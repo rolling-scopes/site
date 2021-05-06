@@ -29,7 +29,7 @@
     "gulp-load-plugins": "^2.0.3",
     "gulp-sass": "^4.1.0",
     "gulp-useref": "^4.0.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "normalize.scss": "^0.1.0",
     "through2": "^3.0.1"
   },
