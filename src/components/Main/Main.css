@@ -1,0 +1,116 @@
+.rectangle {
+  width: 100%;
+  display: block;
+  background: #ffdb20;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  border-radius: 0px 0px 0px 0px;
+}
+
+.the-rolling-scopes {
+  flex-shrink: 0;
+  width: auto; /* 845px */
+  height: auto; /* 115px */
+  white-space: pre;
+  position: relative;
+  line-height: 1.2;
+}
+
+._ {
+  flex-shrink: 0;
+  width: auto; /* 51px */
+  height: auto; /* 115px */
+  white-space: pre;
+  position: relative;
+  color: #d44333;
+  line-height: 1.2;
+}
+
+.an-international-community-of-developers {
+  flex-shrink: 0;
+  width: auto; /* 396px */
+  height: auto; /* 28px */
+  white-space: pre;
+  position: relative;
+  color: var(--All_Yellow_700, #664d1b);
+  line-height: 1.2;
+}
+
+.since-2013 {
+  flex-shrink: 0;
+  width: auto; /* 104px */
+  height: auto; /* 28px */
+  white-space: pre;
+  position: relative;
+  color: var(--All_Yellow_700, #664d1b);
+  line-height: 1.2;
+}
+
+.connecting-people-growing-together-having-fun {
+  flex-shrink: 0;
+  width: 575px;
+  height: auto; /* 104px */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  position: relative;
+  text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.14);
+  color: var(--Primary_White, #ffffff);
+  line-height: 1.2;
+}
+
+.tag {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: min-content; /* 187px */
+  height: min-content; /* 40px */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 8px 16px 8px 16px;
+  box-shadow: 0px 0px 16px 0px rgba(114, 92, 19, 0.08);
+  overflow: visible;
+  position: relative;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 24px;
+  border: 2px solid #fffaf0;
+}
+
+.label {
+  flex-shrink: 0;
+  width: auto; /* 155px */
+  height: auto; /* 24px */
+  white-space: pre;
+  position: relative;
+  color: var(--Primary_White, #ffffff);
+  line-height: 1.2;
+}
+
+.asterix {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: block;
+  overflow: visible;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+}
+
+.asterix_label {
+  width: auto; /* 9px */
+  height: auto; /* 19px */
+  white-space: pre;
+  font-weight: 500;
+  font-style: normal;
+  font-family: 'Inter-Medium', 'Inter', sans-serif;
+  color: var(--Secondary_red, #d44333);
+  font-size: 24px;
+  letter-spacing: 0em;
+  line-height: 24px;
+  position: absolute;
+}

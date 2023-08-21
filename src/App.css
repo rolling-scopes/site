@@ -36,16 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.rectangle {
-  width: 1440px;
-  display: block;
-  /* background-image: url(background-image.jpg); */
-  /* background-color: #034567; /* to remove */
-  height: 500px; /* to remove */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  /* position: absolute; */
-  /* border-radius: 0px 0px 0px 0px; */
-}
