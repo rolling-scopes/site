@@ -4,15 +4,13 @@ import './Main.css';
 
 export const Main: React.FC = () => {
   return (
-    <div className="rectangle">
-      <div>
-        <h1 className="the-rolling-scopes">The Rolling Scopes</h1>
-        <span className="_">*</span>
-      </div>
-
-      <div>
-        <span>an international community of developers</span>
-        <span>since 2013</span>
+    <div className="main">
+      <div className="title-container">
+        <div className="title">The Rolling Scopes</div>
+        <div className="title-description">
+          <div>an international community of developers</div>
+          <div>since 2013</div>
+        </div>
       </div>
 
       <div className="connecting-people-growing-together-having-fun">

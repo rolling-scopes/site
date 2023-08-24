@@ -1,4 +1,4 @@
-.rectangle {
+.main {
   width: 100%;
   display: block;
   background: #ffdb20;
@@ -7,57 +7,51 @@
   background-position: center;
   position: absolute;
   border-radius: 0px 0px 0px 0px;
+  padding-top: 150px;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
-.the-rolling-scopes {
-  flex-shrink: 0;
-  width: auto; /* 845px */
-  height: auto; /* 115px */
-  white-space: pre;
-  position: relative;
-  line-height: 1.2;
+.title-container {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid blue;
 }
 
-._ {
-  flex-shrink: 0;
-  width: auto; /* 51px */
-  height: auto; /* 115px */
-  white-space: pre;
-  position: relative;
+.title {
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 1.4em;
+  letter-spacing: 2.4px;
+  color: #000000;
+}
+
+.title::after {
+  content: '*';
   color: #d44333;
-  line-height: 1.2;
 }
 
-.an-international-community-of-developers {
-  flex-shrink: 0;
-  width: auto; /* 396px */
-  height: auto; /* 28px */
-  white-space: pre;
-  position: relative;
-  color: var(--All_Yellow_700, #664d1b);
-  line-height: 1.2;
-}
-
-.since-2013 {
-  flex-shrink: 0;
-  width: auto; /* 104px */
-  height: auto; /* 28px */
-  white-space: pre;
-  position: relative;
-  color: var(--All_Yellow_700, #664d1b);
-  line-height: 1.2;
+.title-description {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  font-weight: medium;
 }
 
 .connecting-people-growing-together-having-fun {
-  flex-shrink: 0;
+  font-size: 30px;
+  letter-spacing: 2.4px;
   width: 575px;
   height: auto; /* 104px */
   white-space: pre-wrap;
   word-wrap: break-word;
   word-break: break-word;
-  position: relative;
   text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.14);
-  color: var(--Primary_White, #ffffff);
+  color: #ffffff;
   line-height: 1.2;
 }
 
