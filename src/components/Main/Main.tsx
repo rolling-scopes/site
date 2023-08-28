@@ -2,6 +2,22 @@ import React from 'react';
 
 import './Main.css';
 
+interface TagProps {
+  label: string;
+}
+
+const Tag: React.FC<TagProps> = ({ label }) => (
+  <div className="tag">
+    <span className="label">{label}</span>
+  </div>
+);
+
+const TagDevider: React.FC = () => (
+  <div className="asterix">
+    <span className="label">*</span>
+  </div>
+);
+
 export const Main: React.FC = () => {
   return (
     <div className="main">
@@ -16,21 +32,11 @@ export const Main: React.FC = () => {
 
       <div className="description">Connecting people, growing together, having fun</div>
       <div className="tags-container">
-        <div className="tag">
-          <span className="label">education</span>
-        </div>
-        <div className="asterix">
-          <span className="label">*</span>
-        </div>
-        <div className="tag">
-          <span className="label">events & meetups</span>
-        </div>
-        <div className="asterix">
-          <span className="label">*</span>
-        </div>
-        <div className="tag">
-          <span className="label">community building</span>
-        </div>
+        <Tag label="education" />
+        <TagDevider />
+        <Tag label="events & meetups" />
+        <TagDevider />
+        <Tag label="community building" />
       </div>
     </div>
   );
