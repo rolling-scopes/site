@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  height: 600px;
+  display: block;
+  background: #ff2343;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0px 0px 0px 0px;
+  padding-top: 150px;
+  padding-left: 5%;
+  padding-right: 5%;
+}
