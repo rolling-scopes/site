@@ -1,5 +1,4 @@
 .main {
-  width: 100%;
   height: 600px;
   display: block;
   background: #ffdb20;
@@ -20,7 +19,7 @@
   font-family: 'Inter-Bold', 'Inter', sans-serif;
 }
 
-.title {
+.main .title {
   font-weight: bold;
   font-size: 96px;
   line-height: 1.2em;
@@ -46,7 +45,7 @@
   line-height: 28px;
 }
 
-.description {
+.main .description {
   font-size: 44px;
   letter-spacing: 0.04em;
   line-height: 52px;
