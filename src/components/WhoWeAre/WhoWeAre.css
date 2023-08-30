@@ -1,13 +1,43 @@
-.container {
-  width: 100%;
-  height: 600px;
-  display: block;
-  background: #ff2343;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 0px 0px 0px 0px;
-  padding-top: 150px;
-  padding-left: 5%;
-  padding-right: 5%;
+.who_we_are {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 120px 40px 120px;
+}
+
+.who_we_are .container {
+  text-align: left;
+}
+
+.who_we_are .title {
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 52px;
+  letter-spacing: 0.04em;
+  color: #000000;
+}
+
+.who_we_are .subtitle {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #545454;
+  margin-top: 15px;
+}
+
+.who_we_are .description {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #545454;
+  margin-top: 15px;
+}
+
+.picture {
+  width: 340px;
+  height: 340px;
+  margin-left: 120px;
 }
