@@ -1,11 +1,11 @@
 import React from 'react';
-import image from '../../assets/whoWeAre.png';
+import image from '../../assets/about.png';
 
-import './WhoWeAre.css';
+import './About.css';
 
-export const WhoWeAre: React.FC = () => {
+export const About: React.FC = () => {
   return (
-    <div className="who_we_are">
+    <div className="about">
       <div className="container">
         <div className="title">Who we are</div>
         <div className="subtitle">

@@ -1,4 +1,4 @@
-.who_we_are {
+.about {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -6,11 +6,11 @@
   padding: 80px 120px 40px 120px;
 }
 
-.who_we_are .container {
+.about .container {
   text-align: left;
 }
 
-.who_we_are .title {
+.about .title {
   font-weight: 600;
   font-size: 44px;
   line-height: 52px;
@@ -18,7 +18,7 @@
   color: #000000;
 }
 
-.who_we_are .subtitle {
+.about .subtitle {
   font-weight: 600;
   font-size: 20px;
   line-height: 28px;
@@ -27,7 +27,7 @@
   margin-top: 15px;
 }
 
-.who_we_are .description {
+.about .description {
   font-weight: 400;
   font-size: 18px;
   line-height: 28px;
