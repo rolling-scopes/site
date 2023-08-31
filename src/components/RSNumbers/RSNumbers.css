@@ -1,0 +1,57 @@
+.numbers {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 120px;
+  border: 3px solid red;
+  min-height: 650px;
+}
+
+.map {
+  flex-shrink: 0;
+  width: 986px;
+  height: 650px;
+  display: block;
+  overflow: hidden;
+  z-index: 1;
+  position: absolute;
+  border-radius: 0px 0px 0px 0px;
+}
+
+.numbers .container {
+  display: flex;
+  flex-direction: row;
+}
+
+.numbers .container > div {
+  width: 50%;
+  text-align: left;
+}
+
+.numbers .title {
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 52px;
+  letter-spacing: 0.04em;
+  color: #000000;
+}
+
+.numbers .subtitle {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #545454;
+  margin-top: 10px;
+}
+
+.numbers .description {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #545454;
+  margin-top: 10px;
+}
+
