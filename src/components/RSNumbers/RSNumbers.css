@@ -1,11 +1,10 @@
 .numbers {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0 120px;
-  border: 3px solid red;
-  min-height: 650px;
+  min-height: 632px;
 }
 
 .map {
@@ -16,15 +15,15 @@
   overflow: hidden;
   z-index: 1;
   position: absolute;
-  border-radius: 0px 0px 0px 0px;
+  left: 0;
 }
 
-.numbers .container {
+.numbers .text-container {
   display: flex;
   flex-direction: row;
 }
 
-.numbers .container > div {
+.numbers .text-container > div {
   width: 50%;
   text-align: left;
 }
@@ -55,3 +54,37 @@
   margin-top: 10px;
 }
 
+.numbers .info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 24px;
+  margin-top: 12px;
+}
+
+.numbers .info-container {
+  width: 192px;
+  height: 108px;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 8px 16px 8px 16px;
+  margin: 0 24px;
+}
+
+.numbers .info-container div:first-child {
+  font-weight: 500;
+  font-size: 52px;
+  line-height: 64px;
+  letter-spacing: 0.04em;
+  color: #000000;
+}
+.numbers .info-container div:nth-child(2) {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: #545454;
+}
