@@ -5,6 +5,7 @@ import { Navbar } from './components/Header/Navbar';
 import { Main } from './components/Main/Main';
 import { About } from './components/About/About';
 import { RSNumbers } from './components/RSNumbers/RSNumbers';
+import { RSPlaces } from './components/RSPlaces/RSPlaces';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Main />
       <About />
       <RSNumbers />
+      <RSPlaces />
     </div>
   );
 }

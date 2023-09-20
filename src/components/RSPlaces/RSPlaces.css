@@ -1,0 +1,29 @@
+.places {
+  min-width: 1440px;
+  height: min-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 5px 20px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-color: #545454;
+  border-style: solid;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #000000;
+}
+
+.places .divider {
+  font-weight: 700;
+  color: #d44333;
+}
