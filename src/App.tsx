@@ -6,6 +6,7 @@ import { Main } from './components/Main/Main';
 import { About } from './components/About/About';
 import { RSNumbers } from './components/RSNumbers/RSNumbers';
 import { RSPlaces } from './components/RSPlaces/RSPlaces';
+import { RSPictures } from './components/RSPictures/RSPictures';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <About />
       <RSNumbers />
       <RSPlaces />
+      <RSPictures />
     </div>
   );
 }

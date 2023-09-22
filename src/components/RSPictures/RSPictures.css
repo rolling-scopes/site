@@ -1,0 +1,15 @@
+.pictures {
+  width: 100%;
+  height: 600px;
+}
+
+.pictures .title {
+  margin-top: 48px;
+  width: 450px; 
+  text-align: left;
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 52px;
+  letter-spacing: 0.04em;
+  color: #000000;
+}
