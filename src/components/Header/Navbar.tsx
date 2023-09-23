@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import './Navbar.css';
+import './Navbar.scss';
 
 interface NavItemProps {
   label: string;

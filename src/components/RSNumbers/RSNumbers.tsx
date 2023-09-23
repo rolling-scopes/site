@@ -1,7 +1,7 @@
 import React from 'react';
 import image from '../../assets/map.png';
 
-import './RSNumbers.css';
+import './RSNumbers.scss';
 
 interface InfoCellProps {
   title: string;

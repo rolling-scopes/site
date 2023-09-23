@@ -11,7 +11,7 @@ import photo7 from '../../assets/photo-7.png';
 import photo8 from '../../assets/photo-8.png';
 import photo9 from '../../assets/photo-9.png';
 
-import './RSPictures.css';
+import './RSPictures.scss';
 
 export const RSPictures: React.FC = () => {
   const onChange = () => console.log('onChange');

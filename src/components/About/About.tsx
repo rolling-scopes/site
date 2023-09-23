@@ -1,7 +1,7 @@
 import React from 'react';
 import image from '../../assets/about.png';
 
-import './About.css';
+import './About.scss';
 
 export const About: React.FC = () => {
   return (
