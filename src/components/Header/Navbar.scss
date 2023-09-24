@@ -1,3 +1,5 @@
+@import '../../mixins';
+
 .navbar {
   box-sizing: border-box;
   width: 100%;
@@ -124,7 +126,7 @@
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
-@media screen and (max-width: 809px) {
+@include media-tablet {
   .menu {
     flex-direction: column;
     justify-content: space-between;
