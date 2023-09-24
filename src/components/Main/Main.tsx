@@ -20,11 +20,11 @@ const TagDevider: React.FC = () => (
 
 export const Main: React.FC = () => {
   return (
-    <div className="main">
+    <div className="main container">
       <div className="title-container">
         <div className="title">The Rolling Scopes</div>
 
-        <div className="title-description">
+        <div className="subtitle">
           <div>an international community of developers</div>
           <div>since 2013</div>
         </div>
