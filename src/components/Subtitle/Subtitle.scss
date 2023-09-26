@@ -1,0 +1,15 @@
+@import '../../constants';
+@import '../../mixins';
+
+.subtitle {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: $color-secondary-gray600;
+  @include media-tablet {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
