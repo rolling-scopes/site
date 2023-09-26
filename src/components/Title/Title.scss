@@ -1,0 +1,19 @@
+@import '../../constants';
+@import '../../mixins';
+
+.title {
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 52px;
+  letter-spacing: 0.04em;
+  color: $color-primary-black;
+  @include media-tablet {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+.asterix::after {
+  content: '*';
+  color: $color-secondary-red;
+}
