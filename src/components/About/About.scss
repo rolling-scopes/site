@@ -1,43 +1,53 @@
+@import '../../constants';
+@import '../../mixins';
+
 .about {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 80px 120px 40px 120px;
-}
 
-.about .container {
-  text-align: left;
-}
+  &.container {
+    padding: 80px 120px 40px 120px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    @include media-laptop {
+      padding: 80px 40px 40px 40px;
+      flex-direction: column;
+    }
+    @include media-tablet {
+      padding: 40px 16px;
+    }
+  }
 
-.about .title {
-  font-weight: 600;
-  font-size: 44px;
-  line-height: 52px;
-  letter-spacing: 0.04em;
-  color: #000000;
-}
+  & .left {
+    min-width: 640px;
+    text-align: left;
+    margin-right: 200px;
+    @include media-laptop {
+      min-width: 400px;
+      margin-right: 20px;
+    }
+    @include media-tablet {
+      min-width: auto;
+    }
+    & .subtitle {
+      margin: 16px 0;
+    }
+  }
 
-.about .subtitle {
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 28px;
-  letter-spacing: 0;
-  color: #545454;
-  margin-top: 15px;
-}
-
-.about .description {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: 0;
-  color: #545454;
-  margin-top: 15px;
-}
-
-.picture {
-  width: 340px;
-  height: 340px;
-  margin-left: 120px;
+  .picture {
+    width: 370px;
+    height: 340px;
+    @include media-laptop {
+      margin-top: 32px;
+    }
+    @include media-tablet {
+      width: 296px;
+      height: 272px;
+      margin: 32px 0;
+    }
+  }
 }
