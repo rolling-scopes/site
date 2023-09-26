@@ -1,0 +1,18 @@
+@import '../../constants';
+@import '../../mixins';
+
+.paragraph {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: $color-secondary-gray600;
+  @include media-laptop {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  @include media-tablet {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
