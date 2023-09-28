@@ -16,12 +16,12 @@ export const About: React.FC = () => {
           together."
         />
         <Paragraph>
-          <div className="description">
+          <div>
             The Rolling Scopes was founded in 2013 in Minsk as a community of Front-end developers.
             It has since grown into an enormous international developers community.
           </div>
           <br />
-          <div className="description">
+          <div>
             The Rolling Scopes brings together developers of all levels who are passionate about
             technologies such as JavaScript, Front-end development, AWS, iOS, Android, and more.
             Currently, many developers around the world recognize The Rolling Scopes for its
