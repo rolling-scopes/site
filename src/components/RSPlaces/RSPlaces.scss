@@ -1,5 +1,8 @@
+@import '../../constants';
+@import '../../mixins';
+
 .places {
-  min-width: 1440px;
+  min-width: 1440px; // TODO
   height: min-content;
   display: flex;
   flex-direction: row;
@@ -10,20 +13,24 @@
   padding: 5px 20px;
   align-content: center;
   flex-wrap: nowrap;
-  border-color: #545454;
+  border-color: $color-secondary-gray600;
   border-style: solid;
   border-top-width: 1px;
   border-bottom-width: 1px;
   border-left-width: 0px;
   border-right-width: 0px;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
   letter-spacing: 0;
-  color: #000000;
+  color: $color-primary-black;
+  @include media-tablet {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 .places .divider {
-  font-weight: 700;
-  color: #d44333;
+  color: $color-secondary-red;
 }
