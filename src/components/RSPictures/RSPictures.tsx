@@ -12,37 +12,32 @@ import photo8 from '../../assets/photo-8.png';
 import photo9 from '../../assets/photo-9.png';
 
 import './RSPictures.scss';
+import { Title } from '../Title/Title';
+import { Paragraph } from '../Paragraph/Paragraph';
 
-export const RSPictures: React.FC = () => {
-  const onChange = () => console.log('onChange');
-  const onClickItem = () => console.log('onClickItem');
-  const onClickThumb = () => console.log('onClickThumb');
-  return (
-    <div className="pictures">
-      <div className="title">The Rolling Scopes in pictures</div>
-      <div className="subtitle">
-        Each time our events take place in a different city, so that makes it hard to say where the
-        next one will take place.
-      </div>
-      <Carousel
-        className="carousel"
-        showArrows={false}
-        showThumbs={false}
-        showStatus={false}
-        centerMode={true}
-        onChange={onChange}
-        onClickItem={onClickItem}
-        onClickThumb={onClickThumb}>
-        <img src={photo1} />
-        <img src={photo2} />
-        <img src={photo3} />
-        <img src={photo4} />
-        <img src={photo5} />
-        <img src={photo6} />
-        <img src={photo7} />
-        <img src={photo8} />
-        <img src={photo9} />
-      </Carousel>
-    </div>
-  );
-};
+export const RSPictures: React.FC = () => (
+  <div className="pictures">
+    <Title text="The Rolling Scopes in pictures" asterix />
+
+    <Carousel
+      className="carousel"
+      showArrows={false}
+      showThumbs={false}
+      showStatus={false}
+      centerMode={true}>
+      <img src={photo1} />
+      <img src={photo2} />
+      <img src={photo3} />
+      <img src={photo4} />
+      <img src={photo5} />
+      <img src={photo6} />
+      <img src={photo7} />
+      <img src={photo8} />
+      <img src={photo9} />
+    </Carousel>
+    <Paragraph>
+      Want to see photos of our community? A vast collection of photographs from our events is
+      available on our Facebook Albums and Instagram pages.
+    </Paragraph>
+  </div>
+);

@@ -1,45 +1,78 @@
+@import '../../constants';
+@import '../../mixins';
+
 .pictures {
-  width: 100%;
-  height: 600px;
   padding: 80px 120px 40px 120px;
+  @include media-laptop {
+    padding: 80px 40px 40px;
+  }
+  @include media-tablet {
+    padding: 40px 16px;
+  }
 }
 
-.pictures .title {
-  margin-top: 48px;
-  width: 450px;
-  text-align: left;
-  font-weight: 600;
-  font-size: 44px;
-  line-height: 52px;
-  letter-spacing: 0.04em;
-  color: #000000;
-}
-
-.pictures .subtitle {
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 28px;
-  letter-spacing: 0;
-  color: #545454;
-  margin-top: 15px;
-  width: 600px;
-  text-align: left;
+.pictures {
+  & .title {
+    width: 600px;
+    text-align: left;
+    @include media-tablet {
+      width: 100%;
+    }
+  }
+  & .paragraph {
+    width: 600px;
+    text-align: left;
+    @include media-tablet {
+      width: 100%;
+    }
+  }
 }
 
 .pictures .carousel-root {
   width: 1200px;
   height: 540px;
+  padding: 10px 10px 40px;
+  margin: 0 auto;
+  @include media-laptop {
+    width: 730px;
+    height: 369px;
+  }
+  @include media-tablet {
+    width: 358px;
+    height: 210px;
+    padding: 0 0 25px;
+  }
 }
 
 .carousel {
   height: 540px;
+  @include media-laptop {
+    height: 369px;
+  }
+  @include media-tablet {
+    height: 210px;
+  }
 }
 .slider {
   height: 468px;
+  @include media-laptop {
+    height: 325px;
+  }
+  @include media-tablet {
+    height: 175px;
+  }
 }
 
 .carousel .slide {
   width: 750px;
   height: 468px;
   margin-right: 10px;
+  @include media-laptop {
+    width: 730px;
+    height: 369px;
+  }
+  @include media-tablet {
+    width: 358px;
+    height: 210px;
+  }
 }
