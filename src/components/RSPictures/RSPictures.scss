@@ -9,9 +9,7 @@
   @include media-tablet {
     padding: 40px 16px;
   }
-}
 
-.pictures {
   & .title {
     width: 600px;
     text-align: left;
@@ -25,6 +23,57 @@
     @include media-tablet {
       width: 100%;
     }
+  }
+
+  & .social-media-container {
+    display: flex;
+    @include media-tablet {
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  & .social-media {
+    width: fit-content;
+    height: min-content;
+    padding: 0 12px;
+    margin-right: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 24px;
+    @include media-tablet {
+      min-width: 112px;
+      margin-right: 0;
+    }
+
+    & .icon-container {
+      width: 57px;
+      height: 57px;
+      border-radius: 50%;
+      background-color: rgb(238, 238, 238);
+    }
+
+    & .text {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0;
+      margin-top: 8px;
+      @include media-tablet {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+  }
+
+  & a {
+    text-decoration: none;
+    color: $color-secondary-gray600;
+    cursor: pointer;
   }
 }
 
