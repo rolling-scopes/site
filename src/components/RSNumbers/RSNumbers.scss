@@ -19,14 +19,20 @@
 }
 
 .map {
-  flex-shrink: 0;
-  width: 986px;
-  height: 650px;
-  display: block;
+  max-width: 986px;
+  width: 90%;
+  max-height: 650px;
+  height: auto;
   overflow: hidden;
   z-index: 1;
   position: absolute;
   left: 0;
+  @include media-tablet {
+    max-width: none;
+    width: 100%;
+    max-height: none;
+    height: auto;
+  }
 }
 
 .numbers .text-container {
