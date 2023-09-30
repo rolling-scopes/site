@@ -2,7 +2,6 @@
 @import '../../mixins';
 
 .places {
-  min-width: 1440px; // TODO
   height: min-content;
   display: flex;
   flex-direction: row;
@@ -12,7 +11,7 @@
   position: relative;
   padding: 5px 20px;
   align-content: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   border-color: $color-secondary-gray600;
   border-style: solid;
   border-top-width: 1px;
@@ -28,6 +27,10 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+  }
+
+  & .place {
+    padding: 0 16px;
   }
 }
 
