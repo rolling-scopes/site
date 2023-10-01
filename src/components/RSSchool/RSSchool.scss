@@ -49,4 +49,53 @@
       margin-top: 16px;
     }
   }
+
+  & .study-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 24px;
+    @include media-laptop {
+      flex-direction: column;
+    }
+
+    & .option {
+      max-width: 380px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      color: $color-secondary-gray600;
+      @include media-laptop {
+        max-width: 600px;
+        margin-top: 24px;
+      }
+      @include media-tablet {
+        max-width: 100%;
+      }
+    }
+
+    & .option-title {
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 36px;
+      letter-spacing: 0;
+      @include media-tablet {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+
+    & .option-description {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 28px;
+      letter-spacing: 0;
+      margin-top: 16px;
+      text-align: left;
+      @include media-tablet {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
 }
