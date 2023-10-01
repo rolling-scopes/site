@@ -2,12 +2,24 @@
 @import '../../mixins';
 
 .pictures {
-  padding: 80px 120px 40px 120px;
-  @include media-laptop {
-    padding: 80px 40px 40px;
+  &.container {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
   }
-  @include media-tablet {
-    padding: 40px 16px;
+
+  &.content {
+    width: 1440px;
+    padding: 80px 120px 40px 120px;
+    @include media-laptop {
+      padding: 80px 40px 40px;
+      max-width: 1440px;
+      width: auto;
+    }
+    @include media-tablet {
+      padding: 40px 16px;
+    }
   }
 
   & .title {

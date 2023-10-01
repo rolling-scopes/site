@@ -2,20 +2,25 @@
 @import '../../mixins';
 
 .about {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-
   &.container {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  &.content {
+    width: 1440px;
     padding: 80px 120px 40px 120px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
     @include media-laptop {
       padding: 80px 40px 40px;
       flex-direction: column;
+      max-width: 1440px;
+      width: auto;
     }
     @include media-tablet {
       padding: 40px 16px;

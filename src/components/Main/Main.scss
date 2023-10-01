@@ -2,13 +2,23 @@
 @import '../../mixins';
 
 .main {
-  min-height: 492px;
-  background: $color-secondary-yellow;
+  min-height: 800px;
 
   &.container {
+    width: 100%;
+    background: $color-secondary-yellow;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  &.content {
+    width: 1440px;
     padding: 208px 100px 100px;
     @include media-laptop {
       padding: 120px 45px 120px;
+      max-width: 1440px;
+      width: auto;
     }
     @include media-tablet {
       padding: 120px 15px 120px;

@@ -31,26 +31,28 @@ const stydyOptions: StydyOptionsProps[] = [
 ];
 
 export const RSSchool: React.FC = () => (
-  <div className="school">
-    <div className="study">
-      <div className="left">
-        <Tag text="education" />
-        <Title text="Study with RS School" asterix />
-        <Subtitle text="RS School is a free and community-based online education program conducted by The Rolling Scopes Community since 2013. " />
-        <Paragraph>
-          Want to see photos of our community? A vast collection of photographs from our events is
-          available on our Facebook Albums and Instagram pages.
-        </Paragraph>
-      </div>
-      <img className="right picture" src={image} alt="education" />
-    </div>
-    <div className="study-options">
-      {stydyOptions.map(({ title, description }) => (
-        <div key={title} className="option">
-          <div className="option-title">{title}</div>
-          <div className="option-description">{description}</div>
+  <div className="school container">
+    <div className="school content">
+      <div className="study">
+        <div className="left">
+          <Tag text="education" />
+          <Title text="Study with RS School" asterix />
+          <Subtitle text="RS School is a free and community-based online education program conducted by The Rolling Scopes Community since 2013. " />
+          <Paragraph>
+            Want to see photos of our community? A vast collection of photographs from our events is
+            available on our Facebook Albums and Instagram pages.
+          </Paragraph>
         </div>
-      ))}
+        <img className="right picture" src={image} alt="education" />
+      </div>
+      <div className="study-options">
+        {stydyOptions.map(({ title, description }) => (
+          <div key={title} className="option">
+            <div className="option-title">{title}</div>
+            <div className="option-description">{description}</div>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 );

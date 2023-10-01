@@ -86,35 +86,37 @@ const socialMedia: SocialMediaProps[] = [
 ];
 
 export const RSPictures: React.FC = () => (
-  <div className="pictures">
-    <Title text="The Rolling Scopes in pictures" asterix />
-    <Carousel
-      className="carousel"
-      showArrows={false}
-      showThumbs={false}
-      showStatus={false}
-      centerMode={true}>
-      <img src={photo1} />
-      <img src={photo2} />
-      <img src={photo3} />
-      <img src={photo4} />
-      <img src={photo5} />
-      <img src={photo6} />
-      <img src={photo7} />
-      <img src={photo8} />
-      <img src={photo9} />
-    </Carousel>
-    <Paragraph>
-      Want to see photos of our community? A vast collection of photographs from our events is
-      available on our Facebook Albums and Instagram pages.
-    </Paragraph>
-    <div className="social-media-container">
-      {socialMedia.map(({ title, href, icon }) => (
-        <a className="social-media" key={title} href={href} target="_blank" rel="noreferrer">
-          <div className="icon-container">{icon}</div>
-          <div className="text">{title}</div>
-        </a>
-      ))}
+  <div className="pictures container">
+    <div className="pictures content">
+      <Title text="The Rolling Scopes in pictures" asterix />
+      <Carousel
+        className="carousel"
+        showArrows={false}
+        showThumbs={false}
+        showStatus={false}
+        centerMode={true}>
+        <img src={photo1} />
+        <img src={photo2} />
+        <img src={photo3} />
+        <img src={photo4} />
+        <img src={photo5} />
+        <img src={photo6} />
+        <img src={photo7} />
+        <img src={photo8} />
+        <img src={photo9} />
+      </Carousel>
+      <Paragraph>
+        Want to see photos of our community? A vast collection of photographs from our events is
+        available on our Facebook Albums and Instagram pages.
+      </Paragraph>
+      <div className="social-media-container">
+        {socialMedia.map(({ title, href, icon }) => (
+          <a className="social-media" key={title} href={href} target="_blank" rel="noreferrer">
+            <div className="icon-container">{icon}</div>
+            <div className="text">{title}</div>
+          </a>
+        ))}
+      </div>
     </div>
   </div>
 );
