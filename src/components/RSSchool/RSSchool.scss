@@ -1,0 +1,52 @@
+@import '../../constants';
+@import '../../mixins';
+
+.school {
+  padding: 80px 40px 40px;
+  border: 1px solid red;
+  @include media-laptop {
+    padding: 80px 40px 40px;
+  }
+  @include media-tablet {
+    padding: 40px 16px;
+  }
+
+  & .study {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    @include media-laptop {
+      flex-direction: column;
+    }
+
+    & .left {
+      text-align: left;
+      width: 640px;
+      @include media-laptop {
+        width: 100%;
+      }
+    }
+
+    & .right {
+      @include media-laptop {
+        margin: 40px auto 0;
+      }
+    }
+
+    & .picture {
+      width: 347px;
+      height: 327px;
+      @include media-tablet {
+        width: 278px;
+        height: auto;
+      }
+    }
+
+    & .title,
+    & .subtitle,
+    & .paragraph {
+      margin-top: 16px;
+    }
+  }
+}

@@ -4,6 +4,7 @@ import { About } from './components/About/About';
 import { RSNumbers } from './components/RSNumbers/RSNumbers';
 import { RSPlaces } from './components/RSPlaces/RSPlaces';
 import { RSPictures } from './components/RSPictures/RSPictures';
+import { RSSchool } from './components/RSSchool/RSSchool';
 
 import './App.scss';
 
@@ -16,6 +17,7 @@ function App() {
       <RSNumbers />
       <RSPlaces />
       <RSPictures />
+      <RSSchool />
     </div>
   );
 }
