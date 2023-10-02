@@ -1,0 +1,57 @@
+@import '../../constants';
+@import '../../mixins';
+
+.principle-card {
+  position: relative;
+  width: 380px;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 48px 24px 48px;
+  background-color: #fffaf0;
+  overflow: hidden;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 219, 32, 0.08);
+
+  & .accent {
+    flex-shrink: 0;
+    width: 20px;
+    height: 19px;
+    display: block;
+    -webkit-filter: blur(8px);
+    filter: blur(8px);
+    background-color: $color-accent-yellow;
+    z-index: 1;
+    aspect-ratio: 1.032 / 1;
+    position: absolute;
+    border-radius: 100%;
+  }
+
+  & .text {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: 0;
+    margin-top: 16px;
+  }
+}
+
+.accent-corner {
+  flex-shrink: 0;
+  width: 310px;
+  height: 300px;
+  display: block;
+  -webkit-filter: blur(32px);
+  filter: blur(32px);
+  background-color: rgba(255, 219, 32, 0.2);
+  z-index: 1;
+  aspect-ratio: 1.032 / 1;
+  position: absolute;
+  right: -160px;
+  bottom: -150px;
+  border-radius: 100%;
+}
