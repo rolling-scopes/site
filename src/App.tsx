@@ -7,6 +7,7 @@ import { RSPictures } from './components/RSPictures/RSPictures';
 import { RSSchool } from './components/RSSchool/RSSchool';
 
 import './App.scss';
+import { RSSchoolPrinciples } from './components/RSSchoolPrinciples/RSSchoolPrinciples';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <RSPlaces />
       <RSPictures />
       <RSSchool />
+      <RSSchoolPrinciples />
     </div>
   );
 }

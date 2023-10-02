@@ -1,0 +1,36 @@
+@import '../../constants';
+@import '../../mixins';
+
+.school-principles {
+  &.container {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  &.content {
+    width: 1440px;
+    padding: 20px 120px 40px;
+    @include media-laptop {
+      padding: 20px 40px 40px;
+      max-width: 1440px;
+      width: auto;
+    }
+    @include media-tablet {
+      padding: 20px 16px 40px;
+    }
+  }
+
+  & .title {
+    width: 640px;
+  }
+
+  & .cards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+}

@@ -7,10 +7,24 @@
   line-height: 52px;
   letter-spacing: 0.04em;
   color: $color-primary-black;
+  text-align: left;
   @include media-tablet {
     font-size: 36px;
     line-height: 44px;
   }
+
+  &.extra {
+    font-weight: 500;
+    font-size: 52px;
+    line-height: 64px;
+  }
+}
+
+.title.extra::before {
+  // TODO
+  content: '‖';
+  color: $color-secondary-red;
+  white-space: pre;
 }
 
 .asterix::after {
