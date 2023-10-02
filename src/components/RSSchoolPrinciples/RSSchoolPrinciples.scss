@@ -24,6 +24,9 @@
 
   & .title {
     width: 640px;
+    @include media-laptop {
+      width: 100%;
+    }
   }
 
   & .cards {
@@ -32,5 +35,18 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 24px;
+    @include media-laptop {
+      width: 100%;
+      flex-direction: column;
+      & > div {
+        margin-top: 16px;
+      }
+    }
+
+    @include media-tablet {
+      & > div {
+        margin-top: 8px;
+      }
+    }
   }
 }
