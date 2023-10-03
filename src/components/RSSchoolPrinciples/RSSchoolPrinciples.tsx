@@ -1,6 +1,7 @@
 import React from 'react';
 import { PrincipleCard, PrincipleCardProps } from '../PrincipleCard/PrincipleCard';
 import { Title } from '../Title/Title';
+import { UpcomingCourses } from '../UpcomingCourses/UpcomingCourses';
 
 import './RSSchoolPrinciples.scss';
 
@@ -93,6 +94,7 @@ export const RSSchoolPrinciples: React.FC = () => (
           <PrincipleCard key={text} text={text} icon={icon} />
         ))}
       </div>
+      <UpcomingCourses />
     </div>
   </div>
 );

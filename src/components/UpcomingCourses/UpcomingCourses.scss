@@ -1,0 +1,204 @@
+@import '../../constants';
+@import '../../mixins';
+
+.upcoming-courses {
+  & .title {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: 0;
+    margin: 24px 0;
+  }
+
+  & .content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media-laptop {
+      flex-direction: column;
+    }
+
+    // & .info {
+    //     width: auto;
+    // }
+
+    & .button {
+      box-sizing: border-box;
+      width: 218px;
+      height: min-content; /* 56px */
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 16px 24px 16px 24px;
+      background-color: #000000;
+      overflow: visible;
+      position: relative;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 8;
+      border-radius: 0px 0px 0px 0px;
+      margin-top: 24px;
+
+      & .label {
+        flex-shrink: 0;
+        width: auto; /* 138px */
+        height: auto; /* 24px */
+        white-space: pre;
+        position: relative;
+        font-weight: 500;
+        font-style: normal;
+        font-family: 'Inter-Medium', 'Inter', sans-serif;
+        color: #ffffff;
+        font-size: 18px;
+        letter-spacing: 0em;
+        line-height: 24px;
+        text-align: center;
+      }
+    }
+
+    & .courses {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 800px;
+      @include media-laptop {
+        width: 100%;
+      }
+
+      & .course-card {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        & .icon-container {
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: min-content; /* 88px */
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 16px 16px 16px 16px;
+          overflow: visible;
+          position: relative;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 0;
+          border-radius: 0px 0px 0px 0px;
+        }
+
+        & .course-info {
+          width: 100%;
+          text-align: left;
+
+          & .name {
+            flex-shrink: 0;
+            width: 573px;
+            height: auto; /* 24px */
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            word-break: break-word;
+            position: relative;
+            font-weight: 500;
+            font-style: normal;
+            font-family: 'Inter-Medium', 'Inter', sans-serif;
+            color: #000000;
+            font-size: 18px;
+            letter-spacing: 0em;
+            line-height: 24px;
+          }
+
+          & .date {
+            flex-shrink: 0;
+            width: 573px;
+            height: auto; /* 20px */
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            word-break: break-word;
+            position: relative;
+            font-family: 'Inter', sans-serif;
+            color: #545454;
+            font-size: 14px;
+            letter-spacing: 0em;
+            line-height: 20px;
+            margin-top: 8px;
+          }
+        }
+
+        & .details-container {
+          cursor: pointer;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: fit-content;
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 16px 16px 16px 16px;
+          overflow: visible;
+          position: relative;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 0;
+          border-radius: 0px 0px 0px 0px;
+
+          & a {
+            text-decoration: none;
+          }
+
+          & .details {
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 107px;
+            height: 36px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 12px 10px 12px;
+            background-color: #eeeeee;
+            overflow: hidden;
+            position: relative;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 8;
+            border-radius: 9999px;
+            & .label {
+              flex-shrink: 0;
+              width: auto; /* 83px */
+              height: auto; /* 16px */
+              white-space: pre;
+              position: relative;
+              font-weight: 500;
+              font-style: normal;
+              font-family: 'Inter-Medium', 'Inter', sans-serif;
+              color: #000000;
+              font-size: 14px;
+              letter-spacing: 0em;
+              line-height: 16px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+
+    & .image {
+      width: 299px;
+      height: 193px;
+      border: 1px solid red;
+
+      @include media-laptop {
+          margin-top: 24px;
+      }
+    }
+  }
+}
