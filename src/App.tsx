@@ -5,9 +5,11 @@ import { RSNumbers } from './components/RSNumbers/RSNumbers';
 import { RSPlaces } from './components/RSPlaces/RSPlaces';
 import { RSPictures } from './components/RSPictures/RSPictures';
 import { RSSchool } from './components/RSSchool/RSSchool';
+import { RSSchoolPrinciples } from './components/RSSchoolPrinciples/RSSchoolPrinciples';
+
+import { OurAlumni } from './components/OurAlumni/OurAlumni';
 
 import './App.scss';
-import { RSSchoolPrinciples } from './components/RSSchoolPrinciples/RSSchoolPrinciples';
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
       <RSPictures />
       <RSSchool />
       <RSSchoolPrinciples />
+      <OurAlumni />
     </div>
   );
 }

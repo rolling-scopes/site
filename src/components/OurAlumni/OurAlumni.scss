@@ -1,0 +1,51 @@
+@import '../../constants';
+@import '../../mixins';
+
+.our-alumni {
+  &.container {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  &.content {
+    width: 1440px;
+    padding: 80px 40px 40px;
+    text-align: left;
+    @include media-laptop {
+      padding: 80px 40px 40px;
+      max-width: 1440px;
+      width: auto;
+    }
+    @include media-tablet {
+      padding: 40px 16px;
+    }
+
+    & .title,
+    & .paragraph {
+      width: 640px;
+      @include media-tablet {
+        width: 100%;
+      }
+    }
+
+    & .paragraph {
+      margin-top: 16px;
+    }
+
+    & .alumni {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    & .alumni-logo {
+      width: 141px;
+      height: 40px;
+      margin-right: 35px;
+      margin-bottom: 48px;
+    }
+  }
+}
