@@ -118,25 +118,23 @@ export const UpcomingCourses: React.FC = () => (
   <div className="upcoming-courses">
     <div className="title">Upcoming courses</div>
     <div className="content">
-      <div className="info">
-        <div className="courses">
-          {courses.map(({ title, language, startDate, href, icon }) => (
-            <div key={title} className="course-card">
-              <div className="icon-container">{icon}</div>
-              <div className="course-info">
-                <div className="name">
-                  {title} {language}
-                </div>
-                <div className="date">Start date: {startDate}</div>
+      <div className="courses">
+        {courses.map(({ title, language, startDate, href, icon }) => (
+          <div key={title} className="course-card">
+            <div className="icon-container">{icon}</div>
+            <div className="course-info">
+              <div className="name">
+                {title} ({language})
               </div>
-              <div className="details-container">
-                <a className="details" href={href} target="_blank" rel="noreferrer">
-                  <span className="label">More details</span>
-                </a>
-              </div>
+              <div className="date">Start date: {startDate}</div>
             </div>
-          ))}
-        </div>
+            <div className="details-container">
+              <a className="details" href={href} target="_blank" rel="noreferrer">
+                <span className="label">More details</span>
+              </a>
+            </div>
+          </div>
+        ))}
         <div className="button">
           <span className="label">Go to RS School</span>
           <svg
