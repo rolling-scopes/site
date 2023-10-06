@@ -11,80 +11,55 @@
 
   &.content {
     width: 1440px;
-    padding: 80px 40px 40px;
+    padding: 80px 120px 40px 120px;
     text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
     @include media-laptop {
+      flex-direction: column;
+      align-items: flex-start;
       padding: 80px 40px 40px;
       max-width: 1440px;
-      width: auto;
+      width: 100%;
     }
     @include media-tablet {
       padding: 40px 16px;
     }
 
-    // & .title,
-    // & .paragraph {
-    //   width: 640px;
-    //   @include media-tablet {
-    //     width: 100%;
-    //   }
-    // }
+    & .info {
+      width: 460px;
+      @include media-tablet {
+        width: 100%;
+      }
+    }
 
-    // & .paragraph {
-    //   margin-top: 16px;
-    // }
-  }
-}
+    & .paragraph {
+      @include media-laptop {
+        margin-top: 16px;
+      }
+    }
 
-.card {
-  width: min-content;
-  height: min-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  overflow: visible;
-  padding: 0px 0px 0px 0px;
-  align-content: flex-start;
-  border-radius: 0px 0px 0px 0px;
+    & .cards {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      @include media-laptop {
+        margin-top: 16px;
+      }
+      @include media-tablet {
+        flex-direction: column;
+      }
 
-  & .top {
-    box-sizing: border-box;
-    width: 320px;
-    height: min-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 32px 24px 24px 24px;
-    background-color: #f4f1fa;
-    overflow: hidden;
-    align-content: flex-start;
-    flex-wrap: nowrap;
-    gap: 24;
-    position: relative;
-    border-radius: 12px 12px 0px 0px;
-    border-color: #e2e2e2;
-    border-style: solid;
-    border-top-width: 1px;
-    border-bottom-width: 0px;
-    border-left-width: 1px;
-    border-right-width: 1px;
-  }
-  & .tag {
-    width: 123px;
-    height: 36px;
-    display: block;
-    overflow: visible;
-    border-radius: 0px 0px 0px 0px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 60px;
-    border: 4px solid #cdbaeb;
-    font-weight: 400;
-    color: $color-secondary-gray600;
-    font-size: 16px;
-    letter-spacing: 0em;
-    line-height: 1.2;
-    white-space: pre;
+      & .card {
+        margin-right: 16px;
+         @include media-tablet {
+           margin-right: 0;
+           margin-top: 16px;
+         }
+      }
+    }
   }
 }

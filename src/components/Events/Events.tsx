@@ -4,20 +4,9 @@ import { Title } from '../Title/Title';
 import { Paragraph } from '../Paragraph/Paragraph';
 import { Subtitle } from '../Subtitle/Subtitle';
 import { Tag } from '../Tag/Tag';
+import { EventCard, EventCardProps } from '../EventCard/EventCard';
 
 import './Events.scss';
-
-interface EventCardProps {
-  eventType: string; // Meetup
-  title: string;
-  organizedBy: string;
-  organization: string;
-  date: string;
-  time: string;
-  type: string; // Offline | Online
-  address: string;
-  href: string;
-}
 
 const events: EventCardProps[] = [
   {
@@ -43,37 +32,6 @@ const events: EventCardProps[] = [
     href: 'https://www.meetup.com/the-rolling-scopes-lithuania/events/293907703/'
   }
 ];
-
-const EventCard: React.FC<EventCardProps> = ({
-  eventType,
-  organizedBy,
-  organization,
-  title,
-  date,
-  time,
-  type,
-  address,
-  href
-}) => (
-  <div className="card">
-    <div className="top">
-      <div className="tag">{eventType}</div>
-      <div>{organizedBy}</div>
-      <div>{organization}</div>
-      <div>{title}</div>
-      <div>and more</div>
-    </div>
-    <div className="bottom">
-      <div>
-        • {date} • {time} • {type}
-      </div>
-      <div>{address}</div>
-      <a href={href} target="_blank" rel="noreferrer">
-        View details
-      </a>
-    </div>
-  </div>
-);
 
 export const Events: React.FC = () => (
   <div className="events container">
