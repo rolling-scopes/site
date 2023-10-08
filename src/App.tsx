@@ -8,6 +8,7 @@ import { RSSchool } from './components/RSSchool/RSSchool';
 import { RSSchoolPrinciples } from './components/RSSchoolPrinciples/RSSchoolPrinciples';
 import { OurAlumni } from './components/OurAlumni/OurAlumni';
 import { Events } from './components/Events/Events';
+import { Speakers } from './components/Speakers/Speakers';
 
 import './App.scss';
 
@@ -24,6 +25,7 @@ function App() {
       <RSSchoolPrinciples />
       <OurAlumni />
       <Events />
+      <Speakers />
     </div>
   );
 }
