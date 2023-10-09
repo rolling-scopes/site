@@ -10,6 +10,7 @@ import { OurAlumni } from './components/OurAlumni/OurAlumni';
 import { Events } from './components/Events/Events';
 import { Speakers } from './components/Speakers/Speakers';
 import { Merch } from './components/Merch/Merch';
+import { Community } from './components/RSCommunity/RSCommunity';
 
 import './App.scss';
 
@@ -28,6 +29,7 @@ function App() {
       <Events />
       <Speakers />
       <Merch />
+      <Community />
     </div>
   );
 }
