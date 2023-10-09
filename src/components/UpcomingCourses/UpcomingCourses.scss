@@ -152,42 +152,7 @@
       }
 
       & .button {
-        box-sizing: border-box;
-        width: 218px;
-        height: min-content; /* 56px */
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 16px 24px 16px 24px;
-        background-color: #000000;
-        overflow: visible;
-        position: relative;
-        align-content: center;
-        flex-wrap: nowrap;
-        gap: 8;
-        border-radius: 0px 0px 0px 0px;
         margin-top: 24px;
-
-        @include media-tablet {
-          width: 100%;
-        }
-
-        & .label {
-          flex-shrink: 0;
-          width: auto; /* 138px */
-          height: auto; /* 24px */
-          white-space: pre;
-          position: relative;
-          font-weight: 500;
-          font-style: normal;
-          font-family: 'Inter-Medium', 'Inter', sans-serif;
-          color: #ffffff;
-          font-size: 18px;
-          letter-spacing: 0em;
-          line-height: 24px;
-          text-align: center;
-        }
       }
     }
 
