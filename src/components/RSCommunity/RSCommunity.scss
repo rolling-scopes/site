@@ -7,7 +7,6 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    background-color: $color-secondary-gray100;
   }
 
   &.content {
@@ -32,8 +31,6 @@
     & .info {
       width: 640px;
       text-align: left;
-      // font-weight: 500;
-      // color: $color-primary-black;
 
       @include media-laptop {
         width: 100%;
@@ -41,6 +38,38 @@
 
       & .subtitle {
         margin-top: 8px;
+      }
+
+      & .social-media-container {
+        width: 416px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+      & .social-media {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 112px;
+        margin-top: 36px;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: $color-secondary-gray600;
+        @include media-tablet {
+          font-size: 12px;
+          line-height: 16px;
+        }
+
+        & text {
+          margin-top: 8px;
+        }
       }
     }
 
