@@ -2,7 +2,7 @@ import React from 'react';
 import { Title } from '../Title/Title';
 import { Subtitle } from '../Subtitle/Subtitle';
 
-import image from '../../assets/community-welcome.png';
+import image from '../../assets/welcome.png';
 
 import './RSCommunity.scss';
 import { InstagramIcon, LinkedInIcon, YouTubeIcon, TelegramIcon, FacebookIcon } from '../../icons';

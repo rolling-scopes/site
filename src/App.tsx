@@ -11,6 +11,7 @@ import { Events } from './components/Events/Events';
 import { Speakers } from './components/Speakers/Speakers';
 import { Merch } from './components/Merch/Merch';
 import { Community } from './components/RSCommunity/RSCommunity';
+import { Contribute } from './components/Contribute/Contribute';
 
 import './App.scss';
 
@@ -30,6 +31,7 @@ function App() {
       <Speakers />
       <Merch />
       <Community />
+      <Contribute />
     </div>
   );
 }
