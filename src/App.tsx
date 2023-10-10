@@ -12,6 +12,7 @@ import { Speakers } from './components/Speakers/Speakers';
 import { Merch } from './components/Merch/Merch';
 import { Community } from './components/RSCommunity/RSCommunity';
 import { Contribute } from './components/Contribute/Contribute';
+import { Support } from './components/Support/Support';
 
 import './App.scss';
 
@@ -32,6 +33,7 @@ function App() {
       <Merch />
       <Community />
       <Contribute />
+      <Support />
     </div>
   );
 }
