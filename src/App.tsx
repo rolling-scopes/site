@@ -14,6 +14,7 @@ import { Community } from './components/RSCommunity/RSCommunity';
 import { Contribute } from './components/Contribute/Contribute';
 import { Support } from './components/Support/Support';
 import { Partnered } from './components/Partnered/Partnered';
+import { Footer } from './components/Footer/Footer';
 
 import './App.scss';
 
@@ -36,6 +37,7 @@ function App() {
       <Contribute />
       <Support />
       <Partnered />
+      <Footer />
     </div>
   );
 }
