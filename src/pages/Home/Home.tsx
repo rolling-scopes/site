@@ -1,7 +1,9 @@
 import React from 'react';
 
-import { Navbar } from '../components/Header/Navbar';
-import { Main } from '../components/Main/Main';
+import { Navbar } from '../../components/Header/Navbar';
+import { Main } from './sections/Main/Main';
+
+import './Home.scss';
 
 export const Home: React.FC = () => (
   <div className="App">
