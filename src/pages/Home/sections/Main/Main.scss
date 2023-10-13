@@ -5,20 +5,13 @@
   min-height: 800px;
 
   &.container {
-    width: 100%;
     background: $color-secondary-yellow;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
   }
 
   &.content {
-    width: 1440px;
     padding: 208px 100px 100px;
     @include media-laptop {
       padding: 120px 45px 120px;
-      max-width: 1440px;
-      width: auto;
     }
     @include media-tablet {
       padding: 120px 15px 120px;
@@ -30,27 +23,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Inter-Bold', 'Inter', sans-serif;
     text-align: left;
-
-    & > .title {
-      font-weight: 700;
-      font-size: 96px;
-      line-height: 1.2em;
-      letter-spacing: 0.04em;
-      color: $color-primary-black;
-      @include media-laptop {
-        font-size: 77px;
-      }
-      @include media-tablet {
-        font-size: 61px;
-      }
-    }
-
-    & > .title::after {
-      content: '*';
-      color: $color-secondary-red;
-    }
 
     & > .subtitle {
       display: flex;
@@ -84,7 +57,9 @@
     color: $color-primary-white;
     margin: 40px 0;
     text-align: left;
+    width: 600px;
     @include media-tablet {
+      width: 100%;
       font-size: 24px;
       letter-spacing: 0;
       line-height: 32px;
@@ -100,72 +75,6 @@
     @include media-tablet {
       flex-direction: column;
       align-items: flex-start;
-    }
-
-    & > .tag {
-      box-sizing: border-box;
-      flex-shrink: 0;
-      width: min-content;
-      height: min-content;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: flex-start;
-      padding: 8px 16px 8px 16px;
-      box-shadow: 0px 0px 16px 0px rgba(114, 92, 19, 0.08);
-      overflow: visible;
-      position: relative;
-      align-content: flex-start;
-      flex-wrap: nowrap;
-      gap: 0;
-      border-radius: 24px;
-      border: 2px solid #fffaf0;
-      @include media-tablet {
-        margin-bottom: 24px;
-      }
-    }
-
-    & > .tag > .label {
-      flex-shrink: 0;
-      width: auto;
-      height: auto;
-      font-weight: 500;
-      font-size: 18;
-      letter-spacing: 0;
-      white-space: pre;
-      line-height: 24px;
-      position: relative;
-      color: #ffffff;
-    }
-
-    & > .asterix {
-      flex-shrink: 0;
-      width: 24px;
-      height: 24px;
-      overflow: visible;
-      position: relative;
-      border-radius: 0px 0px 0px 0px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      @include media-tablet {
-        display: none;
-      }
-    }
-
-    & > .asterix > .label {
-      width: auto;
-      height: auto;
-      white-space: pre;
-      font-weight: 500;
-      font-style: normal;
-      font-family: 'Inter-Medium', 'Inter', sans-serif;
-      color: $color-secondary-red;
-      font-size: 24px;
-      letter-spacing: 0em;
-      line-height: 24px;
-      position: absolute;
-      top: 5px;
     }
   }
 }

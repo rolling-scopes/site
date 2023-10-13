@@ -1,43 +1,39 @@
 import React from 'react';
 
+import { Tag, TagColor, TagDivider, Title, TitleType } from '../../../../components';
+
 import './Main.scss';
 
 interface TagProps {
+  id: string;
   label: string;
 }
 
-const Tag: React.FC<TagProps> = ({ label }) => (
-  <div className="tag">
-    <span className="label">{label}</span>
-  </div>
-);
-
-const TagDevider: React.FC = () => (
-  <div className="asterix">
-    <span className="label">*</span>
-  </div>
-);
+const tags: TagProps[] = [
+  { id: 'education', label: 'education' },
+  { id: 'events', label: 'events & meetups' },
+  { id: 'community', label: 'community building' }
+];
 
 export const Main: React.FC = () => {
   return (
     <div className="main container">
       <div className="main content">
         <div className="title-container">
-          <div className="title">The Rolling Scopes</div>
-
+          <Title text="The Rolling Scopes" type={TitleType.ExtraBig} />
           <div className="subtitle">
             <div>an international community of developers</div>
             <div>since 2013</div>
           </div>
         </div>
-
         <div className="description">Connecting people, growing together, having fun</div>
         <div className="tags-container">
-          <Tag label="education" />
-          <TagDevider />
-          <Tag label="events & meetups" />
-          <TagDevider />
-          <Tag label="community building" />
+          {tags.map(({ id, label }, index) => (
+            <>
+              <Tag key="id" id={id} label={label} color={TagColor.Light} />
+              {index !== tags?.length - 1 && <TagDivider />}
+            </>
+          ))}
         </div>
       </div>
     </div>
