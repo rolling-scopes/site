@@ -2,22 +2,26 @@ import React from 'react';
 
 import './Title.scss';
 
+export enum TitleType {
+  Regular = 'regular',
+  Big = 'big',
+  ExtraBig = 'extra-big'
+}
 interface TitleProps {
   text: string;
-  asterix: boolean;
-  extra?: boolean;
+  type?: TitleType;
+  hasAsterix?: boolean;
+  hasLines?: boolean;
 }
 
-export const Title: React.FC<TitleProps> = ({ text, asterix, extra }: TitleProps) => {
-  let classNames = 'title';
+export const Title: React.FC<TitleProps> = ({ text, type, hasAsterix, hasLines }: TitleProps) => {
+  const titleType = type ?? TitleType.Regular;
 
-  if (asterix) {
-    classNames += ' asterix';
-  }
-
-  if (extra) {
-    classNames += ' extra';
-  }
-
-  return <div className={classNames}>{text}</div>;
+  return (
+    <div className={`title ${titleType}`}>
+      {hasLines && <span className="before">‖</span>}
+      <span>{text}</span>
+      {hasAsterix && <span className="after">*</span>}
+    </div>
+  );
 };

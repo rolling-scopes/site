@@ -2,7 +2,7 @@
 @import '../../mixins';
 
 .title {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 44px;
   line-height: 52px;
   letter-spacing: 0.04em;
@@ -13,21 +13,39 @@
     line-height: 44px;
   }
 
-  &.extra {
-    font-weight: 500;
+  & .big {
     font-size: 52px;
     line-height: 64px;
   }
-}
 
-.title.extra::before {
-  // TODO
-  content: '‖';
-  color: $color-secondary-red;
-  white-space: pre;
-}
+  &.extra-big {
+    font-size: 96px;
+    line-height: 1.2em;
+    font-weight: 700;
+    @include media-laptop {
+      font-size: 77px;
+    }
+    @include media-tablet {
+      font-size: 61px;
+    }
+  }
 
-.asterix::after {
-  content: '*';
-  color: $color-secondary-red;
+  & .before,
+  & .after {
+    color: $color-secondary-red;
+  }
+
+  & .before {
+    margin-right: 16px;
+    @include media-tablet {
+      margin-right: 8px;
+    }
+  }
+
+  & .after {
+    margin-left: 16px;
+    @include media-tablet {
+      margin-left: 8px;
+    }
+  }
 }
