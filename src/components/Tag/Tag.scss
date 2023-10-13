@@ -4,20 +4,19 @@
 .tag {
   width: fit-content;
   padding: 8px 16px;
-  border: 1px solid $color-secondary-gray400;
   border-radius: 24px;
-  cursor: pointer;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
   letter-spacing: 0;
-  color: $color-secondary-gray600;
-  @include media-laptop {
-    font-size: 16px;
-    line-height: 24px;
+
+  &.dark {
+    color: $color-secondary-gray600;
+    border: 1px solid $color-secondary-gray400;
   }
-  @include media-tablet {
-    font-size: 14px;
-    line-height: 20px;
+
+  &.light {
+    color: #ffffff;
+    border: 2px solid #fffaf0;
   }
 }
