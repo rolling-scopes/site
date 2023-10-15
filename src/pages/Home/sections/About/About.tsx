@@ -1,17 +1,17 @@
 import React from 'react';
-import image from '../../assets/about.png';
-import { Title } from '../Title/Title';
-import { Subtitle } from '../Subtitle/Subtitle';
-import { Paragraph } from '../Paragraph/Paragraph';
+
+import { Title, Subtitle, Paragraph } from '../../../../components';
+
+import image from '../../../../assets/about.png';
 
 import './About.scss';
 
 export const About: React.FC = () => {
   return (
-    <div className="about container">
-      <div className="about content">
+    <div className="about container" id="about">
+      <div className="about content column-2">
         <div className="left">
-          <Title text="Who we are" asterix />
+          <Title text="Who we are" hasAsterix />
           <Subtitle
             text="Our mission is to provide free education in intriguing subjects, connect people, and grow
           together."
