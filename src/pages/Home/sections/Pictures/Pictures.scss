@@ -1,0 +1,71 @@
+@import '../../../../constants';
+@import '../../../../mixins';
+
+.pictures {
+  & .title,
+  & .paragraph {
+    width: 600px;
+    text-align: left;
+    @include media-tablet {
+      width: 100%;
+    }
+  }
+
+  & .social-media-container {
+    display: flex;
+    @include media-tablet {
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.pictures .carousel-root {
+  width: 1200px;
+  height: 540px;
+  padding: 10px 10px 40px;
+  margin: 0 auto;
+  @include media-laptop {
+    width: 730px;
+    height: 369px;
+  }
+  @include media-tablet {
+    width: 358px;
+    height: 210px;
+    padding: 0 0 25px;
+  }
+}
+
+.carousel {
+  height: 540px;
+  @include media-laptop {
+    height: 369px;
+  }
+  @include media-tablet {
+    height: 210px;
+  }
+}
+.slider {
+  height: 468px;
+  @include media-laptop {
+    height: 325px;
+  }
+  @include media-tablet {
+    height: 175px;
+  }
+}
+
+.carousel .slide {
+  width: 750px;
+  height: 468px;
+  margin-right: 10px;
+  @include media-laptop {
+    width: 730px;
+    height: 369px;
+  }
+  @include media-tablet {
+    width: 358px;
+    height: 210px;
+  }
+}
