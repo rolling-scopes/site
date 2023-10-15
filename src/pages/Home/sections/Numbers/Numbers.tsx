@@ -1,10 +1,10 @@
 import React from 'react';
-import image from '../../assets/map.png';
-import { Paragraph } from '../Paragraph/Paragraph';
-import { Subtitle } from '../Subtitle/Subtitle';
-import { Title } from '../Title/Title';
 
-import './RSNumbers.scss';
+import { Title, Subtitle, Paragraph } from '../../../../components';
+
+import image from '../../../../assets/map.png';
+
+import './Numbers.scss';
 
 interface InfoCellProps {
   title: string;
@@ -20,13 +20,13 @@ const InfoCell: React.FC<InfoCellProps> = ({ title, description }) => (
 
 const InfoCellDivider: React.FC = () => <div className="info-divider" />;
 
-export const RSNumbers: React.FC = () => {
+export const Numbers: React.FC = () => {
   return (
     <div className="numbers container">
       <div className="numbers content">
         <div className="text-container">
           <div>
-            <Title text="The Rolling Scopes in numbers" asterix />
+            <Title text="The Rolling Scopes in numbers" hasAsterix />
             <Subtitle
               text="Everyone can discover our community, regardless of age, professional employment, or
             place of residence."

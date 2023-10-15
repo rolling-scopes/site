@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Navbar } from '../../components/Header/Navbar';
-import { Main, About } from './sections';
+import { Main, About, Numbers } from './sections';
 
 import './Home.scss';
 
@@ -10,7 +10,7 @@ export const Home: React.FC = () => (
     <Navbar />
     <Main />
     <About />
-    {/* <RSNumbers /> */}
+    <Numbers />
     {/* <RSPlaces /> */}
     {/* <RSPictures /> */}
     {/* <RSSchool /> */}

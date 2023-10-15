@@ -1,18 +1,10 @@
-@import '../../constants';
-@import '../../mixins';
+@import '../../../../constants';
+@import '../../../../mixins';
 
 .numbers {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
 
-  &.container {
-    width: 100%;
-  }
-
   &.content {
-    width: 1440px;
     padding: 40px 120px 80px;
     display: flex;
     flex-direction: column;
@@ -20,8 +12,6 @@
     align-items: center;
     @include media-laptop {
       padding: 80px 40px;
-      max-width: 1440px;
-      width: auto;
     }
     @include media-tablet {
       padding: 40px 16px;
@@ -52,6 +42,7 @@
 
   @include media-laptop {
     flex-direction: row;
+    align-self: flex-start;
   }
 }
 
