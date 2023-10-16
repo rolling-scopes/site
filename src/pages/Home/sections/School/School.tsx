@@ -1,18 +1,18 @@
 import React from 'react';
-import { Title } from '../Title/Title';
-import { Paragraph } from '../Paragraph/Paragraph';
-import { Subtitle } from '../Subtitle/Subtitle';
-import { Tag } from '../Tag/Tag';
-import image from '../../assets/rs-school.png';
+import {
+  Title,
+  Subtitle,
+  Paragraph,
+  Tag,
+  OptionItem,
+  OptionItemProps
+} from '../../../../components';
 
-import './RSSchool.scss';
+import image from '../../../../assets/rs-school.png';
 
-interface StydyOptionsProps {
-  title: string;
-  description: string;
-}
+import './School.scss';
 
-const stydyOptions: StydyOptionsProps[] = [
+const stydyOptions: OptionItemProps[] = [
   {
     title: 'Teach and empower',
     description:
@@ -30,13 +30,13 @@ const stydyOptions: StydyOptionsProps[] = [
   }
 ];
 
-export const RSSchool: React.FC = () => (
-  <div className="school container">
+export const School: React.FC = () => (
+  <div id="education" className="school container">
     <div className="school content">
       <div className="study">
         <div className="left">
-          <Tag text="education" />
-          <Title text="Study with RS School" asterix />
+          <Tag id="education" label="education" />
+          <Title text="Study with RS School" hasAsterix />
           <Subtitle text="RS School is a free and community-based online education program conducted by The Rolling Scopes Community since 2013. " />
           <Paragraph>
             Want to see photos of our community? A vast collection of photographs from our events is
@@ -45,12 +45,9 @@ export const RSSchool: React.FC = () => (
         </div>
         <img className="right picture" src={image} alt="education" />
       </div>
-      <div className="study-options">
-        {stydyOptions.map(({ title, description }) => (
-          <div key={title} className="option">
-            <div className="option-title">{title}</div>
-            <div className="option-description">{description}</div>
-          </div>
+      <div className="study-options column-3 ">
+        {stydyOptions.map((i) => (
+          <OptionItem {...i} key={i.title} />
         ))}
       </div>
     </div>

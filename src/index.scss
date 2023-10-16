@@ -46,3 +46,12 @@ a {
     flex-direction: column;
   }
 }
+
+.column-3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @include media-laptop {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,51 @@
+@import '../../../../constants';
+@import '../../../../mixins';
+
+.school {
+  &.content {
+    padding: 80px 40px 40px;
+  }
+
+  & .study {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    @include media-laptop {
+      flex-direction: column;
+    }
+
+    & .left {
+      text-align: left;
+      width: 640px;
+      @include media-laptop {
+        width: 100%;
+      }
+    }
+
+    & .right {
+      @include media-laptop {
+        margin: 40px auto 0;
+      }
+    }
+
+    & .picture {
+      width: 347px;
+      height: 327px;
+      @include media-tablet {
+        width: 278px;
+        height: auto;
+      }
+    }
+
+    & .title,
+    & .subtitle,
+    & .paragraph {
+      margin-top: 16px;
+    }
+  }
+
+  & .study-options {
+    margin-top: 24px;
+  }
+}
