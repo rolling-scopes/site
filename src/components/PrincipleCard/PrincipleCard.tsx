@@ -2,14 +2,14 @@ import React from 'react';
 import './PrincipleCard.scss';
 
 export interface PrincipleCardProps {
-  icon: React.ReactNode;
   text: string;
+  Icon: React.FC;
 }
 
-export const PrincipleCard: React.FC<PrincipleCardProps> = ({ icon, text }: PrincipleCardProps) => (
+export const PrincipleCard: React.FC<PrincipleCardProps> = ({ text, Icon }: PrincipleCardProps) => (
   <div className="principle-card">
     <div className="accent" />
-    {icon}
+    <Icon />
     <div className="text">{text}</div>
     <div className="accent-corner" />
   </div>
