@@ -1,7 +1,7 @@
-@import '../../constants';
-@import '../../mixins';
+@import '../../../../constants';
+@import '../../../../mixins';
 
-.upcoming-courses {
+.courses {
   & .title {
     font-weight: 500;
     font-size: 36px;
@@ -11,13 +11,14 @@
   }
 
   & .content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-
+    padding: 0 120px 40px;
     @include media-laptop {
-      flex-direction: column;
+      width: 100%;
+      max-width: 1440px;
+      padding: 0 40px 40px;
+    }
+    @include media-tablet {
+      padding: 0 40px 16px;
     }
 
     & .courses {

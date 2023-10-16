@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button } from '../Button/Button';
+import { Button } from '../../../../components/Button/Button';
 
-import './UpcomingCourses.scss';
+import './Courses.scss';
 
 const RSLogo: React.ReactNode = (
   <svg
@@ -84,14 +84,15 @@ const JsFrontendIcon: React.ReactNode = (
   </svg>
 );
 
-interface Courses {
+interface CourseProps {
   title: string;
   language: string;
   startDate: string;
   href: string;
   icon: React.ReactNode;
 }
-const courses: Courses[] = [
+
+const courses: CourseProps[] = [
   {
     title: 'Node.js',
     language: 'EN',
@@ -115,30 +116,32 @@ const courses: Courses[] = [
   }
 ];
 
-export const UpcomingCourses: React.FC = () => (
-  <div className="upcoming-courses">
-    <div className="title">Upcoming courses</div>
-    <div className="content">
-      <div className="courses">
-        {courses.map(({ title, language, startDate, href, icon }) => (
-          <div key={title} className="course-card">
-            <div className="icon-container">{icon}</div>
-            <div className="course-info">
-              <div className="name">
-                {title} ({language})
+export const Courses: React.FC = () => (
+  <div className="courses container">
+    <div className="courses content">
+      <div className="title">Upcoming courses</div>
+      <div className="column-2">
+        <div className="courses">
+          {courses.map(({ title, language, startDate, href, icon }) => (
+            <div key={title} className="course-card">
+              <div className="icon-container">{icon}</div>
+              <div className="course-info">
+                <div className="name">
+                  {title} ({language})
+                </div>
+                <div className="date">Start date: {startDate}</div>
               </div>
-              <div className="date">Start date: {startDate}</div>
+              <div className="details-container">
+                <a className="details" href={href} target="_blank" rel="noreferrer">
+                  <span className="label">More details</span>
+                </a>
+              </div>
             </div>
-            <div className="details-container">
-              <a className="details" href={href} target="_blank" rel="noreferrer">
-                <span className="label">More details</span>
-              </a>
-            </div>
-          </div>
-        ))}
-        <Button label="Go to RS School" />
+          ))}
+          <Button label="Go to RS School" />
+        </div>
+        <div className="image">{RSLogo}</div>
       </div>
-      <div className="image">{RSLogo}</div>
     </div>
   </div>
 );
