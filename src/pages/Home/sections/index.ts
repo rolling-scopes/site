@@ -3,3 +3,4 @@ export * from './About';
 export * from './Numbers';
 export * from './Pictures';
 export * from './School';
+export * from './Principles';

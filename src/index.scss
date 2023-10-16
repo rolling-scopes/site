@@ -50,6 +50,7 @@ a {
 .column-3 {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   @include media-laptop {
     flex-direction: column;

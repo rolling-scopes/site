@@ -1,16 +1,8 @@
-@import '../../constants';
-@import '../../mixins';
+@import '../../../../constants';
+@import '../../../../mixins';
 
-.school-principles {
-  &.container {
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-  }
-
+.principles {
   &.content {
-    width: 1440px;
     padding: 20px 120px 40px;
     @include media-laptop {
       padding: 20px 40px 40px;
@@ -30,14 +22,9 @@
   }
 
   & .cards {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
     margin-top: 24px;
     @include media-laptop {
       width: 100%;
-      flex-direction: column;
       & > div {
         margin-top: 16px;
       }

@@ -71,8 +71,8 @@ export const Pictures: React.FC = () => (
         available on our Facebook Albums and Instagram pages.
       </Paragraph>
       <div className="social-media-container">
-        {socialMedia.map((props: SocialMediaProps) => (
-          <SocialMedia {...props} key={props.title} />
+        {socialMedia.map((i) => (
+          <SocialMedia {...i} key={i.title} />
         ))}
       </div>
     </div>
