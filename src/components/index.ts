@@ -4,3 +4,4 @@ export * from './Tag';
 export * from './TagDivider';
 export * from './Paragraph';
 export * from './SocialMedia';
+export * from './OptionItem';
