@@ -1,9 +1,8 @@
 import React from 'react';
-import { Title } from '../Title/Title';
-import { Paragraph } from '../Paragraph/Paragraph';
-import { Subtitle } from '../Subtitle/Subtitle';
 
-import image from '../../assets/contribute.png';
+import { Title, Paragraph, Subtitle, OptionItem } from '../../../../components';
+
+import image from '../../../../assets/contribute.png';
 
 import './Contribute.scss';
 
@@ -33,7 +32,7 @@ export const Contribute: React.FC = () => (
     <div className="contribute content">
       <div className="general">
         <div className="info">
-          <Title text="How to Contribute" asterix />
+          <Title text="How to Contribute" hasAsterix />
           <Subtitle text="Contributing to The Rolling Scopes is not only a great way to give back to the community, but it’s also an excellent way to enhance your own knowledge." />
           <Paragraph>
             Remember, teaching others is one of the best ways to learn – this is known as The
@@ -43,12 +42,8 @@ export const Contribute: React.FC = () => (
         <img className="right picture" src={image} alt="contribute" />
       </div>
       <div className="contribute-options">
-        {contributeOptions.map(({ title, description, buttonLabel }) => (
-          <div key={title} className="option">
-            <div className="option-title">{title}</div>
-            <div className="option-description">{description}</div>
-            <div className="option-button">{buttonLabel}</div>
-          </div>
+        {contributeOptions.map((i) => (
+          <OptionItem {...i} key={i.title} />
         ))}
       </div>
       <Paragraph>

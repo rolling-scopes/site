@@ -12,7 +12,8 @@ import {
   Alumni,
   Events,
   Merch,
-  Community
+  Community,
+  Contribute
 } from './sections';
 
 import './Home.scss';
@@ -33,7 +34,7 @@ export const Home: React.FC = () => (
     {/* <Speakers /> */}
     <Merch />
     <Community />
-    {/* <Contribute /> */}
+    <Contribute />
     {/* <Support /> */}
     {/* <Partnered /> */}
     {/* <Footer /> */}
