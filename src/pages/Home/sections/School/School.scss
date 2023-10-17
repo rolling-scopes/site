@@ -2,10 +2,6 @@
 @import '../../../../mixins';
 
 .school {
-  &.content {
-    padding: 80px 40px 40px;
-  }
-
   & .study {
     display: flex;
     flex-direction: row;
