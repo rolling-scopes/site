@@ -1,29 +1,14 @@
-@import '../../constants';
-@import '../../mixins';
+@import '../../../../constants';
+@import '../../../../mixins';
 
 .merch {
-  &.container {
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-  }
-
   &.content {
-    width: 1440px;
-    padding: 80px 120px 40px 120px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
     @include media-laptop {
       flex-direction: column;
-      padding: 80px 40px 40px;
-      max-width: 1440px;
-      width: 100%;
-    }
-    @include media-tablet {
-      padding: 40px 16px;
     }
 
     & .info {

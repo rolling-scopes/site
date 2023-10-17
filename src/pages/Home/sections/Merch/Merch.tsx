@@ -1,12 +1,8 @@
 import React from 'react';
-import { Title } from '../Title/Title';
 
-import { Paragraph } from '../Paragraph/Paragraph';
-import { Subtitle } from '../Subtitle/Subtitle';
-import { Tag } from '../Tag/Tag';
-import { Button } from '../Button/Button';
+import { Title, Subtitle, Paragraph, Tag, Button } from '../../../../components';
 
-import image from '../../assets/merch.png';
+import image from '../../../../assets/merch.png';
 
 import './Merch.scss';
 
@@ -14,8 +10,8 @@ export const Merch: React.FC = () => (
   <div className="merch container">
     <div className="merch content">
       <div className="info">
-        <Tag text="merch" />
-        <Title text="RS merch" asterix />
+        <Tag id="merch" label="merch" />
+        <Title text="RS merch" hasAsterix />
         <Subtitle text="Are you an RS sloth fan and looking for RS merch?" />
         <Paragraph>
           The wait is almost over as we're gearing up for the catalog of free web and print assets
