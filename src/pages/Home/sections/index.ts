@@ -10,3 +10,4 @@ export * from './Events';
 export * from './Merch';
 export * from './Community';
 export * from './Contribute';
+export * from './Speakers';
