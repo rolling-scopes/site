@@ -8,3 +8,4 @@ export * from './Courses';
 export * from './Alumni';
 export * from './Events';
 export * from './Merch';
+export * from './Community';

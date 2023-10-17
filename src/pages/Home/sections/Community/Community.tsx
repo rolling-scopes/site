@@ -1,11 +1,17 @@
 import React from 'react';
-import { Title } from '../Title/Title';
-import { Subtitle } from '../Subtitle/Subtitle';
+import { Title, Subtitle, SocialMedia } from '../../../../components';
 
-import image from '../../assets/welcome.png';
+import {
+  InstagramIcon,
+  LinkedInIcon,
+  YouTubeIcon,
+  TelegramIcon,
+  FacebookIcon
+} from '../../../../icons';
 
-import './RSCommunity.scss';
-import { InstagramIcon, LinkedInIcon, YouTubeIcon, TelegramIcon, FacebookIcon } from '../../icons';
+import image from '../../../../assets/welcome.png';
+
+import './Community.scss';
 
 interface communityGroup {
   title: string;
@@ -63,16 +69,13 @@ const communityGroups: communityGroup[] = [
 
 export const Community: React.FC = () => (
   <div className="community container">
-    <div className="community content">
+    <div className="community content column-2">
       <div className="info">
-        <Title text="Join RS Community" asterix={false} extra={true} />
+        <Title text="Join RS Community" hasAsterix={false} hasLines={true} />
         <Subtitle text="If you want to learn coding or be a RS School mentor, speaking at developers meetups and conferences or taking part in RS clubs welcome to the Rolling Scopes community! Join us in social networks to be in touch!" />
         <div className="social-media-container">
-          {communityGroups.map(({ title, href, Icon }) => (
-            <a className="social-media" key={title} href={href} target="_blank" rel="noreferrer">
-              <Icon />
-              <span className="text">{title}</span>
-            </a>
+          {communityGroups.map((i) => (
+            <SocialMedia {...i} key={i.title} />
           ))}
         </div>
       </div>
