@@ -6,3 +6,4 @@ export * from './Paragraph';
 export * from './SocialMedia';
 export * from './OptionItem';
 export * from './PrincipleCard';
+export * from './EventCard';

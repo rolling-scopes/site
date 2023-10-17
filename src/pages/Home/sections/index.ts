@@ -6,3 +6,4 @@ export * from './School';
 export * from './Principles';
 export * from './Courses';
 export * from './Alumni';
+export * from './Events';

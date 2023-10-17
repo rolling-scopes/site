@@ -1,10 +1,5 @@
 import React from 'react';
-import { Title } from '../Title/Title';
-
-import { Paragraph } from '../Paragraph/Paragraph';
-import { Subtitle } from '../Subtitle/Subtitle';
-import { Tag } from '../Tag/Tag';
-import { EventCard, EventCardProps } from '../EventCard/EventCard';
+import { Title, Subtitle, Paragraph, Tag, EventCard, EventCardProps } from '../../../../components';
 
 import './Events.scss';
 
@@ -37,8 +32,8 @@ export const Events: React.FC = () => (
   <div className="events container">
     <div className="events content">
       <div className="info">
-        <Tag text="events & meetups" />
-        <Title text="Meet us at events" asterix />
+        <Tag id="events" label="events & meetups" />
+        <Title text="Meet us at events" hasAsterix />
         <Subtitle text="For years we have been organizing meetups and conferences, where you can always learn something new, share your knowledge, discover new technologies, meet old and find new friends." />
         <Paragraph>
           During 9 years we have organized 150+ events for developers in different cities and
