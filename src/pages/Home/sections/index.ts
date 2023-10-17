@@ -11,3 +11,4 @@ export * from './Merch';
 export * from './Community';
 export * from './Contribute';
 export * from './Speakers';
+export * from './Support';
