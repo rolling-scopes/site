@@ -9,3 +9,4 @@ export * from './PrincipleCard';
 export * from './EventCard';
 export * from './Button';
 export * from './Navbar';
+export * from './Footer';

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Navbar } from '../../components';
+import { Navbar, Footer } from '../../components';
 
 import {
   Main,
@@ -42,6 +42,6 @@ export const Home: React.FC = () => (
     <Contribute />
     <Support />
     <Partnered />
-    {/* <Footer /> */}
+    <Footer />
   </div>
 );
