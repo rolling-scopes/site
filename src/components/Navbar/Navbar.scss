@@ -1,23 +1,40 @@
 @import '../../mixins';
 
 .navbar {
-  box-sizing: border-box;
   width: 100%;
   height: 64px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 8px 40px;
-  background-color: rgba(95, 44, 20, 0.1);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
   transition: background-color 0.3s;
-}
+  border-radius: 0;
 
-.navbar:hover {
-  background-color: rgba(95, 44, 20, 0.2);
+  &.gray {
+    background-color: rgba(95, 44, 20, 0.1);
+    &:hover {
+      box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.14);
+      background-color: rgba(95, 44, 20, 0.2);
+    }
+  }
+
+  &.none {
+    display: none;
+  }
+  &.white {
+    background-color: rgb(255, 255, 255);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    box-shadow: rgba(0, 0, 0, 0.082) 0px 1.02604px 8.06943px 0px;
+    opacity: 1;
+    &:hover {
+      box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.14);
+    }
+  }
 }
 
 .logo-container {
@@ -30,6 +47,7 @@
   justify-content: center;
   overflow: hidden;
   position: relative;
+  cursor: pointer;
 }
 
 .logo {
@@ -41,8 +59,8 @@
 
 .menu {
   display: flex;
+  align-items: center;
   position: relative;
-  gap: 16px;
 }
 
 .menu.open {
@@ -54,10 +72,19 @@
 }
 
 .menu-item {
+  width: fit-content;
   display: flex;
   align-items: center;
-  gap: 10px;
   padding: 14px 14px 14px 14px;
+  cursor: pointer;
+  &:hover {
+    border-color: #000000;
+    border-style: solid;
+    border-top-width: 0px;
+    border-bottom-width: 2px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+  }
 }
 
 .label {
@@ -70,6 +97,11 @@
   letter-spacing: 0em;
   line-height: 20px;
   text-align: center;
+  &:hover {
+    font-weight: 600;
+    font-family: 'Inter-SemiBold', 'Inter', sans-serif;
+    color: #000000;
+  }
 }
 
 .burger {
@@ -97,6 +129,9 @@
   overflow: hidden;
   position: absolute;
   border-radius: 0px 0px 0px 0px;
+  &:hover {
+    height: 3px;
+  }
 }
 
 .top {

@@ -8,3 +8,4 @@ export * from './OptionItem';
 export * from './PrincipleCard';
 export * from './EventCard';
 export * from './Button';
+export * from './Navbar';

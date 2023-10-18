@@ -17,7 +17,7 @@ const tags: TagProps[] = [
 
 export const Main: React.FC = () => {
   return (
-    <div className="main container">
+    <div id="main" className="main container">
       <div className="main content">
         <div className="title-container">
           <Title text="The Rolling Scopes" type={TitleType.ExtraBig} />

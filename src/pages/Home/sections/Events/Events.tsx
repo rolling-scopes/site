@@ -29,7 +29,7 @@ const events: EventCardProps[] = [
 ];
 
 export const Events: React.FC = () => (
-  <div className="events container">
+  <div id="events" className="events container">
     <div className="events content">
       <div className="info">
         <Tag id="events" label="events & meetups" />

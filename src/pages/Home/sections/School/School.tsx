@@ -31,7 +31,7 @@ const stydyOptions: OptionItemProps[] = [
 ];
 
 export const School: React.FC = () => (
-  <div id="education" className="school container">
+  <div id="school" className="school container">
     <div className="school content">
       <div className="study">
         <div className="left">

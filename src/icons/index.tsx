@@ -10,3 +10,4 @@ export * from './Epam';
 export * from './JetBrains';
 export * from './Aws';
 export * from './GitHub';
+export * from './Rs';

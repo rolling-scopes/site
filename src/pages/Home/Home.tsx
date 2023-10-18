@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Navbar } from '../../components/Header/Navbar';
+import { Navbar } from '../../components';
+
 import {
   Main,
   About,
@@ -16,7 +17,8 @@ import {
   Contribute,
   Speakers,
   Support,
-  Partnered
+  Partnered,
+  Places
 } from './sections';
 
 import './Home.scss';
@@ -27,7 +29,7 @@ export const Home: React.FC = () => (
     <Main />
     <About />
     <Numbers />
-    {/* <RSPlaces /> */}
+    <Places />
     <Pictures />
     <School />
     <Principles />

@@ -68,7 +68,7 @@ const communityGroups: communityGroup[] = [
 ];
 
 export const Community: React.FC = () => (
-  <div className="community container">
+  <div id="community" className="community container">
     <div className="community content column-2">
       <div className="info">
         <Title text="Join RS Community" hasAsterix={false} hasLines={true} />

@@ -7,7 +7,7 @@ import image from '../../../../assets/merch.png';
 import './Merch.scss';
 
 export const Merch: React.FC = () => (
-  <div className="merch container">
+  <div id="merch" className="merch container">
     <div className="merch content">
       <div className="info">
         <Tag id="merch" label="merch" />
