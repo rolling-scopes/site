@@ -10,7 +10,7 @@ interface TagProps {
 }
 
 const tags: TagProps[] = [
-  { id: 'education', label: 'education' },
+  { id: 'school', label: 'education' },
   { id: 'events', label: 'events & meetups' },
   { id: 'community', label: 'community building' }
 ];
@@ -29,10 +29,10 @@ export const Main: React.FC = () => {
         <div className="description">Connecting people, growing together, having fun</div>
         <div className="tags-container">
           {tags.map(({ id, label }, index) => (
-            <>
-              <Tag key="id" id={id} label={label} color={TagColor.Light} />
+            <div className="tag-container" key={id}>
+              <Tag id={id} label={label} color={TagColor.Light} />
               {index !== tags?.length - 1 && <TagDivider />}
-            </>
+            </div>
           ))}
         </div>
       </div>

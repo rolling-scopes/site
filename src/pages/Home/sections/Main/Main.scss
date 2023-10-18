@@ -36,7 +36,6 @@
       color: $color-secondary-brown;
       letter-spacing: 0;
       line-height: 28px;
-
       @include media-tablet {
         flex-direction: column;
         align-items: flex-start;
@@ -75,6 +74,14 @@
     @include media-tablet {
       flex-direction: column;
       align-items: flex-start;
+    }
+
+    & .tag-container {
+      display: flex;
+      align-items: center;
+      @include media-tablet {
+        margin-top: 16px;
+      }
     }
   }
 }
