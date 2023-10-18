@@ -19,7 +19,11 @@
     line-height: 16px;
   }
 
-  & text {
+  &:hover {
+    color: #000000;
+  }
+
+  & .text {
     margin-top: 8px;
   }
 }

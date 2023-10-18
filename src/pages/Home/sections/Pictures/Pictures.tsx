@@ -1,4 +1,5 @@
 import React from 'react';
+
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
@@ -23,6 +24,7 @@ interface SocialMediaProps {
   href: string;
   Icon: React.FC;
 }
+
 const socialMedia: SocialMediaProps[] = [
   {
     title: 'Albums',

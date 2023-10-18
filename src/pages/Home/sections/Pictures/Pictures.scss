@@ -13,6 +13,8 @@
 
   & .social-media-container {
     display: flex;
+    align-items: flex-start;
+    cursor: pointer;
     @include media-tablet {
       flex-wrap: wrap;
       align-items: center;
