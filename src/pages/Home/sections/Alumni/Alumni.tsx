@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Title, Paragraph } from '../../../../components';
 
+import { useWindowSize } from '../../../../hooks';
+
 import epam from '../../../../assets/alumni/epam.png';
 import toptal from '../../../../assets/alumni/toptal.png';
 import oxagile from '../../../../assets/alumni/oxagile.png';
@@ -51,19 +53,35 @@ const alumni: AlumniProps[] = [
   { id: 'aesoft', image: aesoft }
 ];
 
-export const Alumni: React.FC = () => (
-  <div className="alumni container">
-    <div className="alumni content">
-      <Title text="Our alumni" hasAsterix />
-      <Paragraph>
-        We are immensely proud of RS School alumni who build their successful careers in ambitious
-        IT companies
-      </Paragraph>
-      <div className="alumni">
-        {alumni.map(({ id, image }) => (
-          <img key={id} className="alumni-logo" src={image} alt={id} />
-        ))}
+export const Alumni: React.FC = () => {
+  const size = useWindowSize();
+
+  let alumniArr = [];
+
+  if (size.width <= 1440 && size.width > 810) {
+    alumniArr = alumni.slice(0, 12);
+  } else if (size.width <= 810) {
+    alumniArr = alumni.slice(0, 6);
+  } else {
+    alumniArr = [...alumni];
+  }
+
+  return (
+    <div className="alumni container">
+      <div className="alumni content">
+        <Title text="Our alumni" hasAsterix />
+        <Paragraph>
+          We are immensely proud of RS School alumni who build their successful careers in ambitious
+          IT companies
+        </Paragraph>
+        <div className="alumni">
+          {alumniArr.map(({ id, image }) => (
+            <div key={id} className="alumni-logo-container">
+              <img className="alumni-logo" src={image} alt={id} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
