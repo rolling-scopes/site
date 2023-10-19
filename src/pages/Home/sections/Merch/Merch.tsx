@@ -8,7 +8,7 @@ import './Merch.scss';
 
 export const Merch: React.FC = () => (
   <div id="merch" className="merch container">
-    <div className="merch content">
+    <div className="merch content column-2">
       <div className="info">
         <Tag label="merch" isClickable={false} />
         <Title text="RS merch" hasAsterix />
