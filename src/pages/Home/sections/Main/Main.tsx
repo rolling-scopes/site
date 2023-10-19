@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Tag, TagColor, TagDivider, Title, TitleType } from '../../../../components';
+import { Tag, TagDivider, Title, TitleType } from '../../../../components';
 
 import './Main.scss';
 
@@ -30,7 +30,7 @@ export const Main: React.FC = () => {
         <div className="tags-container">
           {tags.map(({ id, label }, index) => (
             <div className="tag-container" key={id}>
-              <Tag id={id} label={label} color={TagColor.Light} />
+              <Tag id={id} label={label} isClickable />
               {index !== tags?.length - 1 && <TagDivider />}
             </div>
           ))}

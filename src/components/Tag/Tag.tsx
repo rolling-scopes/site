@@ -2,19 +2,20 @@ import React from 'react';
 
 import './Tag.scss';
 
-export enum TagColor {
-  Light = 'light',
-  Dark = 'dark'
-}
-
 type TagProps = {
-  id: string;
+  id?: string;
   label: string;
-  color?: TagColor;
+  isClickable: boolean;
 };
 
-export const Tag: React.FC<TagProps> = ({ id, label, color = TagColor.Dark }: TagProps) => (
-  <a className={`tag ${color}`} href={`#${id}`}>
-    {label}
-  </a>
-);
+export const Tag: React.FC<TagProps> = ({ id, label, isClickable }: TagProps) => {
+  if (isClickable) {
+    return (
+      <a className="tag clickable" href={`#${id}`}>
+        {label}
+      </a>
+    );
+  }
+
+  return <div className="tag">{label}</div>;
+};

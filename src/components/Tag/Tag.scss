@@ -9,15 +9,13 @@
   font-size: 18px;
   line-height: 24px;
   letter-spacing: 0;
-  cursor: pointer;
 
-  &.dark {
-    color: $color-secondary-gray600;
-    border: 1px solid $color-secondary-gray400;
-  }
+  color: $color-secondary-gray600;
+  border: 1px solid $color-secondary-gray400;
 
-  &.light {
+  &.clickable {
     color: #ffffff;
     border: 2px solid #fffaf0;
+    cursor: pointer;
   }
 }

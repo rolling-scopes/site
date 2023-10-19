@@ -10,7 +10,7 @@ export const Merch: React.FC = () => (
   <div id="merch" className="merch container">
     <div className="merch content">
       <div className="info">
-        <Tag id="merch" label="merch" />
+        <Tag label="merch" isClickable={false} />
         <Title text="RS merch" hasAsterix />
         <Subtitle text="Are you an RS sloth fan and looking for RS merch?" />
         <Paragraph>
