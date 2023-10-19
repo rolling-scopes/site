@@ -138,7 +138,7 @@ export const Courses: React.FC = () => (
               </div>
             </div>
           ))}
-          <Button label="Go to RS School " />
+          <Button label="Go to RS School " href="https://rs.school/" />
         </div>
         <div className="image">{RSLogo}</div>
       </div>
