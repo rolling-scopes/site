@@ -12,6 +12,7 @@
     "@types/react-dom": "^18.2.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-double-marquee": "^1.1.0",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.16.0",
     "react-scripts": "5.0.1",

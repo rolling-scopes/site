@@ -13,3 +13,4 @@ export * from './Contribute';
 export * from './Speakers';
 export * from './Support';
 export * from './Partnered';
+export * from './Places';
