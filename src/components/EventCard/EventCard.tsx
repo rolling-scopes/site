@@ -26,14 +26,15 @@ export const EventCard: React.FC<EventCardProps> = ({
   href
 }) => (
   <div className="card">
-    <div className="top">
+    <div className="card-top">
       <div className="card-tag">{eventType}</div>
       <div className="organizedBy">{organizedBy}</div>
       <div className="organization">{organization}</div>
-      <div className="title">{title}</div>
+      <div className="card-title">{title}</div>
       <div className="and-more">and more</div>
+      <div className="card-accent" />
     </div>
-    <div className="bottom">
+    <div className="card-bottom">
       <div className="date-and-time">
         • {date} • {time} • {type}
       </div>

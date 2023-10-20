@@ -7,8 +7,11 @@
   justify-content: flex-start;
   align-items: flex-start;
   padding: 0;
+  &:hover {
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.14);
+  }
 
-  & .top {
+  & .card-top {
     width: 320px;
     height: min-content;
     display: flex;
@@ -27,6 +30,7 @@
     border-bottom-width: 0px;
     border-left-width: 1px;
     border-right-width: 1px;
+    position: relative;
 
     & .card-tag {
       width: 123px;
@@ -63,7 +67,7 @@
       margin-top: 8px;
     }
 
-    & .title,
+    & .card-title,
     & .and-more {
       white-space: pre-wrap;
       word-wrap: break-word;
@@ -73,7 +77,7 @@
       text-align: left;
     }
 
-    & .title {
+    & .card-title {
       width: 272px;
       height: auto;
       white-space: pre-wrap;
@@ -90,9 +94,25 @@
       line-height: 20px;
       margin-top: 8px;
     }
+
+    & .card-accent {
+      width: 258px;
+      height: 250px;
+      display: block;
+      -webkit-filter: blur(32px);
+      filter: blur(32px);
+      background-color: #7356bf;
+      opacity: 0.5;
+      z-index: 1;
+      aspect-ratio: 1.032 / 1;
+      border-radius: 100%;
+      position: absolute;
+      top: 194px;
+      left: 204px;
+    }
   }
 
-  & .bottom {
+  & .card-bottom {
     width: 320px;
     height: min-content;
     display: flex;
@@ -165,4 +185,24 @@
       cursor: pointer;
     }
   }
+}
+
+.card:hover > .card-top > .card-accent {
+  width: 314px;
+  height: 304px;
+  display: block;
+  -webkit-filter: blur(32px);
+  filter: blur(32px);
+  background-color: #7356bf;
+  opacity: 0.5;
+  z-index: 1;
+  aspect-ratio: 1.032 / 1;
+  border-radius: 100%;
+  position: absolute;
+  top: 140px;
+  left: 160px;
+}
+
+.card:hover > .card-bottom > .details-button {
+  background-color: rgba(82, 82, 82, 0.4);
 }
