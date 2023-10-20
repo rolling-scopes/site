@@ -10,9 +10,24 @@ import {
 import './Principles.scss';
 
 const cards: PrincipleCardProps[] = [
-  { text: 'Open to everyone', Icon: OpenToEveryoneIcon },
-  { text: 'Open source philosophy', Icon: OpenSourcePhilosophyIcon },
-  { text: 'Pay the favor forward', Icon: TeachItForwardIcon }
+  {
+    title: 'Open to everyone',
+    description:
+      'Free courses, no obligations, and no contracts. No age limit. Only students’ time and dedication are required. Students can repeatedly attend courses.',
+    Icon: OpenToEveryoneIcon
+  },
+  {
+    title: 'Open source philosophy',
+    description:
+      'Our Learning Management System platform and educational materials are publicly available on GitHub and YouTube.',
+    Icon: OpenSourcePhilosophyIcon
+  },
+  {
+    title: '"Teach it forward"',
+    description:
+      'Students study at school for free, but we request that they return as mentors to pass on their knowledge to the next generation of students.',
+    Icon: TeachItForwardIcon
+  }
 ];
 
 export const Principles: React.FC = () => (
@@ -25,7 +40,7 @@ export const Principles: React.FC = () => (
       />
       <div className="cards column-3 ">
         {cards.map((i) => (
-          <PrincipleCard key={i.text} {...i} />
+          <PrincipleCard key={i.title} {...i} />
         ))}
       </div>
     </div>
