@@ -9,15 +9,22 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 48px 24px 48px;
+  padding: 36px 24px 24px;
   background-color: #fffaf0;
   overflow: hidden;
   align-content: center;
   flex-wrap: nowrap;
   border-radius: 12px;
   border: 1px solid rgba(255, 219, 32, 0.08);
+  cursor: pointer;
+  color: $color-secondary-gray600;
   @include media-laptop {
     width: 100%;
+  }
+
+  &:hover {
+    padding: 24px 24px 24px;
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.14);
   }
 
   & .accent {
@@ -34,15 +41,29 @@
     border-radius: 100%;
   }
 
-  & .text {
+  & .card-title {
     font-weight: 500;
     font-size: 32px;
     line-height: 40px;
     letter-spacing: 0;
     margin-top: 16px;
+    text-align: center;
     @include media-tablet {
       font-size: 24px;
       line-height: 32px;
+    }
+  }
+
+  & .card-description {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0;
+    margin-top: 16px;
+    text-align: left;
+    @include media-tablet {
+      font-size: 16px;
+      line-height: 24px;
     }
   }
 }
