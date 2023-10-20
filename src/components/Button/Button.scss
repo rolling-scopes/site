@@ -14,11 +14,14 @@
   position: relative;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 8;
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 0;
 
   @include media-tablet {
     width: 100%;
+  }
+
+  &:hover {
+    background-color: #545454;
   }
 
   & .label {

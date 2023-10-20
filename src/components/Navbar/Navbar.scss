@@ -85,22 +85,22 @@
     border-left-width: 0px;
     border-right-width: 0px;
   }
-}
 
-.label {
-  white-space: nowrap;
-  font-weight: 500;
-  font-style: normal;
-  font-family: 'Inter-Medium', 'Inter', sans-serif;
-  color: #000000;
-  font-size: 16px;
-  letter-spacing: 0em;
-  line-height: 20px;
-  text-align: center;
-  &:hover {
-    font-weight: 600;
-    font-family: 'Inter-SemiBold', 'Inter', sans-serif;
+  & .label {
+    white-space: nowrap;
+    font-weight: 500;
+    font-style: normal;
+    font-family: 'Inter-Medium', 'Inter', sans-serif;
     color: #000000;
+    font-size: 16px;
+    letter-spacing: 0em;
+    line-height: 20px;
+    text-align: center;
+    &:hover {
+      font-weight: 600;
+      font-family: 'Inter-SemiBold', 'Inter', sans-serif;
+      color: #000000;
+    }
   }
 }
 
