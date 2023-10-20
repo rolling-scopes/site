@@ -20,7 +20,7 @@ export const Main: React.FC = () => {
     <div id="main" className="main container">
       <div className="main content">
         <div className="title-container">
-          <Title text="The Rolling Scopes" type={TitleType.ExtraBig} />
+          <Title text="The Rolling Scopes" type={TitleType.ExtraBig} hasAsterix />
           <div className="subtitle">
             <div>an international community of developers</div>
             <div>since 2013</div>
