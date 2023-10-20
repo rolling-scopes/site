@@ -28,6 +28,12 @@
       align-content: center;
       flex-wrap: nowrap;
       align-self: center;
+      @include media-tablet {
+        flex-direction: column;
+        & > svg {
+          margin-top: 24px;
+        }
+      }
     }
   }
 }
