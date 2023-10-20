@@ -1,29 +1,25 @@
 import React from 'react';
 
-import { Title, Paragraph, Subtitle, OptionItem } from '../../../../components';
+import { Title, Paragraph, Subtitle, OptionItem, OptionItemProps } from '../../../../components';
 
 import image from '../../../../assets/contribute.png';
 
 import './Contribute.scss';
 
-interface ContributeOptionsProps {
-  title: string;
-  description: string;
-  buttonLabel: string;
-}
-
-const contributeOptions: ContributeOptionsProps[] = [
+const contributeOptions: OptionItemProps[] = [
   {
     title: 'Mentorship',
     description:
       'Become a mentor and guide the next generation of developers. Sign up as a mentor here.',
-    buttonLabel: 'Go to RS School'
+    buttonLabel: 'Register as a mentor',
+    href: 'https://app.rs.school/registry/mentor'
   },
   {
     title: 'Developer / Coordinator / Trainer',
     description:
       'Contribute your skills as a developer, coordinator, or trainer. Fill out this form to get started.',
-    buttonLabel: 'Become a contributor'
+    buttonLabel: 'Become a contributor',
+    href: 'https://docs.google.com/forms/d/e/1FAIpQLSdGKdEHK1CnZjgll9PpMU0xD1m0hm6xGoXc98H7woCDulyQkg/viewform'
   }
 ];
 

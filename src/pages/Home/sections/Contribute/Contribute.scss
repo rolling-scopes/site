@@ -101,31 +101,6 @@
       }
     }
 
-    & .option-button {
-      width: 240px;
-      height: min-content;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      background-color: rgba(255, 219, 32, 0.8);
-      overflow: visible;
-      align-content: flex-start;
-      flex-wrap: nowrap;
-      border-radius: 0;
-      padding: 8px 24px 8px 24px;
-      white-space: pre;
-      font-weight: 500;
-      font-style: normal;
-      font-family: 'Inter-Medium', 'Inter', sans-serif;
-      color: #000000;
-      font-size: 16px;
-      letter-spacing: 0em;
-      line-height: 24px;
-      text-align: center;
-      margin: 24px 0;
-    }
-
     & .paragraph {
       width: 100%;
     }
