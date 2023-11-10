@@ -30,7 +30,7 @@ export const Main: React.FC = () => {
         <div className="tags-container">
           {tags.map(({ id, label }, index) => (
             <div className="tag-container" key={id}>
-              <Tag id={id} label={label} isClickable />
+              <Tag id={id} label={label} />
               {index !== tags?.length - 1 && <TagDivider />}
             </div>
           ))}

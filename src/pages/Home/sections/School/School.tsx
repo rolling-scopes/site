@@ -35,7 +35,7 @@ export const School: React.FC = () => (
     <div className="school content">
       <div className="study">
         <div className="left">
-          <Tag label="education" isClickable={false} />
+          <Tag label="education" />
           <Title text="Study with RS School" hasAsterix />
           <Subtitle text="RS School is a free and community-based online education program conducted by The Rolling Scopes Community since 2013. " />
           <Paragraph>

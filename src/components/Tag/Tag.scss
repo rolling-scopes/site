@@ -9,13 +9,15 @@
   font-size: 18px;
   line-height: 24px;
   letter-spacing: 0;
-
-  color: $color-secondary-gray600;
   border: 1px solid $color-secondary-gray400;
+  color: $color-primary-white;
+  border: 2px solid #fffaf0;
+  cursor: pointer;
 
-  &.clickable {
-    color: #ffffff;
+  &:hover {
+    box-shadow: 0px 0px 16px 0px rgba(114, 92, 19, 0.08);
+    background-color: $color-primary-white;
     border: 2px solid #fffaf0;
-    cursor: pointer;
+    color: $color-secondary-gray600;
   }
 }
