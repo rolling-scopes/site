@@ -122,7 +122,7 @@
 
           & .details {
             flex-shrink: 0;
-            width: 107px;
+            width: min-content;
             height: 36px;
             display: flex;
             flex-direction: row;
@@ -134,9 +134,9 @@
             position: relative;
             align-content: center;
             flex-wrap: nowrap;
-            gap: 8;
             border-radius: 9999px;
             cursor: pointer;
+
             & .label {
               flex-shrink: 0;
               width: auto; /* 83px */
@@ -151,6 +151,7 @@
               letter-spacing: 0em;
               line-height: 16px;
               text-align: center;
+              margin-right: 8px;
             }
 
             &:hover {

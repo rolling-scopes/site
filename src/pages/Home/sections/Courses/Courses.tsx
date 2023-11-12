@@ -134,6 +134,7 @@ export const Courses: React.FC = () => (
               <div className="details-container">
                 <a className="details" href={href} target="_blank" rel="noreferrer">
                   <span className="label">More details</span>
+                  <span className="material-symbols-outlined">arrow_forward</span>
                 </a>
               </div>
             </div>
