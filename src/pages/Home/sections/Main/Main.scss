@@ -18,6 +18,27 @@
     }
   }
 
+  .title-with-icon-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .title-icon {
+    width: 91px;
+    height: 91px;
+    margin-top: 12px;
+    margin-left: 8px;
+    @include media-laptop {
+      width: 71px;
+      height: 71px;
+    }
+    @include media-tablet {
+      width: 55px;
+      height: 55px;
+    }
+  }
+
   .title-container {
     width: fit-content;
     display: flex;
