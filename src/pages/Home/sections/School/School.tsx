@@ -3,9 +3,9 @@ import {
   Title,
   Subtitle,
   Paragraph,
-  Tag,
   OptionItem,
-  OptionItemProps
+  OptionItemProps,
+  SectionLabel
 } from '../../../../components';
 
 import image from '../../../../assets/rs-school.png';
@@ -35,7 +35,7 @@ export const School: React.FC = () => (
     <div className="school content">
       <div className="study">
         <div className="left">
-          <Tag label="education" />
+          <SectionLabel label="education" />
           <Title text="Study with RS School" hasAsterix />
           <Subtitle text="RS School is a free and community-based online education program conducted by The Rolling Scopes Community since 2013. " />
           <Paragraph>

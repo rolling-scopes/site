@@ -30,22 +30,11 @@
     }
   }
 
-  & .before,
-  & .after {
+  & .before {
     color: $color-secondary-red;
   }
 
   & .before {
-    margin-right: 16px;
-    @include media-tablet {
-      margin-right: 8px;
-    }
-  }
-
-  & .after {
-    margin-left: 16px;
-    @include media-tablet {
-      margin-left: 8px;
-    }
+    margin-right: 8px;
   }
 }

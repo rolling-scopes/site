@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Title, Subtitle, Paragraph, Tag, Button } from '../../../../components';
+import { Title, Subtitle, Paragraph, Button, SectionLabel } from '../../../../components';
 
 import image from '../../../../assets/merch.png';
 
@@ -10,7 +10,7 @@ export const Merch: React.FC = () => (
   <div id="merch" className="merch container">
     <div className="merch content column-2">
       <div className="info">
-        <Tag label="merch" />
+        <SectionLabel label="merch" />
         <Title text="RS merch" hasAsterix />
         <Subtitle text="Are you an RS sloth fan and looking for RS merch?" />
         <Paragraph>

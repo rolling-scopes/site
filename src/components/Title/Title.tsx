@@ -20,8 +20,8 @@ export const Title: React.FC<TitleProps> = ({ text, type, hasAsterix, hasLines }
   return (
     <div className={`title ${titleType}`}>
       {hasLines && <span className="before">‖</span>}
+      {hasAsterix && <span className="before">*</span>}
       <span>{text}</span>
-      {hasAsterix && <span className="after">*</span>}
     </div>
   );
 };

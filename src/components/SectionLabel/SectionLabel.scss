@@ -1,0 +1,11 @@
+@import '../../constants';
+@import '../../mixins';
+
+.section-label {
+  height: 16px;
+  display: flex;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 16px;
+  color: $color-primary-black;
+}
