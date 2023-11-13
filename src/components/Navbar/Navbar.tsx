@@ -12,7 +12,10 @@ interface NavItemProps {
 
 const NavItem: React.FC<NavItemProps> = ({ label, href, toggleMenu }) => {
   return (
-    <a className="menu-item" href={`#${href}`} onClick={toggleMenu}>
+    <a
+      className="menu-item"
+      href={`#${href}`}
+      onClick={window.innerWidth <= 810 ? toggleMenu : () => {}}>
       <div className="label">{label}</div>
     </a>
   );
@@ -46,7 +49,7 @@ export const Navbar: React.FC = () => {
         <RsLogo />
       </a>
       <div className={`menu ${isMenuOpen ? 'open' : ''}`}>
-        <a className="logo-container" href="#main" onClick={toggleMenu}>
+        <a className="logo-container" href="#main">
           <RsLogo />
         </a>
         <NavItem label="About" href="about" toggleMenu={toggleMenu} />

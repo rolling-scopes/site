@@ -18,46 +18,41 @@
     }
   }
 
-  .title-with-icon-container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .title-icon {
-    width: 91px;
-    height: 91px;
-    margin-top: 12px;
-    margin-left: 8px;
-    @include media-laptop {
-      width: 71px;
-      height: 71px;
-    }
-    @include media-tablet {
-      width: 55px;
-      height: 55px;
-    }
-  }
-
   .title-container {
     width: fit-content;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     text-align: left;
+
+    .title-icon {
+      width: 91px;
+      height: 91px;
+      display: inline-block;
+      margin-left: 8px;
+      @include media-laptop {
+        width: 71px;
+        height: 71px;
+      }
+      @include media-tablet {
+        width: 55px;
+        height: 55px;
+      }
+    }
 
     & > .subtitle {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-direction: row;
-      width: 100%;
+      width: calc(100% - 91px);
       font-weight: 500;
       font-size: 20px;
       color: $color-secondary-brown;
       letter-spacing: 0;
       line-height: 28px;
       @include media-tablet {
+        width: calc(100% - 55px);
         flex-direction: column;
         align-items: flex-start;
         font-weight: 400;

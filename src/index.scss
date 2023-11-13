@@ -54,5 +54,6 @@ a {
   justify-content: space-between;
   @include media-laptop {
     flex-direction: column;
+    align-items: flex-start;
   }
 }

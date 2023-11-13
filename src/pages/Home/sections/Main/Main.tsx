@@ -36,16 +36,16 @@ export const Main: React.FC = () => {
   return (
     <div id="main" className="main container">
       <div className="main content">
-        <div className="title-with-icon-container">
-          <div className="title-container">
-            <Title text="The Rolling Scopes" type={TitleType.ExtraBig} />
-            <div className="subtitle">
-              <div>an international community of developers</div>
-              <div>since 2013</div>
+        <div className="title-container">
+          <Title text="The Rolling Scopes" type={TitleType.ExtraBig}>
+            <div className="title-icon">
+              <TitleIcon />
             </div>
-          </div>
-          <div className="title-icon">
-            <TitleIcon />
+          </Title>
+
+          <div className="subtitle">
+            <div>an international community of developers</div>
+            <div>since 2013</div>
           </div>
         </div>
         <div className="description">Connecting people, growing together, having fun</div>
