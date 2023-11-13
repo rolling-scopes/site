@@ -46,6 +46,9 @@ export const Navbar: React.FC = () => {
         <RsLogo />
       </a>
       <div className={`menu ${isMenuOpen ? 'open' : ''}`}>
+        <a className="logo-container" href="#main" onClick={toggleMenu}>
+          <RsLogo />
+        </a>
         <NavItem label="About" href="about" toggleMenu={toggleMenu} />
         <NavItem label="RS School" href="school" toggleMenu={toggleMenu} />
         <NavItem label="Events" href="events" toggleMenu={toggleMenu} />
