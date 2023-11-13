@@ -21,6 +21,7 @@ export const OptionItem: React.FC<OptionItemProps> = ({
     {buttonLabel && (
       <a href={href} target="_blank" rel="noreferrer" className="option-button">
         {buttonLabel}
+        <span className="material-symbols-outlined arrow">arrow_forward</span>
       </a>
     )}
   </div>

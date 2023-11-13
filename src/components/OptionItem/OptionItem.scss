@@ -44,10 +44,9 @@
   width: 240px;
   height: min-content;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color: rgba(255, 219, 32, 0.8);
   overflow: visible;
   align-content: flex-start;
   flex-wrap: nowrap;
@@ -63,6 +62,12 @@
   line-height: 24px;
   text-align: center;
   margin: 24px 0;
+  border-radius: 0;
+  border: 2px solid;
+
+  & .arrow {
+    margin-left: 8px;
+  }
 
   @include media-tablet {
     width: 100%;
