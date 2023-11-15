@@ -22,6 +22,10 @@
         flex-wrap: wrap;
         align-items: flex-start;
         justify-content: space-between;
+        @include media-tablet {
+          width: 100%;
+          justify-content: space-evenly;
+        }
       }
 
       & .social-media {
