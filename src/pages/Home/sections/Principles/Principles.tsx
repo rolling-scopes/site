@@ -1,5 +1,5 @@
 import React from 'react';
-import { Title, PrincipleCard, PrincipleCardProps } from '../../../../components';
+import { Title, PrincipleCard, PrincipleCardProps, TitleType } from '../../../../components';
 
 import {
   OpenToEveryoneIcon,
@@ -35,6 +35,7 @@ export const Principles: React.FC = () => (
     <div className="principles content">
       <Title
         text="RS School Principles are  an ability to complete our mission"
+        type={TitleType.Big}
         hasAsterix={false}
         hasLines={true}
       />

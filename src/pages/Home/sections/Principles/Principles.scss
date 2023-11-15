@@ -12,13 +12,6 @@
     }
   }
 
-  & .title {
-    width: 640px;
-    @include media-laptop {
-      width: 100%;
-    }
-  }
-
   & .cards {
     margin-top: 24px;
     @include media-laptop {

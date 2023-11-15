@@ -2,15 +2,6 @@
 @import '../../../../mixins';
 
 .pictures {
-  & .title,
-  & .paragraph {
-    width: 600px;
-    text-align: left;
-    @include media-tablet {
-      width: 100%;
-    }
-  }
-
   & .social-media-container {
     display: flex;
     align-items: flex-start;

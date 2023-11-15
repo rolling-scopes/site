@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Title, Subtitle } from '../../../../components';
+import { Title, Subtitle, TitleType } from '../../../../components';
 
 import image from '../../../../assets/speakers-wanted.png';
 
@@ -10,7 +10,7 @@ export const Speakers: React.FC = () => (
   <div className="speakers container">
     <div className="speakers content">
       <div className="info">
-        <Title text="Speakers wanted" hasAsterix={false} hasLines={true} />
+        <Title text="Speakers wanted" type={TitleType.Big} hasAsterix={false} hasLines={true} />
         <Subtitle text="If you want to give a talk or conduct a workshop, present your open source project or share a success story, the Rolling Scopes welcomes all kinds of talk proposals." />
         <Subtitle text="So don't hesitate to drop a short synopsis to RS Head " />
 
