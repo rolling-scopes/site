@@ -27,7 +27,7 @@
   width: 1200px;
   height: 540px;
   padding: 10px 10px 40px;
-  margin: 0 auto;
+  margin: 16px auto;
   @include media-laptop {
     width: 730px;
     height: 369px;
@@ -36,6 +36,10 @@
     width: 358px;
     height: 210px;
     padding: 0 0 25px;
+  }
+  @include media-mobile {
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -56,6 +60,9 @@
   @include media-tablet {
     height: 175px;
   }
+  @include media-mobile {
+    height: auto;
+  }
 }
 
 .carousel .slide {
@@ -69,5 +76,8 @@
   @include media-tablet {
     width: 358px;
     height: 210px;
+  }
+  @include media-mobile {
+    height: auto;
   }
 }
