@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '../../../../components/Button/Button';
+import { useWindowSize } from '../../../../hooks';
 
 import './Courses.scss';
 
@@ -116,33 +117,44 @@ const courses: CourseProps[] = [
   }
 ];
 
-export const Courses: React.FC = () => (
-  <div className="courses container">
-    <div className="courses content">
-      <div className="title">Upcoming courses</div>
-      <div className="column-2">
-        <div className="courses">
-          {courses.map(({ title, language, startDate, href, icon }) => (
-            <div key={title} className="course-card">
-              <div className="icon-container">{icon}</div>
-              <div className="course-info">
-                <div className="name">
-                  {title} ({language})
+export const Courses: React.FC = () => {
+  const size = useWindowSize();
+
+  let buttonText = 'More details';
+  if (size.width <= 810) {
+    buttonText = '';
+  } else if (size.width <= 1440) {
+    buttonText = 'More';
+  }
+
+  return (
+    <div className="courses container">
+      <div className="courses content">
+        <div className="title">Upcoming courses</div>
+        <div className="column-2">
+          <div className="courses">
+            {courses.map(({ title, language, startDate, href, icon }) => (
+              <div key={title} className="course-card">
+                <div className="icon-container">{icon}</div>
+                <div className="course-info">
+                  <div className="name">
+                    {title} ({language})
+                  </div>
+                  <div className="date">Start date: {startDate}</div>
                 </div>
-                <div className="date">Start date: {startDate}</div>
+                <div className="details-container">
+                  <a className="details" href={href} target="_blank" rel="noreferrer">
+                    {buttonText && <span className="label">{buttonText}</span>}
+                    <span className="material-symbols-outlined">arrow_forward</span>
+                  </a>
+                </div>
               </div>
-              <div className="details-container">
-                <a className="details" href={href} target="_blank" rel="noreferrer">
-                  <span className="label">More details</span>
-                  <span className="material-symbols-outlined">arrow_forward</span>
-                </a>
-              </div>
-            </div>
-          ))}
-          <Button label="Go to RS School " href="https://rs.school/" />
+            ))}
+            <Button label="Go to RS School " href="https://rs.school/" />
+          </div>
+          <div className="image">{RSLogo}</div>
         </div>
-        <div className="image">{RSLogo}</div>
       </div>
     </div>
-  </div>
-);
+  );
+};
