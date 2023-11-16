@@ -47,6 +47,11 @@
       @include media-laptop {
         margin-top: 16px;
       }
+
+      @include media-mobile {
+        width: 100%;
+        height: auto;
+      }
     }
 
     & .contribute-options {
