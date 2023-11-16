@@ -20,6 +20,7 @@
   color: $color-secondary-gray600;
   @include media-laptop {
     width: 100%;
+    height: auto;
   }
 
   &:hover {
@@ -36,7 +37,6 @@
     filter: blur(8px);
     background-color: $color-accent-yellow;
     z-index: 1;
-    aspect-ratio: 1.032 / 1;
     position: absolute;
     border-radius: 100%;
   }
@@ -66,6 +66,10 @@
       line-height: 24px;
     }
   }
+
+  & > svg {
+    display: block;
+  }
 }
 
 .accent-corner {
@@ -77,7 +81,6 @@
   filter: blur(32px);
   background-color: rgba(255, 219, 32, 0.2);
   z-index: 1;
-  aspect-ratio: 1.032 / 1;
   position: absolute;
   right: -160px;
   bottom: -150px;

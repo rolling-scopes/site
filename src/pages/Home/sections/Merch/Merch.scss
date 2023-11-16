@@ -37,6 +37,7 @@
     & .picture {
       width: 680px;
       height: 700px;
+      margin: 0 auto;
       @include media-laptop {
         margin-top: 24px;
         width: 680px;
