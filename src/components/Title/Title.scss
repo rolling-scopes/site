@@ -19,6 +19,10 @@
   &.big {
     font-size: 52px;
     line-height: 64px;
+    @include media-tablet {
+      font-size: 36px;
+      line-height: 44px;
+    }
   }
 
   &.extra-big {
