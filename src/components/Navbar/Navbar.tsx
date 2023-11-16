@@ -42,19 +42,21 @@ export const Navbar: React.FC = () => {
     setMenuOpen(!isMenuOpen);
   };
 
+  const scrollToTop = () => window.scrollTo({ top: 0 });
+
   useEffect(() => {
     window.addEventListener('scroll', listenScrollEvent);
   }, []);
 
   return (
     <div className={`navbar ${color}`}>
-      <a className="logo-container" href="/">
+      <div className="logo-container" onClick={scrollToTop}>
         <RsLogo />
-      </a>
+      </div>
       <div className={`menu ${isMenuOpen ? 'open' : ''}`}>
-        <a className="logo-container" href="/">
+        <div className="logo-container" onClick={scrollToTop}>
           <RsLogo />
-        </a>
+        </div>
         <NavItem label="About" href="about" toggleMenu={toggleMenu} />
         <NavItem label="RS School" href="school" toggleMenu={toggleMenu} />
         <NavItem label="Events" href="events" toggleMenu={toggleMenu} />
