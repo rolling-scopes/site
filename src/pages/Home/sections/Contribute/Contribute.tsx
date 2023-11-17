@@ -44,7 +44,7 @@ export const Contribute: React.FC = () => (
       </div>
       <Paragraph>
         Additionally, we provide feedback on LinkedIn, which can be a valuable asset for your
-        professional development.s.
+        professional development.
       </Paragraph>
     </div>
   </div>
