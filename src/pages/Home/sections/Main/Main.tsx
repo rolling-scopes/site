@@ -34,7 +34,7 @@ const TitleIcon = () => (
 );
 export const Main: React.FC = () => {
   return (
-    <div id="main" className="main container">
+    <main id="main" className="main container">
       <div className="main content">
         <div className="title-container">
           <Title text="The Rolling Scopes" type={TitleType.ExtraBig}>
@@ -58,6 +58,6 @@ export const Main: React.FC = () => {
           ))}
         </div>
       </div>
-    </div>
+    </main>
   );
 };

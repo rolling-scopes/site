@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useWindowSize } from '../../hooks';
 
 import { RsLogo } from '../../icons';
 
@@ -26,8 +25,6 @@ export const Navbar: React.FC = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [color, setColor] = useState('gray');
 
-  const size = useWindowSize();
-
   const listenScrollEvent = (event: any) => {
     if (window.scrollY <= 64) {
       setColor('gray');
@@ -53,7 +50,7 @@ export const Navbar: React.FC = () => {
       <div className="logo-container" onClick={scrollToTop}>
         <RsLogo />
       </div>
-      <div className={`menu ${isMenuOpen ? 'open' : ''}`}>
+      <menu className={`menu ${isMenuOpen ? 'open' : ''}`}>
         <div className="logo-container" onClick={scrollToTop}>
           <RsLogo />
         </div>
@@ -62,7 +59,7 @@ export const Navbar: React.FC = () => {
         <NavItem label="Events" href="events" toggleMenu={toggleMenu} />
         <NavItem label="Community" href="community" toggleMenu={toggleMenu} />
         <NavItem label="Merch" href="merch" toggleMenu={toggleMenu} />
-      </div>
+      </menu>
       <div className={`burger ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <div className="top" />
         <div className="mid" />
