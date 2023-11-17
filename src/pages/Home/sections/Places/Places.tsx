@@ -22,7 +22,7 @@ const places: string[] = [
 export const Places: React.FC = () => (
   <div className="places container">
     <div className="places content">
-      <Marquee direction="left">
+      <Marquee direction="left" childMargin={0}>
         {places.map((i) => (
           <span key={i} className="place-container">
             <span className="place">{i}</span>
