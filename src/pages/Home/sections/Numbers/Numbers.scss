@@ -25,7 +25,7 @@
   max-height: 650px;
   height: auto;
   overflow: hidden;
-  z-index: 1;
+  z-index: -1;
   position: absolute;
   left: 0;
   @include media-tablet {
