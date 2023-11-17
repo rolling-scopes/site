@@ -86,10 +86,11 @@
 }
 
 .menu-item {
-  width: fit-content;
+  width: 120px;
   display: flex;
   align-items: center;
-  padding: 14px 14px 14px 14px;
+  justify-content: center;
+  padding: 14px;
   cursor: pointer;
   &:hover {
     border-color: #000000;
