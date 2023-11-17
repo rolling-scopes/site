@@ -19,7 +19,8 @@ const events: EventCardProps[] = [
     date: '29 June 2023',
     time: '18:00',
     type: 'Offline',
-    address: 'al. Grunwaldzka 472BGdańsk',
+    address: 'al. Grunwaldzka 472B',
+    city: 'Gdańsk',
     href: 'https://www.meetup.com/aws-user-group-3city/events/293689995/'
   },
   {
@@ -30,7 +31,8 @@ const events: EventCardProps[] = [
     date: '13 July 2023 2023',
     time: '19:00',
     type: 'Offline',
-    address: 'Vytenio Str., 18Vilnius',
+    address: 'Vytenio Str., 18',
+    city: 'Vilnius',
     href: 'https://www.meetup.com/the-rolling-scopes-lithuania/events/293907703/'
   }
 ];

@@ -11,6 +11,7 @@ export interface EventCardProps {
   time: string;
   type: string; // Offline | Online
   address: string;
+  city: string;
   href: string;
 }
 
@@ -23,6 +24,7 @@ export const EventCard: React.FC<EventCardProps> = ({
   time,
   type,
   address,
+  city,
   href
 }) => (
   <div className="card">
@@ -39,6 +41,7 @@ export const EventCard: React.FC<EventCardProps> = ({
         • {date} • {time} • {type}
       </div>
       <div className="address">{address}</div>
+      <div className="city">{city}</div>
       <a href={href} target="_blank" rel="noreferrer" className="details-button">
         View details
       </a>
