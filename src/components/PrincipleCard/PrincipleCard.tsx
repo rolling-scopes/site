@@ -12,30 +12,15 @@ export const PrincipleCard: React.FC<PrincipleCardProps> = ({
   title,
   description,
   Icon
-}: PrincipleCardProps) => {
-  const [hovered, setHovered] = useState(false);
+}: PrincipleCardProps) => (
+  <div className="principle-card">
+    <div className="accent" />
+    <Icon />
+    <>
+      <div className="card-title">{title}</div>
+      <div className="card-description">{description}</div>
+    </>
 
-  const size = useWindowSize();
-
-  const toggleHover = () => setHovered(!hovered);
-
-  return (
-    <div className="principle-card" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-      <div className="accent" />
-      <Icon />
-      {size.width <= 810 ? (
-        <>
-          <div className="card-title">{title}</div>
-          <div className="card-description">{description}</div>
-        </>
-      ) : (
-        <>
-          {!hovered && <div className="card-title">{title}</div>}
-          {hovered && <div className="card-description">{description}</div>}
-        </>
-      )}
-
-      <div className="accent-corner" />
-    </div>
-  );
-};
+    <div className="accent-corner" />
+  </div>
+);
