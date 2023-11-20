@@ -26,6 +26,15 @@
   &:hover {
     padding: 24px 24px 24px;
     box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.14);
+    .card-title {
+      display: none;
+      @include media-tablet {
+        display: block;
+      }
+    }
+    .card-description {
+      display: block;
+    }
   }
 
   & .accent {
@@ -61,9 +70,11 @@
     letter-spacing: 0;
     margin-top: 16px;
     text-align: left;
+    display: none;
     @include media-tablet {
       font-size: 16px;
       line-height: 24px;
+      display: block;
     }
   }
 

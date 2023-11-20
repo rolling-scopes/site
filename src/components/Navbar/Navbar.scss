@@ -11,7 +11,7 @@
   top: 0;
   left: 0;
   z-index: 100;
-  transition: background-color 0.3s;
+  transition: background-color 2s;
   border-radius: 0;
 
   &.gray {
@@ -73,7 +73,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  top: 0;
+  top: -24px;
   left: 0;
   background-color: #ffdb20;
   box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.14);
@@ -111,6 +111,9 @@
     letter-spacing: 0em;
     line-height: 20px;
     text-align: center;
+    @include media-tablet {
+      text-align: left;
+    }
     &:hover {
       font-weight: 600;
       font-family: 'Inter-SemiBold', 'Inter', sans-serif;
@@ -128,6 +131,13 @@
   border-radius: 0px 0px 0px 0px;
   cursor: pointer;
   transition: 0.4s;
+  &:hover {
+    .top,
+    .mid,
+    .bottom {
+      height: 3px;
+    }
+  }
 }
 
 .burger.open {
@@ -144,9 +154,6 @@
   overflow: hidden;
   position: absolute;
   border-radius: 0px 0px 0px 0px;
-  &:hover {
-    height: 3px;
-  }
 }
 
 .top {
