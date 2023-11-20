@@ -69,6 +69,9 @@
   @include media-tablet {
     flex-direction: column;
   }
+  @include media-mobile {
+    padding: 0 8px;
+  }
 
   .left,
   .right {
