@@ -22,8 +22,10 @@
     width: 100%;
   }
 
-  &:hover {
-    background-color: #545454;
+  @include media-hover {
+    &:hover {
+      background-color: #545454;
+    }
   }
 
   & .label {
