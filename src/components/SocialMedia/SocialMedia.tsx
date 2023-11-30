@@ -1,20 +1,15 @@
-import React from 'react';
-
+import { ReactNode } from 'react';
 import './SocialMedia.scss';
 
-interface SocialMediaProps {
+export type SocialMediaProps = {
   title: string;
   href: string;
-  Icon: React.FC;
-}
+  icon: ReactNode;
+};
 
-export const SocialMedia: React.FC<SocialMediaProps> = ({
-  title,
-  href,
-  Icon
-}: SocialMediaProps) => (
+export const SocialMedia = ({ title, href, icon }: SocialMediaProps) => (
   <a className="social-media" href={href} target="_blank" rel="noreferrer">
-    <Icon />
+    {icon}
     <span className="text">{title}</span>
   </a>
 );

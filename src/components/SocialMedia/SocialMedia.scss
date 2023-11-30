@@ -1,7 +1,9 @@
 @import '../../constants';
 @import '../../mixins';
+@import '../../placeholders';
 
 .social-media {
+  --_transition: .4s;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,16 +16,57 @@
   font-size: 14px;
   line-height: 16px;
   color: $color-secondary-gray600;
-  @include media-tablet {
-    font-size: 12px;
-    line-height: 16px;
+  @extend %transition-all;
+  
+  & > svg:not(.telegram-icon) {
+    rect {
+      transition: fill var(--_transition) ease-in-out;
+    }
+
+    path  {
+      transition: stroke var(--_transition) ease-in-out;
+    }
   }
 
-  &:hover {
-    color: #000000;
+  .telegram-icon {
+    rect {
+      transition: fill var(--_transition) ease-in-out;
+    }
+    
+    path {
+      transition: fill var(--_transition) ease-in-out;
+    }
   }
 
   & .text {
     margin-top: 8px;
+  }
+
+  @include media-hover {
+    &:hover {
+      color: $color-primary-black;
+      
+      svg {
+        rect {
+          fill: $color-secondary-gray600;
+        }
+        
+        path {
+          stroke: $color-primary-white;
+        }
+      }
+      
+      .telegram-icon {  
+        path {
+          fill: $color-primary-white;
+          stroke: none;
+        }
+      }
+    }
+  }
+  
+  @include media-tablet {
+    font-size: 12px;
+    line-height: 16px;
   }
 }
