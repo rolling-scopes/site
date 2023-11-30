@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react';
-
+import { useEffect, useLayoutEffect, useState } from 'react';
+import { useWindowSize } from '../../hooks';
 import { RsLogo } from '../../icons';
-
 import './Navbar.scss';
 
-interface NavItemProps {
+type NavItemProps = {
   label: string;
   href: string;
   toggleMenu: () => void;
-}
+};
 
-const NavItem: React.FC<NavItemProps> = ({ label, href, toggleMenu }) => {
+const NavItem = ({ label, href, toggleMenu }: NavItemProps) => {
   return (
     <a
       className="menu-item"
@@ -21,11 +20,12 @@ const NavItem: React.FC<NavItemProps> = ({ label, href, toggleMenu }) => {
   );
 };
 
-export const Navbar: React.FC = () => {
+export const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const { width } = useWindowSize();
   const [color, setColor] = useState('gray');
 
-  const listenScrollEvent = (event: any) => {
+  const listenScrollEvent = () => {
     if (window.scrollY <= 64) {
       setColor('gray');
     } else if (window.scrollY > 64 && window.scrollY < 800) {
@@ -36,7 +36,7 @@ export const Navbar: React.FC = () => {
   };
 
   const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
+    setMenuOpen((prev) => !prev);
   };
 
   const scrollToTop = () => window.scrollTo({ top: 0 });
@@ -44,6 +44,12 @@ export const Navbar: React.FC = () => {
   useEffect(() => {
     window.addEventListener('scroll', listenScrollEvent);
   }, []);
+
+  useLayoutEffect(() => {
+    if (width > 810) {
+      setMenuOpen(false);
+    }
+  }, [width]);
 
   return (
     <div className={`navbar ${color}`}>
