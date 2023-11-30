@@ -69,7 +69,7 @@ export const Alumni: React.FC = () => {
   return (
     <div className="alumni container">
       <div className="alumni content">
-        <Title text="Our alumni" hasAsterix />
+        <Title text="Our alumni" hasAsterisk />
         <Paragraph>
           We are immensely proud of RS School alumni who build their successful careers in ambitious
           IT companies

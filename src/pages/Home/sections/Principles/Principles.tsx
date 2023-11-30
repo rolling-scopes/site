@@ -36,7 +36,7 @@ export const Principles: React.FC = () => (
       <Title
         text="RS School Principles are  an ability to complete our mission"
         type={TitleType.Big}
-        hasAsterix={false}
+        hasAsterisk={false}
         hasLines={true}
       />
       <div className="cards column-3 ">

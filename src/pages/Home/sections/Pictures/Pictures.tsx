@@ -51,7 +51,7 @@ const socialMedia: SocialMediaProps[] = [
 export const Pictures: React.FC = () => (
   <div className="pictures container">
     <div className="pictures content">
-      <Title text="The Rolling Scopes in pictures" hasAsterix />
+      <Title text="The Rolling Scopes in pictures" hasAsterisk />
       <Carousel
         className="carousel"
         showArrows={false}

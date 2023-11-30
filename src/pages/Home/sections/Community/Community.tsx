@@ -71,7 +71,7 @@ export const Community: React.FC = () => (
   <div id="community" className="community container">
     <div className="community content column-2">
       <div className="info">
-        <Title text="Join RS Community" type={TitleType.Big} hasAsterix={false} hasLines={true} />
+        <Title text="Join RS Community" type={TitleType.Big} hasAsterisk={false} hasLines={true} />
         <Subtitle text="If you want to learn coding or be a RS School mentor, speaking at developers meetups and conferences or taking part in RS clubs welcome to the Rolling Scopes community! Join us in social networks to be in touch!" />
         <div className="social-media-container">
           {communityGroups.map((i) => (

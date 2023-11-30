@@ -26,7 +26,7 @@ export const Numbers: React.FC = () => {
       <div className="numbers content">
         <div className="text-container">
           <div>
-            <Title text="The Rolling Scopes in numbers" hasAsterix />
+            <Title text="The Rolling Scopes in numbers" hasAsterisk />
             <Subtitle
               text="Everyone can discover our community, regardless of age, professional employment, or
             place of residence."
