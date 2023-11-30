@@ -1,8 +1,6 @@
-import React from 'react';
-
 import './EventCard.scss';
 
-export interface EventCardProps {
+export type EventCardProps = {
   eventType: string; // Meetup
   title: string;
   organizedBy: string;
@@ -13,9 +11,9 @@ export interface EventCardProps {
   address: string;
   city: string;
   href: string;
-}
+};
 
-export const EventCard: React.FC<EventCardProps> = ({
+export const EventCard = ({
   eventType,
   organizedBy,
   organization,
@@ -26,7 +24,7 @@ export const EventCard: React.FC<EventCardProps> = ({
   address,
   city,
   href
-}) => (
+}: EventCardProps) => (
   <div className="card">
     <div className="card-top">
       <div className="card-tag">{eventType}</div>
