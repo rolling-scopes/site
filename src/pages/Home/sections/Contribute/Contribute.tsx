@@ -1,9 +1,5 @@
-import React from 'react';
-
 import { Title, Paragraph, Subtitle, OptionItem, OptionItemProps } from '../../../../components';
-
 import image from '../../../../assets/contribute.png';
-
 import './Contribute.scss';
 
 const contributeOptions: OptionItemProps[] = [
@@ -15,7 +11,7 @@ const contributeOptions: OptionItemProps[] = [
     href: 'https://app.rs.school/registry/mentor'
   },
   {
-    title: 'Developer / Coordinator / Trainer',
+    title: 'Developer / Coordinator / Trainer',
     description:
       'Contribute your skills as a developer, coordinator, or trainer. Fill out this form to get started.',
     buttonLabel: 'Become a contributor',
@@ -23,7 +19,7 @@ const contributeOptions: OptionItemProps[] = [
   }
 ];
 
-export const Contribute: React.FC = () => (
+export const Contribute = () => (
   <div className="contribute container">
     <div className="contribute content">
       <div className="general">
@@ -31,15 +27,21 @@ export const Contribute: React.FC = () => (
           <Title text="How to Contribute" hasAsterisk />
           <Subtitle text="Contributing to The Rolling Scopes is not only a great way to give back to the community, but it’s also an excellent way to enhance your own knowledge." />
           <Paragraph>
-            Remember, teaching others is one of the best ways to learn – this is known as The
+            Remember, teaching others is one of the best ways to learn - this is known as The
             Protégé Effect! There are several ways you can contribute, choose yours.
           </Paragraph>
         </div>
         <img className="right picture" src={image} alt="contribute" />
       </div>
       <div className="contribute-options">
-        {contributeOptions.map((i) => (
-          <OptionItem {...i} key={i.title} />
+        {contributeOptions.map(({ title, description, buttonLabel, href }) => (
+          <OptionItem
+            key={title}
+            title={title}
+            description={description}
+            buttonLabel={buttonLabel}
+            href={href}
+          />
         ))}
       </div>
       <Paragraph>
