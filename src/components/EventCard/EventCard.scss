@@ -32,6 +32,9 @@
     border-left-width: 1px;
     border-right-width: 1px;
     position: relative;
+    @include media-mobile {
+      width: 100%;
+    }
 
     & .card-tag {
       width: 123px;
@@ -88,6 +91,9 @@
       font-size: 24px;
       line-height: 32px;
       margin-top: 32px;
+      @include media-mobile {
+        width: 100%;
+      }
     }
 
     & .and-more {
@@ -105,11 +111,18 @@
       background-color: #7356bf;
       opacity: 0.5;
       z-index: 1;
-      aspect-ratio: 1.032 / 1;
       border-radius: 100%;
       position: absolute;
       top: 194px;
       left: 204px;
+      @include media-tablet {
+        width: 225px;
+        left: 155px;
+      }
+      @include media-mobile {
+        width: 175px;
+        left: 135px;
+      }
     }
   }
 
@@ -133,6 +146,9 @@
     border-bottom-width: 1px;
     border-left-width: 1px;
     border-right-width: 1px;
+    @include media-mobile {
+      width: 100%;
+    }
 
     & .date-and-time {
       width: 100%;
@@ -163,6 +179,9 @@
       letter-spacing: 0em;
       line-height: 20px;
       margin-top: 16px;
+      @include media-mobile {
+        width: 100%;
+      }
     }
 
     & .details-button {
@@ -202,6 +221,9 @@
   position: absolute;
   top: 140px;
   left: 160px;
+  @include media-mobile {
+    width: 125px;
+  }
 }
 
 .card:hover > .card-bottom > .details-button {
