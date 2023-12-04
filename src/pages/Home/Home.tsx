@@ -24,8 +24,7 @@ import {
 import './Home.scss';
 
 export const Home: React.FC = () => (
-  <div className="App">
-    <Navbar />
+  <>
     <Main />
     <About />
     <Numbers />
@@ -41,7 +40,5 @@ export const Home: React.FC = () => (
     <Community />
     <Contribute />
     <Support />
-    <Partnered />
-    <Footer />
-  </div>
+  </>
 );

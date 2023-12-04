@@ -1,0 +1,1 @@
+export { MentorCard } from './MentorCard';

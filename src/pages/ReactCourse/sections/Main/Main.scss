@@ -1,0 +1,108 @@
+@import '../../../../constants';
+@import '../../../../mixins';
+
+.main {
+  min-height: 800px;
+
+  &.container {
+    background: $color-secondary-yellow;
+  }
+
+  &.content {
+    padding: 208px 100px 100px;
+    @include media-laptop {
+      padding: 120px 45px 120px;
+    }
+    @include media-tablet {
+      padding: 120px 15px 120px;
+    }
+  }
+
+  .title-container {
+    width: fit-content;
+    text-align: left;
+
+    .title-icon {
+      width: 91px;
+      height: 91px;
+      display: inline-block;
+      margin-left: 8px;
+      @include media-laptop {
+        width: 71px;
+        height: 71px;
+      }
+      @include media-tablet {
+        width: 55px;
+        height: 55px;
+      }
+    }
+
+    & > .subtitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      width: calc(100% - 91px);
+      font-weight: 500;
+      font-size: 20px;
+      color: $color-secondary-brown;
+      letter-spacing: 0;
+      line-height: 28px;
+      @include media-tablet {
+        width: calc(100% - 55px);
+        flex-direction: column;
+        align-items: flex-start;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  & > .description {
+    font-weight: 500;
+    font-size: 52px;
+    letter-spacing: 0.04em;
+    line-height: 64px;
+    height: auto;
+    text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.14);
+    color: $color-primary-white;
+    margin: 40px 0;
+    text-align: left;
+    width: 741px;
+    @include media-laptop {
+      font-size: 44px;
+      line-height: 52px;
+    }
+    @include media-tablet {
+      width: 100%;
+      font-size: 24px;
+      letter-spacing: 0;
+      line-height: 32px;
+    }
+  }
+
+  & > .tags-container {
+    display: flex;
+    width: max-content;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    @include media-tablet {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    & .tag-container {
+      display: flex;
+      align-items: center;
+      @include media-tablet {
+        margin-top: 16px;
+      }
+    }
+  }
+
+  & .tag-divider {
+    margin: 0 8px;
+  }
+}

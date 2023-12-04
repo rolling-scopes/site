@@ -1,0 +1,15 @@
+@import '../../../../constants';
+@import '../../../../mixins';
+.mentors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+
+  &Item {
+    flex: 0 0 calc(50% - 32px);
+
+    @include media-laptop {
+      flex: 0 0 100%;
+    }
+  }
+}
