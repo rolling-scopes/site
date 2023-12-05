@@ -1,0 +1,85 @@
+@import '../../../../constants';
+@import '../../../../mixins';
+
+.courses-main {
+  height: 440px;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  &.container {
+    background: $color-secondary-yellow;
+  }
+
+  &.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 31px;
+    padding-bottom: 95px;
+
+    @include media-laptop {
+      padding: 120px 45px 120px;
+    }
+    @include media-tablet {
+      padding: 120px 15px 120px;
+    }
+  }
+
+  &.content > .left {
+    .title-container {
+      width: fit-content;
+      text-align: left;
+
+      & > .subtitle > div {
+        padding-left: 5px;
+        width: fit-content;
+        font-weight: 500;
+        font-size: 18px;
+        font-weight: 500;
+        font-style: normal;
+        white-space: pre;
+        color: $color-secondary-brown;
+        letter-spacing: 0.6px;
+        line-height: 24px;
+
+        @include media-tablet {
+          width: calc(100% - 55px);
+          flex-direction: column;
+          align-items: flex-start;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+
+  & .description {
+    margin: 24px 0 0;
+    font-weight: 500;
+    font-size: 44px;
+    letter-spacing: 0px;
+    line-height: 52px;
+    text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.14);
+    color: $color-primary-white;
+    width: 600px;
+
+    @include media-laptop {
+      font-size: 44px;
+      line-height: 52px;
+    }
+    @include media-tablet {
+      width: 100%;
+      font-size: 24px;
+      letter-spacing: 0;
+      line-height: 32px;
+    }
+  }
+
+  & > .right.picture {
+    width: 314px;
+    height: 250px;
+    display: block;
+    margin-right: 22px;
+  }
+}

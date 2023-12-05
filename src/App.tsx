@@ -1,11 +1,15 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { Home } from './pages';
+import { Courses, Home } from './pages';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Home />
+  },
+  {
+    path: '/rs-courses',
+    element: <Courses />
   }
 ]);
 
