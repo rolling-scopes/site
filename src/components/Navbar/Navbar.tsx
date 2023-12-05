@@ -14,7 +14,7 @@ const NavItem: React.FC<NavItemProps> = ({ label, href, toggleMenu }) => {
   return (
     <a
       className="menu-item"
-      href={`#${href}`}
+      href={`/#${href}`}
       onClick={window.innerWidth <= 810 ? toggleMenu : () => {}}>
       <div className="label">{label}</div>
     </a>
