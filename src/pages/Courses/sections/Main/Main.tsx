@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Tag, TagDivider, Title, TitleType } from '../../../../components';
+import { Title, TitleType } from '../../../../components';
 
 import mentors from '../../../../assets/mentor with his students.png';
 
