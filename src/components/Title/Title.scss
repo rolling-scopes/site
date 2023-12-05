@@ -26,10 +26,14 @@
   }
 
   &.bigger {
-    font-size: 71px;
+    font-size: 75px;
     line-height: 77px;
-    letter-spacing: 0px;
+    letter-spacing: -0.04em;
     font-weight: 600;
+    @include media-laptop {
+      font-size: 96px;
+      line-height: 1.2em;
+    }
   }
 
   &.extra-big {

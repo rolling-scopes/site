@@ -12,7 +12,7 @@ export const Main: React.FC = () => {
       <div className="courses-main content">
         <div className="left">
           <div className="title-container">
-            <Title text="RS School" type={TitleType.Bigger} />
+            <Title text="RS School" type={TitleType.ExtraBig} />
             <div className="subtitle">
               <div>Free courses. High motivation</div>
             </div>
