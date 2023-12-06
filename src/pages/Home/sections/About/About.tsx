@@ -11,7 +11,7 @@ export const About: React.FC = () => {
     <div className="about container" id="about">
       <div className="about content column-2">
         <div className="left">
-          <Title text="Who we are" hasAsterix />
+          <Title text="Who we are" hasAsterisk />
           <Subtitle
             text="Our mission is to provide free education in intriguing subjects, connect people, and grow
           together."

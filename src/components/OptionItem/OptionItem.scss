@@ -1,5 +1,6 @@
 @import '../../constants';
 @import '../../mixins';
+@import '../../placeholders';
 
 .option {
   max-width: 380px;
@@ -64,6 +65,7 @@
   margin: 24px 0;
   border-radius: 0;
   border: 2px solid;
+  @extend %transition-all;
 
   & .arrow {
     margin-left: 8px;
@@ -73,7 +75,9 @@
     width: 100%;
   }
 
-  &:hover {
-    background-color: $color-secondary-gray200;
+  @include media-hover {
+    &:hover {
+      background-color: $color-secondary-gray200;
+    }
   }
 }

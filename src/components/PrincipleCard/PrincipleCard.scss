@@ -1,5 +1,6 @@
 @import '../../constants';
 @import '../../mixins';
+@import '../../placeholders';
 
 .principle-card {
   position: relative;
@@ -16,25 +17,19 @@
   flex-wrap: nowrap;
   border-radius: 12px;
   border: 1px solid rgba(255, 219, 32, 0.08);
-  cursor: pointer;
+  cursor: default;
   color: $color-secondary-gray600;
-  @include media-laptop {
-    width: 100%;
-    height: auto;
-  }
+  @extend %transition-all;
 
-  &:hover {
-    padding: 24px 24px 24px;
-    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.14);
-    .card-title {
-      display: none;
-      @include media-tablet {
-        display: block;
-      }
-    }
-    .card-description {
-      display: block;
-    }
+  & .card-description {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0;
+    margin-top: 16px;
+    text-align: left;
+    display: none;
+    opacity: 0;
   }
 
   & .accent {
@@ -51,35 +46,72 @@
   }
 
   & .card-title {
+    position: relative;
     font-weight: 500;
     font-size: 32px;
     line-height: 40px;
     letter-spacing: 0;
     margin-top: 16px;
     text-align: center;
-    @include media-tablet {
-      font-size: 24px;
-      line-height: 32px;
-    }
-  }
-
-  & .card-description {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 28px;
-    letter-spacing: 0;
-    margin-top: 16px;
-    text-align: left;
-    display: none;
-    @include media-tablet {
-      font-size: 16px;
-      line-height: 24px;
-      display: block;
-    }
   }
 
   & > svg {
     display: block;
+  }
+
+  @include media-hover {
+    &:hover {
+      padding: 24px 24px 24px;
+      box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.14);
+  
+      .card-title {
+        animation: hide .2s;
+        animation-fill-mode: forwards;
+        animation-delay: .1s;
+      }
+  
+      .card-description {
+        display: block;
+        height: 0;
+        animation: show .7s;
+        animation-fill-mode: forwards;
+        animation-delay: .3s;
+      }
+    }
+  }
+
+  @include media-laptop {
+    width: 100%;
+    height: auto;
+
+    & .card-description {
+      font-size: 16px;
+      line-height: 24px;
+      display: block;
+      opacity: 1;
+    }
+
+    @include media-hover {
+      &:hover {
+        padding: 24px 24px 36px;
+        .card-description {
+          animation: none;
+          height: unset;
+        }
+  
+        .card-title {
+          display: block;
+          animation: none;
+        }
+      }
+    }
+  }
+
+  @include media-tablet {
+    & .card-title {
+      font-size: 24px;
+      line-height: 32px;
+    }
   }
 }
 
@@ -96,4 +128,18 @@
   right: -160px;
   bottom: -150px;
   border-radius: 100%;
+}
+
+@keyframes show {
+  100% {
+    opacity: 1;
+    height: unset;
+  }
+}
+
+@keyframes hide {
+  100% {
+    opacity: 0;
+    display: none;
+  }
 }

@@ -1,5 +1,6 @@
 @import '../../constants';
 @import '../../mixins';
+@import '../../placeholders';
 
 .card {
   display: flex;
@@ -8,8 +9,12 @@
   align-items: flex-start;
   padding: 0;
   border-radius: 12px;
-  &:hover {
-    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.14);
+  @extend %transition-all;
+
+  @include media-hover {
+    &:hover {
+      box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.14);
+    }
   }
 
   & .card-top {
@@ -115,6 +120,8 @@
       position: absolute;
       top: 194px;
       left: 204px;
+      @extend %transition-all;
+
       @include media-tablet {
         width: 225px;
         left: 155px;
@@ -203,29 +210,32 @@
       text-decoration: none;
       margin-top: 32px;
       cursor: pointer;
+      @extend %transition-all;
     }
   }
 }
 
-.card:hover > .card-top > .card-accent {
-  width: 314px;
-  height: 304px;
-  display: block;
-  -webkit-filter: blur(32px);
-  filter: blur(32px);
-  background-color: #7356bf;
-  opacity: 0.5;
-  z-index: 1;
-  aspect-ratio: 1.032 / 1;
-  border-radius: 100%;
-  position: absolute;
-  top: 140px;
-  left: 160px;
-  @include media-mobile {
-    width: 125px;
+@include media-hover {
+  .card:hover > .card-top > .card-accent {
+    width: 314px;
+    height: 304px;
+    display: block;
+    -webkit-filter: blur(32px);
+    filter: blur(32px);
+    background-color: #7356bf;
+    opacity: 0.5;
+    z-index: 1;
+    aspect-ratio: 1.032 / 1;
+    border-radius: 100%;
+    position: absolute;
+    top: 140px;
+    left: 160px;
+    @include media-mobile {
+      width: 125px;
+    }
   }
-}
-
-.card:hover > .card-bottom > .details-button {
-  background-color: rgba(82, 82, 82, 0.4);
+  
+  .card:hover > .card-bottom > .details-button {
+    background-color: rgba(82, 82, 82, 0.4);
+  }
 }

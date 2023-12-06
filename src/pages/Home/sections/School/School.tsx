@@ -36,7 +36,7 @@ export const School: React.FC = () => (
       <div className="study">
         <div className="left">
           <SectionLabel label="education" />
-          <Title text="Study with RS School" hasAsterix />
+          <Title text="Study with RS School" hasAsterisk />
           <Subtitle text="RS School is a free and community-based online education program conducted by The Rolling Scopes Community since 2013. " />
           <Paragraph>
             Want to see photos of our community? A vast collection of photographs from our events is

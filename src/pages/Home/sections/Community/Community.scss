@@ -27,29 +27,6 @@
           justify-content: space-evenly;
         }
       }
-
-      & .social-media {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 112px;
-        margin-top: 36px;
-        text-decoration: none;
-        text-align: center;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 16px;
-        color: $color-secondary-gray600;
-        @include media-tablet {
-          font-size: 12px;
-          line-height: 16px;
-        }
-
-        & text {
-          margin-top: 8px;
-        }
-      }
     }
 
     & .picture {

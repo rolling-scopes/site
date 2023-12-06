@@ -70,7 +70,7 @@
     flex-direction: column;
   }
   @include media-mobile {
-    padding: 0 8px;
+    padding: 0;
   }
 
   .left,
