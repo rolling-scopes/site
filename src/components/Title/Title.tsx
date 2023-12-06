@@ -8,7 +8,7 @@ export enum TitleType {
   ExtraBig = 'extra-big'
 }
 interface TitleProps {
-  text: string;
+  text?: string;
   type?: TitleType;
   hasAsterix?: boolean;
   hasLines?: boolean;
