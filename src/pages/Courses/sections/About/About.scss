@@ -60,7 +60,7 @@
     justify-content: flex-start;
     overflow: visible;
     width: 600px;
-    min-width: 300px; // preserve the min-width as it may be important for layout
+    min-width: 300px;
 
     @include media-tablet {
       width: 100%;

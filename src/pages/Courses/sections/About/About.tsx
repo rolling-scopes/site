@@ -13,7 +13,7 @@ export const About = () => {
       <div className="about__content">
         <CourseCard {...course} />
         <div className="about__text ">
-          <Title text="About RS School" hasAsterix />
+          <Title text="About RS School" hasAsterisk />
           <Subtitle text="No matter your age, professional employment, or place of residence." />
           <Paragraph>
             RS School offers a unique learning experience as a free, community-based online
