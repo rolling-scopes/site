@@ -14,3 +14,4 @@ export * from './Rs';
 export * from './RSLogo';
 export * from './NodeJSIcon';
 export * from './JsFrontendIcon';
+export * from './TitleIcon';
