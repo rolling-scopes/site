@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { Courses, Home } from './pages';
+import { CoursesPage, Home } from './pages';
 
 const router = createBrowserRouter([
   {
@@ -9,7 +9,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/rs-courses',
-    element: <Courses />
+    element: <CoursesPage />
   }
 ]);
 
