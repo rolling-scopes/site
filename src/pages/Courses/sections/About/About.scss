@@ -1,0 +1,95 @@
+@import '../../../../constants';
+@import '../../../../mixins';
+
+.about {
+  &__container {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 24px 120px 40px;
+
+    @include media-laptop {
+      max-width: 810px;
+      padding: 24px 40px 40px;
+      margin: 0 auto;
+    }
+
+    @include media-tablet {
+      padding: 24px 16px 40px;
+      width: 100%;
+    }
+  }
+
+  &__bread_crumb {
+    font-size: 14px;
+    color: $color-secondary-gray600;
+  }
+
+  &__content {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 120px;
+    height: min-content;
+    justify-content: flex-start;
+    overflow: visible;
+    padding: 80px 0 0;
+    width: 1200px;
+
+    @include media-laptop {
+      flex-direction: column;
+      gap: 40px;
+      padding: 40px 0 0;
+      width: 100%;
+    }
+
+    @include media-tablet {
+      width: 100%;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: min-content;
+    justify-content: flex-start;
+    overflow: visible;
+    width: 600px;
+    min-width: 300px; // preserve the min-width as it may be important for layout
+
+    @include media-tablet {
+      width: 100%;
+    }
+
+    // Override .title, .subtitle, .paragraph. Change in the component itself when possible
+    .title {
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      @include media-tablet {
+        font-size: 20px;
+        line-height: 28px;
+        max-width: 90%;
+      }
+    }
+
+    .paragraph {
+      @include media-laptop {
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: 0.5px;
+      }
+      @include media-tablet {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+}

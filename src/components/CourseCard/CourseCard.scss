@@ -1,0 +1,149 @@
+@import '../../constants';
+.course-card {
+  display: flex;
+  flex-direction: column;
+  height: min-content;
+  max-width: 380px;
+  min-width: 100px;
+  width: 100%;
+  padding: 0;
+  justify-content: start;
+  color: $color-secondary-gray600;
+  &__top {
+    display: flex;
+    align-content: start;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+    height: min-content;
+    padding: 32px 24px 24px;
+    width: 100%;
+    height: min-content;
+    background-color: #eef3fe;
+    border: 1px solid #e2e2e2;
+    border-radius: 12px 12px 0px 0px;
+    border-bottom-width: 0px;
+    overflow: hidden;
+
+    h3 {
+      margin: 0;
+    }
+
+    img {
+      width: 60px;
+      height: 54px;
+      display: block;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    height: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: var($color-secondary-gray600);
+    font-size: 24px;
+    letter-spacing: 0px;
+    line-height: 32px;
+    text-align: left;
+  }
+
+  &__bottom {
+    padding: 24px 24px 24px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: start;
+    height: min-content;
+    width: 100%;
+    background-color: #fefefe;
+    overflow: visible;
+    gap: 24;
+    border: 1px solid #e2e2e2;
+    border-radius: 0px 0px 12px 12px;
+    border-top-width: 0px;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    font-size: 14px;
+  }
+
+  &__date-info {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__note-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  &__date {
+    letter-spacing: 0.3px;
+  }
+
+  &__lang-info {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 4px;
+  }
+
+  // .course-card__mic-icon
+
+  &__mic-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  // .course-card__lang
+
+  &__lang {
+    text-transform: uppercase;
+  }
+
+  // .course-card__mode
+
+  &__mode {
+    text-transform: capitalize;
+  }
+
+  // .course-card__right
+
+  &__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__more {
+    box-sizing: border-box;
+    width: fit-content;
+    height: min-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 12px 10px 12px;
+    background-color: #eeeeee;
+    color: $color-primary-black;
+    overflow: hidden;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 8;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0em;
+    line-height: 16px;
+    text-align: center;
+  }
+}
