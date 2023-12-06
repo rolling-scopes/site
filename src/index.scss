@@ -1,6 +1,10 @@
 @import './_constants.scss';
 @import './_mixins.scss';
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Inter-Bold', 'Inter', sans-serif;
@@ -25,11 +29,10 @@ a {
 }
 
 .content {
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
   padding: 80px 120px 40px 120px;
   @include media-laptop {
-    width: 100%;
-    max-width: 1440px;
     padding: 80px 40px 40px;
   }
   @include media-tablet {

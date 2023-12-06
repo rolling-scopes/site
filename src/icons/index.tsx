@@ -11,4 +11,7 @@ export * from './JetBrains';
 export * from './Aws';
 export * from './GitHub';
 export * from './Rs';
+export * from './RSLogo';
+export * from './NodeJSIcon';
+export * from './JsFrontendIcon';
 export * from './TitleIcon';

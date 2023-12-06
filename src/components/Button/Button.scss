@@ -1,5 +1,6 @@
 @import '../../constants';
 @import '../../mixins';
+@import '../../placeholders';
 
 .button {
   width: min-content;
@@ -15,13 +16,16 @@
   align-content: center;
   flex-wrap: nowrap;
   border-radius: 0;
+  @extend %transition-all;
 
   @include media-tablet {
     width: 100%;
   }
 
-  &:hover {
-    background-color: #545454;
+  @include media-hover {
+    &:hover {
+      background-color: #545454;
+    }
   }
 
   & .label {

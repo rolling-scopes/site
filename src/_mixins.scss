@@ -17,3 +17,9 @@
     @content;
   }
 }
+
+@mixin media-hover {
+  @media (hover: hover) {
+    @content;
+  }
+}
