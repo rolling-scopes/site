@@ -8,7 +8,6 @@ import {
   Numbers,
   Pictures,
   School,
-  Principles,
   Courses,
   Alumni,
   Events,
@@ -22,6 +21,7 @@ import {
 } from './sections';
 
 import './Home.scss';
+import { Principles } from '../commonSections/Principles';
 
 export const Home: React.FC = () => (
   <div className="App">
