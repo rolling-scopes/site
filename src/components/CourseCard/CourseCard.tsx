@@ -1,7 +1,7 @@
 import React from 'react';
 import './CourseCard.scss';
-import noteIcon from '../../icons/noteIcon.png';
-import micIcon from '../../icons/mic.png';
+import noteIcon from '../../icons/noteIcon.svg';
+import micIcon from '../../icons/mic.svg';
 
 type CourseCardProps = {
   title?: string;
@@ -10,7 +10,7 @@ type CourseCardProps = {
   mode: string;
   language: ('en' | 'ru')[];
   detailsUrl: string;
-  background?: string;
+  backgroundStyle: { backgroundColor: string; accentColor: string };
 };
 
 export const CourseCard: React.FC<CourseCardProps> = ({
@@ -20,13 +20,18 @@ export const CourseCard: React.FC<CourseCardProps> = ({
   detailsUrl,
   mode,
   language,
-  background
+  backgroundStyle: { backgroundColor, accentColor }
 }) => {
   const lang = language.join(' / ');
 
+  const cardStyle = {
+    backgroundColor: backgroundColor,
+    '--accent-bg-color': accentColor
+  };
+
   return (
     <div className="course-card">
-      <div className="course-card__top">
+      <div className="course-card__top" style={cardStyle}>
         <img src={iconSrc} alt={title} />
         <h3 className="course-card__title">{title}</h3>
       </div>

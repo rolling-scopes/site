@@ -8,7 +8,7 @@ type Courses = {
   language: ('en' | 'ru')[];
   mode: 'online' | 'offline';
   detailsUrl: string;
-  backgroundStyle: { backgroundColor: string };
+  backgroundStyle: { backgroundColor: string; accentColor: string };
 };
 
 export const coursesData: Courses[] = [
@@ -20,7 +20,7 @@ export const coursesData: Courses[] = [
     language: ['ru', 'en'],
     mode: 'online',
     detailsUrl: 'https://rs.school/react/',
-    backgroundStyle: { backgroundColor: '#61DAFB' }
+    backgroundStyle: { backgroundColor: '#EEF3FE', accentColor: '#7356BF' }
   },
   {
     id: '2',
@@ -30,7 +30,7 @@ export const coursesData: Courses[] = [
     language: ['en'],
     mode: 'online',
     detailsUrl: 'https://rs.school/aws-fundamentals/',
-    backgroundStyle: { backgroundColor: '#FF9900' }
+    backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#7356BF' }
   },
   {
     id: '3',
@@ -40,7 +40,7 @@ export const coursesData: Courses[] = [
     language: ['en'],
     mode: 'online',
     detailsUrl: 'https://rs.school/angular/',
-    backgroundStyle: { backgroundColor: '#DD0031' }
+    backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#F4AFA7' }
   },
   {
     id: '4',
@@ -50,7 +50,7 @@ export const coursesData: Courses[] = [
     language: ['ru'],
     mode: 'online',
     detailsUrl: 'https://rs.school/js/',
-    backgroundStyle: { backgroundColor: '#DD0031' }
+    backgroundStyle: { backgroundColor: '#FFDB201A', accentColor: '#FFDB204D' }
   },
   {
     id: '5',
@@ -60,6 +60,16 @@ export const coursesData: Courses[] = [
     language: ['en'],
     mode: 'online',
     detailsUrl: 'https://rs.school/js-en/',
-    backgroundStyle: { backgroundColor: '#DD0031' }
+    backgroundStyle: { backgroundColor: '#DD0031', accentColor: '#FFDB20' }
+  },
+  {
+    id: '6',
+    title: 'Node.js course',
+    iconSrc: 'path/to/angular-icon.png',
+    startDate: '22 Jan, 2024',
+    language: ['en'],
+    mode: 'online',
+    detailsUrl: 'https://rs.school/nodejs/',
+    backgroundStyle: { backgroundColor: '#F0F9F4', accentColor: '#AEDF36' }
   }
 ];
