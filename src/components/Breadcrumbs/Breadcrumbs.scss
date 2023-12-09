@@ -1,0 +1,27 @@
+@import '../../constants';
+@import '../../placeholders';
+
+.breadcrumbs {
+  font-size: 14px;
+  color: $color-secondary-gray600;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+  }
+
+  &__separator {
+    padding: 0 8px;
+  }
+  &__link {
+    @extend %transition-all;
+    &--disabled {
+      text-decoration: underline;
+    }
+
+    &:hover {
+      color: $color-primary-black;
+    }
+  }
+}

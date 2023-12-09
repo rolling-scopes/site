@@ -1,4 +1,5 @@
 import { Paragraph, Subtitle, Title } from '../../../../components';
+import Breadcrumbs from '../../../../components/Breadcrumbs/Breadcrumbs';
 import { CourseCard } from '../../../../components/CourseCard';
 import { coursesData } from '../coursesData';
 import './About.scss';
@@ -6,10 +7,13 @@ export const About = () => {
   const [course] = coursesData.filter((course: { title: string }) =>
     course.title.startsWith('React')
   );
-
+  const crumbs = [
+    { label: 'Home', path: '/' },
+    { label: 'RS School', path: '/rs-courses' }
+  ];
   return (
     <div className="about__container container">
-      <div className="about__bread_crumb">BreadCrumb / Rs-School</div>
+      <Breadcrumbs crumbs={crumbs} />
       <div className="about__content">
         <CourseCard {...course} />
         <div className="about__text ">
