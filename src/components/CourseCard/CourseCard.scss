@@ -5,15 +5,23 @@
   display: flex;
   flex-direction: column;
   height: min-content;
-  max-width: 380px;
+  width: 380px;
   min-width: 100px;
-  width: 100%;
   padding: 0;
   border-radius: 12px;
   justify-content: start;
   color: $color-secondary-gray600;
   cursor: pointer;
   @extend %transition-all;
+
+  @include media-laptop {
+    width: 100%;
+    max-width: 345px;
+  }
+
+  @include media-tablet {
+    max-width: 100%;
+  }
 
   &__top {
     display: flex;
@@ -54,7 +62,7 @@
       border-radius: 100%;
       position: absolute;
       top: 64px;
-      left: 263px;
+      left: 69%;
       @extend %transition-all;
     }
   }
