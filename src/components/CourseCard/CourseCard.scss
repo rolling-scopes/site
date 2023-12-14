@@ -9,7 +9,7 @@
   min-width: 100px;
   padding: 0;
   border-radius: 12px;
-  justify-content: start;
+  justify-content: flex-start;
   color: $color-secondary-gray600;
   cursor: pointer;
   @extend %transition-all;
@@ -25,7 +25,7 @@
 
   &__top {
     display: flex;
-    align-content: start;
+    align-content: flex-start;
     justify-content: flex-start;
     align-items: center;
     gap: 24px;
@@ -91,7 +91,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    align-content: start;
+    align-content: flex-start;
     width: 100%;
     background-color: #fefefe;
     gap: 24;
@@ -111,7 +111,7 @@
 
   &__date-info {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     gap: 4px;
   }
@@ -127,7 +127,7 @@
 
   &__lang-info {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     gap: 4px;
   }
