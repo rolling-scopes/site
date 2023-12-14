@@ -2,13 +2,17 @@
 @import '../../placeholders';
 
 .breadcrumbs {
+  width: 1200px;
+  margin: 0 auto;
   font-size: 14px;
   color: $color-secondary-gray600;
+
   ul {
     margin: 0;
     padding: 0;
     list-style: none;
     display: flex;
+    align-items: flex-start;
   }
 
   &__separator {
