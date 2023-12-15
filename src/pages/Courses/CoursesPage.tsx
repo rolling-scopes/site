@@ -4,6 +4,7 @@ import { Main } from './sections/Main';
 import { About } from './sections/About';
 import { Principles } from '../commonSections/Principles';
 import Courses from './sections/Courses/Courses';
+import StudyPath from './sections/StudyPath/StudyPath';
 
 export const CoursesPage: React.FC = () => (
   <div className="App">
@@ -12,6 +13,7 @@ export const CoursesPage: React.FC = () => (
     <About />
     <Principles />
     <Courses />
+    <StudyPath />
     {/* <Footer /> */}
   </div>
 );

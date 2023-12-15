@@ -1,0 +1,191 @@
+@import '../../../../mixins';
+@import '../../../../constants';
+@import '../../../../placeholders';
+
+.study-path {
+  &.content {
+    @include media-laptop {
+      width: 810px;
+      padding: 40px;
+    }
+
+    @include media-tablet {
+      justify-content: flex-start;
+      padding: 40px 16px;
+    }
+
+    & > .title {
+      font-size: 36px;
+      line-height: 44px;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+
+      @include media-tablet {
+        font-size: 28px;
+        line-height: 36px;
+      }
+    }
+
+    & > .paragraph {
+      max-width: 600px;
+      font-size: 18px;
+      line-height: 28px;
+
+      @include media-tablet {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  .stages {
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    gap: 32px;
+
+    & .stage {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 40px;
+      color: $color-secondary-gray600;
+
+      @include media-tablet {
+        gap: 16px;
+      }
+
+      .stage-step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        height: auto;
+        align-self: stretch;
+
+        .stage-number {
+          width: 80px;
+          height: 80px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #fffaf0;
+          border-radius: 50%;
+          border: 1px solid #fff2d9;
+          font-size: 24px;
+          line-height: 32px;
+
+          @include media-tablet {
+            height: 40px;
+            width: 40px;
+            font-size: 16px;
+            line-height: 20px;
+          }
+        }
+
+        .stage-line {
+          height: calc(100% - 80px - 10px);
+          width: 2px;
+          background-color: $color-secondary-gray400;
+
+          @include media-tablet {
+            height: calc(100% - 40px - 10px);
+          }
+        }
+      }
+      // hide line on the last element
+      &:last-child .stage-line {
+        display: none;
+      }
+
+      .stage-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 8px;
+        max-width: 600px;
+
+        @include media-tablet {
+          max-width: 100%;
+        }
+
+        .stage-title {
+          margin: 0;
+          padding: 0;
+          font-size: 28px;
+          font-weight: 500;
+          line-height: 32px;
+        }
+        .stage-description {
+          margin: 0;
+          font-size: 18px;
+          line-height: 28px;
+          letter-spacing: 0.5px;
+        }
+
+        @include media-tablet {
+          .stage-title {
+            font-size: 24px;
+          }
+
+          .stage-description {
+            font-size: 16px;
+          }
+        }
+
+        .stage-links {
+          margin: 0;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 24px;
+
+          @include media-laptop {
+            flex-direction: column;
+            gap: 16px;
+          }
+
+          & > a {
+            color: $color-secondary-gray600;
+            text-decoration: underline;
+            @extend %transition-all;
+
+            &.disabled {
+              pointer-events: none;
+              color: $color-secondary-gray200;
+              line-height: 1em;
+              text-decoration: none;
+            }
+
+            &:hover {
+              color: $color-secondary-gray400;
+            }
+          }
+        }
+      }
+
+      .stage-logo {
+        padding: 0 0 0 60px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        max-width: 130px;
+        max-height: 102px;
+
+        img {
+          max-width: 143px;
+          max-height: 102px;
+          width: auto;
+          height: auto;
+        }
+
+        @include media-tablet {
+          display: none;
+        }
+      }
+    }
+  }
+}
