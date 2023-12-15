@@ -4,6 +4,7 @@
 
 .study-path {
   &.content {
+    padding: 40px 120px;
     @include media-laptop {
       width: 810px;
       padding: 40px;
