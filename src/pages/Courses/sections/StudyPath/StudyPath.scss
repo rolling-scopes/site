@@ -119,6 +119,10 @@
           font-size: 28px;
           font-weight: 500;
           line-height: 32px;
+
+          @include media-laptop {
+            font-size: 22px;
+          }
         }
         .stage-description {
           margin: 0;
