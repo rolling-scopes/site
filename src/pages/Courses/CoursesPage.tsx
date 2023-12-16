@@ -6,6 +6,7 @@ import { Principles } from '../commonSections/Principles';
 import Courses from './sections/Courses/Courses';
 import StudyPath from './sections/StudyPath/StudyPath';
 import General from './sections/General/General';
+import Mentors from './sections/Mentors/Mentors';
 
 export const CoursesPage: React.FC = () => (
   <div className="App">
@@ -16,6 +17,7 @@ export const CoursesPage: React.FC = () => (
     <Courses />
     <StudyPath />
     <General />
+    <Mentors />
     {/* <Footer /> */}
   </div>
 );
