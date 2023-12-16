@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Navbar, Footer } from '../../components';
+import { Partnered, Principles } from '../commonSections';
 
 import {
   Main,
@@ -20,8 +21,6 @@ import {
 } from './sections';
 
 import './Home.scss';
-import { Principles } from '../commonSections/Principles';
-import { Partnered } from '../commonSections';
 
 export const Home: React.FC = () => (
   <div className="App">

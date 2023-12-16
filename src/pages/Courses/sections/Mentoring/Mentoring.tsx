@@ -11,7 +11,7 @@ const mentorshipBenefits = [
   { id: 5, info: 'Looking for beginner developers to join your company or project' }
 ];
 
-const Mentoring = () => {
+export const Mentoring = () => {
   return (
     <section className="mentoring container">
       <div className="mentoring content">
@@ -27,5 +27,3 @@ const Mentoring = () => {
     </section>
   );
 };
-
-export default Mentoring;

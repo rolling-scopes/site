@@ -1,7 +1,7 @@
 import { Title } from '../../../../components';
 import './General.scss';
 
-const General = () => {
+export const General = () => {
   return (
     <section className="general container">
       <div className="general content">
@@ -36,5 +36,3 @@ const General = () => {
     </section>
   );
 };
-
-export default General;

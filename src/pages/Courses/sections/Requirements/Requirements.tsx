@@ -1,6 +1,6 @@
 import { Button } from '../../../../components';
 import './Requirements.scss';
-const Requirements = () => {
+export const Requirements = () => {
   return (
     <section className="requirements container">
       <div className="requirements content">
@@ -30,5 +30,3 @@ const Requirements = () => {
     </section>
   );
 };
-
-export default Requirements;

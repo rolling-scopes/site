@@ -1,7 +1,7 @@
 import { Button, Subtitle, Title, TitleType } from '../../../../components';
 import './Mentors.scss';
 import mentorImg from '../../../../assets/mentors-wanted.png';
-const Mentors = () => {
+export const Mentors = () => {
   return (
     <section className="mentors container">
       <div className="mentors content column-2">
@@ -22,5 +22,3 @@ const Mentors = () => {
     </section>
   );
 };
-
-export default Mentors;

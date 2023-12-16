@@ -4,7 +4,7 @@ import { pathCoursesList } from '../coursesData';
 
 import './StudyPath.scss';
 
-const StudyPath = () => {
+export const StudyPath = () => {
   return (
     <section className="study-path container">
       <div className="study-path content">
@@ -25,5 +25,3 @@ const StudyPath = () => {
     </section>
   );
 };
-
-export default StudyPath;

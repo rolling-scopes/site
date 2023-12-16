@@ -1,7 +1,7 @@
 import { CourseCard } from '../../../../components/CourseCard';
 import { coursesData } from '../coursesData';
 import './Courses.scss';
-const Courses = () => {
+export const Courses = () => {
   const upcomingCourses = coursesData.filter(
     ({ title }) => !title.toLowerCase().startsWith('node')
   );
@@ -19,5 +19,3 @@ const Courses = () => {
     </div>
   );
 };
-
-export default Courses;
