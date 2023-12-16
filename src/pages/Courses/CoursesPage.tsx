@@ -7,6 +7,7 @@ import Courses from './sections/Courses/Courses';
 import StudyPath from './sections/StudyPath/StudyPath';
 import General from './sections/General/General';
 import Mentors from './sections/Mentors/Mentors';
+import Mentoring from './sections/Mentoring/Mentoring';
 
 export const CoursesPage: React.FC = () => (
   <div className="App">
@@ -18,6 +19,7 @@ export const CoursesPage: React.FC = () => (
     <StudyPath />
     <General />
     <Mentors />
+    <Mentoring />
     {/* <Footer /> */}
   </div>
 );
