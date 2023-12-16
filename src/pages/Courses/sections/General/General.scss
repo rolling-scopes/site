@@ -14,7 +14,7 @@
     }
 
     & .title {
-      margin-bottom: 16px;
+      margin-bottom: 10px;
       font-size: 36px;
       line-height: 44px;
     }
@@ -38,7 +38,7 @@
         }
 
         & .title {
-          margin: 6px 0;
+          margin-top: 0;
           font-size: 28px;
 
           @include media-laptop {
@@ -67,12 +67,8 @@
 
       .materials {
         ul {
-          padding: 0 0 0 16px;
           font-size: 18px;
           line-height: 28px;
-          li {
-            padding: 0;
-          }
         }
       }
     }
