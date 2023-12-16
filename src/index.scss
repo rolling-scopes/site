@@ -20,6 +20,17 @@ a {
   cursor: pointer;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   width: 100%;
   display: flex;
