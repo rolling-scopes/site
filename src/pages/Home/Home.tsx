@@ -16,12 +16,12 @@ import {
   Contribute,
   Speakers,
   Support,
-  Partnered,
   Places
 } from './sections';
 
 import './Home.scss';
 import { Principles } from '../commonSections/Principles';
+import { Partnered } from '../commonSections';
 
 export const Home: React.FC = () => (
   <div className="App">
