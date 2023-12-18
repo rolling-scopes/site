@@ -57,6 +57,15 @@
       @include media-tablet {
         flex-direction: column;
       }
+
+      .rs-course-card {
+        @include media-laptop {
+          max-width: 345px;
+        }
+        @include media-tablet {
+          max-width: 100%;
+        }
+      }
     }
   }
 }

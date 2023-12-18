@@ -12,26 +12,28 @@ const Breadcrumbs: React.FC<BreadCrumbsProps> = ({ crumbs }) => {
   }
 
   return (
-    <nav className="breadcrumbs content">
-      <ul>
-        {crumbs.map(({ label, path }, i) => {
-          const isLast = i === crumbs.length - 1;
-          return (
-            <li key={i}>
-              {!isLast ? (
-                <>
-                  <Link to={path} className="link">
-                    {label}
-                  </Link>
-                  <span className="separator">/</span>
-                </>
-              ) : (
-                <span className="link disabled">{label}</span>
-              )}
-            </li>
-          );
-        })}
-      </ul>
+    <nav className="breadcrumbs container">
+      <div className="breadcrumbs content">
+        <ul>
+          {crumbs.map(({ label, path }, i) => {
+            const isLast = i === crumbs.length - 1;
+            return (
+              <li key={i}>
+                {!isLast ? (
+                  <>
+                    <Link to={path} className="link">
+                      {label}
+                    </Link>
+                    <span className="separator">/</span>
+                  </>
+                ) : (
+                  <span className="link disabled">{label}</span>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </nav>
   );
 };
