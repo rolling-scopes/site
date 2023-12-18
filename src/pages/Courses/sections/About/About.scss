@@ -1,92 +1,58 @@
 @import '../../../../constants';
 @import '../../../../mixins';
 
-.about {
-  &__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    height: min-content;
-    justify-content: center;
-    overflow: hidden;
-    padding: 24px 120px 40px;
+.rs-about {
+  & .content {
+    padding: 80px 120px 40px;
 
     @include media-laptop {
-      max-width: 810px;
-      padding: 24px 40px 40px;
-      margin: 0 auto;
+      padding: 40px;
     }
 
     @include media-tablet {
-      padding: 24px 16px 40px;
+      padding: 40px 15px;
+    }
+
+    & > .column-2 {
       width: 100%;
-    }
-  }
+      display: flex;
+      justify-content: flex-start;
+      gap: 120px;
 
-  &__content {
-    display: flex;
-    flex-wrap: nowrap;
-    align-self: center;
-    gap: 120px;
-    height: min-content;
-    padding: 80px 0 0;
-    width: 1200px;
-
-    @include media-laptop {
-      flex-direction: column;
-      gap: 40px;
-      padding: 40px 0 0;
-      width: 100%;
-    }
-
-    @include media-tablet {
-      width: 100%;
-    }
-  }
-
-  &__card-wrapper {
-    max-width: 380px;
-    width: 100%;
-  }
-
-  &__text {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    height: min-content;
-    justify-content: flex-start;
-    overflow: visible;
-    width: 600px;
-    min-width: 300px;
-
-    @include media-tablet {
-      width: 100%;
-    }
-
-    // Override .title, .subtitle, .paragraph. Change in the component itself when possible
-    .title {
-      letter-spacing: -0.04em;
-    }
-
-    .subtitle {
-      @include media-tablet {
-        font-size: 20px;
-        line-height: 28px;
-        max-width: 90%;
-      }
-    }
-
-    .paragraph {
       @include media-laptop {
-        font-size: 18px;
-        line-height: 28px;
-        letter-spacing: 0.5px;
+        align-items: flex-start;
+        gap: 40px;
       }
-      @include media-tablet {
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: 0.5px;
+
+      .card-wrapper {
+        width: 380px;
+
+        @include media-tablet {
+          max-width: 100%;
+        }
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 600px;
+        min-width: 300px;
+
+        @include media-laptop {
+          width: 100%;
+        }
+
+        & > .paragraph {
+          @include media-laptop {
+            font-size: 18px;
+            line-height: 28px;
+          }
+          @include media-tablet {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
       }
     }
   }
