@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Title, TitleType } from '../../../../components';
+import { Subtitle, Title, TitleType } from '../../../../components';
 
 import mentors from '../../../../assets/mentor with his students.png';
 
@@ -13,11 +13,9 @@ export const Main: React.FC = () => {
         <div className="left">
           <div className="title-container">
             <Title text="RS School" type={TitleType.ExtraBig} />
-            <div className="subtitle">
-              <div>Free courses. High motivation</div>
-            </div>
+            <Subtitle text="Free courses. High motivation" />
           </div>
-          <div className="description">Journey to full stack mastery</div>
+          <h2 className="description">Journey to full stack mastery</h2>
         </div>
         <img src={mentors} alt="Mentors with students" className="right picture" />
       </div>
