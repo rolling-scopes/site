@@ -131,14 +131,17 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    max-width: 130px;
+    max-width: 143px;
     max-height: 102px;
+    overflow: hidden;
 
     img {
       max-width: 143px;
       max-height: 102px;
       width: auto;
       height: auto;
+      object-fit: contain; /* add this */
+      object-position: bottom right;
     }
 
     @include media-tablet {
