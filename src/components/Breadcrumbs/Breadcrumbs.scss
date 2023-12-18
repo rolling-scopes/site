@@ -1,31 +1,40 @@
 @import '../../constants';
+@import '../../mixins';
 @import '../../placeholders';
 
 .breadcrumbs {
-  width: 1200px;
-  margin: 0 auto;
-  font-size: 14px;
-  color: $color-secondary-gray600;
+  &.content {
+    padding: 24px 120px 10px;
 
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    align-items: flex-start;
-  }
-
-  &__separator {
-    padding: 0 8px;
-  }
-  &__link {
-    @extend %transition-all;
-    &--disabled {
-      text-decoration: underline;
+    @include media-laptop {
+      padding: 24px 40px 10px;
+    }
+    @include media-tablet {
+      padding: 24px 15px 10px;
     }
 
-    &:hover {
-      color: $color-primary-black;
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: flex-start;
+      font-size: 14px;
+    }
+
+    & .separator {
+      padding: 0 8px;
+    }
+    & .link {
+      color: $color-secondary-gray500;
+      @extend %transition-all;
+
+      &.disabled {
+        text-decoration: underline;
+        color: $color-secondary-gray600;
+      }
+
+      &:hover {
+        color: $color-secondary-gray600;
+      }
     }
   }
 }
