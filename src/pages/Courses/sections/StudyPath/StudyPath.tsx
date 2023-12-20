@@ -17,8 +17,15 @@ export const StudyPath = () => {
           faster product development.
         </Paragraph>
         <div className="stages">
-          {pathCoursesList.map((course) => (
-            <StageCard key={course.id} {...course} />
+          {pathCoursesList.map(({ id, title, description, logoIcon, links }) => (
+            <StageCard
+              key={id}
+              id={id}
+              title={title}
+              description={description}
+              logoIcon={logoIcon}
+              links={links}
+            />
           ))}
         </div>
       </div>
