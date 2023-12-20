@@ -1,5 +1,6 @@
 @import '../../constants';
 @import '../../mixins';
+@import '../../_placeholders';
 
 .tag {
   width: fit-content;
@@ -13,11 +14,13 @@
   color: $color-primary-white;
   border: 2px solid #fffaf0;
   cursor: pointer;
+  @extend %transition-all;
 
-  &:hover {
-    box-shadow: 0px 0px 16px 0px rgba(114, 92, 19, 0.08);
-    background-color: $color-primary-white;
-    border: 2px solid #fffaf0;
-    color: $color-secondary-gray600;
+  @include media-hover {
+    &:hover {
+      box-shadow: 0px 0px 16px 0px rgba(114, 92, 19, 0.08);
+      background-color: $color-primary-white;
+      color: $color-secondary-gray600;
+    }
   }
 }

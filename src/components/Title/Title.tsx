@@ -8,9 +8,9 @@ export enum TitleType {
   ExtraBig = 'extra-big'
 }
 interface TitleProps {
-  text: string;
+  text?: string;
   type?: TitleType;
-  hasAsterix?: boolean;
+  hasAsterisk?: boolean;
   hasLines?: boolean;
   children?: any;
 }
@@ -18,7 +18,7 @@ interface TitleProps {
 export const Title: React.FC<TitleProps> = ({
   text,
   type,
-  hasAsterix,
+  hasAsterisk,
   hasLines,
   children
 }: TitleProps) => {
@@ -27,7 +27,7 @@ export const Title: React.FC<TitleProps> = ({
   return (
     <div className={`title ${titleType}`}>
       {hasLines && <span className="before">‖</span>}
-      {hasAsterix && <span className="before">*</span>}
+      {hasAsterisk && <span className="before">*</span>}
       <div>
         {text}
         {children}

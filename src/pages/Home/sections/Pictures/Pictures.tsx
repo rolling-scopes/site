@@ -1,9 +1,8 @@
-import React from 'react';
-
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-
-import { Title, Paragraph, SocialMedia } from '../../../../components';
+import { Title, Paragraph, SocialMedia, SocialMediaProps } from '../../../../components';
+import { InstagramIcon, FacebookIcon } from '../../../../icons';
+import './Pictures.scss';
 
 import photo1 from '../../../../assets/photo-1.png';
 import photo2 from '../../../../assets/photo-2.png';
@@ -15,43 +14,33 @@ import photo7 from '../../../../assets/photo-7.png';
 import photo8 from '../../../../assets/photo-8.png';
 import photo9 from '../../../../assets/photo-9.png';
 
-import { InstagramIcon, FacebookIcon } from '../../../../icons';
-
-import './Pictures.scss';
-
-interface SocialMediaProps {
-  title: string;
-  href: string;
-  Icon: React.FC;
-}
-
 const socialMedia: SocialMediaProps[] = [
   {
     title: 'Albums',
     href: 'https://www.facebook.com/groups/186362068186532/media/albums',
-    Icon: FacebookIcon
+    icon: <FacebookIcon />
   },
   {
     title: 'The Rolling Scopes',
     href: 'https://www.instagram.com/rollingscopes/',
-    Icon: InstagramIcon
+    icon: <InstagramIcon />
   },
   {
     title: 'RS School EN',
     href: 'https://www.instagram.com/rsschool_en/',
-    Icon: InstagramIcon
+    icon: <InstagramIcon />
   },
   {
     title: 'RS School RU',
     href: 'https://www.instagram.com/rsschool_news',
-    Icon: InstagramIcon
+    icon: <InstagramIcon />
   }
 ];
 
-export const Pictures: React.FC = () => (
+export const Pictures = () => (
   <div className="pictures container">
     <div className="pictures content">
-      <Title text="The Rolling Scopes in pictures" hasAsterix />
+      <Title text="The Rolling Scopes in pictures" hasAsterisk />
       <Carousel
         className="carousel"
         showArrows={false}
@@ -73,8 +62,8 @@ export const Pictures: React.FC = () => (
         available on our Facebook Albums and Instagram pages.
       </Paragraph>
       <div className="social-media-container">
-        {socialMedia.map((i) => (
-          <SocialMedia {...i} key={i.title} />
+        {socialMedia.map(({ title, href, icon }) => (
+          <SocialMedia key={title} title={title} href={href} icon={icon} />
         ))}
       </div>
     </div>

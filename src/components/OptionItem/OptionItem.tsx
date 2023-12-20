@@ -1,20 +1,13 @@
-import React from 'react';
-
 import './OptionItem.scss';
 
-export interface OptionItemProps {
+export type OptionItemProps = {
   title: string;
   description: string;
   buttonLabel?: string;
   href?: string;
-}
+};
 
-export const OptionItem: React.FC<OptionItemProps> = ({
-  title,
-  description,
-  buttonLabel,
-  href
-}: OptionItemProps) => (
+export const OptionItem = ({ title, description, buttonLabel, href }: OptionItemProps) => (
   <div key={title} className="option">
     <div className="option-title">{title}</div>
     <div className="option-description">{description}</div>
