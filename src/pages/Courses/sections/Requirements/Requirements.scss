@@ -18,6 +18,7 @@
       margin-bottom: 16px;
       font-size: 28px;
       line-height: 36px;
+      color: $color-secondary-gray600;
 
       @include media-laptop {
         font-size: 22px;
@@ -27,6 +28,7 @@
     & .description {
       font-size: 18px;
       line-height: 28px;
+      color: $color-secondary-gray600;
     }
 
     .requirements-info {

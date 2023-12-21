@@ -40,6 +40,7 @@
         & .title {
           margin-top: 0;
           font-size: 28px;
+          color: $color-secondary-gray600;
 
           @include media-laptop {
             font-size: 22px;

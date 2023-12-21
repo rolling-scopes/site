@@ -7,12 +7,10 @@
     flex-direction: column;
 
     & .title {
-      font-weight: 500;
-      font-style: normal;
-      font-family: 'Inter-Medium', 'Inter', sans-serif;
+      font-weight: $font-weight-medium;
       color: $color-primary-black;
       font-size: 36px;
-      letter-spacing: 0em;
+      letter-spacing: 0px;
       line-height: 44px;
     }
 
