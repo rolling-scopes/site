@@ -10,6 +10,11 @@
     @include media-tablet {
       padding: 20px 16px 40px;
     }
+
+    & > .title {
+      max-width: 640px;
+      letter-spacing: -0.045em;
+    }
   }
 
   & .cards {

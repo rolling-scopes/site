@@ -28,7 +28,7 @@
     letter-spacing: 0;
     margin-top: 16px;
     text-align: left;
-    display: none;
+    visibility: hidden;
     opacity: 0;
   }
 
@@ -47,7 +47,7 @@
 
   & .card-title {
     position: relative;
-    font-weight: 500;
+    font-weight: $font-weight-medium;
     font-size: 32px;
     line-height: 40px;
     letter-spacing: 0;
@@ -73,7 +73,7 @@
         height: 0;
         animation: show 0.7s;
         animation-fill-mode: forwards;
-        animation-delay: 0.3s;
+        animation-delay: 0.1s;
         animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
       }
     }
@@ -132,13 +132,15 @@
 @keyframes show {
   0% {
     opacity: 0;
-    height: 0;
-    visibility: hidden;
+    transform: translateY(100%);
+  }
+
+  5% {
+    visibility: visible;
   }
 
   100% {
     opacity: 1;
-    height: unset;
     visibility: visible;
   }
 }
@@ -146,7 +148,6 @@
 @keyframes hide {
   0% {
     opacity: 1;
-    height: unset;
     visibility: visible;
   }
 
