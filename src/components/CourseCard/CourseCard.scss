@@ -166,21 +166,21 @@
       margin-left: 8px;
     }
   }
-  @include media-hover {
-    &__more:hover {
-      background-color: $color-secondary-gray400;
-    }
-  }
 }
 
 @include media-hover {
-  .rs-course-card:hover {
-    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.14);
-  }
-  .rs-course-card:hover > .rs-course-card__top::after {
-    width: 279px;
-    height: 270px;
-    left: 230px;
-    top: 14px;
+  .rs-course-card {
+    &:hover {
+      box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.14);
+    }
+    &:hover > &__top::after {
+      width: 279px;
+      height: 270px;
+      left: 230px;
+      top: 14px;
+    }
+    &__more:hover {
+      background-color: $color-secondary-gray400;
+    }
   }
 }
