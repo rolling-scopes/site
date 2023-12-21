@@ -5,7 +5,7 @@
     background: $color-secondary-gray100;
 
     .content {
-      padding: 40px 120px;
+      padding: 40px 80px 40px 120px;
 
       @include media-tablet {
         padding: 40px 16px;
@@ -21,6 +21,7 @@
 
         & > .subtitle {
           max-width: 640px;
+          font-weight: $font-weight-regular;
 
           @include media-tablet {
             max-width: 100%;

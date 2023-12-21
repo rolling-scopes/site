@@ -42,5 +42,10 @@
     letter-spacing: 0em;
     line-height: 24px;
     text-align: center;
+
+    & ~ .material-symbols-outlined.arrow {
+      color: $color-primary-white;
+      margin-left: 8px;
+    }
   }
 }
