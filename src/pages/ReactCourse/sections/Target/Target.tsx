@@ -3,9 +3,9 @@ import { Title } from '../../../../components';
 
 export const Target = () => {
   return (
-    <div className="container">
-      <div className="cotent">
-        <Title text="Target audience" hasAsterix />
+    <div className="rs-target container">
+      <div className="rs-target content">
+        <Title text="Target audience" hasAsterisk />
         <div>
           Students of the RS School from the 2022Q3, which has passed RS School Stage #2 as well as
           new students with practical experience and knowledge of:

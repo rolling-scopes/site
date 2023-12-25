@@ -1,0 +1,32 @@
+@import '../../../../constants';
+@import '../../../../mixins';
+
+.card-wrapper {
+  width: 100%;
+  height: min-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: #ffffff;
+  overflow: hidden;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.large {
+  flex: 2 0 calc(66.66% - 30px); /* Занимает две трети строки */
+
+  @include media-laptop {
+    flex: 0 0 100%;
+  }
+}
+
+.small {
+  flex: 1 0 calc(33.33% - 30px); /* Занимают одну треть строки */
+
+  @include media-laptop {
+    flex: 0 0 100%;
+  }
+}

@@ -5,8 +5,8 @@
     height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: start;
+    justify-content: flex-start;
+    align-items: flex-start;
     padding: 40px 32px 40px 32px;
     box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.12);
     background-color: #ffffff;
@@ -21,7 +21,7 @@
   }
 
   &Text {
-    width: 320px;
+    width: 100%;
     height: min-content;
     display: flex;
     flex-direction: column;
