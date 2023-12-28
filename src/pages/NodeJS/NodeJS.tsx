@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar } from '../../components';
-import { About, Main, Audience } from './sections';
+import { About, Main, Audience, Required } from './sections';
 
 export const NodeJS: React.FC = () => (
   <div className="App">
@@ -8,5 +8,6 @@ export const NodeJS: React.FC = () => (
     <Main />
     <Audience />
     <About />
+    <Required />
   </div>
 );
