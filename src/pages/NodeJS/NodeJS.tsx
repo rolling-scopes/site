@@ -1,7 +1,7 @@
 import React from 'react';
-import { Navbar } from '../../components';
-import { About, Main, Audience, Required } from './sections';
-import Trainer from './sections/Trainer/Trainer';
+import { About, Main, Audience, Required, Trainer } from './sections';
+import { Footer, Navbar } from '../../components';
+import { Partnered } from '../commonSections';
 
 export const NodeJS: React.FC = () => (
   <div className="App">
@@ -11,5 +11,7 @@ export const NodeJS: React.FC = () => (
     <About />
     <Required />
     <Trainer />
+    <Partnered />
+    <Footer />
   </div>
 );

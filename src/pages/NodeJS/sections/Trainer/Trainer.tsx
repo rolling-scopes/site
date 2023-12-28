@@ -2,7 +2,7 @@ import { Title } from '../../../../components';
 import './Trainer.scss';
 import nodejsTrainer from '../../../../assets/NodejsTrainer.png';
 
-const Trainer = () => {
+export const Trainer = () => {
   return (
     <section className="nodejs-trainer container">
       <div className="nodejs-trainer content wrapper">
@@ -30,5 +30,3 @@ const Trainer = () => {
     </section>
   );
 };
-
-export default Trainer;
