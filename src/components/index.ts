@@ -14,3 +14,5 @@ export * from './Footer';
 export * from './SectionLabel';
 export * from './TopTitle';
 export * from './DateLang';
+// exporting layouts
+export * from './AboutGridLayout';
