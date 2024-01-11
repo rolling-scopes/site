@@ -12,6 +12,12 @@
   }
 }
 
+@mixin media-mobile-landscape {
+  @media (max-width: $mobile-landscape-width) {
+    @content;
+  }
+}
+
 @mixin media-mobile {
   @media (max-width: $mobile-width) {
     @content;

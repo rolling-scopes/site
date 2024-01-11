@@ -1,0 +1,18 @@
+@import '../../../../mixins';
+.nodejs-about {
+  & .content {
+    padding: 40px 120px;
+
+    @include media-laptop {
+      padding: 40px;
+    }
+
+    @include media-tablet {
+      padding: 16px;
+    }
+
+    .about-grid {
+      margin-bottom: 40px;
+    }
+  }
+}

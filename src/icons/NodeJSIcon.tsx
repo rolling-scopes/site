@@ -1,5 +1,17 @@
-export const NodeJsIcon = () => (
-  <svg width="49" height="47" viewBox="0 0 49 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const NodeJsIcon = ({
+  width = '49',
+  height = '47'
+}: {
+  width?: string;
+  height?: string;
+}) => (
+  <svg
+    width={width}
+    height={height}
+    viewBox="0 0 49 47"
+    fill="none"
+    preserveAspectRatio="xMinYMin meet"
+    xmlns="http://www.w3.org/2000/svg">
     <path
       d="M22.8037 2.84792C24.1271 2.12845 25.7248 2.12845 27.0482 2.84792L42.7517 11.3855C44.1821 12.1631 45.0726 13.6609 45.0726 15.289V31.8473C45.0726 33.4754 44.1821 34.9731 42.7517 35.7508L27.0482 44.2884C25.7248 45.0078 24.1271 45.0078 22.8037 44.2884L7.10019 35.7508C5.6698 34.9731 4.77931 33.4754 4.77931 31.8473V15.289C4.77931 13.6609 5.6698 12.1631 7.10019 11.3855L22.8037 2.84792Z"
       fill="#757575"

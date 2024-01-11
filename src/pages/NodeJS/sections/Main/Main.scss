@@ -1,0 +1,54 @@
+@import '../../../../constants';
+@import '../../../../mixins';
+
+.nodejs-main {
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+
+  &.container {
+    background: $color-secondary-yellow;
+  }
+
+  &.content {
+    padding: 100px;
+
+    @include media-laptop {
+      padding: 100px 40px;
+    }
+
+    &.column-2 {
+      justify-content: flex-start;
+      gap: 40px;
+
+      @include media-laptop {
+        flex-direction: row;
+      }
+
+      @include media-tablet {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .icon {
+        @include media-tablet {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &.content > .info {
+    .title {
+      margin-bottom: 28px;
+
+      @include media-laptop {
+        margin-bottom: 16px;
+      }
+    }
+
+    .date-lang {
+      margin-bottom: 40px;
+    }
+  }
+}
