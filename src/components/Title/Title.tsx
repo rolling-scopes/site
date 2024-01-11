@@ -5,6 +5,7 @@ import './Title.scss';
 export enum TitleType {
   Regular = 'regular',
   Big = 'big',
+  Bigger = 'bigger',
   ExtraBig = 'extra-big'
 }
 interface TitleProps {

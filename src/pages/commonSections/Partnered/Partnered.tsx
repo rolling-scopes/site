@@ -1,5 +1,5 @@
 import React from 'react';
-import { EpamLogo, JetBrainsLogo, AwsLogo, GithubLogo } from '../../../../icons';
+import { EpamLogo, JetBrainsLogo, AwsLogo, GithubLogo } from '../../../icons';
 
 import './Partnered.scss';
 

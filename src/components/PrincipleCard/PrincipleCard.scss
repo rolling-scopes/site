@@ -22,13 +22,13 @@
   @extend %transition-all;
 
   & .card-description {
-    font-weight: 500;
+    font-weight: $font-weight-light;
     font-size: 18px;
     line-height: 28px;
     letter-spacing: 0;
     margin-top: 16px;
     text-align: left;
-    display: none;
+    visibility: hidden;
     opacity: 0;
   }
 
@@ -47,7 +47,7 @@
 
   & .card-title {
     position: relative;
-    font-weight: 500;
+    font-weight: $font-weight-medium;
     font-size: 32px;
     line-height: 40px;
     letter-spacing: 0;
@@ -55,34 +55,33 @@
     text-align: center;
   }
 
-  & > svg {
-    display: block;
-  }
-
   @include media-hover {
     &:hover {
       padding: 24px 24px 24px;
       box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.14);
-  
+      height: 240px;
+
       .card-title {
-        animation: hide .2s;
+        margin-top: 0;
+        animation: hide 0.2s ease-out;
         animation-fill-mode: forwards;
-        animation-delay: .1s;
+        animation-delay: -0.1s;
+        animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
       }
-  
+
       .card-description {
         display: block;
         height: 0;
-        animation: show .7s;
+        animation: show 0.7s;
         animation-fill-mode: forwards;
-        animation-delay: .3s;
+        animation-delay: 0.1s;
+        animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
       }
     }
   }
 
   @include media-laptop {
     width: 100%;
-    height: auto;
 
     & .card-description {
       font-size: 16px;
@@ -95,22 +94,21 @@
       &:hover {
         padding: 24px 24px 36px;
         .card-description {
-          animation: none;
           height: unset;
+          font-size: 18px;
+          max-width: 1100px;
+          animation: show 0.1s ease-out;
+          animation-fill-mode: forwards;
+          animation-delay: 0.1s;
         }
-  
+
         .card-title {
-          display: block;
-          animation: none;
+          animation: hide 0.1s ease-out;
+          animation-fill-mode: forwards;
+          animation-delay: -0.1s;
+          animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
         }
       }
-    }
-  }
-
-  @include media-tablet {
-    & .card-title {
-      font-size: 24px;
-      line-height: 32px;
     }
   }
 }
@@ -131,15 +129,30 @@
 }
 
 @keyframes show {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  5% {
+    visibility: visible;
+  }
+
   100% {
     opacity: 1;
-    height: unset;
+    visibility: visible;
   }
 }
 
 @keyframes hide {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
   100% {
     opacity: 0;
-    display: none;
+    height: 0;
+    visibility: hidden;
   }
 }

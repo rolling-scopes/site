@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Navbar, Footer } from '../../components';
+import { Partnered, Principles } from '../commonSections';
 
 import {
   Main,
@@ -8,7 +9,6 @@ import {
   Numbers,
   Pictures,
   School,
-  Principles,
   Courses,
   Alumni,
   Events,
@@ -17,7 +17,6 @@ import {
   Contribute,
   Speakers,
   Support,
-  Partnered,
   Places
 } from './sections';
 

@@ -2,7 +2,7 @@
 @import '../../mixins';
 
 .paragraph {
-  font-weight: 400;
+  font-weight: $font-weight-regular;
   font-size: 18px;
   line-height: 28px;
   letter-spacing: 0;
