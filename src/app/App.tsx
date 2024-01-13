@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { HomePage, CoursesPage } from '@/pages';
+import { HomePage, CoursesPage, NodejsPage } from '@/pages';
 import { Navbar } from '@/shared/UI';
 import './App.scss';
 
@@ -12,6 +12,10 @@ const router = createBrowserRouter([
   {
     path: '/courses',
     element: <CoursesPage />
+  },
+  {
+    path: '/nodejs-course',
+    element: <NodejsPage />
   }
 ]);
 

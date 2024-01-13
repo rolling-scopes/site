@@ -1,6 +1,18 @@
+import { About, Audience, Main, Required, Trainer } from '@/features/nodejsFeatures';
+import { FooterPartners } from '@/features/footerPartners';
 import { useTitle } from '@/shared/hooks';
 
-export const Nodejs = () => {
+export const NodejsPage = () => {
   useTitle('Node.js Course · The Rolling Scopes School');
-  return <div>Nodejs Page</div>;
+
+  return (
+    <>
+      <Main />
+      <Audience />
+      <About />
+      <Required />
+      <Trainer />
+      <FooterPartners />
+    </>
+  );
 };
