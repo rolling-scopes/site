@@ -19,11 +19,11 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "types": ["node", "vite-plugin-svgr/client"],
+    "types": ["node"],
     "baseUrl": "./src",
     "paths": {
       "@/*": ["*"],
-      "Styles/*": ["styles/*"]
+      "Styles/*": ["app/styles/*"]
     }
   },
   "include": ["src"],

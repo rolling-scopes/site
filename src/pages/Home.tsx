@@ -6,7 +6,6 @@ import {
   Pictures,
   School,
   Courses,
-  Principles,
   Alumni,
   Events,
   Speakers,
@@ -15,10 +14,11 @@ import {
   Contribute,
   Support
 } from '@/features/homeFeatures';
+import { Principles } from '@/features/Principles';
 import { FooterPartners } from '@/features/footerPartners';
 
-export const Home = () => {
-  useTitle('Home');
+export const HomePage = () => {
+  useTitle("The Rolling Scopes School");
 
   return (
     <>

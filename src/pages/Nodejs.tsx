@@ -1,6 +1,6 @@
+import { useTitle } from '@/shared/hooks';
 
 export const Nodejs = () => {
-  return (
-    <div>Nodejs Page</div>
-  )
-}
+  useTitle('Node.js Course · The Rolling Scopes School');
+  return <div>Nodejs Page</div>;
+};
