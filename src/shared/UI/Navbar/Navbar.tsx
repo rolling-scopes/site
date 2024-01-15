@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 import { useWindowSize } from '@/shared/hooks/useWindowSize';
 import { RsLogo } from '@/assets/icons/Rs';
 import './Navbar.scss';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 type NavItemProps = {
   label: string;
@@ -30,9 +30,9 @@ const NavItem = ({ label, href, toggleMenu }: NavItemProps) => {
   };
 
   return (
-    <Link className="menu-item" to={`/${href}`} onClick={handleClick}>
+    <NavLink className="menu-item" to={`/${href}`} onClick={handleClick}>
       <div className="label">{label}</div>
-    </Link>
+    </NavLink>
   );
 };
 
