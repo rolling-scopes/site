@@ -12,19 +12,21 @@ import {
   Merch,
   Community,
   Contribute,
-  Support
+  Support,
 } from '@/features/homeFeatures';
 import { Principles } from '@/features/Principles';
 import { FooterPartners } from '@/features/footerPartners';
+import { Places } from '@/widgets';
 
 export const HomePage = () => {
-  useTitle("The Rolling Scopes School");
+  useTitle("Home · The Rolling Scopes School");
 
   return (
     <>
       <HomeHero />
       <About />
       <Numbers />
+      <Places/>
       <Pictures />
       <School />
       <Principles />

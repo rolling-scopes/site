@@ -1,18 +1,27 @@
 import { Paragraph, Subtitle, Title } from '@/shared/UI';
-import { Breadcrumbs } from '@/widgets';
+import { useCourseBytTitle } from '@/shared/hooks/useCourseByTitle';
 import { CourseCard } from '@/widgets/CourseCard';
-import { coursesData } from '../coursesData';
+import { Breadcrumbs } from '@/widgets';
 import './About.scss';
 
 export const About = () => {
-  const [course] = coursesData.filter((course: { title: string }) =>
-    course.title.startsWith('React')
-  );
+  const { course, loading, error } = useCourseBytTitle('React');
 
   const crumbs = [
     { label: 'Home', path: '/' },
     { label: 'RS School', path: '/rs-courses' }
   ];
+
+  let courseContent;
+  if (loading) {
+    courseContent = <p>Loading...</p>;
+  } else if (error) {
+    courseContent = <p>Error loading courses: {error}</p>;
+  } else if (course) {
+    courseContent = <CourseCard {...course} />;
+  } else {
+    courseContent = <p>No React courses found.</p>;
+  }
 
   return (
     <>
@@ -20,9 +29,7 @@ export const About = () => {
       <div className="rs-about container">
         <div className="rs-about content">
           <div className="column-2">
-            <div className="card-wrapper">
-              <CourseCard {...course} />
-            </div>
+            <div className="card-wrapper">{courseContent}</div>
             <div className="info">
               <Title text="About RS School" hasAsterisk />
               <Subtitle text="No matter your age, professional employment, or place of residence." />

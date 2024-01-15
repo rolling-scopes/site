@@ -1,9 +1,8 @@
-import React from 'react';
 import { Title, ButtonOutlined, TopTitle, DateLang } from '@/shared/UI';
 import { NodeJsIcon } from '@/shared/icons';
-import './Main.scss';
+import './CourseMain.scss';
 
-export const Main: React.FC = () => {
+export const CourseMain = () => {
   return (
     <main className="nodejs-main container">
       <div className="nodejs-main content column-2">

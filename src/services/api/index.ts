@@ -1,0 +1,13 @@
+import { coursesData } from '../data/coursesData';
+import { type DataMap } from '../data/model';
+
+const dataProviders: DataMap = {
+  courses: coursesData
+};
+
+export const fetchDataByName = (dataName: keyof DataMap) => {
+  if (!dataName || !dataProviders[dataName]) {
+    throw new Error(`No data avialable for name: ${dataName}`);
+  }
+  return dataProviders[dataName];
+};

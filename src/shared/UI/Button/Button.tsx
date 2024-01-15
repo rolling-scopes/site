@@ -1,5 +1,3 @@
-import React from 'react';
-
 import './Button.scss';
 
 type ButtonProps = {
