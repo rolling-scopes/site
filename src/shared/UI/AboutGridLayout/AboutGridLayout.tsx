@@ -4,8 +4,8 @@ interface AboutGridLayoutProps {
   items: { id: number; title: string; info: string; icon: string }[];
   hasTitle?: boolean;
 }
-
-export const AboutGridLayout = ({ items, hasTitle }: AboutGridLayoutProps) => {
+//removed hasTitle props temp
+export const AboutGridLayout = ({ items }: AboutGridLayoutProps) => {
   return (
     <div className="about-grid">
       {items.map(({ id, title, info, icon }) => (
