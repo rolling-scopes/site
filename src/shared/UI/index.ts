@@ -1,4 +1,3 @@
-export * from './Navbar/Navbar';
 export * from './Title/Title';
 export * from './Subtitle/Subtitle';
 export * from './Paragraph/Paragraph';
