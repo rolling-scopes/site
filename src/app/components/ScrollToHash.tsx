@@ -5,17 +5,15 @@ export const ScrollToHashElement = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const hash = location.hash.replace('#', '');
-    if (hash !== '') {
-      let element = document.getElementById(hash);
+    const scrollToElement = (hash: string) => {
+      const element = document.getElementById(hash.replace('#', ''));
       if (element) {
-        element.scrollIntoView({
-          behavior: 'smooth',
-          inline: 'nearest'
-        });
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-    }
-  }, [location.hash, location.pathname]);
+    };
+
+    scrollToElement(location.hash);
+  }, [location.hash]);
 
   return null;
 };

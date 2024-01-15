@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 import { useWindowSize } from '@/shared/hooks/useWindowSize';
 import { RsLogo } from '@/assets/icons/Rs';
 import './Navbar.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 type NavItemProps = {
   label: string;
@@ -11,7 +11,23 @@ type NavItemProps = {
 };
 
 const NavItem = ({ label, href, toggleMenu }: NavItemProps) => {
-  const handleClick = () => window.innerWidth <= 810 && toggleMenu();
+  const navigate = useNavigate();
+
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    if (window.innerWidth <= 810) {
+      toggleMenu();
+    }
+
+    if (href.startsWith('#')) {
+      if (window.location.pathname === '/' && window.location.hash === href) {
+        event.preventDefault();
+        const element = document.getElementById(href.replace('#', ''));
+        element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        navigate({ pathname: '/', hash: href });
+      }
+    }
+  };
 
   return (
     <Link className="menu-item" to={`/${href}`} onClick={handleClick}>
