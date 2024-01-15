@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 import { useWindowSize } from '@/shared/hooks/useWindowSize';
 import { RsLogo } from '@/assets/icons/Rs';
 import './Navbar.scss';
+import { Link } from 'react-router-dom';
 
 type NavItemProps = {
   label: string;
@@ -10,13 +11,12 @@ type NavItemProps = {
 };
 
 const NavItem = ({ label, href, toggleMenu }: NavItemProps) => {
+  const handleClick = () => window.innerWidth <= 810 && toggleMenu();
+
   return (
-    <a
-      className="menu-item"
-      href={`/#${href}`}
-      onClick={window.innerWidth <= 810 ? toggleMenu : () => {}}>
+    <Link className="menu-item" to={`/${href}`} onClick={handleClick}>
       <div className="label">{label}</div>
-    </a>
+    </Link>
   );
 };
 
@@ -53,18 +53,18 @@ export const Navbar = () => {
 
   return (
     <div className={`navbar ${color}`}>
-      <div className="logo-container" onClick={scrollToTop}>
+      <Link className="logo-container" to="/" onClick={scrollToTop}>
         <RsLogo />
-      </div>
+      </Link>
       <menu className={`menu ${isMenuOpen ? 'open' : ''}`}>
         <div className="logo-container" onClick={scrollToTop}>
           <RsLogo />
         </div>
-        <NavItem label="About" href="about" toggleMenu={toggleMenu} />
-        <NavItem label="RS School" href="school" toggleMenu={toggleMenu} />
-        <NavItem label="Events" href="events" toggleMenu={toggleMenu} />
-        <NavItem label="Community" href="community" toggleMenu={toggleMenu} />
-        <NavItem label="Merch" href="merch" toggleMenu={toggleMenu} />
+        <NavItem label="About" href="#about" toggleMenu={toggleMenu} />
+        <NavItem label="RS School" href="#school" toggleMenu={toggleMenu} />
+        <NavItem label="Events" href="#events" toggleMenu={toggleMenu} />
+        <NavItem label="Community" href="#community" toggleMenu={toggleMenu} />
+        <NavItem label="Merch" href="#merch" toggleMenu={toggleMenu} />
       </menu>
       <div className={`burger ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <div className="top" />
