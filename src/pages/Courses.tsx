@@ -8,7 +8,6 @@ import {
   Requirements,
   StudyPath
 } from '@/features/coursesFeatures';
-import { FooterPartners } from '@/features/footerPartners';
 import { Principles } from '@/features/Principles';
 
 import { useTitle } from '@/shared/hooks';
@@ -27,7 +26,6 @@ export const CoursesPage = () => {
       <Mentors />
       <Mentoring />
       <Requirements />
-      <FooterPartners />
     </>
   );
 };

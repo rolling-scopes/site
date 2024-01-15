@@ -15,7 +15,6 @@ import {
   Support,
 } from '@/features/homeFeatures';
 import { Principles } from '@/features/Principles';
-import { FooterPartners } from '@/features/footerPartners';
 import { Places } from '@/widgets';
 
 export const HomePage = () => {
@@ -38,7 +37,6 @@ export const HomePage = () => {
       <Community />
       <Contribute />
       <Support />
-      <FooterPartners />
     </>
   );
 };

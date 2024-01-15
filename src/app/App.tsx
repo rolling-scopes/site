@@ -1,22 +1,12 @@
-import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
-
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { HomePage, CoursesPage, NodejsPage } from '@/pages';
-import { ScrollToHashElement } from './components/ScrollToHash';
-import { Navbar } from '@/shared/UI';
+import { BaseLayout } from './baseLayout';
 import './App.scss';
-
-const Layout = () => (
-  <>
-    <ScrollToHashElement />
-    <Navbar />
-    <Outlet />
-  </>
-);
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />,
+    element: <BaseLayout />,
     children: [
       { index: true, element: <HomePage /> },
       { path: 'courses', element: <CoursesPage /> },
