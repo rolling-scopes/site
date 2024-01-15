@@ -1,4 +1,4 @@
-import { AboutGridLayout, Button, Title } from '@/shared/UI';
+import { InfoGrid, Button, Title } from '@/shared/UI';
 import personIcon from '@/assets/icons/personIcon.png';
 import noteIcon from '@/assets/icons/noteIcon.png';
 import paperIcon from '@/assets/icons/paperIcon.png';
@@ -44,7 +44,7 @@ export const About = () => {
     <section className="nodejs-about container">
       <div className="nodejs-about content">
         <Title text="About" />
-        <AboutGridLayout items={nodejsCourseInfo} hasTitle />
+        <InfoGrid items={nodejsCourseInfo} hasTitle />
         <Button label="Become a student" href="https://wearecommunity.io/events/nodejs-rs-2024q1" />
       </div>
     </section>

@@ -1,4 +1,4 @@
-import { Title, ButtonOutlined, TopTitle, DateLang } from '@/shared/UI';
+import { Title, ButtonOutlined, DateLang, SectionLabel } from '@/shared/UI';
 import { NodeJsIcon } from '@/shared/icons';
 import './CourseMain.scss';
 
@@ -10,7 +10,7 @@ export const CourseMain = () => {
           <NodeJsIcon width="200" height="192" />
         </div>
         <div className="info">
-          <TopTitle text="Avialable" />
+          <SectionLabel label="avialable" />
           <Title text="Node.js course" />
           <DateLang startDate="24 Jan, 2024" language="en" mode="online" />
           <ButtonOutlined label="Enroll" href="https://wearecommunity.io/events/nodejs-rs-2024q1" />

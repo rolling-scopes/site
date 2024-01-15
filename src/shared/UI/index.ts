@@ -7,7 +7,6 @@ export * from './SectionLabel/SectionLabel';
 export * from './PrincipleCard/PrincipleCard';
 export * from './Button/Button';
 export * from './EventCard/EventCard';
-export * from './AboutGridLayout/AboutGridLayout';
+export * from './InfoGrid/InfoGrid';
 export * from './ButtonOutlined/ButtonOutlined';
 export * from './DateLang/DateLang';
-export * from './TopTitle/TopTitle';

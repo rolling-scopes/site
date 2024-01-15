@@ -2,10 +2,11 @@
 @import 'Styles/mixins';
 
 .section-label {
-  height: 16px;
-  display: flex;
+  margin: 8px;
   text-transform: uppercase;
   font-size: 14px;
+  font-weight: $font-weight-regular;
+  letter-spacing: 0;
   line-height: 16px;
-  color: $color-primary-black;
+  color: $color-secondary-gray600;
 }
