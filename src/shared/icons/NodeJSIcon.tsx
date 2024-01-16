@@ -1,10 +1,9 @@
-export const NodeJsIcon = ({
-  width = '49',
-  height = '47'
-}: {
+import React from 'react';
+
+export const NodeJsIcon: React.FC<{
   width?: string;
   height?: string;
-}) => (
+}> = ({ width = '49', height = '47' }) => (
   <svg
     width={width}
     height={height}
