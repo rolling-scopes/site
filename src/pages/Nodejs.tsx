@@ -1,8 +1,8 @@
-import { About, Audience, Required, Trainer } from '@/features/nodejsFeatures';
-import { CourseMain } from '@/features/CourseMain/CourseMain';
+import { About, Audience, Required, Trainer } from '@/features/nodejs';
+import { CourseMain } from '@/features/сourseMain/CourseMain';
 import { useTitle } from '@/shared/hooks';
 
-export const NodejsPage = () => {
+export const Nodejs = () => {
   useTitle('Node.js Course · The Rolling Scopes School');
 
   return (

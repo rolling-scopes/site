@@ -1,18 +1,18 @@
 import {
   About,
-  Courses,
+  Courses as RSCourses,
   General,
   Main,
   Mentoring,
   Mentors,
   Requirements,
   StudyPath
-} from '@/features/coursesFeatures';
+} from '@/features/courses';
 import { Principles } from '@/features/Principles';
 
 import { useTitle } from '@/shared/hooks';
 
-export const CoursesPage = () => {
+export const Courses = () => {
   useTitle('Courses · The Rolling Scopes School');
 
   return (
@@ -20,7 +20,7 @@ export const CoursesPage = () => {
       <Main />
       <About />
       <Principles />
-      <Courses />
+      <RSCourses />
       <StudyPath />
       <General />
       <Mentors />

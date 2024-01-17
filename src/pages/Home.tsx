@@ -12,20 +12,20 @@ import {
   Merch,
   Community,
   Contribute,
-  Support,
-} from '@/features/homeFeatures';
+  Support
+} from '@/features/home';
 import { Principles } from '@/features/Principles';
 import { Places } from '@/widgets';
 
-export const HomePage = () => {
-  useTitle("Home · The Rolling Scopes School");
+export const Home = () => {
+  useTitle('Home · The Rolling Scopes School');
 
   return (
     <>
       <HomeHero />
       <About />
       <Numbers />
-      <Places/>
+      <Places />
       <Pictures />
       <School />
       <Principles />
