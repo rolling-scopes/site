@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Title, Subtitle, Paragraph } from '@/shared/components';
 
 import image from '@/assets/about.png';

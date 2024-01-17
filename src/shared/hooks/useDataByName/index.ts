@@ -1,0 +1,1 @@
+export { useDataByName } from './useDataByName';

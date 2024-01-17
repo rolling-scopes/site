@@ -1,1 +1,1 @@
-export * from './FooterPartners';
+export { FooterPartners } from './FooterPartners';

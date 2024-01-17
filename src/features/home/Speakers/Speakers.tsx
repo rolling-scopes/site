@@ -1,12 +1,10 @@
-import React from 'react';
-
 import { Title, Subtitle, TitleType } from '@/shared/components';
 
 import image from '@/assets/speakers-wanted.png';
 
 import './Speakers.scss';
 
-export const Speakers: React.FC = () => (
+export const Speakers = () => (
   <div className="speakers container">
     <div className="speakers content">
       <div className="info">

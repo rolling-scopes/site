@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useState } from 'react';
-import { useWindowSize } from '@/shared/hooks/useWindowSize';
+import { useWindowSize } from '@/shared/hooks/useWindowSize/useWindowSize';
 import { RsLogo } from '@/assets/icons/Rs';
 import './Navbar.scss';
 import { Link, NavLink, useNavigate } from 'react-router-dom';

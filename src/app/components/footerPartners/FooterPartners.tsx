@@ -1,5 +1,5 @@
-import { Footer } from './Footer/Footer';
-import { Partnered } from './Partnered/Partnered';
+import { Footer } from './Footer';
+import { Partnered } from './Partnered';
 
 export const FooterPartners = () => {
   return (

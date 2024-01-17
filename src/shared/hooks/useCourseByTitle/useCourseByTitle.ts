@@ -1,6 +1,6 @@
-import { useDataByName } from './useDataByName';
+import { useDataByName } from '../useDataByName/useDataByName';
 
-export const useCourseBytTitle = (titleStartsWith: string) => {
+export const useCourseByTitle = (titleStartsWith: string) => {
   const { data: courses, error, loading } = useDataByName('courses');
 
   const course = courses?.find((course) =>

@@ -1,7 +1,7 @@
 import { Title, Paragraph, Subtitle, OptionItem, OptionItemProps } from '@/shared/components';
-import image from '@/assets/contribute.png';
 import './Contribute.scss';
 
+import image from '@/assets/contribute.png';
 const contributeOptions: OptionItemProps[] = [
   {
     title: 'Mentorship',

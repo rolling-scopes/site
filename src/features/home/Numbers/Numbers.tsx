@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Title, Subtitle, Paragraph } from '@/shared/components';
 
 import image from '@/assets/map.png';
@@ -11,7 +9,7 @@ interface InfoCellProps {
   description: string;
 }
 
-const InfoCell: React.FC<InfoCellProps> = ({ title, description }) => (
+const InfoCell = ({ title, description }: InfoCellProps) => (
   <div className="info-cell">
     <div className="number">{title}</div>
     <div className="text">{description}</div>

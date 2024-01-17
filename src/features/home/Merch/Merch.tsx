@@ -1,12 +1,10 @@
-import React from 'react';
-
 import { Title, Subtitle, Paragraph, Button, SectionLabel } from '@/shared/components';
 
 import image from '@/assets/merch.png';
 
 import './Merch.scss';
 
-export const Merch: React.FC = () => (
+export const Merch = () => (
   <div id="merch" className="merch container">
     <div className="merch content column-2">
       <div className="info">

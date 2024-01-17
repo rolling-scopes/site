@@ -1,0 +1,1 @@
+export { InfoGrid } from './InfoGrid';

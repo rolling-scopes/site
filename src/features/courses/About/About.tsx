@@ -1,11 +1,11 @@
 import { Paragraph, Subtitle, Title } from '@/shared/components';
-import { useCourseBytTitle } from '@/shared/hooks/useCourseByTitle';
-import { CourseCard } from '@/widgets/CourseCard';
-import { Breadcrumbs } from '@/widgets';
+import { useCourseByTitle } from '@/shared/hooks';
+import { CourseCard } from '@/shared/components';
+import { Breadcrumbs } from '@/shared/components';
 import './About.scss';
 
 export const About = () => {
-  const { course, loading, error } = useCourseBytTitle('React');
+  const { course, loading, error } = useCourseByTitle('React');
 
   const crumbs = [
     { label: 'Home', path: '/' },

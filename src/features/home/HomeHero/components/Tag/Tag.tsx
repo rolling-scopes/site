@@ -1,5 +1,3 @@
-import React from 'react';
-
 import './Tag.scss';
 
 type TagProps = {
@@ -7,7 +5,7 @@ type TagProps = {
   label: string;
 };
 
-export const Tag: React.FC<TagProps> = ({ id, label }: TagProps) => (
+export const Tag = ({ id, label }: TagProps) => (
   <a className="tag" href={`#${id}`}>
     {label}
   </a>

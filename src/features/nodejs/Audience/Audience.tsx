@@ -1,4 +1,4 @@
-import { Breadcrumbs } from '@/widgets';
+import { Breadcrumbs } from '@/shared/components';
 import './Audience.scss';
 import audienceImg from '@/assets/nodejs-audience.png';
 import { Button, Paragraph, Title } from '@/shared/components';

@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Title,
   Subtitle,
@@ -30,7 +29,7 @@ const stydyOptions: OptionItemProps[] = [
   }
 ];
 
-export const School: React.FC = () => (
+export const School = () => (
   <div id="school" className="school container">
     <div className="school content">
       <div className="study">

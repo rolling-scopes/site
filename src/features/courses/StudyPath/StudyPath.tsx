@@ -1,5 +1,5 @@
 import { Paragraph, Title } from '@/shared/components';
-import { StageCard } from '@/widgets';
+import { StageCard } from '@/shared/components';
 import { pathCoursesList } from '../coursesData';
 
 import './StudyPath.scss';

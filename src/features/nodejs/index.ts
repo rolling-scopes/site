@@ -1,4 +1,4 @@
-export * from './About/About';
-export * from './Audience/Audience';
-export * from './Required/Required';
-export * from './Trainer/Trainer';
+export { About } from './About';
+export { Audience } from './Audience';
+export { Required } from './Required';
+export { Trainer } from './Trainer';

@@ -1,6 +1,6 @@
-import { CourseCard } from '@/widgets';
+import { CourseCard } from '@/shared/components';
 import './Courses.scss';
-import { useDataByName } from '@/shared/hooks/useDataByName';
+import { useDataByName } from '@/shared/hooks';
 
 export const Courses = () => {
   const { data: courses, loading, error } = useDataByName('courses');

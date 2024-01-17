@@ -1,5 +1,6 @@
 import { Button } from '@/shared/components';
 import './Requirements.scss';
+
 export const Requirements = () => {
   return (
     <section className="requirements container">

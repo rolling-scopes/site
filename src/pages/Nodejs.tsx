@@ -1,5 +1,5 @@
 import { About, Audience, Required, Trainer } from '@/features/nodejs';
-import { CourseMain } from '@/features/сourseMain/CourseMain';
+import { CourseMain } from '@/features/сourseMain';
 import { useTitle } from '@/shared/hooks';
 
 export const Nodejs = () => {

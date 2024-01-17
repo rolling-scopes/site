@@ -1,3 +1,3 @@
-export * from './Navbar/Navbar';
-export * from './footerPartners/FooterPartners';
-export * from './ScrollToHash/ScrollToHash';
+export { Navbar } from './Navbar';
+export { FooterPartners } from './footerPartners';
+export { ScrollToHashElement } from './ScrollToHash';

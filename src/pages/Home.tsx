@@ -1,4 +1,4 @@
-import { useTitle } from '@/shared/hooks/useTitle';
+import { useTitle } from '@/shared/hooks/useTitle/useTitle';
 import {
   About,
   HomeHero,
@@ -15,7 +15,7 @@ import {
   Support
 } from '@/features/home';
 import { Principles } from '@/features/Principles';
-import { Places } from '@/widgets';
+import { Places } from '@/shared/components';
 
 export const Home = () => {
   useTitle('Home · The Rolling Scopes School');

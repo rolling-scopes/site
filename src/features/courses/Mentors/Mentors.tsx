@@ -1,6 +1,6 @@
 import { Button, Subtitle, Title, TitleType } from '@/shared/components';
-import './Mentors.scss';
 import mentorImg from '@/assets/mentors-wanted.png';
+import './Mentors.scss';
 
 export const Mentors = () => {
   return (
