@@ -6,7 +6,7 @@ export { OptionItem } from './OptionItem';
 export { SectionLabel } from './SectionLabel';
 export { PrincipleCard } from './PrincipleCard';
 export { Button } from './Button';
-export { EventCard } from './EventCard';
+export { EventCard, type EventCardProps } from './EventCard';
 export { InfoGrid } from './InfoGrid';
 export { ButtonOutlined } from './ButtonOutlined';
 export { DateLang } from './DateLang';

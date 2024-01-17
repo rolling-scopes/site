@@ -4,7 +4,7 @@ import image from '@/assets/about.png';
 
 import './About.scss';
 
-export const About: React.FC = () => {
+export const About = () => {
   return (
     <div className="about container" id="about">
       <div className="about content column-2">

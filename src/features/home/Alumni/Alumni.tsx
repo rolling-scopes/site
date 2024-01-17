@@ -51,7 +51,7 @@ const alumni: AlumniProps[] = [
   { id: 'aesoft', image: aesoft }
 ];
 
-export const Alumni: React.FC = () => {
+export const Alumni = () => {
   const size = useWindowSize();
 
   let alumniArr = [];

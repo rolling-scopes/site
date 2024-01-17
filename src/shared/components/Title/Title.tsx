@@ -1,5 +1,3 @@
-import React from 'react';
-
 import './Title.scss';
 
 export enum TitleType {
@@ -16,13 +14,7 @@ interface TitleProps {
   children?: any;
 }
 
-export const Title: React.FC<TitleProps> = ({
-  text,
-  type,
-  hasAsterisk,
-  hasLines,
-  children
-}: TitleProps) => {
+export const Title = ({ text, type, hasAsterisk, hasLines, children }: TitleProps) => {
   const titleType = type ?? TitleType.Regular;
 
   return (

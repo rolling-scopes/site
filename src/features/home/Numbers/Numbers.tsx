@@ -16,9 +16,9 @@ const InfoCell = ({ title, description }: InfoCellProps) => (
   </div>
 );
 
-const InfoCellDivider: React.FC = () => <div className="info-divider" />;
+const InfoCellDivider = () => <div className="info-divider" />;
 
-export const Numbers: React.FC = () => {
+export const Numbers = () => {
   return (
     <div className="numbers container">
       <div className="numbers content">
