@@ -6,6 +6,6 @@ type ParagraphProps = {
   children?: React.ReactNode;
 };
 
-export const Paragraph: React.FC<ParagraphProps> = ({ children }: ParagraphProps) => (
+export const Paragraph = ({ children }: ParagraphProps) => (
   <div className="paragraph">{children}</div>
 );

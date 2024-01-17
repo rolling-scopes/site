@@ -17,7 +17,7 @@ const places: string[] = [
   'Lithuania'
 ];
 
-export const Places: React.FC = () => (
+export const Places = () => (
   <div className="places container">
     <div className="places content">
       <Marquee direction="left" childMargin={0}>

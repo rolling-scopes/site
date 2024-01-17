@@ -36,7 +36,7 @@ const events: EventCardProps[] = [
   }
 ];
 
-export const Events: React.FC = () => (
+export const Events = () => (
   <div id="events" className="events container">
     <div className="events content">
       <div className="info">
