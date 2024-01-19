@@ -1,10 +1,6 @@
-import { afterEach, describe, expect, it } from 'vitest';
-import { cleanup, render, screen } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
+import { render, screen } from '@testing-library/react';
 import { Button } from './Button';
-
-afterEach(() => {
-  cleanup();
-});
 
 describe('Button', () => {
   const label = 'Click me';
