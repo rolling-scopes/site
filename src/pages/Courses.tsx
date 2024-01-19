@@ -8,7 +8,7 @@ import {
   Requirements,
   StudyPath
 } from '@/features/courses';
-import { Principles } from '@/features/Principles';
+import { Principles } from '@/features/principles';
 
 import { useTitle } from '@/shared/hooks';
 

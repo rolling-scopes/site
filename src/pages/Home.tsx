@@ -14,7 +14,7 @@ import {
   Contribute,
   Support
 } from '@/features/home';
-import { Principles } from '@/features/Principles';
+import { Principles } from '@/features/principles';
 import { Places } from '@/shared/components';
 
 export const Home = () => {
