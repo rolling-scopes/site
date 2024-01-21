@@ -10,7 +10,7 @@ type NavItemProps = {
   toggleMenu: () => void;
 };
 
-const NavItem = ({ label, href, toggleMenu }: NavItemProps) => {
+export const NavItem = ({ label, href, toggleMenu }: NavItemProps) => {
   const navigate = useNavigate();
 
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {

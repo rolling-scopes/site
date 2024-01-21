@@ -7,7 +7,7 @@ const dataProviders: DataMap = {
 
 export const fetchDataByName = (dataName: keyof DataMap) => {
   if (!dataName || !dataProviders[dataName]) {
-    throw new Error(`No data avialable for name: ${dataName}`);
+    throw Promise.reject(new Error(`No data avialable for name: ${dataName}`));
   }
-  return dataProviders[dataName];
+  return Promise.resolve(dataProviders[dataName]);
 };

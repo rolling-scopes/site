@@ -1,12 +1,6 @@
 import './StageCard.scss';
+import type { StageCardProps } from './StageCard.types';
 
-export type StageCardProps = {
-  id: number;
-  title: string;
-  description: string;
-  logoIcon: string;
-  links: { href: string; linkTitle: string; isActive?: boolean }[];
-};
 export const StageCard = ({ id, title, description, logoIcon, links }: StageCardProps) => {
   return (
     <div className="stage">

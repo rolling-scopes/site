@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import { StageCard, type StageCardProps } from './StageCard';
+import { StageCard } from './StageCard';
+import { type StageCardProps } from './StageCard.types';
 
 describe('StageCard component', () => {
   const props: StageCardProps = {
