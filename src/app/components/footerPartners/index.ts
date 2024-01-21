@@ -1,1 +1,0 @@
-export { FooterPartners } from './FooterPartners';

@@ -13,7 +13,7 @@ export const DateLang = ({ startDate, language, mode }: DateLangProps) => {
     <div className="date-lang">
       <div className="date-info">
         <img src={noteIcon} alt="note-icon" className="note-icon" />
-        <div className="date">Start date {startDate}</div>
+        <div className="date">Start date {startDate ?? 'Not set'}</div>
       </div>
       <div className="lang-info">
         <img src={micIcon} className="mic-icon" />

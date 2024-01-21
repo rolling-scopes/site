@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { ButtonOutlined } from './ButtonOutlined';
+import { describe, expect, it } from 'vitest';
 
 describe('ButtonOutlined', () => {
   it('should render correctly', () => {

@@ -9,7 +9,7 @@ export const InfoGrid = ({ items }: InfoGridProps) => {
   return (
     <div className="about-grid">
       {items.map(({ id, title, info, icon }) => (
-        <div key={id} className="item">
+        <div key={id} className="item" data-testid="info-grid-item">
           <div className="item-title">
             <img src={icon} alt={title} />
             <h2>{title}</h2>

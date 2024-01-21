@@ -21,10 +21,12 @@ export const Places = () => (
   <div className="places container">
     <div className="places content">
       <Marquee direction="left" childMargin={0}>
-        {places.map((i) => (
-          <span key={i} className="place-container">
-            <span className="place">{i}</span>
-            <span className="divider">*</span>
+        {places.map((place) => (
+          <span key={place} className="place-container">
+            <span className="place">{place}</span>
+            <span className="divider" data-testid="divider">
+              *
+            </span>
           </span>
         ))}
       </Marquee>

@@ -1,3 +1,4 @@
 export { Navbar } from './Navbar';
-export { FooterPartners } from './footerPartners';
+export { Footer } from './Footer';
+export { Partnered } from './Partnered';
 export { ScrollToHashElement } from './ScrollToHash';

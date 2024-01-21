@@ -1,6 +1,6 @@
 import './StageCard.scss';
 
-type StageCardProps = {
+export type StageCardProps = {
   id: number;
   title: string;
   description: string;
@@ -9,7 +9,7 @@ type StageCardProps = {
 };
 export const StageCard = ({ id, title, description, logoIcon, links }: StageCardProps) => {
   return (
-    <div key={id} className="stage">
+    <div className="stage">
       <div className="stage-step">
         <span className="stage-number">{id}</span>
         <div className="stage-line" />
@@ -22,7 +22,7 @@ export const StageCard = ({ id, title, description, logoIcon, links }: StageCard
             <a
               href={href}
               key={linkTitle}
-              className={`className=${isActive ? undefined : 'disabled'}`}
+              className={`${isActive ? '' : 'disabled'}`}
               target="blank">
               {linkTitle}
             </a>

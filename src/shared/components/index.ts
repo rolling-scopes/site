@@ -4,7 +4,7 @@ export { Paragraph } from './Paragraph';
 export { SocialMedia } from './SocialMedia';
 export { OptionItem } from './OptionItem';
 export { SectionLabel } from './SectionLabel';
-export { PrincipleCard } from './PrincipleCard';
+export { PrincipleCard, type PrincipleCardProps } from './PrincipleCard';
 export { Button } from './Button';
 export { EventCard, type EventCardProps } from './EventCard';
 export { InfoGrid } from './InfoGrid';

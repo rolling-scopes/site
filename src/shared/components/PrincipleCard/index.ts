@@ -1,1 +1,1 @@
-export { PrincipleCard } from './PrincipleCard';
+export { PrincipleCard, type PrincipleCardProps } from './PrincipleCard';

@@ -26,7 +26,7 @@
       "Styles/*": ["app/styles/*"]
     }
   },
-  "include": ["src", "src/**/*.ts", "src/**/*.tsx", "__tests__"],
+  "include": ["src", "src/**/*.ts", "src/**/*.tsx", "setup-tests.ts"],
   "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

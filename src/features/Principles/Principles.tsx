@@ -1,4 +1,4 @@
-import { Title, PrincipleCard, PrincipleCardProps, TitleType } from '@/shared/components';
+import { Title, PrincipleCard, type PrincipleCardProps, TitleType } from '@/shared/components';
 
 import { OpenToEveryoneIcon, OpenSourcePhilosophyIcon, TeachItForwardIcon } from '@/shared/icons';
 
