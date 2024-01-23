@@ -68,7 +68,7 @@ export const Navbar = () => {
   }, [width]);
 
   return (
-    <div className={`navbar ${color}`}>
+    <div className={`navbar ${color}`} data-testid="navigation">
       <Link className="logo-container" to="/" onClick={scrollToTop}>
         <RsLogo />
       </Link>
