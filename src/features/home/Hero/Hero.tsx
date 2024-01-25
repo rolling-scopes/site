@@ -1,5 +1,5 @@
 import { Tag, TagDivider } from './components';
-import './HomeHero.scss';
+import './Hero.scss';
 // import { TitleIcon } from '../../../../icons';
 
 interface TagProps {
@@ -13,7 +13,7 @@ const tags: TagProps[] = [
   { id: 'community', label: 'community building' }
 ];
 
-export const HomeHero = () => {
+export const Hero = () => {
   return (
     <main id="main" className="main container">
       <div className="main content">

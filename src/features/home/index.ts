@@ -1,4 +1,4 @@
-export { HomeHero } from './HomeHero';
+export { Hero } from './Hero';
 export { About } from './About';
 export { Numbers } from './Numbers';
 export { Pictures } from './Pictures';

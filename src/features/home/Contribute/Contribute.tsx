@@ -1,4 +1,4 @@
-import { Title, Paragraph, Subtitle, OptionItem, OptionItemProps } from '@/shared/components';
+import { Title, Paragraph, Subtitle, OptionItem, type OptionItemProps } from '@/shared/components';
 import './Contribute.scss';
 
 import image from '@/assets/contribute.png';

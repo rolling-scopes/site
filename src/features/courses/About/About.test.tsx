@@ -3,6 +3,7 @@ import { screen } from '@testing-library/react';
 import { it, vi, expect, describe } from 'vitest';
 import { useCourseByTitle } from '@/shared/hooks';
 import { renderWithRouter } from '@/shared/utils';
+import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 
 vi.mock('@/shared/hooks', () => {
   return {
@@ -28,7 +29,7 @@ describe('About', () => {
     const course = {
       id: '2',
       title: 'React JS course',
-      iconSrc: 'mocked-image-path',
+      iconSrc: MOCKED_IMAGE_PATH,
       startDate: '23 Oct, 2023',
       language: ['ru', 'en'],
       mode: 'online',
@@ -44,6 +45,6 @@ describe('About', () => {
   it('displays no courses found when there is no course', () => {
     (useCourseByTitle as any).mockImplementation(() => ({}));
     renderWithRouter(<About />);
-    expect(screen.getByText('No React courses found.')).toBeVisible();
+    expect(screen.getByText('No React courses found.')).toBeInTheDocument();
   });
 });

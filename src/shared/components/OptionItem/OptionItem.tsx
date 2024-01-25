@@ -9,8 +9,10 @@ export type OptionItemProps = {
 
 export const OptionItem = ({ title, description, buttonLabel, href }: OptionItemProps) => (
   <div key={title} className="option">
-    <div className="option-title">{title}</div>
-    <div className="option-description">{description}</div>
+    <h3 className="option-title">{title}</h3>
+    <p className="option-description" role="text">
+      {description}
+    </p>
     {buttonLabel && (
       <a href={href} target="_blank" rel="noreferrer" className="option-button">
         {buttonLabel}

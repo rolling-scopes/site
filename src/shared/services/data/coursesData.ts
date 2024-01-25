@@ -10,7 +10,7 @@ import ReactAngIcon from '@/assets/icons/ReactAngular.svg';
 import NodeJSIcon from '@/assets/icons/Nodejs.png';
 import AWSFundamentalsIcon from '@/assets/icons/AWSFundamentals.png';
 import AWSDeveloperIcon from '@/assets/icons/AWSDeveloper.png';
-import { type Courses } from './model';
+import { PathCoursesList, type Courses } from './coursesData.types';
 
 export const coursesData: Courses[] = [
   {
@@ -75,18 +75,6 @@ export const coursesData: Courses[] = [
     backgroundStyle: { backgroundColor: '#F0F9F4', accentColor: '#AEDF36' }
   }
 ];
-
-type PathCoursesList = {
-  id: number;
-  title: string;
-  description: string;
-  logoIcon: string;
-  links: {
-    linkTitle: string;
-    href: string;
-    isActive?: boolean;
-  }[];
-};
 
 export const pathCoursesList: PathCoursesList[] = [
   {

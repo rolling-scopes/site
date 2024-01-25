@@ -12,7 +12,9 @@ export const Speakers = () => (
         <Subtitle text="If you want to give a talk or conduct a workshop, present your open source project or share a success story, the Rolling Scopes welcomes all kinds of talk proposals." />
         <Subtitle text="So don't hesitate to drop a short synopsis to RS Head " />
 
-        <div className="name">Dzmitry Varabei</div>
+        <div className="name" data-testid="contact-name">
+          Dzmitry Varabei
+        </div>
         <div className="email">
           <svg
             width="24"

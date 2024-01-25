@@ -1,7 +1,7 @@
 import { useTitle } from '@/shared/hooks/useTitle/useTitle';
 import {
   About,
-  HomeHero,
+  Hero,
   Numbers,
   Pictures,
   School,
@@ -22,7 +22,7 @@ export const Home = () => {
 
   return (
     <>
-      <HomeHero />
+      <Hero />
       <About />
       <Numbers />
       <Places />

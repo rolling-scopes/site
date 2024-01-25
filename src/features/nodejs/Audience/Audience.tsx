@@ -9,7 +9,7 @@ const crumbs = [
   { label: 'Node.js course', path: '/nodejs-course' }
 ];
 
-const topics = [
+export const topics = [
   'Node.js basics',
   'Network communication.',
   'HTTP & WebSockets',

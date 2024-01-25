@@ -11,7 +11,7 @@ import image from '@/assets/rs-school.png';
 
 import './School.scss';
 
-const stydyOptions: OptionItemProps[] = [
+export const studyOptions: OptionItemProps[] = [
   {
     title: 'Teach and empower',
     description:
@@ -45,7 +45,7 @@ export const School = () => (
         <img className="right picture" src={image} alt="education" />
       </div>
       <div className="study-options column-3 ">
-        {stydyOptions.map((i) => (
+        {studyOptions.map((i) => (
           <OptionItem {...i} key={i.title} />
         ))}
       </div>

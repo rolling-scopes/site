@@ -1,6 +1,6 @@
+import { pathCoursesList } from '@/shared/services/data/coursesData';
 import { Paragraph, Title } from '@/shared/components';
 import { StageCard } from '@/shared/components';
-import { pathCoursesList } from '../coursesData';
 
 import './StudyPath.scss';
 

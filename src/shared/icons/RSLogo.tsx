@@ -1,5 +1,6 @@
 export const RSLogo = () => (
   <svg
+    data-testid="rslogo"
     width="299"
     height="193"
     viewBox="0 0 299 193"

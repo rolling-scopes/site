@@ -5,6 +5,7 @@ export const NodeJsIcon: React.FC<{
   height?: string;
 }> = ({ width = '49', height = '47' }) => (
   <svg
+    aria-label="Node.js Icon"
     width={width}
     height={height}
     viewBox="0 0 49 47"

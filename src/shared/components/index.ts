@@ -1,8 +1,8 @@
 export { Title, TitleType } from './Title';
 export { Subtitle } from './Subtitle';
 export { Paragraph } from './Paragraph';
-export { SocialMedia } from './SocialMedia';
-export { OptionItem } from './OptionItem';
+export { SocialMedia, type SocialMediaProps } from './SocialMedia';
+export { OptionItem, type OptionItemProps } from './OptionItem';
 export { SectionLabel } from './SectionLabel';
 export { PrincipleCard, type PrincipleCardProps } from './PrincipleCard';
 export { Button } from './Button';

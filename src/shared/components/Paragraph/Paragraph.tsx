@@ -7,5 +7,7 @@ type ParagraphProps = {
 };
 
 export const Paragraph = ({ children }: ParagraphProps) => (
-  <div className="paragraph">{children}</div>
+  <div className="paragraph" data-testid="my-paragraph">
+    {children}
+  </div>
 );

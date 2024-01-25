@@ -1,4 +1,10 @@
-import { Title, Subtitle, SocialMedia, TitleType, SocialMediaProps } from '@/shared/components';
+import {
+  Title,
+  Subtitle,
+  SocialMedia,
+  TitleType,
+  type SocialMediaProps
+} from '@/shared/components';
 
 import {
   InstagramIcon,

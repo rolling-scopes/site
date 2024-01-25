@@ -1,1 +1,1 @@
-export { SocialMedia } from './SocialMedia';
+export { SocialMedia, type SocialMediaProps } from './SocialMedia';

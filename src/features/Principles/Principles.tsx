@@ -4,7 +4,7 @@ import { OpenToEveryoneIcon, OpenSourcePhilosophyIcon, TeachItForwardIcon } from
 
 import './Principles.scss';
 
-const cards: PrincipleCardProps[] = [
+export const cards: PrincipleCardProps[] = [
   {
     title: 'Open to everyone',
     description:
@@ -29,7 +29,7 @@ export const Principles = () => (
   <div className="principles container">
     <div className="principles content">
       <Title
-        text="RS School Principles are  an ability to complete our mission"
+        text="RS School Principles are an ability to complete our mission"
         type={TitleType.Big}
         hasAsterisk={false}
         hasLines={true}

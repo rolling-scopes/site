@@ -25,12 +25,12 @@ import aesoft from '@/assets/alumni/aesoft.png';
 
 import './Alumni.scss';
 
-interface AlumniProps {
+export interface AlumniProps {
   id: string;
   image: string;
 }
 
-const alumni: AlumniProps[] = [
+export const alumni: AlumniProps[] = [
   { id: 'epam', image: epam },
   { id: 'toptal', image: toptal },
   { id: 'oxagile', image: oxagile },

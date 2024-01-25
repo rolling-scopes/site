@@ -12,3 +12,15 @@ export type Courses = {
 export type DataMap = {
   [key: string]: any;
 };
+
+export type PathCoursesList = {
+  id: number;
+  title: string;
+  description: string;
+  logoIcon: string;
+  links: {
+    linkTitle: string;
+    href: string;
+    isActive?: boolean;
+  }[];
+};

@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { DateLang } from './DateLang';
+import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 
 describe('DateLang', () => {
   it('renders the start date correctly', () => {
@@ -22,8 +23,8 @@ describe('DateLang', () => {
   });
 
   it('displays the correct note and microphone icons', () => {
-    const noteIcon = 'mocked-image-path';
-    const micIcon = 'mocked-image-path';
+    const noteIcon = MOCKED_IMAGE_PATH;
+    const micIcon = MOCKED_IMAGE_PATH;
     render(<DateLang startDate="" language="" mode="" />);
     expect(screen.getByAltText('note-icon')).toHaveAttribute('src', noteIcon);
     expect(screen.getByRole('img', { name: '' })).toHaveAttribute('src', micIcon);

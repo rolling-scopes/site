@@ -6,7 +6,7 @@ import awardIcon from '@/assets/icons/awardIcon.png';
 import chatIcon from '@/assets/icons/chatIcon.png';
 import './About.scss';
 
-const nodejsCourseInfo = [
+export const nodejsCourseInfo = [
   {
     id: 1,
     title: 'For everyone',

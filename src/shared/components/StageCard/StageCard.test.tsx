@@ -2,13 +2,14 @@ import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import { StageCard } from './StageCard';
 import { type StageCardProps } from './StageCard.types';
+import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 
 describe('StageCard component', () => {
   const props: StageCardProps = {
     id: 1,
     title: 'TestTitle',
     description: 'Test description for the card.',
-    logoIcon: 'mocked-image-path',
+    logoIcon: MOCKED_IMAGE_PATH,
     links: [
       { href: 'https://test1.com', linkTitle: 'Test link 1' },
       { href: 'https://test2.com', linkTitle: 'Test link 2', isActive: false }
@@ -67,6 +68,6 @@ describe('StageCard component', () => {
   it('renders the logo img with correct src and alt attributes', () => {
     render(<StageCard {...props} />);
     const logo = screen.getByAltText('TestTitle');
-    expect(logo).toHaveAttribute('src', 'mocked-image-path');
+    expect(logo).toHaveAttribute('src', MOCKED_IMAGE_PATH);
   });
 });
