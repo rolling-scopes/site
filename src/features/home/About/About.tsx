@@ -1,4 +1,4 @@
-import { Title, Subtitle, Paragraph } from '@/shared/components';
+import { Title, Subtitle, Paragraph } from '@/app/components';
 
 import image from '@/assets/about.png';
 

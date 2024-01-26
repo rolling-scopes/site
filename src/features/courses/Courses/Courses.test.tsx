@@ -1,11 +1,11 @@
 import { screen } from '@testing-library/react';
-import { it, vi, expect, describe } from 'vitest';
-import { useDataByName } from '@/shared/hooks';
-import { renderWithRouter } from '@/shared/utils';
+import { it, vi, expect, describe, Mock } from 'vitest';
+import { useDataByName } from '@/app/hooks';
+import { renderWithRouter } from '@/__tests__/utils';
 import { Courses } from './Courses';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 
-vi.mock('@/shared/hooks', () => {
+vi.mock('@/app/hooks', () => {
   return {
     useDataByName: vi.fn()
   };
@@ -13,7 +13,7 @@ vi.mock('@/shared/hooks', () => {
 
 describe('Courses', () => {
   it('displays a loading state', () => {
-    (useDataByName as any).mockImplementation(() => ({ loading: true }));
+    (useDataByName as Mock).mockImplementation(() => ({ loading: true }));
     renderWithRouter(<Courses />);
 
     expect(screen.getByText('Loading...')).toBeVisible();
@@ -21,7 +21,7 @@ describe('Courses', () => {
 
   it('displays a error state', () => {
     const errorMessage = 'Something went wrong';
-    (useDataByName as any).mockImplementation(() => ({ error: errorMessage }));
+    (useDataByName as Mock).mockImplementation(() => ({ error: errorMessage }));
     renderWithRouter(<Courses />);
 
     expect(screen.getByText(errorMessage)).toBeVisible();
@@ -42,7 +42,7 @@ describe('Courses', () => {
       }
     ];
 
-    (useDataByName as any).mockImplementation(() => ({ data: courses }));
+    (useDataByName as Mock).mockImplementation(() => ({ data: courses }));
     renderWithRouter(<Courses />);
 
     expect(screen.getByText('React course')).toBeInTheDocument();

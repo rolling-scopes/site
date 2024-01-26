@@ -1,7 +1,7 @@
-import { Paragraph, Subtitle, Title } from '@/shared/components';
-import { useCourseByTitle } from '@/shared/hooks';
-import { CourseCard } from '@/shared/components';
-import { Breadcrumbs } from '@/shared/components';
+import { Paragraph, Subtitle, Title } from '@/app/components';
+import { useCourseByTitle } from '@/app/hooks';
+import { CourseCard } from '@/app/components';
+import { Breadcrumbs } from '@/app/components';
 import './About.scss';
 
 export const About = () => {

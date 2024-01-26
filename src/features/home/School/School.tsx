@@ -5,7 +5,7 @@ import {
   OptionItem,
   OptionItemProps,
   SectionLabel
-} from '@/shared/components';
+} from '@/app/components';
 
 import image from '@/assets/rs-school.png';
 

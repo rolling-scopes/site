@@ -1,7 +1,7 @@
-import { Breadcrumbs } from '@/shared/components';
+import { Breadcrumbs } from '@/app/components';
 import './Audience.scss';
 import audienceImg from '@/assets/nodejs-audience.png';
-import { Button, Paragraph, Title } from '@/shared/components';
+import { Button, Paragraph, Title } from '@/app/components';
 
 const crumbs = [
   { label: 'Home', path: '/' },

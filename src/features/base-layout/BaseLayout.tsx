@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { Footer, Partnered, Navbar, ScrollToHashElement } from '../components';
+import { Footer, Partnered, Navbar, ScrollToHashElement } from '../../app/components';
 
 export const BaseLayout = () => (
   <>

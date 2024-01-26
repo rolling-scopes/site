@@ -1,4 +1,4 @@
-import { Title } from '@/shared/components';
+import { Title } from '@/app/components';
 import './General.scss';
 
 export const General = () => {

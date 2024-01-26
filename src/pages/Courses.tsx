@@ -10,7 +10,7 @@ import {
 } from '@/features/courses';
 import { Principles } from '@/features/principles';
 
-import { useTitle } from '@/shared/hooks';
+import { useTitle } from '@/app/hooks';
 
 export const Courses = () => {
   useTitle('Courses · The Rolling Scopes School');

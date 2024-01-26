@@ -1,6 +1,6 @@
 import './DateLang.scss';
-import noteIcon from '@/shared/icons/noteIcon.svg';
-import micIcon from '@/shared/icons/mic.svg';
+import noteIcon from '@/icons/noteIcon.svg';
+import micIcon from '@/icons/mic.svg';
 
 interface DateLangProps {
   startDate: string;

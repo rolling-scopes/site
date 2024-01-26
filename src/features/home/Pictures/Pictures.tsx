@@ -1,7 +1,7 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import { Title, Paragraph, SocialMedia, SocialMediaProps } from '@/shared/components';
-import { InstagramIcon, FacebookIcon } from '@/shared/icons';
+import { Title, Paragraph, SocialMedia, SocialMediaProps } from '@/app/components';
+import { InstagramIcon, FacebookIcon } from '@/icons';
 import './Pictures.scss';
 
 import photo1 from '@/assets/photo-1.png';

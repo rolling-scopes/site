@@ -1,6 +1,6 @@
-import { Title, PrincipleCard, type PrincipleCardProps, TitleType } from '@/shared/components';
+import { Title, PrincipleCard, type PrincipleCardProps, TitleType } from '@/app/components';
 
-import { OpenToEveryoneIcon, OpenSourcePhilosophyIcon, TeachItForwardIcon } from '@/shared/icons';
+import { OpenToEveryoneIcon, OpenSourcePhilosophyIcon, TeachItForwardIcon } from '@/icons';
 
 import './Principles.scss';
 

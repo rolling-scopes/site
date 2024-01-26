@@ -1,4 +1,4 @@
-import { InfoGrid, Button, Title } from '@/shared/components';
+import { InfoGrid, Button, Title } from '@/app/components';
 import personIcon from '@/assets/icons/personIcon.png';
 import noteIcon from '@/assets/icons/noteIcon.png';
 import paperIcon from '@/assets/icons/paperIcon.png';

@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
-import { JsFrontendIcon, NodeJsIcon, RSLogo } from '@/shared/icons';
-import { useWindowSize } from '@/shared/hooks';
-import { Button } from '@/shared/components';
+import { JsFrontendIcon, NodeJsIcon, RSLogo } from '@/icons';
+import { useWindowSize } from '@/app/hooks';
+import { Button } from '@/app/components';
 import './Courses.scss';
 
 type CourseProps = {

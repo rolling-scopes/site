@@ -1,4 +1,4 @@
-import { Subtitle, Title, TitleType } from '@/shared/components';
+import { Subtitle, Title, TitleType } from '@/app/components';
 
 import mentors from '@/assets/mentor with his students.png';
 

@@ -1,11 +1,11 @@
 import { About } from './About';
 import { screen } from '@testing-library/react';
-import { it, vi, expect, describe } from 'vitest';
-import { useCourseByTitle } from '@/shared/hooks';
-import { renderWithRouter } from '@/shared/utils';
+import { it, vi, expect, describe, Mock } from 'vitest';
+import { useCourseByTitle } from '@/app/hooks';
+import { renderWithRouter } from '@/__tests__/utils';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 
-vi.mock('@/shared/hooks', () => {
+vi.mock('@/app/hooks', () => {
   return {
     useCourseByTitle: vi.fn()
   };
@@ -13,14 +13,14 @@ vi.mock('@/shared/hooks', () => {
 
 describe('About', () => {
   it('displays a loading state', () => {
-    (useCourseByTitle as any).mockImplementation(() => ({ loading: true }));
+    (useCourseByTitle as Mock).mockImplementation(() => ({ loading: true }));
     renderWithRouter(<About />);
     expect(screen.getByText('Loading...')).toBeVisible();
   });
 
   it('displays a error state', () => {
     const errorMessage = 'Something went wrong';
-    (useCourseByTitle as any).mockImplementation(() => ({ error: errorMessage }));
+    (useCourseByTitle as Mock).mockImplementation(() => ({ error: errorMessage }));
     renderWithRouter(<About />);
     expect(screen.getByText(`Error loading courses: ${errorMessage}`)).toBeVisible();
   });
@@ -37,13 +37,13 @@ describe('About', () => {
       backgroundStyle: { backgroundColor: '#EEF3FE', accentColor: '#7356BF' }
     };
 
-    (useCourseByTitle as any).mockImplementation(() => ({ course }));
+    (useCourseByTitle as Mock).mockImplementation(() => ({ course }));
     renderWithRouter(<About />);
     expect(screen.getByText('React JS course')).toBeVisible();
   });
 
   it('displays no courses found when there is no course', () => {
-    (useCourseByTitle as any).mockImplementation(() => ({}));
+    (useCourseByTitle as Mock).mockImplementation(() => ({}));
     renderWithRouter(<About />);
     expect(screen.getByText('No React courses found.')).toBeInTheDocument();
   });

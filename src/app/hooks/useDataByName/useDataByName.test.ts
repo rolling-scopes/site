@@ -1,6 +1,6 @@
 import { renderHook, waitFor } from '@testing-library/react';
 import { useDataByName } from './useDataByName';
-import { fetchDataByName } from '@/shared/services/api';
+import { fetchDataByName } from '@/app/services/api';
 import { it, vi, describe, expect, type MockedFunction } from 'vitest';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 
@@ -27,7 +27,7 @@ const courses = [
   }
 ];
 
-vi.mock('@/shared/services/api', () => ({
+vi.mock('@/app/services/api', () => ({
   fetchDataByName: vi.fn()
 }));
 

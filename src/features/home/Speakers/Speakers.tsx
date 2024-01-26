@@ -1,4 +1,4 @@
-import { Title, Subtitle, TitleType } from '@/shared/components';
+import { Title, Subtitle, TitleType } from '@/app/components';
 
 import image from '@/assets/speakers-wanted.png';
 

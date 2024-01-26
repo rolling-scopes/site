@@ -1,5 +1,5 @@
-import { Title, ButtonOutlined, DateLang, SectionLabel } from '@/shared/components';
-import { NodeJsIcon } from '@/shared/icons';
+import { Title, ButtonOutlined, DateLang, SectionLabel } from '@/app/components';
+import { NodeJsIcon } from '@/icons';
 import './CourseMain.scss';
 
 export const CourseMain = () => {

@@ -1,7 +1,8 @@
-.vscode/
 example.md
 tree.md
+.vscode/
 coverage/
+@/
 # Logs
 logs
 *.log

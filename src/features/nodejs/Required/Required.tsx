@@ -1,4 +1,4 @@
-import { Paragraph, Subtitle, Title } from '@/shared/components';
+import { Paragraph, Subtitle, Title } from '@/app/components';
 import './Required.scss';
 
 export const Required = () => {

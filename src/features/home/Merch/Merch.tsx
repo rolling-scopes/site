@@ -1,4 +1,4 @@
-import { Title, Subtitle, Paragraph, Button, SectionLabel } from '@/shared/components';
+import { Title, Subtitle, Paragraph, Button, SectionLabel } from '@/app/components';
 
 import image from '@/assets/merch.png';
 

@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { it, expect, describe, beforeEach } from 'vitest';
-import { renderWithRouter } from '@/shared/utils';
+import { renderWithRouter } from '@/__tests__/utils';
 import { StudyPath } from './StudyPath';
 
 describe('StudyPath', () => {

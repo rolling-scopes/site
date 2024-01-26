@@ -1,6 +1,6 @@
-import { Title, Paragraph } from '@/shared/components';
+import { Title, Paragraph } from '@/app/components';
 
-import { useWindowSize } from '@/shared/hooks';
+import { useWindowSize } from '@/app/hooks';
 
 import epam from '@/assets/alumni/epam.png';
 import toptal from '@/assets/alumni/toptal.png';

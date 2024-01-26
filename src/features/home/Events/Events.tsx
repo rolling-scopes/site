@@ -5,7 +5,7 @@ import {
   EventCard,
   EventCardProps,
   SectionLabel
-} from '@/shared/components';
+} from '@/app/components';
 
 import './Events.scss';
 

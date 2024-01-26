@@ -1,6 +1,6 @@
-import { type Courses } from '@/shared/services/data/coursesData.types';
-import { type DataMap } from '@/shared/services/data/coursesData.types';
-import { fetchDataByName } from '@/shared/services/api';
+import { type Courses } from '@/app/services/data/coursesData.types';
+import { type DataMap } from '@/app/services/data/coursesData.types';
+import { fetchDataByName } from '@/app/services/api';
 import { useEffect, useState } from 'react';
 
 type Datatype = Courses[] | null;

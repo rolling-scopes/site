@@ -1,4 +1,4 @@
-import { Button } from '@/shared/components';
+import { Button } from '@/app/components';
 import './Requirements.scss';
 
 export const Requirements = () => {

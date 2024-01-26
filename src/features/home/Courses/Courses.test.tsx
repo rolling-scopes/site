@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import { it, vi, expect, describe, beforeEach } from 'vitest';
+import { it, vi, expect, describe, beforeEach, Mock } from 'vitest';
 import { Courses } from './Courses';
-import { useWindowSize } from '@/shared/hooks';
+import { useWindowSize } from '@/app/hooks';
 
 describe('Courses', () => {
-  vi.mock('@/shared/hooks', () => ({
+  vi.mock('@/app/hooks', () => ({
     useWindowSize: vi.fn().mockReturnValue({ width: 1440, height: 900 })
   }));
 
@@ -28,14 +28,14 @@ describe('Courses', () => {
   });
 
   it('renders link with arrow only on window size 810px', () => {
-    (useWindowSize as any).mockReturnValue({ width: 810, height: 900 });
+    (useWindowSize as Mock).mockReturnValue({ width: 810, height: 900 });
     render(<Courses />);
     const courseCards = screen.getAllByRole('link', { name: 'arrow_forward' });
     expect(courseCards.length).toBe(3);
   });
 
   it('renders link with "More details arrow_forward" on window size 810px', () => {
-    (useWindowSize as any).mockReturnValue({ width: 1441, height: 900 });
+    (useWindowSize as Mock).mockReturnValue({ width: 1441, height: 900 });
     render(<Courses />);
     const courseCards = screen.getAllByRole('link', { name: 'More details arrow_forward' });
     expect(courseCards.length).toBe(3);

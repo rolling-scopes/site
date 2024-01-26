@@ -1,18 +1,6 @@
-import {
-  Title,
-  Subtitle,
-  SocialMedia,
-  TitleType,
-  type SocialMediaProps
-} from '@/shared/components';
+import { Title, Subtitle, SocialMedia, TitleType, type SocialMediaProps } from '@/app/components';
 
-import {
-  InstagramIcon,
-  LinkedInIcon,
-  YouTubeIcon,
-  TelegramIcon,
-  FacebookIcon
-} from '@/shared/icons';
+import { InstagramIcon, LinkedInIcon, YouTubeIcon, TelegramIcon, FacebookIcon } from '@/icons';
 
 import image from '@/assets/welcome.png';
 
