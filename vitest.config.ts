@@ -16,6 +16,17 @@ export default defineConfig({
     setupFiles: ['src/__tests__/setup-tests.ts'],
     coverage: {
       provider: 'v8',
+      exclude: [
+        'node_modules',
+        '.eslintrc.cjs',
+        '**/*.types.ts',
+        '@/**',
+        '**/vite-env.d.ts',
+        '**/icons/**',
+        '**/main.tsx',
+        '**/__tests__',
+        '**/index.ts'
+      ],
       thresholds: {
         lines: 80,
         functions: 80,
