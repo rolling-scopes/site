@@ -1,0 +1,28 @@
+@import 'Styles/constants';
+@import 'Styles/mixins';
+
+.tag-divider {
+  width: 24px;
+  height: 24px;
+  overflow: visible;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  border-radius: 0;
+  @include media-tablet {
+    display: none;
+  }
+
+  & .label {
+    position: absolute;
+    top: 5px;
+    font-weight: 500;
+    font-style: normal;
+    color: $color-secondary-red;
+    font-size: 24px;
+    letter-spacing: 0em;
+    line-height: 24px;
+  }
+}
