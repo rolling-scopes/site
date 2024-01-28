@@ -2,7 +2,7 @@ import { Title, Subtitle, Paragraph } from '@/app/components';
 
 import image from '@/assets/about.png';
 
-import './About.scss';
+import './about.scss';
 
 export const About = () => {
   return (

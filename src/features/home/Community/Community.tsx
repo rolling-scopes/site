@@ -4,7 +4,7 @@ import { InstagramIcon, LinkedInIcon, YouTubeIcon, TelegramIcon, FacebookIcon } 
 
 import image from '@/assets/welcome.png';
 
-import './Community.scss';
+import './community.scss';
 
 const communityGroups: SocialMediaProps[] = [
   {

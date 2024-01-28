@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react';
 import { it, vi, expect, describe, Mock } from 'vitest';
 import { useDataByName } from '@/app/hooks';
 import { renderWithRouter } from '@/__tests__/utils';
-import { Courses } from './Courses';
+import { Courses } from './courses';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 
 vi.mock('@/app/hooks', () => {

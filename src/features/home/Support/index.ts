@@ -1,1 +1,1 @@
-export { Support } from './Support';
+export { Support } from './support';

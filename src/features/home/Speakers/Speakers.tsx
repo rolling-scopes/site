@@ -2,7 +2,7 @@ import { Title, Subtitle, TitleType } from '@/app/components';
 
 import image from '@/assets/speakers-wanted.png';
 
-import './Speakers.scss';
+import './speakers.scss';
 
 export const Speakers = () => (
   <div className="speakers container">

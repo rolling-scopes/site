@@ -1,4 +1,4 @@
-export { About } from './About';
-export { Audience } from './Audience';
-export { Required } from './Required';
-export { Trainer } from './Trainer';
+export { Audience } from './audience';
+export { Required } from './required';
+export { Trainer } from './trainer';
+export { About } from './about';

@@ -1,1 +1,1 @@
-export { Contribute } from './Contribute';
+export { Contribute } from './contribute';

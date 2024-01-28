@@ -1,1 +1,1 @@
-export { Principles } from './Principles';
+export { Principles } from './principles';

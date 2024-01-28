@@ -1,1 +1,1 @@
-export { Trainer } from './Trainer';
+export { Trainer } from './trainer';

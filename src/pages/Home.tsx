@@ -1,4 +1,4 @@
-import { useTitle } from '@/app/hooks/useTitle/useTitle';
+import { useTitle } from '@/app/hooks/use-title/use-title';
 import {
   About,
   Hero,

@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { JsFrontendIcon, NodeJsIcon, RSLogo } from '@/icons';
 import { useWindowSize } from '@/app/hooks';
 import { Button } from '@/app/components';
-import './Courses.scss';
+import './courses.scss';
 
 type CourseProps = {
   title: string;

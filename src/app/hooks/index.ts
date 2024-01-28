@@ -1,4 +1,4 @@
-export { useWindowSize } from './useWindowSize';
-export { useTitle } from './useTitle';
-export { useCourseByTitle } from './useCourseByTitle';
-export { useDataByName } from './useDataByName';
+export { useCourseByTitle } from './use-course-by-title';
+export { useDataByName } from './use-data-by-name';
+export { useWindowSize } from './use-window-size';
+export { useTitle } from './use-title';

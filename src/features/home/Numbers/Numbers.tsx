@@ -2,7 +2,7 @@ import { Title, Subtitle, Paragraph } from '@/app/components';
 
 import image from '@/assets/map.png';
 
-import './Numbers.scss';
+import './numbers.scss';
 
 interface InfoCellProps {
   title: string;

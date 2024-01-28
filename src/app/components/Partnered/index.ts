@@ -1,1 +1,0 @@
-export { Partnered } from './Partnered';

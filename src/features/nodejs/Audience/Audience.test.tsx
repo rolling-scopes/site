@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { it, expect, describe, beforeEach } from 'vitest';
-import { Audience, topics } from './Audience';
+import { Audience, topics } from './audience';
 import { renderWithRouter } from '@/__tests__/utils';
 
 describe('Audience', () => {

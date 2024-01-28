@@ -2,7 +2,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import { Title, Paragraph, SocialMedia, SocialMediaProps } from '@/app/components';
 import { InstagramIcon, FacebookIcon } from '@/icons';
-import './Pictures.scss';
+import './pictures.scss';
 
 import photo1 from '@/assets/photo-1.png';
 import photo2 from '@/assets/photo-2.png';

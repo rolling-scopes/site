@@ -1,2 +1,2 @@
-export { Tag } from './Tag';
-export { TagDivider } from './TagDivider';
+export { Tag } from './tag';
+export { TagDivider } from './tag-divider';

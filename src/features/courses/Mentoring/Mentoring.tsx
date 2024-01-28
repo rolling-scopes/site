@@ -1,4 +1,4 @@
-import './Mentoring.scss';
+import './mentoring.scss';
 
 const mentorshipBenefits = [
   { id: 1, info: 'Feel the desire to share your experience and knowledge' },

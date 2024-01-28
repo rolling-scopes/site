@@ -1,5 +1,5 @@
 import { Title } from '@/app/components';
-import './General.scss';
+import './general.scss';
 
 export const General = () => {
   return (

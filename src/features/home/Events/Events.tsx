@@ -7,7 +7,7 @@ import {
   SectionLabel
 } from '@/app/components';
 
-import './Events.scss';
+import './events.scss';
 
 const events: EventCardProps[] = [
   {

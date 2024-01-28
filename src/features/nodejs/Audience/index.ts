@@ -1,1 +1,1 @@
-export { Audience } from './Audience';
+export { Audience } from './audience';

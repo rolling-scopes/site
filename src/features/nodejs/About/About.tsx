@@ -1,10 +1,10 @@
 import { InfoGrid, Button, Title } from '@/app/components';
-import personIcon from '@/assets/icons/personIcon.png';
-import noteIcon from '@/assets/icons/noteIcon.png';
-import paperIcon from '@/assets/icons/paperIcon.png';
-import awardIcon from '@/assets/icons/awardIcon.png';
-import chatIcon from '@/assets/icons/chatIcon.png';
-import './About.scss';
+import personIcon from '@/assets/icons/person-icon.png';
+import noteIcon from '@/assets/icons/note-icon.png';
+import paperIcon from '@/assets/icons/paper-icon.png';
+import awardIcon from '@/assets/icons/award-icon.png';
+import chatIcon from '@/assets/icons/chat-icon.png';
+import './about.scss';
 
 export const nodejsCourseInfo = [
   {

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { it, vi, expect, describe, beforeEach, Mock } from 'vitest';
-import { Courses } from './Courses';
+import { Courses } from './courses';
 import { useWindowSize } from '@/app/hooks';
 
 describe('Courses', () => {

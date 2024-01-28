@@ -1,5 +1,5 @@
 import { Breadcrumbs } from '@/app/components';
-import './Audience.scss';
+import './audience.scss';
 import audienceImg from '@/assets/nodejs-audience.png';
 import { Button, Paragraph, Title } from '@/app/components';
 

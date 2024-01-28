@@ -1,6 +1,6 @@
 import { Title } from '@/app/components';
-import './Trainer.scss';
-import nodejsTrainer from '@/assets/NodejsTrainer.png';
+import './trainer.scss';
+import nodejsTrainer from '@/assets/nodejs-trainer.png';
 
 export const Trainer = () => {
   return (

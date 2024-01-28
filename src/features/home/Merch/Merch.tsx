@@ -2,7 +2,7 @@ import { Title, Subtitle, Paragraph, Button, SectionLabel } from '@/app/componen
 
 import image from '@/assets/merch.png';
 
-import './Merch.scss';
+import './merch.scss';
 
 export const Merch = () => (
   <div id="merch" className="merch container">

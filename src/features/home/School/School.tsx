@@ -9,7 +9,7 @@ import {
 
 import image from '@/assets/rs-school.png';
 
-import './School.scss';
+import './school.scss';
 
 export const studyOptions: OptionItemProps[] = [
   {

@@ -2,7 +2,7 @@ import { Paragraph, Subtitle, Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
 import { CourseCard } from '@/app/components';
 import { Breadcrumbs } from '@/app/components';
-import './About.scss';
+import './about.scss';
 
 export const About = () => {
   const { course, loading, error } = useCourseByTitle('React');

@@ -1,5 +1,5 @@
-import { coursesData } from '../data/coursesData';
-import { type DataMap } from '../data/coursesData.types';
+import { coursesData } from '../data/courses-data';
+import { type DataMap } from '../data/courses-data.types';
 
 const dataProviders: DataMap = {
   courses: coursesData

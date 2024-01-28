@@ -1,4 +1,4 @@
-import './Tag.scss';
+import './tag.scss';
 
 type TagProps = {
   id?: string;

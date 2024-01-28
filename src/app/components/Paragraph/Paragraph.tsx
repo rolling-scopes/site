@@ -1,6 +1,4 @@
-import React from 'react';
-
-import './Paragraph.scss';
+import './paragraph.scss';
 
 type ParagraphProps = {
   children?: React.ReactNode;
