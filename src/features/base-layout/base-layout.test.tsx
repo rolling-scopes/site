@@ -7,15 +7,15 @@ vi.mock('react-router-dom', () => ({
   useLocation: vi.fn(() => ({ hash: 'testHash' }))
 }));
 
-vi.mock('./components/Navbar', () => ({
+vi.mock('./components/navbar', () => ({
   Navbar: vi.fn(() => <div data-testid="mockNavbar" />)
 }));
 
-vi.mock('./components/Partnered', () => ({
+vi.mock('./components/partnered', () => ({
   Partnered: vi.fn(() => <div data-testid="mockPartnered" />)
 }));
 
-vi.mock('./components/Footer', () => ({
+vi.mock('./components/footer', () => ({
   Footer: vi.fn(() => <div data-testid="mockFooter" />)
 }));
 
