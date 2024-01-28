@@ -1,0 +1,50 @@
+@import 'Styles/mixins';
+@import 'Styles/constants';
+@import 'Styles/placeholders';
+
+.study-path {
+  &.content {
+    padding: 40px 120px;
+    @include media-laptop {
+      width: 810px;
+      padding: 40px;
+    }
+
+    @include media-tablet {
+      justify-content: flex-start;
+      padding: 40px 16px;
+    }
+
+    & > .title {
+      font-size: 36px;
+      line-height: 44px;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+
+      @include media-tablet {
+        font-size: 28px;
+        line-height: 36px;
+      }
+    }
+
+    & > .paragraph {
+      max-width: 600px;
+      font-size: 18px;
+      line-height: 28px;
+
+      @include media-tablet {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  .stages {
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 32px;
+  }
+}

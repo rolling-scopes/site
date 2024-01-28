@@ -1,0 +1,1 @@
+export { CourseMain } from './CourseMain';

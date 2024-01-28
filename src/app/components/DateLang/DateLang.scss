@@ -1,0 +1,51 @@
+@import 'Styles/constants';
+
+.date-lang {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+
+  & .date-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+
+    .note-icon {
+      width: 16px;
+      height: auto;
+    }
+
+    .date {
+      font-size: 14px;
+      color: $color-secondary-gray600;
+    }
+  }
+
+  & .lang-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+
+    .mic-icon {
+      width: 16px;
+      height: auto;
+    }
+
+    .language,
+    .mode {
+      font-size: 14px;
+      color: $color-secondary-gray600;
+    }
+
+    .language {
+      text-transform: uppercase;
+    }
+
+    .mode {
+      text-transform: capitalize;
+    }
+  }
+}
