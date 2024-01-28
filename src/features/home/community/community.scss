@@ -1,0 +1,51 @@
+@import 'Styles/constants';
+@import 'Styles/mixins';
+
+.community {
+  &.content {
+    & .info {
+      width: 640px;
+      text-align: left;
+
+      @include media-laptop {
+        width: 100%;
+      }
+
+      & .subtitle {
+        margin-top: 8px;
+      }
+
+      & .social-media-container {
+        width: 416px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        @include media-tablet {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          place-items: center;
+        }
+      }
+    }
+
+    & .picture {
+      width: 390px;
+      height: 390px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      @include media-laptop {
+        width: 350px;
+        height: 350px;
+        margin-top: 16px;
+      }
+      @include media-mobile {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
