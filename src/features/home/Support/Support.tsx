@@ -2,7 +2,7 @@ import { Title, Subtitle, Button, TitleType } from '@/app/components';
 
 import image from '@/assets/support.png';
 
-import './Support.scss';
+import './support.scss';
 
 export const Support = () => (
   <div className="support container">

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { it, expect, describe, beforeEach } from 'vitest';
-import { School, studyOptions } from './School';
+import { School, studyOptions } from './school';
 
 describe('School Component', () => {
   beforeEach(() => {

@@ -1,6 +1,4 @@
-import React from 'react';
-
-export const RsLogo: React.FC = () => (
+export const RsLogo = () => (
   <svg
     className="logo"
     width="35"

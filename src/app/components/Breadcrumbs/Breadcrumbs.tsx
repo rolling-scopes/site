@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './Breadcrumbs.scss';
+import './breadcrumbs.scss';
 
 type BreadCrumbsProps = {
   crumbs: { label: string; path: string }[];

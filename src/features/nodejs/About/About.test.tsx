@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import { it, expect, describe, beforeEach } from 'vitest';
 
-import { About } from './About';
-import { nodejsCourseInfo } from './About'; // Assuming it's exported from the file
+import { About } from './about';
+import { nodejsCourseInfo } from './about'; // Assuming it's exported from the file
 
 describe('About', () => {
   beforeEach(() => {

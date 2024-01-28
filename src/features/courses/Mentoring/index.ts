@@ -1,1 +1,1 @@
-export { Mentoring } from './Mentoring';
+export { Mentoring } from './mentoring';

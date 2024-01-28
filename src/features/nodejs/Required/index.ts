@@ -1,1 +1,1 @@
-export { Required } from './Required';
+export { Required } from './required';

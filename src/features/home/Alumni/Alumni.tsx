@@ -23,7 +23,7 @@ import sberbank from '@/assets/alumni/sberbank.png';
 import nanosoft from '@/assets/alumni/nanosoft.png';
 import aesoft from '@/assets/alumni/aesoft.png';
 
-import './Alumni.scss';
+import './alumni.scss';
 
 export interface AlumniProps {
   id: string;

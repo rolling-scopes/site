@@ -1,4 +1,4 @@
-import { About } from './About';
+import { About } from './about';
 import { screen } from '@testing-library/react';
 import { it, vi, expect, describe, Mock } from 'vitest';
 import { useCourseByTitle } from '@/app/hooks';

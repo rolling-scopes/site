@@ -1,4 +1,4 @@
-import './Subtitle.scss';
+import './subtitle.scss';
 
 interface SubtitleProps {
   text: string;

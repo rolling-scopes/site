@@ -1,5 +1,5 @@
 import { CourseCard } from '@/app/components';
-import './Courses.scss';
+import './courses.scss';
 import { useDataByName } from '@/app/hooks';
 
 export const Courses = () => {

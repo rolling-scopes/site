@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import { it, expect, describe, beforeEach } from 'vitest';
 import { renderWithRouter } from '@/__tests__/utils';
-import { Mentors } from './Mentors';
+import { Mentors } from './mentors';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 
 describe('Mentors', () => {

@@ -1,1 +1,1 @@
-export { CourseMain } from './CourseMain';
+export { CourseMain } from './course-main';

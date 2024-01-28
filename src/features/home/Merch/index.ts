@@ -1,1 +1,1 @@
-export { Merch } from './Merch';
+export { Merch } from './merch';

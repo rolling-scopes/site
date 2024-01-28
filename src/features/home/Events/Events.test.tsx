@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { it, expect, describe } from 'vitest';
-import { Events } from './Events';
+import { Events } from './events';
 
 describe('Events', () => {
   it('renders the title "Meet us at events"', () => {

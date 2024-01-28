@@ -1,5 +1,5 @@
 import { Button } from '@/app/components';
-import './Requirements.scss';
+import './requirements.scss';
 
 export const Requirements = () => {
   return (

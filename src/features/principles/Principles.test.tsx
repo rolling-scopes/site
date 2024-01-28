@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import { it, expect, describe, beforeEach } from 'vitest';
 
-import { Principles } from './Principles';
-import { cards } from './Principles'; // Assuming it's exported from the file
+import { Principles } from './principles';
+import { cards } from './principles'; // Assuming it's exported from the file
 
 describe('Principles', () => {
   beforeEach(() => {

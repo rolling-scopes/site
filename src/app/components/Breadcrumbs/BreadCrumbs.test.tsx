@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Breadcrumbs } from './Breadcrumbs';
+import { Breadcrumbs } from './breadcrumbs';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
 

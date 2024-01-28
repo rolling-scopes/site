@@ -1,5 +1,5 @@
 import { Paragraph, Subtitle, Title } from '@/app/components';
-import './Required.scss';
+import './required.scss';
 
 export const Required = () => {
   return (

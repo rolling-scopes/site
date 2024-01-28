@@ -1,6 +1,5 @@
 import { Tag, TagDivider } from './components';
-import './Hero.scss';
-// import { TitleIcon } from '../../../../icons';
+import './hero.scss';
 
 interface TagProps {
   id: string;
@@ -19,9 +18,6 @@ export const Hero = () => {
       <div className="main content">
         <div className="title-container">
           <h1 className="title-main">The Rolling Scopes</h1>
-          {/* <div className="title-icon">
-            <TitleIcon />
-          </div> */}
 
           <div className="subtitle-container">
             <h2 className="subtitle">an international community of developers</h2>

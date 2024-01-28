@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { it, expect, describe, beforeEach } from 'vitest';
-import { Merch } from './Merch';
+import { Merch } from './merch';
 
 describe('Merch', () => {
   beforeEach(() => {

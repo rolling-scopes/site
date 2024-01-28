@@ -2,7 +2,7 @@ import { Title, PrincipleCard, type PrincipleCardProps, TitleType } from '@/app/
 
 import { OpenToEveryoneIcon, OpenSourcePhilosophyIcon, TeachItForwardIcon } from '@/icons';
 
-import './Principles.scss';
+import './principles.scss';
 
 export const cards: PrincipleCardProps[] = [
   {

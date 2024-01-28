@@ -1,1 +1,1 @@
-export { Alumni } from './Alumni';
+export { Alumni } from './alumni';

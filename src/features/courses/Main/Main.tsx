@@ -2,7 +2,7 @@ import { Subtitle, Title, TitleType } from '@/app/components';
 
 import mentors from '@/assets/mentor with his students.png';
 
-import './Main.scss';
+import './main.scss';
 
 export const Main = () => {
   return (

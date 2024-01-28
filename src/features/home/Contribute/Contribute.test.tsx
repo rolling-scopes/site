@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { it, expect, describe, beforeEach } from 'vitest';
-import { Contribute } from './Contribute';
+import { Contribute } from './contribute';
 
 describe('Contribute', () => {
   beforeEach(() => {

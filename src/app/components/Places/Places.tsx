@@ -1,7 +1,7 @@
 // @ts-ignore
 import Marquee from 'react-double-marquee';
 
-import './Places.scss';
+import './places.scss';
 
 const places: string[] = [
   'Kazakhstan',

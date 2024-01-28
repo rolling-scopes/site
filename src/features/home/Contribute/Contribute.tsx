@@ -1,5 +1,5 @@
 import { Title, Paragraph, Subtitle, OptionItem, type OptionItemProps } from '@/app/components';
-import './Contribute.scss';
+import './contribute.scss';
 
 import image from '@/assets/contribute.png';
 const contributeOptions: OptionItemProps[] = [

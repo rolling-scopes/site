@@ -1,4 +1,4 @@
-import './Button.scss';
+import './button.scss';
 
 type ButtonProps = {
   label: string;
