@@ -1,1 +1,0 @@
-export { Merch } from './merch';
