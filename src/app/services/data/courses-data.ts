@@ -1,22 +1,31 @@
-import React from '@/assets/icons/react.svg';
-import Node from '@/assets/icons/node.svg';
-import JavaScript from '@/assets/icons/javascript.png';
-import Angular from '@/assets/icons/angular.svg';
-import AWS from '@/assets/icons/aws.svg';
-//icons for pathCoursesList
+import react from '@/assets/icons/react.svg';
+import nodejs from '@/assets/icons/node.svg';
+import javascript from '@/assets/icons/javascript.png';
+import angular from '@/assets/icons/angular.svg';
+import aws from '@/assets/icons/aws.svg';
+
+// secondary icons for Course
+import reactSecondary from '@/assets/icons/react-secondary.png';
+import jsSecondary from '@/assets/icons/js-secondary.png';
+import awsSecondary from '@/assets/icons/aws-secondary.png';
+import angularSecondary from '@/assets/icons/aws-secondary.png';
+import nodejsSecondary from '@/assets/icons/nodejs-secondary.png';
+
+// icons for pathCoursesList
 import HTMLIcon from '@/assets/icons/html.png';
 import JSIcon from '@/assets/icons/javascript.png';
 import ReactAngIcon from '@/assets/icons/react-angular.svg';
 import NodeJSIcon from '@/assets/icons/nodejs.png';
 import AWSFundamentalsIcon from '@/assets/icons/aws-fundamentals.png';
 import AWSDeveloperIcon from '@/assets/icons/aws-developer.png';
-import { PathCoursesList, type Courses } from './courses-data.types';
+import { PathCoursesList, type Course } from './courses-data.types';
 
-export const coursesData: Courses[] = [
+export const coursesData: Course[] = [
   {
     id: '1',
     title: 'AWS Fundamentals',
-    iconSrc: AWS,
+    iconSrc: aws,
+    secondaryIcon: awsSecondary,
     startDate: 'Sept 18, 2023',
     language: ['en'],
     mode: 'online',
@@ -26,7 +35,8 @@ export const coursesData: Courses[] = [
   {
     id: '2',
     title: 'React JS course',
-    iconSrc: React,
+    iconSrc: react,
+    secondaryIcon: reactSecondary,
     startDate: '23 Oct, 2023',
     language: ['ru', 'en'],
     mode: 'online',
@@ -37,7 +47,8 @@ export const coursesData: Courses[] = [
   {
     id: '3',
     title: 'Angular course',
-    iconSrc: Angular,
+    iconSrc: angular,
+    secondaryIcon: angularSecondary,
     startDate: '16 Oct, 2023',
     language: ['en'],
     mode: 'online',
@@ -47,7 +58,8 @@ export const coursesData: Courses[] = [
   {
     id: '4',
     title: 'JS / Front-end course',
-    iconSrc: JavaScript,
+    iconSrc: javascript,
+    secondaryIcon: jsSecondary,
     startDate: '5 Nov, 2023',
     language: ['ru'],
     mode: 'online',
@@ -57,7 +69,8 @@ export const coursesData: Courses[] = [
   {
     id: '5',
     title: 'JS / Front-end course',
-    iconSrc: JavaScript,
+    iconSrc: javascript,
+    secondaryIcon: jsSecondary,
     startDate: '6 Nov, 2023',
     language: ['en'],
     mode: 'online',
@@ -67,7 +80,8 @@ export const coursesData: Courses[] = [
   {
     id: '6',
     title: 'Node.js course',
-    iconSrc: Node,
+    iconSrc: nodejs,
+    secondaryIcon: nodejsSecondary,
     startDate: '22 Jan, 2024',
     language: ['en'],
     mode: 'online',

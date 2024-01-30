@@ -1,9 +1,9 @@
-import { type Courses } from '@/app/services/data/courses-data.types';
+import { type Course } from '@/app/services/data/courses-data.types';
 import { type DataMap } from '@/app/services/data/courses-data.types';
 import { fetchDataByName } from '@/app/services/api';
 import { useEffect, useState } from 'react';
 
-type Datatype = Courses[] | null;
+type Datatype = Course[] | null;
 
 export const useDataByName = <T extends Datatype>(
   dataName: keyof DataMap,

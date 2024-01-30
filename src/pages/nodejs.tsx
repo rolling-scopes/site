@@ -7,7 +7,7 @@ export const Nodejs = () => {
 
   return (
     <>
-      <CourseMain />
+      <CourseMain courseType="Node.js course" />
       <Audience />
       <About />
       <Required />

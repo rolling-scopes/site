@@ -32,12 +32,14 @@ vi.mock('@/app/services/api', () => ({
 }));
 
 describe('useDataByName', () => {
-  it('starts with the correct initial state', () => {
+  it('starts with the correct initial state', async () => {
     const { result } = renderHook(() => useDataByName('courses'));
 
-    expect(result.current.data).toEqual([]);
-    expect(result.current.loading).toBe(true);
-    expect(result.current.error).toBe('');
+    await waitFor(() => {
+      expect(result.current.loading).toBe(true);
+      expect(result.current.data).toEqual([]);
+      expect(result.current.error).toBe('');
+    });
   });
 
   it('fetches successfully data by name', async () => {

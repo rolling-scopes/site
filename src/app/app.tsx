@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Home, Courses, Nodejs } from '@/pages';
 import { BaseLayout } from '../features/base-layout';
 import './app.scss';
+import { JavaScript } from '@/pages/javascript';
 
 const router = createBrowserRouter([
   {
@@ -10,7 +11,8 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: 'courses', element: <Courses /> },
-      { path: 'nodejs-course', element: <Nodejs /> }
+      { path: 'nodejs-course', element: <Nodejs /> },
+      { path: 'javascript-course', element: <JavaScript /> }
     ]
   }
 ]);

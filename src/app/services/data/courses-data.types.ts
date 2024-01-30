@@ -1,7 +1,8 @@
-export type Courses = {
+export type Course = {
   id: string;
   title: string;
   iconSrc: string;
+  secondaryIcon: string;
   startDate: string;
   language: ('en' | 'ru')[];
   mode: 'online' | 'offline';

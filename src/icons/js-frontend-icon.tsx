@@ -1,5 +1,12 @@
-export const JsFrontendIcon = () => (
-  <svg width="40" height="47" viewBox="0 0 40 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+import { IconProps } from './icon.types';
+
+export const JsFrontendIcon = ({ width = '49', height = '47' }: IconProps) => (
+  <svg
+    width={width}
+    height={height}
+    viewBox="0 0 40 47"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg">
     <path
       d="M2.64431 39.7828C2.75249 41.1049 3.67162 42.2203 4.94873 42.5792L19.1832 46.5797C19.753 46.7398 20.3561 46.7374 20.9246 46.5728L34.6982 42.5846C35.9583 42.2197 36.864 41.1172 36.9773 39.8103L40.094 3.86042C40.2545 2.00904 38.797 0.416485 36.9387 0.412663L2.86761 0.342598C1.0102 0.338778 -0.453471 1.92383 -0.301996 3.77506L2.64431 39.7828Z"
       fill="#757575"

@@ -26,7 +26,7 @@ describe('useCourseByTitle', () => {
 
   it('keeps the state of loading and error from useDataByName', () => {
     const { result } = renderHook(() => useCourseByTitle('React'));
-    expect(result.current.error).toBe('');
+    expect(result.current.hasError).toBeFalsy();
     expect(result.current.loading).toBeFalsy();
   });
 });
