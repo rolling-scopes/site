@@ -5,7 +5,7 @@ import { Breadcrumbs } from '@/app/components';
 import './about.scss';
 
 export const About = () => {
-  const { course, loading, error } = useCourseByTitle('React');
+  const { course, loading, hasError } = useCourseByTitle('React');
 
   const crumbs = [
     { label: 'Home', path: '/' },
@@ -15,8 +15,8 @@ export const About = () => {
   let courseContent;
   if (loading) {
     courseContent = <p>Loading...</p>;
-  } else if (error) {
-    courseContent = <p>Error loading courses: {error}</p>;
+  } else if (hasError) {
+    courseContent = <p>Error loading courses. Try again with different course title.</p>;
   } else if (course) {
     courseContent = <CourseCard {...course} />;
   } else {

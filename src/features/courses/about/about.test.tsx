@@ -19,10 +19,11 @@ describe('About', () => {
   });
 
   it('displays a error state', () => {
-    const errorMessage = 'Something went wrong';
-    (useCourseByTitle as Mock).mockImplementation(() => ({ error: errorMessage }));
+    (useCourseByTitle as Mock).mockImplementation(() => ({ hasError: true }));
     renderWithRouter(<About />);
-    expect(screen.getByText(`Error loading courses: ${errorMessage}`)).toBeVisible();
+    expect(
+      screen.getByText('Error loading courses. Try again with different course title.')
+    ).toBeVisible();
   });
 
   it('displays the course when data is available', () => {
