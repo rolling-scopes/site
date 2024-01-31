@@ -1,4 +1,4 @@
-import { Breadcrumbs, Paragraph, Subtitle, Title } from '@/app/components';
+import { Breadcrumbs, Button, Paragraph, Subtitle, Title } from '@/app/components';
 import jsImg from '@/assets/js-rs-slope.png';
 import awsDevImg from '@/assets/rs-slope-aws-dev.png';
 import awsFundamentalsImg from '@/assets/rs-slope-aws-fundamentals.png';
@@ -45,6 +45,7 @@ export const TrainingProgram = ({ course }: TrainingProgramProps) => {
               be respected.
             </Paragraph>
             <Subtitle text="Attention! Mentors on this course will be first assigned to the graduates of the RS School Stage #2." />
+            <Button label="Register" href="https://wearecommunity.io/events/js-fe-rs-2023q4" />
           </div>
           <div className="right">
             <img src={imageType[course]} alt={course} />

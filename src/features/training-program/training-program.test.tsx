@@ -31,4 +31,10 @@ describe('TrainingProgram Component', () => {
     const title = screen.getByText('BE AWARE');
     expect(title).toBeVisible();
   });
+
+  it('renders Button with correct href', () => {
+    renderWithRouter(<TrainingProgram course="angular" />);
+    const button = screen.getByRole('link', { name: /register/i });
+    expect(button).toHaveAttribute('href', 'https://wearecommunity.io/events/js-fe-rs-2023q4');
+  });
 });
