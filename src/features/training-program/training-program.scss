@@ -1,0 +1,76 @@
+@import 'Styles/constants';
+@import 'Styles/mixins';
+
+.training-program {
+  &.content {
+    padding: 90px 120px;
+
+    @include media-laptop {
+      padding: 75px 40px;
+    }
+
+    @include media-tablet {
+      padding: 16px;
+    }
+
+    &.column-2 {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 100px;
+
+      @include media-tablet-large {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 80px;
+      }
+
+      @include media-tablet {
+        gap: 50px;
+      }
+
+      .left {
+        max-width: 53%;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        flex: 1 1 53%;
+
+        & > :nth-child(4) > span {
+          font-weight: $font-weight-bold;
+        }
+
+        @include media-laptop {
+          & > .title {
+            margin-bottom: -20px;
+          }
+        }
+
+        @include media-laptop-medium {
+          max-width: 500px;
+        }
+
+        @include media-tablet {
+          max-width: 100%;
+        }
+      }
+
+      .right {
+        max-width: 47%;
+        flex: 1 1 47%;
+
+        img {
+          width: 100%;
+          height: min-content;
+        }
+
+        @include media-tablet-large {
+          max-width: 80%;
+          align-self: center;
+          max-height: 484px;
+        }
+      }
+    }
+  }
+}
