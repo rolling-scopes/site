@@ -26,7 +26,8 @@ export default defineConfig({
         '**/icons/**',
         '**/main.tsx',
         '**/__tests__',
-        '**/index.ts'
+        '**/index.ts',
+        'build'
       ],
       thresholds: {
         lines: 80,
