@@ -87,7 +87,7 @@ export const coursesData: Course[] = [
     iconSrc: javascript,
     secondaryIcon: jsSecondary,
     startDate: '5 Nov, 2023',
-    language: ['en'],
+    language: ['ru'],
     mode: 'online',
     detailsUrl: 'https://rs.school/js/',
     backgroundStyle: { backgroundColor: '#FFDB201A', accentColor: '#FFDB204D' }

@@ -12,7 +12,8 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: 'courses', element: <Courses /> },
       { path: 'nodejs-course', element: <Nodejs /> },
-      { path: 'javascript-course', element: <JavaScript /> }
+      { path: 'javascript-mentoring-program', element: <JavaScript type="Mentoring Program" /> },
+      { path: 'javascript-preschool', element: <JavaScript type="Pre-school" /> }
     ]
   }
 ]);

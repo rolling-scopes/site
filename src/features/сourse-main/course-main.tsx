@@ -1,7 +1,7 @@
 import { Title, ButtonOutlined, DateLang, SectionLabel, Subtitle } from '@/app/components';
 import { useCourseByTitle, useTitle } from '@/app/hooks';
 import './course-main.scss';
-import { type CourseType } from '@/app/services/data/courses-data.types';
+import { type CourseType } from '@/app/types';
 
 interface CourseMainProps {
   courseName: string;

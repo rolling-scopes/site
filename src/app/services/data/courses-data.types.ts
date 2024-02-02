@@ -1,3 +1,5 @@
+import { CourseType } from '@/app/types';
+
 export type Course = {
   id: string;
   title: string;
@@ -11,8 +13,6 @@ export type Course = {
   detailsUrl: string;
   backgroundStyle: { backgroundColor: string; accentColor: string };
 };
-
-export type CourseType = 'Mentoring Program' | 'Pre-school';
 
 export type DataMap = {
   [key: string]: any;
