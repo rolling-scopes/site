@@ -1,12 +1,13 @@
-import { About, Audience, Required, Trainer } from '@/features/nodejs';
+import { Audience, Required, Trainer } from '@/features/nodejs';
+import { About } from '@/features/about';
 import { CourseMain } from '@/features/сourse-main';
 
 export const Nodejs = () => {
   return (
     <>
-      <CourseMain courseType="Node.js course" />
+      <CourseMain courseName="Node.js course" />
       <Audience />
-      <About />
+      <About courseName="node" />
       <Required />
       <Trainer />
     </>

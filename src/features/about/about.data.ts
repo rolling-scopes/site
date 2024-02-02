@@ -1,12 +1,12 @@
-import { InfoGrid, Button, Title } from '@/app/components';
 import personIcon from '@/assets/icons/person-icon.png';
 import noteIcon from '@/assets/icons/note-icon.png';
 import paperIcon from '@/assets/icons/paper-icon.png';
 import awardIcon from '@/assets/icons/award-icon.png';
 import chatIcon from '@/assets/icons/chat-icon.png';
-import './about.scss';
+import giftIcon from '@/assets/icons/gift.png';
+import planetIcon from '@/assets/icons/planet.png';
 
-export const nodejsCourseInfo = [
+export const courseInfoSchedule = [
   {
     id: 1,
     title: 'For everyone',
@@ -39,14 +39,35 @@ export const nodejsCourseInfo = [
   }
 ];
 
-export const About = () => {
-  return (
-    <section className="nodejs-about container">
-      <div className="nodejs-about content">
-        <Title text="About" />
-        <InfoGrid items={nodejsCourseInfo} hasTitle />
-        <Button label="Become a student" href="https://wearecommunity.io/events/nodejs-rs-2024q1" />
-      </div>
-    </section>
-  );
-};
+export const courseInfoFree = [
+  {
+    id: 1,
+    title: 'For everyone',
+    info: 'Everyone can study at RS School, regardless of age, professional employment, or place of residence. However, you should have sufficient base knowledge before the program begins.',
+    icon: personIcon
+  },
+  {
+    id: 2,
+    title: 'Worldwide mentors and trainers',
+    info: 'The Mentors and trainers of our school are front-end and javascript developers from different companies/countries. How to become a mentor?',
+    icon: planetIcon
+  },
+  {
+    id: 3,
+    title: 'Free education',
+    info: 'Feel the desire to share your experience and knowledge',
+    icon: giftIcon
+  },
+  {
+    id: 4,
+    title: 'Certificate',
+    info: 'A certificate of successful completion of the course is issued to everybody who pass two stages of training.',
+    icon: awardIcon
+  },
+  {
+    id: 5,
+    title: 'Chat',
+    info: 'Throughout the course, we mostly use Discord chat.',
+    icon: chatIcon
+  }
+];

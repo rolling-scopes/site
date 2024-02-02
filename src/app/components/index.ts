@@ -10,7 +10,6 @@ export { CourseCard } from './course-card';
 export { StageCard } from './stage-card';
 export { Paragraph } from './paragraph';
 export { DateLang } from './date-lang';
-export { InfoGrid } from './info-grid';
 export { Subtitle } from './subtitle';
 export { Button } from './button';
 export { Places } from './places';

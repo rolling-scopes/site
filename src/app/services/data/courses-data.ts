@@ -58,10 +58,12 @@ export const coursesData: Course[] = [
   {
     id: '4',
     title: 'JS / Front-end course',
+    altTitle: 'JavaScript / Front-end',
+    type: 'Mentoring Program',
     iconSrc: javascript,
     secondaryIcon: jsSecondary,
     startDate: '5 Nov, 2023',
-    language: ['ru'],
+    language: ['en'],
     mode: 'online',
     detailsUrl: 'https://rs.school/js/',
     backgroundStyle: { backgroundColor: '#FFDB201A', accentColor: '#FFDB204D' }
@@ -72,13 +74,26 @@ export const coursesData: Course[] = [
     iconSrc: javascript,
     secondaryIcon: jsSecondary,
     startDate: '6 Nov, 2023',
-    language: ['en'],
+    language: ['ru'],
     mode: 'online',
     detailsUrl: 'https://rs.school/js-en/',
     backgroundStyle: { backgroundColor: '#FFDB201A', accentColor: '#FFDB204D' }
   },
   {
     id: '6',
+    title: 'JS / Front-end course',
+    altTitle: 'JavaScript / Front-end',
+    type: 'Pre-school',
+    iconSrc: javascript,
+    secondaryIcon: jsSecondary,
+    startDate: '5 Nov, 2023',
+    language: ['en'],
+    mode: 'online',
+    detailsUrl: 'https://rs.school/js/',
+    backgroundStyle: { backgroundColor: '#FFDB201A', accentColor: '#FFDB204D' }
+  },
+  {
+    id: '7',
     title: 'Node.js course',
     iconSrc: nodejs,
     secondaryIcon: nodejsSecondary,

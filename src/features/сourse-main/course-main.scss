@@ -46,16 +46,13 @@
   }
 
   &.content > .info {
-    .title {
-      margin-bottom: 28px;
-
-      @include media-laptop {
-        margin-bottom: 16px;
-      }
+    .subtitle {
+      color: currentColor;
+      font-size: 24px;
     }
 
     .date-lang {
-      margin-bottom: 40px;
+      margin: 16px 0 40px;
     }
   }
 }

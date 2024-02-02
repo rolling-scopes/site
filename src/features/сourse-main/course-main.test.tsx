@@ -15,6 +15,7 @@ describe('CourseMain', () => {
       course: {
         title: 'Node.js course',
         language: ['English'],
+        type: 'Mentoring Program',
         mode: 'online',
         detailsUrl: 'https://wearecommunity.io/events/nodejs-rs-2024q1',
         secondaryIcon: MOCKED_IMAGE_PATH,
@@ -23,7 +24,7 @@ describe('CourseMain', () => {
     });
 
     act(() => {
-      render(<CourseMain courseType="Node.js course" />);
+      render(<CourseMain courseName="Node.js course" type="Mentoring Program" />);
     });
   });
 
@@ -35,6 +36,11 @@ describe('CourseMain', () => {
   it('renders the section label correctly', () => {
     const labelElement = screen.getByText('unavailable');
     expect(labelElement).toBeVisible();
+  });
+
+  it('renders the Subtitle correctly', () => {
+    const subtitle = screen.getByText('Mentoring Program');
+    expect(subtitle).toBeVisible();
   });
 
   it('renders enroll button with correct label and href', () => {
