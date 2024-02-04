@@ -1,10 +1,10 @@
 import type { StageCardProps } from './stage-card.types';
-import { Topics } from '../topics';
-import { Actions } from '../actions';
-import { Links } from '../links';
-import { LogoIcon } from '../logo-icon';
-import { Image } from '../image';
-import { Step } from '../step';
+import { Topics } from './topics';
+import { Actions } from './actions';
+import { Links } from './links';
+import { LogoIcon } from './logo-icon';
+import { Image } from './image';
+import { Step } from './step';
 import './stage-card.scss';
 
 export const StageCard = ({
