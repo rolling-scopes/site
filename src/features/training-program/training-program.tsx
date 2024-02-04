@@ -5,6 +5,8 @@ import awsFundamentalsImg from '@/assets/rs-slope-aws-fundamentals.png';
 import angularImg from '@/assets/rs-slope-angular.png';
 import './training-program.scss';
 import { ImageType, TrainingProgramProps } from './training-program.types';
+import { useCourseByTitle } from '@/app/hooks';
+import { Course } from '@/app/types';
 
 const crumbs = [
   { label: 'Home', path: '/' },
@@ -19,7 +21,11 @@ const imageType: ImageType = {
   javascript: jsImg
 };
 
-export const TrainingProgram = ({ course }: TrainingProgramProps) => {
+export const TrainingProgram = ({ courseName, type }: TrainingProgramProps) => {
+  const { course: courseRaw } = useCourseByTitle(courseName, type);
+
+  const course = courseRaw as Course;
+
   return (
     <>
       <Breadcrumbs crumbs={crumbs} />
@@ -45,10 +51,10 @@ export const TrainingProgram = ({ course }: TrainingProgramProps) => {
               be respected.
             </Paragraph>
             <Subtitle text="Attention! Mentors on this course will be first assigned to the graduates of the RS School Stage #2." />
-            <Button label="Register" href="https://wearecommunity.io/events/js-fe-rs-2023q4" />
+            <Button label="Register" href={course?.detailsUrl} />
           </div>
           <div className="right">
-            <img src={imageType[course]} alt={course} />
+            <img src={imageType[courseName]} alt={courseName} />
           </div>
         </div>
       </section>

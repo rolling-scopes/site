@@ -1,5 +1,8 @@
+import { type CourseType } from '@/app/types';
+
 export interface TrainingProgramProps {
-  course: 'awsDev' | 'javascript' | 'awsFundamentals' | 'angular';
+  courseName: string;
+  type?: CourseType;
 }
 
-export type ImageType = Record<TrainingProgramProps['course'], string>;
+export type ImageType = Record<TrainingProgramProps['courseName'], string>;
