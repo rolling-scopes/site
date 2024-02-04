@@ -1,6 +1,7 @@
 import { CourseType } from '@/app/types';
+import { AboutVideo } from '@/features/about-video';
 import { About } from '@/features/about';
-import { AboutVideo } from '@/features/embedded-video';
+import { StudyPath } from '@/features/study-path';
 import { TrainingProgram } from '@/features/training-program';
 import { CourseMain } from '@/features/сourse-main';
 
@@ -15,6 +16,7 @@ export const JavaScript = ({ type }: JavaScriptProps) => {
       <TrainingProgram course="javascript" />
       <About courseName="javascript" />
       <AboutVideo />
+      <StudyPath path="javascriptPath" />
     </>
   );
 };

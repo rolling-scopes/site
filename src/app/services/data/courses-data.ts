@@ -18,7 +18,7 @@ import ReactAngIcon from '@/assets/icons/react-angular.svg';
 import NodeJSIcon from '@/assets/icons/nodejs.png';
 import AWSFundamentalsIcon from '@/assets/icons/aws-fundamentals.png';
 import AWSDeveloperIcon from '@/assets/icons/aws-developer.png';
-import { PathCoursesList, type Course } from './courses-data.types';
+import { type CoursesPath, JSPath, AngularAwsPath } from './courses-data.types';
 
 export const coursesData: Course[] = [
   {
@@ -105,7 +105,7 @@ export const coursesData: Course[] = [
   }
 ];
 
-export const pathCoursesList: PathCoursesList[] = [
+export const coursesPath: CoursesPath[] = [
   {
     id: 1,
     title: 'Pre-school',
@@ -187,6 +187,211 @@ export const pathCoursesList: PathCoursesList[] = [
         linkTitle: 'AWS Developer invert',
         href: 'https://wearecommunity.io/events/aws-cloud-dev-rs2023q4'
       }
+    ]
+  }
+];
+
+import stage1 from '@/assets/stages/stage-1.png';
+import stage2 from '@/assets/stages/stage-2.png';
+import stage3 from '@/assets/stages/stage-3.png';
+import { Course } from '@/app/types';
+
+export const jsPath: JSPath[] = [
+  {
+    id: 1,
+    title: 'Stage 1',
+    description:
+      'Everyone registered is automatically eligible for this stage. The first stage lasts 15 weeks. This stage includes practical assignments and tests. Evaluation is either automatic or in the form of cross-checking between students.',
+    imageSrc: stage1,
+    topics: ['Git', 'HTML', 'CSS', 'Javascript basics']
+  },
+  {
+    id: 2,
+    title: 'Stage 2',
+    description:
+      'To pass to the second stage, you must successfully complete the tasks and tests from the first stage without missing the deadlines, and pass a mock technical interview with one of our mentors.The second stage lasts 20 weeks. You will be assigned a personal mentor who will answer your questions from now on. This stage includes practical exercises and tests which will be reviewed and evaluated by your mentor.',
+    imageSrc: stage2,
+    topics: [
+      'Advanced Javascript',
+      'Security',
+      'Testing',
+      'Agile',
+      'Networking',
+      'web development tools'
+    ]
+  },
+  {
+    id: 3,
+    title: 'Stage 3',
+    description:
+      'Learning either React or Angular Framework (the choice belongs to the student). To enroll, you need to successfully complete two stages of training. Format: mentoring, self-study, webinars, and communication on Discord. Practical sessions are reviewed and evaluated by mentors, as well as through cross-checking methods. Throughout the training, mock interviews are conducted with different mentors.',
+    imageSrc: stage3,
+    actions: [
+      'Choose a Framework: React or Angular.',
+      'Collaborative development of a final project.',
+      'Framework-based interviews.'
+    ]
+  }
+];
+
+export const angularPath: AngularAwsPath[] = [
+  {
+    id: 1,
+    title: 'Week #1',
+    actions: [
+      'Module "Angular Intro. TypeScript."',
+      'Module "Angular. Components"',
+      'Module "Angular. Directives & Pipes"'
+    ]
+  },
+  {
+    id: 2,
+    title: 'Week #2',
+    actions: [
+      'Module "Angular Intro. Task Review."',
+      'Angular. Modules & Services, Dependency Injection',
+      'Module "Angular. Directives & Pipes"',
+      'Module "Angular. Routing"',
+      'Workshop'
+    ]
+  },
+  {
+    id: 3,
+    title: 'Week #3',
+    actions: [
+      '"Angular. Components, Directives, Pipes" task review',
+      'Module "RxJS & Observables"',
+      'Module "Angular. HTTP"',
+      'Module "Angular. Forms"',
+      'Workshop'
+    ]
+  },
+  {
+    id: 4,
+    title: 'Week #4',
+    actions: [
+      '"Angular. Modules, Services, Routing" task review',
+      'Module "Angular. Redux & NgRx"',
+      'Module "Angular. Unit Test"',
+      'Workshop'
+    ]
+  },
+  {
+    id: 5,
+    title: 'Week #5-8',
+    actions: [
+      '"Angular. RxJS & HTTPClient & NgRx & Forms", task review',
+      'Final Angular test',
+      'Workshop',
+      '"Project Management Application" final task'
+    ]
+  },
+  {
+    id: 5,
+    title: 'Week #9',
+    actions: ['Cross-checking the "Project management application" final task']
+  }
+];
+
+export const awsPath: AngularAwsPath[] = [
+  {
+    id: 1,
+    title: 'Module 1. Cloud Introduction',
+    actions: [
+      'Fundamental theory about cloud computing',
+      'Cloud service models, cloud deployment models, infrastructure-as-code',
+      'Monolith vs microservices vs serverless',
+      'AWS intro, registration, Cloud Watch, IAM Repository structure'
+    ]
+  },
+  {
+    id: 2,
+    title: 'Module 2. Serving SPA',
+    actions: [
+      'AWS Simple Storage Service overview',
+      'Services & tools overview',
+      'AWS CloudFront overview',
+      'Basic overview of deployment process to CloudFront and S3',
+      'AWS CLI overview'
+    ]
+  },
+  {
+    id: 3,
+    title: 'Module 3. Serverless API',
+    actions: [
+      'AWS Lambda overview',
+      'Introduction to collecting logs with AWS CloudWatch',
+      'Lambda advanced features and configuration'
+    ]
+  },
+  {
+    id: 4,
+    title: 'Module 4. Integration with NoSQL Database',
+    actions: ['Easy way to store data in cloud', 'AWS DynamoDB and how to use it']
+  },
+  {
+    id: 5,
+    title: 'Module 5. Integration with S3',
+    actions: [
+      'AWS S3 in-depth introduction',
+      'S3 storage classes and their use cases',
+      'S3 access control & encryption',
+      'S3 versioning, lifecycle management & events',
+      'Integration with S3 and Lambda overview'
+    ]
+  },
+  {
+    id: 6,
+    title: 'Module 6. Async Microservices Communication',
+    actions: [
+      'Async messaging overview',
+      'AWS SQS overview',
+      'AWS SNS overview',
+      'Integration with SQS, SNS, and Lambda overview'
+    ]
+  },
+  {
+    id: 7,
+    title: 'Module 7. Authorization',
+    actions: [
+      'Authentication & authorization overview',
+      'Lambda authorizer & API Gateway',
+      'AWS Cognito overview',
+      'Cognito user pool',
+      'Cognito identity pool'
+    ]
+  },
+  {
+    id: 8,
+    title: 'Module 8. Integration with SQL Database',
+    actions: [
+      'Relational databases theory',
+      'SQL overview',
+      'Overview of AWS database offering',
+      'AWS RDS and its engines',
+      'Serverless functions & AWS RDS'
+    ]
+  },
+  {
+    id: 9,
+    title: 'Module 9. Containerization',
+    actions: [
+      'Docker overview',
+      'Dockerfiles & images',
+      'Containers & VMs',
+      'Docker build optimizations',
+      'AWS Elastic Beanstalk overview',
+      'AWS EB CLI'
+    ]
+  },
+  {
+    id: 10,
+    title: 'Module 10. Backend for Frontend',
+    actions: [
+      'Backend for frontend overview',
+      'BFF as pattern',
+      'API Gateway as BFF',
+      'AWS Elastic Beanstalk configuration'
     ]
   }
 ];

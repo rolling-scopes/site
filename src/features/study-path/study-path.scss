@@ -5,9 +5,13 @@
 .study-path {
   &.content {
     padding: 40px 120px;
+
     @include media-laptop {
-      width: 810px;
       padding: 40px;
+    }
+
+    @include media-laptop {
+      width: 100%;
     }
 
     @include media-tablet {
@@ -37,14 +41,5 @@
         line-height: 24px;
       }
     }
-  }
-
-  .stages {
-    margin-top: 64px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 32px;
   }
 }

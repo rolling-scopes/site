@@ -1,5 +1,5 @@
 import { Title } from '@/app/components';
-import './embedded-video.scss';
+import './about-video.scss';
 
 export const AboutVideo = () => {
   return (

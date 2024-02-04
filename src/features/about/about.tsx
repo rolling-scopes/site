@@ -3,14 +3,15 @@ import { Button, Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
 import { InfoGrid } from './components';
 import './about.scss';
+import { type Course } from '@/app/types';
 
 export const About = ({ courseName }: { courseName: string }) => {
-  const { course } = useCourseByTitle(courseName);
+  const { course: courseRaw } = useCourseByTitle(courseName);
+
+  const course = courseRaw as Course;
 
   const infoList =
-    courseName.includes('react') || courseName.includes('front-end')
-      ? courseInfoFree
-      : courseInfoSchedule;
+    courseName === 'react' || courseName === 'javascript' ? courseInfoFree : courseInfoSchedule;
 
   return (
     <section className="nodejs-about container">

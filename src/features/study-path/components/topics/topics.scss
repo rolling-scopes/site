@@ -1,0 +1,25 @@
+@import 'Styles/mixins';
+
+.stage-topics {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.5px;
+
+  @include media-tablet {
+    font-size: 16px;
+  }
+
+  & > li {
+    margin: 0;
+
+    &:not(:last-child)::after {
+      content: ',';
+      margin-right: 6px;
+    }
+  }
+}

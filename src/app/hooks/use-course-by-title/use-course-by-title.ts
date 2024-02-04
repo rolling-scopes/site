@@ -7,6 +7,8 @@ export const useCourseByTitle = (titleStartsWith: string, type?: CourseType) => 
   const course = type
     ? courses?.find(
         (course) =>
+          'altTitle' in course &&
+          'type' in course &&
           course.altTitle?.toLowerCase().startsWith(titleStartsWith.toLowerCase()) &&
           course.type?.toLowerCase().includes(type.toLowerCase())
       )

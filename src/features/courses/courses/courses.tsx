@@ -1,9 +1,12 @@
 import { CourseCard } from '@/app/components';
 import { useDataByName } from '@/app/hooks';
 import './courses.scss';
+import { type Course } from '@/app/types';
 
 export const Courses = () => {
   const { data: courses, loading, error } = useDataByName('courses');
+
+  if (courses === null) return null;
 
   const upcomingCourses = courses?.filter(({ title }) => !title.toLowerCase().startsWith('node'));
 
@@ -15,7 +18,7 @@ export const Courses = () => {
       <div className="rs-courses content">
         <div className="title">Upcoming courses</div>
         <div className="rs-courses-wrapper">
-          {upcomingCourses?.map(
+          {(upcomingCourses as Course[]).map(
             ({ id, title, iconSrc, startDate, detailsUrl, mode, language, backgroundStyle }) => (
               <CourseCard
                 key={id}

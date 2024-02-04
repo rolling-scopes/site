@@ -5,10 +5,10 @@ import {
   Main,
   Mentoring,
   Mentors,
-  Requirements,
-  StudyPath
+  Requirements
 } from '@/features/courses';
 import { Principles } from '@/features/principles';
+import { StudyPath } from '@/features/study-path';
 
 import { useTitle } from '@/app/hooks';
 
@@ -21,7 +21,7 @@ export const Courses = () => {
       <About />
       <Principles />
       <RSCourses />
-      <StudyPath />
+      <StudyPath path="coursesPath" />
       <General />
       <Mentors />
       <Mentoring />

@@ -3,9 +3,12 @@ import { useCourseByTitle } from '@/app/hooks';
 import { CourseCard } from '@/app/components';
 import { Breadcrumbs } from '@/app/components';
 import './about.scss';
+import { type Course } from '@/app/types';
 
 export const About = () => {
-  const { course, loading, hasError } = useCourseByTitle('React');
+  const { course: courseRaw, loading, hasError } = useCourseByTitle('React');
+
+  const course = courseRaw as Course;
 
   const crumbs = [
     { label: 'Home', path: '/' },

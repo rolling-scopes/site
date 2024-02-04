@@ -2,6 +2,7 @@ import { Title, ButtonOutlined, DateLang, SectionLabel, Subtitle } from '@/app/c
 import { useCourseByTitle, useTitle } from '@/app/hooks';
 import './course-main.scss';
 import { type CourseType } from '@/app/types';
+import { type Course } from '@/app/types';
 
 interface CourseMainProps {
   courseName: string;
@@ -9,7 +10,10 @@ interface CourseMainProps {
 }
 
 export const CourseMain = ({ courseName, type }: CourseMainProps) => {
-  const { course, hasError } = useCourseByTitle(courseName, type);
+  const { course: courseRaw, hasError } = useCourseByTitle(courseName, type);
+
+  const course = courseRaw as Course;
+
   useTitle(`${course?.title || ''} · The Rolling Scopes School`);
 
   if (hasError || !course) {
