@@ -13,7 +13,7 @@ export const JavaScript = ({ type }: JavaScriptProps) => {
   return (
     <>
       <CourseMain courseName="javascript" type={type} />
-      <TrainingProgram courseName="angular" />
+      <TrainingProgram courseName="javascript" type={type} />
       <About courseName="javascript" />
       <AboutVideo />
       <StudyPath path="javascriptPath" />
