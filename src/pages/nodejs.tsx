@@ -1,15 +1,13 @@
-import { About, Audience, Required, Trainer } from '@/features/nodejs';
+import { Audience, Required, Trainer } from '@/features/nodejs';
+import { About } from '@/features/about';
 import { CourseMain } from '@/features/сourse-main';
-import { useTitle } from '@/app/hooks';
 
 export const Nodejs = () => {
-  useTitle('Node.js Course · The Rolling Scopes School');
-
   return (
     <>
-      <CourseMain />
+      <CourseMain courseName="Node.js course" />
       <Audience />
-      <About />
+      <About courseName="node" />
       <Required />
       <Trainer />
     </>

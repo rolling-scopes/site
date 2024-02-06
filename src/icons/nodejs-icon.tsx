@@ -1,9 +1,6 @@
-import React from 'react';
+import { IconProps } from './icon.types';
 
-export const NodeJsIcon: React.FC<{
-  width?: string;
-  height?: string;
-}> = ({ width = '49', height = '47' }) => (
+export const NodeJsIcon = ({ width = '49', height = '47' }: IconProps) => (
   <svg
     aria-label="Node.js Icon"
     width={width}

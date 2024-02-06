@@ -1,0 +1,58 @@
+@import 'Styles/constants';
+@import 'Styles/mixins';
+@import 'Styles/placeholders';
+
+.stage {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 40px;
+  color: $color-secondary-gray600;
+
+  @include media-tablet {
+    gap: 16px;
+  }
+
+  .stage-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    flex: 1 1 40%;
+    max-width: 600px;
+
+    @include media-tablet-large {
+      max-width: 100%;
+    }
+
+    .stage-title {
+      margin: 0;
+      padding: 0;
+      font-size: 28px;
+      font-weight: $font-weight-medium;
+      line-height: 32px;
+
+      @include media-laptop {
+        font-size: 22px;
+      }
+    }
+
+    .stage-description {
+      margin: 0;
+      font-size: 18px;
+      line-height: 28px;
+      letter-spacing: 0.5px;
+    }
+
+    @include media-tablet {
+      .stage-title {
+        font-size: 24px;
+      }
+
+      .stage-description {
+        font-size: 16px;
+      }
+    }
+  }
+}

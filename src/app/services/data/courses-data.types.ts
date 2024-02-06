@@ -1,19 +1,25 @@
-export type Courses = {
-  id: string;
-  title: string;
-  iconSrc: string;
-  startDate: string;
-  language: ('en' | 'ru')[];
-  mode: 'online' | 'offline';
-  detailsUrl: string;
-  backgroundStyle: { backgroundColor: string; accentColor: string };
-};
+import { type Course } from '@/app/types';
 
 export type DataMap = {
-  [key: string]: any;
+  courses: Course[];
+  coursesPath: CoursesPath[];
+  javascriptPath: JSPath[];
+  angularPath: AngularAwsPath[];
+  awsDevPath: AngularAwsPath[];
 };
 
-export type PathCoursesList = {
+export interface JSPath {
+  id: number;
+  title: string;
+  description: string;
+  imageSrc: string;
+  topics?: string[];
+  actions?: string[];
+}
+
+export interface AngularAwsPath extends Pick<JSPath, 'id' | 'title' | 'actions'> {}
+
+export interface CoursesPath {
   id: number;
   title: string;
   description: string;
@@ -23,4 +29,4 @@ export type PathCoursesList = {
     href: string;
     isActive?: boolean;
   }[];
-};
+}

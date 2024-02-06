@@ -13,6 +13,7 @@ export default defineConfig({
   },
   test: {
     environment: 'jsdom',
+    globals: true,
     setupFiles: ['src/__tests__/setup-tests.ts'],
     coverage: {
       provider: 'v8',
@@ -25,7 +26,8 @@ export default defineConfig({
         '**/icons/**',
         '**/main.tsx',
         '**/__tests__',
-        '**/index.ts'
+        '**/index.ts',
+        'build'
       ],
       thresholds: {
         lines: 80,

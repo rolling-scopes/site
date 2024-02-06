@@ -5,10 +5,12 @@ import micIcon from '@/assets/icons/mic.svg';
 interface DateLangProps {
   startDate: string;
   mode: string;
-  language: string;
+  language: string[];
 }
 
 export const DateLang = ({ startDate, language, mode }: DateLangProps) => {
+  const splittedLanguage = language.slice().join('/');
+
   return (
     <div className="date-lang">
       <div className="date-info">
@@ -17,7 +19,7 @@ export const DateLang = ({ startDate, language, mode }: DateLangProps) => {
       </div>
       <div className="lang-info">
         <img src={micIcon} className="mic-icon" />
-        <div className="language">{language}</div>
+        <div className="language">{splittedLanguage}</div>
         <div className="mode">• {mode}</div>
       </div>
     </div>

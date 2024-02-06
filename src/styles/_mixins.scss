@@ -6,6 +6,17 @@
   }
 }
 
+@mixin media-laptop-medium {
+  @media (max-width: $medium-laptop-width) {
+    @content;
+  }
+}
+
+@mixin media-tablet-large {
+  @media (max-width: $large-tablet-width) {
+    @content;
+  }
+}
 @mixin media-tablet {
   @media (max-width: $tablet-width) {
     @content;
