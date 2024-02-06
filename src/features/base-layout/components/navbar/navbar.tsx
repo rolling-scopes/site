@@ -49,11 +49,11 @@ export const Navbar = () => {
         <div className="logo-container" onClick={scrollToTop}>
           <RsLogo />
         </div>
-        <NavItem label="About" href="#about" toggleMenu={toggleMenu} />
-        <NavItem label="RS School" href="#school" toggleMenu={toggleMenu} />
-        <NavItem label="Events" href="#events" toggleMenu={toggleMenu} />
-        <NavItem label="Community" href="#community" toggleMenu={toggleMenu} />
-        <NavItem label="Merch" href="#merch" toggleMenu={toggleMenu} />
+        <NavItem label="About" href="/#about" toggleMenu={toggleMenu} />
+        <NavItem label="RS School" href="/#school" toggleMenu={toggleMenu} />
+        <NavItem label="Events" href="/#events" toggleMenu={toggleMenu} />
+        <NavItem label="Community" href="/#community" toggleMenu={toggleMenu} />
+        <NavItem label="Merch" href="/#merch" toggleMenu={toggleMenu} />
       </menu>
       <div className={`burger ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <div className="top" />

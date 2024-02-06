@@ -14,7 +14,7 @@ export const Courses = () => {
   if (error) return <h1 style={{ color: 'red' }}>{error}</h1>;
 
   return (
-    <div className="rs-courses container">
+    <div className="rs-courses container" id="upcoming-courses">
       <div className="rs-courses content">
         <div className="title">Upcoming courses</div>
         <div className="rs-courses-wrapper">

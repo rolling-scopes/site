@@ -1,5 +1,18 @@
 @import 'Styles/mixins';
+@import 'Styles/constants';
+@import 'Styles/placeholders';
 
 .footer {
   background-color: $color-primary-black;
+
+  &.content {
+    padding: 40px 120px;
+
+    & .info-wrapper {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 167px;
+    }
+  }
 }
