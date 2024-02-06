@@ -1,40 +1,9 @@
 import { useEffect, useLayoutEffect, useState } from 'react';
 import { useWindowSize } from '@/app/hooks/use-window-size/use-window-size';
 import { RsLogo } from '@/icons/rs';
+import { Link } from 'react-router-dom';
+import { NavItem } from './nav-item/nav-item';
 import './navbar.scss';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
-
-type NavItemProps = {
-  label: string;
-  href: string;
-  toggleMenu: () => void;
-};
-
-export const NavItem = ({ label, href, toggleMenu }: NavItemProps) => {
-  const navigate = useNavigate();
-
-  const handleClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    if (window.innerWidth <= 810) {
-      toggleMenu();
-    }
-
-    if (href.startsWith('#')) {
-      if (window.location.pathname === '/' && window.location.hash === href) {
-        event.preventDefault();
-        const element = document.getElementById(href.replace('#', ''));
-        element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        navigate({ pathname: '/', hash: href });
-      }
-    }
-  };
-
-  return (
-    <NavLink className="menu-item" to={`/${href}`} onClick={handleClick}>
-      <div className="label">{label}</div>
-    </NavLink>
-  );
-};
 
 export const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -59,6 +28,10 @@ export const Navbar = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', listenScrollEvent);
+
+    return () => {
+      window.removeEventListener('scroll', listenScrollEvent);
+    };
   }, []);
 
   useLayoutEffect(() => {

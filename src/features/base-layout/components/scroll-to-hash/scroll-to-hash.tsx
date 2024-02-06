@@ -13,7 +13,7 @@ export const ScrollToHashElement = () => {
     };
 
     scrollToElement(location.hash);
-  }, [location.hash]);
+  }, [location.key]);
 
   return null;
 };
