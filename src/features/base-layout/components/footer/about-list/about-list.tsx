@@ -1,16 +1,17 @@
 import { Link } from 'react-router-dom';
-import logo from '@/assets/icons/footer/rs-logo.png';
 import './about-list.scss';
+import { LogoWrapper } from './logo-wrapper';
 
 export const AboutList = () => {
   return (
-    <div className="left">
-      <div className="logo-wrapper">
+    <div className="about-list">
+      {/* <div className="logo-wrapper">
         <Link to="/" onClick={() => window.scrollTo({ top: 0 })}>
           <img src={logo} alt="The Rolling Scopes School" />
         </Link>
-      </div>
-      <ul className="about-list">
+      </div> */}
+      <LogoWrapper />
+      <ul className="about-links">
         <li>
           <Link to="/#about">About RS</Link>
         </li>

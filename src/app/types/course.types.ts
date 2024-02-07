@@ -7,6 +7,7 @@ export type Course = {
   type?: CourseType;
   iconSrc: string;
   secondaryIcon: string;
+  iconSmall: string;
   startDate: string;
   language: ('en' | 'ru')[];
   mode: 'online' | 'offline';

@@ -8,11 +8,42 @@
   &.content {
     padding: 40px 120px;
 
+    @include media-laptop {
+      padding: 40px;
+    }
+
+    @include media-laptop {
+      padding: 40px 16px;
+    }
+
     & .info-wrapper {
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;
-      gap: 167px;
+      gap: 75px;
+
+      & .left {
+        display: flex;
+        gap: 167px;
+      }
+
+      @include media-laptop-medium {
+        gap: 50px;
+
+        & .left {
+          gap: 50px;
+        }
+      }
+
+      @include media-tablet-large {
+        flex-direction: column;
+
+        & .left {
+          max-width: 500px;
+          width: 100%;
+          justify-content: space-between;
+        }
+      }
     }
   }
 }
