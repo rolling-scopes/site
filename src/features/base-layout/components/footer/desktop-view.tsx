@@ -1,9 +1,9 @@
-import { AboutList } from '../about-list';
-import { SchoolMenu } from '../school-menu';
+import { AboutList } from './about-list';
+import { SchoolMenu } from '@/app/components';
 
-export const DesktopFooter = () => {
+export const DesktopView = () => {
   return (
-    <div className="info-wrapper">
+    <div className="desktop-view" data-testid="desktop-view">
       <div className="left">
         <AboutList />
         <SchoolMenu heading="rs school" />

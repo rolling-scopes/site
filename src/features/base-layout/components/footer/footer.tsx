@@ -1,13 +1,13 @@
 import { useWindowSize } from '@/app/hooks';
-import { Copyright } from './copyright/copyright';
-import { MobileFooter } from './mobile-footer/mobile-footer';
-import { DesktopFooter } from './desktop-footer/desktop-footer';
+import { Copyright } from './copyright';
+import { MobileView } from './mobile-view';
+import { DesktopView } from './desktop-view';
 import './footer.scss';
 
 export const Footer = () => {
   const { width } = useWindowSize();
 
-  const content = width >= 810 ? <DesktopFooter /> : <MobileFooter />;
+  const content = width >= 810 ? <DesktopView /> : <MobileView />;
 
   return (
     <footer className="footer container">

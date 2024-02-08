@@ -3,11 +3,11 @@ import { MemoryRouter } from 'react-router-dom';
 import { describe, it, vi, expect, beforeEach } from 'vitest';
 import { ScrollToHashElement } from './scroll-to-hash';
 
-
 describe('ScrollToHashElement', () => {
   let scrollIntoViewMock = vi.fn();
   let getElementByIdMock = vi.fn();
   beforeEach(() => {
+    vi.useFakeTimers();
     scrollIntoViewMock.mockClear();
     getElementByIdMock.mockClear();
 
@@ -17,18 +17,15 @@ describe('ScrollToHashElement', () => {
   });
 
   const setup = (entry = '/') => {
-    return render(
+    render(
       <MemoryRouter initialEntries={[entry]}>
         <ScrollToHashElement />
       </MemoryRouter>
     );
+    vi.runAllTimers();
   };
 
   it('scrolls to an element matching the hash', () => {
-    getElementByIdMock.mockReturnValueOnce({
-      scrollIntoView: scrollIntoViewMock
-    } as unknown as HTMLElement);
-
     setup('/#value');
     expect(scrollIntoViewMock).toHaveBeenCalled();
   });

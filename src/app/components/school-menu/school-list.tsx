@@ -1,6 +1,5 @@
 import { type Course } from '@/app/types';
-import { SchoolItem } from '../school-item';
-import './school-list.scss';
+import { SchoolItem } from './school-item';
 
 export interface GenericItemProps {
   title: string;

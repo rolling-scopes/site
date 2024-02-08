@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom';
-import { LogoWrapper } from '../about-list/logo-wrapper';
-import { SchoolMenu } from '../school-menu';
-import './mobile-footer.scss';
+import { LogoWrapper } from './logo-wrapper';
+import { SchoolMenu } from '@/app/components';
 
 const Divider = () => <div className="divider" />;
 
-export const MobileFooter = () => {
+export const MobileView = () => {
   return (
-    <div className="mobile-footer">
+    <div className="mobile-view" data-testid="mobile-view">
       <LogoWrapper />
       <Link to="/#about" className="main-link">
         About Community

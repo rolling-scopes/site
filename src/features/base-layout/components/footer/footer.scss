@@ -16,7 +16,7 @@
       padding: 40px 16px;
     }
 
-    & .info-wrapper {
+    & .desktop-view {
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;
@@ -39,11 +39,87 @@
         flex-direction: column;
 
         & .left {
-          max-width: 500px;
+          max-width: 430px;
           width: 100%;
           justify-content: space-between;
         }
       }
+
+      // AboutList component styles
+      .about-list {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: flex-start;
+        gap: 24px;
+        font-size: 18px;
+        font-weight: $font-weight-medium;
+        line-height: 24px;
+        letter-spacing: 0px;
+        color: $color-secondary-gray100;
+
+        .about-links {
+          list-style-type: none;
+
+          & li:not(:last-child) {
+            margin-bottom: 24px;
+          }
+
+          a {
+            color: currentColor;
+            @extend %transition-all;
+
+            &:hover {
+              color: $color-secondary-gray400;
+            }
+          }
+        }
+      }
+    }
+
+    // MobileView styles
+    .mobile-view {
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+      justify-content: flex-start;
+      gap: 16px;
+
+      .main-link {
+        font-size: 16px;
+        font-weight: $font-weight-medium;
+        color: $color-secondary-gray100;
+
+        &.mt {
+          margin-top: 18px;
+        }
+      }
+
+      & > .school-menu {
+        margin-bottom: 22px;
+      }
+
+      .divider {
+        margin-bottom: 8px;
+        width: 100%;
+        border-bottom: 1px solid $color-secondary-gray600;
+      }
+    }
+
+    .logo-wrapper {
+      max-width: 56px;
+      max-height: 56px;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .copyright {
+      margin-top: 64px;
+      color: $color-primary-white;
+      line-height: 24px;
     }
   }
 }

@@ -1,5 +1,3 @@
-import './copyright.scss';
-
 export const Copyright = () => {
   const currentYear = new Date().getFullYear();
 

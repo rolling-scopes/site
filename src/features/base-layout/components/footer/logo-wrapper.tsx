@@ -1,6 +1,5 @@
 import rsLogo from '@/assets/icons/footer/rs-logo.png';
 import { Link } from 'react-router-dom';
-import './logo-wrapper.scss';
 
 export const LogoWrapper = () => {
   return (

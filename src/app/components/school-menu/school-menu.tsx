@@ -1,7 +1,8 @@
 import { useDataByName } from '@/app/hooks';
-import { SchoolList } from '../school-list';
+import { SchoolList } from './school-list';
+import { type Course } from '@/app/types';
 import './school-menu.scss';
-import { Course } from '@/app/types';
+
 const schoolMenuProps = [
   {
     title: 'About RS School',
@@ -24,6 +25,7 @@ const schoolMenuProps = [
     description: 'Contribute and study'
   }
 ];
+
 export const SchoolMenu = ({ heading }: { heading: 'rs school' | 'all courses' }) => {
   const { data: courseRaw } = useDataByName('courses');
 

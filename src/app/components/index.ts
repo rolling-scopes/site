@@ -7,6 +7,7 @@ export { SectionLabel } from './section-label';
 export { Breadcrumbs } from './breadcrumbs';
 export { Title, TitleType } from './title';
 export { CourseCard } from './course-card';
+export { SchoolMenu } from './school-menu';
 export { Paragraph } from './paragraph';
 export { DateLang } from './date-lang';
 export { Subtitle } from './subtitle';
