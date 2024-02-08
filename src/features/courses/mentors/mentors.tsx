@@ -4,7 +4,7 @@ import './mentors.scss';
 
 export const Mentors = () => {
   return (
-    <section className="mentors container">
+    <section className="mentors container" id="mentors-wanted">
       <div className="mentors content column-2">
         <div className="mentors-info">
           <Title text="Mentors wanted!" hasLines type={TitleType.Big} />

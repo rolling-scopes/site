@@ -1,27 +1,125 @@
 @import 'Styles/mixins';
+@import 'Styles/constants';
+@import 'Styles/placeholders';
 
 .footer {
-  box-sizing: border-box;
-  width: 100%;
-  height: min-content;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 24px;
   background-color: $color-primary-black;
-  overflow: hidden;
-  align-content: center;
-  flex-wrap: nowrap;
-  border-radius: 0;
-  width: auto;
-  height: auto;
-  white-space: pre;
-  font-family: 'Inter', sans-serif;
-  color: $color-primary-white;
-  font-size: 16px;
-  letter-spacing: 0em;
-  line-height: 24px;
-  text-align: center;
-  margin-top: auto;
+
+  &.content {
+    padding: 40px 120px;
+
+    @include media-laptop {
+      padding: 40px;
+    }
+
+    @include media-laptop {
+      padding: 40px 16px;
+    }
+
+    & .desktop-view {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 75px;
+
+      & .left {
+        display: flex;
+        gap: 167px;
+      }
+
+      @include media-laptop-medium {
+        gap: 50px;
+
+        & .left {
+          gap: 50px;
+        }
+      }
+
+      @include media-tablet-large {
+        flex-direction: column;
+
+        & .left {
+          max-width: 430px;
+          width: 100%;
+          justify-content: space-between;
+        }
+      }
+
+      // AboutList component styles
+      .about-list {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: flex-start;
+        gap: 24px;
+        font-size: 18px;
+        font-weight: $font-weight-medium;
+        line-height: 24px;
+        letter-spacing: 0px;
+        color: $color-secondary-gray100;
+
+        .about-links {
+          list-style-type: none;
+
+          & li:not(:last-child) {
+            margin-bottom: 24px;
+          }
+
+          a {
+            color: currentColor;
+            @extend %transition-all;
+
+            &:hover {
+              color: $color-secondary-gray400;
+            }
+          }
+        }
+      }
+    }
+
+    // MobileView styles
+    .mobile-view {
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+      justify-content: flex-start;
+      gap: 16px;
+
+      .main-link {
+        font-size: 16px;
+        font-weight: $font-weight-medium;
+        color: $color-secondary-gray100;
+
+        &.mt {
+          margin-top: 18px;
+        }
+      }
+
+      & > .school-menu {
+        margin-bottom: 22px;
+      }
+
+      .divider {
+        margin-bottom: 8px;
+        width: 100%;
+        border-bottom: 1px solid $color-secondary-gray600;
+      }
+    }
+
+    .logo-wrapper {
+      max-width: 56px;
+      max-height: 56px;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .copyright {
+      margin-top: 64px;
+      color: $color-primary-white;
+      line-height: 24px;
+    }
+  }
 }

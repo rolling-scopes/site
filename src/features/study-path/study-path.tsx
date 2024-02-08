@@ -20,7 +20,7 @@ export const StudyPath = ({ path }: StudyPathProps) => {
       : 'A full-stack developer is someone who has expertise in both frontend (what users see) and backend (server and database) development. This dual skill set enables them to supervise and implement projects from start to finish. Businesses today prioritize hiring full-stack developers because they can efficiently bridge various technological aspects, resulting in faster product development.';
 
   return (
-    <section className="study-path container">
+    <section className="study-path container" id="learning-path">
       <div className="study-path content upd">
         <Title text={title} hasAsterisk />
         <Paragraph>{paragraph}</Paragraph>

@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 export const ScrollToHashElement = () => {
-  const location = useLocation();
+  // const location = useLocation();
+  const { key } = useLocation();
 
   useEffect(() => {
     const scrollToElement = (hash: string) => {
@@ -12,8 +13,12 @@ export const ScrollToHashElement = () => {
       }
     };
 
-    scrollToElement(location.hash);
-  }, [location.hash]);
+    let id = setTimeout(() => scrollToElement(location.hash));
+
+    return () => {
+      clearInterval(id);
+    };
+  }, [key]);
 
   return null;
 };

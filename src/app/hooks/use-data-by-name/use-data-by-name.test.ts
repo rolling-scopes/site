@@ -11,6 +11,7 @@ const courses: DataMap['courses'] = [
     title: 'AWS Fundamentals',
     iconSrc: MOCKED_IMAGE_PATH,
     secondaryIcon: MOCKED_IMAGE_PATH,
+    iconSmall: MOCKED_IMAGE_PATH,
     startDate: 'Sept 18, 2023',
     language: ['en'],
     mode: 'online',

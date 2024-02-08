@@ -1,5 +1,6 @@
 export const RsLogo = () => (
   <svg
+    aria-label="logo-navbar"
     className="logo"
     width="35"
     height="18"
