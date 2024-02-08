@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, it, vi, expect, beforeEach } from 'vitest';
 import { ScrollToHashElement } from './scroll-to-hash';
@@ -7,7 +7,6 @@ describe('ScrollToHashElement', () => {
   let scrollIntoViewMock = vi.fn();
   let getElementByIdMock = vi.fn();
   beforeEach(() => {
-    vi.useFakeTimers();
     scrollIntoViewMock.mockClear();
     getElementByIdMock.mockClear();
 
@@ -22,25 +21,31 @@ describe('ScrollToHashElement', () => {
         <ScrollToHashElement />
       </MemoryRouter>
     );
-    vi.runAllTimers();
   };
 
-  it('scrolls to an element matching the hash', () => {
+  it('scrolls to an element matching the hash', async () => {
     setup('/#value');
-    expect(scrollIntoViewMock).toHaveBeenCalled();
+    await waitFor(() => {
+      expect(getElementByIdMock).toHaveBeenCalled();
+      expect(scrollIntoViewMock).toHaveBeenCalledWith({ behavior: 'smooth', block: 'start' });
+    });
   });
 
-  it("doesn't scroll when there is no target element", () => {
+  it("doesn't scroll when there is no target element", async () => {
     getElementByIdMock.mockReturnValueOnce(null);
 
     setup('/#missing');
-    expect(scrollIntoViewMock).not.toHaveBeenCalled();
+    await waitFor(() => {
+      expect(scrollIntoViewMock).not.toHaveBeenCalled();
+    });
   });
 
-  it("doesn't scroll when the URL doesn't contain a hash", () => {
+  it("doesn't scroll when the URL doesn't contain a hash", async () => {
     getElementByIdMock.mockReturnValueOnce(null);
 
     setup();
-    expect(scrollIntoViewMock).not.toHaveBeenCalled();
+    await waitFor(() => {
+      expect(scrollIntoViewMock).not.toHaveBeenCalled();
+    });
   });
 });
