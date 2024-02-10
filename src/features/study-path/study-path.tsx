@@ -6,9 +6,10 @@ import './study-path.scss';
 
 interface StudyPathProps {
   path: keyof DataMap;
+  marked?: boolean;
 }
 
-export const StudyPath = ({ path }: StudyPathProps) => {
+export const StudyPath = ({ path, marked }: StudyPathProps) => {
   const { data: coursesPath } = useDataByName<keyof DataMap>(path);
   const title =
     path === 'angularPath' || path === 'awsDevPath'
@@ -24,7 +25,7 @@ export const StudyPath = ({ path }: StudyPathProps) => {
       <div className="study-path content upd">
         <Title text={title} hasAsterisk />
         <Paragraph>{paragraph}</Paragraph>
-        <Stages stages={coursesPath} />
+        <Stages stages={coursesPath} marked={marked} />
       </div>
     </section>
   );

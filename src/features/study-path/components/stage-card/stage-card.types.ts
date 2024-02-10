@@ -9,4 +9,6 @@ export interface Stage {
   imageSrc?: string;
 }
 
-export interface StageCardProps extends Stage {}
+export interface StageCardProps extends Stage {
+  marked?: boolean;
+}

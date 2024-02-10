@@ -3,9 +3,10 @@ import './stages.scss';
 
 export interface StagesProps {
   stages: Stage[] | null;
+  marked?: boolean;
 }
 
-export const Stages = ({ stages }: StagesProps) => {
+export const Stages = ({ stages, marked }: StagesProps) => {
   if (stages === null || stages.length === 0) return null;
 
   return (
@@ -21,6 +22,7 @@ export const Stages = ({ stages }: StagesProps) => {
           topics={topics}
           imageSrc={imageSrc}
           actions={actions}
+          marked={marked}
         />
       ))}
     </div>

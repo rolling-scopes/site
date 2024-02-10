@@ -15,7 +15,8 @@ export const StageCard = ({
   links,
   topics,
   actions,
-  imageSrc
+  imageSrc,
+  marked
 }: StageCardProps) => {
   return (
     <div className="stage">
@@ -25,7 +26,7 @@ export const StageCard = ({
         {description && <p className="stage-description">{description}</p>}
         {links && <Links links={links} />}
         {topics && <Topics topics={topics} />}
-        {actions && <Actions actions={actions} marked />}
+        {actions && <Actions actions={actions} marked={marked} />}
       </div>
 
       {logoIcon && <LogoIcon icon={logoIcon} title={title} />}

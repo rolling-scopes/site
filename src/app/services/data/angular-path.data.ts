@@ -53,7 +53,7 @@ export const angularPath: AngularAwsPath[] = [
     ]
   },
   {
-    id: 5,
+    id: 6,
     title: 'Week #9',
     actions: ['Cross-checking the "Project management application" final task']
   }

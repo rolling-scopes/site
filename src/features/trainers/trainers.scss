@@ -1,0 +1,93 @@
+@import 'Styles/constants';
+@import 'Styles/mixins';
+
+.nodejs-trainer {
+  & .content {
+    padding: 40px 120px;
+
+    @include media-laptop {
+      padding: 40px;
+    }
+
+    @include media-tablet {
+      padding: 40px 16px;
+    }
+
+    &.gap {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .trainers-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+      gap: 32px;
+
+      @include media-tablet-large {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .trainer-card {
+      max-width: 700px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 40px 32px 40px 32px;
+      box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.12);
+      gap: 24px;
+      border-radius: 16px;
+
+      @include media-tablet-large {
+        max-width: 100%;
+      }
+
+      @include media-mobile-landscape {
+        flex-direction: column;
+      }
+
+      .picture {
+        max-width: 120px;
+        max-height: 120px;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .right {
+        width: fit-content;
+
+        & > .card-title {
+          margin: 0;
+          font-size: 24px;
+          font-weight: $font-weight-medium;
+          line-height: 32px;
+
+          @include media-tablet {
+            font-size: 20px;
+          }
+        }
+
+        & > .card-subtitle {
+          margin: 0;
+          font-size: 18px;
+          font-weight: $font-weight-medium;
+          color: $color-secondary-gray500;
+          @include media-tablet {
+            font-size: 18px;
+          }
+        }
+
+        & .card-content {
+          color: $color-secondary-gray600;
+          font-size: 16px;
+          font-weight: $font-weight-regular;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}

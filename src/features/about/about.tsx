@@ -2,13 +2,13 @@ import { courseInfoFree, courseInfoSchedule } from './about.data';
 import { Button, Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
 import { InfoGrid } from './components';
-import './about.scss';
 import { type Course } from '@/app/types';
+import './about.scss';
 
 export const About = ({ courseName }: { courseName: string }) => {
-  const { course: courseRaw } = useCourseByTitle(courseName);
+  const { course: data } = useCourseByTitle(courseName);
 
-  const course = courseRaw as Course;
+  const course = data as Course;
 
   const infoList =
     courseName === 'react' || courseName === 'javascript' ? courseInfoFree : courseInfoSchedule;
