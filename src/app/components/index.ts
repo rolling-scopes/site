@@ -11,5 +11,6 @@ export { SchoolMenu } from './school-menu';
 export { Paragraph } from './paragraph';
 export { DateLang } from './date-lang';
 export { Subtitle } from './subtitle';
+export { Actions } from './actions';
 export { Button } from './button';
 export { Places } from './places';

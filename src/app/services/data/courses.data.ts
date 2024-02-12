@@ -7,7 +7,7 @@ import aws from '@/assets/icons/aws.svg';
 import reactSecondary from '@/assets/icons/react-secondary.png';
 import jsSecondary from '@/assets/icons/js-secondary.png';
 import awsSecondary from '@/assets/icons/aws-secondary.png';
-import angularSecondary from '@/assets/icons/aws-secondary.png';
+import angularSecondary from '@/assets/icons/angular-secondary.png';
 import nodejsSecondary from '@/assets/icons/nodejs-secondary.png';
 //small icons for Course
 import awsFundSmall from '@/assets/icons/footer/aws-fundamentals.png';
