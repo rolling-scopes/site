@@ -6,7 +6,7 @@
     padding: 90px 120px;
 
     @include media-laptop {
-      padding: 75px 40px;
+      padding: 75px 40px 40px;
     }
 
     @include media-tablet {
@@ -23,52 +23,46 @@
       @include media-tablet-large {
         flex-direction: column;
         align-items: flex-start;
-        gap: 80px;
-      }
-
-      @include media-tablet {
-        gap: 50px;
+        gap: 40px;
       }
 
       .left {
-        max-width: 53%;
+        max-width: 54%;
         display: flex;
         flex-direction: column;
-        gap: 35px;
+        gap: 16px;
         flex: 1 1 53%;
 
         & > :nth-child(4) > span {
           font-weight: $font-weight-bold;
         }
 
-        @include media-laptop {
-          & > .title {
-            margin-bottom: -20px;
-          }
-        }
-
         @include media-laptop-medium {
-          max-width: 500px;
+          max-width: 100%;
         }
 
-        @include media-tablet {
-          max-width: 100%;
+        & > .button {
+          margin-top: 24px;
         }
       }
 
       .right {
-        max-width: 47%;
-        flex: 1 1 47%;
+        max-width: 46%;
+        flex: 1 1 46%;
 
         img {
           width: 100%;
           height: min-content;
         }
 
+        @include media-laptop-medium {
+          max-width: 43%;
+        }
+
         @include media-tablet-large {
-          max-width: 80%;
+          max-width: 52%;
           align-self: center;
-          max-height: 484px;
+          max-height: 511px;
         }
       }
     }

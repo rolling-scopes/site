@@ -4,6 +4,7 @@ import { BaseLayout } from '@/features/base-layout';
 import { JavaScript } from '@/pages/javascript';
 import { Angular } from '@/pages/angular';
 import './app.scss';
+import { AwsDeveloper } from '@/pages/aws-developer';
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,8 @@ const router = createBrowserRouter([
       { path: 'nodejs-course', element: <Nodejs /> },
       { path: 'javascript-mentoring-program', element: <JavaScript type="Mentoring Program" /> },
       { path: 'javascript-preschool', element: <JavaScript type="Pre-school" /> },
-      { path: 'angular-course', element: <Angular /> }
+      { path: 'angular-course', element: <Angular /> },
+      { path: 'aws-cloud-developer-course', element: <AwsDeveloper /> }
     ]
   }
 ]);

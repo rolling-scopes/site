@@ -31,6 +31,10 @@
     color: $color-secondary-gray600;
     width: 100%;
 
+    @include media-laptop {
+      font-size: 16px;
+    }
+
     & > .item-title {
       margin-bottom: 10px;
       display: flex;
