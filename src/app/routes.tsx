@@ -21,8 +21,8 @@ export const routes = [
             element: <JavaScript type="Mentoring Program" />
           },
           { path: 'javascript-preschool', element: <JavaScript type="Pre-school" /> },
-          { path: 'angular-course', element: <Angular /> },
-          { path: 'aws-cloud-developer-course', element: <AwsDeveloper /> },
+          { path: 'angular', element: <Angular /> },
+          { path: 'aws-cloud-developer', element: <AwsDeveloper /> },
           { path: 'react', element: <React /> }
         ]
       }
