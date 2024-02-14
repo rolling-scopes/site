@@ -8,20 +8,22 @@ import { act } from 'react-dom/test-utils';
 vi.mock('@/app/hooks');
 
 describe('CourseMain', () => {
+  const testCourse = {
+    loading: false,
+    error: '',
+    course: {
+      title: 'Node.js course',
+      language: ['English'],
+      type: 'Mentoring Program',
+      mode: 'online',
+      detailsUrl: 'https://wearecommunity.io/events/nodejs-rs-2024q1',
+      secondaryIcon: MOCKED_IMAGE_PATH,
+      startDate: '22 Jan, 2060'
+    }
+  };
+
   beforeEach(() => {
-    (useCourseByTitle as Mock).mockReturnValue({
-      loading: false,
-      error: '',
-      course: {
-        title: 'Node.js course',
-        language: ['English'],
-        type: 'Mentoring Program',
-        mode: 'online',
-        detailsUrl: 'https://wearecommunity.io/events/nodejs-rs-2024q1',
-        secondaryIcon: MOCKED_IMAGE_PATH,
-        startDate: '2024-01-01'
-      }
-    });
+    (useCourseByTitle as Mock).mockReturnValue(testCourse);
 
     act(() => {
       render(<CourseMain courseName="Node.js course" type="Mentoring Program" />);
@@ -34,7 +36,20 @@ describe('CourseMain', () => {
   });
 
   it('renders the section label correctly', () => {
-    const labelElement = screen.getByText('unavailable');
+    const labelElement = screen.getByText('avialable');
+    expect(labelElement).toBeVisible();
+  });
+
+  it('renders the section with correct label depending on date', () => {
+    (useCourseByTitle as Mock).mockReturnValueOnce({
+      ...testCourse,
+      course: {
+        ...testCourse.course,
+        startDate: '22 Jan, 2024'
+      }
+    });
+    render(<CourseMain courseName="Node.js course" type="Mentoring Program" />);
+    const labelElement = screen.getByText('upcoming');
     expect(labelElement).toBeVisible();
   });
 

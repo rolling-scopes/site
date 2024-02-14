@@ -10,9 +10,9 @@ interface CourseMainProps {
 }
 
 export const CourseMain = ({ courseName, type }: CourseMainProps) => {
-  const { course: courseRaw, hasError } = useCourseByTitle(courseName, type);
+  const { course: data, hasError } = useCourseByTitle(courseName, type);
 
-  const course = courseRaw as Course;
+  const course = data as Course;
 
   useTitle(`${course?.title || ''} · The Rolling Scopes School`);
 
@@ -20,9 +20,10 @@ export const CourseMain = ({ courseName, type }: CourseMainProps) => {
     return <p>Error fetching course. Try again.</p>;
   }
 
-  const now = new Date();
-  const requiredDate = new Date(course.startDate || now);
-  const label = requiredDate > now ? 'available' : 'unavailable';
+  const now = new Date().setHours(0, 0, 0, 0);
+  const requiredDate = new Date(course.startDate).setHours(0, 0, 0, 0);
+
+  const label = requiredDate < now ? 'upcoming' : 'avialable';
 
   const { title, altTitle, language, mode, detailsUrl, secondaryIcon, startDate } = course;
 
