@@ -3,6 +3,7 @@ import { BaseLayout } from '@/features/base-layout';
 import { JavaScript } from '@/pages/javascript';
 import { Angular } from '@/pages/angular';
 import { AwsDeveloper } from '@/pages/aws-developer';
+import { React } from '@/pages/react';
 
 export const routes = [
   {
@@ -21,7 +22,8 @@ export const routes = [
           },
           { path: 'javascript-preschool', element: <JavaScript type="Pre-school" /> },
           { path: 'angular-course', element: <Angular /> },
-          { path: 'aws-cloud-developer-course', element: <AwsDeveloper /> }
+          { path: 'aws-cloud-developer-course', element: <AwsDeveloper /> },
+          { path: 'react', element: <React /> }
         ]
       }
     ]

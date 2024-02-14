@@ -56,7 +56,7 @@ const awsCloudDeveloper: AboutInfo[] = angularNodejsAwsFundamentals.map((item) =
   return item;
 });
 
-const reactEnJavascript: AboutInfo[] = [
+const javaScript: AboutInfo[] = [
   {
     id: 1,
     title: 'For everyone',
@@ -88,6 +88,17 @@ const reactEnJavascript: AboutInfo[] = [
     icon: chatIcon
   }
 ];
+
+const reactEn: AboutInfo[] = javaScript.map((item) => {
+  if (item.id === 2)
+    return {
+      ...item,
+      title: 'Materials',
+      info: '• School documentation https://docs.rs.school • All materials are publicly available on on the YouTube channel and GitHub',
+      icon: paperIcon
+    };
+  return item;
+});
 
 const reactRuAbout: AboutInfo[] = [
   {
@@ -126,8 +137,8 @@ export const contentMap: ContentMap = {
   angular: angularNodejsAwsFundamentals,
   'aws fundamentals': angularNodejsAwsFundamentals,
   'node.js': angularNodejsAwsFundamentals,
-  javascript: reactEnJavascript,
-  react: reactEnJavascript,
+  javascript: javaScript,
+  react: reactEn,
   'aws cloud dev': awsCloudDeveloper,
   'react ru': reactRuAbout
 };
