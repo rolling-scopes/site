@@ -23,7 +23,7 @@ export const routes = [
           { path: 'javascript-preschool', element: <JavaScript type="Pre-school" /> },
           { path: 'angular', element: <Angular /> },
           { path: 'aws-cloud-developer', element: <AwsDeveloper /> },
-          { path: 'react', element: <React /> }
+          { path: 'reactjs', element: <React /> }
         ]
       }
     ]
