@@ -1,15 +1,9 @@
 import { Breadcrumbs, Button, Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
 import type { Course, CourseType } from '@/app/types';
-import { CourseNames, contentMap } from './training-program.data';
+import { type CourseNames, contentMap } from './training-program.data';
 import { cloneElement } from 'react';
 import './training-program.scss';
-
-const crumbs = [
-  { label: 'Home', path: '/' },
-  { label: 'RS School', path: '/rs-courses' },
-  { label: 'JavaScript course', path: '/javascript-course' }
-];
 
 interface TrainingProgramProps {
   courseName: CourseNames;
@@ -25,7 +19,7 @@ export const TrainingProgram = ({ courseName, type }: TrainingProgramProps) => {
 
   return (
     <>
-      <Breadcrumbs crumbs={crumbs} />
+      <Breadcrumbs />
       <section className="training-program container">
         <div className="training-program content column-2">
           <div className="left">

@@ -1,19 +1,12 @@
-import { Paragraph, Subtitle, Title } from '@/app/components';
+import { Paragraph, Subtitle, Title, CourseCard, Breadcrumbs } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
-import { CourseCard } from '@/app/components';
-import { Breadcrumbs } from '@/app/components';
-import './about.scss';
 import { type Course } from '@/app/types';
+import './about.scss';
 
 export const About = () => {
   const { course: courseRaw, loading, hasError } = useCourseByTitle('React');
 
   const course = courseRaw as Course;
-
-  const crumbs = [
-    { label: 'Home', path: '/' },
-    { label: 'RS School', path: '/rs-courses' }
-  ];
 
   let courseContent;
   if (loading) {
@@ -28,7 +21,7 @@ export const About = () => {
 
   return (
     <>
-      <Breadcrumbs crumbs={crumbs} />
+      <Breadcrumbs />
       <div className="rs-about container">
         <div className="rs-about content">
           <div className="column-2">
