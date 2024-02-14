@@ -1,6 +1,7 @@
 import { Actions, Paragraph, Subtitle } from '@/app/components';
 
 import awsFundamentalsImg from '@/assets/rs-slope-aws-fundamentals.png';
+import awsPractitionerBadge from '@/assets/aws-cloud-pract-badge.png';
 import reactEnImg from '@/assets/rs-slope-react-en.png';
 import reactRuImg from '@/assets/rs-slope-react-ru.png';
 import angularImg from '@/assets/rs-slope-angular.png';
@@ -9,13 +10,14 @@ import nodejsImg from '@/assets/rs-slope-nodejs.png';
 import jsImg from '@/assets/rs-slope-js.png';
 
 export type CourseNames =
-  | 'awsDev'
+  | 'aws cloud dev'
   | 'angular'
   | 'javascript'
-  | 'awsFundamentals'
-  | 'nodejs'
-  | 'reactEn'
-  | 'reactRu';
+  | 'aws fundamentals'
+  | 'node.js'
+  | 'react'
+  | 'react ru'
+  | 'aws fundamentals badge';
 
 interface CourseInfo {
   title: string;
@@ -28,7 +30,7 @@ type ContentMap = {
 };
 
 export const contentMap: ContentMap = {
-  awsDev: {
+  'aws cloud dev': {
     title: 'Training Program',
     content: [
       <Paragraph>
@@ -58,7 +60,7 @@ export const contentMap: ContentMap = {
     ],
     image: awsDevImg
   },
-  awsFundamentals: {
+  'aws fundamentals': {
     title: 'Training Program',
     content: [
       <Paragraph>
@@ -78,7 +80,7 @@ export const contentMap: ContentMap = {
     ],
     image: awsFundamentalsImg
   },
-  nodejs: {
+  'node.js': {
     title: 'Course Topics',
     content: [
       <Paragraph>
@@ -155,7 +157,7 @@ export const contentMap: ContentMap = {
     ],
     image: jsImg
   },
-  reactEn: {
+  react: {
     title: 'Target audience',
     content: [
       <Paragraph>
@@ -178,7 +180,7 @@ export const contentMap: ContentMap = {
     ],
     image: reactEnImg
   },
-  reactRu: {
+  'react ru': {
     title: 'Для кого',
     content: [
       <Paragraph>
@@ -188,5 +190,18 @@ export const contentMap: ContentMap = {
       </Paragraph>
     ],
     image: reactRuImg
+  },
+  'aws fundamentals badge': {
+    title: 'AWS DIGITAL BADGE',
+    content: [
+      <Paragraph>
+        Upon completing the course and passing the AWS Cloud Quest: Cloud Practitioner, you will
+        obtain an AWS digital badge. This badge will recognize your achievement and demonstrate your
+        knowledge of AWS fundamentals to potential employers or clients. By the end of the course,
+        you will have gained a solid foundation in AWS fundamentals and be prepared to pass the AWS
+        Cloud Practitioner certification.
+      </Paragraph>
+    ],
+    image: awsPractitionerBadge
   }
 };

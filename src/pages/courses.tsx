@@ -11,6 +11,7 @@ import { Principles } from '@/features/principles';
 import { StudyPath } from '@/features/study-path';
 
 import { useTitle } from '@/app/hooks';
+import { Breadcrumbs } from '@/app/components';
 
 export const Courses = () => {
   useTitle('Courses · The Rolling Scopes School');
@@ -18,6 +19,7 @@ export const Courses = () => {
   return (
     <>
       <Main />
+      <Breadcrumbs />
       <About />
       <Principles />
       <RSCourses />

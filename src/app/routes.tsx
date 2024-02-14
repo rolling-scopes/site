@@ -4,6 +4,7 @@ import { JavaScript } from '@/pages/javascript';
 import { Angular } from '@/pages/angular';
 import { AwsDeveloper } from '@/pages/aws-developer';
 import { React } from '@/pages/react';
+import { AwsFundamentals } from '@/pages/aws-fundamentals';
 
 export const routes = [
   {
@@ -23,6 +24,7 @@ export const routes = [
           { path: 'javascript-preschool', element: <JavaScript type="Pre-school" /> },
           { path: 'angular', element: <Angular /> },
           { path: 'aws-cloud-developer', element: <AwsDeveloper /> },
+          { path: 'aws-fundamentals', element: <AwsFundamentals /> },
           { path: 'reactjs', element: <React /> }
         ]
       }

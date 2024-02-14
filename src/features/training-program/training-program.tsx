@@ -1,4 +1,4 @@
-import { Breadcrumbs, Button, Title } from '@/app/components';
+import { Button, Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
 import type { Course, CourseType } from '@/app/types';
 import { type CourseNames, contentMap } from './training-program.data';
@@ -11,29 +11,29 @@ interface TrainingProgramProps {
 }
 
 export const TrainingProgram = ({ courseName, type }: TrainingProgramProps) => {
-  const { course: data } = useCourseByTitle(courseName, type);
+  const { course: data } = useCourseByTitle(
+    courseName.includes('badge') ? 'aws fundamentals' : courseName,
+    type
+  );
 
   const course = data as Course;
 
   const { title, content, image } = contentMap[courseName];
 
   return (
-    <>
-      <Breadcrumbs />
-      <section className="training-program container">
-        <div className="training-program content column-2">
-          <div className="left">
-            <Title text={title} hasAsterisk />
+    <section className="training-program container">
+      <div className="training-program content column-2">
+        <div className="left">
+          <Title text={title} hasAsterisk />
 
-            {content.map((component, index) => cloneElement(component, { key: index }))}
+          {content.map((component, index) => cloneElement(component, { key: index }))}
 
-            <Button label="Register" href={course?.detailsUrl} />
-          </div>
-          <div className="right">
-            <img src={image} alt={course?.title} />
-          </div>
+          <Button label="Register" href={course?.detailsUrl} />
         </div>
-      </section>
-    </>
+        <div className={`right ${courseName.includes('badge') ? 'badge' : ''}`}>
+          <img src={image} alt={course?.title} />
+        </div>
+      </div>
+    </section>
   );
 };
