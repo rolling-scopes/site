@@ -45,7 +45,6 @@ export const courses: Course[] = [
     detailsUrl: 'https://rs.school/react/',
     backgroundStyle: { backgroundColor: '#EEF3FE', accentColor: '#7356BF' }
   },
-
   {
     id: '3',
     title: 'Angular course',

@@ -9,7 +9,7 @@ export const Nodejs = () => {
     <>
       <CourseMain courseName="Node.js course" />
       <TrainingProgram courseName="nodejs" />
-      <About courseName="node" />
+      <About courseName="node.js" />
       <Required courseName="nodejs" />
       <Trainers courseName="nodejs" />
     </>

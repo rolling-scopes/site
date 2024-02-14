@@ -5,8 +5,20 @@ import awardIcon from '@/assets/icons/award-icon.png';
 import chatIcon from '@/assets/icons/chat-icon.png';
 import giftIcon from '@/assets/icons/gift.png';
 import planetIcon from '@/assets/icons/planet.png';
+import type { CourseNames } from './about';
 
-export const courseInfoSchedule = [
+type AboutInfo = {
+  id: number;
+  title: string;
+  info: string;
+  icon: string;
+};
+
+type ContentMap = {
+  [key in CourseNames]: AboutInfo[];
+};
+
+const angularNodejsAwsFundamentals: AboutInfo[] = [
   {
     id: 1,
     title: 'For everyone',
@@ -22,7 +34,7 @@ export const courseInfoSchedule = [
   {
     id: 3,
     title: 'Schedule',
-    info: 'Twice a week in the evenings.Duration: 9 weeks.Types of training: webinars.',
+    info: 'Twice a week in the evenings. Duration: 9 weeks.Types of training: webinars.',
     icon: noteIcon
   },
   {
@@ -39,7 +51,12 @@ export const courseInfoSchedule = [
   }
 ];
 
-export const courseInfoFree = [
+const awsCloudDeveloper: AboutInfo[] = angularNodejsAwsFundamentals.map((item) => {
+  if (item.id === 3) return { ...item, info: 'Duration: 10 weeks.' };
+  return item;
+});
+
+const reactEnJavascript: AboutInfo[] = [
   {
     id: 1,
     title: 'For everyone',
@@ -71,3 +88,46 @@ export const courseInfoFree = [
     icon: chatIcon
   }
 ];
+
+const reactRuAbout: AboutInfo[] = [
+  {
+    id: 1,
+    title: 'Для всех желающих',
+    info: 'Новый набор студентов стартует каждые полгода и насчитывает около 6000-7000 человек.В RS School может учиться каждый, независимо от возраста, профессиональной занятости и места жительства. Однако для обучения необходимо иметь базовые знания.',
+    icon: personIcon
+  },
+  {
+    id: 2,
+    title: 'Материалы',
+    info: 'Документация школы - https://docs.rs.schoolВсе материалы находятся в открытом доступе на YouTube и GitHub.Также предлагаем ознакомиться с конспектом первого этапа обучения.',
+    icon: paperIcon
+  },
+  {
+    id: 3,
+    title: 'Сертификат',
+    info: 'Сертификат об успешном прохождении курсов выдается всем прошедшим два этапа обучения.',
+    icon: awardIcon
+  },
+  {
+    id: 4,
+    title: 'Чат',
+    info: 'Открытый чат для абитуриентов и учащихся Discord.',
+    icon: chatIcon
+  },
+  {
+    id: 5,
+    title: 'Менторы и Тренеры',
+    info: 'В обучении участвуют 430 менторов. Наши менторы — это front-end и javascript разработчики из различных компаний и стран.Как стать ментором?',
+    icon: planetIcon
+  }
+];
+
+export const contentMap: ContentMap = {
+  angular: angularNodejsAwsFundamentals,
+  'aws fundamentals': angularNodejsAwsFundamentals,
+  'node.js': angularNodejsAwsFundamentals,
+  javascript: reactEnJavascript,
+  react: reactEnJavascript,
+  'aws cloud dev': awsCloudDeveloper,
+  'react ru': reactRuAbout
+};
