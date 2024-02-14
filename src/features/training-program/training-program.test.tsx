@@ -61,7 +61,7 @@ describe('TrainingProgram', () => {
           detailsUrl: 'https://rs.school/aws-dev'
         }
       });
-      renderWithRouter(<TrainingProgram courseName="awsDev" />);
+      renderWithRouter(<TrainingProgram courseName="aws cloud dev" />);
     });
 
     it('renders correct title', () => {
@@ -93,7 +93,7 @@ describe('TrainingProgram', () => {
     });
   });
 
-  describe('with "reactRu" props', () => {
+  describe('with "react ru" props', () => {
     beforeEach(() => {
       (useCourseByTitle as Mock).mockReturnValueOnce({
         course: {
@@ -103,7 +103,7 @@ describe('TrainingProgram', () => {
         }
       });
 
-      renderWithRouter(<TrainingProgram courseName="reactRu" />);
+      renderWithRouter(<TrainingProgram courseName="react ru" />);
     });
 
     it('renders correct title', () => {

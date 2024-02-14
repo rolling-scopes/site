@@ -3,7 +3,7 @@
 
 .training-program {
   &.content {
-    padding: 90px 120px;
+    padding: 80px 120px;
 
     @include media-laptop {
       padding: 75px 40px 40px;
@@ -27,11 +27,11 @@
       }
 
       .left {
-        max-width: 54%;
+        max-width: 55%;
         display: flex;
         flex-direction: column;
-        gap: 16px;
-        flex: 1 1 53%;
+        gap: 26px;
+        flex: 1 1 55%;
 
         & > :nth-child(4) > span {
           font-weight: $font-weight-bold;
@@ -47,21 +47,35 @@
       }
 
       .right {
-        max-width: 46%;
-        flex: 1 1 46%;
+        max-width: 30%;
+        flex: 1 1 30%;
+
+        &.badge {
+          max-width: 276px;
+          height: auto;
+
+          @include media-tablet-large {
+            max-width: 220px;
+          }
+
+          @include media-tablet {
+            max-width: 175px;
+          }
+
+          @include media-mobile {
+            max-width: 135px;
+          }
+        }
 
         img {
           width: 100%;
           height: min-content;
         }
 
-        @include media-laptop-medium {
-          max-width: 43%;
-        }
-
         @include media-tablet-large {
-          max-width: 52%;
           align-self: center;
+          width: 320px;
+          height: auto;
           max-height: 511px;
         }
       }
