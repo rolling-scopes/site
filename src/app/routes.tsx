@@ -1,10 +1,11 @@
-import { Home, Courses, Nodejs } from '@/pages';
-import { BaseLayout } from '@/features/base-layout';
-import { JavaScript } from '@/pages/javascript';
-import { Angular } from '@/pages/angular';
-import { AwsDeveloper } from '@/pages/aws-developer';
-import { React } from '@/pages/react';
 import { AwsFundamentals } from '@/pages/aws-fundamentals';
+import { AwsDeveloper } from '@/pages/aws-developer';
+import { BaseLayout } from '@/features/base-layout';
+import { Home, Courses, Nodejs } from '@/pages';
+import { JavaScript } from '@/pages/javascript';
+import { NotFound } from '@/pages/not-found';
+import { Angular } from '@/pages/angular';
+import { React } from '@/pages/react';
 
 export const routes = [
   {
@@ -29,5 +30,6 @@ export const routes = [
         ]
       }
     ]
-  }
+  },
+  { path: '*', element: <NotFound /> }
 ];

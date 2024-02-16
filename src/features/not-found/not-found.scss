@@ -1,0 +1,39 @@
+@import 'Styles/mixins';
+
+.not-found {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+  & > .image-wrapper {
+    max-width: 170px;
+    height: auto;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .paragraph {
+    max-width: 480px;
+    text-align: left;
+
+    @include media-mobile-landscape {
+      text-align: center;
+    }
+  }
+
+  .button {
+    @include media-tablet {
+      width: min-content;
+    }
+
+    @include media-mobile {
+      display: none;
+    }
+  }
+}
