@@ -28,27 +28,27 @@ describe('NavItem', () => {
   it('renders correctly', () => {
     (useWindowSize as Mock).mockReturnValue({ width: 1280 });
 
-    renderWithRouter(<NavItem label="Test" href="/test" toggleMenu={toggleMenu} />);
+    renderWithRouter(<NavItem label="Test" href="/test" />);
 
     const linkElement = screen.getByText('Test');
     expect(linkElement).toBeInTheDocument();
   });
 
-  it('calls toggleMenu on click when window innerWidth is less than or equal to 810', () => {
-    (useWindowSize as Mock).mockReturnValue({ width: 800 });
+  // it('calls toggleMenu on click when window innerWidth is less than or equal to 810', () => {
+  //   (useWindowSize as Mock).mockReturnValue({ width: 800 });
 
-    renderWithRouter(<NavItem label="Test" href="/test" toggleMenu={toggleMenu} />);
+  //   renderWithRouter(<NavItem label="Test" href="/test" />);
 
-    const linkElement = screen.getByText('Test');
-    fireEvent.click(linkElement);
+  //   const linkElement = screen.getByText('Test');
+  //   fireEvent.click(linkElement);
 
-    expect(toggleMenu).toHaveBeenCalled();
-  });
+  //   expect(toggleMenu).toHaveBeenCalled();
+  // });
 
   it('does not call toggleMenu on click when window innerWidth is greater than 810', () => {
     (useWindowSize as Mock).mockReturnValue({ width: 1000 });
 
-    renderWithRouter(<NavItem label="Test" href="/test" toggleMenu={toggleMenu} />);
+    renderWithRouter(<NavItem label="Test" href="/test" />);
 
     const linkElement = screen.getByText('Test');
     fireEvent.click(linkElement);

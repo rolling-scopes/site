@@ -14,3 +14,5 @@ export { Subtitle } from './subtitle';
 export { Actions } from './actions';
 export { Button } from './button';
 export { Places } from './places';
+export { MobileView } from './mobile-view';
+export { LogoWrapper } from './logo-wrapper';

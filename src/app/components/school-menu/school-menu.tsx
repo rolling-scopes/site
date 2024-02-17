@@ -3,7 +3,7 @@ import { SchoolList } from './school-list';
 import { type Course } from '@/app/types';
 import './school-menu.scss';
 
-const schoolMenuProps = [
+const schoolMenuStaticLinks = [
   {
     title: 'About RS School',
     to: '/courses',
@@ -26,17 +26,22 @@ const schoolMenuProps = [
   }
 ];
 
-export const SchoolMenu = ({ heading }: { heading: 'rs school' | 'all courses' }) => {
-  const { data: courseRaw } = useDataByName('courses');
+interface SchoolMenuProps {
+  heading: 'rs school' | 'all courses';
+  color?: 'dark' | 'light';
+}
 
-  const courses = courseRaw as Course[];
+export const SchoolMenu = ({ heading, color = 'light' }: SchoolMenuProps) => {
+  const { data } = useDataByName('courses');
 
-  const schoolListProps = heading.includes('courses') ? courses : schoolMenuProps;
+  const courses = data as Course[];
+
+  const schoolListProps = heading.includes('courses') ? courses : schoolMenuStaticLinks;
 
   return (
     <div className="school-menu">
-      <h3 className="heading">{heading}</h3>
-      <SchoolList list={schoolListProps} />
+      <h3 className={`heading ${color}`}>{heading}</h3>
+      <SchoolList list={schoolListProps} color={color} />
     </div>
   );
 };

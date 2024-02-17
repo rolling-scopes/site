@@ -12,8 +12,8 @@
   cursor: pointer;
 
   &::after {
-    transition: transform 0.3s ease-in-out;
     content: '';
+    transition: transform 0.3s ease-in-out;
     width: 100%;
     height: 2px;
     position: absolute;
@@ -42,6 +42,24 @@
 
     &:hover .label {
       color: $color-primary-black;
+    }
+  }
+}
+
+@include media-tablet {
+  .menu-item {
+    display: none;
+  }
+
+  .menu.open .menu-item {
+    display: block;
+
+    & .label {
+      text-align: left;
+    }
+
+    &::after {
+      transform-origin: center left;
     }
   }
 }

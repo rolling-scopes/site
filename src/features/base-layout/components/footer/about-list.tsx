@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { LogoWrapper } from './logo-wrapper';
+import { LogoWrapper } from '@/app/components';
 
 const aboutList = [
   {
@@ -23,7 +23,9 @@ const aboutList = [
 export const AboutList = () => {
   return (
     <div className="about-list">
-      <LogoWrapper />
+      <Link to="/" onClick={() => window.scrollTo({ top: 0 })}>
+        <LogoWrapper />
+      </Link>
       <ul className="about-links">
         {aboutList.map(({ title, to }) => (
           <li key={to}>
