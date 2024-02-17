@@ -22,7 +22,7 @@ export const SchoolItem = ({ item, index, color }: SchoolItemProps) => {
   ) : (
     <li key={item.id} className="school-item with-icon">
       <div className="icon-wrapper">
-        <img src={item.iconSmall} alt={item.title} />
+        <img src={item.iconSmall} alt={item.title} width={32} height={32} loading="lazy" />
       </div>
       <div className="details">
         <Link to={item.detailsUrl} className={color}>

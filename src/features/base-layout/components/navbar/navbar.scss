@@ -139,7 +139,7 @@
 
   .mobile-menu {
     margin-top: 0;
-    padding: 4px 24px 8px 16px;
+    padding: 4px 24px 28px 16px;
     width: 100%;
     display: flex;
     align-items: flex-start;
@@ -154,11 +154,12 @@
     top: 0;
     left: 0px;
     color: #000;
-    display: none;
+    transform: translateY(-100%); // Start with the menu off-screen
+    transition: transform 0.4s ease-out;
   }
 
   .mobile-menu.open {
-    display: block;
+    transform: translateY(0);
   }
 
   .burger {

@@ -20,7 +20,7 @@ export const Navbar = () => {
   const [color, setColor] = useState('gray');
   const { key, hash, pathname } = useLocation();
   const { width } = useWindowSize();
-  const isMobile = isMenuOpen && width <= 810;
+  const isMobile = width <= 810;
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -56,6 +56,7 @@ export const Navbar = () => {
       <Link to="/" onClick={() => window.scrollTo({ top: 0 })}>
         <LogoWrapper />
       </Link>
+
       {isMobile ? (
         <menu className={`mobile-menu ${isMenuOpen ? 'open' : ''}`} data-testid="menu">
           <MobileView type="navbar" />
@@ -68,7 +69,7 @@ export const Navbar = () => {
         </menu>
       )}
 
-      <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+      {isMobile && <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />}
     </div>
   );
 };
