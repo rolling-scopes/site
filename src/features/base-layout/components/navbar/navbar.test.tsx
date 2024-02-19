@@ -63,8 +63,7 @@ describe('Navbar', () => {
   describe('Mobile view', () => {
     beforeEach(async () => {
       (useWindowSize as Mock).mockReturnValue({ width: 800, height: 600 });
-      const { debug } = await act(async () => renderWithRouter(<Navbar />));
-      debug();
+      await act(async () => renderWithRouter(<Navbar />));
     });
 
     afterEach(() => {
@@ -93,13 +92,11 @@ describe('Navbar', () => {
 
   describe('Dropdown', () => {
     it('should be open when isDropdownOpen is true', async () => {
-      // const { debug } =
       await act(async () =>
         renderWithRouter(
           <Dropdown onMouseLeave={() => {}} isDropdownOpen={true} handleClose={() => {}} />
         )
       );
-      // debug();
 
       const dropdownElement = screen.getByTestId('navbar-dropdown');
       expect(dropdownElement).toHaveClass('open');
