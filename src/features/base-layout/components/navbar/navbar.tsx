@@ -1,18 +1,17 @@
 import { useEffect, useState } from 'react';
-import { useWindowSize } from '@/app/hooks/use-window-size/use-window-size';
-import { LogoWrapper } from '@/app/components';
-import { NavItem } from './nav-item/nav-item';
-import { MobileView } from '@/app/components';
-import './navbar.scss';
 import { Link, useLocation } from 'react-router-dom';
-import BurgerMenu from './burger';
+import { MobileView, LogoWrapper } from '@/app/components';
+import { useWindowSize } from '@/app/hooks';
+import { BurgerMenu } from './burger';
+import { NavItem } from './nav-item';
+import './navbar.scss';
 
 const navLinks = [
-  { label: 'About', href: '/#about' },
-  { label: 'RS School', href: '/#school' },
-  { label: 'Events', href: '/#events' },
-  { label: 'Community', href: '/#community' },
-  { label: 'Merch', href: '/#merch' }
+  { label: 'About', href: '#about' },
+  { label: 'RS School', href: '#school' },
+  { label: 'Events', href: '#events' },
+  { label: 'Community', href: '#community' },
+  { label: 'Merch', href: '#merch' }
 ];
 
 export const Navbar = () => {
@@ -54,18 +53,29 @@ export const Navbar = () => {
   return (
     <div className={`navbar ${color}`} data-testid="navigation">
       <Link to="/" onClick={() => window.scrollTo({ top: 0 })}>
-        <LogoWrapper />
+        <LogoWrapper type="navbar" />
       </Link>
 
-      {isMobile ? (
-        <menu className={`mobile-menu ${isMenuOpen ? 'open' : ''}`} data-testid="menu">
+      {isMobile && (
+        <menu className={`mobile-menu ${isMenuOpen ? 'open' : ''}`} data-testid="mobile-menu">
           <MobileView type="navbar" />
         </menu>
-      ) : (
+      )}
+
+      {!isMobile && (
         <menu className="menu">
-          {navLinks.map((link) => (
-            <NavItem key={link.label} label={link.label} href={link.href} />
-          ))}
+          {navLinks.map((link) => {
+            const isDropdown = link.label === 'RS School';
+
+            return (
+              <NavItem
+                key={link.label}
+                label={link.label}
+                href={isDropdown ? undefined : link.href}
+                dropdown={isDropdown}
+              />
+            );
+          })}
         </menu>
       )}
 

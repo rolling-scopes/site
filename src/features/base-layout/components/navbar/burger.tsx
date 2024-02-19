@@ -3,7 +3,7 @@ interface BurgerProps {
   toggleMenu: () => void;
 }
 
-export default function BurgerMenu({ isMenuOpen, toggleMenu }: BurgerProps) {
+export const BurgerMenu = ({ isMenuOpen, toggleMenu }: BurgerProps) => {
   return (
     <div className={`burger ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu} data-testid="burger">
       <div className="top" />
@@ -11,4 +11,4 @@ export default function BurgerMenu({ isMenuOpen, toggleMenu }: BurgerProps) {
       <div className="bottom" />
     </div>
   );
-}
+};

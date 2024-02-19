@@ -24,7 +24,7 @@ export const AboutList = () => {
   return (
     <div className="about-list">
       <Link to="/" onClick={() => window.scrollTo({ top: 0 })}>
-        <LogoWrapper />
+        <LogoWrapper type="footer" />
       </Link>
       <ul className="about-links">
         {aboutList.map(({ title, to }) => (

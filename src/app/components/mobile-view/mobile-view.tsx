@@ -17,7 +17,7 @@ export const MobileView = ({ type }: MobileViewProps) => {
   return (
     <div className="mobile-view" data-testid="mobile-view">
       <Link to={'/'} onClick={() => window.scrollTo({ top: 0 })}>
-        <LogoWrapper />
+        <LogoWrapper type={type} />
       </Link>
 
       <Link to="/#about" className={`main-link ${color}`}>
