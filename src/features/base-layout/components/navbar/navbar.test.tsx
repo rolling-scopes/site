@@ -87,6 +87,8 @@ describe('Navbar', () => {
       fireEvent.click(burger);
       const mobileMenu = screen.getByTestId('mobile-menu');
       expect(mobileMenu).toHaveClass('open');
+      fireEvent.click(burger);
+      expect(mobileMenu).not.toHaveClass('open');
     });
   });
 
