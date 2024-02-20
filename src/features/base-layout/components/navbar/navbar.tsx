@@ -7,11 +7,11 @@ import { NavItem } from './nav-item';
 import './navbar.scss';
 
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'RS School', href: '#school' },
-  { label: 'Events', href: '#events' },
-  { label: 'Community', href: '#community' },
-  { label: 'Merch', href: '#merch' }
+  { label: 'About', href: '/#about' },
+  { label: 'RS School', href: '/#school' },
+  { label: 'Events', href: '/#events' },
+  { label: 'Community', href: '/#community' },
+  { label: 'Merch', href: '/#merch' }
 ];
 
 export const Navbar = () => {
