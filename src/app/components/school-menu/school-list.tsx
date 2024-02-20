@@ -9,12 +9,13 @@ export interface GenericItemProps {
 
 interface SchoolListProps {
   list: (Course | GenericItemProps)[];
+  color: 'dark' | 'light';
 }
 
-export const SchoolList = ({ list }: SchoolListProps) => (
+export const SchoolList = ({ list, color }: SchoolListProps) => (
   <ul className="school-list">
     {list?.map((item, index) => (
-      <SchoolItem item={item} index={index} key={index} />
+      <SchoolItem item={item} index={index} key={index} color={color} />
     ))}
   </ul>
 );
