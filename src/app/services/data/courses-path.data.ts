@@ -17,7 +17,7 @@ export const coursesPath: CoursesPath[] = [
       {
         linkTitle: 'Pre-school upturn',
         href: 'https://rs.school/js-stage0/',
-        isActive: false
+        isActive: true
       }
     ]
   },

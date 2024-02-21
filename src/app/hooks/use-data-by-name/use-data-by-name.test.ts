@@ -31,7 +31,7 @@ const coursesPath: DataMap['coursesPath'] = [
       {
         linkTitle: 'Pre-school upturn',
         href: 'https://rs.school/js-stage0/',
-        isActive: false
+        isActive: true
       }
     ]
   }
