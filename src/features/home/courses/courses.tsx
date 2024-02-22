@@ -16,14 +16,14 @@ const courses: CourseProps[] = [
   {
     title: 'Node.js',
     language: 'EN',
-    startDate: 'June 12, 2023',
+    startDate: 'January 22, 2024',
     href: 'https://rs.school/nodejs/',
     icon: <NodeJsIcon />
   },
   {
     title: 'JS / Front-end. Stage 0',
     language: 'RU',
-    startDate: 'June 26, 2023',
+    startDate: 'June 24, 2024',
     href: 'https://rs.school/js-stage0/',
     icon: <JsFrontendIcon />
   },

@@ -68,7 +68,7 @@ export const courses: Course[] = [
     startDate: '5 Nov, 2023',
     language: ['en'],
     mode: 'online',
-    detailsUrl: 'https://rs.school/js/',
+    detailsUrl: 'https://rs.school/js-en/',
     backgroundStyle: { backgroundColor: '#FFDB201A', accentColor: '#FFDB204D' }
   },
   {
@@ -80,7 +80,7 @@ export const courses: Course[] = [
     startDate: '6 Nov, 2023',
     language: ['ru'],
     mode: 'online',
-    detailsUrl: 'https://rs.school/js-en/',
+    detailsUrl: 'https://rs.school/js/',
     backgroundStyle: { backgroundColor: '#FFDB201A', accentColor: '#FFDB204D' }
   },
   {
@@ -91,10 +91,10 @@ export const courses: Course[] = [
     iconSrc: javascript,
     iconSmall: htmlSmall,
     secondaryIcon: jsSecondary,
-    startDate: '12 Feb, 2024',
+    startDate: '24 Jun, 2024',
     language: ['ru'],
     mode: 'online',
-    detailsUrl: 'https://rs.school/js/',
+    detailsUrl: 'https://rs.school/js-stage0/',
     backgroundStyle: { backgroundColor: '#FFDB201A', accentColor: '#FFDB204D' }
   },
   {
