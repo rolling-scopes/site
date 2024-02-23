@@ -1,13 +1,13 @@
 import './event-card.scss';
 
 export type EventCardProps = {
-  eventType: string; // Meetup
+  eventType: string;
   title: string;
   organizedBy: string;
   organization: string;
   date: string;
   time: string;
-  type: string; // Offline | Online
+  type: string;
   address: string;
   city: string;
   href: string;

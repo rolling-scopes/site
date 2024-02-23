@@ -30,7 +30,8 @@ export const courses: Course[] = [
     startDate: 'Sept 18, 2023',
     language: ['en'],
     mode: 'online',
-    detailsUrl: 'https://rs.school/aws-fundamentals/',
+    detailsUrl: '/courses/aws-fundamentals',
+    enroll: 'https://wearecommunity.io/events/rs-aws-2023q3',
     backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#7356BF' }
   },
   {
@@ -42,7 +43,8 @@ export const courses: Course[] = [
     startDate: '23 Oct, 2023',
     language: ['ru', 'en'],
     mode: 'online',
-    detailsUrl: 'https://rs.school/react/',
+    detailsUrl: '/courses/reactjs',
+    enroll: 'https://wearecommunity.io/events/rs-react-2023q4',
     backgroundStyle: { backgroundColor: '#EEF3FE', accentColor: '#7356BF' }
   },
   {
@@ -54,7 +56,8 @@ export const courses: Course[] = [
     startDate: '16 Oct, 2023',
     language: ['en'],
     mode: 'online',
-    detailsUrl: 'https://rs.school/angular/',
+    detailsUrl: '/courses/angular',
+    enroll: 'https://wearecommunity.io/events/rs-angular-2023q4',
     backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#F4AFA7' }
   },
   {
@@ -68,7 +71,8 @@ export const courses: Course[] = [
     startDate: '5 Nov, 2023',
     language: ['en'],
     mode: 'online',
-    detailsUrl: 'https://rs.school/js-en/',
+    detailsUrl: '/courses/javascript-mentoring-program',
+    enroll: 'https://wearecommunity.io/events/rs-jsfe-en-2023q4',
     backgroundStyle: { backgroundColor: '#FFDB201A', accentColor: '#FFDB204D' }
   },
   {
@@ -80,7 +84,8 @@ export const courses: Course[] = [
     startDate: '6 Nov, 2023',
     language: ['ru'],
     mode: 'online',
-    detailsUrl: 'https://rs.school/js/',
+    detailsUrl: '/courses/javascript-mentoring-program',
+    enroll: 'https://wearecommunity.io/events/js-fe-rs-2023q4',
     backgroundStyle: { backgroundColor: '#FFDB201A', accentColor: '#FFDB204D' }
   },
   {
@@ -94,7 +99,8 @@ export const courses: Course[] = [
     startDate: '24 Jun, 2024',
     language: ['ru'],
     mode: 'online',
-    detailsUrl: 'https://rs.school/js-stage0/',
+    detailsUrl: '/courses/javascript-preschool',
+    enroll: 'https://wearecommunity.io/events/js-stage0-rs-2024q2',
     backgroundStyle: { backgroundColor: '#FFDB201A', accentColor: '#FFDB204D' }
   },
   {
@@ -106,7 +112,8 @@ export const courses: Course[] = [
     startDate: '22 Jan, 2024',
     language: ['en'],
     mode: 'online',
-    detailsUrl: 'https://rs.school/nodejs/',
+    detailsUrl: '/courses/nodejs',
+    enroll: 'https://wearecommunity.io/events/nodejs-rs-2024q1',
     backgroundStyle: { backgroundColor: '#F0F9F4', accentColor: '#AEDF36' }
   },
   {
@@ -118,7 +125,8 @@ export const courses: Course[] = [
     startDate: '12 Feb, 2024',
     language: ['en'],
     mode: 'online',
-    detailsUrl: 'https://rs.school/aws-fundamentals/',
+    detailsUrl: '/courses/aws-cloud-developer',
+    enroll: 'https://wearecommunity.io/events/aws-cloud-dev-rs2023q4',
     backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#7356BF' }
   }
 ];

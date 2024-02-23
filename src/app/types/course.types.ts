@@ -12,5 +12,6 @@ export type Course = {
   language: ('en' | 'ru')[];
   mode: 'online' | 'offline';
   detailsUrl: string;
+  enroll: string;
   backgroundStyle: { backgroundColor: string; accentColor: string };
 };

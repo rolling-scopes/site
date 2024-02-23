@@ -1,16 +1,13 @@
 import noteIcon from '@/assets/icons/note-icon.svg';
 import micIcon from '@/assets/icons/mic.svg';
 import './course-card.scss';
+import { type Course } from '@/app/types';
+import { Link } from 'react-router-dom';
 
-type CourseCardProps = {
-  title: string;
-  iconSrc: string;
-  startDate: string;
-  mode: string;
-  language: ('en' | 'ru')[];
-  detailsUrl: string;
-  backgroundStyle: { backgroundColor: string; accentColor: string };
-};
+export type CourseCardProps = Pick<
+  Course,
+  'title' | 'iconSrc' | 'startDate' | 'detailsUrl' | 'mode' | 'language' | 'backgroundStyle'
+>;
 
 export const CourseCard = ({
   title,
@@ -19,8 +16,9 @@ export const CourseCard = ({
   detailsUrl,
   mode,
   language,
-  backgroundStyle: { backgroundColor, accentColor }
+  backgroundStyle
 }: CourseCardProps) => {
+  const { backgroundColor, accentColor } = backgroundStyle;
   const lang = language.join(' / ');
 
   const cardStyle = {
@@ -47,9 +45,9 @@ export const CourseCard = ({
           </div>
         </div>
         <div className="rs-course-card__right">
-          <a href={detailsUrl} className="rs-course-card__more">
+          <Link to={detailsUrl} className="rs-course-card__more">
             View details<span className="material-symbols-outlined">arrow_forward</span>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

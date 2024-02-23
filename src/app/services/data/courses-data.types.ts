@@ -3,9 +3,9 @@ import { type Course } from '@/app/types';
 export type DataMap = {
   courses: Course[];
   coursesPath: CoursesPath[];
-  javascriptPath: JSPath[];
-  angularPath: AngularAwsPath[];
-  awsDevPath: AngularAwsPath[];
+  javascript: JSPath[];
+  angular: AngularAwsPath[];
+  awsDev: AngularAwsPath[];
 };
 
 export interface JSPath {

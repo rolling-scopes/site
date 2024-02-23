@@ -23,8 +23,7 @@ vi.mock('@/app/hooks', () => ({
 
 describe('StudyPath Component', () => {
   it('renders the title and paragraph text correctly for angularPath', () => {
-    const path = 'angularPath';
-    render(<StudyPath path={path} />);
+    render(<StudyPath path="angular" />);
 
     expect(screen.getByText('Course Curriculum')).toBeInTheDocument();
     expect(
@@ -33,8 +32,7 @@ describe('StudyPath Component', () => {
   });
 
   it('renders the title and paragraph text correctly for awsDevPath', () => {
-    const path = 'awsDevPath';
-    render(<StudyPath path={path} />);
+    render(<StudyPath path="awsDev" />);
 
     expect(screen.getByText('Course Curriculum')).toBeInTheDocument();
     expect(
@@ -43,8 +41,7 @@ describe('StudyPath Component', () => {
   });
 
   it('renders the title and paragraph text correctly for other paths', () => {
-    const path = 'javascriptPath';
-    render(<StudyPath path={path} />);
+    render(<StudyPath path="javascript" />);
 
     expect(screen.getByText('Choose what you want to learn')).toBeInTheDocument();
     expect(
@@ -53,9 +50,7 @@ describe('StudyPath Component', () => {
   });
 
   it('renders stages and their details correctly', () => {
-    const path = 'angularPath';
-
-    render(<StudyPath path={path} />);
+    render(<StudyPath path="angular" />);
 
     testStages.forEach((stage) => {
       const { title, description, topics, actions } = stage;

@@ -25,7 +25,7 @@ export const CourseMain = ({ courseName, type }: CourseMainProps) => {
 
   const label = requiredDate < now ? 'upcoming' : 'avialable';
 
-  const { title, altTitle, language, mode, detailsUrl, secondaryIcon, startDate } = course;
+  const { title, altTitle, language, mode, enroll, secondaryIcon, startDate } = course;
 
   return (
     <main className="nodejs-main container">
@@ -38,7 +38,7 @@ export const CourseMain = ({ courseName, type }: CourseMainProps) => {
           <Title text={altTitle || title} />
           {type && <Subtitle text={type} />}
           <DateLang startDate={startDate} language={language} mode={mode} />
-          <ButtonOutlined label="Enroll" href={detailsUrl} />
+          <ButtonOutlined label="Enroll" href={enroll} />
         </div>
       </div>
     </main>

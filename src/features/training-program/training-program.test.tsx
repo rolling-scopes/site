@@ -16,7 +16,8 @@ describe('TrainingProgram', () => {
           startDate: '16 Oct, 2023',
           language: ['en'],
           mode: 'online',
-          detailsUrl: 'https://rs.school/angular/',
+          detailsUrl: '/courses/angular',
+          enroll: 'https://wearecommunity.io/events/rs-angular-2023q4',
           backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#F4AFA7' }
         }
       });
@@ -43,7 +44,7 @@ describe('TrainingProgram', () => {
 
     it('renders Button with correct url', () => {
       const button = screen.getByRole('link', { name: /register/i });
-      expect(button).toHaveAttribute('href', 'https://rs.school/angular/');
+      expect(button).toHaveAttribute('href', 'https://wearecommunity.io/events/rs-angular-2023q4');
     });
 
     it('renders correct image with alt text', () => {
@@ -56,9 +57,10 @@ describe('TrainingProgram', () => {
     beforeEach(() => {
       (useCourseByTitle as Mock).mockReturnValueOnce({
         course: {
-          id: '2',
-          title: 'aws-dev',
-          detailsUrl: 'https://rs.school/aws-dev'
+          id: '8',
+          title: 'AWS Cloud Developer',
+          detailsUrl: '/courses/aws-cloud-developer',
+          enroll: 'https://wearecommunity.io/events/aws-cloud-dev-rs2023q4'
         }
       });
       renderWithRouter(<TrainingProgram courseName="aws cloud dev" />);
@@ -84,12 +86,15 @@ describe('TrainingProgram', () => {
 
     it('renders Button with correct url', () => {
       const button = screen.getByRole('link', { name: /register/i });
-      expect(button).toHaveAttribute('href', 'https://rs.school/aws-dev');
+      expect(button).toHaveAttribute(
+        'href',
+        'https://wearecommunity.io/events/aws-cloud-dev-rs2023q4'
+      );
     });
 
     it('renders correct image with alt text', () => {
-      const image = screen.getByRole('img', { name: 'aws-dev' });
-      expect(image).toHaveAttribute('alt', expect.stringContaining('aws-dev'));
+      const image = screen.getByRole('img', { name: 'AWS Cloud Developer' });
+      expect(image).toHaveAttribute('alt', expect.stringContaining('AWS Cloud Developer'));
     });
   });
 
@@ -99,7 +104,8 @@ describe('TrainingProgram', () => {
         course: {
           id: '3',
           title: 'react-ru',
-          detailsUrl: 'https://rs.school/react-ru'
+          detailsUrl: '/courses/react-ru',
+          enroll: 'https://wearecommunity.io/events/rs-react-2023q4'
         }
       });
 
@@ -116,6 +122,11 @@ describe('TrainingProgram', () => {
         /Бесплатный курс от сообщества The Rolling Scopes для тех, кто хочет получить знания и опыт/i
       );
       expect(p).toBeInTheDocument();
+    });
+
+    it('renders Button with correct url', () => {
+      const button = screen.getByRole('link', { name: /Записаться/i });
+      expect(button).toHaveAttribute('href', 'https://wearecommunity.io/events/rs-react-2023q4');
     });
   });
 });

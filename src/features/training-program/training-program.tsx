@@ -20,6 +20,8 @@ export const TrainingProgram = ({ courseName, type }: TrainingProgramProps) => {
 
   const { title, content, image } = contentMap[courseName];
 
+  const buttonLabel = courseName === 'react ru' ? 'Записаться' : 'Register';
+
   return (
     <section className="training-program container">
       <div className="training-program content column-2">
@@ -28,7 +30,7 @@ export const TrainingProgram = ({ courseName, type }: TrainingProgramProps) => {
 
           {content.map((component, index) => cloneElement(component, { key: index }))}
 
-          <Button label="Register" href={course?.detailsUrl} />
+          <Button label={buttonLabel} href={course?.enroll} />
         </div>
         <div className={`right ${courseName.includes('badge') ? 'badge' : ''}`}>
           <img src={image} alt={course?.title} />

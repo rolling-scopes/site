@@ -16,6 +16,7 @@ const courses: DataMap['courses'] = [
     language: ['en'],
     mode: 'online',
     detailsUrl: 'https://rs.school/aws-fundamentals/',
+    enroll: 'https://wearecommunity.io/events/rs-aws-2023q3',
     backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#7356BF' }
   }
 ];
@@ -37,7 +38,7 @@ const coursesPath: DataMap['coursesPath'] = [
   }
 ];
 
-const javascriptPath: DataMap['javascriptPath'] = [
+const javascriptPath: DataMap['javascript'] = [
   {
     id: 1,
     title: 'Stage 1',
@@ -48,7 +49,7 @@ const javascriptPath: DataMap['javascriptPath'] = [
   }
 ];
 
-const angularPath: DataMap['angularPath'] = [
+const angularPath: DataMap['angular'] = [
   {
     id: 1,
     title: 'Week #1',
@@ -60,7 +61,7 @@ const angularPath: DataMap['angularPath'] = [
   }
 ];
 
-const awsDevPath: DataMap['awsDevPath'] = [
+const awsDevPath: DataMap['awsDev'] = [
   {
     id: 1,
     title: 'Module 1. Cloud Introduction',
@@ -80,11 +81,11 @@ vi.mock('@/app/services/api', () => ({
         return courses;
       case 'coursesPath':
         return coursesPath;
-      case 'javascriptPath':
+      case 'javascript':
         return javascriptPath;
-      case 'angularPath':
+      case 'angular':
         return angularPath;
-      case 'awsDevPath':
+      case 'awsDev':
         return awsDevPath;
       default:
         return [];
@@ -99,7 +100,7 @@ describe('useDataByName', () => {
     await waitFor(() => !result.current.loading);
 
     expect(result.current.data).toEqual(courses);
-    expect(result.current.error).toBe('');
+    expect(result.current.error).toBe(null);
   });
 
   it('should raise an error when fetch fails', async () => {
@@ -112,7 +113,7 @@ describe('useDataByName', () => {
     await waitFor(() => !result.current.loading);
 
     expect(result.current.data).toEqual(null);
-    expect(result.current.error).toBe('Test fetch failed');
+    expect(result.current.error?.message).toBe('Test fetch failed');
   });
 
   it('should fetch coursesPath data correctly', async () => {
@@ -121,33 +122,33 @@ describe('useDataByName', () => {
     await waitFor(() => !result.current.loading);
 
     expect(result.current.data).toEqual(coursesPath);
-    expect(result.current.error).toBe('');
+    expect(result.current.error).toBe(null);
   });
 
   it('should fetch javascriptPath data correctly', async () => {
-    const { result } = renderHook(() => useDataByName('javascriptPath'));
+    const { result } = renderHook(() => useDataByName('javascript'));
 
     await waitFor(() => !result.current.loading);
 
     expect(result.current.data).toEqual(javascriptPath);
-    expect(result.current.error).toBe('');
+    expect(result.current.error).toBe(null);
   });
 
   it('should fetch angularPath data correctly', async () => {
-    const { result } = renderHook(() => useDataByName('angularPath'));
+    const { result } = renderHook(() => useDataByName('angular'));
 
     await waitFor(() => !result.current.loading);
 
     expect(result.current.data).toEqual(angularPath);
-    expect(result.current.error).toBe('');
+    expect(result.current.error).toBe(null);
   });
 
   it('should fetch awsDevPath data correctly', async () => {
-    const { result } = renderHook(() => useDataByName('awsDevPath'));
+    const { result } = renderHook(() => useDataByName('awsDev'));
 
     await waitFor(() => !result.current.loading);
 
     expect(result.current.data).toEqual(awsDevPath);
-    expect(result.current.error).toBe('');
+    expect(result.current.error).toBe(null);
   });
 });

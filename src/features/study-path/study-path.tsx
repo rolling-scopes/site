@@ -4,19 +4,21 @@ import { Stages } from './components';
 import { useDataByName } from '@/app/hooks';
 import './study-path.scss';
 
+type PathNames = Exclude<keyof DataMap, 'courses'>;
+
 interface StudyPathProps {
-  path: keyof DataMap;
+  path: PathNames;
   marked?: boolean;
 }
 
 export const StudyPath = ({ path, marked }: StudyPathProps) => {
-  const { data: coursesPath } = useDataByName<keyof DataMap>(path);
+  const { data: coursesPath } = useDataByName<PathNames>(path);
+
   const title =
-    path === 'angularPath' || path === 'awsDevPath'
-      ? 'Course Curriculum'
-      : 'Choose what you want to learn';
+    path === 'angular' || path === 'awsDev' ? 'Course Curriculum' : 'Choose what you want to learn';
+
   const paragraph =
-    path === 'angularPath' || path === 'awsDevPath'
+    path === 'angular' || path === 'awsDev'
       ? 'This program will have theory and practice on the following topic:'
       : 'A full-stack developer is someone who has expertise in both frontend (what users see) and backend (server and database) development. This dual skill set enables them to supervise and implement projects from start to finish. Businesses today prioritize hiring full-stack developers because they can efficiently bridge various technological aspects, resulting in faster product development.';
 

@@ -13,7 +13,7 @@ export const Angular = () => {
       <Breadcrumbs />
       <TrainingProgram courseName="angular" />
       <About courseName="angular" />
-      <StudyPath path="angularPath" />
+      <StudyPath path="angular" />
       <Required courseName="angular" marked1 />
       <Trainers courseName="angular" />
     </>

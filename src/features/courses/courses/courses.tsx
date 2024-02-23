@@ -11,7 +11,7 @@ export const Courses = () => {
   const upcomingCourses = courses?.filter(({ title }) => !title.toLowerCase().startsWith('node'));
 
   if (loading) return <h1>Loading...</h1>;
-  if (error) return <h1 style={{ color: 'red' }}>{error}</h1>;
+  if (error) return <h1>{error.message}</h1>;
 
   return (
     <div className="rs-courses container" id="upcoming-courses">
