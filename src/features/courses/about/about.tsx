@@ -4,9 +4,9 @@ import { type Course } from '@/app/types';
 import './about.scss';
 
 export const About = () => {
-  const { course: courseRaw, loading, hasError } = useCourseByTitle('React');
+  const { course: data, loading, hasError } = useCourseByTitle('React');
 
-  const course = courseRaw as Course;
+  const course = data as Course;
 
   let courseContent;
   if (loading) {

@@ -10,13 +10,13 @@ describe('About', () => {
   describe('with "react" props', () => {
     beforeEach(() => {
       (useCourseByTitle as Mock).mockReturnValue({
-        course: { detailsUrl: 'http://course-url.com' }
+        course: { enroll: 'http://course-url.com' }
       });
       render(<About courseName="react" />);
     });
 
-    it('renders "Become a student" button with correct href when courseName is "react"', () => {
-      expect(screen.getByRole('link', { name: /Become a student/i })).toHaveAttribute(
+    it('renders "Become a student" button with correct href when courseName is "react"', async () => {
+      expect(await screen.findByRole('link', { name: /Become a student/i })).toHaveAttribute(
         'href',
         'http://course-url.com'
       );
@@ -34,13 +34,13 @@ describe('About', () => {
   describe('with "angular" props', () => {
     beforeEach(() => {
       (useCourseByTitle as Mock).mockReturnValue({
-        course: { detailsUrl: 'http://course-url.com' }
+        course: { enroll: 'http://course-url.com' }
       });
       render(<About courseName="angular" />);
     });
 
-    it('renders "Become a student" button with correct href', () => {
-      expect(screen.getByRole('link', { name: /Become a student/i })).toHaveAttribute(
+    it('renders "Become a student" button with correct href', async () => {
+      expect(await screen.findByRole('link', { name: /Become a student/i })).toHaveAttribute(
         'href',
         'http://course-url.com'
       );

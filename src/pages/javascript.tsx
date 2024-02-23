@@ -11,16 +11,18 @@ interface JavaScriptProps {
   type: CourseType;
 }
 
+const COURSE_NAME = 'javascript';
+
 export const JavaScript = ({ type }: JavaScriptProps) => {
   return (
     <>
-      <CourseMain courseName="javascript" type={type} />
+      <CourseMain courseName={COURSE_NAME} type={type} />
       <Breadcrumbs />
-      <TrainingProgram courseName="javascript" type={type} />
-      <About courseName="javascript" />
+      <TrainingProgram courseName={COURSE_NAME} type={type} />
+      <About courseName={COURSE_NAME} type={type} />
       <AboutVideo />
-      <StudyPath path="javascriptPath" />
-      <Required courseName="javascript" />
+      <StudyPath path={COURSE_NAME} />
+      <Required courseName={COURSE_NAME} />
     </>
   );
 };

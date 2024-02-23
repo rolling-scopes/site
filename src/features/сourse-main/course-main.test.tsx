@@ -16,7 +16,7 @@ describe('CourseMain', () => {
       language: ['English'],
       type: 'Mentoring Program',
       mode: 'online',
-      detailsUrl: 'https://wearecommunity.io/events/nodejs-rs-2024q1',
+      enroll: 'https://wearecommunity.io/events/nodejs-rs-2024q1',
       secondaryIcon: MOCKED_IMAGE_PATH,
       startDate: '22 Jan, 2060'
     }

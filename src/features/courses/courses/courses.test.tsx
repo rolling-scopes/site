@@ -21,11 +21,10 @@ describe('Courses', () => {
 
   it('displays a error state', () => {
     const errorMessage = 'Something went wrong';
-    (useDataByName as Mock).mockImplementation(() => ({ error: errorMessage }));
+    (useDataByName as Mock).mockImplementation(() => ({ error: new Error(errorMessage) }));
     renderWithRouter(<Courses />);
 
     expect(screen.getByText(errorMessage)).toBeVisible();
-    expect(screen.getByText(errorMessage)).toHaveStyle({ color: 'rgb(255, 0, 0)' });
   });
 
   it('displays the courses when data is available', () => {

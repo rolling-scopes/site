@@ -8,7 +8,7 @@ export const useDataByName = <K extends keyof DataMap>(
 ) => {
   const [data, setData] = useState<DataMap[K] | null>(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,7 +17,7 @@ export const useDataByName = <K extends keyof DataMap>(
         const fetchedData = await fetchDataFn(dataName);
         setData(fetchedData as DataMap[K]);
       } catch (error) {
-        if (error instanceof Error) setError(error.message);
+        if (error instanceof Error) setError(error);
       } finally {
         setLoading(false);
       }

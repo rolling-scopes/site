@@ -12,7 +12,7 @@ export const AwsDeveloper = () => {
       <TrainingProgram courseName="aws cloud dev" />
       <About courseName="aws cloud dev" />
       <Required courseName="awsDev" marked1 />
-      <StudyPath path="awsDevPath" />
+      <StudyPath path="awsDev" />
       <Trainers courseName="awsDev" />
     </>
   );

@@ -1,30 +1,47 @@
-import { CourseType } from '@/app/types';
+import { CourseType, Course } from '@/app/types';
 import { useDataByName } from '../use-data-by-name';
 
+function isCourse(obj: any): obj is Course {
+  return 'title' in obj && (obj as Course).title != null;
+}
+
 export const useCourseByTitle = (titleStartsWith: string, type?: CourseType) => {
-  const { data: courses, error, loading } = useDataByName('courses');
+  const { data: coursesData, error, loading } = useDataByName('courses');
 
-  const course = type
-    ? courses?.find(
-        (course) =>
-          'altTitle' in course &&
-          'type' in course &&
-          course.altTitle?.toLowerCase().startsWith(titleStartsWith.toLowerCase()) &&
-          course.type?.toLowerCase().includes(type.toLowerCase())
-      )
-    : courses?.find((course) =>
-        course.title.toLowerCase().startsWith(titleStartsWith.toLowerCase())
-      );
-
-  if (!course) {
+  if (loading) {
     return {
       course: null,
       loading,
-      hasError: true,
-      error: new Error(`Course with title starting ${titleStartsWith} not found!`)
+      hasError: false,
+      error: null
     };
   }
 
-  const hasError = !!error;
-  return { course, loading, hasError };
+  if (!coursesData || coursesData.length === 0) {
+    return {
+      course: null,
+      loading: false,
+      hasError: true,
+      error: new Error('No courses data available.')
+    };
+  }
+
+  const courses = coursesData.filter(isCourse);
+
+  const titleLower = titleStartsWith.toLowerCase();
+  const typeLower = type?.toLowerCase();
+
+  const course = courses.find((course) => {
+    const titleMatches =
+      course.title.toLowerCase().startsWith(titleLower) ||
+      course.altTitle?.toLowerCase().startsWith(titleLower);
+
+    const typeMatches = typeLower ? course.type?.toLowerCase() === typeLower : true;
+
+    return titleMatches && typeMatches;
+  });
+
+  const hasError = !!error || (!loading && !course);
+
+  return { course, loading, error, hasError };
 };

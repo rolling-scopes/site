@@ -1,20 +1,21 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import { CourseCard } from './course-card';
+import { screen } from '@testing-library/react';
+import { CourseCard, type CourseCardProps } from './course-card';
+import { renderWithRouter } from '@/__tests__/utils';
 
 describe('CourseCard', () => {
-  const mockProps = {
+  const mockProps: CourseCardProps = {
     title: 'Introduction to Testing',
     iconSrc: 'test-icon.svg',
     startDate: '2023-01-01',
-    mode: 'Online',
+    mode: 'online',
     language: ['en', 'ru'] as ('en' | 'ru')[],
     detailsUrl: 'http://example.com/course',
     backgroundStyle: { backgroundColor: '#ffffff', accentColor: '#ff0000' }
   };
 
   beforeEach(() => {
-    render(<CourseCard {...mockProps} />);
+    renderWithRouter(<CourseCard {...mockProps} />);
   });
 
   it('renders the course card title', () => {

@@ -34,7 +34,7 @@ describe('About', () => {
       startDate: '23 Oct, 2023',
       language: ['ru', 'en'],
       mode: 'online',
-      detailsUrl: 'https://rs.school/react/',
+      detailsUrl: '/courses/reactjs',
       backgroundStyle: { backgroundColor: '#EEF3FE', accentColor: '#7356BF' }
     };
 
