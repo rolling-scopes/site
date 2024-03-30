@@ -27,11 +27,11 @@ export const courses: Course[] = [
     iconSrc: aws,
     iconSmall: awsFundSmall,
     secondaryIcon: awsSecondary,
-    startDate: 'Sept 18, 2023',
+    startDate: 'Apr 15, 2024',
     language: ['en'],
     mode: 'online',
     detailsUrl: '/courses/aws-fundamentals',
-    enroll: 'https://wearecommunity.io/events/rs-aws-2023q3',
+    enroll: 'https://wearecommunity.io/events/rs-aws-2024q2',
     backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#7356BF' }
   },
   {
