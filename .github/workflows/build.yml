@@ -7,7 +7,7 @@ env:
   NODE_VERSION: '20.x' # set this to the node version to use
 
 jobs:
-  build-and-deploy:
+  rolling-scopes:
     name: Build and Deploy
     runs-on: ubuntu-latest
     steps:
@@ -19,6 +19,39 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
 
       - name: build
+        env:
+          RS_HOST: 'rollingscopes.com'
+          RS_SCHOOL_HOST: 'rs.school'
+          RS_SCHOOL: false
+        run: |
+          npm install
+          npm run build
+
+      - uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --delete --cache-control max-age=300
+        env:
+          AWS_S3_BUCKET: 'new.rollingscopes.com'
+          AWS_ACCESS_KEY_ID: ${{ secrets.DEPLOY_AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: 'eu-central-1'
+          SOURCE_DIR: 'build'
+  rs-school:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: build
+        env:
+          RS_HOST: 'rollingscopes.com'
+          RS_SCHOOL_HOST: 'rs.school'
+          RS_SCHOOL: true
         run: |
           npm install
           npm run build

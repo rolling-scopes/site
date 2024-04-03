@@ -13,7 +13,7 @@ export const ScrollToHashElement = () => {
       }
     };
 
-    let id = setTimeout(() => scrollToElement(location.hash));
+    const id = setTimeout(() => scrollToElement(location.hash));
 
     return () => {
       clearInterval(id);

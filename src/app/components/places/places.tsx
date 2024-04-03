@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-expect-error no types
 import Marquee from 'react-double-marquee';
 
 import './places.scss';

@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { MobileView, LogoWrapper } from '@/app/components';
+import { buildUrl } from '@/app/services/platform';
 import { useWindowSize } from '@/app/hooks';
 import { BurgerMenu } from './burger';
 import { NavItem } from './nav-item';
 import './navbar.scss';
 
 const navLinks = [
-  { label: 'About', href: '/#about' },
-  { label: 'RS School', href: '/#school' },
-  { label: 'Events', href: '/#events' },
-  { label: 'Community', href: '/#community' },
-  { label: 'Merch', href: '/#merch' }
+  { label: 'About', href: buildUrl('/#about') },
+  { label: 'RS School', href: buildUrl('/#school') },
+  { label: 'Events', href: buildUrl('/#events') },
+  { label: 'Community', href: buildUrl('/#community') },
+  { label: 'Merch', href: buildUrl('/#merch') }
 ];
 
 export const Navbar = () => {

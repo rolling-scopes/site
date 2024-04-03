@@ -1,7 +1,7 @@
 import { CourseType, Course } from '@/app/types';
 import { useDataByName } from '../use-data-by-name';
 
-function isCourse(obj: any): obj is Course {
+function isCourse(obj: object): obj is Course {
   return 'title' in obj && (obj as Course).title != null;
 }
 

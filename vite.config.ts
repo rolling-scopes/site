@@ -7,6 +7,11 @@ export default defineConfig({
   build: {
     outDir: 'build'
   },
+  define: {
+    'process.env.RS_SCHOOL': JSON.stringify(process.env.RS_SCHOOL || false),
+    'process.env.RS_SCHOOL_HOST': JSON.stringify(process.env.RS_SCHOOL_HOST || ''),
+    'process.env.RS_HOST': JSON.stringify(process.env.RS_HOST || '')
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),

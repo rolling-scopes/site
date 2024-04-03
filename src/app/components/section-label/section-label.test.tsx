@@ -10,7 +10,7 @@ describe('SectionLabel component', () => {
   it('converts non-string label props to string', () => {
     const nonStringLabel = 12345;
 
-    // @ts-ignore
+    // @ts-expect-error unit tests
     render(<SectionLabel label={nonStringLabel} />);
     const labelElement = screen.getByText('12345');
     expect(labelElement).toBeInTheDocument();

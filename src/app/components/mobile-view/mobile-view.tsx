@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { LogoWrapper } from '@/app/components';
 import { SchoolMenu } from '@/app/components';
 import './mobile-view.scss';
+import { buildUrl } from '@/app/services/platform';
 
 interface MobileViewProps {
   type: 'navbar' | 'footer';
@@ -16,11 +17,11 @@ export const MobileView = ({ type }: MobileViewProps) => {
 
   return (
     <div className="mobile-view" data-testid="mobile-view">
-      <Link to={'/'} onClick={() => window.scrollTo({ top: 0 })}>
+      <Link to={buildUrl('/')} onClick={() => window.scrollTo({ top: 0 })}>
         <LogoWrapper type={type} />
       </Link>
 
-      <Link to="/#about" className={`main-link ${color}`}>
+      <Link to={buildUrl('/#about')} className={`main-link ${color}`}>
         About Community
       </Link>
 
@@ -34,19 +35,19 @@ export const MobileView = ({ type }: MobileViewProps) => {
 
       <Divider type={type} />
 
-      <Link to="/#community" className={`main-link mt ${color}`}>
+      <Link to={buildUrl('/#community')} className={`main-link mt ${color}`}>
         Community
       </Link>
 
       <Divider type={type} />
 
-      <Link to="/#events" className={`main-link ${color}`}>
+      <Link to={buildUrl('/#events')} className={`main-link ${color}`}>
         Events
       </Link>
 
       <Divider type={type} />
 
-      <Link to="/#merch" className={`main-link ${color}`}>
+      <Link to={buildUrl('/#merch')} className={`main-link ${color}`}>
         Merch
       </Link>
 

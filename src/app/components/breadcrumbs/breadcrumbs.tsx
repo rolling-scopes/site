@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import './breadcrumbs.scss';
+import { buildUrl } from '@/app/services/platform';
 
 export const breadcrumbNameMap: Record<string, string> = {
   courses: 'RS School',
@@ -23,14 +24,14 @@ export const Breadcrumbs = () => {
       <div className="breadcrumbs content">
         <ul>
           <li>
-            <Link to={'/'} className="link">
+            <Link to={buildUrl('/')} className="link">
               Home
             </Link>
             <span className="separator">/</span>
           </li>
           {transformedCrumbs.map((crumb, i) => {
             const isLast = i === transformedCrumbs.length - 1;
-            const to = `/${crumbs.slice(0, i + 1).join('/')}`;
+            const to = buildUrl(`/${crumbs.slice(0, i + 1).join('/')}`);
 
             return (
               <li key={i}>

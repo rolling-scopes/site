@@ -1,29 +1,30 @@
 import { Link } from 'react-router-dom';
 import { LogoWrapper } from '@/app/components';
+import { buildUrl } from '@/app/services/platform';
 
 const aboutList = [
   {
     title: 'About RS',
-    to: '/#about'
+    to: buildUrl('/#about')
   },
   {
     title: 'Events',
-    to: '/#events'
+    to: buildUrl('/#events')
   },
   {
     title: 'Community',
-    to: '/#community'
+    to: buildUrl('/#community')
   },
   {
     title: 'Merch',
-    to: '/#merch'
+    to: buildUrl('/#merch')
   }
 ];
 
 export const AboutList = () => {
   return (
     <div className="about-list">
-      <Link to="/" onClick={() => window.scrollTo({ top: 0 })}>
+      <Link to={buildUrl('/')} onClick={() => window.scrollTo({ top: 0 })}>
         <LogoWrapper type="footer" />
       </Link>
       <ul className="about-links">

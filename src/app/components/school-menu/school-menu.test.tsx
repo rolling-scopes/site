@@ -62,7 +62,7 @@ describe('SchoolMenu', () => {
 
     const descriptions = container.getElementsByTagName('small');
 
-    for (let description of descriptions) {
+    for (const description of descriptions) {
       expect(description).toBeInTheDocument();
     }
   });

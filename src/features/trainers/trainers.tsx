@@ -22,7 +22,7 @@ interface TrainersProps {
 export const Trainers = ({ courseName }: TrainersProps) => {
   const trainers = courseDataMap[courseName];
 
-  let title =
+  const title =
     courseName === 'reactRu'
       ? 'Преподаватели курса'
       : trainers.length > 1

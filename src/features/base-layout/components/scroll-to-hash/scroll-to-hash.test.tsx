@@ -4,8 +4,8 @@ import { describe, it, vi, expect, beforeEach } from 'vitest';
 import { ScrollToHashElement } from './scroll-to-hash';
 
 describe('ScrollToHashElement', () => {
-  let scrollIntoViewMock = vi.fn();
-  let getElementByIdMock = vi.fn();
+  const scrollIntoViewMock = vi.fn();
+  const getElementByIdMock = vi.fn();
   beforeEach(() => {
     scrollIntoViewMock.mockClear();
     getElementByIdMock.mockClear();
