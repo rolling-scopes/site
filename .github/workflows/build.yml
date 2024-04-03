@@ -20,8 +20,8 @@ jobs:
 
       - name: build
         env:
-          RS_HOST: 'rollingscopes.com'
-          RS_SCHOOL_HOST: 'rs.school'
+          RS_HOST: 'https://new.rollingscopes.com'
+          RS_SCHOOL_HOST: 'https://new.rs.school'
           RS_SCHOOL: false
         run: |
           npm install
@@ -49,8 +49,8 @@ jobs:
 
       - name: build
         env:
-          RS_HOST: 'rollingscopes.com'
-          RS_SCHOOL_HOST: 'rs.school'
+          RS_HOST: 'https://new.rollingscopes.com'
+          RS_SCHOOL_HOST: 'https://new.rs.school'
           RS_SCHOOL: true
         run: |
           npm install
