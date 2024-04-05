@@ -46,6 +46,10 @@ export const routes = !process.env.RS_SCHOOL
           {
             path: '/courses',
             children: [
+              {
+                index: true,
+                element: <Courses />
+              },
               { path: 'nodejs', element: <Nodejs /> },
               {
                 path: 'javascript-mentoring-program',
