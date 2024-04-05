@@ -20,8 +20,8 @@ jobs:
 
       - name: build
         env:
-          RS_HOST: 'https://new.rollingscopes.com'
-          RS_SCHOOL_HOST: 'https://new.rs.school'
+          RS_HOST: 'https://rollingscopes.com'
+          RS_SCHOOL_HOST: 'https://rs.school'
         run: |
           npm install
           npm run build
@@ -30,7 +30,7 @@ jobs:
         with:
           args: --delete --cache-control max-age=300
         env:
-          AWS_S3_BUCKET: 'new.rollingscopes.com'
+          AWS_S3_BUCKET: 'rollingscopes.com'
           AWS_ACCESS_KEY_ID: ${{ secrets.DEPLOY_AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: 'eu-central-1'
@@ -49,8 +49,8 @@ jobs:
 
       - name: build
         env:
-          RS_HOST: 'https://new.rollingscopes.com'
-          RS_SCHOOL_HOST: 'https://new.rs.school'
+          RS_HOST: 'https://rollingscopes.com'
+          RS_SCHOOL_HOST: 'https://rs.school'
           RS_SCHOOL: 'true'
         run: |
           npm install
@@ -60,7 +60,7 @@ jobs:
         with:
           args: --delete --cache-control max-age=300
         env:
-          AWS_S3_BUCKET: 'new.rs.school'
+          AWS_S3_BUCKET: 'rs.school'
           AWS_ACCESS_KEY_ID: ${{ secrets.DEPLOY_AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: 'eu-central-1'
