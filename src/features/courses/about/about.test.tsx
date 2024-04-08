@@ -1,25 +1,25 @@
 import { About } from './about';
 import { screen } from '@testing-library/react';
 import { it, vi, expect, describe, Mock } from 'vitest';
-import { useCourseByTitle } from '@/app/hooks';
+import { useNearestCourse } from '@/app/hooks';
 import { renderWithRouter } from '@/__tests__/utils';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 
 vi.mock('@/app/hooks', () => {
   return {
-    useCourseByTitle: vi.fn()
+    useNearestCourse: vi.fn()
   };
 });
 
 describe('About', () => {
   it('displays a loading state', () => {
-    (useCourseByTitle as Mock).mockImplementation(() => ({ loading: true }));
+    (useNearestCourse as Mock).mockImplementation(() => ({ loading: true }));
     renderWithRouter(<About />);
     expect(screen.getByText('Loading...')).toBeVisible();
   });
 
   it('displays a error state', () => {
-    (useCourseByTitle as Mock).mockImplementation(() => ({ hasError: true }));
+    (useNearestCourse as Mock).mockImplementation(() => ({ hasError: true }));
     renderWithRouter(<About />);
     expect(
       screen.getByText('Error loading courses. Try again with different course title.')
@@ -38,13 +38,13 @@ describe('About', () => {
       backgroundStyle: { backgroundColor: '#EEF3FE', accentColor: '#7356BF' }
     };
 
-    (useCourseByTitle as Mock).mockImplementation(() => ({ course }));
+    (useNearestCourse as Mock).mockImplementation(() => ({ course }));
     renderWithRouter(<About />);
     expect(screen.getByText('React JS course')).toBeVisible();
   });
 
   it('displays no courses found when there is no course', () => {
-    (useCourseByTitle as Mock).mockImplementation(() => ({}));
+    (useNearestCourse as Mock).mockImplementation(() => ({}));
     renderWithRouter(<About />);
     expect(screen.getByText('No React courses found.')).toBeInTheDocument();
   });
