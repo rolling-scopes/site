@@ -22,7 +22,7 @@ export const About = () => {
             <br />
             <div>
               The Rolling Scopes brings together developers of all levels who are passionate about
-              technologies such as JavaScript, Front-end development, AWS, iOS, Android, and more.
+              technologies such as JavaScript, Front-end development, AWS, and more.
               Currently, many developers around the world recognize The Rolling Scopes for its
               community-based education program, RS School, along with fascinating events and its
               groovy mascot, Sloth.
