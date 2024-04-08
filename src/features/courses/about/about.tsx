@@ -1,10 +1,10 @@
 import { Paragraph, Subtitle, Title, CourseCard } from '@/app/components';
-import { useCourseByTitle } from '@/app/hooks';
+import { useNearestCourse } from '@/app/hooks';
 import { type Course } from '@/app/types';
 import './about.scss';
 
 export const About = () => {
-  const { course: data, loading, hasError } = useCourseByTitle('React');
+  const { course: data, loading, hasError } = useNearestCourse();
 
   const course = data as Course;
 
