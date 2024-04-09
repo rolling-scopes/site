@@ -28,8 +28,8 @@ export const CourseMain = ({ courseName, type }: CourseMainProps) => {
   const { title, altTitle, language, mode, enroll, secondaryIcon, startDate } = course;
 
   return (
-    <main className="nodejs-main container">
-      <div className="nodejs-main content column-2">
+    <main className="course-main container">
+      <div className="course-main content column-2">
         <div className="icon">
           <img src={secondaryIcon} alt={title} />
         </div>

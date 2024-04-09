@@ -1,7 +1,7 @@
 @import 'Styles/constants';
 @import 'Styles/mixins';
 
-.nodejs-main {
+.course-main {
   min-height: 440px;
   display: flex;
   align-items: center;
@@ -31,6 +31,7 @@
       }
 
       .icon {
+        min-width: 150px;
         max-width: 200px;
         margin-top: -36px;
 
@@ -38,6 +39,7 @@
           width: 100%;
           height: auto;
         }
+
         @include media-tablet {
           display: none;
         }
