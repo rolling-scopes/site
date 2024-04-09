@@ -13,7 +13,9 @@ interface SchoolListProps {
 }
 
 export const SchoolList = ({ list, color }: SchoolListProps) => {
-  const className = !!list && 'description' in list[0] ? "school-list" : "school-list school-list_width" ;
+  const className = (!!list && !!list[0] && 'description' in list[0]) 
+    ? "school-list"
+    : "school-list school-list_width";
   return (
     <ul className={className}>
       {list?.map((item, index) => (
