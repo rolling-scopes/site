@@ -12,11 +12,11 @@ export const About = () => {
   if (loading) {
     courseContent = <p>Loading...</p>;
   } else if (hasError) {
-    courseContent = <p>Error loading courses. Try again with different course title.</p>;
+    courseContent = <p>Error loading courses.</p>;
   } else if (course) {
     courseContent = <CourseCard {...course} />;
   } else {
-    courseContent = <p>No React courses found.</p>;
+    courseContent = <p>No courses found.</p>;
   }
 
   return (
