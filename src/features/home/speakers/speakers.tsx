@@ -1,6 +1,6 @@
 import { Title, Subtitle, TitleType } from '@/app/components';
 
-import image from '@/assets/speakers-wanted.png';
+import image from '@/assets/speakers-wanted.webp';
 
 import './speakers.scss';
 

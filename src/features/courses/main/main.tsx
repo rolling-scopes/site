@@ -1,6 +1,6 @@
 import { Subtitle, Title, TitleType } from '@/app/components';
 
-import mentors from '@/assets/mentor with his students.png';
+import mentors from '@/assets/mentor-with-his-students.webp';
 
 import './main.scss';
 

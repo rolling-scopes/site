@@ -1,9 +1,9 @@
-import HTMLIcon from '@/assets/icons/html.png';
-import JSIcon from '@/assets/icons/javascript.png';
+import HTMLIcon from '@/assets/icons/html.webp';
+import JSIcon from '@/assets/icons/javascript.webp';
 import ReactAngIcon from '@/assets/icons/react-angular.svg';
-import NodeJSIcon from '@/assets/icons/nodejs.png';
-import AWSFundamentalsIcon from '@/assets/icons/aws-fundamentals.png';
-import AWSDeveloperIcon from '@/assets/icons/aws-developer.png';
+import NodeJSIcon from '@/assets/icons/nodejs.webp';
+import AWSFundamentalsIcon from '@/assets/icons/aws-fundamentals.webp';
+import AWSDeveloperIcon from '@/assets/icons/aws-developer.webp';
 import { type CoursesPath } from './courses-data.types';
 
 export const coursesPath: CoursesPath[] = [

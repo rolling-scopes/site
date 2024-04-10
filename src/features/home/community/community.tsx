@@ -2,7 +2,7 @@ import { Title, Subtitle, SocialMedia, TitleType, type SocialMediaProps } from '
 
 import { InstagramIcon, LinkedInIcon, YouTubeIcon, TelegramIcon, FacebookIcon } from '@/icons';
 
-import image from '@/assets/welcome.png';
+import image from '@/assets/welcome.webp';
 
 import './community.scss';
 

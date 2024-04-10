@@ -1,6 +1,6 @@
 import { Title, Subtitle, Paragraph } from '@/app/components';
 
-import image from '@/assets/map.png';
+import image from '@/assets/map.webp';
 
 import './numbers.scss';
 
