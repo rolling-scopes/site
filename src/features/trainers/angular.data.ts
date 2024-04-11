@@ -1,11 +1,11 @@
-import angImg1 from '@/assets/mentors/a-serhiyenia.png';
-import angImg2 from '@/assets/mentors/n-loginova.png';
-import angImg3 from '@/assets/mentors/k-britsyn.png';
-import angImg4 from '@/assets/mentors/d-yarmoshkin.png';
-import angImg5 from '@/assets/mentors/d-kohut.png';
-import angImg6 from '@/assets/mentors/o-duleba.png';
-import angImg7 from '@/assets/mentors/a-sacca.png';
-import angImg8 from '@/assets/mentors/r-saltykov.png';
+import angImg1 from '@/assets/mentors/a-serhiyenia.webp';
+import angImg2 from '@/assets/mentors/n-loginova.webp';
+import angImg3 from '@/assets/mentors/k-britsyn.webp';
+import angImg4 from '@/assets/mentors/d-yarmoshkin.webp';
+import angImg5 from '@/assets/mentors/d-kohut.webp';
+import angImg6 from '@/assets/mentors/o-duleba.webp';
+import angImg7 from '@/assets/mentors/a-sacca.webp';
+import angImg8 from '@/assets/mentors/r-saltykov.webp';
 import type { Trainer } from './trainers.types';
 
 export const angular: Trainer[] = [

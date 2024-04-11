@@ -7,7 +7,7 @@ import {
   SectionLabel
 } from '@/app/components';
 
-import image from '@/assets/rs-school.png';
+import image from '@/assets/rs-school.webp';
 
 import './school.scss';
 

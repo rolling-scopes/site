@@ -1,4 +1,4 @@
-import nodejsImg from '@/assets/nodejs-trainer.png';
+import nodejsImg from '@/assets/nodejs-trainer.webp';
 import type { Trainer } from './trainers.types';
 
 export const nodejs: Trainer[] = [

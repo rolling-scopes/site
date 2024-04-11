@@ -43,7 +43,7 @@ function stubAssetImport() {
   return {
     name: 'stub-asset-import',
     transform(_code: string, id: string) {
-      if (id.endsWith('.svg') || id.endsWith('.png')) {
+      if (id.endsWith('.svg') || id.endsWith('.webp')) {
         return `export default 'mocked-image-path'`;
       }
     }

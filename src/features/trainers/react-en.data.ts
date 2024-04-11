@@ -1,7 +1,7 @@
-import reactEnImg1 from '@/assets/mentors/i-krasiuk.png';
-import reactEnImg2 from '@/assets/mentors/a-parfianenkau.png';
-import reactEnImg3 from '@/assets/mentors/d-yarmoshkin.png';
-import reactEnImg4 from '@/assets/mentors/a-podlubnyj.png';
+import reactEnImg1 from '@/assets/mentors/i-krasiuk.webp';
+import reactEnImg2 from '@/assets/mentors/a-parfianenkau.webp';
+import reactEnImg3 from '@/assets/mentors/d-yarmoshkin.webp';
+import reactEnImg4 from '@/assets/mentors/a-podlubnyj.webp';
 import type { Trainer } from './trainers.types';
 
 export const reactEn: Trainer[] = [
