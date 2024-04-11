@@ -96,8 +96,7 @@ describe('SchoolMenu', () => {
   it('renders correct link for "AWS Fundamentals" and "React JS course"', () => {
     renderWithRouter(<SchoolMenu heading="all courses" />);
 
-    const linkAWS = screen.getByRole('link', { name: aws.title });
-    const linkReact = screen.getByRole('link', { name: react.title });
+    const [linkAWS, linkReact] = screen.getAllByRole('link');
 
     expect(linkAWS).toHaveAttribute('href', aws.detailsUrl);
     expect(linkReact).toHaveAttribute('href', react.detailsUrl);

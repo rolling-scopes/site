@@ -91,7 +91,7 @@ export const courses: Course[] = [
   },
   {
     id: '6',
-    title: 'JS / Front-end course Pre-school',
+    title: 'JS / Front-end Pre-school',
     altTitle: 'JavaScript / Front-end',
     type: 'Pre-school',
     iconSrc: javascript,

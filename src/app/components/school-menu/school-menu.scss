@@ -53,7 +53,7 @@
       justify-content: flex-start;
       gap: 5px;
 
-      &.with-icon {
+      & .with-icon {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -98,7 +98,7 @@
         }
       }
 
-      a {
+      span {
         font-weight: $font-weight-medium;
         line-height: 20px;
         @extend %transition-all;
@@ -122,7 +122,7 @@
       }
 
       @include media-mobile-landscape {
-        a {
+        span {
           font-size: 12px;
           display: block;
           max-width: 220px;
@@ -136,7 +136,7 @@
       }
 
       @media (max-width: 430px) {
-        a {
+        span {
           max-width: 135px;
         }
       }
