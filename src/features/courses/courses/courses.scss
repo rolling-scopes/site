@@ -38,23 +38,31 @@
 
     & .rs-courses-wrapper {
       width: 100%;
-      display: flex;
+      display: grid;
+      grid-template: 1fr / repeat(3,1fr);
+      grid-auto-flow: row;
       gap: 22px;
-      justify-content: flex-start;
-      flex-wrap: wrap;
 
-      @include media-laptop {
-        padding: 0;
+      @include media-laptop-medium {
+        grid-template: 1fr / repeat(2,1fr);
       }
       @include media-tablet {
-        flex-direction: column;
+        grid-template: 1fr / repeat(1,1fr);
       }
 
       .rs-course-card {
-        flex: 1 1 345px;
+        height: 100%;
+
+        &__top {
+          min-height: calc(100% - 99px);
+        }
+
         @include media-tablet {
-          flex: inherit;
-          max-width: 100%;
+          height: auto;
+
+          &__top {
+            min-height: min-content;
+          }
         }
       }
     }
