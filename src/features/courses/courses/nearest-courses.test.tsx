@@ -1,32 +1,35 @@
-import { About } from './about';
 import { screen } from '@testing-library/react';
 import { it, vi, expect, describe, Mock } from 'vitest';
 import { useNearestCourse } from '@/app/hooks';
 import { renderWithRouter } from '@/__tests__/utils';
+import { Courses } from './courses';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 
 vi.mock('@/app/hooks', () => {
   return {
-    useNearestCourse: vi.fn()
+    useDataByName: vi.fn(() => ({ data: [], loading: false, error: undefined })),
+    useNearestCourse: vi.fn().mockImplementation(() => ({ course: undefined, loading: false, error: undefined, hasError: false })),
   };
 });
 
-describe('About', () => {
-  it('displays a loading state', () => {
+describe('Courses (nearest course)', () => {
+  it('displays a loading state for nearest course', () => {
     (useNearestCourse as Mock).mockImplementation(() => ({ loading: true }));
-    renderWithRouter(<About />);
+    renderWithRouter(<Courses />);
+
     expect(screen.getByText('Loading...')).toBeVisible();
   });
 
-  it('displays a error state', () => {
+  it('displays a error state for nearest course', () => {
     (useNearestCourse as Mock).mockImplementation(() => ({ hasError: true }));
-    renderWithRouter(<About />);
+    renderWithRouter(<Courses />);
+
     expect(
-      screen.getByText('Error loading courses. Try again with different course title.')
+      screen.getByText('Error loading courses.')
     ).toBeVisible();
   });
 
-  it('displays the course when data is available', () => {
+  it('displays the courses when data is available for nearest course', () => {
     const course = {
       id: '2',
       title: 'React JS course',
@@ -39,13 +42,13 @@ describe('About', () => {
     };
 
     (useNearestCourse as Mock).mockImplementation(() => ({ course }));
-    renderWithRouter(<About />);
+    renderWithRouter(<Courses />);
     expect(screen.getByText('React JS course')).toBeVisible();
   });
 
   it('displays no courses found when there is no course', () => {
     (useNearestCourse as Mock).mockImplementation(() => ({}));
-    renderWithRouter(<About />);
-    expect(screen.getByText('No React courses found.')).toBeInTheDocument();
+    renderWithRouter(<Courses />);
+    expect(screen.getByText('No courses found.')).toBeInTheDocument();
   });
 });
