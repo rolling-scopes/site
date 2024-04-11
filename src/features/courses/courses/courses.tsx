@@ -19,9 +19,6 @@ export const Courses = () => {
   }
 
   if (courses === null) return null;
-
-  const upcomingCourses = courses?.filter(({ title }) => !title.toLowerCase().startsWith('node'));
-
   if (loading) return <h1>Loading...</h1>;
   if (error) return <h1>{error.message}</h1>;
 
@@ -32,11 +29,10 @@ export const Courses = () => {
         <div className="card-wrapper">
           {courseContent}
         </div>
-
         
         <Title text="Other curses" type={TitleType.Regular} />
         <div className="rs-courses-wrapper">
-          {(upcomingCourses as Course[]).map(
+          {(courses as Course[]).map(
             (course) => {
               if (course.id === nearestCourse?.id) return;
               return (
