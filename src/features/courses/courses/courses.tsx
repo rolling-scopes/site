@@ -36,7 +36,7 @@ export const Courses = () => {
           {courseContent}
         </div>
         
-        <Title text="Other curses" type={TitleType.Regular} />
+        <Title text="Upcoming courses" type={TitleType.Regular} />
         <div className="rs-courses-wrapper">
           {sortedCourses.map(
             (course) => {
