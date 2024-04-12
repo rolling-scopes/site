@@ -7,7 +7,9 @@ import { compareNumbers } from './utils/compare-courses';
 export const Courses = () => {
   const { data: courses, loading, error } = useDataByName('courses');
   const { course: nearestCourse, loading: nearestLoading, hasError: nearestHasError } = useNearestCourse();
-  const dateNow = Date.now();
+  const nearestCourseStartDate = nearestCourse
+    ? Date.parse(nearestCourse.startDate)
+    : Date.now();
 
   let courseContent;
   if (nearestLoading) {
@@ -24,7 +26,7 @@ export const Courses = () => {
   if (loading) return <h1>Loading...</h1>;
   if (error) return <h1>{error.message}</h1>;
 
-  const sortedCourses = (courses as Course[]).sort(compareNumbers)
+  const sortedCourses = (courses as Course[]).sort((a, b) => compareNumbers(a, b, nearestCourseStartDate))
 
   return (
     <div className="rs-courses container" id="upcoming-courses">
@@ -38,12 +40,11 @@ export const Courses = () => {
         <div className="rs-courses-wrapper">
           {sortedCourses.map(
             (course) => {
-              if (course.id === nearestCourse?.id) return;
               return (
                 <CourseCard
                   key={course.id}
                   {...course}
-                  startDate={ dateNow < Date.parse(course.startDate) ? course.startDate : '(Upcoming)' }
+                  startDate={ nearestCourseStartDate <= Date.parse(course.startDate) ? course.startDate : '(Upcoming)' }
                 />
               )
             }
