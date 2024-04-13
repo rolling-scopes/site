@@ -52,19 +52,19 @@ export const Navbar = () => {
   }, [width, key, hash, pathname]);
 
   return (
-    <div className={`navbar ${color}`} data-testid="navigation">
+    <header className={`navbar ${color}`} data-testid="navigation">
       <Link to="/" onClick={() => window.scrollTo({ top: 0 })}>
         <LogoWrapper type="navbar" />
       </Link>
 
       {isMobile && (
-        <menu className={`mobile-menu ${isMenuOpen ? 'open' : ''}`} data-testid="mobile-menu">
+        <nav className={`mobile-menu ${isMenuOpen ? 'open' : ''}`} data-testid="mobile-menu">
           <MobileView type="navbar" />
-        </menu>
+        </nav>
       )}
 
       {!isMobile && (
-        <menu className="menu">
+        <nav className="menu">
           {navLinks.map((link) => {
             const isDropdown = link.label === 'RS School';
 
@@ -77,10 +77,10 @@ export const Navbar = () => {
               />
             );
           })}
-        </menu>
+        </nav>
       )}
 
       {isMobile && <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />}
-    </div>
+    </header>
   );
 };

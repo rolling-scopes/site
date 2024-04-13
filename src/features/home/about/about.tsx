@@ -6,7 +6,7 @@ import './about.scss';
 
 export const About = () => {
   return (
-    <div className="about container" id="about">
+    <article className="about container" id="about">
       <div className="about content column-2">
         <div className="left">
           <Title text="Who we are" hasAsterisk />
@@ -31,6 +31,6 @@ export const About = () => {
         </div>
         <img className="right picture" src={image} alt="Logo" />
       </div>
-    </div>
+    </article>
   );
 };

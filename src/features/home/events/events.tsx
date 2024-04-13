@@ -37,7 +37,7 @@ const events: EventCardProps[] = [
 ];
 
 export const Events = () => (
-  <div id="events" className="events container">
+  <article id="events" className="events container">
     <div className="events content">
       <div className="info">
         <SectionLabel label="events & meetups" />
@@ -54,5 +54,5 @@ export const Events = () => (
         ))}
       </div>
     </div>
-  </div>
+  </article>
 );

@@ -13,7 +13,7 @@ type TitleProps = React.PropsWithChildren<{
   type?: TitleType;
   hasAsterisk?: boolean;
   hasLines?: boolean;
-}>
+}>;
 
 export const Title = ({ text, type, hasAsterisk, hasLines, children }: TitleProps) => {
   const titleType = type ?? TitleType.Regular;

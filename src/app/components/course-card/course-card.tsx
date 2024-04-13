@@ -27,7 +27,7 @@ export const CourseCard = ({
   };
 
   return (
-    <div className="rs-course-card">
+    <section className="rs-course-card">
       <div className="rs-course-card__top" style={cardStyle}>
         <img src={iconSrc} alt={title} />
         <h3 className="rs-course-card__title">{title}</h3>
@@ -50,6 +50,6 @@ export const CourseCard = ({
           </Link>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

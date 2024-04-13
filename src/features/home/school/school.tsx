@@ -30,7 +30,7 @@ export const studyOptions: OptionItemProps[] = [
 ];
 
 export const School = () => (
-  <div id="school" className="school container">
+  <article id="school" className="school container">
     <div className="school content">
       <div className="study">
         <div className="left">
@@ -50,5 +50,5 @@ export const School = () => (
         ))}
       </div>
     </div>
-  </div>
+  </article>
 );

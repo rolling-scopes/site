@@ -27,7 +27,7 @@ export const Courses = () => {
   const sortedCourses = (courses as Course[]).sort(compareNumbers)
 
   return (
-    <div className="rs-courses container" id="upcoming-courses">
+    <article className="rs-courses container" id="upcoming-courses">
       <div className="rs-courses content">
         <Title text="Nearest course" hasAsterisk type={TitleType.Big}  />
         <div className="card-wrapper">
@@ -50,6 +50,6 @@ export const Courses = () => {
           )}
         </div>
       </div>
-    </div>
+    </article>
   );
 };

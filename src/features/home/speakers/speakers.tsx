@@ -5,7 +5,7 @@ import image from '@/assets/speakers-wanted.webp';
 import './speakers.scss';
 
 export const Speakers = () => (
-  <div className="speakers container">
+  <article className="speakers container">
     <div className="speakers content">
       <div className="info">
         <Title text="Speakers wanted" type={TitleType.Big} hasAsterisk={false} hasLines={true} />
@@ -42,5 +42,5 @@ export const Speakers = () => (
       </div>
       <img className="right picture" src={image} alt="speakers-wanted" />
     </div>
-  </div>
+  </article>
 );

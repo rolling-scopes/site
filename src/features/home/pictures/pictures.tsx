@@ -38,7 +38,7 @@ const socialMedia: SocialMediaProps[] = [
 ];
 
 export const Pictures = () => (
-  <div className="pictures container">
+  <article className="pictures container">
     <div className="pictures content">
       <Title text="The Rolling Scopes in pictures" hasAsterisk />
       <Carousel
@@ -67,5 +67,5 @@ export const Pictures = () => (
         ))}
       </div>
     </div>
-  </div>
+  </article>
 );

@@ -47,7 +47,7 @@ export const Courses = () => {
   }
 
   return (
-    <div className="courses container">
+    <article className="courses container">
       <div className="courses content">
         <div className="title">Upcoming courses</div>
         <div className="column-2">
@@ -76,6 +76,6 @@ export const Courses = () => {
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 };

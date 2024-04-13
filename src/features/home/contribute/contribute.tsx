@@ -20,7 +20,7 @@ const contributeOptions: OptionItemProps[] = [
 ];
 
 export const Contribute = () => (
-  <div className="contribute container">
+  <article className="contribute container">
     <div className="contribute content">
       <div className="general">
         <div className="info">
@@ -49,5 +49,5 @@ export const Contribute = () => (
         professional development.
       </Paragraph>
     </div>
-  </div>
+  </article>
 );

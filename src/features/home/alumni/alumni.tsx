@@ -65,7 +65,7 @@ export const Alumni = () => {
   }
 
   return (
-    <div className="alumni container">
+    <article className="alumni container">
       <div className="alumni content">
         <Title text="Our alumni" hasAsterisk />
         <Paragraph>
@@ -80,6 +80,6 @@ export const Alumni = () => {
           ))}
         </div>
       </div>
-    </div>
+    </article>
   );
 };

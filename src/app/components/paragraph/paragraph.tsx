@@ -5,7 +5,7 @@ type ParagraphProps = {
 };
 
 export const Paragraph = ({ children }: ParagraphProps) => (
-  <div className="paragraph" data-testid="my-paragraph">
+  <p className="paragraph" data-testid="my-paragraph">
     {children}
-  </div>
+  </p>
 );

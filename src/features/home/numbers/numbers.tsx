@@ -20,7 +20,7 @@ const InfoCellDivider = () => <div className="info-divider" />;
 
 export const Numbers = () => {
   return (
-    <div className="numbers container">
+    <article className="numbers container">
       <div className="numbers content">
         <div className="text-container">
           <div>
@@ -50,6 +50,6 @@ export const Numbers = () => {
         </div>
         <img className="map" src={image} alt="map" />
       </div>
-    </div>
+    </article>
   );
 };

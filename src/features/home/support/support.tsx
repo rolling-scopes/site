@@ -5,7 +5,7 @@ import image from '@/assets/support.webp';
 import './support.scss';
 
 export const Support = () => (
-  <div className="support container">
+  <article className="support container">
     <div className="support content">
       <div className="info">
         <Title text="Support Us" type={TitleType.Big} hasAsterisk={false} hasLines={true} />
@@ -15,5 +15,5 @@ export const Support = () => (
       </div>
       <img className="right picture" src={image} alt="support-us" />
     </div>
-  </div>
+  </article>
 );

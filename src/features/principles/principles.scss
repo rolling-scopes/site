@@ -16,13 +16,13 @@
     margin-top: 24px;
     @include media-laptop {
       width: 100%;
-      & > div {
+      & > div, & > section  {
         margin-top: 16px;
       }
     }
 
     @include media-tablet {
-      & > div {
+      & > div, & > section {
         margin-top: 8px;
       }
     }

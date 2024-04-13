@@ -3,7 +3,7 @@ import { EpamLogo, JetBrainsLogo, AwsLogo, GithubLogo } from '@/icons';
 import './partnered.scss';
 
 export const Partnered = () => (
-  <div className="partnered container" data-testid="partnered">
+  <article className="partnered container" data-testid="partnered">
     <div className="partnered content">
       <div className="title">Partnered with</div>
       <div className="partners">
@@ -13,5 +13,5 @@ export const Partnered = () => (
         <GithubLogo />
       </div>
     </div>
-  </div>
+  </article>
 );

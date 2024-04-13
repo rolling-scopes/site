@@ -55,7 +55,7 @@ const communityGroups: SocialMediaProps[] = [
 ];
 
 export const Community = () => (
-  <div id="community" className="community container">
+  <article id="community" className="community container">
     <div className="community content column-2">
       <div className="info">
         <Title text="Join RS Community" type={TitleType.Big} hasAsterisk={false} hasLines={true} />
@@ -68,5 +68,5 @@ export const Community = () => (
       </div>
       <img className="right picture" src={image} alt="community-welcome" />
     </div>
-  </div>
+  </article>
 );

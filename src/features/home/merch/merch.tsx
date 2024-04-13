@@ -5,7 +5,7 @@ import image from '@/assets/merch.webp';
 import './merch.scss';
 
 export const Merch = () => (
-  <div id="merch" className="merch container">
+  <article id="merch" className="merch container">
     <div className="merch content column-2">
       <div className="info">
         <SectionLabel label="merch" />
@@ -20,5 +20,5 @@ export const Merch = () => (
       </div>
       <img className="right picture" src={image} alt="speakers-wanted" />
     </div>
-  </div>
+  </article>
 );

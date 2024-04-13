@@ -18,7 +18,7 @@ const places: string[] = [
 ];
 
 export const Places = () => (
-  <div className="places container">
+  <aside className="places container">
     <div className="places content">
       <Marquee direction="left" childMargin={0}>
         {places.map((place) => (
@@ -31,5 +31,5 @@ export const Places = () => (
         ))}
       </Marquee>
     </div>
-  </div>
+  </aside>
 );

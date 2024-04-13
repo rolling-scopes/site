@@ -26,7 +26,7 @@ export const cards: PrincipleCardProps[] = [
 ];
 
 export const Principles = () => (
-  <div className="principles container">
+  <article className="principles container">
     <div className="principles content">
       <Title
         text="RS School Principles are an ability to complete our mission"
@@ -40,5 +40,5 @@ export const Principles = () => (
         ))}
       </div>
     </div>
-  </div>
+  </article>
 );

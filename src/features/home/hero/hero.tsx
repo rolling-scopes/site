@@ -15,7 +15,7 @@ const tags: TagProps[] = [
 export const Hero = () => {
   return (
     <main id="main" className="main container">
-      <div className="main content">
+      <article className="main content">
         <div className="title-container">
           <h1 className="title-main">The Rolling Scopes</h1>
 
@@ -33,7 +33,7 @@ export const Hero = () => {
             </div>
           ))}
         </div>
-      </div>
+      </article>
     </main>
   );
 };
