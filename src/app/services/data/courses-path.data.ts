@@ -16,7 +16,7 @@ export const coursesPath: CoursesPath[] = [
     links: [
       {
         linkTitle: 'Pre-school upturn',
-        href: 'https://rs.school/js-stage0/',
+        href: 'https://wearecommunity.io/events/js-stage0-rs-2024q2',
         isActive: true
       }
     ]
@@ -30,11 +30,11 @@ export const coursesPath: CoursesPath[] = [
     links: [
       {
         linkTitle: 'JS/TS/FE Fundamentals (RU) invert',
-        href: 'https://rs.school/js/'
+        href: 'https://wearecommunity.io/events/js-fe-rs-2023q4'
       },
       {
         linkTitle: 'JS/TS/FE Fundamentals (EN) invert',
-        href: 'https://rs.school/js-en/'
+        href: 'https://wearecommunity.io/events/rs-jsfe-en-2023q4'
       }
     ]
   },
@@ -47,7 +47,11 @@ export const coursesPath: CoursesPath[] = [
     links: [
       {
         linkTitle: 'React invert',
-        href: 'https://rs.school/react/'
+        href: 'https://wearecommunity.io/events/rs-react-2023q4'
+      },
+      {
+        linkTitle: 'Angular invert',
+        href: 'https://wearecommunity.io/events/rs-angular-2023q4'
       }
     ]
   },
@@ -60,7 +64,7 @@ export const coursesPath: CoursesPath[] = [
     links: [
       {
         linkTitle: 'Node invert',
-        href: 'https://rs.school/nodejs/'
+        href: 'https://wearecommunity.io/events/nodejs-rs-2024q1'
       }
     ]
   },
@@ -73,7 +77,7 @@ export const coursesPath: CoursesPath[] = [
     links: [
       {
         linkTitle: 'AWS Fundamentals invert',
-        href: 'https://rs.school/aws-fundamentals/'
+        href: 'https://wearecommunity.io/events/rs-aws-2023q3'
       }
     ]
   },
