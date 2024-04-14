@@ -1,22 +1,22 @@
 import react from '@/assets/icons/react.svg';
 import nodejs from '@/assets/icons/node.svg';
-import javascript from '@/assets/icons/javascript.png';
+import javascript from '@/assets/icons/javascript.webp';
 import angular from '@/assets/icons/angular.svg';
 import aws from '@/assets/icons/aws.svg';
 // secondary icons for Course
-import reactSecondary from '@/assets/icons/react-secondary.png';
-import jsSecondary from '@/assets/icons/js-secondary.png';
-import awsSecondary from '@/assets/icons/aws-secondary.png';
-import angularSecondary from '@/assets/icons/angular-secondary.png';
-import nodejsSecondary from '@/assets/icons/nodejs-secondary.png';
+import reactSecondary from '@/assets/icons/react-secondary.webp';
+import jsSecondary from '@/assets/icons/js-secondary.webp';
+import awsSecondary from '@/assets/icons/aws-secondary.webp';
+import angularSecondary from '@/assets/icons/angular-secondary.webp';
+import nodejsSecondary from '@/assets/icons/nodejs-secondary.webp';
 //small icons for Course
-import awsFundSmall from '@/assets/icons/footer/aws-fundamentals.png';
-import awsDevSmall from '@/assets/icons/footer/aws-dev.png';
-import jsSmall from '@/assets/icons/footer/javascript.png';
-import htmlSmall from '@/assets/icons/footer/html.png';
-import angularSmall from '@/assets/icons/footer/angular.png';
-import nodejsSmall from '@/assets/icons/footer/nodejs.png';
-import reactSmall from '@/assets/icons/footer/react.png';
+import awsFundSmall from '@/assets/icons/footer/aws-fundamentals.webp';
+import awsDevSmall from '@/assets/icons/footer/aws-dev.webp';
+import jsSmall from '@/assets/icons/footer/javascript.webp';
+import htmlSmall from '@/assets/icons/footer/html.webp';
+import angularSmall from '@/assets/icons/footer/angular.webp';
+import nodejsSmall from '@/assets/icons/footer/nodejs.webp';
+import reactSmall from '@/assets/icons/footer/react.webp';
 
 import { type Course } from '@/app/types';
 import { buildUrl } from '../platform';

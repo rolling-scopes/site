@@ -1,13 +1,13 @@
 import { Actions, Paragraph, Subtitle } from '@/app/components';
 
-import awsFundamentalsImg from '@/assets/rs-slope-aws-fundamentals.png';
-import awsPractitionerBadge from '@/assets/aws-cloud-pract-badge.png';
-import reactEnImg from '@/assets/rs-slope-react-en.png';
-import reactRuImg from '@/assets/rs-slope-react-ru.png';
-import angularImg from '@/assets/rs-slope-angular.png';
-import awsDevImg from '@/assets/rs-slope-aws-dev.png';
-import nodejsImg from '@/assets/rs-slope-nodejs.png';
-import jsImg from '@/assets/rs-slope-js.png';
+import awsFundamentalsImg from '@/assets/rs-slope-aws-fundamentals.webp';
+import awsPractitionerBadge from '@/assets/aws-cloud-pract-badge.webp';
+import reactEnImg from '@/assets/rs-slope-react-en.webp';
+import reactRuImg from '@/assets/rs-slope-react-ru.webp';
+import angularImg from '@/assets/rs-slope-angular.webp';
+import awsDevImg from '@/assets/rs-slope-aws-dev.webp';
+import nodejsImg from '@/assets/rs-slope-nodejs.webp';
+import jsImg from '@/assets/rs-slope-js.webp';
 
 export type CourseNames =
   | 'aws cloud dev'

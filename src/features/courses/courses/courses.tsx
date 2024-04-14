@@ -1,36 +1,52 @@
-import { CourseCard } from '@/app/components';
-import { useDataByName } from '@/app/hooks';
+import { CourseCard, Title, TitleType } from '@/app/components';
+import { useDataByName, useNearestCourse } from '@/app/hooks';
 import './courses.scss';
 import { type Course } from '@/app/types';
+import { compareNumbers } from './utils/compare-courses';
 
 export const Courses = () => {
   const { data: courses, loading, error } = useDataByName('courses');
+  const { course: nearestCourse, loading: nearestLoading, hasError: nearestHasError } = useNearestCourse();
+  const dateNow = Date.now();
+
+  let courseContent;
+  if (nearestLoading) {
+    courseContent = <p>Loading...</p>;
+  } else if (nearestHasError) {
+    courseContent = <p>Error loading courses.</p>;
+  } else if (nearestCourse) {
+    courseContent = <CourseCard {...nearestCourse} />;
+  } else {
+    courseContent = <p>No courses found.</p>;
+  }
 
   if (courses === null) return null;
-
-  const upcomingCourses = courses?.filter(({ title }) => !title.toLowerCase().startsWith('node'));
-
   if (loading) return <h1>Loading...</h1>;
   if (error) return <h1>{error.message}</h1>;
+
+  const sortedCourses = (courses as Course[]).sort(compareNumbers)
 
   return (
     <div className="rs-courses container" id="upcoming-courses">
       <div className="rs-courses content">
-        <div className="title">Upcoming courses</div>
+        <Title text="Nearest course" hasAsterisk type={TitleType.Big}  />
+        <div className="card-wrapper">
+          {courseContent}
+        </div>
+        
+        <Title text="Other curses" type={TitleType.Regular} />
         <div className="rs-courses-wrapper">
-          {(upcomingCourses as Course[]).map(
-            ({ id, title, iconSrc, startDate, detailsUrl, mode, language, backgroundStyle }) => (
-              <CourseCard
-                key={id}
-                title={title}
-                iconSrc={iconSrc}
-                startDate={startDate}
-                detailsUrl={detailsUrl}
-                mode={mode}
-                language={language}
-                backgroundStyle={backgroundStyle}
-              />
-            )
+          {sortedCourses.map(
+            (course) => {
+              if (course.id === nearestCourse?.id) return;
+              return (
+                <CourseCard
+                  key={course.id}
+                  {...course}
+                  startDate={ dateNow < Date.parse(course.startDate) ? course.startDate : '(Upcoming)' }
+                />
+              )
+            }
           )}
         </div>
       </div>

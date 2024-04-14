@@ -1,10 +1,10 @@
-import personIcon from '@/assets/icons/person-icon.png';
-import noteIcon from '@/assets/icons/note-icon.png';
-import paperIcon from '@/assets/icons/paper-icon.png';
-import awardIcon from '@/assets/icons/award-icon.png';
-import chatIcon from '@/assets/icons/chat-icon.png';
-import giftIcon from '@/assets/icons/gift.png';
-import planetIcon from '@/assets/icons/planet.png';
+import personIcon from '@/assets/icons/person-icon.webp';
+import noteIcon from '@/assets/icons/note-icon.webp';
+import paperIcon from '@/assets/icons/paper-icon.webp';
+import awardIcon from '@/assets/icons/award-icon.webp';
+import chatIcon from '@/assets/icons/chat-icon.webp';
+import giftIcon from '@/assets/icons/gift.webp';
+import planetIcon from '@/assets/icons/planet.webp';
 import type { CourseNames } from './about';
 
 type AboutInfo = {

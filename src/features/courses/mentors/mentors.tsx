@@ -1,5 +1,5 @@
 import { Button, Subtitle, Title, TitleType } from '@/app/components';
-import mentorImg from '@/assets/mentors-wanted.png';
+import mentorImg from '@/assets/mentors-wanted.webp';
 import './mentors.scss';
 
 export const Mentors = () => {

@@ -60,8 +60,8 @@
       z-index: 1;
       border-radius: 100%;
       position: absolute;
-      top: 64px;
-      left: 69%;
+      bottom: -180px;
+      right: -150px;
       @extend %transition-all;
     }
   }
@@ -176,8 +176,8 @@
     &:hover > &__top::after {
       width: 279px;
       height: 270px;
-      left: 230px;
-      top: 14px;
+      bottom: -160px;
+      right: -130px;
     }
     &__more:hover {
       background-color: $color-secondary-gray400;

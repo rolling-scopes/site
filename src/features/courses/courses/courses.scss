@@ -1,7 +1,8 @@
 @import 'Styles/mixins';
+@import 'Styles/constants';
+
 .rs-courses {
   @include media-laptop {
-    max-width: 810px;
     padding: 40px;
     margin: 0 auto;
   }
@@ -9,23 +10,15 @@
     padding: 0;
   }
 
-  & .title {
-    font-weight: 500;
+  & > .regular {
     font-size: 36px;
     line-height: 44px;
-    letter-spacing: 0;
-    margin-bottom: 32px;
-
-    @include media-laptop {
-      margin-bottom: 22px;
-    }
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
 
     @include media-tablet {
-      margin-left: 6px;
-    }
-
-    @include media-mobile {
-      margin-bottom: 16px;
+      font-size: 28px;
+      line-height: 36px;
     }
   }
 
@@ -45,25 +38,65 @@
 
     & .rs-courses-wrapper {
       width: 100%;
-      display: flex;
+      display: grid;
+      grid-template: 1fr / repeat(3,1fr);
+      grid-auto-flow: row;
       gap: 22px;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-      padding: 65px 0;
 
-      @include media-laptop {
-        padding: 0;
+      @include media-laptop-medium {
+        grid-template: 1fr / repeat(2,1fr);
       }
       @include media-tablet {
-        flex-direction: column;
+        grid-template: 1fr / repeat(1,1fr);
       }
 
       .rs-course-card {
-        @include media-laptop {
-          max-width: 345px;
+        height: 100%;
+
+        &__top {
+          min-height: calc(100% - 99px);
         }
+
         @include media-tablet {
-          max-width: 100%;
+          height: auto;
+
+          &__top {
+            min-height: min-content;
+          }
+        }
+      }
+    }
+  }
+
+  & .card-wrapper {
+    margin: 28px 0 28px 0;
+
+    @media (min-width: $tablet-width) {
+      & .rs-course-card {
+        flex-direction: row;
+        width: 100%;
+  
+        &__top {
+          border-radius: 12px 0px 0px 12px;
+          border: 1px solid #e2e2e2;
+          border-right: none;
+          min-height: 144px;
+  
+          & h3 {
+            font-size: 24px;
+          }
+          & img {
+            width: 72px;
+            height: 64px;
+            display: block;
+          }
+        }
+  
+        &__bottom {
+          border-radius: 0px 12px 12px 0px;
+  
+          border: 1px solid #e2e2e2;
+          border-left: none;
         }
       }
     }
