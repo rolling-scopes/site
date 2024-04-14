@@ -1,5 +1,6 @@
 import { Title } from '@/app/components';
 import './general.scss';
+import { Link } from 'react-router-dom';
 
 export const General = () => {
   return (
@@ -10,7 +11,9 @@ export const General = () => {
           <div className="materials">
             <h2 className="title">Materials</h2>
             <ul className="description">
-              <li>https://docs.rs.school</li>
+              <li>
+                School <Link to="https://docs.rs.school">documentation</Link>
+              </li>
               <li>All materials are publicly available on YouTube and GitHub</li>
               <li>
                 We also suggest that you familiarize yourself with the summary of the first stage of

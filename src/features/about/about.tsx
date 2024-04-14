@@ -6,13 +6,14 @@ import { CourseType, type Course } from '@/app/types';
 import './about.scss';
 
 export type CourseNames =
-  | 'aws cloud dev'
-  | 'angular'
   | 'javascript'
-  | 'aws fundamentals'
-  | 'node.js'
+  | 'javascript-en'
   | 'react'
-  | 'react ru';
+  | 'react ru'
+  | 'angular'
+  | 'node.js'
+  | 'aws fundamentals'
+  | 'aws cloud dev';
 
 interface AboutProps {
   courseName: CourseNames;

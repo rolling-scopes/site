@@ -18,7 +18,22 @@ type ContentMap = {
   [key in CourseNames]: AboutInfo[];
 };
 
-const angularNodejsAwsFundamentals: AboutInfo[] = [
+type discordLinksType = {
+  [key in CourseNames]: string;
+};
+
+const discordLinks: discordLinksType = {
+  javascript: 'https://discord.com/invite/QvEYg7EaQ4',
+  'javascript-en': 'https://discord.com/invite/uW5cCHR',
+  react: 'https://discord.com/invite/zyRcphs3px',
+  'react ru': 'https://discord.com/invite/zyRcphs3px',
+  angular: 'https://discord.com/invite/xwReXYqvs7',
+  'node.js': 'https://discord.com/invite/8BFb8va',
+  'aws fundamentals': 'https://discord.com/invite/WEZxwRa4J6',
+  'aws cloud dev': 'https://discord.com/invite/WEZxwRa4J6'
+};
+
+const angularNodejsAwsFundamentals: (course: string) => AboutInfo[] = (course) => [
   {
     id: 1,
     title: 'For everyone',
@@ -34,7 +49,7 @@ const angularNodejsAwsFundamentals: AboutInfo[] = [
   {
     id: 3,
     title: 'Schedule',
-    info: 'Twice a week in the evenings. Duration: 9 weeks.Types of training: webinars.',
+    info: 'Twice a week in the evenings. Duration: 9 weeks. Types of training: webinars.',
     icon: noteIcon
   },
   {
@@ -46,17 +61,19 @@ const angularNodejsAwsFundamentals: AboutInfo[] = [
   {
     id: 5,
     title: 'Chat',
-    info: 'Open chat for applicants and students on Discord.',
+    info: `Open <a href=${
+      discordLinks[course as keyof discordLinksType]
+    }>chat</a> for applicants and students on Discord.`,
     icon: chatIcon
   }
 ];
 
-const awsCloudDeveloper: AboutInfo[] = angularNodejsAwsFundamentals.map((item) => {
+const awsCloudDeveloper: AboutInfo[] = angularNodejsAwsFundamentals('aws cloud dev').map((item) => {
   if (item.id === 3) return { ...item, info: 'Duration: 10 weeks.' };
   return item;
 });
 
-const javaScript: AboutInfo[] = [
+const javaScript: (lang: string) => AboutInfo[] = (lang) => [
   {
     id: 1,
     title: 'For everyone',
@@ -66,7 +83,7 @@ const javaScript: AboutInfo[] = [
   {
     id: 2,
     title: 'Worldwide mentors and trainers',
-    info: 'The Mentors and trainers of our school are front-end and javascript developers from different companies/countries. How to become a mentor?',
+    info: 'The Mentors and trainers of our school are front-end and javascript developers from different companies/countries. How to become a <a href="/courses#mentors-wanted">mentor</a>?',
     icon: planetIcon
   },
   {
@@ -84,19 +101,28 @@ const javaScript: AboutInfo[] = [
   {
     id: 5,
     title: 'Chat',
-    info: 'Throughout the course, we mostly use Discord chat.',
+    info: `Throughout the course, we mostly use <a href=${
+      discordLinks[lang === 'en' ? 'javascript-en' : 'javascript']
+    }>Discord chat</a>.`,
     icon: chatIcon
   }
 ];
 
-const reactEn: AboutInfo[] = javaScript.map((item) => {
-  if (item.id === 2)
+const reactEn: AboutInfo[] = javaScript('en').map((item) => {
+  if (item.id === 2) {
     return {
       ...item,
       title: 'Materials',
-      info: '• School documentation https://docs.rs.school • All materials are publicly available on on the YouTube channel and GitHub',
+      info: `<li>School <a href='https://docs.rs.school'>documentation</a></li><li>All materials are publicly available on the YouTube channel and GitHub</li>`,
       icon: paperIcon
     };
+  }
+  if (item.id === 5) {
+    return {
+      ...item,
+      info: `Throughout the course, we mostly use <a href=${discordLinks['react']}>Discord chat</a>.`
+    };
+  }
   return item;
 });
 
@@ -122,23 +148,24 @@ const reactRuAbout: AboutInfo[] = [
   {
     id: 4,
     title: 'Чат',
-    info: 'Открытый чат для абитуриентов и учащихся Discord.',
+    info: `Открытый <a href=${discordLinks['react ru']}>chat</a> для абитуриентов и учащихся Discord.`,
     icon: chatIcon
   },
   {
     id: 5,
     title: 'Менторы и Тренеры',
-    info: 'В обучении участвуют 430 менторов. Наши менторы — это front-end и javascript разработчики из различных компаний и стран.Как стать ментором?',
+    info: 'В обучении участвуют 430 менторов. Наши менторы — это front-end и javascript разработчики из различных компаний и стран. Как стать ментором?',
     icon: planetIcon
   }
 ];
 
 export const contentMap: ContentMap = {
-  angular: angularNodejsAwsFundamentals,
-  'aws fundamentals': angularNodejsAwsFundamentals,
-  'node.js': angularNodejsAwsFundamentals,
-  javascript: javaScript,
+  javascript: javaScript('ru'),
+  'javascript-en': javaScript('en'),
   react: reactEn,
-  'aws cloud dev': awsCloudDeveloper,
-  'react ru': reactRuAbout
+  'react ru': reactRuAbout,
+  angular: angularNodejsAwsFundamentals('angular'),
+  'node.js': angularNodejsAwsFundamentals('node.js'),
+  'aws fundamentals': angularNodejsAwsFundamentals('aws fundamentals'),
+  'aws cloud dev': awsCloudDeveloper
 };
