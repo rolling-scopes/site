@@ -14,7 +14,7 @@ describe('General', () => {
 
   it('displays the Materials section', () => {
     expect(screen.getByText('Materials')).toBeVisible();
-    expect(screen.getByText('https://docs.rs.school')).toBeVisible();
+    expect(screen.getByText('documentation')).toBeVisible();
   });
 
   it('displays the Certificate section', () => {

@@ -18,7 +18,7 @@ describe('Courses', () => {
   });
 
   it('renders course info correctly', () => {
-    const courseElement = screen.getByText('Node.js (EN)');
+    const courseElement = screen.getByText('AWS Fundamentals (EN)');
     expect(courseElement).toBeInTheDocument();
   });
 
