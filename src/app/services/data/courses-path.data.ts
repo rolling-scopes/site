@@ -5,6 +5,7 @@ import NodeJSIcon from '@/assets/icons/nodejs.webp';
 import AWSFundamentalsIcon from '@/assets/icons/aws-fundamentals.webp';
 import AWSDeveloperIcon from '@/assets/icons/aws-developer.webp';
 import { type CoursesPath } from './courses-data.types';
+import { buildUrl } from '@/app/services/platform';
 
 export const coursesPath: CoursesPath[] = [
   {
@@ -16,7 +17,7 @@ export const coursesPath: CoursesPath[] = [
     links: [
       {
         linkTitle: 'Pre-school upturn',
-        href: 'https://wearecommunity.io/events/js-stage0-rs-2024q2',
+        href: buildUrl('/courses/javascript-preschool'),
         isActive: true
       }
     ]
@@ -29,12 +30,13 @@ export const coursesPath: CoursesPath[] = [
     logoIcon: JSIcon,
     links: [
       {
+        // TODO: change link to RU page when it'll be ready
         linkTitle: 'JS/TS/FE Fundamentals (RU) invert',
-        href: 'https://wearecommunity.io/events/js-fe-rs-2023q4'
+        href: buildUrl('/courses/javascript-mentoring-program')
       },
       {
         linkTitle: 'JS/TS/FE Fundamentals (EN) invert',
-        href: 'https://wearecommunity.io/events/rs-jsfe-en-2023q4'
+        href: buildUrl('/courses/javascript-mentoring-program')
       }
     ]
   },
@@ -47,11 +49,11 @@ export const coursesPath: CoursesPath[] = [
     links: [
       {
         linkTitle: 'React invert',
-        href: 'https://wearecommunity.io/events/rs-react-2023q4'
+        href: buildUrl('/courses/reactjs')
       },
       {
         linkTitle: 'Angular invert',
-        href: 'https://wearecommunity.io/events/rs-angular-2023q4'
+        href: buildUrl('/courses/angular')
       }
     ]
   },
@@ -64,7 +66,7 @@ export const coursesPath: CoursesPath[] = [
     links: [
       {
         linkTitle: 'Node invert',
-        href: 'https://wearecommunity.io/events/nodejs-rs-2024q1'
+        href: buildUrl('/courses/nodejs')
       }
     ]
   },
@@ -77,7 +79,7 @@ export const coursesPath: CoursesPath[] = [
     links: [
       {
         linkTitle: 'AWS Fundamentals invert',
-        href: 'https://wearecommunity.io/events/rs-aws-2023q3'
+        href: buildUrl('/courses/aws-fundamentals')
       }
     ]
   },
@@ -90,7 +92,7 @@ export const coursesPath: CoursesPath[] = [
     links: [
       {
         linkTitle: 'AWS Developer invert',
-        href: 'https://wearecommunity.io/events/aws-cloud-dev-rs2023q4'
+        href: buildUrl('/courses/aws-cloud-developer')
       }
     ]
   }
