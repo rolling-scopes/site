@@ -16,7 +16,7 @@ export const coursesPath: CoursesPath[] = [
     logoIcon: HTMLIcon,
     links: [
       {
-        linkTitle: 'Pre-school upturn',
+        linkTitle: 'Pre-school',
         href: buildUrl('/courses/javascript-preschool'),
         isActive: true
       }
@@ -31,11 +31,11 @@ export const coursesPath: CoursesPath[] = [
     links: [
       {
         // TODO: change link to RU page when it'll be ready
-        linkTitle: 'JS/TS/FE Fundamentals (RU) invert',
+        linkTitle: 'JS/TS/FE Fundamentals (RU)',
         href: buildUrl('/courses/javascript-mentoring-program')
       },
       {
-        linkTitle: 'JS/TS/FE Fundamentals (EN) invert',
+        linkTitle: 'JS/TS/FE Fundamentals (EN)',
         href: buildUrl('/courses/javascript-mentoring-program')
       }
     ]
@@ -48,11 +48,11 @@ export const coursesPath: CoursesPath[] = [
     logoIcon: ReactAngIcon,
     links: [
       {
-        linkTitle: 'React invert',
+        linkTitle: 'React',
         href: buildUrl('/courses/reactjs')
       },
       {
-        linkTitle: 'Angular invert',
+        linkTitle: 'Angular',
         href: buildUrl('/courses/angular')
       }
     ]
@@ -65,7 +65,7 @@ export const coursesPath: CoursesPath[] = [
     logoIcon: NodeJSIcon,
     links: [
       {
-        linkTitle: 'Node invert',
+        linkTitle: 'Node',
         href: buildUrl('/courses/nodejs')
       }
     ]
@@ -78,7 +78,7 @@ export const coursesPath: CoursesPath[] = [
     logoIcon: AWSFundamentalsIcon,
     links: [
       {
-        linkTitle: 'AWS Fundamentals invert',
+        linkTitle: 'AWS Fundamentals',
         href: buildUrl('/courses/aws-fundamentals')
       }
     ]
@@ -91,7 +91,7 @@ export const coursesPath: CoursesPath[] = [
     logoIcon: AWSDeveloperIcon,
     links: [
       {
-        linkTitle: 'AWS Developer invert',
+        linkTitle: 'AWS Developer',
         href: buildUrl('/courses/aws-cloud-developer')
       }
     ]
