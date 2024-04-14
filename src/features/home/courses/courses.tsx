@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { JsFrontendIcon, AwsLogo, RSLogo } from '@/icons';
 import { useWindowSize } from '@/app/hooks';
 import { Button } from '@/app/components';
+import { buildUrl } from '@/app/services/platform';
 import './courses.scss';
 
 type CourseProps = {
@@ -17,21 +18,21 @@ const courses: CourseProps[] = [
     title: 'AWS Fundamentals',
     language: 'EN',
     startDate: 'April 15, 2024',
-    href: 'https://rs.school/courses/aws-fundamentals',
+    href: buildUrl('/courses/aws-fundamentals'),
     icon: <AwsLogo />
   },
   {
     title: 'JS / Front-end. Pre-school',
     language: 'RU',
     startDate: 'June 24, 2024',
-    href: 'https://rs.school/courses/javascript-preschool',
+    href: buildUrl('/courses/javascript-preschool'),
     icon: <JsFrontendIcon />
   },
   {
     title: 'JS / Front-end',
     language: 'EN',
     startDate: 'November 6, 2023',
-    href: 'https://rs.school/courses/javascript-mentoring-program',
+    href: buildUrl('/courses/javascript-mentoring-program'),
     icon: <JsFrontendIcon />
   }
 ];
