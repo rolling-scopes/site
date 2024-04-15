@@ -65,21 +65,21 @@ export const Alumni = () => {
   }
 
   return (
-    <div className="alumni container">
-      <div className="alumni content">
+    <article className="alumni container">
+      <section className="alumni content">
         <Title text="Our alumni" hasAsterisk />
         <Paragraph>
           We are immensely proud of RS School alumni who build their successful careers in ambitious
           IT companies
         </Paragraph>
-        <div className="alumni">
+        <section className="alumni">
           {alumniArr.map(({ id, image }) => (
-            <div key={id} className="alumni-logo-container">
+            <figure key={id} className="alumni-logo-container">
               <img className="alumni-logo" src={image} alt={id} />
-            </div>
+            </figure>
           ))}
-        </div>
-      </div>
-    </div>
+        </section>
+      </section>
+    </article>
   );
 };
