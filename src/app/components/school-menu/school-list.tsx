@@ -12,14 +12,15 @@ interface SchoolListProps {
   color: 'dark' | 'light';
 }
 
-export const SchoolList = ({ list, color }: SchoolListProps) => {
+export const SchoolList = ({ list, color }: SchoolListProps) => {  
   const className = (!!list && !!list[0] && 'description' in list[0]) 
     ? "school-list"
     : "school-list school-list_width";
+
   return (
     <ul className={className}>
       {list?.map((item, index) => (
-        <SchoolItem item={item} index={index} key={index} color={color} />
+        <SchoolItem item={item} index={index} key={item.title} color={color} />
       ))}
     </ul>
   )
