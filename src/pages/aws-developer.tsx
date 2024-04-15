@@ -1,5 +1,5 @@
 import { TrainingProgram } from '@/features/training-program';
-import { CourseMain } from '@/features/сourse-main';
+import { CourseMain } from '@/features/course-main';
 import { StudyPath } from '@/features/study-path';
 import { Trainers } from '@/features/trainers';
 import { About } from '@/features/about';
