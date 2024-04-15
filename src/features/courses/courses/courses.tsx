@@ -6,21 +6,10 @@ import { compareNumbers } from './utils/compare-courses';
 
 export const Courses = () => {
   const { data: courses, loading, error } = useDataByName('courses');
-  const { course: nearestCourse, loading: nearestLoading, hasError: nearestHasError } = useNearestCourse();
+  const { course: nearestCourse } = useNearestCourse();
   const nearestCourseStartDate = nearestCourse
     ? Date.parse(nearestCourse.startDate)
     : Date.now();
-
-  let courseContent;
-  if (nearestLoading) {
-    courseContent = <p>Loading...</p>;
-  } else if (nearestHasError) {
-    courseContent = <p>Error loading courses.</p>;
-  } else if (nearestCourse) {
-    courseContent = <CourseCard {...nearestCourse} />;
-  } else {
-    courseContent = <p>No courses found.</p>;
-  }
 
   if (courses === null) return null;
   if (loading) return <h1>Loading...</h1>;
@@ -30,12 +19,7 @@ export const Courses = () => {
 
   return (
     <div className="rs-courses container" id="upcoming-courses">
-      <div className="rs-courses content">
-        <Title text="Nearest course" hasAsterisk type={TitleType.Big}  />
-        <div className="card-wrapper">
-          {courseContent}
-        </div>
-        
+      <div className="rs-courses content">        
         <Title text="Upcoming courses" type={TitleType.Regular} />
         <div className="rs-courses-wrapper">
           {sortedCourses.map(

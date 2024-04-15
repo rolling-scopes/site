@@ -10,18 +10,6 @@
     padding: 0;
   }
 
-  & > .regular {
-    font-size: 36px;
-    line-height: 44px;
-    letter-spacing: -0.02em;
-    margin-bottom: 24px;
-
-    @include media-tablet {
-      font-size: 28px;
-      line-height: 36px;
-    }
-  }
-
   & .content {
     padding: 40px 120px 40px;
 
@@ -42,6 +30,7 @@
       grid-template: 1fr / repeat(3,1fr);
       grid-auto-flow: row;
       gap: 22px;
+      margin-top: 24px;
 
       @include media-laptop-medium {
         grid-template: 1fr / repeat(2,1fr);
@@ -63,40 +52,6 @@
           &__top {
             min-height: min-content;
           }
-        }
-      }
-    }
-  }
-
-  & .card-wrapper {
-    margin: 28px 0 28px 0;
-
-    @media (min-width: $tablet-width) {
-      & .rs-course-card {
-        flex-direction: row;
-        width: 100%;
-  
-        &__top {
-          border-radius: 12px 0px 0px 12px;
-          border: 1px solid #e2e2e2;
-          border-right: none;
-          min-height: 144px;
-  
-          & h3 {
-            font-size: 24px;
-          }
-          & img {
-            width: 72px;
-            height: 64px;
-            display: block;
-          }
-        }
-  
-        &__bottom {
-          border-radius: 0px 12px 12px 0px;
-  
-          border: 1px solid #e2e2e2;
-          border-left: none;
         }
       }
     }
