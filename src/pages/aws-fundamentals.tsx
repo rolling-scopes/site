@@ -3,6 +3,7 @@ import { CourseMain } from '@/features/сourse-main';
 import { About } from '@/features/about';
 import { Required } from '@/features/required';
 import { Breadcrumbs } from '@/app/components';
+import { Trainers } from '@/features/trainers';
 
 export const AwsFundamentals = () => {
   return (
@@ -13,6 +14,7 @@ export const AwsFundamentals = () => {
       <About courseName="aws fundamentals" />
       <Required courseName="awsFundamentals" marked2 />
       <TrainingProgram courseName="aws fundamentals badge" />
+      <Trainers courseName="awsFundamentals" />
     </>
   );
 };
