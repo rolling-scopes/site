@@ -1,4 +1,4 @@
-import { CourseMain } from '@/features/сourse-main';
+import { CourseMain } from '@/features/course-main';
 import { Required } from '@/features/required';
 import { About } from '@/features/about';
 import { Trainers } from '@/features/trainers';
