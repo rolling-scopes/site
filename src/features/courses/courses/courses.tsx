@@ -1,19 +1,20 @@
 import { CourseCard, Title, TitleType } from '@/app/components';
-import { useDataByName, useNearestCourse } from '@/app/hooks';
+import { useDataByName } from '@/app/hooks';
 import './courses.scss';
 import { type Course } from '@/app/types';
 import { compareNumbers } from './utils/compare-courses';
+import { finedNearestCourse } from '@/app/hooks/use-nearest-course';
 
 export const Courses = () => {
   const { data: courses, loading, error } = useDataByName('courses');
-  const { course: nearestCourse } = useNearestCourse();
+  if (loading) return <h1>Loading...</h1>;
+  if (error) return <h1>{error.message}</h1>;
+  if (!courses) return null;
+
+  const nearestCourse = finedNearestCourse(courses);
   const nearestCourseStartDate = nearestCourse
     ? Date.parse(nearestCourse.startDate)
     : Date.now();
-
-  if (courses === null) return null;
-  if (loading) return <h1>Loading...</h1>;
-  if (error) return <h1>{error.message}</h1>;
 
   const sortedCourses = (courses as Course[]).sort((a, b) => compareNumbers(a, b, nearestCourseStartDate))
 
