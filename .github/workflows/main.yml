@@ -7,7 +7,7 @@ on:
       - main
 
 env:
-  NODE_VERSION: 21.5.0
+  NODE_VERSION: 21.x
 
 jobs:
   linting:
