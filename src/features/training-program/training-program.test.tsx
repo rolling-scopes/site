@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react';
+import { type Mock, beforeEach, vi } from 'vitest';
 import { TrainingProgram } from './training-program';
 import { renderWithRouter } from '@/__tests__/utils';
 import { useCourseByTitle } from '@/app/hooks';
-import { type Mock, vi, beforeEach } from 'vitest';
 
 vi.mock('@/app/hooks');
 
@@ -18,8 +18,8 @@ describe('TrainingProgram', () => {
           mode: 'online',
           detailsUrl: '/courses/angular',
           enroll: 'https://wearecommunity.io/events/rs-angular-2023q4',
-          backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#F4AFA7' }
-        }
+          backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#F4AFA7' },
+        },
       });
       renderWithRouter(<TrainingProgram courseName="angular" />);
     });
@@ -34,7 +34,7 @@ describe('TrainingProgram', () => {
         'The program consists of 3 stages. There may be requirements for advancing to each higher stage',
         'You will also have the ability to communicate with other students and help each other solve any problems you might face',
         'deadlines are not suggestions, and should be respected',
-        'Attention! Mentors on this course will be first'
+        'Attention! Mentors on this course will be first',
       ];
 
       paragraphs.forEach((p) => {
@@ -60,8 +60,8 @@ describe('TrainingProgram', () => {
           id: '8',
           title: 'AWS Cloud Developer',
           detailsUrl: '/courses/aws-cloud-developer',
-          enroll: 'https://wearecommunity.io/events/aws-cloud-dev-rs2023q4'
-        }
+          enroll: 'https://wearecommunity.io/events/aws-cloud-dev-rs2023q4',
+        },
       });
       renderWithRouter(<TrainingProgram courseName="aws cloud dev" />);
     });
@@ -77,7 +77,7 @@ describe('TrainingProgram', () => {
         'Be well-prepared to pass the "AWS Certified Developer - Associate"',
         'Course highlights',
         'using AWS S3 and CloudFront',
-        'Implement backend-for-frontend using API Gateway'
+        'Implement backend-for-frontend using API Gateway',
       ];
       paragraphs.forEach((p) => {
         expect(screen.getByText(new RegExp(p, 'i'))).toBeInTheDocument();
@@ -88,7 +88,7 @@ describe('TrainingProgram', () => {
       const button = screen.getByRole('link', { name: /register/i });
       expect(button).toHaveAttribute(
         'href',
-        'https://wearecommunity.io/events/aws-cloud-dev-rs2023q4'
+        'https://wearecommunity.io/events/aws-cloud-dev-rs2023q4',
       );
     });
 
@@ -105,8 +105,8 @@ describe('TrainingProgram', () => {
           id: '3',
           title: 'react-ru',
           detailsUrl: '/courses/react-ru',
-          enroll: 'https://wearecommunity.io/events/rs-react-2023q4'
-        }
+          enroll: 'https://wearecommunity.io/events/rs-react-2023q4',
+        },
       });
 
       renderWithRouter(<TrainingProgram courseName="react ru" />);
@@ -119,7 +119,7 @@ describe('TrainingProgram', () => {
 
     it('renders correct paragraph', () => {
       const p = screen.getByText(
-        /Бесплатный курс от сообщества The Rolling Scopes для тех, кто хочет получить знания и опыт/i
+        /Бесплатный курс от сообщества The Rolling Scopes для тех, кто хочет получить знания и опыт/i,
       );
       expect(p).toBeInTheDocument();
     });

@@ -1,11 +1,11 @@
-import HTMLIcon from '@/assets/icons/html.webp';
-import JSIcon from '@/assets/icons/javascript.webp';
-import ReactAngIcon from '@/assets/icons/react-angular.svg';
-import NodeJSIcon from '@/assets/icons/nodejs.webp';
-import AWSFundamentalsIcon from '@/assets/icons/aws-fundamentals.webp';
-import AWSDeveloperIcon from '@/assets/icons/aws-developer.webp';
 import { type CoursesPath } from './courses-data.types';
 import { buildUrl } from '@/app/services/platform';
+import AWSDeveloperIcon from '@/assets/icons/aws-developer.webp';
+import AWSFundamentalsIcon from '@/assets/icons/aws-fundamentals.webp';
+import HTMLIcon from '@/assets/icons/html.webp';
+import JSIcon from '@/assets/icons/javascript.webp';
+import NodeJSIcon from '@/assets/icons/nodejs.webp';
+import ReactAngIcon from '@/assets/icons/react-angular.svg';
 
 export const coursesPath: CoursesPath[] = [
   {
@@ -18,9 +18,9 @@ export const coursesPath: CoursesPath[] = [
       {
         linkTitle: 'Pre-school',
         href: buildUrl('/courses/javascript-preschool'),
-        isActive: true
-      }
-    ]
+        isActive: true,
+      },
+    ],
   },
   {
     id: 2,
@@ -32,13 +32,13 @@ export const coursesPath: CoursesPath[] = [
       {
         // TODO: change link to RU page when it'll be ready
         linkTitle: 'JS/TS/FE Fundamentals (RU)',
-        href: buildUrl('/courses/javascript-mentoring-program')
+        href: buildUrl('/courses/javascript-mentoring-program'),
       },
       {
         linkTitle: 'JS/TS/FE Fundamentals (EN)',
-        href: buildUrl('/courses/javascript-mentoring-program')
-      }
-    ]
+        href: buildUrl('/courses/javascript-mentoring-program'),
+      },
+    ],
   },
   {
     id: 3,
@@ -49,13 +49,13 @@ export const coursesPath: CoursesPath[] = [
     links: [
       {
         linkTitle: 'React',
-        href: buildUrl('/courses/reactjs')
+        href: buildUrl('/courses/reactjs'),
       },
       {
         linkTitle: 'Angular',
-        href: buildUrl('/courses/angular')
-      }
-    ]
+        href: buildUrl('/courses/angular'),
+      },
+    ],
   },
   {
     id: 4,
@@ -66,9 +66,9 @@ export const coursesPath: CoursesPath[] = [
     links: [
       {
         linkTitle: 'Node',
-        href: buildUrl('/courses/nodejs')
-      }
-    ]
+        href: buildUrl('/courses/nodejs'),
+      },
+    ],
   },
   {
     id: 5,
@@ -79,9 +79,9 @@ export const coursesPath: CoursesPath[] = [
     links: [
       {
         linkTitle: 'AWS Fundamentals',
-        href: buildUrl('/courses/aws-fundamentals')
-      }
-    ]
+        href: buildUrl('/courses/aws-fundamentals'),
+      },
+    ],
   },
   {
     id: 6,
@@ -92,8 +92,8 @@ export const coursesPath: CoursesPath[] = [
     links: [
       {
         linkTitle: 'AWS Developer',
-        href: buildUrl('/courses/aws-cloud-developer')
-      }
-    ]
-  }
+        href: buildUrl('/courses/aws-cloud-developer'),
+      },
+    ],
+  },
 ];

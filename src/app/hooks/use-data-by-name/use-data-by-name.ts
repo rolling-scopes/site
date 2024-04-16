@@ -1,10 +1,10 @@
-import { type DataMap } from '@/app/services/data/courses-data.types';
-import { fetchDataByName } from '@/app/services/api';
 import { useEffect, useState } from 'react';
+import { fetchDataByName } from '@/app/services/api';
+import { type DataMap } from '@/app/services/data/courses-data.types';
 
 export const useDataByName = <K extends keyof DataMap>(
   dataName: keyof DataMap,
-  fetchDataFn = fetchDataByName
+  fetchDataFn = fetchDataByName,
 ) => {
   const [data, setData] = useState<DataMap[K] | null>(null);
   const [loading, setLoading] = useState(false);

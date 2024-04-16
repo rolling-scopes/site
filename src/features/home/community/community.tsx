@@ -1,8 +1,7 @@
-import { Title, Subtitle, SocialMedia, TitleType, type SocialMediaProps } from '@/app/components';
-
-import { InstagramIcon, LinkedInIcon, YouTubeIcon, TelegramIcon, FacebookIcon } from '@/icons';
+import { SocialMedia, type SocialMediaProps, Subtitle, Title, TitleType } from '@/app/components';
 
 import image from '@/assets/welcome.webp';
+import { FacebookIcon, InstagramIcon, LinkedInIcon, TelegramIcon, YouTubeIcon } from '@/icons';
 
 import './community.scss';
 
@@ -10,48 +9,48 @@ const communityGroups: SocialMediaProps[] = [
   {
     title: 'LinkedIn',
     href: 'https://www.linkedin.com/company/the-rolling-scopes-school/',
-    icon: <LinkedInIcon />
+    icon: <LinkedInIcon />,
   },
   {
     title: 'Instagram RU',
     href: 'https://www.instagram.com/rsschool_news/',
-    icon: <InstagramIcon />
+    icon: <InstagramIcon />,
   },
   {
     title: 'Instagram EN',
     href: 'https://www.instagram.com/rsschool_en/',
-    icon: <InstagramIcon />
+    icon: <InstagramIcon />,
   },
   {
     title: 'YouTube RU',
     href: 'https://www.youtube.com/c/RollingScopesSchool',
-    icon: <YouTubeIcon />
+    icon: <YouTubeIcon />,
   },
   {
     title: 'YouTube EN',
     href: 'https://www.youtube.com/c/RSschool',
-    icon: <YouTubeIcon />
+    icon: <YouTubeIcon />,
   },
   {
     title: 'Telegram RU',
     href: 'https://t.me/AfishaRSSchool',
-    icon: <TelegramIcon />
+    icon: <TelegramIcon />,
   },
   {
     title: 'Facebook RU',
     href: 'https://www.facebook.com/RollingScopesSchool',
-    icon: <FacebookIcon />
+    icon: <FacebookIcon />,
   },
   {
     title: 'Facebook EN',
     href: 'https://www.facebook.com/rsschoolEN',
-    icon: <FacebookIcon />
+    icon: <FacebookIcon />,
   },
   {
     title: 'Facebook Group RU & EN',
     href: 'https://www.facebook.com/groups/TheRollingScopes',
-    icon: <FacebookIcon />
-  }
+    icon: <FacebookIcon />,
+  },
 ];
 
 export const Community = () => (

@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
-import { it, expect, describe, beforeEach } from 'vitest';
-import { renderWithRouter } from '@/__tests__/utils';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { Mentoring } from './mentoring';
+import { renderWithRouter } from '@/__tests__/utils';
 
 describe('Mentoring', () => {
   beforeEach(() => {
@@ -14,7 +14,7 @@ describe('Mentoring', () => {
 
   it('renders mentorship benefit 1', () => {
     expect(
-      screen.getByText('Feel the desire to share your experience and knowledge')
+      screen.getByText('Feel the desire to share your experience and knowledge'),
     ).toBeVisible();
   });
 
@@ -29,14 +29,14 @@ describe('Mentoring', () => {
   it('renders mentorship benefit 4', () => {
     expect(
       screen.getByText(
-        'Do you want to train acquaintances / friends / colleagues, but you do not have a ready curriculum or you studied at The Rollings Scopes School, and it\'s time for "Teach It Forward"'
-      )
+        'Do you want to train acquaintances / friends / colleagues, but you do not have a ready curriculum or you studied at The Rollings Scopes School, and it\'s time for "Teach It Forward"',
+      ),
     ).toBeVisible();
   });
 
   it('renders mentorship benefit 5', () => {
     expect(
-      screen.getByText('Looking for beginner developers to join your company or project')
+      screen.getByText('Looking for beginner developers to join your company or project'),
     ).toBeVisible();
   });
 });

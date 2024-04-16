@@ -1,29 +1,30 @@
-import { useDataByName } from '@/app/hooks';
 import { SchoolList } from './school-list';
+import { useDataByName } from '@/app/hooks';
 import { type Course } from '@/app/types';
+
 import './school-menu.scss';
 
 const schoolMenuStaticLinks = [
   {
     title: 'About RS School',
     detailsUrl: '/courses',
-    description: 'Free online education'
+    description: 'Free online education',
   },
   {
     title: 'Upcoming courses',
     detailsUrl: '/courses#upcoming-courses',
-    description: 'Schedule your study'
+    description: 'Schedule your study',
   },
   {
     title: 'IT Journey',
     detailsUrl: '/courses#learning-path',
-    description: 'Plan your developer path'
+    description: 'Plan your developer path',
   },
   {
     title: 'Mentoring',
     detailsUrl: '/courses#mentors-wanted',
-    description: 'Contribute and study'
-  }
+    description: 'Contribute and study',
+  },
 ];
 
 interface SchoolMenuProps {

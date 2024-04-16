@@ -1,5 +1,5 @@
-import { describe, it, expect, beforeEach } from 'vitest';
 import { screen } from '@testing-library/react';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { CourseCard, type CourseCardProps } from './course-card';
 import { renderWithRouter } from '@/__tests__/utils';
 
@@ -11,7 +11,7 @@ describe('CourseCard', () => {
     mode: 'online',
     language: ['en', 'ru'] as ('en' | 'ru')[],
     detailsUrl: 'http://example.com/course',
-    backgroundStyle: { backgroundColor: '#ffffff', accentColor: '#ff0000' }
+    backgroundStyle: { backgroundColor: '#ffffff', accentColor: '#ff0000' },
   };
 
   beforeEach(() => {

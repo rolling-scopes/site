@@ -1,7 +1,7 @@
-import { render, screen } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
-import { PrincipleCard } from './principle-card';
 import { ReactNode } from 'react';
+import { render, screen } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
+import { PrincipleCard } from './principle-card';
 
 describe('PrincipleCard component', () => {
   const mockIcon: ReactNode = <div>mockIcon</div>;
@@ -9,7 +9,7 @@ describe('PrincipleCard component', () => {
   const mockProps = {
     title: 'TestTitle',
     description: 'Test description for the card.',
-    icon: mockIcon
+    icon: mockIcon,
   };
 
   it('renders correct icon', () => {

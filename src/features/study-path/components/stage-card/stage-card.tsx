@@ -1,10 +1,11 @@
-import type { StageCardProps } from './stage-card.types';
-import { Topics } from './topics';
 import { Actions } from './actions';
+import { Image } from './image';
 import { Links } from './links';
 import { LogoIcon } from './logo-icon';
-import { Image } from './image';
+import type { StageCardProps } from './stage-card.types';
 import { Step } from './step';
+import { Topics } from './topics';
+
 import './stage-card.scss';
 
 export const StageCard = ({
@@ -16,7 +17,7 @@ export const StageCard = ({
   topics,
   actions,
   imageSrc,
-  marked
+  marked,
 }: StageCardProps) => {
   return (
     <div className="stage">

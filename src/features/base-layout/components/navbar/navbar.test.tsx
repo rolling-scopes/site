@@ -1,12 +1,11 @@
-import { fireEvent, screen } from '@testing-library/react';
-import { Navbar } from './navbar';
-import { beforeEach, vi } from 'vitest';
-import { renderWithRouter } from '@/__tests__/utils';
-import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
-import { useWindowSize } from '@/app/hooks';
-import { Mock } from 'vitest';
 import { act } from 'react-dom/test-utils';
+import { fireEvent, screen } from '@testing-library/react';
+import { Mock, beforeEach, vi } from 'vitest';
 import { Dropdown } from './dropdown';
+import { Navbar } from './navbar';
+import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
+import { renderWithRouter } from '@/__tests__/utils';
+import { useWindowSize } from '@/app/hooks';
 
 vi.mock('@/app/hooks', async (importOriginal) => {
   const originalModule = await importOriginal<typeof import('@/app/hooks')>();
@@ -14,7 +13,7 @@ vi.mock('@/app/hooks', async (importOriginal) => {
   return {
     ...originalModule,
     useWindowSize: vi.fn(),
-    useOutsideClick: vi.fn(() => ({ current: null }))
+    useOutsideClick: vi.fn(() => ({ current: null })),
   };
 });
 
@@ -96,8 +95,8 @@ describe('Navbar', () => {
     it('should be open when isDropdownOpen is true', async () => {
       await act(async () =>
         renderWithRouter(
-          <Dropdown onMouseLeave={() => {}} isDropdownOpen={true} handleClose={() => {}} />
-        )
+          <Dropdown onMouseLeave={() => {}} isDropdownOpen={true} handleClose={() => {}} />,
+        ),
       );
 
       const dropdownElement = screen.getByTestId('navbar-dropdown');

@@ -25,7 +25,7 @@ describe('Trainer', () => {
     const trainerNameElement = screen.getByText('Maksim Shylau');
     const trainerTitleElement = screen.getByText('Senior Software Engineer at Epam');
     const trainerDescriptionElement = screen.getByText(
-      /Maksim Shylau is a professional with around 6 years/i
+      /Maksim Shylau is a professional with around 6 years/i,
     );
 
     expect(trainerNameElement).toBeVisible();

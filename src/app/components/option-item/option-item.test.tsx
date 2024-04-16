@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { OptionItem } from './option-item';
 
 describe('OptionItem component', () => {
@@ -23,7 +23,7 @@ describe('OptionItem component', () => {
         description="My Description"
         buttonLabel="My Button"
         href="http://my-link.com"
-      />
+      />,
     );
 
     const button = screen.getByRole('link', { name: /My Button/i });

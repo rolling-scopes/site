@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react';
-import { SchoolMenu } from './school-menu';
-import { renderWithRouter } from '@/__tests__/utils';
 import { vi } from 'vitest';
+import { SchoolMenu } from './school-menu';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
+import { renderWithRouter } from '@/__tests__/utils';
 
 const testCourses = [
   {
@@ -15,7 +15,7 @@ const testCourses = [
     language: ['en'],
     mode: 'online',
     detailsUrl: 'https://rs.school/aws-fundamentals/',
-    backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#7356BF' }
+    backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#7356BF' },
   },
   {
     id: '2',
@@ -27,15 +27,15 @@ const testCourses = [
     language: ['ru', 'en'],
     mode: 'online',
     detailsUrl: 'https://rs.school/react/',
-    backgroundStyle: { backgroundColor: '#EEF3FE', accentColor: '#7356BF' }
-  }
+    backgroundStyle: { backgroundColor: '#EEF3FE', accentColor: '#7356BF' },
+  },
 ];
 
 vi.mock('@/app/hooks', () => {
   return {
     useDataByName: vi.fn().mockImplementation(() => ({
-      data: testCourses
-    }))
+      data: testCourses,
+    })),
   };
 });
 

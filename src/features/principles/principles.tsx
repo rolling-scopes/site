@@ -1,6 +1,6 @@
-import { Title, PrincipleCard, type PrincipleCardProps, TitleType } from '@/app/components';
+import { PrincipleCard, type PrincipleCardProps, Title, TitleType } from '@/app/components';
 
-import { OpenToEveryoneIcon, OpenSourcePhilosophyIcon, TeachItForwardIcon } from '@/icons';
+import { OpenSourcePhilosophyIcon, OpenToEveryoneIcon, TeachItForwardIcon } from '@/icons';
 
 import './principles.scss';
 
@@ -9,20 +9,20 @@ export const cards: PrincipleCardProps[] = [
     title: 'Open to everyone',
     description:
       'Free courses, no obligations, and no contracts. No age limit. Only students’ time and dedication are required. Students can repeatedly attend courses.',
-    icon: <OpenToEveryoneIcon />
+    icon: <OpenToEveryoneIcon />,
   },
   {
     title: 'Open source philosophy',
     description:
       'Our Learning Management System platform and educational materials are publicly available on GitHub and YouTube.',
-    icon: <OpenSourcePhilosophyIcon />
+    icon: <OpenSourcePhilosophyIcon />,
   },
   {
     title: '"Teach it forward"',
     description:
       'Students study at school for free, but we request that they return as mentors to pass on their knowledge to the next generation of students.',
-    icon: <TeachItForwardIcon />
-  }
+    icon: <TeachItForwardIcon />,
+  },
 ];
 
 export const Principles = () => (

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { EventCard } from './event-card';
 import { describe, expect, it } from 'vitest';
+import { EventCard } from './event-card';
 
 describe('EventCard', () => {
   const mockProps = {
@@ -13,7 +13,7 @@ describe('EventCard', () => {
     type: 'Offline',
     address: '123 Main St',
     city: 'Metropolis City',
-    href: 'http://test.com'
+    href: 'http://test.com',
   };
 
   it('should render correctly', () => {
