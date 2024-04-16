@@ -3,6 +3,7 @@ import { useCourseByTitle, useTitle } from '@/app/hooks';
 import './course-main.scss';
 import { type CourseType } from '@/app/types';
 import { type Course } from '@/app/types';
+import { hasDayInDate } from './utils/has-day';
 
 interface CourseMainProps {
   courseName: string;
@@ -23,7 +24,11 @@ export const CourseMain = ({ courseName, type }: CourseMainProps) => {
   const now = new Date().setHours(0, 0, 0, 0);
   const requiredDate = new Date(course.startDate).setHours(0, 0, 0, 0);
 
-  const label = requiredDate < now ? 'upcoming' : 'avialable';
+  const label = requiredDate < now 
+    ? 'upcoming'
+    : hasDayInDate(course.startDate)
+      ? 'available'
+      : 'planned';
 
   const { title, altTitle, language, mode, enroll, secondaryIcon, startDate } = course;
 
