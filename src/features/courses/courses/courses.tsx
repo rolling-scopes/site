@@ -7,8 +7,8 @@ import { finedNearestCourse } from '@/app/hooks/use-nearest-course';
 
 export const Courses = () => {
   const { data: courses, loading, error } = useDataByName('courses');
-  if (loading) return <h1>Loading...</h1>;
-  if (error) return <h1>{error.message}</h1>;
+  if (loading) return <h2>Loading...</h2>;
+  if (error) return <h2>{error.message}</h2>;
   if (!courses) return null;
 
   const nearestCourse = finedNearestCourse(courses);
@@ -19,8 +19,8 @@ export const Courses = () => {
   const sortedCourses = (courses as Course[]).sort((a, b) => compareNumbers(a, b, nearestCourseStartDate))
 
   return (
-    <div className="rs-courses container" id="upcoming-courses">
-      <div className="rs-courses content">        
+    <section className="rs-courses container" id="upcoming-courses">
+      <div className="rs-courses content">
         <Title text="Upcoming courses" type={TitleType.Regular} />
         <div className="rs-courses-wrapper">
           {sortedCourses.map(
@@ -36,6 +36,6 @@ export const Courses = () => {
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
