@@ -1,8 +1,9 @@
+import { cloneElement } from 'react';
+import { type CourseNames, contentMap } from './training-program.data';
 import { Button, Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
 import type { Course, CourseType } from '@/app/types';
-import { type CourseNames, contentMap } from './training-program.data';
-import { cloneElement } from 'react';
+
 import './training-program.scss';
 
 interface TrainingProgramProps {
@@ -13,7 +14,7 @@ interface TrainingProgramProps {
 export const TrainingProgram = ({ courseName, type }: TrainingProgramProps) => {
   const { course: data } = useCourseByTitle(
     courseName.includes('badge') ? 'aws fundamentals' : courseName,
-    type
+    type,
   );
 
   const course = data as Course;

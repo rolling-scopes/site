@@ -1,4 +1,4 @@
-import { Title, Subtitle, TitleType } from '@/app/components';
+import { Subtitle, Title, TitleType } from '@/app/components';
 
 import image from '@/assets/speakers-wanted.webp';
 

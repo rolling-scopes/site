@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
-import { describe, it, expect, beforeEach } from 'vitest';
-import { renderWithRouter } from '@/__tests__/utils';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { About } from './about';
+import { renderWithRouter } from '@/__tests__/utils';
 
 describe('About', () => {
   beforeEach(() => {
@@ -25,7 +25,7 @@ describe('About', () => {
 
   it('renders the correct second paragraph', () => {
     const secondParagraphElement = screen.getByText(
-      /The Rolling Scopes brings together developers/i
+      /The Rolling Scopes brings together developers/i,
     );
     expect(secondParagraphElement).toBeVisible();
   });

@@ -23,7 +23,7 @@ export const EventCard = ({
   type,
   address,
   city,
-  href
+  href,
 }: EventCardProps) => (
   <div className="card">
     <div className="card-top">

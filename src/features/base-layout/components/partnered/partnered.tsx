@@ -1,4 +1,4 @@
-import { EpamLogo, JetBrainsLogo, AwsLogo, GithubLogo } from '@/icons';
+import { AwsLogo, EpamLogo, GithubLogo, JetBrainsLogo } from '@/icons';
 
 import './partnered.scss';
 

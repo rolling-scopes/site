@@ -1,10 +1,9 @@
 import { renderHook } from '@testing-library/react';
-import { useCourseByTitle } from './use-course-by-title';
-import { it, vi, expect, describe, Mock } from 'vitest';
-import { useDataByName } from '../use-data-by-name';
+import { Mock, describe, expect, it, vi } from 'vitest';
+import { useCourseByTitle, useDataByName } from '@/app/hooks';
 
 vi.mock('../use-data-by-name', () => ({
-  useDataByName: vi.fn()
+  useDataByName: vi.fn(),
 }));
 
 describe('useCourseByTitle', () => {
@@ -14,15 +13,15 @@ describe('useCourseByTitle', () => {
       id: 2,
       title: 'JavaScript / Front-end',
       alTitle: 'JavaScript / Front-end',
-      type: 'Mentoring Program'
-    }
+      type: 'Mentoring Program',
+    },
   ];
 
   it('returns the course where title starts with provided string', () => {
     (useDataByName as Mock).mockReturnValue({
       data: mockData,
       loading: false,
-      error: null
+      error: null,
     });
 
     const { result } = renderHook(() => useCourseByTitle('React'));
@@ -37,7 +36,7 @@ describe('useCourseByTitle', () => {
     (useDataByName as Mock).mockReturnValue({
       data: [],
       loading: false,
-      error: new Error('No courses data available.')
+      error: new Error('No courses data available.'),
     });
 
     const { result } = renderHook(() => useCourseByTitle('AWS'));
@@ -52,7 +51,7 @@ describe('useCourseByTitle', () => {
     (useDataByName as Mock).mockReturnValue({
       data: null,
       loading: true,
-      error: null
+      error: null,
     });
 
     const { result } = renderHook(() => useCourseByTitle('AWS'));
@@ -65,7 +64,7 @@ describe('useCourseByTitle', () => {
     (useDataByName as Mock).mockReturnValue({
       data: mockData,
       loading: false,
-      error: null
+      error: null,
     });
 
     const { result } = renderHook(() => useCourseByTitle('JavaScript', 'Mentoring Program'));
@@ -77,7 +76,7 @@ describe('useCourseByTitle', () => {
     (useDataByName as Mock).mockReturnValue({
       data: mockData,
       loading: false,
-      error: null
+      error: null,
     });
 
     const { result } = renderHook(() => useCourseByTitle('React', 'Mentoring Program'));
@@ -91,7 +90,7 @@ it('handles fetch error from useDataByName', async () => {
   (useDataByName as Mock).mockReturnValue({
     data: null,
     loading: false,
-    error: new Error('anything')
+    error: new Error('anything'),
   });
 
   const { result } = renderHook(() => useCourseByTitle('anything'));

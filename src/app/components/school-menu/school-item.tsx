@@ -1,6 +1,6 @@
-import { type Course } from '@/app/types';
-import { type GenericItemProps } from './school-list';
 import { Link } from 'react-router-dom';
+import { type GenericItemProps } from './school-list';
+import { type Course } from '@/app/types';
 
 interface SchoolItemProps {
   item: Course | GenericItemProps;

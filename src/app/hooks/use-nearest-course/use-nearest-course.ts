@@ -1,5 +1,5 @@
+import { useDataByName } from '@/app/hooks';
 import { Course } from '@/app/types';
-import { useDataByName } from '../use-data-by-name';
 
 type Day = number;
 
@@ -10,7 +10,7 @@ export const useNearestCourse = (bufferPeriod: Day = 14) => {
       course: null,
       loading,
       hasError: false,
-      error: null
+      error: null,
     };
   }
   if (!coursesData || coursesData.length === 0) {
@@ -18,15 +18,15 @@ export const useNearestCourse = (bufferPeriod: Day = 14) => {
       course: null,
       loading: false,
       hasError: true,
-      error: new Error('No courses data available.')
+      error: new Error('No courses data available.'),
     };
   }
-  
-  const { prevCourse, nextCourse } = definePrevNext(coursesData);  
-  const course = chooseNearestCourse({prevCourse, nextCourse, bufferPeriod});
+
+  const { prevCourse, nextCourse } = definePrevNext(coursesData);
+  const course = chooseNearestCourse({ prevCourse, nextCourse, bufferPeriod });
   const hasError = !!error || (!loading && !course);
 
-  return { 
+  return {
     course,
     loading,
     error,
@@ -38,40 +38,46 @@ function isCourse(obj: object): obj is Course {
   return 'startDate' in obj && (obj as Course).startDate != null;
 }
 
-function definePrevNext(coursesData: object[]): { prevCourse: Course | undefined, nextCourse: Course | undefined } {
+function definePrevNext(coursesData: object[]): {
+  prevCourse: Course | undefined;
+  nextCourse: Course | undefined;
+} {
   const dateNow = Date.now();
   let prevCourse: Course | undefined;
   let nextCourse: Course | undefined;
 
   coursesData.forEach((obj: object) => {
-    if(isCourse(obj)) {
+    if (isCourse(obj)) {
       const startDate = Date.parse(obj.startDate);
       const isPast = startDate <= dateNow;
       if (
-        (!prevCourse && isPast) 
-        || (isPast && Date.parse((prevCourse as Course).startDate) < startDate)
+        (!prevCourse && isPast) ||
+        (isPast && Date.parse((prevCourse as Course).startDate) < startDate)
       ) {
         prevCourse = obj;
       }
       if (
-        !nextCourse && !isPast
-        || (!isPast && Date.parse((nextCourse as Course).startDate) > startDate)
+        (!nextCourse && !isPast) ||
+        (!isPast && Date.parse((nextCourse as Course).startDate) > startDate)
       ) {
         nextCourse = obj;
       }
     }
-  })
-  return { prevCourse, nextCourse }
+  });
+  return { prevCourse, nextCourse };
 }
-
 
 type chooseNearestCourseProps = {
-  prevCourse?: Course,
-  nextCourse?: Course,
-  bufferPeriod: Day,
-}
+  prevCourse?: Course;
+  nextCourse?: Course;
+  bufferPeriod: Day;
+};
 
-function chooseNearestCourse({prevCourse, nextCourse, bufferPeriod}: chooseNearestCourseProps): Course | undefined {
+function chooseNearestCourse({
+  prevCourse,
+  nextCourse,
+  bufferPeriod,
+}: chooseNearestCourseProps): Course | undefined {
   const dateNow = Date.now();
   let course = !nextCourse ? prevCourse : nextCourse;
   if (nextCourse && prevCourse) {
@@ -82,5 +88,5 @@ function chooseNearestCourse({prevCourse, nextCourse, bufferPeriod}: chooseNeare
       course = prevCourse;
     }
   }
-  return course
+  return course;
 }

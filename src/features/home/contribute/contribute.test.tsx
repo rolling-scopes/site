@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { it, expect, describe, beforeEach } from 'vitest';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { Contribute } from './contribute';
 
 describe('Contribute', () => {
@@ -14,7 +14,7 @@ describe('Contribute', () => {
 
   it('renders the subtitle correctly', () => {
     const subtitleElement = screen.getByText(
-      /Contributing to The Rolling Scopes is not only a great way/i
+      /Contributing to The Rolling Scopes is not only a great way/i,
     );
     expect(subtitleElement).toBeInTheDocument();
   });

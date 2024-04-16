@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { Places } from './places';
 
 describe('Places component', () => {
@@ -14,7 +14,7 @@ describe('Places component', () => {
     'Uzbekistan',
     'Online',
     'Kyrgyzstan',
-    'Lithuania'
+    'Lithuania',
   ];
 
   it('renders the marquee with correct places', () => {

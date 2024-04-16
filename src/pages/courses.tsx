@@ -1,17 +1,16 @@
+import { Breadcrumbs } from '@/app/components';
+import { useTitle } from '@/app/hooks';
 import {
   About,
-  Courses as RSCourses,
   General,
   Main,
   Mentoring,
   Mentors,
-  Requirements
+  Courses as RSCourses,
+  Requirements,
 } from '@/features/courses';
 import { Principles } from '@/features/principles';
 import { StudyPath } from '@/features/study-path';
-
-import { useTitle } from '@/app/hooks';
-import { Breadcrumbs } from '@/app/components';
 
 export const Courses = () => {
   useTitle('Courses · The Rolling Scopes School');

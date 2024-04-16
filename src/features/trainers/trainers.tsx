@@ -1,12 +1,13 @@
-import { TrainerCard } from './trainer-card';
-import { Title } from '@/app/components';
-import './trainers.scss';
-import { reactEn } from './react-en.data';
-import { reactRu } from './react-ru.data';
+import { angular } from './angular.data';
 import { awsDev } from './awsDev.data';
 import { nodejs } from './nodejs.data';
-import { angular } from './angular.data';
+import { reactEn } from './react-en.data';
+import { reactRu } from './react-ru.data';
+import { TrainerCard } from './trainer-card';
+import { Title } from '@/app/components';
 import { awsFundamentals } from '@/features/trainers/awsFundamentals.data.ts';
+
+import './trainers.scss';
 
 const courseDataMap = {
   reactEn,
@@ -14,7 +15,7 @@ const courseDataMap = {
   awsDev,
   awsFundamentals,
   nodejs,
-  angular
+  angular,
 };
 
 interface TrainersProps {
@@ -28,8 +29,8 @@ export const Trainers = ({ courseName }: TrainersProps) => {
     courseName === 'reactRu'
       ? 'Преподаватели курса'
       : trainers.length > 1
-      ? 'Our mentors and trainers'
-      : 'Our trainer';
+        ? 'Our mentors and trainers'
+        : 'Our trainer';
 
   return (
     <section className="nodejs-trainer container">

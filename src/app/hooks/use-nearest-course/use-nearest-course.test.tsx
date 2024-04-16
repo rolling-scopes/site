@@ -1,12 +1,11 @@
 import { renderHook } from '@testing-library/react';
-import { useNearestCourse } from './use-nearest-course';
-import { it, vi, expect, describe, Mock, afterAll } from 'vitest';
-import { useDataByName } from '../use-data-by-name';
+import { Mock, afterAll, describe, expect, it, vi } from 'vitest';
+import { useDataByName, useNearestCourse } from '@/app/hooks';
 
 const originalDateNow = Date.now;
 const mockData = [
-  { 
-    id: 1, 
+  {
+    id: 1,
     title: 'React JS course',
     startDate: 'Apr 5, 2024',
   },
@@ -19,11 +18,11 @@ const mockData = [
     id: 3,
     title: 'Some course title',
     startDate: 'May 20, 2024',
-  }
+  },
 ];
 
 vi.mock('../use-data-by-name', () => ({
-  useDataByName: vi.fn()
+  useDataByName: vi.fn(),
 }));
 
 describe('useNearestCourse', () => {
@@ -34,12 +33,12 @@ describe('useNearestCourse', () => {
   it('returns the nearest course', () => {
     const bufferPeriod = 14;
     const date1 = Date.parse(mockData[0].startDate) + (bufferPeriod - 1) * 24 * 60 * 60 * 1000;
-    const date2 = Date.parse(mockData[0].startDate) + (bufferPeriod) * 24 * 60 * 60 * 1000;
+    const date2 = Date.parse(mockData[0].startDate) + bufferPeriod * 24 * 60 * 60 * 1000;
 
     (useDataByName as Mock).mockReturnValue({
       data: mockData,
       loading: false,
-      error: null
+      error: null,
     });
     Date.now = vi.fn(() => date1);
     const { result: res1 } = renderHook(() => useNearestCourse(bufferPeriod));
@@ -61,7 +60,7 @@ describe('useNearestCourse', () => {
     (useDataByName as Mock).mockReturnValue({
       data: mockData,
       loading: false,
-      error: null
+      error: null,
     });
     Date.now = vi.fn(() => Date.parse(mockData[0].startDate) + 1);
 
@@ -77,7 +76,7 @@ describe('useNearestCourse', () => {
     (useDataByName as Mock).mockReturnValue({
       data: mockData,
       loading: false,
-      error: null
+      error: null,
     });
     Date.now = vi.fn(() => Date.parse('Apr 1, 2024'));
 
@@ -93,7 +92,7 @@ describe('useNearestCourse', () => {
     (useDataByName as Mock).mockReturnValue({
       data: mockData,
       loading: false,
-      error: null
+      error: null,
     });
     Date.now = vi.fn(() => Date.parse('May 30, 2024'));
 
@@ -109,7 +108,7 @@ describe('useNearestCourse', () => {
     (useDataByName as Mock).mockReturnValue({
       data: [],
       loading: false,
-      error: new Error('No courses data available.')
+      error: new Error('No courses data available.'),
     });
 
     const { result } = renderHook(() => useNearestCourse());
@@ -124,7 +123,7 @@ describe('useNearestCourse', () => {
     (useDataByName as Mock).mockReturnValue({
       data: null,
       loading: true,
-      error: null
+      error: null,
     });
 
     const { result } = renderHook(() => useNearestCourse());
