@@ -6,11 +6,13 @@ import { reactRu } from './react-ru.data';
 import { awsDev } from './awsDev.data';
 import { nodejs } from './nodejs.data';
 import { angular } from './angular.data';
+import { awsFundamentals } from '@/features/trainers/awsFundamentals.data.ts';
 
 const courseDataMap = {
   reactEn,
   reactRu,
   awsDev,
+  awsFundamentals,
   nodejs,
   angular
 };

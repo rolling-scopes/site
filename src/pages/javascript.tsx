@@ -3,7 +3,7 @@ import { AboutVideo } from '@/features/about-video';
 import { About } from '@/features/about';
 import { StudyPath } from '@/features/study-path';
 import { TrainingProgram } from '@/features/training-program';
-import { CourseMain } from '@/features/сourse-main';
+import { CourseMain } from '@/features/course-main';
 import { Required } from '@/features/required';
 import { Breadcrumbs } from '@/app/components';
 
