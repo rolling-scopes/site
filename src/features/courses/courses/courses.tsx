@@ -1,9 +1,9 @@
 import { CourseCard, Title, TitleType } from '@/app/components';
 import { useDataByName } from '@/app/hooks';
 import './courses.scss';
-import { type Course } from '@/app/types';
 import { compareNumbers } from './utils/compare-courses';
 import { finedNearestCourse } from '@/app/hooks/use-nearest-course';
+import { isCourse } from './utils/is-course';
 
 export const Courses = () => {
   const { data: courses, loading, error } = useDataByName('courses');
@@ -15,8 +15,10 @@ export const Courses = () => {
   const nearestCourseStartDate = nearestCourse
     ? Date.parse(nearestCourse.startDate)
     : Date.now();
-
-  const sortedCourses = (courses as Course[]).sort((a, b) => compareNumbers(a, b, nearestCourseStartDate))
+  
+  const sortedCourses = courses
+    .filter(isCourse)
+    .sort((a, b) => compareNumbers(a, b, nearestCourseStartDate))
 
   return (
     <section className="rs-courses container" id="upcoming-courses">
