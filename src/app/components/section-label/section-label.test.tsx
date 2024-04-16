@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { SectionLabel } from './section-label';
 
 describe('SectionLabel component', () => {
   const props = {
-    label: 'Test Label'
+    label: 'Test Label',
   };
 
   it('converts non-string label props to string', () => {

@@ -1,15 +1,15 @@
 /// <reference types="vitest" />
-import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [react(), stubAssetImport()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
-      Styles: path.resolve(__dirname, 'src/app/styles')
-    }
+      Styles: path.resolve(__dirname, 'src/app/styles'),
+    },
   },
   test: {
     environment: 'jsdom',
@@ -27,16 +27,16 @@ export default defineConfig({
         '**/main.tsx',
         '**/__tests__',
         '**/index.ts',
-        'build'
+        'build',
       ],
       thresholds: {
         lines: 80,
         functions: 80,
         branches: 80,
-        statements: 80
-      }
-    }
-  }
+        statements: 80,
+      },
+    },
+  },
 });
 
 function stubAssetImport() {
@@ -46,6 +46,6 @@ function stubAssetImport() {
       if (id.endsWith('.svg') || id.endsWith('.webp')) {
         return `export default 'mocked-image-path'`;
       }
-    }
+    },
   };
 }

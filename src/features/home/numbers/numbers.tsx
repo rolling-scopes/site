@@ -1,4 +1,4 @@
-import { Title, Subtitle, Paragraph } from '@/app/components';
+import { Paragraph, Subtitle, Title } from '@/app/components';
 
 import image from '@/assets/map.webp';
 

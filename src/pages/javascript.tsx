@@ -1,11 +1,11 @@
+import { Breadcrumbs } from '@/app/components';
 import { CourseType } from '@/app/types';
-import { AboutVideo } from '@/features/about-video';
 import { About } from '@/features/about';
-import { StudyPath } from '@/features/study-path';
-import { TrainingProgram } from '@/features/training-program';
+import { AboutVideo } from '@/features/about-video';
 import { CourseMain } from '@/features/course-main';
 import { Required } from '@/features/required';
-import { Breadcrumbs } from '@/app/components';
+import { StudyPath } from '@/features/study-path';
+import { TrainingProgram } from '@/features/training-program';
 
 interface JavaScriptProps {
   type: CourseType;

@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { it, expect, describe, beforeEach } from 'vitest';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { Community } from './community';
 import { renderWithRouter } from '@/__tests__/utils';
 
@@ -15,7 +15,7 @@ describe('Community', () => {
 
   it('Displays Subtitle Correctly', () => {
     const subtitleElement = screen.getByText(
-      /If you want to learn coding or be a RS School mentor/i
+      /If you want to learn coding or be a RS School mentor/i,
     );
     expect(subtitleElement).toBeVisible();
   });

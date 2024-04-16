@@ -1,13 +1,13 @@
 import { Actions, Paragraph, Subtitle } from '@/app/components';
 
-import awsFundamentalsImg from '@/assets/rs-slope-aws-fundamentals.webp';
 import awsPractitionerBadge from '@/assets/aws-cloud-pract-badge.webp';
-import reactEnImg from '@/assets/rs-slope-react-en.webp';
-import reactRuImg from '@/assets/rs-slope-react-ru.webp';
 import angularImg from '@/assets/rs-slope-angular.webp';
 import awsDevImg from '@/assets/rs-slope-aws-dev.webp';
-import nodejsImg from '@/assets/rs-slope-nodejs.webp';
+import awsFundamentalsImg from '@/assets/rs-slope-aws-fundamentals.webp';
 import jsImg from '@/assets/rs-slope-js.webp';
+import nodejsImg from '@/assets/rs-slope-nodejs.webp';
+import reactEnImg from '@/assets/rs-slope-react-en.webp';
+import reactRuImg from '@/assets/rs-slope-react-ru.webp';
 
 export type CourseNames =
   | 'aws cloud dev'
@@ -53,12 +53,12 @@ export const contentMap: ContentMap = {
           'Master asynchronous microservices communication using SQS and SNS',
           'Explore authorization with Lambda Authorizers and Cognito',
           'Learn containerization with Docker and Elastic Beanstalk',
-          'Implement backend-for-frontend using API Gateway'
+          'Implement backend-for-frontend using API Gateway',
         ]}
         marked
-      />
+      />,
     ],
-    image: awsDevImg
+    image: awsDevImg,
   },
   'aws fundamentals': {
     title: 'Training Program',
@@ -76,9 +76,9 @@ export const contentMap: ContentMap = {
       <Paragraph>
         During the course, you will have access to online sessions led by AWS User Groups and RS
         School Mentors, where you can ask questions, discuss the materials, and get feedback.
-      </Paragraph>
+      </Paragraph>,
     ],
-    image: awsFundamentalsImg
+    image: awsFundamentalsImg,
   },
   'node.js': {
     title: 'Course Topics',
@@ -101,12 +101,12 @@ export const contentMap: ContentMap = {
           'Containerization, Docker',
           'Logging and Error Handling',
           'Authentication & authorization, JWT',
-          'Nest.js'
+          'Nest.js',
         ]}
         marked
-      />
+      />,
     ],
-    image: nodejsImg
+    image: nodejsImg,
   },
   angular: {
     title: 'Training Program',
@@ -128,9 +128,9 @@ export const contentMap: ContentMap = {
         <span>BE AWARE</span> that practical tasks’ deadlines are not suggestions, and should be
         respected.
       </Paragraph>,
-      <Subtitle text="Attention! Mentors on this course will be first assigned to the graduates of the RS School Stage #2." />
+      <Subtitle text="Attention! Mentors on this course will be first assigned to the graduates of the RS School Stage #2." />,
     ],
-    image: angularImg
+    image: angularImg,
   },
 
   javascript: {
@@ -153,9 +153,9 @@ export const contentMap: ContentMap = {
         <span>BE AWARE</span> that practical tasks’ deadlines are not suggestions, and should be
         respected.
       </Paragraph>,
-      <Subtitle text="Attention! Mentors on this course will be first assigned to the graduates of the RS School Stage #2." />
+      <Subtitle text="Attention! Mentors on this course will be first assigned to the graduates of the RS School Stage #2." />,
     ],
-    image: jsImg
+    image: jsImg,
   },
   react: {
     title: 'Target audience',
@@ -172,13 +172,13 @@ export const contentMap: ContentMap = {
           'NPM, Webpack',
           'CSS3 / HTML5',
           'Chrome DevTools, Figma',
-          'Understanding of the REST'
+          'Understanding of the REST',
         ]}
         marked
       />,
-      <Subtitle text="Attention! Mentors on this course will be first assigned to the graduates of the RS School Stage #2." />
+      <Subtitle text="Attention! Mentors on this course will be first assigned to the graduates of the RS School Stage #2." />,
     ],
-    image: reactEnImg
+    image: reactEnImg,
   },
   'react ru': {
     title: 'Для кого',
@@ -187,9 +187,9 @@ export const contentMap: ContentMap = {
         Бесплатный курс от сообщества The Rolling Scopes для тех, кто хочет получить знания и опыт,
         достаточные для трудоустройства на позицию Junior Software Engineer в области
         JavaScript/Front-end.
-      </Paragraph>
+      </Paragraph>,
     ],
-    image: reactRuImg
+    image: reactRuImg,
   },
   'aws fundamentals badge': {
     title: 'AWS DIGITAL BADGE',
@@ -200,8 +200,8 @@ export const contentMap: ContentMap = {
         knowledge of AWS fundamentals to potential employers or clients. By the end of the course,
         you will have gained a solid foundation in AWS fundamentals and be prepared to pass the AWS
         Cloud Practitioner certification.
-      </Paragraph>
+      </Paragraph>,
     ],
-    image: awsPractitionerBadge
-  }
+    image: awsPractitionerBadge,
+  },
 };

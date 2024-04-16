@@ -1,8 +1,9 @@
+import { contentMap } from './about.data';
+import { InfoGrid } from './components';
 import { Button, Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
-import { InfoGrid } from './components';
-import { contentMap } from './about.data';
-import { CourseType, type Course } from '@/app/types';
+import { type Course, CourseType } from '@/app/types';
+
 import './about.scss';
 
 export type CourseNames =

@@ -1,6 +1,6 @@
-import { renderHook, act } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
+import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { useWindowSize } from '.';
-import { beforeEach, describe, afterEach, it, expect } from 'vitest';
 
 describe('useWindowSize', () => {
   let windowDimensions: { width: number; height: number };
@@ -8,7 +8,7 @@ describe('useWindowSize', () => {
   beforeEach(() => {
     windowDimensions = {
       width: window.innerWidth,
-      height: window.innerHeight
+      height: window.innerHeight,
     };
   });
 

@@ -1,6 +1,7 @@
-import { Title } from '@/app/components';
-import './general.scss';
 import { Link } from 'react-router-dom';
+import { Title } from '@/app/components';
+
+import './general.scss';
 
 export const General = () => {
   return (

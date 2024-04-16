@@ -1,4 +1,5 @@
 import type { Trainer } from './trainers.types';
+
 interface TrainerProps extends Trainer {}
 
 export const TrainerCard = ({ name, bio, role, photo }: TrainerProps) => {

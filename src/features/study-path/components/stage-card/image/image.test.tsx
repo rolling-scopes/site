@@ -14,12 +14,12 @@ describe('Actions Component', () => {
 
     expect(screen.getByRole('img', { name: MOCKED_IMAGE_PATH })).toHaveAttribute(
       'src',
-      MOCKED_IMAGE_PATH
+      MOCKED_IMAGE_PATH,
     );
 
     expect(screen.getByRole('img', { name: MOCKED_IMAGE_PATH })).toHaveAttribute(
       'alt',
-      MOCKED_IMAGE_PATH
+      MOCKED_IMAGE_PATH,
     );
   });
 });

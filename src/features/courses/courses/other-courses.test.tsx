@@ -1,14 +1,19 @@
 import { screen } from '@testing-library/react';
-import { it, vi, expect, describe, Mock } from 'vitest';
-import { useDataByName } from '@/app/hooks';
-import { renderWithRouter } from '@/__tests__/utils';
+import { Mock, describe, expect, it, vi } from 'vitest';
 import { Courses } from './courses';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
+import { renderWithRouter } from '@/__tests__/utils';
+import { useDataByName } from '@/app/hooks';
 
 vi.mock('@/app/hooks', () => {
   return {
     useDataByName: vi.fn(() => ({ data: undefined, loading: false, error: undefined })),
-    useNearestCourse: vi.fn().mockImplementation(() => ({ course: undefined, loading: false, error: undefined, hasError: false })),
+    useNearestCourse: vi.fn().mockImplementation(() => ({
+      course: undefined,
+      loading: false,
+      error: undefined,
+      hasError: false,
+    })),
   };
 });
 
@@ -38,8 +43,8 @@ describe('Courses (other courses)', () => {
         language: ['ru', 'en'],
         mode: 'online',
         detailsUrl: 'https://rs.school/react/',
-        backgroundStyle: { backgroundColor: '#EEF3FE', accentColor: '#7356BF' }
-      }
+        backgroundStyle: { backgroundColor: '#EEF3FE', accentColor: '#7356BF' },
+      },
     ];
 
     (useDataByName as Mock).mockImplementation(() => ({ data: courses }));

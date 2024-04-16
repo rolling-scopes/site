@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { it, expect, describe, beforeEach } from 'vitest';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { Support } from './support';
 
 describe('Support', () => {
@@ -14,7 +14,7 @@ describe('Support', () => {
 
   it('renders the subtitle correctly', () => {
     const subtitleElement1 = screen.getByText(
-      'Your donations help us cover hosting, domains, licenses, and advertising for courses and events. Every donation, big or small, helps!'
+      'Your donations help us cover hosting, domains, licenses, and advertising for courses and events. Every donation, big or small, helps!',
     );
     const subtitleElement2 = screen.getByText('Thank you for your support!');
     expect(subtitleElement1).toBeVisible();

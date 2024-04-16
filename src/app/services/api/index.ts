@@ -1,4 +1,4 @@
-import { courses, coursesPath, jsPath, angularPath, awsDevPath } from '../data';
+import { angularPath, awsDevPath, courses, coursesPath, jsPath } from '../data';
 import { type DataMap } from '../data';
 
 const dataProviders: DataMap = {
@@ -6,7 +6,7 @@ const dataProviders: DataMap = {
   coursesPath: coursesPath,
   javascript: jsPath,
   angular: angularPath,
-  awsDev: awsDevPath
+  awsDev: awsDevPath,
 };
 
 export const fetchDataByName = (dataName: keyof DataMap) => {

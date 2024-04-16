@@ -1,22 +1,22 @@
 import { render, screen } from '@testing-library/react';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { BaseLayout } from './base-layout';
-import { it, vi, expect, describe, beforeEach } from 'vitest';
 
 vi.mock('react-router-dom', () => ({
   Outlet: vi.fn(() => <div data-testid="mockOutlet" />),
-  useLocation: vi.fn(() => ({ hash: 'testHash' }))
+  useLocation: vi.fn(() => ({ hash: 'testHash' })),
 }));
 
 vi.mock('./components/navbar', () => ({
-  Navbar: vi.fn(() => <div data-testid="mockNavbar" />)
+  Navbar: vi.fn(() => <div data-testid="mockNavbar" />),
 }));
 
 vi.mock('./components/partnered', () => ({
-  Partnered: vi.fn(() => <div data-testid="mockPartnered" />)
+  Partnered: vi.fn(() => <div data-testid="mockPartnered" />),
 }));
 
 vi.mock('./components/footer', () => ({
-  Footer: vi.fn(() => <div data-testid="mockFooter" />)
+  Footer: vi.fn(() => <div data-testid="mockFooter" />),
 }));
 
 describe('BaseLayout', () => {

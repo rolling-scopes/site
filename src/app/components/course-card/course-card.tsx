@@ -1,8 +1,9 @@
-import noteIcon from '@/assets/icons/note-icon.svg';
-import micIcon from '@/assets/icons/mic.svg';
-import './course-card.scss';
-import { type Course } from '@/app/types';
 import { Link } from 'react-router-dom';
+import { type Course } from '@/app/types';
+import micIcon from '@/assets/icons/mic.svg';
+import noteIcon from '@/assets/icons/note-icon.svg';
+
+import './course-card.scss';
 
 export type CourseCardProps = Pick<
   Course,
@@ -16,14 +17,14 @@ export const CourseCard = ({
   detailsUrl,
   mode,
   language,
-  backgroundStyle
+  backgroundStyle,
 }: CourseCardProps) => {
   const { backgroundColor, accentColor } = backgroundStyle;
   const lang = language.join(' / ');
 
   const cardStyle = {
     backgroundColor: backgroundColor,
-    '--accent-bg-color': accentColor
+    '--accent-bg-color': accentColor,
   };
 
   return (

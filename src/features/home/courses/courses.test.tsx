@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
-import { it, vi, expect, describe, beforeEach, Mock } from 'vitest';
+import { Mock, beforeEach, describe, expect, it, vi } from 'vitest';
 import { Courses } from './courses';
 import { useWindowSize } from '@/app/hooks';
 
 describe('Courses', () => {
   vi.mock('@/app/hooks', () => ({
-    useWindowSize: vi.fn().mockReturnValue({ width: 1440, height: 900 })
+    useWindowSize: vi.fn().mockReturnValue({ width: 1440, height: 900 }),
   }));
 
   beforeEach(() => {
