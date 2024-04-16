@@ -32,7 +32,7 @@ export const courses: Course[] = [
     mode: 'online',
     detailsUrl: buildUrl('/courses/javascript-preschool'),
     enroll: 'https://wearecommunity.io/events/js-stage0-rs-2024q2',
-    backgroundStyle: { backgroundColor: '#FFDB201A', accentColor: '#FFDB204D' }
+    backgroundStyle: { backgroundColor: '#FFDB201A', accentColor: '#FFDB204D' },
   },
   {
     id: '2',
@@ -73,7 +73,7 @@ export const courses: Course[] = [
     mode: 'online',
     detailsUrl: buildUrl('/courses/reactjs'),
     enroll: 'https://wearecommunity.io/events/rs-react-2023q4',
-    backgroundStyle: { backgroundColor: '#EEF3FE', accentColor: '#7356BF' }
+    backgroundStyle: { backgroundColor: '#EEF3FE', accentColor: '#7356BF' },
   },
   {
     id: '5',
@@ -86,7 +86,7 @@ export const courses: Course[] = [
     mode: 'online',
     detailsUrl: buildUrl('/courses/angular'),
     enroll: 'https://wearecommunity.io/events/rs-angular-2023q4',
-    backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#F4AFA7' }
+    backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#F4AFA7' },
   },
   {
     id: '6',
@@ -112,9 +112,9 @@ export const courses: Course[] = [
     mode: 'online',
     detailsUrl: buildUrl('/courses/aws-fundamentals'),
     enroll: 'https://wearecommunity.io/events/rs-aws-2024q2',
-    backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#7356BF' }
+    backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#7356BF' },
   },
-  
+
   {
     id: '8',
     title: 'AWS Cloud Developer',

@@ -1,6 +1,6 @@
-import React from 'react';
+import { FC } from 'react';
 
-export const DropdownArrow: React.FC = () => (
+export const DropdownArrow: FC = () => (
   <svg
     aria-label="dropdown-arrow"
     xmlns="http://www.w3.org/2000/svg"

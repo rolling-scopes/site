@@ -1,5 +1,5 @@
-import { Course } from '@/app/types';
 import { SchoolItem } from './school-item';
+import { Course } from '@/app/types';
 
 export interface GenericItemProps {
   title: string;
@@ -20,9 +20,7 @@ export const SchoolList = ({ list, color }: SchoolListProps) => {
 
   return (
     <ul className={className}>
-      {list?.map((item) => (
-        <SchoolItem item={item} key={item.title} color={color} />
-      ))}
+      {list?.map((item) => <SchoolItem item={item} key={item.title} color={color} />)}
     </ul>
   );
 };
