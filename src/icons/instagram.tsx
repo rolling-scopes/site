@@ -1,6 +1,6 @@
-import * as React from 'react';
+import { FC } from 'react';
 
-export const InstagramIcon: React.FC = () => (
+export const InstagramIcon: FC = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="57" height="57">
     <rect x="0.666504" y="0.0683594" width="56" height="56" rx="28" fill="#EEEEEE" />
     <path

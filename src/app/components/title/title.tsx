@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { PropsWithChildren } from 'react';
 
 import './title.scss';
 
@@ -9,7 +9,7 @@ export enum TitleType {
   ExtraBig = 'extra-big',
 }
 
-type TitleProps = React.PropsWithChildren<{
+type TitleProps = PropsWithChildren<{
   text?: string;
   type?: TitleType;
   hasAsterisk?: boolean;

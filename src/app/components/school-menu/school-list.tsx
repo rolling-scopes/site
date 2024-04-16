@@ -14,7 +14,6 @@ interface SchoolListProps {
 
 export const SchoolList = ({ list, color }: SchoolListProps) => (
   <ul className="school-list">
-    // eslint-disable-next-line prettier/prettier
     {list?.map((item, index) => <SchoolItem item={item} index={index} key={index} color={color} />)}
   </ul>
 );
