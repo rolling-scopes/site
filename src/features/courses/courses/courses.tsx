@@ -31,7 +31,7 @@ export const Courses = () => {
                 <CourseCard
                   key={course.id}
                   {...course}
-                  startDate={ nearestCourseStartDate <= Date.parse(course.startDate) ? course.startDate : '(Upcoming)' }
+                  startDate={ nearestCourseStartDate <= Date.parse(course.startDate) ? course.startDate : '(TBD)' }
                 />
               )
             }
