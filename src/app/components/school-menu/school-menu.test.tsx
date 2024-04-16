@@ -89,7 +89,7 @@ describe('SchoolMenu', () => {
     const descriptions = container.getElementsByTagName('small');
 
     expect(descriptions).toHaveLength(2);
-    expect(descriptions[0]).toHaveTextContent(/upcoming/i as RegExp);
+    expect(descriptions[0]).toHaveTextContent(/tbd/i as RegExp);
     expect(descriptions[1]).toHaveTextContent(`Start ${react.startDate}` as string);
   });
 

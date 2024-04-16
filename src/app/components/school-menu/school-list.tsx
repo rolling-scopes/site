@@ -1,21 +1,21 @@
-import { type Course } from '@/app/types';
+import { Course } from '@/app/types';
 import { SchoolItem } from './school-item';
 
 export interface GenericItemProps {
   title: string;
-  to: string;
+  detailsUrl: string;
   description: string;
 }
 
 interface SchoolListProps {
-  list: (Course | GenericItemProps)[];
+  list: Course[] | GenericItemProps[];
   color: 'dark' | 'light';
 }
 
 export const SchoolList = ({ list, color }: SchoolListProps) => (
   <ul className="school-list">
     {list?.map((item, index) => (
-      <SchoolItem item={item} index={index} key={index} color={color} />
+      <SchoolItem item={item} key={index} color={color} />
     ))}
   </ul>
 );

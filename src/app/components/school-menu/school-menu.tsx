@@ -6,22 +6,22 @@ import './school-menu.scss';
 const schoolMenuStaticLinks = [
   {
     title: 'About RS School',
-    to: '/courses',
+    detailsUrl: '/courses',
     description: 'Free online education'
   },
   {
     title: 'Upcoming courses',
-    to: '/courses#upcoming-courses',
+    detailsUrl: '/courses#upcoming-courses',
     description: 'Schedule your study'
   },
   {
     title: 'IT Journey',
-    to: '/courses#learning-path',
+    detailsUrl: '/courses#learning-path',
     description: 'Plan your developer path'
   },
   {
     title: 'Mentoring',
-    to: '/courses#mentors-wanted',
+    detailsUrl: '/courses#mentors-wanted',
     description: 'Contribute and study'
   }
 ];
