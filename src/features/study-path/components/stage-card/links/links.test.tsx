@@ -5,7 +5,7 @@ describe('Links Component', () => {
   it('renders links correctly', () => {
     const testLinks = [
       { href: 'https://example.com', linkTitle: 'Example', isActive: true },
-      { href: 'https://dummy.com', linkTitle: 'Dummy', isActive: false }
+      { href: 'https://dummy.com', linkTitle: 'Dummy', isActive: false },
     ];
 
     render(<Links links={testLinks} />);

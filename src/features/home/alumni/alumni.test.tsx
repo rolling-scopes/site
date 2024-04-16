@@ -5,7 +5,7 @@ import { useWindowSize } from '@/app/hooks';
 
 vi.mock('@/app/hooks', () => {
   return {
-    useWindowSize: vi.fn().mockReturnValue({ width: 2000, height: 2000 })
+    useWindowSize: vi.fn().mockReturnValue({ width: 2000, height: 2000 }),
   };
 });
 

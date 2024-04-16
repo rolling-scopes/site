@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { LogoWrapper } from '@/app/components';
-import { SchoolMenu } from '@/app/components';
-import './mobile-view.scss';
+import { LogoWrapper, SchoolMenu } from '@/app/components';
 import { buildUrl } from '@/app/services/platform';
+
+import './mobile-view.scss';
 
 interface MobileViewProps {
   type: 'navbar' | 'footer';

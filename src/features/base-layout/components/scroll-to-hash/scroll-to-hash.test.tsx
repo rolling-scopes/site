@@ -1,6 +1,6 @@
 import { render, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { describe, it, vi, expect, beforeEach } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ScrollToHashElement } from './scroll-to-hash';
 
 describe('ScrollToHashElement', () => {
@@ -11,7 +11,7 @@ describe('ScrollToHashElement', () => {
     getElementByIdMock.mockClear();
 
     global.document.getElementById = getElementByIdMock.mockReturnValue({
-      scrollIntoView: scrollIntoViewMock
+      scrollIntoView: scrollIntoViewMock,
     } as unknown as HTMLElement);
   });
 
@@ -19,7 +19,7 @@ describe('ScrollToHashElement', () => {
     render(
       <MemoryRouter initialEntries={[entry]}>
         <ScrollToHashElement />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
   };
 

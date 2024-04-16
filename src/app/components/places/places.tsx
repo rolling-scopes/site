@@ -14,7 +14,7 @@ const places: string[] = [
   'Uzbekistan',
   'Online',
   'Kyrgyzstan',
-  'Lithuania'
+  'Lithuania',
 ];
 
 export const Places = () => (

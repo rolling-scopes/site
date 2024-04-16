@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 export const FacebookIcon: React.FC = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="57" height="57">

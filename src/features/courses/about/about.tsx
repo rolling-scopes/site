@@ -1,4 +1,5 @@
 import { Paragraph, Subtitle, Title } from '@/app/components';
+
 import './about.scss';
 
 export const About = () => {

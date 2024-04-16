@@ -1,5 +1,6 @@
 import rsLogoFooter from '@/assets/icons/footer/rs-logo.webp';
 import rsLogoNavbar from '@/assets/rs-logo.webp';
+
 import './logo-wrapper.scss';
 
 interface LogoWrapperProps {

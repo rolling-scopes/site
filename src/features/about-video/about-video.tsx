@@ -1,4 +1,5 @@
 import { Title } from '@/app/components';
+
 import './about-video.scss';
 
 export const AboutVideo = () => {

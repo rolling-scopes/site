@@ -1,7 +1,8 @@
-import { useWindowSize } from '@/app/hooks';
 import { Copyright } from './copyright';
-import { MobileView } from '@/app/components';
 import { DesktopView } from './desktop-view';
+import { MobileView } from '@/app/components';
+import { useWindowSize } from '@/app/hooks';
+
 import './footer.scss';
 
 export const Footer = () => {
