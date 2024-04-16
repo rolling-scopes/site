@@ -29,8 +29,8 @@ jobs:
       - name: Lint Application
         run: npm run lint
 
-  type-check:
-    name: Types
+  build:
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
@@ -45,8 +45,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Check Application Types
-        run: npm run type-check
+      - name: Build
+        run: npm run build
 
   tests:
     name: Test
