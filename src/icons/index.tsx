@@ -1,18 +1,20 @@
+export { TeachItForwardIcon } from '@/icons/teach-It-forward-icon.tsx';
+export { TitleIcon } from '@/icons/title-icon.tsx';
+export { JsFrontendIcon } from '@/icons/js-frontend-icon.tsx';
+export { NodeJsIcon } from '@/icons/nodejs-icon.tsx';
+export { JetBrainsLogo } from '@/icons/jetbrains.tsx';
+export { YouTubeIcon } from '@/icons/youtube.tsx';
+export { OpenToEveryoneIcon } from '@/icons/open-to-everyone-icon.tsx';
+export { OpenSourcePhilosophyIcon } from '@/icons/open-source-philosophy-icon.tsx';
+export { InstagramIcon } from '@/icons/instagram.tsx';
+export { LinkedInIcon } from '@/icons/linkedIn.tsx';
+export { TelegramIcon } from '@/icons/telegram.tsx';
+export { GithubLogo } from '@/icons/github.tsx';
+export { FacebookIcon } from '@/icons/facebook.tsx';
+export { EpamLogo } from '@/icons/epam.tsx';
+export { AwsLogo } from '@/icons/aws.tsx';
+
 /* eslint-disable react-refresh/only-export-components */
-export * from './facebook';
-export * from './instagram';
-export * from './linkedIn';
-export * from './telegram';
-export * from './youtube';
-export * from './open-to-everyone-icon';
-export * from './open-source-philosophy-icon';
-export * from './teach-It-forward-icon';
-export * from './epam';
-export * from './jetbrains';
-export * from './aws';
-export * from './github';
+// TODO The same name by components
 export * from './rs';
 export * from './rs-logo';
-export * from './nodejs-icon';
-export * from './js-frontend-icon';
-export * from './title-icon';

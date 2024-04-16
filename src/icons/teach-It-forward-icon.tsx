@@ -1,6 +1,6 @@
-import React from 'react';
+import { FC } from 'react';
 
-export const TeachItForwardIcon: React.FC = () => (
+export const TeachItForwardIcon: FC = () => (
   <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M23.4618 22.8712C23.3144 19.8003 25.4324 17.0332 28.5586 16.4465L33.6447 15.4919C33.7922 18.5628 31.6742 21.33 28.5479 21.9167L23.4618 22.8712Z"
