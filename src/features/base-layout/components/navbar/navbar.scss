@@ -210,24 +210,17 @@
       visibility: visible;
       transform: translateY(0);
     }
-
-    .icon-wrapper ~ .details > a {
-      max-width: 200px;
-      max-height: 20px;
-      overflow: hidden;
-      text-wrap: nowrap;
-    }
   }
 }
 
 .navbar {
   & .burger {
+    position: relative;
+    display: none;
     width: 32px;
     height: 32px;
-    display: none;
+    border-radius: 0px;
     overflow: hidden;
-    position: relative;
-    border-radius: 0px 0px 0px 0px;
     cursor: pointer;
 
     @include media-hover {
@@ -248,28 +241,26 @@
   .top,
   .mid,
   .bottom {
+    position: absolute;
+    display: block;
     width: 24px;
     height: 2px;
-    display: block;
-    background-color: #888888;
+    left: 4px;
     overflow: hidden;
-    position: absolute;
-    border-radius: 0px 0px 0px 0px;
+    border-radius: 0px;
+    background-color: #888888;
     transition: transform 0.4s ease-in-out;
   }
 
   .top {
     top: 7px;
-    left: 4px;
   }
 
   .mid {
-    left: 4px;
     top: 15px;
   }
 
   .bottom {
-    left: 4px;
     top: 23px;
   }
 

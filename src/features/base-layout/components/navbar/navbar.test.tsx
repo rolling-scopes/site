@@ -45,19 +45,19 @@ describe('Navbar', () => {
     });
 
     it('renders all the navbar links', () => {
-      const navbarElement = screen.getAllByText(/.*/, { selector: 'div.label' });
-      expect(navbarElement).toHaveLength(5);
+      const navbarElement = screen.getAllByText(/.*/, { selector: 'p.label' });
+      expect(navbarElement).toHaveLength(4);
     });
 
-    // it('renders svg arrow', () => {
-    //   const labelDiv = screen.getByText('About', { selector: 'div.label' });
+    it('renders svg arrow', () => {
+      const labelDiv = screen.getByText('About', { selector: 'p.label' });
 
-    //   fireEvent.mouseOver(labelDiv);
-    //   const svg = screen.getByLabelText('dropdown-arrow');
+      fireEvent.mouseOver(labelDiv);
+      const svg = screen.getByLabelText('dropdown-arrow');
 
-    //   expect(svg).toBeInTheDocument();
-    //   expect(svg).toBeVisible();
-    // });
+      expect(svg).toBeInTheDocument();
+      expect(svg).toBeVisible();
+    });
   });
 
   describe('Mobile view', () => {
