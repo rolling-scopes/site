@@ -39,6 +39,14 @@
       column-gap: 10px;
     }
 
+    &_width {
+      width: 512px;
+      
+      @media (max-width: 795px) {
+        width: auto;
+      }
+    }
+
     & .school-item {
       display: flex;
       flex-direction: column;
