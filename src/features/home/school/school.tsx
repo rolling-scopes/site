@@ -1,10 +1,10 @@
 import {
-  Title,
-  Subtitle,
-  Paragraph,
   OptionItem,
   OptionItemProps,
-  SectionLabel
+  Paragraph,
+  SectionLabel,
+  Subtitle,
+  Title,
 } from '@/app/components';
 
 import image from '@/assets/rs-school.webp';
@@ -15,18 +15,18 @@ export const studyOptions: OptionItemProps[] = [
   {
     title: 'Teach and empower',
     description:
-      'We aim to provide education to everyone interested and assist in hiring the best students.'
+      'We aim to provide education to everyone interested and assist in hiring the best students.',
   },
   {
     title: 'Connect and grow',
     description:
-      'We strive to connect people, grow together, and build a solid educational community.'
+      'We strive to connect people, grow together, and build a solid educational community.',
   },
   {
     title: 'Foster mentoring culture',
     description:
-      'We encourage a culture of mentoring where knowledge is shared and wisdom is passed on.'
-  }
+      'We encourage a culture of mentoring where knowledge is shared and wisdom is passed on.',
+  },
 ];
 
 export const School = () => (

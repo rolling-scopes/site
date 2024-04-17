@@ -11,7 +11,7 @@ describe('AboutVideo', () => {
     render(<AboutVideo />);
     expect(screen.getByTitle('RS School Intro')).toHaveAttribute(
       'src',
-      'https://www.youtube.com/embed/n4unZLVpnaU'
+      'https://www.youtube.com/embed/n4unZLVpnaU',
     );
   });
 });

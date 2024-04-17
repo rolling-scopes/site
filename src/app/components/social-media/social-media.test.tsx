@@ -1,7 +1,7 @@
-import { render, screen } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
-import { SocialMedia } from './social-media';
 import { ReactNode } from 'react';
+import { render, screen } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
+import { SocialMedia } from './social-media';
 
 describe('SocialMedia component', () => {
   const mockIcon: ReactNode = <div>mockIcon</div>;
@@ -9,7 +9,7 @@ describe('SocialMedia component', () => {
   const props = {
     title: 'TestSocialMedia',
     href: 'https://test.com',
-    icon: mockIcon
+    icon: mockIcon,
   };
 
   it('renders without crashing', () => {

@@ -1,4 +1,5 @@
 import { Tag, TagDivider } from './components';
+
 import './hero.scss';
 
 interface TagProps {
@@ -9,7 +10,7 @@ interface TagProps {
 const tags: TagProps[] = [
   { id: 'school', label: 'education' },
   { id: 'events', label: 'events & meetups' },
-  { id: 'community', label: 'community building' }
+  { id: 'community', label: 'community building' },
 ];
 
 export const Hero = () => {

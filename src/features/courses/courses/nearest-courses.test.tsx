@@ -1,14 +1,19 @@
 import { screen } from '@testing-library/react';
-import { it, vi, expect, describe, Mock } from 'vitest';
-import { useNearestCourse } from '@/app/hooks';
-import { renderWithRouter } from '@/__tests__/utils';
+import { Mock, describe, expect, it, vi } from 'vitest';
 import { Courses } from './courses';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
+import { renderWithRouter } from '@/__tests__/utils';
+import { useNearestCourse } from '@/app/hooks';
 
 vi.mock('@/app/hooks', () => {
   return {
     useDataByName: vi.fn(() => ({ data: [], loading: false, error: undefined })),
-    useNearestCourse: vi.fn().mockImplementation(() => ({ course: undefined, loading: false, error: undefined, hasError: false })),
+    useNearestCourse: vi.fn().mockImplementation(() => ({
+      course: undefined,
+      loading: false,
+      error: undefined,
+      hasError: false,
+    })),
   };
 });
 
@@ -24,9 +29,7 @@ describe('Courses (nearest course)', () => {
     (useNearestCourse as Mock).mockImplementation(() => ({ hasError: true }));
     renderWithRouter(<Courses />);
 
-    expect(
-      screen.getByText('Error loading courses.')
-    ).toBeVisible();
+    expect(screen.getByText('Error loading courses.')).toBeVisible();
   });
 
   it('displays the courses when data is available for nearest course', () => {
@@ -38,7 +41,7 @@ describe('Courses (nearest course)', () => {
       language: ['ru', 'en'],
       mode: 'online',
       detailsUrl: '/courses/reactjs',
-      backgroundStyle: { backgroundColor: '#EEF3FE', accentColor: '#7356BF' }
+      backgroundStyle: { backgroundColor: '#EEF3FE', accentColor: '#7356BF' },
     };
 
     (useNearestCourse as Mock).mockImplementation(() => ({ course }));

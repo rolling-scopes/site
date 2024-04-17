@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { Paragraph } from './paragraph';
 
 describe('Paragraph component', () => {
@@ -14,7 +14,7 @@ describe('Paragraph component', () => {
     render(
       <Paragraph>
         <span>Child Component</span>
-      </Paragraph>
+      </Paragraph>,
     );
 
     const spanElement = screen.getByText('Child Component');

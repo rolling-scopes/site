@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { StageCard } from './stage-card';
 import { type StageCardProps } from './stage-card.types';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
@@ -12,8 +12,8 @@ describe('StageCard component', () => {
     logoIcon: MOCKED_IMAGE_PATH,
     links: [
       { href: 'https://test1.com', linkTitle: 'Test link 1' },
-      { href: 'https://test2.com', linkTitle: 'Test link 2', isActive: false }
-    ]
+      { href: 'https://test2.com', linkTitle: 'Test link 2', isActive: false },
+    ],
   };
 
   it('renders without crashing', () => {

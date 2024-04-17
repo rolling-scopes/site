@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { expect, it, describe } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { Required } from './required';
 
@@ -16,7 +16,7 @@ describe('Required', () => {
   it('renders correct requirement with "nodejs" props', () => {
     render(<Required courseName="nodejs" />);
     const requirement = screen.getByText(
-      /Solid knowledge of JavaScript, including ES6, is required for this course./i
+      /Solid knowledge of JavaScript, including ES6, is required for this course./i,
     );
     expect(requirement).toBeVisible();
   });
@@ -29,7 +29,7 @@ describe('Required', () => {
       'Git, GitHub',
       'npm, webpackCSS3',
       'Chrome DevTools Figma',
-      'REST API'
+      'REST API',
     ];
 
     requirements.forEach((requirement) => {
@@ -42,7 +42,7 @@ describe('Required', () => {
     const requirements = [
       'You should be comfortable with at',
       'English language level: Intermediate',
-      'Being able to spend at least 10 hours per week studying.'
+      'Being able to spend at least 10 hours per week studying.',
     ];
 
     requirements.forEach((requirement) => {
@@ -61,7 +61,7 @@ describe('Required', () => {
       'Networking Fundamentals',
       'Cloud Technical Fundamentals',
       'AWS Cloud Essentials',
-      'Basic AWS Services'
+      'Basic AWS Services',
     ];
 
     requirements.forEach((requirement) => {

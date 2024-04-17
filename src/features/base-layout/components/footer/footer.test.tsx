@@ -1,16 +1,16 @@
-import { renderWithRouter } from '@/__tests__/utils';
 import { type Mock, describe, expect, it } from 'vitest';
-import { useWindowSize } from '@/app/hooks';
 import { Footer } from './footer';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
+import { renderWithRouter } from '@/__tests__/utils';
+import { useWindowSize } from '@/app/hooks';
 
 vi.mock('@/app/hooks', () => ({
   useWindowSize: vi.fn().mockImplementation(() => ({
-    width: 1200
+    width: 1200,
   })),
   useDataByName: vi.fn().mockImplementation(() => ({
-    data: []
-  }))
+    data: [],
+  })),
 }));
 
 describe('Footer', () => {

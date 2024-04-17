@@ -5,20 +5,20 @@ import { buildUrl } from '@/app/services/platform';
 const aboutList = [
   {
     title: 'About RS',
-    to: buildUrl('/#about')
+    to: buildUrl('/#about'),
   },
   {
     title: 'Events',
-    to: buildUrl('/#events')
+    to: buildUrl('/#events'),
   },
   {
     title: 'Community',
-    to: buildUrl('/#community')
+    to: buildUrl('/#community'),
   },
   {
     title: 'Merch',
-    to: buildUrl('/#merch')
-  }
+    to: buildUrl('/#merch'),
+  },
 ];
 
 export const AboutList = () => {

@@ -12,8 +12,8 @@ describe('Stages Component', () => {
       links: [{ href: 'test.com', linkTitle: 'test title', isActive: true }],
       topics: ['Advanced Javascript', 'Security'],
       imageSrc: MOCKED_IMAGE_PATH,
-      actions: ['Action 1', 'Action 2']
-    }
+      actions: ['Action 1', 'Action 2'],
+    },
   ];
 
   it('renders stages and their details correctly', () => {

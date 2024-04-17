@@ -1,9 +1,9 @@
 import { renderHook, waitFor } from '@testing-library/react';
+import { MockedFunction, describe, expect, it, vi } from 'vitest';
 import { useDataByName } from './use-data-by-name';
-import { it, vi, describe, expect, MockedFunction } from 'vitest';
-import { DataMap } from '@/app/services/data/courses-data.types';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 import { fetchDataByName } from '@/app/services/api';
+import { DataMap } from '@/app/services/data/courses-data.types';
 
 const courses: DataMap['courses'] = [
   {
@@ -17,8 +17,8 @@ const courses: DataMap['courses'] = [
     mode: 'online',
     detailsUrl: 'https://rs.school/aws-fundamentals/',
     enroll: 'https://wearecommunity.io/events/rs-aws-2023q3',
-    backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#7356BF' }
-  }
+    backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#7356BF' },
+  },
 ];
 
 const coursesPath: DataMap['coursesPath'] = [
@@ -32,10 +32,10 @@ const coursesPath: DataMap['coursesPath'] = [
       {
         linkTitle: 'Pre-school upturn',
         href: 'https://rs.school/js-stage0/',
-        isActive: true
-      }
-    ]
-  }
+        isActive: true,
+      },
+    ],
+  },
 ];
 
 const javascriptPath: DataMap['javascript'] = [
@@ -45,8 +45,8 @@ const javascriptPath: DataMap['javascript'] = [
     description:
       'Everyone registered is automatically eligible for this stage. The first stage lasts 15 weeks. This stage includes practical assignments and tests. Evaluation is either automatic or in the form of cross-checking between students.',
     imageSrc: MOCKED_IMAGE_PATH,
-    topics: ['Git', 'HTML', 'CSS', 'Javascript basics']
-  }
+    topics: ['Git', 'HTML', 'CSS', 'Javascript basics'],
+  },
 ];
 
 const angularPath: DataMap['angular'] = [
@@ -56,9 +56,9 @@ const angularPath: DataMap['angular'] = [
     actions: [
       'Module "Angular Intro. TypeScript."',
       'Module "Angular. Components"',
-      'Module "Angular. Directives & Pipes"'
-    ]
-  }
+      'Module "Angular. Directives & Pipes"',
+    ],
+  },
 ];
 
 const awsDevPath: DataMap['awsDev'] = [
@@ -69,9 +69,9 @@ const awsDevPath: DataMap['awsDev'] = [
       'Fundamental theory about cloud computing',
       'Cloud service models, cloud deployment models, infrastructure-as-code',
       'Monolith vs microservices vs serverless',
-      'AWS intro, registration, Cloud Watch, IAM Repository structure'
-    ]
-  }
+      'AWS intro, registration, Cloud Watch, IAM Repository structure',
+    ],
+  },
 ];
 
 vi.mock('@/app/services/api', () => ({
@@ -90,7 +90,7 @@ vi.mock('@/app/services/api', () => ({
       default:
         return [];
     }
-  })
+  }),
 }));
 
 describe('useDataByName', () => {
@@ -105,7 +105,7 @@ describe('useDataByName', () => {
 
   it('should raise an error when fetch fails', async () => {
     (fetchDataByName as MockedFunction<typeof fetchDataByName>).mockReturnValueOnce(
-      Promise.reject(new Error('Test fetch failed'))
+      Promise.reject(new Error('Test fetch failed')),
     );
 
     const { result } = renderHook(() => useDataByName('courses'));

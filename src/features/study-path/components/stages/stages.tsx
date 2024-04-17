@@ -1,4 +1,5 @@
-import { StageCard, type Stage } from '../stage-card';
+import { type Stage, StageCard } from '../stage-card';
+
 import './stages.scss';
 
 export interface StagesProps {

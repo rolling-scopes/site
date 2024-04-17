@@ -1,8 +1,9 @@
 import { ReactNode } from 'react';
-import { JsFrontendIcon, AwsLogo, RSLogo } from '@/icons';
-import { useWindowSize } from '@/app/hooks';
 import { Button } from '@/app/components';
+import { useWindowSize } from '@/app/hooks';
 import { buildUrl } from '@/app/services/platform';
+import { AwsLogo, JsFrontendIcon, RSLogo } from '@/icons';
+
 import './courses.scss';
 
 type CourseProps = {
@@ -19,22 +20,22 @@ const courses: CourseProps[] = [
     language: 'EN',
     startDate: 'April 15, 2024',
     href: buildUrl('/courses/aws-fundamentals'),
-    icon: <AwsLogo />
+    icon: <AwsLogo />,
   },
   {
     title: 'JS / Front-end. Pre-school',
     language: 'RU',
     startDate: 'June 24, 2024',
     href: buildUrl('/courses/javascript-preschool'),
-    icon: <JsFrontendIcon />
+    icon: <JsFrontendIcon />,
   },
   {
     title: 'JS / Front-end',
     language: 'EN',
     startDate: 'November 6, 2023',
     href: buildUrl('/courses/javascript-mentoring-program'),
-    icon: <JsFrontendIcon />
-  }
+    icon: <JsFrontendIcon />,
+  },
 ];
 
 export const Courses = () => {

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { Title, TitleType } from './title';
 
 describe('Title component', () => {
@@ -31,7 +31,7 @@ describe('Title component', () => {
     render(
       <Title>
         <div>Child element</div>
-      </Title>
+      </Title>,
     );
 
     const child = screen.getByText('Child element');

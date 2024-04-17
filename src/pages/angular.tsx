@@ -16,7 +16,7 @@ export const Angular = () => {
       <About courseName="angular" />
       <StudyPath path="angular" />
       <Required courseName="angular" marked1 />
-      <Trainers trainers={angular} />
+      <Trainers trainers={ angular } />
     </>
   );
 };

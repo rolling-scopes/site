@@ -1,5 +1,5 @@
-import { CourseType, Course } from '@/app/types';
 import { useDataByName } from '../use-data-by-name';
+import { Course, CourseType } from '@/app/types';
 
 function isCourse(obj: object): obj is Course {
   return 'title' in obj && (obj as Course).title != null;
@@ -13,7 +13,7 @@ export const useCourseByTitle = (titleStartsWith: string, type?: CourseType) => 
       course: null,
       loading,
       hasError: false,
-      error: null
+      error: null,
     };
   }
 
@@ -22,7 +22,7 @@ export const useCourseByTitle = (titleStartsWith: string, type?: CourseType) => 
       course: null,
       loading: false,
       hasError: true,
-      error: new Error('No courses data available.')
+      error: new Error('No courses data available.'),
     };
   }
 
