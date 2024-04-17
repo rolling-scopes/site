@@ -14,7 +14,7 @@ export const InfoGrid = ({ items }: InfoGridProps) => {
             <img src={icon} alt={title} />
             <h2>{title}</h2>
           </div>
-          {info}
+          <p dangerouslySetInnerHTML={{ __html: info }} />
         </div>
       ))}
     </div>

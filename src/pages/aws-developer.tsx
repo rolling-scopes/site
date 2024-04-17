@@ -1,9 +1,9 @@
-import { TrainingProgram } from '@/features/training-program';
-import { CourseMain } from '@/features/сourse-main';
+import { About } from '@/features/about';
+import { CourseMain } from '@/features/course-main';
+import { Required } from '@/features/required';
 import { StudyPath } from '@/features/study-path';
 import { Trainers } from '@/features/trainers';
-import { About } from '@/features/about';
-import { Required } from '@/features/required';
+import { TrainingProgram } from '@/features/training-program';
 
 export const AwsDeveloper = () => {
   return (

@@ -8,7 +8,7 @@ const breadcrumbNameMap: Record<string, string> = {
   'javascript-mentoring-program': 'JavaScript Mentoring Program',
   'javascript-preschool': 'JavaScript Pre-school',
   angular: 'Angular Course',
-  'aws-cloud-developer': 'AWS Cloud Developer Course'
+  'aws-cloud-developer': 'AWS Cloud Developer Course',
 };
 
 describe('Breadcrumbs', () => {

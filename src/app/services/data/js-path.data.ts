@@ -1,7 +1,7 @@
-import stage1 from '@/assets/stages/stage-1.png';
-import stage2 from '@/assets/stages/stage-2.png';
-import stage3 from '@/assets/stages/stage-3.png';
 import { type JSPath } from './courses-data.types';
+import stage1 from '@/assets/stages/stage-1.webp';
+import stage2 from '@/assets/stages/stage-2.webp';
+import stage3 from '@/assets/stages/stage-3.webp';
 
 export const jsPath: JSPath[] = [
   {
@@ -10,7 +10,7 @@ export const jsPath: JSPath[] = [
     description:
       'Everyone registered is automatically eligible for this stage. The first stage lasts 15 weeks. This stage includes practical assignments and tests. Evaluation is either automatic or in the form of cross-checking between students.',
     imageSrc: stage1,
-    topics: ['Git', 'HTML', 'CSS', 'Javascript basics']
+    topics: ['Git', 'HTML', 'CSS', 'Javascript basics'],
   },
   {
     id: 2,
@@ -24,8 +24,8 @@ export const jsPath: JSPath[] = [
       'Testing',
       'Agile',
       'Networking',
-      'web development tools'
-    ]
+      'web development tools',
+    ],
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ export const jsPath: JSPath[] = [
     actions: [
       'Choose a Framework: React or Angular.',
       'Collaborative development of a final project.',
-      'Framework-based interviews.'
-    ]
-  }
+      'Framework-based interviews.',
+    ],
+  },
 ];

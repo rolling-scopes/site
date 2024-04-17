@@ -53,6 +53,10 @@
         font-size: 20px;
       }
     }
+
+    & a {
+      text-decoration: underline;
+    }
   }
 
   .item:nth-child(1) {

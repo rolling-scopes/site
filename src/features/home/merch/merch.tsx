@@ -1,6 +1,6 @@
-import { Title, Subtitle, Paragraph, Button, SectionLabel } from '@/app/components';
+import { Button, Paragraph, SectionLabel, Subtitle, Title } from '@/app/components';
 
-import image from '@/assets/merch.png';
+import image from '@/assets/merch.webp';
 
 import './merch.scss';
 

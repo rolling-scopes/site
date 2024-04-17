@@ -1,8 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import { it, expect, describe, beforeEach } from 'vitest';
+import { beforeEach, describe, expect, it } from 'vitest';
 
-import { Principles } from './principles';
-import { cards } from './principles'; // Assuming it's exported from the file
+import { Principles, cards } from './principles';
 
 describe('Principles', () => {
   beforeEach(() => {
@@ -11,7 +10,7 @@ describe('Principles', () => {
 
   it('renders the title correctly', () => {
     const titleElement = screen.getByText(
-      /RS School Principles are an ability to complete our mission/i
+      /RS School Principles are an ability to complete our mission/i,
     );
     expect(titleElement).toBeVisible();
   });

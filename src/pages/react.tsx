@@ -1,8 +1,8 @@
 import { Breadcrumbs } from '@/app/components';
 import { About } from '@/features/about';
+import { CourseMain } from '@/features/course-main';
 import { Trainers } from '@/features/trainers';
 import { TrainingProgram } from '@/features/training-program';
-import { CourseMain } from '@/features/сourse-main';
 
 export const React = () => {
   return (

@@ -1,6 +1,6 @@
-import { Title, Subtitle, Button, TitleType } from '@/app/components';
+import { Button, Subtitle, Title, TitleType } from '@/app/components';
 
-import image from '@/assets/support.png';
+import image from '@/assets/support.webp';
 
 import './support.scss';
 

@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+
 import './principle-card.scss';
 
 export interface PrincipleCardProps {

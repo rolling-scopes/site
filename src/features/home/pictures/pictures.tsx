@@ -1,40 +1,42 @@
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+// requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import { Title, Paragraph, SocialMedia, SocialMediaProps } from '@/app/components';
-import { InstagramIcon, FacebookIcon } from '@/icons';
-import './pictures.scss';
+import { Paragraph, SocialMedia, SocialMediaProps, Title } from '@/app/components';
 
-import photo1 from '@/assets/photo-1.png';
-import photo2 from '@/assets/photo-2.png';
-import photo3 from '@/assets/photo-3.png';
-import photo4 from '@/assets/photo-4.png';
-import photo5 from '@/assets/photo-5.png';
-import photo6 from '@/assets/photo-6.png';
-import photo7 from '@/assets/photo-7.png';
-import photo8 from '@/assets/photo-8.png';
-import photo9 from '@/assets/photo-9.png';
+import photo1 from '@/assets/photo-1.webp';
+import photo2 from '@/assets/photo-2.webp';
+import photo3 from '@/assets/photo-3.webp';
+import photo4 from '@/assets/photo-4.webp';
+import photo5 from '@/assets/photo-5.webp';
+import photo6 from '@/assets/photo-6.webp';
+import photo7 from '@/assets/photo-7.webp';
+import photo8 from '@/assets/photo-8.webp';
+import photo9 from '@/assets/photo-9.webp';
+import { FacebookIcon, InstagramIcon } from '@/icons';
+
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import './pictures.scss';
 
 const socialMedia: SocialMediaProps[] = [
   {
     title: 'Albums',
     href: 'https://www.facebook.com/groups/186362068186532/media/albums',
-    icon: <FacebookIcon />
+    icon: <FacebookIcon />,
   },
   {
     title: 'The Rolling Scopes',
     href: 'https://www.instagram.com/rollingscopes/',
-    icon: <InstagramIcon />
+    icon: <InstagramIcon />,
   },
   {
     title: 'RS School EN',
     href: 'https://www.instagram.com/rsschool_en/',
-    icon: <InstagramIcon />
+    icon: <InstagramIcon />,
   },
   {
     title: 'RS School RU',
     href: 'https://www.instagram.com/rsschool_news',
-    icon: <InstagramIcon />
-  }
+    icon: <InstagramIcon />,
+  },
 ];
 
 export const Pictures = () => (

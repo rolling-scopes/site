@@ -1,7 +1,8 @@
-import { type DataMap } from '@/app/services/data/courses-data.types';
-import { Paragraph, Title } from '@/app/components';
 import { Stages } from './components';
+import { Paragraph, Title } from '@/app/components';
 import { useDataByName } from '@/app/hooks';
+import { type DataMap } from '@/app/services/data/courses-data.types';
+
 import './study-path.scss';
 
 type PathNames = Exclude<keyof DataMap, 'courses'>;
