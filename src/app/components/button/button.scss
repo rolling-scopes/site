@@ -6,46 +6,59 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: nowrap;
-  padding: 16px 24px;
-  width: min-content;
-  height: min-content;
-  background-color: #000000;
-  overflow: visible;
   @extend %transition-all;
+
+  &.outlined {
+    padding: 10px 24px;
+    margin: 24px 0;
+    width: max-content;
+    font-size: 18px;
+    font-weight: $font-weight-medium;
+    color: $color-primary-black;
+    border: 2px solid currentColor;
+
+    @include media-hover {
+      &:hover {
+        background-color: $color-secondary-gray100;
+      }
+    }
+  }
+
+  &.colored {
+    width: min-content;
+    padding: 16px 24px;
+    background-color: $color-primary-black;
+
+    @include media-tablet {
+      width: 100%;
+    }
+
+    @include media-hover {
+      &:hover {
+        background-color: $color-secondary-gray600;
+      }
+    }
+
+    & #btn-arrow {
+      stroke: $color-primary-white;
+      stroke-width: 2;
+    }
+
+    & .label {
+      text-align: center;
+      white-space: pre;
+      font-size: 18px;
+      letter-spacing: 0em;
+      font-weight: $font-weight-medium;
+      font-family: $font-primary;
+      line-height: 24px;
+      color: $color-primary-white;
+    }
+  }
 
   & .arrow {
     position: relative;
     top: 2px;
     margin-left: 8px;
-  }
-
-  @include media-tablet {
-    width: 100%;
-  }
-
-  @include media-hover {
-    &:hover {
-      background-color: #545454;
-    }
-  }
-
-  & #btn-arrow {
-    stroke: white;
-    stroke-width: 2;
-  }
-
-  & .label {
-    flex-shrink: 0;
-    width: auto;
-    height: auto;
-    text-align: center;
-    white-space: pre;
-    font-size: 18px;
-    letter-spacing: 0em;
-    font-weight: $font-weight-medium;
-    font-family: 'Inter', sans-serif;
-    line-height: 24px;
-    color: #ffffff;
   }
 }

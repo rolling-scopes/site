@@ -8,7 +8,7 @@ export type ButtonProps = {
 };
 
 export const MakeBtnTemp = (isOutlined: boolean) => {
-  const btnClass = isOutlined ? 'button-outlined' : 'button';
+  const btnClass = isOutlined ? 'button outlined' : 'button colored';
   return ({ label, href }: ButtonProps) => (
     <a className={btnClass} href={href} target="_blank" rel="noreferrer">
       {isOutlined ? label : <span className="label">{label}</span>}
@@ -20,3 +20,4 @@ export const MakeBtnTemp = (isOutlined: boolean) => {
 };
 
 export const Button = MakeBtnTemp(false);
+export const ButtonOutlined = MakeBtnTemp(true);

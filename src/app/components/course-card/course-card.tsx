@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { type Course } from '@/app/types';
 import micIcon from '@/assets/icons/mic.svg';
 import noteIcon from '@/assets/icons/note-icon.svg';
+import { Arrow } from '@/icons/arrow';
 
 import './course-card.scss';
 
@@ -37,19 +38,20 @@ export const CourseCard = ({
         <div className="rs-course-card__left">
           <div className="rs-course-card__date-info">
             <img src={noteIcon} alt="note-icon" className="rs-course-card__note-icon" />
-            <div className="rs-course-card__date">Start {startDate}</div>
+            <span className="rs-course-card__date">Start {startDate}</span>
           </div>
           <div className="rs-course-card__lang-info">
             <img src={micIcon} className="rs-course-card__mic-icon" />
-            <div className="rs-course-card__lang">{lang}</div>
-            <div className="rs-course-card__mode">• {mode}</div>
+            <span className="rs-course-card__lang">{lang}</span>
+            <span className="rs-course-card__mode">• {mode}</span>
           </div>
         </div>
-        <div className="rs-course-card__right">
-          <Link to={detailsUrl} className="rs-course-card__more">
-            View details<span className="material-symbols-outlined">arrow_forward</span>
-          </Link>
-        </div>
+        <Link to={detailsUrl} className="rs-course-card__more">
+          View details
+          <span className="rs-course-card__more__arrow">
+            <Arrow />
+          </span>
+        </Link>
       </div>
     </div>
   );

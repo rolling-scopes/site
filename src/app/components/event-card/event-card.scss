@@ -30,7 +30,7 @@
     flex-wrap: nowrap;
     position: static;
     border-radius: 12px 12px 0px 0px;
-    border-color: #e2e2e2;
+    border-color: $color-secondary-gray180;
     border-style: solid;
     border-top-width: 1px;
     border-bottom-width: 0px;
@@ -141,13 +141,13 @@
     justify-content: flex-start;
     align-items: flex-start;
     padding: 24px;
-    background-color: #fefefe;
+    background-color: $color-secondary-white-50;
     overflow: visible;
     align-content: flex-start;
     flex-wrap: nowrap;
     position: static;
     border-radius: 0px 0px 12px 12px;
-    border-color: #e2e2e2;
+    border-color: $color-secondary-gray180;
     border-style: solid;
     border-top-width: 0px;
     border-bottom-width: 1px;

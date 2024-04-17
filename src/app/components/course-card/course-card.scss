@@ -1,15 +1,16 @@
 @import 'Styles/constants';
 @import 'Styles/mixins';
 @import 'Styles/placeholders';
+
 .rs-course-card {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
   height: min-content;
   width: 380px;
   min-width: 100px;
-  padding: 0;
   border-radius: 12px;
-  justify-content: flex-start;
   color: $color-secondary-gray600;
   cursor: pointer;
   @extend %transition-all;
@@ -23,21 +24,20 @@
   }
 
   &__top {
+    position: relative;
     display: flex;
     align-content: flex-start;
     justify-content: flex-start;
     align-items: center;
     gap: 24px;
-    height: min-content;
     padding: 32px 24px 24px;
-    width: 100%;
     height: min-content;
-    background-color: #eef3fe;
-    border: 1px solid #e2e2e2;
+    width: 100%;
+    background-color: $color-secondary-blue-100;
+    border: 1px solid $color-secondary-gray180;
     border-radius: 12px 12px 0px 0px;
     border-bottom: none;
     overflow: hidden;
-    position: relative;
 
     h3 {
       margin: 0;
@@ -51,31 +51,28 @@
 
     &::after {
       content: '';
-      width: 258px;
-      height: 250px;
-      display: block;
-      filter: blur(32px);
-      background-color: var(--accent-bg-color);
-      opacity: 0.5;
-      z-index: 1;
-      border-radius: 100%;
       position: absolute;
       bottom: -180px;
       right: -150px;
+      display: block;
+      width: 258px;
+      height: 250px;
+      z-index: 1;
+      opacity: 0.5;
+      border-radius: 100%;
+      background-color: var(--accent-bg-color);
+      filter: blur(32px);
       @extend %transition-all;
     }
   }
 
   &__title {
-    width: 100%;
-    height: auto;
-    font-weight: 500;
-    font-style: normal;
-    color: var($color-secondary-gray600);
+    text-align: left;
     font-size: 24px;
+    font-weight: $font-weight-medium;
     letter-spacing: 0px;
     line-height: 32px;
-    text-align: left;
+    color: $color-secondary-gray600;
 
     @include media-laptop {
       font-size: 19px;
@@ -86,15 +83,14 @@
   }
 
   &__bottom {
-    padding: 24px 24px 24px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    align-content: flex-start;
-    width: 100%;
-    background-color: #fefefe;
+    padding: 24px;
     gap: 24;
-    border: 1px solid #e2e2e2;
+    width: 100%;
+    background-color: $color-secondary-white-50;
+    border: 1px solid $color-secondary-gray180;
     border-radius: 0px 0px 12px 12px;
     border-top: none;
   }
@@ -108,22 +104,7 @@
     font-size: 14px;
   }
 
-  &__date-info {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 4px;
-  }
-
-  &__note-icon {
-    width: 16px;
-    height: 16px;
-  }
-
-  &__date {
-    letter-spacing: 0.3px;
-  }
-
+  &__date-info,
   &__lang-info {
     display: flex;
     justify-content: flex-start;
@@ -131,9 +112,14 @@
     gap: 4px;
   }
 
+  &__note-icon,
   &__mic-icon {
     width: 16px;
     height: 16px;
+  }
+
+  &__date {
+    letter-spacing: 0.3px;
   }
 
   &__lang {
@@ -144,26 +130,27 @@
     text-transform: capitalize;
   }
 
-  &__right {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   &__more {
     display: flex;
     align-items: center;
-    padding: 10px 12px 10px 12px;
-    background-color: #eeeeee;
-    color: $color-primary-black;
-    align-content: center;
-    border-radius: 9999px;
+    padding: 5px 5px 5px 12px;
     font-size: 14px;
+    color: $color-primary-black;
+    border-radius: 9999px;
+    background-color: $color-secondary-gray150;
     @extend %transition-all;
 
-    .material-symbols-outlined {
-      font-size: 16px;
+    &__arrow {
+      position: relative;
+      top: 4px;
       margin-left: 8px;
+
+      & #btn-arrow {
+        width: 5px;
+        height: 5px;
+        transform: scale(0.75);
+        stroke-width: 1.5;
+      }
     }
   }
 }
