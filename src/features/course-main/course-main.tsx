@@ -23,7 +23,7 @@ export const CourseMain = ({ courseName, type }: CourseMainProps) => {
   const now = new Date().setHours(0, 0, 0, 0);
   const requiredDate = new Date(course.startDate).setHours(0, 0, 0, 0);
 
-  const label = requiredDate < now ? 'upcoming' : 'avialable';
+  const label = requiredDate < now ? 'upcoming' : 'available';
 
   const { title, altTitle, language, mode, enroll, secondaryIcon, startDate } = course;
 

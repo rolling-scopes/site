@@ -3,20 +3,22 @@
 @import 'Styles/placeholders';
 
 .button {
-  width: min-content;
-  height: min-content; /* 56px */
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 16px 24px 16px 24px;
+  flex-wrap: nowrap;
+  padding: 16px 24px;
+  width: min-content;
+  height: min-content;
   background-color: #000000;
   overflow: visible;
-  position: relative;
-  align-content: center;
-  flex-wrap: nowrap;
-  border-radius: 0;
   @extend %transition-all;
+
+  & .arrow {
+    position: relative;
+    top: 2px;
+    margin-left: 8px;
+  }
 
   @include media-tablet {
     width: 100%;
@@ -28,24 +30,22 @@
     }
   }
 
+  & #btn-arrow {
+    stroke: white;
+    stroke-width: 2;
+  }
+
   & .label {
     flex-shrink: 0;
-    width: auto; /* 138px */
-    height: auto; /* 24px */
+    width: auto;
+    height: auto;
+    text-align: center;
     white-space: pre;
-    position: relative;
-    font-weight: $font-weight-medium;
-    font-style: normal;
-    font-family: 'Inter', sans-serif;
-    color: #ffffff;
     font-size: 18px;
     letter-spacing: 0em;
+    font-weight: $font-weight-medium;
+    font-family: 'Inter', sans-serif;
     line-height: 24px;
-    text-align: center;
-
-    & ~ .material-symbols-outlined.arrow {
-      color: $color-primary-white;
-      margin-left: 8px;
-    }
+    color: #ffffff;
   }
 }

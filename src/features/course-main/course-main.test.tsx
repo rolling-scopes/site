@@ -36,7 +36,7 @@ describe('CourseMain', () => {
   });
 
   it('renders the section label correctly', () => {
-    const labelElement = screen.getByText('avialable');
+    const labelElement = screen.getByText('available');
     expect(labelElement).toBeVisible();
   });
 

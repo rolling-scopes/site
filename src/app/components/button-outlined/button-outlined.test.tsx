@@ -18,7 +18,7 @@ describe('ButtonOutlined', () => {
 
   it('should display an arrow symbol', () => {
     render(<ButtonOutlined label="Test" href="http://test.com" />);
-    const arrow = screen.getByText('arrow_forward');
+    const arrow = document.getElementById('btn-arrow');
     expect(arrow).toBeInTheDocument();
   });
 });

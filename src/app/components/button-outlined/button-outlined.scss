@@ -3,12 +3,12 @@
 @import 'Styles/mixins';
 
 .button-outlined {
-  margin: 24px 0;
-  width: max-content;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 12px 24px;
+  padding: 10px 24px;
+  margin: 24px 0;
+  width: max-content;
   font-size: 18px;
   font-weight: $font-weight-medium;
   color: $color-primary-black;
@@ -16,6 +16,8 @@
   @extend %transition-all;
 
   & .arrow {
+    position: relative;
+    top: 2px;
     margin-left: 8px;
   }
 

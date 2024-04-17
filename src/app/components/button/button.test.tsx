@@ -6,12 +6,7 @@ describe('Button', () => {
   const label = 'Click me';
   const href = 'http://example.com';
 
-  it('renders without crashing', () => {
-    render(<Button label={label} href={href} />);
-    expect(screen.getByText(label)).toBeDefined();
-  });
-
-  it('displays the correct label text', () => {
+  it('renders without crashing and displays the correct label text', () => {
     render(<Button label={label} href={href} />);
     expect(screen.getByText(label)).toBeDefined();
   });
