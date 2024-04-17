@@ -9,14 +9,18 @@ type chooseNearestCourseProps = {
 
 export function chooseNearestCourse({prevCourse, nextCourse, bufferPeriod}: chooseNearestCourseProps): Course | undefined {
   const dateNow = Date.now();
+  const bufferPeriodMs = bufferPeriod * 24 * 60 * 60 * 1000;
   let course = !nextCourse ? prevCourse : nextCourse;
+  let deltaNext: number;
+  let deltaPrev: number;
+
   if (nextCourse && prevCourse) {
-    const bufferPeriodMs = bufferPeriod * 24 * 60 * 60 * 1000;
-    const deltaNext = Date.parse(nextCourse.startDate) - dateNow;
-    const deltaPrev = dateNow - Date.parse(prevCourse.startDate);
+    deltaNext = Date.parse(nextCourse.startDate) - dateNow;
+    deltaPrev = dateNow - Date.parse(prevCourse.startDate);
     if (deltaPrev < deltaNext && deltaPrev < bufferPeriodMs) {
       course = prevCourse;
     }
   }
+
   return course
 }
