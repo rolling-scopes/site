@@ -5,6 +5,8 @@ import { AboutVideo } from '@/features/about-video';
 import { CourseMain } from '@/features/course-main';
 import { Required } from '@/features/required';
 import { StudyPath } from '@/features/study-path';
+import { Trainers } from '@/features/trainers';
+import { preSchool } from '@/features/trainers/preSchool.data.ts';
 import { TrainingProgram } from '@/features/training-program';
 
 interface JavaScriptProps {
@@ -14,6 +16,8 @@ interface JavaScriptProps {
 const COURSE_NAME = 'javascript';
 
 export const JavaScript = ({ type }: JavaScriptProps) => {
+  const isPreSchool = type === 'Pre-school';
+
   return (
     <>
       <CourseMain courseName={COURSE_NAME} type={type} />
@@ -23,6 +27,7 @@ export const JavaScript = ({ type }: JavaScriptProps) => {
       <AboutVideo />
       <StudyPath path={COURSE_NAME} />
       <Required courseName={COURSE_NAME} />
+      {isPreSchool && <Trainers trainers={preSchool}></Trainers>}
     </>
   );
 };
