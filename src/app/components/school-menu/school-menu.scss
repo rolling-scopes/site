@@ -34,16 +34,17 @@
     gap: 19px;
     column-gap: 40px;
 
-    @include media-laptop-medium {
-      column-gap: 30px;
-    }
-
-    @include media-tablet {
-      column-gap: 20px;
-    }
-
     @include media-mobile-landscape {
+      max-height: 600px;
       column-gap: 10px;
+    }
+
+    &_width {
+      width: 512px;
+
+      @media (max-width: 795px) {
+        width: auto;
+      }
     }
 
     & .school-item {
@@ -58,47 +59,19 @@
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
-        gap: 20px;
-
-        & .icon-wrapper {
-          max-width: 40px;
-          max-height: 40px;
-
-          img {
-            width: 100%;
-            height: 100%;
-          }
-        }
-
-        @include media-tablet {
-          &.with-icon {
-            gap: 5px;
-            & .icon-wrapper {
-              max-width: 32px;
-              max-height: 32px;
-            }
-          }
-
-          @include media-mobile-landscape {
-            &.with-icon {
-              & .icon-wrapper {
-                max-width: 26px;
-                max-height: 26px;
-              }
-            }
-          }
-        }
+        gap: 15px;
 
         .details {
           display: flex;
           flex-direction: column;
-          align-items: baseline;
+          align-items: start;
           justify-content: flex-start;
           gap: 5px;
         }
       }
 
-      a {
+      span {
+        text-align: start;
         font-weight: $font-weight-medium;
         line-height: 20px;
         @extend %transition-all;
@@ -119,26 +92,6 @@
       small {
         font-size: 12px;
         color: $color-secondary-gray500;
-      }
-
-      @include media-mobile-landscape {
-        a {
-          font-size: 12px;
-          display: block;
-          max-width: 220px;
-          max-height: 20px;
-          overflow-x: auto;
-        }
-
-        small {
-          font-size: 10px;
-        }
-      }
-
-      @media (max-width: 430px) {
-        a {
-          max-width: 135px;
-        }
       }
     }
   }
