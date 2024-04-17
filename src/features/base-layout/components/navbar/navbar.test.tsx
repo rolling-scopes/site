@@ -95,7 +95,12 @@ describe('Navbar', () => {
     it('should be open when isDropdownOpen is true', async () => {
       await act(async () =>
         renderWithRouter(
-          <Dropdown onMouseLeave={() => {}} isDropdownOpen={true} handleClose={() => {}} />,
+          <Dropdown
+            onMouseEnter={() => {}}
+            onMouseLeave={() => {}}
+            isDropdownOpen={true}
+            handleClose={() => {}}
+          />,
         ),
       );
 
