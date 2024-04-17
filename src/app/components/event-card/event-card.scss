@@ -18,114 +18,106 @@
   }
 
   & .card-top {
-    width: 320px;
-    height: min-content;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 32px 24px 24px 24px;
+    padding: 32px 24px 24px;
+    width: 320px;
+    height: min-content;
+    border: 1px solid $color-secondary-gray180;
+    border-bottom-width: 0px;
+    border-radius: 12px 12px 0px 0px;
     background-color: #f4f1fa;
     overflow: hidden;
-    flex-wrap: nowrap;
-    position: static;
-    border-radius: 12px 12px 0px 0px;
-    border-color: $color-secondary-gray180;
-    border-style: solid;
-    border-top-width: 1px;
-    border-bottom-width: 0px;
-    border-left-width: 1px;
-    border-right-width: 1px;
-    position: relative;
+
     @include media-mobile {
       width: 100%;
     }
 
     & .card-tag {
-      width: 123px;
-      height: 36px;
-      display: block;
-      overflow: visible;
-      background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 60px;
-      border: 4px solid #cdbaeb;
-      font-weight: 400;
-      color: $color-secondary-gray600;
-      font-size: 16px;
-      letter-spacing: 0em;
-      line-height: 1.2;
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 123px;
+      height: 36px;
+      border: 4px solid #cdbaeb;
+      border-radius: 60px;
+      font-size: 16px;
+      font-weight: $font-weight-regular;
+      letter-spacing: 0em;
+      line-height: 1.2;
+      color: $color-secondary-gray600;
+      background-color: rgba(255, 255, 255, 0.05);
     }
 
     & .organizedBy {
-      color: $color-primary-black;
+      margin-top: 32px;
       font-size: 16px;
       letter-spacing: 0em;
       line-height: 20px;
-      margin-top: 32px;
+      color: $color-primary-black;
     }
 
     & .organization {
-      font-weight: 500;
-      color: $color-primary-black;
+      margin-top: 8px;
       font-size: 20px;
+      font-weight: $font-weight-medium;
       letter-spacing: 0em;
       line-height: 28px;
-      margin-top: 8px;
+      color: $color-primary-black;
     }
 
     & .card-title,
     & .and-more {
+      text-align: left;
       white-space: pre-wrap;
       word-wrap: break-word;
       word-break: break-word;
       color: $color-primary-black;
       letter-spacing: 0em;
-      text-align: left;
     }
 
     & .card-title {
+      margin-top: 32px;
       width: 272px;
       height: auto;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      word-break: break-word;
-      font-weight: 500;
       font-size: 24px;
+      font-weight: $font-weight-medium;
       line-height: 32px;
-      margin-top: 32px;
+
       @include media-mobile {
         width: 100%;
       }
     }
 
     & .and-more {
+      margin-top: 8px;
       font-size: 16px;
       line-height: 20px;
-      margin-top: 8px;
     }
 
     & .card-accent {
-      width: 258px;
-      height: 250px;
-      display: block;
-      -webkit-filter: blur(32px);
-      filter: blur(32px);
-      background-color: #7356bf;
-      opacity: 0.5;
-      z-index: 1;
-      border-radius: 100%;
       position: absolute;
       top: 194px;
       left: 204px;
+      display: block;
+      width: 258px;
+      height: 250px;
+      opacity: 0.5;
+      z-index: 1;
+      border-radius: 100%;
+      background-color: #7356bf;
+      -webkit-filter: blur(32px);
+      filter: blur(32px);
       @extend %transition-all;
 
       @include media-tablet {
         width: 225px;
         left: 155px;
       }
+
       @include media-mobile {
         width: 175px;
         left: 135px;
@@ -134,58 +126,43 @@
   }
 
   & .card-bottom {
-    width: 320px;
-    height: min-content;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     padding: 24px;
-    background-color: $color-secondary-gray50;
-    overflow: visible;
-    align-content: flex-start;
-    flex-wrap: nowrap;
-    position: static;
+    width: 320px;
+    border: 1px solid $color-secondary-gray180;
     border-radius: 0px 0px 12px 12px;
-    border-color: $color-secondary-gray180;
-    border-style: solid;
-    border-top-width: 0px;
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    border-right-width: 1px;
+    border-top-width: 0;
+    background-color: $color-secondary-gray50;
+
     @include media-mobile {
       width: 100%;
     }
 
     & .date-and-time {
-      width: 100%;
-      height: min-content;
       display: flex;
-      flex-direction: row;
       justify-content: flex-start;
       align-items: flex-start;
-      overflow: visible;
-      padding: 0;
-      align-content: flex-start;
-      flex-wrap: nowrap;
-      font-weight: 500;
-      color: #9fa1ad;
       font-size: 14px;
+      font-weight: $font-weight-medium;
       letter-spacing: 0em;
       line-height: 16px;
+      color: #9fa1ad;
     }
 
     & .address {
+      margin-top: 16px;
       width: 272px;
-      height: auto;
+      font-size: 16px;
+      letter-spacing: 0em;
+      line-height: 20px;
       white-space: pre-wrap;
       word-wrap: break-word;
       word-break: break-word;
       color: $color-primary-black;
-      font-size: 16px;
-      letter-spacing: 0em;
-      line-height: 20px;
-      margin-top: 16px;
+
       @include media-mobile {
         width: 100%;
       }
@@ -193,22 +170,18 @@
 
     & .details-button {
       display: flex;
-      flex-direction: row;
       justify-content: center;
       align-items: center;
       padding: 10px 12px;
-      background-color: #eeeeee;
-      overflow: hidden;
-      align-content: center;
-      border-radius: 9999px;
-      font-weight: 500;
+      margin-top: 32px;
+      text-align: center;
       color: $color-primary-black;
       font-size: 14px;
+      font-weight: $font-weight-medium;
       letter-spacing: 0em;
       line-height: 16px;
-      text-align: center;
-      text-decoration: none;
-      margin-top: 32px;
+      border-radius: 9999px;
+      background-color: $color-secondary-gray150;
       cursor: pointer;
       @extend %transition-all;
     }
@@ -217,19 +190,20 @@
 
 @include media-hover {
   .card:hover > .card-top > .card-accent {
+    position: absolute;
+    top: 140px;
+    left: 160px;
+    display: block;
     width: 314px;
     height: 304px;
-    display: block;
-    -webkit-filter: blur(32px);
-    filter: blur(32px);
-    background-color: #7356bf;
     opacity: 0.5;
     z-index: 1;
     aspect-ratio: 1.032 / 1;
     border-radius: 100%;
-    position: absolute;
-    top: 140px;
-    left: 160px;
+    -webkit-filter: blur(32px);
+    filter: blur(32px);
+    background-color: #7356bf;
+
     @include media-mobile {
       width: 125px;
     }
