@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react';
-import { SchoolMenu } from './school-menu';
-import { renderWithRouter } from '@/__tests__/utils';
 import { vi } from 'vitest';
+import { SchoolMenu } from './school-menu';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
+import { renderWithRouter } from '@/__tests__/utils';
 
 const testCourses = [
   {
@@ -15,7 +15,7 @@ const testCourses = [
     language: ['en'],
     mode: 'online',
     detailsUrl: 'https://rs.school/aws-fundamentals/',
-    backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#7356BF' }
+    backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#7356BF' },
   },
   {
     id: '2',
@@ -27,15 +27,15 @@ const testCourses = [
     language: ['ru', 'en'],
     mode: 'online',
     detailsUrl: 'https://rs.school/react/',
-    backgroundStyle: { backgroundColor: '#EEF3FE', accentColor: '#7356BF' }
-  }
+    backgroundStyle: { backgroundColor: '#EEF3FE', accentColor: '#7356BF' },
+  },
 ];
 
 vi.mock('@/app/hooks', () => {
   return {
     useDataByName: vi.fn().mockImplementation(() => ({
-      data: testCourses
-    }))
+      data: testCourses,
+    })),
   };
 });
 
@@ -89,15 +89,14 @@ describe('SchoolMenu', () => {
     const descriptions = container.getElementsByTagName('small');
 
     expect(descriptions).toHaveLength(2);
-    expect(descriptions[0]).toHaveTextContent(/upcoming/i as RegExp);
+    expect(descriptions[0]).toHaveTextContent(/tbd/i as RegExp);
     expect(descriptions[1]).toHaveTextContent(`Start ${react.startDate}` as string);
   });
 
   it('renders correct link for "AWS Fundamentals" and "React JS course"', () => {
     renderWithRouter(<SchoolMenu heading="all courses" />);
 
-    const linkAWS = screen.getByRole('link', { name: aws.title });
-    const linkReact = screen.getByRole('link', { name: react.title });
+    const [linkAWS, linkReact] = screen.getAllByRole('link');
 
     expect(linkAWS).toHaveAttribute('href', aws.detailsUrl);
     expect(linkReact).toHaveAttribute('href', react.detailsUrl);

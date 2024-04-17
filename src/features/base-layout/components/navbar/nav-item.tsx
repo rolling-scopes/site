@@ -1,6 +1,7 @@
-import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { Dropdown } from './dropdown';
+import { DropdownArrow } from '@/icons/dropdown-arrow';
 
 type NavItemProps = {
   label: string;
@@ -21,38 +22,26 @@ export const NavItem = ({ label, href, dropdown = false }: NavItemProps) => {
     <>
       {href && !dropdown ? (
         <NavLink className="menu-item" to={href} end>
-          <div className="label">{label}</div>
+          <p className="label">{label}</p>
         </NavLink>
       ) : (
-        <div
-          className={`menu-item dropdown-toggle ${isDropdownOpen ? 'rotate' : ''}`}
-          data-outside-click-ignore
-          onClick={handleDropdownToggle}>
-          <div className="label">{label}</div>
-          {dropdown && (
+        <>
+          <p
+            className={`menu-item dropdown-toggle ${isDropdownOpen ? 'rotate' : ''}`}
+            data-outside-click-ignore
+            onClick={handleDropdownToggle}>
+            <span className="label">{label}</span>
             <span className="dropdown-arrow">
-              <svg
-                aria-label="dropdown-arrow"
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="17"
-                viewBox="0 0 24 24"
-                fill="none"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                style={{ width: '100%', height: '100%' }}>
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
+              <DropdownArrow />
             </span>
-          )}
-        </div>
+          </p>
+          <Dropdown
+            onMouseLeave={handleClose}
+            isDropdownOpen={isDropdownOpen}
+            handleClose={handleClose}
+          />
+        </>
       )}
-      <Dropdown
-        onMouseLeave={() => setDropdownOpen(false)}
-        isDropdownOpen={isDropdownOpen}
-        handleClose={handleClose}
-      />
     </>
   );
 };

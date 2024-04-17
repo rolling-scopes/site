@@ -1,6 +1,7 @@
-import { Actions, Subtitle, Title } from '@/app/components';
-import type { CourseName } from './required.types';
 import { courseDataMap } from './required.data';
+import type { CourseName } from './required.types';
+import { Actions, Subtitle, Title } from '@/app/components';
+
 import './required.scss';
 
 interface RequiredProps {

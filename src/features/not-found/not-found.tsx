@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom';
 import { Paragraph } from '@/app/components';
 import { useTitle } from '@/app/hooks';
 import notFoundImg from '@/assets/404.webp';
-import { Link } from 'react-router-dom';
+
 import './not-found.scss';
 
 export const NotFound = () => {

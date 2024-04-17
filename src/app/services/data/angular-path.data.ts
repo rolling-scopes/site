@@ -7,8 +7,8 @@ export const angularPath: AngularAwsPath[] = [
     actions: [
       'Module "Angular Intro. TypeScript."',
       'Module "Angular. Components"',
-      'Module "Angular. Directives & Pipes"'
-    ]
+      'Module "Angular. Directives & Pipes"',
+    ],
   },
   {
     id: 2,
@@ -18,8 +18,8 @@ export const angularPath: AngularAwsPath[] = [
       'Angular. Modules & Services, Dependency Injection',
       'Module "Angular. Directives & Pipes"',
       'Module "Angular. Routing"',
-      'Workshop'
-    ]
+      'Workshop',
+    ],
   },
   {
     id: 3,
@@ -29,8 +29,8 @@ export const angularPath: AngularAwsPath[] = [
       'Module "RxJS & Observables"',
       'Module "Angular. HTTP"',
       'Module "Angular. Forms"',
-      'Workshop'
-    ]
+      'Workshop',
+    ],
   },
   {
     id: 4,
@@ -39,8 +39,8 @@ export const angularPath: AngularAwsPath[] = [
       '"Angular. Modules, Services, Routing" task review',
       'Module "Angular. Redux & NgRx"',
       'Module "Angular. Unit Test"',
-      'Workshop'
-    ]
+      'Workshop',
+    ],
   },
   {
     id: 5,
@@ -49,12 +49,12 @@ export const angularPath: AngularAwsPath[] = [
       '"Angular. RxJS & HTTPClient & NgRx & Forms", task review',
       'Final Angular test',
       'Workshop',
-      '"Project Management Application" final task'
-    ]
+      '"Project Management Application" final task',
+    ],
   },
   {
     id: 6,
     title: 'Week #9',
-    actions: ['Cross-checking the "Project management application" final task']
-  }
+    actions: ['Cross-checking the "Project management application" final task'],
+  },
 ];

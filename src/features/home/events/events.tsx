@@ -1,10 +1,10 @@
 import {
-  Title,
-  Subtitle,
-  Paragraph,
   EventCard,
   EventCardProps,
-  SectionLabel
+  Paragraph,
+  SectionLabel,
+  Subtitle,
+  Title,
 } from '@/app/components';
 
 import './events.scss';
@@ -20,7 +20,7 @@ const events: EventCardProps[] = [
     type: 'Offline',
     address: 'al. Grunwaldzka 472B',
     city: 'Gdańsk',
-    href: 'https://www.meetup.com/aws-user-group-3city/events/293689995/'
+    href: 'https://www.meetup.com/aws-user-group-3city/events/293689995/',
   },
   {
     eventType: 'Meetup',
@@ -32,8 +32,8 @@ const events: EventCardProps[] = [
     type: 'Offline',
     address: 'Vytenio Str., 18',
     city: 'Vilnius',
-    href: 'https://www.meetup.com/the-rolling-scopes-lithuania/events/293907703/'
-  }
+    href: 'https://www.meetup.com/the-rolling-scopes-lithuania/events/293907703/',
+  },
 ];
 
 export const Events = () => (

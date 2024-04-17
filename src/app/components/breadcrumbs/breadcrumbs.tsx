@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
-import './breadcrumbs.scss';
 import { buildUrl } from '@/app/services/platform';
+
+import './breadcrumbs.scss';
 
 export const breadcrumbNameMap: Record<string, string> = {
   courses: 'RS School',
@@ -9,7 +10,7 @@ export const breadcrumbNameMap: Record<string, string> = {
   'javascript-preschool': 'JavaScript Pre-school',
   angular: 'Angular Course',
   'aws-cloud-developer': 'AWS Cloud Developer Course',
-  'aws-fundamentals': 'AWS Fundamentals Course'
+  'aws-fundamentals': 'AWS Fundamentals Course',
 };
 
 export const Breadcrumbs = () => {

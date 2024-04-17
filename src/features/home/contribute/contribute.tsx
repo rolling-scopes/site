@@ -1,22 +1,24 @@
-import { Title, Paragraph, Subtitle, OptionItem, type OptionItemProps } from '@/app/components';
-import './contribute.scss';
+import { OptionItem, type OptionItemProps, Paragraph, Subtitle, Title } from '@/app/components';
 
 import image from '@/assets/contribute.webp';
+
+import './contribute.scss';
+
 const contributeOptions: OptionItemProps[] = [
   {
     title: 'Mentorship',
     description:
       'Become a mentor and guide the next generation of developers. Sign up as a mentor here.',
     buttonLabel: 'Register as a mentor',
-    href: 'https://app.rs.school/registry/mentor'
+    href: 'https://app.rs.school/registry/mentor',
   },
   {
     title: 'Developer / Coordinator / Trainer',
     description:
       'Contribute your skills as a developer, coordinator, or trainer. Fill out this form to get started.',
     buttonLabel: 'Become a contributor',
-    href: 'https://docs.google.com/forms/d/e/1FAIpQLSdGKdEHK1CnZjgll9PpMU0xD1m0hm6xGoXc98H7woCDulyQkg/viewform'
-  }
+    href: 'https://docs.google.com/forms/d/e/1FAIpQLSdGKdEHK1CnZjgll9PpMU0xD1m0hm6xGoXc98H7woCDulyQkg/viewform',
+  },
 ];
 
 export const Contribute = () => (

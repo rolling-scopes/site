@@ -1,10 +1,11 @@
+import { type CoursesPath } from './courses-data.types';
+import { buildUrl } from '@/app/services/platform';
+import AWSDeveloperIcon from '@/assets/icons/aws-developer.webp';
+import AWSFundamentalsIcon from '@/assets/icons/aws-fundamentals.webp';
 import HTMLIcon from '@/assets/icons/html.webp';
 import JSIcon from '@/assets/icons/javascript.webp';
-import ReactAngIcon from '@/assets/icons/react-angular.svg';
 import NodeJSIcon from '@/assets/icons/nodejs.webp';
-import AWSFundamentalsIcon from '@/assets/icons/aws-fundamentals.webp';
-import AWSDeveloperIcon from '@/assets/icons/aws-developer.webp';
-import { type CoursesPath } from './courses-data.types';
+import ReactAngIcon from '@/assets/icons/react-angular.svg';
 
 export const coursesPath: CoursesPath[] = [
   {
@@ -15,11 +16,11 @@ export const coursesPath: CoursesPath[] = [
     logoIcon: HTMLIcon,
     links: [
       {
-        linkTitle: 'Pre-school upturn',
-        href: 'https://rs.school/js-stage0/',
-        isActive: true
-      }
-    ]
+        linkTitle: 'Pre-school',
+        href: buildUrl('/courses/javascript-preschool'),
+        isActive: true,
+      },
+    ],
   },
   {
     id: 2,
@@ -29,14 +30,15 @@ export const coursesPath: CoursesPath[] = [
     logoIcon: JSIcon,
     links: [
       {
-        linkTitle: 'JS/TS/FE Fundamentals (RU) invert',
-        href: 'https://rs.school/js/'
+        // TODO: change link to RU page when it'll be ready
+        linkTitle: 'JS/TS/FE Fundamentals (RU)',
+        href: buildUrl('/courses/javascript-mentoring-program'),
       },
       {
-        linkTitle: 'JS/TS/FE Fundamentals (EN) invert',
-        href: 'https://rs.school/js-en/'
-      }
-    ]
+        linkTitle: 'JS/TS/FE Fundamentals (EN)',
+        href: buildUrl('/courses/javascript-mentoring-program'),
+      },
+    ],
   },
   {
     id: 3,
@@ -46,10 +48,14 @@ export const coursesPath: CoursesPath[] = [
     logoIcon: ReactAngIcon,
     links: [
       {
-        linkTitle: 'React invert',
-        href: 'https://rs.school/react/'
-      }
-    ]
+        linkTitle: 'React',
+        href: buildUrl('/courses/reactjs'),
+      },
+      {
+        linkTitle: 'Angular',
+        href: buildUrl('/courses/angular'),
+      },
+    ],
   },
   {
     id: 4,
@@ -59,10 +65,10 @@ export const coursesPath: CoursesPath[] = [
     logoIcon: NodeJSIcon,
     links: [
       {
-        linkTitle: 'Node invert',
-        href: 'https://rs.school/nodejs/'
-      }
-    ]
+        linkTitle: 'Node',
+        href: buildUrl('/courses/nodejs'),
+      },
+    ],
   },
   {
     id: 5,
@@ -72,10 +78,10 @@ export const coursesPath: CoursesPath[] = [
     logoIcon: AWSFundamentalsIcon,
     links: [
       {
-        linkTitle: 'AWS Fundamentals invert',
-        href: 'https://rs.school/aws-fundamentals/'
-      }
-    ]
+        linkTitle: 'AWS Fundamentals',
+        href: buildUrl('/courses/aws-fundamentals'),
+      },
+    ],
   },
   {
     id: 6,
@@ -85,9 +91,9 @@ export const coursesPath: CoursesPath[] = [
     logoIcon: AWSDeveloperIcon,
     links: [
       {
-        linkTitle: 'AWS Developer invert',
-        href: 'https://wearecommunity.io/events/aws-cloud-dev-rs2023q4'
-      }
-    ]
-  }
+        linkTitle: 'AWS Developer',
+        href: buildUrl('/courses/aws-cloud-developer'),
+      },
+    ],
+  },
 ];

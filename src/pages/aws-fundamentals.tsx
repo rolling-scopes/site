@@ -1,8 +1,10 @@
-import { TrainingProgram } from '@/features/training-program';
-import { CourseMain } from '@/features/сourse-main';
-import { About } from '@/features/about';
-import { Required } from '@/features/required';
 import { Breadcrumbs } from '@/app/components';
+import { About } from '@/features/about';
+import { CourseMain } from '@/features/course-main';
+import { Required } from '@/features/required';
+import { Trainers } from '@/features/trainers';
+import { awsFundamentals } from '@/features/trainers/awsFundamentals.data.ts';
+import { TrainingProgram } from '@/features/training-program';
 
 export const AwsFundamentals = () => {
   return (
@@ -13,6 +15,7 @@ export const AwsFundamentals = () => {
       <About courseName="aws fundamentals" />
       <Required courseName="awsFundamentals" marked2 />
       <TrainingProgram courseName="aws fundamentals badge" />
+      <Trainers trainers={awsFundamentals} />
     </>
   );
 };

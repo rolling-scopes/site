@@ -8,8 +8,8 @@ export const awsDevPath: AngularAwsPath[] = [
       'Fundamental theory about cloud computing',
       'Cloud service models, cloud deployment models, infrastructure-as-code',
       'Monolith vs microservices vs serverless',
-      'AWS intro, registration, Cloud Watch, IAM Repository structure'
-    ]
+      'AWS intro, registration, Cloud Watch, IAM Repository structure',
+    ],
   },
   {
     id: 2,
@@ -19,8 +19,8 @@ export const awsDevPath: AngularAwsPath[] = [
       'Services & tools overview',
       'AWS CloudFront overview',
       'Basic overview of deployment process to CloudFront and S3',
-      'AWS CLI overview'
-    ]
+      'AWS CLI overview',
+    ],
   },
   {
     id: 3,
@@ -28,13 +28,13 @@ export const awsDevPath: AngularAwsPath[] = [
     actions: [
       'AWS Lambda overview',
       'Introduction to collecting logs with AWS CloudWatch',
-      'Lambda advanced features and configuration'
-    ]
+      'Lambda advanced features and configuration',
+    ],
   },
   {
     id: 4,
     title: 'Module 4. Integration with NoSQL Database',
-    actions: ['Easy way to store data in cloud', 'AWS DynamoDB and how to use it']
+    actions: ['Easy way to store data in cloud', 'AWS DynamoDB and how to use it'],
   },
   {
     id: 5,
@@ -44,8 +44,8 @@ export const awsDevPath: AngularAwsPath[] = [
       'S3 storage classes and their use cases',
       'S3 access control & encryption',
       'S3 versioning, lifecycle management & events',
-      'Integration with S3 and Lambda overview'
-    ]
+      'Integration with S3 and Lambda overview',
+    ],
   },
   {
     id: 6,
@@ -54,8 +54,8 @@ export const awsDevPath: AngularAwsPath[] = [
       'Async messaging overview',
       'AWS SQS overview',
       'AWS SNS overview',
-      'Integration with SQS, SNS, and Lambda overview'
-    ]
+      'Integration with SQS, SNS, and Lambda overview',
+    ],
   },
   {
     id: 7,
@@ -65,8 +65,8 @@ export const awsDevPath: AngularAwsPath[] = [
       'Lambda authorizer & API Gateway',
       'AWS Cognito overview',
       'Cognito user pool',
-      'Cognito identity pool'
-    ]
+      'Cognito identity pool',
+    ],
   },
   {
     id: 8,
@@ -76,8 +76,8 @@ export const awsDevPath: AngularAwsPath[] = [
       'SQL overview',
       'Overview of AWS database offering',
       'AWS RDS and its engines',
-      'Serverless functions & AWS RDS'
-    ]
+      'Serverless functions & AWS RDS',
+    ],
   },
   {
     id: 9,
@@ -88,8 +88,8 @@ export const awsDevPath: AngularAwsPath[] = [
       'Containers & VMs',
       'Docker build optimizations',
       'AWS Elastic Beanstalk overview',
-      'AWS EB CLI'
-    ]
+      'AWS EB CLI',
+    ],
   },
   {
     id: 10,
@@ -98,7 +98,7 @@ export const awsDevPath: AngularAwsPath[] = [
       'Backend for frontend overview',
       'BFF as pattern',
       'API Gateway as BFF',
-      'AWS Elastic Beanstalk configuration'
-    ]
-  }
+      'AWS Elastic Beanstalk configuration',
+    ],
+  },
 ];

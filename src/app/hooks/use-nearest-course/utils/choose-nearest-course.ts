@@ -1,13 +1,17 @@
-import { Course } from "@/app/types";
-import { Day } from "../types";
+import { Day } from '../types';
+import { Course } from '@/app/types';
 
 type chooseNearestCourseProps = {
-  prevCourse?: Course,
-  nextCourse?: Course,
-  bufferPeriod: Day,
-}
+  prevCourse?: Course;
+  nextCourse?: Course;
+  bufferPeriod: Day;
+};
 
-export function chooseNearestCourse({prevCourse, nextCourse, bufferPeriod}: chooseNearestCourseProps): Course | undefined {
+export function chooseNearestCourse({
+  prevCourse,
+  nextCourse,
+  bufferPeriod,
+}: chooseNearestCourseProps): Course | undefined {
   const dateNow = Date.now();
   const bufferPeriodMs = bufferPeriod * 24 * 60 * 60 * 1000;
   let course = !nextCourse ? prevCourse : nextCourse;
@@ -22,5 +26,5 @@ export function chooseNearestCourse({prevCourse, nextCourse, bufferPeriod}: choo
     }
   }
 
-  return course
+  return course;
 }

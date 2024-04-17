@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
-import { it, expect, describe, beforeEach } from 'vitest';
-import { renderWithRouter } from '@/__tests__/utils';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { General } from './general';
+import { renderWithRouter } from '@/__tests__/utils';
 
 describe('General', () => {
   beforeEach(() => {
@@ -14,7 +14,7 @@ describe('General', () => {
 
   it('displays the Materials section', () => {
     expect(screen.getByText('Materials')).toBeVisible();
-    expect(screen.getByText('https://docs.rs.school')).toBeVisible();
+    expect(screen.getByText('documentation')).toBeVisible();
   });
 
   it('displays the Certificate section', () => {

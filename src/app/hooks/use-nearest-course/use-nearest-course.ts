@@ -1,6 +1,6 @@
-import { useDataByName } from '../use-data-by-name';
 import { BUFFER_PERIOD } from './constants';
 import { finedNearestCourse } from './utils/fined-nearest-course';
+import { useDataByName } from '../use-data-by-name';
 
 type Day = number;
 
@@ -11,7 +11,7 @@ export const useNearestCourse = (bufferPeriod: Day = BUFFER_PERIOD) => {
       course: null,
       loading,
       hasError: false,
-      error: null
+      error: null,
     };
   }
   if (!coursesData || coursesData.length === 0) {
@@ -19,14 +19,14 @@ export const useNearestCourse = (bufferPeriod: Day = BUFFER_PERIOD) => {
       course: null,
       loading: false,
       hasError: true,
-      error: new Error('No courses data available.')
+      error: new Error('No courses data available.'),
     };
   }
 
   const course = finedNearestCourse(coursesData, bufferPeriod);
   const hasError = !!error || (!loading && !course);
 
-  return { 
+  return {
     course,
     loading,
     error,

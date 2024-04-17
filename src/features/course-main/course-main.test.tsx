@@ -1,9 +1,9 @@
-import { render, screen } from '@testing-library/react';
-import { CourseMain } from './course-main';
-import { useCourseByTitle } from '@/app/hooks';
-import { Mock } from 'vitest';
-import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 import { act } from 'react-dom/test-utils';
+import { render, screen } from '@testing-library/react';
+import { Mock } from 'vitest';
+import { CourseMain } from './course-main';
+import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
+import { useCourseByTitle } from '@/app/hooks';
 
 vi.mock('@/app/hooks');
 
@@ -18,8 +18,8 @@ describe('CourseMain', () => {
       mode: 'online',
       enroll: 'https://wearecommunity.io/events/nodejs-rs-2024q1',
       secondaryIcon: MOCKED_IMAGE_PATH,
-      startDate: '22 Jan, 3060'
-    }
+      startDate: '22 Jan, 3060',
+    },
   };
 
   beforeEach(() => {
@@ -45,8 +45,8 @@ describe('CourseMain', () => {
       ...testCourse,
       course: {
         ...testCourse.course,
-        startDate: '22 Jan, 2024'
-      }
+        startDate: '22 Jan, 2024',
+      },
     });
     render(<CourseMain courseName="Node.js course" type="Mentoring Program" />);
     const labelElement = screen.getByText('upcoming');
@@ -63,7 +63,7 @@ describe('CourseMain', () => {
     expect(buttonElement).toBeVisible();
     expect(buttonElement).toHaveAttribute(
       'href',
-      'https://wearecommunity.io/events/nodejs-rs-2024q1'
+      'https://wearecommunity.io/events/nodejs-rs-2024q1',
     );
   });
 

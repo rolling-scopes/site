@@ -1,6 +1,6 @@
-import React from 'react';
+import { FC } from 'react';
 
-export const EpamLogo: React.FC = () => (
+export const EpamLogo: FC = () => (
   <svg width="121" height="44" viewBox="0 0 121 44" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clipPath="url(#clip0_20948_268243)">
       <path

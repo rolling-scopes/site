@@ -1,10 +1,11 @@
-import { TrainingProgram } from '@/features/training-program';
-import { CourseMain } from '@/features/сourse-main';
-import { StudyPath } from '@/features/study-path';
-import { Required } from '@/features/required';
-import { Trainers } from '@/features/trainers';
-import { About } from '@/features/about';
 import { Breadcrumbs } from '@/app/components';
+import { About } from '@/features/about';
+import { CourseMain } from '@/features/course-main';
+import { Required } from '@/features/required';
+import { StudyPath } from '@/features/study-path';
+import { Trainers } from '@/features/trainers';
+import { angular } from '@/features/trainers/angular.data';
+import { TrainingProgram } from '@/features/training-program';
 
 export const Angular = () => {
   return (
@@ -15,7 +16,7 @@ export const Angular = () => {
       <About courseName="angular" />
       <StudyPath path="angular" />
       <Required courseName="angular" marked1 />
-      <Trainers courseName="angular" />
+      <Trainers trainers={angular} />
     </>
   );
 };

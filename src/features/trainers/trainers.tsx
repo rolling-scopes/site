@@ -1,33 +1,31 @@
 import { TrainerCard } from './trainer-card';
 import { Title } from '@/app/components';
-import './trainers.scss';
-import { reactEn } from './react-en.data';
-import { reactRu } from './react-ru.data';
-import { awsDev } from './awsDev.data';
-import { nodejs } from './nodejs.data';
-import { angular } from './angular.data';
+import { Trainer } from '@/features/trainers/trainers.types.ts';
 
-const courseDataMap = {
-  reactEn,
-  reactRu,
-  awsDev,
-  nodejs,
-  angular
-};
+import './trainers.scss';
 
 interface TrainersProps {
-  courseName: keyof typeof courseDataMap;
+  trainers: Trainer[];
+  lang?: 'en' | 'ru';
 }
 
-export const Trainers = ({ courseName }: TrainersProps) => {
-  const trainers = courseDataMap[courseName];
+const ONE_TRAINER = 'oneTrainer';
+const MULTIPLE_TRAINERS = 'multipleTrainers';
 
-  const title =
-    courseName === 'reactRu'
-      ? 'Преподаватели курса'
-      : trainers.length > 1
-      ? 'Our mentors and trainers'
-      : 'Our trainer';
+const trainersTitle = {
+  ru: {
+    [ONE_TRAINER]: 'Преподаватель курса',
+    [MULTIPLE_TRAINERS]: 'Преподаватели курса',
+  },
+  en: {
+    [ONE_TRAINER]: 'Our trainer',
+    [MULTIPLE_TRAINERS]: 'Our mentors and trainers',
+  },
+} as const;
+
+export const Trainers = ({ trainers, lang = 'en' }: TrainersProps) => {
+  const isMultipleTrainers = trainers.length > 1 ? MULTIPLE_TRAINERS : ONE_TRAINER;
+  const title = trainersTitle[lang][isMultipleTrainers];
 
   return (
     <section className="nodejs-trainer container">

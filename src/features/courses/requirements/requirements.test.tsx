@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
-import { it, expect, describe, beforeEach } from 'vitest';
-import { renderWithRouter } from '@/__tests__/utils';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { Requirements } from './requirements';
+import { renderWithRouter } from '@/__tests__/utils';
 
 describe('Requirements', () => {
   beforeEach(() => {
