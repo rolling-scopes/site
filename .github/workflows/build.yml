@@ -8,23 +8,27 @@ env:
 
 jobs:
   rolling-scopes:
-    name: Build and Deploy
+    name: rollingscopes.com
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+
+      - uses: bahmutov/npm-install@v1
+
+      - name: lint and test
+        run: |
+          npm run test
+          npm run lint
 
       - name: build
         env:
           RS_HOST: 'https://rollingscopes.com'
           RS_SCHOOL_HOST: 'https://rs.school'
-        run: |
-          npm install
-          npm run build
+        run: npm run build
 
       - uses: jakejarvis/s3-sync-action@master
         with:
@@ -37,24 +41,28 @@ jobs:
           SOURCE_DIR: 'build'
 
   rs-school:
-    name: Build and Deploy
+    name: rs.school
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+
+      - uses: bahmutov/npm-install@v1
+
+      - name: lint and test
+        run: |
+          npm run test
+          npm run lint
 
       - name: build
         env:
           RS_HOST: 'https://rollingscopes.com'
           RS_SCHOOL_HOST: 'https://rs.school'
           RS_SCHOOL: 'true'
-        run: |
-          npm install
-          npm run build
+        run: npm run build
 
       - uses: jakejarvis/s3-sync-action@master
         with:
