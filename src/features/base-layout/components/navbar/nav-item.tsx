@@ -12,11 +12,8 @@ type NavItemProps = {
 export const NavItem = ({ label, href, dropdown = false }: NavItemProps) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
-  const handleDropdownToggle = () => {
-    setDropdownOpen((prev) => !prev);
-  };
-
   const handleClose = () => setDropdownOpen(false);
+  const handleOpen = () => setDropdownOpen(true);
 
   return (
     <>
@@ -29,7 +26,8 @@ export const NavItem = ({ label, href, dropdown = false }: NavItemProps) => {
           <p
             className={`menu-item dropdown-toggle ${isDropdownOpen ? 'rotate' : ''}`}
             data-outside-click-ignore
-            onClick={handleDropdownToggle}>
+            onMouseLeave={handleClose}
+            onMouseEnter={handleOpen}>
             <span className="label">{label}</span>
             <span className="dropdown-arrow">
               <DropdownArrow />
@@ -37,6 +35,7 @@ export const NavItem = ({ label, href, dropdown = false }: NavItemProps) => {
           </p>
           <Dropdown
             onMouseLeave={handleClose}
+            onMouseEnter={handleOpen}
             isDropdownOpen={isDropdownOpen}
             handleClose={handleClose}
           />
