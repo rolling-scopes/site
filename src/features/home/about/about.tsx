@@ -15,18 +15,15 @@ export const About = () => {
           together."
           />
           <Paragraph>
-            <div>
-              The Rolling Scopes was founded in 2013 in Minsk as a community of Front-end
-              developers. It has since grown into an enormous international developers community.
-            </div>
-            <br />
-            <div>
-              The Rolling Scopes brings together developers of all levels who are passionate about
-              technologies such as JavaScript, Front-end development, AWS, and more. Currently, many
-              developers around the world recognize The Rolling Scopes for its community-based
-              education program, RS School, along with fascinating events and its groovy mascot,
-              Sloth.
-            </div>
+            The Rolling Scopes was founded in 2013 in Minsk as a community of Front-end developers.
+            It has since grown into an enormous international developers community.
+          </Paragraph>
+          <Paragraph>
+            The Rolling Scopes brings together developers of all levels who are passionate about
+            technologies such as JavaScript, Front-end development, AWS, and more. Currently, many
+            developers around the world recognize The Rolling Scopes for its community-based
+            education program, RS School, along with fascinating events and its groovy mascot,
+            Sloth.
           </Paragraph>
         </div>
         <img className="right picture" src={image} alt="Logo" />
