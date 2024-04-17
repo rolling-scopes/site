@@ -23,7 +23,7 @@ export const useDataByName = <K extends keyof DataMap>(
       }
     };
     fetchData();
-  }, [dataName]);
+  }, [dataName, fetchDataFn]);
 
   return { data, loading, error };
 };

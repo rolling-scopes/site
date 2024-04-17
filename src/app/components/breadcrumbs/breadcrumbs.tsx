@@ -1,17 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
+import { breadcrumbNameMap } from './constants';
 import { buildUrl } from '@/app/services/platform';
 
 import './breadcrumbs.scss';
-
-export const breadcrumbNameMap: Record<string, string> = {
-  courses: 'RS School',
-  nodejs: 'Node.js Course',
-  'javascript-mentoring-program': 'JavaScript Mentoring Program',
-  'javascript-preschool': 'JavaScript Pre-school',
-  angular: 'Angular Course',
-  'aws-cloud-developer': 'AWS Cloud Developer Course',
-  'aws-fundamentals': 'AWS Fundamentals Course',
-};
 
 export const Breadcrumbs = () => {
   const location = useLocation();

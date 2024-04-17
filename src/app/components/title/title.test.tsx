@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import { Title, TitleType } from './title';
+import { Title } from './title';
+import { TitleType } from './types';
 
 describe('Title component', () => {
   it('renders without crashing', () => {

@@ -1,1 +1,2 @@
-export { Title, TitleType } from './title';
+export { Title } from './title';
+export { TitleType } from './types';

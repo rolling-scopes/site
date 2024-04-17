@@ -8,8 +8,10 @@ export const useTitle = (title: string) => {
 
     if (document.title !== title) document.title = title;
 
+    const titleElement = originalTitle.current;
+
     return () => {
-      document.title = originalTitle.current;
+      document.title = titleElement;
     };
-  }, [title]);
+  }, [documentDefined, title]);
 };
