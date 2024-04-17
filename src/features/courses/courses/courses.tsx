@@ -19,6 +19,12 @@ export const Courses = () => {
   const sortedCourses = courses
     .filter(isCourse)
     .sort((a, b) => compareNumbers(a, b, nearestCourseStartDate))
+    .map((course) => {
+      return {
+        ...course,
+        startDate: nearestCourseStartDate <= Date.parse(course.startDate) ? course.startDate : '(TBD)'
+      }
+    })
 
   return (
     <section className="rs-courses container" id="upcoming-courses">
@@ -31,7 +37,6 @@ export const Courses = () => {
                 <CourseCard
                   key={course.id}
                   {...course}
-                  startDate={ nearestCourseStartDate <= Date.parse(course.startDate) ? course.startDate : '(TBD)' }
                 />
               )
             }

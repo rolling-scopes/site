@@ -82,7 +82,7 @@ export const courses: Course[] = [
     iconSrc: javascript,
     iconSmall: jsSmall,
     secondaryIcon: jsSecondary,
-    startDate: 'Oct, 2024',
+    startDate: 'Oct, 2023',
     language: ['ru'],
     mode: 'online',
     detailsUrl: buildUrl('/courses/javascript-mentoring-program'),
