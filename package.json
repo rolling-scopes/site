@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "test": "vitest --run",
     "coverage": "vitest run --coverage",
-    "precommit": "npx lint-staged && npm run build",
+    "precommit": "npm run lint:fix && npm run build",
     "prepare": "husky"
   },
   "dependencies": {
@@ -44,7 +44,6 @@
     "eslint-plugin-react-refresh": "^0.4.6",
     "husky": "^9.0.11",
     "jsdom": "^23.2.0",
-    "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
     "sass": "^1.69.7",
     "typescript": "^5.2.2",
