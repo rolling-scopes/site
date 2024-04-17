@@ -3,6 +3,7 @@ import { CourseMain } from '@/features/course-main';
 import { Required } from '@/features/required';
 import { StudyPath } from '@/features/study-path';
 import { Trainers } from '@/features/trainers';
+import { awsDev } from '@/features/trainers/awsDev.data.ts';
 import { TrainingProgram } from '@/features/training-program';
 
 export const AwsDeveloper = () => {
@@ -13,7 +14,7 @@ export const AwsDeveloper = () => {
       <About courseName="aws cloud dev" />
       <Required courseName="awsDev" marked1 />
       <StudyPath path="awsDev" />
-      <Trainers courseName="awsDev" />
+      <Trainers trainers={awsDev} />
     </>
   );
 };
