@@ -46,8 +46,8 @@ describe('Courses', () => {
     expect(goButton).toBeInTheDocument();
   });
 
-  it('should render RSLogo', () => {
-    const rsLogo = screen.getByTestId('rslogo');
-    expect(rsLogo).toBeInTheDocument();
+  it('should render RsBanner', () => {
+    const rsBanner = screen.getByTestId('rs-banner');
+    expect(rsBanner).toBeInTheDocument();
   });
 });

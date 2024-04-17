@@ -1,6 +1,8 @@
-export const RSLogo = () => (
+import { FC } from 'react';
+
+export const RsBanner: FC = () => (
   <svg
-    data-testid="rslogo"
+    data-testid="rs-banner"
     width="299"
     height="193"
     viewBox="0 0 299 193"

@@ -1,3 +1,3 @@
-export * from './home';
-export * from './courses';
-export * from './nodejs';
+export { Courses } from './courses';
+export { Home } from './home';
+export { Nodejs } from './nodejs';

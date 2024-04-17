@@ -1,4 +1,6 @@
-export const TelegramIcon = () => (
+import { FC } from 'react';
+
+export const TelegramIcon: FC = () => (
   <svg
     className="telegram-icon"
     width="56"

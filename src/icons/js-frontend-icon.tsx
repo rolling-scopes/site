@@ -1,6 +1,7 @@
+import { FC } from 'react';
 import { IconProps } from './icon.types';
 
-export const JsFrontendIcon = ({ width = '49', height = '47' }: IconProps) => (
+export const JsFrontendIcon: FC = ({ width = '49', height = '47' }: IconProps) => (
   <svg
     width={width}
     height={height}
