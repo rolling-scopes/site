@@ -18,7 +18,7 @@ describe('CourseMain', () => {
       mode: 'online',
       enroll: 'https://wearecommunity.io/events/nodejs-rs-2024q1',
       secondaryIcon: MOCKED_IMAGE_PATH,
-      startDate: '22 Jan, 2060',
+      startDate: '22 Jan, 3060',
     },
   };
 
@@ -36,7 +36,7 @@ describe('CourseMain', () => {
   });
 
   it('renders the section label correctly', () => {
-    const labelElement = screen.getByText('avialable');
+    const labelElement = screen.getByText('available');
     expect(labelElement).toBeVisible();
   });
 
