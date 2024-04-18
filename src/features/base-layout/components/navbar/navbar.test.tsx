@@ -98,7 +98,7 @@ describe('Navbar', () => {
           <DropdownMenu
             onMouseEnter={() => {}}
             onMouseLeave={() => {}}
-            isDropdownOpen={true}
+            isOpen={true}
             onClose={() => {}}
           />,
         ),

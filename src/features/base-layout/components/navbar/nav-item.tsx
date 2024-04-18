@@ -36,7 +36,7 @@ export const NavItem = ({ label, href, dropdown = false }: NavItemProps) => {
           <DropdownMenu
             onMouseLeave={onClose}
             onMouseEnter={onOpen}
-            isDropdownOpen={isDropdownOpen}
+            isOpen={isDropdownOpen}
             onClose={onClose}
           />
         </>

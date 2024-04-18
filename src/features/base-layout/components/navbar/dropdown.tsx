@@ -4,20 +4,15 @@ import { useOutsideClick } from '@/app/hooks';
 export interface DropdownProps {
   onMouseLeave: () => void;
   onMouseEnter: () => void;
-  isDropdownOpen: boolean;
+  isOpen: boolean;
   onClose: () => void;
 }
-export const DropdownMenu = ({
-  onMouseLeave,
-  onMouseEnter,
-  isDropdownOpen,
-  onClose,
-}: DropdownProps) => {
+export const DropdownMenu = ({ onMouseLeave, onMouseEnter, isOpen, onClose }: DropdownProps) => {
   const clickRef = useOutsideClick(onClose);
 
   return (
     <div
-      className={`courses-dropdown ${isDropdownOpen ? 'open' : ''}`}
+      className={`courses-dropdown ${isOpen ? 'open' : ''}`}
       onMouseLeave={onMouseLeave}
       onMouseEnter={onMouseEnter}
       data-testid="navbar-dropdown"
