@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { Breadcrumbs } from '@/app/components';
 import { About } from '@/features/about';
 import { CourseMain } from '@/features/course-main';
@@ -6,7 +7,7 @@ import { Trainers } from '@/features/trainers';
 import { nodejs } from '@/features/trainers/nodejs.data.ts';
 import { TrainingProgram } from '@/features/training-program';
 
-export const Nodejs = () => {
+export const Nodejs: FC = () => {
   return (
     <>
       <CourseMain courseName="Node.js course" />

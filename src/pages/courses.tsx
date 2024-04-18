@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { Breadcrumbs } from '@/app/components';
 import { useTitle } from '@/app/hooks';
 import {
@@ -12,7 +13,7 @@ import {
 import { Principles } from '@/features/principles';
 import { StudyPath } from '@/features/study-path';
 
-export const Courses = () => {
+export const Courses: FC = () => {
   useTitle('Courses · The Rolling Scopes School');
 
   return (

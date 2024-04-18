@@ -1,4 +1,6 @@
-export const RsLogo = () => (
+import { FC } from 'react';
+
+export const RsLogo: FC = () => (
   <svg
     aria-label="logo-navbar"
     className="logo"

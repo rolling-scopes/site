@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { Button } from '@/app/components';
 import { useWindowSize } from '@/app/hooks';
 import { buildUrl } from '@/app/services/platform';
-import { AwsLogo, JsFrontendIcon, RSLogo } from '@/icons';
+import { AwsLogo, JsFrontendIcon, RsBanner } from '@/icons';
 
 import './courses.scss';
 
@@ -74,7 +74,7 @@ export const Courses = () => {
             <Button label="Go to RS School " href="https://rs.school/" />
           </div>
           <div className="image">
-            <RSLogo />
+            <RsBanner />
           </div>
         </div>
       </div>

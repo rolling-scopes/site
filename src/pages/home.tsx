@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { Places } from '@/app/components';
 import { useTitle } from '@/app/hooks/use-title/use-title';
 import {
@@ -17,7 +18,7 @@ import {
 } from '@/features/home';
 import { Principles } from '@/features/principles';
 
-export const Home = () => {
+export const Home: FC = () => {
   useTitle('Home · The Rolling Scopes School');
 
   return (

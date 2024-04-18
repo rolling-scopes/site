@@ -22,6 +22,7 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'import/no-namespace': ['error', {ignore: ['*.ext']}],
     'import/no-unresolved': 'error',
     'import/newline-after-import': 'error',
     'import/no-duplicates': 'error',
