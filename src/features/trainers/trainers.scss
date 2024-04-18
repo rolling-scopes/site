@@ -3,8 +3,6 @@
 
 .nodejs-trainer {
   & .content {
-    padding: 40px 120px;
-
     @include media-laptop {
       padding: 40px;
     }
@@ -13,6 +11,8 @@
       padding: 40px 16px;
     }
 
+    padding: 40px 120px;
+
     &.gap {
       display: flex;
       flex-direction: column;
@@ -20,25 +20,16 @@
     }
 
     .trainers-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-      gap: 32px;
-
       @include media-tablet-large {
         grid-template-columns: 1fr;
       }
+
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+      gap: 32px;
     }
 
     .trainer-card {
-      max-width: 700px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: 40px 32px 40px 32px;
-      box-shadow: 0 4px 16px 0 rgb(0 0 0 / 12%);
-      gap: 24px;
-      border-radius: 16px;
-
       @include media-tablet-large {
         max-width: 100%;
       }
@@ -46,6 +37,17 @@
       @include media-mobile-landscape {
         flex-direction: column;
       }
+
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      max-width: 700px;
+      padding: 40px 32px 40px 32px;
+
+      border-radius: 16px;
+      box-shadow: 0 4px 16px 0 rgb(0 0 0 / 12%);
 
       .picture {
         max-width: 120px;
@@ -62,32 +64,32 @@
         width: fit-content;
 
         & > .card-title {
+          @include media-tablet {
+            font-size: 20px;
+          }
+
           margin: 0;
           font-size: 24px;
           font-weight: $font-weight-medium;
           line-height: 32px;
-
-          @include media-tablet {
-            font-size: 20px;
-          }
         }
 
         & > .card-subtitle {
+          @include media-tablet {
+            font-size: 18px;
+          }
+
           margin: 0;
           font-size: 18px;
           font-weight: $font-weight-medium;
           color: $color-secondary-gray500;
-
-          @include media-tablet {
-            font-size: 18px;
-          }
         }
 
         & .card-content {
-          color: $color-secondary-gray600;
           font-size: 16px;
           font-weight: $font-weight-regular;
           line-height: 24px;
+          color: $color-secondary-gray600;
         }
       }
     }

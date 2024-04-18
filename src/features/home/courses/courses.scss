@@ -4,16 +4,15 @@
 
 .courses {
   & .title {
-    font-weight: 500;
+    margin-top: 24px;
+
     font-size: 36px;
+    font-weight: 500;
     line-height: 44px;
     letter-spacing: 0;
-    margin-top: 24px;
   }
 
   & .content {
-    padding: 0 120px 40px;
-
     @include media-laptop {
       width: 100%;
       max-width: 1440px;
@@ -28,25 +27,21 @@
       padding: 0 20px 16px;
     }
 
-    & .courses {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: space-between;
-      width: 800px;
+    padding: 0 120px 40px;
 
+    & .courses {
       @include media-laptop {
         width: 100%;
       }
 
-      & .course-card {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
 
+      width: 800px;
+
+      & .course-card {
         @extend %transition-all;
 
         @include media-hover {
@@ -55,19 +50,30 @@
           }
         }
 
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+        margin-top: 24px;
+
         & .icon-container {
-          box-sizing: border-box;
-          flex-shrink: 0;
-          width: min-content; /* 88px */
-          height: 100%;
+          position: relative;
+
+          overflow: visible;
           display: flex;
           flex-flow: row nowrap;
+          flex-shrink: 0;
+          gap: 0;
           place-content: center flex-start;
           align-items: center;
+
+          box-sizing: border-box;
+          width: min-content; /* 88px */
+          height: 100%;
           padding: 16px 16px 16px 16px;
-          overflow: visible;
-          position: relative;
-          gap: 0;
+
           border-radius: 0;
         }
 
@@ -76,98 +82,114 @@
           text-align: left;
 
           & .name {
+            position: relative;
+
             flex-shrink: 0;
             // width: 573px;
             height: auto; /* 24px */
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            word-break: break-word;
-            position: relative;
+
+            font-family: Inter-Medium, Inter, sans-serif;
+            font-size: 18px;
             font-weight: 500;
             font-style: normal;
-            font-family: Inter-Medium, Inter, sans-serif;
-            color: #000;
-            font-size: 18px;
-            letter-spacing: 0;
             line-height: 24px;
+            color: #000;
+            letter-spacing: 0;
+            word-break: break-word;
+            word-wrap: break-word;
+            white-space: pre-wrap;
           }
 
           & .date {
-            flex-shrink: 0;
-            height: auto; /* 20px */
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            word-break: break-word;
             position: relative;
-            font-family: Inter, sans-serif;
-            color: #545454;
-            font-size: 14px;
-            letter-spacing: 0;
-            line-height: 20px;
+
+            flex-shrink: 0;
+
+            height: auto; /* 20px */
             margin-top: 8px;
+
+            font-family: Inter, sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            color: #545454;
+            letter-spacing: 0;
+            word-break: break-word;
+            word-wrap: break-word;
+            white-space: pre-wrap;
           }
         }
 
         & .details-container {
+          @extend %transition-all;
+
           cursor: pointer;
-          box-sizing: border-box;
-          flex-shrink: 0;
-          width: fit-content;
-          height: 100%;
+
+          position: relative;
+
+          overflow: visible;
           display: flex;
           flex-flow: row nowrap;
+          flex-shrink: 0;
+          gap: 0;
           place-content: center flex-start;
           align-items: center;
-          padding: 16px 16px 16px 16px;
-          overflow: visible;
-          position: relative;
-          gap: 0;
-          border-radius: 0;
 
-          @extend %transition-all;
+          box-sizing: border-box;
+          width: fit-content;
+          height: 100%;
+          padding: 16px 16px 16px 16px;
+
+          border-radius: 0;
 
           & a {
             text-decoration: none;
           }
 
           & .details {
-            flex-shrink: 0;
-            width: min-content;
-            height: 36px;
-            display: flex;
-            flex-flow: row nowrap;
-            place-content: center center;
-            align-items: center;
-            padding: 10px 12px;
-            background-color: #eee;
-            overflow: hidden;
-            position: relative;
-            border-radius: 9999px;
-            cursor: pointer;
-
             @extend %transition-all;
-
-            & .label {
-              flex-shrink: 0;
-              width: auto; /* 83px */
-              height: auto; /* 16px */
-              white-space: pre;
-              position: relative;
-              font-weight: 500;
-              font-style: normal;
-              font-family: Inter-Medium, Inter, sans-serif;
-              color: #000;
-              font-size: 14px;
-              letter-spacing: 0;
-              line-height: 16px;
-              text-align: center;
-              margin-right: 8px;
-            }
 
             @include media-hover {
               &:hover {
                 background-color: rgb(84 84 84 / 40%);
               }
+            }
+
+            cursor: pointer;
+
+            position: relative;
+
+            overflow: hidden;
+            display: flex;
+            flex-flow: row nowrap;
+            flex-shrink: 0;
+            place-content: center center;
+            align-items: center;
+
+            width: min-content;
+            height: 36px;
+            padding: 10px 12px;
+
+            background-color: #eee;
+            border-radius: 9999px;
+
+            & .label {
+              position: relative;
+
+              flex-shrink: 0;
+
+              width: auto; /* 83px */
+              height: auto; /* 16px */
+              margin-right: 8px;
+
+              font-family: Inter-Medium, Inter, sans-serif;
+              font-size: 14px;
+              font-weight: 500;
+              font-style: normal;
+              line-height: 16px;
+              color: #000;
+              text-align: center;
+              letter-spacing: 0;
+              white-space: pre;
             }
           }
         }
@@ -179,12 +201,12 @@
     }
 
     & .image {
-      width: 299px;
-      height: 193px;
-
       @include media-laptop {
         margin-top: 24px;
       }
+
+      width: 299px;
+      height: 193px;
     }
   }
 }

@@ -3,12 +3,6 @@
 @import 'Styles/placeholders';
 
 .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 0;
-  border-radius: 12px;
 
   @extend %transition-all;
 
@@ -18,214 +12,248 @@
     }
   }
 
-  & .card-top {
-    width: 320px;
-    height: min-content;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 32px 24px 24px 24px;
-    background-color: #f4f1fa;
-    overflow: hidden;
-    border-radius: 12px 12px 0 0;
-    border-color: #e2e2e2;
-    border-style: solid;
-    border-width: 1px 1px 0 1px;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 
+  padding: 0;
+
+  border-radius: 12px;
+
+  & .card-top {
     @include media-mobile {
       width: 100%;
     }
 
+    position: relative;
+
+    overflow: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    width: 320px;
+    height: min-content;
+    padding: 32px 24px 24px 24px;
+
+    background-color: #f4f1fa;
+    border-color: #e2e2e2;
+    border-style: solid;
+    border-width: 1px 1px 0 1px;
+    border-radius: 12px 12px 0 0;
+
     & .card-tag {
-      width: 123px;
-      height: 36px;
       overflow: visible;
-      background-color: rgb(255 255 255 / 5%);
-      border-radius: 60px;
-      border: 4px solid #cdbaeb;
-      font-weight: 400;
-      color: $color-secondary-gray600;
-      font-size: 16px;
-      letter-spacing: 0;
-      line-height: 1.2;
       display: flex;
       align-items: center;
       justify-content: center;
+
+      width: 123px;
+      height: 36px;
+
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.2;
+      color: $color-secondary-gray600;
+      letter-spacing: 0;
+
+      background-color: rgb(255 255 255 / 5%);
+      border: 4px solid #cdbaeb;
+      border-radius: 60px;
     }
 
     & .organized-by {
-      color: $color-primary-black;
-      font-size: 16px;
-      letter-spacing: 0;
-      line-height: 20px;
       margin-top: 32px;
+
+      font-size: 16px;
+      line-height: 20px;
+      color: $color-primary-black;
+      letter-spacing: 0;
     }
 
     & .organization {
-      font-weight: 500;
-      color: $color-primary-black;
-      font-size: 20px;
-      letter-spacing: 0;
-      line-height: 28px;
       margin-top: 8px;
+
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 28px;
+      color: $color-primary-black;
+      letter-spacing: 0;
     }
 
     & .card-title,
     & .and-more {
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      word-break: break-word;
       color: $color-primary-black;
-      letter-spacing: 0;
       text-align: left;
+      letter-spacing: 0;
+      word-break: break-word;
+      word-wrap: break-word;
+      white-space: pre-wrap;
     }
 
     & .card-title {
-      width: 272px;
-      height: auto;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      word-break: break-word;
-      font-weight: 500;
-      font-size: 24px;
-      line-height: 32px;
-      margin-top: 32px;
-
       @include media-mobile {
         width: 100%;
       }
+
+      width: 272px;
+      height: auto;
+      margin-top: 32px;
+
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      word-break: break-word;
+      word-wrap: break-word;
+      white-space: pre-wrap;
     }
 
     & .and-more {
+      margin-top: 8px;
       font-size: 16px;
       line-height: 20px;
-      margin-top: 8px;
     }
 
     & .card-accent {
-      width: 258px;
-      height: 250px;
-      display: block;
-      filter: blur(32px);
-      background-color: #7356bf;
-      opacity: 0.5;
-      z-index: 1;
-      border-radius: 100%;
-      position: absolute;
-      top: 194px;
-      left: 204px;
-
       @extend %transition-all;
 
       @include media-tablet {
-        width: 225px;
         left: 155px;
+        width: 225px;
       }
 
       @include media-mobile {
-        width: 175px;
         left: 135px;
+        width: 175px;
       }
+
+      position: absolute;
+      z-index: 1;
+      top: 194px;
+      left: 204px;
+
+      display: block;
+
+      width: 258px;
+      height: 250px;
+
+      opacity: 0.5;
+      background-color: #7356bf;
+      filter: blur(32px);
+      border-radius: 100%;
     }
   }
 
   & .card-bottom {
-    width: 320px;
-    height: min-content;
-    display: flex;
-    flex-flow: column nowrap;
-    place-content: flex-start flex-start;
-    align-items: flex-start;
-    padding: 24px;
-    background-color: #fefefe;
-    overflow: visible;
-    position: static;
-    border-radius: 0 0 12px 12px;
-    border-color: #e2e2e2;
-    border-style: solid;
-    border-width: 0 1px 1px 1px;
-
     @include media-mobile {
       width: 100%;
     }
 
+    position: static;
+
+    overflow: visible;
+    display: flex;
+    flex-flow: column nowrap;
+    place-content: flex-start flex-start;
+    align-items: flex-start;
+
+    width: 320px;
+    height: min-content;
+    padding: 24px;
+
+    background-color: #fefefe;
+    border-color: #e2e2e2;
+    border-style: solid;
+    border-width: 0 1px 1px 1px;
+    border-radius: 0 0 12px 12px;
+
     & .date-and-time {
-      width: 100%;
-      height: min-content;
+      overflow: visible;
       display: flex;
       flex-flow: row nowrap;
       place-content: flex-start flex-start;
       align-items: flex-start;
-      overflow: visible;
+
+      width: 100%;
+      height: min-content;
       padding: 0;
-      font-weight: 500;
-      color: #9fa1ad;
+
       font-size: 14px;
-      letter-spacing: 0;
+      font-weight: 500;
       line-height: 16px;
+      color: #9fa1ad;
+      letter-spacing: 0;
     }
 
     & .address {
-      width: 272px;
-      height: auto;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      word-break: break-word;
-      color: $color-primary-black;
-      font-size: 16px;
-      letter-spacing: 0;
-      line-height: 20px;
-      margin-top: 16px;
-
       @include media-mobile {
         width: 100%;
       }
+
+      width: 272px;
+      height: auto;
+      margin-top: 16px;
+
+      font-size: 16px;
+      line-height: 20px;
+      color: $color-primary-black;
+      letter-spacing: 0;
+      word-break: break-word;
+      word-wrap: break-word;
+      white-space: pre-wrap;
     }
 
     & .details-button {
+      @extend %transition-all;
+
+      cursor: pointer;
+
+      overflow: hidden;
       display: flex;
       flex-direction: row;
       place-content: center center;
       align-items: center;
+
+      margin-top: 32px;
       padding: 10px 12px;
-      background-color: #eee;
-      overflow: hidden;
-      border-radius: 9999px;
-      font-weight: 500;
-      color: $color-primary-black;
+
       font-size: 14px;
-      letter-spacing: 0;
+      font-weight: 500;
       line-height: 16px;
+      color: $color-primary-black;
       text-align: center;
       text-decoration: none;
-      margin-top: 32px;
-      cursor: pointer;
+      letter-spacing: 0;
 
-      @extend %transition-all;
+      background-color: #eee;
+      border-radius: 9999px;
     }
   }
 }
 
 @include media-hover {
   .card:hover > .card-top > .card-accent {
-    width: 314px;
-    height: 304px;
-    display: block;
-    filter: blur(32px);
-    background-color: #7356bf;
-    opacity: 0.5;
-    z-index: 1;
-    aspect-ratio: 1.032 / 1;
-    border-radius: 100%;
-    position: absolute;
-    top: 140px;
-    left: 160px;
-
     @include media-mobile {
       width: 125px;
     }
+
+    position: absolute;
+    z-index: 1;
+    top: 140px;
+    left: 160px;
+
+    display: block;
+
+    aspect-ratio: 1.032 / 1;
+    width: 314px;
+    height: 304px;
+
+    opacity: 0.5;
+    background-color: #7356bf;
+    filter: blur(32px);
+    border-radius: 100%;
   }
 
   .card:hover > .card-bottom > .details-button {

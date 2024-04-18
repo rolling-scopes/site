@@ -3,17 +3,6 @@
 @import 'Styles/placeholders';
 
 .rs-course-card {
-  display: flex;
-  flex-direction: column;
-  height: min-content;
-  width: 380px;
-  min-width: 100px;
-  padding: 0;
-  border-radius: 12px;
-  justify-content: flex-start;
-  color: $color-secondary-gray600;
-  cursor: pointer;
-
   @extend %transition-all;
 
   @include media-laptop {
@@ -24,60 +13,72 @@
     max-width: 100%;
   }
 
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  width: 380px;
+  min-width: 100px;
+  height: min-content;
+  padding: 0;
+
+  color: $color-secondary-gray600;
+
+  border-radius: 12px;
+
   &__top {
+    position: relative;
+
+    overflow: hidden;
     display: flex;
+    gap: 24px;
     place-content: flex-start flex-start;
     align-items: center;
-    gap: 24px;
-    padding: 32px 24px 24px;
+
     width: 100%;
     height: min-content;
+    padding: 32px 24px 24px;
+
     background-color: #eef3fe;
     border: 1px solid #e2e2e2;
-    border-radius: 12px 12px 0 0;
     border-bottom: none;
-    overflow: hidden;
-    position: relative;
+    border-radius: 12px 12px 0 0;
+
+    &::after {
+      @extend %transition-all;
+
+      content: '';
+
+      position: absolute;
+      z-index: 1;
+      right: -150px;
+      bottom: -180px;
+
+      display: block;
+
+      width: 258px;
+      height: 250px;
+
+      opacity: 0.5;
+      background-color: var(--accent-bg-color);
+      filter: blur(32px);
+      border-radius: 100%;
+    }
 
     h3 {
       margin: 0;
     }
 
     img {
+      display: block;
       width: 60px;
       height: 54px;
-      display: block;
-    }
-
-    &::after {
-      content: '';
-      width: 258px;
-      height: 250px;
-      display: block;
-      filter: blur(32px);
-      background-color: var(--accent-bg-color);
-      opacity: 0.5;
-      z-index: 1;
-      border-radius: 100%;
-      position: absolute;
-      bottom: -180px;
-      right: -150px;
-
-      @extend %transition-all;
     }
   }
 
   &__title {
-    width: 100%;
-    height: auto;
-    font-weight: 500;
-    font-style: normal;
-    color: var($color-secondary-gray600);
-    font-size: 24px;
-    letter-spacing: 0;
-    line-height: 32px;
-    text-align: left;
-
     @include media-laptop {
       font-size: 19px;
     }
@@ -85,35 +86,49 @@
     @include media-tablet {
       font-size: 24px;
     }
+
+    width: 100%;
+    height: auto;
+
+    font-size: 24px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 32px;
+    color: var($color-secondary-gray600);
+    text-align: left;
+    letter-spacing: 0;
   }
 
   &__bottom {
-    padding: 24px 24px 24px 24px;
     display: flex;
+    gap: 24;
     place-content: flex-start space-between;
     align-items: center;
+
     width: 100%;
+    padding: 24px 24px 24px 24px;
+
     background-color: #fefefe;
-    gap: 24;
     border: 1px solid #e2e2e2;
-    border-radius: 0 0 12px 12px;
     border-top: none;
+    border-radius: 0 0 12px 12px;
   }
 
   &__left {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
     gap: 16px;
+    align-items: flex-start;
+    justify-content: center;
+
     font-size: 14px;
   }
 
   &__date-info {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
     gap: 4px;
+    align-items: center;
+    justify-content: flex-start;
   }
 
   &__note-icon {
@@ -127,9 +142,9 @@
 
   &__lang-info {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
     gap: 4px;
+    align-items: center;
+    justify-content: flex-start;
   }
 
   &__mic-icon {
@@ -152,20 +167,23 @@
   }
 
   &__more {
-    display: flex;
-    align-items: center;
-    padding: 10px 12px 10px 12px;
-    background-color: #eee;
-    color: $color-primary-black;
-    align-content: center;
-    border-radius: 9999px;
-    font-size: 14px;
-
     @extend %transition-all;
 
+    display: flex;
+    align-content: center;
+    align-items: center;
+
+    padding: 10px 12px 10px 12px;
+
+    font-size: 14px;
+    color: $color-primary-black;
+
+    background-color: #eee;
+    border-radius: 9999px;
+
     .material-symbols-outlined {
-      font-size: 16px;
       margin-left: 8px;
+      font-size: 16px;
     }
   }
 }
@@ -177,10 +195,10 @@
     }
 
     &:hover > &__top::after {
+      right: -130px;
+      bottom: -160px;
       width: 279px;
       height: 270px;
-      bottom: -160px;
-      right: -130px;
     }
 
     &__more:hover {

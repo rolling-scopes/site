@@ -5,9 +5,10 @@
 .school-menu {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: baseline;
   gap: 16px;
+  align-items: baseline;
+  justify-content: flex-start;
+
   color: $color-secondary-gray100;
 
   & .heading {
@@ -26,18 +27,20 @@
   }
 
   .school-list {
-    max-height: 260px;
-    list-style-type: none;
+    @include media-mobile-landscape {
+      column-gap: 10px;
+      max-height: 600px;
+    }
+
     display: flex;
     flex-flow: column wrap;
-    align-items: baseline;
     gap: 19px;
     column-gap: 40px;
+    align-items: baseline;
 
-    @include media-mobile-landscape {
-      max-height: 600px;
-      column-gap: 10px;
-    }
+    max-height: 260px;
+
+    list-style-type: none;
 
     &_width {
       width: 512px;
@@ -50,32 +53,32 @@
     & .school-item {
       display: flex;
       flex-direction: column;
+      gap: 5px;
       align-items: baseline;
       justify-content: flex-start;
-      gap: 5px;
 
       &.with-icon {
         display: flex;
         flex-direction: row;
+        gap: 15px;
         align-items: center;
         justify-content: flex-start;
-        gap: 15px;
 
         .details {
           display: flex;
           flex-direction: column;
+          gap: 5px;
           align-items: start;
           justify-content: flex-start;
-          gap: 5px;
         }
       }
 
       span {
-        text-align: start;
+        @extend %transition-all;
+
         font-weight: $font-weight-medium;
         line-height: 20px;
-
-        @extend %transition-all;
+        text-align: start;
 
         &.dark {
           color: $color-secondary-gray600;

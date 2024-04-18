@@ -3,28 +3,30 @@
 
 .contribute {
   & .content {
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-
     @include media-laptop {
       flex-direction: column;
       align-items: center;
     }
 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    text-align: left;
+
     & .general {
-      width: 100%;
+      @include media-laptop {
+        flex-direction: column;
+        align-items: center;
+      }
+
       display: flex;
       flex-direction: row;
       align-items: flex-start;
       justify-content: space-between;
 
-      @include media-laptop {
-        flex-direction: column;
-        align-items: center;
-      }
+      width: 100%;
     }
 
     & .paragraph {
@@ -32,12 +34,12 @@
     }
 
     & .info {
-      width: 640px;
-      text-align: left;
-
       @include media-laptop {
         width: 100%;
       }
+
+      width: 640px;
+      text-align: left;
 
       & .subtitle,
       & .paragraph {
@@ -46,9 +48,6 @@
     }
 
     & .picture {
-      width: 358px;
-      height: 358px;
-
       @include media-laptop {
         margin-top: 16px;
       }
@@ -57,27 +56,26 @@
         width: 100%;
         height: auto;
       }
+
+      width: 358px;
+      height: 358px;
     }
 
     & .contribute-options {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 24px;
-
       @include media-laptop {
         flex-direction: column;
         align-items: flex-start;
       }
 
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      width: 100%;
+      margin-top: 24px;
+
       & .option {
-        max-width: 500px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        color: $color-secondary-gray600;
 
         @include media-laptop {
           max-width: 600px;
@@ -87,32 +85,41 @@
         @include media-tablet {
           max-width: 100%;
         }
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        max-width: 500px;
+
+        color: $color-secondary-gray600;
       }
 
       & .option-title {
-        font-weight: 500;
-        font-size: 28px;
-        line-height: 36px;
-        letter-spacing: 0;
-
         @include media-tablet {
           font-size: 24px;
           line-height: 32px;
         }
+
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 36px;
+        letter-spacing: 0;
       }
 
       & .option-description {
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 28px;
-        letter-spacing: 0;
-        margin-top: 16px;
-        text-align: left;
-
         @include media-tablet {
           font-size: 16px;
           line-height: 24px;
         }
+
+        margin-top: 16px;
+
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+        text-align: left;
+        letter-spacing: 0;
       }
     }
   }

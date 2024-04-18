@@ -2,28 +2,33 @@
 @import 'Styles/mixins';
 
 .tag-divider {
-  width: 24px;
-  height: 24px;
-  overflow: visible;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  vertical-align: middle;
-  border-radius: 0;
-
   @include media-tablet {
     display: none;
   }
 
+  position: relative;
+
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+
+  vertical-align: middle;
+
+  border-radius: 0;
+
   & .label {
     position: absolute;
     top: 5px;
+
+    font-size: 24px;
     font-weight: 500;
     font-style: normal;
-    color: $color-secondary-red;
-    font-size: 24px;
-    letter-spacing: 0;
     line-height: 24px;
+    color: $color-secondary-red;
+    letter-spacing: 0;
   }
 }

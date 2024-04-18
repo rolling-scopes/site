@@ -2,18 +2,16 @@
 @import 'Styles/mixins';
 
 .main {
-  min-height: 800px;
   display: flex;
   flex-direction: column;
   gap: 40px;
+  min-height: 800px;
 
   &.container {
     background: $color-secondary-yellow;
   }
 
   &.content {
-    padding: 208px 100px 100px;
-
     @include media-laptop {
       padding: 120px 45px 120px;
     }
@@ -21,30 +19,31 @@
     @include media-tablet {
       padding: 120px 15px 120px;
     }
+
+    padding: 208px 100px 100px;
   }
 
   .title-container {
     display: flex;
     flex-direction: column;
-    width: fit-content;
-    text-align: left;
     gap: 8px;
+
+    width: fit-content;
+
+    text-align: left;
 
     .title-main {
       display: flex;
+
+      margin: 0;
+
       font-size: 96px;
       font-weight: 700;
-      letter-spacing: -0.4rem;
       line-height: 1.2em;
-      margin: 0;
+      letter-spacing: -0.4rem;
     }
 
     .title-icon {
-      width: 91px;
-      height: 91px;
-      display: inline-block;
-      margin-left: 8px;
-
       @include media-laptop {
         width: 71px;
         height: 71px;
@@ -54,73 +53,82 @@
         width: 55px;
         height: 55px;
       }
+
+      display: inline-block;
+      width: 91px;
+      height: 91px;
+      margin-left: 8px;
     }
   }
 
   .subtitle {
-    font-family: Inter-Medium, Inter, sans-serif;
-    margin: 0;
-    font-weight: 500;
-    font-size: 20px;
-    color: $color-secondary-brown;
-    letter-spacing: 0;
-    line-height: 28px;
-
     @include media-tablet {
       flex-direction: column;
       align-items: flex-start;
-      font-weight: 400;
+
       font-size: 16px;
+      font-weight: 400;
       line-height: 20px;
     }
 
-    &-container {
-      margin: 0;
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 0 0 24px;
+    margin: 0;
 
+    font-family: Inter-Medium, Inter, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    color: $color-secondary-brown;
+    letter-spacing: 0;
+
+    &-container {
       @include media-tablet {
-        padding: 0;
+        flex-direction: column;
         gap: 4px;
         align-items: flex-start;
-        flex-direction: column;
+        padding: 0;
       }
 
       @include media-mobile {
         padding: 0;
       }
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      width: 100%;
+      margin: 0;
+      padding: 0 0 0 24px;
     }
   }
 
   & > .tags-container {
-    display: flex;
-    width: max-content;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 0 0 24px;
-
     @include media-tablet {
-      padding: 0;
       flex-direction: column;
       align-items: flex-start;
+      padding: 0;
     }
 
     @include media-mobile {
       padding: 0;
     }
 
-    & .tag-container {
-      display: flex;
-      align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 
+    width: max-content;
+    padding: 0 0 0 24px;
+
+    & .tag-container {
       @include media-tablet {
         margin-top: 16px;
       }
+
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -130,27 +138,29 @@
 }
 
 .description-title {
-  margin: 0;
-  padding: 0 0 0 24px;
-  font-weight: 500;
-  font-size: 52px;
-  letter-spacing: 0.04em;
-  line-height: 64px;
-  height: auto;
-  text-shadow: 0 0 16px rgb(0 0 0 / 14%);
-  color: $color-primary-white;
-  text-align: left;
-  width: 741px;
-
   @include media-tablet {
-    padding: 0;
     width: 100%;
+    padding: 0;
+
     font-size: 24px;
-    letter-spacing: 0;
     line-height: 32px;
+    letter-spacing: 0;
   }
 
   @include media-mobile {
     padding: 0;
   }
+
+  width: 741px;
+  height: auto;
+  margin: 0;
+  padding: 0 0 0 24px;
+
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 64px;
+  color: $color-primary-white;
+  text-align: left;
+  text-shadow: 0 0 16px rgb(0 0 0 / 14%);
+  letter-spacing: 0.04em;
 }

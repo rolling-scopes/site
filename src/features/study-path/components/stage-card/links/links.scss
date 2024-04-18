@@ -2,27 +2,28 @@
 @import 'Styles/placeholders';
 
 .stage-links {
-  margin: 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 24px;
-
   @include media-laptop {
     flex-direction: column;
     gap: 16px;
   }
 
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin: 0;
+
   & > a {
+    @extend %transition-all;
+
     color: $color-secondary-gray600;
     text-decoration: underline;
 
-    @extend %transition-all;
-
     &.disabled {
       pointer-events: none;
-      color: $color-secondary-gray200;
       line-height: 1em;
+      color: $color-secondary-gray200;
       text-decoration: none;
     }
 

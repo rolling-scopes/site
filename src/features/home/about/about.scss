@@ -3,10 +3,6 @@
 
 .about {
   & .left {
-    min-width: 640px;
-    text-align: left;
-    margin-right: 200px;
-
     @include media-laptop {
       min-width: 400px;
       margin-right: 20px;
@@ -16,15 +12,16 @@
       min-width: auto;
     }
 
+    min-width: 640px;
+    margin-right: 200px;
+    text-align: left;
+
     & .subtitle {
       margin: 16px 0;
     }
   }
 
   .picture {
-    width: 370px;
-    height: 340px;
-
     @include media-laptop {
       margin-top: 32px;
     }
@@ -34,5 +31,8 @@
       height: 272px;
       margin: 32px 0;
     }
+
+    width: 370px;
+    height: 340px;
   }
 }
