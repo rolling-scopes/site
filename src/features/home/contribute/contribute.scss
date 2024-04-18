@@ -2,7 +2,7 @@
 @import 'Styles/mixins';
 
 .contribute {
-  &.content {
+  & .content {
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -25,6 +25,10 @@
         flex-direction: column;
         align-items: center;
       }
+    }
+
+    & .paragraph {
+      width: 100%;
     }
 
     & .info {
@@ -110,10 +114,6 @@
           line-height: 24px;
         }
       }
-    }
-
-    & .paragraph {
-      width: 100%;
     }
   }
 }

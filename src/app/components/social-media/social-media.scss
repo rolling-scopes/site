@@ -21,16 +21,6 @@
 
   @extend %transition-all;
 
-  & > svg:not(.telegram-icon) {
-    rect {
-      transition: fill var(--_transition) ease-in-out;
-    }
-
-    path {
-      transition: stroke var(--_transition) ease-in-out;
-    }
-  }
-
   .telegram-icon {
     rect {
       transition: fill var(--_transition) ease-in-out;
@@ -38,6 +28,16 @@
 
     path {
       transition: fill var(--_transition) ease-in-out;
+    }
+  }
+
+  & > svg:not(.telegram-icon) {
+    rect {
+      transition: fill var(--_transition) ease-in-out;
+    }
+
+    path {
+      transition: stroke var(--_transition) ease-in-out;
     }
   }
 
