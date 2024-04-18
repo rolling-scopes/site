@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Dropdown } from './dropdown';
+import { DropdownMenu } from './dropdown';
 import { DropdownArrow } from '@/icons/dropdown-arrow';
 
 type NavItemProps = {
@@ -12,8 +12,8 @@ type NavItemProps = {
 export const NavItem = ({ label, href, dropdown = false }: NavItemProps) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
-  const handleClose = () => setDropdownOpen(false);
-  const handleOpen = () => setDropdownOpen(true);
+  const onClose = () => setDropdownOpen(false);
+  const onOpen = () => setDropdownOpen(true);
 
   return (
     <>
@@ -26,18 +26,18 @@ export const NavItem = ({ label, href, dropdown = false }: NavItemProps) => {
           <p
             className={`menu-item dropdown-toggle ${isDropdownOpen ? 'rotate' : ''}`}
             data-outside-click-ignore
-            onMouseLeave={handleClose}
-            onMouseEnter={handleOpen}>
+            onMouseLeave={onClose}
+            onMouseEnter={onOpen}>
             <span className="label">{label}</span>
             <span className="dropdown-arrow">
               <DropdownArrow />
             </span>
           </p>
-          <Dropdown
-            onMouseLeave={handleClose}
-            onMouseEnter={handleOpen}
+          <DropdownMenu
+            onMouseLeave={onClose}
+            onMouseEnter={onOpen}
             isDropdownOpen={isDropdownOpen}
-            handleClose={handleClose}
+            onClose={onClose}
           />
         </>
       )}

@@ -1,7 +1,7 @@
 import { act } from 'react-dom/test-utils';
 import { fireEvent, screen } from '@testing-library/react';
 import { Mock, beforeEach, vi } from 'vitest';
-import { Dropdown } from './dropdown';
+import { DropdownMenu } from './dropdown';
 import { Navbar } from './navbar';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 import { renderWithRouter } from '@/__tests__/utils';
@@ -95,11 +95,11 @@ describe('Navbar', () => {
     it('should be open when isDropdownOpen is true', async () => {
       await act(async () =>
         renderWithRouter(
-          <Dropdown
+          <DropdownMenu
             onMouseEnter={() => {}}
             onMouseLeave={() => {}}
             isDropdownOpen={true}
-            handleClose={() => {}}
+            onClose={() => {}}
           />,
         ),
       );

@@ -5,15 +5,15 @@ export interface DropdownProps {
   onMouseLeave: () => void;
   onMouseEnter: () => void;
   isDropdownOpen: boolean;
-  handleClose: () => void;
+  onClose: () => void;
 }
-export const Dropdown = ({
+export const DropdownMenu = ({
   onMouseLeave,
   onMouseEnter,
   isDropdownOpen,
-  handleClose,
+  onClose,
 }: DropdownProps) => {
-  const clickRef = useOutsideClick(handleClose);
+  const clickRef = useOutsideClick(onClose);
 
   return (
     <div
