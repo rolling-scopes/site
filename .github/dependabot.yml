@@ -4,7 +4,7 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    assignees:
+    reviewers:
       - 'dzmitry-varabei'
       - 'andron13'
       - 'SpaNb4'
