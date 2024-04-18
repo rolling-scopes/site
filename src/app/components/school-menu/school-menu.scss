@@ -19,6 +19,7 @@
     &.dark {
       color: $color-primary-black;
     }
+
     &.light {
       color: $color-secondary-gray400;
     }
@@ -28,8 +29,7 @@
     max-height: 260px;
     list-style-type: none;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    flex-flow: column wrap;
     align-items: baseline;
     gap: 19px;
     column-gap: 40px;
@@ -42,7 +42,7 @@
     &_width {
       width: 512px;
 
-      @media (max-width: 795px) {
+      @media (width <= 795px) {
         width: auto;
       }
     }
@@ -74,6 +74,7 @@
         text-align: start;
         font-weight: $font-weight-medium;
         line-height: 20px;
+
         @extend %transition-all;
 
         &.dark {

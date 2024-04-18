@@ -7,11 +7,13 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 80px 0px 40px 120px;
+    padding: 80px 0 40px 120px;
+
     @include media-laptop {
       flex-direction: column;
       padding: 80px 40px 40px;
     }
+
     @include media-tablet {
       padding: 40px 16px;
     }
@@ -19,6 +21,7 @@
     & .info {
       width: 600px;
       text-align: left;
+
       @include media-laptop {
         width: 100%;
       }
@@ -38,11 +41,13 @@
       width: 680px;
       height: 700px;
       margin: 0 auto;
+
       @include media-laptop {
         margin-top: 24px;
         width: 680px;
         height: 618px;
       }
+
       @include media-tablet {
         width: 100%;
         height: auto;

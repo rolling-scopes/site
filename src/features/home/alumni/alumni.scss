@@ -6,6 +6,7 @@
     & .title,
     & .paragraph {
       width: 640px;
+
       @include media-tablet {
         width: 100%;
       }
@@ -18,10 +19,9 @@
     & .alumni {
       margin-top: 40px;
       display: flex;
-      flex-direction: row;
+      flex-flow: row wrap;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
     }
 
     & .alumni-logo-container {
@@ -30,9 +30,11 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 48px;
+
       @include media-laptop {
         flex-basis: 25%;
       }
+
       @include media-tablet {
         flex-basis: 50%;
       }

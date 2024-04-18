@@ -8,10 +8,7 @@
     border-style: solid;
     padding: 5px 20px;
     border-color: $color-secondary-gray600;
-    border-top-width: 1px;
-    border-bottom-width: 1px;
-    border-left-width: 0px;
-    border-right-width: 0px;
+    border-width: 1px 0 1px 0;
     overflow: hidden;
   }
 

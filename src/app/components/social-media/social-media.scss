@@ -1,9 +1,11 @@
+/* stylelint-disable custom-property-pattern */
 @import 'Styles/constants';
 @import 'Styles/mixins';
 @import 'Styles/placeholders';
 
 .social-media {
   --_transition: 0.4s;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,6 +18,7 @@
   font-size: 14px;
   line-height: 16px;
   color: $color-secondary-gray600;
+
   @extend %transition-all;
 
   & > svg:not(.telegram-icon) {

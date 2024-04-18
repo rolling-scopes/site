@@ -12,7 +12,8 @@
   font-size: 18px;
   font-weight: $font-weight-medium;
   color: $color-primary-black;
-  border: 2px solid currentColor;
+  border: 2px solid currentcolor;
+
   @extend %transition-all;
 
   & .arrow {

@@ -6,16 +6,15 @@
   width: min-content;
   height: min-content; /* 56px */
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-flow: row nowrap;
+  place-content: center center;
   align-items: center;
   padding: 16px 24px 16px 24px;
-  background-color: #000000;
+  background-color: #000;
   overflow: visible;
   position: relative;
-  align-content: center;
-  flex-wrap: nowrap;
   border-radius: 0;
+
   @extend %transition-all;
 
   @include media-tablet {
@@ -36,10 +35,10 @@
     position: relative;
     font-weight: $font-weight-medium;
     font-style: normal;
-    font-family: 'Inter', sans-serif;
-    color: #ffffff;
+    font-family: Inter, sans-serif;
+    color: #fff;
     font-size: 18px;
-    letter-spacing: 0em;
+    letter-spacing: 0;
     line-height: 24px;
     text-align: center;
 

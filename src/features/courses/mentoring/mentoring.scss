@@ -1,5 +1,6 @@
 @import 'Styles/constants';
 @import 'Styles/mixins';
+
 .mentoring {
   &.content {
     padding: 40px 120px;
@@ -14,7 +15,7 @@
 
     & > .title {
       font-size: 36px;
-      letter-spacing: 0px;
+      letter-spacing: 0;
 
       @include media-laptop {
         font-size: 29px;
@@ -49,9 +50,9 @@
         padding: 24px;
         background-color: $color-secondary-yellow-50;
         border-radius: 12px;
-        border: 1px solid rgba(255, 219, 32, 0.078);
+        border: 1px solid rgb(255 219 32 / 7.8%);
         font-size: 18px;
-        letter-spacing: 0px;
+        letter-spacing: 0;
         line-height: 28px;
         color: $color-secondary-gray600;
         width: 100%;
@@ -60,15 +61,19 @@
       .benefit:nth-child(1) {
         grid-area: a;
       }
+
       .benefit:nth-child(2) {
         grid-area: b;
       }
+
       .benefit:nth-child(3) {
         grid-area: c;
       }
+
       .benefit:nth-child(4) {
         grid-area: d;
       }
+
       .benefit:nth-child(5) {
         grid-area: e;
       }

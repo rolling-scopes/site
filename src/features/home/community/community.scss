@@ -18,10 +18,10 @@
       & .social-media-container {
         width: 416px;
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-flow: row wrap;
         align-items: flex-start;
         justify-content: space-between;
+
         @include media-tablet {
           width: 100%;
           display: grid;
@@ -37,11 +37,13 @@
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
+
       @include media-laptop {
         width: 350px;
         height: 350px;
         margin-top: 16px;
       }
+
       @include media-mobile {
         width: 100%;
         height: auto;

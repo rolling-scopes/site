@@ -7,6 +7,7 @@
   line-height: 28px;
   letter-spacing: 0;
   color: $color-secondary-gray600;
+
   @include media-tablet {
     font-weight: 400;
     font-size: 18px;

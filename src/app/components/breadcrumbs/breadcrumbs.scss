@@ -9,6 +9,7 @@
     @include media-laptop {
       padding: 24px 40px 10px;
     }
+
     @include media-tablet {
       padding: 24px 15px 10px;
     }
@@ -23,8 +24,10 @@
     & .separator {
       padding: 0 8px;
     }
+
     & .link {
       color: $color-secondary-gray500;
+
       @extend %transition-all;
 
       &.disabled {

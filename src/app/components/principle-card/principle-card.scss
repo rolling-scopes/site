@@ -7,18 +7,17 @@
   width: 380px;
   height: 240px;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-flow: column nowrap;
+  place-content: center flex-start;
   align-items: center;
   padding: 36px 24px 24px;
   background-color: #fffaf0;
   overflow: hidden;
-  align-content: center;
-  flex-wrap: nowrap;
   border-radius: 12px;
-  border: 1px solid rgba(255, 219, 32, 0.08);
+  border: 1px solid rgb(255 219 32 / 8%);
   cursor: default;
   color: $color-secondary-gray600;
+
   @extend %transition-all;
 
   & .card-description {
@@ -37,7 +36,6 @@
     width: 20px;
     height: 19px;
     display: block;
-    -webkit-filter: blur(8px);
     filter: blur(8px);
     background-color: $color-accent-yellow;
     z-index: 1;
@@ -58,7 +56,7 @@
   @include media-hover {
     &:hover {
       padding: 24px 24px 24px;
-      box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.14);
+      box-shadow: 0 4px 16px 0 rgb(0 0 0 / 14%);
       height: 240px;
 
       .card-title {
@@ -93,6 +91,7 @@
     @include media-hover {
       &:hover {
         padding: 24px 24px 36px;
+
         .card-description {
           height: unset;
           font-size: 18px;
@@ -118,9 +117,8 @@
   width: 310px;
   height: 300px;
   display: block;
-  -webkit-filter: blur(32px);
   filter: blur(32px);
-  background-color: rgba(255, 219, 32, 0.2);
+  background-color: rgb(255 219 32 / 20%);
   z-index: 1;
   position: absolute;
   right: -160px;

@@ -11,6 +11,7 @@
   letter-spacing: -0.04em;
   color: $color-primary-black;
   text-align: left;
+
   @include media-tablet {
     font-size: 36px;
     line-height: 44px;
@@ -19,6 +20,7 @@
   &.big {
     font-size: 52px;
     line-height: 64px;
+
     @include media-tablet {
       font-size: 36px;
       line-height: 44px;
@@ -30,6 +32,7 @@
     line-height: 77px;
     letter-spacing: -0.04em;
     font-weight: 600;
+
     @include media-laptop {
       font-size: 96px;
       line-height: 1.2em;
@@ -40,9 +43,11 @@
     font-size: 96px;
     line-height: 1.2em;
     font-weight: 700;
+
     @include media-laptop {
       font-size: 77px;
     }
+
     @include media-tablet {
       font-size: 61px;
     }

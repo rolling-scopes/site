@@ -13,9 +13,11 @@
 
   &.content {
     padding: 208px 100px 100px;
+
     @include media-laptop {
       padding: 120px 45px 120px;
     }
+
     @include media-tablet {
       padding: 120px 15px 120px;
     }
@@ -42,10 +44,12 @@
       height: 91px;
       display: inline-block;
       margin-left: 8px;
+
       @include media-laptop {
         width: 71px;
         height: 71px;
       }
+
       @include media-tablet {
         width: 55px;
         height: 55px;
@@ -54,9 +58,8 @@
   }
 
   .subtitle {
-    font-family: 'Inter-Medium', 'Inter', sans-serif;
+    font-family: Inter-Medium, Inter, sans-serif;
     margin: 0;
-
     font-weight: 500;
     font-size: 20px;
     color: $color-secondary-brown;
@@ -78,17 +81,17 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      padding: 0px 0px 0px 24px;
+      padding: 0 0 0 24px;
 
       @include media-tablet {
-        padding: 0px;
+        padding: 0;
         gap: 4px;
         align-items: flex-start;
         flex-direction: column;
       }
 
       @include media-mobile {
-        padding: 0px;
+        padding: 0;
       }
     }
   }
@@ -99,21 +102,22 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 0px 0px 24px;
+    padding: 0 0 0 24px;
 
     @include media-tablet {
-      padding: 0px;
+      padding: 0;
       flex-direction: column;
       align-items: flex-start;
     }
 
     @include media-mobile {
-      padding: 0px;
+      padding: 0;
     }
 
     & .tag-container {
       display: flex;
       align-items: center;
+
       @include media-tablet {
         margin-top: 16px;
       }
@@ -127,21 +131,19 @@
 
 .description-title {
   margin: 0;
-  padding: 0px 0px 0px 24px;
-
+  padding: 0 0 0 24px;
   font-weight: 500;
   font-size: 52px;
   letter-spacing: 0.04em;
   line-height: 64px;
   height: auto;
-  text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.14);
+  text-shadow: 0 0 16px rgb(0 0 0 / 14%);
   color: $color-primary-white;
   text-align: left;
   width: 741px;
 
   @include media-tablet {
-    padding: 0px;
-
+    padding: 0;
     width: 100%;
     font-size: 24px;
     letter-spacing: 0;
@@ -149,6 +151,6 @@
   }
 
   @include media-mobile {
-    padding: 0px;
+    padding: 0;
   }
 }

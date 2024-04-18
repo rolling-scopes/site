@@ -6,6 +6,7 @@
     padding: 40px;
     margin: 0 auto;
   }
+
   @include media-tablet {
     padding: 0;
   }
@@ -35,6 +36,7 @@
       @include media-laptop-medium {
         grid-template: 1fr / repeat(2,1fr);
       }
+
       @include media-tablet {
         grid-template: 1fr / repeat(1,1fr);
       }

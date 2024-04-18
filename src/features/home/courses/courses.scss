@@ -13,14 +13,17 @@
 
   & .content {
     padding: 0 120px 40px;
+
     @include media-laptop {
       width: 100%;
       max-width: 1440px;
       padding: 0 40px 40px;
     }
+
     @include media-tablet {
       padding: 0 40px 16px;
     }
+
     @include media-mobile {
       padding: 0 20px 16px;
     }
@@ -31,6 +34,7 @@
       align-items: flex-start;
       justify-content: space-between;
       width: 800px;
+
       @include media-laptop {
         width: 100%;
       }
@@ -42,11 +46,12 @@
         align-items: center;
         justify-content: space-between;
         margin-top: 24px;
+
         @extend %transition-all;
 
         @include media-hover {
           &:hover {
-            box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 4px 16px 0 rgb(0 0 0 / 12%);
           }
         }
 
@@ -56,16 +61,14 @@
           width: min-content; /* 88px */
           height: 100%;
           display: flex;
-          flex-direction: row;
-          justify-content: flex-start;
+          flex-flow: row nowrap;
+          place-content: center flex-start;
           align-items: center;
           padding: 16px 16px 16px 16px;
           overflow: visible;
           position: relative;
-          align-content: center;
-          flex-wrap: nowrap;
           gap: 0;
-          border-radius: 0px 0px 0px 0px;
+          border-radius: 0;
         }
 
         & .course-info {
@@ -82,10 +85,10 @@
             position: relative;
             font-weight: 500;
             font-style: normal;
-            font-family: 'Inter-Medium', 'Inter', sans-serif;
-            color: #000000;
+            font-family: Inter-Medium, Inter, sans-serif;
+            color: #000;
             font-size: 18px;
-            letter-spacing: 0em;
+            letter-spacing: 0;
             line-height: 24px;
           }
 
@@ -96,10 +99,10 @@
             word-wrap: break-word;
             word-break: break-word;
             position: relative;
-            font-family: 'Inter', sans-serif;
+            font-family: Inter, sans-serif;
             color: #545454;
             font-size: 14px;
-            letter-spacing: 0em;
+            letter-spacing: 0;
             line-height: 20px;
             margin-top: 8px;
           }
@@ -112,16 +115,15 @@
           width: fit-content;
           height: 100%;
           display: flex;
-          flex-direction: row;
-          justify-content: flex-start;
+          flex-flow: row nowrap;
+          place-content: center flex-start;
           align-items: center;
           padding: 16px 16px 16px 16px;
           overflow: visible;
           position: relative;
-          align-content: center;
-          flex-wrap: nowrap;
           gap: 0;
-          border-radius: 0px 0px 0px 0px;
+          border-radius: 0;
+
           @extend %transition-all;
 
           & a {
@@ -133,17 +135,16 @@
             width: min-content;
             height: 36px;
             display: flex;
-            flex-direction: row;
-            justify-content: center;
+            flex-flow: row nowrap;
+            place-content: center center;
             align-items: center;
-            padding: 10px 12px 10px 12px;
-            background-color: #eeeeee;
+            padding: 10px 12px;
+            background-color: #eee;
             overflow: hidden;
             position: relative;
-            align-content: center;
-            flex-wrap: nowrap;
             border-radius: 9999px;
             cursor: pointer;
+
             @extend %transition-all;
 
             & .label {
@@ -154,10 +155,10 @@
               position: relative;
               font-weight: 500;
               font-style: normal;
-              font-family: 'Inter-Medium', 'Inter', sans-serif;
-              color: #000000;
+              font-family: Inter-Medium, Inter, sans-serif;
+              color: #000;
               font-size: 14px;
-              letter-spacing: 0em;
+              letter-spacing: 0;
               line-height: 16px;
               text-align: center;
               margin-right: 8px;
@@ -165,7 +166,7 @@
 
             @include media-hover {
               &:hover {
-                background-color: rgba(84, 84, 84, 0.4);
+                background-color: rgb(84 84 84 / 40%);
               }
             }
           }
@@ -190,6 +191,6 @@
 
 @include media-hover {
   .courses .content .courses .course-card:hover > .details-container > .details {
-    background-color: rgba(84, 84, 84, 0.4);
+    background-color: rgb(84 84 84 / 40%);
   }
 }

@@ -10,7 +10,7 @@
       font-weight: $font-weight-medium;
       color: $color-primary-black;
       font-size: 36px;
-      letter-spacing: 0px;
+      letter-spacing: 0;
       line-height: 44px;
     }
 
@@ -18,17 +18,17 @@
       width: 500px;
       height: min-content;
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      flex-flow: row nowrap;
+      place-content: center space-between;
       align-items: center;
       padding: 16px 16px 16px 16px;
       overflow: hidden;
-      align-content: center;
-      flex-wrap: nowrap;
       align-self: center;
+
       @include media-tablet {
         width: 100%;
         flex-direction: column;
+
         & > svg {
           margin-top: 24px;
         }

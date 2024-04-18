@@ -1,5 +1,6 @@
 @import 'Styles/constants';
 @import 'Styles/mixins';
+
 .mentors {
   &.container {
     background: $color-secondary-gray100;
@@ -15,6 +16,7 @@
         display: flex;
         flex-direction: column;
         gap: 16px;
+
         @include media-mobile {
           order: 1;
         }

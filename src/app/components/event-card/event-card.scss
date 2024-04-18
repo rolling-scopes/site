@@ -9,11 +9,12 @@
   align-items: flex-start;
   padding: 0;
   border-radius: 12px;
+
   @extend %transition-all;
 
   @include media-hover {
     &:hover {
-      box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.14);
+      box-shadow: 0 4px 16px 0 rgb(0 0 0 / 14%);
     }
   }
 
@@ -21,22 +22,18 @@
     width: 320px;
     height: min-content;
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-start;
     padding: 32px 24px 24px 24px;
     background-color: #f4f1fa;
     overflow: hidden;
-    flex-wrap: nowrap;
-    position: static;
-    border-radius: 12px 12px 0px 0px;
+    border-radius: 12px 12px 0 0;
     border-color: #e2e2e2;
     border-style: solid;
-    border-top-width: 1px;
-    border-bottom-width: 0px;
-    border-left-width: 1px;
-    border-right-width: 1px;
+    border-width: 1px 1px 0 1px;
     position: relative;
+
     @include media-mobile {
       width: 100%;
     }
@@ -44,15 +41,14 @@
     & .card-tag {
       width: 123px;
       height: 36px;
-      display: block;
       overflow: visible;
-      background-color: rgba(255, 255, 255, 0.05);
+      background-color: rgb(255 255 255 / 5%);
       border-radius: 60px;
       border: 4px solid #cdbaeb;
       font-weight: 400;
       color: $color-secondary-gray600;
       font-size: 16px;
-      letter-spacing: 0em;
+      letter-spacing: 0;
       line-height: 1.2;
       display: flex;
       align-items: center;
@@ -62,7 +58,7 @@
     & .organizedBy {
       color: $color-primary-black;
       font-size: 16px;
-      letter-spacing: 0em;
+      letter-spacing: 0;
       line-height: 20px;
       margin-top: 32px;
     }
@@ -71,7 +67,7 @@
       font-weight: 500;
       color: $color-primary-black;
       font-size: 20px;
-      letter-spacing: 0em;
+      letter-spacing: 0;
       line-height: 28px;
       margin-top: 8px;
     }
@@ -82,7 +78,7 @@
       word-wrap: break-word;
       word-break: break-word;
       color: $color-primary-black;
-      letter-spacing: 0em;
+      letter-spacing: 0;
       text-align: left;
     }
 
@@ -96,6 +92,7 @@
       font-size: 24px;
       line-height: 32px;
       margin-top: 32px;
+
       @include media-mobile {
         width: 100%;
       }
@@ -111,7 +108,6 @@
       width: 258px;
       height: 250px;
       display: block;
-      -webkit-filter: blur(32px);
       filter: blur(32px);
       background-color: #7356bf;
       opacity: 0.5;
@@ -120,12 +116,14 @@
       position: absolute;
       top: 194px;
       left: 204px;
+
       @extend %transition-all;
 
       @include media-tablet {
         width: 225px;
         left: 155px;
       }
+
       @include media-mobile {
         width: 175px;
         left: 135px;
@@ -137,22 +135,18 @@
     width: 320px;
     height: min-content;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    flex-flow: column nowrap;
+    place-content: flex-start flex-start;
     align-items: flex-start;
     padding: 24px;
     background-color: #fefefe;
     overflow: visible;
-    align-content: flex-start;
-    flex-wrap: nowrap;
     position: static;
-    border-radius: 0px 0px 12px 12px;
+    border-radius: 0 0 12px 12px;
     border-color: #e2e2e2;
     border-style: solid;
-    border-top-width: 0px;
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    border-right-width: 1px;
+    border-width: 0 1px 1px 1px;
+
     @include media-mobile {
       width: 100%;
     }
@@ -161,17 +155,15 @@
       width: 100%;
       height: min-content;
       display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
+      flex-flow: row nowrap;
+      place-content: flex-start flex-start;
       align-items: flex-start;
       overflow: visible;
       padding: 0;
-      align-content: flex-start;
-      flex-wrap: nowrap;
       font-weight: 500;
       color: #9fa1ad;
       font-size: 14px;
-      letter-spacing: 0em;
+      letter-spacing: 0;
       line-height: 16px;
     }
 
@@ -183,9 +175,10 @@
       word-break: break-word;
       color: $color-primary-black;
       font-size: 16px;
-      letter-spacing: 0em;
+      letter-spacing: 0;
       line-height: 20px;
       margin-top: 16px;
+
       @include media-mobile {
         width: 100%;
       }
@@ -194,22 +187,22 @@
     & .details-button {
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      place-content: center center;
       align-items: center;
       padding: 10px 12px;
-      background-color: #eeeeee;
+      background-color: #eee;
       overflow: hidden;
-      align-content: center;
       border-radius: 9999px;
       font-weight: 500;
       color: $color-primary-black;
       font-size: 14px;
-      letter-spacing: 0em;
+      letter-spacing: 0;
       line-height: 16px;
       text-align: center;
       text-decoration: none;
       margin-top: 32px;
       cursor: pointer;
+
       @extend %transition-all;
     }
   }
@@ -220,7 +213,6 @@
     width: 314px;
     height: 304px;
     display: block;
-    -webkit-filter: blur(32px);
     filter: blur(32px);
     background-color: #7356bf;
     opacity: 0.5;
@@ -230,12 +222,13 @@
     position: absolute;
     top: 140px;
     left: 160px;
+
     @include media-mobile {
       width: 125px;
     }
   }
 
   .card:hover > .card-bottom > .details-button {
-    background-color: rgba(82, 82, 82, 0.4);
+    background-color: rgb(82 82 82 / 40%);
   }
 }
