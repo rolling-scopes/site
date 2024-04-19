@@ -23,7 +23,7 @@
     "baseUrl": "./src",
     "paths": {
       "@/*": ["*"],
-      "Styles/*": ["app/styles/*"]
+      // "Styles/*": ["app/styles/*"]
     }
   },
   "include": ["src", "src/**/*.ts", "src/**/*.tsx", "src/__tests__/setup-tests.ts"],
