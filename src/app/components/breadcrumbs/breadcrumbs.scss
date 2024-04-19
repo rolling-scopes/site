@@ -1,31 +1,34 @@
 .breadcrumbs {
   &.content {
-    padding: 24px 120px 10px 120px;
-
     @include media-laptop {
       padding: 24px 40px 10px;
     }
+
     @include media-tablet {
       padding: 24px 15px 10px;
     }
 
+    padding: 24px 120px 10px 120px;
+
     ul {
-      list-style: none;
       display: flex;
       align-items: flex-start;
       font-size: 14px;
+      list-style: none;
     }
 
     & .separator {
       padding: 0 8px;
     }
+
     & .link {
-      color: $color-secondary-gray500;
       @extend %transition-all;
 
+      color: $color-secondary-gray500;
+
       &.disabled {
-        text-decoration: underline;
         color: $color-secondary-gray600;
+        text-decoration: underline;
       }
 
       &:hover {

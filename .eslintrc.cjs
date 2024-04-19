@@ -42,6 +42,11 @@ module.exports = {
             group: 'object',
             position: 'after'
           },
+          {
+            pattern: '{.,..}/**/*\module.scss',
+            group: 'object',
+            position: 'after'
+          },
         ],
         pathGroupsExcludedImportTypes: ['react', 'react-dom/**'],
         'distinctGroup': false,

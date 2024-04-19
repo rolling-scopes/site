@@ -2,33 +2,33 @@
   white-space: nowrap;
 
   &.content {
-    border-style: solid;
-    padding: 5px 20px;
-    border-color: $color-secondary-gray600;
-    border-top-width: 1px;
-    border-bottom-width: 1px;
-    border-left-width: 0px;
-    border-right-width: 0px;
     overflow: hidden;
+
+    padding: 5px 20px;
+
+    border-color: $color-secondary-gray600;
+    border-style: solid;
+    border-width: 1px 0 1px 0;
   }
 
   & .place-container {
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 28px;
-    letter-spacing: 0;
-    overflow: hidden;
-    color: $color-primary-black;
-
     @include media-tablet {
-      font-weight: 400;
       font-size: 16px;
+      font-weight: 400;
       line-height: 24px;
     }
+
+    overflow: hidden;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    color: $color-primary-black;
+    letter-spacing: 0;
   }
 
   & .place {
@@ -38,8 +38,8 @@
 
   & .divider {
     display: inline-block;
-    font-size: 36px;
     height: 12px;
+    font-size: 36px;
     color: $color-secondary-red;
   }
 }

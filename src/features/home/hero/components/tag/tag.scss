@@ -1,22 +1,25 @@
 .tag {
-  width: fit-content;
-  padding: 8px 16px;
-  border-radius: 24px;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: 0;
-  border: 1px solid $color-secondary-gray400;
-  color: $color-primary-white;
-  border: 2px solid #fffaf0;
-  cursor: pointer;
   @extend %transition-all;
 
   @include media-hover {
     &:hover {
-      box-shadow: 0px 0px 16px 0px rgba(114, 92, 19, 0.08);
-      background-color: $color-primary-white;
       color: $color-secondary-gray600;
+      background-color: $color-primary-white;
+      box-shadow: 0 0 16px 0 rgb(114 92 19 / 8%);
     }
   }
+
+  cursor: pointer;
+
+  width: fit-content;
+  padding: 8px 16px;
+
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  color: $color-primary-white;
+  letter-spacing: 0;
+
+  border: 2px solid #fffaf0;
+  border-radius: 24px;
 }

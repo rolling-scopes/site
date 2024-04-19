@@ -1,17 +1,18 @@
 .stage-actions {
-  list-style-type: none;
+  @include media-laptop {
+    font-size: 16px;
+  }
+
   display: flex;
   flex-direction: column;
   gap: 8px;
+
   font-size: 18px;
   line-height: 28px;
   letter-spacing: 0.5px;
+  list-style-type: none;
 
   &.marked {
     list-style-type: disc;
-  }
-
-  @include media-laptop {
-    font-size: 16px;
   }
 }

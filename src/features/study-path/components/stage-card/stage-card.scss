@@ -1,44 +1,18 @@
 .stage {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 40px;
-  color: $color-secondary-gray600;
-
   @include media-tablet {
     gap: 16px;
   }
 
-  .stage-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 8px;
-    flex: 1 1 40%;
-    max-width: 600px;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: flex-start;
 
+  color: $color-secondary-gray600;
+
+  .stage-info {
     @include media-tablet-large {
       max-width: 100%;
-    }
-
-    .stage-title {
-      margin: 0;
-      padding: 0;
-      font-size: 28px;
-      font-weight: $font-weight-medium;
-      line-height: 32px;
-
-      @include media-laptop {
-        font-size: 22px;
-      }
-    }
-
-    .stage-description {
-      margin: 0;
-      font-size: 18px;
-      line-height: 28px;
-      letter-spacing: 0.5px;
     }
 
     @include media-tablet {
@@ -49,6 +23,35 @@
       .stage-description {
         font-size: 16px;
       }
+    }
+
+    display: flex;
+    flex: 1 1 40%;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    max-width: 600px;
+
+    .stage-title {
+      @include media-laptop {
+        font-size: 22px;
+      }
+
+      margin: 0;
+      padding: 0;
+
+      font-size: 28px;
+      font-weight: $font-weight-medium;
+      line-height: 32px;
+    }
+
+    .stage-description {
+      margin: 0;
+      font-size: 18px;
+      line-height: 28px;
+      letter-spacing: 0.5px;
     }
   }
 }
