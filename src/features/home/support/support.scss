@@ -7,25 +7,25 @@
   }
 
   &.content {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-
     @include media-laptop {
       flex-direction: column;
       align-items: center;
     }
 
-    & .info {
-      width: 640px;
-      text-align: left;
-      font-weight: 500;
-      color: $color-primary-black;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
 
+    & .info {
       @include media-laptop {
         width: 100%;
       }
+
+      width: 640px;
+      font-weight: 500;
+      color: $color-primary-black;
+      text-align: left;
 
       & .subtitle {
         margin-top: 8px;
@@ -37,11 +37,6 @@
     }
 
     & .picture {
-      width: 348px;
-      height: 288px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
       @include media-laptop {
         width: 300px;
         height: auto;
@@ -51,6 +46,13 @@
       @include media-tablet {
         width: 280px;
       }
+
+      width: 348px;
+      height: 288px;
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
     }
   }
 }

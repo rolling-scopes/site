@@ -3,21 +3,24 @@
 
 .events {
   &.content {
-    text-align: left;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
     @include media-laptop {
       flex-direction: column;
       align-items: flex-start;
     }
 
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    text-align: left;
+
     & .info {
-      width: 460px;
       @include media-tablet {
         width: 100%;
       }
+
+      width: 460px;
     }
 
     & .title,
@@ -27,23 +30,26 @@
     }
 
     & .cards {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
       @include media-laptop {
         margin-top: 16px;
       }
+
       @include media-tablet {
         flex-direction: column;
       }
 
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
       & .card {
-        margin-right: 16px;
         @include media-tablet {
-          margin-right: 0;
           margin-top: 16px;
+          margin-right: 0;
         }
+
+        margin-right: 16px;
       }
     }
   }

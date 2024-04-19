@@ -1,16 +1,16 @@
 @import 'Styles/mixins';
 
 .logo-wrapper {
+  @include media-tablet {
+    max-width: 40px;
+    max-height: 40px;
+  }
+
   max-width: 56px;
   max-height: 56px;
 
   img {
-    height: 100%;
     width: 100%;
-  }
-
-  @include media-tablet {
-    max-width: 40px;
-    max-height: 40px;
+    height: 100%;
   }
 }

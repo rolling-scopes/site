@@ -2,20 +2,15 @@
 @import 'Styles/mixins';
 
 .courses-main {
-  min-height: 440px;
   display: flex;
   align-items: center;
+  min-height: 440px;
 
   &.container {
     background: $color-secondary-yellow;
   }
 
   &.content {
-    padding: 95px 120px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-
     @include media-laptop {
       padding: 120px 40px 120px;
     }
@@ -23,46 +18,53 @@
     @include media-tablet {
       padding: 120px 15px;
     }
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 95px 120px;
   }
 
   &.content > .left {
     .title-container {
       & > .subtitle {
         padding-left: 4px;
-        font-weight: 500;
+
         font-size: 18px;
-        letter-spacing: 0.6px;
+        font-weight: 500;
         line-height: 24px;
+        letter-spacing: 0.6px;
       }
     }
   }
 
   & .description {
-    margin: 24px 0 0;
-    font-size: 44px;
-    font-weight: 500;
-    line-height: 52px;
-    text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
-    color: $color-primary-white;
-
     @include media-laptop {
       font-size: 36px;
     }
+
+    margin: 24px 0 0;
+
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 52px;
+    color: $color-primary-white;
+    text-shadow: 0 0 16px rgb(0 0 0 / 25%);
   }
 
   & > .right.picture {
-    width: 100%;
-    max-width: 314px;
-    height: auto;
-    margin-right: 22px;
-
     @include media-laptop {
-      height: 260px; // applied a little different size since the original makes the img flat
       aspect-ratio: 1.256 / 1;
+      height: 260px; // applied a little different size since the original makes the img flat
     }
 
     @include media-tablet {
       display: none;
     }
+
+    width: 100%;
+    max-width: 314px;
+    height: auto;
+    margin-right: 22px;
   }
 }

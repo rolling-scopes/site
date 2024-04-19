@@ -5,16 +5,20 @@ $tablet-width: 810px;
 $mobile-landscape-width: 568px;
 $mobile-width: 375px;
 
+// font-family
 $font-primary: 'Inter', sans-serif;
 
+// font weights
 $font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-medium: 500;
 $font-weight-bold: 700;
 
-$color-primary-black: #000000;
-$color-primary-white: #ffffff;
+// primary font colors
+$color-primary-black: #000;
+$color-primary-white: #fff;
 
+// secondary font colors
 $color-secondary-gray600: #545454;
 $color-secondary-gray500: #757575;
 $color-secondary-gray400: #afafaf;
@@ -25,4 +29,5 @@ $color-secondary-yellow: #ffdb20;
 $color-secondary-yellow-50: #fffaf0;
 $color-secondary-red: #d44333;
 
-$color-accent-yellow: rgba(255, 219, 32, 0.8);
+// accent font colors
+$color-accent-yellow: rgb(255 219 32 / 80%);

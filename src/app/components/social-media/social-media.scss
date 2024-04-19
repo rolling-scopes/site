@@ -1,46 +1,12 @@
+/* stylelint-disable custom-property-pattern */
 @import 'Styles/constants';
 @import 'Styles/mixins';
 @import 'Styles/placeholders';
 
 .social-media {
   --_transition: 0.4s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 112px;
-  margin-top: 36px;
-  text-decoration: none;
-  text-align: center;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 16px;
-  color: $color-secondary-gray600;
+
   @extend %transition-all;
-
-  & > svg:not(.telegram-icon) {
-    rect {
-      transition: fill var(--_transition) ease-in-out;
-    }
-
-    path {
-      transition: stroke var(--_transition) ease-in-out;
-    }
-  }
-
-  .telegram-icon {
-    rect {
-      transition: fill var(--_transition) ease-in-out;
-    }
-
-    path {
-      transition: fill var(--_transition) ease-in-out;
-    }
-  }
-
-  & .text {
-    margin-top: 8px;
-  }
 
   @include media-hover {
     &:hover {
@@ -68,5 +34,44 @@
   @include media-tablet {
     font-size: 12px;
     line-height: 16px;
+  }
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 112px;
+  margin-top: 36px;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  color: $color-secondary-gray600;
+  text-align: center;
+  text-decoration: none;
+
+  .telegram-icon {
+    rect {
+      transition: fill var(--_transition) ease-in-out;
+    }
+
+    path {
+      transition: fill var(--_transition) ease-in-out;
+    }
+  }
+
+  & > svg:not(.telegram-icon) {
+    rect {
+      transition: fill var(--_transition) ease-in-out;
+    }
+
+    path {
+      transition: stroke var(--_transition) ease-in-out;
+    }
+  }
+
+  & .text {
+    margin-top: 8px;
   }
 }

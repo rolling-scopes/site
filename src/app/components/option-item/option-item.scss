@@ -3,77 +3,86 @@
 @import 'Styles/placeholders';
 
 .option {
-  max-width: 380px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: $color-secondary-gray600;
   @include media-laptop {
     max-width: 600px;
     margin-top: 24px;
   }
+
   @include media-tablet {
     max-width: 100%;
   }
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  max-width: 380px;
+
+  color: $color-secondary-gray600;
 }
 
 .option-title {
-  margin: 0;
-  font-weight: $font-weight-medium;
-  font-size: 28px;
-  line-height: 36px;
   @include media-tablet {
     font-size: 24px;
     line-height: 32px;
   }
+
+  margin: 0;
+  font-size: 28px;
+  font-weight: $font-weight-medium;
+  line-height: 36px;
 }
 
 .option-description {
-  font-weight: $font-weight-regular;
-  font-size: 18px;
-  line-height: 28px;
-  margin: 16px 0 0;
-  text-align: left;
   @include media-tablet {
     font-size: 16px;
     line-height: 24px;
   }
+
+  margin: 16px 0 0;
+
+  font-size: 18px;
+  font-weight: $font-weight-regular;
+  line-height: 28px;
+  text-align: left;
 }
 
 .option-button {
-  width: 240px;
-  height: min-content;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: flex-start;
-  border-radius: 0;
-  padding: 8px 24px;
-  white-space: pre;
-  font-weight: $font-weight-medium;
-  font-family: 'Inter', sans-serif;
-  color: #000000;
-  font-size: 16px;
-  letter-spacing: 0em;
-  line-height: 24px;
-  margin: 24px 0;
-  border-radius: 0;
-  border: 2px solid;
   @extend %transition-all;
 
-  & .arrow {
-    margin-left: 8px;
-  }
-
   @include media-mobile-landscape {
-    width: 100%;
     justify-content: center;
+    width: 100%;
   }
 
   @include media-hover {
     &:hover {
       background-color: $color-secondary-gray200;
     }
+  }
+
+  display: flex;
+  flex-direction: row;
+  place-content: flex-start flex-start;
+  align-items: flex-start;
+
+  width: 240px;
+  height: min-content;
+  margin: 24px 0;
+  padding: 8px 24px;
+
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: $font-weight-medium;
+  line-height: 24px;
+  color: #000;
+  letter-spacing: 0;
+  white-space: pre;
+
+  border: 2px solid;
+  border-radius: 0;
+
+  & .arrow {
+    margin-left: 8px;
   }
 }
