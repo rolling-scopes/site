@@ -1,15 +1,15 @@
 .general {
   & .content {
-    padding: 40px 120px;
-
     @include media-laptop {
-      padding: 40px 40px 80px;
       width: 100%;
+      padding: 40px 40px 80px;
     }
 
     @include media-tablet {
       padding: 40px 16px 80px;
     }
+
+    padding: 40px 120px;
 
     & .title {
       margin-bottom: 10px;
@@ -18,28 +18,25 @@
     }
 
     & .general-info {
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      align-items: flex-start;
-      color: $color-secondary-gray600;
-
       @include media-laptop {
         flex-direction: column;
       }
 
-      & > div {
-        max-width: 380px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      justify-content: space-between;
 
+      color: $color-secondary-gray600;
+
+      & > div {
         @include media-laptop {
           max-width: 640px;
         }
 
-        & .title {
-          margin-top: 0;
-          font-size: 28px;
-          color: $color-secondary-gray600;
+        max-width: 380px;
 
+        & .title {
           @include media-laptop {
             font-size: 22px;
             line-height: 36px;
@@ -49,9 +46,18 @@
             font-size: 28px;
             line-height: 36px;
           }
+
+          margin-top: 0;
+          font-size: 28px;
+          color: $color-secondary-gray600;
         }
 
         & .description {
+          @include media-tablet {
+            font-size: 16px;
+            line-height: 24px;
+          }
+
           margin: 0;
           padding: 0;
           font-size: 18px;
@@ -59,11 +65,6 @@
 
           a {
             text-decoration: underline;
-          }
-
-          @include media-tablet {
-            font-size: 16px;
-            line-height: 24px;
           }
         }
       }
