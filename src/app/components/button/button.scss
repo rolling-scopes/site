@@ -3,7 +3,6 @@
 @import 'Styles/placeholders';
 
 .button {
-
   @extend %transition-all;
 
   @include media-tablet {

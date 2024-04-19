@@ -3,7 +3,6 @@
 @import 'Styles/placeholders';
 
 .card {
-
   @extend %transition-all;
 
   @include media-hover {
