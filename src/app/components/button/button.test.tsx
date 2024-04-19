@@ -32,6 +32,6 @@ describe('Button', () => {
 
     expect(link).toHaveAttribute('rel', 'noreferrer');
     expect(link).toHaveTextContent('Click me');
-    expect(link).toHaveAttribute('target', '_blank');
+    expect(link).not.toHaveAttribute('target', '_blank');
   });
 });

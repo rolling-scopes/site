@@ -1,0 +1,58 @@
+@import 'Styles/constants';
+@import 'Styles/mixins';
+@import 'Styles/placeholders';
+
+.button {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.colored {
+  background-color: $color-primary-black;
+  border-radius: 0;
+  height: min-content; /* 56px */
+  overflow: visible;
+  padding: 16px 24px 16px 24px;
+  position: relative;
+  width: min-content;
+  @extend %transition-all;
+
+  &.large {
+    margin-top: 24px;
+  }
+
+  @include media-tablet {
+    width: 100%;
+  }
+
+  @include media-hover {
+    &:hover {
+      background-color: #545454;
+    }
+  }
+
+  & .label {
+    color: $color-primary-white;
+    flex-shrink: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: $font-weight-medium;
+    height: auto; /* 24px */
+    letter-spacing: 0em;
+    line-height: 24px;
+    position: relative;
+    text-align: center;
+    white-space: pre;
+    width: auto; /* 138px */
+  }
+}
+
+#btn-arrow {
+  stroke: $color-primary-white;
+  stroke-width: 2;
+}
