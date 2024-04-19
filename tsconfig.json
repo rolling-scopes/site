@@ -22,8 +22,7 @@
     "types": ["node", "@testing-library/jest-dom", "vitest/globals"],
     "baseUrl": "./src",
     "paths": {
-      "@/*": ["*"],
-      // "Styles/*": ["app/styles/*"]
+      "@/*": ["*"]
     }
   },
   "include": ["src", "src/**/*.ts", "src/**/*.tsx", "src/__tests__/setup-tests.ts"],
