@@ -1,7 +1,5 @@
-import { readFileSync, rm } from 'node:fs';
-import { readdir } from 'node:fs/promises';
+import { readFileSync, readdirSync, rm } from 'node:fs';
 import { join, resolve } from 'node:path';
-import { isNativeError } from 'node:util/types';
 import sharp from 'sharp';
 
 const BUILD_ASSETS_DIRNAME = join('build', 'assets');
@@ -31,21 +29,13 @@ const notImage = (name) => {
 
 /**
  * Reads all the files recursively and returns them in a list, for the given folder
- * @param {string} folderName - The folder name where the files needs to be red
- * @return {Promise<string[]>} - Returns the file list if it's success
+ * @param {string} dir - The folder name where the files needs to be red
+ * @return {string[]} - Returns the file list if it's success
  * @throws {Error} - Throws an error in case some error happens while reading the folder
  */
-const getFileList = async (folderName) => {
-  try {
-    const path = resolve(folderName);
-    const files = await readdir(path, { recursive: true });
-    return files;
-  } catch (e) {
-    if (isNativeError(e))
-      throw new Error(
-        `😱 Oops... Something went really wrong, reading the image list! (${e.message})`,
-      );
-  }
+const getImgList = async (dir) => {
+  const path = resolve(dir);
+  return readdirSync(path, { recursive: true });
 };
 
 /**
@@ -120,8 +110,8 @@ const generateSizesForMultipleDevices = (imgList) => {
  * @return {Promise<void>} - Returns nothing
  */
 const init = async () => {
-  await convertImagesToWebp(await getFileList(BUILD_ASSETS_DIRNAME));
-  generateSizesForMultipleDevices(await getFileList(BUILD_ASSETS_DIRNAME));
+  await convertImagesToWebp(getImgList(BUILD_ASSETS_DIRNAME));
+  generateSizesForMultipleDevices(getImgList(BUILD_ASSETS_DIRNAME));
 };
 
 void init();
