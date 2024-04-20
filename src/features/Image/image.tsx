@@ -6,10 +6,15 @@ import './image.scss';
 
 const Image: FC<ImageProps> = ({ alt, src = '', lazy = true, ...props }) => {
   const srcNoExtension = src.slice(0, src.lastIndexOf('.'));
-  const srcSet = `${src} 1200w, ${srcNoExtension}-${TABLET_W}.webp ${TABLET_W}w, ${srcNoExtension}-${MOBILE_W}.webp ${MOBILE_W}w`;
   const loading: LoadingAttr = lazy ? 'lazy' : 'eager';
 
-  return <img {...props} loading={loading} srcSet={srcSet} alt={alt} className="img" />;
+  return (
+    <picture {...props}>
+      <source media={`(max-width: ${MOBILE_W}px)`} srcSet={`${srcNoExtension}-${MOBILE_W}.webp`} />
+      <source media={`(max-width: ${TABLET_W}px)`} srcSet={`${srcNoExtension}-${TABLET_W}.webp`} />
+      <img loading={loading} src={src} alt={alt} className="img" />
+    </picture>
+  );
 };
 
 export default Image;
