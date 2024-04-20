@@ -33,7 +33,7 @@ const notImage = (name) => {
  * @return {string[]} - Returns the file list if it's success
  * @throws {Error} - Throws an error in case some error happens while reading the folder
  */
-const getImgList = async (dir) => {
+const getImgList = (dir) => {
   const path = resolve(dir);
   return readdirSync(path, { recursive: true });
 };
