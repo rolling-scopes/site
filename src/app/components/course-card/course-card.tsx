@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Button } from '../button';
 import { type Course } from '@/app/types';
 import micIcon from '@/assets/icons/mic.svg';
 import noteIcon from '@/assets/icons/note-icon.svg';
@@ -46,9 +46,14 @@ export const CourseCard = ({
           </div>
         </div>
         <div className="rs-course-card__right">
-          <Link to={detailsUrl} className="rs-course-card__more">
-            View details<span className="material-symbols-outlined">arrow_forward</span>
-          </Link>
+          <Button
+            label="View details"
+            href={detailsUrl}
+            size="small"
+            color="black"
+            fontWeight={false}
+            arrowSize={16}
+          />
         </div>
       </div>
     </div>

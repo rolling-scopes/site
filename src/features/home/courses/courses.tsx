@@ -64,10 +64,7 @@ export const Courses = () => {
                   <div className="date">Start date: {startDate}</div>
                 </div>
                 <div className="details-container">
-                  <a className="details" href={href} target="_blank" rel="noreferrer">
-                    {buttonText && <span className="label">{buttonText}</span>}
-                    <span className="material-symbols-outlined">arrow_forward</span>
-                  </a>
+                  <Button label={buttonText} href={href} size="small" color="black" />
                 </div>
               </div>
             ))}

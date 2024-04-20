@@ -30,7 +30,7 @@ describe('OptionItem component', () => {
     expect(button).toBeInTheDocument();
     expect(button).toHaveAttribute('href', 'http://my-link.com');
 
-    const arrow = screen.getByText('arrow_forward');
+    const arrow = document.getElementById('btn-arrow');
     expect(button).toContainElement(arrow);
   });
 });

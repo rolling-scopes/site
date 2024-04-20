@@ -1,3 +1,5 @@
+import { Button } from '../button';
+
 import './option-item.scss';
 
 export type OptionItemProps = {
@@ -14,10 +16,7 @@ export const OptionItem = ({ title, description, buttonLabel, href }: OptionItem
       {description}
     </p>
     {buttonLabel && (
-      <a href={href} target="_blank" rel="noreferrer" className="option-button">
-        {buttonLabel}
-        <span className="material-symbols-outlined arrow">arrow_forward</span>
-      </a>
+      <Button label={buttonLabel} href={href || ''} outlined={true} size="medium" color="black" />
     )}
   </div>
 );

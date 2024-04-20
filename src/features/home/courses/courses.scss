@@ -123,57 +123,7 @@
           gap: 0;
           border-radius: 0px 0px 0px 0px;
           @extend %transition-all;
-
-          & a {
-            text-decoration: none;
-          }
-
-          & .details {
-            flex-shrink: 0;
-            width: min-content;
-            height: 36px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            padding: 10px 12px 10px 12px;
-            background-color: #eeeeee;
-            overflow: hidden;
-            position: relative;
-            align-content: center;
-            flex-wrap: nowrap;
-            border-radius: 9999px;
-            cursor: pointer;
-            @extend %transition-all;
-
-            & .label {
-              flex-shrink: 0;
-              width: auto; /* 83px */
-              height: auto; /* 16px */
-              white-space: pre;
-              position: relative;
-              font-weight: 500;
-              font-style: normal;
-              font-family: 'Inter-Medium', 'Inter', sans-serif;
-              color: #000000;
-              font-size: 14px;
-              letter-spacing: 0em;
-              line-height: 16px;
-              text-align: center;
-              margin-right: 8px;
-            }
-
-            @include media-hover {
-              &:hover {
-                background-color: rgba(84, 84, 84, 0.4);
-              }
-            }
-          }
         }
-      }
-
-      & .button {
-        margin-top: 24px;
       }
     }
 
@@ -189,7 +139,7 @@
 }
 
 @include media-hover {
-  .courses .content .courses .course-card:hover > .details-container > .details {
+  .courses .content .courses .course-card:hover > .details-container > .button {
     background-color: rgba(84, 84, 84, 0.4);
   }
 }

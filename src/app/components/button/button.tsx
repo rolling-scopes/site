@@ -5,18 +5,36 @@ import styles from './button.module.scss';
 type ButtonProps = {
   label: string;
   href: string;
+  arrow?: boolean;
   outlined?: boolean;
   size?: 'small' | 'medium' | 'large';
+  color?: 'black' | 'white';
+  fontWeight?: boolean;
+  arrowSize?: number;
 };
 
-export const Button = ({ label, href, outlined = false, size = 'large' }: ButtonProps) => {
+export const Button = ({
+  label,
+  href,
+  arrow = true,
+  outlined = false,
+  size = 'large',
+  color = 'white',
+  fontWeight = true,
+  arrowSize = 24,
+}: ButtonProps) => {
   let btnClass = `${styles.button} ${outlined ? styles.outlined : styles.colored}`;
+  btnClass += ` ${arrow ? '' : styles['without-arrow']}`;
   btnClass += ` ${styles[size]}`;
 
   return (
     <a className={btnClass} href={href} rel="noreferrer">
-      <span className={styles.label}>{label}</span>
-      <Arrow color="white" />
+      <span className={`${styles.label} ${fontWeight ? '' : styles.fontWeight}`}>{label}</span>
+      {arrow && (
+        <span className={styles.arrow}>
+          <Arrow color={color} size={arrowSize} />
+        </span>
+      )}
     </a>
   );
 };

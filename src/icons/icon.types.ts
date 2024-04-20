@@ -5,4 +5,5 @@ export interface IconProps {
 
 export interface ArrowIconProps {
   color: string;
+  size: number;
 }

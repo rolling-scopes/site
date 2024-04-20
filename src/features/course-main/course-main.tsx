@@ -1,5 +1,5 @@
 import { hasDayInDate } from './utils/has-day';
-import { ButtonOutlined, DateLang, SectionLabel, Subtitle, Title } from '@/app/components';
+import { Button, DateLang, SectionLabel, Subtitle, Title } from '@/app/components';
 import { useCourseByTitle, useTitle } from '@/app/hooks';
 import { type Course, type CourseType } from '@/app/types';
 
@@ -40,7 +40,7 @@ export const CourseMain = ({ courseName, type }: CourseMainProps) => {
           <Title text={altTitle || title} />
           {type && <Subtitle text={type} />}
           <DateLang startDate={startDate} language={language} mode={mode} />
-          <ButtonOutlined label="Enroll" href={enroll} />
+          <Button label="Enroll" href={enroll} outlined={true} color="black" />
         </div>
       </div>
     </main>

@@ -38,7 +38,7 @@ describe('Events', () => {
     const eventLinks = getAllByRole('link', { name: /View details/i });
 
     eventLinks.forEach((link) => {
-      expect(link).toHaveAttribute('target', '_blank');
+      expect(link).not.toHaveAttribute('target', '_blank');
       expect(link).toHaveAttribute('rel', 'noreferrer');
     });
   });

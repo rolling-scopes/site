@@ -190,28 +190,6 @@
         width: 100%;
       }
     }
-
-    & .details-button {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      padding: 10px 12px;
-      background-color: #eeeeee;
-      overflow: hidden;
-      align-content: center;
-      border-radius: 9999px;
-      font-weight: 500;
-      color: $color-primary-black;
-      font-size: 14px;
-      letter-spacing: 0em;
-      line-height: 16px;
-      text-align: center;
-      text-decoration: none;
-      margin-top: 32px;
-      cursor: pointer;
-      @extend %transition-all;
-    }
   }
 }
 
@@ -233,9 +211,5 @@
     @include media-mobile {
       width: 125px;
     }
-  }
-
-  .card:hover > .card-bottom > .details-button {
-    background-color: rgba(82, 82, 82, 0.4);
   }
 }

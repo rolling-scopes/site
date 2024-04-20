@@ -35,6 +35,6 @@ describe('CourseCard', () => {
   });
 
   it('renders the course details link', () => {
-    expect(screen.getByText('View details')).toHaveAttribute('href', mockProps.detailsUrl);
+    expect(screen.getByRole('link')).toHaveAttribute('href', mockProps.detailsUrl);
   });
 });

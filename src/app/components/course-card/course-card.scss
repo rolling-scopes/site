@@ -149,23 +149,6 @@
     align-items: center;
     justify-content: center;
   }
-
-  &__more {
-    display: flex;
-    align-items: center;
-    padding: 10px 12px 10px 12px;
-    background-color: #eeeeee;
-    color: $color-primary-black;
-    align-content: center;
-    border-radius: 9999px;
-    font-size: 14px;
-    @extend %transition-all;
-
-    .material-symbols-outlined {
-      font-size: 16px;
-      margin-left: 8px;
-    }
-  }
 }
 
 @include media-hover {
@@ -178,9 +161,6 @@
       height: 270px;
       bottom: -160px;
       right: -130px;
-    }
-    &__more:hover {
-      background-color: $color-secondary-gray400;
     }
   }
 }

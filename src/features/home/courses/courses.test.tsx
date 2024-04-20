@@ -23,21 +23,21 @@ describe('Courses', () => {
   });
 
   it('renders three course cards', () => {
-    const courseCards = screen.getAllByRole('link', { name: 'More arrow_forward' });
+    const courseCards = screen.getAllByRole('link', { name: 'More' });
     expect(courseCards.length).toBe(3);
   });
 
   it('renders link with arrow only on window size 810px', () => {
     (useWindowSize as Mock).mockReturnValue({ width: 810, height: 900 });
     render(<Courses />);
-    const courseCards = screen.getAllByRole('link', { name: 'arrow_forward' });
+    const courseCards = screen.getAllByRole('link', { name: /^(More)/gi });
     expect(courseCards.length).toBe(3);
   });
 
   it('renders link with "More details arrow_forward" on window size 810px', () => {
     (useWindowSize as Mock).mockReturnValue({ width: 1441, height: 900 });
     render(<Courses />);
-    const courseCards = screen.getAllByRole('link', { name: 'More details arrow_forward' });
+    const courseCards = screen.getAllByRole('link', { name: 'More details' });
     expect(courseCards.length).toBe(3);
   });
 

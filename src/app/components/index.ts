@@ -1,7 +1,6 @@
 export { Actions } from './actions';
 export { Breadcrumbs } from './breadcrumbs';
 export { Button } from './button';
-export { ButtonOutlined } from './button-outlined';
 export { CourseCard } from './course-card';
 export { DateLang } from './date-lang';
 export { EventCard, type EventCardProps } from './event-card';

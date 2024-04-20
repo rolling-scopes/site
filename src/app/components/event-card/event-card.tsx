@@ -1,3 +1,5 @@
+import { Button } from '../button';
+
 import './event-card.scss';
 
 export type EventCardProps = {
@@ -40,9 +42,7 @@ export const EventCard = ({
       </div>
       <div className="address">{address}</div>
       <div className="city">{city}</div>
-      <a href={href} target="_blank" rel="noreferrer" className="details-button">
-        View details
-      </a>
+      <Button label="View details" href={href} arrow={false} size="small" />
     </div>
   </div>
 );
