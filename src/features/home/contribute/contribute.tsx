@@ -1,6 +1,7 @@
 import { OptionItem, type OptionItemProps, Paragraph, Subtitle, Title } from '@/app/components';
 
 import image from '@/assets/contribute.webp';
+import Image from '@/features/image';
 
 import './contribute.scss';
 
@@ -33,7 +34,7 @@ export const Contribute = () => (
             Protégé Effect! There are several ways you can contribute, choose yours.
           </Paragraph>
         </div>
-        <img className="right picture" src={image} alt="contribute" />
+        <Image className="right picture" src={image} alt="contribute" />
       </div>
       <div className="contribute-options">
         {contributeOptions.map(({ title, description, buttonLabel, href }) => (

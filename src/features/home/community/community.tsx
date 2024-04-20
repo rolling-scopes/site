@@ -1,6 +1,7 @@
 import { SocialMedia, type SocialMediaProps, Subtitle, Title, TitleType } from '@/app/components';
 
 import image from '@/assets/welcome.webp';
+import Image from '@/features/image';
 import { FacebookIcon, InstagramIcon, LinkedInIcon, TelegramIcon, YouTubeIcon } from '@/icons';
 
 import './community.scss';
@@ -65,7 +66,7 @@ export const Community = () => (
           ))}
         </div>
       </div>
-      <img className="right picture" src={image} alt="community-welcome" />
+      <Image className="right picture" src={image} alt="community-welcome" />
     </div>
   </div>
 );

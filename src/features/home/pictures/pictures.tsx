@@ -11,6 +11,7 @@ import photo6 from '@/assets/photo-6.webp';
 import photo7 from '@/assets/photo-7.webp';
 import photo8 from '@/assets/photo-8.webp';
 import photo9 from '@/assets/photo-9.webp';
+import Image from '@/features/image';
 import { FacebookIcon, InstagramIcon } from '@/icons';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -49,15 +50,15 @@ export const Pictures = () => (
         showThumbs={false}
         showStatus={false}
         centerMode={true}>
-        <img src={photo1} />
-        <img src={photo2} />
-        <img src={photo3} />
-        <img src={photo4} />
-        <img src={photo5} />
-        <img src={photo6} />
-        <img src={photo7} />
-        <img src={photo8} />
-        <img src={photo9} />
+        <Image src={photo1} />
+        <Image src={photo2} />
+        <Image src={photo3} />
+        <Image src={photo4} />
+        <Image src={photo5} />
+        <Image src={photo6} />
+        <Image src={photo7} />
+        <Image src={photo8} />
+        <Image src={photo9} />
       </Carousel>
       <Paragraph>
         Want to see photos of our community? A vast collection of photographs from our events is
