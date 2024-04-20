@@ -1,7 +1,7 @@
 import { ImgHTMLAttributes } from 'react';
 
 export type ImageProps = ImgHTMLAttributes<HTMLImageElement> & {
-  lazy?: boolean;
+  lazy?: 'false' | 'true';
 };
 
 export type LoadingAttr = ImgHTMLAttributes<HTMLImageElement>['loading'];

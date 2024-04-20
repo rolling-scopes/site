@@ -1,3 +1,5 @@
+import Image from '@/features/Image';
+
 import './info-grid.scss';
 
 interface InfoGridProps {
@@ -11,7 +13,7 @@ export const InfoGrid = ({ items }: InfoGridProps) => {
       {items.map(({ id, title, info, icon }) => (
         <div key={id} className="item" data-testid="info-grid-item">
           <div className="item-title">
-            <img src={icon} alt={title} />
+            <Image src={icon} alt={title} />
             <h2>{title}</h2>
           </div>
           <p dangerouslySetInnerHTML={{ __html: info }} />

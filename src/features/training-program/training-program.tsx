@@ -3,6 +3,7 @@ import { type CourseNames, contentMap } from './training-program.data';
 import { Button, Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
 import type { Course, CourseType } from '@/app/types';
+import Image from '@/features/Image';
 
 import './training-program.scss';
 
@@ -34,7 +35,7 @@ export const TrainingProgram = ({ courseName, type }: TrainingProgramProps) => {
           <Button label={buttonLabel} href={course?.enroll} />
         </div>
         <div className={`right ${courseName.includes('badge') ? 'badge' : ''}`}>
-          <img src={image} alt={course?.title} />
+          <Image src={image} alt={course?.title} lazy="false" />
         </div>
       </div>
     </section>
