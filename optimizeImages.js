@@ -78,7 +78,7 @@ const convertImagesToWebp = (imgList) => {
 };
 
 /**
- * Generates the 3 sizes of the same image for desktop, tablet and mobile
+ * Generates 2 more sizes of the same image for tablet and mobile
  * @param {string[]} imgList - The list of images to be processed
  */
 const generateSizesForMultipleDevices = (imgList) => {
@@ -89,7 +89,7 @@ const generateSizesForMultipleDevices = (imgList) => {
     const fullnameNoExtension = removeExtension(fullname);
     const sharpImg = sharp(readFileSync(fullname));
 
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < RESIZE_VALUES.length; i++) {
       const resizeValue = RESIZE_VALUES.at(i);
       const isTabletSize = i === 0;
       const outFIle = isTabletSize
