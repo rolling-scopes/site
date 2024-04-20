@@ -6,6 +6,9 @@ import sharp from 'sharp';
 
 const BUILD_ASSETS_DIRNAME = join('build', 'assets');
 const COMPRESS_QUALITY = 80;
+const TABLET_RESIZE = 700;
+const MOBILE_RESIZE = 500;
+const RESIZE_VALUES = [TABLET_RESIZE, MOBILE_RESIZE];
 
 /**
  * Checks whether image needs to be converted to webP or not
@@ -40,7 +43,7 @@ const getFileList = async (folderName) => {
 /**
  * Converts all the given images to WebP format
  * @param {string} dir - The dirname where the images are stored
- * @param {string} name - The current image to proccess name
+ * @param {string} name - The current image to process name
  * @param {number} quality - The quality for image to be compressed
  * @return {Promise<void>} - Returns void promise
  */
@@ -79,19 +82,39 @@ const convertImagesToWebp = (imgList) => {
   );
 };
 
-/*
-const generateSizesForMultipleDevices = () => {};
-
+/**
+ * Generates the 3 sizes of the same image for desktop, tablet and mobile
+ * @param {string[]} imgList - The list of images to be processed
  */
+const generateSizesForMultipleDevices = (imgList) => {
+  imgList.map((imgName) => {
+    const fullname = join(BUILD_ASSETS_DIRNAME, imgName);
+    const fullnameNoExtension = fullname.slice(0, fullname.lastIndexOf('.')); // img.jpg -> img;
+    const sharpImg = sharp(readFileSync(fullname));
+
+    for (let i = 0; i < 2; i++) {
+      const resizeValue = RESIZE_VALUES.at(i);
+      const isTabletSize = i === 0;
+      const outFIle = isTabletSize
+        ? `${fullnameNoExtension}-medium.webp`
+        : `${fullnameNoExtension}-small.webp`;
+
+      sharpImg
+        .resize(resizeValue)
+        .toFile(outFIle)
+        .then(() => console.log('Created multiple sizes', outFIle))
+        .catch((e) => console.log('Failed creating multiple sizes', outFIle, e, 'skipping...'));
+    }
+  });
+};
 
 /**
  * Initializes the algorithm
  * @return {Promise<void>} - Returns nothing
  */
 const init = async () => {
-  const imageList = await getFileList(BUILD_ASSETS_DIRNAME);
-  await convertImagesToWebp(imageList);
-  console.log(imageList);
+  await convertImagesToWebp(await getFileList(BUILD_ASSETS_DIRNAME));
+  generateSizesForMultipleDevices(await getFileList(BUILD_ASSETS_DIRNAME));
 };
 
 void init();
