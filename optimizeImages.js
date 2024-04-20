@@ -41,40 +41,38 @@ const getImgList = (dir) => {
 
 /**
  * Converts all the given images to WebP format
+ * @param {string[]} imgList - The list of images that needs to be processed
  * @param {string} dir - The dirname where the images are stored
- * @param {string} name - The current image to process name
  * @param {number} quality - The quality for image to be compressed
- * @return {Promise<void> | void} - Returns void promise or void
+ * @return {Promise} - Returns promise
  */
-const convertToWebP = (dir, name, quality) => {
-  if (notImage(name)) return;
-
-  const fullname = join(dir, name);
-  const newFullname = removeExtension(fullname);
-  const convertedFileName = `${newFullname}.webp`;
-  const isAlreadyWebp = name.endsWith('.webp');
-
-  const img = sharp(readFileSync(fullname));
-  img.toFormat('webp', { quality });
-
-  if (isAlreadyWebp) {
-    // If image is already a WebP image - only apply compression
-    return img
-      .toFile(fullname)
-      .then(() => console.log('Compressed', fullname))
-      .catch((e) => console.log('Failed compressing', fullname, e, 'skipping...'));
-  }
-
-  return img
-    .toFile(convertedFileName)
-    .then(() => console.log('Converted', fullname))
-    .then(() => rm(fullname, () => {}))
-    .catch((e) => console.log('Failed converting', fullname, e, 'skipping...'));
-};
-
-const convertImagesToWebp = (imgList) => {
+const convertCompressImagesToWebp = (imgList, dir, quality) => {
   return Promise.allSettled(
-    imgList.map((imgName) => convertToWebP(BUILD_ASSETS_DIRNAME, imgName, COMPRESS_QUALITY)),
+    imgList.map((imgName) => {
+      if (notImage(imgName)) return;
+
+      const fullname = join(BUILD_ASSETS_DIRNAME, imgName);
+      const newFullname = removeExtension(fullname);
+      const convertedFileName = `${newFullname}.webp`;
+      const isAlreadyWebp = imgName.endsWith('.webp');
+
+      const img = sharp(readFileSync(fullname));
+      img.toFormat('webp', { quality });
+
+      if (isAlreadyWebp) {
+        // If image is already a WebP image - only apply compression
+        return img
+          .toFile(fullname)
+          .then(() => console.log('Compressed', fullname))
+          .catch((e) => console.log('Failed compressing', fullname, e, 'skipping...'));
+      }
+
+      return img
+        .toFile(convertedFileName)
+        .then(() => console.log('Converted', fullname))
+        .then(() => rm(fullname, () => {}))
+        .catch((e) => console.log('Failed converting', fullname, e, 'skipping...'));
+    }),
   );
 };
 
@@ -97,7 +95,7 @@ const generateSizesForMultipleDevices = (imgList) => {
       sharpImg
         .resize(resizeValue)
         .toFile(outFIle)
-        .then(() => console.log('Created multiple sizes', outFIle))
+        .then(() => console.log(`Created ${RESIZE_VALUES} size`, outFIle))
         .catch((e) => console.log('Failed creating multiple sizes', outFIle, e, 'skipping...'));
     }
   });
@@ -108,7 +106,11 @@ const generateSizesForMultipleDevices = (imgList) => {
  * @return {Promise<void>} - Returns nothing
  */
 const init = async () => {
-  await convertImagesToWebp(getImgList(BUILD_ASSETS_DIRNAME));
+  await convertCompressImagesToWebp(
+    getImgList(BUILD_ASSETS_DIRNAME),
+    BUILD_ASSETS_DIRNAME,
+    COMPRESS_QUALITY,
+  );
   generateSizesForMultipleDevices(getImgList(BUILD_ASSETS_DIRNAME));
 };
 
