@@ -1,6 +1,6 @@
 import { Subtitle, Title, TitleType } from '@/app/components';
-
 import mentors from '@/assets/mentor-with-his-students.webp';
+import Image from '@/features/image';
 
 import './main.scss';
 
@@ -15,7 +15,7 @@ export const Main = () => {
           </div>
           <h2 className="description">Journey to full stack mastery</h2>
         </div>
-        <img src={mentors} alt="Mentors with students" className="right picture" />
+        <Image src={mentors} alt="Mentor with students" className="right picture" />
       </div>
     </main>
   );
