@@ -15,7 +15,7 @@ const RESIZE_VALUES = [TABLET_RESIZE, MOBILE_RESIZE];
  * @param {string} name - The name of the image
  * @return {boolean}
  */
-const noNeedToConvert = (name) => {
+const notImage = (name) => {
   return (
     name.includes('.html') || name.includes('.css') || name.includes('.js') || name.includes('.svg')
   );
@@ -48,7 +48,7 @@ const getFileList = async (folderName) => {
  * @return {Promise<void>} - Returns void promise
  */
 const convertToWebP = (dir, name, quality) => {
-  if (noNeedToConvert(name)) return;
+  if (notImage(name)) return;
 
   const fullname = join(dir, name);
   const newFullname = fullname.slice(0, fullname.lastIndexOf('.')); // img.jpg -> img;
