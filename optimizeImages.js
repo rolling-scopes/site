@@ -1,11 +1,12 @@
+/* eslint-disable no-undef */
 import { readFileSync, readdirSync, rm } from 'node:fs';
 import { join, resolve } from 'node:path';
 import sharp from 'sharp';
 
 const BUILD_ASSETS_DIRNAME = join('build', 'assets');
 const COMPRESS_QUALITY = 80;
-const TABLET_RESIZE = 768;
-const MOBILE_RESIZE = 425;
+const TABLET_RESIZE = Number(process.env.VITE_TABLET);
+const MOBILE_RESIZE = Number(process.env.VITE_MOBILE);
 const RESIZE_VALUES = [TABLET_RESIZE, MOBILE_RESIZE];
 
 /**
