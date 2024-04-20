@@ -51,7 +51,7 @@ export const CourseCard = ({
             href={detailsUrl}
             size="small"
             color="black"
-            fontWeight={false}
+            bold={false}
             arrowSize={16}
           />
         </div>

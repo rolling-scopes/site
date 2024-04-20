@@ -1,9 +1,5 @@
-@import 'Styles/constants';
-@import 'Styles/mixins';
 .mentoring {
   &.content {
-    padding: 40px 120px;
-
     @include media-laptop {
       padding: 40px;
     }
@@ -12,10 +8,9 @@
       padding: 40px 16px;
     }
 
-    & > .title {
-      font-size: 36px;
-      letter-spacing: 0px;
+    padding: 40px 120px;
 
+    & > .title {
       @include media-laptop {
         font-size: 29px;
         line-height: 44px;
@@ -24,17 +19,12 @@
       @include media-tablet {
         font-size: 23px;
       }
+
+      font-size: 36px;
+      letter-spacing: 0;
     }
 
     & > .benefits {
-      margin-top: 24px;
-      display: grid;
-      grid-template-areas:
-        'a b c'
-        'd d e';
-      gap: 30px;
-      grid-template-columns: 1fr 1fr 1fr;
-
       @include media-laptop {
         display: flex;
         flex-direction: column;
@@ -45,30 +35,45 @@
         gap: 16px;
       }
 
+      display: grid;
+      grid-template-areas:
+        'a b c'
+        'd d e';
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+
+      margin-top: 24px;
+
       .benefit {
+        width: 100%;
         padding: 24px;
-        background-color: $color-secondary-yellow-50;
-        border-radius: 12px;
-        border: 1px solid rgba(255, 219, 32, 0.078);
+
         font-size: 18px;
-        letter-spacing: 0px;
         line-height: 28px;
         color: $color-secondary-gray600;
-        width: 100%;
+        letter-spacing: 0;
+
+        background-color: $color-secondary-yellow-50;
+        border: 1px solid rgb(255 219 32 / 7.8%);
+        border-radius: 12px;
       }
 
       .benefit:nth-child(1) {
         grid-area: a;
       }
+
       .benefit:nth-child(2) {
         grid-area: b;
       }
+
       .benefit:nth-child(3) {
         grid-area: c;
       }
+
       .benefit:nth-child(4) {
         grid-area: d;
       }
+
       .benefit:nth-child(5) {
         grid-area: e;
       }

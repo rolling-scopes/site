@@ -1,16 +1,14 @@
-@import 'Styles/constants';
-
 .date-lang {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 16px;
+  align-items: flex-start;
 
   & .date-info {
     display: flex;
+    gap: 4px;
     align-items: center;
     justify-content: flex-start;
-    gap: 4px;
 
     .note-icon {
       width: 16px;
@@ -25,9 +23,9 @@
 
   & .lang-info {
     display: flex;
+    gap: 4px;
     align-items: center;
     justify-content: flex-start;
-    gap: 4px;
 
     .mic-icon {
       width: 16px;

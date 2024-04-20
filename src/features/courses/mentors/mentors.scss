@@ -1,32 +1,31 @@
-@import 'Styles/constants';
-@import 'Styles/mixins';
 .mentors {
   &.container {
     background: $color-secondary-gray100;
 
     .content {
-      padding: 40px 80px 40px 120px;
-
       @include media-tablet {
         padding: 40px 16px;
       }
 
+      padding: 40px 80px 40px 120px;
+
       & .mentors-info {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
         @include media-mobile {
           order: 1;
         }
 
-        & > .subtitle {
-          max-width: 640px;
-          font-weight: $font-weight-regular;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
 
+        & > .subtitle {
           @include media-tablet {
             max-width: 100%;
             font-size: 20px;
           }
+
+          max-width: 640px;
+          font-weight: $font-weight-regular;
         }
 
         & > a {

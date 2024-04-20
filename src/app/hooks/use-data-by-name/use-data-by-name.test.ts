@@ -93,7 +93,7 @@ vi.mock('@/app/services/api', () => ({
   }),
 }));
 
-describe('useDataByName', () => {
+describe('useDataByName', async () => {
   it('should fetch courses data correctly and update the state', async () => {
     const { result } = renderHook(() => useDataByName('courses'));
 

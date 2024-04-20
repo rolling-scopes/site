@@ -1,16 +1,11 @@
-@import 'Styles/constants';
-@import 'Styles/mixins';
-@import 'Styles/placeholders';
-
 .button {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
   cursor: pointer;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+  place-content: center center;
+  align-items: center;
 
   & .arrow {
     max-height: 24px;
@@ -19,14 +14,6 @@
 
 .colored {
   &.large {
-    background-color: $color-primary-black;
-    border-radius: 0;
-    height: min-content; /* 56px */
-    overflow: visible;
-    padding: 16px 24px;
-    position: relative;
-    width: min-content;
-    margin-top: 24px;
     @extend %transition-all;
 
     @include media-tablet {
@@ -39,52 +26,80 @@
       }
     }
 
+    position: relative;
+
+    overflow: visible;
+
+    width: min-content;
+    height: min-content; /* 56px */
+    margin-top: 24px;
+    padding: 16px 24px;
+
+    background-color: $color-primary-black;
+    border-radius: 0;
+
     & .label {
-      color: $color-primary-white;
-      flex-shrink: 0;
-      font-family: 'Inter', sans-serif;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: $font-weight-medium;
-      height: auto; /* 24px */
-      letter-spacing: 0em;
-      line-height: 24px;
       position: relative;
-      text-align: center;
-      white-space: pre;
+
+      flex-shrink: 0;
+
       width: auto; /* 138px */
+      height: auto; /* 24px */
+
+      font-family: Inter, sans-serif;
+      font-size: 18px;
+      font-weight: $font-weight-medium;
+      font-style: normal;
+      line-height: 24px;
+      color: $color-primary-white;
+      text-align: center;
+      letter-spacing: 0;
+      white-space: pre;
     }
   }
 
   &.small {
-    align-content: center;
-    align-items: center;
-    background-color: #eeeeee;
-    border-radius: 9999px;
-    flex-shrink: 0;
-    height: 36px;
-    overflow: hidden;
-    padding: 10px 12px;
-    position: relative;
-    width: min-content;
     @extend %transition-all;
 
-    & .label {
-      color: #000000;
-      flex-shrink: 0;
-      font-family: 'Inter-Medium', 'Inter', sans-serif;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 500;
-      height: auto; /* 16px */
-      letter-spacing: 0em;
-      line-height: 16px;
-      position: relative;
-      text-align: center;
-      white-space: pre;
-      width: auto; /* 83px */
+    @include media-hover {
+      &:hover {
+        background-color: rgb(84 84 84 / 40%);
+      }
+    }
 
-      &.fontWeight {
+    position: relative;
+
+    overflow: hidden;
+    flex-shrink: 0;
+    align-content: center;
+    align-items: center;
+
+    width: min-content;
+    height: 36px;
+    padding: 10px 12px;
+
+    background-color: #eee;
+    border-radius: 9999px;
+
+    & .label {
+      position: relative;
+
+      flex-shrink: 0;
+
+      width: auto; /* 83px */
+      height: auto; /* 16px */
+
+      font-family: Inter-Medium, Inter, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      font-style: normal;
+      line-height: 16px;
+      color: #000;
+      text-align: center;
+      letter-spacing: 0;
+      white-space: pre;
+
+      &.bold {
         font-weight: 400;
       }
     }
@@ -92,53 +107,37 @@
     &.without-arrow {
       margin-top: 32px;
     }
-
-    @include media-hover {
-      &:hover {
-        background-color: rgba(84, 84, 84, 0.4);
-      }
-    }
   }
 }
 
 .outlined {
-  font-weight: $font-weight-medium;
-  color: $color-primary-black;
-  margin: 24px 0;
   @extend %transition-all;
 
-  &.large {
-    border: 2px solid $color-primary-black;
-    font-size: 18px;
-    justify-content: flex-start;
-    padding: 12px 24px;
-    width: max-content;
+  margin: 24px 0;
+  font-weight: $font-weight-medium;
+  color: $color-primary-black;
 
+  &.large {
     @include media-hover {
       &:hover {
         background-color: $color-secondary-gray100;
       }
     }
+
+    justify-content: flex-start;
+
+    width: max-content;
+    padding: 12px 24px;
+
+    font-size: 18px;
+
+    border: 2px solid $color-primary-black;
   }
 
   &.medium {
-    align-content: flex-start;
-    align-items: flex-start;
-    border: 2px solid;
-    border-radius: 0;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    height: min-content;
-    justify-content: flex-start;
-    letter-spacing: 0em;
-    line-height: 24px;
-    padding: 8px 24px;
-    white-space: pre;
-    width: 240px;
-
     @include media-mobile-landscape {
-      width: 100%;
       justify-content: center;
+      width: 100%;
     }
 
     @include media-hover {
@@ -146,26 +145,28 @@
         background-color: $color-secondary-gray200;
       }
     }
+
+    place-content: flex-start flex-start;
+    align-items: flex-start;
+
+    width: 240px;
+    height: min-content;
+    padding: 8px 24px;
+
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+    white-space: pre;
+
+    border: 2px solid;
+    border-radius: 0;
   }
 
   &.small {
-    align-content: flex-start;
-    align-items: flex-start;
-    border: 2px solid;
-    border-radius: 0;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    height: min-content;
-    justify-content: flex-start;
-    letter-spacing: 0em;
-    line-height: 24px;
-    padding: 8px 24px;
-    white-space: pre;
-    width: 240px;
-
     @include media-mobile-landscape {
-      width: 100%;
       justify-content: center;
+      width: 100%;
     }
 
     @include media-hover {
@@ -173,5 +174,21 @@
         background-color: $color-secondary-gray200;
       }
     }
+
+    place-content: flex-start flex-start;
+    align-items: flex-start;
+
+    width: 240px;
+    height: min-content;
+    padding: 8px 24px;
+
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+    white-space: pre;
+
+    border: 2px solid;
+    border-radius: 0;
   }
 }

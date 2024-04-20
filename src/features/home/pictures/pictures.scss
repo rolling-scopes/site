@@ -1,76 +1,86 @@
-@import 'Styles/constants';
-@import 'Styles/mixins';
-
 .pictures {
   & .social-media-container {
-    display: flex;
-    align-items: flex-start;
-
     @include media-tablet {
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
     }
+
+    display: flex;
+    align-items: flex-start;
   }
 }
 
 .pictures .carousel-root {
-  width: 1200px;
-  height: 540px;
-  padding: 10px 10px 40px;
-  margin: 16px auto;
   @include media-laptop {
-    max-width: 730px;
     width: 100%;
+    max-width: 730px;
     height: 369px;
   }
+
   @include media-tablet {
-    max-width: 358px;
     width: 100%;
+    max-width: 358px;
     height: 210px;
     padding: 0 0 25px;
   }
+
   @include media-mobile {
     width: 100%;
     height: auto;
   }
+
+  width: 1200px;
+  height: 540px;
+  margin: 16px auto;
+  padding: 10px 10px 40px;
 }
 
 .carousel {
-  height: 540px;
+
   @include media-laptop {
     height: 369px;
   }
+
   @include media-tablet {
     height: 210px;
   }
+
+  height: 540px;
 }
+
 .slider {
-  height: 468px;
   @include media-laptop {
     height: 325px;
   }
+
   @include media-tablet {
     height: 175px;
   }
+
   @include media-mobile {
     height: auto;
   }
+
+  height: 468px;
 }
 
 .carousel .slide {
-  width: 750px;
-  height: 468px;
-  margin-right: 10px;
   @include media-laptop {
     width: 730px;
     height: 369px;
   }
+
   @include media-tablet {
     width: 358px;
     height: 210px;
   }
+
   @include media-mobile {
     height: auto;
   }
+
+  width: 750px;
+  height: 468px;
+  margin-right: 10px;
 }

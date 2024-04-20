@@ -1,58 +1,59 @@
-@import 'Styles/constants';
-@import 'Styles/mixins';
-
 .title {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  font-weight: 500;
-  font-size: 44px;
-  line-height: 52px;
-  letter-spacing: -0.04em;
-  color: $color-primary-black;
-  text-align: left;
   @include media-tablet {
     font-size: 36px;
     line-height: 44px;
   }
 
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 52px;
+  color: $color-primary-black;
+  text-align: left;
+  letter-spacing: -0.04em;
+
   &.big {
-    font-size: 52px;
-    line-height: 64px;
+
     @include media-tablet {
       font-size: 36px;
       line-height: 44px;
     }
+
+    font-size: 52px;
+    line-height: 64px;
   }
 
   &.bigger {
-    font-size: 75px;
-    line-height: 77px;
-    letter-spacing: -0.04em;
-    font-weight: 600;
     @include media-laptop {
       font-size: 96px;
       line-height: 1.2em;
     }
+
+    font-size: 75px;
+    font-weight: 600;
+    line-height: 77px;
+    letter-spacing: -0.04em;
   }
 
   &.extra-big {
-    font-size: 96px;
-    line-height: 1.2em;
-    font-weight: 700;
     @include media-laptop {
       font-size: 77px;
     }
+
     @include media-tablet {
       font-size: 61px;
     }
-  }
 
-  & .before {
-    color: $color-secondary-red;
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 1.2em;
   }
 
   & .before {
     margin-right: 8px;
+    color: $color-secondary-red;
   }
 }
