@@ -5,6 +5,7 @@ import { isNativeError } from 'node:util/types';
 import sharp from 'sharp';
 
 const BUILD_ASSETS_DIRNAME = join('build', 'assets');
+const COMPRESS_QUALITY = 80;
 
 /**
  * Checks whether image needs to be converted to webP or not
@@ -13,11 +14,7 @@ const BUILD_ASSETS_DIRNAME = join('build', 'assets');
  */
 const noNeedToConvert = (name) => {
   return (
-    name.includes('.webp') ||
-    name.includes('.html') ||
-    name.includes('.css') ||
-    name.includes('.js') ||
-    name.includes('.svg')
+    name.includes('.html') || name.includes('.css') || name.includes('.js') || name.includes('.svg')
   );
 };
 
@@ -44,17 +41,26 @@ const getFileList = async (folderName) => {
  * Converts all the given images to WebP format
  * @param {string} dir - The dirname where the images are stored
  * @param {string} name - The current image to proccess name
+ * @param {number} quality - The quality for image to be compressed
  * @return {Promise<void>} - Returns void promise
  */
-const convertToWebP = (dir, name) => {
+const convertToWebP = (dir, name, quality) => {
   if (noNeedToConvert(name)) return;
 
   const fullname = join(dir, name);
   const newFullname = fullname.slice(0, fullname.lastIndexOf('.')); // img.jpg -> img;
   const convertedFileName = `${newFullname}.webp`; // img -> img.webp;
+  const isAlreadyWebp = name.endsWith('.webp');
 
   const i = sharp(readFileSync(fullname));
-  i.toFormat('webp', { quality: 80 });
+  i.toFormat('webp', { quality });
+
+  if (isAlreadyWebp) {
+    return i
+      .toFile(fullname)
+      .then(() => console.log('Compressed', fullname))
+      .catch((e) => console.log('Failed compressing', fullname, e, 'skipping...'));
+  }
 
   return i
     .toFile(convertedFileName)
@@ -68,14 +74,12 @@ const convertToWebP = (dir, name) => {
 };
 
 const convertImagesToWebp = (imgList) => {
-  return Promise.allSettled(imgList.map((imgName) => convertToWebP(BUILD_ASSETS_DIRNAME, imgName)));
+  return Promise.allSettled(
+    imgList.map((imgName) => convertToWebP(BUILD_ASSETS_DIRNAME, imgName, COMPRESS_QUALITY)),
+  );
 };
 
 /*
-const compressImages = async (imgList) => {
-
-};
-
 const generateSizesForMultipleDevices = () => {};
 
  */
