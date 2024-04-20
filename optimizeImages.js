@@ -88,6 +88,8 @@ const convertImagesToWebp = (imgList) => {
  */
 const generateSizesForMultipleDevices = (imgList) => {
   imgList.map((imgName) => {
+    if (notImage(imgName)) return;
+
     const fullname = join(BUILD_ASSETS_DIRNAME, imgName);
     const fullnameNoExtension = fullname.slice(0, fullname.lastIndexOf('.')); // img.jpg -> img;
     const sharpImg = sharp(readFileSync(fullname));
