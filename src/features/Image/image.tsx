@@ -9,11 +9,12 @@ import {
 
 import './image.scss';
 
-const Image: FC<ImageProps> = ({ alt, src = '', lazy = true, ...props }) => {
+const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
   const srcNoExtension = src.slice(0, src.lastIndexOf('.'));
-  const loading: LoadingAttr = lazy ? 'lazy' : 'eager';
-  const fetchPriority: FetchPriorityAttr = lazy ? 'low' : 'high';
-  const decoding: DecodingAttr = lazy ? 'async' : 'auto';
+  const isLazy = lazy === 'true';
+  const loading: LoadingAttr = isLazy ? 'lazy' : 'eager';
+  const fetchPriority: FetchPriorityAttr = isLazy ? 'low' : 'high';
+  const decoding: DecodingAttr = isLazy ? 'async' : 'auto';
 
   return (
     <picture {...props}>
