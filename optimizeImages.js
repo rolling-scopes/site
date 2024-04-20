@@ -52,17 +52,17 @@ const convertToWebP = (dir, name, quality) => {
   const convertedFileName = `${newFullname}.webp`; // img -> img.webp;
   const isAlreadyWebp = name.endsWith('.webp');
 
-  const i = sharp(readFileSync(fullname));
-  i.toFormat('webp', { quality });
+  const img = sharp(readFileSync(fullname));
+  img.toFormat('webp', { quality });
 
   if (isAlreadyWebp) {
-    return i
+    return img
       .toFile(fullname)
       .then(() => console.log('Compressed', fullname))
       .catch((e) => console.log('Failed compressing', fullname, e, 'skipping...'));
   }
 
-  return i
+  return img
     .toFile(convertedFileName)
     .then(() => console.log('Converted', fullname))
     .then(() => {
