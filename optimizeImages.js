@@ -4,8 +4,8 @@ import sharp from 'sharp';
 
 const BUILD_ASSETS_DIRNAME = join('build', 'assets');
 const COMPRESS_QUALITY = 80;
-const TABLET_RESIZE = 700;
-const MOBILE_RESIZE = 500;
+const TABLET_RESIZE = 768;
+const MOBILE_RESIZE = 425;
 const RESIZE_VALUES = [TABLET_RESIZE, MOBILE_RESIZE];
 
 /**
