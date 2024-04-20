@@ -7,8 +7,6 @@ import {
   LoadingAttr,
 } from '@/features/image/types.ts';
 
-import './image.scss';
-
 const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
   const srcNoExtension = src.slice(0, src.lastIndexOf('.'));
   const isLazy = lazy === 'true';
@@ -31,7 +29,6 @@ const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
       fetchPriority={fetchPriority}
       src={src}
       alt={alt}
-      className="img"
       draggable="false"
       {...props}
     />
