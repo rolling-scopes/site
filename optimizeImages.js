@@ -15,7 +15,7 @@ const RESIZE_VALUES = [TABLET_RESIZE, MOBILE_RESIZE];
  * @return {string} - Returns the filename without the extension
  * @example removeExtension('img.jpt') // img.jpg -> img;
  */
-const removeExtension = (filename) => filename.slice(filename.lastIndexOf('.'));
+const removeExtension = (filename) => filename.slice(0, filename.lastIndexOf('.'));
 
 /**
  * Checks whether image needs to be converted to webP or not
@@ -92,10 +92,7 @@ const generateSizesForMultipleDevices = (imgList) => {
 
     for (let i = 0; i < RESIZE_VALUES.length; i++) {
       const resizeValue = RESIZE_VALUES.at(i);
-      const isTabletSize = i === 0;
-      const outFIle = isTabletSize
-        ? `${fullnameNoExtension}-medium.webp`
-        : `${fullnameNoExtension}-small.webp`;
+      const outFIle = `${fullnameNoExtension}-${resizeValue}.webp`;
 
       sharpImg
         .resize(resizeValue)
