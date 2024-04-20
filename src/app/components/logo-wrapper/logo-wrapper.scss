@@ -1,5 +1,3 @@
-@import 'Styles/mixins';
-
 .logo-wrapper {
   @include media-tablet {
     max-width: 40px;

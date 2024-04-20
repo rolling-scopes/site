@@ -1,6 +1,3 @@
-@import 'Styles/constants';
-@import 'Styles/mixins';
-
 .title {
   @include media-tablet {
     font-size: 36px;

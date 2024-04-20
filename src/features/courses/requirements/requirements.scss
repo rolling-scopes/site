@@ -1,5 +1,3 @@
-@import 'Styles/mixins';
-
 .requirements {
   & .content {
     @include media-laptop {

@@ -1,6 +1,3 @@
-@import 'Styles/constants';
-@import 'Styles/mixins';
-
 .about-grid {
   @include media-laptop {
     display: flex;

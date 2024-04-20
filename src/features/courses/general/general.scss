@@ -1,6 +1,3 @@
-@import 'Styles/mixins';
-@import 'Styles/constants';
-
 .general {
   & .content {
     @include media-laptop {

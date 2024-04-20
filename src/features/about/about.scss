@@ -1,5 +1,3 @@
-@import 'Styles/mixins';
-
 .nodejs-about {
   & .content {
     @include media-laptop {

@@ -1,6 +1,3 @@
-@import 'Styles/constants';
-@import 'Styles/mixins';
-
 .nodejs-trainer {
   & .content {
     @include media-laptop {

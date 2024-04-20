@@ -1,6 +1,3 @@
-@import 'Styles/constants';
-@import 'Styles/mixins';
-
 .rs-about {
   & .content {
     @include media-laptop {

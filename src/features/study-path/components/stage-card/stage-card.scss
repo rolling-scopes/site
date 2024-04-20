@@ -1,7 +1,3 @@
-@import 'Styles/constants';
-@import 'Styles/mixins';
-@import 'Styles/placeholders';
-
 .stage {
   @include media-tablet {
     gap: 16px;

@@ -1,7 +1,3 @@
-@import 'Styles/constants';
-@import 'Styles/placeholders';
-@import 'Styles/mixins';
-
 .button-outlined {
 
   @extend %transition-all;

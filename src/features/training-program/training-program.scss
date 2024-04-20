@@ -1,6 +1,3 @@
-@import 'Styles/constants';
-@import 'Styles/mixins';
-
 .training-program {
   &.content {
     @include media-laptop {

@@ -1,7 +1,3 @@
-@import 'Styles/mixins';
-@import 'Styles/placeholders';
-@import 'Styles/constants';
-
 .navbar {
   @include media-tablet {
     height: 48px;

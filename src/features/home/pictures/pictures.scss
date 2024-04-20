@@ -1,6 +1,3 @@
-@import 'Styles/constants';
-@import 'Styles/mixins';
-
 .pictures {
   & .social-media-container {
     @include media-tablet {

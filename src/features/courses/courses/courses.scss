@@ -1,6 +1,3 @@
-@import 'Styles/mixins';
-@import 'Styles/constants';
-
 .rs-courses {
   @include media-laptop {
     margin: 0 auto;

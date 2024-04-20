@@ -1,7 +1,3 @@
-@import 'Styles/constants';
-@import 'Styles/mixins';
-@import 'Styles/placeholders';
-
 .rs-course-card {
   @extend %transition-all;
 
