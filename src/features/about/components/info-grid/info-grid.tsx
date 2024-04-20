@@ -1,4 +1,4 @@
-import Image from '@/features/Image';
+import Image from '@/features/image';
 
 import './info-grid.scss';
 

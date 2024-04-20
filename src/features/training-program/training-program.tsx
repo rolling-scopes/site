@@ -3,7 +3,7 @@ import { type CourseNames, contentMap } from './training-program.data';
 import { Button, Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
 import type { Course, CourseType } from '@/app/types';
-import Image from '@/features/Image';
+import Image from '@/features/image';
 
 import './training-program.scss';
 

@@ -2,7 +2,7 @@ import { hasDayInDate } from './utils/has-day';
 import { ButtonOutlined, DateLang, SectionLabel, Subtitle, Title } from '@/app/components';
 import { useCourseByTitle, useTitle } from '@/app/hooks';
 import { type Course, type CourseType } from '@/app/types';
-import Image from '@/features/Image';
+import Image from '@/features/image';
 
 import './course-main.scss';
 

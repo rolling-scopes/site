@@ -1,11 +1,11 @@
 import { FC } from 'react';
-import { MOBILE_W, TABLET_W } from '@/features/Image/constants.ts';
+import { MOBILE_W, TABLET_W } from '@/features/image/constants.ts';
 import {
   DecodingAttr,
   FetchPriorityAttr,
   ImageProps,
   LoadingAttr,
-} from '@/features/Image/types.ts';
+} from '@/features/image/types.ts';
 
 import './image.scss';
 
@@ -17,7 +17,7 @@ const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
   const decoding: DecodingAttr = isLazy ? 'async' : 'auto';
 
   return (
-    <picture {...props}>
+    <picture>
       <source media={`(max-width: ${MOBILE_W}px)`} srcSet={`${srcNoExtension}-${MOBILE_W}.webp`} />
       <source media={`(max-width: ${TABLET_W}px)`} srcSet={`${srcNoExtension}-${TABLET_W}.webp`} />
       <img
@@ -30,6 +30,7 @@ const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
         draggable="false"
         decoding={decoding}
         fetchPriority={fetchPriority}
+        {...props}
       />
     </picture>
   );
