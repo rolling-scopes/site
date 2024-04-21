@@ -91,21 +91,19 @@ const generateSizesForMultipleDevices = (imgList) => {
 
     const { width: imgWidth } = await sharpImg.metadata();
 
-    for (let i = 0; i < RESIZE_VALUES.length; i++) {
-      const resizeValue = RESIZE_VALUES.at(i);
-      const outFIle = `${fullnameNoExtension}-${resizeValue}.webp`;
-      const isImageAlreadySmall = imgWidth < resizeValue;
-
+    RESIZE_VALUES.forEach((size) => {
+      const isImageAlreadySmall = imgWidth <= size;
       if (isImageAlreadySmall) {
-        continue;
+        return;
       }
 
+      const outFIle = `${fullnameNoExtension}-${size}.webp`;
       sharpImg
-        .resize(resizeValue)
+        .resize(size)
         .toFile(outFIle)
         .then(() => console.log(`Created ${RESIZE_VALUES} size`, outFIle))
         .catch((e) => console.log('Failed creating multiple sizes', outFIle, e, 'skipping...'));
-    }
+    });
   });
 };
 
