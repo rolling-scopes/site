@@ -1,25 +1,24 @@
 import { FC, useState } from 'react';
-import { MOBILE_W, TABLET_W } from '@/features/image/constants.ts';
 import {
   DecodingAttr,
   FetchPriorityAttr,
   ImageProps,
   LoadingAttr,
 } from '@/features/image/types.ts';
+import generateSizes from '@/features/image/utils/generateSizes.ts';
+import generateSrcSet from '@/features/image/utils/generateSrcSet.ts';
 
 const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
-  const srcNoExtension = src.slice(0, src.lastIndexOf('.'));
-  const srcSetInitial = `${srcNoExtension}-${MOBILE_W}.webp ${MOBILE_W}w, ${srcNoExtension}-${TABLET_W}.webp ${TABLET_W}w, ${src} 1280w`;
-
-  const [srcSet, setSrcSet] = useState(srcSetInitial);
+  const [srcSet, setSrcSet] = useState(() => generateSrcSet(src));
 
   const isLazy = lazy === 'true';
   const loading: LoadingAttr = isLazy ? 'lazy' : 'eager';
   const fetchPriority: FetchPriorityAttr = isLazy ? 'low' : 'high';
   const decoding: DecodingAttr = isLazy ? 'async' : 'auto';
-  const sizes = `(max-width: ${MOBILE_W}px) ${MOBILE_W}px, (max-width: ${TABLET_W}px) ${TABLET_W}px, 1280px`;
+  const sizes = generateSizes();
 
   const handleError = () => {
+    // fallback to basic src if there are no responsive sizes for an image
     setSrcSet('');
   };
 
