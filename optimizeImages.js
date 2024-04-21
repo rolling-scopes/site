@@ -142,7 +142,7 @@ const convertCompressImagesToWebp = (imgList, dir, quality) => {
     try {
       const compressedFile = await img.toFile(convertedFileName);
 
-      if (!isAlreadyWebp) {
+      if (isAlreadyWebp) {
         logCompressed(imgName);
         return compressedFile;
       }
