@@ -38,6 +38,59 @@ const paint = (text, color, style) => {
 };
 
 /**
+ * Paints the image name
+ * @param {string} name - The name of the image
+ * @return {`${string}${string}`} - Returns painted image name
+ */
+const paintImgName = (name) => {
+  const assetsDirname = `${BUILD_ASSETS_DIRNAME.replaceAll('\\', '/')}/`;
+  return `${paint(assetsDirname, 'gray', 'italic')}${paint(name, 'cyan', 'italic')}`;
+};
+
+/**
+ * Logs into the console image name with success compression
+ * @param {string} imgName - The name of the image
+ * @return {void} - Returns nothing
+ */
+const logCompressed = (imgName) => {
+  console.log(paint('Compressed', 'green', 'bold'), paintImgName(imgName));
+};
+
+/**
+ * Logs that the specified image successfully converted
+ * @param {string} imgName - The name of the image
+ * @return {void} - Returns nothing
+ */
+const logConverted = (imgName) => {
+  console.log(paint('Converted', 'green', 'bold'), paintImgName(imgName));
+};
+
+/**
+ * Logs into the console that the 2 responsive sizes successfully created
+ * @param {string} size - Size that was created
+ * @param {string} imgName - The image name that size is created for
+ * @return {void} - Returns nothing
+ */
+const logVariant = (size, imgName) => {
+  console.log(
+    `${paint('Created', 'green')} ${paint(`${size}px`, 'yellow', 'bold')} variant for`,
+    paintImgName(imgName),
+  );
+};
+
+/**
+ * Logs painted error into the console
+ * @param {string} fullname - The name of the file that was processed while error occurred
+ * @param {Error} error - The error object
+ * @return {void} - Returns nothing
+ */
+const logError = (fullname, error) => {
+  console.log(
+    paint(`Something went really wrong! ${fullname} (${error}) skipping...`, 'red', 'italic'),
+  );
+};
+
+/**
  * Removes the extension from the given filename
  * @param {string} filename - The filename that needs to be processed
  * @return {string} - Returns the filename without the extension
@@ -90,26 +143,20 @@ const convertCompressImagesToWebp = (imgList, dir, quality) => {
       // If image is already a WebP image - only apply compression
       try {
         const toFile = img.toFile(fullname);
-        console.log(
-          paint('Compressed', 'green', 'bold'),
-          `${paint(`${BUILD_ASSETS_DIRNAME}/`, 'gray', 'italic').replaceAll('\\', '/')}${paint(imgName, 'cyan', 'italic')}`,
-        );
+        logCompressed(imgName);
         return toFile;
       } catch (e) {
-        console.log(paint(`Failed compressing ${fullname} (${e}) skipping...`, 'red', 'italic'));
+        logError(fullname, e);
       }
     }
 
     try {
       const toFile = await img.toFile(convertedFileName);
-      console.log(
-        paint('Converted', 'green', 'bold'),
-        `${paint(`${BUILD_ASSETS_DIRNAME}/`, 'gray', 'italic').replaceAll('\\', '/')}${paint(imgName, 'cyan', 'italic')}`,
-      );
       await rm(fullname, () => {});
+      logConverted(imgName);
       return toFile;
     } catch (e) {
-      console.log(paint(`Failed converting ${fullname} (${e}) skipping...`, 'red', 'italic'));
+      logError(fullname, e);
     }
   });
 
@@ -140,14 +187,9 @@ const generateSizesForMultipleDevices = (imgList) => {
       const outFIle = `${fullnameNoExtension}-${size}.webp`;
       try {
         await sharpImg.resize(size).toFile(outFIle);
-        console.log(
-          `${paint('Created', 'green')} ${paint(`${size}px`, 'yellow', 'bold')} variant for`,
-          `${paint(`${BUILD_ASSETS_DIRNAME.replaceAll('\\', '/')}/`, 'gray', 'italic')}${paint(imgName, 'cyan', 'italic')}`,
-        );
+        logVariant(size, imgName);
       } catch (e) {
-        console.log(
-          paint(`Failed creating multiple sizes ${outFIle} (${e}) skipping...`, 'red', 'italic'),
-        );
+        logError(fullname, e);
       }
     });
   });
