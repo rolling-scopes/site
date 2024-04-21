@@ -67,7 +67,7 @@ const logConverted = (imgName) => {
 
 /**
  * Logs into the console that the 2 responsive sizes successfully created
- * @param {string} size - Size that was created
+ * @param {number} size - Size that was created
  * @param {string} imgName - The image name that size is created for
  * @return {void} - Returns nothing
  */
@@ -139,22 +139,17 @@ const convertCompressImagesToWebp = (imgList, dir, quality) => {
     const img = sharp(readFileSync(fullname));
     img.toFormat('webp', { quality });
 
-    if (isAlreadyWebp) {
-      // If image is already a WebP image - only apply compression
-      try {
-        const toFile = img.toFile(fullname);
-        logCompressed(imgName);
-        return toFile;
-      } catch (e) {
-        logError(fullname, e);
-      }
-    }
-
     try {
-      const toFile = await img.toFile(convertedFileName);
+      const compressedFile = await img.toFile(convertedFileName);
+
+      if (!isAlreadyWebp) {
+        logCompressed(imgName);
+        return compressedFile;
+      }
+
       await rm(fullname, () => {});
       logConverted(imgName);
-      return toFile;
+      return compressedFile;
     } catch (e) {
       logError(fullname, e);
     }
