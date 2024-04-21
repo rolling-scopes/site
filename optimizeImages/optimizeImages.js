@@ -24,71 +24,63 @@ const getImgList = (dir) => {
 
 /**
  * Converts all the given images to WebP format
- * @param {string[]} imgList - The list of images that needs to be processed
- * @param {string} dir - The dirname where the images are stored
+ * @param {string} imgName - The image that needs to be processed
  * @param {number} quality - The quality for image to be compressed
- * @return {Promise} - Returns promise
+ * @return {Promise<string>} - Returns promise with the new converted file
  */
-const convertCompressImagesToWebp = (imgList, dir, quality) => {
-  const promiseQueue = imgList.map(async (imgName) => {
-    if (notImage(imgName)) return;
+const convertCompressImageToWebp = async (imgName, quality) => {
+  const fullname = join(BUILD_ASSETS_DIRNAME, imgName);
+  const fullNameNoExtension = removeExtension(fullname);
+  const imgNameNoExtension = removeExtension(imgName);
 
-    const fullname = join(BUILD_ASSETS_DIRNAME, imgName);
-    const newFullname = removeExtension(fullname);
-    const convertedFileName = `${newFullname}.webp`;
-    const isAlreadyWebp = imgName.endsWith('.webp');
+  const convertedImgFullname = `${fullNameNoExtension}.webp`;
+  const convertedImgName = `${imgNameNoExtension}.webp`;
+  const isAlreadyWebp = imgName.endsWith('.webp');
 
-    const img = sharp(readFileSync(fullname));
-    img.toFormat('webp', { quality });
+  const img = sharp(readFileSync(fullname));
+  img.toFormat('webp', { quality });
 
-    try {
-      const compressedFile = await img.toFile(convertedFileName);
+  try {
+    await img.toFile(convertedImgFullname);
 
-      if (isAlreadyWebp) {
-        logCompressed(imgName);
-        return compressedFile;
-      }
-
-      await rm(fullname, () => {});
-      logConverted(imgName);
-      return compressedFile;
-    } catch (e) {
-      logError(fullname, e);
+    if (isAlreadyWebp) {
+      logCompressed(imgName);
+      return convertedImgName;
     }
-  });
 
-  return Promise.allSettled(promiseQueue);
+    await rm(fullname, () => {});
+    logConverted(imgName);
+    return convertedImgName;
+  } catch (e) {
+    logError(fullname, e);
+  }
 };
 
 /**
  * Generates 2 more sizes of the same image for tablet and mobile
- * @param {string[]} imgList - The list of images to be processed
+ * @param {string} imgName - The image to be processed
  * @return {void} - Returns nothing
  */
-const generateSizesForMultipleDevices = (imgList) => {
-  imgList.map(async (imgName) => {
-    if (notImage(imgName)) return;
+const generateSizesForMultipleDevices = async (imgName) => {
+  const fullname = join(BUILD_ASSETS_DIRNAME, imgName);
+  const fullnameNoExtension = removeExtension(fullname);
+  const sharpImg = sharp(readFileSync(fullname));
 
-    const fullname = join(BUILD_ASSETS_DIRNAME, imgName);
-    const fullnameNoExtension = removeExtension(fullname);
-    const sharpImg = sharp(readFileSync(fullname));
+  const { width: imgWidth } = await sharpImg.metadata();
 
-    const { width: imgWidth } = await sharpImg.metadata();
+  RESIZE_VALUES.map(async (size) => {
+    const isImageAlreadySmall = imgWidth <= size;
+    if (isImageAlreadySmall) {
+      return;
+    }
 
-    RESIZE_VALUES.map(async (size) => {
-      const isImageAlreadySmall = imgWidth <= size;
-      if (isImageAlreadySmall) {
-        return;
-      }
-
-      const outFIle = `${fullnameNoExtension}-${size}.webp`;
-      try {
-        await sharpImg.resize(size).toFile(outFIle);
-        logVariant(size, imgName);
-      } catch (e) {
-        logError(fullname, e);
-      }
-    });
+    const outFIle = `${fullnameNoExtension}-${size}.webp`;
+    try {
+      await sharpImg.resize(size).toFile(outFIle);
+      logVariant(size, imgName);
+    } catch (e) {
+      logError(fullname, e);
+    }
   });
 };
 
@@ -97,12 +89,12 @@ const generateSizesForMultipleDevices = (imgList) => {
  * @return {Promise<void>} - Returns nothing
  */
 const init = async () => {
-  await convertCompressImagesToWebp(
-    getImgList(BUILD_ASSETS_DIRNAME),
-    BUILD_ASSETS_DIRNAME,
-    COMPRESS_QUALITY,
-  );
-  generateSizesForMultipleDevices(getImgList(BUILD_ASSETS_DIRNAME));
+  getImgList(BUILD_ASSETS_DIRNAME).map(async (img) => {
+    if (notImage(img)) return;
+
+    const webpImage = await convertCompressImageToWebp(img, COMPRESS_QUALITY);
+    generateSizesForMultipleDevices(webpImage);
+  });
 };
 
 void init();
