@@ -79,6 +79,7 @@ const convertCompressImagesToWebp = (imgList, dir, quality) => {
 /**
  * Generates 2 more sizes of the same image for tablet and mobile
  * @param {string[]} imgList - The list of images to be processed
+ * @return {void} - Returns nothing
  */
 const generateSizesForMultipleDevices = (imgList) => {
   imgList.map((imgName) => {
