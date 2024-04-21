@@ -9,6 +9,35 @@ const TABLET_RESIZE = Number(process.env.VITE_TABLET);
 const MOBILE_RESIZE = Number(process.env.VITE_MOBILE);
 const RESIZE_VALUES = [TABLET_RESIZE, MOBILE_RESIZE];
 
+const styles = {
+  bold: '\x1b[1m',
+  italic: '\x1b[3m',
+};
+
+const colors = {
+  yellow: '\x1b[33m',
+  red: '\x1b[31m',
+  green: '\x1b[32m',
+  cyan: '\x1b[36m',
+  reset: '\x1b[0m',
+  gray: '\x1b[90m',
+};
+
+/**
+ * Paints the text in specified color & text style.
+ *
+ * @param {string} text - The text that needs to bes styled.
+ * @param {Object.<colors, string>} color - The color in what needs to paint the text.
+ * @param {Object.<styles, string>} [style] - The style that needs to apply to the text.
+ * @return {string} - Returns the modified string.
+ */
+const paint = (text, color, style) => {
+  const textColor = colors[color];
+  const textStyle = styles[style] ?? '';
+
+  return `${textColor}${textStyle}${text}${colors.reset}`;
+};
+
 /**
  * Removes the extension from the given filename
  * @param {string} filename - The filename that needs to be processed
@@ -63,15 +92,31 @@ const convertCompressImagesToWebp = (imgList, dir, quality) => {
         // If image is already a WebP image - only apply compression
         return img
           .toFile(fullname)
-          .then(() => console.log('Compressed', fullname))
-          .catch((e) => console.log('Failed compressing', fullname, e, 'skipping...'));
+          .then(() =>
+            console.log(
+              paint('Compressed', 'green', 'bold'),
+              `${paint(`${BUILD_ASSETS_DIRNAME}/`, 'gray', 'italic').replaceAll('\\', '/')}${paint(imgName, 'cyan', 'italic')}`,
+            ),
+          )
+          .catch((e) =>
+            console.log(
+              paint(`Failed compressing ${fullname} (${e}) skipping...`, 'red', 'italic'),
+            ),
+          );
       }
 
       return img
         .toFile(convertedFileName)
-        .then(() => console.log('Converted', fullname))
+        .then(() =>
+          console.log(
+            paint('Converted', 'green', 'bold'),
+            `${paint(`${BUILD_ASSETS_DIRNAME}/`, 'gray', 'italic').replaceAll('\\', '/')}${paint(imgName, 'cyan', 'italic')}`,
+          ),
+        )
         .then(() => rm(fullname, () => {}))
-        .catch((e) => console.log('Failed converting', fullname, e, 'skipping...'));
+        .catch((e) =>
+          console.log(paint(`Failed converting ${fullname} (${e}) skipping...`, 'red', 'italic')),
+        );
     }),
   );
 };
@@ -101,8 +146,17 @@ const generateSizesForMultipleDevices = (imgList) => {
       sharpImg
         .resize(size)
         .toFile(outFIle)
-        .then(() => console.log(`Created ${RESIZE_VALUES} size`, outFIle))
-        .catch((e) => console.log('Failed creating multiple sizes', outFIle, e, 'skipping...'));
+        .then(() =>
+          console.log(
+            `${paint('Created', 'green')} ${paint(`${size}px`, 'yellow', 'bold')} variant for`,
+            `${paint(`${BUILD_ASSETS_DIRNAME.replaceAll('\\', '/')}/`, 'gray', 'italic')}${paint(imgName, 'cyan', 'italic')}`,
+          ),
+        )
+        .catch((e) =>
+          console.log(
+            paint(`Failed creating multiple sizes ${outFIle} (${e}) skipping...`, 'red', 'italic'),
+          ),
+        );
     });
   });
 };
