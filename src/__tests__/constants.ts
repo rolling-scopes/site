@@ -1,7 +1,7 @@
 import nodejsImg1 from '@/assets/mentors/m-shylau.webp';
 import { Trainer } from '@/features/trainers/trainers.types.ts';
 
-export const MOCKED_IMAGE_PATH = 'mocked-image-path';
+export const MOCKED_IMAGE_PATH = 'mocked-image-path.webp';
 const MOCKED_TRAINER = {
   name: 'Maksim Shylau',
   role: 'Senior Software Engineer at Epam',
