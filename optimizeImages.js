@@ -82,16 +82,23 @@ const convertCompressImagesToWebp = (imgList, dir, quality) => {
  * @return {void} - Returns nothing
  */
 const generateSizesForMultipleDevices = (imgList) => {
-  imgList.map((imgName) => {
+  imgList.map(async (imgName) => {
     if (notImage(imgName)) return;
 
     const fullname = join(BUILD_ASSETS_DIRNAME, imgName);
     const fullnameNoExtension = removeExtension(fullname);
     const sharpImg = sharp(readFileSync(fullname));
 
+    const { width: imgWidth } = await sharpImg.metadata();
+
     for (let i = 0; i < RESIZE_VALUES.length; i++) {
       const resizeValue = RESIZE_VALUES.at(i);
       const outFIle = `${fullnameNoExtension}-${resizeValue}.webp`;
+      const isImageAlreadySmall = imgWidth < resizeValue;
+
+      if (isImageAlreadySmall) {
+        continue;
+      }
 
       sharpImg
         .resize(resizeValue)
