@@ -75,49 +75,45 @@ const getImgList = (dir) => {
  * @return {Promise} - Returns promise
  */
 const convertCompressImagesToWebp = (imgList, dir, quality) => {
-  return Promise.allSettled(
-    imgList.map((imgName) => {
-      if (notImage(imgName)) return;
+  const promiseQueue = imgList.map(async (imgName) => {
+    if (notImage(imgName)) return;
 
-      const fullname = join(BUILD_ASSETS_DIRNAME, imgName);
-      const newFullname = removeExtension(fullname);
-      const convertedFileName = `${newFullname}.webp`;
-      const isAlreadyWebp = imgName.endsWith('.webp');
+    const fullname = join(BUILD_ASSETS_DIRNAME, imgName);
+    const newFullname = removeExtension(fullname);
+    const convertedFileName = `${newFullname}.webp`;
+    const isAlreadyWebp = imgName.endsWith('.webp');
 
-      const img = sharp(readFileSync(fullname));
-      img.toFormat('webp', { quality });
+    const img = sharp(readFileSync(fullname));
+    img.toFormat('webp', { quality });
 
-      if (isAlreadyWebp) {
-        // If image is already a WebP image - only apply compression
-        return img
-          .toFile(fullname)
-          .then(() =>
-            console.log(
-              paint('Compressed', 'green', 'bold'),
-              `${paint(`${BUILD_ASSETS_DIRNAME}/`, 'gray', 'italic').replaceAll('\\', '/')}${paint(imgName, 'cyan', 'italic')}`,
-            ),
-          )
-          .catch((e) =>
-            console.log(
-              paint(`Failed compressing ${fullname} (${e}) skipping...`, 'red', 'italic'),
-            ),
-          );
-      }
-
-      return img
-        .toFile(convertedFileName)
-        .then(() =>
-          console.log(
-            paint('Converted', 'green', 'bold'),
-            `${paint(`${BUILD_ASSETS_DIRNAME}/`, 'gray', 'italic').replaceAll('\\', '/')}${paint(imgName, 'cyan', 'italic')}`,
-          ),
-        )
-        .then(() => rm(fullname, () => {}))
-        .catch((e) =>
-          console.log(paint(`Failed converting ${fullname} (${e}) skipping...`, 'red', 'italic')),
+    if (isAlreadyWebp) {
+      // If image is already a WebP image - only apply compression
+      try {
+        const toFile = img.toFile(fullname);
+        console.log(
+          paint('Compressed', 'green', 'bold'),
+          `${paint(`${BUILD_ASSETS_DIRNAME}/`, 'gray', 'italic').replaceAll('\\', '/')}${paint(imgName, 'cyan', 'italic')}`,
         );
-    }),
-  );
+        return toFile;
+      } catch (e) {
+        console.log(paint(`Failed compressing ${fullname} (${e}) skipping...`, 'red', 'italic'));
+      }
+    }
+
+    try {
+      const toFile = await img.toFile(convertedFileName);
+      console.log(
+        paint('Converted', 'green', 'bold'),
+        `${paint(`${BUILD_ASSETS_DIRNAME}/`, 'gray', 'italic').replaceAll('\\', '/')}${paint(imgName, 'cyan', 'italic')}`,
+      );
+      await rm(fullname, () => {});
+      return toFile;
+    } catch (e) {
+      console.log(paint(`Failed converting ${fullname} (${e}) skipping...`, 'red', 'italic'));
+    }
+  });
+
+  return Promise.allSettled(promiseQueue);
 };
 
 /**
@@ -135,27 +131,24 @@ const generateSizesForMultipleDevices = (imgList) => {
 
     const { width: imgWidth } = await sharpImg.metadata();
 
-    RESIZE_VALUES.forEach((size) => {
+    RESIZE_VALUES.map(async (size) => {
       const isImageAlreadySmall = imgWidth <= size;
       if (isImageAlreadySmall) {
         return;
       }
 
       const outFIle = `${fullnameNoExtension}-${size}.webp`;
-      sharpImg
-        .resize(size)
-        .toFile(outFIle)
-        .then(() =>
-          console.log(
-            `${paint('Created', 'green')} ${paint(`${size}px`, 'yellow', 'bold')} variant for`,
-            `${paint(`${BUILD_ASSETS_DIRNAME.replaceAll('\\', '/')}/`, 'gray', 'italic')}${paint(imgName, 'cyan', 'italic')}`,
-          ),
-        )
-        .catch((e) =>
-          console.log(
-            paint(`Failed creating multiple sizes ${outFIle} (${e}) skipping...`, 'red', 'italic'),
-          ),
+      try {
+        await sharpImg.resize(size).toFile(outFIle);
+        console.log(
+          `${paint('Created', 'green')} ${paint(`${size}px`, 'yellow', 'bold')} variant for`,
+          `${paint(`${BUILD_ASSETS_DIRNAME.replaceAll('\\', '/')}/`, 'gray', 'italic')}${paint(imgName, 'cyan', 'italic')}`,
         );
+      } catch (e) {
+        console.log(
+          paint(`Failed creating multiple sizes ${outFIle} (${e}) skipping...`, 'red', 'italic'),
+        );
+      }
     });
   });
 };
