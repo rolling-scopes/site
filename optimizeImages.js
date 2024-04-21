@@ -25,7 +25,6 @@ const colors = {
 
 /**
  * Paints the text in specified color & text style.
- *
  * @param {string} text - The text that needs to bes styled.
  * @param {Object.<colors, string>} color - The color in what needs to paint the text.
  * @param {Object.<styles, string>} [style] - The style that needs to apply to the text.
@@ -47,13 +46,13 @@ const paint = (text, color, style) => {
 const removeExtension = (filename) => filename.slice(0, filename.lastIndexOf('.'));
 
 /**
- * Checks whether image needs to be converted to webP or not
+ * Checks if the given file is an image or not
  * @param {string} name - The name of the image
- * @return {boolean}
+ * @return {boolean} - Returns true if the given name is not an image, false otherwise
  */
 const notImage = (name) => {
   return (
-    name.includes('.html') || name.includes('.css') || name.includes('.js') || name.includes('.svg')
+    name.endsWith('.html') || name.endsWith('.css') || name.endsWith('.js') || name.endsWith('.svg')
   );
 };
 
