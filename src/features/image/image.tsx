@@ -5,11 +5,13 @@ import {
   ImageProps,
   LoadingAttr,
 } from '@/features/image/types.ts';
+import convertToWebp from '@/features/image/utils/convertToWebp.ts';
 import generateSizes from '@/features/image/utils/generateSizes.ts';
 import generateSrcSet from '@/features/image/utils/generateSrcSet.ts';
 
 const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
-  const [srcSet, setSrcSet] = useState(() => generateSrcSet(src));
+  const srcWebp = convertToWebp(src);
+  const [srcSet, setSrcSet] = useState(() => generateSrcSet(srcWebp));
 
   const isLazy = lazy === 'true';
   const loading: LoadingAttr = isLazy ? 'lazy' : 'eager';
@@ -31,7 +33,7 @@ const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
       sizes={sizes}
       decoding={decoding}
       fetchPriority={fetchPriority}
-      src={src}
+      src={srcWebp}
       alt={alt}
       draggable="false"
       onError={handleError}
