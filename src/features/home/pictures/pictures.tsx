@@ -40,6 +40,8 @@ const socialMedia: SocialMediaProps[] = [
   },
 ];
 
+const photos = [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9];
+
 export const Pictures = () => (
   <div className="pictures container">
     <div className="pictures content">
@@ -50,15 +52,9 @@ export const Pictures = () => (
         showThumbs={false}
         showStatus={false}
         centerMode={true}>
-        <Image src={photo1} />
-        <Image src={photo2} />
-        <Image src={photo3} />
-        <Image src={photo4} />
-        <Image src={photo5} />
-        <Image src={photo6} />
-        <Image src={photo7} />
-        <Image src={photo8} />
-        <Image src={photo9} />
+        {photos.map((photo) => (
+          <Image src={photo} key={photo} />
+        ))}
       </Carousel>
       <Paragraph>
         Want to see photos of our community? A vast collection of photographs from our events is
