@@ -1,32 +1,32 @@
-@import 'Styles/mixins';
-
 .stage-logo {
-  padding: 0 0 0 60px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  max-width: 143px;
-  max-height: 102px;
-  overflow: hidden;
-
   @include media-laptop {
     padding: 0 0 0 71px;
   }
 
-  img {
-    max-width: 143px;
-    max-height: 102px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    object-position: bottom right;
+  @include media-tablet {
+    display: none;
+  }
 
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  max-width: 143px;
+  max-height: 102px;
+  padding: 0 0 0 60px;
+
+  img {
     @include media-laptop {
       max-width: 118px;
     }
-  }
 
-  @include media-tablet {
-    display: none;
+    width: auto;
+    max-width: 143px;
+    height: auto;
+    max-height: 102px;
+
+    object-fit: contain;
+    object-position: bottom right;
   }
 }

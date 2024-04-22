@@ -1,13 +1,12 @@
-@import 'Styles/constants';
-
 .mobile-view {
   display: flex;
-  flex-grow: 1;
-  width: 100%;
   flex-direction: column;
+  flex-grow: 1;
+  gap: 16px;
   align-items: baseline;
   justify-content: flex-start;
-  gap: 16px;
+
+  width: 100%;
 
   .main-link {
     font-size: 16px;
@@ -31,10 +30,10 @@
   }
 
   .divider {
-    margin-bottom: 8px;
     width: 100%;
-    border-bottom: 1px solid;
+    margin-bottom: 8px;
     border-color: $color-secondary-gray600;
+    border-bottom: 1px solid;
 
     &.dark {
       color: $color-secondary-gray600;

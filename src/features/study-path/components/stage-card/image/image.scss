@@ -1,6 +1,8 @@
-@import 'Styles/mixins';
-
 .stage-image {
+  @include media-tablet-large {
+    display: none;
+  }
+
   max-width: 360px;
   height: 192px;
 
@@ -8,9 +10,5 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
-  }
-
-  @include media-tablet-large {
-    display: none;
   }
 }

@@ -15,7 +15,17 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
-      Styles: path.resolve(__dirname, 'src/styles'),
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @import "./src/styles/_constants.scss";
+          @import "./src/styles/_mixins.scss";
+          @import "./src/styles/_placeholders.scss";
+        `,
+      },
     },
   },
 });

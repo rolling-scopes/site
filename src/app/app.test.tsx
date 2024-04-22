@@ -7,7 +7,7 @@ describe('App component tests', async () => {
   it('renders without crashing', async () => {
     const result = await act(async () => render(<App />));
     const { container } = result;
-    expect(container.firstChild).toHaveClass('App');
+    expect(container.firstChild).toHaveClass('app-styles');
   });
 
   it('does not log errors in console', async () => {

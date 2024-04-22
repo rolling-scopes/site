@@ -161,8 +161,8 @@ export const contentMap: ContentMap = {
     title: 'Target audience',
     content: [
       <Paragraph>
-        Students of the RS School from the 2022Q3, which has passed RS School Stage #2 as well as
-        new students with practical experience and knowledge of:
+        RS School students who have completed RS School Stage #2 and new students with strong
+        CoreJS/TS/Frontend skills:
       </Paragraph>,
       <Actions
         actions={[

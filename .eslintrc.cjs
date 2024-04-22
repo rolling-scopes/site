@@ -10,7 +10,7 @@ module.exports = {
     'plugin:import/typescript',
     'plugin:css-import-order/recommended',
   ],
-  plugins: ['react-refresh', 'css-import-order'],
+  plugins: ['react-refresh', 'css-import-order', 'sort-exports'],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -42,6 +42,11 @@ module.exports = {
             group: 'object',
             position: 'after'
           },
+          {
+            pattern: '{.,..}/**/*\module.scss',
+            group: 'object',
+            position: 'after'
+          },
         ],
         pathGroupsExcludedImportTypes: ['react', 'react-dom/**'],
         'distinctGroup': false,
@@ -62,6 +67,15 @@ module.exports = {
         'memberSyntaxSortOrder': ['all', 'multiple', 'single', 'none'],
         'allowSeparatedGroups': false,
     }],
+    'sort-exports/sort-exports': [
+      'error',
+      {
+        sortDir: 'asc',
+        ignoreCase: false,
+        sortExportKindFirst: 'type',
+        pattern: '**/index.*',
+      },
+  ],
   },
   settings: {
     'import/resolver': {

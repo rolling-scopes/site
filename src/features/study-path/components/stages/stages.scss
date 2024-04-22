@@ -1,8 +1,9 @@
 .stages {
-  margin-top: 64px;
   display: flex;
   flex-direction: column;
+  gap: 32px;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 32px;
+
+  margin-top: 64px;
 }

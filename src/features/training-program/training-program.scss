@@ -1,10 +1,5 @@
-@import 'Styles/constants';
-@import 'Styles/mixins';
-
 .training-program {
   &.content {
-    padding: 80px 120px;
-
     @include media-laptop {
       padding: 75px 40px 40px;
     }
@@ -13,32 +8,35 @@
       padding: 16px;
     }
 
-    &.column-2 {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 100px;
+    padding: 80px 120px;
 
+    &.column-2 {
       @include media-tablet-large {
         flex-direction: column;
-        align-items: flex-start;
         gap: 40px;
+        align-items: flex-start;
       }
 
+      display: flex;
+      flex-direction: row;
+      gap: 100px;
+      align-items: center;
+      justify-content: flex-start;
+
       .left {
-        max-width: 55%;
+        @include media-laptop-medium {
+          max-width: 100%;
+        }
+
         display: flex;
+        flex: 1 1 55%;
         flex-direction: column;
         gap: 26px;
-        flex: 1 1 55%;
+
+        max-width: 55%;
 
         & > :nth-child(4) > span {
           font-weight: $font-weight-bold;
-        }
-
-        @include media-laptop-medium {
-          max-width: 100%;
         }
 
         & > .button {
@@ -47,13 +45,17 @@
       }
 
       .right {
-        max-width: 30%;
+        @include media-tablet-large {
+          align-self: center;
+          width: 320px;
+          height: auto;
+          max-height: 511px;
+        }
+
         flex: 1 1 30%;
+        max-width: 30%;
 
         &.badge {
-          max-width: 276px;
-          height: auto;
-
           @include media-tablet-large {
             max-width: 220px;
           }
@@ -65,18 +67,14 @@
           @include media-mobile {
             max-width: 135px;
           }
+
+          max-width: 276px;
+          height: auto;
         }
 
         img {
           width: 100%;
           height: min-content;
-        }
-
-        @include media-tablet-large {
-          align-self: center;
-          width: 320px;
-          height: auto;
-          max-height: 511px;
         }
       }
     }

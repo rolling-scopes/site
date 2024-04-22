@@ -1,22 +1,21 @@
-@import 'Styles/constants';
-@import 'Styles/mixins';
-
 .school {
   & .study {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
     @include media-laptop {
       flex-direction: column;
     }
 
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+
     & .left {
-      text-align: left;
-      width: 640px;
       @include media-laptop {
         width: 100%;
       }
+
+      width: 640px;
+      text-align: left;
     }
 
     & .right {
@@ -26,12 +25,13 @@
     }
 
     & .picture {
-      width: 347px;
-      height: 327px;
       @include media-tablet {
         width: 278px;
         height: auto;
       }
+
+      width: 347px;
+      height: 327px;
     }
 
     & .title,
@@ -42,7 +42,7 @@
   }
 
   & .study-options {
-    margin-top: 24px;
     align-items: flex-start;
+    margin-top: 24px;
   }
 }
