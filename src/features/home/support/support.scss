@@ -38,6 +38,7 @@
         width: 300px;
         height: auto;
         margin-top: 16px;
+        object-fit: contain;
       }
 
       @include media-tablet {
