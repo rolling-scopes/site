@@ -1,9 +1,11 @@
 const convertToWebp = (src: string) => {
+  const srcLowCase = src.toLowerCase();
+
   if (
-    src.includes('svg') ||
-    src.includes('base64') ||
-    src.endsWith('.svg') ||
-    src.endsWith('.webp')
+    srcLowCase.includes('svg') ||
+    srcLowCase.includes('base64') ||
+    srcLowCase.endsWith('.svg') ||
+    srcLowCase.endsWith('.webp')
   )
     return src;
   return `${src.slice(0, src.lastIndexOf('.'))}.webp`;
