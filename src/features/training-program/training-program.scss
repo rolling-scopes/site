@@ -47,7 +47,9 @@
       .right {
         @include media-tablet-large {
           align-self: center;
+
           width: 320px;
+          max-width: 60%;
           height: auto;
           max-height: 511px;
         }
