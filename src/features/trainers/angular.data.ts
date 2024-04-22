@@ -1,12 +1,11 @@
 import type { Trainer } from './trainers.types';
-import angImg7 from '@/assets/mentors/a-sacca.webp';
+import angImg6 from '@/assets/mentors/a-sacca.webp';
 import angImg1 from '@/assets/mentors/a-serhiyenia.webp';
-import angImg5 from '@/assets/mentors/d-kohut.webp';
-import angImg4 from '@/assets/mentors/d-yarmoshkin.webp';
+import angImg4 from '@/assets/mentors/d-kohut.webp';
 import angImg3 from '@/assets/mentors/k-britsyn.webp';
 import angImg2 from '@/assets/mentors/n-loginova.webp';
-import angImg6 from '@/assets/mentors/o-duleba.webp';
-import angImg8 from '@/assets/mentors/r-saltykov.webp';
+import angImg5 from '@/assets/mentors/o-duleba.webp';
+import angImg7 from '@/assets/mentors/r-saltykov.webp';
 
 export const angular: Trainer[] = [
   {
@@ -28,33 +27,27 @@ export const angular: Trainer[] = [
     photo: angImg3,
   },
   {
-    name: 'Dzmitry Yarmoshkin',
-    role: 'PHP / React front-end developer',
-    bio: "While my journey took an unexpected turn, my passion for front-end work has never been stronger. Not a big fan of Redux, but that's the beauty of the tech world - we all have our preferences. Embracing the unpredictability of tech careers, I'm excited to see where my adventure takes me!",
-    photo: angImg4,
-  },
-  {
     name: 'Diana Kohut',
     role: 'Frontend developer',
     bio: "Diana Kohut, a frontend developer with two years at Epam, started in a student lab and specializes in Angular. She's from Kyiv, Ukraine, with degrees in Cybersecurity and Information Management Systems. Passionate about travel, she's visited 11 countries with Spain next on her list. Diana enjoys detective books, computer games, and her two cats.",
-    photo: angImg5,
+    photo: angImg4,
   },
   {
     name: 'Oleh Duleba',
     role: 'Front-end/Full Stack developer',
     bio: 'Oleh Duleba was born and currently lives in Ukraine. In 2019, Oleh joined the EPAM company as a front-end developer. He previously worked as a full-stack, but because technology keeps changing, he focused on JavaScript, Angular, React, and the front-end side in general.  In his free time, he likes to make small software projects to improve at coding. Besides his main job, Oleh has taught students, helped them with their projects, and showed them how to present their work.',
-    photo: angImg6,
+    photo: angImg5,
   },
   {
     name: 'Arcangelo Sacca',
     role: 'Senior Angular Developer',
     bio: 'Arcangelo, often referred to as Angelo, is known for his problem-solving approach and passion for DIY. He has an interest in technology, particularly in areas like Home Theatre, HI-FI, photography, and Home Automation. He frequents the gym and previously had a passion for overclocking computers. Angelo has over 10 years of experience as a Senior Angular Developer in web application development.',
-    photo: angImg7,
+    photo: angImg6,
   },
   {
     name: 'Rustam Satlykov',
     role: 'Front-end/Full Stack developer',
     bio: 'Rustam Satlykov lives in Tashkent, Uzbekistan. He obtained a bachelor\'s degree in Power Engineering from Tashkent State Technical University (TSTU) in 2016 and worked for CDC "Energia" for six years. Rustam attended the JS/FE course at RS School three times before graduating in 2022, followed by an Angular course. In 2022, he joined EPAM Systems. He\'s mentored at RS School five times, serves as an Angular course coordinator, and is an RS local coordinator in Uzbekistan. Rustam wishes for everyone to find and pursue their passions.',
-    photo: angImg8,
+    photo: angImg7,
   },
 ];
