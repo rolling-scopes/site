@@ -1,4 +1,4 @@
-import paint from './paint.js';
+import chalk from 'chalk';
 import paintImgName from './paintImgName.js';
 
 /**
@@ -9,7 +9,7 @@ import paintImgName from './paintImgName.js';
  */
 const logVariant = (size, imgName) => {
   console.log(
-    `${paint('Created', 'green')} ${paint(`${size}px`, 'yellow', 'bold')} variant for`,
+    `${chalk.green('Created')} ${chalk.yellow.bold(`${size}px`)} variant for`,
     paintImgName(imgName),
   );
 };

@@ -1,4 +1,4 @@
-import paint from './paint.js';
+import chalk from 'chalk';
 
 /**
  * Logs painted error into the console
@@ -7,9 +7,7 @@ import paint from './paint.js';
  * @return {void} - Returns nothing
  */
 const logError = (fullname, error) => {
-  console.log(
-    paint(`Something went really wrong! ${fullname} (${error}) skipping...`, 'red', 'italic'),
-  );
+  console.log(chalk.red.italic(`Something went really wrong! ${fullname} (${error}) skipping...`));
 };
 
 export default logError;

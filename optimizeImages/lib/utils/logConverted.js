@@ -1,4 +1,4 @@
-import paint from './paint.js';
+import chalk from 'chalk';
 import paintImgName from './paintImgName.js';
 
 /**
@@ -7,7 +7,7 @@ import paintImgName from './paintImgName.js';
  * @return {void} - Returns nothing
  */
 const logConverted = (imgName) => {
-  console.log(paint('Converted', 'green', 'bold'), paintImgName(imgName));
+  console.log(chalk.green.bold('Converted'), paintImgName(imgName));
 };
 
 export default logConverted;

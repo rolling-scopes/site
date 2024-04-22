@@ -1,4 +1,4 @@
-import paint from './paint.js';
+import chalk from 'chalk';
 import { BUILD_ASSETS_DIRNAME } from '../const/index.js';
 
 /**
@@ -8,7 +8,7 @@ import { BUILD_ASSETS_DIRNAME } from '../const/index.js';
  */
 const paintImgName = (name) => {
   const assetsDirname = `${BUILD_ASSETS_DIRNAME.replaceAll('\\', '/')}/`;
-  return `${paint(assetsDirname, 'gray', 'italic')}${paint(name, 'cyan', 'italic')}`;
+  return `${chalk.gray.italic(assetsDirname)}${chalk.cyan.italic(name)}`;
 };
 
 export default paintImgName;
