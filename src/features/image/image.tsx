@@ -1,4 +1,5 @@
 import { FC, useState } from 'react';
+import { IS_DEV } from '@/features/image/constants.ts';
 import {
   DecodingAttr,
   FetchPriorityAttr,
@@ -29,11 +30,11 @@ const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
       // ⚠️ Firefox and Safari wants the loading attribute to be BEFORE the src, in order lazy loading to work
       // see https://github.com/facebook/react/issues/25883#issuecomment-1410060269
       loading={loading}
-      srcSet={srcSet}
+      srcSet={IS_DEV ? '' : srcSet}
       sizes={sizes}
       decoding={decoding}
       fetchPriority={fetchPriority}
-      src={srcWebp}
+      src={IS_DEV ? src : srcWebp}
       alt={alt}
       draggable="false"
       onError={handleError}

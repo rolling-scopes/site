@@ -1,2 +1,3 @@
 export const TABLET_W = import.meta.env.VITE_TABLET;
 export const MOBILE_W = import.meta.env.VITE_MOBILE;
+export const IS_DEV = import.meta.env.DEV;
