@@ -9,7 +9,7 @@ type ButtonProps = {
   outlined?: boolean;
   size?: 'small' | 'medium' | 'large';
   color?: 'black' | 'white';
-  bold?: boolean;
+  regular?: boolean;
   arrowSize?: number;
 };
 
@@ -20,7 +20,7 @@ export const Button = ({
   outlined = false,
   size = 'large',
   color = 'white',
-  bold = true,
+  regular = false,
   arrowSize = 24,
 }: ButtonProps) => {
   let btnClass = `${styles.button} ${outlined ? styles.outlined : styles.colored}`;
@@ -29,7 +29,7 @@ export const Button = ({
 
   return (
     <a className={btnClass} href={href} rel="noreferrer">
-      <span className={`${styles.label} ${bold ? '' : styles['font-weight']}`}>{label}</span>
+      <span className={`${styles.label} ${regular ? styles['regular'] : ''}`}>{label}</span>
       {arrow && (
         <span className={styles.arrow}>
           <Arrow color={color} size={arrowSize} />

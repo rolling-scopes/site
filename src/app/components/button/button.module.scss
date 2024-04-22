@@ -1,4 +1,6 @@
 .button {
+  @extend %transition-all;
+
   cursor: pointer;
 
   display: flex;
@@ -14,8 +16,6 @@
 
 .colored {
   &.large {
-    @extend %transition-all;
-
     @include media-tablet {
       width: 100%;
     }
@@ -25,8 +25,6 @@
         background-color: #545454;
       }
     }
-
-    position: relative;
 
     overflow: visible;
 
@@ -39,17 +37,9 @@
     border-radius: 0;
 
     & .label {
-      position: relative;
-
-      flex-shrink: 0;
-
-      width: auto; /* 138px */
-      height: auto; /* 24px */
-
-      font-family: Inter, sans-serif;
+      font-family: $font-primary;
       font-size: 18px;
       font-weight: $font-weight-medium;
-      font-style: normal;
       line-height: 24px;
       color: $color-primary-white;
       text-align: center;
@@ -59,7 +49,13 @@
   }
 
   &.small {
-    @extend %transition-all;
+    @include media-tablet {
+      gap: 0;
+
+      &.regular {
+        margin-right: 8px;
+      }
+    }
 
     @include media-hover {
       &:hover {
@@ -67,12 +63,7 @@
       }
     }
 
-    position: relative;
-
     overflow: hidden;
-    flex-shrink: 0;
-    align-content: center;
-    align-items: center;
 
     width: min-content;
     height: 36px;
@@ -82,25 +73,17 @@
     border-radius: 9999px;
 
     & .label {
-      position: relative;
-
-      flex-shrink: 0;
-
-      width: auto; /* 83px */
-      height: auto; /* 16px */
-
       font-family: Inter-Medium, Inter, sans-serif;
       font-size: 14px;
-      font-weight: 500;
-      font-style: normal;
+      font-weight: $font-weight-medium;
       line-height: 16px;
-      color: #000;
+      color: $color-primary-black;
       text-align: center;
       letter-spacing: 0;
       white-space: pre;
 
-      &.bold {
-        font-weight: 400;
+      &.regular {
+        font-weight: $font-weight-regular;
       }
     }
 
@@ -111,8 +94,6 @@
 }
 
 .outlined {
-  @extend %transition-all;
-
   margin: 24px 0;
   font-weight: $font-weight-medium;
   color: $color-primary-black;
@@ -150,39 +131,9 @@
     align-items: flex-start;
 
     width: 240px;
-    height: min-content;
     padding: 8px 24px;
 
-    font-family: Inter, sans-serif;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0;
-    white-space: pre;
-
-    border: 2px solid;
-    border-radius: 0;
-  }
-
-  &.small {
-    @include media-mobile-landscape {
-      justify-content: center;
-      width: 100%;
-    }
-
-    @include media-hover {
-      &:hover {
-        background-color: $color-secondary-gray200;
-      }
-    }
-
-    place-content: flex-start flex-start;
-    align-items: flex-start;
-
-    width: 240px;
-    height: min-content;
-    padding: 8px 24px;
-
-    font-family: Inter, sans-serif;
+    font-family: $font-primary;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0;
