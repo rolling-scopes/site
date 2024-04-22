@@ -4,9 +4,7 @@
  * @return {boolean} - Returns true if the given name is not an image, false otherwise
  */
 const notImage = (name) => {
-  return (
-    name.endsWith('.html') || name.endsWith('.css') || name.endsWith('.js') || name.endsWith('.svg')
-  );
+  return name.endsWith('.css') || name.endsWith('.js');
 };
 
 export default notImage;

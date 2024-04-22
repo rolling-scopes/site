@@ -1,6 +1,7 @@
-import { readFileSync, readdirSync, rm } from 'node:fs';
+import { readFileSync, readdirSync, rm, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import sharp from 'sharp';
+import { optimize } from 'svgo';
 import { BUILD_ASSETS_DIRNAME, COMPRESS_QUALITY, RESIZE_VALUES } from './lib/const/index.js';
 import {
   logCompressed,
@@ -10,6 +11,7 @@ import {
   notImage,
   removeExtension,
 } from './lib/utils/index.js';
+import isSvg from './lib/utils/isSvg.js';
 
 /**
  * Reads all the files recursively and returns them in a list, for the given folder
@@ -85,12 +87,37 @@ const generateSizesForMultipleDevices = async (imgName) => {
 };
 
 /**
+ * Compresses the svg file using the SVGO API
+ * @param svg {string} - The svg file that needs to be processed
+ * @return {void} - Return nothing
+ */
+const compressSvg = (svg) => {
+  const svgFullPath = join(BUILD_ASSETS_DIRNAME, svg);
+
+  const result = optimize(readFileSync(svgFullPath, { encoding: 'utf8' }), {
+    path: svgFullPath,
+    multipass: true,
+  });
+
+  const optimizedSvgString = result.data;
+  writeFileSync(svgFullPath, optimizedSvgString);
+  logCompressed(svg);
+};
+
+/**
  * Initializes the algorithm
  * @return {Promise<void>} - Returns nothing
  */
 const init = async () => {
   getImgList(BUILD_ASSETS_DIRNAME).map(async (img) => {
-    if (notImage(img)) return;
+    if (isSvg(img)) {
+      compressSvg(img);
+      return;
+    }
+
+    if (notImage(img)) {
+      return;
+    }
 
     const webpImage = await convertCompressImageToWebp(img, COMPRESS_QUALITY);
     generateSizesForMultipleDevices(webpImage);
