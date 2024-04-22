@@ -13,17 +13,18 @@ import generateSrcSet from '@/features/image/utils/generateSrcSet.ts';
 const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
   const srcWebp = convertToWebp(src);
   const [srcSet, setSrcSet] = useState(() => (IS_DEV ? undefined : generateSrcSet(srcWebp)));
+  const [sizes, setSizes] = useState(() => (IS_DEV ? undefined : generateSizes()));
 
   const isLazy = lazy === 'true';
   const loading: LoadingAttr = isLazy ? 'lazy' : 'eager';
   const fetchPriority: FetchPriorityAttr = isLazy ? 'low' : 'high';
   const decoding: DecodingAttr = isLazy ? 'async' : 'auto';
-  const sizes = IS_DEV ? undefined : generateSizes();
   const srcAttr = IS_DEV ? src : srcWebp;
 
   const handleError = () => {
     // fallback to basic src if there are no responsive sizes for an image
-    setSrcSet('');
+    setSrcSet(undefined);
+    setSizes(undefined);
   };
 
   return (
