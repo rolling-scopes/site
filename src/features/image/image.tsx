@@ -30,8 +30,8 @@ const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
       // ⚠️ Firefox and Safari wants the loading attribute to be BEFORE the src, in order lazy loading to work
       // see https://github.com/facebook/react/issues/25883#issuecomment-1410060269
       loading={loading}
-      srcSet={IS_DEV ? '' : srcSet}
-      sizes={sizes}
+      srcSet={IS_DEV ? undefined : srcSet}
+      sizes={IS_DEV ? undefined : sizes}
       decoding={decoding}
       fetchPriority={fetchPriority}
       src={IS_DEV ? src : srcWebp}
