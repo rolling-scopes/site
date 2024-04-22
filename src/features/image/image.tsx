@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { FC, useState } from 'react';
 import { IS_DEV } from '@/features/image/constants.ts';
 import {
@@ -35,7 +36,10 @@ const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
       srcSet={srcSet}
       sizes={sizes}
       decoding={decoding}
-      fetchPriority={fetchPriority}
+      // FIXME: remove this line when fetchPriority prop will be fixed
+      // see https://github.com/facebook/react/issues/27233#issuecomment-2035176576
+      // @ts-expect-error
+      fetchpriority={fetchPriority}
       src={srcAttr}
       alt={alt}
       draggable="false"
