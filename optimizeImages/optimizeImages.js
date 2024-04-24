@@ -2,7 +2,12 @@ import { readFileSync, readdirSync, rm, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import sharp from 'sharp';
 import { optimize } from 'svgo';
-import { BUILD_ASSETS_DIRNAME, COMPRESS_QUALITY, RESIZE_VALUES } from './lib/const/index.js';
+import {
+  BUILD_ASSETS_DIRNAME,
+  COMPRESS_QUALITY,
+  MOBILE_RESIZE,
+  TABLET_RESIZE,
+} from './lib/const/index.js';
 import {
   logCompressed,
   logConverted,
@@ -12,6 +17,8 @@ import {
   removeExtension,
 } from './lib/utils/index.js';
 import isSvg from './lib/utils/isSvg.js';
+
+const RESIZE_VALUES = [TABLET_RESIZE, MOBILE_RESIZE];
 
 /**
  * Reads all the files recursively and returns them in a list, for the given folder
