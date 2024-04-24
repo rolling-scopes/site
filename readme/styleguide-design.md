@@ -16,7 +16,7 @@ Please follow the rules and tokens provided in the guide.
 ```
 
 #### Token Name
-![Color Token Name](https://github.com/rolling-scopes/site/assets/124388500/a50b0a39-ba85-461d-8224-b198826b341f)
+![Color Token Name](https://github.com/rolling-scopes/site/assets/124388500/1462f844-459e-4bf3-8975-0683c498cb65)
 
 1. Token type: `$color`
 2. The name of the color.
@@ -53,7 +53,7 @@ Please follow the rules and tokens provided in the guide.
 ```
 
 #### Token Name
-![Opacity Token Name]()
+![Opacity Token Name](https://github.com/rolling-scopes/site/assets/124388500/e0807875-db73-4283-b19f-82b046024eb6)
 
 1. Token type: `$opacity`
 2. The opacity value (as a percentage).
