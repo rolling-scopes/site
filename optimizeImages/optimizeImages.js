@@ -15,7 +15,7 @@ import isSvg from './lib/utils/isSvg.js';
 
 /**
  * Reads all the files recursively and returns them in a list, for the given folder
- * @param {string} dir - The folder name where the files needs to be red
+ * @param {string} dir - The folder name where the files needs to be read
  * @return {string[]} - Returns the file list if it's success
  * @throws {Error} - Throws an error in case some error happens while reading the folder
  */
