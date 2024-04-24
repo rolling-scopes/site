@@ -1,3 +1,4 @@
+export { AngularIcon } from './angular-icon';
 export { AwsLogo } from './aws';
 export { EpamLogo } from './epam';
 export { FacebookIcon } from './facebook';
@@ -9,6 +10,7 @@ export { LinkedInIcon } from './linkedIn';
 export { NodeJsIcon } from './nodejs-icon';
 export { OpenSourcePhilosophyIcon } from './open-source-philosophy-icon';
 export { OpenToEveryoneIcon } from './open-to-everyone-icon';
+export { ReactIcon } from './react-icon';
 export { RsBanner } from './rs-banner';
 export { RsLogo } from './rs-logo-nav';
 export { TeachItForwardIcon } from './teach-It-forward-icon';

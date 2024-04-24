@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { Button } from '@/app/components';
 import { useWindowSize } from '@/app/hooks';
 import { buildUrl } from '@/app/services/platform';
-import { AwsLogo, JsFrontendIcon, RsBanner } from '@/icons';
+import { AngularIcon, AwsLogo, JsFrontendIcon, ReactIcon, RsBanner } from '@/icons';
 
 import './courses.scss';
 
@@ -35,6 +35,20 @@ const courses: CourseProps[] = [
     startDate: 'June 24, 2024',
     href: buildUrl('/courses/javascript-preschool'),
     icon: <JsFrontendIcon />,
+  },
+  {
+    title: 'React JS course',
+    language: 'EN',
+    startDate: 'Jul 1, 2024',
+    href: buildUrl('/courses/reactjs'),
+    icon: <ReactIcon />,
+  },
+  {
+    title: 'Angular course',
+    language: 'EN',
+    startDate: 'Jul 1, 2024',
+    href: buildUrl('/courses/angular'),
+    icon: <AngularIcon />,
   },
 ];
 
