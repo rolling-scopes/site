@@ -3,8 +3,8 @@ import { FC } from 'react';
 export const ReactIcon: FC = () => (
   <svg
     fill="#757575"
-    width="45"
-    height="45"
+    width="48"
+    height="36"
     viewBox="0 0 32 32"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg">
