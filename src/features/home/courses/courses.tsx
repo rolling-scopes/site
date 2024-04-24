@@ -23,17 +23,17 @@ const courses: CourseProps[] = [
     icon: <AwsLogo />,
   },
   {
+    title: 'AWS Cloud Developer',
+    language: 'EN',
+    startDate: 'May 28, 2024',
+    href: buildUrl('/courses/aws-cloud-developer'),
+    icon: <AwsLogo />,
+  },
+  {
     title: 'JS / Front-end. Pre-school',
     language: 'RU',
     startDate: 'June 24, 2024',
     href: buildUrl('/courses/javascript-preschool'),
-    icon: <JsFrontendIcon />,
-  },
-  {
-    title: 'JS / Front-end',
-    language: 'EN',
-    startDate: 'November 6, 2023',
-    href: buildUrl('/courses/javascript-mentoring-program'),
     icon: <JsFrontendIcon />,
   },
 ];
