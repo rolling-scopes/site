@@ -3,7 +3,7 @@
 
   @include media-hover {
     &:hover {
-      color: $color-secondary-gray600;
+      color: $color-secondary-gray-600;
       background-color: $color-primary-white;
       box-shadow: 0 0 16px 0 rgb(114 92 19 / 8%);
     }

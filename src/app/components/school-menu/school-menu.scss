@@ -5,7 +5,7 @@
   align-items: baseline;
   justify-content: flex-start;
 
-  color: $color-secondary-gray100;
+  color: $color-secondary-gray-100;
 
   & .heading {
     margin: 0;
@@ -18,7 +18,7 @@
     }
 
     &.light {
-      color: $color-secondary-gray400;
+      color: $color-secondary-gray-400;
     }
   }
 
@@ -77,21 +77,21 @@
         text-align: start;
 
         &.dark {
-          color: $color-secondary-gray600;
+          color: $color-secondary-gray-600;
         }
 
         &.light {
-          color: $color-secondary-gray200;
+          color: $color-secondary-gray-200;
         }
 
         &:hover {
-          color: $color-secondary-gray400;
+          color: $color-secondary-gray-400;
         }
       }
 
       small {
         font-size: 12px;
-        color: $color-secondary-gray500;
+        color: $color-secondary-gray-500;
       }
     }
   }

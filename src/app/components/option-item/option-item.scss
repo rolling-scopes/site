@@ -14,7 +14,7 @@
 
   max-width: 380px;
 
-  color: $color-secondary-gray600;
+  color: $color-secondary-gray-600;
 }
 
 .option-title {
@@ -53,7 +53,7 @@
 
   @include media-hover {
     &:hover {
-      background-color: $color-secondary-gray200;
+      background-color: $color-secondary-gray-200;
     }
   }
 

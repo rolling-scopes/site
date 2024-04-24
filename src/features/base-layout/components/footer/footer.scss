@@ -52,7 +52,7 @@
         font-size: 18px;
         font-weight: $font-weight-medium;
         line-height: 24px;
-        color: $color-secondary-gray100;
+        color: $color-secondary-gray-100;
         letter-spacing: 0;
 
         .about-links {
@@ -68,7 +68,7 @@
             color: currentcolor;
 
             &:hover {
-              color: $color-secondary-gray400;
+              color: $color-secondary-gray-400;
             }
           }
         }
