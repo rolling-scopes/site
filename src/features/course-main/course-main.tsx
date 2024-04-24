@@ -10,6 +10,9 @@ interface CourseMainProps {
   type?: CourseType;
 }
 
+const MS_IN_2_WEEKS = 1209600000;
+const MS_IN_3_MONTHS = 7889400000;
+
 export const CourseMain = ({ courseName, type }: CourseMainProps) => {
   const { course: data, hasError } = useCourseByTitle(courseName, type);
 
@@ -25,7 +28,11 @@ export const CourseMain = ({ courseName, type }: CourseMainProps) => {
   const requiredDate = new Date(course.startDate).setHours(0, 0, 0, 0);
 
   const label =
-    requiredDate < now ? 'upcoming' : hasDayInDate(course.startDate) ? 'available' : 'planned';
+    hasDayInDate(course.startDate) && Math.abs(now - requiredDate) < MS_IN_2_WEEKS
+      ? 'available'
+      : now < requiredDate && requiredDate - now < MS_IN_3_MONTHS
+        ? 'upcoming'
+        : 'planned';
 
   const { title, altTitle, language, mode, enroll, secondaryIcon, startDate } = course;
 

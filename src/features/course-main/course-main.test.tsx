@@ -7,21 +7,21 @@ import { useCourseByTitle } from '@/app/hooks';
 
 vi.mock('@/app/hooks');
 
-describe('CourseMain', () => {
-  const testCourse = {
-    loading: false,
-    error: '',
-    course: {
-      title: 'Node.js course',
-      language: ['English'],
-      type: 'Mentoring Program',
-      mode: 'online',
-      enroll: 'https://wearecommunity.io/events/nodejs-rs-2024q1',
-      secondaryIcon: MOCKED_IMAGE_PATH,
-      startDate: '22 Jan, 3060',
-    },
-  };
+const testCourse = {
+  loading: false,
+  error: '',
+  course: {
+    title: 'Node.js course',
+    language: ['English'],
+    type: 'Mentoring Program',
+    mode: 'online',
+    enroll: 'https://wearecommunity.io/events/nodejs-rs-2024q1',
+    secondaryIcon: MOCKED_IMAGE_PATH,
+    startDate: '22 Jan, 3060',
+  },
+};
 
+describe('CourseMain', () => {
   beforeEach(() => {
     (useCourseByTitle as Mock).mockReturnValue(testCourse);
 
@@ -36,20 +36,7 @@ describe('CourseMain', () => {
   });
 
   it('renders the section label correctly', () => {
-    const labelElement = screen.getByText('available');
-    expect(labelElement).toBeVisible();
-  });
-
-  it('renders the section with correct label depending on date', () => {
-    (useCourseByTitle as Mock).mockReturnValueOnce({
-      ...testCourse,
-      course: {
-        ...testCourse.course,
-        startDate: '22 Jan, 2024',
-      },
-    });
-    render(<CourseMain courseName="Node.js course" type="Mentoring Program" />);
-    const labelElement = screen.getByText('upcoming');
+    const labelElement = screen.getByText('planned');
     expect(labelElement).toBeVisible();
   });
 
@@ -71,5 +58,24 @@ describe('CourseMain', () => {
     const imageElement = screen.getByRole('img', { name: /Node.js course/i });
     expect(imageElement).toBeInTheDocument();
     expect(imageElement).toHaveAttribute('src', MOCKED_IMAGE_PATH);
+  });
+});
+
+describe('CourseMain', () => {
+  it('renders the section with correct label depending on date', () => {
+    (useCourseByTitle as Mock).mockReturnValueOnce({
+      ...testCourse,
+      course: {
+        ...testCourse.course,
+        startDate: new Date().toLocaleString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        }),
+      },
+    });
+    render(<CourseMain courseName="Node.js course" type="Mentoring Program" />);
+    const labelElement = screen.getByText('available');
+    expect(labelElement).toBeVisible();
   });
 });
