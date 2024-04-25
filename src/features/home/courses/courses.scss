@@ -47,7 +47,6 @@
         }
 
         display: flex;
-        flex-direction: row;
         align-items: center;
         justify-content: space-between;
 
@@ -55,22 +54,29 @@
         margin-top: 24px;
 
         & .icon-container {
-          position: relative;
 
-          overflow: visible;
+          @include media-mobile-landscape {
+            gap: 5px;
+            padding: 10px;
+
+            & .icon-lang {
+              display: inline-block;
+              font-size: 14px;
+              color: $color-secondary-gray600;
+            }
+          }
+
           display: flex;
-          flex-flow: row nowrap;
-          flex-shrink: 0;
+          flex-wrap: wrap;
           gap: 0;
-          place-content: center flex-start;
           align-items: center;
+          justify-content: center;
 
-          box-sizing: border-box;
-          width: min-content; /* 88px */
-          height: 100%;
-          padding: 16px 16px 16px 16px;
+          padding: 16px;
 
-          border-radius: 0;
+          & .icon-lang {
+            display: none;
+          }
         }
 
         & .course-info {
@@ -78,40 +84,26 @@
           text-align: left;
 
           & .name {
-            position: relative;
-
-            flex-shrink: 0;
-            // width: 573px;
-            height: auto; /* 24px */
-
             font-family: Inter-Medium, Inter, sans-serif;
             font-size: 18px;
             font-weight: 500;
-            font-style: normal;
             line-height: 24px;
-            color: #000;
-            letter-spacing: 0;
-            word-break: break-word;
-            word-wrap: break-word;
-            white-space: pre-wrap;
+            color: $color-primary-black;
+
+            & .name-lang {
+              @include media-mobile-landscape {
+                display: none;
+              }
+            }
           }
 
           & .date {
-            position: relative;
-
-            flex-shrink: 0;
-
-            height: auto; /* 20px */
             margin-top: 8px;
 
             font-family: Inter, sans-serif;
             font-size: 14px;
             line-height: 20px;
-            color: #545454;
-            letter-spacing: 0;
-            word-break: break-word;
-            word-wrap: break-word;
-            white-space: pre-wrap;
+            color: $color-secondary-gray600;
 
             & .date-title {
               @include media-mobile-landscape {

@@ -8,7 +8,7 @@ export const HtmlIcon: FC = () => (
     width="48"
     height="36"
     viewBox="0 0 512 512"
-    enable-background="new 0 0 512 512">
+    enableBackground="new 0 0 512 512">
     <g id="c133de6af664cd4f011a55de6b000d0b">
       <path
         display="inline"

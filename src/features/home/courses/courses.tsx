@@ -70,10 +70,13 @@ export const Courses = () => {
           <div className="courses">
             {courses.map(({ title, language, startDate, href, icon }) => (
               <div key={title} className="course-card">
-                <div className="icon-container">{icon}</div>
+                <div className="icon-container">
+                  {icon}
+                  <span className="icon-lang">{language}</span>
+                </div>
                 <div className="course-info">
                   <div className="name">
-                    {title} ({language})
+                    {title} <span className="name-lang">{language}</span>
                   </div>
                   <div className="date">
                     Start<span className="date-title"> date</span>: {startDate}
