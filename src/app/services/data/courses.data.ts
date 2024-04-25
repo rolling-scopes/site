@@ -36,7 +36,7 @@ export const courses: Course[] = [
   },
   {
     id: '2',
-    title: 'JS / Front-end course EN',
+    title: 'JS / Front-end EN',
     altTitle: 'JavaScript / Front-end',
     type: 'Mentoring Program',
     iconSrc: javascript,
@@ -51,7 +51,7 @@ export const courses: Course[] = [
   },
   {
     id: '3',
-    title: 'JS / Front-end course RU',
+    title: 'JS / Front-end RU',
     iconSrc: javascript,
     iconSmall: jsSmall,
     secondaryIcon: jsSecondary,
@@ -64,7 +64,7 @@ export const courses: Course[] = [
   },
   {
     id: '4',
-    title: 'React JS course',
+    title: 'React',
     iconSrc: react,
     iconSmall: reactSmall,
     secondaryIcon: reactSecondary,
@@ -77,7 +77,7 @@ export const courses: Course[] = [
   },
   {
     id: '5',
-    title: 'Angular course',
+    title: 'Angular',
     iconSrc: angular,
     iconSmall: angularSmall,
     secondaryIcon: angularSecondary,
@@ -90,7 +90,7 @@ export const courses: Course[] = [
   },
   {
     id: '6',
-    title: 'Node.js course',
+    title: 'Node.js',
     iconSrc: nodejs,
     iconSmall: nodejsSmall,
     secondaryIcon: nodejsSecondary,

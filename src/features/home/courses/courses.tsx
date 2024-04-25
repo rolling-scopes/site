@@ -30,21 +30,21 @@ const courses: CourseProps[] = [
     icon: <AwsLogo />,
   },
   {
-    title: 'JS / Front-end. Pre-school',
+    title: 'JS / Front‑end. Pre‑school',
     language: 'RU',
     startDate: 'June 24, 2024',
     href: buildUrl('/courses/javascript-preschool'),
     icon: <HtmlIcon />,
   },
   {
-    title: 'React JS course',
+    title: 'React',
     language: 'EN',
     startDate: 'July 1, 2024',
     href: buildUrl('/courses/reactjs'),
     icon: <ReactIcon />,
   },
   {
-    title: 'Angular course',
+    title: 'Angular',
     language: 'EN',
     startDate: 'July 1, 2024',
     href: buildUrl('/courses/angular'),
@@ -70,17 +70,10 @@ export const Courses = () => {
           <div className="courses">
             {courses.map(({ title, language, startDate, href, icon }) => (
               <div key={title} className="course-card">
-                <div className="icon-container">
-                  {icon}
-                  <span className="icon-lang">{language}</span>
-                </div>
+                <div className="icon-container">{icon}</div>
                 <div className="course-info">
-                  <div className="name">
-                    {title} <span className="name-lang">{language}</span>
-                  </div>
-                  <div className="date">
-                    Start<span className="date-title"> date</span>: {startDate}
-                  </div>
+                  <div className="name">{title}</div>
+                  <div className="date">{`${startDate} • ${language}`}</div>
                 </div>
                 <div className="details-container">
                   <a className="details" href={href} target="_blank" rel="noreferrer">
