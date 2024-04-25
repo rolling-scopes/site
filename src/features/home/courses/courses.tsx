@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { Button } from '@/app/components';
 import { useWindowSize } from '@/app/hooks';
 import { buildUrl } from '@/app/services/platform';
-import { AngularIcon, AwsLogo, JsFrontendIcon, ReactIcon, RsBanner } from '@/icons';
+import { AngularIcon, AwsLogo, HtmlIcon, ReactIcon, RsBanner } from '@/icons';
 
 import './courses.scss';
 
@@ -34,19 +34,19 @@ const courses: CourseProps[] = [
     language: 'RU',
     startDate: 'June 24, 2024',
     href: buildUrl('/courses/javascript-preschool'),
-    icon: <JsFrontendIcon />,
+    icon: <HtmlIcon />,
   },
   {
     title: 'React JS course',
     language: 'EN',
-    startDate: 'Jul 1, 2024',
+    startDate: 'July 1, 2024',
     href: buildUrl('/courses/reactjs'),
     icon: <ReactIcon />,
   },
   {
     title: 'Angular course',
     language: 'EN',
-    startDate: 'Jul 1, 2024',
+    startDate: 'July 1, 2024',
     href: buildUrl('/courses/angular'),
     icon: <AngularIcon />,
   },
@@ -75,7 +75,9 @@ export const Courses = () => {
                   <div className="name">
                     {title} ({language})
                   </div>
-                  <div className="date">Start date: {startDate}</div>
+                  <div className="date">
+                    Start<span className="date-title"> date</span>: {startDate}
+                  </div>
                 </div>
                 <div className="details-container">
                   <a className="details" href={href} target="_blank" rel="noreferrer">

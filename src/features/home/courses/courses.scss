@@ -112,6 +112,12 @@
             word-break: break-word;
             word-wrap: break-word;
             white-space: pre-wrap;
+
+            & .date-title {
+              @include media-mobile-landscape {
+                display: none;
+              }
+            }
           }
         }
 

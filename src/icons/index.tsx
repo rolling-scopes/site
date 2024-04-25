@@ -3,6 +3,7 @@ export { AwsLogo } from './aws';
 export { EpamLogo } from './epam';
 export { FacebookIcon } from './facebook';
 export { GithubLogo } from './github';
+export { HtmlIcon } from './html-icon';
 export { InstagramIcon } from './instagram';
 export { JetBrainsLogo } from './jetbrains';
 export { JsFrontendIcon } from './js-frontend-icon';
