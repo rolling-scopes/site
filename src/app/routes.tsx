@@ -45,6 +45,10 @@ export const routes = config.isRollingScopesLanding
             element: <Courses />,
           },
           {
+            path: '/community',
+            element: <Home />,
+          },
+          {
             path: '/courses',
             children: [
               {

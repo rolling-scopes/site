@@ -54,6 +54,6 @@ describe('Footer', () => {
     const { getByText } = renderWithRouter(<Footer />);
     const aboutLink = getByText('About Community');
     expect(aboutLink).toBeInTheDocument();
-    expect(aboutLink).toHaveAttribute('href', '/#about');
+    expect(aboutLink).toHaveAttribute('href', '/community/#about');
   });
 });
