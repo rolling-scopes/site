@@ -58,5 +58,6 @@ jobs:
       - uses: jakejarvis/s3-sync-action@master
         with:
           args: --delete --cache-control max-age=300
+        env:
           SOURCE_DIR: 'build'
           DEST_DIR: rs-school
