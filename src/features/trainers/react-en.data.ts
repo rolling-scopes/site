@@ -1,7 +1,7 @@
 import type { Trainer } from './trainers.types';
 import reactEnImg2 from '@/assets/mentors/a-parfianenkau.webp';
 import reactEnImg4 from '@/assets/mentors/a-podlubnyj.webp';
-import reactEnImg3 from '@/assets/mentors/d-yarmoshkin.webp';
+import reactEnImg3 from '@/assets/mentors/d-yarmoshkin.png';
 import reactEnImg1 from '@/assets/mentors/i-krasiuk.webp';
 import reactEnImg6 from '@/assets/mentors/m-malets.webp';
 import reactEnImg5 from '@/assets/mentors/v-dluski.webp';
