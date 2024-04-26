@@ -1,9 +1,8 @@
+import { config } from '@/config';
+
 export function buildUrl(path: string) {
-  if (path.includes('courses')) {
-    return `${process.env.RS_SCHOOL_HOST}${path}`;
+  if (config.isRollingScopesLanding && path.includes('courses')) {
+    return `${config.rsSchoolHost}${path}`;
   }
-  if (process.env.RS_SCHOOL) {
-    return `${process.env.RS_HOST}${path}`;
-  }
-  return path;
+  return `${config.host}${path}`;
 }

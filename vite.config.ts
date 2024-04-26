@@ -8,9 +8,8 @@ export default defineConfig({
     outDir: 'build',
   },
   define: {
-    'process.env.RS_SCHOOL': JSON.stringify(process.env.RS_SCHOOL || ''),
     'process.env.RS_SCHOOL_HOST': JSON.stringify(process.env.RS_SCHOOL_HOST || ''),
-    'process.env.RS_HOST': JSON.stringify(process.env.RS_HOST || ''),
+    'process.env.HOST': JSON.stringify(process.env.HOST || ''),
   },
   resolve: {
     alias: {
