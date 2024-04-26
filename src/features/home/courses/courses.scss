@@ -1,5 +1,5 @@
 .courses {
-  & .title {
+  .title {
     margin-top: 24px;
 
     font-size: 36px;
@@ -8,7 +8,7 @@
     letter-spacing: 0;
   }
 
-  & .content {
+  .content {
     @include media-laptop {
       width: 100%;
       max-width: 1440px;
@@ -25,7 +25,7 @@
 
     padding: 0 120px 40px;
 
-    & .courses {
+    .courses {
       @include media-laptop {
         width: 100%;
       }
@@ -37,7 +37,7 @@
 
       width: 800px;
 
-      & .course-card {
+      .course-card {
         @extend %transition-all;
 
         @include media-hover {
@@ -53,18 +53,18 @@
         width: 100%;
         margin-top: 24px;
 
-        & .icon-container {
+        .icon-container {
           display: flex;
           align-items: center;
           justify-content: center;
           padding: 16px;
         }
 
-        & .course-info {
+        .course-info {
           width: 100%;
           text-align: left;
 
-          & .name {
+          .name {
             font-family: Inter-Medium, Inter, sans-serif;
             font-size: 18px;
             font-weight: 500;
@@ -72,7 +72,7 @@
             color: $color-primary-black;
           }
 
-          & .date {
+          .date {
             margin-top: 8px;
 
             font-family: Inter, sans-serif;
