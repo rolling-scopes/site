@@ -2,6 +2,7 @@ import { studyOptions } from './constants';
 import { OptionItem, Paragraph, SectionLabel, Subtitle, Title } from '@/app/components';
 
 import image from '@/assets/rs-school.webp';
+import Image from '@/features/image';
 
 import './school.scss';
 
@@ -18,7 +19,7 @@ export const School = () => (
             available on our Facebook Albums and Instagram pages.
           </Paragraph>
         </div>
-        <img className="right picture" src={image} alt="education" />
+        <Image className="right picture" src={image} alt="education" />
       </div>
       <div className="study-options column-3 ">
         {studyOptions.map((i) => (

@@ -1,6 +1,7 @@
 import { Button, Paragraph, SectionLabel, Subtitle, Title } from '@/app/components';
 
 import image from '@/assets/merch.webp';
+import Image from '@/features/image';
 
 import './merch.scss';
 
@@ -18,7 +19,7 @@ export const Merch = () => (
         </Paragraph>
         <Button label="Discover merch assets " href="https://sloths.rs.school/" />
       </div>
-      <img className="right picture" src={image} alt="speakers-wanted" />
+      <Image className="right picture" src={image} alt="speakers-wanted" />
     </div>
   </div>
 );

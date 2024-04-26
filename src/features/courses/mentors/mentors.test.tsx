@@ -26,7 +26,7 @@ describe('Mentors', () => {
   });
 
   it('renders the mentor image', () => {
-    const img = screen.getByAltText('Become a mentor');
+    const img = screen.getByAltText('Sloth - mascot dressed as a detective');
     expect(img).toBeVisible();
     expect(img).toHaveAttribute('src', MOCKED_IMAGE_PATH);
   });

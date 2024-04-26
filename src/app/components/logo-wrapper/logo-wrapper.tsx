@@ -1,5 +1,6 @@
 import rsLogoFooter from '@/assets/icons/footer/rs-logo.webp';
 import rsLogoNavbar from '@/assets/rs-logo.webp';
+import Image from '@/features/image';
 
 import './logo-wrapper.scss';
 
@@ -12,7 +13,7 @@ export const LogoWrapper = ({ type }: LogoWrapperProps) => {
 
   return (
     <div className="logo-wrapper">
-      <img src={logo} alt="The Rolling Scopes School" width={40} height={40} loading="lazy" />
+      <Image src={logo} alt="The Rolling Scopes School" width={40} height={40} lazy="false" />
     </div>
   );
 };

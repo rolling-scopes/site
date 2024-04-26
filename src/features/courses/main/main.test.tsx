@@ -22,7 +22,7 @@ describe('Main', () => {
   });
 
   it('renders the picture of mentors with students', () => {
-    const img = screen.getByAltText('Mentors with students');
+    const img = screen.getByAltText('Mentor with students');
     expect(img).toBeVisible();
     expect(img).toHaveAttribute('src', MOCKED_IMAGE_PATH);
   });

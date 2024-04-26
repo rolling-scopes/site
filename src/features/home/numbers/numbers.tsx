@@ -1,6 +1,7 @@
 import { Paragraph, Subtitle, Title } from '@/app/components';
 
 import image from '@/assets/map.webp';
+import Image from '@/features/image';
 
 import './numbers.scss';
 
@@ -48,7 +49,7 @@ export const Numbers = () => {
             <InfoCell title="1800+" description="RS School alumni per year" />
           </div>
         </div>
-        <img className="map" src={image} alt="map" />
+        <Image className="map" src={image} alt="map" />
       </div>
     </div>
   );

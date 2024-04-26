@@ -1,3 +1,5 @@
+import Image from '@/features/image';
+
 import './logo-icon.scss';
 
 interface LogoIconProps {
@@ -8,7 +10,7 @@ interface LogoIconProps {
 export const LogoIcon = ({ icon, title }: LogoIconProps) => {
   return (
     <div className="stage-logo">
-      <img src={icon} alt={title} />
+      <Image src={icon} alt={title} />
     </div>
   );
 };

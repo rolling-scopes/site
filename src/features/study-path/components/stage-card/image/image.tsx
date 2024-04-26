@@ -1,3 +1,5 @@
+import LazyImage from '@/features/image';
+
 import './image.scss';
 
 interface ImageProps {
@@ -8,7 +10,7 @@ interface ImageProps {
 export const Image = ({ imageSrc, title }: ImageProps) => {
   return (
     <div className="stage-image">
-      <img src={imageSrc} alt={title} />
+      <LazyImage src={imageSrc} className="mic-icon" alt={title} />
     </div>
   );
 };
