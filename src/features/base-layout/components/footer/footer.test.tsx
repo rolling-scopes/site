@@ -22,7 +22,7 @@ describe('Footer', () => {
   it('displays logo', () => {
     const { getByTestId } = renderWithRouter(<Footer />);
     const logoElement = getByTestId('logo-footer');
-    expect(logoElement).toHaveClass('logo_footer');
+    expect(logoElement).toBeInTheDocument();
   });
 
   it('displays copyright in the footer', () => {

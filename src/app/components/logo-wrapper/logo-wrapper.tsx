@@ -9,7 +9,11 @@ export const LogoWrapper = ({ type }: LogoWrapperProps) => {
 
   return (
     <div className="logo-wrapper">
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        data-testid={`logo-${type}`}
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_5701_38384)">
           <circle cx="32" cy="32" r="30" fill="black" stroke={color} stroke-width="1" />
           <path

@@ -34,7 +34,7 @@ describe('Navbar', () => {
 
     it('renders RsLogo', () => {
       const logoElement = screen.getByTestId('logo-navbar');
-      expect(logoElement).toHaveClass('logo_navbar');
+      expect(logoElement).toBeInTheDocument();
     });
 
     it('set color as gray when scrollbar is at the top', () => {
@@ -69,8 +69,8 @@ describe('Navbar', () => {
     });
 
     it('renders RsLogo in mobile view', async () => {
-      const logoElement = screen.getAllByTestId('logo-navbar')[0];
-      expect(logoElement).toHaveClass('logo_navbar');
+      const logoElement = screen.getAllByTestId('logo-navbar');
+      expect(logoElement).toHaveLength(2);
     });
 
     it('renders Burger menu', () => {
