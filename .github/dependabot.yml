@@ -1,20 +1,20 @@
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "monthly"
+      interval: 'monthly'
     reviewers:
       - 'dzmitry-varabei'
       - 'andron13'
       - 'SpaNb4'
     commit-message:
-      prefix: "chore"
+      prefix: 'chore'
     groups:
       production-dependencies:
-        dependency-type: "production"
+        dependency-type: 'production'
       development-dependencies:
-        dependency-type: "development"
+        dependency-type: 'development'
     ignore:
-      - dependency-name: "eslint"
-        update-types: [ "version-update:semver-major" ]
+      - dependency-name: 'eslint'
+        update-types: ['version-update:semver-major']
