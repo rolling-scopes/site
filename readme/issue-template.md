@@ -1,5 +1,3 @@
-Okay. Here's the revised README then:
-
 # Issue Template for Rolling Scopes Projects Repository
 
 This README provides guidance on using the issue-template.md designed for [this project](https://github.com/orgs/rolling-scopes/projects/6/).
