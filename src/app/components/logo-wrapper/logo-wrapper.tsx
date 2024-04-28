@@ -5,5 +5,5 @@ interface LogoWrapperProps {
 }
 
 export const LogoWrapper = ({ type }: LogoWrapperProps) => {
-  return <div className={`logo_${type}`}></div>;
+  return <div data-testid={`logo-${type}`} className={`logo_${type}`}></div>;
 };
