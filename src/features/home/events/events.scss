@@ -13,11 +13,10 @@
     text-align: left;
 
     & .info {
-      @include media-tablet {
+      width: 460px;
+      @include media-laptop {
         width: 100%;
       }
-
-      width: 460px;
     }
 
     & .title,
