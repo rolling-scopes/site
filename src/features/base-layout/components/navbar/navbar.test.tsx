@@ -69,7 +69,6 @@ describe('Navbar', () => {
     });
 
     it('renders RsLogo in mobile view', async () => {
-      screen.debug();
       const logoElement = screen.getAllByTestId('logo-navbar')[0];
       expect(logoElement).toHaveClass('logo_navbar');
     });

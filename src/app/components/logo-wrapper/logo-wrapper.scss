@@ -1,16 +1,15 @@
 $types: 'navbar', 'footer';
 
 @each $type in $types {
-		.logo_#{$type} {
+  .logo_#{$type} {
 
-      @include media-tablet {
-        max-width: 40px;
-        max-height: 40px;
-      }
+    @include media-tablet {
+      max-width: 40px;
+      max-height: 40px;
+    }
 
-      width: 56px;
-      height: 56px;
-			background-image: url('../../../assets/rss-logo.svg##{$type}');
-		}
-    
+    width: 56px;
+    height: 56px;
+    background-image: url('../../../assets/rss-logo.svg##{$type}');
+  }
 }
