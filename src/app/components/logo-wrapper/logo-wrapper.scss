@@ -1,14 +1,16 @@
-.logo-wrapper {
-  @include media-tablet {
-    max-width: 40px;
-    max-height: 40px;
-  }
+$types: 'navbar', 'footer';
 
-  max-width: 56px;
-  max-height: 56px;
+@each $type in $types {
+		.logo_#{$type} {
 
-  img {
-    width: 100%;
-    height: 100%;
-  }
+      @include media-tablet {
+        max-width: 40px;
+        max-height: 40px;
+      }
+
+      width: 56px;
+      height: 56px;
+			background-image: url('../../../assets/rss-logo.svg##{$type}');
+		}
+    
 }
