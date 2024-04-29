@@ -4,7 +4,7 @@
   }
 
   &.content {
-    @include media-laptop {
+    @include media-tablet-large {
       flex-direction: column;
       align-items: center;
     }

@@ -4,11 +4,11 @@
   }
 
   &.content {
-    @include media-laptop {
+    @include media-tablet {
       flex-direction: column;
       align-items: center;
     }
-
+    
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -26,6 +26,12 @@
 
       & .subtitle {
         margin-top: 8px;
+        @include media-laptop {
+          padding-right: 50px;
+        }
+        @include media-tablet {
+          padding-right: 0;
+        }
       }
 
       & .name {
