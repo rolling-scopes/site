@@ -1,18 +1,19 @@
+import { route } from '@/app/const';
 import { config } from '@/config';
 
 const coursesRoute = {
-  path: '/courses',
+  path: route.COURSES,
   children: [
     {
       index: true,
       lazy: () => import('../pages/courses.tsx'),
     },
     {
-      path: 'nodejs',
+      path: route.NODE_JS,
       lazy: () => import('../pages/nodejs.tsx'),
     },
     {
-      path: 'javascript-mentoring-program',
+      path: route.JS_MENTORING,
       async lazy() {
         const { Component } = await import('../pages/javascript.tsx');
         const boundedComponent = Component.bind(null, { type: 'Mentoring Program' });
@@ -20,7 +21,7 @@ const coursesRoute = {
       },
     },
     {
-      path: 'javascript-preschool',
+      path: route.JS_PRESCHOOL,
       async lazy() {
         const { Component } = await import('../pages/javascript.tsx');
         const boundedComponent = Component.bind(null, { type: 'Pre-school' });
@@ -28,33 +29,33 @@ const coursesRoute = {
       },
     },
     {
-      path: 'angular',
+      path: route.ANGULAR,
       lazy: () => import('../pages/angular.tsx'),
     },
     {
-      path: 'aws-cloud-developer',
+      path: route.AWS_DEVELOPER,
       lazy: () => import('../pages/aws-developer.tsx'),
     },
     {
-      path: 'aws-fundamentals',
+      path: route.AWS_FUNDAMENTALS,
       lazy: () => import('../pages/aws-fundamentals.tsx'),
     },
     {
-      path: 'reactjs',
+      path: route.REACT,
       lazy: () => import('../pages/react.tsx'),
     },
   ],
 };
 
 const notFoundRoute = {
-  path: '*',
+  path: route.NOT_FOUND,
   lazy: () => import('../pages/not-found.tsx'),
 };
 
 export const routes = config.isRollingScopesLanding
   ? [
       {
-        path: '/',
+        path: route.HOME,
         lazy: () => import('../features/base-layout/base-layout.tsx'),
         children: [
           {
@@ -68,7 +69,7 @@ export const routes = config.isRollingScopesLanding
     ]
   : [
       {
-        path: '/',
+        path: route.HOME,
         lazy: () => import('../features/base-layout/base-layout.tsx'),
         children: [
           {
@@ -76,7 +77,7 @@ export const routes = config.isRollingScopesLanding
             lazy: () => import('../pages/courses.tsx'),
           },
           {
-            path: '/community',
+            path: route.COMMUNITY,
             lazy: () => import('@/pages/home.tsx'),
           },
           coursesRoute,

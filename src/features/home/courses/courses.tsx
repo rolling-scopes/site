@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { Button } from '@/app/components';
+import { route } from '@/app/const';
 import { useWindowSize } from '@/app/hooks';
 import { buildUrl } from '@/app/services/platform';
 import { AngularIcon, AwsLogo, HtmlIcon, ReactIcon, RsBanner } from '@/icons';
@@ -19,35 +20,35 @@ const courses: CourseProps[] = [
     title: 'AWS Fundamentals',
     language: 'EN',
     startDate: 'April 15, 2024',
-    href: buildUrl('/courses/aws-fundamentals'),
+    href: buildUrl(`/${route.COURSES}/${route.AWS_FUNDAMENTALS}`),
     icon: <AwsLogo />,
   },
   {
     title: 'AWS Cloud Developer',
     language: 'EN',
     startDate: 'May 28, 2024',
-    href: buildUrl('/courses/aws-cloud-developer'),
+    href: buildUrl(`/${route.COURSES}/${route.AWS_DEVELOPER}`),
     icon: <AwsLogo />,
   },
   {
     title: 'JS / Front‑end. Pre‑school',
     language: 'RU',
     startDate: 'June 24, 2024',
-    href: buildUrl('/courses/javascript-preschool'),
+    href: buildUrl(`/${route.COURSES}/${route.JS_PRESCHOOL}`),
     icon: <HtmlIcon />,
   },
   {
     title: 'React',
     language: 'EN',
     startDate: 'July 1, 2024',
-    href: buildUrl('/courses/reactjs'),
+    href: buildUrl(`/${route.COURSES}/${route.REACT}`),
     icon: <ReactIcon />,
   },
   {
     title: 'Angular',
     language: 'EN',
     startDate: 'July 1, 2024',
-    href: buildUrl('/courses/angular'),
+    href: buildUrl(`/${route.COURSES}/${route.ANGULAR}`),
     icon: <AngularIcon />,
   },
 ];

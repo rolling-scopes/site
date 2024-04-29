@@ -2,6 +2,7 @@ import { renderHook, waitFor } from '@testing-library/react';
 import { MockedFunction, describe, expect, it, vi } from 'vitest';
 import { useDataByName } from './use-data-by-name';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
+import { route } from '@/app/const';
 import { fetchDataByName } from '@/app/services/api';
 import { DataMap } from '@/app/services/data/courses-data.types';
 
@@ -15,7 +16,7 @@ const courses: DataMap['courses'] = [
     startDate: 'Sept 18, 2023',
     language: ['en'],
     mode: 'online',
-    detailsUrl: 'https://rs.school/aws-fundamentals/',
+    detailsUrl: `https://rs.school/${route.AWS_FUNDAMENTALS}/`,
     enroll: 'https://wearecommunity.io/events/rs-aws-2023q3',
     backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#7356BF' },
   },
