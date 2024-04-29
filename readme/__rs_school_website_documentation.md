@@ -28,10 +28,16 @@ Our objective is to ensure that any person willing to help us can do so effortle
 
 For a seamless onboarding process and a comprehensive understanding of our work procedures, please familiarize yourself with the following key files:
 
-1. [`onboarding.md`](./onboarding.md): This document contains all the necessary information for newcomers, allowing for a smooth integration process.
-2. [`git-pullrequest-workflow.md`](./git-pullrequest-workflow.md): This is a comprehensive guide on our workflow surrounding Git and Pull Requests.
-3. [`semantic-webaccessibility.md`](./semantic-webaccessibility.md): This file provides insights into our norms and standards for semantic web and accessibility.
-4. [`styleguide-design.md`](./styleguide-design.md): This is our design style guide that ensures clarity and consistency in our visual communication.
-5. [`tests.md`](./tests.md): This provides an overview of the testing procedures and standards we follow to ensure consistency and high-quality work.
+1. [`volunteering.md`](./volunteering.md): This document outlines how you can contribute to our project. It explains the various roles open for volunteers, what those roles involve, and how they contribute to the overall progress of the community. Whether you're a developer, a tester, or an enthusiast wanting to support our cause, you'll learn how you can contribute and grow with us.
+
+2. [`onboarding.md`](./onboarding.md): This document is a guide for newcomers. It includes all necessary information that enables a smooth integration process. It offers a comprehensive introduction to our community, work methods, and communication channels.
+
+3. [`git-pullrequest-workflow.md`](./git-pullrequest-workflow.md): This comprehensive guide explains our workflow, particularly focusing on Git and Pull Requests. It's an important resource for every team member working on our codebase.
+
+4. [`semantic-webaccessibility.md`](./semantic-webaccessibility.md): This file provides a deep dive into our practices and standards for semantic web and accessibility, ensuring that our projects are understandable and accessible to all users.
+
+5. [`styleguide-design.md`](./styleguide-design.md): This is our design style guide that lays out the rules for clarity and consistency in our visual communication. It helps maintain a consistent appearance across all our projects.
+
+6. [`tests.md`](./tests.md): This document provides an overview of the testing procedures and standards we follow. Ensuring consistency and high-quality work, it is critical for developers and testers on our team.
 
 Familiarizing yourself with these documents will give you a solid understanding of our working style and expectations. All team members are expected to adhere to these processes and standards.
