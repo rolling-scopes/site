@@ -3,12 +3,16 @@
     &.column-2 {
       @include media-laptop {
         flex-direction: row;
+        gap: 50px;
       }
+
       @include media-tablet-large {
+        gap: 0px;
         flex-direction: column;
       }
     }
   }
+
   & .left {
     @include media-laptop {
       min-width: 400px;

@@ -17,10 +17,12 @@
       @include media-tablet-large {
         flex-direction: column;
         align-items: center;
+        gap: 0px;
       }
 
       display: flex;
       flex-direction: row;
+      gap: 50px;
       align-items: flex-start;
       justify-content: space-between;
 

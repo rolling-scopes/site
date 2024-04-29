@@ -1,14 +1,17 @@
 .mentors {
   &.container {
     background: $color-secondary-gray100;
+
     .column-2 {
       @include media-laptop-medium {
         flex-direction: row;
       }
+
       @include media-tablet-large {
         flex-direction: column;
       }
     }
+
     .content {
       @include media-tablet {
         padding: 40px 16px;

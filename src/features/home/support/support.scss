@@ -7,9 +7,11 @@
     @include media-tablet-large {
       flex-direction: column;
       align-items: center;
+      gap: 0px;
     }
 
     display: flex;
+    gap: 50px;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;

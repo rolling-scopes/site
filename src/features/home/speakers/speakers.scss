@@ -6,10 +6,12 @@
   &.content {
     @include media-tablet {
       flex-direction: column;
+      gap: 0px;
       align-items: center;
     }
     
     display: flex;
+    gap: 50px;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
@@ -25,13 +27,15 @@
       text-align: left;
 
       & .subtitle {
+        // @include media-laptop {
+        //   padding-right: 50px;
+        // }
+
+        // @include media-tablet {
+        //   padding-right: 0;
+        // }
+
         margin-top: 8px;
-        @include media-laptop {
-          padding-right: 50px;
-        }
-        @include media-tablet {
-          padding-right: 0;
-        }
       }
 
       & .name {
