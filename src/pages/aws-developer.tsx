@@ -6,7 +6,7 @@ import { Trainers } from '@/features/trainers';
 import { awsDev } from '@/features/trainers/awsDev.data.ts';
 import { TrainingProgram } from '@/features/training-program';
 
-export const Component = () => {
+export const AwsDeveloper = () => {
   return (
     <>
       <CourseMain courseName="aws cloud dev" />
@@ -18,5 +18,3 @@ export const Component = () => {
     </>
   );
 };
-
-Component.displayName = 'AwsDeveloper';
