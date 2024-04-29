@@ -40,7 +40,7 @@ Let's make some corrections:
 - The `<div>` containing the courses was changed to `<section>`. This is a relevant section for users and search engines.
 - The `<div>` containing the course details was swapped out for an `<article>`. Each course is an individual piece of content.
 - The `<div>` that served as the title has been changed to a `<header>`.
-- The `<div>` with the list of courses is now a `<main>` element as it's the unique content on the page.
+- The `<div>` with the list of courses is now a `<aside>` element.
 - Each `<div>` housing a course card is now an `<article>`, as each course is an independent piece of content that could be embedded elsewhere on the site using an iframe.
 - The sections with the course information and details link have been labelled as `<section>` for more semantic value.
 - The `<div>` for the date has been replaced with the `<time>` tag for semantic value.
@@ -53,11 +53,11 @@ Additionally, in each course card, we're using the `<h2>` heading.
 <section className="courses container">
   <article className="courses content">
     <header className="title">Upcoming courses</header>
-    <main className="column-2">
+    <aside className="column-2">
       <section className="courses">
         {courses.map(({ title, language, startDate, href, icon }) => (
           <article key={title} className="course-card">
-            <div className="icon-container">{icon}</div>
+            <figure className="icon-container">{icon}</figure>
             <section className="course-info">
               <h2 className="name">{title}</h2>
               <time className="date">{`${startDate} • ${language}`}</time>
@@ -75,7 +75,7 @@ Additionally, in each course card, we're using the `<h2>` heading.
       <figure className="image">
         <RsBanner />
       </figure>
-    </main>
+    </aside>
   </article>
 </section>
 ```
@@ -84,4 +84,4 @@ Additionally, in each course card, we're using the `<h2>` heading.
 
 Please at least use semantic markup and remember, we have countless opportunities to express our thoughts.
 
-Use elements such as header, nav, main, section, article, p, aside, footer and ect to accurately reflect the meaning and purpose of the content they contain.
+Use elements such as `header`, `nav`, `main`, `section`, `article`, `p`, `aside`, `footer` and etc to accurately reflect the meaning and purpose of the content they contain.
