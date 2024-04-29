@@ -7,7 +7,7 @@ import { Trainers } from '@/features/trainers';
 import { nodejs } from '@/features/trainers/nodejs.data.ts';
 import { TrainingProgram } from '@/features/training-program';
 
-export const Nodejs: FC = () => {
+export const Component: FC = () => {
   return (
     <>
       <CourseMain courseName="Node.js" />
@@ -19,3 +19,5 @@ export const Nodejs: FC = () => {
     </>
   );
 };
+
+Component.displayName = 'Nodejs';

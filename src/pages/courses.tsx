@@ -13,7 +13,7 @@ import {
 import { Principles } from '@/features/principles';
 import { StudyPath } from '@/features/study-path';
 
-export const Courses: FC = () => {
+export const Component: FC = () => {
   useTitle('Courses · The Rolling Scopes School');
 
   return (
@@ -31,3 +31,5 @@ export const Courses: FC = () => {
     </>
   );
 };
+
+Component.displayName = 'Courses';

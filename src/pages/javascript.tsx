@@ -15,7 +15,7 @@ interface JavaScriptProps {
 
 const COURSE_NAME = 'javascript';
 
-export const JavaScript = ({ type }: JavaScriptProps) => {
+export const Component = ({ type }: JavaScriptProps) => {
   const isPreSchool = type === 'Pre-school';
 
   return (
@@ -31,3 +31,5 @@ export const JavaScript = ({ type }: JavaScriptProps) => {
     </>
   );
 };
+
+Component.displayName = 'JavaScript';

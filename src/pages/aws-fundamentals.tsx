@@ -6,7 +6,7 @@ import { Trainers } from '@/features/trainers';
 import { awsFundamentals } from '@/features/trainers/awsFundamentals.data.ts';
 import { TrainingProgram } from '@/features/training-program';
 
-export const AwsFundamentals = () => {
+export const Component = () => {
   return (
     <>
       <CourseMain courseName="aws fundamentals" />
@@ -19,3 +19,5 @@ export const AwsFundamentals = () => {
     </>
   );
 };
+
+Component.displayName = 'AwsFundamentals';

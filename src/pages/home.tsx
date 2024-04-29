@@ -19,7 +19,7 @@ import {
 } from '@/features/home';
 import { Principles } from '@/features/principles';
 
-export const Home: FC = () => {
+export const Component: FC = () => {
   useTitle(`Home · ${config.title}`);
 
   return (
@@ -42,3 +42,5 @@ export const Home: FC = () => {
     </>
   );
 };
+
+Component.displayName = 'Home';

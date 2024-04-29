@@ -7,7 +7,7 @@ import { Trainers } from '@/features/trainers';
 import { angular } from '@/features/trainers/angular.data';
 import { TrainingProgram } from '@/features/training-program';
 
-export const Angular = () => {
+export const Component = () => {
   return (
     <>
       <CourseMain courseName="angular" />
@@ -20,3 +20,5 @@ export const Angular = () => {
     </>
   );
 };
+
+Component.displayName = 'Angular';

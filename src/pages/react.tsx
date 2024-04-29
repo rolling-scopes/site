@@ -5,7 +5,7 @@ import { Trainers } from '@/features/trainers';
 import { reactEn } from '@/features/trainers/react-en.data.ts';
 import { TrainingProgram } from '@/features/training-program';
 
-export const React = () => {
+export const Component = () => {
   return (
     <>
       <CourseMain courseName="react" />
@@ -16,3 +16,5 @@ export const React = () => {
     </>
   );
 };
+
+Component.displayName = 'React';

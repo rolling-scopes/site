@@ -1,3 +1,3 @@
-export { Courses } from './courses';
-export { Home } from './home';
-export { Nodejs } from './nodejs';
+export { Component as Courses } from './courses';
+export { Component as Home } from './home';
+export { Component as Nodejs } from './nodejs';
