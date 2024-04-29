@@ -6,13 +6,13 @@
   &.content {
     @include media-tablet-large {
       flex-direction: column;
+      gap: 0;
       align-items: center;
-      gap: 0px;
     }
 
     display: flex;
-    gap: 50px;
     flex-direction: row;
+    gap: 50px;
     align-items: flex-start;
     justify-content: space-between;
 

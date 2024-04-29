@@ -1,19 +1,17 @@
 .school {
   & .study {
-    
     @include media-tablet-large {
       flex-direction: column;
-      gap: 0px;
+      gap: 0;
     }
     
     display: flex;
-    gap: 50px;
     flex-direction: row;
+    gap: 50px;
     align-items: flex-start;
     justify-content: space-between;
 
     & .left {
-
       @include media-tablet-large {
         width: 100%;
       }
@@ -51,7 +49,7 @@
     margin-top: 24px;
   }
 
-  & .column-3 {
+  .column-3 {
     @include media-tablet-large {
       flex-direction: column;
       gap: 0;

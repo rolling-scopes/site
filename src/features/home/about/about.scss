@@ -7,8 +7,8 @@
       }
 
       @include media-tablet-large {
-        gap: 0px;
         flex-direction: column;
+        gap: 0;
       }
     }
   }

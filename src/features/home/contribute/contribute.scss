@@ -1,6 +1,5 @@
 .contribute {
   & .content {
-
     @include media-laptop {
       flex-direction: column;
       align-items: center;
@@ -16,8 +15,8 @@
     & .general {
       @include media-tablet-large {
         flex-direction: column;
+        gap: 0;
         align-items: center;
-        gap: 0px;
       }
 
       display: flex;

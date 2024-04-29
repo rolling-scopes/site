@@ -3,13 +3,12 @@
     background: $color-secondary-gray100;
 
     .column-2 {
-      @include media-laptop-medium {
-        flex-direction: row;
-      }
 
       @include media-tablet-large {
         flex-direction: column;
       }
+
+      flex-direction: row;
     }
 
     .content {
