@@ -12,11 +12,17 @@
     }
 
     .content {
-      @include media-tablet {
-        padding: 40px 16px;
+      @include media-tablet-large {
+        padding-top: 40px;
       }
 
-      padding: 40px 80px 40px 120px;
+      @include media-mobile {
+        padding-top: 0;
+        padding-bottom: 40px;
+      }
+
+      padding-top: 0;
+      padding-bottom: 0;
 
       & .mentors-info {
         @include media-mobile {
