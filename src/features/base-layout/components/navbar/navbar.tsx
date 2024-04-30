@@ -53,7 +53,7 @@ export const Navbar = () => {
   }, [width, key, hash, pathname]);
 
   return (
-    <div className={`navbar ${color}`} data-testid="navigation">
+    <nav className={`navbar ${color}`} data-testid="navigation">
       <section className="navbar-content">
         <Link to="/" onClick={() => window.scrollTo({ top: 0 })}>
           <LogoWrapper type="navbar" />
@@ -84,6 +84,6 @@ export const Navbar = () => {
 
         {isMobile && <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />}
       </section>
-    </div>
+    </nav>
   );
 };
