@@ -24,13 +24,16 @@ Your commit messages should be short, but they should tell us what changes you m
 
 Example: `doc: 159 - add login button functionality`
 
+
+Please note that at RS School, we strive to follow the [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/). In case of uncertainty, feel free to refer to this source that inspired us in writing these guidelines.
+
 ## Pull Requests
 
 When you finish your work in a branch, make a pull request against the main branch. Use the same format as commit messages for your pull request title.
 
 Example: `123-feat: Complete addition of login button functionality`.
 
-Follow your usual template for the rest of the pull request.
+For the project, we use a template for pull requests that assists in correctly filling out the details of the pull request.
 
 ## Comment Resolution
 
