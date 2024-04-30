@@ -1,5 +1,5 @@
 interface LogoProps {
-  color: '#000000' | '#ffffff';
+  color: '#000' | '#fff';
 }
 
 export const Logo = ({ color }: LogoProps) => {

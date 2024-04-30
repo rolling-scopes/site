@@ -6,8 +6,8 @@ interface LogoWrapperProps {
   type: 'navbar' | 'footer';
 }
 
-const BLACK = '#000000';
-const WHITE = '#ffffff';
+const BLACK = '#000';
+const WHITE = '#fff';
 
 export const LogoWrapper = ({ type }: LogoWrapperProps) => {
   const color = type === 'navbar' ? BLACK : WHITE;
