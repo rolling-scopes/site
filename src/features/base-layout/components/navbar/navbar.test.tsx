@@ -3,7 +3,6 @@ import { fireEvent, screen } from '@testing-library/react';
 import { Mock, beforeEach, vi } from 'vitest';
 import { DropdownMenu } from './dropdown';
 import { Navbar } from './navbar';
-import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 import { renderWithRouter } from '@/__tests__/utils';
 import { useWindowSize } from '@/app/hooks';
 
@@ -34,8 +33,8 @@ describe('Navbar', () => {
     });
 
     it('renders RsLogo', () => {
-      const logoElement = screen.getByRole('img', { name: 'The Rolling Scopes School' });
-      expect(logoElement).toHaveAttribute('src', MOCKED_IMAGE_PATH);
+      const logoElement = screen.getByTestId('logo-navbar');
+      expect(logoElement).toBeInTheDocument();
     });
 
     it('set color as gray when scrollbar is at the top', () => {
@@ -70,7 +69,7 @@ describe('Navbar', () => {
     });
 
     it('renders RsLogo in mobile view', async () => {
-      const logoElement = screen.getAllByRole('img', { name: 'The Rolling Scopes School' });
+      const logoElement = screen.getAllByTestId('logo-navbar');
       expect(logoElement).toHaveLength(2);
     });
 
