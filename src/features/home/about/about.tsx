@@ -1,6 +1,7 @@
 import { Paragraph, Subtitle, Title } from '@/app/components';
 
 import image from '@/assets/about.webp';
+import Image from '@/features/image';
 
 import './about.scss';
 
@@ -26,7 +27,7 @@ export const About = () => {
             Sloth.
           </Paragraph>
         </div>
-        <img className="right picture" src={image} alt="Logo" />
+        <Image className="right picture" src={image} alt="Logo" />
       </div>
     </div>
   );

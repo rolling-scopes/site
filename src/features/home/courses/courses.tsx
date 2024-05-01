@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { Button } from '@/app/components';
 import { useWindowSize } from '@/app/hooks';
 import { buildUrl } from '@/app/services/platform';
-import { AwsLogo, JsFrontendIcon, RsBanner } from '@/icons';
+import { AngularIcon, AwsLogo, HtmlIcon, ReactIcon, RsBanner } from '@/icons';
 
 import './courses.scss';
 
@@ -23,18 +23,32 @@ const courses: CourseProps[] = [
     icon: <AwsLogo />,
   },
   {
-    title: 'JS / Front-end. Pre-school',
+    title: 'AWS Cloud Developer',
+    language: 'EN',
+    startDate: 'May 28, 2024',
+    href: buildUrl('/courses/aws-cloud-developer'),
+    icon: <AwsLogo />,
+  },
+  {
+    title: 'JS / Front‑end. Pre‑school',
     language: 'RU',
     startDate: 'June 24, 2024',
     href: buildUrl('/courses/javascript-preschool'),
-    icon: <JsFrontendIcon />,
+    icon: <HtmlIcon />,
   },
   {
-    title: 'JS / Front-end',
+    title: 'React',
     language: 'EN',
-    startDate: 'November 6, 2023',
-    href: buildUrl('/courses/javascript-mentoring-program'),
-    icon: <JsFrontendIcon />,
+    startDate: 'July 1, 2024',
+    href: buildUrl('/courses/reactjs'),
+    icon: <ReactIcon />,
+  },
+  {
+    title: 'Angular',
+    language: 'EN',
+    startDate: 'July 1, 2024',
+    href: buildUrl('/courses/angular'),
+    icon: <AngularIcon />,
   },
 ];
 
@@ -58,10 +72,8 @@ export const Courses = () => {
               <div key={title} className="course-card">
                 <div className="icon-container">{icon}</div>
                 <div className="course-info">
-                  <div className="name">
-                    {title} ({language})
-                  </div>
-                  <div className="date">Start date: {startDate}</div>
+                  <div className="name">{title}</div>
+                  <div className="date">{`${startDate} • ${language}`}</div>
                 </div>
                 <div className="details-container">
                   <a className="details" href={href} target="_blank" rel="noreferrer">

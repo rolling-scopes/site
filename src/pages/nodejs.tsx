@@ -10,7 +10,7 @@ import { TrainingProgram } from '@/features/training-program';
 export const Nodejs: FC = () => {
   return (
     <>
-      <CourseMain courseName="Node.js course" />
+      <CourseMain courseName="Node.js" />
       <Breadcrumbs />
       <TrainingProgram courseName="node.js" />
       <About courseName="node.js" />

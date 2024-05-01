@@ -2,6 +2,7 @@ import { hasDayInDate } from './utils/has-day';
 import { ButtonOutlined, DateLang, SectionLabel, Subtitle, Title } from '@/app/components';
 import { useCourseByTitle, useTitle } from '@/app/hooks';
 import { type Course, type CourseType } from '@/app/types';
+import Image from '@/features/image';
 
 import './course-main.scss';
 
@@ -40,11 +41,11 @@ export const CourseMain = ({ courseName, type }: CourseMainProps) => {
     <main className="course-main container">
       <div className="course-main content column-2">
         <div className="icon">
-          <img src={secondaryIcon} alt={title} />
+          <Image src={secondaryIcon} alt={title} lazy="false" />
         </div>
         <div className="info">
           <SectionLabel label={label} />
-          <Title text={altTitle || title} />
+          <Title text={`${altTitle || title} Course`} />
           {type && <Subtitle text={type} />}
           <DateLang startDate={startDate} language={language} mode={mode} />
           <ButtonOutlined label="Enroll" href={enroll} />

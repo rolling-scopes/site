@@ -1,5 +1,6 @@
 import micIcon from '@/assets/icons/mic.svg';
 import noteIcon from '@/assets/icons/note-icon.svg';
+import Image from '@/features/image';
 
 import './date-lang.scss';
 
@@ -15,11 +16,11 @@ export const DateLang = ({ startDate, language, mode }: DateLangProps) => {
   return (
     <div className="date-lang">
       <div className="date-info">
-        <img src={noteIcon} alt="note-icon" className="note-icon" />
+        <Image src={noteIcon} alt="note-icon" className="note-icon" lazy="false" />
         <div className="date">Start date {startDate ?? 'Not set'}</div>
       </div>
       <div className="lang-info">
-        <img src={micIcon} className="mic-icon" />
+        <Image src={micIcon} className="mic-icon" alt="microphone icon" lazy="false" />
         <div className="language">{splittedLanguage}</div>
         <div className="mode">• {mode}</div>
       </div>

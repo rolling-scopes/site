@@ -28,7 +28,7 @@ describe('DateLang', () => {
     const micIcon = MOCKED_IMAGE_PATH;
     render(<DateLang startDate="" language={[]} mode="" />);
     expect(screen.getByAltText('note-icon')).toHaveAttribute('src', noteIcon);
-    expect(screen.getByRole('img', { name: '' })).toHaveAttribute('src', micIcon);
+    expect(screen.getByRole('img', { name: 'microphone icon' })).toHaveAttribute('src', micIcon);
   });
 
   it('handles missing start date', () => {

@@ -1,7 +1,7 @@
 import { alumni } from './constants';
 import { Paragraph, Title } from '@/app/components';
-
 import { useWindowSize } from '@/app/hooks';
+import Image from '@/features/image';
 
 import './alumni.scss';
 
@@ -34,7 +34,7 @@ export const Alumni = () => {
         <section className="alumni">
           {alumniArr.map(({ id, image }) => (
             <figure key={id} className="alumni-logo-container">
-              <img className="alumni-logo" src={image} alt={id} />
+              <Image className="alumni-logo" src={image} alt={id} />
             </figure>
           ))}
         </section>
