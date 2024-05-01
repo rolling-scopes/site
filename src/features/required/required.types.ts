@@ -1,6 +1,16 @@
+type Link = {
+  text: string;
+  title: string;
+  link: string;
+};
+
+export type Point = Link[];
+
+export type Description = (string | Point)[];
+
 export type CourseModule = {
   title: string;
-  description: string[];
+  description: Description;
 };
 
 export type Course = {
