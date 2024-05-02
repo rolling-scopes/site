@@ -60,13 +60,6 @@ export const courseDataMap: CourseMap = {
         [
           {
             text: '',
-            title: 'Intro to Computer Science ',
-            link: 'https://www.udacity.com/course/intro-to-theoretical-computer-science--cs313',
-          },
-        ],
-        [
-          {
-            text: '',
             title: 'Algorithms. ',
             link: 'https://www.coursera.org/learn/algorithms-part1',
           },
