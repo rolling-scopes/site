@@ -1,4 +1,5 @@
 import { config } from '@/config';
+import courseLoader from '@/features/course-main/courseLoader.ts';
 
 const coursesRoute = {
   path: '/courses',
@@ -12,6 +13,7 @@ const coursesRoute = {
     },
     {
       path: 'nodejs',
+      loader: courseLoader,
       async lazy() {
         const { Nodejs } = await import('../pages/nodejs.tsx');
         return { Component: Nodejs };
@@ -19,6 +21,7 @@ const coursesRoute = {
     },
     {
       path: 'javascript-mentoring-program',
+      loader: courseLoader,
       async lazy() {
         const { JavaScript } = await import('../pages/javascript.tsx');
         const boundedComponent = JavaScript.bind(null, { type: 'Mentoring Program' });
@@ -27,6 +30,7 @@ const coursesRoute = {
     },
     {
       path: 'javascript-preschool',
+      loader: courseLoader,
       async lazy() {
         const { JavaScript } = await import('../pages/javascript.tsx');
         const boundedComponent = JavaScript.bind(null, { type: 'Pre-school' });
@@ -35,6 +39,7 @@ const coursesRoute = {
     },
     {
       path: 'angular',
+      loader: courseLoader,
       lazy: async () => {
         const { Angular } = await import('../pages/angular.tsx');
         return { Component: Angular };
@@ -42,6 +47,7 @@ const coursesRoute = {
     },
     {
       path: 'aws-cloud-developer',
+      loader: courseLoader,
       lazy: async () => {
         const { AwsDeveloper } = await import('../pages/aws-developer.tsx');
         return { Component: AwsDeveloper };
@@ -49,6 +55,7 @@ const coursesRoute = {
     },
     {
       path: 'aws-fundamentals',
+      loader: courseLoader,
       lazy: async () => {
         const { AwsFundamentals } = await import('../pages/aws-fundamentals.tsx');
         return { Component: AwsFundamentals };
@@ -56,6 +63,7 @@ const coursesRoute = {
     },
     {
       path: 'reactjs',
+      loader: courseLoader,
       lazy: async () => {
         const { React } = await import('../pages/react.tsx');
         return { Component: React };

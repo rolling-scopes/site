@@ -1,9 +1,6 @@
 import { useDataByName } from '../use-data-by-name';
+import selectCourse from '@/app/hooks/use-course-by-title/utils/select-course.ts';
 import { Course, CourseType } from '@/app/types';
-
-function isCourse(obj: object): obj is Course {
-  return 'title' in obj && (obj as Course).title != null;
-}
 
 export const useCourseByTitle = (titleStartsWith: string, type?: CourseType) => {
   const { data: coursesData, error, loading } = useDataByName('courses');
@@ -26,20 +23,7 @@ export const useCourseByTitle = (titleStartsWith: string, type?: CourseType) => 
     };
   }
 
-  const courses = coursesData.filter(isCourse);
-
-  const titleLower = titleStartsWith.toLowerCase();
-  const typeLower = type?.toLowerCase();
-
-  const course = courses.find((course) => {
-    const titleMatches =
-      course.title.toLowerCase().startsWith(titleLower) ||
-      course.altTitle?.toLowerCase().startsWith(titleLower);
-
-    const typeMatches = typeLower ? course.type?.toLowerCase() === typeLower : true;
-
-    return titleMatches && typeMatches;
-  });
+  const course = selectCourse(coursesData as Course[], titleStartsWith, type);
 
   const hasError = !!error || (!loading && !course);
 

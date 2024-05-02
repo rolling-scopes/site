@@ -1,7 +1,9 @@
+import { useLoaderData } from 'react-router-dom';
 import { hasDayInDate } from './utils/has-day';
 import { ButtonOutlined, DateLang, SectionLabel, Subtitle, Title } from '@/app/components';
-import { useCourseByTitle, useTitle } from '@/app/hooks';
-import { type Course, type CourseType } from '@/app/types';
+import { useTitle } from '@/app/hooks';
+import selectCourse from '@/app/hooks/use-course-by-title/utils/select-course.ts';
+import { Course, type CourseType } from '@/app/types';
 import Image from '@/features/image';
 
 import './course-main.scss';
@@ -12,13 +14,13 @@ interface CourseMainProps {
 }
 
 export const CourseMain = ({ courseName, type }: CourseMainProps) => {
-  const { course: data, hasError } = useCourseByTitle(courseName, type);
+  const courses = useLoaderData() as Course[];
 
-  const course = data as Course;
+  const course = selectCourse(courses, courseName, type);
 
   useTitle(`${course?.title || ''} · The Rolling Scopes School`);
 
-  if (hasError || !course) {
+  if (!course) {
     return <p>Error fetching course. Try again.</p>;
   }
 
