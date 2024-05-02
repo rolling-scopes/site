@@ -11,7 +11,7 @@ export const Actions = ({ actions, marked = false }: ActionsProps) => {
   return (
     <ul className={`stage-actions ${marked ? 'marked' : ''}`}>
       {actions.map((action, index) => (
-        <li key={index}>
+        <li className={`${typeof action !== 'string' ? 'marked' : ''}`} key={index}>
           {typeof action === 'string' ? <>{action}</> : <ClickableText data={action} />}
         </li>
       ))}

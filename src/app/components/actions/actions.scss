@@ -13,7 +13,8 @@
   letter-spacing: 0.5px;
   list-style-type: none;
 
-  &.marked {
+  &.marked, 
+  & li.marked {
     list-style-type: disc;
-  }
+  } 
 }

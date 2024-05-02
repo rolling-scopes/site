@@ -1,25 +1,3 @@
 .required-link {
     text-decoration: underline;
-
-    &:first-child {
-        display: block;
-
-        &::before{
-            content: '-';
-            display: inline-block;
-            margin-right: 5px;
-        }
-    }
-
-    &:first-child ~ .required-link {
-        display: block;
-
-        &::before{
-            content: '-';
-            display: inline-block;
-            margin-right: 5px;
-        }
-    }
-
 }
-
