@@ -1,30 +1,36 @@
 import { act } from 'react-dom/test-utils';
 import { render, screen } from '@testing-library/react';
-import { Mock } from 'vitest';
+import { vi } from 'vitest';
 import { CourseMain } from './course-main';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
-import { useCourseByTitle } from '@/app/hooks';
+
+const mockedCourseNode = {
+  title: 'Node.js',
+  language: ['English'],
+  type: 'Mentoring Program',
+  mode: 'online',
+  enroll: 'https://wearecommunity.io/events/nodejs-rs-2024q1',
+  secondaryIcon: MOCKED_IMAGE_PATH,
+  startDate: '22 Jan, 3060',
+};
+
+const mockedCourseReact = {
+  title: 'React.js',
+  language: ['English'],
+  type: 'Mentoring Program',
+  mode: 'online',
+  enroll: 'https://wearecommunity.io/events/react-rs-2024q1',
+  secondaryIcon: MOCKED_IMAGE_PATH,
+  startDate: '22 Jan, 2024',
+};
 
 vi.mock('@/app/hooks');
+vi.mock('react-router-dom', () => ({
+  useLoaderData: vi.fn(() => [mockedCourseNode, mockedCourseReact]),
+}));
 
 describe('CourseMain', () => {
-  const testCourse = {
-    loading: false,
-    error: '',
-    course: {
-      title: 'Node.js',
-      language: ['English'],
-      type: 'Mentoring Program',
-      mode: 'online',
-      enroll: 'https://wearecommunity.io/events/nodejs-rs-2024q1',
-      secondaryIcon: MOCKED_IMAGE_PATH,
-      startDate: '22 Jan, 3060',
-    },
-  };
-
   beforeEach(() => {
-    (useCourseByTitle as Mock).mockReturnValue(testCourse);
-
     act(() => {
       render(<CourseMain courseName="Node.js" type="Mentoring Program" />);
     });
@@ -41,14 +47,7 @@ describe('CourseMain', () => {
   });
 
   it('renders the section with correct label depending on date', () => {
-    (useCourseByTitle as Mock).mockReturnValueOnce({
-      ...testCourse,
-      course: {
-        ...testCourse.course,
-        startDate: '22 Jan, 2024',
-      },
-    });
-    render(<CourseMain courseName="Node.js course" type="Mentoring Program" />);
+    render(<CourseMain courseName="React" type="Mentoring Program" />);
     const labelElement = screen.getByText('upcoming');
     expect(labelElement).toBeVisible();
   });
