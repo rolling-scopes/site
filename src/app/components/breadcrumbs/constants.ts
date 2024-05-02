@@ -6,4 +6,5 @@ export const breadcrumbNameMap: Record<string, string> = {
   angular: 'Angular Course',
   'aws-cloud-developer': 'AWS Cloud Developer Course',
   'aws-fundamentals': 'AWS Fundamentals Course',
+  reactjs: 'React course',
 };
