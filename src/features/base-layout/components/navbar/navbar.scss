@@ -9,10 +9,6 @@
   top: 0;
   left: 0;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
   width: 100%;
   height: 64px;
   padding: 8px 40px;
@@ -36,6 +32,17 @@
     border-bottom-left-radius: 0;
     box-shadow: rgb(0 0 0 / 8.2%) 0 1.0260px 8.0694px 0;
   }
+
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
 
   .burger {
     @include media-hover {
@@ -111,9 +118,10 @@
       }
     }
   }
+
 }
 
-.navbar > .menu {
+.navbar-content > .menu {
   position: relative;
   display: flex;
   gap: 28px;
