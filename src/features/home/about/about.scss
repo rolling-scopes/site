@@ -1,4 +1,18 @@
 .about {
+  &.content {
+    &.column-2 {
+      @include media-laptop {
+        flex-direction: row;
+        gap: 50px;
+      }
+
+      @include media-tablet-large {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+  }
+
   & .left {
     @include media-laptop {
       min-width: 400px;

@@ -4,13 +4,15 @@
   }
 
   &.content {
-    @include media-laptop {
+    @include media-tablet-large {
       flex-direction: column;
+      gap: 0;
       align-items: center;
     }
 
     display: flex;
     flex-direction: row;
+    gap: 50px;
     align-items: flex-start;
     justify-content: space-between;
 

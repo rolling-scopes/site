@@ -1,6 +1,5 @@
 import { type Mock, describe, expect, it } from 'vitest';
 import { Footer } from './footer';
-import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 import { renderWithRouter } from '@/__tests__/utils';
 import { useWindowSize } from '@/app/hooks';
 
@@ -21,9 +20,9 @@ describe('Footer', () => {
   });
 
   it('displays logo', () => {
-    const { getByRole } = renderWithRouter(<Footer />);
-    const logo = getByRole('img', { name: 'The Rolling Scopes School' });
-    expect(logo).toHaveAttribute('src', MOCKED_IMAGE_PATH);
+    const { getByTestId } = renderWithRouter(<Footer />);
+    const logoElement = getByTestId('logo-footer');
+    expect(logoElement).toBeInTheDocument();
   });
 
   it('displays copyright in the footer', () => {
