@@ -1,7 +1,8 @@
+import { RouteObject } from 'react-router-dom';
 import { config } from '@/config';
 import courseLoader from '@/features/course-main/courseLoader.ts';
 
-const coursesRoute = {
+const coursesRoute: RouteObject = {
   path: '/courses',
   children: [
     {
@@ -72,7 +73,7 @@ const coursesRoute = {
   ],
 };
 
-const notFoundRoute = {
+const notFoundRoute: RouteObject = {
   path: '*',
   lazy: async () => {
     const { NotFound } = await import('../pages/not-found.tsx');
@@ -80,7 +81,7 @@ const notFoundRoute = {
   },
 };
 
-export const routes = config.isRollingScopesLanding
+export const routes: RouteObject[] = config.isRollingScopesLanding
   ? [
       {
         path: '/',
