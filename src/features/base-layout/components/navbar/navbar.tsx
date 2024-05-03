@@ -53,35 +53,37 @@ export const Navbar = () => {
   }, [width, key, hash, pathname]);
 
   return (
-    <div className={`navbar ${color}`} data-testid="navigation">
-      <Link to="/" onClick={() => window.scrollTo({ top: 0 })}>
-        <LogoWrapper type="navbar" />
-      </Link>
+    <nav className={`navbar ${color}`} data-testid="navigation">
+      <section className="navbar-content">
+        <Link to="/" onClick={() => window.scrollTo({ top: 0 })}>
+          <LogoWrapper type="navbar" />
+        </Link>
 
-      {isMobile && (
-        <menu className={`mobile-menu ${isMenuOpen ? 'open' : ''}`} data-testid="mobile-menu">
-          <MobileView type="navbar" />
-        </menu>
-      )}
+        {isMobile && (
+          <menu className={`mobile-menu ${isMenuOpen ? 'open' : ''}`} data-testid="mobile-menu">
+            <MobileView type="navbar" />
+          </menu>
+        )}
 
-      {!isMobile && (
-        <menu className="menu">
-          {navLinks.map((link) => {
-            const isDropdown = link.label === 'RS School';
+        {!isMobile && (
+          <menu className="menu">
+            {navLinks.map((link) => {
+              const isDropdown = link.label === 'RS School';
 
-            return (
-              <NavItem
-                key={link.label}
-                label={link.label}
-                href={isDropdown ? undefined : link.href}
-                dropdown={isDropdown}
-              />
-            );
-          })}
-        </menu>
-      )}
+              return (
+                <NavItem
+                  key={link.label}
+                  label={link.label}
+                  href={isDropdown ? undefined : link.href}
+                  dropdown={isDropdown}
+                />
+              );
+            })}
+          </menu>
+        )}
 
-      {isMobile && <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />}
-    </div>
+        {isMobile && <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />}
+      </section>
+    </nav>
   );
 };
