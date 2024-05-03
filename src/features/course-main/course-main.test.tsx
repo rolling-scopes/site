@@ -1,9 +1,11 @@
 import { act } from 'react-dom/test-utils';
 import { render, screen } from '@testing-library/react';
+import dayjs from 'dayjs';
 import { Mock } from 'vitest';
 import { CourseMain } from './course-main';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 import { useCourseByTitle } from '@/app/hooks';
+import { Labels } from '@/app/types';
 
 vi.mock('@/app/hooks');
 
@@ -17,7 +19,7 @@ const testCourse = {
     mode: 'online',
     enroll: 'https://wearecommunity.io/events/nodejs-rs-2024q1',
     secondaryIcon: MOCKED_IMAGE_PATH,
-    startDate: '22 Jan, 3060',
+    startDate: dayjs().subtract(2, 'month').format('D MMM, YYYY'),
   },
 };
 
@@ -36,7 +38,7 @@ describe('CourseMain', () => {
   });
 
   it('renders the section label correctly', () => {
-    const labelElement = screen.getByText('planned');
+    const labelElement = screen.getByText(Labels.PLANNED);
     expect(labelElement).toBeVisible();
   });
 
@@ -67,15 +69,26 @@ describe('CourseMain', () => {
       ...testCourse,
       course: {
         ...testCourse.course,
-        startDate: new Date().toLocaleString('en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-        }),
+        startDate: dayjs().format('D MMM, YYYY'),
       },
     });
     render(<CourseMain courseName="Node.js course" type="Mentoring Program" />);
-    const labelElement = screen.getByText('available');
+    const labelElement = screen.getByText(Labels.AVAILABLE);
+    expect(labelElement).toBeVisible();
+  });
+});
+
+describe('CourseMain', () => {
+  it('renders the section with correct label depending on date', () => {
+    (useCourseByTitle as Mock).mockReturnValueOnce({
+      ...testCourse,
+      course: {
+        ...testCourse.course,
+        startDate: dayjs().add(1, 'month').format('D MMM, YYYY'),
+      },
+    });
+    render(<CourseMain courseName="Node.js course" type="Mentoring Program" />);
+    const labelElement = screen.getByText(Labels.UPCOMING);
     expect(labelElement).toBeVisible();
   });
 });

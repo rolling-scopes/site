@@ -1,18 +1,17 @@
+import dayjs from 'dayjs';
+import isBetween from 'dayjs/plugin/isBetween';
 import { hasDayInDate } from './utils/has-day';
 import { ButtonOutlined, DateLang, SectionLabel, Subtitle, Title } from '@/app/components';
 import { useCourseByTitle, useTitle } from '@/app/hooks';
-import { type Course, type CourseType } from '@/app/types';
+import { Course, CourseType, Labels } from '@/app/types';
 import Image from '@/features/image';
 
-import './course-main.scss';
+import styles from './course-main.module.scss';
 
 interface CourseMainProps {
   courseName: string;
   type?: CourseType;
 }
-
-const MS_IN_2_WEEKS = 1209600000;
-const MS_IN_3_MONTHS = 7889400000;
 
 export const CourseMain = ({ courseName, type }: CourseMainProps) => {
   const { course: data, hasError } = useCourseByTitle(courseName, type);
@@ -25,31 +24,29 @@ export const CourseMain = ({ courseName, type }: CourseMainProps) => {
     return <p>Error fetching course. Try again.</p>;
   }
 
-  const now = new Date().setHours(0, 0, 0, 0);
-  const requiredDate = new Date(course.startDate).setHours(0, 0, 0, 0);
-
-  const label =
-    hasDayInDate(course.startDate) && Math.abs(now - requiredDate) < MS_IN_2_WEEKS
-      ? 'available'
-      : now < requiredDate && requiredDate - now < MS_IN_3_MONTHS
-        ? 'upcoming'
-        : 'planned';
-
   const { title, altTitle, language, mode, enroll, secondaryIcon, startDate } = course;
 
+  const now = dayjs();
+  const courseStartDate = dayjs(startDate);
+  dayjs.extend(isBetween);
+
+  const label =
+    hasDayInDate(startDate) &&
+    courseStartDate.isBetween(now.subtract(2, 'week'), now.add(2, 'week'))
+      ? Labels.AVAILABLE
+      : courseStartDate.isBetween(now, now.add(3, 'month'))
+        ? Labels.UPCOMING
+        : Labels.PLANNED;
+
   return (
-    <main className="course-main container">
-      <div className="course-main content column-2">
-        <div className="icon">
-          <Image src={secondaryIcon} alt={title} lazy="false" />
-        </div>
-        <div className="info">
-          <SectionLabel label={label} />
-          <Title text={`${altTitle || title} Course`} />
-          {type && <Subtitle text={type} />}
-          <DateLang startDate={startDate} language={language} mode={mode} />
-          <ButtonOutlined label="Enroll" href={enroll} />
-        </div>
+    <main className={styles.container}>
+      <Image className={styles.icon} src={secondaryIcon} alt={title} lazy="false" />
+      <div className={styles.info}>
+        <SectionLabel label={label} />
+        <Title text={`${altTitle || title} Course`} />
+        {type && <Subtitle text={type} type="course-main" />}
+        <DateLang startDate={startDate} language={language} mode={mode} type="main" />
+        <ButtonOutlined label="Enroll" href={enroll} />
       </div>
     </main>
   );
