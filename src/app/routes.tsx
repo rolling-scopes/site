@@ -1,6 +1,6 @@
 import { RouteObject } from 'react-router-dom';
 import { config } from '@/config';
-import courseLoader from '@/features/course-main/courseLoader.ts';
+import { courseLoader } from '@/features/course-main/courseLoader.ts';
 
 const coursesRoute: RouteObject = {
   path: '/courses',
