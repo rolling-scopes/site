@@ -2,7 +2,7 @@ import { useLoaderData } from 'react-router-dom';
 import { hasDayInDate } from './utils/has-day';
 import { ButtonOutlined, DateLang, SectionLabel, Subtitle, Title } from '@/app/components';
 import { useTitle } from '@/app/hooks';
-import selectCourse from '@/app/hooks/use-course-by-title/utils/select-course.ts';
+import { selectCourse } from '@/app/hooks/use-course-by-title/utils/select-course.ts';
 import { Course, type CourseType } from '@/app/types';
 import Image from '@/features/image';
 

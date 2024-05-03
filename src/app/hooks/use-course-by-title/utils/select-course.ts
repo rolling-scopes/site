@@ -1,7 +1,11 @@
 import isCourse from '@/app/hooks/use-course-by-title/utils/is-course.ts';
 import { Course } from '@/app/types';
 
-const selectCourse = (coursesData: Course[], titleStartsWith: string, type: string | undefined) => {
+export const selectCourse = (
+  coursesData: Course[],
+  titleStartsWith: string,
+  type: string | undefined,
+) => {
   const courses = coursesData.filter(isCourse);
 
   const titleLower = titleStartsWith.toLowerCase();
@@ -19,5 +23,3 @@ const selectCourse = (coursesData: Course[], titleStartsWith: string, type: stri
 
   return course;
 };
-
-export default selectCourse;

@@ -1,5 +1,5 @@
 import { useDataByName } from '../use-data-by-name';
-import selectCourse from '@/app/hooks/use-course-by-title/utils/select-course.ts';
+import { selectCourse } from '@/app/hooks/use-course-by-title/utils/select-course.ts';
 import { Course, CourseType } from '@/app/types';
 
 export const useCourseByTitle = (titleStartsWith: string, type?: CourseType) => {
