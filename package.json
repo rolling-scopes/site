@@ -14,7 +14,7 @@
     "preview": "vite preview",
     "test": "vitest --run",
     "coverage": "vitest run --coverage",
-    "precommit": "npm run stylelint:fix && npm run lint:fix && npm run build",
+    "precommit": "npm run stylelint && npm run lint && npm run build",
     "prepare": "husky"
   },
   "dependencies": {
