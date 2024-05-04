@@ -17,7 +17,7 @@ Therefore we introduced an automated image optimization technique that will prod
 🎉 Developers are using our brand new component API `<Image />`. That will perform all the necessary optimizations automatically.
 
 ### ⚠️ The only thing that developer must to watch closely
-Is that the images that will be loaded on the main screen - must be loaded with `high priority`, that means that for such images **we need to disable lazy loading**, because it makes no sense to load them lazily 🤷‍♂️, and will produce performance drop.
+Is that the images that will be loaded on the start screen - must be loaded with `high priority`, that means that for such images **we need to disable lazy loading**, because it makes no sense to load them lazily 🤷‍♂️, and will produce performance drop.
 
 <img src="./assets/watch-close.png" width="600" alt="image">
 
@@ -47,11 +47,11 @@ The src prop can accept image of any format - `.jpg`, `.jpeg`, `.png`... Everyth
 <img loading="eager" srcset="/assets/rs-slope-nodejs-BmvHY6ZF-425.webp 425w, /assets/rs-slope-nodejs-BmvHY6ZF-768.webp 768w, /assets/rs-slope-nodejs-BmvHY6ZF.webp 1280w" sizes="(max-width: 425px) 425px, (max-width: 768px) 768px, 1280px" decoding="auto" fetchpriority="high" src="/assets/rs-slope-nodejs-BmvHY6ZF.webp" draggable="false" alt="Node.js">
 ```
 
-## 🤔 How it works behind the scenes?
+## 🤔 How is it working behind the scenes?
 1. Any image of any format will be converted to `WebP` and compressed
 2. If an image is already in `WebP` format it'll be only compressed
 3. `SVG` are compressed as well, using [SVGO](https://github.com/svg/svgo)
-4. At the build step the 2 more variants of the image will be generated based on `.env` variables breakpoints. By default it's `768px` image for `tablets` and `425px` for `mobile`.
+4. At the build step the 2 more variants of the image will be generated based on `env` variables breakpoints. By default it's `768px` image for `tablets` and `425px` for `mobile`.
 
 You can also correct the compression value from `1 to 100` - where `1` is the most compressed image and `100` is the most quality respectful.
 
@@ -64,7 +64,7 @@ You can also correct the compression value from `1 to 100` - where `1` is the mo
 }
 ```
 
-Also should be mentioned that if an image is very small e.g `90px:90px` and the `.env` variables are greater that this image size, no optimization are gonna be performed for this image - this means that for this image will not be created 2 different smaller sizes.
+Also should be mentioned that if an image is very small e.g `90px:90px` and the `env` variables are greater that this image size, no optimization will be performed for such image - therefore will not be created 2 different smaller sizes.
 
 The `<Image />` component also know how to deal in such situation, and if there are no responsive image variants for `tablet` and `mobile` - it will fallback to basic `src` image (in our case image of `90px:90px`)
 
