@@ -13,6 +13,7 @@
     "lint:fix": "eslint . --fix --ext ts,tsx --report-unused-disable-directives --max-warnings 10",
     "preview": "vite preview",
     "test": "vitest --run",
+    "test:playWright": "npx playwright test",
     "coverage": "vitest run --coverage",
     "precommit": "npm run stylelint:fix && npm run lint:fix && npm run build",
     "prepare": "husky"
