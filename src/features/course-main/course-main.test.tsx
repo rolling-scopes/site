@@ -1,10 +1,10 @@
 import { act } from 'react-dom/test-utils';
 import { render, screen } from '@testing-library/react';
-import dayjs from 'dayjs';
 import { Mock } from 'vitest';
 import { CourseMain } from './course-main';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 import { useCourseByTitle } from '@/app/hooks';
+import { dayJS } from '@/app/services/dayjs';
 import { Labels } from '@/app/types';
 
 vi.mock('@/app/hooks');
@@ -19,7 +19,7 @@ const testCourse = {
     mode: 'online',
     enroll: 'https://wearecommunity.io/events/nodejs-rs-2024q1',
     secondaryIcon: MOCKED_IMAGE_PATH,
-    startDate: dayjs().subtract(2, 'month').format('D MMM, YYYY'),
+    startDate: dayJS().subtract(2, 'month').format('D MMM, YYYY'),
   },
 };
 
@@ -69,7 +69,7 @@ describe('CourseMain', () => {
       ...testCourse,
       course: {
         ...testCourse.course,
-        startDate: dayjs().format('D MMM, YYYY'),
+        startDate: dayJS().format('D MMM, YYYY'),
       },
     });
     render(<CourseMain courseName="Node.js course" type="Mentoring Program" />);
@@ -84,7 +84,7 @@ describe('CourseMain', () => {
       ...testCourse,
       course: {
         ...testCourse.course,
-        startDate: dayjs().add(1, 'month').format('D MMM, YYYY'),
+        startDate: dayJS().add(1, 'month').format('D MMM, YYYY'),
       },
     });
     render(<CourseMain courseName="Node.js course" type="Mentoring Program" />);

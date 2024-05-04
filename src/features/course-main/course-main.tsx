@@ -1,5 +1,4 @@
 import dayjs from 'dayjs';
-import isBetween from 'dayjs/plugin/isBetween';
 import { hasDayInDate } from './utils/has-day';
 import { ButtonOutlined, DateLang, SectionLabel, Subtitle, Title } from '@/app/components';
 import { useCourseByTitle, useTitle } from '@/app/hooks';
@@ -28,7 +27,6 @@ export const CourseMain = ({ courseName, type }: CourseMainProps) => {
 
   const now = dayjs();
   const courseStartDate = dayjs(startDate);
-  dayjs.extend(isBetween);
 
   const label =
     hasDayInDate(startDate) &&
