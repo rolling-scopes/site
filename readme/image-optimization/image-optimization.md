@@ -6,7 +6,7 @@ The problem that we faced is that we experience troubles with initial page loadi
 
 🫢 Therefore we are facing a significant performance drop on initial page load, which is unacceptable in modern web:
 
-<img src="./assets/img.png" width="600" alt="image">
+<img src="assets/bad-performance.png" width="600" alt="image">
 
 For faster loading, developers use modern `WebP` images and `lazy loading`. This means images only download when they appear on screen.
 
