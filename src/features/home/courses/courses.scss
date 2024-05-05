@@ -82,30 +82,8 @@
           }
         }
 
-        & .details-container {
-          @extend %transition-all;
-          @extend %transition-all;
-
-          cursor: pointer;
-
-          position: relative;
-
-          overflow: visible;
-          display: flex;
-          flex-flow: row nowrap;
-          flex-shrink: 0;
-          flex-wrap: nowrap;
-          gap: 0;
-          place-content: center flex-start;
-          align-content: center;
-          align-items: center;
-
-          box-sizing: border-box;
-          width: fit-content;
-          height: 100%;
-          padding: 16px 16px 16px 16px;
-
-          border-radius: 0 0 0 0;
+        .details-container {
+          padding: 16px;
         }
       }
     }
@@ -118,11 +96,5 @@
       width: 299px;
       height: 193px;
     }
-  }
-}
-
-@include media-hover {
-  .courses .content .courses .course-card:hover > .details-container > .button {
-    background-color: rgb(84 84 84 / 40%);
   }
 }
