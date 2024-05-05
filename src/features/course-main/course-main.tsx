@@ -28,13 +28,20 @@ export const CourseMain = ({ courseName, type }: CourseMainProps) => {
   const now = dayjs();
   const courseStartDate = dayjs(startDate);
 
-  const label =
+  const isAvailable =
     hasDayInDate(startDate) &&
-    courseStartDate.isBetween(now.subtract(2, 'week'), now.add(2, 'week'))
-      ? Labels.AVAILABLE
-      : courseStartDate.isBetween(now, now.add(3, 'month'))
-        ? Labels.UPCOMING
-        : Labels.PLANNED;
+    courseStartDate.isBetween(now.subtract(2, 'week'), now.add(2, 'week'));
+  const isUpcoming = courseStartDate.isBetween(now, now.add(3, 'month'));
+
+  let label = Labels.PLANNED;
+
+  if (isAvailable) {
+    label = Labels.AVAILABLE;
+  }
+
+  if (isUpcoming) {
+    label = Labels.UPCOMING;
+  }
 
   return (
     <main className={styles.container}>
