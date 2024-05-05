@@ -2,7 +2,7 @@
 
 ## 💫 Introduction
 
-The problem that we faced is that we experience troubles with initial page loading, because of too many images are trying to load all at once, even if this images are not yet visible on the page (especially noticeable on devices, with slow internet connection)
+The problem that we faced is that we experience troubles with initial page loading, because of too many images are trying to load all at once, even if those images are not yet visible on the page (especially noticeable on devices, with slow internet connection)
 
 🫢 Therefore we are facing a significant performance drop on initial page load, which is unacceptable in modern web:
 
@@ -10,11 +10,11 @@ The problem that we faced is that we experience troubles with initial page loadi
 
 For faster loading, developers use modern `WebP` images and `lazy loading`. This means images only download when they appear on screen.
 
-Our motivation is that developers shouldn't think about any trivial performance optimization and focus on his more important job.
+Our motivation is that developers shouldn't think about trivial performance optimization and focus on more important work.
 
-Therefore we introduced an automated image optimization technique that will produce all the necessary work by himself. The optimizations are performed in a super simple way:
+Therefore we introduced an automated image optimization technique that will produce all the necessary work by itself. The optimizations are performed in a super simple way:
 
-🎉 Developers are using our brand new component API `<Image />`. That will perform all the necessary optimizations automatically.
+🎉 Developers should use our brand new component API `<Image />`. That will perform all the necessary optimizations automatically.
 
 ### ⚠️ The only thing that developer must to watch closely
 Is that the images that will be loaded on the start screen - must be loaded with `high priority`, that means that for such images **we need to disable lazy loading**, because it makes no sense to load them lazily 🤷‍♂️, and will produce performance drop.
@@ -55,7 +55,7 @@ The src prop can accept image of any format - `.jpg`, `.jpeg`, `.png`... Everyth
 
 You can also correct the compression value from `1 to 100` - where `1` is the most compressed image and `100` is the most quality respectful.
 
-⚠️ Unfortinally, we need to duplicate the `env` variables in the `build` script and in the `optimizeImages` script. Because the `env` variables are defined for the each script's runtime separatelly.
+⚠️ Unfortunately, we need to duplicate the `env` variables in the `build` script and in the `optimizeImages` script. Because the `env` variables are defined for the runtime of each script separately.
 
 ```JSON
 {
@@ -73,7 +73,7 @@ The `<Image />` component also know how to deal in such situation, and if there 
 ### ⛔ **No optimizations are performed for development mode**
 
 ## 🧠 Source
-You can check out the links with a deep dive into the image optimization in the modern web, that are been used for our topic:
+You can check out the links with a deep dive into image optimization on the modern web that were used for our topic:
 
 * [Browser-level image lazy loading for the web](https://web.dev/articles/browser-level-image-lazy-loading)
 * [Optimize Largest Contentful Paint](https://web.dev/articles/optimize-lcp)
