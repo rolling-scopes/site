@@ -1,7 +1,6 @@
-/* eslint-disable import/no-named-as-default-member */
-import dayjs from 'dayjs';
+import dayjs, { extend } from 'dayjs';
 import isBetween from 'dayjs/plugin/isBetween';
 
-dayjs.extend(isBetween);
+extend(isBetween);
 
 export const dayJS = dayjs;

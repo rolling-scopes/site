@@ -37,7 +37,7 @@ describe('CourseMain', () => {
     expect(titleElement).toBeVisible();
   });
 
-  it('renders the section label correctly', () => {
+  it('renders the section label "PLANNED" correctly', () => {
     const labelElement = screen.getByText(Labels.PLANNED);
     expect(labelElement).toBeVisible();
   });
@@ -64,7 +64,7 @@ describe('CourseMain', () => {
 });
 
 describe('CourseMain', () => {
-  it('renders the section with correct label depending on date', () => {
+  it('renders the section with correct label "AVAILABLE"', () => {
     (useCourseByTitle as Mock).mockReturnValueOnce({
       ...testCourse,
       course: {
@@ -76,10 +76,8 @@ describe('CourseMain', () => {
     const labelElement = screen.getByText(Labels.AVAILABLE);
     expect(labelElement).toBeVisible();
   });
-});
 
-describe('CourseMain', () => {
-  it('renders the section with correct label depending on date', () => {
+  it('renders the section with correct label "UPCOMING"', () => {
     (useCourseByTitle as Mock).mockReturnValueOnce({
       ...testCourse,
       course: {
