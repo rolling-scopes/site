@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Arrow } from '@/icons/btn-arrow';
 
 import styles from './button.module.scss';
@@ -32,13 +33,13 @@ export const Button = ({
   btnClass += ` ${rounded ? styles.rounded : ''}`;
 
   return (
-    <a className={btnClass} href={href} rel="noreferrer">
+    <Link className={btnClass} to={href} rel="noreferrer">
       {label}
       {arrow && (
         <span className={styles.arrow}>
           <Arrow color={color} size={arrowSize} />
         </span>
       )}
-    </a>
+    </Link>
   );
 };

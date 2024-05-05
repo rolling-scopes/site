@@ -1,6 +1,7 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { Mock, beforeEach, describe, expect, it, vi } from 'vitest';
 import { Courses } from './courses';
+import { renderWithRouter } from '@/__tests__/utils';
 import { useWindowSize } from '@/app/hooks';
 
 describe('Courses', () => {
@@ -9,7 +10,7 @@ describe('Courses', () => {
   }));
 
   beforeEach(() => {
-    render(<Courses />);
+    renderWithRouter(<Courses />);
   });
 
   it('renders the title correctly', () => {
@@ -29,14 +30,14 @@ describe('Courses', () => {
 
   it('renders link with arrow only on window size 810px', () => {
     (useWindowSize as Mock).mockReturnValue({ width: 810, height: 900 });
-    render(<Courses />);
+    renderWithRouter(<Courses />);
     const courseCards = screen.getAllByRole('link', { name: /^(More)/gi });
     expect(courseCards.length).toBe(5);
   });
 
   it('renders link with "More details arrow_forward" on window size 810px', () => {
     (useWindowSize as Mock).mockReturnValue({ width: 1441, height: 900 });
-    render(<Courses />);
+    renderWithRouter(<Courses />);
     const courseCards = screen.getAllByRole('link', { name: 'More details' });
     expect(courseCards.length).toBe(5);
   });

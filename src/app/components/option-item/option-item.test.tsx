@@ -1,23 +1,24 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { OptionItem } from './option-item';
+import { renderWithRouter } from '@/__tests__/utils';
 
 describe('OptionItem component', () => {
   it('renders title and description', () => {
-    render(<OptionItem title="My Title" description="My Description" />);
+    renderWithRouter(<OptionItem title="My Title" description="My Description" />);
 
     expect(screen.getByText('My Title')).toBeInTheDocument();
     expect(screen.getByText('My Description')).toBeInTheDocument();
   });
 
   it('does not render button when buttonLabel is not provided', () => {
-    render(<OptionItem title="My Title" description="My Description" />);
+    renderWithRouter(<OptionItem title="My Title" description="My Description" />);
 
     expect(screen.queryByRole('link')).not.toBeInTheDocument();
   });
 
   it('renders button with correct label and href when buttonLabel is provided', () => {
-    render(
+    renderWithRouter(
       <OptionItem
         title="My Title"
         description="My Description"

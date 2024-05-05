@@ -1,8 +1,9 @@
 import { act } from 'react-dom/test-utils';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { Mock } from 'vitest';
 import { CourseMain } from './course-main';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
+import { renderWithRouter } from '@/__tests__/utils';
 import { useCourseByTitle } from '@/app/hooks';
 
 vi.mock('@/app/hooks');
@@ -26,7 +27,7 @@ describe('CourseMain', () => {
     (useCourseByTitle as Mock).mockReturnValue(testCourse);
 
     act(() => {
-      render(<CourseMain courseName="Node.js" type="Mentoring Program" />);
+      renderWithRouter(<CourseMain courseName="Node.js" type="Mentoring Program" />);
     });
   });
 
@@ -48,7 +49,7 @@ describe('CourseMain', () => {
         startDate: '22 Jan, 2024',
       },
     });
-    render(<CourseMain courseName="Node.js course" type="Mentoring Program" />);
+    renderWithRouter(<CourseMain courseName="Node.js course" type="Mentoring Program" />);
     const labelElement = screen.getByText('upcoming');
     expect(labelElement).toBeVisible();
   });

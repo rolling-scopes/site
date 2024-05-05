@@ -1,7 +1,8 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { type Mock, beforeEach } from 'vitest';
 import { About } from './about';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
+import { renderWithRouter } from '@/__tests__/utils';
 import { useCourseByTitle } from '@/app/hooks';
 
 vi.mock('@/app/hooks');
@@ -12,7 +13,7 @@ describe('About', () => {
       (useCourseByTitle as Mock).mockReturnValue({
         course: { enroll: 'http://course-url.com' },
       });
-      render(<About courseName="react" />);
+      renderWithRouter(<About courseName="react" />);
     });
 
     it('renders "Become a student" button with correct href when courseName is "react"', async () => {
@@ -36,7 +37,7 @@ describe('About', () => {
       (useCourseByTitle as Mock).mockReturnValue({
         course: { enroll: 'http://course-url.com' },
       });
-      render(<About courseName="angular" />);
+      renderWithRouter(<About courseName="angular" />);
     });
 
     it('renders "Become a student" button with correct href', async () => {

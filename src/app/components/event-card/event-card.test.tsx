@@ -1,6 +1,7 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { EventCard } from './event-card';
+import { renderWithRouter } from '@/__tests__/utils';
 
 describe('EventCard', () => {
   const mockProps = {
@@ -17,7 +18,7 @@ describe('EventCard', () => {
   };
 
   it('should render correctly', () => {
-    render(<EventCard {...mockProps} />);
+    renderWithRouter(<EventCard {...mockProps} />);
 
     expect(screen.getByText(mockProps.eventType)).toBeInTheDocument();
     expect(screen.getByText(mockProps.title)).toBeInTheDocument();
