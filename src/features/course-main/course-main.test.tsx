@@ -12,7 +12,7 @@ describe('CourseMain', () => {
     loading: false,
     error: '',
     course: {
-      title: 'Node.js course',
+      title: 'Node.js',
       language: ['English'],
       type: 'Mentoring Program',
       mode: 'online',
@@ -26,12 +26,12 @@ describe('CourseMain', () => {
     (useCourseByTitle as Mock).mockReturnValue(testCourse);
 
     act(() => {
-      render(<CourseMain courseName="Node.js course" type="Mentoring Program" />);
+      render(<CourseMain courseName="Node.js" type="Mentoring Program" />);
     });
   });
 
   it('renders the title correctly', async () => {
-    const titleElement = await screen.findByText('Node.js course');
+    const titleElement = await screen.findByText('Node.js Course');
     expect(titleElement).toBeVisible();
   });
 
@@ -68,7 +68,7 @@ describe('CourseMain', () => {
   });
 
   it('renders the image with correct source', () => {
-    const imageElement = screen.getByRole('img', { name: /Node.js course/i });
+    const imageElement = screen.getByRole('img', { name: /Node.js/i });
     expect(imageElement).toBeInTheDocument();
     expect(imageElement).toHaveAttribute('src', MOCKED_IMAGE_PATH);
   });

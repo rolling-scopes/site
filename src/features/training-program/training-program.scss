@@ -47,7 +47,9 @@
       .right {
         @include media-tablet-large {
           align-self: center;
+
           width: 320px;
+          max-width: 60%;
           height: auto;
           max-height: 511px;
         }
@@ -74,7 +76,8 @@
 
         img {
           width: 100%;
-          height: min-content;
+          // height: min-content; // need to check on mobile
+          object-fit: contain;
         }
       }
     }

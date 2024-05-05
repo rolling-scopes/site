@@ -13,13 +13,15 @@
     text-align: left;
 
     & .general {
-      @include media-laptop {
+      @include media-tablet-large {
         flex-direction: column;
+        gap: 0;
         align-items: center;
       }
 
       display: flex;
       flex-direction: row;
+      gap: 50px;
       align-items: flex-start;
       justify-content: space-between;
 
@@ -52,6 +54,7 @@
       @include media-mobile {
         width: 100%;
         height: auto;
+        object-fit: contain;
       }
 
       width: 358px;
@@ -73,7 +76,6 @@
       margin-top: 24px;
 
       & .option {
-
         @include media-laptop {
           max-width: 600px;
           margin-top: 24px;

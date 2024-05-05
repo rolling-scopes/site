@@ -1,5 +1,5 @@
 .courses {
-  & .title {
+  .title {
     margin-top: 24px;
 
     font-size: 36px;
@@ -8,7 +8,7 @@
     letter-spacing: 0;
   }
 
-  & .content {
+  .content {
     @include media-laptop {
       width: 100%;
       max-width: 1440px;
@@ -25,7 +25,7 @@
 
     padding: 0 120px 40px;
 
-    & .courses {
+    .courses {
       @include media-laptop {
         width: 100%;
       }
@@ -37,7 +37,7 @@
 
       width: 800px;
 
-      & .course-card {
+      .course-card {
         @extend %transition-all;
 
         @include media-hover {
@@ -47,71 +47,38 @@
         }
 
         display: flex;
-        flex-direction: row;
         align-items: center;
         justify-content: space-between;
 
         width: 100%;
         margin-top: 24px;
 
-        & .icon-container {
-          position: relative;
-
-          overflow: visible;
+        .icon-container {
           display: flex;
-          flex-flow: row nowrap;
-          flex-shrink: 0;
-          gap: 0;
-          place-content: center flex-start;
           align-items: center;
-
-          box-sizing: border-box;
-          width: min-content; /* 88px */
-          height: 100%;
-          padding: 16px 16px 16px 16px;
-
-          border-radius: 0;
+          justify-content: center;
+          padding: 16px;
         }
 
-        & .course-info {
+        .course-info {
           width: 100%;
           text-align: left;
 
-          & .name {
-            position: relative;
-
-            flex-shrink: 0;
-            // width: 573px;
-            height: auto; /* 24px */
-
+          .name {
             font-family: Inter-Medium, Inter, sans-serif;
             font-size: 18px;
             font-weight: 500;
-            font-style: normal;
             line-height: 24px;
-            color: #000;
-            letter-spacing: 0;
-            word-break: break-word;
-            word-wrap: break-word;
-            white-space: pre-wrap;
+            color: $color-primary-black;
           }
 
-          & .date {
-            position: relative;
-
-            flex-shrink: 0;
-
-            height: auto; /* 20px */
+          .date {
             margin-top: 8px;
 
             font-family: Inter, sans-serif;
             font-size: 14px;
             line-height: 20px;
-            color: #545454;
-            letter-spacing: 0;
-            word-break: break-word;
-            word-wrap: break-word;
-            white-space: pre-wrap;
+            color: $color-secondary-gray600;
           }
         }
 

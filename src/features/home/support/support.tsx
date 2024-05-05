@@ -1,6 +1,7 @@
 import { Button, Subtitle, Title, TitleType } from '@/app/components';
 
 import image from '@/assets/support.webp';
+import Image from '@/features/image';
 
 import './support.scss';
 
@@ -13,7 +14,7 @@ export const Support = () => (
         <Subtitle text="Thank you for your support!" />
         <Button label="Donate now " href="https://opencollective.com/rsschool" />
       </div>
-      <img className="right picture" src={image} alt="support-us" />
+      <Image className="right picture" src={image} alt="support-us" />
     </div>
   </div>
 );

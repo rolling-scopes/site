@@ -1,16 +1,18 @@
 .school {
   & .study {
-    @include media-laptop {
+    @include media-tablet-large {
       flex-direction: column;
+      gap: 0;
     }
-
+    
     display: flex;
     flex-direction: row;
+    gap: 50px;
     align-items: flex-start;
     justify-content: space-between;
 
     & .left {
-      @include media-laptop {
+      @include media-tablet-large {
         width: 100%;
       }
 
@@ -19,7 +21,7 @@
     }
 
     & .right {
-      @include media-laptop {
+      @include media-tablet-large {
         margin: 40px auto 0;
       }
     }
@@ -28,8 +30,9 @@
       @include media-tablet {
         width: 278px;
         height: auto;
+        object-fit: contain;
       }
-
+      
       width: 347px;
       height: 327px;
     }
@@ -44,5 +47,15 @@
   & .study-options {
     align-items: flex-start;
     margin-top: 24px;
+  }
+
+  .column-3 {
+    @include media-tablet-large {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    flex-direction: row;
+    gap: 24px;
   }
 }

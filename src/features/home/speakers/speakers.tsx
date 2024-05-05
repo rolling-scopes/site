@@ -1,6 +1,7 @@
 import { Subtitle, Title, TitleType } from '@/app/components';
 
 import image from '@/assets/speakers-wanted.webp';
+import Image from '@/features/image';
 
 import './speakers.scss';
 
@@ -40,7 +41,7 @@ export const Speakers = () => (
           <span>rolling.scopes@gmail.com</span>
         </div>
       </div>
-      <img className="right picture" src={image} alt="speakers-wanted" />
+      <Image className="right picture" src={image} alt="speakers-wanted" />
     </div>
   </div>
 );

@@ -10,6 +10,7 @@ export const AboutVideo = () => {
         <div className="video-wrapper">
           <div className="video-container">
             <iframe
+              loading="lazy"
               title="RS School Intro"
               src="https://www.youtube.com/embed/n4unZLVpnaU"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

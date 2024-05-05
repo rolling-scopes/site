@@ -18,27 +18,27 @@ describe('Courses', () => {
   });
 
   it('renders course info correctly', () => {
-    const courseElement = screen.getByText('AWS Fundamentals (EN)');
+    const courseElement = screen.getByText('AWS Fundamentals');
     expect(courseElement).toBeInTheDocument();
   });
 
   it('renders three course cards', () => {
     const courseCards = screen.getAllByRole('link', { name: 'More' });
-    expect(courseCards.length).toBe(3);
+    expect(courseCards.length).toBe(5);
   });
 
   it('renders link with arrow only on window size 810px', () => {
     (useWindowSize as Mock).mockReturnValue({ width: 810, height: 900 });
     render(<Courses />);
     const courseCards = screen.getAllByRole('link', { name: /^(More)/gi });
-    expect(courseCards.length).toBe(3);
+    expect(courseCards.length).toBe(5);
   });
 
   it('renders link with "More details arrow_forward" on window size 810px', () => {
     (useWindowSize as Mock).mockReturnValue({ width: 1441, height: 900 });
     render(<Courses />);
     const courseCards = screen.getAllByRole('link', { name: 'More details' });
-    expect(courseCards.length).toBe(3);
+    expect(courseCards.length).toBe(5);
   });
 
   it('renders the Go to RS School button', () => {

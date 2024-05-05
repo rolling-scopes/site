@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { type GenericItemProps } from './school-list';
 import { type Course } from '@/app/types';
+import Image from '@/features/image';
 
 interface SchoolItemProps {
   item: Course | GenericItemProps;
@@ -35,13 +36,12 @@ export const SchoolItem = ({ item, color }: SchoolItemProps) => {
         className={'id' in item ? 'school-item with-icon' : 'school-item'}
         onClick={'id' in item ? () => window.scrollTo({ top: 0 }) : undefined}>
         {'iconSmall' in item && (
-          <img
+          <Image
             className="icon-wrapper"
             src={item.iconSmall}
             alt={item.title}
             width={32}
             height={32}
-            loading="lazy"
           />
         )}
         {descriptionBlock}

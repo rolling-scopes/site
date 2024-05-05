@@ -1,3 +1,4 @@
+import { config } from '@/config';
 import { BaseLayout } from '@/features/base-layout';
 import { Courses, Home, Nodejs } from '@/pages';
 import { Angular } from '@/pages/angular';
@@ -7,7 +8,7 @@ import { JavaScript } from '@/pages/javascript';
 import { NotFound } from '@/pages/not-found';
 import { React } from '@/pages/react';
 
-export const routes = !process.env.RS_SCHOOL
+export const routes = config.isRollingScopesLanding
   ? [
       {
         path: '/',
@@ -42,6 +43,10 @@ export const routes = !process.env.RS_SCHOOL
           {
             index: true,
             element: <Courses />,
+          },
+          {
+            path: '/community',
+            element: <Home />,
           },
           {
             path: '/courses',

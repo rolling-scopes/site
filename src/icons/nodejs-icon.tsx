@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import { IconProps } from './icon.types';
 
-export const NodeJsIcon: FC = ({ width = '49', height = '47' }: IconProps) => (
+export const NodeJsIcon: FC = ({ width = '48', height = '36' }: IconProps) => (
   <svg
     aria-label="Node.js Icon"
     width={width}
     height={height}
-    viewBox="0 0 49 47"
+    viewBox="-4 0 48 44"
     fill="none"
     preserveAspectRatio="xMinYMin meet"
     xmlns="http://www.w3.org/2000/svg">

@@ -1,5 +1,6 @@
 import { Button, Subtitle, Title, TitleType } from '@/app/components';
 import mentorImg from '@/assets/mentors-wanted.webp';
+import Image from '@/features/image';
 
 import './mentors.scss';
 
@@ -18,7 +19,7 @@ export const Mentors = () => {
           <Button label="Become a mentor" href="https://app.rs.school/registry/mentor" />
         </div>
         <div className="picture">
-          <img src={mentorImg} alt="Become a mentor" />
+          <Image src={mentorImg} alt="Sloth - mascot dressed as a detective" />
         </div>
       </div>
     </section>
