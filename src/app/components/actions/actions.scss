@@ -12,9 +12,8 @@
   color: $color-secondary-gray600;
   letter-spacing: 0.5px;
   list-style-type: none;
-
-  &.marked, 
-  & li.marked {
-    list-style-type: disc;
-  } 
 }
+
+.marked {
+  list-style-type: disc;
+} 

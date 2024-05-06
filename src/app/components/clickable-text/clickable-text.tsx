@@ -8,16 +8,12 @@ interface ClickableTextProps {
 }
 
 export const ClickableText = ({ data }: ClickableTextProps) => {
-  return (
-    <>
-      {data.map((item, index) => (
-        <Fragment key={index}>
-          {item.text && <span>{item.text}</span>}
-          <a className="required-link" href={item.link}>
-            {item.title}
-          </a>
-        </Fragment>
-      ))}
-    </>
-  );
+  return data.map((item, index) => (
+    <Fragment key={index}>
+      {item.text && <span>{item.text}</span>}
+      <a className="required-link" href={item.link}>
+        {item.title}
+      </a>
+    </Fragment>
+  ));
 };

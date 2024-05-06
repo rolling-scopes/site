@@ -18,6 +18,7 @@ export const courseDataMap: CourseMap = {
         'In this case, you will have to spend enough time on self-preparation. We recommend:',
         [
           {
+            id: 0,
             text: 'Take a course in ',
             title: 'Computer Science.',
             link: 'https://rkhaslarov.github.io/computer-science-introduction/#introduction',
@@ -25,6 +26,7 @@ export const courseDataMap: CourseMap = {
         ],
         [
           {
+            id: 1,
             text: 'Read a good ',
             title: 'Javascript tutorial.',
             link: 'https://javascript.info/',
@@ -32,11 +34,13 @@ export const courseDataMap: CourseMap = {
         ],
         [
           {
+            id: 2,
             text: 'Use the ',
             title: 'Codewars platform',
             link: 'https://www.codewars.com/kata/search/javascript',
           },
           {
+            id: 3,
             text: ' to solve practical tasks. You can start with ',
             title: 'simpler ones.',
             link: 'https://www.codewars.com/kata/search/javascript?q=&r%5B%5D=-8&beta=false',
@@ -45,6 +49,7 @@ export const courseDataMap: CourseMap = {
         'Take free online courses:',
         [
           {
+            id: 4,
             text: '',
             title: 'Learn the Command Line  ',
             link: 'https://www.codecademy.com/learn/learn-the-command-line',
@@ -52,6 +57,7 @@ export const courseDataMap: CourseMap = {
         ],
         [
           {
+            id: 5,
             text: '',
             title: 'Learn Git ',
             link: 'https://www.codecademy.com/learn/learn-git',
@@ -59,6 +65,7 @@ export const courseDataMap: CourseMap = {
         ],
         [
           {
+            id: 6,
             text: '',
             title: 'Algorithms. ',
             link: 'https://www.coursera.org/learn/algorithms-part1',

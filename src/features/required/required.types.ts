@@ -1,4 +1,5 @@
 type Link = {
+  id: number;
   text: string;
   title: string;
   link: string;
