@@ -9,10 +9,10 @@ interface ActionsProps {
 }
 export const Actions = ({ actions, marked = false }: ActionsProps) => {
   return (
-    <ul className={`stage-actions ${marked ? 'marked' : ''}`}>
+    <ul className="stage-actions">
       {actions.map((action) => {
         const isLink = typeof action !== 'string';
-        const itemClassName = isLink ? 'marked' : undefined;
+        const itemClassName = isLink || marked ? 'marked' : undefined;
         const keyAction = isLink ? action[0].id : action;
 
         return (
