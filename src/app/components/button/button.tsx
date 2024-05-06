@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import { Arrow } from '@/icons/btn-arrow';
 
@@ -26,11 +27,15 @@ export const Button = ({
   rounded = false,
   arrowSize = 24,
 }: ButtonProps) => {
-  let btnClass = `${styles.button} ${outlined ? styles.outlined : styles.colored}`;
-  btnClass += ` ${arrow ? '' : styles['text']}`;
-  btnClass += ` ${regular ? styles['regular'] : ''}`;
-  btnClass += ` ${styles[size]}`;
-  btnClass += ` ${rounded ? styles.rounded : ''}`;
+  const btnClass = classNames({
+    [styles.button]: true,
+    [styles.outlined]: outlined,
+    [styles.colored]: !outlined,
+    [styles.text]: arrow,
+    [styles.regular]: regular,
+    [styles[size]]: true,
+    [styles.rounded]: rounded,
+  });
 
   return (
     <Link className={btnClass} to={href} rel="noreferrer">
