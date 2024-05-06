@@ -14,7 +14,7 @@
     "preview": "vite preview",
     "test": "vitest --run",
     "coverage": "vitest run --coverage",
-    "precommit": "npx lint-staged && npm run build",
+    "precommit": "concurrently \"npx lint-staged\" \"npm:build\"",
     "prepare": "husky"
   },
   "dependencies": {
