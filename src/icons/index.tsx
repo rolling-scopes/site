@@ -8,6 +8,7 @@ export { InstagramIcon } from './instagram';
 export { JetBrainsLogo } from './jetbrains';
 export { JsFrontendIcon } from './js-frontend-icon';
 export { LinkedInIcon } from './linkedIn';
+export { Logo } from './logo';
 export { NodeJsIcon } from './nodejs-icon';
 export { OpenSourcePhilosophyIcon } from './open-source-philosophy-icon';
 export { OpenToEveryoneIcon } from './open-to-everyone-icon';
