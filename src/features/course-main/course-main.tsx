@@ -1,4 +1,4 @@
-import { setLabel } from './utils';
+import { getCourseStatus } from './utils';
 import { ButtonOutlined, DateLang, SectionLabel, Subtitle, Title } from '@/app/components';
 import { useCourseByTitle, useTitle } from '@/app/hooks';
 import { Course, CourseType } from '@/app/types';
@@ -23,14 +23,14 @@ export const CourseMain = ({ courseName, type }: CourseMainProps) => {
   }
 
   const { title, altTitle, language, mode, enroll, secondaryIcon, startDate } = course;
-  const label = setLabel(startDate);
+  const status = getCourseStatus(startDate);
 
   return (
     <main className={`container ${styles.container}`}>
       <div className={`content ${styles.content}`}>
         <Image className={styles.icon} src={secondaryIcon} alt={title} lazy="false" />
         <div className={styles.info}>
-          <SectionLabel label={label} />
+          <SectionLabel label={status} />
           <Title text={`${altTitle || title} Course`} />
           {type && <Subtitle text={type} type="course-main" />}
           <DateLang startDate={startDate} language={language} mode={mode} type="main" />

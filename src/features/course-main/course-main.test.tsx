@@ -5,7 +5,7 @@ import { CourseMain } from './course-main';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 import { useCourseByTitle } from '@/app/hooks';
 import { dayJS } from '@/app/services/dayjs';
-import { Labels } from '@/app/types';
+import { CourseStatus } from '@/app/types';
 
 vi.mock('@/app/hooks');
 
@@ -38,7 +38,7 @@ describe('CourseMain', () => {
   });
 
   it('renders the section label "PLANNED" correctly', () => {
-    const labelElement = screen.getByText(Labels.PLANNED);
+    const labelElement = screen.getByText(CourseStatus.PLANNED);
     expect(labelElement).toBeVisible();
   });
 
@@ -73,7 +73,7 @@ describe('CourseMain', () => {
       },
     });
     render(<CourseMain courseName="Node.js course" type="Mentoring Program" />);
-    const labelElement = screen.getByText(Labels.AVAILABLE);
+    const labelElement = screen.getByText(CourseStatus.AVAILABLE);
     expect(labelElement).toBeVisible();
   });
 
@@ -86,7 +86,7 @@ describe('CourseMain', () => {
       },
     });
     render(<CourseMain courseName="Node.js course" type="Mentoring Program" />);
-    const labelElement = screen.getByText(Labels.UPCOMING);
+    const labelElement = screen.getByText(CourseStatus.UPCOMING);
     expect(labelElement).toBeVisible();
   });
 });
