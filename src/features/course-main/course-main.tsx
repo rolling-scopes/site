@@ -1,8 +1,7 @@
-import dayjs from 'dayjs';
-import { hasDayInDate } from './utils/has-day';
+import { setLabel } from './utils/set-label';
 import { ButtonOutlined, DateLang, SectionLabel, Subtitle, Title } from '@/app/components';
 import { useCourseByTitle, useTitle } from '@/app/hooks';
-import { Course, CourseType, Labels } from '@/app/types';
+import { Course, CourseType } from '@/app/types';
 import Image from '@/features/image';
 
 import styles from './course-main.module.scss';
@@ -24,34 +23,19 @@ export const CourseMain = ({ courseName, type }: CourseMainProps) => {
   }
 
   const { title, altTitle, language, mode, enroll, secondaryIcon, startDate } = course;
-
-  const now = dayjs();
-  const courseStartDate = dayjs(startDate);
-
-  const isAvailable =
-    hasDayInDate(startDate) &&
-    courseStartDate.isBetween(now.subtract(2, 'week'), now.add(2, 'week'));
-  const isUpcoming = courseStartDate.isBetween(now, now.add(3, 'month'));
-
-  let label = Labels.PLANNED;
-
-  if (isAvailable) {
-    label = Labels.AVAILABLE;
-  }
-
-  if (isUpcoming) {
-    label = Labels.UPCOMING;
-  }
+  const label = setLabel(startDate);
 
   return (
-    <main className={styles.container}>
-      <Image className={styles.icon} src={secondaryIcon} alt={title} lazy="false" />
-      <div className={styles.info}>
-        <SectionLabel label={label} />
-        <Title text={`${altTitle || title} Course`} />
-        {type && <Subtitle text={type} type="course-main" />}
-        <DateLang startDate={startDate} language={language} mode={mode} type="main" />
-        <ButtonOutlined label="Enroll" href={enroll} />
+    <main className={`container ${styles.container}`}>
+      <div className={`content ${styles.content}`}>
+        <Image className={styles.icon} src={secondaryIcon} alt={title} lazy="false" />
+        <div className={styles.info}>
+          <SectionLabel label={label} />
+          <Title text={`${altTitle || title} Course`} />
+          {type && <Subtitle text={type} type="course-main" />}
+          <DateLang startDate={startDate} language={language} mode={mode} type="main" />
+          <ButtonOutlined label="Enroll" href={enroll} />
+        </div>
       </div>
     </main>
   );
