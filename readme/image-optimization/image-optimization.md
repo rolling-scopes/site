@@ -2,13 +2,13 @@
 
 ## 💫 Introduction
 
-The problem that we faced is that we experience troubles with initial page loading, because of too many images are trying to load all at once, even if those images are not yet visible on the page (especially noticeable on devices, with slow internet connection)
+The problem that we faced is that we experience troubles with initial page loading due to too many images attempting to load all at once, even if those images are not yet visible on the page (especially noticeable on devices, with slow internet connection)
 
 🫢 Therefore we are facing a significant performance drop on initial page load, which is unacceptable in modern web:
 
 <img src="assets/bad-performance.png" width="600" alt="image">
 
-For faster loading, developers use modern `WebP` images and `lazy loading`. This means images only download when they appear on screen.
+To achieve faster loading times, developers use modern `WebP` images and `lazy loading`. This means images only download when they appear on screen.
 
 Our motivation is that developers shouldn't think about trivial performance optimization and focus on more important work.
 
@@ -34,7 +34,7 @@ Familiar API - you can use the component just like basic `img` element, all opti
 ```
 
 ```tsx
-// Explicitely disabled lazy loading 
+// Explicitly disabled lazy loading 
 // should be used if an image is on the start screen
 <Image src={photo} alt="Person's photo" lazy="false" />
 ```
@@ -64,9 +64,9 @@ You can also correct the compression value from `1 to 100` - where `1` is the mo
 }
 ```
 
-Also should be mentioned that if an image is very small e.g `90px:90px` and the `env` variables are greater that this image size, no optimization will be performed for such image - therefore will not be created 2 different smaller sizes.
+Also should be mentioned that if an image is very small e.g `90px x 90px` and the `env` variables are greater that this image size, no optimization will be performed for such image - therefore will not be created 2 different smaller sizes.
 
-The `<Image />` component also know how to deal in such situation, and if there are no responsive image variants for `tablet` and `mobile` - it will fallback to basic `src` image (in our case image of `90px:90px`)
+The `<Image />` component also knows how to deal in such situation, and if there are no responsive image variants for `tablet` and `mobile` - it will fallback to basic `src` image (in our case image of `90px:90px`)
 
 ### ⚠️ To check if responsive images are generated - first build the project and then run ```npm run preview```.
 
