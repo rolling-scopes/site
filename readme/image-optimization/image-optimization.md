@@ -66,7 +66,7 @@ You can also correct the compression value from `1 to 100` - where `1` is the mo
 
 Also should be mentioned that if an image is very small e.g `90px x 90px` and the `env` variables are greater that this image size, no optimization will be performed for such image - therefore will not be created 2 different smaller sizes.
 
-The `<Image />` component also knows how to deal in such situation, and if there are no responsive image variants for `tablet` and `mobile` - it will fallback to basic `src` image (in our case image of `90px:90px`)
+The `<Image />` component also knows how to deal in such situation, and if there are no responsive image variants for `tablet` and `mobile` - it will fallback to basic `src` image (in our case image of `90px x 90px`)
 
 ### ⚠️ To check if responsive images are generated - first build the project and then run ```npm run preview```.
 
