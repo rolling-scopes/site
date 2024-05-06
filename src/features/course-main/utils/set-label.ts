@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import { hasDayInDate } from './has-day';
+import { hasDayInDate } from '.';
 import { Labels } from '@/app/types';
 
 export function setLabel(date: string) {

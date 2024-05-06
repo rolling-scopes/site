@@ -1,4 +1,4 @@
-import { setLabel } from './utils/set-label';
+import { setLabel } from './utils';
 import { ButtonOutlined, DateLang, SectionLabel, Subtitle, Title } from '@/app/components';
 import { useCourseByTitle, useTitle } from '@/app/hooks';
 import { Course, CourseType } from '@/app/types';
