@@ -15,7 +15,7 @@ const breadcrumbNameMap: Record<string, string> = {
 describe('Breadcrumbs', () => {
   it('renders "Home"', async () => {
     renderWithRouter(<Breadcrumbs />, { route: route.HOME });
-    const homeLink = await screen.findByText(route.HOME);
+    const homeLink = await screen.findByText(/Home/i);
     expect(homeLink).toBeInTheDocument();
   });
 
