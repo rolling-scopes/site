@@ -1,33 +1,40 @@
 import { act } from 'react-dom/test-utils';
 import { render, screen } from '@testing-library/react';
-import { vi } from 'vitest';
 import { CourseMain } from './course-main';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
+import { dayJS } from '@/app/services/dayjs';
+import { CourseStatus } from '@/app/types';
 
-const mockedCourseNode = {
+vi.mock('@/app/hooks');
+vi.mock('@/app/hooks');
+vi.mock('react-router-dom', () => ({
+  useLoaderData: vi.fn(() => [mockedCourse, mockedCourseAvailable, mockedCourseUpcoming]),
+}));
+
+const reactCourseTitle = 'React';
+const angularCourseTitle = 'Angular';
+
+const mockedCourse = {
   title: 'Node.js',
   language: ['English'],
   type: 'Mentoring Program',
   mode: 'online',
   enroll: 'https://wearecommunity.io/events/nodejs-rs-2024q1',
   secondaryIcon: MOCKED_IMAGE_PATH,
-  startDate: '22 Jan, 3060',
+  startDate: dayJS().subtract(2, 'month').format('D MMM, YYYY'),
 };
 
-const mockedCourseReact = {
-  title: 'React.js',
-  language: ['English'],
-  type: 'Mentoring Program',
-  mode: 'online',
-  enroll: 'https://wearecommunity.io/events/react-rs-2024q1',
-  secondaryIcon: MOCKED_IMAGE_PATH,
-  startDate: '22 Jan, 2024',
+const mockedCourseAvailable = {
+  ...mockedCourse,
+  title: reactCourseTitle,
+  startDate: dayJS().format('D MMM, YYYY'),
 };
 
-vi.mock('@/app/hooks');
-vi.mock('react-router-dom', () => ({
-  useLoaderData: vi.fn(() => [mockedCourseNode, mockedCourseReact]),
-}));
+const mockedCourseUpcoming = {
+  ...mockedCourse,
+  title: angularCourseTitle,
+  startDate: dayJS().add(1, 'month').format('D MMM, YYYY'),
+};
 
 describe('CourseMain', () => {
   beforeEach(() => {
@@ -41,14 +48,8 @@ describe('CourseMain', () => {
     expect(titleElement).toBeVisible();
   });
 
-  it('renders the section label correctly', () => {
-    const labelElement = screen.getByText('available');
-    expect(labelElement).toBeVisible();
-  });
-
-  it('renders the section with correct label depending on date', () => {
-    render(<CourseMain courseName="React" type="Mentoring Program" />);
-    const labelElement = screen.getByText('upcoming');
+  it('renders the section label "PLANNED" correctly', () => {
+    const labelElement = screen.getByText(CourseStatus.PLANNED);
     expect(labelElement).toBeVisible();
   });
 
@@ -70,5 +71,19 @@ describe('CourseMain', () => {
     const imageElement = screen.getByRole('img', { name: /Node.js/i });
     expect(imageElement).toBeInTheDocument();
     expect(imageElement).toHaveAttribute('src', MOCKED_IMAGE_PATH);
+  });
+});
+
+describe('CourseMain', () => {
+  it('renders the section with correct label "AVAILABLE"', () => {
+    render(<CourseMain courseName={reactCourseTitle} type="Mentoring Program" />);
+    const labelElement = screen.getByText(CourseStatus.AVAILABLE);
+    expect(labelElement).toBeVisible();
+  });
+
+  it('renders the section with correct label "UPCOMING"', () => {
+    render(<CourseMain courseName={angularCourseTitle} type="Mentoring Program" />);
+    const labelElement = screen.getByText(CourseStatus.UPCOMING);
+    expect(labelElement).toBeVisible();
   });
 });

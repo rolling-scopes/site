@@ -15,17 +15,12 @@
         padding-top: 40px;
       }
 
-      @include media-mobile {
-        padding-top: 0;
-        padding-bottom: 40px;
-      }
-
       padding-top: 0;
       padding-bottom: 0;
 
       & .mentors-info {
-        @include media-mobile {
-          order: 1;
+        @include media-tablet-large {
+          width: 100%;
         }
 
         display: flex;
@@ -33,7 +28,7 @@
         gap: 16px;
 
         & > .subtitle {
-          @include media-tablet {
+          @include media-tablet-large {
             max-width: 100%;
             font-size: 20px;
           }
