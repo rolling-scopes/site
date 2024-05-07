@@ -1,3 +1,4 @@
+import { Breadcrumbs } from '@/app/components';
 import { About } from '@/features/about';
 import { CourseMain } from '@/features/course-main';
 import { Required } from '@/features/required';
@@ -10,6 +11,7 @@ export const AwsDeveloper = () => {
   return (
     <>
       <CourseMain courseName="aws cloud dev" />
+      <Breadcrumbs />
       <TrainingProgram courseName="aws cloud dev" />
       <About courseName="aws cloud dev" />
       <Required courseName="awsDev" marked1 />

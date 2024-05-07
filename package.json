@@ -18,6 +18,8 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "nextjs-toploader": "^1.6.12",
+    "dayjs": "^1.11.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-double-marquee": "^1.1.0",
