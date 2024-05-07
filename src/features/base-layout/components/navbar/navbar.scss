@@ -178,8 +178,8 @@
 
     &.dropdown-toggle {
       @include media-hover {
-        &:hover .dropdown-arrow svg {
-          stroke: $color-primary-black;
+        &:hover .dropdown-arrow img {
+          filter: brightness(0);
         }
       }
 
@@ -191,17 +191,13 @@
         width: 16px;
         height: 17px;
         margin-left: 10px;
-
-        svg {
-          stroke: transparent;
-        }
       }
 
       &.rotate .dropdown-arrow {
         transform: rotate(180deg);
 
-        svg {
-          stroke: $color-primary-black;
+        img {
+          filter: brightness(0);
         }
       }
     }
