@@ -1,8 +1,16 @@
 import { ReactNode } from 'react';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
+import { route as routeValues } from '@/app/const';
 
-export const renderWithRouter = (ui: JSX.Element, { route = '/' } = {}) => {
+interface RenderWithRouterProps {
+  route?: string;
+}
+
+export const renderWithRouter = (
+  ui: ReactNode,
+  { route = routeValues.HOME }: RenderWithRouterProps = {},
+) => {
   window.history.pushState({}, 'Test page', route);
   const Wrapper = ({ children }: { children?: ReactNode }) => {
     return <MemoryRouter initialEntries={[route]}>{children}</MemoryRouter>;
