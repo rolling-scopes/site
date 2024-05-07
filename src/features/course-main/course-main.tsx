@@ -1,10 +1,10 @@
-import { hasDayInDate } from './utils/has-day';
+import { getCourseStatus } from './utils';
 import { ButtonOutlined, DateLang, SectionLabel, Subtitle, Title } from '@/app/components';
 import { useCourseByTitle, useTitle } from '@/app/hooks';
-import { type Course, type CourseType } from '@/app/types';
+import { Course, CourseType } from '@/app/types';
 import Image from '@/features/image';
 
-import './course-main.scss';
+import styles from './course-main.module.scss';
 
 interface CourseMainProps {
   courseName: string;
@@ -22,25 +22,18 @@ export const CourseMain = ({ courseName, type }: CourseMainProps) => {
     return <p>Error fetching course. Try again.</p>;
   }
 
-  const now = new Date().setHours(0, 0, 0, 0);
-  const requiredDate = new Date(course.startDate).setHours(0, 0, 0, 0);
-
-  const label =
-    requiredDate < now ? 'upcoming' : hasDayInDate(course.startDate) ? 'available' : 'planned';
-
   const { title, altTitle, language, mode, enroll, secondaryIcon, startDate } = course;
+  const status = getCourseStatus(startDate);
 
   return (
-    <main className="course-main container">
-      <div className="course-main content column-2">
-        <div className="icon">
-          <Image src={secondaryIcon} alt={title} lazy="false" />
-        </div>
-        <div className="info">
-          <SectionLabel label={label} />
+    <main className={`container ${styles.container}`}>
+      <div className={`content ${styles.content}`}>
+        <Image className={styles.icon} src={secondaryIcon} alt={title} lazy="false" />
+        <div className={styles.info}>
+          <SectionLabel label={status} />
           <Title text={`${altTitle || title} Course`} />
-          {type && <Subtitle text={type} />}
-          <DateLang startDate={startDate} language={language} mode={mode} />
+          {type && <Subtitle text={type} type="course-main" />}
+          <DateLang startDate={startDate} language={language} mode={mode} type="main" />
           <ButtonOutlined label="Enroll" href={enroll} />
         </div>
       </div>
