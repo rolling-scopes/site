@@ -30,5 +30,6 @@ dist-ssr
 *.sw?
 /test-results/
 /playwright-report/
+/visualTestingResults/
 /blob-report/
 /playwright/.cache/
