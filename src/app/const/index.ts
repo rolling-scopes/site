@@ -10,4 +10,4 @@ export const route = {
   AWS_FUNDAMENTALS: 'aws-fundamentals',
   REACT: 'reactjs',
   NOT_FOUND: '*',
-};
+} as const;
