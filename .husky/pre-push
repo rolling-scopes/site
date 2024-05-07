@@ -1,2 +1,2 @@
 npm run test
-npm run test:playWright
+npx playwright test --reporter=line
