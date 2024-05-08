@@ -1,5 +1,6 @@
 export { AngularIcon } from './angular-icon';
 export { AwsLogo } from './aws';
+export { EmailIcon } from './email';
 export { EpamLogo } from './epam';
 export { FacebookIcon } from './facebook';
 export { GithubLogo } from './github';
