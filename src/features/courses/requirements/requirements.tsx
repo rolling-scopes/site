@@ -27,7 +27,11 @@ export const Requirements = () => {
             </ul>
           </div>
         </div>
-        <Button label="Register as a mentor" href="https://app.rs.school/registry/mentor" />
+        <Button
+          label="Register as a mentor"
+          href="https://app.rs.school/registry/mentor"
+          target="_blank"
+        />
       </div>
     </section>
   );

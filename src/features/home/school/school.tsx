@@ -15,8 +15,8 @@ export const School = () => (
           <Title text="Study with RS School" hasAsterisk />
           <Subtitle text="RS School is a free and community-based online education program conducted by The Rolling Scopes Community since 2013. " />
           <Paragraph>
-            Want to see photos of our community? A vast collection of photographs from our events is
-            available on our Facebook Albums and Instagram pages.
+            Currently 500+ developers from different countries and companies involve in the
+            education process as mentors.
           </Paragraph>
         </div>
         <Image className="right picture" src={image} alt="education" />

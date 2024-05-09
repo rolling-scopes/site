@@ -41,7 +41,7 @@ export const About = ({ courseName, type }: AboutProps) => {
       <div className="nodejs-about content">
         <Title text="About" />
         <InfoGrid items={infoList} hasTitle />
-        <Button label="Become a student" href={course.enroll} />
+        <Button label="Become a student" href={course.enroll} target="_blank" />
       </div>
     </section>
   );

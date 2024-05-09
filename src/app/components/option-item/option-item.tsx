@@ -16,7 +16,14 @@ export const OptionItem = ({ title, description, buttonLabel, href }: OptionItem
       {description}
     </p>
     {buttonLabel && (
-      <Button label={buttonLabel} href={href || ''} outlined={true} size="medium" color="black" />
+      <Button
+        label={buttonLabel}
+        href={href}
+        outlined={true}
+        size="medium"
+        color="black"
+        target="_blank"
+      />
     )}
   </div>
 );

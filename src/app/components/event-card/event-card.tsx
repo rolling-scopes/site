@@ -42,7 +42,7 @@ export const EventCard = ({
       </div>
       <div className="address">{address}</div>
       <div className="city">{city}</div>
-      <Button label="View details" href={href} arrow={false} size="small" />
+      <Button label="View details" href={href} arrow={false} size="small" target="_blank" />
     </div>
   </div>
 );

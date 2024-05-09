@@ -32,7 +32,7 @@ export const TrainingProgram = ({ courseName, type }: TrainingProgramProps) => {
 
           {content.map((component, index) => cloneElement(component, { key: index }))}
 
-          <Button label={buttonLabel} href={course?.enroll} />
+          <Button label={buttonLabel} href={course?.enroll} target="_blank" />
         </div>
         <div className={`right ${courseName.includes('badge') ? 'badge' : ''}`}>
           <Image src={image} alt={course?.title} lazy="false" />

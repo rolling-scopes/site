@@ -4,9 +4,12 @@ import { Arrow } from '@/icons/btn-arrow';
 
 import styles from './button.module.scss';
 
-type ButtonProps = {
+type ButtonProps = React.DetailedHTMLProps<
+  React.AnchorHTMLAttributes<HTMLAnchorElement>,
+  HTMLAnchorElement
+> & {
   label: string;
-  href: string;
+  href?: string;
   arrow?: boolean;
   outlined?: boolean;
   size?: 'small' | 'medium' | 'large';
@@ -14,31 +17,32 @@ type ButtonProps = {
   regular?: boolean;
   rounded?: boolean;
   arrowSize?: number;
+  className?: string;
 };
 
 export const Button = ({
   label,
-  href,
+  href = '',
   arrow = true,
   outlined = false,
   size = 'large',
   color = 'white',
   regular = false,
   rounded = false,
+  className = '',
   arrowSize = 24,
+  ...props
 }: ButtonProps) => {
-  const btnClass = classNames({
-    [styles.button]: true,
+  const btnClass = classNames(styles.button, styles[size], {
     [styles.outlined]: outlined,
     [styles.colored]: !outlined,
-    [styles.text]: arrow,
+    [styles.text]: !arrow,
     [styles.regular]: regular,
-    [styles[size]]: true,
     [styles.rounded]: rounded,
   });
 
   return (
-    <Link className={btnClass} to={href} rel="noreferrer">
+    <Link className={classNames(btnClass, className)} to={href} {...props} rel="noreferrer">
       {label}
       {arrow && (
         <span className={styles.arrow}>
