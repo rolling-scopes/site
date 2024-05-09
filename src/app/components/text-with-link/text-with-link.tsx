@@ -1,13 +1,13 @@
 import { Fragment } from 'react/jsx-runtime';
-import { Point } from '@/features/required/required.types';
+import { LinkList } from '@/features/required/required.types';
 
-import './clickable-text.scss';
+import './text-with-link.scss';
 
-interface ClickableTextProps {
-  data: Point;
+interface TextWithLinkProps {
+  data: LinkList;
 }
 
-export const ClickableText = ({ data }: ClickableTextProps) => {
+export const TextWithLink = ({ data }: TextWithLinkProps) => {
   return data.map((item, index) => (
     <Fragment key={index}>
       {item.text && <span>{item.text}</span>}

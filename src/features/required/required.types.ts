@@ -1,13 +1,13 @@
-type Link = {
+type itemWithLink = {
   id: number;
   text: string;
   title: string;
   link: string;
 };
 
-export type Point = Link[];
+export type LinkList = itemWithLink[];
 
-export type Description = (string | Point)[];
+export type Description = (string | LinkList)[];
 
 export type CourseModule = {
   title: string;

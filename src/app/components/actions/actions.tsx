@@ -1,4 +1,4 @@
-import { ClickableText } from '../clickable-text';
+import { TextWithLink } from '../text-with-link';
 import { Description } from '@/features/required/required.types';
 
 import './actions.scss';
@@ -7,6 +7,7 @@ interface ActionsProps {
   actions: Description;
   marked?: boolean;
 }
+
 export const Actions = ({ actions, marked = false }: ActionsProps) => {
   return (
     <ul className="stage-actions">
@@ -17,7 +18,7 @@ export const Actions = ({ actions, marked = false }: ActionsProps) => {
 
         return (
           <li className={itemClassName} key={keyAction}>
-            {isLink ? <ClickableText data={action} /> : <>{action}</>}
+            {isLink ? <TextWithLink data={action} /> : <>{action}</>}
           </li>
         );
       })}
