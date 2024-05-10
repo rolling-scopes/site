@@ -1,0 +1,13 @@
+.communication {
+  &.content {
+    &.info-wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+
+      &.logo-wrapper {
+        width: 100px;
+      }
+    }
+  }
+}

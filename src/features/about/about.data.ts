@@ -1,4 +1,3 @@
-import type { CourseNames } from './about';
 import awardIcon from '@/assets/icons/award-icon.webp';
 import chatIcon from '@/assets/icons/chat-icon.webp';
 import giftIcon from '@/assets/icons/gift.webp';
@@ -6,6 +5,8 @@ import noteIcon from '@/assets/icons/note-icon.webp';
 import paperIcon from '@/assets/icons/paper-icon.webp';
 import personIcon from '@/assets/icons/person-icon.webp';
 import planetIcon from '@/assets/icons/planet.webp';
+import type { CourseNames } from '@/shared/data/communication';
+import { discordLinks } from '@/shared/data/communication';
 
 type AboutInfo = {
   id: number;
@@ -20,17 +21,6 @@ type ContentMap = {
 
 type discordLinksType = {
   [key in CourseNames]: string;
-};
-
-const discordLinks: discordLinksType = {
-  javascript: 'https://discord.com/invite/QvEYg7EaQ4',
-  'javascript-en': 'https://discord.com/invite/uW5cCHR',
-  react: 'https://discord.com/invite/zyRcphs3px',
-  'react ru': 'https://discord.com/invite/zyRcphs3px',
-  angular: 'https://discord.com/invite/xwReXYqvs7',
-  'node.js': 'https://discord.com/invite/8BFb8va',
-  'aws fundamentals': 'https://discord.com/invite/WEZxwRa4J6',
-  'aws cloud dev': 'https://discord.com/invite/WEZxwRa4J6',
 };
 
 const angularNodejsAwsFundamentals: (course: string) => AboutInfo[] = (course) => [
