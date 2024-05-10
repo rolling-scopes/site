@@ -1,5 +1,4 @@
 import awardIcon from '@/assets/icons/award-icon.webp';
-import chatIcon from '@/assets/icons/chat-icon.webp';
 import giftIcon from '@/assets/icons/gift.webp';
 import noteIcon from '@/assets/icons/note-icon.webp';
 import paperIcon from '@/assets/icons/paper-icon.webp';
@@ -19,11 +18,7 @@ type ContentMap = {
   [key in CourseNames]: AboutInfo[];
 };
 
-type discordLinksType = {
-  [key in CourseNames]: string;
-};
-
-const angularNodejsAwsFundamentals: (course: string) => AboutInfo[] = (course) => [
+const angularNodejsAwsFundamentals: (course: string) => AboutInfo[] = () => [
   {
     id: 1,
     title: 'For everyone',
@@ -48,14 +43,6 @@ const angularNodejsAwsFundamentals: (course: string) => AboutInfo[] = (course) =
     info: 'After accomplishing all three stages of education, students will receive an electronic certificate of completion.',
     icon: awardIcon,
   },
-  {
-    id: 5,
-    title: 'Chat',
-    info: `Open <a href=${
-      discordLinks[course as keyof discordLinksType]
-    }>chat</a> for applicants and students on Discord.`,
-    icon: chatIcon,
-  },
 ];
 
 const awsCloudDeveloper: AboutInfo[] = angularNodejsAwsFundamentals('aws cloud dev').map((item) => {
@@ -63,7 +50,7 @@ const awsCloudDeveloper: AboutInfo[] = angularNodejsAwsFundamentals('aws cloud d
   return item;
 });
 
-const javaScript: (lang: string) => AboutInfo[] = (lang) => [
+const javaScript: (lang: string) => AboutInfo[] = () => [
   {
     id: 1,
     title: 'For everyone',
@@ -87,14 +74,6 @@ const javaScript: (lang: string) => AboutInfo[] = (lang) => [
     title: 'Certificate',
     info: 'A certificate of successful completion of the course is issued to everybody who pass two stages of training.',
     icon: awardIcon,
-  },
-  {
-    id: 5,
-    title: 'Chat',
-    info: `Throughout the course, we mostly use <a href=${
-      discordLinks[lang === 'en' ? 'javascript-en' : 'javascript']
-    }>Discord chat</a>.`,
-    icon: chatIcon,
   },
 ];
 
@@ -137,12 +116,6 @@ const reactRuAbout: AboutInfo[] = [
   },
   {
     id: 4,
-    title: 'Чат',
-    info: `Открытый <a href=${discordLinks['react ru']}>chat</a> для абитуриентов и учащихся Discord.`,
-    icon: chatIcon,
-  },
-  {
-    id: 5,
     title: 'Менторы и Тренеры',
     info: 'В обучении участвуют 430 менторов. Наши менторы — это front-end и javascript разработчики из различных компаний и стран. Как стать ментором?',
     icon: planetIcon,

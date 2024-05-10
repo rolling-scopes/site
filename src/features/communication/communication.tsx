@@ -28,7 +28,7 @@ export const Communication = ({ courseName }: RequiredProps) => {
             </Paragraph>
             <Paragraph>
               More info about communication at course in the{' '}
-              <a href={RS_DOCS_COMMUNICATION_LINK} className="communication-link">
+              <a href={RS_DOCS_COMMUNICATION_LINK} target="_blank" className="communication-link">
                 RS Docs
               </a>
               . Here you could find rules, links to other courses and Telegram channels. Feel free
