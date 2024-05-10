@@ -6,7 +6,7 @@ To solve this problem, end-to-end testing was implemented using Playwright.
 
 **How it works**
 
-At this stage, testing works as follows: before sending changes to GitHub, Husky runs all unit tests, as well as end-to-end testing.
+At this stage, testing works as follows: before sending changes to GitHub, developer may run end-to-end testing (`npx playwright test`).
 
 During end-to-end testing, Playwright starts the server, using the modified developer's code, takes screenshots of the full pages of the application, and compares them with reference samples, which are already stored in the repository. If discrepancies are found, the test exits with an error and the results of comparing the old and new appearance of the site is saved in `visualTestingResults` folder in the root of the repository. This allows determining exactly where the problem arose, and eliminate it.
 
