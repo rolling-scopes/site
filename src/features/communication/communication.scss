@@ -2,11 +2,54 @@
   &.content {
     &.info-wrapper {
       display: flex;
-      flex-direction: row;
-      gap: 16px;
+      flex-direction: column;
+      gap: 26px;
 
-      &.logo-wrapper {
-        width: 100px;
+      & .column-2 {
+        @include media-tablet-large {
+          flex-direction: column;
+          gap: 40px;
+          align-items: flex-start;
+        }
+
+        display: flex;
+        flex-direction: row;
+        gap: 100px;
+        align-items: center;
+        justify-content: flex-start;
+
+        & .paragraph {
+          padding-top: 5px;
+        }
+
+        & .communication-link {
+          @include media-tablet {
+            font-size: 18px;
+          }
+
+          font-size: 22px;
+          font-weight: 600; 
+          color: #545454;
+          transition: all 0.3s ease;
+
+          &:hover {
+            color: #000;
+          }
+        }
+
+        & .subtitle {
+          font-size: 28px;
+        }
+
+        & .disclogo-wrapper {
+          @include media-tablet {
+            width: 200px;
+          }
+
+          flex-shrink: 0;
+          align-self: center;
+          width: 300px;
+        }
       }
     }
   }

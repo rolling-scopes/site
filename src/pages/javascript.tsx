@@ -25,10 +25,10 @@ export const JavaScript = ({ type }: JavaScriptProps) => {
       <Breadcrumbs />
       <TrainingProgram courseName={COURSE_NAME} type={type} />
       <About courseName={COURSE_NAME} type={type} />
+      <Communication courseName={COURSE_NAME} />
       <AboutVideo />
       <StudyPath path={COURSE_NAME} />
       <Required courseName={COURSE_NAME} />
-      <Communication courseName={COURSE_NAME} />
       {isPreSchool && <Trainers trainers={preSchool}></Trainers>}
     </>
   );
