@@ -16,7 +16,9 @@ When we talk about good websites, we often overlook where they start from: the c
               <div className="date">{`${startDate} • ${language}`}</div>
             </div>
             <div className="details-container">
-              <Button label={buttonText} href={href} size="small" color="black" />
+              <a className="details" href={href} target="_blank" rel="noreferrer">
+                {buttonText && <span className="label">{buttonText}</span>}
+              </a>
             </div>
           </div>
         ))}
@@ -60,11 +62,13 @@ Additionally, in each course card, we're using the `<h2>` heading.
               <time className="date">{`${startDate} • ${language}`}</time>
             </section>
             <section className="details-container">
-              <LinkBtn label={buttonText} href={href} size="small" color="black" />
+              <a className="details" href={href} target="_blank" rel="noreferrer">
+                {buttonText && <span className="label">{buttonText}</span>}
+              </a>
             </section>
           </article>
         ))}
-        <LinkBtn label="Go to RS School " href="https://rs.school/" />
+        <Button label="Go to RS School " href="https://rs.school/" />
       </section>
       <figure className="image">
         <RsBanner />
