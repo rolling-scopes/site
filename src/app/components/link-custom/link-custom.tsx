@@ -46,7 +46,7 @@ export const LinkCustom = ({
       {label}
       {arrow && (
         <span className={styles.arrow}>
-          <LinkArrowIcon sizes={`${arrowSize}`} />
+          <LinkArrowIcon side={arrowSize} />
         </span>
       )}
     </Link>
