@@ -1,6 +1,10 @@
 import { Paragraph, Subtitle, Title } from '@/app/components';
 import { DiscordLogo } from '@/icons/discord-logo';
-import { CourseNames, RS_DOCS_COMMUNICATION_LINK, discordLinks } from '@/shared/data/communication';
+import {
+  CourseNames,
+  RS_DOCS_COMMUNICATION_LINK,
+  discordLinks,
+} from '@/shared/data/communication.data';
 
 import './communication.scss';
 
@@ -27,12 +31,12 @@ export const Communication = ({ courseName }: RequiredProps) => {
               where you can see latest news and chat with students.
             </Paragraph>
             <Paragraph>
-              More info about communication at course in the{' '}
+              More info about communication at RS School in the{' '}
               <a href={RS_DOCS_COMMUNICATION_LINK} target="_blank" className="communication-link">
                 RS Docs
               </a>
-              . Here you could find rules, links to other courses and Telegram channels. Feel free
-              to use that info.
+              . Here you could find rules, links to other courses and Telegram channels related to
+              your country or even city. Feel free to use it :)
             </Paragraph>
           </div>
         </div>
