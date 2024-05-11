@@ -1,4 +1,13 @@
 .container {
+  @include media-tablet-large {
+    min-height: 546px;
+  }
+
+  @include media-tablet {
+    min-height: 494px;
+  }
+
+  min-height: 494px;
   background: $color-secondary-yellow;
 
   .content {
