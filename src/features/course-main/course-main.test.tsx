@@ -1,34 +1,47 @@
-import { act } from 'react-dom/test-utils';
 import { screen } from '@testing-library/react';
-import { Mock } from 'vitest';
 import { CourseMain } from './course-main';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 import { renderWithRouter } from '@/__tests__/utils';
-import { useCourseByTitle } from '@/app/hooks';
+import { dayJS } from '@/app/services/dayjs';
+import { CourseStatus } from '@/app/types';
 
 vi.mock('@/app/hooks');
+vi.mock('react-router-dom', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('react-router-dom')>();
+  return {
+    ...actual,
+    useLoaderData: vi.fn(() => [mockedCourse, mockedCourseAvailable, mockedCourseUpcoming]),
+  };
+});
+
+const reactCourseTitle = 'React';
+const angularCourseTitle = 'Angular';
+
+const mockedCourse = {
+  title: 'Node.js',
+  language: ['English'],
+  type: 'Mentoring Program',
+  mode: 'online',
+  enroll: 'https://wearecommunity.io/events/nodejs-rs-2024q1',
+  secondaryIcon: MOCKED_IMAGE_PATH,
+  startDate: dayJS().subtract(2, 'month').format('D MMM, YYYY'),
+};
+
+const mockedCourseAvailable = {
+  ...mockedCourse,
+  title: reactCourseTitle,
+  startDate: dayJS().format('D MMM, YYYY'),
+};
+
+const mockedCourseUpcoming = {
+  ...mockedCourse,
+  title: angularCourseTitle,
+  startDate: dayJS().add(1, 'month').format('D MMM, YYYY'),
+};
 
 describe('CourseMain', () => {
-  const testCourse = {
-    loading: false,
-    error: '',
-    course: {
-      title: 'Node.js',
-      language: ['English'],
-      type: 'Mentoring Program',
-      mode: 'online',
-      enroll: 'https://wearecommunity.io/events/nodejs-rs-2024q1',
-      secondaryIcon: MOCKED_IMAGE_PATH,
-      startDate: '22 Jan, 3060',
-    },
-  };
-
   beforeEach(() => {
-    (useCourseByTitle as Mock).mockReturnValue(testCourse);
-
-    act(() => {
-      renderWithRouter(<CourseMain courseName="Node.js" type="Mentoring Program" />);
-    });
+    renderWithRouter(<CourseMain courseName="Node.js" type="Mentoring Program" />);
   });
 
   it('renders the title correctly', async () => {
@@ -36,21 +49,8 @@ describe('CourseMain', () => {
     expect(titleElement).toBeVisible();
   });
 
-  it('renders the section label correctly', () => {
-    const labelElement = screen.getByText('available');
-    expect(labelElement).toBeVisible();
-  });
-
-  it('renders the section with correct label depending on date', () => {
-    (useCourseByTitle as Mock).mockReturnValueOnce({
-      ...testCourse,
-      course: {
-        ...testCourse.course,
-        startDate: '22 Jan, 2024',
-      },
-    });
-    renderWithRouter(<CourseMain courseName="Node.js course" type="Mentoring Program" />);
-    const labelElement = screen.getByText('upcoming');
+  it('renders the section label "PLANNED" correctly', () => {
+    const labelElement = screen.getByText(CourseStatus.PLANNED);
     expect(labelElement).toBeVisible();
   });
 
@@ -72,5 +72,19 @@ describe('CourseMain', () => {
     const imageElement = screen.getByRole('img', { name: /Node.js/i });
     expect(imageElement).toBeInTheDocument();
     expect(imageElement).toHaveAttribute('src', MOCKED_IMAGE_PATH);
+  });
+});
+
+describe('CourseMain', () => {
+  it('renders the section with correct label "AVAILABLE"', () => {
+    renderWithRouter(<CourseMain courseName={reactCourseTitle} type="Mentoring Program" />);
+    const labelElement = screen.getByText(CourseStatus.AVAILABLE);
+    expect(labelElement).toBeVisible();
+  });
+
+  it('renders the section with correct label "UPCOMING"', () => {
+    renderWithRouter(<CourseMain courseName={angularCourseTitle} type="Mentoring Program" />);
+    const labelElement = screen.getByText(CourseStatus.UPCOMING);
+    expect(labelElement).toBeVisible();
   });
 });
