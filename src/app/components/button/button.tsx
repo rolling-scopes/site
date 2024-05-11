@@ -9,7 +9,7 @@ type ButtonProps = React.DetailedHTMLProps<
   HTMLAnchorElement
 > & {
   label: string;
-  href?: string;
+  href: string;
   arrow?: boolean;
   outlined?: boolean;
   size?: 'small' | 'medium' | 'large';
@@ -22,7 +22,7 @@ type ButtonProps = React.DetailedHTMLProps<
 
 export const Button = ({
   label,
-  href = '',
+  href,
   arrow = true,
   outlined = false,
   size = 'large',
