@@ -1,4 +1,4 @@
-import { Button } from '../button';
+import { LinkBtn } from '../button';
 import { type Course } from '@/app/types';
 import micIcon from '@/assets/icons/mic.svg';
 import noteIcon from '@/assets/icons/note-icon.svg';
@@ -47,7 +47,7 @@ export const CourseCard = ({
           </div>
         </div>
         <div className="rs-course-card__right">
-          <Button
+          <LinkBtn
             label="View details"
             href={detailsUrl}
             size="small"

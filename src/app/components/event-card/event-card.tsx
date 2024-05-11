@@ -1,4 +1,4 @@
-import { Button } from '../button';
+import { LinkBtn } from '../button';
 
 import './event-card.scss';
 
@@ -42,7 +42,7 @@ export const EventCard = ({
       </div>
       <div className="address">{address}</div>
       <div className="city">{city}</div>
-      <Button label="View details" href={href} arrow={false} size="small" target="_blank" />
+      <LinkBtn label="View details" href={href} arrow={false} size="small" target="_blank" />
     </div>
   </div>
 );

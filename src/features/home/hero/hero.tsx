@@ -1,5 +1,5 @@
 import { TagDivider } from './tag-divider';
-import { Button } from '@/app/components';
+import { LinkBtn } from '@/app/components';
 
 import './hero.scss';
 
@@ -30,7 +30,7 @@ export const Hero = () => {
         <div className="tags-container">
           {tags.map(({ id, label }, index) => (
             <div className="tag-container" key={id}>
-              <Button label={label} href={`#${id}`} arrow={false} outlined={true} rounded={true} />
+              <LinkBtn label={label} href={`#${id}`} arrow={false} outlined={true} rounded={true} />
               {index !== tags?.length - 1 && <TagDivider />}
             </div>
           ))}

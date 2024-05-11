@@ -1,4 +1,4 @@
-import { Button } from '../button';
+import { LinkBtn } from '../button';
 
 import './option-item.scss';
 
@@ -16,7 +16,7 @@ export const OptionItem = ({ title, description, buttonLabel, href = '' }: Optio
       {description}
     </p>
     {buttonLabel && (
-      <Button
+      <LinkBtn
         label={buttonLabel}
         href={href}
         outlined={true}

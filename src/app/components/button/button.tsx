@@ -4,7 +4,7 @@ import { Arrow } from '@/icons/btn-arrow';
 
 import styles from './button.module.scss';
 
-type ButtonProps = React.DetailedHTMLProps<
+type LinkBtnProps = React.DetailedHTMLProps<
   React.AnchorHTMLAttributes<HTMLAnchorElement>,
   HTMLAnchorElement
 > & {
@@ -20,7 +20,7 @@ type ButtonProps = React.DetailedHTMLProps<
   className?: string;
 };
 
-export const Button = ({
+export const LinkBtn = ({
   label,
   href,
   arrow = true,
@@ -32,7 +32,7 @@ export const Button = ({
   className = '',
   arrowSize = 24,
   ...props
-}: ButtonProps) => {
+}: LinkBtnProps) => {
   const btnClass = classNames(styles.button, styles[size], {
     [styles.outlined]: outlined,
     [styles.colored]: !outlined,

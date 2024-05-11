@@ -1,4 +1,4 @@
-import { Button, Subtitle, Title, TitleType } from '@/app/components';
+import { LinkBtn, Subtitle, Title, TitleType } from '@/app/components';
 import mentorImg from '@/assets/mentors-wanted.webp';
 import Image from '@/features/image';
 
@@ -16,7 +16,7 @@ export const Mentors = () => {
             Over the past few years, over 1500+ people have successfully completed our six month
             training program."
           />
-          <Button
+          <LinkBtn
             label="Become a mentor"
             href="https://app.rs.school/registry/mentor"
             target="_blank"

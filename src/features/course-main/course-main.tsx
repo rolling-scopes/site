@@ -1,6 +1,6 @@
 import { useLoaderData } from 'react-router-dom';
 import { getCourseStatus } from './utils';
-import { Button, DateLang, SectionLabel, Subtitle, Title } from '@/app/components';
+import { DateLang, LinkBtn, SectionLabel, Subtitle, Title } from '@/app/components';
 import { useTitle } from '@/app/hooks';
 import { selectCourse } from '@/app/hooks/use-course-by-title/utils/select-course.ts';
 import { Course, CourseType } from '@/app/types';
@@ -36,7 +36,7 @@ export const CourseMain = ({ courseName, type }: CourseMainProps) => {
           <Title text={`${altTitle || title} Course`} />
           {type && <Subtitle text={type} type="course-main" />}
           <DateLang startDate={startDate} language={language} mode={mode} type="main" />
-          <Button label="Enroll" href={enroll} outlined={true} color="black" target="_blank" />
+          <LinkBtn label="Enroll" href={enroll} outlined={true} color="black" target="_blank" />
         </div>
       </div>
     </main>

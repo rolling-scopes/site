@@ -1,4 +1,4 @@
-import { Button, Paragraph } from '@/app/components';
+import { LinkBtn, Paragraph } from '@/app/components';
 import { useTitle } from '@/app/hooks';
 import notFoundImg from '@/assets/404.webp';
 import Image from '@/features/image';
@@ -17,7 +17,7 @@ export const NotFound = () => {
         The page you are looking for doesn't exist or has been moved. Please go back to the
         homepage.
       </Paragraph>
-      <Button label="Go back home" href="/" />
+      <LinkBtn label="Go back home" href="/" />
     </main>
   );
 };

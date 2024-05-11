@@ -60,11 +60,11 @@ Additionally, in each course card, we're using the `<h2>` heading.
               <time className="date">{`${startDate} • ${language}`}</time>
             </section>
             <section className="details-container">
-              <Button label={buttonText} href={href} size="small" color="black" />
+              <LinkBtn label={buttonText} href={href} size="small" color="black" />
             </section>
           </article>
         ))}
-        <Button label="Go to RS School " href="https://rs.school/" />
+        <LinkBtn label="Go to RS School " href="https://rs.school/" />
       </section>
       <figure className="image">
         <RsBanner />

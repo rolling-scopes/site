@@ -1,4 +1,4 @@
-import { Button } from '@/app/components';
+import { LinkBtn } from '@/app/components';
 
 import './requirements.scss';
 
@@ -27,7 +27,7 @@ export const Requirements = () => {
             </ul>
           </div>
         </div>
-        <Button
+        <LinkBtn
           label="Register as a mentor"
           href="https://app.rs.school/registry/mentor"
           target="_blank"
