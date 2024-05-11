@@ -13,7 +13,7 @@ describe('Actions Component', () => {
 
   it('adds the marked class when marked prop is true', () => {
     render(<Actions actions={['Action']} marked={true} />);
-    const actionsElement = screen.getByText('Action').parentElement;
+    const actionsElement = screen.getByText('Action');
     expect(actionsElement).toHaveClass('marked');
   });
 });
