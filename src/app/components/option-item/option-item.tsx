@@ -1,4 +1,4 @@
-import { LinkBtn } from '../button';
+import { LinkCustom } from '../link-custom';
 
 import './option-item.scss';
 
@@ -16,12 +16,12 @@ export const OptionItem = ({ title, description, buttonLabel, href = '' }: Optio
       {description}
     </p>
     {buttonLabel && (
-      <LinkBtn
+      <LinkCustom
         label={buttonLabel}
         href={href}
-        outlined={true}
         size="medium"
-        color="black"
+        outlined={true}
+        arrowColor="black"
         target="_blank"
       />
     )}

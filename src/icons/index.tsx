@@ -7,6 +7,7 @@ export { HtmlIcon } from './html-icon';
 export { InstagramIcon } from './instagram';
 export { JetBrainsLogo } from './jetbrains';
 export { JsFrontendIcon } from './js-frontend-icon';
+export { LinkArrowIcon } from './link-arrow';
 export { LinkedInIcon } from './linkedIn';
 export { NodeJsIcon } from './nodejs-icon';
 export { OpenSourcePhilosophyIcon } from './open-source-philosophy-icon';

@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { LinkBtn } from '@/app/components';
+import { LinkCustom } from '@/app/components';
 import { useWindowSize } from '@/app/hooks';
 import { buildUrl } from '@/app/services/platform';
 import { AngularIcon, AwsLogo, HtmlIcon, ReactIcon, RsBanner } from '@/icons';
@@ -76,11 +76,11 @@ export const Courses = () => {
                   <div className="date">{`${startDate} • ${language}`}</div>
                 </div>
                 <div className="details-container">
-                  <LinkBtn label={buttonText} href={href} size="small" color="black" />
+                  <LinkCustom label={buttonText} href={href} size="small" arrowColor="black" />
                 </div>
               </div>
             ))}
-            <LinkBtn label="Go to RS School " href="https://rs.school/" />
+            <LinkCustom label="Go to RS School " href="https://rs.school/" />
           </div>
           <div className="image">
             <RsBanner />

@@ -1,4 +1,4 @@
-import { LinkBtn } from '@/app/components';
+import { LinkCustom } from '@/app/components';
 
 import './requirements.scss';
 
@@ -27,7 +27,7 @@ export const Requirements = () => {
             </ul>
           </div>
         </div>
-        <LinkBtn
+        <LinkCustom
           label="Register as a mentor"
           href="https://app.rs.school/registry/mentor"
           target="_blank"

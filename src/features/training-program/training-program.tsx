@@ -1,6 +1,6 @@
 import { cloneElement } from 'react';
 import { type CourseNames, contentMap } from './training-program.data';
-import { LinkBtn, Title } from '@/app/components';
+import { LinkCustom, Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
 import type { Course, CourseType } from '@/app/types';
 import Image from '@/features/image';
@@ -32,7 +32,7 @@ export const TrainingProgram = ({ courseName, type }: TrainingProgramProps) => {
 
           {content.map((component, index) => cloneElement(component, { key: index }))}
 
-          <LinkBtn label={buttonLabel} href={course?.enroll} target="_blank" />
+          <LinkCustom label={buttonLabel} href={course?.enroll} target="_blank" />
         </div>
         <div className={`right ${courseName.includes('badge') ? 'badge' : ''}`}>
           <Image src={image} alt={course?.title} lazy="false" />

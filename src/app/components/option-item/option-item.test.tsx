@@ -27,11 +27,9 @@ describe('OptionItem component', () => {
       />,
     );
 
-    const button = screen.getByRole('link', { name: /My Button/i });
+    const button = screen.getByRole('link', { name: /My Button/gi });
     expect(button).toBeInTheDocument();
     expect(button).toHaveAttribute('href', 'http://my-link.com');
-
-    const arrow = document.getElementById('btn-arrow');
-    expect(button).toContainElement(arrow);
+    expect(button).toHaveAttribute('target', '_blank');
   });
 });

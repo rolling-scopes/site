@@ -1,6 +1,6 @@
 import { contentMap } from './about.data';
 import { InfoGrid } from './components';
-import { LinkBtn, Title } from '@/app/components';
+import { LinkCustom, Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
 import { type Course, CourseType } from '@/app/types';
 
@@ -41,7 +41,7 @@ export const About = ({ courseName, type }: AboutProps) => {
       <div className="nodejs-about content">
         <Title text="About" />
         <InfoGrid items={infoList} hasTitle />
-        <LinkBtn label="Become a student" href={course.enroll} target="_blank" />
+        <LinkCustom label="Become a student" href={course.enroll} target="_blank" />
       </div>
     </section>
   );

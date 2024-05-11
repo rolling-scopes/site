@@ -1,43 +1,43 @@
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import { Arrow } from '@/icons/btn-arrow';
+import { LinkArrowIcon } from '@/icons';
 
-import styles from './button.module.scss';
+import styles from './link-custom.module.scss';
 
-type LinkBtnProps = React.DetailedHTMLProps<
+type LinkCustomProps = React.DetailedHTMLProps<
   React.AnchorHTMLAttributes<HTMLAnchorElement>,
   HTMLAnchorElement
 > & {
   label: string;
   href: string;
-  arrow?: boolean;
-  outlined?: boolean;
   size?: 'small' | 'medium' | 'large';
-  color?: 'black' | 'white';
-  regular?: boolean;
+  outlined?: boolean;
   rounded?: boolean;
+  arrow?: boolean;
   arrowSize?: number;
+  arrowColor?: 'black' | 'white';
+  textRegular?: boolean;
   className?: string;
 };
 
-export const LinkBtn = ({
+export const LinkCustom = ({
   label,
   href,
-  arrow = true,
-  outlined = false,
   size = 'large',
-  color = 'white',
-  regular = false,
+  outlined = false,
   rounded = false,
-  className = '',
+  arrow = true,
   arrowSize = 24,
+  arrowColor = 'white',
+  textRegular = false,
+  className = '',
   ...props
-}: LinkBtnProps) => {
-  const btnClass = classNames(styles.button, styles[size], {
+}: LinkCustomProps) => {
+  const btnClass = classNames(styles.button, styles[size], `stroke:${arrowColor}`, {
     [styles.outlined]: outlined,
     [styles.colored]: !outlined,
     [styles.text]: !arrow,
-    [styles.regular]: regular,
+    [styles.regular]: textRegular,
     [styles.rounded]: rounded,
   });
 
@@ -46,7 +46,7 @@ export const LinkBtn = ({
       {label}
       {arrow && (
         <span className={styles.arrow}>
-          <Arrow color={color} size={arrowSize} />
+          <LinkArrowIcon sizes={`${arrowSize}`} />
         </span>
       )}
     </Link>

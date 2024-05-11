@@ -3,7 +3,7 @@ export { Breadcrumbs } from './breadcrumbs';
 export { CourseCard } from './course-card';
 export { DateLang } from './date-lang';
 export { EventCard, type EventCardProps } from './event-card';
-export { LinkBtn } from './button';
+export { LinkCustom } from './link-custom';
 export { LogoWrapper } from './logo-wrapper';
 export { MobileView } from './mobile-view';
 export { OptionItem, type OptionItemProps } from './option-item';
