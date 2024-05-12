@@ -24,10 +24,10 @@
 
         & .communication-link {
           @include media-tablet {
-            font-size: 18px;
+            font-size: 16px;
           }
 
-          font-size: 22px;
+          font-size: 20px;
           font-weight: 600; 
           color: #545454;
           transition: all 0.3s ease;
@@ -43,12 +43,12 @@
 
         & .disclogo-wrapper {
           @include media-tablet {
-            width: 200px;
+            width: 150px;
           }
 
           flex-shrink: 0;
           align-self: center;
-          width: 300px;
+          width: 200px;
         }
       }
     }
