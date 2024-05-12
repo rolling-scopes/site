@@ -3,8 +3,8 @@ import Image from '@/features/image';
 
 export const YouTubeIcon = () => {
   return (
-    <div className="icon-surface">
+    <figure className="icon-surface">
       <Image src={youtube} alt="youtube icon" />
-    </div>
+    </figure>
   );
 };

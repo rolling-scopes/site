@@ -3,8 +3,8 @@ import Image from '@/features/image';
 
 export const TelegramIcon = () => {
   return (
-    <div className="icon-surface">
+    <figure className="icon-surface">
       <Image src={telegram} alt="telegram icon" />
-    </div>
+    </figure>
   );
 };

@@ -3,8 +3,8 @@ import Image from '@/features/image';
 
 export const InstagramIcon = () => {
   return (
-    <div className="icon-surface">
+    <figure className="icon-surface">
       <Image src={instagram} alt="instagram icon" />
-    </div>
+    </figure>
   );
 };

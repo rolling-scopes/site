@@ -3,8 +3,8 @@ import Image from '@/features/image';
 
 export const FacebookIcon = () => {
   return (
-    <div className="icon-surface">
+    <figure className="icon-surface">
       <Image src={facebook} alt="facebook icon" />
-    </div>
+    </figure>
   );
 };

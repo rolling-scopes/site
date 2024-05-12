@@ -3,8 +3,8 @@ import Image from '@/features/image';
 
 export const LinkedInIcon = () => {
   return (
-    <div className="icon-surface">
+    <figure className="icon-surface">
       <Image src={linkedIn} alt="linkedIn icon" />
-    </div>
+    </figure>
   );
 };
