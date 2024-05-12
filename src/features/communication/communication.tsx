@@ -15,12 +15,12 @@ interface RequiredProps {
 export const Communication = ({ courseName }: RequiredProps) => {
   return (
     <section className="communication container">
-      <div className="communication content info-wrapper">
+      <article className="communication content info-wrapper">
         <Title text="Communication" hasAsterisk />
         <div className="column-2">
-          <div className="disclogo-wrapper">
+          <figure className="disclogo-wrapper">
             <DiscordLogo />
-          </div>
+          </figure>
           <div>
             <Subtitle text="Discord is the main communication channel in RS School" />
             <Paragraph>
@@ -40,7 +40,7 @@ export const Communication = ({ courseName }: RequiredProps) => {
             </Paragraph>
           </div>
         </div>
-      </div>
+      </article>
     </section>
   );
 };
