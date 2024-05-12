@@ -46,6 +46,8 @@
     transition: all var(--_transition) ease-in-out;
 
     > img {
+      width: 56px;
+      height: 56px;
       transition: filter var(--_transition) ease-in-out;
     }
   }
