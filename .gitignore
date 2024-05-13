@@ -28,9 +28,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-/test-results/
-/playwright-report/
-/visualTestingResults/
-/visualTestingReport/
+src/__tests__/visualTesting/results
+src/__tests__/visualTesting/report
 /blob-report/
 /playwright/.cache/
