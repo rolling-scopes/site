@@ -1,19 +1,12 @@
 import { screen } from '@testing-library/react';
 import { Breadcrumbs } from './breadcrumbs';
 import { renderWithRouter } from '@/__tests__/utils';
-
-const breadcrumbNameMap: Record<string, string> = {
-  courses: 'RS School',
-  nodejs: 'Node.js Course',
-  'javascript-mentoring-program': 'JavaScript Mentoring Program',
-  'javascript-preschool': 'JavaScript Pre-school',
-  angular: 'Angular Course',
-  'aws-cloud-developer': 'AWS Cloud Developer Course',
-};
+import { breadcrumbNameMap } from '@/app/components/breadcrumbs/constants.ts';
+import { ROUTES } from '@/app/const';
 
 describe('Breadcrumbs', () => {
   it('renders "Home"', async () => {
-    renderWithRouter(<Breadcrumbs />, { route: '/' });
+    renderWithRouter(<Breadcrumbs />, { route: ROUTES.HOME });
     const homeLink = await screen.findByText(/Home/i);
     expect(homeLink).toBeInTheDocument();
   });
@@ -33,9 +26,9 @@ describe('Breadcrumbs', () => {
   });
 
   test('renders Breadcrumbs for nested route', () => {
-    renderWithRouter(<Breadcrumbs />, { route: '/courses/nodejs' });
-    const parentBreadcrumb = screen.getByText(breadcrumbNameMap['courses']);
-    const childBreadcrumb = screen.getByText(breadcrumbNameMap['nodejs']);
+    renderWithRouter(<Breadcrumbs />, { route: `/${ROUTES.COURSES}/${ROUTES.NODE_JS}` });
+    const parentBreadcrumb = screen.getByText(breadcrumbNameMap[ROUTES.COURSES]);
+    const childBreadcrumb = screen.getByText(breadcrumbNameMap[ROUTES.NODE_JS]);
     expect(parentBreadcrumb).toBeInTheDocument();
     expect(childBreadcrumb).toBeInTheDocument();
   });
