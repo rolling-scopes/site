@@ -21,7 +21,7 @@ describe('Breadcrumbs', () => {
 
   test('renders un-mapped Breadcrumbs', () => {
     renderWithRouter(<Breadcrumbs />, { route: '/unmapped-route' });
-    const unmappedBreadcrumb = screen.getByText(/unmapped-ROUTES/i);
+    const unmappedBreadcrumb = screen.getByText(/unmapped-route/i);
     expect(unmappedBreadcrumb).toBeInTheDocument();
   });
 
