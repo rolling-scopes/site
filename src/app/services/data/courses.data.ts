@@ -1,5 +1,5 @@
 import { buildUrl } from '../platform';
-import { route } from '@/app/const';
+import { ROUTES } from '@/app/const';
 import { type Course } from '@/app/types';
 import angularSecondary from '@/assets/icons/angular-secondary.webp';
 import angular from '@/assets/icons/angular.svg';
@@ -31,7 +31,7 @@ export const courses: Course[] = [
     startDate: 'Jun 24, 2024',
     language: ['ru'],
     mode: 'online',
-    detailsUrl: buildUrl(`/${route.COURSES}/${route.JS_PRESCHOOL}`),
+    detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS_PRESCHOOL}`),
     enroll: 'https://wearecommunity.io/events/js-stage0-rs-2024q2',
     backgroundStyle: { backgroundColor: '#FFDB201A', accentColor: '#FFDB204D' },
   },
@@ -46,7 +46,7 @@ export const courses: Course[] = [
     startDate: 'Oct, 2024',
     language: ['en'],
     mode: 'online',
-    detailsUrl: buildUrl(`/${route.COURSES}/${route.JS_MENTORING}`),
+    detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS_MENTORING}`),
     enroll: 'https://wearecommunity.io/events/rs-jsfe-en-2023q4',
     backgroundStyle: { backgroundColor: '#FFDB201A', accentColor: '#FFDB204D' },
   },
@@ -59,7 +59,7 @@ export const courses: Course[] = [
     startDate: 'Oct, 2024',
     language: ['ru'],
     mode: 'online',
-    detailsUrl: buildUrl(`/${route.COURSES}/${route.JS_MENTORING}`),
+    detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS_MENTORING}`),
     enroll: 'https://wearecommunity.io/events/js-fe-rs-2023q4',
     backgroundStyle: { backgroundColor: '#FFDB201A', accentColor: '#FFDB204D' },
   },
@@ -72,7 +72,7 @@ export const courses: Course[] = [
     startDate: 'Jul 1, 2024',
     language: ['en'],
     mode: 'online',
-    detailsUrl: buildUrl(`/${route.COURSES}/${route.REACT}`),
+    detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.REACT}`),
     enroll: 'https://wearecommunity.io/events/rs-react-2024q3',
     backgroundStyle: { backgroundColor: '#EEF3FE', accentColor: '#7356BF' },
   },
@@ -85,7 +85,7 @@ export const courses: Course[] = [
     startDate: 'Jul 1, 2024',
     language: ['en'],
     mode: 'online',
-    detailsUrl: buildUrl(`/${route.COURSES}/${route.ANGULAR}`),
+    detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.ANGULAR}`),
     enroll: 'https://wearecommunity.io/events/rs-angular-2024q3',
     backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#F4AFA7' },
   },
@@ -98,7 +98,7 @@ export const courses: Course[] = [
     startDate: 'Sep, 2024',
     language: ['en'],
     mode: 'online',
-    detailsUrl: buildUrl(`/${route.COURSES}/${route.NODE_JS}`),
+    detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.NODE_JS}`),
     enroll: 'https://wearecommunity.io/events/nodejs-rs-2024q1',
     backgroundStyle: { backgroundColor: '#F0F9F4', accentColor: '#AEDF36' },
   },
@@ -111,7 +111,7 @@ export const courses: Course[] = [
     startDate: 'Apr 15, 2024',
     language: ['en'],
     mode: 'online',
-    detailsUrl: buildUrl(`/${route.COURSES}/${route.AWS_FUNDAMENTALS}`),
+    detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.AWS_FUNDAMENTALS}`),
     enroll: 'https://wearecommunity.io/events/rs-aws-2024q2',
     backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#7356BF' },
   },
@@ -125,7 +125,7 @@ export const courses: Course[] = [
     startDate: 'May 28, 2024',
     language: ['en'],
     mode: 'online',
-    detailsUrl: buildUrl(`/${route.COURSES}/${route.AWS_DEVELOPER}`),
+    detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.AWS_DEVELOPER}`),
     enroll: 'https://wearecommunity.io/events/aws-cloud-dev-rs2024q2',
     backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#7356BF' },
   },

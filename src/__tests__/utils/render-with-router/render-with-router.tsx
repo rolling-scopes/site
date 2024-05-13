@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { route as routeValues } from '@/app/const';
+import { ROUTES } from '@/app/const';
 
 interface RenderWithRouterProps {
   route?: string;
@@ -9,7 +9,7 @@ interface RenderWithRouterProps {
 
 export const renderWithRouter = (
   ui: ReactNode,
-  { route = routeValues.HOME }: RenderWithRouterProps = {},
+  { route = ROUTES.HOME }: RenderWithRouterProps = {},
 ) => {
   window.history.pushState({}, 'Test page', route);
   const Wrapper = ({ children }: { children?: ReactNode }) => {

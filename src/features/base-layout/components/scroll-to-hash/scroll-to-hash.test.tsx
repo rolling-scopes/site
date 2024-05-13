@@ -2,7 +2,7 @@ import { render, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ScrollToHashElement } from './scroll-to-hash';
-import { route } from '@/app/const';
+import { ROUTES } from '@/app/const';
 
 describe('ScrollToHashElement', () => {
   const scrollIntoViewMock = vi.fn();
@@ -16,7 +16,7 @@ describe('ScrollToHashElement', () => {
     } as unknown as HTMLElement);
   });
 
-  const setup = (entry: string = route.HOME) => {
+  const setup = (entry: string = ROUTES.HOME) => {
     render(
       <MemoryRouter initialEntries={[entry]}>
         <ScrollToHashElement />
