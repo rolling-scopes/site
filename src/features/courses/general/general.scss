@@ -27,7 +27,7 @@
       align-items: flex-start;
       justify-content: space-between;
 
-      color: $color-secondary-gray600;
+      color: $color-secondary-gray-600;
 
       & > div {
         @include media-laptop {
@@ -49,7 +49,7 @@
 
           margin-top: 0;
           font-size: 28px;
-          color: $color-secondary-gray600;
+          color: $color-secondary-gray-600;
         }
 
         & .description {

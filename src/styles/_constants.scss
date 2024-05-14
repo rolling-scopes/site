@@ -14,20 +14,34 @@ $font-weight-regular: 400;
 $font-weight-medium: 500;
 $font-weight-bold: 700;
 
-// primary font colors
-$color-primary-black: #000;
-$color-primary-white: #fff;
 
-// secondary font colors
-$color-secondary-gray600: #545454;
-$color-secondary-gray500: #757575;
-$color-secondary-gray400: #afafaf;
-$color-secondary-gray200: #e6e6e6;
-$color-secondary-gray100: #f2f2f2;
-$color-secondary-brown: #664d1b;
-$color-secondary-yellow: #ffdb20;
-$color-secondary-yellow-50: #fffaf0;
+// COLORS
+
+// Primary colors
+$color-primary-black: hsl(0deg 0% 0%);
+$color-primary-white: hsl(0deg 0% 100%);
+
+// Yellow colors
+$color-secondary-yellow: hsl(50deg 100% 56%);
+$color-secondary-yellow-700: hsl(40deg 58% 25%);
+$color-secondary-yellow-500: hsl(49deg 87% 53%);
+$color-secondary-yellow-50: hsl(40deg 100% 97%);
+
+// Red colors
 $color-secondary-red: #d44333;
 
-// accent font colors
-$color-accent-yellow: rgb(255 219 32 / 80%);
+// Secondary font colors
+$color-secondary-gray-600: hsl(0deg 0% 33%);
+$color-secondary-gray-500: hsl(0deg 0% 46%);
+$color-secondary-gray-400: hsl(0deg 0% 69%);
+$color-secondary-gray-200: hsl(0deg 0% 90%);
+$color-secondary-gray-100: hsl(0deg 0% 95%);
+
+
+// OPACITY
+$opacity-100: 1;
+$opacity-80: 0.8;
+$opacity-50: 0.5;
+$opacity-20: 0.2;
+$opacity-8: 0.08;
+$opacity-0: 0;

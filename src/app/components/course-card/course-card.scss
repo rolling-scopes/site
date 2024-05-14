@@ -20,7 +20,7 @@
   height: min-content;
   padding: 0;
 
-  color: $color-secondary-gray600;
+  color: $color-secondary-gray-600;
 
   border-radius: 12px;
 
@@ -90,7 +90,7 @@
     font-weight: 500;
     font-style: normal;
     line-height: 32px;
-    color: var($color-secondary-gray600);
+    color: var($color-secondary-gray-600);
     text-align: left;
     letter-spacing: 0;
   }
@@ -198,7 +198,7 @@
     }
 
     &__more:hover {
-      background-color: $color-secondary-gray400;
+      background-color: $color-secondary-gray-400;
     }
   }
 }

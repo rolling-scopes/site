@@ -78,7 +78,7 @@
   height: 240px;
   padding: 36px 24px 24px;
 
-  color: $color-secondary-gray600;
+  color: $color-secondary-gray-600;
 
   background-color: #fffaf0;
   border: 1px solid rgb(255 219 32 / 8%);
@@ -107,7 +107,7 @@
     width: 20px;
     height: 19px;
 
-    background-color: $color-accent-yellow;
+    background-color: rgba($color-secondary-yellow, $opacity-80);
     filter: blur(8px);
     border-radius: 100%;
   }
