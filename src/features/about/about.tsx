@@ -3,7 +3,7 @@ import { InfoGrid } from './components';
 import { Button, Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
 import { type Course, CourseType } from '@/app/types';
-import { CourseNames } from '@/shared/data/communication.data';
+import { CourseNames } from '@/data/communication.data';
 
 import './about.scss';
 

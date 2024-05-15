@@ -4,8 +4,8 @@ import noteIcon from '@/assets/icons/note-icon.webp';
 import paperIcon from '@/assets/icons/paper-icon.webp';
 import personIcon from '@/assets/icons/person-icon.webp';
 import planetIcon from '@/assets/icons/planet.webp';
-import type { CourseNames } from '@/shared/data/communication.data';
-import { discordLinks } from '@/shared/data/communication.data';
+import type { CourseNames } from '@/data/communication.data';
+import { DISCORD_LINKS } from '@/data/communication.data';
 
 type AboutInfo = {
   id: number;
@@ -89,7 +89,7 @@ const reactEn: AboutInfo[] = javaScript('en').map((item) => {
   if (item.id === 5) {
     return {
       ...item,
-      info: `Throughout the course, we mostly use <a href=${discordLinks['react']}>Discord chat</a>.`,
+      info: `Throughout the course, we mostly use <a href=${DISCORD_LINKS['react']}>Discord chat</a>.`,
     };
   }
   return item;

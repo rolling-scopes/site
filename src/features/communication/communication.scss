@@ -5,7 +5,7 @@
       flex-direction: column;
       gap: 26px;
 
-      & .column-2 {
+      .column-2 {
         @include media-tablet-large {
           flex-direction: column;
           gap: 40px;
@@ -18,30 +18,15 @@
         align-items: center;
         justify-content: flex-start;
 
-        & .paragraph {
+        .paragraph {
           padding-top: 5px;
         }
 
-        & .communication-link {
-          @include media-tablet {
-            font-size: 16px;
-          }
-
-          font-size: 20px;
-          font-weight: 600; 
-          color: #545454;
-          transition: all 0.3s ease;
-
-          &:hover {
-            color: #000;
-          }
-        }
-
-        & .subtitle {
+        .subtitle {
           font-size: 28px;
         }
 
-        & .disclogo-wrapper {
+        .disclogo-wrapper {
           @include media-tablet {
             width: 150px;
           }

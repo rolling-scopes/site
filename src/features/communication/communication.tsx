@@ -1,11 +1,7 @@
 import { Paragraph, Subtitle, Title } from '@/app/components';
 import ExternalLink from '@/app/components/externalLink/external-link';
+import { CourseNames, DISCORD_LINKS, RS_DOCS_COMMUNICATION_LINK } from '@/data/communication.data';
 import { DiscordLogo } from '@/icons/discord-logo';
-import {
-  CourseNames,
-  RS_DOCS_COMMUNICATION_LINK,
-  discordLinks,
-} from '@/shared/data/communication.data';
 
 import './communication.scss';
 
@@ -26,7 +22,7 @@ export const Communication = ({ courseName }: RequiredProps) => {
             <Subtitle text="Discord is the main communication channel in RS School" />
             <Paragraph>
               Here is link for the{' '}
-              <ExternalLink href={discordLinks[courseName]} text="course discord server" /> where
+              <ExternalLink href={DISCORD_LINKS[courseName]} text="course discord server" /> where
               you can see latest news and chat with students.
             </Paragraph>
             <Paragraph>
