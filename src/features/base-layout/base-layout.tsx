@@ -1,11 +1,11 @@
 import { Outlet } from 'react-router-dom';
-import { Footer, Navbar, Partnered, ScrollToHashElement } from './components';
+import { Footer, Header, Partnered, ScrollToHashElement } from './components';
 
 export const BaseLayout = () => {
   return (
     <>
       <ScrollToHashElement />
-      <Navbar />
+      <Header />
       <Outlet />
       <Partnered />
       <Footer />
