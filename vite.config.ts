@@ -27,7 +27,7 @@ export default defineConfig({
       },
     },
     modules: {
-      localsConvention: 'camelCaseOnly',
+      localsConvention: 'camelCase',
     },
   },
 });

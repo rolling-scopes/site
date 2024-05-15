@@ -1,73 +1,132 @@
+import { RouteObject } from 'react-router-dom';
+import { ROUTES } from '@/app/const';
 import { config } from '@/config';
-import { BaseLayout } from '@/features/base-layout';
-import { Courses, Home, Nodejs } from '@/pages';
-import { Angular } from '@/pages/angular';
-import { AwsDeveloper } from '@/pages/aws-developer';
-import { AwsFundamentals } from '@/pages/aws-fundamentals';
-import { JavaScript } from '@/pages/javascript';
-import { NotFound } from '@/pages/not-found';
-import { React } from '@/pages/react';
+import { courseLoader } from '@/features/course-main/courseLoader.ts';
 
-export const routes = config.isRollingScopesLanding
+const coursesRoute: RouteObject = {
+  path: ROUTES.COURSES,
+  children: [
+    {
+      index: true,
+      async lazy() {
+        const { Courses } = await import('../pages/courses.tsx');
+        return { Component: Courses };
+      },
+    },
+    {
+      path: ROUTES.NODE_JS,
+      loader: courseLoader,
+      async lazy() {
+        const { Nodejs } = await import('../pages/nodejs.tsx');
+        return { Component: Nodejs };
+      },
+    },
+    {
+      path: ROUTES.JS_MENTORING,
+      loader: courseLoader,
+      async lazy() {
+        const { JavaScript } = await import('../pages/javascript.tsx');
+        const boundedComponent = JavaScript.bind(null, { type: 'Mentoring Program' });
+        return { Component: boundedComponent };
+      },
+    },
+    {
+      path: ROUTES.JS_PRESCHOOL,
+      loader: courseLoader,
+      async lazy() {
+        const { JavaScript } = await import('../pages/javascript.tsx');
+        const boundedComponent = JavaScript.bind(null, { type: 'Pre-school' });
+        return { Component: boundedComponent };
+      },
+    },
+    {
+      path: ROUTES.ANGULAR,
+      loader: courseLoader,
+      lazy: async () => {
+        const { Angular } = await import('../pages/angular.tsx');
+        return { Component: Angular };
+      },
+    },
+    {
+      path: ROUTES.AWS_DEVELOPER,
+      loader: courseLoader,
+      lazy: async () => {
+        const { AwsDeveloper } = await import('../pages/aws-developer.tsx');
+        return { Component: AwsDeveloper };
+      },
+    },
+    {
+      path: ROUTES.AWS_FUNDAMENTALS,
+      loader: courseLoader,
+      lazy: async () => {
+        const { AwsFundamentals } = await import('../pages/aws-fundamentals.tsx');
+        return { Component: AwsFundamentals };
+      },
+    },
+    {
+      path: ROUTES.REACT,
+      loader: courseLoader,
+      lazy: async () => {
+        const { React } = await import('../pages/react.tsx');
+        return { Component: React };
+      },
+    },
+  ],
+};
+
+const notFoundRoute: RouteObject = {
+  path: ROUTES.NOT_FOUND,
+  lazy: async () => {
+    const { NotFound } = await import('../pages/not-found.tsx');
+    return { Component: NotFound };
+  },
+};
+
+export const routes: RouteObject[] = config.isRollingScopesLanding
   ? [
       {
-        path: '/',
-        element: <BaseLayout />,
-        children: [
-          { index: true, element: <Home /> },
-          {
-            path: '/courses',
-            children: [
-              { index: true, element: <Courses /> },
-              { path: 'nodejs', element: <Nodejs /> },
-              {
-                path: 'javascript-mentoring-program',
-                element: <JavaScript type="Mentoring Program" />,
-              },
-              { path: 'javascript-preschool', element: <JavaScript type="Pre-school" /> },
-              { path: 'angular', element: <Angular /> },
-              { path: 'aws-cloud-developer', element: <AwsDeveloper /> },
-              { path: 'aws-fundamentals', element: <AwsFundamentals /> },
-              { path: 'reactjs', element: <React /> },
-            ],
-          },
-        ],
-      },
-      { path: '*', element: <NotFound /> },
-    ]
-  : [
-      {
-        path: '/',
-        element: <BaseLayout />,
+        path: ROUTES.HOME,
+        lazy: async () => {
+          const { BaseLayout } = await import('../features/base-layout/base-layout.tsx');
+          return { Component: BaseLayout };
+        },
         children: [
           {
             index: true,
-            element: <Courses />,
+            lazy: async () => {
+              const { Home } = await import('../pages/home.tsx');
+              return { Component: Home };
+            },
           },
-          {
-            path: '/community',
-            element: <Home />,
-          },
-          {
-            path: '/courses',
-            children: [
-              {
-                index: true,
-                element: <Courses />,
-              },
-              { path: 'nodejs', element: <Nodejs /> },
-              {
-                path: 'javascript-mentoring-program',
-                element: <JavaScript type="Mentoring Program" />,
-              },
-              { path: 'javascript-preschool', element: <JavaScript type="Pre-school" /> },
-              { path: 'angular', element: <Angular /> },
-              { path: 'aws-cloud-developer', element: <AwsDeveloper /> },
-              { path: 'aws-fundamentals', element: <AwsFundamentals /> },
-              { path: 'reactjs', element: <React /> },
-            ],
-          },
+          coursesRoute,
         ],
       },
-      { path: '*', element: <NotFound /> },
+      notFoundRoute,
+    ]
+  : [
+      {
+        path: ROUTES.HOME,
+        lazy: async () => {
+          const { BaseLayout } = await import('../features/base-layout/base-layout.tsx');
+          return { Component: BaseLayout };
+        },
+        children: [
+          {
+            index: true,
+            lazy: async () => {
+              const { Courses } = await import('../pages/courses.tsx');
+              return { Component: Courses };
+            },
+          },
+          {
+            path: ROUTES.COMMUNITY,
+            lazy: async () => {
+              const { Home } = await import('../pages/home.tsx');
+              return { Component: Home };
+            },
+          },
+          coursesRoute,
+        ],
+      },
+      notFoundRoute,
     ];

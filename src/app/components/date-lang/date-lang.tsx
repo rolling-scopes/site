@@ -2,28 +2,29 @@ import micIcon from '@/assets/icons/mic.svg';
 import noteIcon from '@/assets/icons/note-icon.svg';
 import Image from '@/features/image';
 
-import './date-lang.scss';
+import styles from './date-lang.module.scss';
 
 interface DateLangProps {
   startDate: string;
   mode: string;
   language: string[];
+  type?: string;
 }
 
-export const DateLang = ({ startDate, language, mode }: DateLangProps) => {
+export const DateLang = ({ startDate, language, mode, type = '' }: DateLangProps) => {
   const splittedLanguage = language.slice().join('/');
 
   return (
-    <div className="date-lang">
-      <div className="date-info">
-        <Image src={noteIcon} alt="note-icon" className="note-icon" lazy="false" />
-        <div className="date">Start date {startDate ?? 'Not set'}</div>
-      </div>
-      <div className="lang-info">
-        <Image src={micIcon} className="mic-icon" alt="microphone icon" lazy="false" />
-        <div className="language">{splittedLanguage}</div>
-        <div className="mode">• {mode}</div>
-      </div>
+    <div className={`${styles.info} ${styles[type]}`}>
+      <p className={styles.date}>
+        <Image className={styles.note} src={noteIcon} alt="note-icon" lazy="false" />
+        <span>Start date {startDate ?? 'Not set'}</span>
+      </p>
+      <p className={styles.lang}>
+        <Image className={styles.microphone} src={micIcon} alt="microphone icon" lazy="false" />
+        <span className={styles.language}>{splittedLanguage}</span>
+        <span className={styles.mode}> • {mode}</span>
+      </p>
     </div>
   );
 };

@@ -1,5 +1,17 @@
 .community {
   &.content {
+    &.column-2 {
+      @include media-laptop {
+        flex-direction: row;
+        gap: 50px;
+      }
+
+      @include media-tablet-large {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+
     & .info {
       @include media-laptop {
         width: 100%;

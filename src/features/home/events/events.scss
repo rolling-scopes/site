@@ -13,7 +13,7 @@
     text-align: left;
 
     & .info {
-      @include media-tablet {
+      @include media-laptop {
         width: 100%;
       }
 

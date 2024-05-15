@@ -32,11 +32,11 @@
 
         flex-direction: row;
         gap: 8rem;
+        align-items: start;
         justify-content: flex-start;
 
         & > * {
           flex: 1;
-          max-width: 45%;
         }
 
         & div > .subtitle {
@@ -47,7 +47,6 @@
     }
 
     & > .title {
-      max-width: 700px;
       margin-bottom: 8px;
     }
   }
