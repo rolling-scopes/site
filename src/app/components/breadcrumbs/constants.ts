@@ -1,7 +1,7 @@
 import { BreadcrumbNameMap } from '@/app/components/breadcrumbs/breadcrumbs.types.ts';
 
 export const breadcrumbNameMap: BreadcrumbNameMap = {
-  courses: 'RS School',
+  courses: 'Courses',
   nodejs: 'Node.js Course',
   'javascript-mentoring-program': 'JavaScript Mentoring Program',
   'javascript-preschool': 'JavaScript Pre-school',
