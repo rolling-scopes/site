@@ -25,10 +25,15 @@ $color-white: hsl(0deg 0% 100%);  // #fff
 $color-yellow: hsl(50deg 100% 56%);  // #ffdb20
 $color-yellow-700: hsl(40deg 58% 25%);  // #664d1b
 $color-yellow-500: hsl(49deg 87% 53%);  // #efc91f
+$color-yellow-100: hsl(39deg 100% 93%);  // #fff2d9
 $color-yellow-50: hsl(40deg 100% 97%);  // #fffaf0
 
 // Red colors
-$color-red: #d44333;  // #d44333
+$color-red: hsl(6deg 65% 52%);  // #d44333
+
+// Purple colors
+$color-purple-400: hsl(257deg 45% 54%);  // #7356bf
+$color-purple-50: hsl(260deg 47% 96%);  // #f4f1fa
 
 // Secondary font colors
 $color-gray-600: hsl(0deg 0% 33%);  // #545454
