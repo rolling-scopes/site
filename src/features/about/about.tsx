@@ -3,18 +3,9 @@ import { InfoGrid } from './components';
 import { Button, Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
 import { type Course, CourseType } from '@/app/types';
+import { CourseNames } from '@/data/communication.data';
 
 import './about.scss';
-
-export type CourseNames =
-  | 'javascript'
-  | 'javascript-en'
-  | 'react'
-  | 'react ru'
-  | 'angular'
-  | 'node.js'
-  | 'aws fundamentals'
-  | 'aws cloud dev';
 
 interface AboutProps {
   courseName: CourseNames;

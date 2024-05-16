@@ -1,0 +1,36 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+
+  &.main {
+    margin: 16px 0 40px;
+  }
+}
+
+.date,
+.lang {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin: 0;
+
+  font-size: 14px;
+  color: $color-secondary-gray600;
+}
+
+.note,
+.microphone {
+  width: 16px;
+}
+
+.language {
+  text-transform: uppercase;
+}
+
+.mode {
+  text-transform: capitalize;
+}

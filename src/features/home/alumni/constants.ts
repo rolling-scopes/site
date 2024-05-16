@@ -1,24 +1,22 @@
 import { AlumniProps } from './alumni';
-import aesoft from '@/assets/alumni/aesoft.webp';
-import andersen from '@/assets/alumni/andersen.webp';
-import coherent from '@/assets/alumni/coherent.webp';
-import dataart from '@/assets/alumni/dataart.webp';
-import dott from '@/assets/alumni/dott.webp';
-import elinext from '@/assets/alumni/elinext.webp';
-import epam from '@/assets/alumni/epam.webp';
-import godel from '@/assets/alumni/godel.webp';
-
-import itechart from '@/assets/alumni/itechart.webp';
-
-import miro from '@/assets/alumni/miro.webp';
-import nanosoft from '@/assets/alumni/nanosoft.webp';
-import oxagile from '@/assets/alumni/oxagile.webp';
-import pandadoc from '@/assets/alumni/pandadoc.webp';
-import qulix from '@/assets/alumni/qulix.webp';
-import satellite from '@/assets/alumni/satellite.webp';
-import sberbank from '@/assets/alumni/sberbank.webp';
-import toptal from '@/assets/alumni/toptal.webp';
-import visualfabriq from '@/assets/alumni/visualfabriq.webp';
+import aesoft from '@/assets/alumni/aesoft.svg';
+import andersen from '@/assets/alumni/andersen.svg';
+import coherent from '@/assets/alumni/coherent.svg';
+import dataart from '@/assets/alumni/dataart.svg';
+import dott from '@/assets/alumni/dott.svg';
+import elinext from '@/assets/alumni/elinext.svg';
+import epam from '@/assets/alumni/epam.svg';
+import godel from '@/assets/alumni/godel.svg';
+import itechart from '@/assets/alumni/itechart.svg';
+import miro from '@/assets/alumni/miro.svg';
+import nanosoft from '@/assets/alumni/nanosoft.svg';
+import oxagile from '@/assets/alumni/oxagile.svg';
+import pandadoc from '@/assets/alumni/pandadoc.svg';
+import qulix from '@/assets/alumni/qulix.svg';
+import satellite from '@/assets/alumni/satellite.svg';
+import sberbank from '@/assets/alumni/sberbank.svg';
+import toptal from '@/assets/alumni/toptal.svg';
+import visualfabriq from '@/assets/alumni/visualfabriq.svg';
 
 export const alumni: AlumniProps[] = [
   { id: 'epam', image: epam },

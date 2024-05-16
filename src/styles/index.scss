@@ -28,9 +28,14 @@ li {
   padding: 0;
 }
 
+figure {
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
 
   width: 100%;
