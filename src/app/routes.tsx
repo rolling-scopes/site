@@ -114,8 +114,8 @@ export const routes: RouteObject[] = config.isRollingScopesLanding
           {
             index: true,
             lazy: async () => {
-              const { Courses } = await import('../pages/courses.tsx');
-              return { Component: Courses };
+              const { School } = await import('../pages/school.tsx');
+              return { Component: School };
             },
           },
           {

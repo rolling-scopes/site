@@ -1,16 +1,7 @@
 import { FC } from 'react';
 import { Breadcrumbs } from '@/app/components';
 import { useTitle } from '@/app/hooks';
-import {
-  About,
-  General,
-  Main,
-  Mentoring,
-  Mentors,
-  Courses as RSCourses,
-  Requirements,
-} from '@/features/courses';
-import { Principles } from '@/features/principles';
+import { General, Main, Courses as RSCourses, Requirements } from '@/features/courses';
 import { StudyPath } from '@/features/study-path';
 
 export const Courses: FC = () => {
@@ -20,13 +11,9 @@ export const Courses: FC = () => {
     <>
       <Main />
       <Breadcrumbs />
-      <About />
-      <Principles />
       <RSCourses />
       <StudyPath path="coursesPath" />
       <General />
-      <Mentors />
-      <Mentoring />
       <Requirements />
     </>
   );
