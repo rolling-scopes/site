@@ -13,6 +13,8 @@
     "lint:fix": "eslint . --fix --ext ts,tsx --report-unused-disable-directives --max-warnings 10",
     "preview": "vite preview",
     "test": "vitest --run",
+    "test:playWright": "npx playwright test",
+    "test:playWrightWithUpdate": "npx playwright test --update-snapshots",
     "coverage": "vitest run --coverage",
     "precommit": "concurrently \"npx lint-staged\" \"npm:build\"",
     "prepare": "husky"
@@ -28,6 +30,7 @@
     "react-router-dom": "^6.22.3"
   },
   "devDependencies": {
+    "@playwright/test": "^1.43.1",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^15.0.6",
     "@testing-library/user-event": "^14.5.2",

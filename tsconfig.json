@@ -25,7 +25,15 @@
       "@/*": ["*"]
     }
   },
-  "include": ["src", "src/**/*.ts", "src/**/*.tsx", "src/__tests__/setup-tests.ts"],
+  "include": [
+    "src",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/__tests__/setup-tests.ts",
+    "src/__tests__/visualTesting/fullpage.spec.ts",
+    "src/__tests__/visualTesting/navbar.spec.ts",
+    "src/__tests__/visualTesting/footer.spec.ts"
+  ],
   "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
