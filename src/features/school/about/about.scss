@@ -1,0 +1,56 @@
+.rs-about {
+  & .content {
+    @include media-laptop {
+      padding: 40px;
+    }
+
+    @include media-tablet {
+      padding: 40px 15px;
+    }
+
+    padding: 80px 120px 40px;
+
+    & > .column-2 {
+      @include media-laptop {
+        gap: 40px;
+        align-items: flex-start;
+      }
+
+      display: flex;
+      gap: 120px;
+      justify-content: flex-start;
+      width: 100%;
+
+      .card-wrapper {
+        @include media-tablet {
+          max-width: 100%;
+        }
+
+        width: 380px;
+      }
+
+      .info {
+        @include media-laptop {
+          width: 100%;
+        }
+
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        min-width: 300px;
+
+        & > .paragraph {
+          @include media-laptop {
+            font-size: 18px;
+            line-height: 28px;
+          }
+
+          @include media-tablet {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+}
