@@ -4,7 +4,7 @@
 
   @include media-hover {
     &:hover {
-      background-color: $color-secondary-gray-100;
+      background-color: $color-gray-100;
     }
   }
 
@@ -18,7 +18,7 @@
 
   font-size: 18px;
   font-weight: $font-weight-medium;
-  color: $color-primary-black;
+  color: $color-black;
 
   border: 2px solid currentcolor;
 

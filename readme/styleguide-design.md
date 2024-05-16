@@ -10,8 +10,8 @@ Please follow the rules and tokens provided in the guide.
 ### Usage
 ```scss
 {
-  background-color: rgba($color-secondary-yellow, $opacity-8);
-  color: $color-primary-black;
+  background-color: rgba($color-yellow, $opacity-8);
+  color: $color-black;
 }
 ```
 
@@ -27,28 +27,28 @@ Please follow the rules and tokens provided in the guide.
 |   | Token | HSL | HEX |
 | ----------- | ----------- | ----------- | ----------- |
 |  | $$Primary$$ |  |  |  |
-| ![#000](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-primary-black.svg)    |   `$color-primary-black`        | hsla(0, 0%, 0%) |   #000   |
-| ![#fff](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-primary-white.svg)     |   `$color-primary-white`        | hsla(0, 0%, 100%) |   #fff   |
+| ![#000](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-primary-black.svg)    |   `$color-black`        | hsla(0, 0%, 0%) |   #000   |
+| ![#fff](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-primary-white.svg)     |   `$color-white`        | hsla(0, 0%, 100%) |   #fff   |
 |  | $$Yellow$$  |  |  |  |
-| ![#ffdb20](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-secondary-yellow.svg)  |   `$color-secondary-yellow`     | hsla(50, 100%, 56%) |   #ffdb20   |
-| ![#664d1b](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-secondary-yellow-700.svg)  |   `$color-secondary-yellow-700` | hsla(40, 58%, 25%) |   #664d1b   |
-| ![#efc91f](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-secondary-yellow-500.svg)  |   `$color-secondary-yellow-500` | hsla(49, 87%, 53%) |   #efc91f   |
-| ![#fffaf0](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-secondary-yellow-50.svg)  |   `$color-secondary-yellow-50`  | hsla(40, 100%, 97%) |   #fffaf0   |
+| ![#ffdb20](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-secondary-yellow.svg)  |   `$color-yellow`     | hsla(50, 100%, 56%) |   #ffdb20   |
+| ![#664d1b](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-secondary-yellow-700.svg)  |   `$color-yellow-700` | hsla(40, 58%, 25%) |   #664d1b   |
+| ![#efc91f](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-secondary-yellow-500.svg)  |   `$color-yellow-500` | hsla(49, 87%, 53%) |   #efc91f   |
+| ![#fffaf0](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-secondary-yellow-50.svg)  |   `$color-yellow-50`  | hsla(40, 100%, 97%) |   #fffaf0   |
 |  | $$Red$$ |  |  |  |
-| ![#d44333](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-secondary-red.svg)  |   `$color-secondary-red`        | hsla(6, 65%, 52%) |   #d44333   |
+| ![#d44333](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-secondary-red.svg)  |   `$color-red`        | hsla(6, 65%, 52%) |   #d44333   |
 |  | $$Gray$$ |  |  |  |
-| ![#545454](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-secondary-gray-600.svg)  |   `$color-secondary-gray-600`    | hsla(0, 0%, 33%) |   #545454   |
-| ![#757575](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-secondary-gray-500.svg)  |   `$color-secondary-gray-500`    | hsla(0, 0%, 46%) |   #757575   |
-| ![#afafaf](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-secondary-gray-400.svg)  |   `$color-secondary-gray-400`    | hsla(0, 0%, 69%) |   #afafaf   |
-| ![#e6e6e6](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-secondary-gray-200.svg)  |   `$color-secondary-gray-200`    | hsla(0, 0%, 90%) |   #e6e6e6   |
-| ![#f2f2f2](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-secondary-gray-100.svg)  |   `$color-secondary-gray-100`    | hsla(0, 0%, 95%) |   #f2f2f2   |
+| ![#545454](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-secondary-gray-600.svg)  |   `$color-gray-600`    | hsla(0, 0%, 33%) |   #545454   |
+| ![#757575](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-secondary-gray-500.svg)  |   `$color-gray-500`    | hsla(0, 0%, 46%) |   #757575   |
+| ![#afafaf](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-secondary-gray-400.svg)  |   `$color-gray-400`    | hsla(0, 0%, 69%) |   #afafaf   |
+| ![#e6e6e6](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-secondary-gray-200.svg)  |   `$color-gray-200`    | hsla(0, 0%, 90%) |   #e6e6e6   |
+| ![#f2f2f2](https://raw.githubusercontent.com/rolling-scopes/site/33180fc2e1d5be898e89fc27fa2d6cd08c8e0c65/readme/assets/styleguide-design/color-secondary-gray-100.svg)  |   `$color-gray-100`    | hsla(0, 0%, 95%) |   #f2f2f2   |
 
 ## 🫧 Opacity
 ### Usage
 ```scss
 {
-  background-color: rgba($color-secondary-yellow, $opacity-8);
-  color: rgba($color-primary-black, $opacity-80);
+  background-color: rgba($color-yellow, $opacity-8);
+  color: rgba($color-black, $opacity-80);
   opacity: $opacity-100;
 }
 ```

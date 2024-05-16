@@ -6,21 +6,21 @@
 
   @include media-hover {
     &:hover {
-      color: $color-primary-black;
+      color: $color-black;
 
       svg {
         rect {
-          fill: $color-secondary-gray-600;
+          fill: $color-gray-600;
         }
 
         path {
-          stroke: $color-primary-white;
+          stroke: $color-white;
         }
       }
 
       .telegram-icon {
         path {
-          fill: $color-primary-white;
+          fill: $color-white;
           stroke: none;
         }
       }
@@ -43,7 +43,7 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 16px;
-  color: $color-secondary-gray-600;
+  color: $color-gray-600;
   text-align: center;
   text-decoration: none;
 

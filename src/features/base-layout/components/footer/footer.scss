@@ -1,5 +1,5 @@
 .footer {
-  background-color: $color-primary-black;
+  background-color: $color-black;
 
   &.content {
     @include media-laptop {
@@ -52,7 +52,7 @@
         font-size: 18px;
         font-weight: $font-weight-medium;
         line-height: 24px;
-        color: $color-secondary-gray-100;
+        color: $color-gray-100;
         letter-spacing: 0;
 
         .about-links {
@@ -68,7 +68,7 @@
             color: currentcolor;
 
             &:hover {
-              color: $color-secondary-gray-400;
+              color: $color-gray-400;
             }
           }
         }
@@ -78,7 +78,7 @@
     .copyright {
       margin-top: 64px;
       line-height: 24px;
-      color: $color-primary-white;
+      color: $color-white;
     }
   }
 }

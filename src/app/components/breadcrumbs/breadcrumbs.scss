@@ -24,15 +24,15 @@
     & .link {
       @extend %transition-all;
 
-      color: $color-secondary-gray-500;
+      color: $color-gray-500;
 
       &.disabled {
-        color: $color-secondary-gray-600;
+        color: $color-gray-600;
         text-decoration: underline;
       }
 
       &:hover {
-        color: $color-secondary-gray-600;
+        color: $color-gray-600;
       }
     }
   }

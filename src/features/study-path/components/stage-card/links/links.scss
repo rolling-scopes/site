@@ -14,18 +14,18 @@
   & > a {
     @extend %transition-all;
 
-    color: $color-secondary-gray-600;
+    color: $color-gray-600;
     text-decoration: underline;
 
     &.disabled {
       pointer-events: none;
       line-height: 1em;
-      color: $color-secondary-gray-200;
+      color: $color-gray-200;
       text-decoration: none;
     }
 
     &:hover {
-      color: $color-secondary-gray-400;
+      color: $color-gray-400;
     }
   }
 }

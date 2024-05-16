@@ -3,8 +3,8 @@
 
   @include media-hover {
     &:hover {
-      color: $color-secondary-gray-600;
-      background-color: $color-primary-white;
+      color: $color-gray-600;
+      background-color: $color-white;
       box-shadow: 0 0 16px 0 rgb(114 92 19 / 8%);
     }
   }
@@ -17,7 +17,7 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
-  color: $color-primary-white;
+  color: $color-white;
   letter-spacing: 0;
 
   border: 2px solid #fffaf0;
