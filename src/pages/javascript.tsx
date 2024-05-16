@@ -2,6 +2,7 @@ import { Breadcrumbs } from '@/app/components';
 import { CourseType } from '@/app/types';
 import { About } from '@/features/about';
 import { AboutVideo } from '@/features/about-video';
+import { Communication } from '@/features/communication';
 import { CourseMain } from '@/features/course-main';
 import { Required } from '@/features/required';
 import { StudyPath } from '@/features/study-path';
@@ -24,6 +25,7 @@ export const JavaScript = ({ type }: JavaScriptProps) => {
       <Breadcrumbs />
       <TrainingProgram courseName={COURSE_NAME} type={type} />
       <About courseName={COURSE_NAME} type={type} />
+      <Communication courseName={COURSE_NAME} />
       <AboutVideo />
       <StudyPath path={COURSE_NAME} />
       <Required courseName={COURSE_NAME} />
