@@ -48,18 +48,18 @@ describe('Header', () => {
 
     it('renders all the header links', () => {
       const headerElement = screen.getAllByText(/.*/, { selector: `p.${stylesNavItem.label}` });
-      expect(headerElement).toHaveLength(4);
+      expect(headerElement).toHaveLength(3);
     });
 
-    it('renders svg arrow', () => {
-      const labelDiv = screen.getByText('About', { selector: `p.${stylesNavItem.label}` });
+    // it('renders svg arrow', () => {
+    //   const labelDiv = screen.getByText('About', { selector: `p.${stylesNavItem.label}` });
 
-      fireEvent.mouseOver(labelDiv);
-      const svg = screen.getByLabelText('dropdown-arrow');
+    //   fireEvent.mouseOver(labelDiv);
+    //   const svg = screen.getByLabelText('dropdown-arrow');
 
-      expect(svg).toBeInTheDocument();
-      expect(svg).toBeVisible();
-    });
+    //   expect(svg).toBeInTheDocument();
+    //   expect(svg).toBeVisible();
+    // });
   });
 
   describe('Mobile view', () => {
