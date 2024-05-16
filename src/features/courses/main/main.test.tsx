@@ -9,12 +9,8 @@ describe('Main', () => {
     renderWithRouter(<Main />);
   });
 
-  it('renders the RS School title', () => {
-    expect(screen.getByText('RS School')).toBeVisible();
-  });
-
-  it('renders the course title and motivation text', () => {
-    expect(screen.getByText('Free courses. High motivation')).toBeVisible();
+  it('renders the Courses title', () => {
+    expect(screen.getByText('Our Courses')).toBeVisible();
   });
 
   it('renders the description', () => {
