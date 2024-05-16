@@ -20,7 +20,12 @@ export const NavItem = ({ label, href, dropdown = false }: NavItemProps) => {
   return (
     <>
       {href && !dropdown ? (
-        <NavLink className={styles.menuItem} to={href} end>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? `${styles.menuItem} ${styles.active}` : styles.menuItem
+          }
+          to={href}
+          end>
           <p className={styles.label}>{label}</p>
         </NavLink>
       ) : (

@@ -8,6 +8,7 @@
       color: $color-primary-black;
     }
   }
+  
 
   cursor: pointer;
 
@@ -17,7 +18,8 @@
   align-items: center;
   justify-content: center;
 
-  padding: 14px;
+  height: 100%;
+  padding: 0 14px;
 
   &::after {
     @extend %transition-all;
@@ -25,7 +27,7 @@
     content: '';
 
     position: absolute;
-    bottom: 2%;
+    bottom: 1px;
     left: 0;
     transform: scaleX(0);
 
@@ -74,6 +76,14 @@
       svg {
         stroke: $color-primary-black;
       }
+    }
+  }
+
+  &.active {
+    & > p {
+      padding: 0 8px;
+      font-weight: $font-weight-bold;
+      color: $color-primary-black;
     }
   }
 }
