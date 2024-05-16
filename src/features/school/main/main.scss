@@ -1,4 +1,4 @@
-.courses-main {
+.school-main {
   display: flex;
   align-items: center;
   min-height: 440px;
@@ -23,7 +23,15 @@
   }
 
   &.content > .left {
+    max-width: 640px;
+
     .title-container {
+      & > .title {  
+        @media (min-width: $tablet-width) {
+          font-size: 96px;
+        }
+      }
+
       & > .subtitle {
         padding-left: 4px;
 
