@@ -18,7 +18,7 @@ describe('Pictures', () => {
   });
 
   it('renders the carousel with images', () => {
-    const images = screen.getAllByRole('img');
+    const images = screen.getAllByTestId('carousel-image');
     expect(images.length).toBe(9);
   });
 
