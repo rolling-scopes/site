@@ -17,7 +17,7 @@ export const DropdownMenu = ({ onMouseLeave, onMouseEnter, isOpen, onClose }: Dr
       className={`${styles.coursesDropdown} ${isOpen ? styles.open : ''}`}
       onMouseLeave={onMouseLeave}
       onMouseEnter={onMouseEnter}
-      data-testid="navbar-dropdown"
+      data-testid="header-dropdown"
       ref={clickRef}>
       <SchoolMenu heading="all courses" color="dark" />
       <SchoolMenu heading="rs school" color="dark" />

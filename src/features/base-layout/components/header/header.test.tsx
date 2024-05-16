@@ -6,6 +6,10 @@ import { Header } from './header';
 import { renderWithRouter } from '@/__tests__/utils';
 import { useWindowSize } from '@/app/hooks';
 
+import stylesDropdown from './dropdown/dropdown.module.scss';
+import stylesHeader from './header.module.scss';
+import stylesNavItem from './nav-item/nav-item.module.scss';
+
 vi.mock('@/app/hooks', async (importOriginal) => {
   const originalModule = await importOriginal<typeof import('@/app/hooks')>();
 
@@ -33,22 +37,22 @@ describe('Header', () => {
     });
 
     it('renders RsLogo', () => {
-      const logoElement = screen.getByTestId('logo-navbar');
+      const logoElement = screen.getByTestId('logo-header');
       expect(logoElement).toBeInTheDocument();
     });
 
     it('set color as gray when scrollbar is at the top', () => {
       const headerElement = screen.getByTestId('navigation');
-      expect(headerElement).toHaveClass('gray');
+      expect(headerElement).toHaveClass(stylesHeader.gray);
     });
 
-    it('renders all the navbar links', () => {
-      const headerElement = screen.getAllByText(/.*/, { selector: 'p.label' });
+    it('renders all the header links', () => {
+      const headerElement = screen.getAllByText(/.*/, { selector: `p.${stylesNavItem.label}` });
       expect(headerElement).toHaveLength(4);
     });
 
     it('renders svg arrow', () => {
-      const labelDiv = screen.getByText('About', { selector: 'p.label' });
+      const labelDiv = screen.getByText('About', { selector: `p.${stylesNavItem.label}` });
 
       fireEvent.mouseOver(labelDiv);
       const svg = screen.getByLabelText('dropdown-arrow');
@@ -69,7 +73,7 @@ describe('Header', () => {
     });
 
     it('renders RsLogo in mobile view', async () => {
-      const logoElement = screen.getAllByTestId('logo-navbar');
+      const logoElement = screen.getAllByTestId('logo-header');
       expect(logoElement).toHaveLength(2);
     });
 
@@ -84,9 +88,9 @@ describe('Header', () => {
 
       fireEvent.click(burger);
       const mobileMenu = screen.getByTestId('mobile-menu');
-      expect(mobileMenu).toHaveClass('open');
+      expect(mobileMenu).toHaveClass(stylesHeader.open);
       fireEvent.click(burger);
-      expect(mobileMenu).not.toHaveClass('open');
+      expect(mobileMenu).not.toHaveClass(stylesHeader.open);
     });
   });
 
@@ -103,8 +107,8 @@ describe('Header', () => {
         ),
       );
 
-      const dropdownElement = screen.getByTestId('navbar-dropdown');
-      expect(dropdownElement).toHaveClass('open');
+      const dropdownElement = screen.getByTestId('header-dropdown');
+      expect(dropdownElement).toHaveClass(stylesDropdown.open);
     });
   });
 });
