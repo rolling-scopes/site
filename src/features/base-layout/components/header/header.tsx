@@ -4,16 +4,13 @@ import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
 import { LogoWrapper, MobileView } from '@/app/components';
 import { useWindowSize } from '@/app/hooks';
-import { buildUrl } from '@/app/services/platform';
 
 import styles from './header.module.scss';
 
 const navLinks = [
-  { label: 'About', href: buildUrl('/#about') },
-  { label: 'RS School', href: buildUrl('/#school') },
-  { label: 'Events', href: buildUrl('/#events') },
-  { label: 'Community', href: buildUrl('/#community') },
-  { label: 'Merch', href: buildUrl('/#merch') },
+  { label: 'RS School', href: '/' },
+  { label: 'Courses', href: '/courses' },
+  { label: 'Community', href: '/community' },
 ];
 
 export const Header = () => {
@@ -70,7 +67,8 @@ export const Header = () => {
         {!isMobile && (
           <menu className={styles.menu}>
             {navLinks.map((link) => {
-              const isDropdown = link.label === 'RS School';
+              const isDropdown = false;
+              // const isDropdown = link.label === 'RS School';
 
               return (
                 <NavItem
