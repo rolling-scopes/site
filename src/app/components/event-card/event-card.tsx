@@ -37,30 +37,32 @@ export const EventCard = ({
       : `• ${date} • ${time} • ${type}`;
 
   return (
-    <div className={cx('event-card')}>
+    <article className={cx('event-card')}>
       <section className={cx('event-card__header')}>
-        <div className={cx('event-tag')}>{eventType}</div>
-        <div className={cx('about-organization')}>
+        <section className={cx('event-tag')}>{eventType}</section>
+        <section className={cx('about-organization')}>
           <h4 className={cx('organized-by')}>{organizedBy}</h4>
           <h3 className={cx('event-organization')}>{organization}</h3>
-        </div>
-        <div className={cx('about-event')}>
+        </section>
+        <section className={cx('about-event')}>
           <h2 className={cx('event-title')}>{title}</h2>
           <p className={cx('event-additional-info')}>{additionalInfo}</p>
-        </div>
+        </section>
       </section>
 
       <section className={cx('event-card__info')}>
-        <div className={cx('event-date')}>{dateInfo}</div>
-        <p className={cx('event-address')}>
+        <time dateTime={date} className={cx('event-date')}>
+          {dateInfo}
+        </time>
+        <address className={cx('event-address')}>
           {address}
           <br />
           {city}
-        </p>
+        </address>
         <a href={href} target="_blank" rel="noreferrer" className={cx('details-button')}>
           View details
         </a>
       </section>
-    </div>
+    </article>
   );
 };
