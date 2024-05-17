@@ -14,13 +14,21 @@ interface StudyPathProps {
 
 export const StudyPath = ({ path, marked }: StudyPathProps) => {
   const { data: coursesPath } = useDataByName<PathNames>(path);
+  console.log(path, path.indexOf('ru'));
+  //todo add correct language check
+  const isAngularOrAwsDev = path === 'angular' || path === 'awsDev';
 
-  const title =
-    path === 'angular' || path === 'awsDev' ? 'Course Curriculum' : 'Choose what you want to learn';
-
-  const paragraph =
-    path === 'angular' || path === 'awsDev'
-      ? 'This program will have theory and practice on the following topic:'
+  const title = isAngularOrAwsDev
+    ? 'Course Curriculum'
+    : path.indexOf('ru') !== -1
+      ? 'Выберите, чему вы хотите научиться'
+      : 'Choose what you want to learn';
+  console.log(title);
+  //todo add correct language check
+  const paragraph = isAngularOrAwsDev
+    ? 'This program will have theory and practice on the following topic:'
+    : path.indexOf('ru') !== -1
+      ? 'Full-stack разработчик — это человек, обладающий опытом как в области внешнего интерфейса (то, что видят пользователи), так и в области внутреннего интерфейса (сервера и базы данных). Этот двойной набор навыков позволяет им контролировать и реализовывать проекты от начала до конца. Сегодня компании отдают приоритет найму разработчиков полного стека, потому что они могут эффективно объединить различные технологические аспекты, что приводит к более быстрой разработке продукта.'
       : 'A full-stack developer is someone who has expertise in both frontend (what users see) and backend (server and database) development. This dual skill set enables them to supervise and implement projects from start to finish. Businesses today prioritize hiring full-stack developers because they can efficiently bridge various technological aspects, resulting in faster product development.';
 
   return (

@@ -160,53 +160,54 @@ export const contentMap: ContentMap = {
     image: jsImg,
   },
 
-  //todo add ru
   'js / front-end ru': {
-    title: 'Training Program',
+    title: 'Программа обучения',
     content: [
       <Paragraph>
-        ru The program consists of 3 stages. There may be requirements for advancing to each higher
-        stage, which will be described below. This specific run of the program will take the form of
-        self-study. This means that you will have access to pre-recorded webinars, recommended
-        materials, and weekly live Q&A sessions with our mentors/coordinators to answer any
-        questions you might have.
+        Программа состоит из 3 этапов. На каждом последующем этапе могут быть установлены требования
+        для перехода на следующий уровень, которые будут описаны ниже. В данном запуске программы
+        будет предусмотрено самостоятельное обучение. Это означает, что у вас будет доступ к
+        предзаписанным вебинарам, рекомендуемым материалам и еженедельным онлайн сессиям вопросов и
+        ответов с нашими наставниками/координаторами для ответа на любые вопросы, которые у вас
+        могут возникнуть.
       </Paragraph>,
       <Paragraph>
-        ru You will also have the ability to communicate with other students and help each other
-        solve any problems you might face. We will provide you with a list of topics that should be
-        covered for each stage with recommended deadlines, but you will have the freedom to choose
-        when you want to watch the lectures and complete the tasks.
+        У вас также будет возможность общаться с другими студентами и помогать друг другу решать
+        любые проблемы, с которыми вы можете столкнуться. Мы предоставим вам список тем, которые
+        должны быть рассмотрены на каждом этапе с рекомендуемыми сроками, но у вас будет свобода
+        выбора времени для просмотра лекций и выполнения заданий.
       </Paragraph>,
       <Paragraph>
-        <span>BE AWARE</span> that practical tasks’ deadlines are not suggestions, and should be
-        respected.
+        <span>ОБРАТИТЕ ВНИМАНИЕ</span>, что сроки выполнения практических заданий не являются
+        рекомендацией и должны быть соблюдены.
       </Paragraph>,
-      <Subtitle text="Attention! Mentors on this course will be first assigned to the graduates of the RS School Stage #2." />,
+      <Subtitle text="Внимание! Наставники на этом курсе будут первоначально назначены выпускникам RS School Stage #2." />,
     ],
     image: jsImg,
   },
 
   'js / front-end pre-school': {
-    title: 'Training Program',
+    title: 'Программа обучения',
     content: [
       <Paragraph>
-        The program consists of 3 stages. There may be requirements for advancing to each higher
-        stage, which will be described below. This specific run of the program will take the form of
-        self-study. This means that you will have access to pre-recorded webinars, recommended
-        materials, and weekly live Q&A sessions with our mentors/coordinators to answer any
-        questions you might have.
+        Программа состоит из 3 этапов. На каждом последующем этапе могут быть установлены требования
+        для перехода на следующий уровень, которые будут описаны ниже. В данном запуске программы
+        будет предусмотрено самостоятельное обучение. Это означает, что у вас будет доступ к
+        предзаписанным вебинарам, рекомендуемым материалам и еженедельным онлайн сессиям вопросов и
+        ответов с нашими наставниками/координаторами для ответа на любые вопросы, которые у вас
+        могут возникнуть.
       </Paragraph>,
       <Paragraph>
-        You will also have the ability to communicate with other students and help each other solve
-        any problems you might face. We will provide you with a list of topics that should be
-        covered for each stage with recommended deadlines, but you will have the freedom to choose
-        when you want to watch the lectures and complete the tasks.
+        У вас также будет возможность общаться с другими студентами и помогать друг другу решать
+        любые проблемы, с которыми вы можете столкнуться. Мы предоставим вам список тем, которые
+        должны быть рассмотрены на каждом этапе с рекомендуемыми сроками, но у вас будет свобода
+        выбора времени для просмотра лекций и выполнения заданий.
       </Paragraph>,
       <Paragraph>
-        <span>BE AWARE</span> that practical tasks’ deadlines are not suggestions, and should be
-        respected.
+        <span>ОБРАТИТЕ ВНИМАНИЕ</span>, что сроки выполнения практических заданий не являются
+        рекомендацией и должны быть соблюдены.
       </Paragraph>,
-      <Subtitle text="Attention! Mentors on this course will be first assigned to the graduates of the RS School Stage #2." />,
+      <Subtitle text="Внимание! Наставники на этом курсе будут первоначально назначены выпускникам RS School Stage #2." />,
     ],
     image: jsImg,
   },

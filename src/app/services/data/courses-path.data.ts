@@ -30,13 +30,12 @@ export const coursesPath: CoursesPath[] = [
     logoIcon: JSIcon,
     links: [
       {
-        // TODO: change link to RU page when it'll be ready
         linkTitle: 'JS/TS/FE Fundamentals (RU)',
-        href: buildUrl('/courses/javascript-mentoring-program'),
+        href: buildUrl('/courses/javascript-ru'),
       },
       {
         linkTitle: 'JS/TS/FE Fundamentals (EN)',
-        href: buildUrl('/courses/javascript-mentoring-program'),
+        href: buildUrl('/courses/javascript'),
       },
     ],
   },

@@ -15,8 +15,8 @@ export const JavaScriptRu = () => {
       <Breadcrumbs />
       <TrainingProgram courseName={COURSE_NAME} />
       <About courseName={COURSE_NAME} />
-      <AboutVideo />
-      <StudyPath path={'javascript'} />
+      <AboutVideo language="ru" />
+      <StudyPath path={'javascriptRu'} />
       <Required courseName={COURSE_NAME} />
     </>
   );

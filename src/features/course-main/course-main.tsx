@@ -36,7 +36,7 @@ export const CourseMain = ({ courseName, type }: CourseMainProps) => {
           <Title text={`${altTitle || title} Course`} />
           {type && <Subtitle text={type} type="course-main" />}
           <DateLang startDate={startDate} language={language} mode={mode} type="main" />
-          <ButtonOutlined label="Enroll" href={enroll} />
+          <ButtonOutlined label={language[0] === 'ru' ? 'Записаться' : 'Enroll'} href={enroll} />
         </div>
       </div>
     </main>

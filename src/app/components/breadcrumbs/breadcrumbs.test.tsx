@@ -5,8 +5,8 @@ import { renderWithRouter } from '@/__tests__/utils';
 const breadcrumbNameMap: Record<string, string> = {
   courses: 'RS School',
   nodejs: 'Node.js Course',
-  'javascript-mentoring-program': 'JavaScript Mentoring Program',
-  'javascript-preschool': 'JavaScript Pre-school',
+  javascript: 'JavaScript Mentoring Program',
+  'javascript-preschool-ru': 'JavaScript Pre-school',
   angular: 'Angular Course',
   'aws-cloud-developer': 'AWS Cloud Developer Course',
 };
