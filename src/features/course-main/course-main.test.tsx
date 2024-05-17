@@ -39,7 +39,7 @@ const mockedCourseUpcoming = {
 describe('CourseMain', () => {
   beforeEach(() => {
     act(() => {
-      render(<CourseMain courseName="Node.js" type="Mentoring Program" />);
+      render(<CourseMain courseName="Node.js" />);
     });
   });
 
@@ -76,13 +76,13 @@ describe('CourseMain', () => {
 
 describe('CourseMain', () => {
   it('renders the section with correct label "AVAILABLE"', () => {
-    render(<CourseMain courseName={reactCourseTitle} type="Mentoring Program" />);
+    render(<CourseMain courseName={reactCourseTitle} />);
     const labelElement = screen.getByText(CourseStatus.AVAILABLE);
     expect(labelElement).toBeVisible();
   });
 
   it('renders the section with correct label "UPCOMING"', () => {
-    render(<CourseMain courseName={angularCourseTitle} type="Mentoring Program" />);
+    render(<CourseMain courseName={angularCourseTitle} />);
     const labelElement = screen.getByText(CourseStatus.UPCOMING);
     expect(labelElement).toBeVisible();
   });

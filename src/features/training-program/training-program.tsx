@@ -2,27 +2,26 @@ import { cloneElement } from 'react';
 import { type CourseNames, contentMap } from './training-program.data';
 import { Button, Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
-import type { Course, CourseType } from '@/app/types';
+import type { Course } from '@/app/types';
 import Image from '@/features/image';
 
 import './training-program.scss';
 
 interface TrainingProgramProps {
   courseName: CourseNames;
-  type?: CourseType;
 }
 
-export const TrainingProgram = ({ courseName, type }: TrainingProgramProps) => {
+export const TrainingProgram = ({ courseName }: TrainingProgramProps) => {
   const { course: data } = useCourseByTitle(
     courseName.includes('badge') ? 'aws fundamentals' : courseName,
-    type,
   );
 
   const course = data as Course;
-
   const { title, content, image } = contentMap[courseName];
-
-  const buttonLabel = courseName === 'react ru' ? 'Записаться' : 'Register';
+  let buttonLabel = 'Register';
+  if (course) {
+    buttonLabel = course.language[0] === 'ru' ? 'Записаться' : 'Register';
+  }
 
   return (
     <section className="training-program container">

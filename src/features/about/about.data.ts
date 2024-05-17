@@ -22,9 +22,12 @@ type discordLinksType = {
   [key in CourseNames]: string;
 };
 
+type Language = 'en' | 'ru';
+
 const discordLinks: discordLinksType = {
-  javascript: 'https://discord.com/invite/QvEYg7EaQ4',
-  'javascript-en': 'https://discord.com/invite/uW5cCHR',
+  'js / front-end ru': 'https://discord.com/invite/QvEYg7EaQ4',
+  'js / front-end en': 'https://discord.com/invite/uW5cCHR',
+  'js / front-end pre-school': 'https://discord.com/invite/gFnRh8Sudg',
   react: 'https://discord.com/invite/zyRcphs3px',
   'react ru': 'https://discord.com/invite/zyRcphs3px',
   angular: 'https://discord.com/invite/xwReXYqvs7',
@@ -73,40 +76,78 @@ const awsCloudDeveloper: AboutInfo[] = angularNodejsAwsFundamentals('aws cloud d
   return item;
 });
 
-const javaScript: (lang: string) => AboutInfo[] = (lang) => [
-  {
-    id: 1,
-    title: 'For everyone',
-    info: 'Everyone can study at RS School, regardless of age, professional employment, or place of residence. However, you should have sufficient base knowledge before the program begins.',
-    icon: personIcon,
-  },
-  {
-    id: 2,
-    title: 'Worldwide mentors and trainers',
-    info: 'The Mentors and trainers of our school are front-end and javascript developers from different companies/countries. How to become a <a href="/courses#mentors-wanted">mentor</a>?',
-    icon: planetIcon,
-  },
-  {
-    id: 3,
-    title: 'Free education',
-    info: 'Feel the desire to share your experience and knowledge',
-    icon: giftIcon,
-  },
-  {
-    id: 4,
-    title: 'Certificate',
-    info: 'A certificate of successful completion of the course is issued to everybody who pass two stages of training.',
-    icon: awardIcon,
-  },
-  {
-    id: 5,
-    title: 'Chat',
-    info: `Throughout the course, we mostly use <a href=${
-      discordLinks[lang === 'en' ? 'javascript-en' : 'javascript']
-    }>Discord chat</a>.`,
-    icon: chatIcon,
-  },
-];
+const javaScript: (lang: Language) => AboutInfo[] = (lang) => {
+  console.log(lang + 'javaScript lang in about.data');
+  if (lang === 'en') {
+    return [
+      {
+        id: 1,
+        title: 'For everyone',
+        info: 'Everyone can study at RS School, regardless of age, professional employment, or place of residence. However, you should have sufficient base knowledge before the program begins.',
+        icon: personIcon,
+      },
+      {
+        id: 2,
+        title: 'Worldwide mentors and trainers',
+        info: 'The Mentors and trainers of our school are front-end and javascript developers from different companies/countries. How to become a <a href="/courses#mentors-wanted">mentor</a>?',
+        icon: planetIcon,
+      },
+      {
+        id: 3,
+        title: 'Free education',
+        info: 'Feel the desire to share your experience and knowledge',
+        icon: giftIcon,
+      },
+      {
+        id: 4,
+        title: 'Certificate',
+        info: 'A certificate of successful completion of the course is issued to everybody who pass two stages of training.',
+        icon: awardIcon,
+      },
+      {
+        id: 5,
+        title: 'Chat',
+        info: `Throughout the course, we mostly use <a href=${
+          discordLinks[lang === 'en' ? 'js / front-end en' : 'js / front-end en']
+        }>Discord chat</a>.`,
+        icon: chatIcon,
+      },
+    ];
+  } else {
+    return [
+      {
+        id: 1,
+        title: 'Для всех',
+        info: 'Каждый может учиться в RS School, независимо от возраста, профессиональной занятости или места жительства. Однако вам следует иметь достаточные базовые знания перед началом программы.',
+        icon: personIcon,
+      },
+      {
+        id: 2,
+        title: 'Наставники и тренеры со всего мира',
+        info: 'Наставники и тренеры нашей школы - это фронтенд и разработчики JavaScript из разных компаний и стран. Как стать наставником?',
+        icon: planetIcon,
+      },
+      {
+        id: 3,
+        title: 'Бесплатное образование',
+        info: 'Почувствуйте желание поделиться своим опытом и знаниями',
+        icon: giftIcon,
+      },
+      {
+        id: 4,
+        title: 'Сертификат',
+        info: 'Сертификат успешного окончания курса выдается всем, кто проходит два этапа обучения.',
+        icon: awardIcon,
+      },
+      {
+        id: 5,
+        title: 'Чат',
+        info: ` На протяжении курса мы в основном используем <a href=${discordLinks[lang === 'ru' ? 'js / front-end ru' : 'js / front-end en']}>чат Discord</a>.`,
+        icon: chatIcon,
+      },
+    ];
+  }
+};
 
 const reactEn: AboutInfo[] = javaScript('en').map((item) => {
   if (item.id === 2) {
@@ -160,8 +201,9 @@ const reactRuAbout: AboutInfo[] = [
 ];
 
 export const contentMap: ContentMap = {
-  javascript: javaScript('ru'),
-  'javascript-en': javaScript('en'),
+  'js / front-end ru': javaScript('ru'),
+  'js / front-end en': javaScript('en'),
+  'js / front-end pre-school': javaScript('ru'),
   react: reactEn,
   'react ru': reactRuAbout,
   angular: angularNodejsAwsFundamentals('angular'),

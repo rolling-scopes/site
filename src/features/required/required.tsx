@@ -1,6 +1,8 @@
 import { courseDataMap } from './required.data';
 import type { CourseName } from './required.types';
 import { Actions, Subtitle, Title } from '@/app/components';
+import { useCourseByTitle } from '@/app/hooks';
+import { type Course } from '@/app/types';
 
 import './required.scss';
 
@@ -11,6 +13,15 @@ interface RequiredProps {
 }
 
 export const Required = ({ courseName, marked1, marked2 }: RequiredProps) => {
+  const { course: data } = useCourseByTitle(courseName);
+
+  const course = data as Course;
+  let language = 'en';
+
+  if (course) {
+    language = course.language[0];
+  }
+
   const requiredKnowledge = courseDataMap[courseName];
 
   const { knowBefore, willLearn } = requiredKnowledge;
@@ -18,7 +29,12 @@ export const Required = ({ courseName, marked1, marked2 }: RequiredProps) => {
   return (
     <section className="required container">
       <div className="required content info-wrapper">
-        <Title text="What you should know before starting" hasAsterisk />
+        <Title
+          text={
+            language === 'en' ? 'What you should know before starting' : 'Что нужно знать до начала'
+          }
+          hasAsterisk
+        />
 
         <div className="column-2">
           <div>

@@ -19,7 +19,14 @@ export type Course = {
   willLearn?: CourseModule | CourseModule[];
 };
 
-export type CourseName = 'javascript' | 'awsFundamentals' | 'awsDev' | 'nodejs' | 'angular';
+export type CourseName =
+  | 'awsFundamentals'
+  | 'awsDev'
+  | 'nodejs'
+  | 'angular'
+  | 'js / front-end en'
+  | 'js / front-end ru'
+  | 'js / front-end pre-school';
 
 export type CourseMap = {
   [courseName in CourseName]: Course;

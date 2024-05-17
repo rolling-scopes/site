@@ -8,9 +8,11 @@ import { Trainers } from '@/features/trainers';
 import { preSchool } from '@/features/trainers/preSchool.data.ts';
 import { TrainingProgram } from '@/features/training-program';
 
-const COURSE_NAME = 'javascript';
+const COURSE_NAME = 'js / front-end pre-school';
 
 export const JavaScriptPreSchoolRu = () => {
+  //TODO fix Breadcrumbs
+  //TODO Study path
   return (
     <>
       <CourseMain courseName={COURSE_NAME} />
@@ -18,8 +20,8 @@ export const JavaScriptPreSchoolRu = () => {
       <TrainingProgram courseName={COURSE_NAME} />
       <About courseName={COURSE_NAME} />
       <AboutVideo />
-      <StudyPath path={COURSE_NAME} />
-      <Required courseName={COURSE_NAME} />
+      <StudyPath path={'javascript'} />
+      <Required courseName={'js / front-end pre-school'} />
       <Trainers trainers={preSchool}></Trainers>
     </>
   );

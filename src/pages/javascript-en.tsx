@@ -6,7 +6,7 @@ import { Required } from '@/features/required';
 import { StudyPath } from '@/features/study-path';
 import { TrainingProgram } from '@/features/training-program';
 
-const COURSE_NAME = 'javascript';
+const COURSE_NAME = 'js / front-end en';
 
 export const JavaScriptEn = () => {
   return (
@@ -16,7 +16,7 @@ export const JavaScriptEn = () => {
       <TrainingProgram courseName={COURSE_NAME} />
       <About courseName={COURSE_NAME} />
       <AboutVideo />
-      <StudyPath path={COURSE_NAME} />
+      <StudyPath path={'javascript'} />
       <Required courseName={COURSE_NAME} />
     </>
   );

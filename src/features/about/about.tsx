@@ -2,13 +2,15 @@ import { contentMap } from './about.data';
 import { InfoGrid } from './components';
 import { Button, Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
-import { type Course, CourseType } from '@/app/types';
+import { type Course } from '@/app/types';
 
 import './about.scss';
 
+2;
 export type CourseNames =
-  | 'javascript'
-  | 'javascript-en'
+  | 'js / front-end en'
+  | 'js / front-end ru'
+  | 'js / front-end pre-school'
   | 'react'
   | 'react ru'
   | 'angular'
@@ -18,14 +20,17 @@ export type CourseNames =
 
 interface AboutProps {
   courseName: CourseNames;
-  type?: CourseType;
 }
 
-export const About = ({ courseName, type }: AboutProps) => {
-  const { course: data, error, loading, hasError } = useCourseByTitle(courseName, type);
+export const About = ({ courseName }: AboutProps) => {
+  const { course: data, error, loading, hasError } = useCourseByTitle(courseName);
 
   const course = data as Course;
+  let language = 'en';
 
+  if (course) {
+    language = course.language[0];
+  }
   const infoList = contentMap[courseName];
 
   if (loading) {
@@ -35,13 +40,16 @@ export const About = ({ courseName, type }: AboutProps) => {
   if ((error && hasError) || !course) {
     return <h3>Error: {error?.message || 'Course not found'}</h3>;
   }
-
+  console.log(infoList);
   return (
     <section className="nodejs-about container">
       <div className="nodejs-about content">
-        <Title text="About" />
+        <Title text={language === 'ru' ? 'О курсе' : 'About the course'} />
         <InfoGrid items={infoList} hasTitle />
-        <Button label="Become a student" href={course.enroll} />
+        <Button
+          label={language === 'ru' ? 'Cтать студентом' : 'Become a student'}
+          href={course.enroll}
+        />
       </div>
     </section>
   );
