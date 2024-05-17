@@ -21,10 +21,6 @@
   },
   "dependencies": {
     "classnames": "^2.5.1",
-<<<<<<< refactor/126-event-card
-    "nextjs-toploader": "^1.6.12",
-=======
->>>>>>> main
     "dayjs": "^1.11.11",
     "nextjs-toploader": "^1.6.12",
     "react": "^18.2.0",
