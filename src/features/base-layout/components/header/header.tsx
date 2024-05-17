@@ -8,9 +8,9 @@ import { useWindowSize } from '@/app/hooks';
 import styles from './header.module.scss';
 
 const navLinks = [
-  { label: 'RS School', href: '/' },
-  { label: 'Courses', href: '/courses' },
-  { label: 'Community', href: '/community' },
+  { label: 'RS School', href: '/#main' },
+  { label: 'Courses', href: '/courses/#main' },
+  { label: 'Community', href: '/community/#main' },
 ];
 
 export const Header = () => {
