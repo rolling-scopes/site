@@ -55,7 +55,7 @@ export const Navbar = () => {
   return (
     <nav className={`navbar ${color}`} data-testid="navigation">
       <section className="navbar-content">
-        <Link to="/" onClick={() => window.scrollTo({ top: 0 })}>
+        <Link to="/">
           <LogoWrapper type="navbar" />
         </Link>
 

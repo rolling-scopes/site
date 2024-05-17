@@ -30,7 +30,11 @@
     background-color: rgb(255 255 255);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
-    box-shadow: rgb(0 0 0 / 8.2%) 0 1.0260px 8.0694px 0;
+    box-shadow: rgb(0 0 0 / 8.2%) 0 1.0260px 8.0694px 0;    
+  }
+
+  .dropdown-arrow img {
+    opacity: 0;
   }
 
 }
@@ -178,8 +182,9 @@
 
     &.dropdown-toggle {
       @include media-hover {
-        &:hover .dropdown-arrow svg {
-          stroke: $color-black;
+        &:hover .dropdown-arrow img {
+          opacity: 1;
+          filter: brightness(0);
         }
       }
 
@@ -191,17 +196,15 @@
         width: 16px;
         height: 17px;
         margin-left: 10px;
-
-        svg {
-          stroke: transparent;
-        }
       }
 
       &.rotate .dropdown-arrow {
         transform: rotate(180deg);
 
-        svg {
-          stroke: $color-black;
+
+        img {
+          opacity: 1;
+          filter: brightness(0);
         }
       }
     }
