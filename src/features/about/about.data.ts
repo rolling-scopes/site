@@ -1,11 +1,11 @@
-import type { CourseNames } from './about';
 import awardIcon from '@/assets/icons/award-icon.webp';
-import chatIcon from '@/assets/icons/chat-icon.webp';
 import giftIcon from '@/assets/icons/gift.webp';
 import noteIcon from '@/assets/icons/note-icon.webp';
 import paperIcon from '@/assets/icons/paper-icon.webp';
 import personIcon from '@/assets/icons/person-icon.webp';
 import planetIcon from '@/assets/icons/planet.webp';
+import type { CourseNames } from '@/data/communication.data';
+import { DISCORD_LINKS } from '@/data/communication.data';
 
 type AboutInfo = {
   id: number;
@@ -18,22 +18,7 @@ type ContentMap = {
   [key in CourseNames]: AboutInfo[];
 };
 
-type discordLinksType = {
-  [key in CourseNames]: string;
-};
-
-const discordLinks: discordLinksType = {
-  javascript: 'https://discord.com/invite/QvEYg7EaQ4',
-  'javascript-en': 'https://discord.com/invite/uW5cCHR',
-  react: 'https://discord.com/invite/zyRcphs3px',
-  'react ru': 'https://discord.com/invite/zyRcphs3px',
-  angular: 'https://discord.com/invite/xwReXYqvs7',
-  'node.js': 'https://discord.com/invite/8BFb8va',
-  'aws fundamentals': 'https://discord.com/invite/WEZxwRa4J6',
-  'aws cloud dev': 'https://discord.com/invite/WEZxwRa4J6',
-};
-
-const angularNodejsAwsFundamentals: (course: string) => AboutInfo[] = (course) => [
+const angularNodejsAwsFundamentals: (course: string) => AboutInfo[] = () => [
   {
     id: 1,
     title: 'For everyone',
@@ -58,14 +43,6 @@ const angularNodejsAwsFundamentals: (course: string) => AboutInfo[] = (course) =
     info: 'After accomplishing all three stages of education, students will receive an electronic certificate of completion.',
     icon: awardIcon,
   },
-  {
-    id: 5,
-    title: 'Chat',
-    info: `Open <a href=${
-      discordLinks[course as keyof discordLinksType]
-    }>chat</a> for applicants and students on Discord.`,
-    icon: chatIcon,
-  },
 ];
 
 const awsCloudDeveloper: AboutInfo[] = angularNodejsAwsFundamentals('aws cloud dev').map((item) => {
@@ -73,7 +50,7 @@ const awsCloudDeveloper: AboutInfo[] = angularNodejsAwsFundamentals('aws cloud d
   return item;
 });
 
-const javaScript: (lang: string) => AboutInfo[] = (lang) => [
+const javaScript: (lang: string) => AboutInfo[] = () => [
   {
     id: 1,
     title: 'For everyone',
@@ -98,14 +75,6 @@ const javaScript: (lang: string) => AboutInfo[] = (lang) => [
     info: 'A certificate of successful completion of the course is issued to everybody who pass two stages of training.',
     icon: awardIcon,
   },
-  {
-    id: 5,
-    title: 'Chat',
-    info: `Throughout the course, we mostly use <a href=${
-      discordLinks[lang === 'en' ? 'javascript-en' : 'javascript']
-    }>Discord chat</a>.`,
-    icon: chatIcon,
-  },
 ];
 
 const reactEn: AboutInfo[] = javaScript('en').map((item) => {
@@ -120,7 +89,7 @@ const reactEn: AboutInfo[] = javaScript('en').map((item) => {
   if (item.id === 5) {
     return {
       ...item,
-      info: `Throughout the course, we mostly use <a href=${discordLinks['react']}>Discord chat</a>.`,
+      info: `Throughout the course, we mostly use <a href=${DISCORD_LINKS['react']}>Discord chat</a>.`,
     };
   }
   return item;
@@ -147,12 +116,6 @@ const reactRuAbout: AboutInfo[] = [
   },
   {
     id: 4,
-    title: 'Чат',
-    info: `Открытый <a href=${discordLinks['react ru']}>chat</a> для абитуриентов и учащихся Discord.`,
-    icon: chatIcon,
-  },
-  {
-    id: 5,
     title: 'Менторы и Тренеры',
     info: 'В обучении участвуют 430 менторов. Наши менторы — это front-end и javascript разработчики из различных компаний и стран. Как стать ментором?',
     icon: planetIcon,
