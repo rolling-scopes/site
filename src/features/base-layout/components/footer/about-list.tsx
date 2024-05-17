@@ -24,7 +24,7 @@ const aboutList = [
 export const AboutList = () => {
   return (
     <div className="about-list">
-      <Link to={buildUrl('/')} onClick={() => window.scrollTo({ top: 0 })}>
+      <Link to={buildUrl('/')}>
         <LogoWrapper type="footer" />
       </Link>
       <ul className="about-links">
