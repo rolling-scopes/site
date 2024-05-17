@@ -81,9 +81,10 @@
 
   &.active {
     & > p {
-      padding: 0 8px;
-      font-weight: $font-weight-bold;
       color: $color-primary-black;
+
+      -webkit-text-stroke-color: currentcolor;
+      -webkit-text-stroke-width: 1.25px;
     }
   }
 }
