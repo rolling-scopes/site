@@ -42,6 +42,7 @@
       width: fit-content;
       min-width: 124px;
       height: 36px;
+      margin-top: 0;
 
       font-size: 16px;
       font-weight: $font-weight-regular;
@@ -136,15 +137,15 @@
       place-content: flex-start;
       align-items: flex-start;
 
+      margin-bottom: 16px;
+
       font-size: 14px;
       font-weight: $font-weight-medium;
       color: #9fa1ad;
-      letter-spacing: -0.2px;
     }
 
     .event-address {
-      margin-bottom: 0;
-
+      font-style: inherit;
       color: $color-primary-black;
       word-break: break-word;
       word-wrap: break-word;
