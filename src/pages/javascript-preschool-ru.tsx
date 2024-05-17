@@ -15,7 +15,7 @@ export const JavaScriptPreSchoolRu = () => {
   //TODO Study path
   return (
     <>
-      <CourseMain courseName={COURSE_NAME} />
+      <CourseMain courseName={COURSE_NAME} type={'Pre-school'} />
       <Breadcrumbs />
       <TrainingProgram courseName={COURSE_NAME} />
       <About courseName={COURSE_NAME} />

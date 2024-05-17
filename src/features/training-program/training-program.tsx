@@ -19,7 +19,7 @@ export const TrainingProgram = ({ courseName }: TrainingProgramProps) => {
   const course = data as Course;
   const { title, content, image } = contentMap[courseName];
   let buttonLabel = 'Register';
-  if (course) {
+  if (course && course.language) {
     buttonLabel = course.language[0] === 'ru' ? 'Записаться' : 'Register';
   }
 

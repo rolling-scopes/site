@@ -108,7 +108,7 @@ describe('useDataByName', () => {
       Promise.reject(new Error('Test fetch failed')),
     );
 
-    const { result } = renderHook(() => useDataByName('courses'));
+    const { result } = renderHook(() => useDataByName('courses', fetchDataByName));
 
     await waitFor(() => !result.current.loading);
 

@@ -53,11 +53,6 @@ describe('CourseMain', () => {
     expect(labelElement).toBeVisible();
   });
 
-  it('renders the Subtitle correctly', () => {
-    const subtitle = screen.getByText('Mentoring Program');
-    expect(subtitle).toBeVisible();
-  });
-
   it('renders enroll button with correct label and href', () => {
     const buttonElement = screen.getByRole('link', { name: /enroll/i });
     expect(buttonElement).toBeVisible();

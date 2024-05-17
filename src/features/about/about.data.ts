@@ -77,7 +77,6 @@ const awsCloudDeveloper: AboutInfo[] = angularNodejsAwsFundamentals('aws cloud d
 });
 
 const javaScript: (lang: Language) => AboutInfo[] = (lang) => {
-  console.log(lang + 'javaScript lang in about.data');
   if (lang === 'en') {
     return [
       {

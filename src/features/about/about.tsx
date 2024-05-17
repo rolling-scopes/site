@@ -28,7 +28,7 @@ export const About = ({ courseName }: AboutProps) => {
   const course = data as Course;
   let language = 'en';
 
-  if (course) {
+  if (course && course.language) {
     language = course.language[0];
   }
   const infoList = contentMap[courseName];
@@ -40,7 +40,6 @@ export const About = ({ courseName }: AboutProps) => {
   if ((error && hasError) || !course) {
     return <h3>Error: {error?.message || 'Course not found'}</h3>;
   }
-  console.log(infoList);
   return (
     <section className="nodejs-about container">
       <div className="nodejs-about content">

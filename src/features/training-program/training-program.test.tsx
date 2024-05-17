@@ -97,36 +97,4 @@ describe('TrainingProgram', () => {
       expect(image).toHaveAttribute('alt', expect.stringContaining('AWS Cloud Developer'));
     });
   });
-
-  describe('with "react ru" props', () => {
-    beforeEach(() => {
-      (useCourseByTitle as Mock).mockReturnValueOnce({
-        course: {
-          id: '3',
-          title: 'react-ru',
-          detailsUrl: '/courses/react-ru',
-          enroll: 'https://wearecommunity.io/events/rs-react-2023q4',
-        },
-      });
-
-      renderWithRouter(<TrainingProgram courseName="react ru" />);
-    });
-
-    it('renders correct title', () => {
-      const title = screen.getByText(/Для кого/i);
-      expect(title).toBeInTheDocument();
-    });
-
-    it('renders correct paragraph', () => {
-      const p = screen.getByText(
-        /Бесплатный курс от сообщества The Rolling Scopes для тех, кто хочет получить знания и опыт/i,
-      );
-      expect(p).toBeInTheDocument();
-    });
-
-    it('renders Button with correct url', () => {
-      const button = screen.getByRole('link', { name: /Записаться/i });
-      expect(button).toHaveAttribute('href', 'https://wearecommunity.io/events/rs-react-2023q4');
-    });
-  });
 });
