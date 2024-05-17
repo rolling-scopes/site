@@ -37,7 +37,12 @@ For a seamless onboarding process and a comprehensive understanding of our work 
 4. [`semantic-webaccessibility.md`](./semantic-webaccessibility.md): This file provides a deep dive into our practices and standards for semantic web and accessibility, ensuring that our projects are understandable and accessible to all users.
 
 5. [`styleguide-design.md`](./styleguide-design.md): This is our design style guide that lays out the rules for clarity and consistency in our visual communication. It helps maintain a consistent appearance across all our projects.
+ 
+6. [`image-optimization.md`](./image-optimization.md): automated assets optimization
+ 
+7. [`tests.md`](./tests.md): This document provides an overview of the testing procedures and standards we follow. Ensuring consistency and high-quality work, it is critical for developers and testers on our team.
 
-6. [`tests.md`](./tests.md): This document provides an overview of the testing procedures and standards we follow. Ensuring consistency and high-quality work, it is critical for developers and testers on our team.
+8. [`end-to-end-testing.md`](./end-to-end-testing.md):  playwright test
+ 
 
 Familiarizing yourself with these documents will give you a solid understanding of our working style and expectations. All team members are expected to adhere to these processes and standards.
