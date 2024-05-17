@@ -1,34 +1,34 @@
 .events {
   &.content {
-    @include media-laptop {
+    @include media-laptop-medium {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: start;
     }
 
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: start;
     justify-content: space-between;
 
     text-align: left;
 
-    & .info {
-      @include media-laptop {
+    .info {
+      @include media-laptop-medium {
         width: 100%;
       }
 
       width: 460px;
     }
 
-    & .title,
-    & .subtitle,
-    & .paragraph {
+    .title,
+    .subtitle,
+    .paragraph {
       margin-top: 16px;
     }
 
-    & .cards {
+    .cards {
       @include media-laptop {
-        margin-top: 16px;
+        align-self: center;
       }
 
       @include media-tablet {
@@ -37,17 +37,9 @@
 
       display: flex;
       flex-direction: row;
+      gap: 16px;
       align-items: center;
       justify-content: space-between;
-
-      & .card {
-        @include media-tablet {
-          margin-top: 16px;
-          margin-right: 0;
-        }
-
-        margin-right: 16px;
-      }
     }
   }
 }
