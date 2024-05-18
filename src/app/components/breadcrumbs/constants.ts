@@ -4,7 +4,7 @@ export const breadcrumbNameMap: BreadcrumbNameMap = {
   courses: 'RS School',
   nodejs: 'Node.js Course',
   javascript: 'JavaScript Mentoring Program',
-  'javascript-ru': 'JavaScript Mentoring Program',
+  'javascript-ru': 'JavaScript Mentoring Program RU',
   'javascript-preschool-ru': 'JavaScript Pre-school',
   angular: 'Angular Course',
   'aws-cloud-developer': 'AWS Cloud Developer Course',
