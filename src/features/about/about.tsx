@@ -32,6 +32,7 @@ const localizedContent = {
     buttonLabel: 'Cтать студентом',
   },
 };
+
 export const About = ({ courseName, lang = 'en' }: AboutProps) => {
   const { course: data, error, loading, hasError } = useCourseByTitle(courseName);
 
@@ -44,8 +45,9 @@ export const About = ({ courseName, lang = 'en' }: AboutProps) => {
   }
 
   if ((error && hasError) || !course) {
-    return '';
+    return <h3>Error: {error?.message || 'Course not found'}</h3>;
   }
+
   return (
     <section className="course-about container">
       <div className="course-about content">

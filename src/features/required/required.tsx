@@ -19,6 +19,7 @@ const localizedContent = {
     title: 'Что нужно знать до начала',
   },
 };
+
 export const Required = ({ courseName, marked1, marked2, lang = 'en' }: RequiredProps) => {
   //todo all links to recommended resources are in English
   const requiredKnowledge = courseDataMap[courseName];
