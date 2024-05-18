@@ -44,7 +44,7 @@ export const About = ({ courseName, lang = 'en' }: AboutProps) => {
   }
 
   if ((error && hasError) || !course) {
-    return <h3>Error: {error?.message || 'Course not found'}</h3>;
+    return '';
   }
   return (
     <section className="nodejs-about container">
