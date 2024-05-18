@@ -19,17 +19,24 @@ export type CourseNames =
 
 interface AboutProps {
   courseName: CourseNames;
+  lang?: 'ru' | 'en';
 }
 
-export const About = ({ courseName }: AboutProps) => {
+const LocalizedContent = {
+  en: {
+    title: 'About the course',
+    buttonLabel: 'Become a student',
+  },
+  ru: {
+    title: 'О курсе',
+    buttonLabel: 'Cтать студентом',
+  },
+};
+export const About = ({ courseName, lang = 'en' }: AboutProps) => {
   const { course: data, error, loading, hasError } = useCourseByTitle(courseName);
 
   const course = data as Course;
-  let language = 'en';
 
-  if (course && course.language) {
-    language = course.language[0];
-  }
   const infoList = contentMap[courseName];
 
   if (loading) {
@@ -42,12 +49,9 @@ export const About = ({ courseName }: AboutProps) => {
   return (
     <section className="nodejs-about container">
       <div className="nodejs-about content">
-        <Title text={language === 'ru' ? 'О курсе' : 'About the course'} />
+        <Title text={LocalizedContent[lang].title} />
         <InfoGrid items={infoList} hasTitle />
-        <Button
-          label={language === 'ru' ? 'Cтать студентом' : 'Become a student'}
-          href={course.enroll}
-        />
+        <Button label={LocalizedContent[lang].buttonLabel} href={course.enroll} />
       </div>
     </section>
   );
