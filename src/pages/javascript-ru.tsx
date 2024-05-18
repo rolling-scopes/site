@@ -10,17 +10,18 @@ import { TrainingProgram } from '@/features/training-program';
 const COURSE_NAME = 'js / front-end ru';
 
 export const JavaScriptRu = () => {
+  const lang = 'ru';
   //todo add ru in communication
   return (
     <>
-      <CourseMain courseName={COURSE_NAME} type="Менторская программа" />
+      <CourseMain courseName={COURSE_NAME} type="Менторская программа" lang={lang} />
       <Breadcrumbs />
-      <TrainingProgram courseName={COURSE_NAME} />
-      <About courseName={COURSE_NAME} />
+      <TrainingProgram courseName={COURSE_NAME} lang={lang} />
+      <About courseName={COURSE_NAME} lang={lang} />
       <Communication courseName={COURSE_NAME} />
-      <AboutVideo language="ru" />
-      <StudyPath path={'javascriptRu'} />
-      <Required courseName={COURSE_NAME} />
+      <AboutVideo lang={lang} />
+      <StudyPath path={'javascriptRu'} lang={lang} />
+      <Required courseName={COURSE_NAME} lang={lang} />
     </>
   );
 };

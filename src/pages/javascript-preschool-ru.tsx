@@ -13,6 +13,7 @@ const COURSE_NAME = 'js / front-end pre-school';
 
 export const JavaScriptPreSchoolRu = () => {
   //todo add preschool ru in communication
+  //todo trainers to ru
   return (
     <>
       <CourseMain courseName={COURSE_NAME} type={'Pre-school'} />
@@ -20,7 +21,7 @@ export const JavaScriptPreSchoolRu = () => {
       <TrainingProgram courseName={COURSE_NAME} />
       <About courseName={COURSE_NAME} />
       <Communication courseName={COURSE_NAME} />
-      <AboutVideo language="ru" />
+      <AboutVideo />
       <StudyPath path={'javascriptRu'} />
       <Required courseName={'js / front-end ru'} />
       <Trainers trainers={preSchool}></Trainers>
