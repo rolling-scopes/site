@@ -12,18 +12,19 @@ import { TrainingProgram } from '@/features/training-program';
 const COURSE_NAME = 'js / front-end pre-school ru';
 
 export const JavaScriptPreSchoolRu = () => {
+  const lang = 'ru';
   //todo add preschool ru in communication
   //todo trainers to ru
   return (
     <>
-      <CourseMain courseName={COURSE_NAME} type={'Pre-school'} />
+      <CourseMain courseName={COURSE_NAME} type={'Pre-school'} lang={lang} />
       <Breadcrumbs />
-      <TrainingProgram courseName={COURSE_NAME} />
-      <About courseName={COURSE_NAME} />
+      <TrainingProgram courseName={COURSE_NAME} lang={lang} />
+      <About courseName={COURSE_NAME} lang={lang} />
       <Communication courseName={COURSE_NAME} />
-      <AboutVideo />
-      <StudyPath path={'javascriptRu'} />
-      <Required courseName={'js / front-end ru'} />
+      <AboutVideo lang={lang} />
+      <StudyPath path={'javascriptRu'} lang={lang} />
+      <Required courseName={'js / front-end ru'} lang={lang} />
       <Trainers trainers={preSchool}></Trainers>
     </>
   );
