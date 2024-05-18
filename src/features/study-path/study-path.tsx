@@ -13,7 +13,7 @@ interface StudyPathProps {
   lang?: 'ru' | 'en';
 }
 
-const LocalizedContent = {
+const localizedContent = {
   en: {
     title: 'Choose what you want to learn',
     paragraph:
@@ -30,11 +30,11 @@ export const StudyPath = ({ path, marked, lang = 'en' }: StudyPathProps) => {
 
   const isAngularOrAwsDev = path === 'angular' || path === 'awsDev';
 
-  const title = isAngularOrAwsDev ? 'Course Curriculum' : LocalizedContent[lang].title;
+  const title = isAngularOrAwsDev ? 'Course Curriculum' : localizedContent[lang].title;
 
   const paragraph = isAngularOrAwsDev
     ? 'This program will have theory and practice on the following topic:'
-    : LocalizedContent[lang].paragraph;
+    : localizedContent[lang].paragraph;
 
   return (
     <section className="study-path container" id="learning-path">

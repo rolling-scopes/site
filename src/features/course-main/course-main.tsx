@@ -14,7 +14,7 @@ interface CourseMainProps {
   type?: 'Mentoring Program' | 'Pre-school RU' | 'Менторская программа';
 }
 
-const LocalizedContent = {
+const localizedContent = {
   en: {
     buttonLabel: 'Enroll',
   },
@@ -46,7 +46,7 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
           <Title text={`${altTitle || title} Course`} />
           {type && <Subtitle text={type} type="course-main" />}
           <DateLang startDate={startDate} language={language} mode={mode} type="main" />
-          <ButtonOutlined label={LocalizedContent[lang].buttonLabel} href={enroll} />
+          <ButtonOutlined label={localizedContent[lang].buttonLabel} href={enroll} />
         </div>
       </div>
     </main>

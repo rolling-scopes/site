@@ -22,7 +22,7 @@ interface AboutProps {
   lang?: 'ru' | 'en';
 }
 
-const LocalizedContent = {
+const localizedContent = {
   en: {
     title: 'About the course',
     buttonLabel: 'Become a student',
@@ -49,9 +49,9 @@ export const About = ({ courseName, lang = 'en' }: AboutProps) => {
   return (
     <section className="course container">
       <div className="course content">
-        <Title text={LocalizedContent[lang].title} />
+        <Title text={localizedContent[lang].title} />
         <InfoGrid items={infoList} hasTitle />
-        <Button label={LocalizedContent[lang].buttonLabel} href={course.enroll} />
+        <Button label={localizedContent[lang].buttonLabel} href={course.enroll} />
       </div>
     </section>
   );

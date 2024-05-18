@@ -12,7 +12,7 @@ interface TrainingProgramProps {
   lang?: 'ru' | 'en';
 }
 
-const LocalizedContent = {
+const localizedContent = {
   en: {
     buttonLabel: 'Register',
   },
@@ -37,7 +37,7 @@ export const TrainingProgram = ({ courseName, lang = 'en' }: TrainingProgramProp
 
           {content.map((component, index) => cloneElement(component, { key: index }))}
 
-          <Button label={LocalizedContent[lang].buttonLabel} href={course?.enroll} />
+          <Button label={localizedContent[lang].buttonLabel} href={course?.enroll} />
         </div>
         <div className={`right ${courseName.includes('badge') ? 'badge' : ''}`}>
           <Image src={image} alt={course?.title} lazy="false" />

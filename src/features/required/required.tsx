@@ -11,7 +11,7 @@ interface RequiredProps {
   lang?: 'ru' | 'en';
 }
 
-const LocalizedContent = {
+const localizedContent = {
   en: {
     title: 'What you should know before starting',
   },
@@ -28,7 +28,7 @@ export const Required = ({ courseName, marked1, marked2, lang = 'en' }: Required
   return (
     <section className="required container">
       <div className="required content info-wrapper">
-        <Title text={LocalizedContent[lang].title} hasAsterisk />
+        <Title text={localizedContent[lang].title} hasAsterisk />
 
         <div className="column-2">
           <div>
