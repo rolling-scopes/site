@@ -80,7 +80,7 @@ describe('useCourseByTitle', () => {
       error: null,
     });
 
-    const { result } = renderHook(() => useCourseByTitle('React1'));
+    const { result } = renderHook(() => useCourseByTitle('React RU'));
 
     expect(result.current.course).toBeUndefined();
     expect(result.current.hasError).toBe(true);
