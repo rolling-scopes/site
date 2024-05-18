@@ -2,12 +2,22 @@ import { Title } from '@/app/components';
 
 import './about-video.scss';
 
-type AboutVideoProps = { language?: 'en' | 'ru' };
-export const AboutVideo = ({ language = 'en' }: AboutVideoProps) => {
+type AboutVideoProps = { lang?: 'en' | 'ru' };
+
+const LocalizedContent = {
+  en: {
+    title: 'RS School video',
+  },
+  ru: {
+    title: 'Видео RS School',
+  },
+};
+
+export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
   return (
     <div className="about-video container">
       <div className="about-video content">
-        <Title hasLines text={language === 'en' ? 'RS School video' : 'Видео RS School'} />
+        <Title hasLines text={LocalizedContent[lang].title} />
         <div className="video-wrapper">
           <div className="video-container">
             <iframe
