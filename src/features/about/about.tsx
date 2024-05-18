@@ -6,7 +6,6 @@ import { type Course } from '@/app/types';
 
 import './about.scss';
 
-2;
 export type CourseNames =
   | 'js / front-end en'
   | 'js / front-end ru'

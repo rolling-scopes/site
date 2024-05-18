@@ -51,7 +51,7 @@
       font-size: 16px;
       font-weight: 400;
       line-height: 1.2;
-      color: $color-secondary-gray600;
+      color: $color-gray-600;
       letter-spacing: 0;
 
       background-color: rgb(255 255 255 / 5%);
@@ -64,7 +64,7 @@
 
       font-size: 16px;
       line-height: 20px;
-      color: $color-primary-black;
+      color: $color-black;
       letter-spacing: 0;
     }
 
@@ -74,13 +74,13 @@
       font-size: 20px;
       font-weight: 500;
       line-height: 28px;
-      color: $color-primary-black;
+      color: $color-black;
       letter-spacing: 0;
     }
 
     & .card-title,
     & .and-more {
-      color: $color-primary-black;
+      color: $color-black;
       text-align: left;
       letter-spacing: 0;
       word-break: break-word;
@@ -193,7 +193,7 @@
 
       font-size: 16px;
       line-height: 20px;
-      color: $color-primary-black;
+      color: $color-black;
       letter-spacing: 0;
       word-break: break-word;
       word-wrap: break-word;
@@ -217,7 +217,7 @@
       font-size: 14px;
       font-weight: 500;
       line-height: 16px;
-      color: $color-primary-black;
+      color: $color-black;
       text-align: center;
       text-decoration: none;
       letter-spacing: 0;

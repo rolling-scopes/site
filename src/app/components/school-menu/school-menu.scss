@@ -5,7 +5,7 @@
   align-items: baseline;
   justify-content: flex-start;
 
-  color: $color-secondary-gray100;
+  color: $color-gray-100;
 
   & .heading {
     margin: 0;
@@ -14,11 +14,11 @@
     text-transform: uppercase;
 
     &.dark {
-      color: $color-primary-black;
+      color: $color-black;
     }
 
     &.light {
-      color: $color-secondary-gray400;
+      color: $color-gray-400;
     }
   }
 
@@ -77,21 +77,21 @@
         text-align: start;
 
         &.dark {
-          color: $color-secondary-gray600;
+          color: $color-gray-600;
         }
 
         &.light {
-          color: $color-secondary-gray200;
+          color: $color-gray-200;
         }
 
         &:hover {
-          color: $color-secondary-gray400;
+          color: $color-gray-400;
         }
       }
 
       small {
         font-size: 12px;
-        color: $color-secondary-gray500;
+        color: $color-gray-500;
       }
     }
   }

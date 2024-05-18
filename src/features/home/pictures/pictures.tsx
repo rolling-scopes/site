@@ -53,7 +53,7 @@ export const Pictures = () => (
         showStatus={false}
         centerMode={true}>
         {photos.map((photo) => (
-          <Image src={photo} key={photo} />
+          <Image src={photo} key={photo} data-testid="carousel-image" />
         ))}
       </Carousel>
       <Paragraph>

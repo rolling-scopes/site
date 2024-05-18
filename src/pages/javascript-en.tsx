@@ -1,6 +1,7 @@
 import { Breadcrumbs } from '@/app/components';
 import { About } from '@/features/about';
 import { AboutVideo } from '@/features/about-video';
+import { Communication } from '@/features/communication';
 import { CourseMain } from '@/features/course-main';
 import { Required } from '@/features/required';
 import { StudyPath } from '@/features/study-path';
@@ -15,6 +16,7 @@ export const JavaScriptEn = () => {
       <Breadcrumbs />
       <TrainingProgram courseName={COURSE_NAME} />
       <About courseName={COURSE_NAME} />
+      <Communication courseName={COURSE_NAME} />
       <AboutVideo />
       <StudyPath path={'javascript'} />
       <Required courseName={COURSE_NAME} />

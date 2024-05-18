@@ -30,7 +30,11 @@
     background-color: rgb(255 255 255);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
-    box-shadow: rgb(0 0 0 / 8.2%) 0 1.0260px 8.0694px 0;
+    box-shadow: rgb(0 0 0 / 8.2%) 0 1.0260px 8.0694px 0;    
+  }
+
+  .dropdown-arrow img {
+    opacity: 0;
   }
 
 }
@@ -134,7 +138,7 @@
       }
 
       &:hover .label {
-        color: $color-primary-black;
+        color: $color-black;
       }
     }
 
@@ -161,7 +165,7 @@
       width: 100%;
       height: 2px;
 
-      background-color: $color-primary-black;
+      background-color: $color-black;
     }
 
     & .label {
@@ -171,15 +175,16 @@
       font-size: 16px;
       font-weight: $font-weight-regular;
       line-height: 20px;
-      color: $color-secondary-gray600;
+      color: $color-gray-600;
       text-align: center;
       letter-spacing: 0;
     }
 
     &.dropdown-toggle {
       @include media-hover {
-        &:hover .dropdown-arrow svg {
-          stroke: $color-primary-black;
+        &:hover .dropdown-arrow img {
+          opacity: 1;
+          filter: brightness(0);
         }
       }
 
@@ -191,17 +196,15 @@
         width: 16px;
         height: 17px;
         margin-left: 10px;
-
-        svg {
-          stroke: transparent;
-        }
       }
 
       &.rotate .dropdown-arrow {
         transform: rotate(180deg);
 
-        svg {
-          stroke: $color-primary-black;
+
+        img {
+          opacity: 1;
+          filter: brightness(0);
         }
       }
     }
@@ -238,7 +241,7 @@
 
     visibility: hidden;
     opacity: 0;
-    background-color: $color-primary-white;
+    background-color: $color-white;
     border-radius: 20px;
     box-shadow: 0 1px 8px 0 rgb(0 0 0 / 25%);
 
@@ -255,7 +258,7 @@
         width: 1px;
         height: calc(100% + 52px);
 
-        background: $color-secondary-gray100;
+        background: $color-gray-100;
       }
     }
 

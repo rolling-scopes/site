@@ -2,6 +2,7 @@ import { screen } from '@testing-library/react';
 import { type Mock, beforeEach, vi } from 'vitest';
 import { TrainingProgram } from './training-program';
 import { renderWithRouter } from '@/__tests__/utils';
+import { ROUTES } from '@/app/const';
 import { useCourseByTitle } from '@/app/hooks';
 
 vi.mock('@/app/hooks');
@@ -16,7 +17,7 @@ describe('TrainingProgram', () => {
           startDate: '16 Oct, 2023',
           language: ['en'],
           mode: 'online',
-          detailsUrl: '/courses/angular',
+          detailsUrl: `/${ROUTES.COURSES}/${ROUTES.ANGULAR}`,
           enroll: 'https://wearecommunity.io/events/rs-angular-2023q4',
           backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#F4AFA7' },
         },
@@ -59,7 +60,7 @@ describe('TrainingProgram', () => {
         course: {
           id: '8',
           title: 'AWS Cloud Developer',
-          detailsUrl: '/courses/aws-cloud-developer',
+          detailsUrl: `/${ROUTES.COURSES}/${ROUTES.AWS_DEVELOPER}`,
           enroll: 'https://wearecommunity.io/events/aws-cloud-dev-rs2023q4',
         },
       });

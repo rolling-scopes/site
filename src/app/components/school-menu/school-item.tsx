@@ -31,10 +31,7 @@ export const SchoolItem = ({ item, color }: SchoolItemProps) => {
 
   return (
     <li key={'id' in item ? item.id : item.title}>
-      <Link
-        to={item.detailsUrl}
-        className={'id' in item ? 'school-item with-icon' : 'school-item'}
-        onClick={'id' in item ? () => window.scrollTo({ top: 0 }) : undefined}>
+      <Link to={item.detailsUrl} className={'id' in item ? 'school-item with-icon' : 'school-item'}>
         {'iconSmall' in item && (
           <Image
             className="icon-wrapper"

@@ -25,6 +25,17 @@
 
     padding: 0 120px 40px;
 
+    & .image {
+      @include media-laptop {
+        margin-top: 24px;
+      }
+
+      img {
+        width: 299px;
+        height: 193px;
+      }
+    }
+
     .courses {
       @include media-laptop {
         width: 100%;
@@ -58,6 +69,11 @@
           align-items: center;
           justify-content: center;
           padding: 16px;
+
+          img {
+            width: 48px;
+            height: 36px;
+          }
         }
 
         .course-info {
@@ -69,7 +85,7 @@
             font-size: 18px;
             font-weight: 500;
             line-height: 24px;
-            color: $color-primary-black;
+            color: $color-black;
           }
 
           .date {
@@ -78,7 +94,7 @@
             font-family: Inter, sans-serif;
             font-size: 14px;
             line-height: 20px;
-            color: $color-secondary-gray600;
+            color: $color-gray-600;
           }
         }
 
@@ -162,15 +178,7 @@
         margin-top: 24px;
       }
     }
-
-    & .image {
-      @include media-laptop {
-        margin-top: 24px;
-      }
-
-      width: 299px;
-      height: 193px;
-    }
+   
   }
 }
 

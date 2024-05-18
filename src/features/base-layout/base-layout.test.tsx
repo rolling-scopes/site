@@ -5,7 +5,10 @@ import { BaseLayout } from './base-layout';
 vi.mock('react-router-dom', () => ({
   Outlet: vi.fn(() => <div data-testid="mockOutlet" />),
   useLocation: vi.fn(() => ({ hash: 'testHash' })),
+  ScrollRestoration: vi.fn(() => null),
 }));
+
+vi.mock;
 
 vi.mock('./components/navbar', () => ({
   Navbar: vi.fn(() => <div data-testid="mockNavbar" />),
