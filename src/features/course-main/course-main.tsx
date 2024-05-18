@@ -19,7 +19,7 @@ const localizedContent = {
     buttonLabel: 'Enroll',
   },
   ru: {
-    buttonLabel: 'Записаться',
+    buttonLabel: 'Присоединиться',
   },
 };
 
