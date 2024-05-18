@@ -9,19 +9,25 @@ import './training-program.scss';
 
 interface TrainingProgramProps {
   courseName: CourseNames;
+  lang?: 'ru' | 'en';
 }
 
-export const TrainingProgram = ({ courseName }: TrainingProgramProps) => {
+const LocalizedContent = {
+  en: {
+    buttonLabel: 'Register',
+  },
+  ru: {
+    buttonLabel: 'Записаться',
+  },
+};
+
+export const TrainingProgram = ({ courseName, lang = 'en' }: TrainingProgramProps) => {
   const { course: data } = useCourseByTitle(
     courseName.includes('badge') ? 'aws fundamentals' : courseName,
   );
 
   const course = data as Course;
   const { title, content, image } = contentMap[courseName];
-  let buttonLabel = 'Register';
-  if (course && course.language) {
-    buttonLabel = course.language[0] === 'ru' ? 'Записаться' : 'Register';
-  }
 
   return (
     <section className="training-program container">
@@ -31,7 +37,7 @@ export const TrainingProgram = ({ courseName }: TrainingProgramProps) => {
 
           {content.map((component, index) => cloneElement(component, { key: index }))}
 
-          <Button label={buttonLabel} href={course?.enroll} />
+          <Button label={LocalizedContent[lang].buttonLabel} href={course?.enroll} />
         </div>
         <div className={`right ${courseName.includes('badge') ? 'badge' : ''}`}>
           <Image src={image} alt={course?.title} lazy="false" />
