@@ -12,7 +12,7 @@ const COURSE_NAME = 'js / front-end en';
 export const JavaScriptEn = () => {
   return (
     <>
-      <CourseMain courseName={COURSE_NAME} type="Mentoring Program" />
+      <CourseMain courseName={COURSE_NAME} type="Mentoring Program EN" />
       <Breadcrumbs />
       <TrainingProgram courseName={COURSE_NAME} />
       <About courseName={COURSE_NAME} />

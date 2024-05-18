@@ -51,6 +51,7 @@ export const courses: Course[] = [
   {
     id: '3',
     title: 'JS / Front-end RU',
+    altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
     iconSmall: jsSmall,
     secondaryIcon: jsSecondary,

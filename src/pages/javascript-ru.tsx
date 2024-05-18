@@ -11,10 +11,9 @@ const COURSE_NAME = 'js / front-end ru';
 
 export const JavaScriptRu = () => {
   const lang = 'ru';
-  //todo add ru in communication
   return (
     <>
-      <CourseMain courseName={COURSE_NAME} type="Менторская программа" lang={lang} />
+      <CourseMain courseName={COURSE_NAME} type="Менторская программа RU" lang={lang} />
       <Breadcrumbs />
       <TrainingProgram courseName={COURSE_NAME} lang={lang} />
       <About courseName={COURSE_NAME} lang={lang} />
