@@ -30,13 +30,12 @@
     background-color: rgb(255 255 255);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
-    box-shadow: rgb(0 0 0 / 8.2%) 0 1.0260px 8.0694px 0;    
+    box-shadow: rgb(0 0 0 / 8.2%) 0 1.026px 8.0694px 0;
   }
 
   .dropdown-arrow img {
     opacity: 0;
   }
-
 }
 
 .navbar-content {
@@ -122,7 +121,6 @@
       }
     }
   }
-
 }
 
 .navbar-content > .menu {
@@ -200,7 +198,6 @@
 
       &.rotate .dropdown-arrow {
         transform: rotate(180deg);
-
 
         img {
           opacity: 1;
