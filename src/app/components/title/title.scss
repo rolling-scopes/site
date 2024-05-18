@@ -16,7 +16,6 @@
   letter-spacing: -0.04em;
 
   &.big {
-
     @include media-tablet {
       font-size: 36px;
       line-height: 44px;
