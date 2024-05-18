@@ -47,8 +47,8 @@ export const About = ({ courseName, lang = 'en' }: AboutProps) => {
     return '';
   }
   return (
-    <section className="course container">
-      <div className="course content">
+    <section className="course-about container">
+      <div className="course-about content">
         <Title text={localizedContent[lang].title} />
         <InfoGrid items={infoList} hasTitle />
         <Button label={localizedContent[lang].buttonLabel} href={course.enroll} />
