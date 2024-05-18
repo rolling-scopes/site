@@ -10,10 +10,20 @@ import styles from './course-main.module.scss';
 
 interface CourseMainProps {
   courseName: string;
+  lang?: 'ru' | 'en';
   type?: 'Mentoring Program' | 'Pre-school' | 'Менторская программа';
 }
 
-export const CourseMain = ({ courseName, type }: CourseMainProps) => {
+const LocalizedContent = {
+  en: {
+    buttonLabel: 'Enroll',
+  },
+  ru: {
+    buttonLabel: 'Записаться',
+  },
+};
+
+export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) => {
   const courses = useLoaderData() as Course[];
 
   const course = selectCourse(courses, courseName);
@@ -36,7 +46,7 @@ export const CourseMain = ({ courseName, type }: CourseMainProps) => {
           <Title text={`${altTitle || title} Course`} />
           {type && <Subtitle text={type} type="course-main" />}
           <DateLang startDate={startDate} language={language} mode={mode} type="main" />
-          <ButtonOutlined label={language[0] === 'ru' ? 'Записаться' : 'Enroll'} href={enroll} />
+          <ButtonOutlined label={LocalizedContent[lang].buttonLabel} href={enroll} />
         </div>
       </div>
     </main>
