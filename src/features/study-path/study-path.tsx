@@ -10,26 +10,31 @@ type PathNames = Exclude<keyof DataMap, 'courses'>;
 interface StudyPathProps {
   path: PathNames;
   marked?: boolean;
+  lang?: 'ru' | 'en';
 }
 
-export const StudyPath = ({ path, marked }: StudyPathProps) => {
+const LocalizedContent = {
+  en: {
+    title: 'Choose what you want to learn',
+    paragraph:
+      'A full-stack developer is someone who has expertise in both frontend (what users see) and backend (server and database) development. This dual skill set enables them to supervise and implement projects from start to finish. Businesses today prioritize hiring full-stack developers because they can efficiently bridge various technological aspects, resulting in faster product development.',
+  },
+  ru: {
+    title: 'Выберите, чему вы хотите научиться',
+    paragraph:
+      'Full-stack разработчик — это человек, обладающий опытом как в области внешнего интерфейса (то, что видят пользователи), так и в области внутреннего интерфейса (сервера и базы данных). Этот двойной набор навыков позволяет им контролировать и реализовывать проекты от начала до конца. Сегодня компании отдают приоритет найму разработчиков полного стека, потому что они могут эффективно объединить различные технологические аспекты, что приводит к более быстрой разработке продукта.',
+  },
+};
+export const StudyPath = ({ path, marked, lang = 'en' }: StudyPathProps) => {
   const { data: coursesPath } = useDataByName<PathNames>(path);
-  console.log(path, path.indexOf('ru'));
-  //todo add correct language check
+
   const isAngularOrAwsDev = path === 'angular' || path === 'awsDev';
 
-  const title = isAngularOrAwsDev
-    ? 'Course Curriculum'
-    : path.indexOf('ru') !== -1
-      ? 'Выберите, чему вы хотите научиться'
-      : 'Choose what you want to learn';
-  console.log(title);
-  //todo add correct language check
+  const title = isAngularOrAwsDev ? 'Course Curriculum' : LocalizedContent[lang].title;
+
   const paragraph = isAngularOrAwsDev
     ? 'This program will have theory and practice on the following topic:'
-    : path.indexOf('ru') !== -1
-      ? 'Full-stack разработчик — это человек, обладающий опытом как в области внешнего интерфейса (то, что видят пользователи), так и в области внутреннего интерфейса (сервера и базы данных). Этот двойной набор навыков позволяет им контролировать и реализовывать проекты от начала до конца. Сегодня компании отдают приоритет найму разработчиков полного стека, потому что они могут эффективно объединить различные технологические аспекты, что приводит к более быстрой разработке продукта.'
-      : 'A full-stack developer is someone who has expertise in both frontend (what users see) and backend (server and database) development. This dual skill set enables them to supervise and implement projects from start to finish. Businesses today prioritize hiring full-stack developers because they can efficiently bridge various technological aspects, resulting in faster product development.';
+    : LocalizedContent[lang].paragraph;
 
   return (
     <section className="study-path container" id="learning-path">
