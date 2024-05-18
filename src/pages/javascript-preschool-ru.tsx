@@ -17,7 +17,7 @@ export const JavaScriptPreSchoolRu = () => {
   //todo trainers to ru
   return (
     <>
-      <CourseMain courseName={COURSE_NAME} type={'Pre-school'} lang={lang} />
+      <CourseMain courseName={COURSE_NAME} type={'Pre-school RU'} lang={lang} />
       <Breadcrumbs />
       <TrainingProgram courseName={COURSE_NAME} lang={lang} />
       <About courseName={COURSE_NAME} lang={lang} />

@@ -11,7 +11,7 @@ import ReactAngIcon from '@/assets/icons/react-angular.svg';
 export const coursesPath: CoursesPath[] = [
   {
     id: 1,
-    title: 'Pre-school',
+    title: 'Pre-school (RU)',
     description:
       'For those brand new to coding, this is your starting point. Get acquainted with the basics and build a strong foundation.',
     logoIcon: HTMLIcon,

@@ -11,7 +11,7 @@ import styles from './course-main.module.scss';
 interface CourseMainProps {
   courseName: string;
   lang?: 'ru' | 'en';
-  type?: 'Mentoring Program' | 'Pre-school' | 'Менторская программа';
+  type?: 'Mentoring Program' | 'Pre-school RU' | 'Менторская программа';
 }
 
 const LocalizedContent = {
