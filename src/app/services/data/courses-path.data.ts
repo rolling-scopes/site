@@ -17,7 +17,7 @@ export const coursesPath: CoursesPath[] = [
     logoIcon: HTMLIcon,
     links: [
       {
-        linkTitle: 'Pre-school',
+        linkTitle: 'Pre-school (RU)',
         href: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS_PRESCHOOL_RU}`),
         isActive: true,
       },

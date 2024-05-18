@@ -22,7 +22,7 @@ import react from '@/assets/icons/react.svg';
 export const courses: Course[] = [
   {
     id: '1',
-    title: 'JS / Front-end Pre-school',
+    title: 'JS / Front-end Pre-school RU',
     altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
     iconSmall: htmlSmall,

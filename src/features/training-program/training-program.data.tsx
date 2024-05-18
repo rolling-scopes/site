@@ -14,7 +14,7 @@ export type CourseNames =
   | 'angular'
   | 'js / front-end en'
   | 'js / front-end ru'
-  | 'js / front-end pre-school'
+  | 'js / front-end pre-school ru'
   | 'aws fundamentals'
   | 'node.js'
   | 'react'
@@ -186,7 +186,7 @@ export const contentMap: ContentMap = {
     image: jsImg,
   },
 
-  'js / front-end pre-school': {
+  'js / front-end pre-school ru': {
     title: 'Программа обучения',
     content: [
       <Paragraph>

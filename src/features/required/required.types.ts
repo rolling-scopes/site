@@ -26,7 +26,7 @@ export type CourseName =
   | 'angular'
   | 'js / front-end en'
   | 'js / front-end ru'
-  | 'js / front-end pre-school';
+  | 'js / front-end pre-school ru';
 
 export type CourseMap = {
   [courseName in CourseName]: Course;

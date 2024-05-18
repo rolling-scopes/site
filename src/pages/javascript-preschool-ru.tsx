@@ -9,7 +9,7 @@ import { Trainers } from '@/features/trainers';
 import { preSchool } from '@/features/trainers/preSchool.data.ts';
 import { TrainingProgram } from '@/features/training-program';
 
-const COURSE_NAME = 'js / front-end pre-school';
+const COURSE_NAME = 'js / front-end pre-school ru';
 
 export const JavaScriptPreSchoolRu = () => {
   //todo add preschool ru in communication

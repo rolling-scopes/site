@@ -158,7 +158,7 @@ const reactRuAbout: AboutInfo[] = [
 export const contentMap: ContentMap = {
   'js / front-end ru': javaScript('ru'),
   'js / front-end en': javaScript('en'),
-  'js / front-end pre-school': javaScript('ru'),
+  'js / front-end pre-school ru': javaScript('ru'),
   react: reactEn,
   'react ru': reactRuAbout,
   angular: angularNodejsAwsFundamentals('angular'),

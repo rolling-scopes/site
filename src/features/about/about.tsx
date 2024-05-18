@@ -9,7 +9,7 @@ import './about.scss';
 export type CourseNames =
   | 'js / front-end en'
   | 'js / front-end ru'
-  | 'js / front-end pre-school'
+  | 'js / front-end pre-school ru'
   | 'react'
   | 'react ru'
   | 'angular'

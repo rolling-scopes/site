@@ -149,7 +149,7 @@ export const courseDataMap: CourseMap = {
       ],
     },
   },
-  'js / front-end pre-school': {
+  'js / front-end pre-school ru': {
     knowBefore: {
       title: 'Required before the start',
       description: [
