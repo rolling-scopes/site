@@ -1,3 +1,4 @@
+import { createContext } from 'react';
 import { Stages } from './components';
 import { Paragraph, Title } from '@/app/components';
 import { useDataByName } from '@/app/hooks';
@@ -26,6 +27,8 @@ const localizedContent = {
   },
 };
 
+export const LangContext = createContext<'ru' | 'en'>('en');
+
 export const StudyPath = ({ path, marked, lang = 'en' }: StudyPathProps) => {
   const { data: coursesPath } = useDataByName<PathNames>(path);
 
@@ -38,12 +41,14 @@ export const StudyPath = ({ path, marked, lang = 'en' }: StudyPathProps) => {
     : localizedContent[lang].paragraph;
 
   return (
-    <section className="study-path container" id="learning-path">
-      <div className="study-path content upd">
-        <Title text={title} hasAsterisk />
-        <Paragraph>{paragraph}</Paragraph>
-        <Stages stages={coursesPath} marked={marked} />
-      </div>
-    </section>
+    <LangContext.Provider value={lang}>
+      <section className="study-path container" id="learning-path">
+        <div className="study-path content upd">
+          <Title text={title} hasAsterisk />
+          <Paragraph>{paragraph}</Paragraph>
+          <Stages stages={coursesPath} marked={marked} />
+        </div>
+      </section>
+    </LangContext.Provider>
   );
 };
