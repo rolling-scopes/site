@@ -30,7 +30,7 @@ export const courses: Course[] = [
     startDate: 'Jun 24, 2024',
     language: ['ru'],
     mode: 'online',
-    detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS_PRESCHOOL}`),
+    detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS_PRESCHOOL_RU}`),
     enroll: 'https://wearecommunity.io/events/js-stage0-rs-2024q2',
     backgroundStyle: { backgroundColor: '#FFDB201A', accentColor: '#FFDB204D' },
   },

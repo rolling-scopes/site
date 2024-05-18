@@ -38,7 +38,7 @@ const coursesRoute: RouteObject = {
       },
     },
     {
-      path: ROUTES.JS_PRESCHOOL,
+      path: ROUTES.JS_PRESCHOOL_RU,
       loader: courseLoader,
       async lazy() {
         const { JavaScriptPreSchoolRu } = await import('../pages/javascript-preschool-ru.tsx');
