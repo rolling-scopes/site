@@ -2,9 +2,9 @@ import { screen } from '@testing-library/react';
 import { Communication } from './communication';
 import { renderWithRouter } from '@/__tests__/utils';
 
-const jsCourseName = 'javascript';
+const jsCourseName = 'js / front-end en';
 const nodeCourseName = 'node.js';
-const jsDiscLink = 'https://discord.com/invite/QvEYg7EaQ4';
+const jsDiscLink = 'https://discord.com/invite/uW5cCHR';
 const nodeDiscLink = 'https://discord.com/invite/8BFb8va';
 
 describe('Communication section tests', () => {

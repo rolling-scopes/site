@@ -3,20 +3,30 @@ import { getCourseStatus } from './utils';
 import { ButtonOutlined, DateLang, SectionLabel, Subtitle, Title } from '@/app/components';
 import { useTitle } from '@/app/hooks';
 import { selectCourse } from '@/app/hooks/use-course-by-title/utils/select-course.ts';
-import { Course, CourseType } from '@/app/types';
+import { Course } from '@/app/types';
 import Image from '@/features/image';
 
 import styles from './course-main.module.scss';
 
 interface CourseMainProps {
   courseName: string;
-  type?: CourseType;
+  lang?: 'ru' | 'en';
+  type?: 'Mentoring Program' | 'Pre-school RU' | 'Менторская программа';
 }
 
-export const CourseMain = ({ courseName, type }: CourseMainProps) => {
+const localizedContent = {
+  en: {
+    buttonLabel: 'Enroll',
+  },
+  ru: {
+    buttonLabel: 'Записаться',
+  },
+};
+
+export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) => {
   const courses = useLoaderData() as Course[];
 
-  const course = selectCourse(courses, courseName, type);
+  const course = selectCourse(courses, courseName);
 
   useTitle(`${course?.title || ''} · The Rolling Scopes School`);
 
@@ -36,7 +46,7 @@ export const CourseMain = ({ courseName, type }: CourseMainProps) => {
           <Title text={`${altTitle || title} Course`} />
           {type && <Subtitle text={type} type="course-main" />}
           <DateLang startDate={startDate} language={language} mode={mode} type="main" />
-          <ButtonOutlined label="Enroll" href={enroll} />
+          <ButtonOutlined label={localizedContent[lang].buttonLabel} href={enroll} />
         </div>
       </div>
     </main>

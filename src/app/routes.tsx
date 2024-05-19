@@ -22,21 +22,27 @@ const coursesRoute: RouteObject = {
       },
     },
     {
-      path: ROUTES.JS_MENTORING,
+      path: ROUTES.JS,
       loader: courseLoader,
       async lazy() {
-        const { JavaScript } = await import('../pages/javascript.tsx');
-        const boundedComponent = JavaScript.bind(null, { type: 'Mentoring Program' });
-        return { Component: boundedComponent };
+        const { JavaScriptEn } = await import('../pages/javascript-en.tsx');
+        return { Component: JavaScriptEn };
       },
     },
     {
-      path: ROUTES.JS_PRESCHOOL,
+      path: ROUTES.JS_RU,
       loader: courseLoader,
       async lazy() {
-        const { JavaScript } = await import('../pages/javascript.tsx');
-        const boundedComponent = JavaScript.bind(null, { type: 'Pre-school' });
-        return { Component: boundedComponent };
+        const { JavaScriptRu } = await import('../pages/javascript-ru.tsx');
+        return { Component: JavaScriptRu };
+      },
+    },
+    {
+      path: ROUTES.JS_PRESCHOOL_RU,
+      loader: courseLoader,
+      async lazy() {
+        const { JavaScriptPreSchoolRu } = await import('../pages/javascript-preschool-ru.tsx');
+        return { Component: JavaScriptPreSchoolRu };
       },
     },
     {

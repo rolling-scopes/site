@@ -4,6 +4,7 @@ export type DataMap = {
   courses: Course[];
   coursesPath: CoursesPath[];
   javascript: JSPath[];
+  javascriptRu: JSPath[];
   angular: AngularAwsPath[];
   awsDev: AngularAwsPath[];
 };

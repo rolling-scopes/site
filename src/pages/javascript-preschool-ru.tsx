@@ -1,5 +1,4 @@
 import { Breadcrumbs } from '@/app/components';
-import { CourseType } from '@/app/types';
 import { About } from '@/features/about';
 import { AboutVideo } from '@/features/about-video';
 import { Communication } from '@/features/communication';
@@ -10,26 +9,23 @@ import { Trainers } from '@/features/trainers';
 import { preSchool } from '@/features/trainers/preSchool.data.ts';
 import { TrainingProgram } from '@/features/training-program';
 
-interface JavaScriptProps {
-  type: CourseType;
-}
+const COURSE_NAME = 'js / front-end pre-school ru';
 
-const COURSE_NAME = 'javascript';
-
-export const JavaScript = ({ type }: JavaScriptProps) => {
-  const isPreSchool = type === 'Pre-school';
-
+export const JavaScriptPreSchoolRu = () => {
+  const lang = 'ru';
+  //todo add preschool ru in communication
+  //todo trainers to ru
   return (
     <>
-      <CourseMain courseName={COURSE_NAME} type={type} />
+      <CourseMain courseName={COURSE_NAME} type={'Pre-school RU'} lang={lang} />
       <Breadcrumbs />
-      <TrainingProgram courseName={COURSE_NAME} type={type} />
-      <About courseName={COURSE_NAME} type={type} />
+      <TrainingProgram courseName={COURSE_NAME} lang={lang} />
+      <About courseName={COURSE_NAME} lang={lang} />
       <Communication courseName={COURSE_NAME} />
-      <AboutVideo />
-      <StudyPath path={COURSE_NAME} />
-      <Required courseName={COURSE_NAME} />
-      {isPreSchool && <Trainers trainers={preSchool}></Trainers>}
+      <AboutVideo lang={lang} />
+      <StudyPath path={'javascriptRu'} lang={lang} />
+      <Required courseName={'js / front-end ru'} lang={lang} />
+      <Trainers trainers={preSchool}></Trainers>
     </>
   );
 };

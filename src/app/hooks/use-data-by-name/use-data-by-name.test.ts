@@ -25,7 +25,7 @@ const courses: DataMap['courses'] = [
 const coursesPath: DataMap['coursesPath'] = [
   {
     id: 1,
-    title: 'Pre-school',
+    title: 'Pre-school RU',
     description:
       'For those brand new to coding, this is your starting point. Get acquainted with the basics and build a strong foundation.',
     logoIcon: MOCKED_IMAGE_PATH,
@@ -109,7 +109,7 @@ describe('useDataByName', () => {
       Promise.reject(new Error('Test fetch failed')),
     );
 
-    const { result } = renderHook(() => useDataByName('courses'));
+    const { result } = renderHook(() => useDataByName('courses', fetchDataByName));
 
     await waitFor(() => !result.current.loading);
 

@@ -1,10 +1,7 @@
-export type CourseType = 'Mentoring Program' | 'Pre-school';
-
 export type Course = {
   id: string;
   title: string;
   altTitle?: string;
-  type?: CourseType;
   iconSrc: string;
   secondaryIcon: string;
   iconSmall: string;

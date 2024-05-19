@@ -11,14 +11,14 @@ import ReactAngIcon from '@/assets/icons/react-angular.svg';
 export const coursesPath: CoursesPath[] = [
   {
     id: 1,
-    title: 'Pre-school',
+    title: 'Pre-school (RU)',
     description:
       'For those brand new to coding, this is your starting point. Get acquainted with the basics and build a strong foundation.',
     logoIcon: HTMLIcon,
     links: [
       {
-        linkTitle: 'Pre-school',
-        href: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS_PRESCHOOL}`),
+        linkTitle: 'Pre-school (RU)',
+        href: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS_PRESCHOOL_RU}`),
         isActive: true,
       },
     ],
@@ -31,13 +31,12 @@ export const coursesPath: CoursesPath[] = [
     logoIcon: JSIcon,
     links: [
       {
-        // TODO: change link to RU page when it'll be ready
         linkTitle: 'JS/TS/FE Fundamentals (RU)',
-        href: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS_MENTORING}`),
+        href: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS_RU}`),
       },
       {
         linkTitle: 'JS/TS/FE Fundamentals (EN)',
-        href: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS_MENTORING}`),
+        href: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS}`),
       },
     ],
   },
