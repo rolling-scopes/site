@@ -17,10 +17,10 @@ export const CourseCard = ({
 }: PropsType) => {
   return (
     <div className="course-card">
-      <div className="icon-container">{icon}</div>
+      <figure className="icon-container">{icon}</figure>
       <div className="course-info">
-        <div className="name">{title}</div>
-        <div className="date">{`${startDate} • ${language[0].toUpperCase()}`}</div>
+        <p className="name">{title}</p>
+        <p className="date">{`${startDate} • ${language[0].toUpperCase()}`}</p>
       </div>
       <div className="details-container">
         <a className="details" href={detailsUrl} target="_blank" rel="noreferrer">

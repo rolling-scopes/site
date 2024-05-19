@@ -39,19 +39,19 @@ export const Courses = () => {
   });
 
   return (
-    <div className="courses container">
-      <div className="courses content">
-        <div className="title">Upcoming courses</div>
+    <article className="courses container">
+      <section className="courses content">
+        <h4 className="title">Upcoming courses</h4>
         <div className="column-2">
           <div className="courses">
             {coursesContent}
             <Button label="Go to RS School " href="https://rs.school/" />
           </div>
-          <div className="image">
+          <figure className="image">
             <RsBanner />
-          </div>
+          </figure>
         </div>
-      </div>
-    </div>
+      </section>
+    </article>
   );
 };
