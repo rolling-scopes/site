@@ -16,15 +16,3 @@ export const formatCoursesData = (courses: Course[]) => {
     })
     .filter((_, i) => i < 5);
 };
-
-// const coursesData = (res.data as Course[])
-//     ?.filter((course) => {
-//       const startDate = new Date(course.startDate).getTime();
-//       return startDate > expirationDate;
-//     })
-//     .sort((a, b) => {
-//       const aDate = new Date(a.startDate).getTime();
-//       const bDate = new Date(b.startDate).getTime();
-//       return aDate - bDate;
-//     })
-//     .filter((_, i) => i < 5);
