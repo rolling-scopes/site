@@ -1,60 +1,18 @@
-import { ReactNode } from 'react';
+import { formatCoursesData } from './lib/formatCoursesData';
+import { IconsTitle, getCourseIcon } from './lib/getCourseIcon';
+import { CourseCard } from './ui/CourseCard';
 import { Button } from '@/app/components';
-import { ROUTES } from '@/app/const';
-import { useWindowSize } from '@/app/hooks';
-import { buildUrl } from '@/app/services/platform';
-import { AngularIcon, AwsLogo, HtmlIcon, ReactIcon, RsBanner } from '@/icons';
+import { useDataByName, useWindowSize } from '@/app/hooks';
+import { Course } from '@/app/types';
+import { RsBanner } from '@/icons';
 
 import './courses.scss';
 
-type CourseProps = {
-  title: string;
-  language: string;
-  startDate: string;
-  href: string;
-  icon: ReactNode;
-};
-
-const courses: CourseProps[] = [
-  {
-    title: 'AWS Fundamentals',
-    language: 'EN',
-    startDate: 'April 15, 2024',
-    href: buildUrl(`/${ROUTES.COURSES}/${ROUTES.AWS_FUNDAMENTALS}`),
-    icon: <AwsLogo />,
-  },
-  {
-    title: 'AWS Cloud Developer',
-    language: 'EN',
-    startDate: 'May 28, 2024',
-    href: buildUrl(`/${ROUTES.COURSES}/${ROUTES.AWS_DEVELOPER}`),
-    icon: <AwsLogo />,
-  },
-  {
-    title: 'JS / Front‑end. Pre‑school',
-    language: 'RU',
-    startDate: 'June 24, 2024',
-    href: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS_PRESCHOOL_RU}`),
-    icon: <HtmlIcon />,
-  },
-  {
-    title: 'React',
-    language: 'EN',
-    startDate: 'July 1, 2024',
-    href: buildUrl(`/${ROUTES.COURSES}/${ROUTES.REACT}`),
-    icon: <ReactIcon />,
-  },
-  {
-    title: 'Angular',
-    language: 'EN',
-    startDate: 'July 1, 2024',
-    href: buildUrl(`/${ROUTES.COURSES}/${ROUTES.ANGULAR}`),
-    icon: <AngularIcon />,
-  },
-];
-
 export const Courses = () => {
   const size = useWindowSize();
+  const res = useDataByName('courses');
+  const coursesData = formatCoursesData(res?.data as Course[]);
+  const { loading, error } = res;
 
   let buttonText = 'More details';
   if (size.width <= 810) {
@@ -63,27 +21,30 @@ export const Courses = () => {
     buttonText = 'More';
   }
 
+  if (loading || error) return;
+
+  const coursesContent = coursesData?.map(({ title, language, startDate, detailsUrl }) => {
+    const courseIcon = getCourseIcon(title as IconsTitle);
+    return (
+      <CourseCard
+        title={title}
+        language={language}
+        startDate={startDate}
+        detailsUrl={detailsUrl}
+        icon={courseIcon}
+        buttonText={buttonText}
+        key={title}
+      />
+    );
+  });
+
   return (
     <div className="courses container">
       <div className="courses content">
         <div className="title">Upcoming courses</div>
         <div className="column-2">
           <div className="courses">
-            {courses.map(({ title, language, startDate, href, icon }) => (
-              <div key={title} className="course-card">
-                <div className="icon-container">{icon}</div>
-                <div className="course-info">
-                  <div className="name">{title}</div>
-                  <div className="date">{`${startDate} • ${language}`}</div>
-                </div>
-                <div className="details-container">
-                  <a className="details" href={href} target="_blank" rel="noreferrer">
-                    {buttonText && <span className="label">{buttonText}</span>}
-                    <span className="material-symbols-outlined">arrow_forward</span>
-                  </a>
-                </div>
-              </div>
-            ))}
+            {coursesContent}
             <Button label="Go to RS School " href="https://rs.school/" />
           </div>
           <div className="image">
