@@ -23,16 +23,16 @@ const localizedContent = {
       'Here you could find rules, links to other courses and Telegram channels related to your country or even city. Feel free to use it :)',
   },
   ru: {
-    title: 'Коммуникации',
-    subTitle: 'Дискорд — основной способ коммуникации в RS School',
-    firstParagraphFirstHalf: 'Здесь есть ссылка на',
+    title: 'Общение',
+    subTitle: 'Дискорд — основной способ общения в RS School',
+    firstParagraphFirstHalf: 'Вот ссылка на',
     discordLink: 'дискорд сервер курса',
     firstParagraphSecondHalf:
       'где вы можете посмотреть последние новости и общаться со студентами.',
     secondParagraphFirstHalf: 'Более подробная информация об общении в RS School в',
     rsDocsLink: 'RS Docs',
     secondParagraphSecondHalf:
-      'где вы можете найти правила, ссылки на другие курсы и каналы Telegram, связанные с вашей страной или даже городом. Не стесняйтесь использовать их :)',
+      'где вы можете найти правила, ссылки на другие курсы и каналы Telegram, связанные с вашей страной или даже городом. Не стесняйтесь пользоваться ими :)',
   },
 };
 
@@ -52,7 +52,7 @@ export const Communication = ({ courseName, lang = 'en' }: RequiredProps) => {
               <ExternalLink
                 href={DISCORD_LINKS[courseName]}
                 text={localizedContent[lang].discordLink}
-              />
+              />{' '}
               {localizedContent[lang].firstParagraphSecondHalf}
             </Paragraph>
             <Paragraph>
