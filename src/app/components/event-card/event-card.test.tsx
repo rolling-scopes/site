@@ -5,14 +5,14 @@ import { EventCard } from './event-card';
 describe('EventCard', () => {
   const mockProps = {
     eventType: 'Meetup',
-    title: 'Autoscaling strategies for ECS Fargate',
-    organizedBy: 'by AWS User Group',
-    organization: '3CITY / Trójmiasto',
-    date: '29 June 2023',
-    time: '18:00',
+    title: 'Test Event',
+    organizedBy: 'John Doe',
+    organization: 'Tech Talks',
+    date: 'Dec 25, 2023',
+    time: '13:00',
     type: 'Offline',
-    address: 'al. Grunwaldzka 472B',
-    city: 'Gdańsk',
+    address: '123 Main St',
+    city: 'Metropolis City',
     href: 'http://test.com',
   };
 

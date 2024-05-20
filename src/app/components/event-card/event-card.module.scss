@@ -45,7 +45,6 @@
       margin-top: 0;
 
       font-size: 16px;
-      font-weight: $font-weight-regular;
       line-height: 1.2;
       color: $color-secondary-gray600;
 
@@ -59,15 +58,13 @@
 
       .organized-by {
         margin-bottom: 0;
-        font-weight: normal;
-        color: $color-primary-black;
+        font-weight: $font-weight-regular;
       }
 
       .event-organization {
         margin-top: 10px;
         font-size: 20px;
         font-weight: $font-weight-medium;
-        color: $color-primary-black;
       }
     }
 
@@ -82,16 +79,10 @@
           width: 100%;
         }
 
-        height: auto;
         margin-top: 16px;
         margin-bottom: 0;
-
         font-weight: $font-weight-medium;
         line-height: 32px;
-        color: $color-primary-black;
-        word-break: break-word;
-        overflow-wrap: break-word;
-        white-space: pre-line;
       }
 
       .event-additional-info {
@@ -146,10 +137,6 @@
 
     .event-address {
       font-style: inherit;
-      color: $color-primary-black;
-      word-break: break-word;
-      word-wrap: break-word;
-      white-space: pre-wrap;
     }
 
     .details-button {
