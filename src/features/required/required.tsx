@@ -14,7 +14,7 @@ export const Required = ({ courseName, marked1, marked2 }: RequiredProps) => {
   const requiredKnowledge = courseDataMap[courseName];
 
   const { knowBefore, willLearn, title } = requiredKnowledge;
-  console.log(knowBefore, willLearn);
+
   return (
     <section className="required container">
       <div className="required content info-wrapper">
