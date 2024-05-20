@@ -1,6 +1,6 @@
 import { contentMap } from './about.data';
 import { InfoGrid } from './components';
-import { Button, Title } from '@/app/components';
+import { Button, Paragraph, Subtitle, Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
 import { type Course } from '@/app/types';
 
@@ -52,6 +52,18 @@ export const About = ({ courseName, lang = 'en' }: AboutProps) => {
     <section className="course-about container">
       <div className="course-about content">
         <Title text={localizedContent[lang].title} />
+        {courseName === 'js / front-end pre-school ru' && (
+          <>
+            <Paragraph>
+              <Subtitle text="JS/Frontend-разработка. Подготовительный этап"></Subtitle>
+            </Paragraph>
+            <Paragraph>
+              Подготовительный этап поможет тем, кто мало знаком или совсем не знаком с
+              программированием и хотел бы впоследствии учиться на основном курсе
+              «JavaScript/Front-end».
+            </Paragraph>
+          </>
+        )}
         <InfoGrid items={infoList} hasTitle />
         <Button label={localizedContent[lang].buttonLabel} href={course.enroll} />
       </div>

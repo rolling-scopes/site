@@ -18,8 +18,8 @@ export const JavaScriptPreSchoolRu = () => {
     <>
       <CourseMain courseName={COURSE_NAME} type={'Pre-school RU'} lang={lang} />
       <Breadcrumbs />
-      <TrainingProgram courseName={COURSE_NAME} lang={lang} />
       <About courseName={COURSE_NAME} lang={lang} />
+      <TrainingProgram courseName={COURSE_NAME} lang={lang} />
       <Required courseName={COURSE_NAME} />
       <Communication courseName={COURSE_NAME} lang={lang} />
       <AboutVideo lang={lang} />

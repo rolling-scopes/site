@@ -155,7 +155,6 @@ export const courseDataMap: CourseMap = {
     title: 'Что следует сделать до старта курса',
     willLearn: {
       title: '',
-      // title: 'What to do if you lack base knowledge?',
       description: [
         [
           {
