@@ -7,29 +7,61 @@ import './communication.scss';
 
 interface RequiredProps {
   courseName: CourseNames;
+  lang?: 'ru' | 'en';
 }
 
-export const Communication = ({ courseName }: RequiredProps) => {
+const localizedContent = {
+  en: {
+    title: 'Communication',
+    subTitle: 'Discord is the main communication channel in RS School',
+    firstParagraphFirstHalf: 'Here is link for the',
+    discordLink: 'course discord server',
+    firstParagraphSecondHalf: 'where you can see latest news and chat with students.',
+    secondParagraphFirstHalf: 'More info about communication at RS School in the',
+    rsDocsLink: 'RS Docs',
+    secondParagraphSecondHalf:
+      'Here you could find rules, links to other courses and Telegram channels related to your country or even city. Feel free to use it :)',
+  },
+  ru: {
+    title: 'Общение',
+    subTitle: 'Дискорд — основной способ общения в RS School',
+    firstParagraphFirstHalf: 'Вот ссылка на',
+    discordLink: 'дискорд сервер курса',
+    firstParagraphSecondHalf:
+      ', где вы можете посмотреть последние новости и общаться со студентами.',
+    secondParagraphFirstHalf: 'Более подробная информация об общении в RS School в',
+    rsDocsLink: 'RS Docs',
+    secondParagraphSecondHalf:
+      ', где вы можете найти правила, ссылки на другие курсы и каналы Telegram, связанные с вашей страной или даже городом. Не стесняйтесь пользоваться ими :)',
+  },
+};
+
+export const Communication = ({ courseName, lang = 'en' }: RequiredProps) => {
   return (
     <section className="communication container">
       <article className="communication content info-wrapper">
-        <Title text="Communication" hasAsterisk />
+        <Title text={localizedContent[lang].title} hasAsterisk />
         <div className="column-2">
           <figure className="disclogo-wrapper">
             <DiscordLogo />
           </figure>
           <div>
-            <Subtitle text="Discord is the main communication channel in RS School" />
+            <Subtitle text={localizedContent[lang].subTitle} />
             <Paragraph>
-              Here is link for the{' '}
-              <ExternalLink href={DISCORD_LINKS[courseName]} text="course discord server" /> where
-              you can see latest news and chat with students.
+              {localizedContent[lang].firstParagraphFirstHalf}{' '}
+              <ExternalLink
+                href={DISCORD_LINKS[courseName]}
+                text={localizedContent[lang].discordLink}
+              />{' '}
+              {localizedContent[lang].firstParagraphSecondHalf}
             </Paragraph>
             <Paragraph>
-              More info about communication at RS School in the{' '}
-              <ExternalLink href={RS_DOCS_COMMUNICATION_LINK} text="RS Docs" /> Here you could find
-              rules, links to other courses and Telegram channels related to your country or even
-              city. Feel free to use it :)
+              {localizedContent[lang].secondParagraphFirstHalf}{' '}
+              <ExternalLink
+                href={RS_DOCS_COMMUNICATION_LINK}
+                text={localizedContent[lang].rsDocsLink}
+              />
+              {localizedContent[lang].secondParagraphSecondHalf}
             </Paragraph>
           </div>
         </div>

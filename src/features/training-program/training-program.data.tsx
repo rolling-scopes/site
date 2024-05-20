@@ -155,7 +155,6 @@ export const contentMap: ContentMap = {
         <span>BE AWARE</span> that practical tasks’ deadlines are not suggestions, and should be
         respected.
       </Paragraph>,
-      <Subtitle text="Attention! Mentors on this course will be first assigned to the graduates of the RS School Stage #2." />,
     ],
     image: jsImg,
   },
@@ -181,7 +180,6 @@ export const contentMap: ContentMap = {
         <span>ОБРАТИТЕ ВНИМАНИЕ</span>, что сроки выполнения практических заданий не являются
         рекомендацией и должны быть соблюдены.
       </Paragraph>,
-      <Subtitle text="Внимание! Наставники на этом курсе будут первоначально назначены выпускникам RS School Stage #2." />,
     ],
     image: jsImg,
   },
@@ -207,7 +205,6 @@ export const contentMap: ContentMap = {
         <span>ОБРАТИТЕ ВНИМАНИЕ</span>, что сроки выполнения практических заданий не являются
         рекомендацией и должны быть соблюдены.
       </Paragraph>,
-      <Subtitle text="Внимание! Наставники на этом курсе будут первоначально назначены выпускникам RS School Stage #2." />,
     ],
     image: jsImg,
   },

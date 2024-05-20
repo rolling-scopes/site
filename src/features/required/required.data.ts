@@ -94,7 +94,7 @@ export const courseDataMap: CourseMap = {
           {
             id: 0,
             text: 'Пройти курс по ',
-            title: 'Компьютерным наукам.',
+            title: 'Computer Science.',
             link: 'https://rkhaslarov.github.io/computer-science-introduction/#introduction',
           },
         ],
@@ -103,7 +103,7 @@ export const courseDataMap: CourseMap = {
             id: 1,
             text: 'Прочитать хороший ',
             title: 'учебник по JavaScript.',
-            link: 'https://javascript.info/',
+            link: 'https://learn.javascript.ru/',
           },
         ],
         [
@@ -125,7 +125,7 @@ export const courseDataMap: CourseMap = {
           {
             id: 4,
             text: '',
-            title: 'Изучить командную строку ',
+            title: 'Изучить command line ',
             link: 'https://www.codecademy.com/learn/learn-the-command-line',
           },
         ],
