@@ -5,26 +5,28 @@
       flex-direction: column;
       gap: 26px;
 
-      .content {
-        @include media-tablet-large {
-          flex-direction: column;
-          gap: 40px;
-          align-items: flex-start;
-        }
-
-        display: flex;
+      @include media-tablet-large {
         flex-direction: column;
-        gap: 100px;
-        align-items: center;
-        justify-content: flex-start;
+        gap: 40px;
+        align-items: flex-start;
+        font-size: 18px;
+      }
 
-        .paragraph {
-          padding-top: 5px;
+      align-items: start;
+      justify-content: flex-start;
+      font-size: 20px;
+
+      .paragraph {
+        @include media-tablet-large {
+          font-size: 16px;
         }
 
-        .subtitle {
-          font-size: 28px;
-        }
+        padding-top: 5px;
+        font-size: 18px;
+      }
+
+      .subtitle {
+        font-size: 28px;
       }
     }
   }

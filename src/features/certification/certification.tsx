@@ -26,8 +26,8 @@ const localizedContent = {
 
 export const Certification = ({ courseName, lang = 'en' }: RequiredProps) => {
   return (
-    <section className="communication container">
-      <article className="communication content info-wrapper">
+    <section className="certification container">
+      <article className="certification content info-wrapper">
         <Title text={localizedContent[lang].title} hasAsterisk />
         <Paragraph>{localizedContent[lang].firstParagraph}</Paragraph>
         {courseName === 'js / front-end pre-school ru' && (

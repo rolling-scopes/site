@@ -70,7 +70,7 @@ export const Faq = () => {
         <Title text={'FAQ'} hasAsterisk />
         <ol className="list">
           {data.map(({ question, answer }, index) => (
-            <li key={question}>
+            <li className="list-item" key={question}>
               <span className="question marked">
                 {index + 1}. {question}
               </span>
