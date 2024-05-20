@@ -1,6 +1,7 @@
 import { Breadcrumbs } from '@/app/components';
 import { About } from '@/features/about';
 import { AboutVideo } from '@/features/about-video';
+import { Certification } from '@/features/certification';
 import { Communication } from '@/features/communication';
 import { CourseMain } from '@/features/course-main';
 import { Required } from '@/features/required';
@@ -21,6 +22,7 @@ export const JavaScriptPreSchoolRu = () => {
       <About courseName={COURSE_NAME} lang={lang} />
       <TrainingProgram courseName={COURSE_NAME} lang={lang} />
       <Required courseName={COURSE_NAME} />
+      <Certification courseName={COURSE_NAME} lang="ru" />
       <Communication courseName={COURSE_NAME} lang={lang} />
       <AboutVideo lang={lang} />
       {/* <StudyPath path={'javascriptRu'} lang={lang} /> */}
