@@ -20,7 +20,7 @@ export const JavaScriptRu = () => {
       <Communication courseName={COURSE_NAME} lang={lang} />
       <AboutVideo lang={lang} />
       <StudyPath path={'javascriptRu'} lang={lang} />
-      <Required courseName={COURSE_NAME} lang={lang} />
+      <Required courseName={COURSE_NAME} />
     </>
   );
 };

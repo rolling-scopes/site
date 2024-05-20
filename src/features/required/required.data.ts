@@ -2,6 +2,7 @@ import type { CourseMap } from './required.types';
 
 export const courseDataMap: CourseMap = {
   'js / front-end en': {
+    title: 'What you should know before starting',
     knowBefore: {
       title: 'Required before the start',
       description: [
@@ -76,6 +77,7 @@ export const courseDataMap: CourseMap = {
     },
   },
   'js / front-end ru': {
+    title: 'Что нужно знать до начала',
     knowBefore: {
       title: 'Требуется до начала',
       description: [
@@ -150,80 +152,78 @@ export const courseDataMap: CourseMap = {
     },
   },
   'js / front-end pre-school ru': {
-    knowBefore: {
-      title: 'Required before the start',
-      description: [
-        'Basic knowledge of HTML, CSS, Javascript is highly recommended before starting the course.',
-        'Basic computer science theory (data structures, algorithms, maths) is recommended before starting the course.',
-        'Experience with using any IDE.',
-        'English language level: Intermediate (B1) and up.',
-        'Register through this page and join the official discord channel for the training participants.',
-      ],
-    },
+    title: 'Что следует сделать до старта курса',
     willLearn: {
-      title: 'What to do if you lack base knowledge?',
+      title: '',
+      // title: 'What to do if you lack base knowledge?',
       description: [
-        'In this case, you will have to spend enough time on self-preparation. We recommend:',
         [
           {
             id: 0,
-            text: 'Take a course in ',
-            title: 'Computer Science.',
-            link: 'https://rkhaslarov.github.io/computer-science-introduction/#introduction',
+            text: 'Зарегистрироваться на платформе ',
+            title: 'RS School',
+            link: 'https://app.rs.school/registry/student?course=js-fe-preschool-2024q2',
           },
-        ],
-        [
           {
             id: 1,
-            text: 'Read a good ',
-            title: 'Javascript tutorial.',
-            link: 'https://javascript.info/',
+            text: '. После регистрации вы сможете найти себя в ',
+            title: 'Score',
+            link: 'https://app.rs.school/course/score?course=js-fe-preschool-2024q2',
           },
         ],
         [
           {
-            id: 2,
-            text: 'Use the ',
-            title: 'Codewars platform',
-            link: 'https://www.codewars.com/kata/search/javascript',
-          },
-          {
             id: 3,
-            text: ' to solve practical tasks. You can start with ',
-            title: 'simpler ones.',
-            link: 'https://www.codewars.com/kata/search/javascript?q=&r%5B%5D=-8&beta=false',
+            text: 'Прочитать документацию о ',
+            title: 'школе',
+            link: 'https://docs.rs.school/#/',
           },
         ],
-        'Take free online courses:',
         [
           {
             id: 4,
-            text: '',
-            title: 'Learn the Command Line  ',
-            link: 'https://www.codecademy.com/learn/learn-the-command-line',
+            text: 'Присоединиться в ',
+            title: 'Discord',
+            link: 'https://discord.gg/gFnRh8Sudg',
           },
-        ],
-        [
           {
             id: 5,
-            text: '',
-            title: 'Learn Git ',
-            link: 'https://www.codecademy.com/learn/learn-git',
+            text: ' чат курса и указать в нике свой GitHub аккаунт. Инструкция ',
+            title: 'тут',
+            link: 'https://docs.rs.school/#/rs-school-chats',
           },
         ],
+        'Запомнить правила хорошего тона RS School:',
         [
           {
             id: 6,
-            text: '',
-            title: 'Algorithms. ',
-            link: 'https://www.coursera.org/learn/algorithms-part1',
+            text: ' Если вам помогли, не забудьте написать спасибо. Желательно использовать специальный канал ',
+            title: 'RS School',
+            link: 'https://app.rs.school/gratitude)',
           },
         ],
-        'Believe in your strength!',
+        [
+          {
+            id: 7,
+            text: 'Если вам помогли с каким-то вопросом и вы видите, что у других студентов возникли подобные сложности, то очень желательно не проходить мимо и помочь в свою очередь',
+            title: '',
+            link: '',
+          },
+        ],
+
+        [
+          {
+            id: 8,
+            text: 'Если у вас какие-либо проблемы с выполнением тасков или платформой школы (RS App) - не следует писать в личные сообщения администраторам или модераторам',
+            title: '',
+            link: '',
+          },
+        ],
       ],
     },
   },
   awsFundamentals: {
+    title: 'What you should know before starting',
     knowBefore: {
       title: 'Required before the start',
       description: [
@@ -244,6 +244,7 @@ export const courseDataMap: CourseMap = {
     },
   },
   awsDev: {
+    title: 'What you should know before starting',
     knowBefore: {
       title: 'Required before the start',
       description: [
@@ -255,6 +256,7 @@ export const courseDataMap: CourseMap = {
     willLearn: [],
   },
   nodejs: {
+    title: 'What you should know before starting',
     knowBefore: {
       title: 'Required before the start',
       description: ['Solid knowledge of JavaScript, including ES6, is required for this course.'],
@@ -262,6 +264,7 @@ export const courseDataMap: CourseMap = {
     willLearn: [],
   },
   angular: {
+    title: 'What you should know before starting',
     knowBefore: {
       title: 'Required before the start',
       description: [
