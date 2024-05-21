@@ -1,5 +1,6 @@
 import { formatCoursesData } from './lib/formatCoursesData';
-import { IconsTitle, getCourseIcon } from './lib/getCourseIcon';
+import { getCourseIcon } from './lib/getCourseIcon';
+import { IconsTitle } from './lib/icons.data';
 import { CourseCard } from './ui/CourseCard';
 import { Button } from '@/app/components';
 import { useDataByName, useWindowSize } from '@/app/hooks';

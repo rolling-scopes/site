@@ -1,11 +1,11 @@
-type PropsType = {
-  title: string;
-  language: ('en' | 'ru')[];
-  startDate: string;
-  detailsUrl: string;
+import { Course } from '@/app/types';
+
+type addFields = {
   buttonText: string;
   icon: JSX.Element | null;
 };
+
+type PropsType = Pick<Course, 'title' | 'language' | 'startDate' | 'detailsUrl'> & addFields;
 
 export const CourseCard = ({
   title,
