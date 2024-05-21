@@ -21,7 +21,7 @@ export const JavaScriptPreSchoolRu = () => {
       <Breadcrumbs />
       <TrainingProgram courseName={COURSE_NAME} lang={lang} />
       <About courseName={COURSE_NAME} lang={lang} />
-      <Communication courseName={COURSE_NAME} />
+      <Communication courseName={COURSE_NAME} lang={lang} />
       <AboutVideo lang={lang} />
       <StudyPath path={'javascriptRu'} lang={lang} />
       <Required courseName={'js / front-end ru'} lang={lang} />
