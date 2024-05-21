@@ -65,7 +65,7 @@ describe('Courses', () => {
     expect(titleElement).toBeInTheDocument();
   });
 
-  it('renders three course cards', () => {
+  it('renders five course cards', () => {
     const courseCards = screen.getAllByRole('link', { name: 'More arrow_forward' });
     expect(courseCards.length).toBe(5);
   });

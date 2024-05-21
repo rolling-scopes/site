@@ -16,7 +16,7 @@ export const CourseCard = ({
   icon,
 }: PropsType) => {
   return (
-    <div className="course-card">
+    <section className="course-card">
       <figure className="icon-container">{icon}</figure>
       <div className="course-info">
         <p className="name">{title}</p>
@@ -28,7 +28,7 @@ export const CourseCard = ({
           <span className="material-symbols-outlined">arrow_forward</span>
         </a>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,17 +1,18 @@
+import dayjs from 'dayjs';
 import { Course } from '@/app/types';
 
-const threeWeeksInMs = 1814400000;
-const expirationDate = new Date(new Date().getTime() - threeWeeksInMs).getTime();
+const now = dayjs();
+const courseExpirationDate = now.subtract(3, 'week');
 
 export const formatCoursesData = (courses: Course[]) => {
   return courses
     ?.filter((course) => {
-      const startDate = new Date(course.startDate).getTime();
-      return startDate > expirationDate;
+      const startDate = dayjs(course.startDate);
+      return startDate > courseExpirationDate;
     })
     .sort((a, b) => {
-      const aDate = new Date(a.startDate).getTime();
-      const bDate = new Date(b.startDate).getTime();
+      const aDate = dayjs(a.startDate).valueOf();
+      const bDate = dayjs(b.startDate).valueOf();
       return aDate - bDate;
     })
     .filter((_, i) => i < 5);

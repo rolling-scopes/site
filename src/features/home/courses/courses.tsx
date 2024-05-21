@@ -10,14 +10,16 @@ import './courses.scss';
 
 export const Courses = () => {
   const size = useWindowSize();
+  const laptopScreenBreakPoint = 1440;
+  const tabletScreenBreakPoint = 810;
   const res = useDataByName('courses');
   const coursesData = formatCoursesData(res?.data as Course[]);
   const { loading, error } = res;
 
   let buttonText = 'More details';
-  if (size.width <= 810) {
+  if (size.width <= tabletScreenBreakPoint) {
     buttonText = '';
-  } else if (size.width <= 1440) {
+  } else if (size.width <= laptopScreenBreakPoint) {
     buttonText = 'More';
   }
 

@@ -4,7 +4,7 @@
     margin-bottom: 0;
 
     font-size: 36px;
-    font-weight: 500;
+    font-weight: $font-weight-medium;
     line-height: 44px;
     letter-spacing: 0;
   }
@@ -85,9 +85,8 @@
             margin-top: 0;
             margin-bottom: 0;
 
-            font-family: Inter-Medium, Inter, sans-serif;
             font-size: 18px;
-            font-weight: 500;
+            font-weight: $font-weight-medium;
             line-height: 24px;
             color: $color-black;
           }
@@ -96,7 +95,6 @@
             margin-top: 8px;
             margin-bottom: 0;
 
-            font-family: Inter, sans-serif;
             font-size: 14px;
             line-height: 20px;
             color: $color-gray-600;
@@ -165,7 +163,6 @@
               height: auto; /* 16px */
               margin-right: 8px;
 
-              font-family: Inter-Medium, Inter, sans-serif;
               font-size: 14px;
               font-weight: 500;
               font-style: normal;
