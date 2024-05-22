@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Breadcrumbs } from '@/app/components';
 import { useTitle } from '@/app/hooks';
-import { General, Main, Courses as RSCourses, Requirements } from '@/features/courses';
+import { General, Main, Courses as RSCourses } from '@/features/courses';
 import { StudyPath } from '@/features/study-path';
 
 export const Courses: FC = () => {
@@ -14,7 +14,6 @@ export const Courses: FC = () => {
       <RSCourses />
       <StudyPath path="coursesPath" />
       <General />
-      <Requirements />
     </>
   );
 };
