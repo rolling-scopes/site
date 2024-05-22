@@ -3,8 +3,8 @@ import { getCourseIcon } from './lib/getCourseIcon';
 import { IconsTitle } from './lib/icons.data';
 import { CourseCard } from './ui/CourseCard';
 import { Button } from '@/app/components';
-import { useDataByName, useWindowSize } from '@/app/hooks';
-import { Course } from '@/app/types';
+import { useWindowSize } from '@/app/hooks';
+import { courses } from '@/app/services/data';
 import { RsBanner } from '@/icons';
 
 import './courses.scss';
@@ -13,9 +13,7 @@ export const Courses = () => {
   const size = useWindowSize();
   const laptopScreenBreakPoint = 1440;
   const tabletScreenBreakPoint = 810;
-  const res = useDataByName('courses');
-  const coursesData = formatCoursesData(res?.data as Course[]);
-  const { loading, error } = res;
+  const coursesData = formatCoursesData(courses);
 
   let buttonText = 'More details';
   if (size.width <= tabletScreenBreakPoint) {
@@ -23,8 +21,6 @@ export const Courses = () => {
   } else if (size.width <= laptopScreenBreakPoint) {
     buttonText = 'More';
   }
-
-  if (loading || error) return;
 
   const coursesContent = coursesData?.map(({ title, language, startDate, detailsUrl }) => {
     const courseIcon = getCourseIcon(title as IconsTitle);

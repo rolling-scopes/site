@@ -8,12 +8,12 @@ export const formatCoursesData = (courses: Course[]) => {
   return courses
     ?.filter((course) => {
       const startDate = dayjs(course.startDate);
-      return startDate > courseExpirationDate;
+      return startDate.isAfter(courseExpirationDate);
     })
     .sort((a, b) => {
-      const aDate = dayjs(a.startDate).valueOf();
-      const bDate = dayjs(b.startDate).valueOf();
-      return aDate - bDate;
+      const aDate = dayjs(a.startDate);
+      const bDate = dayjs(b.startDate);
+      return aDate.isBefore(bDate) ? -1 : 1;
     })
     .filter((_, i) => i < 5);
 };
