@@ -13,11 +13,11 @@
     font-weight: $font-weight-medium;
 
     &.dark {
-      color: $color-secondary-gray600;
+      color: $color-gray-600;
     }
 
     &.light {
-      color: $color-secondary-gray100;
+      color: $color-gray-100;
     }
 
     &.mt {
@@ -32,15 +32,15 @@
   .divider {
     width: 100%;
     margin-bottom: 8px;
-    border-color: $color-secondary-gray600;
+    border-color: $color-gray-600;
     border-bottom: 1px solid;
 
     &.dark {
-      color: $color-secondary-gray600;
+      color: $color-gray-600;
     }
 
     &.light {
-      color: $color-secondary-gray100;
+      color: $color-gray-100;
     }
   }
 }

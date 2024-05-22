@@ -13,7 +13,7 @@ body {
 
 a {
   cursor: pointer;
-  color: $color-secondary-gray600;
+  color: $color-gray-600;
   text-decoration: none;
 }
 
@@ -24,6 +24,11 @@ ul {
 }
 
 li {
+  margin: 0;
+  padding: 0;
+}
+
+figure {
   margin: 0;
   padding: 0;
 }

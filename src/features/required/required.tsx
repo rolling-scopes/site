@@ -8,9 +8,20 @@ interface RequiredProps {
   courseName: CourseName;
   marked1?: boolean;
   marked2?: boolean;
+  lang?: 'ru' | 'en';
 }
 
-export const Required = ({ courseName, marked1, marked2 }: RequiredProps) => {
+const localizedContent = {
+  en: {
+    title: 'What you should know before starting',
+  },
+  ru: {
+    title: 'Что нужно знать до начала',
+  },
+};
+
+export const Required = ({ courseName, marked1, marked2, lang = 'en' }: RequiredProps) => {
+  //todo all links to recommended resources are in English
   const requiredKnowledge = courseDataMap[courseName];
 
   const { knowBefore, willLearn } = requiredKnowledge;
@@ -18,7 +29,7 @@ export const Required = ({ courseName, marked1, marked2 }: RequiredProps) => {
   return (
     <section className="required container">
       <div className="required content info-wrapper">
-        <Title text="What you should know before starting" hasAsterisk />
+        <Title text={localizedContent[lang].title} hasAsterisk />
 
         <div className="column-2">
           <div>

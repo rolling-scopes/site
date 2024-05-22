@@ -29,7 +29,7 @@
 
   visibility: hidden;
   opacity: 0;
-  background-color: $color-primary-white;
+  background-color: $color-white;
   border-radius: 20px;
   box-shadow: 0 1px 8px 0 rgb(0 0 0 / 25%);
 
@@ -46,7 +46,7 @@
       width: 1px;
       height: calc(100% + 52px);
 
-      background: $color-secondary-gray100;
+      background: $color-gray-100;
     }
   }
 

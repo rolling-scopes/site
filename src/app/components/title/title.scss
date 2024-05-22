@@ -11,12 +11,11 @@
   font-size: 44px;
   font-weight: 500;
   line-height: 52px;
-  color: $color-primary-black;
+  color: $color-black;
   text-align: left;
   letter-spacing: -0.04em;
 
   &.big {
-
     @include media-tablet {
       font-size: 36px;
       line-height: 44px;
@@ -54,6 +53,6 @@
 
   & .before {
     margin-right: 8px;
-    color: $color-secondary-red;
+    color: $color-red;
   }
 }
