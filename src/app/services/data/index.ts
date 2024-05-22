@@ -4,3 +4,4 @@ export { awsDevPath } from './aws-dev-path.data';
 export { courses } from './courses.data';
 export { coursesPath } from './courses-path.data';
 export { jsPath } from './js-path.data';
+export { jsPathRu } from './js-ru-path.data';

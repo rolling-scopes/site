@@ -6,16 +6,15 @@
 
   @include media-hover {
     &:hover {
-      color: $color-primary-black;
+      color: $color-black;
 
       .icon-surface {
-        background-color: $color-secondary-gray600;
+        background-color: $color-gray-600;
 
         > img {
           filter: invert(100%);
         }
       }
-      
     }
   }
 
@@ -35,13 +34,13 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 16px;
-  color: $color-secondary-gray600;
+  color: $color-gray-600;
   text-align: center;
   text-decoration: none;
 
   .icon-surface {
     display: flex;
-    background-color: $color-secondary-gray200;
+    background-color: $color-gray-200;
     border-radius: 50%;
     transition: all var(--_transition) ease-in-out;
 

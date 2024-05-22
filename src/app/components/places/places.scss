@@ -6,7 +6,7 @@
 
     padding: 5px 20px;
 
-    border-color: $color-secondary-gray600;
+    border-color: $color-gray-600;
     border-style: solid;
     border-width: 1px 0 1px 0;
   }
@@ -27,7 +27,7 @@
     font-size: 20px;
     font-weight: 500;
     line-height: 28px;
-    color: $color-primary-black;
+    color: $color-black;
     letter-spacing: 0;
   }
 
@@ -40,6 +40,6 @@
     display: inline-block;
     height: 12px;
     font-size: 36px;
-    color: $color-secondary-red;
+    color: $color-red;
   }
 }

@@ -34,7 +34,7 @@ const courses: CourseProps[] = [
     title: 'JS / Front‑end. Pre‑school',
     language: 'RU',
     startDate: 'June 24, 2024',
-    href: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS_PRESCHOOL}`),
+    href: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS_PRESCHOOL_RU}`),
     icon: <HtmlIcon />,
   },
   {

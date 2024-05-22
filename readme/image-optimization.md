@@ -19,7 +19,7 @@ Therefore we introduced an automated image optimization technique that will prod
 ### ⚠️ The only thing that developer must to watch closely
 Is that the images that will be loaded on the start screen - must be loaded with `high priority`, that means that for such images **we need to disable lazy loading**, because it makes no sense to load them lazily 🤷‍♂️, and will produce performance drop.
 
-<img src="./assets/watch-close.png" width="600" alt="image">
+<img src="assets/watch-close.png" width="600" alt="image">
 
 ## 🚀 Public API
 
