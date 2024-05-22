@@ -17,7 +17,7 @@ const localizedContent = {
     buttonLabel: 'Register',
   },
   ru: {
-    buttonLabel: 'Записаться',
+    buttonLabel: 'Зарегистрироваться',
   },
 };
 
