@@ -2,7 +2,7 @@ import type { Trainer } from './trainers.types';
 import awsImg2 from '@/assets/mentors/v-antonau.webp';
 import awsImg1 from '@/assets/mentors/v-kavaliou.webp';
 
-export const awsDev:  Trainer[] = [
+export const awsDev: Trainer[] = [
   {
     name: 'Viktar Kavaliou',
     role: 'EPAM, Senior Software Engineer',
