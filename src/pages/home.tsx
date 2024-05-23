@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Places } from '@/app/components';
+import { Breadcrumbs, Places } from '@/app/components';
 import { useTitle } from '@/app/hooks/use-title/use-title';
 import { config } from '@/config';
 import {
@@ -25,6 +25,7 @@ export const Home: FC = () => {
   return (
     <>
       <Hero />
+      <Breadcrumbs />
       <About />
       <Numbers />
       <Places />
