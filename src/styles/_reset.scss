@@ -9,19 +9,13 @@ Box-sizing model
 }
 
 /*
-Remove default margin
- */
-
-* {
-  margin: 0;
-}
-
-/*
-1. Improve text rendering  
-2. Tweaking line-height
+1. Remove default margin
+2. Improve text rendering  
+3. Tweaking line-height
  */
 
 body {
+  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
