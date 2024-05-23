@@ -1,22 +1,19 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { BurgerMenu } from './burger';
-import { NavItem } from './nav-item';
+import { BurgerMenu } from './burger/burger';
+import { NavItem } from './nav-item/nav-item';
 import { LogoWrapper, MobileView } from '@/app/components';
 import { useWindowSize } from '@/app/hooks';
-import { buildUrl } from '@/app/services/platform';
 
-import './navbar.scss';
+import styles from './header.module.scss';
 
 const navLinks = [
-  { label: 'About', href: buildUrl('/#about') },
-  { label: 'RS School', href: buildUrl('/#school') },
-  { label: 'Events', href: buildUrl('/#events') },
-  { label: 'Community', href: buildUrl('/#community') },
-  { label: 'Merch', href: buildUrl('/#merch') },
+  { label: 'RS School', href: '/#main' },
+  { label: 'Courses', href: '/courses/#main' },
+  { label: 'Community', href: '/community/#main' },
 ];
 
-export const Navbar = () => {
+export const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [color, setColor] = useState('gray');
   const { key, hash, pathname } = useLocation();
@@ -53,22 +50,25 @@ export const Navbar = () => {
   }, [width, key, hash, pathname]);
 
   return (
-    <nav className={`navbar ${color}`} data-testid="navigation">
-      <section className="navbar-content">
-        <Link to="/">
-          <LogoWrapper type="navbar" />
+    <nav className={`${styles.navbar} ${styles[color]}`} data-testid="navigation">
+      <section className={styles.navbarContent}>
+        <Link to="/" onClick={() => window.scrollTo({ top: 0 })}>
+          <LogoWrapper type="header" />
         </Link>
 
         {isMobile && (
-          <menu className={`mobile-menu ${isMenuOpen ? 'open' : ''}`} data-testid="mobile-menu">
-            <MobileView type="navbar" />
+          <menu
+            className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ''}`}
+            data-testid="mobile-menu">
+            <MobileView type="header" />
           </menu>
         )}
 
         {!isMobile && (
-          <menu className="menu">
+          <menu className={styles.menu}>
             {navLinks.map((link) => {
-              const isDropdown = link.label === 'RS School';
+              const isDropdown = false;
+              // const isDropdown = link.label === 'RS School';
 
               return (
                 <NavItem
