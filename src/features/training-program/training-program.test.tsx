@@ -2,6 +2,7 @@ import { screen } from '@testing-library/react';
 import { type Mock, beforeEach, vi } from 'vitest';
 import { TrainingProgram } from './training-program';
 import { renderWithRouter } from '@/__tests__/utils';
+import { ROUTES } from '@/app/const';
 import { useCourseByTitle } from '@/app/hooks';
 
 vi.mock('@/app/hooks');
@@ -16,7 +17,7 @@ describe('TrainingProgram', () => {
           startDate: '16 Oct, 2023',
           language: ['en'],
           mode: 'online',
-          detailsUrl: '/courses/angular',
+          detailsUrl: `/${ROUTES.COURSES}/${ROUTES.ANGULAR}`,
           enroll: 'https://wearecommunity.io/events/rs-angular-2023q4',
           backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#F4AFA7' },
         },
@@ -59,7 +60,7 @@ describe('TrainingProgram', () => {
         course: {
           id: '8',
           title: 'AWS Cloud Developer',
-          detailsUrl: '/courses/aws-cloud-developer',
+          detailsUrl: `/${ROUTES.COURSES}/${ROUTES.AWS_DEVELOPER}`,
           enroll: 'https://wearecommunity.io/events/aws-cloud-dev-rs2023q4',
         },
       });
@@ -95,38 +96,6 @@ describe('TrainingProgram', () => {
     it('renders correct image with alt text', () => {
       const image = screen.getByRole('img', { name: 'AWS Cloud Developer' });
       expect(image).toHaveAttribute('alt', expect.stringContaining('AWS Cloud Developer'));
-    });
-  });
-
-  describe('with "react ru" props', () => {
-    beforeEach(() => {
-      (useCourseByTitle as Mock).mockReturnValueOnce({
-        course: {
-          id: '3',
-          title: 'react-ru',
-          detailsUrl: '/courses/react-ru',
-          enroll: 'https://wearecommunity.io/events/rs-react-2023q4',
-        },
-      });
-
-      renderWithRouter(<TrainingProgram courseName="react ru" />);
-    });
-
-    it('renders correct title', () => {
-      const title = screen.getByText(/Для кого/i);
-      expect(title).toBeInTheDocument();
-    });
-
-    it('renders correct paragraph', () => {
-      const p = screen.getByText(
-        /Бесплатный курс от сообщества The Rolling Scopes для тех, кто хочет получить знания и опыт/i,
-      );
-      expect(p).toBeInTheDocument();
-    });
-
-    it('renders Button with correct url', () => {
-      const button = screen.getByRole('link', { name: /Записаться/i });
-      expect(button).toHaveAttribute('href', 'https://wearecommunity.io/events/rs-react-2023q4');
     });
   });
 });

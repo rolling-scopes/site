@@ -5,19 +5,19 @@ import { buildUrl } from '@/app/services/platform';
 import './mobile-view.scss';
 
 interface MobileViewProps {
-  type: 'navbar' | 'footer';
+  type: 'header' | 'footer';
 }
 
 const Divider = ({ type }: MobileViewProps) => (
-  <div className={`divider ${type === 'navbar' ? 'dark' : 'light'}`} />
+  <div className={`divider ${type === 'header' ? 'dark' : 'light'}`} />
 );
 
 export const MobileView = ({ type }: MobileViewProps) => {
-  const color = type === 'navbar' ? 'dark' : 'light';
+  const color = type === 'header' ? 'dark' : 'light';
 
   return (
     <div className="mobile-view" data-testid="mobile-view">
-      <Link to={buildUrl('/')} onClick={() => window.scrollTo({ top: 0 })}>
+      <Link to={buildUrl('/')}>
         <LogoWrapper type={type} />
       </Link>
 

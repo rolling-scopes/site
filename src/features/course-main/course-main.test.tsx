@@ -41,7 +41,7 @@ const mockedCourseUpcoming = {
 
 describe('CourseMain', () => {
   beforeEach(() => {
-    renderWithRouter(<CourseMain courseName="Node.js" type="Mentoring Program" />);
+    renderWithRouter(<CourseMain courseName="Node.js" />);
   });
 
   it('renders the title correctly', async () => {
@@ -52,11 +52,6 @@ describe('CourseMain', () => {
   it('renders the section label "PLANNED" correctly', () => {
     const labelElement = screen.getByText(CourseStatus.PLANNED);
     expect(labelElement).toBeVisible();
-  });
-
-  it('renders the Subtitle correctly', () => {
-    const subtitle = screen.getByText('Mentoring Program');
-    expect(subtitle).toBeVisible();
   });
 
   it('renders enroll button with correct label and href', () => {
@@ -77,13 +72,13 @@ describe('CourseMain', () => {
 
 describe('CourseMain', () => {
   it('renders the section with correct label "AVAILABLE"', () => {
-    renderWithRouter(<CourseMain courseName={reactCourseTitle} type="Mentoring Program" />);
+    renderWithRouter(<CourseMain courseName={reactCourseTitle} />);
     const labelElement = screen.getByText(CourseStatus.AVAILABLE);
     expect(labelElement).toBeVisible();
   });
 
   it('renders the section with correct label "UPCOMING"', () => {
-    renderWithRouter(<CourseMain courseName={angularCourseTitle} type="Mentoring Program" />);
+    renderWithRouter(<CourseMain courseName={angularCourseTitle} />);
     const labelElement = screen.getByText(CourseStatus.UPCOMING);
     expect(labelElement).toBeVisible();
   });

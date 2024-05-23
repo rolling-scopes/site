@@ -30,8 +30,9 @@ describe('EventCard', () => {
     expect(screen.getByText(mockProps.time, { exact: false })).toBeInTheDocument();
     expect(screen.getByText(mockProps.type, { exact: false })).toBeInTheDocument();
 
-    expect(screen.getByText(mockProps.address)).toBeInTheDocument();
-    expect(screen.getByText(mockProps.city)).toBeInTheDocument();
+    // verifying address/city individually
+    expect(screen.getByText(mockProps.address, { exact: false })).toBeInTheDocument();
+    expect(screen.getByText(mockProps.city, { exact: false })).toBeInTheDocument();
 
     const detailsLink = screen.getByRole('link', { name: /View details/i });
     expect(detailsLink).toHaveAttribute('href', mockProps.href);

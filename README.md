@@ -1,30 +1,88 @@
-# React + TypeScript + Vite
+# https://rs.school/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the RS School repository! Here you'll find the source code for the RS School landing page. RS School offers free courses in software development, building a supportive community of students, mentors, and industry professionals.
 
-Currently, two official plugins are available:
+## Purpose
+Our landing page provides the latest information about RS School courses, introduces our amazing instructors, and explains how you can join our community.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technology Overview
 
-## Expanding the ESLint configuration
+### Development
+- **React**: Our UI framework.
+- **TypeScript**: Typed JavaScript for a better development experience.
+- **Vite**: Super-fast build tool.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Code Quality
+- **ESLint**: Keeps our code clean.
+- **Stylelint**: Keeps our styles consistent.
+- **Prettier**: Formats our code nicely.
 
-- Configure the top-level `parserOptions` property like this:
+### Testing
+- **Vitest**: For unit testing.
+- **Playwright**: For end-to-end testing.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+### Assets Optimization
+- **Sharp**: For image processing.
+- **SVGO**: For SVG optimization.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Build Tools
+- **cross-env**: Manages environment variables.
+- **concurrently**: Runs multiple scripts at once.
+- **husky**: Automates Git hooks.
+
+## Launch Instructions
+
+### Prerequisites
+- Node.js (v14+) and npm (v6+).
+
+### Installation
+
+1. **Clone the Repository:**
+    ```sh
+    git clone https://github.com/rolling-scopes/site.git
+    cd site
+    ```
+
+2. **Install Dependencies:**
+    ```sh
+    npm install
+    ```
+
+### Running the Project
+
+1. **Start the Development Server:**
+    ```sh
+    npm run dev
+    ```
+
+### Building for Production
+
+1. **Build the Project:**
+    ```sh
+    npm run build
+    ```
+
+## Contributors
+
+This project exists thanks to all the wonderful people who contribute. [[Contribute](CONTRIBUTING.md)].
+
+<a href="https://github.com/rolling-scopes/site/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=rolling-scopes/site" />
+</a>
+
+We invite you to join our development community! Follow the guidelines in the [RS School Website Documentation](readme/__rs_school_website_documentation.md) to learn how you can get involved.
+
+## Financial Contributors
+
+Help us sustain our community by becoming a financial contributor. [[Contribute](https://opencollective.com/rsschool/contribute)]
+
+### Individuals
+
+<a href="https://opencollective.com/rsschool"><img src="https://opencollective.com/rsschool/individuals.svg?width=890"></a>
+
+### Organizations
+
+Support this project with your organization. Your logo will be displayed here with a link to your website. [[Contribute](https://opencollective.com/rsschool/contribute)]
+
+<a href="https://opencollective.com/rsschool/organization/0/website"><img src="https://opencollective.com/rsschool/organization/0/avatar.svg"></a>
+<a href="https://opencollective.com/rsschool/organization/1/website"><img src="https://opencollective.com/rsschool/organization/1/avatar.svg"></a>

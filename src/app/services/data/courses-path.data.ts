@@ -1,4 +1,5 @@
 import { type CoursesPath } from './courses-data.types';
+import { ROUTES } from '@/app/const';
 import { buildUrl } from '@/app/services/platform';
 import AWSDeveloperIcon from '@/assets/icons/aws-developer.webp';
 import AWSFundamentalsIcon from '@/assets/icons/aws-fundamentals.webp';
@@ -10,14 +11,14 @@ import ReactAngIcon from '@/assets/icons/react-angular.svg';
 export const coursesPath: CoursesPath[] = [
   {
     id: 1,
-    title: 'Pre-school',
+    title: 'Pre-school (RU)',
     description:
       'For those brand new to coding, this is your starting point. Get acquainted with the basics and build a strong foundation.',
     logoIcon: HTMLIcon,
     links: [
       {
-        linkTitle: 'Pre-school',
-        href: buildUrl('/courses/javascript-preschool'),
+        linkTitle: 'Pre-school (RU)',
+        href: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS_PRESCHOOL_RU}`),
         isActive: true,
       },
     ],
@@ -30,13 +31,12 @@ export const coursesPath: CoursesPath[] = [
     logoIcon: JSIcon,
     links: [
       {
-        // TODO: change link to RU page when it'll be ready
         linkTitle: 'JS/TS/FE Fundamentals (RU)',
-        href: buildUrl('/courses/javascript-mentoring-program'),
+        href: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS_RU}`),
       },
       {
         linkTitle: 'JS/TS/FE Fundamentals (EN)',
-        href: buildUrl('/courses/javascript-mentoring-program'),
+        href: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS}`),
       },
     ],
   },
@@ -49,11 +49,11 @@ export const coursesPath: CoursesPath[] = [
     links: [
       {
         linkTitle: 'React',
-        href: buildUrl('/courses/reactjs'),
+        href: buildUrl(`/${ROUTES.COURSES}/${ROUTES.REACT}`),
       },
       {
         linkTitle: 'Angular',
-        href: buildUrl('/courses/angular'),
+        href: buildUrl(`/${ROUTES.COURSES}/${ROUTES.ANGULAR}`),
       },
     ],
   },
@@ -66,7 +66,7 @@ export const coursesPath: CoursesPath[] = [
     links: [
       {
         linkTitle: 'Node',
-        href: buildUrl('/courses/nodejs'),
+        href: buildUrl(`/${ROUTES.COURSES}/${ROUTES.NODE_JS}`),
       },
     ],
   },
@@ -79,7 +79,7 @@ export const coursesPath: CoursesPath[] = [
     links: [
       {
         linkTitle: 'AWS Fundamentals',
-        href: buildUrl('/courses/aws-fundamentals'),
+        href: buildUrl(`/${ROUTES.COURSES}/${ROUTES.AWS_FUNDAMENTALS}`),
       },
     ],
   },
@@ -92,7 +92,7 @@ export const coursesPath: CoursesPath[] = [
     links: [
       {
         linkTitle: 'AWS Developer',
-        href: buildUrl('/courses/aws-cloud-developer'),
+        href: buildUrl(`/${ROUTES.COURSES}/${ROUTES.AWS_DEVELOPER}`),
       },
     ],
   },

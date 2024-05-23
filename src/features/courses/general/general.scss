@@ -2,11 +2,11 @@
   & .content {
     @include media-laptop {
       width: 100%;
-      padding: 40px 40px 80px;
+      padding: 40px 40px 0;
     }
 
     @include media-tablet {
-      padding: 40px 16px 80px;
+      padding: 40px 16px;
     }
 
     padding: 40px 120px;
@@ -27,7 +27,7 @@
       align-items: flex-start;
       justify-content: space-between;
 
-      color: $color-secondary-gray600;
+      color: $color-gray-600;
 
       & > div {
         @include media-laptop {
@@ -49,7 +49,7 @@
 
           margin-top: 0;
           font-size: 28px;
-          color: $color-secondary-gray600;
+          color: $color-gray-600;
         }
 
         & .description {

@@ -1,11 +1,12 @@
-import { Outlet } from 'react-router-dom';
-import { Footer, Navbar, Partnered, ScrollToHashElement } from './components';
+import { Outlet, ScrollRestoration } from 'react-router-dom';
+import { Footer, Header, Partnered, ScrollToHashElement } from './components';
 
 export const BaseLayout = () => {
   return (
     <>
+      <ScrollRestoration />
       <ScrollToHashElement />
-      <Navbar />
+      <Header />
       <Outlet />
       <Partnered />
       <Footer />

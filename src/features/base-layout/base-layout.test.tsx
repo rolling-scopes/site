@@ -5,10 +5,11 @@ import { BaseLayout } from './base-layout';
 vi.mock('react-router-dom', () => ({
   Outlet: vi.fn(() => <div data-testid="mockOutlet" />),
   useLocation: vi.fn(() => ({ hash: 'testHash' })),
+  ScrollRestoration: vi.fn(() => null),
 }));
 
-vi.mock('./components/navbar', () => ({
-  Navbar: vi.fn(() => <div data-testid="mockNavbar" />),
+vi.mock('./components/header', () => ({
+  Header: vi.fn(() => <div data-testid="mockHeader" />),
 }));
 
 vi.mock('./components/partnered', () => ({
@@ -24,8 +25,8 @@ describe('BaseLayout', () => {
     render(<BaseLayout />);
   });
 
-  it('renders Navbar component', () => {
-    expect(screen.getByTestId('mockNavbar')).toBeInTheDocument();
+  it('renders Header component', () => {
+    expect(screen.getByTestId('mockHeader')).toBeInTheDocument();
   });
 
   it('renders Outlet component', () => {

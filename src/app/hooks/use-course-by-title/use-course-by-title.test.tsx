@@ -68,7 +68,7 @@ describe('useCourseByTitle', () => {
       error: null,
     });
 
-    const { result } = renderHook(() => useCourseByTitle('JavaScript', 'Mentoring Program'));
+    const { result } = renderHook(() => useCourseByTitle('JavaScript'));
 
     expect(result.current.course).toEqual(mockData[1]);
   });
@@ -80,7 +80,7 @@ describe('useCourseByTitle', () => {
       error: null,
     });
 
-    const { result } = renderHook(() => useCourseByTitle('React', 'Mentoring Program'));
+    const { result } = renderHook(() => useCourseByTitle('React RU'));
 
     expect(result.current.course).toBeUndefined();
     expect(result.current.hasError).toBe(true);

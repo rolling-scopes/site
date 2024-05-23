@@ -2,13 +2,14 @@ import { contentMap } from './about.data';
 import { InfoGrid } from './components';
 import { LinkCustom, Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
-import { type Course, CourseType } from '@/app/types';
+import { type Course } from '@/app/types';
 
 import './about.scss';
 
 export type CourseNames =
-  | 'javascript'
-  | 'javascript-en'
+  | 'js / front-end en'
+  | 'js / front-end ru'
+  | 'js / front-end pre-school ru'
   | 'react'
   | 'react ru'
   | 'angular'
@@ -18,11 +19,22 @@ export type CourseNames =
 
 interface AboutProps {
   courseName: CourseNames;
-  type?: CourseType;
+  lang?: 'ru' | 'en';
 }
 
-export const About = ({ courseName, type }: AboutProps) => {
-  const { course: data, error, loading, hasError } = useCourseByTitle(courseName, type);
+const localizedContent = {
+  en: {
+    title: 'About the course',
+    buttonLabel: 'Become a student',
+  },
+  ru: {
+    title: 'О курсе',
+    buttonLabel: 'Cтать студентом',
+  },
+};
+
+export const About = ({ courseName, lang = 'en' }: AboutProps) => {
+  const { course: data, error, loading, hasError } = useCourseByTitle(courseName);
 
   const course = data as Course;
 
@@ -37,11 +49,15 @@ export const About = ({ courseName, type }: AboutProps) => {
   }
 
   return (
-    <section className="nodejs-about container">
-      <div className="nodejs-about content">
-        <Title text="About" />
+    <section className="course-about container">
+      <div className="course-about content">
+        <Title text={localizedContent[lang].title} />
         <InfoGrid items={infoList} hasTitle />
-        <LinkCustom label="Become a student" href={course.enroll} target="_blank" />
+        <LinkCustom
+          label={localizedContent[lang].buttonLabel}
+          href={course.enroll}
+          target="_blank"
+        />
       </div>
     </section>
   );

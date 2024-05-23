@@ -1,12 +1,14 @@
+import classNames from 'classnames/bind';
 import { LinkCustom } from '../link-custom';
 
-import './event-card.scss';
+import styles from './event-card.module.scss';
 
 export type EventCardProps = {
   eventType: string;
   title: string;
-  organizedBy: string;
+  organizedBy: string; // organizer name or place (e.g. 'Vilnius, Lithuania' or 'online')
   organization: string;
+  additionalInfo?: string;
   date: string;
   time: string;
   type: string;
@@ -15,34 +17,51 @@ export type EventCardProps = {
   href: string;
 };
 
+const cx = classNames.bind(styles);
+
 export const EventCard = ({
   eventType,
   organizedBy,
   organization,
   title,
+  additionalInfo = 'and more',
   date,
   time,
   type,
   address,
   city,
   href,
-}: EventCardProps) => (
-  <div className="card">
-    <div className="card-top">
-      <div className="card-tag">{eventType}</div>
-      <div className="organized-by">{organizedBy}</div>
-      <div className="organization">{organization}</div>
-      <div className="card-title">{title}</div>
-      <div className="and-more">and more</div>
-      <div className="card-accent" />
-    </div>
-    <div className="card-bottom">
-      <div className="date-and-time">
-        • {date} • {time} • {type}
+}: EventCardProps) => {
+  const dateInfo: string =
+    organizedBy.toLowerCase() === 'online'
+      ? `• ${date} • ${time}`
+      : `• ${date} • ${time} • ${type}`;
+
+  return (
+    <article className={cx('event-card')}>
+      <div className={cx('event-card__header')}>
+        <p className={cx('event-tag')}>{eventType}</p>
+        <section className={cx('about-organization')}>
+          <h4 className={cx('organized-by')}>{organizedBy}</h4>
+          <h3 className={cx('event-organization')}>{organization}</h3>
+        </section>
+        <section className={cx('about-event')}>
+          <h2 className={cx('event-title')}>{title}</h2>
+          <p className={cx('event-additional-info')}>{additionalInfo}</p>
+        </section>
       </div>
-      <div className="address">{address}</div>
-      <div className="city">{city}</div>
-      <LinkCustom label="View details" href={href} arrow={false} size="small" target="_blank" />
-    </div>
-  </div>
-);
+
+      <div className={cx('event-card__info')}>
+        <time dateTime={date} className={cx('event-date')}>
+          {dateInfo}
+        </time>
+        <address className={cx('event-address')}>
+          {address}
+          <br />
+          {city}
+        </address>
+        <LinkCustom label="View details" href={href} arrow={false} size="small" target="_blank" />
+      </div>
+    </article>
+  );
+};

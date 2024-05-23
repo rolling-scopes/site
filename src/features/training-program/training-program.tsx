@@ -2,27 +2,32 @@ import { cloneElement } from 'react';
 import { type CourseNames, contentMap } from './training-program.data';
 import { LinkCustom, Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
-import type { Course, CourseType } from '@/app/types';
+import type { Course } from '@/app/types';
 import Image from '@/features/image';
 
 import './training-program.scss';
 
 interface TrainingProgramProps {
   courseName: CourseNames;
-  type?: CourseType;
+  lang?: 'ru' | 'en';
 }
 
-export const TrainingProgram = ({ courseName, type }: TrainingProgramProps) => {
+const localizedContent = {
+  en: {
+    buttonLabel: 'Register',
+  },
+  ru: {
+    buttonLabel: 'Зарегистрироваться',
+  },
+};
+
+export const TrainingProgram = ({ courseName, lang = 'en' }: TrainingProgramProps) => {
   const { course: data } = useCourseByTitle(
     courseName.includes('badge') ? 'aws fundamentals' : courseName,
-    type,
   );
 
   const course = data as Course;
-
   const { title, content, image } = contentMap[courseName];
-
-  const buttonLabel = courseName === 'react ru' ? 'Записаться' : 'Register';
 
   return (
     <section className="training-program container">
@@ -32,7 +37,11 @@ export const TrainingProgram = ({ courseName, type }: TrainingProgramProps) => {
 
           {content.map((component, index) => cloneElement(component, { key: index }))}
 
-          <LinkCustom label={buttonLabel} href={course?.enroll} target="_blank" />
+          <LinkCustom
+            label={localizedContent[lang].buttonLabel}
+            href={course?.enroll}
+            target="_blank"
+          />
         </div>
         <div className={`right ${courseName.includes('badge') ? 'badge' : ''}`}>
           <Image src={image} alt={course?.title} lazy="false" />

@@ -33,9 +33,9 @@
 
     font-size: 18px;
     line-height: 24px;
-    color: $color-primary-white;
+    color: $color-white;
 
-    background-color: $color-primary-black;
+    background-color: $color-black;
 
     &:hover {
       background-color: #545454;
@@ -58,7 +58,7 @@
 
     font-size: 14px;
     line-height: 16px;
-    color: $color-primary-black;
+    color: $color-black;
 
     background-color: #eee;
     border-radius: 9999px;
@@ -79,8 +79,8 @@
 
 .outlined {
   margin: 24px 0;
-  color: $color-primary-black;
-  border: 2px solid $color-primary-black;
+  color: $color-black;
+  border: 2px solid $color-black;
 
   &.large {
     width: max-content;
@@ -88,7 +88,7 @@
     font-size: 18px;
 
     &:hover {
-      background-color: $color-secondary-gray100;
+      background-color: $color-gray-100;
     }
 
     &.rounded {
@@ -96,14 +96,14 @@
       margin: 0;
       padding: 8px 16px;
 
-      color: $color-primary-white;
+      color: $color-white;
 
-      border: 2px solid $color-secondary-yellow-50;
+      border: 2px solid $color-yellow-50;
       border-radius: 24px;
 
       &:hover {
-        color: $color-secondary-gray600;
-        background-color: $color-primary-white;
+        color: $color-gray-600;
+        background-color: $color-white;
         box-shadow: 0 0 16px 0 rgb(114 92 19 / 8%);
       }
     }
@@ -120,7 +120,7 @@
     line-height: 24px;
 
     &:hover {
-      background-color: $color-secondary-gray200;
+      background-color: $color-gray-200;
     }
   }
 }

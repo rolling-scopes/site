@@ -2,6 +2,7 @@ import { renderHook, waitFor } from '@testing-library/react';
 import { MockedFunction, describe, expect, it, vi } from 'vitest';
 import { useDataByName } from './use-data-by-name';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
+import { ROUTES } from '@/app/const';
 import { fetchDataByName } from '@/app/services/api';
 import { DataMap } from '@/app/services/data/courses-data.types';
 
@@ -15,7 +16,7 @@ const courses: DataMap['courses'] = [
     startDate: 'Sept 18, 2023',
     language: ['en'],
     mode: 'online',
-    detailsUrl: 'https://rs.school/aws-fundamentals/',
+    detailsUrl: `https://rs.school/${ROUTES.AWS_FUNDAMENTALS}/`,
     enroll: 'https://wearecommunity.io/events/rs-aws-2023q3',
     backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#7356BF' },
   },
@@ -24,7 +25,7 @@ const courses: DataMap['courses'] = [
 const coursesPath: DataMap['coursesPath'] = [
   {
     id: 1,
-    title: 'Pre-school',
+    title: 'Pre-school RU',
     description:
       'For those brand new to coding, this is your starting point. Get acquainted with the basics and build a strong foundation.',
     logoIcon: MOCKED_IMAGE_PATH,
@@ -108,7 +109,7 @@ describe('useDataByName', () => {
       Promise.reject(new Error('Test fetch failed')),
     );
 
-    const { result } = renderHook(() => useDataByName('courses'));
+    const { result } = renderHook(() => useDataByName('courses', fetchDataByName));
 
     await waitFor(() => !result.current.loading);
 

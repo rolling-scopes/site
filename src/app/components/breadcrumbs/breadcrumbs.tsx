@@ -1,13 +1,14 @@
 import { Link, useLocation } from 'react-router-dom';
 import { breadcrumbNameMap } from './constants';
 import { buildUrl } from '@/app/services/platform';
+import { RouteValues } from '@/app/types/route.types.ts';
 
 import './breadcrumbs.scss';
 
 export const Breadcrumbs = () => {
   const location = useLocation();
 
-  const crumbs = location.pathname.split('/').filter(Boolean);
+  const crumbs = location.pathname.split('/').filter(Boolean) as RouteValues[];
 
   const transformedCrumbs = crumbs.map((crumb) => breadcrumbNameMap[crumb] || crumb);
 

@@ -29,7 +29,7 @@ export const Courses = () => {
   return (
     <section className="rs-courses container" id="upcoming-courses">
       <div className="rs-courses content">
-        <Title text="Upcoming courses" type={TitleType.Regular} />
+        <Title text="All courses" type={TitleType.Regular} />
         <div className="rs-courses-wrapper">
           {sortedCourses.map((course) => {
             return <CourseCard key={course.id} {...course} />;

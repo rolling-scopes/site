@@ -1,11 +1,20 @@
 .container {
-  background: $color-secondary-yellow;
+  @include media-tablet-large {
+    min-height: 546px;
+  }
+
+  @include media-tablet {
+    min-height: 494px;
+  }
+
+  min-height: 494px;
+  background: $color-yellow;
 
   .content {
     @include media-laptop {
       padding: 100px 40px;
     }
-    
+
     display: flex;
     gap: 40px;
     align-items: center;

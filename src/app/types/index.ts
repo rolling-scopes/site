@@ -1,2 +1,2 @@
-export { type Course, type CourseType } from './course.types';
+export { type Course } from './course.types';
 export { CourseStatus } from './course-status.types';

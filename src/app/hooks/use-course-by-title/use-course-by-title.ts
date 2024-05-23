@@ -1,8 +1,8 @@
 import { useDataByName } from '../use-data-by-name';
 import { selectCourse } from '@/app/hooks/use-course-by-title/utils/select-course.ts';
-import { Course, CourseType } from '@/app/types';
+import { Course } from '@/app/types';
 
-export const useCourseByTitle = (titleStartsWith: string, type?: CourseType) => {
+export const useCourseByTitle = (titleStartsWith: string) => {
   const { data: coursesData, error, loading } = useDataByName('courses');
 
   if (loading) {
@@ -23,7 +23,7 @@ export const useCourseByTitle = (titleStartsWith: string, type?: CourseType) => 
     };
   }
 
-  const course = selectCourse(coursesData as Course[], titleStartsWith, type);
+  const course = selectCourse(coursesData as Course[], titleStartsWith);
 
   const hasError = !!error || (!loading && !course);
 

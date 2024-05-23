@@ -6,22 +6,13 @@
 
   @include media-hover {
     &:hover {
-      color: $color-primary-black;
+      color: $color-black;
 
-      svg {
-        rect {
-          fill: $color-secondary-gray600;
-        }
+      .icon-surface {
+        background-color: $color-gray-600;
 
-        path {
-          stroke: $color-primary-white;
-        }
-      }
-
-      .telegram-icon {
-        path {
-          fill: $color-primary-white;
-          stroke: none;
+        > img {
+          filter: invert(100%);
         }
       }
     }
@@ -43,27 +34,20 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 16px;
-  color: $color-secondary-gray600;
+  color: $color-gray-600;
   text-align: center;
   text-decoration: none;
 
-  .telegram-icon {
-    rect {
-      transition: fill var(--_transition) ease-in-out;
-    }
+  .icon-surface {
+    display: flex;
+    background-color: $color-gray-200;
+    border-radius: 50%;
+    transition: all var(--_transition) ease-in-out;
 
-    path {
-      transition: fill var(--_transition) ease-in-out;
-    }
-  }
-
-  & > svg:not(.telegram-icon) {
-    rect {
-      transition: fill var(--_transition) ease-in-out;
-    }
-
-    path {
-      transition: stroke var(--_transition) ease-in-out;
+    > img {
+      width: 56px;
+      height: 56px;
+      transition: filter var(--_transition) ease-in-out;
     }
   }
 
