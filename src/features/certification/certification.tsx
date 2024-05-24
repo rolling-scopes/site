@@ -27,12 +27,10 @@ const localizedContent = {
 };
 
 const cx = classNames.bind(styles);
-console.log(styles.paragraph);
+
 export const Certification = ({ lang = 'en' }: RequiredProps) => {
   return (
-    // <section className="certification container">
     <section className={cx('certification', 'container')}>
-      {/* <article className="certification content info-wrapper"> */}
       <article className={cx('certification', 'content', 'info-wrapper')}>
         <Title text={localizedContent[lang].title} hasAsterisk />
         <Paragraph>{localizedContent[lang].firstParagraph}</Paragraph>
