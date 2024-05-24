@@ -1,6 +1,8 @@
+import classNames from 'classnames/bind';
 import { Paragraph, Title } from '@/app/components';
 import { CourseNames } from '@/data/communication.data';
 
+import styles from './certification.module.scss';
 import './certification.scss';
 
 interface RequiredProps {
@@ -24,10 +26,14 @@ const localizedContent = {
   },
 };
 
+const cx = classNames.bind(styles);
+console.log(styles.paragraph);
 export const Certification = ({ lang = 'en' }: RequiredProps) => {
   return (
-    <section className="certification container">
-      <article className="certification content info-wrapper">
+    // <section className="certification container">
+    <section className={cx('certification', 'container')}>
+      {/* <article className="certification content info-wrapper"> */}
+      <article className={cx('certification', 'content', 'info-wrapper')}>
         <Title text={localizedContent[lang].title} hasAsterisk />
         <Paragraph>{localizedContent[lang].firstParagraph}</Paragraph>
         <Paragraph>{localizedContent[lang].secondParagraph}</Paragraph>

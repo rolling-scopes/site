@@ -5,7 +5,6 @@ import { TextWithLink, Title } from '@/app/components';
 import styles from './faq.module.scss';
 
 const cx = classNames.bind(styles);
-console.log(styles);
 
 export const Faq = () => {
   return (
