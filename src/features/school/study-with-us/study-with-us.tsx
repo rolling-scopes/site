@@ -4,9 +4,9 @@ import { OptionItem, Paragraph, SectionLabel, Subtitle, Title } from '@/app/comp
 import image from '@/assets/rs-school.webp';
 import Image from '@/features/image';
 
-import './school.scss';
+import './study-with-us.scss';
 
-export const School = () => (
+export const StudyWithUs = () => (
   <div id="school" className="school container">
     <div className="school content">
       <div className="study">

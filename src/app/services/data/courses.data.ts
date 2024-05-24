@@ -18,11 +18,12 @@ import nodejs from '@/assets/icons/node.svg';
 import nodejsSecondary from '@/assets/icons/nodejs-secondary.webp';
 import reactSecondary from '@/assets/icons/react-secondary.webp';
 import react from '@/assets/icons/react.svg';
+import { COURSE_TITLES } from '@/data/courseTitles.data';
 
 export const courses: Course[] = [
   {
     id: '1',
-    title: 'JS / Front-end Pre-school RU',
+    title: COURSE_TITLES.JS_PRESCHOOL_RU,
     altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
     iconSmall: htmlSmall,
@@ -36,7 +37,7 @@ export const courses: Course[] = [
   },
   {
     id: '2',
-    title: 'JS / Front-end EN',
+    title: COURSE_TITLES.JS_EN,
     altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
     iconSmall: jsSmall,
@@ -50,7 +51,7 @@ export const courses: Course[] = [
   },
   {
     id: '3',
-    title: 'JS / Front-end RU',
+    title: COURSE_TITLES.JS_RU,
     altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
     iconSmall: jsSmall,
@@ -64,7 +65,7 @@ export const courses: Course[] = [
   },
   {
     id: '4',
-    title: 'React',
+    title: COURSE_TITLES.REACT,
     iconSrc: react,
     iconSmall: reactSmall,
     secondaryIcon: reactSecondary,
@@ -77,7 +78,7 @@ export const courses: Course[] = [
   },
   {
     id: '5',
-    title: 'Angular',
+    title: COURSE_TITLES.ANGULAR,
     iconSrc: angular,
     iconSmall: angularSmall,
     secondaryIcon: angularSecondary,
@@ -90,7 +91,7 @@ export const courses: Course[] = [
   },
   {
     id: '6',
-    title: 'Node.js',
+    title: COURSE_TITLES.NODE,
     iconSrc: nodejs,
     iconSmall: nodejsSmall,
     secondaryIcon: nodejsSecondary,
@@ -103,7 +104,7 @@ export const courses: Course[] = [
   },
   {
     id: '7',
-    title: 'AWS Fundamentals',
+    title: COURSE_TITLES.AWS_FUNDAMENTALS,
     iconSrc: aws,
     iconSmall: awsFundSmall,
     secondaryIcon: awsSecondary,
@@ -117,7 +118,7 @@ export const courses: Course[] = [
 
   {
     id: '8',
-    title: 'AWS Cloud Developer',
+    title: COURSE_TITLES.AWS_CLOUD_DEVELOPER,
     iconSrc: aws,
     iconSmall: awsDevSmall,
     secondaryIcon: awsSecondary,
