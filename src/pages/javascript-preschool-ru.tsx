@@ -6,25 +6,24 @@ import { CourseMain } from '@/features/course-main';
 import { Faq } from '@/features/faq';
 import { Required } from '@/features/required';
 import { Trainers } from '@/features/trainers';
-import { preSchool } from '@/features/trainers/preSchool.data.ts';
+import { preSchoolRu } from '@/features/trainers/preSchool.data.ts';
 import { TrainingProgram } from '@/features/training-program';
 
 const COURSE_NAME = 'js / front-end pre-school ru';
 
 export const JavaScriptPreSchoolRu = () => {
   const lang = 'ru';
-  //todo trainers to ru
   return (
     <>
       <CourseMain courseName={COURSE_NAME} type={'Pre-school RU'} lang={lang} />
       <Breadcrumbs />
-      <About courseName={COURSE_NAME} lang={lang} />
+      <About courseName={COURSE_NAME} lang={'pre_school'} />
       <TrainingProgram courseName={COURSE_NAME} lang={lang} />
       <Required courseName={COURSE_NAME} />
-      <Certification courseName={COURSE_NAME} lang="ru" />
+      <Certification courseName={COURSE_NAME} lang={lang} />
       <Communication courseName={COURSE_NAME} lang={lang} />
       <Faq />
-      <Trainers trainers={preSchool}></Trainers>
+      <Trainers trainers={preSchoolRu} lang="ru"></Trainers>
     </>
   );
 };

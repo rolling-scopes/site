@@ -13,26 +13,24 @@ const localizedContent = {
     title: 'Communication',
     firstParagraph:
       "To earn a course certificate, you must complete all assignments, finish the final project, and achieve at least 70% of the top student's score in the course. The certificate is a recognition of your hard work and dedication.",
-    preSchoolParagraph: '',
+    secondParagraph: '',
   },
   ru: {
     title: 'Сертификат',
     firstParagraph:
       'Чтобы получить сертификат о прохождении подготовительного этапа вам необходимо набрать 70% от результата TOP1 студента. Например, если в конце этапа у лучшего студента 2000 баллов, проходной для всех студентов 1400 баллов (2000*0.7).',
-    preSchoolParagraph:
+    secondParagraph:
       ' Наличие или отсутствие сертификата о прохождении подготовительного этапа не влияет на возможность дальнейшего обучения в RS School.',
   },
 };
 
-export const Certification = ({ courseName, lang = 'en' }: RequiredProps) => {
+export const Certification = ({ lang = 'en' }: RequiredProps) => {
   return (
     <section className="certification container">
       <article className="certification content info-wrapper">
         <Title text={localizedContent[lang].title} hasAsterisk />
         <Paragraph>{localizedContent[lang].firstParagraph}</Paragraph>
-        {courseName === 'js / front-end pre-school ru' && (
-          <Paragraph>{localizedContent[lang].preSchoolParagraph}</Paragraph>
-        )}
+        <Paragraph>{localizedContent[lang].secondParagraph}</Paragraph>
       </article>
     </section>
   );

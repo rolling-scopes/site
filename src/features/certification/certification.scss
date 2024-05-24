@@ -1,10 +1,6 @@
 .certification {
   &.content {
     &.info-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 26px;
-
       @include media-tablet-large {
         flex-direction: column;
         gap: 40px;
@@ -12,8 +8,12 @@
         font-size: 18px;
       }
 
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
       align-items: start;
       justify-content: flex-start;
+
       font-size: 20px;
 
       .paragraph {

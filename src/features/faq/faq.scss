@@ -5,15 +5,15 @@
 
   .content {
     .list {
-      display: flex;
-      flex-direction: column;
-      gap: 26px;
-
       @include media-tablet {
         font-size: 18px;
         font-weight: 400;
         line-height: 28px;
       }
+
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
 
       font-size: 20px;
       line-height: 28px;
@@ -21,9 +21,9 @@
       letter-spacing: 0;
 
       .question {
-        font-weight: $font-weight-medium;
         display: block;
         margin-bottom: 6px;
+        font-weight: $font-weight-medium;
       }
     }
 
@@ -36,6 +36,6 @@
 }
 
 ol {
-  list-style: none;
   padding: 0;
+  list-style: none;
 }
