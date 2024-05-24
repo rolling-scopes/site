@@ -3,7 +3,7 @@ import { Logo } from '../../../icons';
 import './logo-wrapper.scss';
 
 interface LogoWrapperProps {
-  type: 'navbar' | 'footer';
+  type: 'header' | 'footer';
 }
 
 export const LogoWrapper = ({ type }: LogoWrapperProps) => {
