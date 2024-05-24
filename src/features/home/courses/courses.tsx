@@ -68,7 +68,7 @@ export const Courses = () => {
       <div className="courses content">
         <div className="title">Upcoming courses</div>
         <div className="column-2">
-          <div className="courses">
+          <div className="courses" data-testid="courses">
             {courses.map(({ title, language, startDate, href, icon }) => (
               <div key={title} className="course-card">
                 <div className="icon-container">{icon}</div>
