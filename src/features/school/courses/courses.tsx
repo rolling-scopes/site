@@ -44,7 +44,7 @@ export const Courses = () => {
         <div className="column-2">
           <div className="courses">
             {coursesContent}
-            <Button label="Go to RS School " href="https://rs.school/" />
+            <Button label="Go to courses " href="./courses/" />
           </div>
           <figure className="image">
             <RsBanner />
