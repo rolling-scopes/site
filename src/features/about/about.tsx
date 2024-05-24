@@ -19,25 +19,29 @@ export type CourseNames =
 
 interface AboutProps {
   courseName: CourseNames;
-  lang?: 'ru' | 'en' | 'pre_school';
+  type?: 'ru' | 'en' | 'Pre-school RU';
 }
 
 const localizedContent = {
   en: {
     title: 'About the course',
     buttonLabel: 'Become a student',
+    paragraph: '',
   },
   ru: {
     title: 'О курсе',
     buttonLabel: 'Cтать студентом',
+    paragraph: '',
   },
-  pre_school: {
+  'Pre-school RU': {
     title: 'JS/Frontend-разработка. Подготовительный этап',
     buttonLabel: 'Стать студентом',
+    paragraph:
+      'Подготовительный этап поможет тем, кто мало знаком или совсем не знаком с программированием и хотел бы впоследствии учиться на основном курсе «JavaScript/Front-end».',
   },
 };
 
-export const About = ({ courseName, lang = 'en' }: AboutProps) => {
+export const About = ({ courseName, type = 'en' }: AboutProps) => {
   const { course: data, error, loading, hasError } = useCourseByTitle(courseName);
 
   const course = data as Course;
@@ -55,17 +59,12 @@ export const About = ({ courseName, lang = 'en' }: AboutProps) => {
   return (
     <section className="course-about container">
       <div className="course-about content">
-        <Title text={localizedContent[lang].title} />
-
-        {courseName === 'js / front-end pre-school ru' && (
-          <Paragraph>
-            Подготовительный этап поможет тем, кто мало знаком или совсем не знаком с
-            программированием и хотел бы впоследствии учиться на основном курсе
-            «JavaScript/Front-end».
-          </Paragraph>
+        <Title text={localizedContent[type].title} />
+        {localizedContent[type].paragraph && (
+          <Paragraph>{localizedContent[type].paragraph}</Paragraph>
         )}
         <InfoGrid items={infoList} hasTitle />
-        <Button label={localizedContent[lang].buttonLabel} href={course.enroll} />
+        <Button label={localizedContent[type].buttonLabel} href={course.enroll} />
       </div>
     </section>
   );
