@@ -3,8 +3,9 @@ import { Course } from '@/app/types';
 
 const now = dayjs();
 const courseExpirationDate = now.subtract(3, 'week');
+const MAX_COURSE_COUNT = 5;
 
-export const formatCoursesData = (courses: Course[]) => {
+export const selectCourses = (courses: Course[]) => {
   return courses
     ?.filter((course) => {
       const startDate = dayjs(course.startDate);
@@ -15,5 +16,5 @@ export const formatCoursesData = (courses: Course[]) => {
       const bDate = dayjs(b.startDate);
       return aDate.isBefore(bDate) ? -1 : 1;
     })
-    .filter((_, i) => i < 5);
+    .slice(0, Math.min(courses.length, MAX_COURSE_COUNT));
 };

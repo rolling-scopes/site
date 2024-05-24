@@ -1,4 +1,4 @@
-import { COURSE_TITLES } from '@/data/couseTitles.data';
+import { COURSE_TITLES } from '@/data/courseTitles.data';
 import { AngularIcon, AwsLogo, HtmlIcon, JavascriptIcon, NodeJsIcon, ReactIcon } from '@/icons';
 
 export const icons = {

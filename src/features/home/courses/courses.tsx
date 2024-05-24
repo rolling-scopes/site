@@ -1,6 +1,6 @@
-import { formatCoursesData } from './lib/formatCoursesData';
 import { getCourseIcon } from './lib/getCourseIcon';
 import { IconsTitle } from './lib/icons.data';
+import { selectCourses } from './lib/selectCourses';
 import { CourseCard } from './ui/CourseCard';
 import { Button } from '@/app/components';
 import { useWindowSize } from '@/app/hooks';
@@ -13,7 +13,7 @@ export const Courses = () => {
   const size = useWindowSize();
   const laptopScreenBreakPoint = 1440;
   const tabletScreenBreakPoint = 810;
-  const coursesData = formatCoursesData(courses);
+  const coursesData = selectCourses(courses);
 
   let buttonText = 'More details';
   if (size.width <= tabletScreenBreakPoint) {
