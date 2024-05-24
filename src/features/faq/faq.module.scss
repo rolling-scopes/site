@@ -3,22 +3,16 @@
     font-size: 16px;
   }
 
-  .content {
+  .info-wrapper {
     .list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
       @include media-tablet {
         font-size: 18px;
         font-weight: 400;
         line-height: 28px;
       }
-
-      display: flex;
-      flex-direction: column;
-      gap: 26px;
-
-      font-size: 20px;
-      line-height: 28px;
-      color: $color-gray-600;
-      letter-spacing: 0;
 
       .question {
         display: block;
@@ -26,12 +20,14 @@
         font-weight: $font-weight-medium;
       }
     }
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
 
-    &.info-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+    font-size: 20px;
+    line-height: 28px;
+    color: $color-gray-600;
+    letter-spacing: 0;
   }
 }
 
