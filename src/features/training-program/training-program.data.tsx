@@ -188,8 +188,9 @@ export const contentMap: ContentMap = {
     title: 'Программа обучения',
     content: [
       <Paragraph>
-        <span>Введение в RS School:</span> Знакомство со школой, профессией JS/Front-end
-        разработчика и системой контроля версий Git.
+        <span>Введение в RS School:</span>
+        <br /> Знакомство со школой, профессией JS/Front-end разработчика и системой контроля версий
+        Git.
       </Paragraph>,
       <Paragraph>
         <span>Основы веб-разработки:</span>
