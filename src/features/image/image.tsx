@@ -17,7 +17,7 @@ const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
   const [sizes, setSizes] = useState(() => (IS_DEV ? undefined : generateSizes()));
 
   const isLazy = lazy === 'true';
-  const loading: LoadingAttr = isLazy ? 'lazy' : 'eager';
+  const loading: LoadingAttr = IS_DEV ? 'eager' : isLazy ? 'lazy' : 'eager';
   const fetchPriority: FetchPriorityAttr = isLazy ? 'low' : 'high';
   const decoding: DecodingAttr = isLazy ? 'async' : 'auto';
   const srcAttr = IS_DEV ? src : srcWebp;
