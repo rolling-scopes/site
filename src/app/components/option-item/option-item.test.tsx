@@ -27,7 +27,7 @@ describe('OptionItem component', () => {
       />,
     );
 
-    const button = screen.getByRole('link', { name: /My Button/gi });
+    const button = screen.getByRole('link', { name: /My Button/i });
     expect(button).toBeInTheDocument();
     expect(button).toHaveAttribute('href', 'http://my-link.com');
     expect(button).toHaveAttribute('target', '_blank');
