@@ -12,7 +12,7 @@ export const Support = () => (
         <Title text="Support Us" type={TitleType.Big} hasAsterisk={false} hasLines={true} />
         <Subtitle text="Your donations help us cover hosting, domains, licenses, and advertising for courses and events. Every donation, big or small, helps!" />
         <Subtitle text="Thank you for your support!" />
-        <LinkCustom href="https://opencollective.com/rsschool" target="_blank">
+        <LinkCustom href="https://opencollective.com/rsschool" button={true} target="_blank">
           Donate now{' '}
         </LinkCustom>
       </div>

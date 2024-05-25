@@ -46,7 +46,12 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
           <Title text={`${altTitle || title} Course`} />
           {type && <Subtitle text={type} type="course-main" />}
           <DateLang startDate={startDate} language={language} mode={mode} type="main" />
-          <LinkCustom href={enroll} outlined={true} invertIconColor={true} target="_blank">
+          <LinkCustom
+            href={enroll}
+            button={true}
+            outlined={true}
+            invertIconColor={true}
+            target="_blank">
             {localizedContent[lang].linkLabel}
           </LinkCustom>
         </div>

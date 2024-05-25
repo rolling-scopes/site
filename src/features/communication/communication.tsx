@@ -1,5 +1,4 @@
-import { Paragraph, Subtitle, Title } from '@/app/components';
-import ExternalLink from '@/app/components/externalLink/external-link';
+import { LinkCustom, Paragraph, Subtitle, Title } from '@/app/components';
 import { CourseNames, DISCORD_LINKS, RS_DOCS_COMMUNICATION_LINK } from '@/data/communication.data';
 import { DiscordLogo } from '@/icons/discord-logo';
 
@@ -49,18 +48,16 @@ export const Communication = ({ courseName, lang = 'en' }: RequiredProps) => {
             <Subtitle text={localizedContent[lang].subTitle} />
             <Paragraph>
               {localizedContent[lang].firstParagraphFirstHalf}{' '}
-              <ExternalLink
-                href={DISCORD_LINKS[courseName]}
-                text={localizedContent[lang].discordLink}
-              />{' '}
+              <LinkCustom href={DISCORD_LINKS[courseName]}>
+                {localizedContent[lang].discordLink}
+              </LinkCustom>{' '}
               {localizedContent[lang].firstParagraphSecondHalf}
             </Paragraph>
             <Paragraph>
               {localizedContent[lang].secondParagraphFirstHalf}{' '}
-              <ExternalLink
-                href={RS_DOCS_COMMUNICATION_LINK}
-                text={localizedContent[lang].rsDocsLink}
-              />
+              <LinkCustom href={RS_DOCS_COMMUNICATION_LINK} target="_blank">
+                {localizedContent[lang].rsDocsLink}
+              </LinkCustom>
               {localizedContent[lang].secondParagraphSecondHalf}
             </Paragraph>
           </div>

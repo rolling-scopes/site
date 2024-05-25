@@ -27,7 +27,7 @@ export const Requirements = () => {
             </ul>
           </div>
         </div>
-        <LinkCustom href="https://app.rs.school/registry/mentor" target="_blank">
+        <LinkCustom href="https://app.rs.school/registry/mentor" button={true} target="_blank">
           Register as a mentor
         </LinkCustom>
       </div>

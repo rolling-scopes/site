@@ -17,7 +17,7 @@ export const Merch = () => (
           where you will find all merch collections and can print your own Rolling Scopes t-shirts,
           stickers etc.
         </Paragraph>
-        <LinkCustom href="https://sloths.rs.school/" target="_blank">
+        <LinkCustom href="https://sloths.rs.school/" button={true} target="_blank">
           Discover merch assets{' '}
         </LinkCustom>
       </div>

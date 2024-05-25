@@ -30,7 +30,7 @@ export const Hero = () => {
         <div className="tags-container">
           {tags.map(({ id, label }, index) => (
             <div className="tag-container" key={id}>
-              <LinkCustom href={`#${id}`} outlined={true} rounded={true} icon={false}>
+              <LinkCustom href={`#${id}`} button={true} outlined={true} rounded={true} icon={false}>
                 {label}
               </LinkCustom>
               {index !== tags?.length - 1 && <TagDivider />}

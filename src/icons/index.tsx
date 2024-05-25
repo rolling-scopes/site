@@ -18,4 +18,5 @@ export { ReactIcon } from './react-icon';
 export { RsBanner } from './rs-banner';
 export { TeachItForwardIcon } from './teach-It-forward-icon';
 export { TelegramIcon } from './telegram';
+export { TextLinkIcon } from './text-link-icon';
 export { YouTubeIcon } from './youtube';

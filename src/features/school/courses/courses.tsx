@@ -44,7 +44,9 @@ export const Courses = () => {
         <div className="column-2">
           <div className="courses">
             {coursesContent}
-            <LinkCustom href="./courses/">Go to courses </LinkCustom>
+            <LinkCustom href="./courses/" button={true}>
+              Go to courses{' '}
+            </LinkCustom>
           </div>
           <figure className="image">
             <RsBanner />
