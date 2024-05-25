@@ -7,10 +7,6 @@ test('Community page full screenshots (match or capture if not exist)', async ({
   await expect(page).toHaveScreenshot('community.png', {
     fullPage: true,
     timeout: 10000,
-    mask: [
-      page.getByTestId('places'),
-      page.getByTestId('courses-list'),
-      page.getByTestId('next-events'),
-    ],
+    mask: [page.getByTestId('places'), page.getByTestId('next-events')],
   });
 });
