@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { DropdownMenu } from './dropdown';
+import { DropdownMenu } from '../dropdown/dropdown';
 import { DropdownArrow } from '@/icons/dropdown-arrow';
+
+import styles from './nav-item.module.scss';
 
 type NavItemProps = {
   label: string;
@@ -18,18 +20,23 @@ export const NavItem = ({ label, href, dropdown = false }: NavItemProps) => {
   return (
     <>
       {href && !dropdown ? (
-        <NavLink className="menu-item" to={href} end>
-          <p className="label">{label}</p>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? `${styles.menuItem} ${styles.active}` : styles.menuItem
+          }
+          to={href}
+          end>
+          <p className={styles.label}>{label}</p>
         </NavLink>
       ) : (
         <>
           <p
-            className={`menu-item dropdown-toggle ${isDropdownOpen ? 'rotate' : ''}`}
+            className={`${styles.menuItem} ${styles.dropdownToggle} ${isDropdownOpen ? styles.rotate : ''}`}
             data-outside-click-ignore
             onMouseLeave={onClose}
             onMouseEnter={onOpen}>
-            <span className="label">{label}</span>
-            <span className="dropdown-arrow">
+            <span className={styles.label}>{label}</span>
+            <span className={styles.dropdownArrow}>
               <DropdownArrow />
             </span>
           </p>

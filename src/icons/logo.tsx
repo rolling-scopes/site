@@ -3,7 +3,7 @@ import logo from '@/assets/svg/rss-logo.svg';
 import Image from '@/features/image';
 
 interface LogoProps {
-  type: 'navbar' | 'footer';
+  type: 'header' | 'footer';
 }
 
 export const Logo = ({ type }: LogoProps) => {
