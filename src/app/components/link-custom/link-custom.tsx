@@ -14,7 +14,6 @@ type LinkCustomProps = React.DetailedHTMLProps<
   rounded?: boolean;
   icon?: boolean;
   invertIconColor?: boolean;
-  textRegular?: boolean;
   className?: string;
 };
 
@@ -26,16 +25,13 @@ export const LinkCustom = ({
   rounded = false,
   icon = true,
   invertIconColor = false,
-  textRegular = false,
   className = '',
   ...props
 }: LinkCustomProps) => {
   const cx = classNames.bind(styles);
 
   const linkClassName = cx('button', [size], outlined ? 'outlined' : 'colored', {
-    text: !icon,
-    regular: textRegular,
-    rounded: rounded,
+    rounded,
   });
 
   return (
