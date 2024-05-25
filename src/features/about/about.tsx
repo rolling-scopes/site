@@ -25,11 +25,11 @@ interface AboutProps {
 const localizedContent = {
   en: {
     title: 'About the course',
-    buttonLabel: 'Become a student',
+    linkLabel: 'Become a student',
   },
   ru: {
     title: 'О курсе',
-    buttonLabel: 'Cтать студентом',
+    linkLabel: 'Cтать студентом',
   },
 };
 
@@ -53,11 +53,9 @@ export const About = ({ courseName, lang = 'en' }: AboutProps) => {
       <div className="course-about content">
         <Title text={localizedContent[lang].title} />
         <InfoGrid items={infoList} hasTitle />
-        <LinkCustom
-          label={localizedContent[lang].buttonLabel}
-          href={course.enroll}
-          target="_blank"
-        />
+        <LinkCustom href={course.enroll} target="_blank">
+          {localizedContent[lang].linkLabel}
+        </LinkCustom>
       </div>
     </section>
   );

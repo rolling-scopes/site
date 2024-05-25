@@ -43,7 +43,7 @@ describe('Courses', () => {
   });
 
   it('renders the Go to RS School button', () => {
-    const goButton = screen.getByText('Go to RS School');
+    const goButton = screen.getByText('Go to courses');
     expect(goButton).toBeInTheDocument();
   });
 

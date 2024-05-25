@@ -47,14 +47,9 @@ export const CourseCard = ({
           </div>
         </div>
         <div className="rs-course-card__right">
-          <LinkCustom
-            label="View details"
-            href={detailsUrl}
-            size="small"
-            arrowSize={16}
-            arrowColor="black"
-            textRegular={true}
-          />
+          <LinkCustom href={detailsUrl} size="small" invertIconColor={true} textRegular={true}>
+            View details
+          </LinkCustom>
         </div>
       </div>
     </div>

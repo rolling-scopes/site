@@ -22,7 +22,7 @@ describe('OptionItem component', () => {
       <OptionItem
         title="My Title"
         description="My Description"
-        buttonLabel="My Button"
+        linkLabel="My Button"
         href="http://my-link.com"
       />,
     );

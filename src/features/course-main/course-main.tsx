@@ -16,10 +16,10 @@ interface CourseMainProps {
 
 const localizedContent = {
   en: {
-    buttonLabel: 'Enroll',
+    linkLabel: 'Enroll',
   },
   ru: {
-    buttonLabel: 'Присоединиться',
+    linkLabel: 'Присоединиться',
   },
 };
 
@@ -46,13 +46,9 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
           <Title text={`${altTitle || title} Course`} />
           {type && <Subtitle text={type} type="course-main" />}
           <DateLang startDate={startDate} language={language} mode={mode} type="main" />
-          <LinkCustom
-            label={localizedContent[lang].buttonLabel}
-            href={enroll}
-            outlined={true}
-            arrowColor="black"
-            target="_blank"
-          />
+          <LinkCustom href={enroll} outlined={true} invertIconColor={true} target="_blank">
+            {localizedContent[lang].linkLabel}
+          </LinkCustom>
         </div>
       </div>
     </main>

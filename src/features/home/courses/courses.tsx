@@ -56,11 +56,11 @@ const courses: CourseProps[] = [
 export const Courses = () => {
   const size = useWindowSize();
 
-  let buttonText = 'More details';
+  let linkText = 'More details';
   if (size.width <= 810) {
-    buttonText = '';
+    linkText = '';
   } else if (size.width <= 1440) {
-    buttonText = 'More';
+    linkText = 'More';
   }
 
   return (
@@ -77,11 +77,13 @@ export const Courses = () => {
                   <div className="date">{`${startDate} • ${language}`}</div>
                 </div>
                 <div className="details-container">
-                  <LinkCustom label={buttonText} href={href} size="small" arrowColor="black" />
+                  <LinkCustom href={href} size="small" invertIconColor={true}>
+                    {linkText}
+                  </LinkCustom>
                 </div>
               </div>
             ))}
-            <LinkCustom label="Go to RS School " href="https://rs.school/" />
+            <LinkCustom href="/courses">Go to courses </LinkCustom>
           </div>
           <div className="image">
             <RsBanner />

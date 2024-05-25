@@ -8,19 +8,19 @@ describe('LinkCustom', () => {
   const href = 'http://example.com';
 
   it('renders without crashing', () => {
-    renderWithRouter(<LinkCustom label={label} href={href} />);
+    renderWithRouter(<LinkCustom href={href}>{label}</LinkCustom>);
     expect(screen.getByText(label)).toBeDefined();
   });
 
   it('displays the correct label text', () => {
-    renderWithRouter(<LinkCustom label={label} href={href} />);
+    renderWithRouter(<LinkCustom href={href}>{label}</LinkCustom>);
     expect(screen.getByText(label)).toBeDefined();
   });
 
   it('renders correctly when given right props', () => {
     const label = 'Test Label';
     const href = 'http://test.com';
-    const { getByRole } = renderWithRouter(<LinkCustom label={label} href={href} />);
+    const { getByRole } = renderWithRouter(<LinkCustom href={href}>{label}</LinkCustom>);
     const link = getByRole('link');
 
     expect(link).toHaveAttribute('href', href);
@@ -28,7 +28,7 @@ describe('LinkCustom', () => {
   });
 
   it('should have attribute', () => {
-    const { getByRole } = renderWithRouter(<LinkCustom label={label} href={href} />);
+    const { getByRole } = renderWithRouter(<LinkCustom href={href}>{label}</LinkCustom>);
     const link = getByRole('link');
 
     expect(link).toHaveAttribute('rel', 'noreferrer');

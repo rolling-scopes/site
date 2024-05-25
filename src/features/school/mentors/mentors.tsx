@@ -16,11 +16,9 @@ export const Mentors = () => {
             Over the past few years, over 1500+ people have successfully completed our six month
             training program."
           />
-          <LinkCustom
-            label="Become a mentor"
-            href="https://app.rs.school/registry/mentor"
-            target="_blank"
-          />
+          <LinkCustom href="https://app.rs.school/registry/mentor" target="_blank">
+            Become a mentor
+          </LinkCustom>
         </div>
         <div className="picture">
           <Image src={mentorImg} alt="Sloth - mascot dressed as a detective" />

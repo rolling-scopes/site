@@ -1,4 +1,5 @@
 export { AngularIcon } from './angular-icon';
+export { ArrowIcon } from './arrow-icon';
 export { AwsLogo } from './aws';
 export { EmailIcon } from './email';
 export { EpamLogo } from './epam';
@@ -7,7 +8,6 @@ export { GithubLogo } from './github';
 export { HtmlIcon } from './html-icon';
 export { InstagramIcon } from './instagram';
 export { JetBrainsLogo } from './jetbrains';
-export { LinkArrowIcon } from './link-arrow';
 export { LinkedInIcon } from './linkedIn';
 export { Logo } from './logo';
 export { NodeJsIcon } from './nodejs-icon';
