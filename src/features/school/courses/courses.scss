@@ -1,9 +1,10 @@
 .courses {
   .title {
     margin-top: 24px;
+    margin-bottom: 0;
 
     font-size: 36px;
-    font-weight: 500;
+    font-weight: $font-weight-medium;
     line-height: 44px;
     letter-spacing: 0;
   }
@@ -25,7 +26,7 @@
 
     padding: 0 120px 40px;
 
-    & .image {
+    .image {
       @include media-laptop {
         margin-top: 24px;
       }
@@ -81,24 +82,26 @@
           text-align: left;
 
           .name {
-            font-family: Inter-Medium, Inter, sans-serif;
+            margin-top: 0;
+            margin-bottom: 0;
+
             font-size: 18px;
-            font-weight: 500;
+            font-weight: $font-weight-medium;
             line-height: 24px;
             color: $color-black;
           }
 
           .date {
             margin-top: 8px;
+            margin-bottom: 0;
 
-            font-family: Inter, sans-serif;
             font-size: 14px;
             line-height: 20px;
             color: $color-gray-600;
           }
         }
 
-        & .details-container {
+        .details-container {
           @extend %transition-all;
 
           cursor: pointer;
@@ -120,11 +123,11 @@
 
           border-radius: 0;
 
-          & a {
+          a {
             text-decoration: none;
           }
 
-          & .details {
+          .details {
             @extend %transition-all;
 
             @include media-hover {
@@ -151,7 +154,7 @@
             background-color: #eee;
             border-radius: 9999px;
 
-            & .label {
+            .label {
               position: relative;
 
               flex-shrink: 0;
@@ -160,7 +163,6 @@
               height: auto; /* 16px */
               margin-right: 8px;
 
-              font-family: Inter-Medium, Inter, sans-serif;
               font-size: 14px;
               font-weight: 500;
               font-style: normal;
@@ -174,7 +176,7 @@
         }
       }
 
-      & .button {
+      .button {
         margin-top: 24px;
       }
     }

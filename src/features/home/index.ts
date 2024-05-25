@@ -1,13 +1,10 @@
 export { About } from './about';
-export { Alumni } from './alumni';
 export { Community } from './community';
 export { Contribute } from './contribute';
-export { Courses } from './courses';
 export { Events } from './events';
 export { Hero } from './hero';
 export { Merch } from './merch';
 export { Numbers } from './numbers';
 export { Pictures } from './pictures';
-export { School } from './school';
 export { Speakers } from './speakers';
 export { Support } from './support';

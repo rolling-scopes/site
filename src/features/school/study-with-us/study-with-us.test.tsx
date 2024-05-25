@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { studyOptions } from './constants';
-import { School } from './school';
+import { StudyWithUs } from './study-with-us';
 
 describe('School Component', () => {
   beforeEach(() => {
-    render(<School />);
+    render(<StudyWithUs />);
   });
 
   it('renders the component title correctly', () => {
