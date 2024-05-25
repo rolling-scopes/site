@@ -6,6 +6,6 @@ test('Courses page full screenshots (match or capture if not exist)', async ({ p
   await expect(page).toHaveScreenshot('courses.png', {
     fullPage: true,
     timeout: 10000,
-    mask: [page.getByTestId('rs-courses')],
+    mask: [page.getByTestId('courses-fancy')],
   });
 });

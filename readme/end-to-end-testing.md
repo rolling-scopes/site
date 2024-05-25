@@ -23,3 +23,9 @@ When you first start testing without samples, the library will create them indep
 For ease of testing and checking its results, the library has a user interface, which can be launched with the command `npx playwright test --ui`.
 
 <img src="./assets/UI.jpg" alt="image">
+
+# Install new browsers
+
+npx playwright install
+
+port 4137
