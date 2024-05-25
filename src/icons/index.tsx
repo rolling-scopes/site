@@ -7,6 +7,7 @@ export { FacebookIcon } from './facebook';
 export { GithubLogo } from './github';
 export { HtmlIcon } from './html-icon';
 export { InstagramIcon } from './instagram';
+export { JavascriptIcon } from './javascript-icon';
 export { JetBrainsLogo } from './jetbrains';
 export { LinkedInIcon } from './linkedIn';
 export { Logo } from './logo';
