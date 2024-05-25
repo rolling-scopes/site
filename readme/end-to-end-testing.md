@@ -1,31 +1,46 @@
-# Reasons for Implementation
+## Reasons for Implementation
 
-The project is developed in such a way that each new feature, after being approved by colleagues, is directly merged into the main branch and immediately goes into production. However, the developers faced a problem: not all bugs in the appearance of the application (missing elements, shifted images) could be quickly detected manually.
+The project ensures that each new feature, once approved, is merged into the main branch and deployed to production. However, visual bugs (missing elements, shifted images) couldn't always be quickly detected manually. To address this, end-to-end testing with Playwright was implemented.
 
-To solve this problem, end-to-end testing was implemented using Playwright.
+## How it works (briefly)
 
-## How it works
+Before pushing changes to GitHub, developers can run end-to-end tests with `npx playwright test`. Playwright starts a server with the modified code, takes full-page screenshots, and compares them with reference images. Discrepancies result in test failures, with comparison results saved in the `src/__tests__/visualTesting/results` folder, helping identify and fix issues.
 
-At this stage, testing works as follows: before sending changes to GitHub, developer may run end-to-end testing (`npx playwright test`).
+## Installation, configuring and preparing
 
-During end-to-end testing, Playwright starts the server, using the modified developer's code, takes screenshots of the full pages of the application, and compares them with reference samples, which are already stored in the repository. If discrepancies are found, the test exits with an error and the results of comparing the old and new appearance of the site is saved in `src/__tests__/visualTesting/results` folder of the repository. This allows determining exactly where the problem arose, and eliminate it.
+- `npm install`: make sure that all dependencies are installed;
+- `npx playwright install`: if you use Playwright for the first time, installing browser's engines is required;
+- make sure Vite develop server is able to use `localhost:5173` port. Before testing Playwright runs dev server automatically and then goes to the http://localhost:5173 page.
 
-<img src="./assets/origin-diff.png" alt="image">
+There are no any other configurations and preparations for testing.
 
-## In case the site has undergone intentional changes
+## Typical Use Cases for Beginners
 
-If the site has undergone intentional changes in appearance, and the developer getting an error realizes that the changes in the design are not a bug, it is enough for the developer to delete the folder with reference samples (for example, `src/__tests__/visualTesting/navbar.spec.ts-snapshots`), and run end-to-end testing using the command `npx playwright test`.
+### Detecting Visual Bugs Using User Interface
 
-When you first start testing without samples, the library will create them independently.
+- run `npx playwright test --ui`;
+- choose browsers for testing and run any test you need separately or all the tests at once
 
-## For ease of testing
+<img src="./assets/end-to-end-testing/UI.jpg" alt="image">
 
-For ease of testing and checking its results, the library has a user interface, which can be launched with the command `npx playwright test --ui`.
+- if there are any problems whith screenshots comparison, go to `src/__tests__/visualTesting/results` and watch the results like this:
 
-<img src="./assets/UI.jpg" alt="image">
+<img src="./assets/end-to-end-testing/origin-diff.png" alt="image">
 
-# Install new browsers
+### Detecting Visual Bugs Using Terminal
 
-npx playwright install
+- run `npx playwright test` and wait for the results;
+- if there are any problems whith screenshots comparison, go to `src/__tests__/visualTesting/results` and watch the results.
 
-port 4137
+### Update screenshots
+
+When intentional design changes cause test failures, to create new references use one of the following ways:
+
+- `npx playwright test --update-snapshots`: updates all the screenshots across the project;
+- to update one or several screenshots only, please delete outdated reference images from the according folder (`src/__tests__/visualTesting/[NAME_OF_THE_TEST].spec.ts-snapshots`) and rerun tests again. On testing without samples, Playwright firstly will create them from your code.
+
+## Troubleshooting
+
+### Timeout errors
+
+When you get `Timeout [number]ms exceeded` error, it makes sence to rerun tests again or run falling test separately using UI. In most cases running the only test prevents appearing such an error.
