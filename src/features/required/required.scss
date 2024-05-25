@@ -6,15 +6,6 @@
       gap: 16px;
 
       .column-2 {
-        .will-learn {
-          & article {
-            margin-top: 20px;
-          }
-          & article:first-child {
-            margin-top: 0;
-          }
-        }
-
         @include media-laptop {
           gap: 5rem;
         }
@@ -43,6 +34,16 @@
         gap: 8rem;
         align-items: start;
         justify-content: flex-start;
+
+        .will-learn {
+          & article {
+            margin-top: 20px;
+          }
+
+          & article:first-child {
+            margin-top: 0;
+          }
+        }
 
         & > * {
           flex: 1;
