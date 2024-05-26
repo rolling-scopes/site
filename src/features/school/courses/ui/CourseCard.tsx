@@ -26,7 +26,7 @@ export const CourseCard = ({
       </div>
       <div className="details-container">
         <LinkCustom href={detailsUrl} button={true} size="small" rounded={true}>
-          {buttonText} <ArrowIcon size="16px" invertIconColor={true} />
+          {buttonText} <ArrowIcon size="16px" invertColor={true} />
         </LinkCustom>
       </div>
     </section>

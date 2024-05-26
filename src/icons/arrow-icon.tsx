@@ -3,11 +3,11 @@ import Image from '@/features/image';
 
 export const ArrowIcon = ({
   size = '24px',
-  invertIconColor = false,
+  invertColor = false,
 }: {
   size?: string;
-  invertIconColor?: boolean;
+  invertColor?: boolean;
 }) => {
-  const filter: string = invertIconColor ? 'invert(100%)' : 'opacity(100%)';
+  const filter: string = invertColor ? 'invert(100%)' : 'opacity(100%)';
   return <Image src={arrow} alt="" height={size} width={size} style={{ filter }} />;
 };

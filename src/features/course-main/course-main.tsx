@@ -48,7 +48,7 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
           {type && <Subtitle text={type} type="course-main" />}
           <DateLang startDate={startDate} language={language} mode={mode} type="main" />
           <LinkCustom href={enroll} button={true} outlined={true} target="_blank">
-            {localizedContent[lang].linkLabel} <ArrowIcon invertIconColor={true} />
+            {localizedContent[lang].linkLabel} <ArrowIcon invertColor={true} />
           </LinkCustom>
         </div>
       </div>
