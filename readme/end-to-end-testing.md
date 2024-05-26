@@ -78,7 +78,7 @@ If intentional changes affect the site's appearance, update the reference images
 
 ## 🆘Troubleshooting and Errors
 
-### 🗐Screenshot Comparison Failed
+### 🗐 Screenshot Comparison Failed
 
 When tests fail, review the error messages and comparison images in the `src/__tests__/visualTesting/results` folder to understand what went wrong. Common issues include layout shifts, missing elements, or unintended changes in styling.
 
