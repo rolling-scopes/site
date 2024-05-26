@@ -1,4 +1,5 @@
 import { LinkCustom } from '../link-custom';
+import { ArrowIcon } from '@/icons';
 
 import './option-item.scss';
 
@@ -16,14 +17,8 @@ export const OptionItem = ({ title, description, linkLabel, href = '' }: OptionI
       {description}
     </p>
     {linkLabel && (
-      <LinkCustom
-        href={href}
-        button={true}
-        size="medium"
-        outlined={true}
-        invertIconColor={true}
-        target="_blank">
-        {linkLabel}
+      <LinkCustom href={href} button={true} size="medium" outlined={true} target="_blank">
+        {linkLabel} <ArrowIcon size="16px" invertIconColor={true} />
       </LinkCustom>
     )}
   </div>

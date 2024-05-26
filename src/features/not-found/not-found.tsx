@@ -2,6 +2,7 @@ import { LinkCustom, Paragraph } from '@/app/components';
 import { useTitle } from '@/app/hooks';
 import notFoundImg from '@/assets/404.webp';
 import Image from '@/features/image';
+import { ArrowIcon } from '@/icons';
 
 import './not-found.scss';
 
@@ -18,7 +19,7 @@ export const NotFound = () => {
         homepage.
       </Paragraph>
       <LinkCustom href="/" button={true}>
-        Go back home
+        Go back home <ArrowIcon />
       </LinkCustom>
     </main>
   );

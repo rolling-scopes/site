@@ -1,5 +1,6 @@
 import { LinkCustom, Paragraph, Subtitle, Title } from '@/app/components';
 import { CourseNames, DISCORD_LINKS, RS_DOCS_COMMUNICATION_LINK } from '@/data/communication.data';
+import { TextLinkIcon } from '@/icons';
 import { DiscordLogo } from '@/icons/discord-logo';
 
 import './communication.scss';
@@ -48,15 +49,15 @@ export const Communication = ({ courseName, lang = 'en' }: RequiredProps) => {
             <Subtitle text={localizedContent[lang].subTitle} />
             <Paragraph>
               {localizedContent[lang].firstParagraphFirstHalf}{' '}
-              <LinkCustom href={DISCORD_LINKS[courseName]}>
-                {localizedContent[lang].discordLink}
+              <LinkCustom href={DISCORD_LINKS[courseName]} target="_blank">
+                {localizedContent[lang].discordLink} <TextLinkIcon />
               </LinkCustom>{' '}
               {localizedContent[lang].firstParagraphSecondHalf}
             </Paragraph>
             <Paragraph>
               {localizedContent[lang].secondParagraphFirstHalf}{' '}
               <LinkCustom href={RS_DOCS_COMMUNICATION_LINK} target="_blank">
-                {localizedContent[lang].rsDocsLink}
+                {localizedContent[lang].rsDocsLink} <TextLinkIcon />
               </LinkCustom>
               {localizedContent[lang].secondParagraphSecondHalf}
             </Paragraph>

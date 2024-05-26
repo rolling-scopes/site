@@ -3,9 +3,10 @@ import { IconsTitle } from './lib/icons.data';
 import { selectCourses } from './lib/selectCourses';
 import { CourseCard } from './ui/CourseCard';
 import { LinkCustom } from '@/app/components';
+import { ROUTES } from '@/app/const';
 import { useWindowSize } from '@/app/hooks';
 import { courses } from '@/app/services/data';
-import { RsBanner } from '@/icons';
+import { ArrowIcon, RsBanner } from '@/icons';
 
 import './courses.scss';
 
@@ -44,8 +45,8 @@ export const Courses = () => {
         <div className="column-2">
           <div className="courses">
             {coursesContent}
-            <LinkCustom href="./courses/" button={true}>
-              Go to courses{' '}
+            <LinkCustom href={ROUTES.COURSES} button={true}>
+              Go to courses <ArrowIcon />
             </LinkCustom>
           </div>
           <figure className="image">

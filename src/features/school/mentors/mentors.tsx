@@ -1,6 +1,8 @@
 import { LinkCustom, Subtitle, Title, TitleType } from '@/app/components';
+import { LINKS } from '@/app/const';
 import mentorImg from '@/assets/mentors-wanted.webp';
 import Image from '@/features/image';
+import { ArrowIcon } from '@/icons';
 
 import './mentors.scss';
 
@@ -16,8 +18,8 @@ export const Mentors = () => {
             Over the past few years, over 1500+ people have successfully completed our six month
             training program."
           />
-          <LinkCustom href="https://app.rs.school/registry/mentor" button={true} target="_blank">
-            Become a mentor
+          <LinkCustom href={LINKS.BECOME_MENTOR} button={true} target="_blank">
+            Become a mentor <ArrowIcon />
           </LinkCustom>
         </div>
         <div className="picture">

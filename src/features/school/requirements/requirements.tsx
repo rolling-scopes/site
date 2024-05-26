@@ -1,4 +1,6 @@
 import { LinkCustom } from '@/app/components';
+import { LINKS } from '@/app/const';
+import { ArrowIcon } from '@/icons';
 
 import './requirements.scss';
 
@@ -27,8 +29,8 @@ export const Requirements = () => {
             </ul>
           </div>
         </div>
-        <LinkCustom href="https://app.rs.school/registry/mentor" button={true} target="_blank">
-          Register as a mentor
+        <LinkCustom href={LINKS.BECOME_MENTOR} button={true} target="_blank">
+          Register as a mentor <ArrowIcon />
         </LinkCustom>
       </div>
     </section>

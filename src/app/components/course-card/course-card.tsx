@@ -3,6 +3,7 @@ import { type Course } from '@/app/types';
 import micIcon from '@/assets/icons/mic.svg';
 import noteIcon from '@/assets/icons/note-icon.svg';
 import Image from '@/features/image';
+import { ArrowIcon } from '@/icons';
 
 import './course-card.scss';
 
@@ -47,8 +48,8 @@ export const CourseCard = ({
           </div>
         </div>
         <div className="rs-course-card__right">
-          <LinkCustom href={detailsUrl} button={true} size="small" invertIconColor={true}>
-            View details
+          <LinkCustom href={detailsUrl} button={true} size="small">
+            View details <ArrowIcon size="16px" invertIconColor={true} />
           </LinkCustom>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { InfoGrid } from './components';
 import { LinkCustom, Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
 import { type Course } from '@/app/types';
+import { ArrowIcon } from '@/icons';
 
 import './about.scss';
 
@@ -54,7 +55,7 @@ export const About = ({ courseName, lang = 'en' }: AboutProps) => {
         <Title text={localizedContent[lang].title} />
         <InfoGrid items={infoList} hasTitle />
         <LinkCustom href={course.enroll} button={true} target="_blank">
-          {localizedContent[lang].linkLabel}
+          {localizedContent[lang].linkLabel} <ArrowIcon />
         </LinkCustom>
       </div>
     </section>

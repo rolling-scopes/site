@@ -5,6 +5,7 @@ import { useTitle } from '@/app/hooks';
 import { selectCourse } from '@/app/hooks/use-course-by-title/utils/select-course.ts';
 import { Course } from '@/app/types';
 import Image from '@/features/image';
+import { ArrowIcon } from '@/icons';
 
 import styles from './course-main.module.scss';
 
@@ -46,13 +47,8 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
           <Title text={`${altTitle || title} Course`} />
           {type && <Subtitle text={type} type="course-main" />}
           <DateLang startDate={startDate} language={language} mode={mode} type="main" />
-          <LinkCustom
-            href={enroll}
-            button={true}
-            outlined={true}
-            invertIconColor={true}
-            target="_blank">
-            {localizedContent[lang].linkLabel}
+          <LinkCustom href={enroll} button={true} outlined={true} target="_blank">
+            {localizedContent[lang].linkLabel} <ArrowIcon invertIconColor={true} />
           </LinkCustom>
         </div>
       </div>

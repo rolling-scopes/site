@@ -1,7 +1,9 @@
 import { LinkCustom, Paragraph, SectionLabel, Subtitle, Title } from '@/app/components';
 
+import { LINKS } from '@/app/const';
 import image from '@/assets/merch.webp';
 import Image from '@/features/image';
+import { ArrowIcon } from '@/icons';
 
 import './merch.scss';
 
@@ -17,8 +19,8 @@ export const Merch = () => (
           where you will find all merch collections and can print your own Rolling Scopes t-shirts,
           stickers etc.
         </Paragraph>
-        <LinkCustom href="https://sloths.rs.school/" button={true} target="_blank">
-          Discover merch assets{' '}
+        <LinkCustom href={LINKS.MERCH} button={true} target="_blank">
+          Discover merch assets <ArrowIcon />
         </LinkCustom>
       </div>
       <Image className="right picture" src={image} alt="speakers-wanted" />
