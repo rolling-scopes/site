@@ -60,7 +60,7 @@
     border-radius: 9999px;
 
     &:hover {
-      background-color: rgb(84 84 84 / 40%);
+      background-color: hsla(from $color-gray-600 h s l/ $opacity-50);
     }
   }
 }
@@ -92,7 +92,7 @@
       &:hover {
         color: $color-gray-600;
         background-color: $color-white;
-        box-shadow: 0 0 16px 0 rgb(114 92 19 / 8%);
+        box-shadow: 0 0 16px 0 rgba(from (114 92 19) r g b / $opacity-8);
       }
     }
   }
