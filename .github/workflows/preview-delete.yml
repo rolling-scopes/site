@@ -2,39 +2,22 @@ name: Delete Preview
 
 on:
   pull_request:
-    branches: [master]
-
-concurrency:
-  group: pr_${{ github.head_ref }}
-  cancel-in-progress: true
-
-env:
-  NODE_VERSION: '20.x'
-  AWS_ACCESS_KEY_ID: ${{ secrets.DEPLOY_AWS_ACCESS_KEY_ID }}
-  AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_AWS_SECRET_ACCESS_KEY }}
-  AWS_REGION: 'eu-central-1'
+    branches: [main]
+    types: [closed]
 
 jobs:
   delete-preview:
-    name: delete preview
-    runs-on: ubuntu-latest
+    name: Delete Preview
     if: ${{ contains(github.event.pull_request.labels.*.name, 'preview') }}
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v3
+      - name: Trigger Preview Deletion
+        uses: peter-evans/repository-dispatch@v3
         with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: Delete Stack
-        working-directory: ./deploy
-        run: |
-          npm ci
-          npx cdk destroy --force --all -c feature=pr${{ github.event.pull_request.number }} -c deployId=${GITHUB_RUN_ID}
-
-      - name: Delete Deployment
-        uses: strumwolf/delete-deployment-environment@v2
-        with:
-          token: ${{ secrets.DELETE_ENV_TOKEN }}
-          environment: pr${{ github.event.pull_request.number }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          repository: rolling-scopes/rsschool-infra
+          event-type: delete-preview
+          client-payload: |
+            {
+              "previewId": "pr${{ github.event.pull_request.number }}"
+            }

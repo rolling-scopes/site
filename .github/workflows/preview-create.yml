@@ -1,8 +1,8 @@
-name: Create Preview
+name: Preview
 
 on:
   pull_request:
-    branches: [master]
+    branches: [main]
 
 concurrency:
   group: pr_${{ github.head_ref }}
@@ -17,7 +17,7 @@ env:
 
 jobs:
   build-rolling-scopes:
-    name: build rollingscopes.com
+    name: Build rollingscopes.com
     if: ${{ contains(github.event.pull_request.labels.*.name, 'preview') }}
     runs-on: ubuntu-latest
     steps:
@@ -28,12 +28,12 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: build
+      - name: Build
         env:
           HOST: 'https://pr${{ github.event.pull_request.number }}.rollingscopes.com'
           RS_SCHOOL_HOST: 'https://pr${{ github.event.pull_request.number }}.rs.school'
         run: |
-          npm install
+          npm ci
           npm run build
 
       - uses: jakejarvis/s3-sync-action@master
@@ -44,25 +44,27 @@ jobs:
           DEST_DIR: rolling-scopes-com-preview/pr${{ github.event.pull_request.number }}
 
   build-rs-school:
-    name: build rs.school
+    name: Build rs.school
     if: ${{ contains(github.event.pull_request.labels.*.name, 'preview') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        name: Checkout
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: build
+      - name: Build
         env:
           HOST: 'https://rs.school'
         run: |
-          npm install
+          npm ci
           npm run build
 
       - uses: jakejarvis/s3-sync-action@master
+        name: Sync to S3
         with:
           args: --cache-control max-age=300
         env:
@@ -70,32 +72,20 @@ jobs:
           DEST_DIR: rs-school-preview/pr${{ github.event.pull_request.number }}
 
   create-preview:
-    name: create preview
+    name: Create Preview
     if: ${{ contains(github.event.pull_request.labels.*.name, 'preview') }}
     runs-on: ubuntu-latest
-    needs: [rs-school, rolling-scopes]
+    needs: [build-rs-school, build-rolling-scopes]
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v3
+      - name: Trigger Preview Deployment
+        uses: peter-evans/repository-dispatch@v3
         with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: deploy
-        working-directory: ./deploy
-        run: |
-          npm ci
-          npx cdk deploy --require-approval never -c feature=pr${{ github.event.pull_request.number }} -c deployId=${GITHUB_RUN_ID}
-
-      - name: github deployment
-        uses: apalchys/deployment-action@v1.2.6
-        id: deployment
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          pr: true
-          pr_id: ${{ github.event.pull_request.number }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-          target_url: https://pr${{ github.event.pull_request.number }}.rs.school
-          environment: pr${{ github.event.pull_request.number }}
-          initial_status: success
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          repository: rolling-scopes/rsschool-infra
+          event-type: create-preview
+          client-payload: |
+            {
+              "number": ${{ github.event.pull_request.number }},
+              "ref": "${{ github.event.pull_request.head.ref }}",
+              "previewId": "pr${{ github.event.pull_request.number }}"
+            }

@@ -11,7 +11,7 @@ module.exports = {
     'plugin:css-import-order/recommended',
   ],
   plugins: ['react-refresh', 'css-import-order', 'sort-exports'],
-  ignorePatterns: ['dist', '.eslintrc.cjs', 'deploy'],
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     'sourceType': 'module',
