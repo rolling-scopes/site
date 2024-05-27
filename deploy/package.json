@@ -1,0 +1,28 @@
+{
+  "name": "site-deploy",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "cdk",
+    "format": "prettier --write .",
+    "deploy": "cdk deploy --all --profile rsschool",
+    "diff": "cdk diff --profile rsschool"
+  },
+  "devDependencies": {
+    "@types/node": "20.12.12",
+    "aws-cdk": "2.143.0",
+    "prettier": "3.2.5",
+    "tsx": "4.11.0",
+    "typescript": "5.4.5"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.143.0",
+    "constructs": "10.3.0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "printWidth": 120
+  }
+}
