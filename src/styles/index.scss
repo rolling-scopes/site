@@ -1,9 +1,10 @@
+@import './normalize';
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
   font-family: $font-primary;
 }
 
