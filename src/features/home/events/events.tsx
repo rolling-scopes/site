@@ -1,3 +1,7 @@
+import cn from 'classnames';
+import classNames from 'classnames/bind';
+import dayjs from 'dayjs';
+import { events } from './events.data';
 import {
   EventCard,
   EventCardProps,
@@ -6,40 +10,25 @@ import {
   Subtitle,
   Title,
 } from '@/app/components';
+import photo3 from '@/assets/photo-3.webp';
+import Image from '@/features/image';
+import { getActualDataList } from '@/utils';
 
-import './events.scss';
+import styles from './events.module.scss';
 
-const events: EventCardProps[] = [
-  {
-    eventType: 'Meetup',
-    title: 'Autoscaling strategies for ECS Fargate',
-    organizedBy: 'by AWS User Group',
-    organization: '3CITY / Trójmiasto',
-    date: '29 June 2023',
-    time: '18:00',
-    type: 'Offline',
-    address: 'al. Grunwaldzka 472B',
-    city: 'Gdańsk',
-    href: 'https://www.meetup.com/aws-user-group-3city/events/293689995/',
-  },
-  {
-    eventType: 'Meetup',
-    title: 'How Does the Ideal CI/CD Pipeline Look?',
-    organizedBy: 'Vilnius, Lithuania',
-    organization: 'Rolling Scopes Meetup',
-    date: '13 July 2023 2023',
-    time: '19:00',
-    type: 'Offline',
-    address: 'Vytenio Str., 18',
-    city: 'Vilnius',
-    href: 'https://www.meetup.com/the-rolling-scopes-lithuania/events/293907703/',
-  },
-];
+const cx = classNames.bind(styles);
+
+const actualEvents = getActualDataList({
+  dataList: events as EventCardProps[],
+  actualDelayInDays: 3,
+});
+
+const stub = <Image src={photo3} />;
 
 export const Events = () => (
-  <div id="events" className="events container">
-    <div className="events content">
-      <div className="info">
+  <div id="events" className={cn(cx('events'), 'container')}>
+    <div className={cn(cx('events', 'content'), 'content')}>
+      <div className={cx('info')}>
         <SectionLabel label="events & meetups" />
         <Title text="Meet us at events" hasAsterisk />
         <Subtitle text="For years we have been organizing meetups and conferences, where you can always learn something new, share your knowledge, discover new technologies, meet old and find new friends." />
@@ -48,9 +37,11 @@ export const Events = () => (
           countries.
         </Paragraph>
       </div>
-      <div className="cards">
-        {events.map((i) => (
-          <EventCard key={i.title} {...i} />
+
+      <div className={cx('cards')}>
+        {!actualEvents.length && stub}
+        {(actualEvents as EventCardProps[]).map((i) => (
+          <EventCard key={i.title} {...i} date={dayjs(i.date).format('DD MMM YYYY')} />
         ))}
       </div>
     </div>

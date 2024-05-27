@@ -1,3 +1,5 @@
+// @import '@/styles/_normalize';
+
 .events {
   &.content {
     @include media-laptop-medium {
@@ -37,6 +39,14 @@
       gap: 16px;
       align-items: center;
       justify-content: space-between;
+    }
+
+    img {
+      @include media-mobile-landscape {
+        width: 100%;
+      }
+
+      width: 500px;
     }
   }
 }
