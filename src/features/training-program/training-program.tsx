@@ -38,7 +38,7 @@ export const TrainingProgram = ({ courseName, lang = 'en' }: TrainingProgramProp
 
           {content.map((component, index) => cloneElement(component, { key: index }))}
 
-          <LinkCustom href={course?.enroll} button={true} target="_blank">
+          <LinkCustom href={course?.enroll} button target="_blank">
             {localizedContent[lang].linkLabel} <ArrowIcon />
           </LinkCustom>
         </div>

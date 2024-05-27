@@ -54,7 +54,7 @@ export const About = ({ courseName, lang = 'en' }: AboutProps) => {
       <div className="course-about content">
         <Title text={localizedContent[lang].title} />
         <InfoGrid items={infoList} hasTitle />
-        <LinkCustom href={course.enroll} button={true} target="_blank">
+        <LinkCustom href={course.enroll} button target="_blank">
           {localizedContent[lang].linkLabel} <ArrowIcon />
         </LinkCustom>
       </div>

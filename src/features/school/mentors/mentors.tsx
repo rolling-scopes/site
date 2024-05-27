@@ -18,7 +18,7 @@ export const Mentors = () => {
             Over the past few years, over 1500+ people have successfully completed our six month
             training program."
           />
-          <LinkCustom href={LINKS.BECOME_MENTOR} button={true} target="_blank">
+          <LinkCustom href={LINKS.BECOME_MENTOR} button target="_blank">
             Become a mentor <ArrowIcon />
           </LinkCustom>
         </div>

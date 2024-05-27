@@ -17,8 +17,8 @@ export const OptionItem = ({ title, description, linkLabel, href = '' }: OptionI
       {description}
     </p>
     {linkLabel && (
-      <LinkCustom href={href} button={true} size="medium" outlined={true} target="_blank">
-        {linkLabel} <ArrowIcon size="16px" invertColor={true} />
+      <LinkCustom href={href} button size="medium" outlined target="_blank">
+        {linkLabel} <ArrowIcon size="16px" invertColor />
       </LinkCustom>
     )}
   </div>
