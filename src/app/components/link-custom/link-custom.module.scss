@@ -92,7 +92,7 @@
       &:hover {
         color: $color-gray-600;
         background-color: $color-white;
-        box-shadow: 0 0 16px 0 rgba(from (114 92 19) r g b / $opacity-8);
+        box-shadow: 0 0 16px 0 rgba(from rgb(114 92 19) r g b / $opacity-8);
       }
     }
   }
