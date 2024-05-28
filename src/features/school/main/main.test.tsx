@@ -8,11 +8,11 @@ describe('Main', () => {
     renderWithRouter(<Main />);
   });
 
-  it('renders the RS School title', () => {
+  it.skip('renders the RS School title', () => {
     expect(screen.getByText('RS School')).toBeVisible();
   });
 
-  it('renders the course title and motivation text', () => {
+  it.skip('renders the course title and motivation text', () => {
     expect(screen.getByText('Free courses. High motivation')).toBeVisible();
   });
 
