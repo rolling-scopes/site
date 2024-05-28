@@ -8,8 +8,8 @@ export const Main = () => {
       <div className="school-main content">
         <div className="left">
           <div className="title-container">
-            <Title text="RS School" type={TitleType.ExtraBig} />
-            <Subtitle text="Free courses. High motivation" />
+            <Title text="RS School (Preview)" type={TitleType.ExtraBig} />
+            <Subtitle text="This is test message for preview" />
           </div>
           <h2 className="description">Connecting people, growing together, having fun</h2>
         </div>
