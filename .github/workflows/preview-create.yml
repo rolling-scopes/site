@@ -97,6 +97,5 @@ jobs:
           pr: true
           pr_id: ${{ github.event.pull_request.number }}
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          target_url: https://pr${{ github.event.pull_request.number }}.rs.school
           environment: pr${{ github.event.pull_request.number }}
           initial_status: in_progress
