@@ -6,12 +6,12 @@ import './school-menu.scss';
 
 const schoolMenuStaticLinks = [
   {
-    title: 'About RS School 2',
+    title: 'About RS School',
     detailsUrl: '/courses',
     description: 'Free online education',
   },
   {
-    title: 'Upcoming courses 2',
+    title: 'Upcoming courses',
     detailsUrl: '/courses#upcoming-courses',
     description: 'Schedule your study',
   },
