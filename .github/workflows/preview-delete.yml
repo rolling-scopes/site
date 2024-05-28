@@ -1,5 +1,4 @@
 name: Delete Preview
-description: Delete deployment preview for PR when PR is closed.
 
 on:
   pull_request:

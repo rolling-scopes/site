@@ -1,5 +1,4 @@
 name: Preview Status
-name: Set deployment status for PR when preview is deployment in a separate infra repository.
 
 on:
   repository_dispatch:
