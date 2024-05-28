@@ -3,7 +3,6 @@ import { Paragraph, Title } from '@/app/components';
 import { CourseNames } from '@/data/communication.data';
 
 import styles from './certification.module.scss';
-import './certification.scss';
 
 interface RequiredProps {
   courseName: CourseNames;
