@@ -1,0 +1,27 @@
+name: Label PR on Creation
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  add-label:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Add Label
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        LABEL_NAME="preview"
+        PR_NUMBER="${{ github.event.pull_request.number }}"
+        REPO_OWNER="${{ github.repository_owner }}"
+        REPO_NAME="${{ github.event.repository.name }}"
+
+        curl -s -X POST -H "Authorization: token ${GITHUB_TOKEN}" \
+             -H "Accept: application/vnd.github.v3+json" \
+             https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/issues/${PR_NUMBER}/labels \
+             -d "{\"labels\":[\"${LABEL_NAME}\"]}"
