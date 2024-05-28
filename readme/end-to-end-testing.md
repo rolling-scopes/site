@@ -74,7 +74,7 @@ npx playwright test --update-snapshots
 
 ### 👀 Real-time Browsing via Specified Engine
 
-You can even browse the websites using current engine. To do that, please use command:
+You can browse websites using a specific rendering engine. To do that, please use command:
 
 ```
 npx playwright open -b webkit rs.school
