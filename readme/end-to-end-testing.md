@@ -72,6 +72,22 @@ npx playwright test --update-snapshots
 
 - to update one or several screenshots only, please delete outdated reference images from the according folder (`src/__tests__/visualTesting/[NAME_OF_THE_TEST].spec.ts-snapshots`) and rerun tests again. On testing without samples, Playwright firstly will create them from your code.
 
+### 👀 Real-time Browsing via Specified Engine
+
+You can even browse the websites using current engine. To do that, please use command:
+
+```
+npx playwright open -b webkit rs.school
+```
+
+```
+npx playwright open -b chromium rs.school
+```
+
+```
+npx playwright open -b firefox rs.school
+```
+
 ## 🆕Handling Intentional Changes
 
 If intentional changes affect the site's appearance, update the reference images by deleting the old ones and rerunning the tests. The library will create new reference samples.
