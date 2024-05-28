@@ -16,7 +16,7 @@
     .list {
       @include media-tablet {
         font-size: 18px;
-        font-weight: 400;
+        font-weight: $font-weight-regular;
         line-height: 28px;
       }
 

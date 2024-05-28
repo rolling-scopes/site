@@ -24,7 +24,7 @@ export const JavaScriptPreSchoolRu = () => {
       <Certification courseName={COURSE_NAME} lang={lang} />
       <Communication courseName={COURSE_NAME} lang={lang} />
       <Faq />
-      <Trainers trainers={preSchoolRu} lang={lang}></Trainers>
+      <Trainers trainers={preSchoolRu} lang={lang} />
     </>
   );
 };

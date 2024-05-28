@@ -53,12 +53,3 @@ export const Required = ({ courseName, marked1, marked2 }: RequiredProps) => {
     </section>
   );
 };
-
-// (
-// willLearn.map((willLearn) => {
-// // <div>
-// //   <Subtitle text={willLearn.title} />
-// //   <Actions actions={willLearn.description} marked={marked2} />
-// // </div>
-// })
-// )
