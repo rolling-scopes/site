@@ -1,4 +1,5 @@
 name: Preview
+description: Create preview for PR by triggering deployment in a separate infra repository. It requires PR to have a label 'preview'.
 
 on:
   pull_request:
