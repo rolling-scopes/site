@@ -1,6 +1,11 @@
 import { Paragraph, Subtitle, Title } from '@/app/components';
 import ExternalLink from '@/app/components/externalLink/external-link';
-import { CourseNames, DISCORD_LINKS, RS_DOCS_COMMUNICATION_LINK } from '@/data/communication.data';
+import {
+  CourseNames,
+  DISCORD_LINKS,
+  RS_DOCS_COMMUNICATION_LINK,
+  RS_DOCS_TELEGRAM_CHATS_LINK,
+} from '@/data/communication.data';
 import { DiscordLogo } from '@/icons/discord-logo';
 
 import './communication.scss';
@@ -15,12 +20,15 @@ const localizedContent = {
     title: 'Communication',
     subTitle: 'Discord is the main communication channel in RS School',
     firstParagraphFirstHalf: 'Here is link for the',
-    discordLink: 'course discord server',
-    firstParagraphSecondHalf: 'where you can see latest news and chat with students.',
-    secondParagraphFirstHalf: 'More info about communication at RS School in the',
-    rsDocsLink: 'RS Docs',
+    discordLink: 'course Discord server',
+    firstParagraphSecondHalf: ', where you can see latest news and chat with students.',
+    secondParagraphFirstHalf: 'There are channels in',
+    telegramLink: 'Telegram',
     secondParagraphSecondHalf:
-      'Here you could find rules, links to other courses and Telegram channels related to your country or even city. Feel free to use it :)',
+      ' for discussing events related to your location. For example, offline lectures or just informal chats among students from the same location.',
+    thirdParagraphFirstHalf: 'Please read the information about communication in RS School in the',
+    rsDocsLink: 'RS Docs',
+    thirdParagraphSecondHalf: ', where you can find rules, descriptions of channels, FAQ.',
   },
   ru: {
     title: 'Общение',
@@ -28,11 +36,14 @@ const localizedContent = {
     firstParagraphFirstHalf: 'Вот ссылка на',
     discordLink: 'дискорд сервер курса',
     firstParagraphSecondHalf:
-      ', где вы можете посмотреть последние новости и общаться со студентами.',
-    secondParagraphFirstHalf: 'Более подробная информация об общении в RS School в',
-    rsDocsLink: 'RS Docs',
+      ', где вы можете посмотреть последние новости, задать вопросы и общаться со студентами.',
+    secondParagraphFirstHalf: 'Также есть каналы в',
+    telegramLink: 'Телеграм',
     secondParagraphSecondHalf:
-      ', где вы можете найти правила, ссылки на другие курсы и каналы Telegram, связанные с вашей страной или даже городом. Не стесняйтесь пользоваться ими :)',
+      ' для обсуждения мероприятий, относящихся к вашему городу. Например, офлайн лекции или просто для общения студентов из одной локации.',
+    thirdParagraphFirstHalf: 'Обязательно прочитайте информацию об общении в RS School в',
+    rsDocsLink: 'RS Docs',
+    thirdParagraphSecondHalf: ', где вы можете найти правила, описание каналов, FAQ.',
   },
 };
 
@@ -58,10 +69,18 @@ export const Communication = ({ courseName, lang = 'en' }: RequiredProps) => {
             <Paragraph>
               {localizedContent[lang].secondParagraphFirstHalf}{' '}
               <ExternalLink
+                href={RS_DOCS_TELEGRAM_CHATS_LINK}
+                text={localizedContent[lang].telegramLink}
+              />
+              {localizedContent[lang].secondParagraphSecondHalf}
+            </Paragraph>
+            <Paragraph>
+              {localizedContent[lang].thirdParagraphFirstHalf}{' '}
+              <ExternalLink
                 href={RS_DOCS_COMMUNICATION_LINK}
                 text={localizedContent[lang].rsDocsLink}
               />
-              {localizedContent[lang].secondParagraphSecondHalf}
+              {localizedContent[lang].thirdParagraphSecondHalf}
             </Paragraph>
           </div>
         </div>
