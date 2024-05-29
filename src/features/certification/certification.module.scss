@@ -1,0 +1,31 @@
+.certification {
+  &.info-wrapper {
+    @include media-tablet-large {
+      flex-direction: column;
+      gap: 40px;
+      align-items: flex-start;
+      font-size: 18px;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    align-items: start;
+    justify-content: flex-start;
+
+    font-size: 20px;
+
+    .subtitle {
+      font-size: 28px;
+    }
+  }
+
+  p {
+    @include media-tablet-large {
+      font-size: 16px;
+    }
+
+    padding-top: 5px;
+    font-size: 18px;
+  }
+}

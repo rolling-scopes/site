@@ -52,7 +52,7 @@ export const Communication = ({ courseName, lang = 'en' }: RequiredProps) => {
               <ExternalLink
                 href={DISCORD_LINKS[courseName]}
                 text={localizedContent[lang].discordLink}
-              />{' '}
+              />
               {localizedContent[lang].firstParagraphSecondHalf}
             </Paragraph>
             <Paragraph>
