@@ -1,0 +1,23 @@
+name: Delete Preview
+
+on:
+  pull_request:
+    branches: [main]
+    types: [closed]
+
+jobs:
+  delete-preview:
+    name: Delete Preview
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'preview') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Preview Deletion
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          repository: rolling-scopes/rsschool-infra
+          event-type: delete-preview
+          client-payload: |
+            {
+              "previewId": "pr${{ github.event.pull_request.number }}"
+            }

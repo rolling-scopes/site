@@ -2,7 +2,22 @@ import type { Trainer } from './trainers.types';
 import preSchoolImg2 from '@/assets/mentors/a-musikhina.webp';
 import preSchoolImg1 from '@/assets/mentors/v-kavaliou.webp';
 
-export const preSchool: Trainer[] = [
+export const preSchoolRu: Trainer[] = [
+  {
+    name: 'Виктор Ковалёв',
+    role: 'EPAM, Senior Software Engineer',
+    bio: 'Это выпускник RS School, который в течение последних нескольких лет работает в EPAM в качестве Senior Software Engineer. Он принимал участие в разработке веб-приложений (JS, React) и мобильных приложений (React Native, Swift). Как выпускник RS School, который никогда не программировал до поступления на курсы, он понимает возможные трудности в процессе обучения и всегда готов помочь студентам. Он начал заниматься менторством, как только понял, что накопил достаточно знаний, чтобы поделиться ими с другими.',
+    photo: preSchoolImg1,
+  },
+
+  {
+    name: 'Анна Мусихина',
+    role: '',
+    bio: 'Самые глубокие страсти в жизни Анны – создавать крутые вещи и помогать людям. Фронтенд-разработка – это то место, где эти страсти соединяются, поэтому она полностью увлечена этим процессом. Она здесь, чтобы сделать путь каждого в мир IT немного мягче, поэтому присоединяйтесь к ее путешествию!',
+    photo: preSchoolImg2,
+  },
+];
+export const preSchoolEn: Trainer[] = [
   {
     name: 'Viktar Kavaliou',
     role: 'EPAM, Senior Software Engineer',

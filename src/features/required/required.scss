@@ -35,6 +35,16 @@
         align-items: start;
         justify-content: flex-start;
 
+        .will-learn {
+          & article {
+            margin-top: 20px;
+          }
+
+          & article:first-child {
+            margin-top: 0;
+          }
+        }
+
         & > * {
           flex: 1;
         }

@@ -1,0 +1,1 @@
+export { Certification } from './certification';
