@@ -10,9 +10,15 @@ interface RequiredProps {
 
 const localizedContent = {
   default: {
-    title: 'Certificate',
+    title: 'Certification',
     firstParagraph:
       "To earn a course certificate, you must complete all assignments, finish the final project, and achieve at least 70% of the top student's score in the course. The certificate is a recognition of your hard work and dedication.",
+    secondParagraph: '',
+  },
+  'js / front-end ru': {
+    title: 'Сертификат',
+    firstParagraph:
+      'Чтобы получить сертификат о прохождении курса вам необходимо набрать 70% от результата TOP-1 студента. Например, если в конце этапа у лучшего студента 2000 баллов, проходной для всех студентов 1400 баллов (2000 * 0.7).',
     secondParagraph: '',
   },
   'js / front-end pre-school ru': {
@@ -29,9 +35,11 @@ type LocalizedContentKey = keyof typeof localizedContent;
 const cx = classNames.bind(styles);
 
 export const Certification = ({ courseName }: RequiredProps) => {
-  const selectedContentKey =
-    courseName in localizedContent ? (courseName as LocalizedContentKey) : 'default';
-  const { title, firstParagraph, secondParagraph } = localizedContent[selectedContentKey];
+  const { title, firstParagraph, secondParagraph } =
+    courseName in localizedContent
+      ? localizedContent[courseName as LocalizedContentKey]
+      : localizedContent.default;
+
   return (
     <section className={cx('certification', 'container')}>
       <article className={cx('certification', 'content', 'info-wrapper')}>
