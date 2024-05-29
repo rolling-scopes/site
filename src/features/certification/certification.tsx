@@ -10,7 +10,7 @@ interface RequiredProps {
 
 const localizedContent = {
   default: {
-    title: 'Communication',
+    title: 'Certificate',
     firstParagraph:
       "To earn a course certificate, you must complete all assignments, finish the final project, and achieve at least 70% of the top student's score in the course. The certificate is a recognition of your hard work and dedication.",
     secondParagraph: '',
