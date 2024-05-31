@@ -42,7 +42,7 @@ export const Courses = () => {
       <section className="courses content">
         <h4 className="title">Upcoming courses</h4>
         <div className="column-2">
-          <div className="courses">
+          <div className="courses" data-testid="courses-list">
             {coursesContent}
             <Button label="Go to courses " href="./courses/" />
           </div>

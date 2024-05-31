@@ -48,7 +48,7 @@ export const Events = () => (
           countries.
         </Paragraph>
       </div>
-      <div className="cards">
+      <div className="cards" data-testid="next-events">
         {events.map((i) => (
           <EventCard key={i.title} {...i} />
         ))}
