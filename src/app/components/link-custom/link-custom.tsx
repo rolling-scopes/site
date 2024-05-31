@@ -9,9 +9,10 @@ type LinkCustomProps = DetailedHTMLProps<
   HTMLAnchorElement
 > & {
   href: string;
+  icon?: JSX.Element;
   button?: boolean;
   size?: 'large' | 'medium' | 'small';
-  outlined?: boolean;
+  variant?: 'outlined' | 'colored' | '';
   rounded?: boolean;
   className?: string;
 };
@@ -19,9 +20,10 @@ type LinkCustomProps = DetailedHTMLProps<
 export const LinkCustom = ({
   children,
   href,
+  icon = <></>,
   button = false,
   size = 'large',
-  outlined = false,
+  variant = '',
   rounded = false,
   className = '',
   ...props
@@ -29,16 +31,14 @@ export const LinkCustom = ({
   const cx = classNames.bind(styles);
 
   const linkClassName = button
-    ? cx('button', [size], {
+    ? cx('button', [size], [variant], {
         rounded,
-        outlined,
-        colored: !outlined,
       })
     : 'text-link';
 
   return (
     <Link className={cx(linkClassName, className)} to={href} {...props} rel="noreferrer">
-      {children}
+      {children} {icon}
     </Link>
   );
 };

@@ -45,8 +45,8 @@ export const Courses = () => {
         <div className="column-2">
           <div className="courses">
             {coursesContent}
-            <LinkCustom href={ROUTES.COURSES} button>
-              Go to courses <ArrowIcon />
+            <LinkCustom href={ROUTES.COURSES} icon={<ArrowIcon />} variant="colored" button>
+              Go to courses
             </LinkCustom>
           </div>
           <figure className="image">

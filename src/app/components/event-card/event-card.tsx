@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { LinkCustom } from '../link-custom';
+import { LinkCustom } from '@/app/components';
 
 import styles from './event-card.module.scss';
 
@@ -60,7 +60,7 @@ export const EventCard = ({
           <br />
           {city}
         </address>
-        <LinkCustom href={href} button size="small" target="_blank">
+        <LinkCustom href={href} variant="colored" button size="small" target="_blank">
           View details
         </LinkCustom>
       </div>

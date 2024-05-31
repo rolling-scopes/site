@@ -49,15 +49,15 @@ export const Communication = ({ courseName, lang = 'en' }: RequiredProps) => {
             <Subtitle text={localizedContent[lang].subTitle} />
             <Paragraph>
               {localizedContent[lang].firstParagraphFirstHalf}{' '}
-              <LinkCustom href={DISCORD_LINKS[courseName]} target="_blank">
-                {localizedContent[lang].discordLink} <TextLinkIcon />
+              <LinkCustom href={DISCORD_LINKS[courseName]} icon={<TextLinkIcon />} target="_blank">
+                {localizedContent[lang].discordLink}
               </LinkCustom>{' '}
               {localizedContent[lang].firstParagraphSecondHalf}
             </Paragraph>
             <Paragraph>
               {localizedContent[lang].secondParagraphFirstHalf}{' '}
-              <LinkCustom href={RS_DOCS_COMMUNICATION_LINK} target="_blank">
-                {localizedContent[lang].rsDocsLink} <TextLinkIcon />
+              <LinkCustom href={RS_DOCS_COMMUNICATION_LINK} icon={<TextLinkIcon />} target="_blank">
+                {localizedContent[lang].rsDocsLink}
               </LinkCustom>
               {localizedContent[lang].secondParagraphSecondHalf}
             </Paragraph>

@@ -25,8 +25,14 @@ export const CourseCard = ({
         <p className="date">{`${startDate} • ${language[0].toUpperCase()}`}</p>
       </div>
       <div className="details-container">
-        <LinkCustom href={detailsUrl} button size="small" rounded>
-          {buttonText} <ArrowIcon size="16px" invertColor />
+        <LinkCustom
+          href={detailsUrl}
+          icon={<ArrowIcon size="16px" />}
+          variant="colored"
+          button
+          size="small"
+          rounded>
+          {buttonText}
         </LinkCustom>
       </div>
     </section>

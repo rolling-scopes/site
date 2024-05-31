@@ -1,4 +1,4 @@
-import { LinkCustom } from '../link-custom';
+import { LinkCustom } from '@/app/components';
 import { type Course } from '@/app/types';
 import micIcon from '@/assets/icons/mic.svg';
 import noteIcon from '@/assets/icons/note-icon.svg';
@@ -48,8 +48,13 @@ export const CourseCard = ({
           </div>
         </div>
         <div className="rs-course-card__right">
-          <LinkCustom href={detailsUrl} button size="small">
-            View details <ArrowIcon size="16px" invertColor />
+          <LinkCustom
+            href={detailsUrl}
+            icon={<ArrowIcon size="16px" />}
+            variant="colored"
+            button
+            size="small">
+            View details
           </LinkCustom>
         </div>
       </div>

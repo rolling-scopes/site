@@ -14,6 +14,58 @@
   white-space: pre;
 }
 
+.outlined {
+  margin: 24px 0;
+  color: $color-black;
+  border: 2px solid $color-black;
+
+  img {
+    filter: invert(100%);
+  }
+
+  &.large {
+    width: max-content;
+    padding: 12px 24px;
+    font-size: 18px;
+
+    &:hover {
+      background-color: $color-gray-100;
+    }
+
+    &.rounded {
+      width: fit-content;
+      margin: 0;
+      padding: 8px 16px;
+
+      color: $color-white;
+
+      border: 2px solid $color-yellow-50;
+      border-radius: 24px;
+
+      &:hover {
+        color: $color-gray-600;
+        background-color: $color-white;
+        box-shadow: 0 0 16px 0 rgba(from rgb(114 92 19) r g b / $opacity-8);
+      }
+    }
+  }
+
+  &.medium {
+    @include media-mobile-landscape {
+      width: 100%;
+    }
+
+    width: 240px;
+    padding: 8px 24px;
+    font-size: 16px;
+    line-height: 24px;
+
+    &:hover {
+      background-color: $color-gray-200;
+    }
+  }
+}
+
 .colored {
   width: min-content;
 
@@ -59,56 +111,12 @@
     background-color: #eee;
     border-radius: 9999px;
 
+    img {
+      filter: invert(100%);
+    }
+
     &:hover {
       background-color: hsla(from $color-gray-600 h s l/ $opacity-50);
-    }
-  }
-}
-
-.outlined {
-  margin: 24px 0;
-  color: $color-black;
-  border: 2px solid $color-black;
-
-  &.large {
-    width: max-content;
-    padding: 12px 24px;
-    font-size: 18px;
-
-    &:hover {
-      background-color: $color-gray-100;
-    }
-
-    &.rounded {
-      width: fit-content;
-      margin: 0;
-      padding: 8px 16px;
-
-      color: $color-white;
-
-      border: 2px solid $color-yellow-50;
-      border-radius: 24px;
-
-      &:hover {
-        color: $color-gray-600;
-        background-color: $color-white;
-        box-shadow: 0 0 16px 0 rgba(from rgb(114 92 19) r g b / $opacity-8);
-      }
-    }
-  }
-
-  &.medium {
-    @include media-mobile-landscape {
-      width: 100%;
-    }
-
-    width: 240px;
-    padding: 8px 24px;
-    font-size: 16px;
-    line-height: 24px;
-
-    &:hover {
-      background-color: $color-gray-200;
     }
   }
 }
