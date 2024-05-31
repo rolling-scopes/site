@@ -15,8 +15,9 @@ export type CourseModule = {
 };
 
 export type Course = {
-  knowBefore: CourseModule;
-  willLearn?: CourseModule | CourseModule[];
+  title: string;
+  knowBefore?: CourseModule;
+  willLearn?: CourseModule[];
 };
 
 export type CourseName =

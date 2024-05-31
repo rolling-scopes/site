@@ -10,7 +10,7 @@ export default defineConfig({
     ? 'dot'
     : [['html', { outputFolder: 'src/__tests__/visualTesting/report' }]],
   use: {
-    baseURL: 'http://localhost:4173',
+    baseURL: 'http://localhost:5173',
     trace: 'off',
   },
   outputDir: 'src/__tests__/visualTesting/results',
@@ -39,8 +39,8 @@ export default defineConfig({
   ],
 
   webServer: {
-    command: 'npm run preview',
-    url: 'http://localhost:4173',
+    command: 'npm run dev',
+    url: 'http://localhost:5173',
     reuseExistingServer: !process.env.CI,
   },
 });
