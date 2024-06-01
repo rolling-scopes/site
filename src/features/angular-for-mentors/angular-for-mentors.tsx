@@ -9,7 +9,6 @@ import styles from './angular-for-mentors.module.scss';
 
 const cx = classNamesBind.bind(styles);
 export const AngularForMentors = () => {
-  console.log(cx('picture'));
   //todo use custom link
   return (
     <section className={cx('angular-for-mentors', 'container')}>
