@@ -11,7 +11,7 @@ export const Footer = () => {
   const content = width >= 810 ? <DesktopView /> : <MobileView type="footer" />;
 
   return (
-    <footer className="footer container">
+    <footer className="footer container" data-testid="footer">
       <div className="footer content">
         {content}
         <Copyright />
