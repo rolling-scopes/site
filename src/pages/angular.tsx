@@ -1,5 +1,6 @@
 import { Breadcrumbs } from '@/app/components';
 import { About } from '@/features/about';
+import { AngularForMentors } from '@/features/angular-for-mentors';
 import { AngularTopics } from '@/features/angular-topics';
 import { Certification } from '@/features/certification';
 import { Communication } from '@/features/communication';
@@ -24,6 +25,7 @@ export const Angular = () => {
       <Communication courseName={COURSE_NAME} />
       <StudyPath path={COURSE_NAME} />
       <Required courseName={COURSE_NAME} marked1 />
+      <AngularForMentors />
       <Trainers trainers={angular} />
     </>
   );

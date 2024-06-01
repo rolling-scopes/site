@@ -1,0 +1,36 @@
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import { Link } from 'react-router-dom';
+import { Paragraph, Title } from '@/app/components';
+import mentorImg from '@/assets/mentors-wanted-poster.webp';
+import Image from '@/features/image';
+
+import styles from './angular-for-mentors.module.scss';
+
+const cx = classNamesBind.bind(styles);
+export const AngularForMentors = () => {
+  console.log(cx('picture'));
+  //todo use custom link
+  return (
+    <section className={cx('angular-for-mentors', 'container')}>
+      <article className={classNames('content', cx('content'))}>
+        <Title text={'For Mentors:'} />
+        <div className={cx('wrapper')}>
+          <Paragraph>
+            If you are interested in mentoring our students, please go through the{' '}
+            <Link
+              className={cx('link')}
+              to="https://github.com/rolling-scopes-school/tasks/tree/master/angular/mentoring"
+              target="blank">
+              Mentoring Documentation
+            </Link>{' '}
+            for the Angular Course.
+          </Paragraph>
+          <div className={cx('picture')}>
+            <Image src={mentorImg} alt="Sloth - mascot dresses as a detective" />
+          </div>
+        </div>
+      </article>
+    </section>
+  );
+};
