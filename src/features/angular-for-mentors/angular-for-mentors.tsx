@@ -14,8 +14,8 @@ export const AngularForMentors = () => {
   return (
     <section className={cx('angular-for-mentors', 'container')}>
       <article className={classNames('content', cx('content'))}>
-        <Title text={'For Mentors:'} />
-        <div className={cx('wrapper')}>
+        <div className={cx('content-left')}>
+          <Title text={'For Mentors:'} />
           <Paragraph>
             If you are interested in mentoring our students, please go through the{' '}
             <Link
@@ -26,9 +26,9 @@ export const AngularForMentors = () => {
             </Link>{' '}
             for the Angular Course.
           </Paragraph>
-          <div className={cx('picture')}>
-            <Image src={mentorImg} alt="Sloth - mascot dresses as a detective" />
-          </div>
+        </div>
+        <div className={cx('picture')}>
+          <Image src={mentorImg} alt="Sloth - mascot dresses as a detective" />
         </div>
       </article>
     </section>
