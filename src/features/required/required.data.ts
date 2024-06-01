@@ -307,11 +307,10 @@ export const courseDataMap: CourseMap = {
     knowBefore: {
       title: 'Required before the start',
       description: [
-        'JavaScript',
-        'Typescript',
+        'JavaScript, TypeScript Basics, CSS3, HTML5, NPM',
         'Git, GitHub (clone, add, commit, push, pull, merge, rebase, work with Pull Request)',
-        'npm, webpackCSS3 / HTML5',
-        'Chrome DevTools Figma',
+        'Chrome DevTools',
+        'Figma',
         'Understanding the concept of REST API',
       ],
     },
