@@ -24,7 +24,7 @@ const localizedContent = {
   'js / front-end pre-school ru': {
     title: 'Сертификат',
     firstParagraph:
-      'Чтобы получить сертификат о прохождении подготовительного этапа вам необходимо набрать 70% от результата TOP-1 студента. Например, если в конце этапа у лучшего студента 2000 баллов, проходной для всех студентов 1400 баллов (2000 * 0.7).',
+      'Чтобы получить сертификат о прохождении подготовительного этапа вам необходимо набрать 70% от результата TOP-1 студента. Например, если в конце этапа у лучшего студента 1000 баллов, проходной для всех студентов 700 баллов (1000 * 0.7).',
     secondParagraph:
       ' Наличие или отсутствие сертификата о прохождении подготовительного этапа не влияет на возможность дальнейшего обучения в RS School.',
   },
@@ -44,8 +44,10 @@ export const Certification = ({ courseName }: RequiredProps) => {
     <section className={cx('certification', 'container')}>
       <article className={cx('certification', 'content', 'info-wrapper')}>
         <Title text={title} hasAsterisk />
-        <Paragraph>{firstParagraph}</Paragraph>
-        {secondParagraph && <Paragraph>{secondParagraph}</Paragraph>}
+        <div className={cx('paragraphs-wrapper')}>
+          <Paragraph>{firstParagraph}</Paragraph>
+          {secondParagraph && <Paragraph>{secondParagraph}</Paragraph>}
+        </div>
       </article>
     </section>
   );
