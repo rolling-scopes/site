@@ -1,8 +1,8 @@
 import { Subtitle, Title, TitleType } from '@/app/components';
 
 import image from '@/assets/speakers-wanted.webp';
-import Image from '@/features/image';
 import { EmailIcon } from '@/icons';
+import Image from '@/shared/image';
 
 import './speakers.scss';
 

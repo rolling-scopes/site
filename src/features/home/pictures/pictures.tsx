@@ -11,8 +11,8 @@ import photo6 from '@/assets/photo-6.webp';
 import photo7 from '@/assets/photo-7.webp';
 import photo8 from '@/assets/photo-8.webp';
 import photo9 from '@/assets/photo-9.webp';
-import Image from '@/features/image';
 import { FacebookIcon, InstagramIcon } from '@/icons';
+import Image from '@/shared/image';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './pictures.scss';

@@ -2,7 +2,7 @@ import { studyOptions } from './constants';
 import { OptionItem, Paragraph, SectionLabel, Subtitle, Title } from '@/app/components';
 
 import image from '@/assets/rs-school.webp';
-import Image from '@/features/image';
+import Image from '@/shared/image';
 
 import './study-with-us.scss';
 

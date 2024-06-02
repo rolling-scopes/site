@@ -1,7 +1,7 @@
 import { Button, Paragraph, SectionLabel, Subtitle, Title } from '@/app/components';
 
 import image from '@/assets/merch.webp';
-import Image from '@/features/image';
+import Image from '@/shared/image';
 
 import './merch.scss';
 

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Paragraph } from '@/app/components';
 import { useTitle } from '@/app/hooks';
 import notFoundImg from '@/assets/404.webp';
-import Image from '@/features/image';
+import Image from '@/shared/image';
 
 import './not-found.scss';
 

@@ -1,5 +1,5 @@
 import type { Trainer } from './trainers.types';
-import Image from '@/features/image';
+import Image from '@/shared/image';
 
 interface TrainerProps extends Trainer {}
 

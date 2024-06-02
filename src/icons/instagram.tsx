@@ -1,5 +1,5 @@
 import instagram from '@/assets/svg/instagram.svg';
-import Image from '@/features/image';
+import Image from '@/shared/image';
 
 export const InstagramIcon = () => {
   return (

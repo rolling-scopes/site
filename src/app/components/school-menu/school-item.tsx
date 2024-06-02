@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { type GenericItemProps } from './school-list';
 import { type Course } from '@/app/types';
-import Image from '@/features/image';
+import Image from '@/shared/image';
 
 interface SchoolItemProps {
   item: Course | GenericItemProps;

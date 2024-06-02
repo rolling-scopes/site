@@ -1,4 +1,4 @@
-import LazyImage from '@/features/image';
+import LazyImage from '@/shared/image';
 
 import './image.scss';
 

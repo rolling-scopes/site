@@ -4,7 +4,7 @@ import { ButtonOutlined, DateLang, SectionLabel, Subtitle, Title } from '@/app/c
 import { useTitle } from '@/app/hooks';
 import { selectCourse } from '@/app/hooks/use-course-by-title/utils/select-course.ts';
 import { Course } from '@/app/types';
-import Image from '@/features/image';
+import Image from '@/shared/image';
 
 import styles from './course-main.module.scss';
 

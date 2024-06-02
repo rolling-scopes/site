@@ -1,15 +1,10 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { FC, useState } from 'react';
-import { IS_DEV } from '@/features/image/constants.ts';
-import {
-  DecodingAttr,
-  FetchPriorityAttr,
-  ImageProps,
-  LoadingAttr,
-} from '@/features/image/types.ts';
-import convertToWebp from '@/features/image/utils/convertToWebp.ts';
-import generateSizes from '@/features/image/utils/generateSizes.ts';
-import generateSrcSet from '@/features/image/utils/generateSrcSet.ts';
+import { IS_DEV } from '@/shared/image/constants.ts';
+import { DecodingAttr, FetchPriorityAttr, ImageProps, LoadingAttr } from '@/shared/image/types.ts';
+import convertToWebp from '@/shared/image/utils/convertToWebp.ts';
+import generateSizes from '@/shared/image/utils/generateSizes.ts';
+import generateSrcSet from '@/shared/image/utils/generateSrcSet.ts';
 
 const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
   const srcWebp = convertToWebp(src);

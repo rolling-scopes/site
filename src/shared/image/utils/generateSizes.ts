@@ -1,4 +1,4 @@
-import { DESKTOP_W, MOBILE_W, TABLET_W } from '@/features/image/constants.ts';
+import { DESKTOP_W, MOBILE_W, TABLET_W } from '@/shared/image/constants.ts';
 
 /**
  * Generates responsive sizes for Img element, based on the env breakpoints

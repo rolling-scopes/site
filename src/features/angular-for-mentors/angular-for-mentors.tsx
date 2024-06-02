@@ -3,7 +3,7 @@ import classNamesBind from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import { Paragraph, Title } from '@/app/components';
 import mentorImg from '@/assets/mentors-wanted-poster.webp';
-import Image from '@/features/image';
+import Image from '@/shared/image';
 
 import styles from './angular-for-mentors.module.scss';
 

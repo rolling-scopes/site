@@ -1,6 +1,6 @@
 import micIcon from '@/assets/icons/mic.svg';
 import noteIcon from '@/assets/icons/note-icon.svg';
-import Image from '@/features/image';
+import Image from '@/shared/image';
 
 import styles from './date-lang.module.scss';
 
