@@ -20,8 +20,10 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "babel-plugin-react-compiler": "^0.0.0-experimental-938cd9a-20240601",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.11",
+    "eslint-plugin-react-compiler": "^0.0.0-experimental-51a85ea-20240601",
     "nextjs-toploader": "^1.6.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

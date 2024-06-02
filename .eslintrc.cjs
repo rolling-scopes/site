@@ -10,7 +10,7 @@ module.exports = {
     'plugin:import/typescript',
     'plugin:css-import-order/recommended',
   ],
-  plugins: ['react-refresh', 'css-import-order', 'sort-exports'],
+  plugins: ['react-refresh', 'css-import-order', 'sort-exports', 'eslint-plugin-react-compiler'],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
   parserOptions: {

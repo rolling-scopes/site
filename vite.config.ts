@@ -3,7 +3,23 @@ import path from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react({
+      babel: {
+        plugins: [
+          [
+            'babel-plugin-react-compiler',
+            {
+              runtimeModule: '@/hooks/useC',
+              environment: {
+                validateNoRefAccessRender: true,
+              },
+            },
+          ],
+        ],
+      },
+    }),
+  ],
   build: {
     outDir: 'build',
   },
