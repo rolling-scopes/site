@@ -1,7 +1,7 @@
 import { RouteObject } from 'react-router-dom';
 import { ROUTES } from '@/app/const';
 import { config } from '@/config';
-import { courseLoader } from '@/features/course-main/courseLoader.ts';
+import { courseLoader } from '@/widgets/course-main/courseLoader.ts';
 
 const coursesRoute: RouteObject = {
   path: ROUTES.COURSES,

@@ -3,10 +3,10 @@ import { About } from '@/features/about';
 import { AboutVideo } from '@/features/about-video';
 import { Certification } from '@/features/certification';
 import { Communication } from '@/features/communication';
-import { CourseMain } from '@/features/course-main';
 import { Required } from '@/features/required';
 import { StudyPath } from '@/features/study-path';
 import { TrainingProgram } from '@/features/training-program';
+import { CourseMain } from '@/widgets/course-main';
 
 const COURSE_NAME = 'js / front-end en';
 

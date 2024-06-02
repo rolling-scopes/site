@@ -2,12 +2,12 @@ import { Breadcrumbs } from '@/app/components';
 import { About } from '@/features/about';
 import { Certification } from '@/features/certification';
 import { Communication } from '@/features/communication';
-import { CourseMain } from '@/features/course-main';
 import { Required } from '@/features/required';
 import { StudyPath } from '@/features/study-path';
 import { Trainers } from '@/features/trainers';
 import { awsDev } from '@/features/trainers/awsDev.data.ts';
 import { TrainingProgram } from '@/features/training-program';
+import { CourseMain } from '@/widgets/course-main';
 
 const COURSE_NAME = 'aws cloud dev';
 
