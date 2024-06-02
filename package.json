@@ -29,8 +29,7 @@
     "react-dom": "^18.2.0",
     "react-double-marquee": "^1.1.0",
     "react-responsive-carousel": "^3.2.23",
-    "react-router-dom": "^6.22.3",
-    "react-compiler-runtime": "file:./src/hooks/usec"
+    "react-router-dom": "^6.22.3"
   },
   "devDependencies": {
     "@playwright/test": "^1.44.1",
