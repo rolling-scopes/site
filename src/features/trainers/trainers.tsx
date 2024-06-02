@@ -1,6 +1,7 @@
 import { TrainerCard } from './trainer-card';
-import { Title } from '@/app/components';
+
 import { Trainer } from '@/features/trainers/trainers.types.ts';
+import { Title } from '@/shared/title';
 
 import './trainers.scss';
 

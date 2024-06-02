@@ -1,8 +1,9 @@
 import { compareNumbers } from './utils/compare-courses';
 import { isCourse } from './utils/is-course';
-import { CourseCard, Title, TitleType } from '@/app/components';
+import { CourseCard } from '@/app/components';
 import { useDataByName } from '@/app/hooks';
 import { finedNearestCourse } from '@/app/hooks/use-nearest-course';
+import { Title, TitleType } from '@/shared/title';
 
 import './courses.scss';
 

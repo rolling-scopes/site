@@ -1,11 +1,12 @@
 import { useLoaderData } from 'react-router-dom';
 import { getCourseStatus } from './utils';
-import { ButtonOutlined, DateLang, Subtitle, Title } from '@/app/components';
+import { ButtonOutlined, DateLang, Subtitle } from '@/app/components';
 import { useTitle } from '@/app/hooks';
 import { selectCourse } from '@/app/hooks/use-course-by-title/utils/select-course.ts';
 import { Course } from '@/app/types';
 import Image from '@/shared/image';
 import { SectionLabel } from '@/shared/section-label';
+import { Title } from '@/shared/title';
 
 import styles from './course-main.module.scss';
 

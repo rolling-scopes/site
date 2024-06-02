@@ -1,9 +1,10 @@
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import { Link } from 'react-router-dom';
-import { Paragraph, Title } from '@/app/components';
+import { Paragraph } from '@/app/components';
 import mentorImg from '@/assets/mentors-wanted-poster.webp';
 import Image from '@/shared/image';
+import { Title } from '@/shared/title';
 
 import styles from './angular-for-mentors.module.scss';
 

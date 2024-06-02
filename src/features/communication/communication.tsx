@@ -1,4 +1,4 @@
-import { Paragraph, Subtitle, Title } from '@/app/components';
+import { Paragraph, Subtitle } from '@/app/components';
 import ExternalLink from '@/app/components/externalLink/external-link';
 import {
   CourseNames,
@@ -7,6 +7,7 @@ import {
   RS_DOCS_TELEGRAM_CHATS_LINK,
 } from '@/data/communication.data';
 import { DiscordLogo } from '@/icons/discord-logo';
+import { Title } from '@/shared/title';
 
 import './communication.scss';
 

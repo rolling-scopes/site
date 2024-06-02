@@ -1,6 +1,7 @@
-import { Button, Subtitle, Title, TitleType } from '@/app/components';
+import { Button, Subtitle } from '@/app/components';
 import mentorImg from '@/assets/mentors-wanted.webp';
 import Image from '@/shared/image';
+import { Title, TitleType } from '@/shared/title';
 
 import './mentors.scss';
 

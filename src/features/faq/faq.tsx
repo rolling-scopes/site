@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import { faqData } from './faq.data';
-import { TextWithLink, Title } from '@/app/components';
+import { TextWithLink } from '@/app/components';
+import { Title } from '@/shared/title';
 
 import styles from './faq.module.scss';
 

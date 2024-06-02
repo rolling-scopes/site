@@ -1,7 +1,8 @@
-import { Button, Subtitle, Title, TitleType } from '@/app/components';
+import { Button, Subtitle } from '@/app/components';
 
 import image from '@/assets/support.webp';
 import Image from '@/shared/image';
+import { Title, TitleType } from '@/shared/title';
 
 import './support.scss';
 

@@ -1,9 +1,10 @@
 import { cloneElement } from 'react';
 import { type CourseNames, contentMap } from './training-program.data';
-import { Button, Title } from '@/app/components';
+import { Button } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
 import type { Course } from '@/app/types';
 import Image from '@/shared/image';
+import { Title } from '@/shared/title';
 
 import './training-program.scss';
 

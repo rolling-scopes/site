@@ -1,4 +1,4 @@
-import { Title } from '@/app/components';
+import { Title } from '@/shared/title';
 
 import './about-video.scss';
 

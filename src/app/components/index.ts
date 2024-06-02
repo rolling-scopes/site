@@ -15,4 +15,3 @@ export { SchoolMenu } from './school-menu';
 export { SocialMedia, type SocialMediaProps } from './social-media';
 export { Subtitle } from './subtitle';
 export { TextWithLink } from './text-with-link';
-export { Title, TitleType } from './title';

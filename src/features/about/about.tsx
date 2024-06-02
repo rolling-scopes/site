@@ -1,8 +1,9 @@
 import { contentMap } from './about.data';
 import { InfoGrid } from './components';
-import { Button, Paragraph, Title } from '@/app/components';
+import { Button, Paragraph } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
 import { type Course } from '@/app/types';
+import { Title } from '@/shared/title';
 
 import './about.scss';
 

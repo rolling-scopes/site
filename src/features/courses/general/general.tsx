@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Title } from '@/app/components';
+import { Title } from '@/shared/title';
 
 import './general.scss';
 

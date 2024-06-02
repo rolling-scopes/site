@@ -1,8 +1,9 @@
 import { createContext } from 'react';
 import { Stages } from './components';
-import { Paragraph, Title } from '@/app/components';
+import { Paragraph } from '@/app/components';
 import { useDataByName } from '@/app/hooks';
 import { type DataMap } from '@/app/services/data/courses-data.types';
+import { Title } from '@/shared/title';
 
 import './study-path.scss';
 
