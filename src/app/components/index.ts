@@ -12,7 +12,6 @@ export { Paragraph } from './paragraph';
 export { Places } from './places';
 export { PrincipleCard, type PrincipleCardProps } from './principle-card';
 export { SchoolMenu } from './school-menu';
-export { SectionLabel } from './section-label';
 export { SocialMedia, type SocialMediaProps } from './social-media';
 export { Subtitle } from './subtitle';
 export { TextWithLink } from './text-with-link';

@@ -1,11 +1,5 @@
-import {
-  EventCard,
-  EventCardProps,
-  Paragraph,
-  SectionLabel,
-  Subtitle,
-  Title,
-} from '@/app/components';
+import { EventCard, EventCardProps, Paragraph, Subtitle, Title } from '@/app/components';
+import { SectionLabel } from '@/shared/section-label';
 
 import './events.scss';
 
