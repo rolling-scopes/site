@@ -10,7 +10,7 @@ export default defineConfig({
           [
             'babel-plugin-react-compiler',
             {
-              runtimeModule: '@/hooks/useC',
+              runtimeModule: '@/hooks/usec',
               environment: {
                 validateNoRefAccessRender: true,
               },
