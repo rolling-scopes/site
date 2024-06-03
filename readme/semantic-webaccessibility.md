@@ -18,7 +18,6 @@ When we talk about good websites, we often overlook where they start from: the c
             <div className="details-container">
               <a className="details" href={href} target="_blank" rel="noreferrer">
                 {buttonText && <span className="label">{buttonText}</span>}
-                <span className="material-symbols-outlined">arrow_forward</span>
               </a>
             </div>
           </div>
@@ -65,7 +64,6 @@ Additionally, in each course card, we're using the `<h2>` heading.
             <section className="details-container">
               <a className="details" href={href} target="_blank" rel="noreferrer">
                 {buttonText && <span className="label">{buttonText}</span>}
-                <span className="material-symbols-outlined">arrow_forward</span>
               </a>
             </section>
           </article>

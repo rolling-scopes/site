@@ -29,3 +29,4 @@ Support this project with your organization. Your logo will be displayed here wi
 
 <a href="https://opencollective.com/rsschool/organization/0/website"><img src="https://opencollective.com/rsschool/organization/0/avatar.svg"></a>
 <a href="https://opencollective.com/rsschool/organization/1/website"><img src="https://opencollective.com/rsschool/organization/1/avatar.svg"></a>
+
