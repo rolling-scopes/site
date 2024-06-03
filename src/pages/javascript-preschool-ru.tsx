@@ -21,7 +21,7 @@ export const JavaScriptPreSchoolRu = () => {
       <About courseName={COURSE_NAME} type={type} />
       <TrainingProgram courseName={COURSE_NAME} lang={lang} />
       <Required courseName={COURSE_NAME} />
-      <Certification courseName={COURSE_NAME} lang={lang} />
+      <Certification courseName={COURSE_NAME} />
       <Communication courseName={COURSE_NAME} lang={lang} />
       <Faq />
       <Trainers trainers={preSchoolRu} lang={lang} />
