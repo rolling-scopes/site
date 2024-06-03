@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { usePositionDropdown } from '@/app/hooks/use-position-dropdown';
+import { usePositionDropdown } from '@/app/hooks';
 
 import styles from './dropdown-wrapper.module.scss';
 
