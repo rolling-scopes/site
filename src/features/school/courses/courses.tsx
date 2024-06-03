@@ -38,7 +38,7 @@ export const Courses = () => {
   });
 
   return (
-    <article className="courses container">
+    <article id="upcoming-courses" className="courses container">
       <section className="courses content">
         <h4 className="title">Upcoming courses</h4>
         <div className="column-2">

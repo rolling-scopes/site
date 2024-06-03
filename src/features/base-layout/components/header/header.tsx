@@ -11,16 +11,17 @@ const navLinks = [
   {
     label: 'RS School',
     href: '/#main',
-    dropdownInner: <SchoolMenu heading="rs school" color="dark" />,
+    dropdownInner: <SchoolMenu heading="rs school" color="dark" hasTitle={false} />,
   },
   {
     label: 'Courses',
     href: '/courses/#main',
-    dropdownInner: <SchoolMenu heading="all courses" color="dark" />,
+    dropdownInner: <SchoolMenu heading="all courses" color="dark" hasTitle={false} />,
   },
   {
     label: 'Community',
     href: '/community/#main',
+    dropdownInner: <SchoolMenu heading="community" color="dark" hasTitle={false} />,
   },
 ];
 
