@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom';
+import { LinkCustom } from '@/app/components';
 import { type Course } from '@/app/types';
 import micIcon from '@/assets/icons/mic.svg';
 import noteIcon from '@/assets/icons/note-icon.svg';
 import Image from '@/features/image';
+import { ArrowIcon } from '@/icons';
 
 import './course-card.scss';
 
@@ -47,9 +48,14 @@ export const CourseCard = ({
           </div>
         </div>
         <div className="rs-course-card__right">
-          <Link to={detailsUrl} className="rs-course-card__more">
-            View details<span className="material-symbols-outlined">arrow_forward</span>
-          </Link>
+          <LinkCustom
+            href={detailsUrl}
+            icon={<ArrowIcon size="16px" />}
+            variant="colored"
+            button
+            size="small">
+            View details
+          </LinkCustom>
         </div>
       </div>
     </div>

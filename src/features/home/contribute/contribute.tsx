@@ -10,14 +10,14 @@ const contributeOptions: OptionItemProps[] = [
     title: 'Mentorship',
     description:
       'Become a mentor and guide the next generation of developers. Sign up as a mentor here.',
-    buttonLabel: 'Register as a mentor',
+    linkLabel: 'Register as a mentor',
     href: 'https://app.rs.school/registry/mentor',
   },
   {
     title: 'Developer / Coordinator / Trainer',
     description:
       'Contribute your skills as a developer, coordinator, or trainer. Fill out this form to get started.',
-    buttonLabel: 'Become a contributor',
+    linkLabel: 'Become a contributor',
     href: 'https://docs.google.com/forms/d/e/1FAIpQLSdGKdEHK1CnZjgll9PpMU0xD1m0hm6xGoXc98H7woCDulyQkg/viewform',
   },
 ];
@@ -28,7 +28,7 @@ export const Contribute = () => (
       <div className="general">
         <div className="info">
           <Title text="How to Contribute" hasAsterisk />
-          <Subtitle text="Contributing to The Rolling Scopes is not only a great way to give back to the community, but it’s also an excellent way to enhance your own knowledge." />
+          <Subtitle text="Contributing to The Rolling Scopes is not only a great way to give back to the community, but it's also an excellent way to enhance your own knowledge." />
           <Paragraph>
             Remember, teaching others is one of the best ways to learn - this is known as The
             Protégé Effect! There are several ways you can contribute, choose yours.
@@ -37,12 +37,12 @@ export const Contribute = () => (
         <Image className="right picture" src={image} alt="contribute" />
       </div>
       <div className="contribute-options">
-        {contributeOptions.map(({ title, description, buttonLabel, href }) => (
+        {contributeOptions.map(({ title, description, linkLabel, href }) => (
           <OptionItem
             key={title}
             title={title}
             description={description}
-            buttonLabel={buttonLabel}
+            linkLabel={linkLabel}
             href={href}
           />
         ))}
