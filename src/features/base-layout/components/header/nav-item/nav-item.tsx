@@ -18,31 +18,33 @@ export const NavItem = ({ label, href, dropdownInner }: NavItemProps) => {
   const onOpen = () => setDropdownOpen(true);
 
   return (
-    <NavLink
-      to={href}
-      className={({ isActive }) =>
-        `
-          ${styles.menuItem} 
-          ${isActive ? styles.active : ''}
-          ${dropdownInner ? styles.dropdownToggle : ''}
-          ${isDropdownOpen ? styles.rotate : ''}
-        `
-      }
-      data-outside-click-ignore
-      onMouseLeave={onClose}
-      onMouseEnter={onOpen}
-      end>
-      <p className={styles.label}>{label}</p>
-      {dropdownInner && (
-        <>
+    <div className={styles.menuItemWrapper}>
+      <NavLink
+        to={href}
+        className={({ isActive }) =>
+          `
+            ${styles.menuItem} 
+            ${isActive ? styles.active : ''}
+            ${dropdownInner ? styles.dropdownToggle : ''}
+            ${isDropdownOpen ? styles.rotate : ''}
+          `
+        }
+        data-outside-click-ignore
+        onMouseLeave={onClose}
+        onMouseEnter={onOpen}
+        end>
+        <p className={styles.label}>{label}</p>
+        {dropdownInner && (
           <span className={styles.dropdownArrow}>
             <DropdownArrow />
           </span>
-          <DropdownWrapper onMouseLeave={onClose} onMouseEnter={onOpen} isOpen={isDropdownOpen}>
-            {dropdownInner}
-          </DropdownWrapper>
-        </>
+        )}
+      </NavLink>
+      {dropdownInner && (
+        <DropdownWrapper onMouseLeave={onClose} onMouseEnter={onOpen} isOpen={isDropdownOpen}>
+          {dropdownInner}
+        </DropdownWrapper>
       )}
-    </NavLink>
+    </div>
   );
 };
