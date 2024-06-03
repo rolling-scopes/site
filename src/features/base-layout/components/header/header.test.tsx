@@ -16,7 +16,7 @@ vi.mock('@/app/hooks', async (importOriginal) => {
   return {
     ...originalModule,
     useWindowSize: vi.fn(),
-    useOutsideClick: vi.fn(() => ({ current: null })),
+    // useOutsideClick: vi.fn(() => ({ current: null })),
   };
 });
 
