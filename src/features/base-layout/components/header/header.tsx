@@ -2,15 +2,26 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
-import { LogoWrapper, MobileView } from '@/app/components';
+import { LogoWrapper, MobileView, SchoolMenu } from '@/app/components';
 import { useWindowSize } from '@/app/hooks';
 
 import styles from './header.module.scss';
 
 const navLinks = [
-  { label: 'RS School', href: '/#main' },
-  { label: 'Courses', href: '/courses/#main' },
-  { label: 'Community', href: '/community/#main' },
+  {
+    label: 'RS School',
+    href: '/#main',
+    dropdownInner: <SchoolMenu heading="rs school" color="dark" />,
+  },
+  {
+    label: 'Courses',
+    href: '/courses/#main',
+    dropdownInner: <SchoolMenu heading="all courses" color="dark" />,
+  },
+  {
+    label: 'Community',
+    href: '/community/#main',
+  },
 ];
 
 export const Header = () => {
@@ -57,32 +68,30 @@ export const Header = () => {
         </Link>
 
         {isMobile && (
-          <menu
-            className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ''}`}
-            data-testid="mobile-menu">
-            <MobileView type="header" />
-          </menu>
+          <>
+            <menu
+              className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ''}`}
+              data-testid="mobile-menu">
+              <MobileView type="header" />
+            </menu>
+            <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+          </>
         )}
 
         {!isMobile && (
           <menu className={styles.menu}>
             {navLinks.map((link) => {
-              const isDropdown = false;
-              // const isDropdown = link.label === 'RS School';
-
               return (
                 <NavItem
                   key={link.label}
                   label={link.label}
-                  href={isDropdown ? undefined : link.href}
-                  dropdown={isDropdown}
+                  href={link.href}
+                  dropdownInner={link.dropdownInner}
                 />
               );
             })}
           </menu>
         )}
-
-        {isMobile && <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />}
       </section>
     </nav>
   );
