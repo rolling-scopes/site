@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { usePositionDropdown } from '@/app/hooks/use-position-dropdown';
 
 import styles from './dropdown-wrapper.module.scss';
 
@@ -14,12 +15,15 @@ export const DropdownWrapper = ({
   isOpen,
   children,
 }: DropdownWrapperProps) => {
+  const dropdownRef = usePositionDropdown();
+
   return (
     <div
       className={`${styles.coursesDropdown} ${isOpen ? styles.open : ''}`}
       onMouseLeave={onMouseLeave}
       onMouseEnter={onMouseEnter}
-      data-testid="header-dropdown">
+      data-testid="header-dropdown"
+      ref={dropdownRef}>
       {children}
     </div>
   );
