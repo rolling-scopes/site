@@ -1,9 +1,12 @@
 import { ReactNode, useState } from 'react';
+import classNames from 'classnames/bind';
 import { NavLink } from 'react-router-dom';
 import { DropdownWrapper } from '../dropdown/dropdown-wrapper';
 import { DropdownArrow } from '@/icons/dropdown-arrow';
 
 import styles from './nav-item.module.scss';
+
+const cx = classNames.bind(styles);
 
 type NavItemProps = {
   label: string;
@@ -18,24 +21,24 @@ export const NavItem = ({ label, href, dropdownInner }: NavItemProps) => {
   const onOpen = () => setDropdownOpen(true);
 
   return (
-    <div className={styles.menuItemWrapper}>
+    <div className={cx('menu-item-wrapper')}>
       <NavLink
         to={href}
         className={({ isActive }) =>
-          `
-            ${styles.menuItem} 
-            ${isActive ? styles.active : ''}
-            ${dropdownInner ? styles.dropdownToggle : ''}
-            ${isDropdownOpen ? styles.rotate : ''}
-          `
+          cx(
+            'menu-item',
+            isActive ? 'active' : '',
+            dropdownInner ? 'dropdown-toggle' : '',
+            isDropdownOpen ? 'rotate' : '',
+          )
         }
         data-outside-click-ignore
         onMouseLeave={onClose}
         onMouseEnter={onOpen}
         end>
-        <p className={styles.label}>{label}</p>
+        <p className={cx('label')}>{label}</p>
         {dropdownInner && (
-          <span className={styles.dropdownArrow}>
+          <span className={cx('dropdown-arrow')}>
             <DropdownArrow />
           </span>
         )}

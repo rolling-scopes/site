@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import classNames from 'classnames/bind';
 import { Link, useLocation } from 'react-router-dom';
 import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
@@ -6,6 +7,8 @@ import { LogoWrapper, MobileView, SchoolMenu } from '@/app/components';
 import { useWindowSize } from '@/app/hooks';
 
 import styles from './header.module.scss';
+
+const cx = classNames.bind(styles);
 
 const navLinks = [
   {
@@ -62,17 +65,15 @@ export const Header = () => {
   }, [width, key, hash, pathname]);
 
   return (
-    <nav className={`${styles.navbar} ${styles[color]}`} data-testid="navigation">
-      <section className={styles.navbarContent}>
+    <nav className={cx('navbar', color)} data-testid="navigation">
+      <section className={cx('navbar-content')}>
         <Link to="/" onClick={() => window.scrollTo({ top: 0 })}>
           <LogoWrapper type="header" />
         </Link>
 
         {isMobile && (
           <>
-            <menu
-              className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ''}`}
-              data-testid="mobile-menu">
+            <menu className={cx('mobile-menu', isMenuOpen ? 'open' : '')} data-testid="mobile-menu">
               <MobileView type="header" />
             </menu>
             <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
@@ -80,7 +81,7 @@ export const Header = () => {
         )}
 
         {!isMobile && (
-          <menu className={styles.menu}>
+          <menu className={cx('menu')}>
             {navLinks.map((link) => {
               return (
                 <NavItem

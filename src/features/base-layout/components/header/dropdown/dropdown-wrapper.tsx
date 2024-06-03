@@ -1,7 +1,10 @@
 import { ReactNode } from 'react';
+import classNames from 'classnames/bind';
 import { usePositionDropdown } from '@/app/hooks';
 
 import styles from './dropdown-wrapper.module.scss';
+
+const cx = classNames.bind(styles);
 
 export interface DropdownWrapperProps {
   onMouseLeave: () => void;
@@ -19,7 +22,7 @@ export const DropdownWrapper = ({
 
   return (
     <div
-      className={`${styles.coursesDropdown} ${isOpen ? styles.open : ''}`}
+      className={cx('courses-dropdown', isOpen ? 'open' : '')}
       onMouseLeave={onMouseLeave}
       onMouseEnter={onMouseEnter}
       data-testid="header-dropdown"
