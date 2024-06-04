@@ -1,5 +1,6 @@
 import { Breadcrumbs } from '@/app/components';
 import { About } from '@/features/about';
+import { Certification } from '@/features/certification';
 import { Communication } from '@/features/communication';
 import { CourseMain } from '@/features/course-main';
 import { Required } from '@/features/required';
@@ -8,16 +9,19 @@ import { Trainers } from '@/features/trainers';
 import { angular } from '@/features/trainers/angular.data';
 import { TrainingProgram } from '@/features/training-program';
 
+const COURSE_NAME = 'angular';
+
 export const Angular = () => {
   return (
     <>
-      <CourseMain courseName="angular" />
+      <CourseMain courseName={COURSE_NAME} />
       <Breadcrumbs />
-      <TrainingProgram courseName="angular" />
-      <About courseName="angular" />
-      <Communication courseName="angular" />
-      <StudyPath path="angular" />
-      <Required courseName="angular" marked1 />
+      <TrainingProgram courseName={COURSE_NAME} />
+      <About courseName={COURSE_NAME} />
+      <Certification courseName={COURSE_NAME} />
+      <Communication courseName={COURSE_NAME} />
+      <StudyPath path={COURSE_NAME} />
+      <Required courseName={COURSE_NAME} marked1 />
       <Trainers trainers={angular} />
     </>
   );

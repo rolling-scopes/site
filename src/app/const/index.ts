@@ -1,3 +1,9 @@
+export const LINKS = {
+  BECOME_MENTOR: 'https://app.rs.school/registry/mentor',
+  MERCH: 'https://sloths.rs.school/',
+  DONATE: 'https://opencollective.com/rsschool',
+};
+
 export const ROUTES = {
   HOME: '/',
   COMMUNITY: 'community',

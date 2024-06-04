@@ -1,11 +1,11 @@
-import { Paragraph, Subtitle, Title } from '@/app/components';
-import ExternalLink from '@/app/components/externalLink/external-link';
+import { LinkCustom, Paragraph, Subtitle, Title } from '@/app/components';
 import {
   CourseNames,
   DISCORD_LINKS,
   RS_DOCS_COMMUNICATION_LINK,
   RS_DOCS_TELEGRAM_CHATS_LINK,
 } from '@/data/communication.data';
+import { TextLinkIcon } from '@/icons';
 import { DiscordLogo } from '@/icons/discord-logo';
 
 import './communication.scss';
@@ -34,7 +34,7 @@ const localizedContent = {
     title: 'Общение',
     subTitle: 'Дискорд — основной способ общения в RS School',
     firstParagraphFirstHalf: 'Вот ссылка на',
-    discordLink: 'дискорд сервер курса',
+    discordLink: 'Дискорд сервер курса',
     firstParagraphSecondHalf:
       ', где вы можете посмотреть последние новости, задать вопросы и общаться со студентами.',
     secondParagraphFirstHalf: 'Также есть каналы в',
@@ -60,26 +60,26 @@ export const Communication = ({ courseName, lang = 'en' }: RequiredProps) => {
             <Subtitle text={localizedContent[lang].subTitle} />
             <Paragraph>
               {localizedContent[lang].firstParagraphFirstHalf}{' '}
-              <ExternalLink
-                href={DISCORD_LINKS[courseName]}
-                text={localizedContent[lang].discordLink}
-              />
+              <LinkCustom href={DISCORD_LINKS[courseName]} icon={<TextLinkIcon />} target="_blank">
+                {localizedContent[lang].discordLink}
+              </LinkCustom>
               {localizedContent[lang].firstParagraphSecondHalf}
             </Paragraph>
             <Paragraph>
               {localizedContent[lang].secondParagraphFirstHalf}{' '}
-              <ExternalLink
+              <LinkCustom
                 href={RS_DOCS_TELEGRAM_CHATS_LINK}
-                text={localizedContent[lang].telegramLink}
-              />
+                icon={<TextLinkIcon />}
+                target="_blank">
+                {localizedContent[lang].telegramLink}
+              </LinkCustom>
               {localizedContent[lang].secondParagraphSecondHalf}
             </Paragraph>
             <Paragraph>
               {localizedContent[lang].thirdParagraphFirstHalf}{' '}
-              <ExternalLink
-                href={RS_DOCS_COMMUNICATION_LINK}
-                text={localizedContent[lang].rsDocsLink}
-              />
+              <LinkCustom href={RS_DOCS_COMMUNICATION_LINK} icon={<TextLinkIcon />} target="_blank">
+                {localizedContent[lang].rsDocsLink}
+              </LinkCustom>
               {localizedContent[lang].thirdParagraphSecondHalf}
             </Paragraph>
           </div>
