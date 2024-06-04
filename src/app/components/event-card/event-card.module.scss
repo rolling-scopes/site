@@ -137,27 +137,10 @@
 
     .event-address {
       font-style: inherit;
-    }
 
-    .details-button {
-      @extend %transition-all;
-
-      cursor: pointer;
-
-      position: absolute;
-      bottom: 27px;
-      left: 24px;
-
-      padding: 8px 12px;
-
-      font-size: 14px;
-      font-weight: $font-weight-medium;
-      color: $color-black;
-      text-align: center;
-      text-decoration: none;
-
-      background-color: #eee;
-      border-radius: 32px;
+      & ~ * {
+        margin-top: 32px;
+      }
     }
   }
 }
@@ -166,10 +149,6 @@
   .event-card {
     &:hover &__header::after {
       @include card-corner-accent-hover;
-    }
-
-    &:hover .details-button {
-      background-color: rgb(82 82 82 / 40%);
     }
   }
 }

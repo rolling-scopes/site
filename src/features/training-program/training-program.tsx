@@ -1,9 +1,10 @@
 import { cloneElement } from 'react';
 import { type CourseNames, contentMap } from './training-program.data';
-import { Button, Title } from '@/app/components';
+import { LinkCustom, Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
 import type { Course } from '@/app/types';
 import Image from '@/features/image';
+import { ArrowIcon } from '@/icons';
 
 import './training-program.scss';
 
@@ -14,10 +15,10 @@ interface TrainingProgramProps {
 
 const localizedContent = {
   en: {
-    buttonLabel: 'Register',
+    linkLabel: 'Register',
   },
   ru: {
-    buttonLabel: 'Зарегистрироваться',
+    linkLabel: 'Зарегистрироваться',
   },
 };
 
@@ -37,7 +38,14 @@ export const TrainingProgram = ({ courseName, lang = 'en' }: TrainingProgramProp
 
           {content.map((component, index) => cloneElement(component, { key: index }))}
 
-          <Button label={localizedContent[lang].buttonLabel} href={course?.enroll} />
+          <LinkCustom
+            href={course?.enroll}
+            icon={<ArrowIcon />}
+            variant="colored"
+            button
+            target="_blank">
+            {localizedContent[lang].linkLabel}
+          </LinkCustom>
         </div>
         <div className={`right ${courseName.includes('badge') ? 'badge' : ''}`}>
           <Image src={image} alt={course?.title} lazy="false" />

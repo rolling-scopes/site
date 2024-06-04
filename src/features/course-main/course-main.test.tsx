@@ -1,15 +1,18 @@
-import { act } from 'react-dom/test-utils';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { CourseMain } from './course-main';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
+import { renderWithRouter } from '@/__tests__/utils';
 import { dayJS } from '@/app/services/dayjs';
 import { CourseStatus } from '@/app/types';
 
 vi.mock('@/app/hooks');
-vi.mock('@/app/hooks');
-vi.mock('react-router-dom', () => ({
-  useLoaderData: vi.fn(() => [mockedCourse, mockedCourseAvailable, mockedCourseUpcoming]),
-}));
+vi.mock('react-router-dom', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('react-router-dom')>();
+  return {
+    ...actual,
+    useLoaderData: vi.fn(() => [mockedCourse, mockedCourseAvailable, mockedCourseUpcoming]),
+  };
+});
 
 const reactCourseTitle = 'React';
 const angularCourseTitle = 'Angular';
@@ -38,9 +41,7 @@ const mockedCourseUpcoming = {
 
 describe('CourseMain', () => {
   beforeEach(() => {
-    act(() => {
-      render(<CourseMain courseName="Node.js" />);
-    });
+    renderWithRouter(<CourseMain courseName="Node.js" />);
   });
 
   it('renders the title correctly', async () => {
@@ -71,13 +72,13 @@ describe('CourseMain', () => {
 
 describe('CourseMain', () => {
   it('renders the section with correct label "AVAILABLE"', () => {
-    render(<CourseMain courseName={reactCourseTitle} />);
+    renderWithRouter(<CourseMain courseName={reactCourseTitle} />);
     const labelElement = screen.getByText(CourseStatus.AVAILABLE);
     expect(labelElement).toBeVisible();
   });
 
   it('renders the section with correct label "UPCOMING"', () => {
-    render(<CourseMain courseName={angularCourseTitle} />);
+    renderWithRouter(<CourseMain courseName={angularCourseTitle} />);
     const labelElement = screen.getByText(CourseStatus.UPCOMING);
     expect(labelElement).toBeVisible();
   });

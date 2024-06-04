@@ -5,6 +5,14 @@
       gap: 40px;
       align-items: flex-start;
       font-size: 18px;
+
+      .paragraph-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: start;
+        justify-content: flex-start;
+      }
     }
 
     display: flex;

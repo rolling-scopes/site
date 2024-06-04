@@ -1,10 +1,11 @@
 import { useLoaderData } from 'react-router-dom';
 import { getCourseStatus } from './utils';
-import { ButtonOutlined, DateLang, SectionLabel, Subtitle, Title } from '@/app/components';
+import { DateLang, LinkCustom, SectionLabel, Subtitle, Title } from '@/app/components';
 import { useTitle } from '@/app/hooks';
 import { selectCourse } from '@/app/hooks/use-course-by-title/utils/select-course.ts';
 import { Course } from '@/app/types';
 import Image from '@/features/image';
+import { ArrowIcon } from '@/icons';
 
 import styles from './course-main.module.scss';
 
@@ -16,10 +17,10 @@ interface CourseMainProps {
 
 const localizedContent = {
   en: {
-    buttonLabel: 'Enroll',
+    linkLabel: 'Enroll',
   },
   ru: {
-    buttonLabel: 'Присоединиться',
+    linkLabel: 'Присоединиться',
   },
 };
 
@@ -46,7 +47,9 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
           <Title text={`${altTitle || title} Course`} />
           {type && <Subtitle text={type} type="course-main" />}
           <DateLang startDate={startDate} language={language} mode={mode} type="main" />
-          <ButtonOutlined label={localizedContent[lang].buttonLabel} href={enroll} />
+          <LinkCustom href={enroll} icon={<ArrowIcon />} button variant="outlined" target="_blank">
+            {localizedContent[lang].linkLabel}
+          </LinkCustom>
         </div>
       </div>
     </main>

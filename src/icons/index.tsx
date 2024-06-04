@@ -1,4 +1,5 @@
 export { AngularIcon } from './angular-icon';
+export { ArrowIcon } from './arrow-icon';
 export { AwsLogo } from './aws';
 export { EmailIcon } from './email';
 export { EpamLogo } from './epam';
@@ -17,4 +18,5 @@ export { ReactIcon } from './react-icon';
 export { RsBanner } from './rs-banner';
 export { TeachItForwardIcon } from './teach-It-forward-icon';
 export { TelegramIcon } from './telegram';
+export { TextLinkIcon } from './text-link-icon';
 export { YouTubeIcon } from './youtube';

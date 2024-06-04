@@ -90,19 +90,19 @@
     font-weight: 500;
     font-style: normal;
     line-height: 32px;
-    color: var($color-gray-600);
+    color: $color-gray-600;
     text-align: left;
     letter-spacing: 0;
   }
 
   &__bottom {
     display: flex;
-    gap: 24;
+    gap: 24px;
     place-content: flex-start space-between;
     align-items: center;
 
     width: 100%;
-    padding: 24px 24px 24px 24px;
+    padding: 24px;
 
     background-color: #fefefe;
     border: 1px solid #e2e2e2;
@@ -160,26 +160,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
 
-  &__more {
-    @extend %transition-all;
-
-    display: flex;
-    align-content: center;
-    align-items: center;
-
-    padding: 10px 12px 10px 12px;
-
-    font-size: 14px;
-    color: $color-black;
-
-    background-color: #eee;
-    border-radius: 9999px;
-
-    .material-symbols-outlined {
-      margin-left: 8px;
-      font-size: 16px;
+    & > * {
+      font-weight: 400;
     }
   }
 }
@@ -195,10 +178,6 @@
       bottom: -160px;
       width: 279px;
       height: 270px;
-    }
-
-    &__more:hover {
-      background-color: $color-gray-400;
     }
   }
 }
