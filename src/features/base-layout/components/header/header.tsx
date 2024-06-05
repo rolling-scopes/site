@@ -42,10 +42,8 @@ export const Header = () => {
   useEffect(() => {
     const listenScrollEvent = () => {
       const scrollY = window.scrollY;
-      if (scrollY < 65) {
+      if (scrollY < 500) {
         setColor('gray');
-      } else if (scrollY < 800) {
-        setColor('none');
       } else {
         setColor('white');
       }
