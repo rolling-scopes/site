@@ -1,4 +1,4 @@
-import { act } from 'react-dom/test-utils';
+import { act } from 'react';
 import { fireEvent, screen } from '@testing-library/react';
 import classNames from 'classnames/bind';
 import { Mock, beforeEach, vi } from 'vitest';
