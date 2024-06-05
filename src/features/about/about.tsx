@@ -1,8 +1,9 @@
 import { contentMap } from './about.data';
 import { InfoGrid } from './components';
-import { Button, Title } from '@/app/components';
+import { LinkCustom, Paragraph, Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
 import { type Course } from '@/app/types';
+import { ArrowIcon } from '@/icons';
 
 import './about.scss';
 
@@ -19,21 +20,29 @@ export type CourseNames =
 
 interface AboutProps {
   courseName: CourseNames;
-  lang?: 'ru' | 'en';
+  type?: 'ru' | 'en' | 'Pre-school RU';
 }
 
 const localizedContent = {
   en: {
     title: 'About the course',
-    buttonLabel: 'Become a student',
+    linkLabel: 'Become a student',
+    paragraph: '',
   },
   ru: {
     title: 'О курсе',
-    buttonLabel: 'Cтать студентом',
+    linkLabel: 'Cтать студентом',
+    paragraph: '',
+  },
+  'Pre-school RU': {
+    title: 'JS/Frontend-разработка. Подготовительный этап',
+    linkLabel: 'Стать студентом',
+    paragraph:
+      'Подготовительный этап поможет тем, кто мало знаком или совсем не знаком с программированием и хотел бы впоследствии учиться на основном курсе «JavaScript/Front-end».',
   },
 };
 
-export const About = ({ courseName, lang = 'en' }: AboutProps) => {
+export const About = ({ courseName, type = 'en' }: AboutProps) => {
   const { course: data, error, loading, hasError } = useCourseByTitle(courseName);
 
   const course = data as Course;
@@ -51,9 +60,19 @@ export const About = ({ courseName, lang = 'en' }: AboutProps) => {
   return (
     <section className="course-about container">
       <div className="course-about content">
-        <Title text={localizedContent[lang].title} />
+        <Title text={localizedContent[type].title} />
+        {localizedContent[type].paragraph && (
+          <Paragraph>{localizedContent[type].paragraph}</Paragraph>
+        )}
         <InfoGrid items={infoList} hasTitle />
-        <Button label={localizedContent[lang].buttonLabel} href={course.enroll} />
+        <LinkCustom
+          href={course.enroll}
+          icon={<ArrowIcon />}
+          variant="colored"
+          button
+          target="_blank">
+          {localizedContent[type].linkLabel}
+        </LinkCustom>
       </div>
     </section>
   );

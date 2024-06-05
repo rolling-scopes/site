@@ -1,0 +1,65 @@
+name: Production
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  NODE_VERSION: '20.x' # set this to the node version to use
+  AWS_S3_BUCKET: 'sites-frontend'
+  AWS_ACCESS_KEY_ID: ${{ secrets.DEPLOY_AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_AWS_SECRET_ACCESS_KEY }}
+  AWS_REGION: 'eu-central-1'
+
+jobs:
+  rolling-scopes:
+    name: Build and Deploy (rollingscopes.com)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: build
+        env:
+          HOST: 'https://rollingscopes.com'
+          RS_SCHOOL_HOST: 'https://rs.school'
+        run: |
+          npm install
+          npm run build
+
+      - uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --cache-control max-age=300
+        env:
+          SOURCE_DIR: 'build'
+          DEST_DIR: rolling-scopes-com
+
+  rs-school:
+    name: Build and Deploy (rs.school)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: build
+        env:
+          HOST: 'https://rs.school'
+        run: |
+          npm install
+          npm run build
+
+      - uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --cache-control max-age=300
+        env:
+          SOURCE_DIR: 'build'
+          DEST_DIR: rs-school

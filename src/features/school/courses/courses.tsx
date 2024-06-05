@@ -2,10 +2,11 @@ import { getCourseIcon } from './lib/getCourseIcon';
 import { IconsTitle } from './lib/icons.data';
 import { selectCourses } from './lib/selectCourses';
 import { CourseCard } from './ui/CourseCard';
-import { Button } from '@/app/components';
+import { LinkCustom } from '@/app/components';
+import { ROUTES } from '@/app/const';
 import { useWindowSize } from '@/app/hooks';
 import { courses } from '@/app/services/data';
-import { RsBanner } from '@/icons';
+import { ArrowIcon, RsBanner } from '@/icons';
 
 import './courses.scss';
 
@@ -15,11 +16,11 @@ export const Courses = () => {
   const tabletScreenBreakPoint = 810;
   const coursesData = selectCourses(courses);
 
-  let buttonText = 'More details';
+  let linkLabel = 'More details';
   if (size.width <= tabletScreenBreakPoint) {
-    buttonText = '';
+    linkLabel = '';
   } else if (size.width <= laptopScreenBreakPoint) {
-    buttonText = 'More';
+    linkLabel = 'More';
   }
 
   const coursesContent = coursesData?.map(({ title, language, startDate, detailsUrl }) => {
@@ -31,7 +32,7 @@ export const Courses = () => {
         startDate={startDate}
         detailsUrl={detailsUrl}
         icon={courseIcon}
-        buttonText={buttonText}
+        buttonText={linkLabel}
         key={title}
       />
     );
@@ -42,9 +43,11 @@ export const Courses = () => {
       <section className="courses content">
         <h4 className="title">Upcoming courses</h4>
         <div className="column-2">
-          <div className="courses">
+          <div className="courses" data-testid="courses-list">
             {coursesContent}
-            <Button label="Go to courses " href="./courses/" />
+            <LinkCustom href={ROUTES.COURSES} icon={<ArrowIcon />} variant="colored" button>
+              Go to courses
+            </LinkCustom>
           </div>
           <figure className="image">
             <RsBanner />

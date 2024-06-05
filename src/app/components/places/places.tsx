@@ -18,7 +18,7 @@ const places: string[] = [
 ];
 
 export const Places = () => (
-  <div className="places container">
+  <div className="places container" data-testid="places">
     <div className="places content">
       <Marquee direction="left" childMargin={0}>
         {places.map((place) => (

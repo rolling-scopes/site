@@ -1,0 +1,22 @@
+name: Preview Status
+
+on:
+  repository_dispatch:
+    types: [preview-created]
+
+jobs:
+  preview-status:
+    name: Deployment Status
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create GitHub deployment
+        uses: apalchys/deployment-action@v1.2.6
+        id: deployment
+        with:
+          ref: ${{ github.event.client_payload.ref }}
+          pr: true
+          pr_id: ${{ github.event.client_payload.number }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          target_url: https://${{ github.event.client_payload.previewId }}.rs.school
+          environment: ${{ github.event.client_payload.previewId }}
+          initial_status: success
