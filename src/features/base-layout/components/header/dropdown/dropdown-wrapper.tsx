@@ -22,7 +22,7 @@ export const DropdownWrapper = ({
 
   return (
     <div
-      className={cx('courses-dropdown', isOpen ? 'open' : '')}
+      className={cx('courses-dropdown', { open: isOpen })}
       onMouseLeave={onMouseLeave}
       onMouseEnter={onMouseEnter}
       data-testid="header-dropdown"

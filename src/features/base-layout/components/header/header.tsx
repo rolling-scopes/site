@@ -71,7 +71,7 @@ export const Header = () => {
 
         {isMobile && (
           <>
-            <menu className={cx('mobile-menu', isMenuOpen ? 'open' : '')} data-testid="mobile-menu">
+            <menu className={cx('mobile-menu', { open: isMenuOpen })} data-testid="mobile-menu">
               <MobileView type="header" />
             </menu>
             <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />

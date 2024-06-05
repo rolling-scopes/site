@@ -27,9 +27,9 @@ export const NavItem = ({ label, href, dropdownInner }: NavItemProps) => {
         className={({ isActive }) =>
           cx(
             'menu-item',
-            isActive ? 'active' : '',
-            dropdownInner ? 'dropdown-toggle' : '',
-            isDropdownOpen ? 'rotate' : '',
+            { active: isActive },
+            { 'dropdown-toggle': !!dropdownInner },
+            { rotate: isDropdownOpen },
           )
         }
         data-outside-click-ignore
