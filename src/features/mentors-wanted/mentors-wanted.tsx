@@ -5,16 +5,16 @@ import { Paragraph, Title } from '@/app/components';
 import mentorImg from '@/assets/mentors-wanted-poster.webp';
 import Image from '@/features/image';
 
-import styles from './angular-for-mentors.module.scss';
+import styles from './mentors-wanted.module.scss';
 
 const cx = classNamesBind.bind(styles);
-export const AngularForMentors = () => {
+export const MentorsWanted = () => {
   //todo use custom link
   return (
-    <section className={cx('angular-for-mentors', 'container')}>
+    <section className={cx('mentors-wanted', 'container')}>
       <article className={classNames('content', cx('content'))}>
         <div className={cx('content-left')}>
-          <Title text={'For Mentors'} />
+          <Title text={'Mentors Wanted!'} hasLines />
           <Paragraph>
             If&nbsp;you are interested in mentoring our students, please go through the{' '}
             <Link
