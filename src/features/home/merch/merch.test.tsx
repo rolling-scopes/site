@@ -1,10 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { Merch } from './merch';
+import { renderWithRouter } from '@/__tests__/utils';
 
 describe('Merch', () => {
   beforeEach(() => {
-    render(<Merch />);
+    renderWithRouter(<Merch />);
   });
 
   it('renders the title correctly', () => {

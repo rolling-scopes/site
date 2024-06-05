@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { LinkCustom } from '@/app/components';
 
 import styles from './event-card.module.scss';
 
@@ -59,9 +60,9 @@ export const EventCard = ({
           <br />
           {city}
         </address>
-        <a href={href} target="_blank" rel="noreferrer" className={cx('details-button')}>
+        <LinkCustom href={href} variant="colored" button size="small" target="_blank">
           View details
-        </a>
+        </LinkCustom>
       </div>
     </article>
   );

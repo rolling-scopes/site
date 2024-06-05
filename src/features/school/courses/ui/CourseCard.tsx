@@ -1,4 +1,6 @@
+import { LinkCustom } from '@/app/components';
 import { Course } from '@/app/types';
+import { ArrowIcon } from '@/icons';
 
 type addFields = {
   buttonText: string;
@@ -23,10 +25,15 @@ export const CourseCard = ({
         <p className="date">{`${startDate} • ${language[0].toUpperCase()}`}</p>
       </div>
       <div className="details-container">
-        <a className="details" href={detailsUrl} target="_blank" rel="noreferrer">
-          {buttonText && <span className="label">{buttonText}</span>}
-          <span className="material-symbols-outlined">arrow_forward</span>
-        </a>
+        <LinkCustom
+          href={detailsUrl}
+          icon={<ArrowIcon size="16px" />}
+          variant="colored"
+          button
+          size="small"
+          rounded>
+          {buttonText}
+        </LinkCustom>
       </div>
     </section>
   );

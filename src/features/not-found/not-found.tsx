@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
-import { Paragraph } from '@/app/components';
+import { LinkCustom, Paragraph } from '@/app/components';
 import { useTitle } from '@/app/hooks';
 import notFoundImg from '@/assets/404.webp';
 import Image from '@/features/image';
+import { ArrowIcon } from '@/icons';
 
 import './not-found.scss';
 
@@ -18,10 +18,9 @@ export const NotFound = () => {
         The page you are looking for doesn't exist or has been moved. Please go back to the
         homepage.
       </Paragraph>
-      <Link to="/" className="button">
-        <span className="label">Go back home</span>
-        <span className="material-symbols-outlined arrow">arrow_forward</span>
-      </Link>
+      <LinkCustom href="/" icon={<ArrowIcon />} variant="colored" button>
+        Go back home
+      </LinkCustom>
     </main>
   );
 };
