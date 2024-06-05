@@ -9,9 +9,11 @@ export const usePositionDropdown = () => {
     const dropdownWidth = dropdownContent.clientWidth;
     const windowWidth = window.innerWidth;
     const marginRight = 32;
+    const sumWidth = dropdownOffset.left + dropdownWidth + marginRight;
+    const isElementBeyondScreen = sumWidth > windowWidth;
 
-    if (dropdownOffset.left + dropdownWidth > windowWidth) {
-      dropdownContent.style.left = `-${dropdownOffset.left + dropdownWidth + marginRight - windowWidth}px`;
+    if (isElementBeyondScreen) {
+      dropdownContent.style.left = `-${sumWidth - windowWidth}px`;
     }
   }, []);
 
