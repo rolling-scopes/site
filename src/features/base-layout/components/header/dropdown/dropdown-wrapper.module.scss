@@ -1,4 +1,6 @@
 .courses-dropdown {
+  --page-padding: 32px;
+
   @extend %transition-all;
 
   pointer-events: none;
@@ -11,7 +13,7 @@
 
   width: max-content;
   min-width: 100%;
-  max-width: calc(100vw - 32px);
+  max-width: calc(100vw - var(--page-padding));
   height: max-content;
   padding: 32px;
 
