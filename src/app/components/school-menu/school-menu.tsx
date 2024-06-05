@@ -1,4 +1,4 @@
-import { SchoolList } from './school-list';
+import { GenericItemProps, SchoolList } from './school-list';
 import { useDataByName } from '@/app/hooks';
 import { type Course } from '@/app/types';
 
@@ -53,14 +53,16 @@ interface SchoolMenuProps {
 
 export const SchoolMenu = ({ heading, hasTitle = true, color = 'light' }: SchoolMenuProps) => {
   const { data } = useDataByName('courses');
-
   const courses = data as Course[];
+  let schoolListProps: GenericItemProps[] | Course[];
 
-  const schoolListProps = heading.includes('courses')
-    ? courses
-    : heading.includes('school')
-      ? schoolMenuStaticLinks
-      : communityMenuStaticLinks;
+  if (heading.includes('courses')) {
+    schoolListProps = courses;
+  } else if (heading.includes('school')) {
+    schoolListProps = schoolMenuStaticLinks;
+  } else {
+    schoolListProps = communityMenuStaticLinks;
+  }
 
   return (
     <div className="school-menu">
