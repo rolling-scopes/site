@@ -12,6 +12,7 @@ export interface DropdownWrapperProps {
   isOpen: boolean;
   children: ReactNode;
 }
+
 export const DropdownWrapper = ({
   onMouseLeave,
   onMouseEnter,
