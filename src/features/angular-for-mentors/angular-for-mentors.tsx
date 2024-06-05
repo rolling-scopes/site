@@ -14,16 +14,16 @@ export const AngularForMentors = () => {
     <section className={cx('angular-for-mentors', 'container')}>
       <article className={classNames('content', cx('content'))}>
         <div className={cx('content-left')}>
-          <Title text={'For Mentors:'} />
+          <Title text={'For Mentors'} />
           <Paragraph>
-            If you are interested in mentoring our students, please go through the{' '}
+            If&nbsp;you are interested in mentoring our students, please go through the{' '}
             <Link
               className={cx('link')}
               to="https://github.com/rolling-scopes-school/tasks/tree/master/angular/mentoring"
               target="blank">
               Mentoring Documentation
             </Link>{' '}
-            for the Angular Course.
+            for&nbsp;the Angular Course.
           </Paragraph>
         </div>
         <div className={cx('picture')}>
