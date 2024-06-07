@@ -51,23 +51,31 @@ interface SchoolMenuProps {
   color?: 'dark' | 'light';
 }
 
+function getMenuItems(
+  heading: SchoolMenuProps['heading'],
+  courses: Course[],
+): GenericItemProps[] | Course[] {
+  switch (heading) {
+    case 'all courses':
+      return courses;
+    case 'rs school':
+      return schoolMenuStaticLinks;
+    case 'community':
+      return communityMenuStaticLinks;
+    default:
+      return [];
+  }
+}
+
 export const SchoolMenu = ({ heading, hasTitle = true, color = 'light' }: SchoolMenuProps) => {
   const { data } = useDataByName('courses');
   const courses = data as Course[];
-  let schoolListProps: GenericItemProps[] | Course[];
-
-  if (heading.includes('courses')) {
-    schoolListProps = courses;
-  } else if (heading.includes('school')) {
-    schoolListProps = schoolMenuStaticLinks;
-  } else {
-    schoolListProps = communityMenuStaticLinks;
-  }
+  const menuItems = getMenuItems(heading, courses);
 
   return (
     <div className="school-menu">
       {hasTitle && <h3 className={`heading ${color}`}>{heading}</h3>}
-      <SchoolList list={schoolListProps} color={color} />
+      <SchoolList list={menuItems} color={color} />
     </div>
   );
 };

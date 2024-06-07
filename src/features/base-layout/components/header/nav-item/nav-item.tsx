@@ -32,7 +32,6 @@ export const NavItem = ({ label, href, dropdownInner }: NavItemProps) => {
             { rotate: isDropdownOpen },
           )
         }
-        data-outside-click-ignore
         onMouseLeave={onClose}
         onMouseEnter={onOpen}
         end>
