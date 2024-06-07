@@ -1,4 +1,4 @@
-import { SchoolList } from './school-list';
+import { GenericItemProps, SchoolList } from './school-list';
 import { useDataByName } from '@/app/hooks';
 import { type Course } from '@/app/types';
 
@@ -7,42 +7,75 @@ import './school-menu.scss';
 const schoolMenuStaticLinks = [
   {
     title: 'About RS School',
-    detailsUrl: '/courses',
+    detailsUrl: '/#about',
     description: 'Free online education',
   },
   {
     title: 'Upcoming courses',
-    detailsUrl: '/courses#upcoming-courses',
+    detailsUrl: '/#upcoming-courses',
     description: 'Schedule your study',
   },
   {
-    title: 'IT Journey',
-    detailsUrl: '/courses#learning-path',
-    description: 'Plan your developer path',
-  },
-  {
     title: 'Mentoring',
-    detailsUrl: '/courses#mentors-wanted',
+    detailsUrl: '/#mentors-wanted',
     description: 'Contribute and study',
   },
 ];
 
+const communityMenuStaticLinks = [
+  {
+    title: 'About',
+    detailsUrl: '/community/#about',
+    description: 'Who we are',
+  },
+  {
+    title: 'Events',
+    detailsUrl: '/community/#events',
+    description: 'Meet us at events',
+  },
+  {
+    title: 'Merch',
+    detailsUrl: '/community/#merch',
+    description: 'Sloths for your daily life',
+  },
+  {
+    title: 'Contribute',
+    detailsUrl: '/community/#contribute',
+    description: 'Assist us and improve yourself',
+  },
+];
+
 interface SchoolMenuProps {
-  heading: 'rs school' | 'all courses';
+  heading: 'rs school' | 'all courses' | 'community';
+  hasTitle?: boolean;
   color?: 'dark' | 'light';
 }
 
-export const SchoolMenu = ({ heading, color = 'light' }: SchoolMenuProps) => {
+function getMenuItems(
+  heading: SchoolMenuProps['heading'],
+  courses: Course[],
+): GenericItemProps[] | Course[] {
+  switch (heading) {
+    case 'all courses':
+      return courses;
+    case 'rs school':
+      return schoolMenuStaticLinks;
+    case 'community':
+      return communityMenuStaticLinks;
+    default:
+      return [];
+  }
+}
+
+export const SchoolMenu = ({ heading, hasTitle = true, color = 'light' }: SchoolMenuProps) => {
   const { data } = useDataByName('courses');
-
   const courses = data as Course[];
-
-  const schoolListProps = heading.includes('courses') ? courses : schoolMenuStaticLinks;
+  const menuItems = getMenuItems(heading, courses);
 
   return (
     <div className="school-menu">
-      <h3 className={`heading ${color}`}>{heading}</h3>
-      <SchoolList list={schoolListProps} color={color} />
+      {hasTitle && <h3 className={`heading ${color}`}>{heading}</h3>}
+      <SchoolList list={menuItems} color={color} />
     </div>
   );
 };

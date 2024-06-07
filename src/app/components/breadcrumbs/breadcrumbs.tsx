@@ -24,7 +24,7 @@ export const Breadcrumbs = () => {
           </li>
           {transformedCrumbs.map((crumb, i) => {
             const isLast = i === transformedCrumbs.length - 1;
-            const to = buildUrl(`/${crumbs.slice(0, i + 1).join('/')}`);
+            const to = buildUrl(`/${crumbs.slice(0, i + 1).join('/')}/`);
 
             return (
               <li key={i}>

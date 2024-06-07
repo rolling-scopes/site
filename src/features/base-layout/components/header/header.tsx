@@ -1,16 +1,31 @@
 import { useEffect, useState } from 'react';
+import classNames from 'classnames/bind';
 import { Link, useLocation } from 'react-router-dom';
 import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
-import { LogoWrapper, MobileView } from '@/app/components';
+import { LogoWrapper, MobileView, SchoolMenu } from '@/app/components';
 import { useWindowSize } from '@/app/hooks';
 
 import styles from './header.module.scss';
 
+const cx = classNames.bind(styles);
+
 const navLinks = [
-  { label: 'RS School', href: '/#main' },
-  { label: 'Courses', href: '/courses/#main' },
-  { label: 'Community', href: '/community/#main' },
+  {
+    label: 'RS School',
+    href: '/#main',
+    dropdownInner: <SchoolMenu heading="rs school" color="dark" hasTitle={false} />,
+  },
+  {
+    label: 'Courses',
+    href: '/courses/#main',
+    dropdownInner: <SchoolMenu heading="all courses" color="dark" hasTitle={false} />,
+  },
+  {
+    label: 'Community',
+    href: '/community/#main',
+    dropdownInner: <SchoolMenu heading="community" color="dark" hasTitle={false} />,
+  },
 ];
 
 export const Header = () => {
@@ -27,10 +42,10 @@ export const Header = () => {
   useEffect(() => {
     const listenScrollEvent = () => {
       const scrollY = window.scrollY;
-      if (scrollY < 65) {
+      // setting the class depending on the scrolled height
+      // class changes the background color of the header
+      if (scrollY < 500) {
         setColor('gray');
-      } else if (scrollY < 800) {
-        setColor('none');
       } else {
         setColor('white');
       }
@@ -50,39 +65,35 @@ export const Header = () => {
   }, [width, key, hash, pathname]);
 
   return (
-    <nav className={`${styles.navbar} ${styles[color]}`} data-testid="navigation">
-      <section className={styles.navbarContent}>
+    <nav className={cx('navbar', color)} data-testid="navigation">
+      <section className={cx('navbar-content')}>
         <Link to="/" onClick={() => window.scrollTo({ top: 0 })}>
           <LogoWrapper type="header" />
         </Link>
 
         {isMobile && (
-          <menu
-            className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ''}`}
-            data-testid="mobile-menu">
-            <MobileView type="header" />
-          </menu>
+          <>
+            <menu className={cx('mobile-menu', { open: isMenuOpen })} data-testid="mobile-menu">
+              <MobileView type="header" />
+            </menu>
+            <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+          </>
         )}
 
         {!isMobile && (
-          <menu className={styles.menu}>
+          <menu className={cx('menu')}>
             {navLinks.map((link) => {
-              const isDropdown = false;
-              // const isDropdown = link.label === 'RS School';
-
               return (
                 <NavItem
                   key={link.label}
                   label={link.label}
-                  href={isDropdown ? undefined : link.href}
-                  dropdown={isDropdown}
+                  href={link.href}
+                  dropdownInner={link.dropdownInner}
                 />
               );
             })}
           </menu>
         )}
-
-        {isMobile && <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />}
       </section>
     </nav>
   );

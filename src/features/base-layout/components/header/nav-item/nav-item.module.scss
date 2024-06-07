@@ -1,3 +1,8 @@
+.menu-item-wrapper {
+  position: relative;
+  height: 100%;
+}
+
 .menu-item {
   @include media-hover {
     &:hover::after {
@@ -49,12 +54,6 @@
   }
 
   &.dropdown-toggle {
-    @include media-hover {
-      &:hover .dropdown-arrow svg {
-        stroke: $color-black;
-      }
-    }
-
     position: relative;
 
     .dropdown-arrow {
@@ -63,18 +62,10 @@
       width: 16px;
       height: 17px;
       margin-left: 10px;
-
-      svg {
-        stroke: transparent;
-      }
     }
 
     &.rotate .dropdown-arrow {
       transform: rotate(180deg);
-
-      svg {
-        stroke: $color-black;
-      }
     }
   }
 
