@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import App from './app';
 
-describe('App component tests', async () => {
+describe('App component tests', () => {
   it('renders without crashing', async () => {
     const result = await act(async () => render(<App />));
     const { container } = result;

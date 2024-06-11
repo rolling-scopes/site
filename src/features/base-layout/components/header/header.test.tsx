@@ -100,7 +100,7 @@ describe('Header', () => {
       await act(async () =>
         renderWithRouter(
           <DropdownWrapper onMouseEnter={() => {}} onMouseLeave={() => {}} isOpen={true}>
-            {'TEST'}
+            TEST
           </DropdownWrapper>,
         ),
       );

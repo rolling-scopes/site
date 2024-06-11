@@ -34,7 +34,8 @@ export const Requirements = () => {
           icon={<ArrowIcon />}
           variant="colored"
           button
-          target="_blank">
+          target="_blank"
+        >
           Register as a mentor
         </LinkCustom>
       </div>

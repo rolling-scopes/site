@@ -1,7 +1,5 @@
-/* eslint-disable @stylistic/object-property-newline */
 /* eslint-disable no-useless-escape */
 /* eslint-disable @stylistic/quote-props */
-
 import js from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
@@ -26,8 +24,7 @@ export default [
       'coverage/',
       'optimizeImages/',
       'src/__tests__/',
-      // `eslint.config.js`,
-      '.lintrc000.cjs',
+      // 'eslint.config.js',
     ],
   },
   stylistic.configs['recommended-flat'],

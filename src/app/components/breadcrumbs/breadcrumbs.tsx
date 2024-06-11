@@ -28,16 +28,18 @@ export const Breadcrumbs = () => {
 
             return (
               <li key={i}>
-                {!isLast ? (
-                  <>
-                    <Link to={to} className="link">
-                      {crumb}
-                    </Link>
-                    <span className="separator">/</span>
-                  </>
-                ) : (
-                  <span className="link disabled">{crumb}</span>
-                )}
+                {!isLast
+                  ? (
+                    <>
+                      <Link to={to} className="link">
+                        {crumb}
+                      </Link>
+                      <span className="separator">/</span>
+                    </>
+                    )
+                  : (
+                    <span className="link disabled">{crumb}</span>
+                    )}
               </li>
             );
           })}

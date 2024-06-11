@@ -25,7 +25,9 @@ export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
               title="RS School Intro"
               src="https://www.youtube.com/embed/n4unZLVpnaU"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen></iframe>
+              allowFullScreen
+            >
+            </iframe>
           </div>
         </div>
       </div>

@@ -21,7 +21,7 @@ export const JavaScriptRu = () => {
       <Certification courseName={COURSE_NAME} />
       <Communication courseName={COURSE_NAME} lang={lang} />
       <AboutVideo lang={lang} />
-      <StudyPath path={'javascriptRu'} lang={lang} />
+      <StudyPath path="javascriptRu" lang={lang} />
       <Required courseName={COURSE_NAME} />
     </>
   );

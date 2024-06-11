@@ -1,3 +1,4 @@
+/* eslint-disable @stylistic/jsx-one-expression-per-line */
 import { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
@@ -32,8 +33,8 @@ export const LinkCustom = ({
 
   const linkClassName = button
     ? cx('button', [size], [variant], {
-        rounded,
-      })
+      rounded,
+    })
     : 'text-link';
 
   return (

@@ -1,3 +1,4 @@
+/* eslint-disable @stylistic/jsx-one-expression-per-line */
 import { LinkCustom } from '@/app/components';
 import { type Course } from '@/app/types';
 import micIcon from '@/assets/icons/mic.svg';
@@ -53,7 +54,8 @@ export const CourseCard = ({
             icon={<ArrowIcon size="16px" />}
             variant="colored"
             button
-            size="small">
+            size="small"
+          >
             View details
           </LinkCustom>
         </div>

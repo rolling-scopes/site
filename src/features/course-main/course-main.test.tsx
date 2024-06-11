@@ -70,7 +70,7 @@ describe('CourseMain', () => {
   });
 });
 
-describe('CourseMain', () => {
+describe('Course labels are correct', () => {
   it('renders the section with correct label "AVAILABLE"', () => {
     renderWithRouter(<CourseMain courseName={reactCourseTitle} />);
     const labelElement = screen.getByText(CourseStatus.AVAILABLE);
