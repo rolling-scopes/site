@@ -128,6 +128,7 @@ export const contentMap: ContentMap = {
       </Paragraph>,
       <Paragraph>
         <span>BE AWARE</span>
+        {' '}
         that practical tasks’ deadlines are not suggestions, and should be respected.
       </Paragraph>,
       <Subtitle text="Attention! Mentors on this course will be first assigned to the graduates of the RS School Stage #2." />,
@@ -153,6 +154,7 @@ export const contentMap: ContentMap = {
       </Paragraph>,
       <Paragraph>
         <span>BE AWARE</span>
+        {' '}
         that practical tasks’ deadlines are not suggestions, and should be respected.
       </Paragraph>,
     ],
