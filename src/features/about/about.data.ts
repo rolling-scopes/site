@@ -40,7 +40,7 @@ const angularNodejsAwsFundamentals: (course: string) => AboutInfo[] = () => [
   {
     id: 4,
     title: 'Certificate',
-    info: 'After successful completion of the course, students will receive an electronic certificate of completion.',
+    info: 'After successful completion of the course, students will receive an electronic certificate.',
     icon: awardIcon,
   },
 ];
@@ -73,7 +73,7 @@ const javaScriptEN: () => AboutInfo[] = () => {
     {
       id: 4,
       title: 'Certificate',
-      info: 'After successful completion of the course, students will receive an electronic certificate of completion.',
+      info: 'After successful completion of the course, students will receive an electronic certificate.',
       icon: awardIcon,
     },
   ];
@@ -101,7 +101,7 @@ const javaScriptRU: () => AboutInfo[] = () => {
     {
       id: 4,
       title: 'Сертификат',
-      info: 'Электронный сертификат успешного окончания курса выдается всем, кто проходит два этапа обучения.',
+      info: 'Электронный сертификат об успешном окончании курса выдается всем, кто пройдет два этапа обучения.',
       icon: awardIcon,
     },
   ];
