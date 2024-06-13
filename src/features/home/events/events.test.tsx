@@ -28,12 +28,19 @@ describe('Events', () => {
     expect(paragraphText).toBeVisible();
   });
 
-  it('renders two or less event cards', () => {
+  it('renders one or two event cards or event image', () => {
+    const { getByRole } = renderWithRouter(<Events />);
     const eventCards = screen.queryAllByText(/View details/i);
     expect(eventCards.length).toBeLessThanOrEqual(2);
+
+    if (!eventCards.length) {
+      const eventImage = getByRole('img');
+      expect(eventImage).toBeInTheDocument();
+    }
   });
 
   it('opens event details in a new tab', () => {
+    renderWithRouter(<Events />);
     const eventLinks = screen.queryAllByText(/View details/i);
 
     if (eventLinks.length) {
