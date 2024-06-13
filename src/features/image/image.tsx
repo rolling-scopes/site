@@ -11,9 +11,7 @@ import convertToWebp from '@/features/image/utils/convertToWebp.ts';
 import generateSizes from '@/features/image/utils/generateSizes.ts';
 import generateSrcSet from '@/features/image/utils/generateSrcSet.ts';
 
-const Image: FC<ImageProps> = ({
-  alt, src = '', lazy = 'true', ...props
-}) => {
+const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
   const srcWebp = convertToWebp(src);
   const [srcSet, setSrcSet] = useState(() => (IS_DEV ? undefined : generateSrcSet(srcWebp)));
   const [sizes, setSizes] = useState(() => (IS_DEV ? undefined : generateSizes()));

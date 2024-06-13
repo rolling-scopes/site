@@ -11,15 +11,8 @@ describe('StageCard component', () => {
     description: 'Test description for the card.',
     logoIcon: MOCKED_IMAGE_PATH,
     links: [
-      {
-        href: 'https://test1.com',
-        linkTitle: 'Test link 1',
-      },
-      {
-        href: 'https://test2.com',
-        linkTitle: 'Test link 2',
-        isActive: false,
-      },
+      { href: 'https://test1.com', linkTitle: 'Test link 1' },
+      { href: 'https://test2.com', linkTitle: 'Test link 2', isActive: false },
     ],
   };
 

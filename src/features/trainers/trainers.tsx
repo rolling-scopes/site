@@ -32,9 +32,7 @@ export const Trainers = ({ trainers, lang = 'en' }: TrainersProps) => {
       <div className="nodejs-trainer content gap">
         <Title text={title} hasLines />
         <div className="trainers-list">
-          {trainers.map(({
-            name, bio, photo, role,
-          }) => (
+          {trainers.map(({ name, bio, photo, role }) => (
             <TrainerCard
               key={name}
               name={name}

@@ -3,14 +3,13 @@ import { Mock, describe, expect, it, vi } from 'vitest';
 import { useCourseByTitle } from './use-course-by-title';
 import { useDataByName } from '../use-data-by-name';
 
-vi.mock('../use-data-by-name', () => ({ useDataByName: vi.fn() }));
+vi.mock('../use-data-by-name', () => ({
+  useDataByName: vi.fn(),
+}));
 
 describe('useCourseByTitle', () => {
   const mockData = [
-    {
-      id: 1,
-      title: 'React JS course',
-    },
+    { id: 1, title: 'React JS course' },
     {
       id: 2,
       title: 'JavaScript / Front-end',

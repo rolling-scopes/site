@@ -19,10 +19,7 @@ describe('TrainingProgram', () => {
           mode: 'online',
           detailsUrl: `/${ROUTES.COURSES}/${ROUTES.ANGULAR}`,
           enroll: 'https://wearecommunity.io/events/rs-angular-2023q4',
-          backgroundStyle: {
-            backgroundColor: '#F4F1FA',
-            accentColor: '#F4AFA7',
-          },
+          backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#F4AFA7' },
         },
       });
       renderWithRouter(<TrainingProgram courseName="angular" />);

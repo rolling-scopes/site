@@ -10,9 +10,7 @@ export type OptionItemProps = {
   href?: string;
 };
 
-export const OptionItem = ({
-  title, description, linkLabel, href = '',
-}: OptionItemProps) => (
+export const OptionItem = ({ title, description, linkLabel, href = '' }: OptionItemProps) => (
   <div key={title} className="option">
     <h3 className="option-title">{title}</h3>
     <p className="option-description" role="text">

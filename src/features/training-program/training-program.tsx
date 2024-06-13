@@ -14,8 +14,12 @@ interface TrainingProgramProps {
 }
 
 const localizedContent = {
-  en: { linkLabel: 'Register' },
-  ru: { linkLabel: 'Зарегистрироваться' },
+  en: {
+    linkLabel: 'Register',
+  },
+  ru: {
+    linkLabel: 'Зарегистрироваться',
+  },
 };
 
 export const TrainingProgram = ({ courseName, lang = 'en' }: TrainingProgramProps) => {

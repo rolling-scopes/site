@@ -51,10 +51,7 @@ vi.mock('@/app/hooks', () => {
       error: null,
       loading: false,
     })),
-    useWindowSize: vi.fn().mockReturnValue({
-      width: 1440,
-      height: 900,
-    }),
+    useWindowSize: vi.fn().mockReturnValue({ width: 1440, height: 900 }),
   };
 });
 
@@ -76,10 +73,7 @@ describe('Courses', () => {
   });
 
   it('renders link with "More" on window size 810px', () => {
-    (useWindowSize as Mock).mockReturnValue({
-      width: 810,
-      height: 900,
-    });
+    (useWindowSize as Mock).mockReturnValue({ width: 810, height: 900 });
     renderWithRouter(<Courses />);
     const courseCards = screen.getAllByRole('link', { name: 'More' });
 
@@ -87,10 +81,7 @@ describe('Courses', () => {
   });
 
   it('renders link with "More details" on window size more than 810px', () => {
-    (useWindowSize as Mock).mockReturnValue({
-      width: 1441,
-      height: 900,
-    });
+    (useWindowSize as Mock).mockReturnValue({ width: 1441, height: 900 });
     renderWithRouter(<Courses />);
     const courseCards = screen.getAllByRole('link', { name: 'More details' });
 

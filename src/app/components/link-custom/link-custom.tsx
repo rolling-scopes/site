@@ -32,7 +32,9 @@ export const LinkCustom = ({
   const cx = classNames.bind(styles);
 
   const linkClassName = button
-    ? cx('button', [size], [variant], { rounded })
+    ? cx('button', [size], [variant], {
+      rounded,
+    })
     : 'text-link';
 
   return (

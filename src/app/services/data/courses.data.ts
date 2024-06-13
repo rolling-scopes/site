@@ -33,10 +33,7 @@ export const courses: Course[] = [
     mode: 'online',
     detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS_PRESCHOOL_RU}`),
     enroll: 'https://wearecommunity.io/events/js-stage0-rs-2024q2',
-    backgroundStyle: {
-      backgroundColor: '#FFDB201A',
-      accentColor: '#FFDB204D',
-    },
+    backgroundStyle: { backgroundColor: '#FFDB201A', accentColor: '#FFDB204D' },
   },
   {
     id: '2',
@@ -50,10 +47,7 @@ export const courses: Course[] = [
     mode: 'online',
     detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS}`),
     enroll: 'https://wearecommunity.io/events/rs-jsfe-en-2023q4',
-    backgroundStyle: {
-      backgroundColor: '#FFDB201A',
-      accentColor: '#FFDB204D',
-    },
+    backgroundStyle: { backgroundColor: '#FFDB201A', accentColor: '#FFDB204D' },
   },
   {
     id: '3',
@@ -67,10 +61,7 @@ export const courses: Course[] = [
     mode: 'online',
     detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS_RU}`),
     enroll: 'https://wearecommunity.io/events/js-fe-rs-2023q4',
-    backgroundStyle: {
-      backgroundColor: '#FFDB201A',
-      accentColor: '#FFDB204D',
-    },
+    backgroundStyle: { backgroundColor: '#FFDB201A', accentColor: '#FFDB204D' },
   },
   {
     id: '4',
@@ -83,10 +74,7 @@ export const courses: Course[] = [
     mode: 'online',
     detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.REACT}`),
     enroll: 'https://wearecommunity.io/events/rs-react-2024q3',
-    backgroundStyle: {
-      backgroundColor: '#EEF3FE',
-      accentColor: '#7356BF',
-    },
+    backgroundStyle: { backgroundColor: '#EEF3FE', accentColor: '#7356BF' },
   },
   {
     id: '5',
@@ -99,10 +87,7 @@ export const courses: Course[] = [
     mode: 'online',
     detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.ANGULAR}`),
     enroll: 'https://wearecommunity.io/events/rs-angular-2024q3',
-    backgroundStyle: {
-      backgroundColor: '#F4F1FA',
-      accentColor: '#F4AFA7',
-    },
+    backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#F4AFA7' },
   },
   {
     id: '6',
@@ -115,10 +100,7 @@ export const courses: Course[] = [
     mode: 'online',
     detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.NODE_JS}`),
     enroll: 'https://wearecommunity.io/events/nodejs-rs-2024q1',
-    backgroundStyle: {
-      backgroundColor: '#F0F9F4',
-      accentColor: '#AEDF36',
-    },
+    backgroundStyle: { backgroundColor: '#F0F9F4', accentColor: '#AEDF36' },
   },
   {
     id: '7',
@@ -131,10 +113,7 @@ export const courses: Course[] = [
     mode: 'online',
     detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.AWS_FUNDAMENTALS}`),
     enroll: 'https://wearecommunity.io/events/rs-aws-2024q2',
-    backgroundStyle: {
-      backgroundColor: '#F4F1FA',
-      accentColor: '#7356BF',
-    },
+    backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#7356BF' },
   },
 
   {
@@ -148,9 +127,6 @@ export const courses: Course[] = [
     mode: 'online',
     detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.AWS_DEVELOPER}`),
     enroll: 'https://wearecommunity.io/events/aws-cloud-dev-rs2024q2',
-    backgroundStyle: {
-      backgroundColor: '#F4F1FA',
-      accentColor: '#7356BF',
-    },
+    backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#7356BF' },
   },
 ];

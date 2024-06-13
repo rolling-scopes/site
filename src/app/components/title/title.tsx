@@ -10,9 +10,7 @@ type TitleProps = PropsWithChildren<{
   hasLines?: boolean;
 }>;
 
-export const Title = ({
-  text, type, hasAsterisk, hasLines, children,
-}: TitleProps) => {
+export const Title = ({ text, type, hasAsterisk, hasLines, children }: TitleProps) => {
   const titleType = type ?? TitleType.Regular;
 
   return (

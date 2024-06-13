@@ -12,9 +12,7 @@ interface DateLangProps {
   type?: string;
 }
 
-export const DateLang = ({
-  startDate, language, mode, type = '',
-}: DateLangProps) => {
+export const DateLang = ({ startDate, language, mode, type = '' }: DateLangProps) => {
   const splittedLanguage = language.slice().join('/');
 
   return (

@@ -37,9 +37,7 @@ export const Contribute = () => (
         <Image className="right picture" src={image} alt="contribute" />
       </div>
       <div className="contribute-options">
-        {contributeOptions.map(({
-          title, description, linkLabel, href,
-        }) => (
+        {contributeOptions.map(({ title, description, linkLabel, href }) => (
           <OptionItem
             key={title}
             title={title}

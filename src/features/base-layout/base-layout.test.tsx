@@ -8,11 +8,17 @@ vi.mock('react-router-dom', () => ({
   ScrollRestoration: vi.fn(() => null),
 }));
 
-vi.mock('./components/header', () => ({ Header: vi.fn(() => <div data-testid="mockHeader" />) }));
+vi.mock('./components/header', () => ({
+  Header: vi.fn(() => <div data-testid="mockHeader" />),
+}));
 
-vi.mock('./components/partnered', () => ({ Partnered: vi.fn(() => <div data-testid="mockPartnered" />) }));
+vi.mock('./components/partnered', () => ({
+  Partnered: vi.fn(() => <div data-testid="mockPartnered" />),
+}));
 
-vi.mock('./components/footer', () => ({ Footer: vi.fn(() => <div data-testid="mockFooter" />) }));
+vi.mock('./components/footer', () => ({
+  Footer: vi.fn(() => <div data-testid="mockFooter" />),
+}));
 
 describe('BaseLayout', () => {
   beforeEach(() => {

@@ -9,7 +9,9 @@ interface LogoProps {
 export const Logo = ({ type }: LogoProps) => {
   return (
     <Image
-      className={cn({ 'white-logo': type === 'footer' })}
+      className={cn({
+        'white-logo': type === 'footer',
+      })}
       src={logo}
       alt="logo"
     />

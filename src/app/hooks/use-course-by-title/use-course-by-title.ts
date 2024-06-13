@@ -27,10 +27,5 @@ export const useCourseByTitle = (titleStartsWith: string) => {
 
   const hasError = !!error || (!loading && !course);
 
-  return {
-    course,
-    loading,
-    error,
-    hasError,
-  };
+  return { course, loading, error, hasError };
 };
