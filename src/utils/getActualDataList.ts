@@ -20,9 +20,7 @@ export const getActualDataList = ({
   const postponeDate = dayJS().subtract(actualDelayInDays, 'day');
   const actualDataList = dataList.filter((item) => dayJS(item.date, 'YYYY-MM-DD') >= postponeDate);
 
-  const sortedList = (actualDataList as DataListType<DataItemWithDate>).sort((a, b) =>
-    dayJS(a.date).diff(b.date),
-  );
+  const sortedList = (actualDataList as DataListType<DataItemWithDate>).sort((a, b) => dayJS(a.date).diff(b.date));
 
   return sorted ? sortedList : actualDataList;
 };
