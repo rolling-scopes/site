@@ -1,0 +1,12 @@
+# Ignore artifacts:
+node_modules
+
+build
+coverage
+dist
+
+optimizeImages
+src/__tests__
+
+# Ignore all HTML files:
+**/*.html

@@ -192,10 +192,10 @@ export default [
           'minItems': 5,
         },
       ],
-      '@stylistic/object-curly-newline': ['error', {
-        'ObjectExpression': { 'multiline': true, 'minProperties': 2 },
-      }],
-      '@stylistic/object-property-newline': ['error', { 'allowAllPropertiesOnSameLine': false }],
+      // '@stylistic/object-curly-newline': ['error', {
+      //   'ObjectExpression': { 'multiline': true, 'minProperties': 2 },
+      // }],
+      // '@stylistic/object-property-newline': ['error', { 'allowAllPropertiesOnSameLine': false }],
 
       '@stylistic/member-delimiter-style': [
         'error',
