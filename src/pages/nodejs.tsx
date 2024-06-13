@@ -10,6 +10,7 @@ import { nodejs } from '@/features/trainers/nodejs.data.ts';
 import { TrainingProgram } from '@/features/training-program';
 
 const COURSE_NAME = 'node.js';
+
 export const Nodejs: FC = () => {
   return (
     <>

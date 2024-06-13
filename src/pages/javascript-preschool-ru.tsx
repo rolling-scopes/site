@@ -14,6 +14,7 @@ const COURSE_NAME = 'js / front-end pre-school ru';
 export const JavaScriptPreSchoolRu = () => {
   const lang = 'ru';
   const type = 'Pre-school RU';
+
   return (
     <>
       <CourseMain courseName={COURSE_NAME} type={type} lang={lang} />

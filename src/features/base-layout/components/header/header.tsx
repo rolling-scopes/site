@@ -42,6 +42,7 @@ export const Header = () => {
   useEffect(() => {
     const listenScrollEvent = () => {
       const scrollY = window.scrollY;
+
       // setting the class depending on the scrolled height
       // class changes the background color of the header
       if (scrollY < 500) {

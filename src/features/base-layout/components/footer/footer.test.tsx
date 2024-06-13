@@ -12,12 +12,14 @@ describe('Footer', () => {
   it('should render without crashing', () => {
     const { getByRole } = renderWithRouter(<Footer />);
     const footerElement = getByRole('contentinfo');
+
     expect(footerElement).toBeInTheDocument();
   });
 
   it('displays logo', () => {
     const { getByTestId } = renderWithRouter(<Footer />);
     const logoElement = getByTestId('logo-footer');
+
     expect(logoElement).toBeInTheDocument();
   });
 
@@ -25,12 +27,14 @@ describe('Footer', () => {
     const { getByText } = renderWithRouter(<Footer />);
     const currentYear = new Date().getFullYear();
     const footerElement = getByText(`© ${currentYear} The Rolling Scopes`);
+
     expect(footerElement).toBeInTheDocument();
   });
 
   it('should render desktop view', () => {
     const { getByTestId } = renderWithRouter(<Footer />);
     const desktopView = getByTestId('desktop-view');
+
     expect(desktopView).toBeInTheDocument();
   });
 
@@ -39,6 +43,7 @@ describe('Footer', () => {
 
     const { getByTestId } = renderWithRouter(<Footer />);
     const mobileView = getByTestId('mobile-view');
+
     expect(mobileView).toBeInTheDocument();
     expect(mobileView).toHaveClass('mobile-view');
   });
@@ -48,6 +53,7 @@ describe('Footer', () => {
 
     const { getByText } = renderWithRouter(<Footer />);
     const aboutLink = getByText('About Community');
+
     expect(aboutLink).toBeInTheDocument();
     expect(aboutLink).toHaveAttribute('href', '/community/#about');
   });

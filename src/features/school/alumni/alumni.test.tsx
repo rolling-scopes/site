@@ -16,12 +16,14 @@ describe('Alumni', () => {
   it('renders the title correctly', () => {
     render(<Alumni />);
     const titleElement = screen.getByText('Our alumni');
+
     expect(titleElement).toBeInTheDocument();
   });
 
   it('renders the paragraph correctly', () => {
     render(<Alumni />);
     const paragraphElement = screen.getByText(/We are immensely proud of RS School alumni/i);
+
     expect(paragraphElement).toBeInTheDocument();
   });
 
@@ -32,6 +34,7 @@ describe('Alumni', () => {
     });
     render(<Alumni />);
     const imageElements = screen.getAllByRole('img');
+
     expect(imageElements).toHaveLength(6);
   });
 
@@ -42,6 +45,7 @@ describe('Alumni', () => {
     });
     render(<Alumni />);
     const imageElements = screen.getAllByRole('img');
+
     expect(imageElements).toHaveLength(12);
   });
 
@@ -53,6 +57,7 @@ describe('Alumni', () => {
     render(<Alumni />);
 
     const imageElements = screen.getAllByRole('img');
+
     expect(imageElements).toHaveLength(18);
   });
 });

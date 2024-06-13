@@ -56,6 +56,7 @@ describe('useNearestCourse', () => {
 
   it('always returns the next course', () => {
     const bufferPeriod = 0;
+
     (useDataByName as Mock).mockReturnValue({
       data: mockData,
       loading: false,

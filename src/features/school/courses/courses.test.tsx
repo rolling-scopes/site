@@ -65,11 +65,13 @@ describe('Courses', () => {
 
   it('renders the title correctly', () => {
     const titleElement = screen.getByText('Upcoming courses');
+
     expect(titleElement).toBeInTheDocument();
   });
 
   it('renders no more than 5 course cards', () => {
     const courseCards = screen.getAllByRole('link', { name: 'More' });
+
     expect(courseCards.length).toBe(5);
   });
 
@@ -80,6 +82,7 @@ describe('Courses', () => {
     });
     renderWithRouter(<Courses />);
     const courseCards = screen.getAllByRole('link', { name: 'More' });
+
     expect(courseCards.length).toBe(5);
   });
 
@@ -90,16 +93,19 @@ describe('Courses', () => {
     });
     renderWithRouter(<Courses />);
     const courseCards = screen.getAllByRole('link', { name: 'More details' });
+
     expect(courseCards.length).toBe(5);
   });
 
   it('renders the Go to RS School button', () => {
     const goButton = screen.getByText('Go to courses');
+
     expect(goButton).toBeInTheDocument();
   });
 
   it('should render RsBanner', () => {
     const rsBanner = screen.getByTestId('rs-banner');
+
     expect(rsBanner).toBeInTheDocument();
   });
 });

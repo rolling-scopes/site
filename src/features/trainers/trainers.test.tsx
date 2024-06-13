@@ -10,18 +10,21 @@ describe('Trainer', () => {
   it('renders the title correctly when 1 trainer', () => {
     render(<Trainers trainers={MOCKED_ONE_TRAINER} />);
     const titleElement = screen.getByText('Our trainer');
+
     expect(titleElement).toBeVisible();
   });
 
   it('renders the title correctly with lang ru prop', () => {
     render(<Trainers trainers={MOCKED_MULTIPLE_TRAINERS} lang="ru" />);
     const titleElement = screen.getByText('Преподаватели курса');
+
     expect(titleElement).toBeVisible();
   });
 
   it('renders the title correctly when several trainers', () => {
     render(<Trainers trainers={MOCKED_MULTIPLE_TRAINERS} />);
     const titleElement = screen.getByText('Our mentors and trainers');
+
     expect(titleElement).toBeVisible();
   });
 
@@ -41,12 +44,14 @@ describe('Trainer', () => {
   it('renders all the trainers if passed several (8 in items)', () => {
     const { container } = render(<Trainers trainers={MOCKED_SEVERAL_TRAINERS} />);
     const trainers = container.getElementsByClassName('trainer-card');
+
     expect(trainers).toHaveLength(8);
   });
 
   it('renders the image with correct alt text', () => {
     render(<Trainers trainers={MOCKED_ONE_TRAINER} />);
     const imageElement = screen.getByAltText('Maksim Shylau Senior Software Engineer at Epam');
+
     expect(imageElement).toBeInTheDocument();
   });
 });

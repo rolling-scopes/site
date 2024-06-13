@@ -41,21 +41,25 @@ describe('Header', () => {
 
     it('renders without crashing', () => {
       const headerElement = screen.getByTestId('navigation');
+
       expect(headerElement).toBeInTheDocument();
     });
 
     it('renders RsLogo', () => {
       const logoElement = screen.getByTestId('logo-header');
+
       expect(logoElement).toBeInTheDocument();
     });
 
     it('set color as gray when scrollbar is at the top', () => {
       const headerElement = screen.getByTestId('navigation');
+
       expect(headerElement).toHaveClass(cxHeader('gray'));
     });
 
     it('renders all the header links', () => {
       const headerElement = screen.getAllByText(/.*/, { selector: `p.${cxNavItem('label')}` });
+
       expect(headerElement).toHaveLength(3);
     });
 
@@ -81,11 +85,13 @@ describe('Header', () => {
 
     it('renders RsLogo in mobile view', async () => {
       const logoElement = screen.getAllByTestId('logo-header');
+
       expect(logoElement).toHaveLength(2);
     });
 
     it('renders Burger menu', () => {
       const burger = screen.getByTestId('burger');
+
       expect(burger).toBeInTheDocument();
       expect(burger).toBeVisible();
     });
@@ -95,6 +101,7 @@ describe('Header', () => {
 
       fireEvent.click(burger);
       const mobileMenu = screen.getByTestId('mobile-menu');
+
       expect(mobileMenu).toHaveClass(cxHeader('open'));
       fireEvent.click(burger);
       expect(mobileMenu).not.toHaveClass(cxHeader('open'));
@@ -112,6 +119,7 @@ describe('Header', () => {
       );
 
       const dropdownElement = screen.getByTestId('header-dropdown');
+
       expect(dropdownElement).toHaveClass(cxDropdown('open'));
     });
   });

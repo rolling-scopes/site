@@ -8,6 +8,7 @@ import './courses.scss';
 
 export const Courses = () => {
   const { data: courses, loading, error } = useDataByName('courses');
+
   if (loading) return <h2>Loading...</h2>;
   if (error) return <h2>{error.message}</h2>;
   if (!courses || courses.length === 0) return null;

@@ -31,6 +31,7 @@ describe('Courses (other courses)', () => {
 
   it('displays a error state for other courses', () => {
     const errorMessage = 'Something went wrong';
+
     (useDataByName as Mock).mockImplementation(() => ({ error: new Error(errorMessage) }));
     renderWithRouter(<Courses />);
 

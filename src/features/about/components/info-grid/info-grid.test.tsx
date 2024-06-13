@@ -23,6 +23,7 @@ describe('InfoGrid component', () => {
     render(<InfoGrid items={dummyData} />);
 
     const itemElements = screen.getAllByTestId('info-grid-item');
+
     expect(itemElements).toHaveLength(dummyData.length);
   });
 

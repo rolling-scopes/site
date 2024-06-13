@@ -11,12 +11,14 @@ describe('SectionLabel component', () => {
     // @ts-expect-error unit tests
     render(<SectionLabel label={nonStringLabel} />);
     const labelElement = screen.getByText('12345');
+
     expect(labelElement).toBeInTheDocument();
   });
 
   it('displays correct label', () => {
     render(<SectionLabel {...props} />);
     const label = screen.getByText('Test Label');
+
     expect(label).toBeInTheDocument();
   });
 });

@@ -14,6 +14,7 @@ const localizedContents = {
 
 export const Topics = ({ topics }: TopicsProps) => {
   const lang = useContext(LangContext);
+
   return (
     <ul className="stage-topics">
       <span className="stage-topics-covered">{localizedContents[lang].topics}</span>

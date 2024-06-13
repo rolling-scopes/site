@@ -20,6 +20,7 @@ describe('Links Component', () => {
 
     testLinks.forEach(({ href, linkTitle }) => {
       const linkElement = screen.getByText(linkTitle);
+
       expect(linkElement).toBeInTheDocument();
       expect(linkElement).toHaveAttribute('href', href);
     });
@@ -31,9 +32,11 @@ describe('Links Component', () => {
       linkTitle: 'Dummy',
       isActive: false,
     };
+
     render(<Links links={[testLink]} />);
 
     const linkElement = screen.getByText(testLink.linkTitle);
+
     expect(linkElement).toHaveClass('disabled');
   });
 });

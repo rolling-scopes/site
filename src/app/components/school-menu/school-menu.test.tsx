@@ -48,6 +48,7 @@ describe('SchoolMenu', () => {
     renderWithRouter(<SchoolMenu heading="rs school" />);
 
     const headingElement = screen.getByRole('heading', { name: /rs school/i });
+
     expect(headingElement).toBeInTheDocument();
   });
 
@@ -73,6 +74,7 @@ describe('SchoolMenu', () => {
     renderWithRouter(<SchoolMenu heading="all courses" />);
 
     const headingElement = screen.getByRole('heading', { name: /all courses/i });
+
     expect(headingElement).toBeInTheDocument();
   });
 
@@ -80,8 +82,10 @@ describe('SchoolMenu', () => {
     renderWithRouter(<SchoolMenu heading="all courses" />);
 
     const imageAWS = screen.getByRole('img', { name: aws.title });
+
     expect(imageAWS).toHaveAttribute('src', MOCKED_IMAGE_PATH);
     const imageReact = screen.getByRole('img', { name: react.title });
+
     expect(imageReact).toHaveAttribute('src', MOCKED_IMAGE_PATH);
   });
 

@@ -8,6 +8,7 @@ import { CourseStatus } from '@/app/types';
 vi.mock('@/app/hooks');
 vi.mock('react-router-dom', async (importOriginal) => {
   const actual = await importOriginal<typeof import('react-router-dom')>();
+
   return {
     ...actual,
     useLoaderData: vi.fn(() => [mockedCourse, mockedCourseAvailable, mockedCourseUpcoming]),
@@ -46,16 +47,19 @@ describe('CourseMain', () => {
 
   it('renders the title correctly', async () => {
     const titleElement = await screen.findByText('Node.js Course');
+
     expect(titleElement).toBeVisible();
   });
 
   it('renders the section label "PLANNED" correctly', () => {
     const labelElement = screen.getByText(CourseStatus.PLANNED);
+
     expect(labelElement).toBeVisible();
   });
 
   it('renders enroll button with correct label and href', () => {
     const buttonElement = screen.getByRole('link', { name: /enroll/i });
+
     expect(buttonElement).toBeVisible();
     expect(buttonElement).toHaveAttribute(
       'href',
@@ -65,6 +69,7 @@ describe('CourseMain', () => {
 
   it('renders the image with correct source', () => {
     const imageElement = screen.getByRole('img', { name: /Node.js/i });
+
     expect(imageElement).toBeInTheDocument();
     expect(imageElement).toHaveAttribute('src', MOCKED_IMAGE_PATH);
   });
@@ -74,12 +79,14 @@ describe('Course labels are correct', () => {
   it('renders the section with correct label "AVAILABLE"', () => {
     renderWithRouter(<CourseMain courseName={reactCourseTitle} />);
     const labelElement = screen.getByText(CourseStatus.AVAILABLE);
+
     expect(labelElement).toBeVisible();
   });
 
   it('renders the section with correct label "UPCOMING"', () => {
     renderWithRouter(<CourseMain courseName={angularCourseTitle} />);
     const labelElement = screen.getByText(CourseStatus.UPCOMING);
+
     expect(labelElement).toBeVisible();
   });
 });

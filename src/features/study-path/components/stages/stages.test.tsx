@@ -50,11 +50,13 @@ describe('Stages Component', () => {
 
   it('returns null when stages is null', () => {
     const { container } = render(<Stages stages={null} />);
+
     expect(container.firstChild).toBeNull();
   });
 
   it('returns null when stages is an empty array', () => {
     const { container } = render(<Stages stages={[]} />);
+
     expect(container.firstChild).toBeNull();
   });
 });

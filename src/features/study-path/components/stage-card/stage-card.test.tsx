@@ -26,24 +26,28 @@ describe('StageCard component', () => {
   it('renders without crashing', () => {
     render(<StageCard {...props} />);
     const card = screen.getByText('TestTitle');
+
     expect(card).toBeInTheDocument();
   });
 
   it('displays correct id', () => {
     render(<StageCard {...props} />);
     const id = screen.getByText('1');
+
     expect(id).toBeInTheDocument();
   });
 
   it('displays correct title', () => {
     render(<StageCard {...props} />);
     const title = screen.getByText('TestTitle');
+
     expect(title).toBeInTheDocument();
   });
 
   it('displays correct description', () => {
     render(<StageCard {...props} />);
     const description = screen.getByText('Test description for the card.');
+
     expect(description).toBeInTheDocument();
   });
 
@@ -51,6 +55,7 @@ describe('StageCard component', () => {
     render(<StageCard {...props} />);
     const link1 = screen.getByText('Test link 1');
     const link2 = screen.getByText('Test link 2');
+
     expect(link1).toBeInTheDocument();
     expect(link2).toBeInTheDocument();
   });
@@ -68,6 +73,7 @@ describe('StageCard component', () => {
     render(<StageCard {...props} />);
     const link1 = screen.getByText('Test link 1');
     const link2 = screen.getByText('Test link 2');
+
     expect(link1).not.toHaveClass('disabled');
     expect(link2).toHaveClass('disabled');
   });
@@ -75,6 +81,7 @@ describe('StageCard component', () => {
   it('renders the logo img with correct src and alt attributes', () => {
     render(<StageCard {...props} />);
     const logo = screen.getByAltText('TestTitle');
+
     expect(logo).toHaveAttribute('src', MOCKED_IMAGE_PATH);
   });
 });

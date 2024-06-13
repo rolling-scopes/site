@@ -9,6 +9,7 @@ import { ROUTES } from '@/app/const';
 describe('ScrollToHashElement', () => {
   const scrollIntoViewMock = vi.fn();
   const getElementByIdMock = vi.fn();
+
   beforeEach(() => {
     scrollIntoViewMock.mockClear();
     getElementByIdMock.mockClear();
