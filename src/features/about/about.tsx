@@ -44,7 +44,9 @@ const localizedContent = {
 };
 
 export const About = ({ courseName, type = 'en' }: AboutProps) => {
-  const { course: data, error, loading, hasError } = useCourseByTitle(courseName);
+  const {
+    course: data, error, loading, hasError,
+  } = useCourseByTitle(courseName);
 
   const course = data as Course;
 

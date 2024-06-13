@@ -9,7 +9,11 @@ describe('Stages Component', () => {
       title: 'Stage 1',
       description: 'Stages Description',
       logoIcon: MOCKED_IMAGE_PATH,
-      links: [{ href: 'test.com', linkTitle: 'test title', isActive: true }],
+      links: [{
+        href: 'test.com',
+        linkTitle: 'test title',
+        isActive: true,
+      }],
       topics: ['Advanced Javascript', 'Security'],
       imageSrc: MOCKED_IMAGE_PATH,
       actions: ['Action 1', 'Action 2'],
@@ -20,7 +24,9 @@ describe('Stages Component', () => {
     render(<Stages stages={testStages} />);
 
     testStages.forEach((stage) => {
-      const { title, description, topics, actions } = stage;
+      const {
+        title, description, topics, actions,
+      } = stage;
 
       expect(screen.getByText(title)).toBeInTheDocument();
 

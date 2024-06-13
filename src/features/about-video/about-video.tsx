@@ -5,12 +5,8 @@ import './about-video.scss';
 type AboutVideoProps = { lang?: 'en' | 'ru' };
 
 const localizedContent = {
-  en: {
-    title: 'RS School video',
-  },
-  ru: {
-    title: 'Видео RS School',
-  },
+  en: { title: 'RS School video' },
+  ru: { title: 'Видео RS School' },
 };
 
 export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {

@@ -10,9 +10,7 @@ vi.mock('@/app/hooks');
 describe('About', () => {
   describe('with "react" props', () => {
     beforeEach(() => {
-      (useCourseByTitle as Mock).mockReturnValue({
-        course: { enroll: 'http://course-url.com' },
-      });
+      (useCourseByTitle as Mock).mockReturnValue({ course: { enroll: 'http://course-url.com' } });
       renderWithRouter(<About courseName="react" />);
     });
 
@@ -34,9 +32,7 @@ describe('About', () => {
 
   describe('with "angular" props', () => {
     beforeEach(() => {
-      (useCourseByTitle as Mock).mockReturnValue({
-        course: { enroll: 'http://course-url.com' },
-      });
+      (useCourseByTitle as Mock).mockReturnValue({ course: { enroll: 'http://course-url.com' } });
       renderWithRouter(<About courseName="angular" />);
     });
 

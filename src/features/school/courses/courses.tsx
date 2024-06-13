@@ -23,7 +23,9 @@ export const Courses = () => {
     linkLabel = 'More';
   }
 
-  const coursesContent = coursesData?.map(({ title, language, startDate, detailsUrl }) => {
+  const coursesContent = coursesData?.map(({
+    title, language, startDate, detailsUrl,
+  }) => {
     const courseIcon = getCourseIcon(title as IconsTitle);
     return (
       <CourseCard

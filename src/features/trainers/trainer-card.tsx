@@ -3,7 +3,9 @@ import Image from '@/features/image';
 
 interface TrainerProps extends Trainer {}
 
-export const TrainerCard = ({ name, bio, role, photo }: TrainerProps) => {
+export const TrainerCard = ({
+  name, bio, role, photo,
+}: TrainerProps) => {
   return (
     <div className="trainer-card">
       <div className="picture">

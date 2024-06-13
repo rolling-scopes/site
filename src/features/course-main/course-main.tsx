@@ -16,12 +16,8 @@ interface CourseMainProps {
 }
 
 const localizedContent = {
-  en: {
-    linkLabel: 'Enroll',
-  },
-  ru: {
-    linkLabel: 'Присоединиться',
-  },
+  en: { linkLabel: 'Enroll' },
+  ru: { linkLabel: 'Присоединиться' },
 };
 
 export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) => {
@@ -35,7 +31,9 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
     return <p>Error fetching course. Try again.</p>;
   }
 
-  const { title, altTitle, language, mode, enroll, secondaryIcon, startDate } = course;
+  const {
+    title, altTitle, language, mode, enroll, secondaryIcon, startDate,
+  } = course;
   const status = getCourseStatus(startDate);
 
   return (

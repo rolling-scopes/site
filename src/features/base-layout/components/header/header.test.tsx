@@ -28,7 +28,10 @@ vi.mock('@/app/hooks', async (importOriginal) => {
 describe('Header', () => {
   describe('Desktop view', () => {
     beforeEach(async () => {
-      (useWindowSize as Mock).mockReturnValue({ width: 1280, height: 600 });
+      (useWindowSize as Mock).mockReturnValue({
+        width: 1280,
+        height: 600,
+      });
       await act(async () => renderWithRouter(<Header />));
     });
 
@@ -65,7 +68,10 @@ describe('Header', () => {
 
   describe('Mobile view', () => {
     beforeEach(async () => {
-      (useWindowSize as Mock).mockReturnValue({ width: 800, height: 600 });
+      (useWindowSize as Mock).mockReturnValue({
+        width: 800,
+        height: 600,
+      });
       await act(async () => renderWithRouter(<Header />));
     });
 

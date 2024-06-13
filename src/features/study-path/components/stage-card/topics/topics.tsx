@@ -8,12 +8,8 @@ interface TopicsProps {
 }
 
 const localizedContents = {
-  en: {
-    topics: 'Topics covered:',
-  },
-  ru: {
-    topics: 'Темы:',
-  },
+  en: { topics: 'Topics covered:' },
+  ru: { topics: 'Темы:' },
 };
 
 export const Topics = ({ topics }: TopicsProps) => {

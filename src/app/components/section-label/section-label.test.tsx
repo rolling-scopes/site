@@ -3,9 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { SectionLabel } from './section-label';
 
 describe('SectionLabel component', () => {
-  const props = {
-    label: 'Test Label',
-  };
+  const props = { label: 'Test Label' };
 
   it('converts non-string label props to string', () => {
     const nonStringLabel = 12345;

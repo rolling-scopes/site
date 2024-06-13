@@ -15,7 +15,9 @@ interface InfoGridProps {
 export const InfoGrid = ({ items }: InfoGridProps) => {
   return (
     <div className="about-grid">
-      {items.map(({ id, title, info, icon }) => (
+      {items.map(({
+        id, title, info, icon,
+      }) => (
         <div key={id} className="item" data-testid="info-grid-item">
           <div className="item-title">
             <Image src={icon} alt={title} />

@@ -22,9 +22,7 @@ const mockData = [
   },
 ];
 
-vi.mock('../use-data-by-name', () => ({
-  useDataByName: vi.fn(),
-}));
+vi.mock('../use-data-by-name', () => ({ useDataByName: vi.fn() }));
 
 describe('useNearestCourse', () => {
   afterAll(() => {

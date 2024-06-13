@@ -9,7 +9,9 @@ interface TextWithLinkProps {
 }
 
 export const TextWithLink = ({ data }: TextWithLinkProps) => {
-  return data.map(({ id, text, link, title }) => (
+  return data.map(({
+    id, text, link, title,
+  }) => (
     <Fragment key={id}>
       {text && <span>{text}</span>}
       <Link className="required-link" to={link}>

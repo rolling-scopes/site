@@ -9,9 +9,18 @@ interface TagProps {
 }
 
 const tags: TagProps[] = [
-  { id: 'school', label: 'education' },
-  { id: 'events', label: 'events & meetups' },
-  { id: 'community', label: 'community building' },
+  {
+    id: 'school',
+    label: 'education',
+  },
+  {
+    id: 'events',
+    label: 'events & meetups',
+  },
+  {
+    id: 'community',
+    label: 'community building',
+  },
 ];
 
 export const Hero = () => {
