@@ -27,5 +27,9 @@ export const useDataByName = <K extends keyof DataMap>(
     fetchData();
   }, [dataName, fetchDataFn]);
 
-  return { data, loading, error };
+  return {
+    data,
+    loading,
+    error,
+  };
 };

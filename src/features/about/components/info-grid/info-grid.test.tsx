@@ -5,8 +5,18 @@ import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 
 describe('InfoGrid component', () => {
   const dummyData = [
-    { id: 1, title: 'Title 1', info: 'Info 1', icon: MOCKED_IMAGE_PATH },
-    { id: 2, title: 'Title 2', info: 'Info 2', icon: MOCKED_IMAGE_PATH },
+    {
+      id: 1,
+      title: 'Title 1',
+      info: 'Info 1',
+      icon: MOCKED_IMAGE_PATH,
+    },
+    {
+      id: 2,
+      title: 'Title 2',
+      info: 'Info 2',
+      icon: MOCKED_IMAGE_PATH,
+    },
   ];
 
   it('renders correct number of items', () => {

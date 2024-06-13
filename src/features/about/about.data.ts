@@ -46,7 +46,10 @@ const angularNodejsAwsFundamentals: (course: string) => AboutInfo[] = () => [
 ];
 
 const awsCloudDeveloper: AboutInfo[] = angularNodejsAwsFundamentals('aws cloud dev').map((item) => {
-  if (item.id === 3) return { ...item, info: 'Duration: 10 weeks.' };
+  if (item.id === 3) return {
+    ...item,
+    info: 'Duration: 10 weeks.',
+  };
   return item;
 });
 

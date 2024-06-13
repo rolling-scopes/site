@@ -31,5 +31,8 @@ export function definePrevNext(coursesData: object[]): {
       }
     }
   });
-  return { prevCourse, nextCourse };
+  return {
+    prevCourse,
+    nextCourse,
+  };
 }

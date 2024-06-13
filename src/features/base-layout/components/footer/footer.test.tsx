@@ -4,12 +4,8 @@ import { renderWithRouter } from '@/__tests__/utils';
 import { useWindowSize } from '@/app/hooks';
 
 vi.mock('@/app/hooks', () => ({
-  useWindowSize: vi.fn().mockImplementation(() => ({
-    width: 1200,
-  })),
-  useDataByName: vi.fn().mockImplementation(() => ({
-    data: [],
-  })),
+  useWindowSize: vi.fn().mockImplementation(() => ({ width: 1200 })),
+  useDataByName: vi.fn().mockImplementation(() => ({ data: [] })),
 }));
 
 describe('Footer', () => {

@@ -5,7 +5,11 @@ import { Day } from '../types';
 
 export function finedNearestCourse(courses: object[], bufferPeriod: Day = BUFFER_PERIOD) {
   const { prevCourse, nextCourse } = definePrevNext(courses);
-  const nearestCourse = chooseNearestCourse({ prevCourse, nextCourse, bufferPeriod });
+  const nearestCourse = chooseNearestCourse({
+    prevCourse,
+    nextCourse,
+    bufferPeriod,
+  });
 
   return nearestCourse;
 }

@@ -16,12 +16,8 @@ interface CourseMainProps {
 }
 
 const localizedContent = {
-  en: {
-    linkLabel: 'Enroll',
-  },
-  ru: {
-    linkLabel: 'Присоединиться',
-  },
+  en: { linkLabel: 'Enroll' },
+  ru: { linkLabel: 'Присоединиться' },
 };
 
 export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) => {
