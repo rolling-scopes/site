@@ -1,0 +1,31 @@
+.tag-divider {
+  @include media-tablet {
+    display: none;
+  }
+
+  position: relative;
+
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+
+  vertical-align: middle;
+
+  border-radius: 0;
+
+  & .label {
+    position: absolute;
+    top: 5px;
+
+    font-size: 24px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 24px;
+    color: $color-red;
+    letter-spacing: 0;
+  }
+}

@@ -21,4 +21,21 @@ describe('Hero', () => {
     const descTitle = screen.getByText('Connecting people, growing together, having fun');
     expect(descTitle).toBeVisible();
   });
+
+  it('renders three tags', () => {
+    renderWithRouter(<Hero />);
+    const tags = screen.getAllByRole('link');
+    expect(tags.length).toBe(3);
+  });
+
+  it('renders the correct tag labels', () => {
+    renderWithRouter(<Hero />);
+    const tag1 = screen.getByRole('link', { name: /education/i });
+    const tag2 = screen.getByRole('link', { name: /events & meetups/i });
+    const tag3 = screen.getByRole('link', { name: /community building/i });
+
+    expect(tag1).toBeInTheDocument();
+    expect(tag2).toBeInTheDocument();
+    expect(tag3).toBeInTheDocument();
+  });
 });
