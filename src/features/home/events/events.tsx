@@ -40,7 +40,11 @@ export const Events = () => {
           <Title text="Meet us at events" hasAsterisk />
           <Subtitle text="For years we have been organizing meetups and conferences, where you can always learn something new, share your knowledge, discover new technologies, meet old and find new friends." />
           <Paragraph>
-            During {rsLifetime} years we have organized 150+ events for developers in different
+            During
+            {' '}
+            {rsLifetime}
+            {' '}
+            years we have organized 150+ events for developers in different
             cities and countries.
           </Paragraph>
         </section>

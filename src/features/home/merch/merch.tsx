@@ -24,7 +24,8 @@ export const Merch = () => (
           icon={<ArrowIcon />}
           button
           variant="colored"
-          target="_blank">
+          target="_blank"
+        >
           Discover merch assets
         </LinkCustom>
       </div>

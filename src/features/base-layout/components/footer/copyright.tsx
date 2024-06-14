@@ -1,3 +1,4 @@
+/* eslint-disable @stylistic/jsx-one-expression-per-line */
 export const Copyright = () => {
   const currentYear = new Date().getFullYear();
 

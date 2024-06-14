@@ -33,7 +33,13 @@ export const Trainers = ({ trainers, lang = 'en' }: TrainersProps) => {
         <Title text={title} hasLines />
         <div className="trainers-list">
           {trainers.map(({ name, bio, photo, role }) => (
-            <TrainerCard key={name} name={name} role={role} bio={bio} photo={photo} />
+            <TrainerCard
+              key={name}
+              name={name}
+              role={role}
+              bio={bio}
+              photo={photo}
+            />
           ))}
         </div>
       </div>

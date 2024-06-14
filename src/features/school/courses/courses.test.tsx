@@ -51,7 +51,10 @@ vi.mock('@/app/hooks', () => {
       error: null,
       loading: false,
     })),
-    useWindowSize: vi.fn().mockReturnValue({ width: 1440, height: 900 }),
+    useWindowSize: vi.fn().mockReturnValue({
+      width: 1440,
+      height: 900,
+    }),
   };
 });
 
@@ -62,35 +65,47 @@ describe('Courses', () => {
 
   it('renders the title correctly', () => {
     const titleElement = screen.getByText('Upcoming courses');
+
     expect(titleElement).toBeInTheDocument();
   });
 
   it('renders no more than 5 course cards', () => {
     const courseCards = screen.getAllByRole('link', { name: 'More' });
+
     expect(courseCards.length).toBe(5);
   });
 
   it('renders link with "More" on window size 810px', () => {
-    (useWindowSize as Mock).mockReturnValue({ width: 810, height: 900 });
+    (useWindowSize as Mock).mockReturnValue({
+      width: 810,
+      height: 900,
+    });
     renderWithRouter(<Courses />);
     const courseCards = screen.getAllByRole('link', { name: 'More' });
+
     expect(courseCards.length).toBe(5);
   });
 
   it('renders link with "More details" on window size more than 810px', () => {
-    (useWindowSize as Mock).mockReturnValue({ width: 1441, height: 900 });
+    (useWindowSize as Mock).mockReturnValue({
+      width: 1441,
+      height: 900,
+    });
     renderWithRouter(<Courses />);
     const courseCards = screen.getAllByRole('link', { name: 'More details' });
+
     expect(courseCards.length).toBe(5);
   });
 
   it('renders the Go to RS School button', () => {
     const goButton = screen.getByText('Go to courses');
+
     expect(goButton).toBeInTheDocument();
   });
 
   it('should render RsBanner', () => {
     const rsBanner = screen.getByTestId('rs-banner');
+
     expect(rsBanner).toBeInTheDocument();
   });
 });

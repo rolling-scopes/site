@@ -6,6 +6,7 @@ type Day = number;
 
 export const useNearestCourse = (bufferPeriod: Day = BUFFER_PERIOD) => {
   const { data: coursesData, error, loading } = useDataByName('courses');
+
   if (loading) {
     return {
       course: null,

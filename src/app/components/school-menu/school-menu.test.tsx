@@ -15,7 +15,10 @@ const testCourses = [
     language: ['en'],
     mode: 'online',
     detailsUrl: 'https://rs.school/aws-fundamentals/',
-    backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#7356BF' },
+    backgroundStyle: {
+      backgroundColor: '#F4F1FA',
+      accentColor: '#7356BF',
+    },
   },
   {
     id: '2',
@@ -27,16 +30,15 @@ const testCourses = [
     language: ['ru', 'en'],
     mode: 'online',
     detailsUrl: 'https://rs.school/react/',
-    backgroundStyle: { backgroundColor: '#EEF3FE', accentColor: '#7356BF' },
+    backgroundStyle: {
+      backgroundColor: '#EEF3FE',
+      accentColor: '#7356BF',
+    },
   },
 ];
 
 vi.mock('@/app/hooks', () => {
-  return {
-    useDataByName: vi.fn().mockImplementation(() => ({
-      data: testCourses,
-    })),
-  };
+  return { useDataByName: vi.fn().mockImplementation(() => ({ data: testCourses })) };
 });
 
 describe('SchoolMenu', () => {
@@ -46,6 +48,7 @@ describe('SchoolMenu', () => {
     renderWithRouter(<SchoolMenu heading="rs school" />);
 
     const headingElement = screen.getByRole('heading', { name: /rs school/i });
+
     expect(headingElement).toBeInTheDocument();
   });
 
@@ -71,6 +74,7 @@ describe('SchoolMenu', () => {
     renderWithRouter(<SchoolMenu heading="all courses" />);
 
     const headingElement = screen.getByRole('heading', { name: /all courses/i });
+
     expect(headingElement).toBeInTheDocument();
   });
 
@@ -78,8 +82,10 @@ describe('SchoolMenu', () => {
     renderWithRouter(<SchoolMenu heading="all courses" />);
 
     const imageAWS = screen.getByRole('img', { name: aws.title });
+
     expect(imageAWS).toHaveAttribute('src', MOCKED_IMAGE_PATH);
     const imageReact = screen.getByRole('img', { name: react.title });
+
     expect(imageReact).toHaveAttribute('src', MOCKED_IMAGE_PATH);
   });
 

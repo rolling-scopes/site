@@ -24,17 +24,19 @@ export const NavItem = ({ label, href, dropdownInner }: NavItemProps) => {
     <div className={cx('menu-item-wrapper')}>
       <NavLink
         to={href}
-        className={({ isActive }) =>
-          cx(
-            'menu-item',
-            { active: isActive },
-            { 'dropdown-toggle': !!dropdownInner },
-            { rotate: isDropdownOpen },
-          )
+        className={
+          ({ isActive }) =>
+            cx(
+              'menu-item',
+              { active: isActive },
+              { 'dropdown-toggle': !!dropdownInner },
+              { rotate: isDropdownOpen },
+            )
         }
         onMouseLeave={onClose}
         onMouseEnter={onOpen}
-        end>
+        end
+      >
         <p className={cx('label')}>{label}</p>
         {dropdownInner && (
           <span className={cx('dropdown-arrow')}>

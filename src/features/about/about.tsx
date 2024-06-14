@@ -1,3 +1,4 @@
+/* eslint-disable @stylistic/jsx-one-expression-per-line */
 import { contentMap } from './about.data';
 import { InfoGrid } from './components';
 import { LinkCustom, Paragraph, Title } from '@/app/components';
@@ -70,7 +71,8 @@ export const About = ({ courseName, type = 'en' }: AboutProps) => {
           icon={<ArrowIcon />}
           variant="colored"
           button
-          target="_blank">
+          target="_blank"
+        >
           {localizedContent[type].linkLabel}
         </LinkCustom>
       </div>

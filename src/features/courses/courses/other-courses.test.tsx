@@ -7,7 +7,11 @@ import { useDataByName } from '@/app/hooks';
 
 vi.mock('@/app/hooks', () => {
   return {
-    useDataByName: vi.fn(() => ({ data: undefined, loading: false, error: undefined })),
+    useDataByName: vi.fn(() => ({
+      data: undefined,
+      loading: false,
+      error: undefined,
+    })),
     useNearestCourse: vi.fn().mockImplementation(() => ({
       course: undefined,
       loading: false,
@@ -27,6 +31,7 @@ describe('Courses (other courses)', () => {
 
   it('displays a error state for other courses', () => {
     const errorMessage = 'Something went wrong';
+
     (useDataByName as Mock).mockImplementation(() => ({ error: new Error(errorMessage) }));
     renderWithRouter(<Courses />);
 
@@ -43,7 +48,10 @@ describe('Courses (other courses)', () => {
         language: ['ru', 'en'],
         mode: 'online',
         detailsUrl: 'https://rs.school/react/',
-        backgroundStyle: { backgroundColor: '#EEF3FE', accentColor: '#7356BF' },
+        backgroundStyle: {
+          backgroundColor: '#EEF3FE',
+          accentColor: '#7356BF',
+        },
       },
     ];
 

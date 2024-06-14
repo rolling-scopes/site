@@ -7,34 +7,40 @@ describe('Events', () => {
   it('renders the title "Meet us at events"', () => {
     renderWithRouter(<Events />);
     const titleElement = screen.getByText('Meet us at events');
+
     expect(titleElement).toBeVisible();
   });
 
   it('renders the subtitle correctly', () => {
     const { getByText } = renderWithRouter(<Events />);
     const subtitleElement = getByText(/For years we have been organizing meetups/i);
+
     expect(subtitleElement).toBeVisible();
   });
 
   it('renders the section label correctly', () => {
     const { getByText } = renderWithRouter(<Events />);
     const sectionLabel = getByText('events & meetups');
+
     expect(sectionLabel).toBeVisible();
   });
 
   it('renders the paragraph text correctly', () => {
     const { getByText } = renderWithRouter(<Events />);
     const paragraphText = getByText(/we have organized 150\+ events/i);
+
     expect(paragraphText).toBeVisible();
   });
 
   it('renders one or two event cards or event image', () => {
     const { getByRole } = renderWithRouter(<Events />);
     const eventCards = screen.queryAllByText(/View details/i);
+
     expect(eventCards.length).toBeLessThanOrEqual(2);
 
     if (!eventCards.length) {
       const eventImage = getByRole('img');
+
       expect(eventImage).toBeInTheDocument();
     }
   });

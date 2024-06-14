@@ -31,7 +31,8 @@ export const CourseCard = ({
           variant="colored"
           button
           size="small"
-          rounded>
+          rounded
+        >
           {buttonText}
         </LinkCustom>
       </div>

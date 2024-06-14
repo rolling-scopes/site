@@ -11,7 +11,10 @@ describe('CourseCard', () => {
     mode: 'online',
     language: ['en', 'ru'] as ('en' | 'ru')[],
     detailsUrl: 'http://example.com/course',
-    backgroundStyle: { backgroundColor: '#ffffff', accentColor: '#ff0000' },
+    backgroundStyle: {
+      backgroundColor: '#ffffff',
+      accentColor: '#ff0000',
+    },
   };
 
   beforeEach(() => {

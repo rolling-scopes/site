@@ -15,6 +15,7 @@ export const useDataByName = <K extends keyof DataMap>(
       setLoading(true);
       try {
         const fetchedData = await fetchDataFn(dataName);
+
         setData(fetchedData as DataMap[K]);
       } catch (error) {
         if (error instanceof Error) setError(error);
@@ -22,8 +23,13 @@ export const useDataByName = <K extends keyof DataMap>(
         setLoading(false);
       }
     };
+
     fetchData();
   }, [dataName, fetchDataFn]);
 
-  return { data, loading, error };
+  return {
+    data,
+    loading,
+    error,
+  };
 };

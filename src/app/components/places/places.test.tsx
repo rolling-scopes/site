@@ -22,6 +22,7 @@ describe('Places component', () => {
 
     places.forEach((place) => {
       const allInstances = screen.getAllByText(place);
+
       expect(allInstances.length).toBe(2);
     });
   });
@@ -29,6 +30,7 @@ describe('Places component', () => {
   it('renders divider after each place except the last one', () => {
     render(<Places />);
     const dividers = screen.getAllByTestId('divider');
+
     expect(dividers).toHaveLength(places.length * 2);
   });
 });

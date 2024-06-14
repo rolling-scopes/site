@@ -19,22 +19,76 @@ import toptal from '@/assets/alumni/toptal.svg';
 import visualfabriq from '@/assets/alumni/visualfabriq.svg';
 
 export const alumni: AlumniProps[] = [
-  { id: 'epam', image: epam },
-  { id: 'toptal', image: toptal },
-  { id: 'oxagile', image: oxagile },
-  { id: 'dott', image: dott },
-  { id: 'andersen', image: andersen },
-  { id: 'godel', image: godel },
-  { id: 'satellite', image: satellite },
-  { id: 'itechart', image: itechart },
-  { id: 'pandadoc', image: pandadoc },
-  { id: 'dataart', image: dataart },
-  { id: 'coherent', image: coherent },
-  { id: 'elinext', image: elinext },
-  { id: 'miro', image: miro },
-  { id: 'qulix', image: qulix },
-  { id: 'visualfabriq', image: visualfabriq },
-  { id: 'sberbank', image: sberbank },
-  { id: 'nanosoft', image: nanosoft },
-  { id: 'aesoft', image: aesoft },
+  {
+    id: 'epam',
+    image: epam,
+  },
+  {
+    id: 'toptal',
+    image: toptal,
+  },
+  {
+    id: 'oxagile',
+    image: oxagile,
+  },
+  {
+    id: 'dott',
+    image: dott,
+  },
+  {
+    id: 'andersen',
+    image: andersen,
+  },
+  {
+    id: 'godel',
+    image: godel,
+  },
+  {
+    id: 'satellite',
+    image: satellite,
+  },
+  {
+    id: 'itechart',
+    image: itechart,
+  },
+  {
+    id: 'pandadoc',
+    image: pandadoc,
+  },
+  {
+    id: 'dataart',
+    image: dataart,
+  },
+  {
+    id: 'coherent',
+    image: coherent,
+  },
+  {
+    id: 'elinext',
+    image: elinext,
+  },
+  {
+    id: 'miro',
+    image: miro,
+  },
+  {
+    id: 'qulix',
+    image: qulix,
+  },
+  {
+    id: 'visualfabriq',
+    image: visualfabriq,
+  },
+  {
+    id: 'sberbank',
+    image: sberbank,
+  },
+  {
+    id: 'nanosoft',
+    image: nanosoft,
+  },
+  {
+    id: 'aesoft',
+    image: aesoft,
+  },
 ];

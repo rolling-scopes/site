@@ -1,3 +1,4 @@
+/* eslint-disable @stylistic/jsx-one-expression-per-line */
 import classNames from 'classnames/bind';
 import { faqData } from './faq.data';
 import { TextWithLink, Title } from '@/app/components';
@@ -10,7 +11,7 @@ export const Faq = () => {
   return (
     <section className={cx('faq', 'container')}>
       <div className={cx('content', 'info-wrapper')}>
-        <Title text={'FAQ'} hasAsterisk />
+        <Title text="FAQ" hasAsterisk />
         <ol className={cx('list')}>
           {faqData.map(({ question, answer }, index) => (
             <li className={cx('list-item')} key={question}>

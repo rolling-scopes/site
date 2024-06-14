@@ -19,10 +19,10 @@ export const Required = ({ courseName, marked1, marked2 }: RequiredProps) => {
     knowBefore && 'description' in knowBefore && knowBefore.description.length !== 0;
 
   const isWillLearnExist =
-    willLearn &&
-    willLearn.length !== 0 &&
-    willLearn[0].description.length !== 0 &&
-    (willLearn.length === 2 ? willLearn[1].description.length !== 0 : true);
+    willLearn
+    && willLearn.length !== 0
+    && willLearn[0].description.length !== 0
+    && (willLearn.length === 2 ? willLearn[1].description.length !== 0 : true);
 
   return (
     <section className="required container">
@@ -39,13 +39,13 @@ export const Required = ({ courseName, marked1, marked2 }: RequiredProps) => {
           <div className="will-learn">
             {isWillLearnExist
               ? willLearn.map((willLearn) => {
-                  return (
-                    <article>
-                      <Subtitle text={willLearn.title} />
-                      <Actions actions={willLearn.description} marked={marked2} />
-                    </article>
-                  );
-                })
+                return (
+                  <article>
+                    <Subtitle text={willLearn.title} />
+                    <Actions actions={willLearn.description} marked={marked2} />
+                  </article>
+                );
+              })
               : ''}
           </div>
         </div>

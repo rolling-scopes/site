@@ -3,10 +3,15 @@ import Image from '@/features/image';
 import './info-grid.scss';
 
 interface InfoGridProps {
-  items: { id: number; title: string; info: string; icon: string }[];
+  items: {
+    id: number;
+    title: string;
+    info: string;
+    icon: string;
+  }[];
   hasTitle?: boolean;
 }
-//removed hasTitle props temp
+// removed hasTitle props temp
 export const InfoGrid = ({ items }: InfoGridProps) => {
   return (
     <div className="about-grid">

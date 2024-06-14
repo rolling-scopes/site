@@ -51,7 +51,8 @@ export const Pictures = () => (
         showArrows={true}
         showThumbs={false}
         showStatus={false}
-        centerMode={true}>
+        centerMode={true}
+      >
         {photos.map((photo) => (
           <Image src={photo} key={photo} data-testid="carousel-image" />
         ))}

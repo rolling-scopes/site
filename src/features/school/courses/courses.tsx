@@ -17,6 +17,7 @@ export const Courses = () => {
   const coursesData = selectCourses(courses);
 
   let linkLabel = 'More details';
+
   if (size.width <= tabletScreenBreakPoint) {
     linkLabel = '';
   } else if (size.width <= laptopScreenBreakPoint) {
@@ -25,6 +26,7 @@ export const Courses = () => {
 
   const coursesContent = coursesData?.map(({ title, language, startDate, detailsUrl }) => {
     const courseIcon = getCourseIcon(title as IconsTitle);
+
     return (
       <CourseCard
         title={title}

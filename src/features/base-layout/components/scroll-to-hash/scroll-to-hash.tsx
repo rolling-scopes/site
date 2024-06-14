@@ -8,8 +8,12 @@ export const ScrollToHashElement = () => {
   useEffect(() => {
     const scrollToElement = (hash: string) => {
       const element = document.getElementById(hash.replace('#', ''));
+
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
       }
     };
 

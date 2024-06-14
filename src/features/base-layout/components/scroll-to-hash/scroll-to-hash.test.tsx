@@ -1,19 +1,22 @@
 import { render, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import {
+  beforeEach, describe, expect, it, vi,
+} from 'vitest';
 import { ScrollToHashElement } from './scroll-to-hash';
 import { ROUTES } from '@/app/const';
 
 describe('ScrollToHashElement', () => {
   const scrollIntoViewMock = vi.fn();
   const getElementByIdMock = vi.fn();
+
   beforeEach(() => {
     scrollIntoViewMock.mockClear();
     getElementByIdMock.mockClear();
 
-    global.document.getElementById = getElementByIdMock.mockReturnValue({
-      scrollIntoView: scrollIntoViewMock,
-    } as unknown as HTMLElement);
+    global.document.getElementById = getElementByIdMock.mockReturnValue(
+      { scrollIntoView: scrollIntoViewMock } as unknown as HTMLElement,
+    );
   });
 
   const setup = (entry: string = ROUTES.HOME) => {
@@ -28,7 +31,10 @@ describe('ScrollToHashElement', () => {
     setup('/#value');
     await waitFor(() => {
       expect(getElementByIdMock).toHaveBeenCalled();
-      expect(scrollIntoViewMock).toHaveBeenCalledWith({ behavior: 'smooth', block: 'start' });
+      expect(scrollIntoViewMock).toHaveBeenCalledWith({
+        behavior: 'smooth',
+        block: 'start',
+      });
     });
   });
 

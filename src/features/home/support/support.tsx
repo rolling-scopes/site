@@ -19,7 +19,8 @@ export const Support = () => (
           icon={<ArrowIcon />}
           variant="colored"
           button
-          target="_blank">
+          target="_blank"
+        >
           Donate now
         </LinkCustom>
       </div>

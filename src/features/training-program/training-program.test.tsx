@@ -19,7 +19,10 @@ describe('TrainingProgram', () => {
           mode: 'online',
           detailsUrl: `/${ROUTES.COURSES}/${ROUTES.ANGULAR}`,
           enroll: 'https://wearecommunity.io/events/rs-angular-2023q4',
-          backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#F4AFA7' },
+          backgroundStyle: {
+            backgroundColor: '#F4F1FA',
+            accentColor: '#F4AFA7',
+          },
         },
       });
       renderWithRouter(<TrainingProgram courseName="angular" />);
@@ -27,6 +30,7 @@ describe('TrainingProgram', () => {
 
     it(`renders correct title "Training Program"`, () => {
       const title = screen.getByText(/Training program/i);
+
       expect(title).toBeVisible();
     });
 
@@ -45,11 +49,13 @@ describe('TrainingProgram', () => {
 
     it('renders Button with correct url', () => {
       const button = screen.getByRole('link', { name: /register/i });
+
       expect(button).toHaveAttribute('href', 'https://wearecommunity.io/events/rs-angular-2023q4');
     });
 
     it('renders correct image with alt text', () => {
       const image = screen.getByRole('img', { name: 'angular' });
+
       expect(image).toHaveAttribute('alt', expect.stringContaining('angular'));
     });
   });
@@ -69,6 +75,7 @@ describe('TrainingProgram', () => {
 
     it('renders correct title', () => {
       const title = screen.getByText(/Training program/i);
+
       expect(title).toBeInTheDocument();
     });
 
@@ -80,6 +87,7 @@ describe('TrainingProgram', () => {
         'using AWS S3 and CloudFront',
         'Implement backend-for-frontend using API Gateway',
       ];
+
       paragraphs.forEach((p) => {
         expect(screen.getByText(new RegExp(p, 'i'))).toBeInTheDocument();
       });
@@ -87,6 +95,7 @@ describe('TrainingProgram', () => {
 
     it('renders Button with correct url', () => {
       const button = screen.getByRole('link', { name: /register/i });
+
       expect(button).toHaveAttribute(
         'href',
         'https://wearecommunity.io/events/aws-cloud-dev-rs2023q4',
@@ -95,6 +104,7 @@ describe('TrainingProgram', () => {
 
     it('renders correct image with alt text', () => {
       const image = screen.getByRole('img', { name: 'AWS Cloud Developer' });
+
       expect(image).toHaveAttribute('alt', expect.stringContaining('AWS Cloud Developer'));
     });
   });

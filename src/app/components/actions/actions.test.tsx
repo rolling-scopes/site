@@ -4,6 +4,7 @@ import { Actions } from './actions';
 describe('Actions Component', () => {
   it('renders action items correctly', () => {
     const actions = ['Action 1', 'Action 2', 'Action 3'];
+
     render(<Actions actions={actions} />);
 
     actions.forEach((action) => {
@@ -14,6 +15,7 @@ describe('Actions Component', () => {
   it('adds the marked class when marked prop is true', () => {
     render(<Actions actions={['Action']} marked={true} />);
     const actionsElement = screen.getByText('Action');
+
     expect(actionsElement).toHaveClass('marked');
   });
 });

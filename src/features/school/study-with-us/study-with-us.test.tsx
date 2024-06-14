@@ -10,16 +10,19 @@ describe('School Component', () => {
 
   it('renders the component title correctly', () => {
     const titleElement = screen.getByText('Study with RS School');
+
     expect(titleElement).toBeVisible();
   });
 
   it('renders the component subtitle correctly', () => {
     const subtitleElement = screen.getByText(/RS School is a free/i);
+
     expect(subtitleElement).toBeVisible();
   });
 
   it('renders the study options correctly', () => {
     const options = screen.getAllByRole('heading', { level: 3 });
+
     expect(options.length).toBe(3);
   });
 
@@ -33,6 +36,7 @@ describe('School Component', () => {
 
   it('renders the picture with correct alt text', () => {
     const image = screen.getByAltText('education');
+
     expect(image).toBeInTheDocument();
   });
 });

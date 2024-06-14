@@ -27,7 +27,8 @@ export const DropdownWrapper = ({
       onMouseLeave={onMouseLeave}
       onMouseEnter={onMouseEnter}
       data-testid="header-dropdown"
-      ref={dropdownRef}>
+      ref={dropdownRef}
+    >
       {children}
     </div>
   );

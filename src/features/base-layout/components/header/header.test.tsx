@@ -28,7 +28,10 @@ vi.mock('@/app/hooks', async (importOriginal) => {
 describe('Header', () => {
   describe('Desktop view', () => {
     beforeEach(async () => {
-      (useWindowSize as Mock).mockReturnValue({ width: 1280, height: 600 });
+      (useWindowSize as Mock).mockReturnValue({
+        width: 1280,
+        height: 600,
+      });
       await act(async () => renderWithRouter(<Header />));
     });
 
@@ -38,21 +41,25 @@ describe('Header', () => {
 
     it('renders without crashing', () => {
       const headerElement = screen.getByTestId('navigation');
+
       expect(headerElement).toBeInTheDocument();
     });
 
     it('renders RsLogo', () => {
       const logoElement = screen.getByTestId('logo-header');
+
       expect(logoElement).toBeInTheDocument();
     });
 
     it('set color as gray when scrollbar is at the top', () => {
       const headerElement = screen.getByTestId('navigation');
+
       expect(headerElement).toHaveClass(cxHeader('gray'));
     });
 
     it('renders all the header links', () => {
       const headerElement = screen.getAllByText(/.*/, { selector: `p.${cxNavItem('label')}` });
+
       expect(headerElement).toHaveLength(3);
     });
 
@@ -65,7 +72,10 @@ describe('Header', () => {
 
   describe('Mobile view', () => {
     beforeEach(async () => {
-      (useWindowSize as Mock).mockReturnValue({ width: 800, height: 600 });
+      (useWindowSize as Mock).mockReturnValue({
+        width: 800,
+        height: 600,
+      });
       await act(async () => renderWithRouter(<Header />));
     });
 
@@ -75,11 +85,13 @@ describe('Header', () => {
 
     it('renders RsLogo in mobile view', async () => {
       const logoElement = screen.getAllByTestId('logo-header');
+
       expect(logoElement).toHaveLength(2);
     });
 
     it('renders Burger menu', () => {
       const burger = screen.getByTestId('burger');
+
       expect(burger).toBeInTheDocument();
       expect(burger).toBeVisible();
     });
@@ -89,6 +101,7 @@ describe('Header', () => {
 
       fireEvent.click(burger);
       const mobileMenu = screen.getByTestId('mobile-menu');
+
       expect(mobileMenu).toHaveClass(cxHeader('open'));
       fireEvent.click(burger);
       expect(mobileMenu).not.toHaveClass(cxHeader('open'));
@@ -100,12 +113,13 @@ describe('Header', () => {
       await act(async () =>
         renderWithRouter(
           <DropdownWrapper onMouseEnter={() => {}} onMouseLeave={() => {}} isOpen={true}>
-            {'TEST'}
+            TEST
           </DropdownWrapper>,
         ),
       );
 
       const dropdownElement = screen.getByTestId('header-dropdown');
+
       expect(dropdownElement).toHaveClass(cxDropdown('open'));
     });
   });
