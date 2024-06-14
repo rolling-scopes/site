@@ -11,14 +11,7 @@
     }
 
     .content {
-      @include media-tablet-large {
-        padding-top: 40px;
-      }
-
-      padding-top: 0;
-      padding-bottom: 0;
-
-      & .mentors-info {
+      .mentors-info {
         @include media-tablet-large {
           width: 100%;
         }
@@ -27,7 +20,7 @@
         flex-direction: column;
         gap: 16px;
 
-        & > .subtitle {
+        > .subtitle {
           @include media-tablet-large {
             max-width: 100%;
             font-size: 20px;
@@ -37,7 +30,7 @@
           font-weight: $font-weight-regular;
         }
 
-        & > a {
+        > a {
           margin-top: 24px;
         }
       }

@@ -2,21 +2,9 @@
   &.content {
     @include media-laptop {
       flex-direction: column;
-      padding: 80px 40px 40px;
     }
 
-    @include media-tablet {
-      padding: 40px 16px;
-    }
-
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-
-    padding: 80px 0 40px 120px;
-
-    & .info {
+    .info {
       @include media-laptop {
         width: 100%;
       }
@@ -24,18 +12,18 @@
       width: 600px;
       text-align: left;
 
-      & .title,
-      & .subtitle,
-      & .paragraph {
+      .title,
+      .subtitle,
+      .paragraph {
         margin-top: 16px;
       }
     }
 
-    & .button {
+    .button {
       margin-top: 24px;
     }
 
-    & .picture {
+    .picture {
       @include media-laptop {
         width: 680px;
         height: 618px;
