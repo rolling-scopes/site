@@ -29,26 +29,30 @@ const nearestEvents = actualEvents.slice(0, displayedCardsQuantity);
 
 const Stub = <Image src={photo3} />;
 
-export const Events = () => (
-  <article id="events" className={cn(cx('events'), 'container')}>
-    <div className={cn(cx('events', 'content'), 'content')}>
-      <section className={cx('info')}>
-        <SectionLabel label="events & meetups" />
-        <Title text="Meet us at events" hasAsterisk />
-        <Subtitle text="For years we have been organizing meetups and conferences, where you can always learn something new, share your knowledge, discover new technologies, meet old and find new friends." />
-        <Paragraph>
-          During 9 years we have organized 150+ events for developers in different cities and
-          countries.
-        </Paragraph>
-      </section>
+export const Events = () => {
+  const rsLifetime = dayjs().diff('2013', 'year');
 
-      <section className={cx('cards')}>
-        {!actualEvents.length && Stub}
+  return (
+    <article id="events" className={cn(cx('events'), 'container')}>
+      <div className={cn(cx('events', 'content'), 'content')}>
+        <section className={cx('info')}>
+          <SectionLabel label="events & meetups" />
+          <Title text="Meet us at events" hasAsterisk />
+          <Subtitle text="For years we have been organizing meetups and conferences, where you can always learn something new, share your knowledge, discover new technologies, meet old and find new friends." />
+          <Paragraph>
+            During {rsLifetime} years we have organized 150+ events for developers in different
+            cities and countries.
+          </Paragraph>
+        </section>
 
-        {(nearestEvents as EventCardProps[]).map((i) => (
-          <EventCard key={i.title} {...i} date={dayjs(i.date).format('DD MMM YYYY')} />
-        ))}
-      </section>
-    </div>
-  </article>
-);
+        <section className={cx('cards')}>
+          {!actualEvents.length && Stub}
+
+          {(nearestEvents as EventCardProps[]).map((i) => (
+            <EventCard key={i.title} {...i} date={dayjs(i.date).format('DD MMM YYYY')} />
+          ))}
+        </section>
+      </div>
+    </article>
+  );
+};

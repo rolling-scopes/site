@@ -17,6 +17,10 @@ Provide the steps to reproduce the behavior:
 3. Scroll down to '...'
 4. Observe the error
 
+## 🏁 Actual Behavior 
+
+Please provide a clear and concise description how it looks right now
+
 ## 🏁 Expected Behavior
 
 Please provide a clear and concise description of what you expected to happen instead of the bug.
@@ -25,20 +29,12 @@ Please provide a clear and concise description of what you expected to happen in
 
 If applicable, add screenshots to help explain the problem.
 
-## 🕹️ Device Information
+## 🕹 Device Information
 
 - OS: [e.g. iOS]
-- Browser: [e.g. Chrome, Safari]
-- Version: [e.g. 22]
+- Browser: [e.g. Chrome, Safari], version
+- Screen size
 
 ## ℹ️ Additional Context
 
 Add any other context or information about the problem here.
-
-## ✅ Definition of Done (DoD):
-
-Detail clear criteria that signify the bug fix's success.
-
-## 🕰️ Timeline:
-
-Provide the deadline or estimated timeframe for the bug fix.
