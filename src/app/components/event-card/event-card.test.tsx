@@ -35,6 +35,7 @@ describe('EventCard', () => {
     expect(screen.getByText(mockProps.city, { exact: false })).toBeInTheDocument();
 
     const detailsLink = screen.getByRole('link', { name: /View details/i });
+
     expect(detailsLink).toHaveAttribute('href', mockProps.href);
   });
 });

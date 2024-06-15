@@ -18,7 +18,7 @@
   transition: background-color 0.2s;
 
   &.gray {
-    background-color: rgb(95 44 20 / 10%);
+    background-color: $color-yellow-500;
   }
 
   &.none {

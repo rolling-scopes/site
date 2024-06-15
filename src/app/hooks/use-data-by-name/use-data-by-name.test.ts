@@ -18,7 +18,10 @@ const courses: DataMap['courses'] = [
     mode: 'online',
     detailsUrl: `https://rs.school/${ROUTES.AWS_FUNDAMENTALS}/`,
     enroll: 'https://wearecommunity.io/events/rs-aws-2023q3',
-    backgroundStyle: { backgroundColor: '#F4F1FA', accentColor: '#7356BF' },
+    backgroundStyle: {
+      backgroundColor: '#F4F1FA',
+      accentColor: '#7356BF',
+    },
   },
 ];
 

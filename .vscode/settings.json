@@ -1,0 +1,6 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "eslint.experimental.useFlatConfig": true
+}

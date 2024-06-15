@@ -8,6 +8,7 @@ import { reactEn } from '@/features/trainers/react-en.data.ts';
 import { TrainingProgram } from '@/features/training-program';
 
 const COURSE_NAME = 'react';
+
 export const React = () => {
   return (
     <>

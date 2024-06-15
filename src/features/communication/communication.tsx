@@ -1,3 +1,4 @@
+/* eslint-disable @stylistic/jsx-one-expression-per-line */
 import { LinkCustom, Paragraph, Subtitle, Title } from '@/app/components';
 import {
   CourseNames,
@@ -70,7 +71,8 @@ export const Communication = ({ courseName, lang = 'en' }: RequiredProps) => {
               <LinkCustom
                 href={RS_DOCS_TELEGRAM_CHATS_LINK}
                 icon={<TextLinkIcon />}
-                target="_blank">
+                target="_blank"
+              >
                 {localizedContent[lang].telegramLink}
               </LinkCustom>
               {localizedContent[lang].secondParagraphSecondHalf}

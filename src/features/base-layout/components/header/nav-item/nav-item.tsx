@@ -1,53 +1,54 @@
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
+import classNames from 'classnames/bind';
 import { NavLink } from 'react-router-dom';
-import { DropdownMenu } from '../dropdown/dropdown';
+import { DropdownWrapper } from '../dropdown/dropdown-wrapper';
 import { DropdownArrow } from '@/icons/dropdown-arrow';
 
 import styles from './nav-item.module.scss';
 
+const cx = classNames.bind(styles);
+
 type NavItemProps = {
   label: string;
-  href?: string;
-  dropdown?: boolean;
+  href: string;
+  dropdownInner?: ReactNode;
 };
 
-export const NavItem = ({ label, href, dropdown = false }: NavItemProps) => {
+export const NavItem = ({ label, href, dropdownInner }: NavItemProps) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const onClose = () => setDropdownOpen(false);
   const onOpen = () => setDropdownOpen(true);
 
   return (
-    <>
-      {href && !dropdown ? (
-        <NavLink
-          className={({ isActive }) =>
-            isActive ? `${styles.menuItem} ${styles.active}` : styles.menuItem
-          }
-          to={href}
-          end>
-          <p className={styles.label}>{label}</p>
-        </NavLink>
-      ) : (
-        <>
-          <p
-            className={`${styles.menuItem} ${styles.dropdownToggle} ${isDropdownOpen ? styles.rotate : ''}`}
-            data-outside-click-ignore
-            onMouseLeave={onClose}
-            onMouseEnter={onOpen}>
-            <span className={styles.label}>{label}</span>
-            <span className={styles.dropdownArrow}>
-              <DropdownArrow />
-            </span>
-          </p>
-          <DropdownMenu
-            onMouseLeave={onClose}
-            onMouseEnter={onOpen}
-            isOpen={isDropdownOpen}
-            onClose={onClose}
-          />
-        </>
+    <div className={cx('menu-item-wrapper')}>
+      <NavLink
+        to={href}
+        className={
+          ({ isActive }) =>
+            cx(
+              'menu-item',
+              { active: isActive },
+              { 'dropdown-toggle': !!dropdownInner },
+              { rotate: isDropdownOpen },
+            )
+        }
+        onMouseLeave={onClose}
+        onMouseEnter={onOpen}
+        end
+      >
+        <p className={cx('label')}>{label}</p>
+        {dropdownInner && (
+          <span className={cx('dropdown-arrow')}>
+            <DropdownArrow />
+          </span>
+        )}
+      </NavLink>
+      {dropdownInner && (
+        <DropdownWrapper onMouseLeave={onClose} onMouseEnter={onOpen} isOpen={isDropdownOpen}>
+          {dropdownInner}
+        </DropdownWrapper>
       )}
-    </>
+    </div>
   );
 };

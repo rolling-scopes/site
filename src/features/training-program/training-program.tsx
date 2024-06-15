@@ -14,12 +14,8 @@ interface TrainingProgramProps {
 }
 
 const localizedContent = {
-  en: {
-    linkLabel: 'Register',
-  },
-  ru: {
-    linkLabel: 'Зарегистрироваться',
-  },
+  en: { linkLabel: 'Register' },
+  ru: { linkLabel: 'Зарегистрироваться' },
 };
 
 export const TrainingProgram = ({ courseName, lang = 'en' }: TrainingProgramProps) => {
@@ -43,7 +39,8 @@ export const TrainingProgram = ({ courseName, lang = 'en' }: TrainingProgramProp
             icon={<ArrowIcon />}
             variant="colored"
             button
-            target="_blank">
+            target="_blank"
+          >
             {localizedContent[lang].linkLabel}
           </LinkCustom>
         </div>

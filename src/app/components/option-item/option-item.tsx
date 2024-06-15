@@ -23,7 +23,8 @@ export const OptionItem = ({ title, description, linkLabel, href = '' }: OptionI
         button
         size="medium"
         variant="outlined"
-        target="_blank">
+        target="_blank"
+      >
         {linkLabel}
       </LinkCustom>
     )}

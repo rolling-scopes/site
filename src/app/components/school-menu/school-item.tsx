@@ -22,12 +22,9 @@ export const SchoolItem = ({ item, color }: SchoolItemProps) => {
     </>
   );
 
-  const descriptionBlock =
-    'description' in item ? (
-      descriptionContent
-    ) : (
-      <div className="details">{descriptionContent}</div>
-    );
+  const descriptionBlock = ('description' in item)
+    ? (descriptionContent)
+    : (<div className="details">{descriptionContent}</div>);
 
   return (
     <li key={'id' in item ? item.id : item.title}>

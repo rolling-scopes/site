@@ -40,13 +40,16 @@ const angularNodejsAwsFundamentals: (course: string) => AboutInfo[] = () => [
   {
     id: 4,
     title: 'Certificate',
-    info: 'After accomplishing all three stages of education, students will receive an electronic certificate of completion.',
+    info: 'After successful completion of the course, students will receive an electronic certificate.',
     icon: awardIcon,
   },
 ];
 
 const awsCloudDeveloper: AboutInfo[] = angularNodejsAwsFundamentals('aws cloud dev').map((item) => {
-  if (item.id === 3) return { ...item, info: 'Duration: 10 weeks.' };
+  if (item.id === 3) return {
+    ...item,
+    info: 'Duration: 10 weeks.',
+  };
   return item;
 });
 
@@ -73,7 +76,7 @@ const javaScriptEN: () => AboutInfo[] = () => {
     {
       id: 4,
       title: 'Certificate',
-      info: 'A certificate of successful completion of the course is issued to everybody who pass two stages of training.',
+      info: 'After successful completion of the course, students will receive an electronic certificate.',
       icon: awardIcon,
     },
   ];
@@ -101,7 +104,7 @@ const javaScriptRU: () => AboutInfo[] = () => {
     {
       id: 4,
       title: 'Сертификат',
-      info: 'Сертификат успешного окончания курса выдается всем, кто проходит два этапа обучения.',
+      info: 'Электронный сертификат об успешном окончании курса выдается всем, кто пройдет два этапа обучения.',
       icon: awardIcon,
     },
   ];
@@ -130,7 +133,7 @@ const javaScriptPreSchoolRU: () => AboutInfo[] = () => {
     {
       id: 4,
       title: 'Сертификат',
-      info: 'При успешном прохождении курса выдается сертификат',
+      info: 'При успешном прохождении курса выдается электронный сертификат.',
       icon: awardIcon,
     },
   ];
@@ -170,7 +173,7 @@ const reactRuAbout: AboutInfo[] = [
   {
     id: 3,
     title: 'Сертификат',
-    info: 'Сертификат об успешном прохождении курсов выдается всем прошедшим два этапа обучения.',
+    info: 'При успешном прохождении курса выдается электронный сертификат.',
     icon: awardIcon,
   },
   {

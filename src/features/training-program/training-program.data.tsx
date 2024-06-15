@@ -122,9 +122,10 @@ export const contentMap: ContentMap = {
       <Paragraph>
         The course lasts 11 weeks, requiring approximately 20-40 hours of study per week.
       </Paragraph>,
-      //todo use custom link
+      // todo use custom link
       <Paragraph>
-        All webinars are recorded and available on our{' '}
+        All webinars are recorded and available on our
+        {' '}
         <Link className="link" to="https://www.youtube.com/c/rollingscopesschool" target="blank">
           Youtube
         </Link>
@@ -151,8 +152,9 @@ export const contentMap: ContentMap = {
         when you want to watch the lectures and complete the tasks.
       </Paragraph>,
       <Paragraph>
-        <span>BE AWARE</span> that practical tasks’ deadlines are not suggestions, and should be
-        respected.
+        <span>BE AWARE</span>
+        {' '}
+        that practical tasks’ deadlines are not suggestions, and should be respected.
       </Paragraph>,
     ],
     image: jsImg,
@@ -176,8 +178,7 @@ export const contentMap: ContentMap = {
         выбора времени для просмотра лекций и выполнения заданий.
       </Paragraph>,
       <Paragraph>
-        <span>ОБРАТИТЕ ВНИМАНИЕ</span>, что сроки выполнения практических заданий не являются
-        рекомендацией и должны быть соблюдены.
+        {`${(<span>ОБРАТИТЕ ВНИМАНИЕ</span>)}, что сроки выполнения практических заданий не являются рекомендацией и должны быть соблюдены.`}
       </Paragraph>,
     ],
     image: jsImg,
@@ -188,8 +189,8 @@ export const contentMap: ContentMap = {
     content: [
       <Paragraph>
         <span>Введение в RS School:</span>
-        <br /> Знакомство со школой, профессией JS/Front-end разработчика и системой контроля версий
-        Git.
+        <br />
+        Знакомство со школой, профессией JS/Front-end разработчика и системой контроля версий Git.
       </Paragraph>,
       <Paragraph>
         <span>Основы веб-разработки:</span>

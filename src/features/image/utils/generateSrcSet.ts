@@ -8,6 +8,7 @@ import { DESKTOP_W, MOBILE_W, TABLET_W } from '@/features/image/constants.ts';
 const generateSrcSet = (src: string) => {
   const srcNoExtension = src.slice(0, src.lastIndexOf('.'));
   const srcSet = `${srcNoExtension}-${MOBILE_W}.webp ${MOBILE_W}w, ${srcNoExtension}-${TABLET_W}.webp ${TABLET_W}w, ${src} ${DESKTOP_W}w`;
+
   return srcSet;
 };
 

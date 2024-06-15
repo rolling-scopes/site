@@ -23,7 +23,7 @@ const contributeOptions: OptionItemProps[] = [
 ];
 
 export const Contribute = () => (
-  <div className="contribute container">
+  <div id="contribute" className="contribute container">
     <div className="contribute content">
       <div className="general">
         <div className="info">

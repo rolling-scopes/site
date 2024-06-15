@@ -8,8 +8,8 @@ export const selectCourse = (coursesData: Course[], titleStartsWith: string) => 
 
   const course = courses.find((course) => {
     const titleMatches =
-      course.title.toLowerCase().startsWith(titleLower) ||
-      course.altTitle?.toLowerCase().startsWith(titleLower);
+      course.title.toLowerCase().startsWith(titleLower)
+      || course.altTitle?.toLowerCase().startsWith(titleLower);
 
     return titleMatches;
   });

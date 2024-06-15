@@ -18,6 +18,7 @@ describe('Required', () => {
     const requirement = screen.getByText(
       /Solid knowledge of JavaScript, including ES6, is required for this course./i,
     );
+
     expect(requirement).toBeVisible();
   });
 

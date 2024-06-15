@@ -24,20 +24,22 @@ export const Breadcrumbs = () => {
           </li>
           {transformedCrumbs.map((crumb, i) => {
             const isLast = i === transformedCrumbs.length - 1;
-            const to = buildUrl(`/${crumbs.slice(0, i + 1).join('/')}`);
+            const to = buildUrl(`/${crumbs.slice(0, i + 1).join('/')}/`);
 
             return (
               <li key={i}>
-                {!isLast ? (
-                  <>
-                    <Link to={to} className="link">
-                      {crumb}
-                    </Link>
-                    <span className="separator">/</span>
-                  </>
-                ) : (
-                  <span className="link disabled">{crumb}</span>
-                )}
+                {!isLast
+                  ? (
+                    <>
+                      <Link to={to} className="link">
+                        {crumb}
+                      </Link>
+                      <span className="separator">/</span>
+                    </>
+                    )
+                  : (
+                    <span className="link disabled">{crumb}</span>
+                    )}
               </li>
             );
           })}

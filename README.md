@@ -3,7 +3,7 @@
 Welcome to the RS School repository! Here you'll find the source code for the RS School landing page. RS School offers free courses in software development, building a supportive community of students, mentors, and industry professionals.
 
 ## RS School Website Documentation
-For more detailed documentation, visit [RS School Website Documentation](./readme/README.md)).
+For more detailed documentation, visit [RS School Website Documentation](./readme/README.md).
 
 ## Contributors
 

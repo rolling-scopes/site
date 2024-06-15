@@ -7,6 +7,7 @@ describe('Paragraph component', () => {
     render(<Paragraph>Test Text</Paragraph>);
 
     const paragraphElement = screen.getByText('Test Text');
+
     expect(paragraphElement).toBeInTheDocument();
   });
 
@@ -18,6 +19,7 @@ describe('Paragraph component', () => {
     );
 
     const spanElement = screen.getByText('Child Component');
+
     expect(spanElement).toBeInTheDocument();
   });
 
@@ -25,6 +27,7 @@ describe('Paragraph component', () => {
     render(<Paragraph></Paragraph>);
 
     const paragraphElement = screen.queryByTestId('paragraph');
+
     expect(paragraphElement).not.toBeInTheDocument();
   });
 });

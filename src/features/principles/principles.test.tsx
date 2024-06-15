@@ -13,6 +13,7 @@ describe('Principles', () => {
     const titleElement = screen.getByText(
       /RS School Principles are an ability to complete our mission/i,
     );
+
     expect(titleElement).toBeVisible();
   });
 
@@ -28,6 +29,7 @@ describe('Principles', () => {
 
   it('renders the correct number of PrincipleCards', () => {
     const principleCards = document.getElementsByClassName('principle-card');
+
     expect(principleCards).toHaveLength(cards.length);
   });
 });

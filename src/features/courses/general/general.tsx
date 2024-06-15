@@ -13,7 +13,8 @@ export const General = () => {
             <h2 className="title">Materials</h2>
             <ul className="description">
               <li>
-                School <Link to="https://docs.rs.school">documentation</Link>
+                School
+                <Link to="https://docs.rs.school">documentation</Link>
               </li>
               <li>All materials are publicly available on YouTube and GitHub</li>
               <li>

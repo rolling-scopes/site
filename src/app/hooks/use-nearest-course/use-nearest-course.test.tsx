@@ -22,9 +22,7 @@ const mockData = [
   },
 ];
 
-vi.mock('../use-data-by-name', () => ({
-  useDataByName: vi.fn(),
-}));
+vi.mock('../use-data-by-name', () => ({ useDataByName: vi.fn() }));
 
 describe('useNearestCourse', () => {
   afterAll(() => {
@@ -58,6 +56,7 @@ describe('useNearestCourse', () => {
 
   it('always returns the next course', () => {
     const bufferPeriod = 0;
+
     (useDataByName as Mock).mockReturnValue({
       data: mockData,
       loading: false,

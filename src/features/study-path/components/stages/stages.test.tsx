@@ -9,7 +9,11 @@ describe('Stages Component', () => {
       title: 'Stage 1',
       description: 'Stages Description',
       logoIcon: MOCKED_IMAGE_PATH,
-      links: [{ href: 'test.com', linkTitle: 'test title', isActive: true }],
+      links: [{
+        href: 'test.com',
+        linkTitle: 'test title',
+        isActive: true,
+      }],
       topics: ['Advanced Javascript', 'Security'],
       imageSrc: MOCKED_IMAGE_PATH,
       actions: ['Action 1', 'Action 2'],
@@ -44,11 +48,13 @@ describe('Stages Component', () => {
 
   it('returns null when stages is null', () => {
     const { container } = render(<Stages stages={null} />);
+
     expect(container.firstChild).toBeNull();
   });
 
   it('returns null when stages is an empty array', () => {
     const { container } = render(<Stages stages={[]} />);
+
     expect(container.firstChild).toBeNull();
   });
 });

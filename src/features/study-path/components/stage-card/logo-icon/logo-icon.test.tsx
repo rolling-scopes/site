@@ -9,6 +9,7 @@ describe('LogoIcon Component', () => {
     render(<LogoIcon icon={MOCKED_IMAGE_PATH} title={testTitle} />);
 
     const imgElement = screen.getByAltText(testTitle);
+
     expect(imgElement).toBeInTheDocument();
     expect(imgElement).toHaveAttribute('src', MOCKED_IMAGE_PATH);
   });

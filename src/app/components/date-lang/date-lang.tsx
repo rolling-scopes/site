@@ -1,3 +1,4 @@
+/* eslint-disable @stylistic/jsx-one-expression-per-line */
 import micIcon from '@/assets/icons/mic.svg';
 import noteIcon from '@/assets/icons/note-icon.svg';
 import Image from '@/features/image';
