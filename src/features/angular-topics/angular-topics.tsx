@@ -18,10 +18,11 @@ export const AngularTopics = () => {
     'Redux & NgRx',
     'Unit Testing',
   ];
+
   return (
     <section className={cx('angular-topics', 'container')}>
       <article className={cx('content', 'angular-topics-content')}>
-        <Title text={'Topics Covered:'} hasAsterisk />
+        <Title text="Topics Covered:" hasAsterisk />
         <Actions actions={topicsList} marked />
       </article>
     </section>

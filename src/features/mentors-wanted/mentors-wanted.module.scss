@@ -42,13 +42,13 @@
     }
   }
 
-  @media (width <= 1440px) {
+  @include media-laptop {
     .content {
       padding: 80px 40px;
     }
   }
 
-  @media (width <= 810px) {
+  @include media-tablet {
     .content {
       flex-direction: column;
       gap: 40px;
