@@ -1,6 +1,7 @@
 import { GenericItemProps, SchoolList } from './school-list';
-import { useDataByName } from '@/app/hooks';
+
 import { type Course } from '@/app/types';
+import { useDataByName } from '@/shared/hooks/use-data-by-name';
 
 import './school-menu.scss';
 

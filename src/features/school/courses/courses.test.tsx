@@ -3,8 +3,9 @@ import { Mock, beforeEach, describe, expect, it, vi } from 'vitest';
 import { Courses } from './courses';
 import { renderWithRouter } from '@/__tests__/utils';
 import { ROUTES } from '@/app/const';
-import { useWindowSize } from '@/app/hooks';
+
 import { buildUrl } from '@/app/services/platform';
+import { useWindowSize } from '@/shared/hooks/use-window-size';
 
 const mockedData = [
   {
@@ -44,13 +45,19 @@ const mockedData = [
   },
 ];
 
-vi.mock('@/app/hooks', () => {
+vi.mock('@/app/hooks/use-data-by-name', () => {
   return {
     useDataByName: vi.fn().mockImplementation(() => ({
       data: mockedData,
       error: null,
       loading: false,
     })),
+
+  };
+});
+
+vi.mock('@/shared/hooks/use-window-size', () => {
+  return {
     useWindowSize: vi.fn().mockReturnValue({
       width: 1440,
       height: 900,

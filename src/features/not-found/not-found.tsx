@@ -1,7 +1,7 @@
-import { useTitle } from '@/app/hooks';
 import Image from '@/features/image';
 import { ArrowIcon } from '@/icons';
 import notFoundImg from '@/shared/assets/404.webp';
+import { useTitle } from '@/shared/hooks/use-title';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { useTitle } from '@/app/hooks';
+
 import { Principles } from '@/features/principles';
 import {
   About,
@@ -11,6 +11,7 @@ import {
   Requirements,
   StudyWithUs,
 } from '@/features/school';
+import { useTitle } from '@/shared/hooks/use-title';
 import { Breadcrumbs } from '@/shared/ui/breadcrumbs';
 
 export const School: FC = () => {

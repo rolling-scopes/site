@@ -1,7 +1,7 @@
 import { Copyright } from './copyright';
 import { DesktopView } from './desktop-view';
 import { MobileView } from '@/app/components';
-import { useWindowSize } from '@/app/hooks';
+import { useWindowSize } from '@/shared/hooks/use-window-size';
 
 import './footer.scss';
 

@@ -3,23 +3,43 @@ import { Mock, describe, expect, it, vi } from 'vitest';
 import { Courses } from './courses';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 import { renderWithRouter } from '@/__tests__/utils';
-import { useDataByName } from '@/app/hooks';
+import { useDataByName } from '@/shared/hooks/use-data-by-name';
 
-vi.mock('@/app/hooks', () => {
+// REVIEW need help with this mock
+// vi.mock("@/shared/hooks/use-nearest-course", async (importOriginal) => {
+//   const actual = await importOriginal()
+//   return {
+//     ...actual,
+
+//     useNearestCourse: vi.fn().mockImplementation(() => ({
+//       course: undefined,
+//       loading: false,
+//       error: undefined,
+//       hasError: false,
+//     })),
+
+//   }
+// })
+vi.mock('@/shared/hooks/use-data-by-name', () => {
   return {
     useDataByName: vi.fn(() => ({
       data: undefined,
       loading: false,
       error: undefined,
     })),
-    useNearestCourse: vi.fn().mockImplementation(() => ({
-      course: undefined,
-      loading: false,
-      error: undefined,
-      hasError: false,
-    })),
   };
 });
+// REVIEW why we mock this hook?
+// vi.mock('@/shared/hooks/use-nearest-course', () => {
+//   return {
+//     useNearestCourse: vi.fn().mockImplementation(() => ({
+//       course: undefined,
+//       loading: false,
+//       error: undefined,
+//       hasError: false,
+//     })),
+//   };
+// })
 
 describe('Courses (other courses)', () => {
   it('displays a loading state for other courses', () => {

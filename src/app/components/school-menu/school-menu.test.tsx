@@ -37,7 +37,7 @@ const testCourses = [
   },
 ];
 
-vi.mock('@/app/hooks', () => {
+vi.mock('@/shared/hooks/use-data-by-name', () => {
   return { useDataByName: vi.fn().mockImplementation(() => ({ data: testCourses })) };
 });
 

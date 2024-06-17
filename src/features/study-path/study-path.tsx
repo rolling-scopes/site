@@ -1,7 +1,8 @@
 import { createContext } from 'react';
 import { Stages } from './components';
-import { useDataByName } from '@/app/hooks';
+
 import { type DataMap } from '@/app/services/data/courses-data.types';
+import { useDataByName } from '@/shared/hooks/use-data-by-name';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Title } from '@/shared/ui/title';
 

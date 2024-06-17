@@ -3,9 +3,9 @@ import { type Mock, beforeEach } from 'vitest';
 import { About } from './about';
 import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 import { renderWithRouter } from '@/__tests__/utils';
-import { useCourseByTitle } from '@/app/hooks';
+import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';
 
-vi.mock('@/app/hooks');
+vi.mock('@/shared/hooks/use-course-by-title');
 
 describe('About', () => {
   describe('with "react" props', () => {

@@ -5,7 +5,7 @@ import { renderWithRouter } from '@/__tests__/utils';
 import { dayJS } from '@/app/services/dayjs';
 import { CourseStatus } from '@/app/types';
 
-vi.mock('@/app/hooks');
+vi.mock('@/app/hooks/use-course-by-title');
 vi.mock('react-router-dom', async (importOriginal) => {
   const actual = await importOriginal<typeof import('react-router-dom')>();
 

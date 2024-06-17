@@ -3,9 +3,10 @@ import { IconsTitle } from './lib/icons.data';
 import { selectCourses } from './lib/selectCourses';
 import { CourseCard } from './ui/CourseCard';
 import { ROUTES } from '@/app/const';
-import { useWindowSize } from '@/app/hooks';
+
 import { courses } from '@/app/services/data';
 import { ArrowIcon, RsBanner } from '@/icons';
+import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { LinkCustom } from '@/shared/ui/link-custom';
 
 import './courses.scss';

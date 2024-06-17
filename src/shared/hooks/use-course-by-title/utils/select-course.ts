@@ -1,4 +1,4 @@
-import isCourse from '@/app/hooks/use-course-by-title/utils/is-course.ts';
+import isCourse from './is-course';
 import { Course } from '@/app/types';
 
 export const selectCourse = (coursesData: Course[], titleStartsWith: string) => {

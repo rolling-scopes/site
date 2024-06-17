@@ -1,12 +1,10 @@
 import { type Mock, describe, expect, it } from 'vitest';
 import { Footer } from './footer';
 import { renderWithRouter } from '@/__tests__/utils';
-import { useWindowSize } from '@/app/hooks';
+import { useWindowSize } from '@/shared/hooks/use-window-size';
 
-vi.mock('@/app/hooks', () => ({
-  useWindowSize: vi.fn().mockImplementation(() => ({ width: 1200 })),
-  useDataByName: vi.fn().mockImplementation(() => ({ data: [] })),
-}));
+vi.mock('@/shared/hooks/use-window-size', () => ({ useWindowSize: vi.fn().mockImplementation(() => ({ width: 1200 })) }));
+vi.mock('@/shared/hooks/use-data-by-name', () => ({ useDataByName: vi.fn().mockImplementation(() => ({ data: [] })) }));
 
 describe('Footer', () => {
   it('should render without crashing', () => {

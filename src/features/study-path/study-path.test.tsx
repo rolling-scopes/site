@@ -19,7 +19,7 @@ const testStages = [
   },
 ];
 
-vi.mock('@/app/hooks', () => ({ useDataByName: vi.fn().mockImplementation(() => ({ data: testStages })) }));
+vi.mock('@/shared/hooks/use-data-by-name', () => ({ useDataByName: vi.fn().mockImplementation(() => ({ data: testStages })) }));
 
 describe('StudyPath Component', () => {
   it('renders the title and paragraph text correctly for angularPath', () => {
