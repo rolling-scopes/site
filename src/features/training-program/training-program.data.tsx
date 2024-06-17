@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 import { Actions } from '@/app/components';
 
-import awsPractitionerBadge from '@/assets/aws-cloud-pract-badge.webp';
-import angularImg from '@/assets/rs-slope-angular.webp';
-import awsDevImg from '@/assets/rs-slope-aws-dev.webp';
-import awsFundamentalsImg from '@/assets/rs-slope-aws-fundamentals.webp';
-import jsImg from '@/assets/rs-slope-js.webp';
-import nodejsImg from '@/assets/rs-slope-nodejs.webp';
-import reactEnImg from '@/assets/rs-slope-react-en.webp';
-import reactRuImg from '@/assets/rs-slope-react-ru.webp';
+import awsPractitionerBadge from '@/shared/assets/aws-cloud-pract-badge.webp';
+import angularImg from '@/shared/assets/rs-slope-angular.webp';
+import awsDevImg from '@/shared/assets/rs-slope-aws-dev.webp';
+import awsFundamentalsImg from '@/shared/assets/rs-slope-aws-fundamentals.webp';
+import jsImg from '@/shared/assets/rs-slope-js.webp';
+import nodejsImg from '@/shared/assets/rs-slope-nodejs.webp';
+import reactEnImg from '@/shared/assets/rs-slope-react-en.webp';
+import reactRuImg from '@/shared/assets/rs-slope-react-ru.webp';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
 

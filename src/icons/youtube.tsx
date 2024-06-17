@@ -1,5 +1,5 @@
-import youtube from '@/assets/svg/youtube.svg';
 import Image from '@/features/image';
+import youtube from '@/shared/assets/svg/youtube.svg';
 
 export const YouTubeIcon = () => {
   return (

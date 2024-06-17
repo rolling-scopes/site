@@ -1,7 +1,7 @@
 import type { Trainer } from './trainers.types';
-import nodejsImg2 from '@/assets/mentors/a-auchynikau.webp';
-import nodejsImg1 from '@/assets/mentors/m-shylau.webp';
-import nodejsImg3 from '@/assets/mentors/v-antonau.webp';
+import nodejsImg2 from '@/shared/assets/mentors/a-auchynikau.webp';
+import nodejsImg1 from '@/shared/assets/mentors/m-shylau.webp';
+import nodejsImg3 from '@/shared/assets/mentors/v-antonau.webp';
 
 export const nodejs: Trainer[] = [
   {

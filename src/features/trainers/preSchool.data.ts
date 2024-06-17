@@ -1,6 +1,6 @@
 import type { Trainer } from './trainers.types';
-import preSchoolImg2 from '@/assets/mentors/a-musikhina.webp';
-import preSchoolImg1 from '@/assets/mentors/v-kavaliou.webp';
+import preSchoolImg2 from '@/shared/assets/mentors/a-musikhina.webp';
+import preSchoolImg1 from '@/shared/assets/mentors/v-kavaliou.webp';
 
 export const preSchoolRu: Trainer[] = [
   {

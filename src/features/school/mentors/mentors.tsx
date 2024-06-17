@@ -1,7 +1,7 @@
 import { LINKS } from '@/app/const';
-import mentorImg from '@/assets/mentors-wanted.webp';
 import Image from '@/features/image';
 import { ArrowIcon } from '@/icons';
+import mentorImg from '@/shared/assets/mentors-wanted.webp';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { Title, TitleType } from '@/shared/ui/title';

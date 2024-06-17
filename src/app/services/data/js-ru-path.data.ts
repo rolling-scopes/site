@@ -1,7 +1,7 @@
 import { type JSPath } from './courses-data.types';
-import stage1 from '@/assets/stages/stage-1.webp';
-import stage2 from '@/assets/stages/stage-2.webp';
-import stage3 from '@/assets/stages/stage-3.webp';
+import stage1 from '@/shared/assets/stages/stage-1.webp';
+import stage2 from '@/shared/assets/stages/stage-2.webp';
+import stage3 from '@/shared/assets/stages/stage-3.webp';
 
 export const jsPathRu: JSPath[] = [
   {

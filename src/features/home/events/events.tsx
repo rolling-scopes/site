@@ -6,8 +6,8 @@ import {
   EventCard,
   EventCardProps,
 } from '@/app/components';
-import photo3 from '@/assets/photo-3.webp';
 import Image from '@/features/image';
+import photo3 from '@/shared/assets/photo-3.webp';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';

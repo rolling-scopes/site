@@ -1,5 +1,5 @@
-import mentors from '@/assets/mentor-with-his-students.webp';
 import Image from '@/features/image';
+import mentors from '@/shared/assets/mentor-with-his-students.webp';
 import { Title, TitleType } from '@/shared/ui/title';
 
 import './main.scss';

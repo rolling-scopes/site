@@ -1,6 +1,6 @@
 import cn from 'classnames';
-import logo from '@/assets/svg/rss-logo.svg';
 import Image from '@/features/image';
+import logo from '@/shared/assets/svg/rss-logo.svg';
 
 interface LogoProps {
   type: 'header' | 'footer';

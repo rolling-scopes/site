@@ -1,6 +1,6 @@
-import image from '@/assets/speakers-wanted.webp';
 import Image from '@/features/image';
 import { EmailIcon } from '@/icons';
+import image from '@/shared/assets/speakers-wanted.webp';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { Title, TitleType } from '@/shared/ui/title';
 

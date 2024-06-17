@@ -1,6 +1,6 @@
-import image from '@/assets/welcome.webp';
 import Image from '@/features/image';
 import { FacebookIcon, InstagramIcon, LinkedInIcon, TelegramIcon, YouTubeIcon } from '@/icons';
+import image from '@/shared/assets/welcome.webp';
 import { SocialMedia, SocialMediaProps } from '@/shared/ui/social-media';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { Title, TitleType } from '@/shared/ui/title';

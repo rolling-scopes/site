@@ -1,7 +1,7 @@
 import { LINKS } from '@/app/const';
-import image from '@/assets/merch.webp';
 import Image from '@/features/image';
 import { ArrowIcon } from '@/icons';
+import image from '@/shared/assets/merch.webp';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';

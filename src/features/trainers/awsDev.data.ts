@@ -1,10 +1,10 @@
 import type { Trainer } from './trainers.types';
-import awsImg3 from '@/assets/mentors/ac-akbarov.webp';
-import awsImg6 from '@/assets/mentors/ac-danilov.webp';
-import awsImg4 from '@/assets/mentors/ac-konyakhin.webp';
-import awsImg5 from '@/assets/mentors/ac-kustikov.webp';
-import awsImg2 from '@/assets/mentors/v-antonau.webp';
-import awsImg1 from '@/assets/mentors/v-kavaliou.webp';
+import awsImg3 from '@/shared/assets/mentors/ac-akbarov.webp';
+import awsImg6 from '@/shared/assets/mentors/ac-danilov.webp';
+import awsImg4 from '@/shared/assets/mentors/ac-konyakhin.webp';
+import awsImg5 from '@/shared/assets/mentors/ac-kustikov.webp';
+import awsImg2 from '@/shared/assets/mentors/v-antonau.webp';
+import awsImg1 from '@/shared/assets/mentors/v-kavaliou.webp';
 
 export const awsDev: Trainer[] = [
   {
