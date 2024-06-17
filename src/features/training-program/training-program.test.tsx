@@ -36,10 +36,10 @@ describe('TrainingProgram', () => {
 
     it('renders correct paragraphs', () => {
       const paragraphs = [
-        'The program consists of 3 stages. There may be requirements for advancing to each higher stage',
-        'You will also have the ability to communicate with other students and help each other solve any problems you might face',
-        'deadlines are not suggestions, and should be respected',
-        'Attention! Mentors on this course will be first',
+        'This course is designed for individuals with a solid foundation in JavaScript, TypeScript, and front-end development. Familiarity with RS School processes and RS Stage #2 certification is a plus.',
+        'The course lasts 11 weeks, requiring approximately 20-40 hours of study per week.',
+        'All webinars are recorded and available on our',
+        '. Theoretical materials are provided as recorded lectures from previous courses.',
       ];
 
       paragraphs.forEach((p) => {

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Actions, Paragraph, Subtitle } from '@/app/components';
 
 import awsPractitionerBadge from '@/assets/aws-cloud-pract-badge.webp';
@@ -114,24 +115,21 @@ export const contentMap: ContentMap = {
     title: 'Training Program',
     content: [
       <Paragraph>
-        The program consists of 3 stages. There may be requirements for advancing to each higher
-        stage, which will be described below. This specific run of the program will take the form of
-        self-study. This means that you will have access to pre-recorded webinars, recommended
-        materials, and weekly live Q&A sessions with our mentors/coordinators to answer any
-        questions you might have.
+        This course is designed for individuals with a solid foundation in JavaScript, TypeScript,
+        and front-end development. Familiarity with RS School processes and RS Stage #2 certification is a plus.
       </Paragraph>,
       <Paragraph>
-        You will also have the ability to communicate with other students and help each other solve
-        any problems you might face. We will provide you with a list of topics that should be
-        covered for each stage with recommended deadlines, but you will have the freedom to choose
-        when you want to watch the lectures and complete the tasks.
+        The course lasts 11 weeks, requiring approximately 20-40 hours of study per week.
       </Paragraph>,
+      // todo use custom link
       <Paragraph>
-        <span>BE AWARE</span>
+        All webinars are recorded and available on our
         {' '}
-        that practical tasks’ deadlines are not suggestions, and should be respected.
+        <Link className="link" to="https://www.youtube.com/c/rollingscopesschool" target="blank">
+          Youtube
+        </Link>
+        . Theoretical materials are provided as recorded lectures from previous courses.
       </Paragraph>,
-      <Subtitle text="Attention! Mentors on this course will be first assigned to the graduates of the RS School Stage #2." />,
     ],
     image: angularImg,
   },
