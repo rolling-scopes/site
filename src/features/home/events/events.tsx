@@ -5,11 +5,11 @@ import { events } from './events.data';
 import {
   EventCard,
   EventCardProps,
-  SectionLabel,
 } from '@/app/components';
 import photo3 from '@/assets/photo-3.webp';
 import Image from '@/features/image';
 import { Paragraph } from '@/shared/ui/paragraph';
+import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { Title } from '@/shared/ui/title';
 import { getActualDataList } from '@/utils';

@@ -1,11 +1,10 @@
-import { SectionLabel } from '@/app/components';
-
 import { LINKS } from '@/app/const';
 import image from '@/assets/merch.webp';
 import Image from '@/features/image';
 import { ArrowIcon } from '@/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
+import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { Title } from '@/shared/ui/title';
 
