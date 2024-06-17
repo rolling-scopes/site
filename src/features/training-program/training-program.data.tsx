@@ -35,19 +35,21 @@ export const contentMap: ContentMap = {
   'aws cloud dev': {
     title: 'Training Program',
     content: [
-      <Paragraph>
+      // TODO delete keys
+      <Paragraph key="aws cloud dev 01">
         This course is a step-by-step journey to become an AWS Certified Developer ‒ Associate
         through this course. You will gain practical experience working with various AWS services
-        and technologies via over 10 hands-on tasks. During the course, you'll dive deep into AWS,
+        and technologies via over 10 hands-on tasks. During the course, you&apos;ll dive deep into AWS,
         from cloud computing basics to advanced integrations and deployment strategies, through nine
         carefully designed modules.
       </Paragraph>,
-      <Paragraph>
-        Be well-prepared to pass the "AWS Certified Developer - Associate" certification and
+      <Paragraph key="aws cloud dev 02">
+        Be well-prepared to pass the &quot;AWS Certified Developer - Associate&quot; certification and
         confidently apply your skills in real-world projects by the end of the course.
       </Paragraph>,
-      <Subtitle text="Course highlights:" />,
+      <Subtitle key="aws cloud dev 03" text="Course highlights:" />,
       <Actions
+        key="aws cloud dev 04"
         actions={[
           'Build a single-page application (SPA) using AWS S3 and CloudFront',
           'Develop serverless APIs with AWS API Gateway and Lambda',
@@ -65,17 +67,17 @@ export const contentMap: ContentMap = {
   'aws fundamentals': {
     title: 'Training Program',
     content: [
-      <Paragraph>
+      <Paragraph key="aws fundamentals 01">
         The AWS Certified Cloud Practitioner certification is a great entry-level certification for
-        AWS. It's great at assessing how well you understand AWS, its services, and its ecosystem.
+        AWS. It&apos;s great at assessing how well you understand AWS, its services, and its ecosystem.
       </Paragraph>,
-      <Paragraph>
+      <Paragraph key="aws fundamentals 02">
         The course consists of weekly assignments that you can complete at your own pace, followed
         by a test that will help you evaluate your understanding of the materials. We expect that
         you will need to dedicate 5‒10 hours per week to complete the assignments. The total
         duration of the course is 5 weeks.
       </Paragraph>,
-      <Paragraph>
+      <Paragraph key="aws fundamentals 03">
         During the course, you will have access to online sessions led by AWS User Groups and RS
         School Mentors, where you can ask questions, discuss the materials, and get feedback.
       </Paragraph>,
@@ -85,15 +87,16 @@ export const contentMap: ContentMap = {
   'node.js': {
     title: 'Course Topics',
     content: [
-      <Paragraph>
+      <Paragraph key="node.js 01">
         This course is designed for JavaScript / Front-End developers who want to get acquainted
         with Node.js and the server side of web application development.
       </Paragraph>,
-      <Paragraph>
+      <Paragraph key="node.js 02">
         The course consists of weekly assignments that you can complete at your own pace, followed
         by a test that will help you evaluate your understanding of the materials
       </Paragraph>,
       <Actions
+        key="node.js 03"
         actions={[
           'Node.js basics',
           'Network communication. HTTP & WebSockets',
@@ -113,25 +116,25 @@ export const contentMap: ContentMap = {
   angular: {
     title: 'Training Program',
     content: [
-      <Paragraph>
+      <Paragraph key="angular 01">
         The program consists of 3 stages. There may be requirements for advancing to each higher
         stage, which will be described below. This specific run of the program will take the form of
         self-study. This means that you will have access to pre-recorded webinars, recommended
         materials, and weekly live Q&A sessions with our mentors/coordinators to answer any
         questions you might have.
       </Paragraph>,
-      <Paragraph>
+      <Paragraph key="angular 02">
         You will also have the ability to communicate with other students and help each other solve
         any problems you might face. We will provide you with a list of topics that should be
         covered for each stage with recommended deadlines, but you will have the freedom to choose
         when you want to watch the lectures and complete the tasks.
       </Paragraph>,
-      <Paragraph>
+      <Paragraph key="angular 03">
         <span>BE AWARE</span>
         {' '}
         that practical tasks’ deadlines are not suggestions, and should be respected.
       </Paragraph>,
-      <Subtitle text="Attention! Mentors on this course will be first assigned to the graduates of the RS School Stage #2." />,
+      <Subtitle key="angular 04" text="Attention! Mentors on this course will be first assigned to the graduates of the RS School Stage #2." />,
     ],
     image: angularImg,
   },
@@ -139,20 +142,20 @@ export const contentMap: ContentMap = {
   'js / front-end en': {
     title: 'Training Program',
     content: [
-      <Paragraph>
+      <Paragraph key="js / front-end en 01">
         The program consists of 3 stages. There may be requirements for advancing to each higher
         stage, which will be described below. This specific run of the program will take the form of
         self-study. This means that you will have access to pre-recorded webinars, recommended
         materials, and weekly live Q&A sessions with our mentors/coordinators to answer any
         questions you might have.
       </Paragraph>,
-      <Paragraph>
+      <Paragraph key="js / front-end en 02">
         You will also have the ability to communicate with other students and help each other solve
         any problems you might face. We will provide you with a list of topics that should be
         covered for each stage with recommended deadlines, but you will have the freedom to choose
         when you want to watch the lectures and complete the tasks.
       </Paragraph>,
-      <Paragraph>
+      <Paragraph key="js / front-end en 03">
         <span>BE AWARE</span>
         {' '}
         that practical tasks’ deadlines are not suggestions, and should be respected.
@@ -164,7 +167,7 @@ export const contentMap: ContentMap = {
   'js / front-end ru': {
     title: 'Программа обучения',
     content: [
-      <Paragraph>
+      <Paragraph key="js / front-end ru 01">
         Программа состоит из 3 этапов. На каждом последующем этапе могут быть установлены требования
         для перехода на следующий уровень, которые будут описаны ниже. В данном запуске программы
         будет предусмотрено самостоятельное обучение. Это означает, что у вас будет доступ к
@@ -172,13 +175,13 @@ export const contentMap: ContentMap = {
         ответов с нашими наставниками/координаторами для ответа на любые вопросы, которые у вас
         могут возникнуть.
       </Paragraph>,
-      <Paragraph>
+      <Paragraph key="js / front-end ru 02">
         У вас также будет возможность общаться с другими студентами и помогать друг другу решать
         любые проблемы, с которыми вы можете столкнуться. Мы предоставим вам список тем, которые
         должны быть рассмотрены на каждом этапе с рекомендуемыми сроками, но у вас будет свобода
         выбора времени для просмотра лекций и выполнения заданий.
       </Paragraph>,
-      <Paragraph>
+      <Paragraph key="js / front-end ru 03">
         {`${(<span>ОБРАТИТЕ ВНИМАНИЕ</span>)}, что сроки выполнения практических заданий не являются рекомендацией и должны быть соблюдены.`}
       </Paragraph>,
     ],
@@ -188,12 +191,12 @@ export const contentMap: ContentMap = {
   'js / front-end pre-school ru': {
     title: 'Программа обучения',
     content: [
-      <Paragraph>
+      <Paragraph key="js / front-end pre-school ru 01">
         <span>Введение в RS School:</span>
         <br />
         Знакомство со школой, профессией JS/Front-end разработчика и системой контроля версий Git.
       </Paragraph>,
-      <Paragraph>
+      <Paragraph key="js / front-end pre-school ru 02">
         <span>Основы веб-разработки:</span>
         <br />
         HTML и CSS: Основы, позиционирование с Flexbox и адаптивные макеты.
@@ -202,7 +205,7 @@ export const contentMap: ContentMap = {
         <br />
         Инструменты: Chrome Dev Tools, VS Code, Терминал и Figma.
       </Paragraph>,
-      <Paragraph>
+      <Paragraph key="js / front-end pre-school ru 03">
         <span>
           Проектное обучение:
           <br />
@@ -216,12 +219,12 @@ export const contentMap: ContentMap = {
         Проекты JS-30: Аудиоплеер, галерея изображений и случайная игра.
         <br />
       </Paragraph>,
-      <Paragraph>
+      <Paragraph key="js / front-end pre-school ru 04">
         <span>Задачи Codewars:</span>
         <br />
         Еженедельные задачи по алгоритмам и структурам данных.
       </Paragraph>,
-      <Paragraph>
+      <Paragraph key="js / front-end pre-school ru 05">
         <span>Итоговая аттестация:</span>
         <br />
         Кросс-чек проектов, тесты и ревью кода. Выдача сертификата.
@@ -232,11 +235,12 @@ export const contentMap: ContentMap = {
   react: {
     title: 'Target audience',
     content: [
-      <Paragraph>
+      <Paragraph key="react 01">
         RS School students who have completed RS School Stage #2 and new students with strong
         CoreJS/TS/Frontend skills:
       </Paragraph>,
       <Actions
+        key="react 02"
         actions={[
           'JavaScript',
           'TypeScript',
@@ -248,14 +252,14 @@ export const contentMap: ContentMap = {
         ]}
         marked
       />,
-      <Subtitle text="Attention! Mentors on this course will be first assigned to the graduates of the RS School Stage #2." />,
+      <Subtitle key="react 03" text="Attention! Mentors on this course will be first assigned to the graduates of the RS School Stage #2." />,
     ],
     image: reactEnImg,
   },
   'react ru': {
     title: 'Для кого',
     content: [
-      <Paragraph>
+      <Paragraph key="react ru 01">
         Бесплатный курс от сообщества The Rolling Scopes для тех, кто хочет получить знания и опыт,
         достаточные для трудоустройства на позицию Junior Software Engineer в области
         JavaScript/Front-end.
@@ -266,7 +270,7 @@ export const contentMap: ContentMap = {
   'aws fundamentals badge': {
     title: 'AWS DIGITAL BADGE',
     content: [
-      <Paragraph>
+      <Paragraph key="aws fundamentals badge 01">
         Upon completing the course and passing the AWS Cloud Quest: Cloud Practitioner, you will
         obtain an AWS digital badge. This badge will recognize your achievement and demonstrate your
         knowledge of AWS fundamentals to potential employers or clients. By the end of the course,

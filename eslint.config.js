@@ -4,7 +4,7 @@ import tsPlugin from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 import cssImportOrder from 'eslint-plugin-css-import-order';
 import importPlugin from 'eslint-plugin-import';
-// import reactPlugin from 'eslint-plugin-react';
+import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import sortExports from 'eslint-plugin-sort-exports';
@@ -48,7 +48,7 @@ export default [
     plugins: {
       '@eslint': js,
       '@typescript-eslint': tsPlugin,
-      // 'react': reactPlugin,
+      'react': reactPlugin,
       'react-hooks': reactHooksPlugin,
       'react-refresh': reactRefresh,
       'import': importPlugin,
@@ -70,7 +70,7 @@ export default [
     rules: {
       ...js.configs['recommended'].rules,
       ...tsPlugin.configs['recommended'].rules,
-      // ...reactPlugin.configs['recommended'].rules,
+      ...reactPlugin.configs['recommended'].rules,
       ...reactHooksPlugin.configs['recommended'].rules,
       ...importPlugin.configs['recommended'].rules,
       ...vitestPlugin.configs['recommended'].rules,

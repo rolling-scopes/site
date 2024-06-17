@@ -13,8 +13,8 @@ export const Requirements = () => {
             <div className="title">Requirements for mentors</div>
             <ul className="description">
               <li>
-                Desire to help students. If you've been working with JS/TS in production for more
-                than 6 months, then that's great.
+                Desire to help students. If you&apos;ve been working with JS/TS in production for more
+                than 6 months, then that&apos;s great.
               </li>
               <li>Desire to mentor 2 to 6 students online or in person</li>
               <li>Ability to spend 3 to 5 hours per week</li>
@@ -25,7 +25,7 @@ export const Requirements = () => {
             <ul className="description">
               <li>Conducting an interview</li>
               <li>Code review tasks</li>
-              <li>Answers to students' questions</li>
+              <li>Answers to students&apos; questions</li>
             </ul>
           </div>
         </div>
