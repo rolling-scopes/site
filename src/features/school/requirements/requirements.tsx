@@ -1,6 +1,6 @@
-import { LinkCustom } from '@/app/components';
 import { LINKS } from '@/app/const';
 import { ArrowIcon } from '@/icons';
+import { LinkCustom } from '@/shared/ui/link-custom';
 
 import './requirements.scss';
 

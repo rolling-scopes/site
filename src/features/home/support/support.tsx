@@ -1,9 +1,10 @@
-import { LinkCustom, Subtitle, Title, TitleType } from '@/app/components';
+import { Subtitle, Title, TitleType } from '@/app/components';
 
 import { LINKS } from '@/app/const';
 import image from '@/assets/support.webp';
 import Image from '@/features/image';
 import { ArrowIcon } from '@/icons';
+import { LinkCustom } from '@/shared/ui/link-custom';
 
 import './support.scss';
 

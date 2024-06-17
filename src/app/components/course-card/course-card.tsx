@@ -1,10 +1,10 @@
 /* eslint-disable @stylistic/jsx-one-expression-per-line */
-import { LinkCustom } from '@/app/components';
 import { type Course } from '@/app/types';
 import micIcon from '@/assets/icons/mic.svg';
 import noteIcon from '@/assets/icons/note-icon.svg';
 import Image from '@/features/image';
 import { ArrowIcon } from '@/icons';
+import { LinkCustom } from '@/shared/ui/link-custom';
 
 import './course-card.scss';
 

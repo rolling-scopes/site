@@ -1,5 +1,5 @@
 /* eslint-disable @stylistic/jsx-one-expression-per-line */
-import { LinkCustom, Paragraph, Subtitle, Title } from '@/app/components';
+import { Paragraph, Subtitle, Title } from '@/app/components';
 import {
   CourseNames,
   DISCORD_LINKS,
@@ -8,6 +8,7 @@ import {
 } from '@/data/communication.data';
 import { TextLinkIcon } from '@/icons';
 import { DiscordLogo } from '@/icons/discord-logo';
+import { LinkCustom } from '@/shared/ui/link-custom';
 
 import './communication.scss';
 

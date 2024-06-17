@@ -1,10 +1,11 @@
 /* eslint-disable @stylistic/jsx-one-expression-per-line */
 import { contentMap } from './about.data';
 import { InfoGrid } from './components';
-import { LinkCustom, Paragraph, Title } from '@/app/components';
+import { Paragraph, Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
 import { type Course } from '@/app/types';
 import { ArrowIcon } from '@/icons';
+import { LinkCustom } from '@/shared/ui/link-custom';
 
 import './about.scss';
 

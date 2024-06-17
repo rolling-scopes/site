@@ -1,10 +1,11 @@
 import { cloneElement } from 'react';
 import { type CourseNames, contentMap } from './training-program.data';
-import { LinkCustom, Title } from '@/app/components';
+import { Title } from '@/app/components';
 import { useCourseByTitle } from '@/app/hooks';
 import type { Course } from '@/app/types';
 import Image from '@/features/image';
 import { ArrowIcon } from '@/icons';
+import { LinkCustom } from '@/shared/ui/link-custom';
 
 import './training-program.scss';
 

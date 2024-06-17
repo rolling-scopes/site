@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { LinkCustom } from '@/app/components';
+import { LinkCustom } from '@/shared/ui/link-custom';
 
 import styles from './event-card.module.scss';
 

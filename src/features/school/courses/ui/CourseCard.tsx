@@ -1,6 +1,6 @@
-import { LinkCustom } from '@/app/components';
 import { Course } from '@/app/types';
 import { ArrowIcon } from '@/icons';
+import { LinkCustom } from '@/shared/ui/link-custom';
 
 type addFields = {
   buttonText: string;

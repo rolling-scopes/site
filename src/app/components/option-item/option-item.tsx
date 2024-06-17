@@ -1,5 +1,5 @@
-import { LinkCustom } from '@/app/components';
 import { ArrowIcon } from '@/icons';
+import { LinkCustom } from '@/shared/ui/link-custom';
 
 import './option-item.scss';
 
