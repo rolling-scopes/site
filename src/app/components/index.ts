@@ -11,4 +11,3 @@ export { SchoolMenu } from './school-menu';
 export { SectionLabel } from './section-label';
 export { SocialMedia, type SocialMediaProps } from './social-media';
 export { TextWithLink } from './text-with-link';
-export { Title, TitleType } from './title';

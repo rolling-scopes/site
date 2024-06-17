@@ -1,8 +1,8 @@
 import { alumni } from './constants';
-import { Title } from '@/app/components';
 import { useWindowSize } from '@/app/hooks';
 import Image from '@/features/image';
 import { Paragraph } from '@/shared/ui/paragraph';
+import { Title } from '@/shared/ui/title';
 
 import './alumni.scss';
 

@@ -1,6 +1,6 @@
-import { Title, TitleType } from '@/app/components';
 import mentors from '@/assets/mentor-with-his-students.webp';
 import Image from '@/features/image';
+import { Title, TitleType } from '@/shared/ui/title';
 
 import './main.scss';
 

@@ -1,5 +1,5 @@
-import { Title, TitleType } from '@/app/components';
 import { Subtitle } from '@/shared/ui/subtitle';
+import { Title, TitleType } from '@/shared/ui/title';
 
 import './main.scss';
 

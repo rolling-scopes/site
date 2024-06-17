@@ -1,7 +1,8 @@
 /* eslint-disable @stylistic/jsx-one-expression-per-line */
 import classNames from 'classnames/bind';
 import { faqData } from './faq.data';
-import { TextWithLink, Title } from '@/app/components';
+import { TextWithLink } from '@/app/components';
+import { Title } from '@/shared/ui/title';
 
 import styles from './faq.module.scss';
 

@@ -1,4 +1,4 @@
-import { SectionLabel, Title } from '@/app/components';
+import { SectionLabel } from '@/app/components';
 
 import { LINKS } from '@/app/const';
 import image from '@/assets/merch.webp';
@@ -7,6 +7,7 @@ import { ArrowIcon } from '@/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
+import { Title } from '@/shared/ui/title';
 
 import './merch.scss';
 

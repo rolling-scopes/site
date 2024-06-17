@@ -1,6 +1,6 @@
-import { Title } from '@/app/components';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
+import { Title } from '@/shared/ui/title';
 
 import './about.scss';
 
