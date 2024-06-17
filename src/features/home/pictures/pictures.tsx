@@ -1,7 +1,6 @@
 // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import { Paragraph, SocialMedia, SocialMediaProps, Title } from '@/app/components';
-
+import { SocialMedia, SocialMediaProps, Title } from '@/app/components';
 import photo1 from '@/assets/photo-1.webp';
 import photo2 from '@/assets/photo-2.webp';
 import photo3 from '@/assets/photo-3.webp';
@@ -13,6 +12,7 @@ import photo8 from '@/assets/photo-8.webp';
 import photo9 from '@/assets/photo-9.webp';
 import Image from '@/features/image';
 import { FacebookIcon, InstagramIcon } from '@/icons';
+import { Paragraph } from '@/shared/ui/paragraph';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './pictures.scss';

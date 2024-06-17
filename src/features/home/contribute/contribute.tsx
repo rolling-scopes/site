@@ -1,7 +1,8 @@
-import { OptionItem, type OptionItemProps, Paragraph, Subtitle, Title } from '@/app/components';
+import { OptionItem, type OptionItemProps, Subtitle, Title } from '@/app/components';
 
 import image from '@/assets/contribute.webp';
 import Image from '@/features/image';
+import { Paragraph } from '@/shared/ui/paragraph';
 
 import './contribute.scss';
 

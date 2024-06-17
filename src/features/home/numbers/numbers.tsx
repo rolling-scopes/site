@@ -1,7 +1,7 @@
-import { Paragraph, Subtitle, Title } from '@/app/components';
-
+import { Subtitle, Title } from '@/app/components';
 import image from '@/assets/map.webp';
 import Image from '@/features/image';
+import { Paragraph } from '@/shared/ui/paragraph';
 
 import './numbers.scss';
 

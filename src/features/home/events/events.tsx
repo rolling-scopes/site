@@ -5,13 +5,13 @@ import { events } from './events.data';
 import {
   EventCard,
   EventCardProps,
-  Paragraph,
   SectionLabel,
   Subtitle,
   Title,
 } from '@/app/components';
 import photo3 from '@/assets/photo-3.webp';
 import Image from '@/features/image';
+import { Paragraph } from '@/shared/ui/paragraph';
 import { getActualDataList } from '@/utils';
 
 import styles from './events.module.scss';

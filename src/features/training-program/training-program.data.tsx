@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Actions, Paragraph, Subtitle } from '@/app/components';
+import { Actions, Subtitle } from '@/app/components';
 
 import awsPractitionerBadge from '@/assets/aws-cloud-pract-badge.webp';
 import angularImg from '@/assets/rs-slope-angular.webp';
@@ -9,6 +9,7 @@ import jsImg from '@/assets/rs-slope-js.webp';
 import nodejsImg from '@/assets/rs-slope-nodejs.webp';
 import reactEnImg from '@/assets/rs-slope-react-en.webp';
 import reactRuImg from '@/assets/rs-slope-react-ru.webp';
+import { Paragraph } from '@/shared/ui/paragraph';
 
 export type CourseNames =
   | 'aws cloud dev'

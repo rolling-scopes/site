@@ -5,7 +5,6 @@ export { EventCard, type EventCardProps } from './event-card';
 export { LogoWrapper } from './logo-wrapper';
 export { MobileView } from './mobile-view';
 export { OptionItem, type OptionItemProps } from './option-item';
-export { Paragraph } from './paragraph';
 export { Places } from './places';
 export { PrincipleCard, type PrincipleCardProps } from './principle-card';
 export { SchoolMenu } from './school-menu';
