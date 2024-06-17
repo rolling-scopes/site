@@ -1,8 +1,9 @@
-import { Subtitle, Title } from '@/app/components';
+import { Title } from '@/app/components';
 
 import image from '@/assets/about.webp';
 import Image from '@/features/image';
 import { Paragraph } from '@/shared/ui/paragraph';
+import { Subtitle } from '@/shared/ui/subtitle';
 
 import './about.scss';
 

@@ -1,6 +1,7 @@
 import { courseDataMap } from './required.data';
 import type { CourseName } from './required.types';
-import { Actions, Subtitle, Title } from '@/app/components';
+import { Actions, Title } from '@/app/components';
+import { Subtitle } from '@/shared/ui/subtitle';
 
 import './required.scss';
 

@@ -1,9 +1,10 @@
 import { studyOptions } from './constants';
-import { OptionItem, SectionLabel, Subtitle, Title } from '@/app/components';
+import { OptionItem, SectionLabel, Title } from '@/app/components';
 
 import image from '@/assets/rs-school.webp';
 import Image from '@/features/image';
 import { Paragraph } from '@/shared/ui/paragraph';
+import { Subtitle } from '@/shared/ui/subtitle';
 
 import './study-with-us.scss';
 

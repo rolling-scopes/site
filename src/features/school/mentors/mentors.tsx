@@ -1,9 +1,10 @@
-import { Subtitle, Title, TitleType } from '@/app/components';
+import { Title, TitleType } from '@/app/components';
 import { LINKS } from '@/app/const';
 import mentorImg from '@/assets/mentors-wanted.webp';
 import Image from '@/features/image';
 import { ArrowIcon } from '@/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
+import { Subtitle } from '@/shared/ui/subtitle';
 
 import './mentors.scss';
 

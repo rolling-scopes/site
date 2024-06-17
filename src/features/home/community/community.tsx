@@ -1,8 +1,9 @@
-import { SocialMedia, type SocialMediaProps, Subtitle, Title, TitleType } from '@/app/components';
+import { SocialMedia, type SocialMediaProps, Title, TitleType } from '@/app/components';
 
 import image from '@/assets/welcome.webp';
 import Image from '@/features/image';
 import { FacebookIcon, InstagramIcon, LinkedInIcon, TelegramIcon, YouTubeIcon } from '@/icons';
+import { Subtitle } from '@/shared/ui/subtitle';
 
 import './community.scss';
 
