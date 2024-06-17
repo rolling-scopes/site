@@ -8,11 +8,11 @@ import {
 } from '@/app/components';
 import Image from '@/features/image';
 import photo3 from '@/shared/assets/photo-3.webp';
+import { getActualDataList } from '@/shared/helpers/getActualDataList';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { Title } from '@/shared/ui/title';
-import { getActualDataList } from '@/utils';
 
 import styles from './events.module.scss';
 
