@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react';
-import { Breadcrumbs } from './breadcrumbs';
 import { renderWithRouter } from '@/__tests__/utils';
-import { breadcrumbNameMap } from '@/app/components/breadcrumbs/constants.ts';
 import { ROUTES } from '@/app/const';
+import { Breadcrumbs } from '@/shared/ui/breadcrumbs';
+import { breadcrumbNameMap } from '@/shared/ui/breadcrumbs/constants.ts';
 
 describe('Breadcrumbs', () => {
   it('renders "Home"', async () => {

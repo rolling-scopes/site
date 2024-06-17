@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Breadcrumbs, Places } from '@/app/components';
+import { Places } from '@/app/components';
 import { useTitle } from '@/app/hooks/use-title/use-title';
 import { config } from '@/config';
 import {
@@ -14,6 +14,7 @@ import {
   Speakers,
   Support,
 } from '@/features/home';
+import { Breadcrumbs } from '@/shared/ui/breadcrumbs';
 
 export const Home: FC = () => {
   useTitle(`Home · ${config.title}`);
