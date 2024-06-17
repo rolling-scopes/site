@@ -26,6 +26,8 @@ export const TrainingProgram = ({ courseName, lang = 'en' }: TrainingProgramProp
   const course = data as Course;
   const { title, content, image } = contentMap[courseName];
 
+  // TODO remove 'cloneElement' on 37 line due 'Using cloneElement is uncommon and can lead to fragile code' https://react.dev/reference/react/cloneElement
+
   return (
     <section className="training-program container">
       <div className="training-program content column-2">

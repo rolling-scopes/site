@@ -39,6 +39,7 @@ const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
       // FIXME: remove this line when fetchPriority prop will be fixed
       // see https://github.com/facebook/react/issues/27233#issuecomment-2035176576
       // @ts-expect-error
+      // eslint-disable-next-line react/no-unknown-property
       fetchpriority={fetchPriority}
       src={srcAttr}
       alt={alt}
