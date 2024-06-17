@@ -25,12 +25,11 @@ describe('Required', () => {
   it('renders correct requirements with "angular" props', () => {
     render(<Required courseName="angular" />);
     const requirements = [
-      'JavaScript',
-      'Typescript',
+      'JavaScript, TypeScript Basics, CSS3, HTML5, NPM',
       'Git, GitHub',
-      'npm, webpackCSS3',
-      'Chrome DevTools Figma',
-      'REST API',
+      'Chrome DevTools',
+      'Figma',
+      'Understanding the concept of REST API',
     ];
 
     requirements.forEach((requirement) => {

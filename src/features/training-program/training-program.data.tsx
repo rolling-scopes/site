@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Actions, Paragraph, Subtitle } from '@/app/components';
 
 import awsPractitionerBadge from '@/assets/aws-cloud-pract-badge.webp';
@@ -132,7 +133,10 @@ export const contentMap: ContentMap = {
       <Paragraph key="angular 03">
         <span>BE AWARE</span>
         {' '}
-        that practical tasks’ deadlines are not suggestions, and should be respected.
+        <Link className="link" to="https://www.youtube.com/c/rollingscopesschool" target="blank">
+          Youtube
+        </Link>
+        . Theoretical materials are provided as recorded lectures from previous courses.
       </Paragraph>,
       <Subtitle key="angular 04" text="Attention! Mentors on this course will be first assigned to the graduates of the RS School Stage #2." />,
     ],
