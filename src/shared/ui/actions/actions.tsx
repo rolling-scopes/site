@@ -1,6 +1,6 @@
 // todo delete TextWithLink
 import { TextWithLink } from '../../../app/components/text-with-link';
-import { Description } from '@/features/required/required.types';
+import { Description } from '@/widgets/required/required.types';
 
 import './actions.scss';
 

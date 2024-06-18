@@ -1,4 +1,3 @@
-import { Required } from '@/features/required';
 import { StudyPath } from '@/features/study-path';
 import { Trainers } from '@/features/trainers';
 import { awsDev } from '@/features/trainers/awsDev.data.ts';
@@ -8,6 +7,7 @@ import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
 import { CourseMain } from '@/widgets/course-main';
+import { Required } from '@/widgets/required';
 
 const COURSE_NAME = 'aws cloud dev';
 

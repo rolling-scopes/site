@@ -1,4 +1,3 @@
-import { Required } from '@/features/required';
 import { StudyPath } from '@/features/study-path';
 import { Trainers } from '@/features/trainers';
 import { angular } from '@/features/trainers/angular.data';
@@ -10,6 +9,7 @@ import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
 import { CourseMain } from '@/widgets/course-main';
 import { MentorsWanted } from '@/widgets/mentors-wanted';
+import { Required } from '@/widgets/required';
 
 const COURSE_NAME = 'angular';
 

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import { Required } from './required';
+import { Required } from './ui/required';
 
 describe('Required', () => {
   it('renders the title and subtitle correctly', () => {

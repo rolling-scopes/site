@@ -1,6 +1,6 @@
 import { Fragment } from 'react/jsx-runtime';
 import { Link } from 'react-router-dom';
-import { LinkList } from '@/features/required/required.types';
+import { LinkList } from '@/widgets/required/required.types';
 
 import './text-with-link.scss';
 

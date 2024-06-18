@@ -1,5 +1,5 @@
-import { courseDataMap } from './required.data';
-import type { CourseName } from './required.types';
+import { courseDataMap } from '../required.data';
+import type { CourseName } from '../required.types';
 
 import { Actions } from '@/shared/ui/actions/actions';
 import { Subtitle } from '@/shared/ui/subtitle';
