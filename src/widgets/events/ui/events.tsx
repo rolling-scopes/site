@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import classNames from 'classnames/bind';
 import dayjs from 'dayjs';
-import { events } from './events.data';
+import { events } from '../events.data';
 import {
   EventCard,
   EventCardProps,
