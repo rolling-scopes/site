@@ -1,10 +1,7 @@
-import { compareNumbers } from '../../../entities/courses/helpers/compare-courses';
-import { isCourse } from '../../../entities/courses/helpers/is-course';
-import { CourseCard } from '@/app/components';
-
-import { finedNearestCourse } from '@/entities/courses';
+import { CourseCard, finedNearestCourse } from '@/entities/courses';
+import { compareNumbers } from '@/entities/courses/helpers/compare-courses';
+import { isCourse } from '@/entities/courses/helpers/is-course';
 import { useDataByName } from '@/shared/hooks/use-data-by-name';
-
 import { Title, TitleType } from '@/shared/ui/title';
 
 import './courses.scss';

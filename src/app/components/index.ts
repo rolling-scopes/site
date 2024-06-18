@@ -1,4 +1,3 @@
-export { CourseCard } from './course-card';
 export { DateLang } from './date-lang';
 export { EventCard, type EventCardProps } from '../../entities/events';
 export { LogoWrapper } from './logo-wrapper';
