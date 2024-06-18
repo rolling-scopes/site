@@ -3,7 +3,7 @@ import { Places } from '@/app/components';
 
 import { config } from '@/config';
 
-import { Contribute } from '@/features/home/contribute';
+
 import { Events } from '@/features/home/events';
 import { Hero } from '@/features/home/hero';
 import { Merch } from '@/features/home/merch';
@@ -16,6 +16,7 @@ import { useTitle } from '@/shared/hooks/use-title';
 import { About } from '@/widgets/about-home';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Community } from '@/widgets/community';
+import { Contribute } from '@/widgets/contribute';
 
 export const Home: FC = () => {
   useTitle(`Home · ${config.title}`);
