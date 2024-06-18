@@ -1,18 +1,19 @@
 // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import { Paragraph, SocialMedia, SocialMediaProps, Title } from '@/app/components';
-
-import photo1 from '@/assets/photo-1.webp';
-import photo2 from '@/assets/photo-2.webp';
-import photo3 from '@/assets/photo-3.webp';
-import photo4 from '@/assets/photo-4.webp';
-import photo5 from '@/assets/photo-5.webp';
-import photo6 from '@/assets/photo-6.webp';
-import photo7 from '@/assets/photo-7.webp';
-import photo8 from '@/assets/photo-8.webp';
-import photo9 from '@/assets/photo-9.webp';
 import Image from '@/features/image';
-import { FacebookIcon, InstagramIcon } from '@/icons';
+import photo1 from '@/shared/assets/photo-1.webp';
+import photo2 from '@/shared/assets/photo-2.webp';
+import photo3 from '@/shared/assets/photo-3.webp';
+import photo4 from '@/shared/assets/photo-4.webp';
+import photo5 from '@/shared/assets/photo-5.webp';
+import photo6 from '@/shared/assets/photo-6.webp';
+import photo7 from '@/shared/assets/photo-7.webp';
+import photo8 from '@/shared/assets/photo-8.webp';
+import photo9 from '@/shared/assets/photo-9.webp';
+import { FacebookIcon, InstagramIcon } from '@/shared/icons';
+import { Paragraph } from '@/shared/ui/paragraph';
+import { SocialMedia, SocialMediaProps } from '@/shared/ui/social-media';
+import { Title } from '@/shared/ui/title';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './pictures.scss';

@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
-import { Paragraph, Title } from '@/app/components';
-import { CourseNames } from '@/data/communication.data';
+import { CourseNames } from '@/shared/data/communication.data';
+import { Paragraph } from '@/shared/ui/paragraph';
+import { Title } from '@/shared/ui/title';
 
 import styles from './certification.module.scss';
 

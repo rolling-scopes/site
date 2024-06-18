@@ -1,22 +1,22 @@
 import { AlumniProps } from './alumni';
-import aesoft from '@/assets/alumni/aesoft.svg';
-import andersen from '@/assets/alumni/andersen.svg';
-import coherent from '@/assets/alumni/coherent.svg';
-import dataart from '@/assets/alumni/dataart.svg';
-import dott from '@/assets/alumni/dott.svg';
-import elinext from '@/assets/alumni/elinext.svg';
-import epam from '@/assets/alumni/epam.svg';
-import godel from '@/assets/alumni/godel.svg';
-import itechart from '@/assets/alumni/itechart.svg';
-import miro from '@/assets/alumni/miro.svg';
-import nanosoft from '@/assets/alumni/nanosoft.svg';
-import oxagile from '@/assets/alumni/oxagile.svg';
-import pandadoc from '@/assets/alumni/pandadoc.svg';
-import qulix from '@/assets/alumni/qulix.svg';
-import satellite from '@/assets/alumni/satellite.svg';
-import sberbank from '@/assets/alumni/sberbank.svg';
-import toptal from '@/assets/alumni/toptal.svg';
-import visualfabriq from '@/assets/alumni/visualfabriq.svg';
+import aesoft from '@/shared/assets/alumni/aesoft.svg';
+import andersen from '@/shared/assets/alumni/andersen.svg';
+import coherent from '@/shared/assets/alumni/coherent.svg';
+import dataart from '@/shared/assets/alumni/dataart.svg';
+import dott from '@/shared/assets/alumni/dott.svg';
+import elinext from '@/shared/assets/alumni/elinext.svg';
+import epam from '@/shared/assets/alumni/epam.svg';
+import godel from '@/shared/assets/alumni/godel.svg';
+import itechart from '@/shared/assets/alumni/itechart.svg';
+import miro from '@/shared/assets/alumni/miro.svg';
+import nanosoft from '@/shared/assets/alumni/nanosoft.svg';
+import oxagile from '@/shared/assets/alumni/oxagile.svg';
+import pandadoc from '@/shared/assets/alumni/pandadoc.svg';
+import qulix from '@/shared/assets/alumni/qulix.svg';
+import satellite from '@/shared/assets/alumni/satellite.svg';
+import sberbank from '@/shared/assets/alumni/sberbank.svg';
+import toptal from '@/shared/assets/alumni/toptal.svg';
+import visualfabriq from '@/shared/assets/alumni/visualfabriq.svg';
 
 export const alumni: AlumniProps[] = [
   {

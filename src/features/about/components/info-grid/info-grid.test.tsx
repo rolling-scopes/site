@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { InfoGrid } from './info-grid';
-import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 
 describe('InfoGrid component', () => {
   const dummyData = [

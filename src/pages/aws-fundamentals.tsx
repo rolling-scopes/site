@@ -1,4 +1,3 @@
-import { Breadcrumbs } from '@/app/components';
 import { About } from '@/features/about';
 import { Certification } from '@/features/certification';
 import { Communication } from '@/features/communication';
@@ -7,6 +6,7 @@ import { Required } from '@/features/required';
 import { Trainers } from '@/features/trainers';
 import { awsFundamentals } from '@/features/trainers/awsFundamentals.data.ts';
 import { TrainingProgram } from '@/features/training-program';
+import { Breadcrumbs } from '@/shared/ui/breadcrumbs';
 
 const COURSE_NAME = 'aws fundamentals';
 

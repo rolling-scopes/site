@@ -5,14 +5,14 @@ import { events } from './events.data';
 import {
   EventCard,
   EventCardProps,
-  Paragraph,
-  SectionLabel,
-  Subtitle,
-  Title,
 } from '@/app/components';
-import photo3 from '@/assets/photo-3.webp';
 import Image from '@/features/image';
-import { getActualDataList } from '@/utils';
+import photo3 from '@/shared/assets/photo-3.webp';
+import { getActualDataList } from '@/shared/helpers/getActualDataList';
+import { Paragraph } from '@/shared/ui/paragraph';
+import { SectionLabel } from '@/shared/ui/section-label';
+import { Subtitle } from '@/shared/ui/subtitle';
+import { Title } from '@/shared/ui/title';
 
 import styles from './events.module.scss';
 

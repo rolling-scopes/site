@@ -1,11 +1,11 @@
 import { screen } from '@testing-library/react';
 import { type Mock, beforeEach, vi } from 'vitest';
 import { TrainingProgram } from './training-program';
-import { renderWithRouter } from '@/__tests__/utils';
 import { ROUTES } from '@/app/const';
-import { useCourseByTitle } from '@/app/hooks';
+import { renderWithRouter } from '@/shared/__tests__/utils';
+import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';
 
-vi.mock('@/app/hooks');
+vi.mock('@/shared/hooks/use-course-by-title');
 
 describe('TrainingProgram', () => {
   describe('with "angular" props', () => {

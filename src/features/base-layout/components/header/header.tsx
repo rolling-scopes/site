@@ -4,7 +4,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
 import { LogoWrapper, MobileView, SchoolMenu } from '@/app/components';
-import { useWindowSize } from '@/app/hooks';
+
+import { useWindowSize } from '@/shared/hooks/use-window-size';
 
 import styles from './header.module.scss';
 

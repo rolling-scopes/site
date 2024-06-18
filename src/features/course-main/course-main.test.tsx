@@ -1,11 +1,11 @@
 import { screen } from '@testing-library/react';
 import { CourseMain } from './course-main';
-import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
-import { renderWithRouter } from '@/__tests__/utils';
 import { dayJS } from '@/app/services/dayjs';
 import { CourseStatus } from '@/app/types';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
+import { renderWithRouter } from '@/shared/__tests__/utils';
 
-vi.mock('@/app/hooks');
+vi.mock('@/app/hooks/use-course-by-title');
 vi.mock('react-router-dom', async (importOriginal) => {
   const actual = await importOriginal<typeof import('react-router-dom')>();
 

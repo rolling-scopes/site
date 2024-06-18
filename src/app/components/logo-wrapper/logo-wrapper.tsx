@@ -1,4 +1,4 @@
-import { Logo } from '../../../icons';
+import { Logo } from '../../../shared/icons';
 
 import './logo-wrapper.scss';
 

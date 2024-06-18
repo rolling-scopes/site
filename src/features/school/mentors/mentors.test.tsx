@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { Mentors } from './mentors';
-import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
-import { renderWithRouter } from '@/__tests__/utils';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
+import { renderWithRouter } from '@/shared/__tests__/utils';
 
 describe('Mentors', () => {
   beforeEach(() => {

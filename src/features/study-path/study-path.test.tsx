@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { StudyPath } from './study-path';
-import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 
 const testStages = [
   {
@@ -19,7 +19,7 @@ const testStages = [
   },
 ];
 
-vi.mock('@/app/hooks', () => ({ useDataByName: vi.fn().mockImplementation(() => ({ data: testStages })) }));
+vi.mock('@/shared/hooks/use-data-by-name', () => ({ useDataByName: vi.fn().mockImplementation(() => ({ data: testStages })) }));
 
 describe('StudyPath Component', () => {
   it('renders the title and paragraph text correctly for angularPath', () => {

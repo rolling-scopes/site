@@ -4,8 +4,9 @@ import classNames from 'classnames/bind';
 import { Mock, beforeEach, vi } from 'vitest';
 import { DropdownWrapper } from './dropdown/dropdown-wrapper';
 import { Header } from './header';
-import { renderWithRouter } from '@/__tests__/utils';
-import { useWindowSize } from '@/app/hooks';
+import { renderWithRouter } from '@/shared/__tests__/utils';
+
+import { useWindowSize } from '@/shared/hooks/use-window-size';
 
 import stylesDropdown from './dropdown/dropdown-wrapper.module.scss';
 import stylesHeader from './header.module.scss';
@@ -15,8 +16,8 @@ const cxDropdown = classNames.bind(stylesDropdown);
 const cxHeader = classNames.bind(stylesHeader);
 const cxNavItem = classNames.bind(stylesNavItem);
 
-vi.mock('@/app/hooks', async (importOriginal) => {
-  const originalModule = await importOriginal<typeof import('@/app/hooks')>();
+vi.mock('@/shared/hooks/use-window-size', async (importOriginal) => {
+  const originalModule = await importOriginal<typeof import('@/shared/hooks/use-window-size')>();
 
   return {
     ...originalModule,
@@ -112,7 +113,7 @@ describe('Header', () => {
     it('should be open when isDropdownOpen is true', async () => {
       await act(async () =>
         renderWithRouter(
-          <DropdownWrapper onMouseEnter={() => {}} onMouseLeave={() => {}} isOpen={true}>
+          <DropdownWrapper onMouseEnter={() => { }} onMouseLeave={() => { }} isOpen={true}>
             TEST
           </DropdownWrapper>,
         ),

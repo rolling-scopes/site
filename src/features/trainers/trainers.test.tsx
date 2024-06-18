@@ -4,7 +4,7 @@ import {
   MOCKED_MULTIPLE_TRAINERS,
   MOCKED_ONE_TRAINER,
   MOCKED_SEVERAL_TRAINERS,
-} from '@/__tests__/constants.ts';
+} from '@/shared/__tests__/constants';
 
 describe('Trainer', () => {
   it('renders the title correctly when 1 trainer', () => {

@@ -19,7 +19,7 @@ export default [
       'build/',
       'coverage/',
       'optimizeImages/',
-      'src/__tests__/',
+      'src/shared/__tests__/',
       'vite.config.ts',
       'vitest.config.ts',
       'eslint.config.js',

@@ -1,22 +1,16 @@
 import { screen } from '@testing-library/react';
 import { Mock, describe, expect, it, vi } from 'vitest';
 import { Courses } from './courses';
-import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
-import { renderWithRouter } from '@/__tests__/utils';
-import { useDataByName } from '@/app/hooks';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
+import { renderWithRouter } from '@/shared/__tests__/utils';
+import { useDataByName } from '@/shared/hooks/use-data-by-name';
 
-vi.mock('@/app/hooks', () => {
+vi.mock('@/shared/hooks/use-data-by-name', () => {
   return {
     useDataByName: vi.fn(() => ({
       data: undefined,
       loading: false,
       error: undefined,
-    })),
-    useNearestCourse: vi.fn().mockImplementation(() => ({
-      course: undefined,
-      loading: false,
-      error: undefined,
-      hasError: false,
     })),
   };
 });

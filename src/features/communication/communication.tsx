@@ -1,13 +1,16 @@
 /* eslint-disable @stylistic/jsx-one-expression-per-line */
-import { LinkCustom, Paragraph, Subtitle, Title } from '@/app/components';
 import {
   CourseNames,
   DISCORD_LINKS,
   RS_DOCS_COMMUNICATION_LINK,
   RS_DOCS_TELEGRAM_CHATS_LINK,
-} from '@/data/communication.data';
-import { TextLinkIcon } from '@/icons';
-import { DiscordLogo } from '@/icons/discord-logo';
+} from '@/shared/data/communication.data';
+import { TextLinkIcon } from '@/shared/icons';
+import { DiscordLogo } from '@/shared/icons/discord-logo';
+import { LinkCustom } from '@/shared/ui/link-custom';
+import { Paragraph } from '@/shared/ui/paragraph';
+import { Subtitle } from '@/shared/ui/subtitle';
+import { Title } from '@/shared/ui/title';
 
 import './communication.scss';
 

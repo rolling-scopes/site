@@ -1,5 +1,6 @@
 import { cards } from './constants';
-import { PrincipleCard, Title, TitleType } from '@/app/components';
+import { PrincipleCard } from '@/app/components';
+import { Title, TitleType } from '@/shared/ui/title';
 
 import './principles.scss';
 

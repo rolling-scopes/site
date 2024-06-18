@@ -1,16 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import { Mock, describe, expect, it, vi } from 'vitest';
 import { Alumni } from './alumni';
-import { useWindowSize } from '@/app/hooks';
+import { useWindowSize } from '@/shared/hooks/use-window-size';
 
-vi.mock('@/app/hooks', () => {
-  return {
-    useWindowSize: vi.fn().mockReturnValue({
-      width: 2000,
-      height: 2000,
-    }),
-  };
-});
+vi.mock('@/shared/hooks/use-window-size', () => ({
+  useWindowSize: vi.fn().mockReturnValue({
+    width: 2000,
+    height: 2000,
+  }),
+}),
+);
 
 describe('Alumni', () => {
   it('renders the title correctly', () => {
@@ -28,6 +27,7 @@ describe('Alumni', () => {
   });
 
   it('renders six images for small screens', () => {
+    // vi.mockImplementation(() => ({ width: 800, height: 600 }));
     (useWindowSize as Mock).mockReturnValue({
       width: 800,
       height: 600,

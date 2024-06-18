@@ -1,8 +1,9 @@
-import { LinkCustom, Paragraph } from '@/app/components';
-import { useTitle } from '@/app/hooks';
-import notFoundImg from '@/assets/404.webp';
 import Image from '@/features/image';
-import { ArrowIcon } from '@/icons';
+import notFoundImg from '@/shared/assets/404.webp';
+import { useTitle } from '@/shared/hooks/use-title';
+import { ArrowIcon } from '@/shared/icons';
+import { LinkCustom } from '@/shared/ui/link-custom';
+import { Paragraph } from '@/shared/ui/paragraph';
 
 import './not-found.scss';
 

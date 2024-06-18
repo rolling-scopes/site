@@ -1,10 +1,10 @@
 import type { Trainer } from './trainers.types';
-import artsiomParfianenkau from '@/assets/mentors/a-parfianenkau.webp';
-import andrejPodlubnyj from '@/assets/mentors/a-podlubnyj.webp';
-import dzmitryYarmoshkin from '@/assets/mentors/d-yarmoshkin.png';
-import iharKrasiuk from '@/assets/mentors/i-krasiuk.webp';
-import marharytaMalets from '@/assets/mentors/m-malets.webp';
-import valeryDluski from '@/assets/mentors/v-dluski.webp';
+import artsiomParfianenkau from '@/shared/assets/mentors/a-parfianenkau.webp';
+import andrejPodlubnyj from '@/shared/assets/mentors/a-podlubnyj.webp';
+import dzmitryYarmoshkin from '@/shared/assets/mentors/d-yarmoshkin.png';
+import iharKrasiuk from '@/shared/assets/mentors/i-krasiuk.webp';
+import marharytaMalets from '@/shared/assets/mentors/m-malets.webp';
+import valeryDluski from '@/shared/assets/mentors/v-dluski.webp';
 
 export const reactEn: Trainer[] = [
   {

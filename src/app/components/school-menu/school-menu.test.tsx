@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react';
 import { vi } from 'vitest';
 import { SchoolMenu } from './school-menu';
-import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
-import { renderWithRouter } from '@/__tests__/utils';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
+import { renderWithRouter } from '@/shared/__tests__/utils';
 
 const testCourses = [
   {
@@ -37,7 +37,7 @@ const testCourses = [
   },
 ];
 
-vi.mock('@/app/hooks', () => {
+vi.mock('@/shared/hooks/use-data-by-name', () => {
   return { useDataByName: vi.fn().mockImplementation(() => ({ data: testCourses })) };
 });
 
