@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { cards } from './constants';
 
-import { Principles } from './principles';
+import { Principles } from './ui/principle-card/principles';
 
 describe('Principles', () => {
   beforeEach(() => {

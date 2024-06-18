@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Principles } from '@/features/principles';
+import { Principles } from '@/widgets/principles';
 import {
   About,
   Alumni,

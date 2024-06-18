@@ -1,5 +1,6 @@
-import { PrincipleCardProps } from '@/app/components';
+
 import { OpenSourcePhilosophyIcon, OpenToEveryoneIcon, TeachItForwardIcon } from '@/shared/icons';
+import { PrincipleCardProps } from './ui/principle-card/principle-card';
 
 export const cards: PrincipleCardProps[] = [
   {
