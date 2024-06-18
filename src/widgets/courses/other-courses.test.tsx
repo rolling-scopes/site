@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { Mock, describe, expect, it, vi } from 'vitest';
-import { Courses } from './courses';
+import { Courses } from './ui/courses';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { useDataByName } from '@/shared/hooks/use-data-by-name';

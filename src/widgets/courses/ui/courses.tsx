@@ -1,5 +1,5 @@
-import { compareNumbers } from './utils/compare-courses';
-import { isCourse } from './utils/is-course';
+import { compareNumbers } from '../../../entities/courses/helpers/compare-courses';
+import { isCourse } from '../../../entities/courses/helpers/is-course';
 import { CourseCard } from '@/app/components';
 
 import { finedNearestCourse } from '@/entities/courses';
