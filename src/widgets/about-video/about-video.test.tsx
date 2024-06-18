@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { AboutVideo } from './about-video';
+import { AboutVideo } from './ui/about-video';
 
 describe('AboutVideo', () => {
   it('renders the title correctly', () => {
