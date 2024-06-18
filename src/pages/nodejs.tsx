@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { About } from '@/features/about';
 import { Certification } from '@/features/certification';
 import { Communication } from '@/features/communication';
 import { CourseMain } from '@/features/course-main';
@@ -8,6 +7,7 @@ import { Trainers } from '@/features/trainers';
 import { nodejs } from '@/features/trainers/nodejs.data.ts';
 import { TrainingProgram } from '@/features/training-program';
 import { Breadcrumbs } from '@/shared/ui/breadcrumbs';
+import { About } from '@/widgets/about';
 
 const COURSE_NAME = 'node.js';
 

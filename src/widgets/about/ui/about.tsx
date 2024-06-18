@@ -1,6 +1,6 @@
 /* eslint-disable @stylistic/jsx-one-expression-per-line */
-import { contentMap } from './about.data';
-import { InfoGrid } from './components';
+import { InfoGrid } from './info-grid/info-grid';
+import { contentMap } from '../about.data';
 
 import { type Course } from '@/app/types';
 import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';
