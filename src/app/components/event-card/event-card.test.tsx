@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { EventCard } from './event-card';
-import { renderWithRouter } from '@/__tests__/utils';
+import { renderWithRouter } from '@/shared/__tests__/utils';
 
 describe('EventCard', () => {
   const mockProps = {

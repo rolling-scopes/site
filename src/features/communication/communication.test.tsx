@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { Communication } from './communication';
-import { renderWithRouter } from '@/__tests__/utils';
+import { renderWithRouter } from '@/shared/__tests__/utils';
 
 const jsCourseName = 'js / front-end en';
 const nodeCourseName = 'node.js';

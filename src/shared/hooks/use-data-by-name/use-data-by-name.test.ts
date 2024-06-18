@@ -1,10 +1,10 @@
 import { renderHook, waitFor } from '@testing-library/react';
 import { MockedFunction, describe, expect, it, vi } from 'vitest';
 import { useDataByName } from './use-data-by-name';
-import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
 import { ROUTES } from '@/app/const';
 import { fetchDataByName } from '@/app/services/api';
 import { DataMap } from '@/app/services/data/courses-data.types';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 
 const courses: DataMap['courses'] = [
   {

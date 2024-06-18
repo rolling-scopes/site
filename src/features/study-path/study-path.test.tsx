@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { StudyPath } from './study-path';
-import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 
 const testStages = [
   {

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { DateLang } from './date-lang';
-import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 
 describe('DateLang', () => {
   it('renders the start date correctly', () => {

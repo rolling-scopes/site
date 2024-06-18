@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import { Mock, beforeEach, vi } from 'vitest';
 import { DropdownWrapper } from './dropdown/dropdown-wrapper';
 import { Header } from './header';
-import { renderWithRouter } from '@/__tests__/utils';
+import { renderWithRouter } from '@/shared/__tests__/utils';
 
 import { useWindowSize } from '@/shared/hooks/use-window-size';
 

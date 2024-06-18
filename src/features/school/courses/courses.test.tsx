@@ -1,10 +1,10 @@
 import { screen } from '@testing-library/react';
 import { Mock, beforeEach, describe, expect, it, vi } from 'vitest';
 import { Courses } from './courses';
-import { renderWithRouter } from '@/__tests__/utils';
 import { ROUTES } from '@/app/const';
 
 import { buildUrl } from '@/app/services/platform';
+import { renderWithRouter } from '@/shared/__tests__/utils';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
 
 const mockedData = [

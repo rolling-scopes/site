@@ -1,6 +1,6 @@
 import { type Mock, describe, expect, it } from 'vitest';
 import { Footer } from './footer';
-import { renderWithRouter } from '@/__tests__/utils';
+import { renderWithRouter } from '@/shared/__tests__/utils';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
 
 vi.mock('@/shared/hooks/use-window-size', () => ({ useWindowSize: vi.fn().mockImplementation(() => ({ width: 1200 })) }));

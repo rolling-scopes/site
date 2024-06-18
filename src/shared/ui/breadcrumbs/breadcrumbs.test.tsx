@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
-import { renderWithRouter } from '@/__tests__/utils';
 import { ROUTES } from '@/app/const';
+import { renderWithRouter } from '@/shared/__tests__/utils';
 import { Breadcrumbs } from '@/shared/ui/breadcrumbs';
 import { breadcrumbNameMap } from '@/shared/ui/breadcrumbs/constants.ts';
 

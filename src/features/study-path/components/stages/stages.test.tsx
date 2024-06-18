@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { Stages, StagesProps } from './stages';
-import { MOCKED_IMAGE_PATH } from '@/__tests__/constants';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 
 describe('Stages Component', () => {
   const testStages: StagesProps['stages'] = [
