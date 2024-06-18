@@ -1,7 +1,7 @@
-import Image from '@/features/image';
 import notFoundImg from '@/shared/assets/404.webp';
 import { useTitle } from '@/shared/hooks/use-title';
 import { ArrowIcon } from '@/shared/icons';
+import Image from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 

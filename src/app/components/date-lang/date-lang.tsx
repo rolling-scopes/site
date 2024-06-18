@@ -1,7 +1,7 @@
 /* eslint-disable @stylistic/jsx-one-expression-per-line */
-import Image from '@/features/image';
 import micIcon from '@/shared/assets/icons/mic.svg';
 import noteIcon from '@/shared/assets/icons/note-icon.svg';
+import Image from '@/shared/ui/image';
 
 import styles from './date-lang.module.scss';
 

@@ -2,9 +2,9 @@ import { cloneElement } from 'react';
 import { type CourseNames, contentMap } from './training-program.data';
 
 import type { Course } from '@/app/types';
-import Image from '@/features/image';
 import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';
 import { ArrowIcon } from '@/shared/icons';
+import Image from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Title } from '@/shared/ui/title';
 

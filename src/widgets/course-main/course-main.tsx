@@ -3,10 +3,10 @@ import { getCourseStatus } from './utils/get-course-status';
 import { DateLang } from '@/app/components';
 
 import { Course } from '@/app/types';
-import Image from '@/features/image';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { useTitle } from '@/shared/hooks/use-title';
 import { ArrowIcon } from '@/shared/icons';
+import Image from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';

@@ -1,5 +1,5 @@
-import Image from '@/features/image';
 import image from '@/shared/assets/map.webp';
+import Image from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { Title } from '@/shared/ui/title';

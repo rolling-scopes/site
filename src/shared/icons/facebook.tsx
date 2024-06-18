@@ -1,5 +1,5 @@
-import Image from '@/features/image';
 import facebook from '@/shared/assets/svg/facebook.svg';
+import Image from '@/shared/ui/image';
 
 export const FacebookIcon = () => {
   return (

@@ -1,7 +1,7 @@
 import { alumni } from './constants';
 
-import Image from '@/features/image';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
+import Image from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Title } from '@/shared/ui/title';
 

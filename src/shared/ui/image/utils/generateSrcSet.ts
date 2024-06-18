@@ -1,4 +1,4 @@
-import { DESKTOP_W, MOBILE_W, TABLET_W } from '@/features/image/constants.ts';
+import { DESKTOP_W, MOBILE_W, TABLET_W } from '../constants';
 
 /**
  * Generates the srcset for the given src image, based on the env breakpoints

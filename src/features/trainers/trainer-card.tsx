@@ -1,7 +1,7 @@
 import type { Trainer } from './trainers.types';
-import Image from '@/features/image';
+import Image from '@/shared/ui/image';
 
-interface TrainerProps extends Trainer {}
+interface TrainerProps extends Trainer { }
 
 export const TrainerCard = ({ name, bio, role, photo }: TrainerProps) => {
   return (
