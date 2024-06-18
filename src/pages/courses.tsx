@@ -1,6 +1,5 @@
 import { FC } from 'react';
-import { General } from '@/entities/courses';
-import { Main } from '@/features/school';
+import { General, Main } from '@/entities/courses';
 import { StudyPath } from '@/features/study-path';
 import { useTitle } from '@/shared/hooks/use-title';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
