@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { General, Main } from '@/entities/courses';
+import { CoursesMain, General } from '@/entities/courses';
 import { StudyPath } from '@/features/study-path';
 import { useTitle } from '@/shared/hooks/use-title';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
@@ -10,7 +10,7 @@ export const Courses: FC = () => {
 
   return (
     <>
-      <Main />
+      <CoursesMain />
       <Breadcrumbs />
       <RSCourses />
       <StudyPath path="coursesPath" />
