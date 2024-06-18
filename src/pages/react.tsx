@@ -4,8 +4,8 @@ import { CourseMain } from '@/features/course-main';
 import { Trainers } from '@/features/trainers';
 import { reactEn } from '@/features/trainers/react-en.data.ts';
 import { TrainingProgram } from '@/features/training-program';
-import { Breadcrumbs } from '@/shared/ui/breadcrumbs';
 import { About } from '@/widgets/about';
+import { Breadcrumbs } from '@/widgets/breadcrumbs';
 
 const COURSE_NAME = 'react';
 

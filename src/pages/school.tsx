@@ -12,7 +12,7 @@ import {
   StudyWithUs,
 } from '@/features/school';
 import { useTitle } from '@/shared/hooks/use-title';
-import { Breadcrumbs } from '@/shared/ui/breadcrumbs';
+import { Breadcrumbs } from '@/widgets/breadcrumbs';
 
 export const School: FC = () => {
   useTitle('The Rolling Scopes School');

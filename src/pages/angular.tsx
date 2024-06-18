@@ -8,8 +8,8 @@ import { StudyPath } from '@/features/study-path';
 import { Trainers } from '@/features/trainers';
 import { angular } from '@/features/trainers/angular.data';
 import { TrainingProgram } from '@/features/training-program';
-import { Breadcrumbs } from '@/shared/ui/breadcrumbs';
 import { About } from '@/widgets/about';
+import { Breadcrumbs } from '@/widgets/breadcrumbs';
 
 const COURSE_NAME = 'angular';
 

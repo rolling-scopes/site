@@ -15,7 +15,7 @@ import {
   Support,
 } from '@/features/home';
 import { useTitle } from '@/shared/hooks/use-title';
-import { Breadcrumbs } from '@/shared/ui/breadcrumbs';
+import { Breadcrumbs } from '@/widgets/breadcrumbs';
 
 export const Home: FC = () => {
   useTitle(`Home · ${config.title}`);

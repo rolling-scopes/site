@@ -6,8 +6,8 @@ import { StudyPath } from '@/features/study-path';
 import { Trainers } from '@/features/trainers';
 import { awsDev } from '@/features/trainers/awsDev.data.ts';
 import { TrainingProgram } from '@/features/training-program';
-import { Breadcrumbs } from '@/shared/ui/breadcrumbs';
 import { About } from '@/widgets/about';
+import { Breadcrumbs } from '@/widgets/breadcrumbs';
 
 const COURSE_NAME = 'aws cloud dev';
 

@@ -6,8 +6,8 @@ import { Required } from '@/features/required';
 import { Trainers } from '@/features/trainers';
 import { preSchoolRu } from '@/features/trainers/preSchool.data.ts';
 import { TrainingProgram } from '@/features/training-program';
-import { Breadcrumbs } from '@/shared/ui/breadcrumbs';
 import { About } from '@/widgets/about';
+import { Breadcrumbs } from '@/widgets/breadcrumbs';
 
 const COURSE_NAME = 'js / front-end pre-school ru';
 
