@@ -2,8 +2,9 @@ import { compareNumbers } from './utils/compare-courses';
 import { isCourse } from './utils/is-course';
 import { CourseCard } from '@/app/components';
 
+import { finedNearestCourse } from '@/app/entities/courses/helpers/fined-nearest-course';
 import { useDataByName } from '@/shared/hooks/use-data-by-name';
-import { finedNearestCourse } from '@/shared/hooks/use-nearest-course';
+
 import { Title, TitleType } from '@/shared/ui/title';
 
 import './courses.scss';
