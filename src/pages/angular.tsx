@@ -1,4 +1,3 @@
-import { AngularTopics } from '@/features/angular-topics';
 import { Certification } from '@/features/certification';
 import { Communication } from '@/features/communication';
 import { CourseMain } from '@/features/course-main';
@@ -9,6 +8,7 @@ import { Trainers } from '@/features/trainers';
 import { angular } from '@/features/trainers/angular.data';
 import { TrainingProgram } from '@/features/training-program';
 import { About } from '@/widgets/about';
+import { AngularTopics } from '@/widgets/angular-topics';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 
 const COURSE_NAME = 'angular';
