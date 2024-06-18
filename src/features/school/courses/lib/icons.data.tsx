@@ -1,5 +1,5 @@
-import { COURSE_TITLES } from '@/data/courseTitles.data';
-import { AngularIcon, AwsLogo, HtmlIcon, JavascriptIcon, NodeJsIcon, ReactIcon } from '@/icons';
+import { COURSE_TITLES } from '@/shared/data/courseTitles.data';
+import { AngularIcon, AwsLogo, HtmlIcon, JavascriptIcon, NodeJsIcon, ReactIcon } from '@/shared/icons';
 
 export const icons = {
   [COURSE_TITLES.JS_PRESCHOOL_RU]: <HtmlIcon />,

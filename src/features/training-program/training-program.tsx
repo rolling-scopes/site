@@ -3,8 +3,8 @@ import { type CourseNames, contentMap } from './training-program.data';
 
 import type { Course } from '@/app/types';
 import Image from '@/features/image';
-import { ArrowIcon } from '@/icons';
 import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';
+import { ArrowIcon } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Title } from '@/shared/ui/title';
 

@@ -3,8 +3,8 @@ import { contentMap } from './about.data';
 import { InfoGrid } from './components';
 
 import { type Course } from '@/app/types';
-import { ArrowIcon } from '@/icons';
 import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';
+import { ArrowIcon } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Title } from '@/shared/ui/title';

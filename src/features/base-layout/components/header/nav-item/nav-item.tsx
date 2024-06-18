@@ -2,7 +2,7 @@ import { ReactNode, useState } from 'react';
 import classNames from 'classnames/bind';
 import { NavLink } from 'react-router-dom';
 import { DropdownWrapper } from '../dropdown/dropdown-wrapper';
-import { DropdownArrow } from '@/icons/dropdown-arrow';
+import { DropdownArrow } from '@/shared/icons/dropdown-arrow';
 
 import styles from './nav-item.module.scss';
 

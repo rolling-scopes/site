@@ -1,7 +1,6 @@
 import { buildUrl } from '../platform';
 import { ROUTES } from '@/app/const';
 import { type Course } from '@/app/types';
-import { COURSE_TITLES } from '@/data/courseTitles.data';
 import angularSecondary from '@/shared/assets/icons/angular-secondary.webp';
 import angular from '@/shared/assets/icons/angular.svg';
 import awsSecondary from '@/shared/assets/icons/aws-secondary.webp';
@@ -19,6 +18,7 @@ import nodejs from '@/shared/assets/icons/node.svg';
 import nodejsSecondary from '@/shared/assets/icons/nodejs-secondary.webp';
 import reactSecondary from '@/shared/assets/icons/react-secondary.webp';
 import react from '@/shared/assets/icons/react.svg';
+import { COURSE_TITLES } from '@/shared/data/courseTitles.data';
 
 export const courses: Course[] = [
   {

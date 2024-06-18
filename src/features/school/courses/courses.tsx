@@ -5,8 +5,8 @@ import { CourseCard } from './ui/CourseCard';
 import { ROUTES } from '@/app/const';
 
 import { courses } from '@/app/services/data';
-import { ArrowIcon, RsBanner } from '@/icons';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
+import { ArrowIcon, RsBanner } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
 
 import './courses.scss';

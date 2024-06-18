@@ -1,9 +1,9 @@
 /* eslint-disable @stylistic/jsx-one-expression-per-line */
 import { type Course } from '@/app/types';
 import Image from '@/features/image';
-import { ArrowIcon } from '@/icons';
 import micIcon from '@/shared/assets/icons/mic.svg';
 import noteIcon from '@/shared/assets/icons/note-icon.svg';
+import { ArrowIcon } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
 
 import './course-card.scss';

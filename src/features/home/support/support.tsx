@@ -1,7 +1,7 @@
 import { LINKS } from '@/app/const';
 import Image from '@/features/image';
-import { ArrowIcon } from '@/icons';
 import image from '@/shared/assets/support.webp';
+import { ArrowIcon } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { Title, TitleType } from '@/shared/ui/title';

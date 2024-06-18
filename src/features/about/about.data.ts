@@ -1,11 +1,11 @@
-import type { CourseNames } from '@/data/communication.data';
-import { DISCORD_LINKS } from '@/data/communication.data';
 import awardIcon from '@/shared/assets/icons/award-icon.webp';
 import giftIcon from '@/shared/assets/icons/gift.webp';
 import noteIcon from '@/shared/assets/icons/note-icon.webp';
 import paperIcon from '@/shared/assets/icons/paper-icon.webp';
 import personIcon from '@/shared/assets/icons/person-icon.webp';
 import planetIcon from '@/shared/assets/icons/planet.webp';
+import type { CourseNames } from '@/shared/data/communication.data';
+import { DISCORD_LINKS } from '@/shared/data/communication.data';
 
 type AboutInfo = {
   id: number;

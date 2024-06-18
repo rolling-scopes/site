@@ -1,5 +1,5 @@
 import { LINKS } from '@/app/const';
-import { ArrowIcon } from '@/icons';
+import { ArrowIcon } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
 
 import './requirements.scss';
