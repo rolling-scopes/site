@@ -1,13 +1,13 @@
 import { FC } from 'react';
-import { Breadcrumbs } from '@/app/components';
-import { About } from '@/features/about';
-import { Certification } from '@/features/certification';
-import { Communication } from '@/features/communication';
-import { CourseMain } from '@/features/course-main';
-import { Required } from '@/features/required';
-import { Trainers } from '@/features/trainers';
-import { nodejs } from '@/features/trainers/nodejs.data.ts';
-import { TrainingProgram } from '@/features/training-program';
+import { About } from '@/widgets/about';
+import { Breadcrumbs } from '@/widgets/breadcrumbs';
+import { Certification } from '@/widgets/certification';
+import { Communication } from '@/widgets/communication';
+import { CourseMain } from '@/widgets/course-main';
+import { Required } from '@/widgets/required';
+import { Trainers } from '@/widgets/trainers';
+import { nodejs } from '@/widgets/trainers/nodejs.data';
+import { TrainingProgram } from '@/widgets/training-program';
 
 const COURSE_NAME = 'node.js';
 

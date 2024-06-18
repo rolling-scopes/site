@@ -1,11 +1,11 @@
-import { Breadcrumbs } from '@/app/components';
-import { About } from '@/features/about';
-import { Certification } from '@/features/certification';
-import { Communication } from '@/features/communication';
-import { CourseMain } from '@/features/course-main';
-import { Trainers } from '@/features/trainers';
-import { reactEn } from '@/features/trainers/react-en.data.ts';
-import { TrainingProgram } from '@/features/training-program';
+import { About } from '@/widgets/about';
+import { Breadcrumbs } from '@/widgets/breadcrumbs';
+import { Certification } from '@/widgets/certification';
+import { Communication } from '@/widgets/communication';
+import { CourseMain } from '@/widgets/course-main';
+import { Trainers } from '@/widgets/trainers';
+import { reactEn } from '@/widgets/trainers/react-en.data';
+import { TrainingProgram } from '@/widgets/training-program';
 
 const COURSE_NAME = 'react';
 

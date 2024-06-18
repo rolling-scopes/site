@@ -1,19 +1,19 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  testDir: 'src/__tests__/visualTesting',
+  testDir: 'src/shared/__tests__/visualTesting',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
   reporter: process.env.CI
     ? 'dot'
-    : [['html', { outputFolder: 'src/__tests__/visualTesting/report' }]],
+    : [['html', { outputFolder: 'src/shared/__tests__/visualTesting/report' }]],
   use: {
     baseURL: 'http://localhost:5173',
     trace: 'off',
   },
-  outputDir: 'src/__tests__/visualTesting/results',
+  outputDir: 'src/shared/__tests__/visualTesting/results',
   projects: [
     {
       name: 'Mobile Chrome',

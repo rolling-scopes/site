@@ -1,17 +1,15 @@
 import { FC } from 'react';
-import { Breadcrumbs } from '@/app/components';
-import { useTitle } from '@/app/hooks';
-import { Principles } from '@/features/principles';
-import {
-  About,
-  Alumni,
-  Courses,
-  Main,
-  Mentoring,
-  Mentors,
-  Requirements,
-  StudyWithUs,
-} from '@/features/school';
+import { useTitle } from '@/shared/hooks/use-title';
+import { About } from '@/widgets/about-school';
+import { Alumni } from '@/widgets/alumni';
+import { Breadcrumbs } from '@/widgets/breadcrumbs';
+import { Courses } from '@/widgets/courses-school';
+import { Main } from '@/widgets/main';
+import { Mentoring } from '@/widgets/mentoring';
+import { Mentors } from '@/widgets/mentors';
+import { Principles } from '@/widgets/principles';
+import { Requirements } from '@/widgets/requirements';
+import { StudyWithUs } from '@/widgets/study-with-us';
 
 export const School: FC = () => {
   useTitle('The Rolling Scopes School');

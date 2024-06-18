@@ -46,7 +46,7 @@ npx playwright test --ui
 
 <img src="./assets/end-to-end-testing/UI.jpg" alt="image">
 
-- if there are any problems whith screenshots comparison, go to `src/__tests__/visualTesting/results` and watch the results like this:
+- if there are any problems whith screenshots comparison, go to `src/shared/__tests__/visualTesting/results` and watch the results like this:
 
 <img src="./assets/end-to-end-testing/origin-diff.png" alt="image">
 
@@ -58,7 +58,7 @@ npx playwright test --ui
 npx playwright test
 ```
 
-- if there are any problems whith screenshots comparison, go to `src/__tests__/visualTesting/results` and watch the results.
+- if there are any problems whith screenshots comparison, go to `src/shared/__tests__/visualTesting/results` and watch the results.
 
 ### 🔁Update Screenshots
 
@@ -70,7 +70,7 @@ When intentional design changes cause test failures, to create new references us
 npx playwright test --update-snapshots
 ```
 
-- to update one or several screenshots only, please delete outdated reference images from the according folder (`src/__tests__/visualTesting/[NAME_OF_THE_TEST].spec.ts-snapshots`) and rerun tests again. On testing without samples, Playwright firstly will create them from your code.
+- to update one or several screenshots only, please delete outdated reference images from the according folder (`src/shared/__tests__/visualTesting/[NAME_OF_THE_TEST].spec.ts-snapshots`) and rerun tests again. On testing without samples, Playwright firstly will create them from your code.
 
 ### 👀 Real-time Browsing via Specified Engine
 
@@ -96,7 +96,7 @@ If intentional changes affect the site's appearance, update the reference images
 
 ### 🗐 Screenshot Comparison Failed
 
-When tests fail, review the error messages and comparison images in the `src/__tests__/visualTesting/results` folder to understand what went wrong. Common issues include layout shifts, missing elements, or unintended changes in styling.
+When tests fail, review the error messages and comparison images in the `src/shared/__tests__/visualTesting/results` folder to understand what went wrong. Common issues include layout shifts, missing elements, or unintended changes in styling.
 
 ### ⏳Timeout Error
 

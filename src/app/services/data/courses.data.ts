@@ -1,24 +1,24 @@
 import { buildUrl } from '../platform';
 import { ROUTES } from '@/app/const';
 import { type Course } from '@/app/types';
-import angularSecondary from '@/assets/icons/angular-secondary.webp';
-import angular from '@/assets/icons/angular.svg';
-import awsSecondary from '@/assets/icons/aws-secondary.webp';
-import aws from '@/assets/icons/aws.svg';
-import angularSmall from '@/assets/icons/footer/angular.webp';
-import awsDevSmall from '@/assets/icons/footer/aws-dev.webp';
-import awsFundSmall from '@/assets/icons/footer/aws-fundamentals.webp';
-import htmlSmall from '@/assets/icons/footer/html.webp';
-import jsSmall from '@/assets/icons/footer/javascript.webp';
-import nodejsSmall from '@/assets/icons/footer/nodejs.webp';
-import reactSmall from '@/assets/icons/footer/react.webp';
-import javascript from '@/assets/icons/javascript.webp';
-import jsSecondary from '@/assets/icons/js-secondary.webp';
-import nodejs from '@/assets/icons/node.svg';
-import nodejsSecondary from '@/assets/icons/nodejs-secondary.webp';
-import reactSecondary from '@/assets/icons/react-secondary.webp';
-import react from '@/assets/icons/react.svg';
-import { COURSE_TITLES } from '@/data/courseTitles.data';
+import angularSecondary from '@/shared/assets/icons/angular-secondary.webp';
+import angular from '@/shared/assets/icons/angular.svg';
+import awsSecondary from '@/shared/assets/icons/aws-secondary.webp';
+import aws from '@/shared/assets/icons/aws.svg';
+import angularSmall from '@/shared/assets/icons/footer/angular.webp';
+import awsDevSmall from '@/shared/assets/icons/footer/aws-dev.webp';
+import awsFundSmall from '@/shared/assets/icons/footer/aws-fundamentals.webp';
+import htmlSmall from '@/shared/assets/icons/footer/html.webp';
+import jsSmall from '@/shared/assets/icons/footer/javascript.webp';
+import nodejsSmall from '@/shared/assets/icons/footer/nodejs.webp';
+import reactSmall from '@/shared/assets/icons/footer/react.webp';
+import javascript from '@/shared/assets/icons/javascript.webp';
+import jsSecondary from '@/shared/assets/icons/js-secondary.webp';
+import nodejs from '@/shared/assets/icons/node.svg';
+import nodejsSecondary from '@/shared/assets/icons/nodejs-secondary.webp';
+import reactSecondary from '@/shared/assets/icons/react-secondary.webp';
+import react from '@/shared/assets/icons/react.svg';
+import { COURSE_TITLES } from '@/shared/data/courseTitles.data';
 
 export const courses: Course[] = [
   {

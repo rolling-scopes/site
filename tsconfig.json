@@ -2,10 +2,13 @@
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "module": "ESNext",
     "skipLibCheck": true,
-
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -13,27 +16,38 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "types": ["node", "@testing-library/jest-dom", "vitest/globals"],
+    "types": [
+      "node",
+      "@testing-library/jest-dom",
+      "vitest/globals"
+    ],
     "baseUrl": "./src",
     "paths": {
-      "@/*": ["*"]
+      "@/*": [
+        "*"
+      ]
     }
   },
   "include": [
     "src",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/__tests__/setup-tests.ts",
-    "src/__tests__/visualTesting/main.spec.ts",
-    "src/__tests__/visualTesting/navbar.spec.ts",
-    "src/__tests__/visualTesting/footer.spec.ts"
+    "src/shared/__tests__/setup-tests.ts",
+    "src/shared/__tests__/visualTesting/main.spec.ts",
+    "src/shared/__tests__/visualTesting/navbar.spec.ts",
+    "src/shared/__tests__/visualTesting/footer.spec.ts"
   ],
-  "exclude": ["node_modules"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "exclude": [
+    "node_modules"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }

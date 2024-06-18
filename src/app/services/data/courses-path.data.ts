@@ -1,12 +1,12 @@
 import { type CoursesPath } from './courses-data.types';
 import { ROUTES } from '@/app/const';
 import { buildUrl } from '@/app/services/platform';
-import AWSDeveloperIcon from '@/assets/icons/aws-developer.webp';
-import AWSFundamentalsIcon from '@/assets/icons/aws-fundamentals.webp';
-import HTMLIcon from '@/assets/icons/html.webp';
-import JSIcon from '@/assets/icons/javascript.webp';
-import NodeJSIcon from '@/assets/icons/nodejs.webp';
-import ReactAngIcon from '@/assets/icons/react-angular.svg';
+import AWSDeveloperIcon from '@/shared/assets/icons/aws-developer.webp';
+import AWSFundamentalsIcon from '@/shared/assets/icons/aws-fundamentals.webp';
+import HTMLIcon from '@/shared/assets/icons/html.webp';
+import JSIcon from '@/shared/assets/icons/javascript.webp';
+import NodeJSIcon from '@/shared/assets/icons/nodejs.webp';
+import ReactAngIcon from '@/shared/assets/icons/react-angular.svg';
 
 export const coursesPath: CoursesPath[] = [
   {
