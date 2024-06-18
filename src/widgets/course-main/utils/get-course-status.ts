@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import { hasDayInDate } from '.';
+import { hasDayInDate } from './has-day';
 import { CourseStatus } from '@/app/types';
 
 export function getCourseStatus(courseStartDate: string): CourseStatus {

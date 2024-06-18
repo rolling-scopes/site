@@ -1,5 +1,5 @@
 import { useLoaderData } from 'react-router-dom';
-import { getCourseStatus } from './utils';
+import { getCourseStatus } from './utils/get-course-status';
 import { DateLang } from '@/app/components';
 
 import { Course } from '@/app/types';

@@ -1,5 +1,3 @@
-import { Communication } from '@/widgets/communication';
-import { CourseMain } from '@/features/course-main';
 import { MentorsWanted } from '@/features/mentors-wanted';
 import { Required } from '@/features/required';
 import { StudyPath } from '@/features/study-path';
@@ -10,6 +8,8 @@ import { About } from '@/widgets/about';
 import { AngularTopics } from '@/widgets/angular-topics';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
+import { Communication } from '@/widgets/communication';
+import { CourseMain } from '@/widgets/course-main';
 
 const COURSE_NAME = 'angular';
 
