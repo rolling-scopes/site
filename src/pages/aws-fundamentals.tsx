@@ -1,4 +1,3 @@
-import { Certification } from '@/features/certification';
 import { Communication } from '@/features/communication';
 import { CourseMain } from '@/features/course-main';
 import { Required } from '@/features/required';
@@ -7,6 +6,7 @@ import { awsFundamentals } from '@/features/trainers/awsFundamentals.data.ts';
 import { TrainingProgram } from '@/features/training-program';
 import { About } from '@/widgets/about';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
+import { Certification } from '@/widgets/certification';
 
 const COURSE_NAME = 'aws fundamentals';
 

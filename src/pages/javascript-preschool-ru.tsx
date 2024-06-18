@@ -1,4 +1,3 @@
-import { Certification } from '@/features/certification';
 import { Communication } from '@/features/communication';
 import { CourseMain } from '@/features/course-main';
 import { Faq } from '@/features/faq';
@@ -8,6 +7,7 @@ import { preSchoolRu } from '@/features/trainers/preSchool.data.ts';
 import { TrainingProgram } from '@/features/training-program';
 import { About } from '@/widgets/about';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
+import { Certification } from '@/widgets/certification';
 
 const COURSE_NAME = 'js / front-end pre-school ru';
 
