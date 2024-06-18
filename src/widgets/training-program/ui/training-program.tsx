@@ -1,5 +1,5 @@
 import { cloneElement } from 'react';
-import { type CourseNames, contentMap } from './training-program.data';
+import { type CourseNames, contentMap } from '../training-program.data';
 
 import type { Course } from '@/app/types';
 import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';

@@ -1,6 +1,6 @@
-import { TrainerCard } from './trainer-card';
-import { Trainer } from '@/features/trainers/trainers.types.ts';
+import { TrainerCard } from './trainers-card/trainer-card';
 import { Title } from '@/shared/ui/title';
+import { Trainer } from '@/widgets/trainers/trainers.types';
 
 import './trainers.scss';
 

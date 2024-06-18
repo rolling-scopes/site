@@ -1,6 +1,3 @@
-import { Trainers } from '@/features/trainers';
-import { preSchoolRu } from '@/features/trainers/preSchool.data.ts';
-import { TrainingProgram } from '@/features/training-program';
 import { About } from '@/widgets/about';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
@@ -8,6 +5,9 @@ import { Communication } from '@/widgets/communication';
 import { CourseMain } from '@/widgets/course-main';
 import { Faq } from '@/widgets/faq';
 import { Required } from '@/widgets/required';
+import { Trainers } from '@/widgets/trainers';
+import { preSchoolRu } from '@/widgets/trainers/preSchool.data';
+import { TrainingProgram } from '@/widgets/training-program';
 
 const COURSE_NAME = 'js / front-end pre-school ru';
 

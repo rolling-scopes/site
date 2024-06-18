@@ -1,4 +1,4 @@
-import type { Trainer } from './trainers.types';
+import { Trainer } from '../../trainers.types';
 import Image from '@/shared/ui/image';
 
 interface TrainerProps extends Trainer { }

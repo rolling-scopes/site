@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { Trainers } from './trainers';
+
+import { Trainers } from './ui/trainers';
 import {
   MOCKED_MULTIPLE_TRAINERS,
   MOCKED_ONE_TRAINER,

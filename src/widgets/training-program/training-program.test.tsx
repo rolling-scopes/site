@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { type Mock, beforeEach, vi } from 'vitest';
-import { TrainingProgram } from './training-program';
+import { TrainingProgram } from './ui/training-program';
 import { ROUTES } from '@/app/const';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';

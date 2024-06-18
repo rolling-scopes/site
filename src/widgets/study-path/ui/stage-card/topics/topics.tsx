@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { LangContext } from '@/features/study-path/study-path';
+import { LangContext } from '../../study-path';
 
 import './topics.scss';
 

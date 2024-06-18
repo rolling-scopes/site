@@ -1,12 +1,12 @@
-import { Trainers } from '@/features/trainers';
-import { awsFundamentals } from '@/features/trainers/awsFundamentals.data.ts';
-import { TrainingProgram } from '@/features/training-program';
 import { About } from '@/widgets/about';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
 import { CourseMain } from '@/widgets/course-main';
 import { Required } from '@/widgets/required';
+import { Trainers } from '@/widgets/trainers';
+import { awsFundamentals } from '@/widgets/trainers/awsFundamentals.data';
+import { TrainingProgram } from '@/widgets/training-program';
 
 const COURSE_NAME = 'aws fundamentals';
 
