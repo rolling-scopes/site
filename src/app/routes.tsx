@@ -103,7 +103,7 @@ export const routes: RouteObject[] = config.isRollingScopesLanding
       {
         path: ROUTES.HOME,
         lazy: async () => {
-          const { BaseLayout } = await import('../features/base-layout/base-layout.tsx');
+          const { BaseLayout } = await import('./layouts/base-layout/base-layout.tsx');
 
           return { Component: BaseLayout };
         },
@@ -125,7 +125,7 @@ export const routes: RouteObject[] = config.isRollingScopesLanding
       {
         path: ROUTES.HOME,
         lazy: async () => {
-          const { BaseLayout } = await import('../features/base-layout/base-layout.tsx');
+          const { BaseLayout } = await import('./layouts/base-layout/base-layout.tsx');
 
           return { Component: BaseLayout };
         },
