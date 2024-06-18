@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
-import { Actions } from '@/app/components';
+
+import { Actions } from '@/shared/ui/actions/actions';
 import { Title } from '@/shared/ui/title';
 
 import styles from './angular-topics.module.scss';
