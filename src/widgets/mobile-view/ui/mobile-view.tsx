@@ -1,6 +1,8 @@
+// todo it not widget
 import { Link } from 'react-router-dom';
-import { LogoWrapper, SchoolMenu } from '@/app/components';
 import { buildUrl } from '@/app/services/platform';
+import { LogoWrapper } from '@/shared/ui/logo-wrapper';
+import { SchoolMenu } from '@/widgets/school-menu';
 
 import './mobile-view.scss';
 

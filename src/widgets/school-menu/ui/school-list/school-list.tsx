@@ -1,4 +1,4 @@
-import { SchoolItem } from './school-item';
+import { SchoolItem } from '../school-item/school-item';
 import { Course } from '@/app/types';
 
 export interface GenericItemProps {

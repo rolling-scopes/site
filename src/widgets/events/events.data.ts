@@ -1,4 +1,4 @@
-import { EventCardProps } from '@/app/components';
+import { EventCardProps } from '@/entities/events';
 
 export const events: EventCardProps[] = [
   {

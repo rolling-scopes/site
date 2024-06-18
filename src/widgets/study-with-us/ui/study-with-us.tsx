@@ -1,11 +1,11 @@
 import { studyOptions } from '../constants';
-import { OptionItem } from '@/app/components';
 import image from '@/shared/assets/rs-school.webp';
 import Image from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { Title } from '@/shared/ui/title';
+import { OptionItem } from '@/widgets/option-item';
 
 import './study-with-us.scss';
 

@@ -1,3 +1,4 @@
+// todo it not widget
 import { ArrowIcon } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
 

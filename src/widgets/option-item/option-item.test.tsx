@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import { OptionItem } from './option-item';
+import { OptionItem } from './ui/option-item';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 describe('OptionItem component', () => {

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import { Places } from './places';
+import { Places } from './ui/places';
 
 describe('Places component', () => {
   const places = [

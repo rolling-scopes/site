@@ -3,9 +3,10 @@ import classNames from 'classnames/bind';
 import { Link, useLocation } from 'react-router-dom';
 import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
-import { LogoWrapper, MobileView, SchoolMenu } from '@/app/components';
-
 import { useWindowSize } from '@/shared/hooks/use-window-size';
+import { LogoWrapper } from '@/shared/ui/logo-wrapper';
+import { MobileView } from '@/widgets/mobile-view';
+import { SchoolMenu } from '@/widgets/school-menu';
 
 import styles from './header.module.scss';
 

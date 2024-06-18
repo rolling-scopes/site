@@ -1,4 +1,4 @@
-import { GenericItemProps, SchoolList } from './school-list';
+import { GenericItemProps, SchoolList } from './school-list/school-list';
 
 import { type Course } from '@/app/types';
 import { useDataByName } from '@/shared/hooks/use-data-by-name';

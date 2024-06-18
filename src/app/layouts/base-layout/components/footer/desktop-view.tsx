@@ -1,5 +1,5 @@
 import { AboutList } from './about-list';
-import { SchoolMenu } from '@/app/components';
+import { SchoolMenu } from '@/widgets/school-menu';
 
 export const DesktopView = () => {
   return (

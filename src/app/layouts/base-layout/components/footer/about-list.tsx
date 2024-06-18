@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { LogoWrapper } from '@/app/components';
 import { buildUrl } from '@/app/services/platform';
+import { LogoWrapper } from '@/shared/ui/logo-wrapper';
 
 const aboutList = [
   {

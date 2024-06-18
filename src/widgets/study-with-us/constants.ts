@@ -1,4 +1,4 @@
-import { OptionItemProps } from '@/app/components/option-item/option-item';
+import { OptionItemProps } from '@/widgets/option-item/ui/option-item';
 
 export const studyOptions: OptionItemProps[] = [
   {
