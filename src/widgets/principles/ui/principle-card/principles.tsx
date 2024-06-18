@@ -1,9 +1,8 @@
+import { PrincipleCard } from './principle-card';
 import { cards } from '../../constants';
-
 import { Title, TitleType } from '@/shared/ui/title';
 
 import './principles.scss';
-import { PrincipleCard } from './principle-card';
 
 export const Principles = () => (
   <div className="principles container">
