@@ -1,4 +1,4 @@
-import { Communication } from '@/features/communication';
+import { Communication } from '@/widgets/communication';
 import { CourseMain } from '@/features/course-main';
 import { MentorsWanted } from '@/features/mentors-wanted';
 import { Required } from '@/features/required';

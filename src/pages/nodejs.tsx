@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Communication } from '@/features/communication';
+import { Communication } from '@/widgets/communication';
 import { CourseMain } from '@/features/course-main';
 import { Required } from '@/features/required';
 import { Trainers } from '@/features/trainers';

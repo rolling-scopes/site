@@ -1,4 +1,4 @@
-import { Communication } from '@/features/communication';
+import { Communication } from '@/widgets/communication';
 import { CourseMain } from '@/features/course-main';
 import { Trainers } from '@/features/trainers';
 import { reactEn } from '@/features/trainers/react-en.data.ts';

@@ -1,1 +1,0 @@
-export { Communication } from './communication';
