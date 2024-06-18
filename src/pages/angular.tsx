@@ -1,15 +1,15 @@
-import { About } from '@/features/about';
-import { AngularTopics } from '@/features/angular-topics';
-import { Certification } from '@/features/certification';
-import { Communication } from '@/features/communication';
-import { CourseMain } from '@/features/course-main';
-import { MentorsWanted } from '@/features/mentors-wanted';
-import { Required } from '@/features/required';
-import { StudyPath } from '@/features/study-path';
-import { Trainers } from '@/features/trainers';
-import { angular } from '@/features/trainers/angular.data';
-import { TrainingProgram } from '@/features/training-program';
-import { Breadcrumbs } from '@/shared/ui/breadcrumbs';
+import { About } from '@/widgets/about';
+import { AngularTopics } from '@/widgets/angular-topics';
+import { Breadcrumbs } from '@/widgets/breadcrumbs';
+import { Certification } from '@/widgets/certification';
+import { Communication } from '@/widgets/communication';
+import { CourseMain } from '@/widgets/course-main';
+import { MentorsWanted } from '@/widgets/mentors-wanted';
+import { Required } from '@/widgets/required';
+import { StudyPath } from '@/widgets/study-path';
+import { Trainers } from '@/widgets/trainers';
+import { angular } from '@/widgets/trainers/angular.data';
+import { TrainingProgram } from '@/widgets/training-program';
 
 const COURSE_NAME = 'angular';
 

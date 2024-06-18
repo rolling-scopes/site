@@ -1,5 +1,5 @@
-import Image from '@/features/image';
 import telegram from '@/shared/assets/svg/telegram.svg';
+import Image from '@/shared/ui/image';
 
 export const TelegramIcon = () => {
   return (

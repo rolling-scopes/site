@@ -1,16 +1,16 @@
 import { FC } from 'react';
-
-import { General, Main, Courses as RSCourses } from '@/features/courses';
-import { StudyPath } from '@/features/study-path';
+import { CoursesMain, General } from '@/entities/courses';
 import { useTitle } from '@/shared/hooks/use-title';
-import { Breadcrumbs } from '@/shared/ui/breadcrumbs';
+import { Breadcrumbs } from '@/widgets/breadcrumbs';
+import { RSCourses } from '@/widgets/courses';
+import { StudyPath } from '@/widgets/study-path';
 
 export const Courses: FC = () => {
   useTitle('Courses · The Rolling Scopes School');
 
   return (
     <>
-      <Main />
+      <CoursesMain />
       <Breadcrumbs />
       <RSCourses />
       <StudyPath path="coursesPath" />

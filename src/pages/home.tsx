@@ -1,21 +1,18 @@
 import { FC } from 'react';
-import { Places } from '@/app/components';
-
 import { config } from '@/config';
-import {
-  About,
-  Community,
-  Contribute,
-  Events,
-  Hero,
-  Merch,
-  Numbers,
-  Pictures,
-  Speakers,
-  Support,
-} from '@/features/home';
 import { useTitle } from '@/shared/hooks/use-title';
-import { Breadcrumbs } from '@/shared/ui/breadcrumbs';
+import { About } from '@/widgets/about-home';
+import { Breadcrumbs } from '@/widgets/breadcrumbs';
+import { Community } from '@/widgets/community';
+import { Contribute } from '@/widgets/contribute';
+import { Events } from '@/widgets/events';
+import { Hero } from '@/widgets/hero';
+import { Merch } from '@/widgets/merch';
+import { Numbers } from '@/widgets/numbers';
+import { Pictures } from '@/widgets/pictures';
+import { Places } from '@/widgets/places';
+import { Speakers } from '@/widgets/speakers';
+import { Support } from '@/widgets/support';
 
 export const Home: FC = () => {
   useTitle(`Home · ${config.title}`);
