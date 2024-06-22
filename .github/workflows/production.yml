@@ -26,7 +26,7 @@ jobs:
 
       - name: build
         env:
-          HOST: 'https://rs.school'
+          HOST: 'https://rollingscopes.com'
         run: |
           npm install
           npm run build

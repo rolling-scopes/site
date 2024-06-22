@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { breadcrumbNameMap } from './constants';
+import { breadcrumbNameMap } from '../constants';
 import { RouteValues } from '@/app/types/route.types.ts';
 
 import './breadcrumbs.scss';
