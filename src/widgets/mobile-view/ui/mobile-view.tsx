@@ -1,6 +1,5 @@
 // todo it not widget
 import { Link } from 'react-router-dom';
-import { buildUrl } from '@/app/services/platform';
 import { LogoWrapper } from '@/shared/ui/logo-wrapper';
 import { SchoolMenu } from '@/widgets/school-menu';
 
@@ -19,11 +18,11 @@ export const MobileView = ({ type }: MobileViewProps) => {
 
   return (
     <div className="mobile-view" data-testid="mobile-view">
-      <Link to={buildUrl('/')}>
+      <Link to="/">
         <LogoWrapper type={type} />
       </Link>
 
-      <Link to={buildUrl('/#about')} className={`main-link ${color}`}>
+      <Link to="/community/#about" className={`main-link ${color}`}>
         About Community
       </Link>
 
@@ -37,19 +36,19 @@ export const MobileView = ({ type }: MobileViewProps) => {
 
       <Divider type={type} />
 
-      <Link to={buildUrl('/#community')} className={`main-link mt ${color}`}>
+      <Link to="/community/#community" className={`main-link mt ${color}`}>
         Community
       </Link>
 
       <Divider type={type} />
 
-      <Link to={buildUrl('/#events')} className={`main-link ${color}`}>
+      <Link to="/community/#events" className={`main-link ${color}`}>
         Events
       </Link>
 
       <Divider type={type} />
 
-      <Link to={buildUrl('/#merch')} className={`main-link ${color}`}>
+      <Link to="/community/#merch" className={`main-link ${color}`}>
         Merch
       </Link>
 

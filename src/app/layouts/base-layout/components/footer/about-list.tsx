@@ -1,30 +1,29 @@
 import { Link } from 'react-router-dom';
-import { buildUrl } from '@/app/services/platform';
 import { LogoWrapper } from '@/shared/ui/logo-wrapper';
 
 const aboutList = [
   {
     title: 'About RS',
-    to: buildUrl('/#about'),
+    to: '/community/#about',
   },
   {
     title: 'Events',
-    to: buildUrl('/#events'),
+    to: '/community/#events',
   },
   {
     title: 'Community',
-    to: buildUrl('/#community'),
+    to: '/community/#community',
   },
   {
     title: 'Merch',
-    to: buildUrl('/#merch'),
+    to: '/community/#merch',
   },
 ];
 
 export const AboutList = () => {
   return (
     <div className="about-list">
-      <Link to={buildUrl('/')}>
+      <Link to="/">
         <LogoWrapper type="footer" />
       </Link>
       <ul className="about-links">

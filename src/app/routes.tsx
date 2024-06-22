@@ -1,6 +1,5 @@
 import { RouteObject } from 'react-router-dom';
 import { ROUTES } from '@/app/const';
-import { config } from '@/config';
 import { courseLoader } from '@/widgets/course-main/courseLoader.ts';
 
 const coursesRoute: RouteObject = {
@@ -98,56 +97,33 @@ const notFoundRoute: RouteObject = {
   },
 };
 
-export const routes: RouteObject[] = config.isRollingScopesLanding
-  ? [
+export const routes: RouteObject[] = [
+  {
+    path: ROUTES.HOME,
+    lazy: async () => {
+      const { BaseLayout } = await import('./layouts/base-layout');
+
+      return { Component: BaseLayout };
+    },
+    children: [
       {
-        path: ROUTES.HOME,
+        index: true,
         lazy: async () => {
-          const { BaseLayout } = await import('./layouts/base-layout/base-layout.tsx');
+          const { Home } = await import('../pages/home.tsx');
 
-          return { Component: BaseLayout };
+          return { Component: Home };
         },
-        children: [
-          {
-            index: true,
-            lazy: async () => {
-              const { Home } = await import('../pages/home.tsx');
-
-              return { Component: Home };
-            },
-          },
-          coursesRoute,
-        ],
       },
-      notFoundRoute,
-    ]
-  : [
       {
-        path: ROUTES.HOME,
+        path: ROUTES.COMMUNITY,
         lazy: async () => {
-          const { BaseLayout } = await import('./layouts/base-layout/base-layout.tsx');
+          const { CommunityPage } = await import('../pages/community.tsx');
 
-          return { Component: BaseLayout };
+          return { Component: CommunityPage };
         },
-        children: [
-          {
-            index: true,
-            lazy: async () => {
-              const { School } = await import('../pages/school.tsx');
-
-              return { Component: School };
-            },
-          },
-          {
-            path: ROUTES.COMMUNITY,
-            lazy: async () => {
-              const { Home } = await import('../pages/home.tsx');
-
-              return { Component: Home };
-            },
-          },
-          coursesRoute,
-        ],
       },
-      notFoundRoute,
-    ];
+      coursesRoute,
+    ],
+  },
+  notFoundRoute,
+];
