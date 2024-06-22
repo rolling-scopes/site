@@ -9,9 +9,9 @@ import generateSrcSet from './utils/generateSrcSet';
 const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
   const ext = src.slice(src.lastIndexOf('.') + 1);
   const [srcSet, setSrcSet] = useState(() =>
-    IS_DEV || ext === 'svg' ? undefined : generateSrcSet(src),
+    (IS_DEV || ext === 'svg') ? undefined : generateSrcSet(src),
   );
-  const [sizes, setSizes] = useState(() => (IS_DEV || ext === 'svg' ? undefined : generateSizes()));
+  const [sizes, setSizes] = useState(() => ((IS_DEV || ext === 'svg') ? undefined : generateSizes()));
 
   const isLazy = lazy === 'true';
   const loading: LoadingAttr = IS_DEV ? 'eager' : isLazy ? 'lazy' : 'eager';
