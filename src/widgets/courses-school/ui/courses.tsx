@@ -1,6 +1,4 @@
 import { CourseCard } from './CourseCard';
-import { getCourseIcon } from '../lib/getCourseIcon';
-import { IconsTitle } from '../lib/icons.data';
 import { selectCourses } from '../lib/selectCourses';
 import { ROUTES } from '@/app/const';
 
@@ -25,16 +23,14 @@ export const Courses = () => {
     linkLabel = 'More';
   }
 
-  const coursesContent = coursesData?.map(({ title, language, startDate, detailsUrl }) => {
-    const courseIcon = getCourseIcon(title as IconsTitle);
-
+  const coursesContent = coursesData?.map(({ title, language, startDate, detailsUrl, iconSrc }) => {
     return (
       <CourseCard
         title={title}
         language={language}
         startDate={startDate}
         detailsUrl={detailsUrl}
-        icon={courseIcon}
+        iconSrc={iconSrc}
         buttonText={linkLabel}
         key={title}
       />

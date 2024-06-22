@@ -1,10 +1,11 @@
 import { Course } from '@/app/types';
 import { ArrowIcon } from '@/shared/icons';
+import Image from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 
 type addFields = {
   buttonText: string;
-  icon: JSX.Element | null;
+  iconSrc: string;
 };
 
 type PropsType = Pick<Course, 'title' | 'language' | 'startDate' | 'detailsUrl'> & addFields;
@@ -15,11 +16,13 @@ export const CourseCard = ({
   startDate,
   detailsUrl,
   buttonText,
-  icon,
+  iconSrc,
 }: PropsType) => {
   return (
     <section className="course-card">
-      <figure className="icon-container">{icon}</figure>
+      <figure className="icon-container">
+        <Image src={iconSrc} alt={title} />
+      </figure>
       <div className="course-info">
         <p className="name">{title}</p>
         <p className="date">{`${startDate} • ${language[0].toUpperCase()}`}</p>
