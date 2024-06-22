@@ -2,20 +2,22 @@
 import { FC, useState } from 'react';
 import { IS_DEV } from './constants';
 import { DecodingAttr, FetchPriorityAttr, ImageProps, LoadingAttr } from './types';
-import convertToWebp from './utils/convertToWebp';
+
 import generateSizes from './utils/generateSizes';
 import generateSrcSet from './utils/generateSrcSet';
 
 const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
-  const srcWebp = convertToWebp(src);
-  const [srcSet, setSrcSet] = useState(() => (IS_DEV ? undefined : generateSrcSet(srcWebp)));
-  const [sizes, setSizes] = useState(() => (IS_DEV ? undefined : generateSizes()));
+  const ext = src.slice(src.lastIndexOf('.') + 1);
+  const [srcSet, setSrcSet] = useState(() =>
+    IS_DEV || ext === 'svg' ? undefined : generateSrcSet(src),
+  );
+  const [sizes, setSizes] = useState(() => (IS_DEV || ext === 'svg' ? undefined : generateSizes()));
 
   const isLazy = lazy === 'true';
   const loading: LoadingAttr = IS_DEV ? 'eager' : isLazy ? 'lazy' : 'eager';
   const fetchPriority: FetchPriorityAttr = isLazy ? 'low' : 'high';
   const decoding: DecodingAttr = isLazy ? 'async' : 'auto';
-  const srcAttr = IS_DEV ? src : srcWebp;
+  const srcAttr = src;
 
   const handleError = () => {
     // fallback to basic src if there are no responsive sizes for an image
