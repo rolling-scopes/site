@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useTitle } from '@/shared/hooks/use-title';
 import { About } from '@/widgets/about-home';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
-import { Community } from '@/widgets/community';
+import { Community as CommunitySection } from '@/widgets/community';
 import { Contribute } from '@/widgets/contribute';
 import { Events } from '@/widgets/events';
 import { Hero } from '@/widgets/hero';
@@ -13,7 +13,7 @@ import { Places } from '@/widgets/places';
 import { Speakers } from '@/widgets/speakers';
 import { Support } from '@/widgets/support';
 
-export const CommunityPage: FC = () => {
+export const Community: FC = () => {
   useTitle(`Community · The Rolling Scopes School`);
 
   return (
@@ -27,7 +27,7 @@ export const CommunityPage: FC = () => {
       <Events />
       <Speakers />
       <Merch />
-      <Community />
+      <CommunitySection />
       <Contribute />
       <Support />
     </>
