@@ -12,19 +12,17 @@ function App() {
   }
 
   return (
-    <>
-      <div className="app-styles">
-        <NextTopLoader
-          color="black"
-          initialPosition={0.0001}
-          crawl={false}
-          easing="ease-in-out"
-          showSpinner={false}
-          speed={300}
-        />
-        <RouterProvider router={router} data-testid="router-provider" />
-      </div>
-    </>
+    <div className="app-styles">
+      <NextTopLoader
+        color="black"
+        initialPosition={0.0001}
+        crawl={false}
+        easing="ease-in-out"
+        showSpinner={false}
+        speed={300}
+      />
+      <RouterProvider router={router} data-testid="router-provider" />
+    </div>
   );
 }
 
