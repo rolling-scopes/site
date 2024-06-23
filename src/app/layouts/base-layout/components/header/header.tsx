@@ -15,17 +15,17 @@ const cx = classNames.bind(styles);
 const navLinks = [
   {
     label: 'RS School',
-    href: '/#main',
+    href: '/',
     dropdownInner: <SchoolMenu heading="rs school" color="dark" hasTitle={false} />,
   },
   {
     label: 'Courses',
-    href: '/courses/#main',
+    href: '/courses/',
     dropdownInner: <SchoolMenu heading="all courses" color="dark" hasTitle={false} />,
   },
   {
     label: 'Community',
-    href: '/community/#main',
+    href: '/community/',
     dropdownInner: <SchoolMenu heading="community" color="dark" hasTitle={false} />,
   },
 ];

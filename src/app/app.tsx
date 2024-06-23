@@ -1,5 +1,5 @@
 import NextTopLoader from 'nextjs-toploader';
-import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { routes } from './routes';
 
 import './app.scss';
@@ -7,11 +7,12 @@ import './app.scss';
 const router = createBrowserRouter(routes);
 
 function App() {
+  if (window.location.hostname === 'rollingscopes.com') {
+    window.location.href = 'https://rs.school';
+  }
+
   return (
     <>
-      {window.location.hostname === 'rollingscopes.com' && (
-        <Navigate to="https://rs.school" replace={true} />
-      )}
       <div className="app-styles">
         <NextTopLoader
           color="black"
