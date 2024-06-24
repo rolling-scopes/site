@@ -1,5 +1,7 @@
 .merch {
   &.content {
+    gap: 50px;
+
     @include media-laptop {
       flex-direction: column;
     }
