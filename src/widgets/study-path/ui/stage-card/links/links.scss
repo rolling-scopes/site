@@ -2,6 +2,7 @@
   @include media-laptop {
     flex-direction: column;
     gap: 16px;
+    align-items: flex-start;
   }
 
   display: flex;
