@@ -1,5 +1,5 @@
-// todo it not widget
 import { Link } from 'react-router-dom';
+import { ROUTES } from '@/app/const';
 import { LogoWrapper } from '@/shared/ui/logo-wrapper';
 import { SchoolMenu } from '@/widgets/school-menu';
 
@@ -18,11 +18,11 @@ export const MobileView = ({ type }: MobileViewProps) => {
 
   return (
     <div className="mobile-view" data-testid="mobile-view">
-      <Link to="/">
+      <Link to={ROUTES.HOME}>
         <LogoWrapper type={type} />
       </Link>
 
-      <Link to="/community/#about" className={`main-link ${color}`}>
+      <Link to={`/${ROUTES.COMMUNITY}/#about`} className={`main-link ${color}`}>
         About Community
       </Link>
 
@@ -36,19 +36,19 @@ export const MobileView = ({ type }: MobileViewProps) => {
 
       <Divider type={type} />
 
-      <Link to="/community/#community" className={`main-link mt ${color}`}>
+      <Link to={`/${ROUTES.COMMUNITY}/#community`} className={`main-link mt ${color}`}>
         Community
       </Link>
 
       <Divider type={type} />
 
-      <Link to="/community/#events" className={`main-link ${color}`}>
+      <Link to={`/${ROUTES.COMMUNITY}/#events`} className={`main-link ${color}`}>
         Events
       </Link>
 
       <Divider type={type} />
 
-      <Link to="/community/#merch" className={`main-link ${color}`}>
+      <Link to={`/${ROUTES.COMMUNITY}/#merch`} className={`main-link ${color}`}>
         Merch
       </Link>
 

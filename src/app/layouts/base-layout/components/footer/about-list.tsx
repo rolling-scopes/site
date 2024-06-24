@@ -1,29 +1,30 @@
 import { Link } from 'react-router-dom';
+import { ROUTES } from '@/app/const';
 import { LogoWrapper } from '@/shared/ui/logo-wrapper';
 
 const aboutList = [
   {
     title: 'About RS',
-    to: '/community/#about',
+    to: `/${ROUTES.COMMUNITY}/#about`,
   },
   {
     title: 'Events',
-    to: '/community/#events',
+    to: `/${ROUTES.COMMUNITY}/#events`,
   },
   {
     title: 'Community',
-    to: '/community/#community',
+    to: `/${ROUTES.COMMUNITY}/#community`,
   },
   {
     title: 'Merch',
-    to: '/community/#merch',
+    to: `/${ROUTES.COMMUNITY}/#merch`,
   },
 ];
 
 export const AboutList = () => {
   return (
     <div className="about-list">
-      <Link to="/">
+      <Link to={ROUTES.HOME}>
         <LogoWrapper type="footer" />
       </Link>
       <ul className="about-links">

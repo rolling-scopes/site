@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import { Link, useLocation } from 'react-router-dom';
 import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
+import { ROUTES } from '@/app/const';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { LogoWrapper } from '@/shared/ui/logo-wrapper';
 import { MobileView } from '@/widgets/mobile-view';
@@ -15,17 +16,17 @@ const cx = classNames.bind(styles);
 const navLinks = [
   {
     label: 'RS School',
-    href: '/',
+    href: ROUTES.HOME,
     dropdownInner: <SchoolMenu heading="rs school" color="dark" hasTitle={false} />,
   },
   {
     label: 'Courses',
-    href: '/courses/',
+    href: ROUTES.COURSES,
     dropdownInner: <SchoolMenu heading="all courses" color="dark" hasTitle={false} />,
   },
   {
     label: 'Community',
-    href: '/community/',
+    href: ROUTES.COMMUNITY,
     dropdownInner: <SchoolMenu heading="community" color="dark" hasTitle={false} />,
   },
 ];

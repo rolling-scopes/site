@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { breadcrumbNameMap } from '../constants';
+import { ROUTES } from '@/app/const';
 import { RouteValues } from '@/app/types/route.types.ts';
 
 import './breadcrumbs.scss';
@@ -16,7 +17,7 @@ export const Breadcrumbs = () => {
       <div className="breadcrumbs content">
         <ul>
           <li>
-            <Link to="/" className="link">
+            <Link to={ROUTES.HOME} className="link">
               Home
             </Link>
             <span className="separator">/</span>

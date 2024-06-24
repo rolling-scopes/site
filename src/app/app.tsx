@@ -7,6 +7,7 @@ import './app.scss';
 const router = createBrowserRouter(routes);
 
 function App() {
+  // If we are on https://rollingscopes.com/, a redirect to https://rs.school/ is triggered.
   if (window.location.hostname === 'rollingscopes.com') {
     window.location.href = 'https://rs.school';
   }
