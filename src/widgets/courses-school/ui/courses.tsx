@@ -1,3 +1,4 @@
+import classNames from 'classnames/bind';
 import { CourseCard } from './CourseCard';
 import { selectCourses } from '../lib/selectCourses';
 import { ROUTES } from '@/app/const';
@@ -7,7 +8,9 @@ import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { ArrowIcon, RsBanner } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
 
-import './courses.scss';
+import styles from './courses.module.scss';
+
+const cx = classNames.bind(styles);
 
 export const Courses = () => {
   const size = useWindowSize();
@@ -38,17 +41,17 @@ export const Courses = () => {
   });
 
   return (
-    <article id="upcoming-courses" className="courses container">
-      <section className="courses content">
-        <h4 className="title">Upcoming courses</h4>
-        <div className="column-2">
-          <div className="courses" data-testid="courses-list">
+    <article id="upcoming-courses" className={cx('container')}>
+      <section className={cx('content')}>
+        <h4 className={cx('course-title')}>Upcoming courses</h4>
+        <div className={cx('column-2')}>
+          <div className={cx('course-list')} data-testid="courses-list">
             {coursesContent}
             <LinkCustom href={ROUTES.COURSES} icon={<ArrowIcon />} variant="colored" button>
               Go to courses
             </LinkCustom>
           </div>
-          <figure className="image">
+          <figure className={cx('image')}>
             <RsBanner />
           </figure>
         </div>
