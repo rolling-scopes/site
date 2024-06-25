@@ -4,7 +4,6 @@ import { ArrowIcon } from '@/shared/icons';
 import Image from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
-import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { Title } from '@/shared/ui/title';
 
@@ -14,13 +13,12 @@ export const Merch = () => (
   <div id="merch" className="merch container">
     <div className="merch content column-2">
       <div className="info">
-        <SectionLabel label="merch" />
         <Title text="RS merch" hasAsterisk />
         <Subtitle text="Are you an RS sloth fan and looking for RS merch?" />
         <Paragraph>
-          The wait is almost over as we&apos;re gearing up for the catalog of free web and print assets
-          where you will find all merch collections and can print your own Rolling Scopes t-shirts,
-          stickers etc.
+          The wait is almost over as we&apos;re gearing up for the catalog of free web and print
+          assets where you will find all merch collections and can print your own Rolling Scopes
+          t-shirts, stickers etc.
         </Paragraph>
         <LinkCustom
           href={LINKS.MERCH}

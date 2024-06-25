@@ -7,7 +7,6 @@ import photo3 from '@/shared/assets/photo-3.webp';
 import { getActualDataList } from '@/shared/helpers/getActualDataList';
 import Image from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
-import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { Title } from '@/shared/ui/title';
 
@@ -33,7 +32,6 @@ export const Events = () => {
     <article id="events" className={cn(cx('events'), 'container')}>
       <div className={cn(cx('events', 'content'), 'content')}>
         <section className={cx('info')}>
-          <SectionLabel label="events & meetups" />
           <Title text="Meet us at events" hasAsterisk />
           <Subtitle text="For years we have been organizing meetups and conferences, where you can always learn something new, share your knowledge, discover new technologies, meet old and find new friends." />
           <Paragraph>

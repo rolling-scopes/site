@@ -18,13 +18,6 @@ describe('Events', () => {
     expect(subtitleElement).toBeVisible();
   });
 
-  it('renders the section label correctly', () => {
-    const { getByText } = renderWithRouter(<Events />);
-    const sectionLabel = getByText('events & meetups');
-
-    expect(sectionLabel).toBeVisible();
-  });
-
   it('renders the paragraph text correctly', () => {
     const { getByText } = renderWithRouter(<Events />);
     const paragraphText = getByText(/we have organized 150\+ events/i);
