@@ -42,13 +42,13 @@ export const contentMap: ContentMap = {
       <Paragraph key="aws cloud dev 01">
         This course is a step-by-step journey to become an AWS Certified Developer ‒ Associate
         through this course. You will gain practical experience working with various AWS services
-        and technologies via over 10 hands-on tasks. During the course, you&apos;ll dive deep into AWS,
-        from cloud computing basics to advanced integrations and deployment strategies, through nine
-        carefully designed modules.
+        and technologies via over 10 hands-on tasks. During the course, you&apos;ll dive deep into
+        AWS, from cloud computing basics to advanced integrations and deployment strategies, through
+        nine carefully designed modules.
       </Paragraph>,
       <Paragraph key="aws cloud dev 02">
-        Be well-prepared to pass the &quot;AWS Certified Developer - Associate&quot; certification and
-        confidently apply your skills in real-world projects by the end of the course.
+        Be well-prepared to pass the &quot;AWS Certified Developer - Associate&quot; certification
+        and confidently apply your skills in real-world projects by the end of the course.
       </Paragraph>,
       <Subtitle key="aws cloud dev 03" text="Course highlights:" />,
       <Actions
@@ -72,7 +72,8 @@ export const contentMap: ContentMap = {
     content: [
       <Paragraph key="aws fundamentals 01">
         The AWS Certified Cloud Practitioner certification is a great entry-level certification for
-        AWS. It&apos;s great at assessing how well you understand AWS, its services, and its ecosystem.
+        AWS. It&apos;s great at assessing how well you understand AWS, its services, and its
+        ecosystem.
       </Paragraph>,
       <Paragraph key="aws fundamentals 02">
         The course consists of weekly assignments that you can complete at your own pace, followed
@@ -121,15 +122,15 @@ export const contentMap: ContentMap = {
     content: [
       <Paragraph key="angular 01">
         This course is designed for individuals with a solid foundation in JavaScript, TypeScript,
-        and front-end development. Familiarity with RS School processes and RS Stage #2 certification is a plus.
+        and front-end development. Familiarity with RS School processes and RS Stage #2
+        certification is a plus.
       </Paragraph>,
       <Paragraph key="angular 02">
         The course lasts 11 weeks, requiring approximately 20-40 hours of study per week.
       </Paragraph>,
       // todo use custom link
       <Paragraph key="angular 03">
-        All webinars are recorded and available on our
-        {' '}
+        {`All webinars are recorded and available on our `}
         <Link className="link" to="https://www.youtube.com/c/rollingscopesschool" target="blank">
           Youtube
         </Link>
@@ -157,8 +158,8 @@ export const contentMap: ContentMap = {
       </Paragraph>,
       <Paragraph key="js / front-end en 03">
         <span>BE AWARE</span>
-        {' '}
-        that practical tasks’ deadlines are not suggestions, and should be respected.
+        {` that practical tasks’ deadlines are not suggestions, and should be
+        respected.`}
       </Paragraph>,
     ],
     image: jsImg,
@@ -182,7 +183,9 @@ export const contentMap: ContentMap = {
         выбора времени для просмотра лекций и выполнения заданий.
       </Paragraph>,
       <Paragraph key="js / front-end ru 03">
-        {`${(<span>ОБРАТИТЕ ВНИМАНИЕ</span>)}, что сроки выполнения практических заданий не являются рекомендацией и должны быть соблюдены.`}
+        <span>ОБРАТИТЕ ВНИМАНИЕ</span>
+        {`, что сроки выполнения практических заданий не являются
+        рекомендацией и должны быть соблюдены.`}
       </Paragraph>,
     ],
     image: jsImg,
@@ -252,7 +255,10 @@ export const contentMap: ContentMap = {
         ]}
         marked
       />,
-      <Subtitle key="react 03" text="Attention! Mentors on this course will be first assigned to the graduates of the RS School Stage #2." />,
+      <Subtitle
+        key="react 03"
+        text="Attention! Mentors on this course will be first assigned to the graduates of the RS School Stage #2."
+      />,
     ],
     image: reactEnImg,
   },
