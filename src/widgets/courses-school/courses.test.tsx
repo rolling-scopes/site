@@ -3,7 +3,6 @@ import { Mock, beforeEach, describe, expect, it, vi } from 'vitest';
 import { Courses } from './ui/courses';
 import { ROUTES } from '@/app/const';
 
-import { buildUrl } from '@/app/services/platform';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
 
@@ -13,35 +12,35 @@ const mockedData = [
     title: 'JS / Front-end Pre-school RU',
     startDate: 'Jun 24, 2024',
     language: ['ru'],
-    detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS_PRESCHOOL_RU}`),
+    detailsUrl: `/${ROUTES.COURSES}/${ROUTES.JS_PRESCHOOL_RU}`,
   },
   {
     id: '2',
     title: 'JS / Front-end EN',
     startDate: 'Oct, 2024',
     language: ['en'],
-    detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS}`),
+    detailsUrl: `/${ROUTES.COURSES}/${ROUTES.JS}`,
   },
   {
     id: '3',
     title: 'JS / Front-end RU',
     startDate: 'Oct, 2024',
     language: ['ru'],
-    detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.JS_RU}`),
+    detailsUrl: `/${ROUTES.COURSES}/${ROUTES.JS_RU}`,
   },
   {
     id: '4',
     title: 'React',
     startDate: 'Jul 1, 2024',
     language: ['en'],
-    detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.REACT}`),
+    detailsUrl: `/${ROUTES.COURSES}/${ROUTES.REACT}`,
   },
   {
     id: '5',
     title: 'Angular',
     startDate: 'Jul 1, 2024',
     language: ['en'],
-    detailsUrl: buildUrl(`/${ROUTES.COURSES}/${ROUTES.ANGULAR}`),
+    detailsUrl: `/${ROUTES.COURSES}/${ROUTES.ANGULAR}`,
   },
 ];
 
@@ -52,7 +51,6 @@ vi.mock('@/app/hooks/use-data-by-name', () => {
       error: null,
       loading: false,
     })),
-
   };
 });
 

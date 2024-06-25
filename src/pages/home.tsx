@@ -1,36 +1,31 @@
 import { FC } from 'react';
-import { config } from '@/config';
 import { useTitle } from '@/shared/hooks/use-title';
-import { About } from '@/widgets/about-home';
+import { About } from '@/widgets/about-school';
+import { Alumni } from '@/widgets/alumni';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
-import { Community } from '@/widgets/community';
-import { Contribute } from '@/widgets/contribute';
-import { Events } from '@/widgets/events';
-import { Hero } from '@/widgets/hero';
-import { Merch } from '@/widgets/merch';
-import { Numbers } from '@/widgets/numbers';
-import { Pictures } from '@/widgets/pictures';
-import { Places } from '@/widgets/places';
-import { Speakers } from '@/widgets/speakers';
-import { Support } from '@/widgets/support';
+import { Courses } from '@/widgets/courses-school';
+import { Main } from '@/widgets/main';
+import { Mentoring } from '@/widgets/mentoring';
+import { Mentors } from '@/widgets/mentors';
+import { Principles } from '@/widgets/principles';
+import { Requirements } from '@/widgets/requirements';
+import { StudyWithUs } from '@/widgets/study-with-us';
 
 export const Home: FC = () => {
-  useTitle(`Home · ${config.title}`);
+  useTitle('Home · The Rolling Scopes School');
 
   return (
     <>
-      <Hero />
+      <Main />
       <Breadcrumbs />
       <About />
-      <Numbers />
-      <Places />
-      <Pictures />
-      <Events />
-      <Speakers />
-      <Merch />
-      <Community />
-      <Contribute />
-      <Support />
+      <Principles />
+      <StudyWithUs />
+      <Courses />
+      <Alumni />
+      <Mentors />
+      <Mentoring />
+      <Requirements />
     </>
   );
 };
