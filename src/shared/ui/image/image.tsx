@@ -10,9 +10,9 @@ const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
   const isSuitable = checkForSuitable(src);
 
   const [srcSet, setSrcSet] = useState(() =>
-    IS_DEV && isSuitable ? undefined : generateSrcSet(src),
+    IS_DEV || isSuitable ? undefined : generateSrcSet(src),
   );
-  const [sizes, setSizes] = useState(() => (IS_DEV && isSuitable ? undefined : generateSizes()));
+  const [sizes, setSizes] = useState(() => (IS_DEV || isSuitable ? undefined : generateSizes()));
 
   const isLazy = lazy === 'true';
   const loading: LoadingAttr = IS_DEV ? 'eager' : isLazy ? 'lazy' : 'eager';

@@ -1,4 +1,4 @@
-const checkForSuitable = (imgUrl: string, width: number = 200) => {
+const checkForSuitable = (imgUrl: string, width: number = 430) => {
   const extention = imgUrl.slice(imgUrl.lastIndexOf('.') + 1);
 
   if (extention === 'svg') {
