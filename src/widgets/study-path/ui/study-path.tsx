@@ -3,7 +3,7 @@ import { Stages } from './stages';
 import { type DataMap } from '@/app/services/data/courses-data.types';
 import { useDataByName } from '@/shared/hooks/use-data-by-name';
 import { Paragraph } from '@/shared/ui/paragraph';
-import { Title } from '@/shared/ui/title';
+import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
 
 import './study-path.scss';
 
@@ -45,7 +45,7 @@ export const StudyPath = ({ path, marked, lang = 'en' }: StudyPathProps) => {
     <LangContext.Provider value={lang}>
       <section className="study-path container" id="learning-path">
         <div className="study-path content upd">
-          <Title text={title} hasAsterisk />
+          <WidgetTitle size="small" mods="asterisk">{title}</WidgetTitle>
           <Paragraph>{paragraph}</Paragraph>
           <Stages stages={coursesPath} marked={marked} />
         </div>
