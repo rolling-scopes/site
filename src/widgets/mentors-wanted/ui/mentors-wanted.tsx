@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import mentorImg from '@/shared/assets/mentors-wanted-poster.webp';
 import Image from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
-import { Title } from '@/shared/ui/title';
+import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
 
 import styles from './mentors-wanted.module.scss';
 
@@ -16,7 +16,7 @@ export const MentorsWanted = () => {
     <section className={cx('mentors-wanted', 'container')}>
       <article className={classNames('content', cx('content'))}>
         <div className={cx('content-left')}>
-          <Title text="Mentors Wanted!" hasLines />
+          <WidgetTitle size="medium" mods="lines">Mentors Wanted!</WidgetTitle>
           <Paragraph>
             If&nbsp;you are interested in mentoring our students, please go through the
             {' '}
