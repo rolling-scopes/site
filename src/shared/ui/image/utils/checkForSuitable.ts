@@ -1,15 +1,15 @@
-const checkForSuitable = (imgurl: string, width: number = 200) => {
-  const ext = imgurl.slice(imgurl.lastIndexOf('.') + 1);
+const checkForSuitable = (imgUrl: string, width: number = 200) => {
+  const extention = imgUrl.slice(imgUrl.lastIndexOf('.') + 1);
 
-  if (ext === 'svg') {
+  if (extention === 'svg') {
     return true;
   }
 
-  const img = new Image();
+  const image = new Image();
 
-  img.src = imgurl;
+  image.src = imgUrl;
 
-  if (Number(img.src) <= width) {
+  if (image.width <= width) {
     return true;
   }
 
