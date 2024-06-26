@@ -10,7 +10,7 @@ import { DiscordLogo } from '@/shared/icons/discord-logo';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { Title } from '@/shared/ui/title';
+import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
 
 import './communication.scss';
 
@@ -55,7 +55,7 @@ export const Communication = ({ courseName, lang = 'en' }: RequiredProps) => {
   return (
     <section className="communication container">
       <article className="communication content info-wrapper">
-        <Title text={localizedContent[lang].title} hasAsterisk />
+        <WidgetTitle size="medium" mods="asterisk">{localizedContent[lang].title}</WidgetTitle>
         <div className="column-2">
           <figure className="disclogo-wrapper">
             <DiscordLogo />
