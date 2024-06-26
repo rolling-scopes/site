@@ -1,0 +1,43 @@
+.title {
+  font-weight: $font-weight-medium;
+  letter-spacing: -0.04em;
+
+  &::before {
+    margin-right: 8px;
+    color: $color-red;
+  }
+}
+
+.small {
+  font-size: $widget-title-font-size-small;
+  line-height: 44px;
+  letter-spacing: 0;
+}
+
+.medium {
+  font-size: $widget-title-font-size-medium;
+  line-height: 52px;
+
+  @include media-tablet {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+.large {
+  @include media-tablet {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  font-size: $widget-title-font-size-large;
+  line-height: 64px;
+}
+
+.lines::before {
+  content: '‖';
+}
+
+.asterisk::before {
+  content: '*';
+}
