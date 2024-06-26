@@ -1,5 +1,5 @@
 import { TrainerCard } from './trainers-card/trainer-card';
-import { Title } from '@/shared/ui/title';
+import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
 import { Trainer } from '@/widgets/trainers/trainers.types';
 
 import './trainers.scss';
@@ -30,7 +30,7 @@ export const Trainers = ({ trainers, lang = 'en' }: TrainersProps) => {
   return (
     <section className="nodejs-trainer container">
       <div className="nodejs-trainer content gap">
-        <Title text={title} hasLines />
+        <WidgetTitle size="medium" mods="lines">{title}</WidgetTitle>
         <div className="trainers-list">
           {trainers.map(({ name, bio, photo, role }) => (
             <TrainerCard
