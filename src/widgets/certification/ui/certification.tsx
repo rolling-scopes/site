@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import { CourseNames } from '@/shared/data/communication.data';
 import { Paragraph } from '@/shared/ui/paragraph';
-import { Title } from '@/shared/ui/title';
+import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
 
 import styles from './certification.module.scss';
 
@@ -44,7 +44,7 @@ export const Certification = ({ courseName }: RequiredProps) => {
   return (
     <section className={cx('certification', 'container')}>
       <article className={cx('certification', 'content', 'info-wrapper')}>
-        <Title text={title} hasAsterisk />
+        <WidgetTitle size="medium" mods="asterisk">{title}</WidgetTitle>
         <div className={cx('paragraphs-wrapper')}>
           <Paragraph>{firstParagraph}</Paragraph>
           {secondParagraph && <Paragraph>{secondParagraph}</Paragraph>}
