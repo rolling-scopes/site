@@ -13,7 +13,7 @@ import { FacebookIcon, InstagramIcon } from '@/shared/icons';
 import Image from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SocialMedia, SocialMediaProps } from '@/shared/ui/social-media';
-import { Title } from '@/shared/ui/title';
+import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './pictures.scss';
@@ -46,7 +46,7 @@ const photos = [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, 
 export const Pictures = () => (
   <div className="pictures container">
     <div className="pictures content">
-      <Title text="The Rolling Scopes in pictures" hasAsterisk />
+      <WidgetTitle size="medium" mods="asterisk">The Rolling Scopes in pictures</WidgetTitle>
       <Carousel
         className="carousel"
         showArrows={true}
