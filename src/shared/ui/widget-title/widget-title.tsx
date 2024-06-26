@@ -6,17 +6,6 @@ export type WidgetTitleProps = React.HTMLAttributes<HTMLHeadingElement> & Varian
 
 export const widgetTitleVariants = cva(styles.title, {
   variants: {
-    // accent: {
-    //   left: styles.leftAccent,
-    //   top: styles.topAccent,
-    // },
-    // variant: {
-    //   primary: styles.primary,
-    //   secondary: styles.secondary,
-    //   danger: styles.danger,
-    //   warning: styles.warning,
-    //   success: styles.success,
-    // },
     mods: {
       lines: styles.lines,
       asterisk: styles.asterisk,
@@ -28,10 +17,8 @@ export const widgetTitleVariants = cva(styles.title, {
     },
   },
   defaultVariants: {
-    // accent: null,
     size: 'medium',
     mods: null,
-    // variant: 'primary',
   },
 });
 
