@@ -7,7 +7,7 @@ import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { Title } from '@/shared/ui/title';
+import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
 
 import styles from './merch.module.scss';
 
@@ -18,7 +18,7 @@ export const Merch = () => (
     <div className={cx('content', 'merch', 'column-2')}>
       <div className={cx('info')}>
         <SectionLabel label="merch" />
-        <Title text="RS merch" hasAsterisk />
+        <WidgetTitle size="medium" mods="asterisk">RS merch</WidgetTitle>
         <Subtitle text="Are you an RS sloth fan and looking for RS merch?" />
         <Paragraph>
           The wait is almost over as we&apos;re gearing up for the catalog of free web and print
