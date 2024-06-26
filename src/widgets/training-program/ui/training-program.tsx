@@ -1,12 +1,11 @@
 import { cloneElement } from 'react';
 import { type CourseNames, contentMap } from '../training-program.data';
-
 import type { Course } from '@/app/types';
 import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';
 import { ArrowIcon } from '@/shared/icons';
 import Image from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
-import { Title } from '@/shared/ui/title';
+import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
 
 import './training-program.scss';
 
@@ -34,7 +33,7 @@ export const TrainingProgram = ({ courseName, lang = 'en' }: TrainingProgramProp
     <section className="training-program container">
       <div className="training-program content column-2">
         <div className="left">
-          <Title text={title} hasAsterisk />
+          <WidgetTitle size="medium" mods="asterisk">{title}</WidgetTitle>
 
           {content.map((component, index) => cloneElement(component, { key: index }))}
 
