@@ -1,9 +1,8 @@
 import { alumni } from '../constants';
-
 import { useWindowSize } from '@/shared/hooks/use-window-size';
 import Image from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
-import { Title } from '@/shared/ui/title';
+import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
 
 import './alumni.scss';
 
@@ -28,7 +27,7 @@ export const Alumni = () => {
   return (
     <article className="alumni container">
       <section className="alumni content">
-        <Title text="Our alumni" hasAsterisk />
+        <WidgetTitle size="medium" mods="asterisk">Our alumni</WidgetTitle>
         <Paragraph>
           We are immensely proud of RS School alumni who build their successful careers in ambitious
           IT companies
