@@ -3,6 +3,7 @@ import { Title, TitleType } from '@/shared/ui/title';
 
 import './main.scss';
 
+// FIXME title to h1
 export const Main = () => {
   return (
     <main id="main" className="school-main container">
