@@ -2,18 +2,14 @@
 import { FC, useState } from 'react';
 import { IS_DEV } from './constants';
 import { DecodingAttr, FetchPriorityAttr, ImageProps, LoadingAttr } from './types';
-// import convertToWebp from './utils/convertToWebp';
 import checkForSuitable from './utils/checkForSuitable';
 import generateSizes from './utils/generateSizes';
 import generateSrcSet from './utils/generateSrcSet';
 
 const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
-  console.log('-------', checkForSuitable(src));
   const isSuitable = checkForSuitable(src);
 
-  // const srcWebp = convertToWebp(src);
   const [srcSet, setSrcSet] = useState(() =>
-    // IS_DEV && isSuitable ? undefined : generateSrcSet(srcWebp),
     IS_DEV && isSuitable ? undefined : generateSrcSet(src),
   );
   const [sizes, setSizes] = useState(() => (IS_DEV && isSuitable ? undefined : generateSizes()));
@@ -22,7 +18,6 @@ const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
   const loading: LoadingAttr = IS_DEV ? 'eager' : isLazy ? 'lazy' : 'eager';
   const fetchPriority: FetchPriorityAttr = isLazy ? 'low' : 'high';
   const decoding: DecodingAttr = isLazy ? 'async' : 'auto';
-  // const srcAttr = IS_DEV ? src : srcWebp;
   const srcAttr = src;
 
   const handleError = () => {
