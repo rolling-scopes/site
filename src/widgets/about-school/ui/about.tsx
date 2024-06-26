@@ -1,6 +1,6 @@
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { Title } from '@/shared/ui/title';
+import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
 
 import './about.scss';
 
@@ -10,7 +10,7 @@ export const About = () => {
       <div className="rs-about content">
         <div className="column-2">
           <div className="info">
-            <Title text="About RS School" hasAsterisk />
+            <WidgetTitle size="medium" mods="asterisk">About RS School</WidgetTitle>
             <Subtitle text="No matter your age, professional employment, or place of residence." />
             <Paragraph>
               RS School offers a unique learning experience as a free, community-based online
