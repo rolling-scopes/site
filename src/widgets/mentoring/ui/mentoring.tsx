@@ -1,3 +1,5 @@
+import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
+
 import './mentoring.scss';
 
 const mentorshipBenefits = [
@@ -27,7 +29,7 @@ export const Mentoring = () => {
   return (
     <section className="mentoring container">
       <div className="mentoring content">
-        <div className="title">Mentoring is for you if you</div>
+        <WidgetTitle size="small">Mentoring is for you if you</WidgetTitle>
         <div className="benefits">
           {mentorshipBenefits.map(({ id, info }) => (
             <div key={id} className="benefit">
