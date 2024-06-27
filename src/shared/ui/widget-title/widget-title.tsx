@@ -2,9 +2,9 @@ import { type VariantProps, cva } from 'class-variance-authority';
 
 import styles from './widget-title.module.scss';
 
-export type WidgetTitleProps = React.HTMLAttributes<HTMLHeadingElement> & VariantProps<typeof widgetTitleVariants>;
+type WidgetTitleProps = React.HTMLAttributes<HTMLHeadingElement> & VariantProps<typeof widgetTitleVariants>;
 
-export const widgetTitleVariants = cva(styles.title, {
+const widgetTitleVariants = cva(styles.title, {
   variants: {
     mods: {
       lines: styles.lines,
