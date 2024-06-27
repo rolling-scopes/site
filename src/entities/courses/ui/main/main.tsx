@@ -1,17 +1,16 @@
 import mentors from '@/shared/assets/mentor-with-his-students.webp';
 import Image from '@/shared/ui/image';
-import { Title, TitleType } from '@/shared/ui/title';
+import { MainTitle } from '@/shared/ui/main-title/main-title';
 
 import './main.scss';
 
-// FIXME Title to h1
 export const Main = () => {
   return (
     <main id="main" className="courses-main container">
       <div className="courses-main content">
         <div className="left">
           <div className="title-container">
-            <Title text="Our Courses" type={TitleType.ExtraBig} />
+            <MainTitle>Our Courses</MainTitle>
           </div>
           <h2 className="description">Journey to full stack mastery</h2>
         </div>
