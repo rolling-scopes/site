@@ -1,10 +1,4 @@
-import { VariantProps, cva } from 'class-variance-authority';
-
-import styles from './main-title.module.scss';
-
-type MainTitleProps = React.HTMLAttributes<HTMLHeadingElement> & VariantProps<typeof mainTitleVariants>;
-
-const mainTitleVariants = cva(styles.title);
+import { MainTitleProps, mainTitleVariants } from './main-title.model';
 
 export const MainTitle = ({ children, className, ...props }: MainTitleProps) => {
   return (
