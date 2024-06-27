@@ -1,8 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { WidgetTitle } from './widget-title';
-
-import styles from './widget-title.module.scss';
+import { widgetTitleClassNames } from './widget-title.model';
 
 describe('WidgetTitle component', () => {
   it('renders without crashing', () => {
@@ -23,35 +22,35 @@ describe('WidgetTitle component', () => {
     render(<WidgetTitle size="small">TestTitle</WidgetTitle>);
     const element = screen.getByRole('heading', { level: 2 });
 
-    expect(element).toHaveClass(styles.small);
+    expect(element).toHaveClass(widgetTitleClassNames('small'));
   });
 
   it('displays size correctly when size=medium', () => {
     render(<WidgetTitle size="medium">TestTitle</WidgetTitle>);
     const element = screen.getByRole('heading', { level: 2 });
 
-    expect(element).toHaveClass(styles.medium);
+    expect(element).toHaveClass(widgetTitleClassNames('medium'));
   });
 
   it('displays size correctly when size=large', () => {
     render(<WidgetTitle size="large">TestTitle</WidgetTitle>);
     const element = screen.getByRole('heading', { level: 2 });
 
-    expect(element).toHaveClass(styles.large);
+    expect(element).toHaveClass(widgetTitleClassNames('large'));
   });
 
   it('displays an asterisk when mods=asterisk', () => {
     render(<WidgetTitle mods="asterisk">TestTitle</WidgetTitle>);
     const asterisk = screen.getByRole('heading', { level: 2 });
 
-    expect(asterisk).toHaveClass(styles.asterisk);
+    expect(asterisk).toHaveClass(widgetTitleClassNames('asterisk'));
   });
 
   it('displays lines when mods=lines', () => {
     render(<WidgetTitle mods="lines">TestTitle</WidgetTitle>);
     const lines = screen.getByRole('heading', { level: 2 });
 
-    expect(lines).toHaveClass(styles.lines);
+    expect(lines).toHaveClass(widgetTitleClassNames('lines'));
   });
 
   it('renders children correctly', () => {

@@ -5,18 +5,18 @@ import styles from './widget-title.module.scss';
 
 export type WidgetTitleProps = React.HTMLAttributes<HTMLHeadingElement> & VariantProps<typeof widgetTitleVariants>;
 
-const cx = classNames.bind(styles);
+export const widgetTitleClassNames = classNames.bind(styles);
 
-export const widgetTitleVariants = cva(cx('title'), {
+export const widgetTitleVariants = cva(widgetTitleClassNames('title'), {
   variants: {
     mods: {
-      lines: cx('lines'),
-      asterisk: cx('asterisk'),
+      lines: widgetTitleClassNames('lines'),
+      asterisk: widgetTitleClassNames('asterisk'),
     },
     size: {
-      small: cx('small'),
-      medium: cx('medium'),
-      large: cx('large'),
+      small: widgetTitleClassNames('small'),
+      medium: widgetTitleClassNames('medium'),
+      large: widgetTitleClassNames('large'),
     },
   },
   defaultVariants: {
