@@ -1,6 +1,6 @@
 import mentors from '@/shared/assets/mentor-with-his-students.webp';
 import Image from '@/shared/ui/image';
-import { MainTitle } from '@/shared/ui/main-title/main-title';
+import { MainTitle } from '@/shared/ui/main-title';
 
 import './main.scss';
 

@@ -1,4 +1,4 @@
-import { MainTitle } from '@/shared/ui/main-title/main-title';
+import { MainTitle } from '@/shared/ui/main-title';
 import { Subtitle } from '@/shared/ui/subtitle';
 
 import './main.scss';
