@@ -19,19 +19,19 @@
   line-height: 52px;
 
   @include media-tablet {
-    font-size: 36px;
+    font-size: $widget-title-font-size-medium-tablet;
     line-height: 44px;
   }
 }
 
 .large {
-  @include media-tablet {
-    font-size: 36px;
-    line-height: 44px;
-  }
-
   font-size: $widget-title-font-size-large;
   line-height: 64px;
+
+  @include media-tablet {
+    font-size: $widget-title-font-size-large-tablet;
+    line-height: 44px;
+  }
 }
 
 .lines::before {
