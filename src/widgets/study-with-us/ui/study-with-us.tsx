@@ -4,7 +4,7 @@ import Image from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 import { OptionItem } from '@/widgets/option-item';
 
 import './study-with-us.scss';

@@ -2,7 +2,7 @@ import image from '@/shared/assets/contribute.webp';
 import Image from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 import { OptionItem, OptionItemProps } from '@/widgets/option-item';
 
 import './contribute.scss';

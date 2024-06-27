@@ -9,7 +9,7 @@ import Image from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './course-main.module.scss';
 

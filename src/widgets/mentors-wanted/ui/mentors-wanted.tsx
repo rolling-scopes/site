@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import mentorImg from '@/shared/assets/mentors-wanted-poster.webp';
 import Image from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
-import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './mentors-wanted.module.scss';
 

@@ -4,7 +4,7 @@ import { ArrowIcon } from '@/shared/icons';
 import Image from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import './mentors.scss';
 

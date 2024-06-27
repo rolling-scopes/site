@@ -6,7 +6,7 @@ import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';
 import { ArrowIcon } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
-import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import './about.scss';
 

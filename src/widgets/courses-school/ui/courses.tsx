@@ -6,7 +6,7 @@ import { courses } from '@/app/services/data';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { ArrowIcon, RsBanner } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
-import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './courses.module.scss';
 

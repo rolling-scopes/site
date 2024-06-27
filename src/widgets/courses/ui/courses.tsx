@@ -2,7 +2,7 @@ import { CourseCard, finedNearestCourse } from '@/entities/courses';
 import { compareNumbers } from '@/entities/courses/helpers/compare-courses';
 import { isCourse } from '@/entities/courses/helpers/is-course';
 import { useDataByName } from '@/shared/hooks/use-data-by-name';
-import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import './courses.scss';
 

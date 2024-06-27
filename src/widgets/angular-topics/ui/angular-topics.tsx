@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import { Actions } from '@/shared/ui/actions/actions';
-import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './angular-topics.module.scss';
 

@@ -2,7 +2,7 @@
 import classNames from 'classnames/bind';
 import { faqData } from '../faq.data';
 import { TextWithLink } from '@/shared/ui/text-with-link';
-import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './faq.module.scss';
 

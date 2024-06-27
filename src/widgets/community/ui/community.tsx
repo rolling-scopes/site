@@ -3,7 +3,7 @@ import { FacebookIcon, InstagramIcon, LinkedInIcon, TelegramIcon, YouTubeIcon } 
 import Image from '@/shared/ui/image';
 import { SocialMedia, SocialMediaProps } from '@/shared/ui/social-media';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import './community.scss';
 

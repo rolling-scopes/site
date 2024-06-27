@@ -1,6 +1,6 @@
 import { PrincipleCard } from './principle-card';
 import { cards } from '../../constants';
-import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import './principles.scss';
 

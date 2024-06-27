@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import './general.scss';
 
