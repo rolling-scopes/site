@@ -19,7 +19,7 @@
   line-height: 52px;
 
   @include media-tablet {
-    font-size: $widget-title-font-size-medium-tablet;
+    font-size: $widget-title-font-size-small;
     line-height: 44px;
   }
 }
@@ -29,7 +29,7 @@
   line-height: 64px;
 
   @include media-tablet {
-    font-size: $widget-title-font-size-large-tablet;
+    font-size: $widget-title-font-size-small;
     line-height: 44px;
   }
 }
