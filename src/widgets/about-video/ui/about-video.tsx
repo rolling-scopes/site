@@ -1,4 +1,4 @@
-import { Title } from '@/shared/ui/title';
+import { WidgetTitle } from '@/shared/ui/widget-title/widget-title';
 
 import './about-video.scss';
 
@@ -13,7 +13,7 @@ export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
   return (
     <div className="about-video container">
       <div className="about-video content">
-        <Title hasLines text={localizedContent[lang].title} />
+        <WidgetTitle size="medium" mods="lines">{localizedContent[lang].title}</WidgetTitle>
         <div className="video-wrapper">
           <div className="video-container">
             <iframe
