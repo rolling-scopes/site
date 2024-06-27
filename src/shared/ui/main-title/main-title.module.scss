@@ -1,0 +1,12 @@
+.title {
+  font-size: $main-title-font-size;
+  font-weight: 700;
+  line-height: 19px;
+  color: $color-black;
+  text-align: left;
+  letter-spacing: -0.04em;
+
+  @include media-tablet {
+    font-size: $main-title-font-size-tablet;
+  }
+}
