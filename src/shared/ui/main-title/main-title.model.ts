@@ -5,6 +5,6 @@ import styles from './main-title.module.scss';
 
 export type MainTitleProps = React.HTMLAttributes<HTMLHeadingElement> & VariantProps<typeof mainTitleVariants>;
 
-const cx = classNames.bind(styles);
+export const cx = classNames.bind(styles);
 
 export const mainTitleVariants = cva(cx('title'));
