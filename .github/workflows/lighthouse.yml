@@ -1,0 +1,59 @@
+name: Lighthouse test
+
+on:
+  repository_dispatch:
+    types: [preview-created]
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+
+      - name: Install dependencies
+        run: npm install && npm install -g @lhci/cli@0.14.x
+
+      - name: Run Lighthouse
+        run: lhci autorun --collect.url=https://pr${{ github.event.client_payload.number }}.rs.school
+
+      - name: Upload Lighthouse artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: '.lighthouseci/*'
+
+      - name: Generate Lighthouse report summary
+        id: generate_report
+        run: |
+          REPORT_PATH=$(ls .lighthouseci/lhr-*.json | head -n 1)
+          FINAL_URL=$(jq -r '.finalUrl' "$REPORT_PATH")
+          LINKS_PATH=$(ls .lighthouseci/links.json | head -n 1)
+          REPORT_URL=$(jq -r --arg FINAL_URL "$FINAL_URL" '.[$FINAL_URL]' "$LINKS_PATH")
+          PERFORMANCE=$(jq -r '.categories.performance.score * 100' "$REPORT_PATH")
+          ACCESSIBILITY=$(jq -r '.categories.accessibility.score * 100' "$REPORT_PATH")
+          BEST_PRACTICES=$(jq -r '.categories["best-practices"].score * 100' "$REPORT_PATH")
+          SEO=$(jq -r '.categories.seo.score * 100' "$REPORT_PATH")
+          echo "performance=$PERFORMANCE" >> $GITHUB_OUTPUT
+          echo "accessibility=$ACCESSIBILITY" >> $GITHUB_OUTPUT
+          echo "bestPractices=$BEST_PRACTICES" >> $GITHUB_OUTPUT
+          echo "seo=$SEO" >> $GITHUB_OUTPUT
+          echo "reportUrl=$REPORT_URL" >> $GITHUB_OUTPUT
+
+      - name: Post Lighthouse results to PR
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.client_payload.number }}
+          body: |
+            **Lighthouse Report**:
+            - Performance: ${{ steps.generate_report.outputs.performance }} / 100
+            - Accessibility: ${{ steps.generate_report.outputs.accessibility }} / 100
+            - Best Practices: ${{ steps.generate_report.outputs.bestPractices }} / 100
+            - SEO: ${{ steps.generate_report.outputs.seo }} / 100
+
+            [View detailed report](${{ steps.generate_report.outputs.reportUrl }})
