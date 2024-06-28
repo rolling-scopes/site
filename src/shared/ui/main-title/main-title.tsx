@@ -1,9 +1,10 @@
+import { HTMLAttributes } from 'react';
 import { VariantProps, cva } from 'class-variance-authority';
 import classNames from 'classnames/bind';
 
 import styles from './main-title.module.scss';
 
-type MainTitleProps = React.HTMLAttributes<HTMLHeadingElement> & VariantProps<typeof mainTitleVariants>;
+type MainTitleProps = HTMLAttributes<HTMLHeadingElement> & VariantProps<typeof mainTitleVariants>;
 
 export const cx = classNames.bind(styles);
 
