@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
-import { breadcrumbNameMap } from './constants';
-import { buildUrl } from '@/app/services/platform';
+import { breadcrumbNameMap } from '../constants';
+import { ROUTES } from '@/app/const';
 import { RouteValues } from '@/app/types/route.types.ts';
 
 import './breadcrumbs.scss';
@@ -17,14 +17,14 @@ export const Breadcrumbs = () => {
       <div className="breadcrumbs content">
         <ul>
           <li>
-            <Link to={buildUrl('/')} className="link">
+            <Link to={ROUTES.HOME} className="link">
               Home
             </Link>
             <span className="separator">/</span>
           </li>
           {transformedCrumbs.map((crumb, i) => {
             const isLast = i === transformedCrumbs.length - 1;
-            const to = buildUrl(`/${crumbs.slice(0, i + 1).join('/')}/`);
+            const to = `/${crumbs.slice(0, i + 1).join('/')}/`;
 
             return (
               <li key={i}>

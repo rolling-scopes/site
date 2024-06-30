@@ -1,0 +1,39 @@
+.merch {
+  gap: 50px;
+
+  @include media-laptop {
+    flex-direction: column;
+  }
+
+  .info {
+    @include media-laptop {
+      width: 100%;
+    }
+
+    width: 600px;
+    text-align: left;
+
+    > :nth-child(2),
+    > :nth-child(3),
+    > :nth-child(4) {
+      margin-top: 16px;
+    }
+  }
+
+  .picture {
+    @include media-laptop {
+      width: 680px;
+      height: 618px;
+      margin-top: 24px;
+    }
+
+    @include media-tablet {
+      width: 100%;
+      height: auto;
+    }
+
+    width: 680px;
+    height: 700px;
+    margin: 0 auto;
+  }
+}

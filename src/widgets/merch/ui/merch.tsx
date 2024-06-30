@@ -1,3 +1,4 @@
+import classNames from 'classnames/bind';
 import { LINKS } from '@/app/const';
 import image from '@/shared/assets/merch.webp';
 import { ArrowIcon } from '@/shared/icons';
@@ -8,19 +9,21 @@ import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { Title } from '@/shared/ui/title';
 
-import './merch.scss';
+import styles from './merch.module.scss';
+
+const cx = classNames.bind(styles);
 
 export const Merch = () => (
-  <div id="merch" className="merch container">
-    <div className="merch content column-2">
-      <div className="info">
+  <div id="merch" className={cx('container')}>
+    <div className={cx('content', 'merch', 'column-2')}>
+      <div className={cx('info')}>
         <SectionLabel label="merch" />
         <Title text="RS merch" hasAsterisk />
         <Subtitle text="Are you an RS sloth fan and looking for RS merch?" />
         <Paragraph>
-          The wait is almost over as we&apos;re gearing up for the catalog of free web and print assets
-          where you will find all merch collections and can print your own Rolling Scopes t-shirts,
-          stickers etc.
+          The wait is almost over as we&apos;re gearing up for the catalog of free web and print
+          assets where you will find all merch collections and can print your own Rolling Scopes
+          t-shirts, stickers etc.
         </Paragraph>
         <LinkCustom
           href={LINKS.MERCH}
@@ -32,7 +35,7 @@ export const Merch = () => (
           Discover merch assets
         </LinkCustom>
       </div>
-      <Image className="right picture" src={image} alt="speakers-wanted" />
+      <Image className={cx('right', 'picture')} src={image} alt="speakers-wanted" />
     </div>
   </div>
 );
