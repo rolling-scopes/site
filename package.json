@@ -30,6 +30,9 @@
     "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.6.0",
+    "@feature-sliced/eslint-config": "^0.1.1",
     "@playwright/test": "^1.44.1",
     "@stylistic/eslint-plugin": "^2.1.0",
     "@testing-library/jest-dom": "^6.4.2",
