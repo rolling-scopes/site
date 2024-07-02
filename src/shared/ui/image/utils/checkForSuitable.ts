@@ -1,4 +1,6 @@
-const checkForSuitable = (imgUrl: string, width: number = 430) => {
+import { MIN_SIZE_BREAKPOINT } from '../constants';
+
+const checkForSuitable = (imgUrl: string, width: number = MIN_SIZE_BREAKPOINT) => {
   const extention = imgUrl.slice(imgUrl.lastIndexOf('.') + 1);
 
   if (extention === 'svg') {
@@ -9,7 +11,7 @@ const checkForSuitable = (imgUrl: string, width: number = 430) => {
 
   image.src = imgUrl;
 
-  if (image.width <= width) {
+  if (image.width < width) {
     return true;
   }
 

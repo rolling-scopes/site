@@ -3,11 +3,14 @@ import { FC, useState } from 'react';
 import { IS_DEV } from './constants';
 import { DecodingAttr, FetchPriorityAttr, ImageProps, LoadingAttr } from './types';
 import checkForSuitable from './utils/checkForSuitable';
+import convertToWebp from './utils/convertToWebp';
 import generateSizes from './utils/generateSizes';
 import generateSrcSet from './utils/generateSrcSet';
 
 const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
   const isSuitable = checkForSuitable(src);
+
+  const srcAttr = isSuitable ? src : convertToWebp(src);
 
   const [srcSet, setSrcSet] = useState(() =>
     IS_DEV || isSuitable ? undefined : generateSrcSet(src),
@@ -18,7 +21,6 @@ const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
   const loading: LoadingAttr = IS_DEV ? 'eager' : isLazy ? 'lazy' : 'eager';
   const fetchPriority: FetchPriorityAttr = isLazy ? 'low' : 'high';
   const decoding: DecodingAttr = isLazy ? 'async' : 'auto';
-  const srcAttr = src;
 
   const handleError = () => {
     // fallback to basic src if there are no responsive sizes for an image
