@@ -27,7 +27,7 @@
     "react-dom": "^18.2.0",
     "react-double-marquee": "^1.1.0",
     "react-responsive-carousel": "^3.2.23",
-    "react-router-dom": "^6.23.1"
+    "react-router-dom": "^6.24.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.45.0",
