@@ -1,7 +1,11 @@
 import './links.scss';
 
 interface LinksProps {
-  links: { href: string; linkTitle: string; isActive?: boolean }[];
+  links: {
+    href: string;
+    linkTitle: string;
+    isActive?: boolean;
+  }[];
 }
 
 export const Links = ({ links }: LinksProps) => {
