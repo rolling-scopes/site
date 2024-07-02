@@ -35,10 +35,11 @@ main {
 /**
    * Correct the font size and margin on `h1` elements within `section` and
    * `article` contexts in Chrome, Firefox, and Safari.
+   * delete h1 margin
    */
 
 h1 {
-  margin: 0.67em 0;
+  margin: 0;
   font-size: 2em;
 }
 

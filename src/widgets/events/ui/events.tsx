@@ -9,7 +9,7 @@ import Image from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { Title } from '@/shared/ui/title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './events.module.scss';
 
@@ -34,7 +34,7 @@ export const Events = () => {
       <div className={cn(cx('events', 'content'), 'content')}>
         <section className={cx('info')}>
           <SectionLabel label="events & meetups" />
-          <Title text="Meet us at events" hasAsterisk />
+          <WidgetTitle size="medium" mods="asterisk">Meet us at events</WidgetTitle>
           <Subtitle text="For years we have been organizing meetups and conferences, where you can always learn something new, share your knowledge, discover new technologies, meet old and find new friends." />
           <Paragraph>
             During

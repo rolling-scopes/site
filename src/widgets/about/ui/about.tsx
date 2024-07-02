@@ -1,13 +1,12 @@
 /* eslint-disable @stylistic/jsx-one-expression-per-line */
 import { InfoGrid } from './info-grid/info-grid';
 import { contentMap } from '../about.data';
-
 import { type Course } from '@/app/types';
 import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';
 import { ArrowIcon } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
-import { Title } from '@/shared/ui/title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import './about.scss';
 
@@ -64,7 +63,7 @@ export const About = ({ courseName, type = 'en' }: AboutProps) => {
   return (
     <section className="course-about container">
       <div className="course-about content">
-        <Title text={localizedContent[type].title} />
+        <WidgetTitle size="medium">{localizedContent[type].title}</WidgetTitle>
         {localizedContent[type].paragraph && (
           <Paragraph>{localizedContent[type].paragraph}</Paragraph>
         )}

@@ -2,7 +2,7 @@ import image from '@/shared/assets/about.webp';
 import Image from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { Title } from '@/shared/ui/title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import './about.scss';
 
@@ -11,7 +11,7 @@ export const About = () => {
     <div className="about container" id="about">
       <div className="about content column-2">
         <div className="left">
-          <Title text="Who we are" hasAsterisk />
+          <WidgetTitle size="medium" mods="asterisk">Who we are</WidgetTitle>
           <Subtitle
             text="Our mission is to provide free education in intriguing subjects, connect people, and grow
           together."

@@ -1,5 +1,5 @@
+import { MainTitle } from '@/shared/ui/main-title';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { Title, TitleType } from '@/shared/ui/title';
 
 import './main.scss';
 
@@ -9,7 +9,7 @@ export const Main = () => {
       <div className="school-main content">
         <div className="left">
           <div className="title-container">
-            <Title text="RS School" type={TitleType.ExtraBig} />
+            <MainTitle>RS School</MainTitle>
             <Subtitle text="Free courses. High motivation" />
           </div>
           <h2 className="description">Connecting people, growing together, having fun</h2>
