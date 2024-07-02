@@ -1,26 +1,31 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { IS_DEV } from './constants';
 import { DecodingAttr, FetchPriorityAttr, ImageProps, LoadingAttr } from './types';
-import checkForSuitable from './utils/checkForSuitable';
+import checkSize from './utils/checkSize';
 import convertToWebp from './utils/convertToWebp';
 import generateSizes from './utils/generateSizes';
 import generateSrcSet from './utils/generateSrcSet';
 
 const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
-  const isSuitable = checkForSuitable(src);
+  const srcWebp = convertToWebp(src);
 
-  const srcAttr = isSuitable ? src : convertToWebp(src);
+  const [applyOneSrc, setApplyOneSrc] = useState(false);
+
+  useEffect(() => {
+    checkSize(srcWebp).then((result) => setApplyOneSrc(result));
+  }, []);
 
   const [srcSet, setSrcSet] = useState(() =>
-    IS_DEV || isSuitable ? undefined : generateSrcSet(src),
+    IS_DEV || applyOneSrc ? undefined : generateSrcSet(src),
   );
-  const [sizes, setSizes] = useState(() => (IS_DEV || isSuitable ? undefined : generateSizes()));
+  const [sizes, setSizes] = useState(() => (IS_DEV || applyOneSrc ? undefined : generateSizes()));
 
   const isLazy = lazy === 'true';
   const loading: LoadingAttr = IS_DEV ? 'eager' : isLazy ? 'lazy' : 'eager';
   const fetchPriority: FetchPriorityAttr = isLazy ? 'low' : 'high';
   const decoding: DecodingAttr = isLazy ? 'async' : 'auto';
+  const srcAttr = srcWebp;
 
   const handleError = () => {
     // fallback to basic src if there are no responsive sizes for an image
