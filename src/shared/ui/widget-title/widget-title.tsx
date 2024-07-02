@@ -4,11 +4,11 @@ import classNames from 'classnames/bind';
 
 import styles from './widget-title.module.scss';
 
- type WidgetTitleProps = HTMLAttributes<HTMLHeadingElement> & VariantProps<typeof widgetTitleVariants>;
+type WidgetTitleProps = HTMLAttributes<HTMLHeadingElement> & VariantProps<typeof widgetTitleVariants>;
 
 export const cx = classNames.bind(styles);
 
-export const widgetTitleVariants = cva(cx('title'), {
+const widgetTitleVariants = cva(cx('title'), {
   variants: {
     mods: {
       lines: cx('lines'),
