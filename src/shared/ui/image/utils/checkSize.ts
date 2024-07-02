@@ -11,6 +11,8 @@ const checkSize = async (imgUrl: string, width: number = MIN_SIZE_BREAKPOINT): P
     image.src = imgUrl;
 
     image.addEventListener('load', () => {
+      // console.log(imgUrl, image.width);
+
       if (image.width < width) {
         resolve(true);
       } else {
