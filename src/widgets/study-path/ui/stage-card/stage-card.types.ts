@@ -3,7 +3,11 @@ export interface Stage {
   title: string;
   description?: string;
   logoIcon?: string;
-  links?: { href: string; linkTitle: string; isActive?: boolean }[];
+  links?: {
+    href: string;
+    linkTitle: string;
+    isActive?: boolean;
+  }[];
   topics?: string[];
   actions?: string[];
   imageSrc?: string;
