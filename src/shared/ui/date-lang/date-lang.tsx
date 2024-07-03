@@ -23,7 +23,7 @@ export const DateLang = ({ startDate, language, mode, type = '' }: DateLangProps
         <span>Start date {startDate ?? 'Not set'}</span>
       </p>
       <p className={cx('other')}>
-        <Image className={cx('icon')} src={micIcon} alt="microphone icon" lazy="false" />
+        <Image className={cx('icon')} src={micIcon} alt="microphone-icon" lazy="false" />
         <span className={cx('language')}>{language}</span>
         <span className={cx('mode')}> • {mode}</span>
       </p>
