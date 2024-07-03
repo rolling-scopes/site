@@ -2,14 +2,14 @@
 import { FC, useState } from 'react';
 import { IS_DEV } from './constants';
 import { DecodingAttr, FetchPriorityAttr, ImageProps, LoadingAttr } from './types';
-import checkSvg from './utils/checkSvg';
+import checkIfSvg from './utils/checkIfSvg';
 import convertToWebp from './utils/convertToWebp';
 import generateSizes from './utils/generateSizes';
 import generateSrcSet from './utils/generateSrcSet';
 
 const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
   const srcWebp = convertToWebp(src);
-  const isSvg = checkSvg(srcWebp);
+  const isSvg = checkIfSvg(srcWebp);
 
   const [srcSet, setSrcSet] = useState(() => (IS_DEV || isSvg ? undefined : generateSrcSet(src)));
   const [sizes, setSizes] = useState(() => (IS_DEV || isSvg ? undefined : generateSizes()));
