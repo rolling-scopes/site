@@ -16,8 +16,6 @@ interface DateLangProps {
 }
 
 export const DateLang = ({ startDate, language, mode, type = '' }: DateLangProps) => {
-  const splittedLanguage = language.slice().join('/');
-
   return (
     <div className={cx('info', type)}>
       <p className={cx('date')}>
@@ -26,7 +24,7 @@ export const DateLang = ({ startDate, language, mode, type = '' }: DateLangProps
       </p>
       <p className={cx('other')}>
         <Image className={cx('icon')} src={micIcon} alt="microphone icon" lazy="false" />
-        <span className={cx('language')}>{splittedLanguage}</span>
+        <span className={cx('language')}>{language}</span>
         <span className={cx('mode')}> • {mode}</span>
       </p>
     </div>
