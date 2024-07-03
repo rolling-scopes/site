@@ -10,5 +10,8 @@ export type Course = {
   mode: 'online' | 'offline';
   detailsUrl: string;
   enroll: string;
-  backgroundStyle: { backgroundColor: string; accentColor: string };
+  backgroundStyle: {
+    backgroundColor: string;
+    accentColor: string;
+  };
 };

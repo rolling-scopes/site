@@ -3,7 +3,10 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { useWindowSize } from '.';
 
 describe('useWindowSize', () => {
-  let windowDimensions: { width: number; height: number };
+  let windowDimensions: {
+    width: number;
+    height: number;
+  };
 
   beforeEach(() => {
     windowDimensions = {
