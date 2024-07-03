@@ -46,7 +46,7 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
           <SectionLabel label={status} />
           <Title text={`${altTitle || title} Course`} />
           {type && <Subtitle text={type} type="course-main" />}
-          <DateLang startDate={startDate} language={language} mode={mode} type="main" />
+          <DateLang startDate={startDate} language={language} mode={mode} />
           <LinkCustom
             href={enroll}
             icon={<ArrowIcon />}

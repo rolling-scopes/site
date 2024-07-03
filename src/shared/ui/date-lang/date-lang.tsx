@@ -11,12 +11,11 @@ interface DateLangProps {
   startDate: string;
   mode: string;
   language: string[];
-  type?: string;
 }
 
-export const DateLang = ({ startDate, language, mode, type = '' }: DateLangProps) => {
+export const DateLang = ({ startDate, language, mode }: DateLangProps) => {
   return (
-    <div className={cx('info', type)}>
+    <div className={cx('info')}>
       <p className={cx('date')}>
         <Image className={cx('icon')} src={noteIcon} alt="note-icon" lazy="false" />
         <span>{`Start date: ${startDate ?? 'not set'}`}</span>
