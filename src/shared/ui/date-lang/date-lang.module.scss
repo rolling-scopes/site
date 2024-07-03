@@ -10,7 +10,7 @@
 }
 
 .date,
-.lang {
+.other {
   display: flex;
   gap: 4px;
   align-items: center;
@@ -22,8 +22,7 @@
   color: $color-gray-600;
 }
 
-.note,
-.microphone {
+.icon {
   width: 16px;
 }
 
