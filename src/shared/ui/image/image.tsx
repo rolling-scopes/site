@@ -1,31 +1,18 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import { IS_DEV } from './constants';
 import { DecodingAttr, FetchPriorityAttr, ImageProps, LoadingAttr } from './types';
-import checkSize from './utils/checkSize';
+import checkSvg from './utils/checkSvg';
 import convertToWebp from './utils/convertToWebp';
 import generateSizes from './utils/generateSizes';
 import generateSrcSet from './utils/generateSrcSet';
 
 const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
   const srcWebp = convertToWebp(src);
+  const isSvg = checkSvg(srcWebp);
 
-  const [applyOneSrc, setApplyOneSrc] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    checkSize(srcWebp).then((result) => {
-      setApplyOneSrc(result);
-      setIsLoading(false);
-    });
-  }, []);
-
-  const [srcSet, setSrcSet] = useState(() =>
-    (IS_DEV || applyOneSrc) && !isLoading ? undefined : generateSrcSet(src),
-  );
-  const [sizes, setSizes] = useState(() =>
-    (IS_DEV || applyOneSrc) && !isLoading ? undefined : generateSizes(),
-  );
+  const [srcSet, setSrcSet] = useState(() => (IS_DEV || isSvg ? undefined : generateSrcSet(src)));
+  const [sizes, setSizes] = useState(() => (IS_DEV || isSvg ? undefined : generateSizes()));
 
   const isLazy = lazy === 'true';
   const loading: LoadingAttr = IS_DEV ? 'eager' : isLazy ? 'lazy' : 'eager';
