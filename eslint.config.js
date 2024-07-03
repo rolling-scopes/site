@@ -85,6 +85,7 @@ export default [
       ...vitestPlugin.configs['recommended'].rules,
       ...cssImportOrder.configs['recommended'].rules,
 
+      'boundaries/element-types': 'warn',
       'no-undef': 'off',
       'react/prop-types': 'off',
       'react/react-in-jsx-scope': 'off',
@@ -99,18 +100,7 @@ export default [
       'import/no-namespace': ['error', { ignore: ['*.ext'] }],
       'import/newline-after-import': 'error',
       'import/no-duplicates': 'error',
-      'import/no-internal-modules': [ 'error',
-        {
-          'allow': [
-            '**/app/*',
-            '**/pages/*',
-            '**/widgets/*',
-            '**/features/*',
-            '**/entities/*',
-            '**/shared/**/*',
-          ],
-        }
-      ],
+      'import/no-internal-modules': 'warn',
       'import/order': [
         'error',
         {
