@@ -18,7 +18,7 @@ const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
   const loading: LoadingAttr = IS_DEV ? 'eager' : isLazy ? 'lazy' : 'eager';
   const fetchPriority: FetchPriorityAttr = isLazy ? 'low' : 'high';
   const decoding: DecodingAttr = isLazy ? 'async' : 'auto';
-  const srcAttr = srcWebp;
+  const srcAttr = IS_DEV ? src : srcWebp;
 
   const handleError = () => {
     // fallback to basic src if there are no responsive sizes for an image
