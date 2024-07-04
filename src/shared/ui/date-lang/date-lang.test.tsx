@@ -8,7 +8,7 @@ describe('DateLang', () => {
     const startDate = '2060-01-01';
 
     render(<DateLang startDate={startDate} language={[]} mode="" />);
-    expect(screen.getByText(`Start date: ${startDate}`)).toBeInTheDocument();
+    expect(screen.getByText(`${startDate}`)).toBeInTheDocument();
   });
 
   it('renders the mode correctly', () => {

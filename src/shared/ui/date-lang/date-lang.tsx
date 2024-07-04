@@ -16,10 +16,11 @@ interface DateLangProps {
 
 export const DateLang = ({ startDate, language, mode }: DateLangProps) => {
   return (
-    <div className={cx('info')}>
+    <section className={cx('info')}>
       <p className={cx('date')}>
         <Image className={cx('icon')} src={noteIcon} alt="note-icon" lazy="false" />
-        <span>{`Start date: ${getCourseDate(startDate)}`}</span>
+        <span>Start date:</span>
+        <time>{getCourseDate(startDate)}</time>
       </p>
       <p className={cx('additional-info')}>
         <Image className={cx('icon')} src={micIcon} alt="microphone-icon" lazy="false" />
@@ -27,6 +28,6 @@ export const DateLang = ({ startDate, language, mode }: DateLangProps) => {
         <span>•</span>
         <span className={cx('mode')}>{mode}</span>
       </p>
-    </div>
+    </section>
   );
 };
