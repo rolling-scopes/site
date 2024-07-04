@@ -4,7 +4,7 @@ import Image from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { Title } from '@/shared/ui/title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 import { OptionItem } from '@/widgets/option-item';
 
 import './study-with-us.scss';
@@ -15,7 +15,7 @@ export const StudyWithUs = () => (
       <div className="study">
         <div className="left">
           <SectionLabel label="education" />
-          <Title text="Study with RS School" hasAsterisk />
+          <WidgetTitle size="medium" mods="asterisk">Study with RS School</WidgetTitle>
           <Subtitle text="RS School is a free and community-based online education program conducted by The Rolling Scopes Community since 2013. " />
           <Paragraph>
             Currently 500+ developers from different countries and companies involve in the
