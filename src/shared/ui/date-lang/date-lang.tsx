@@ -21,7 +21,7 @@ export const DateLang = ({ startDate, language, mode }: DateLangProps) => {
         <Image className={cx('icon')} src={noteIcon} alt="note-icon" lazy="false" />
         <span>{`Start date: ${getCourseDate(startDate)}`}</span>
       </p>
-      <p className={cx('other')}>
+      <p className={cx('additional-info')}>
         <Image className={cx('icon')} src={micIcon} alt="microphone-icon" lazy="false" />
         <span className={cx('language')}>{language}</span>
         <span>•</span>
