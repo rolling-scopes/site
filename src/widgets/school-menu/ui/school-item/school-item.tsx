@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { GenericItemProps } from '../school-list/school-list';
 import { type Course } from '@/app/types';
+import { getCourseDate } from '@/shared/helpers/getCourseDate';
 import Image from '@/shared/ui/image';
 
 interface SchoolItemProps {
@@ -9,10 +10,7 @@ interface SchoolItemProps {
 }
 
 export const SchoolItem = ({ item, color }: SchoolItemProps) => {
-  const courseDate =
-    'startDate' in item && new Date(item.startDate).getTime() > new Date().getTime() - 1209600000
-      ? `Start ${item.startDate}`
-      : 'TBD';
+  const courseDate = 'startDate' in item && getCourseDate(item.startDate);
   const descriptionText = 'description' in item ? item.description : courseDate;
 
   const descriptionContent = (

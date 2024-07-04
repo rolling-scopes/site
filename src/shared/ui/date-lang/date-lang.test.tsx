@@ -5,7 +5,7 @@ import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 
 describe('DateLang', () => {
   it('renders the start date correctly', () => {
-    const startDate = '2022-01-01';
+    const startDate = '2060-01-01';
 
     render(<DateLang startDate={startDate} language={[]} mode="" />);
     expect(screen.getByText(`Start date: ${startDate}`)).toBeInTheDocument();

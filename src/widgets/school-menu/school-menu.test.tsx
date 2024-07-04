@@ -96,7 +96,7 @@ describe('SchoolMenu', () => {
 
     expect(descriptions).toHaveLength(2);
     expect(descriptions[0]).toHaveTextContent(/tbd/i as RegExp);
-    expect(descriptions[1]).toHaveTextContent(`Start ${react.startDate}` as string);
+    expect(descriptions[1]).toHaveTextContent(`${react.startDate}` as string);
   });
 
   it('renders correct link for "AWS Fundamentals" and "React JS course"', () => {

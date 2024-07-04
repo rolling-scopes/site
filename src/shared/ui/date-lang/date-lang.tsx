@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import micIcon from '@/shared/assets/icons/mic.svg';
 import noteIcon from '@/shared/assets/icons/note-icon.svg';
+import { getCourseDate } from '@/shared/helpers/getCourseDate';
 import Image from '@/shared/ui/image';
 
 import styles from './date-lang.module.scss';
@@ -18,7 +19,7 @@ export const DateLang = ({ startDate, language, mode }: DateLangProps) => {
     <div className={cx('info')}>
       <p className={cx('date')}>
         <Image className={cx('icon')} src={noteIcon} alt="note-icon" lazy="false" />
-        <span>{`Start date: ${startDate ?? 'not set'}`}</span>
+        <span>{`Start date: ${getCourseDate(startDate)}`}</span>
       </p>
       <p className={cx('other')}>
         <Image className={cx('icon')} src={micIcon} alt="microphone-icon" lazy="false" />
