@@ -1,15 +1,16 @@
+import classNames from 'classnames/bind';
 import { CourseCard } from './CourseCard';
-import { getCourseIcon } from '../lib/getCourseIcon';
-import { IconsTitle } from '../lib/icons.data';
 import { selectCourses } from '../lib/selectCourses';
 import { ROUTES } from '@/app/const';
-
 import { courses } from '@/app/services/data';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { ArrowIcon, RsBanner } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
-import './courses.scss';
+import styles from './courses.module.scss';
+
+const cx = classNames.bind(styles);
 
 export const Courses = () => {
   const size = useWindowSize();
@@ -25,16 +26,14 @@ export const Courses = () => {
     linkLabel = 'More';
   }
 
-  const coursesContent = coursesData?.map(({ title, language, startDate, detailsUrl }) => {
-    const courseIcon = getCourseIcon(title as IconsTitle);
-
+  const coursesContent = coursesData?.map(({ title, language, startDate, detailsUrl, iconSrc }) => {
     return (
       <CourseCard
         title={title}
         language={language}
         startDate={startDate}
         detailsUrl={detailsUrl}
-        icon={courseIcon}
+        iconSrc={iconSrc}
         buttonText={linkLabel}
         key={title}
       />
@@ -42,17 +41,17 @@ export const Courses = () => {
   });
 
   return (
-    <article id="upcoming-courses" className="courses container">
-      <section className="courses content">
-        <h4 className="title">Upcoming courses</h4>
-        <div className="column-2">
-          <div className="courses" data-testid="courses-list">
+    <article id="upcoming-courses" className={cx('container')}>
+      <section className={cx('content')}>
+        <WidgetTitle size="small" className={cx('course-title')}>Upcoming courses</WidgetTitle>
+        <div className={cx('column-2')}>
+          <div className={cx('course-list')} data-testid="courses-list">
             {coursesContent}
             <LinkCustom href={ROUTES.COURSES} icon={<ArrowIcon />} variant="colored" button>
               Go to courses
             </LinkCustom>
           </div>
-          <figure className="image">
+          <figure className={cx('image')}>
             <RsBanner />
           </figure>
         </div>

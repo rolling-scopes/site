@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Title } from '@/shared/ui/title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import './general.scss';
 
@@ -7,14 +7,15 @@ export const General = () => {
   return (
     <section className="general container">
       <div className="general content">
-        <Title text="General" />
+        <WidgetTitle size="small">General</WidgetTitle>
         <div className="general-info">
           <div className="materials">
             <h2 className="title">Materials</h2>
             <ul className="description">
               <li>
-                School
-                <Link to="https://docs.rs.school">documentation</Link>
+                <Link to="https://docs.rs.school" target="_blank" rel="noopener noreferrer">
+                  School documentation
+                </Link>
               </li>
               <li>All materials are publicly available on YouTube and GitHub</li>
               <li>

@@ -77,10 +77,22 @@ export default [
       ...cssImportOrder.configs['recommended'].rules,
 
       'no-undef': 'off',
+      'no-restricted-exports': [
+        'warn',
+        { 'restrictDefaultExports':
+          {
+            'direct': true,
+            'named': true,
+            'defaultFrom': true,
+            'namedFrom': true,
+            'namespaceFrom': true,
+          }
+        }
+      ],
       'react/prop-types': 'off',
       'react/react-in-jsx-scope': 'off',
       'react-refresh/only-export-components': [
-        'warn',
+        'off',
         { allowConstantExport: true },
       ],
 

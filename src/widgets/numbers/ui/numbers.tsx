@@ -2,7 +2,7 @@ import image from '@/shared/assets/map.webp';
 import Image from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { Title } from '@/shared/ui/title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import './numbers.scss';
 
@@ -26,7 +26,7 @@ export const Numbers = () => {
       <div className="numbers content">
         <div className="text-container">
           <div>
-            <Title text="The Rolling Scopes in numbers" hasAsterisk />
+            <WidgetTitle size="medium" mods="asterisk">The Rolling Scopes in numbers</WidgetTitle>
             <Subtitle
               text="Everyone can discover our community, regardless of age, professional employment, or
             place of residence."

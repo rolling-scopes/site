@@ -1,6 +1,5 @@
 import { RouteObject } from 'react-router-dom';
 import { ROUTES } from '@/app/const';
-import { config } from '@/config';
 import { courseLoader } from '@/widgets/course-main/courseLoader.ts';
 
 const coursesRoute: RouteObject = {
@@ -9,7 +8,7 @@ const coursesRoute: RouteObject = {
     {
       index: true,
       async lazy() {
-        const { Courses } = await import('../pages/courses.tsx');
+        const { Courses } = await import('@/pages/courses.tsx');
 
         return { Component: Courses };
       },
@@ -18,7 +17,7 @@ const coursesRoute: RouteObject = {
       path: ROUTES.NODE_JS,
       loader: courseLoader,
       async lazy() {
-        const { Nodejs } = await import('../pages/nodejs.tsx');
+        const { Nodejs } = await import('@/pages/nodejs.tsx');
 
         return { Component: Nodejs };
       },
@@ -27,7 +26,7 @@ const coursesRoute: RouteObject = {
       path: ROUTES.JS,
       loader: courseLoader,
       async lazy() {
-        const { JavaScriptEn } = await import('../pages/javascript-en.tsx');
+        const { JavaScriptEn } = await import('@/pages/javascript-en.tsx');
 
         return { Component: JavaScriptEn };
       },
@@ -36,7 +35,7 @@ const coursesRoute: RouteObject = {
       path: ROUTES.JS_RU,
       loader: courseLoader,
       async lazy() {
-        const { JavaScriptRu } = await import('../pages/javascript-ru.tsx');
+        const { JavaScriptRu } = await import('@/pages/javascript-ru.tsx');
 
         return { Component: JavaScriptRu };
       },
@@ -45,7 +44,7 @@ const coursesRoute: RouteObject = {
       path: ROUTES.JS_PRESCHOOL_RU,
       loader: courseLoader,
       async lazy() {
-        const { JavaScriptPreSchoolRu } = await import('../pages/javascript-preschool-ru.tsx');
+        const { JavaScriptPreSchoolRu } = await import('@/pages/javascript-preschool-ru.tsx');
 
         return { Component: JavaScriptPreSchoolRu };
       },
@@ -54,7 +53,7 @@ const coursesRoute: RouteObject = {
       path: ROUTES.ANGULAR,
       loader: courseLoader,
       lazy: async () => {
-        const { Angular } = await import('../pages/angular.tsx');
+        const { Angular } = await import('@/pages/angular.tsx');
 
         return { Component: Angular };
       },
@@ -63,7 +62,7 @@ const coursesRoute: RouteObject = {
       path: ROUTES.AWS_DEVELOPER,
       loader: courseLoader,
       lazy: async () => {
-        const { AwsDeveloper } = await import('../pages/aws-developer.tsx');
+        const { AwsDeveloper } = await import('@/pages/aws-developer.tsx');
 
         return { Component: AwsDeveloper };
       },
@@ -72,7 +71,7 @@ const coursesRoute: RouteObject = {
       path: ROUTES.AWS_FUNDAMENTALS,
       loader: courseLoader,
       lazy: async () => {
-        const { AwsFundamentals } = await import('../pages/aws-fundamentals.tsx');
+        const { AwsFundamentals } = await import('@/pages/aws-fundamentals.tsx');
 
         return { Component: AwsFundamentals };
       },
@@ -81,7 +80,7 @@ const coursesRoute: RouteObject = {
       path: ROUTES.REACT,
       loader: courseLoader,
       lazy: async () => {
-        const { React } = await import('../pages/react.tsx');
+        const { React } = await import('@/pages/react.tsx');
 
         return { Component: React };
       },
@@ -92,62 +91,39 @@ const coursesRoute: RouteObject = {
 const notFoundRoute: RouteObject = {
   path: ROUTES.NOT_FOUND,
   lazy: async () => {
-    const { NotFound } = await import('../pages/not-found.tsx');
+    const { NotFound } = await import('@/pages/not-found.tsx');
 
     return { Component: NotFound };
   },
 };
 
-export const routes: RouteObject[] = config.isRollingScopesLanding
-  ? [
+export const routes: RouteObject[] = [
+  {
+    path: ROUTES.HOME,
+    lazy: async () => {
+      const { BaseLayout } = await import('@/app/layouts/base-layout');
+
+      return { Component: BaseLayout };
+    },
+    children: [
       {
-        path: ROUTES.HOME,
+        index: true,
         lazy: async () => {
-          const { BaseLayout } = await import('./layouts/base-layout/base-layout.tsx');
+          const { Home } = await import('@/pages/home.tsx');
 
-          return { Component: BaseLayout };
+          return { Component: Home };
         },
-        children: [
-          {
-            index: true,
-            lazy: async () => {
-              const { Home } = await import('../pages/home.tsx');
-
-              return { Component: Home };
-            },
-          },
-          coursesRoute,
-        ],
       },
-      notFoundRoute,
-    ]
-  : [
       {
-        path: ROUTES.HOME,
+        path: ROUTES.COMMUNITY,
         lazy: async () => {
-          const { BaseLayout } = await import('./layouts/base-layout/base-layout.tsx');
+          const { Community } = await import('@/pages/community.tsx');
 
-          return { Component: BaseLayout };
+          return { Component: Community };
         },
-        children: [
-          {
-            index: true,
-            lazy: async () => {
-              const { School } = await import('../pages/school.tsx');
-
-              return { Component: School };
-            },
-          },
-          {
-            path: ROUTES.COMMUNITY,
-            lazy: async () => {
-              const { Home } = await import('../pages/home.tsx');
-
-              return { Component: Home };
-            },
-          },
-          coursesRoute,
-        ],
       },
-      notFoundRoute,
-    ];
+      coursesRoute,
+    ],
+  },
+  notFoundRoute,
+];
