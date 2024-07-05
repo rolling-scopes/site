@@ -1,6 +1,7 @@
+import { dayJS } from '@/app/services/dayjs';
+
 export const getCourseDate = (startDate: string) => {
-  const fourteenDays = 14 * 24 * 60 * 60 * 1000;
-  const isStale = Date.parse(startDate) < Date.now() - fourteenDays;
+  const isStale = dayJS(startDate) < dayJS().subtract(14, 'day');
 
   return isStale ? 'TBD' : startDate;
 };
