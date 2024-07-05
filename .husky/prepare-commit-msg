@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
+
+COMMIT_MSG_FILE=$1
+
+BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+
+BRANCH_NUMBER=$(echo "$BRANCH_NAME" | grep -o '[0-9]\+')
+
+if [ ! -z "$BRANCH_NUMBER" ];
+then
+  COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+
+  MODIFIED_MSG=$(echo "$COMMIT_MSG" | sed "s/^\(.*: \)\(.*\)/\1$BRANCH_NUMBER - \2/")
+
+  COMMIT_REGEX="^(feat|fix|refactor|docs|chore): [0-9]{1,5} - ([a-zA-Z0-9]+ )"
+
+  if ! echo "$MODIFIED_MSG" | grep -Eq "$COMMIT_REGEX";
+  then
+    echo "-"
+    echo "ERROR: Invalid commit message format. 😕"
+    echo "-"
+    echo "The commit message must have this format:"
+    echo "<commit type>: <what was done>"
+    echo "Allowed commit types: feat, fix, refactor, docs, chore"
+    echo "Example: feat: add login button"
+    echo "-"
+    exit 1
+  fi
+
+  echo "$MODIFIED_MSG" > "$COMMIT_MSG_FILE"
+fi
