@@ -23,7 +23,6 @@ export default defineConfig({
           @import "./src/app/styles/_constants.scss";
           @import "./src/app/styles/_mixins.scss";
           @import "./src/app/styles/_placeholders.scss";
-          @import "./src/app/styles/_normalize.scss";
         `,
       },
     },

@@ -2,7 +2,7 @@
 import classNames from 'classnames/bind';
 import { faqData } from '../faq.data';
 import { TextWithLink } from '@/shared/ui/text-with-link';
-import { Title } from '@/shared/ui/title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './faq.module.scss';
 
@@ -12,7 +12,7 @@ export const Faq = () => {
   return (
     <section className={cx('faq', 'container')}>
       <div className={cx('content', 'info-wrapper')}>
-        <Title text="FAQ" hasAsterisk />
+        <WidgetTitle size="medium" mods="asterisk">FAQ</WidgetTitle>
         <ol className={cx('list')}>
           {faqData.map(({ question, answer }, index) => (
             <li className={cx('list-item')} key={question}>
