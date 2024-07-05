@@ -18,6 +18,13 @@ describe('DateLang', () => {
     expect(screen.getByText('TBD')).toBeInTheDocument();
   });
 
+  it('renders TBD for invalid course date', () => {
+    const startDate = 'invalid-date';
+
+    render(<DateLang startDate={startDate} language={[]} mode="" />);
+    expect(screen.getByText('TBD')).toBeInTheDocument();
+  });
+
   it('renders the mode correctly', () => {
     const mode = 'Online';
 
