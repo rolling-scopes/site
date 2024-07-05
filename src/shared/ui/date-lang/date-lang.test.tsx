@@ -11,6 +11,13 @@ describe('DateLang', () => {
     expect(screen.getByText(`${startDate}`)).toBeInTheDocument();
   });
 
+  it('renders TBD for course date in past', () => {
+    const startDate = '2020-01-01';
+
+    render(<DateLang startDate={startDate} language={[]} mode="" />);
+    expect(screen.getByText('TBD')).toBeInTheDocument();
+  });
+
   it('renders the mode correctly', () => {
     const mode = 'Online';
 
