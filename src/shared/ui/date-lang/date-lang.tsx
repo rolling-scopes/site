@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
 import micIcon from '@/shared/assets/icons/mic.svg';
 import noteIcon from '@/shared/assets/icons/note-icon.svg';
 import { getCourseDate } from '@/shared/helpers/getCourseDate';
@@ -20,7 +21,7 @@ export const DateLang = ({ startDate, language, mode }: DateLangProps) => {
       <p className={cx('date')}>
         <Image className={cx('icon')} src={noteIcon} alt="note-icon" lazy="false" />
         <span>Start date:</span>
-        <time>{getCourseDate(startDate)}</time>
+        <time>{getCourseDate(startDate, COURSE_STALE_AFTER_DAYS)}</time>
       </p>
       <p className={cx('additional-info')}>
         <Image className={cx('icon')} src={micIcon} alt="microphone-icon" lazy="false" />

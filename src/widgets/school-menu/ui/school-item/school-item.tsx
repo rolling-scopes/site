@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { GenericItemProps } from '../school-list/school-list';
+import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
 import { type Course } from '@/app/types';
 import { getCourseDate } from '@/shared/helpers/getCourseDate';
 import Image from '@/shared/ui/image';
@@ -10,7 +11,7 @@ interface SchoolItemProps {
 }
 
 export const SchoolItem = ({ item, color }: SchoolItemProps) => {
-  const courseDate = 'startDate' in item && getCourseDate(item.startDate);
+  const courseDate = 'startDate' in item && getCourseDate(item.startDate, COURSE_STALE_AFTER_DAYS);
   const descriptionText = 'description' in item ? item.description : courseDate;
 
   const descriptionContent = (
@@ -20,9 +21,14 @@ export const SchoolItem = ({ item, color }: SchoolItemProps) => {
     </>
   );
 
-  const descriptionBlock = ('description' in item)
-    ? (descriptionContent)
-    : (<div className="details">{descriptionContent}</div>);
+  const descriptionBlock =
+    'description' in item
+      ? (
+          descriptionContent
+        )
+      : (
+        <div className="details">{descriptionContent}</div>
+        );
 
   return (
     <li key={'id' in item ? item.id : item.title}>
