@@ -1,3 +1,5 @@
+@import './normalize';
+
 html {
   scroll-behavior: smooth;
 }
@@ -8,6 +10,10 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+h1 {
+  margin: 0;
 }
 
 a {
@@ -25,6 +31,10 @@ ul {
 li {
   margin: 0;
   padding: 0;
+}
+
+h2 {
+  margin: 0;
 }
 
 figure {
