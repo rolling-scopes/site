@@ -3,10 +3,10 @@ tone_instructions: 'Be brief and informative.'
 early_access: false
 reviews:
   profile: "chill"
-  request_changes_workflow: true
+  request_changes_workflow: false
   high_level_summary: true
   poem: false
-  review_status: true
+  review_status: false
   collapse_walkthrough: true
   auto_review:
     enabled: true
