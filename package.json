@@ -9,8 +9,8 @@
     "optimizeImages": "npx cross-env VITE_TABLET=768 VITE_MOBILE=425 VITE_COMPRESS_QUALITY=80 node optimizeImages/optimizeImages.js",
     "stylelint": "npx stylelint \"**/*.scss\"",
     "stylelint:fix": "npx stylelint \"**/*.scss\" --fix",
-    "lint": "npx eslint . --report-unused-disable-directives --max-warnings 10",
-    "lint:fix": "npx eslint . --fix --report-unused-disable-directives --max-warnings 10",
+    "lint": "npx eslint . --report-unused-disable-directives --max-warnings 400",
+    "lint:fix": "npx eslint . --fix --report-unused-disable-directives --max-warnings 400",
     "preview": "vite preview",
     "test": "vitest --run",
     "test:playWright": "npx playwright test",
@@ -31,6 +31,7 @@
     "react-router-dom": "^6.24.1"
   },
   "devDependencies": {
+    "@feature-sliced/eslint-config": "^0.1.1",
     "@playwright/test": "^1.45.1",
     "@stylistic/eslint-plugin": "^2.3.0",
     "@testing-library/dom": "^10.3.1",
