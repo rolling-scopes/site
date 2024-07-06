@@ -1,0 +1,43 @@
+.title {
+  font-weight: $font-weight-medium;
+  letter-spacing: -0.04em;
+
+  &::before {
+    margin-right: 8px;
+    color: $color-red;
+  }
+}
+
+.small {
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: 0;
+}
+
+.medium {
+  font-size: 44px;
+  line-height: 52px;
+
+  @include media-tablet {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+.large {
+  font-size: 52px;
+  line-height: 64px;
+
+  @include media-tablet {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+.lines::before {
+  content: '‖';
+}
+
+.asterisk::before {
+  content: '*';
+}

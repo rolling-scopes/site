@@ -6,6 +6,8 @@ import { Communication } from '@/widgets/communication';
 import { CourseMain } from '@/widgets/course-main';
 import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
+import { Trainers } from '@/widgets/trainers';
+import { javaScriptRu } from '@/widgets/trainers/javascript-ru.data';
 import { TrainingProgram } from '@/widgets/training-program';
 
 const COURSE_NAME = 'js / front-end ru';
@@ -24,6 +26,7 @@ export const JavaScriptRu = () => {
       <AboutVideo lang={lang} />
       <StudyPath path="javascriptRu" lang={lang} />
       <Required courseName={COURSE_NAME} />
+      <Trainers trainers={javaScriptRu} lang={lang} />
     </>
   );
 };

@@ -1,9 +1,8 @@
 import { courseDataMap } from '../required.data';
 import type { CourseName } from '../required.types';
-
 import { Actions } from '@/shared/ui/actions/actions';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { Title } from '@/shared/ui/title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import './required.scss';
 
@@ -30,7 +29,7 @@ export const Required = ({ courseName, marked1, marked2 }: RequiredProps) => {
   return (
     <section className="required container">
       <div className="required content info-wrapper">
-        <Title text={title} hasAsterisk />
+        <WidgetTitle size="medium" mods="asterisk">{title}</WidgetTitle>
 
         <div className="column-2">
           {isKnowBeforeExist && (

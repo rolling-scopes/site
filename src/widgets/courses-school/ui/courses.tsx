@@ -2,11 +2,11 @@ import classNames from 'classnames/bind';
 import { CourseCard } from './CourseCard';
 import { selectCourses } from '../lib/selectCourses';
 import { ROUTES } from '@/app/const';
-
 import { courses } from '@/app/services/data';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { ArrowIcon, RsBanner } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './courses.module.scss';
 
@@ -43,7 +43,7 @@ export const Courses = () => {
   return (
     <article id="upcoming-courses" className={cx('container')}>
       <section className={cx('content')}>
-        <h4 className={cx('course-title')}>Upcoming courses</h4>
+        <WidgetTitle size="small" className={cx('course-title')}>Upcoming courses</WidgetTitle>
         <div className={cx('column-2')}>
           <div className={cx('course-list')} data-testid="courses-list">
             {coursesContent}

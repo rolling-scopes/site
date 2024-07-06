@@ -8,6 +8,7 @@ updates:
       - 'dzmitry-varabei'
       - 'andron13'
       - 'SpaNb4'
+      - 'Quiddlee'
     commit-message:
       prefix: 'chore'
     groups:
@@ -18,3 +19,15 @@ updates:
     ignore:
       - dependency-name: 'eslint'
         update-types: ['version-update:semver-major']
+
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'monthly'
+    reviewers:
+      - 'dzmitry-varabei'
+      - 'andron13'
+      - 'SpaNb4'
+      - 'Quiddlee'
+    commit-message:
+      prefix: 'chore'
