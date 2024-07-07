@@ -1,9 +1,7 @@
 import classNames from 'classnames/bind';
-import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
 import { dayJS } from '@/app/services/dayjs';
 import micIcon from '@/shared/assets/icons/mic.svg';
 import noteIcon from '@/shared/assets/icons/note-icon.svg';
-import { getCourseDate } from '@/shared/helpers/getCourseDate';
 import Image from '@/shared/ui/image';
 
 import styles from './date-lang.module.scss';
@@ -14,18 +12,18 @@ interface DateLangProps {
   startDate: string;
   mode: string;
   language: string[];
+  withMargin?: boolean;
 }
 
-export const DateLang = ({ startDate, language, mode }: DateLangProps) => {
+export const DateLang = ({ startDate, language, mode, withMargin }: DateLangProps) => {
   const dateAttr = dayJS(startDate).format('YYYY-MM-DD');
-  const dateContent = getCourseDate(startDate, COURSE_STALE_AFTER_DAYS);
 
   return (
-    <section className={cx('info')}>
+    <section className={cx('info', { margin: withMargin })}>
       <p className={cx('date')}>
         <Image className={cx('icon')} src={noteIcon} alt="note-icon" lazy="false" />
-        <span>Start date:</span>
-        <time dateTime={dateAttr}>{dateContent}</time>
+        <span>Start:</span>
+        <time dateTime={dateAttr}>{startDate}</time>
       </p>
       <p className={cx('additional-info')}>
         <Image className={cx('icon')} src={micIcon} alt="microphone-icon" lazy="false" />

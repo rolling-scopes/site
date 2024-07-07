@@ -11,20 +11,6 @@ describe('DateLang', () => {
     expect(screen.getByText(`${startDate}`)).toBeInTheDocument();
   });
 
-  it('renders TBD for course date in past', () => {
-    const startDate = '2020-01-01';
-
-    render(<DateLang startDate={startDate} language={[]} mode="" />);
-    expect(screen.getByText('TBD')).toBeInTheDocument();
-  });
-
-  it('renders TBD for invalid course date', () => {
-    const startDate = 'invalid-date';
-
-    render(<DateLang startDate={startDate} language={[]} mode="" />);
-    expect(screen.getByText('TBD')).toBeInTheDocument();
-  });
-
   it('renders the mode correctly', () => {
     const mode = 'Online';
 
@@ -39,10 +25,5 @@ describe('DateLang', () => {
     render(<DateLang startDate="" language={[]} mode="" />);
     expect(screen.getByAltText('note-icon')).toHaveAttribute('src', noteIcon);
     expect(screen.getByRole('img', { name: 'microphone-icon' })).toHaveAttribute('src', micIcon);
-  });
-
-  it('handles missing start date', () => {
-    render(<DateLang startDate="" language={['en']} mode="Online" />);
-    expect(screen.getByText('Start date:')).toBeInTheDocument();
   });
 });

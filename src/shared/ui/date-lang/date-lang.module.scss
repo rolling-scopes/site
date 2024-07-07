@@ -4,7 +4,9 @@
   gap: 16px;
   align-items: flex-start;
 
-  margin: 16px 0 40px;
+  &.margin {
+    margin: 16px 0 40px;
+  }
 }
 
 .date,
