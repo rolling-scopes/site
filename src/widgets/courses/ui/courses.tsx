@@ -1,6 +1,8 @@
-import { CourseCard, finedNearestCourse } from '@/entities/courses';
-import { compareNumbers } from '@/entities/courses/helpers/compare-courses';
+import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
+import { Course } from '@/app/types';
+import { CourseCard } from '@/entities/courses';
 import { isCourse } from '@/entities/courses/helpers/is-course';
+import { getActualDataList } from '@/shared/helpers/getActualDataList';
 import { useDataByName } from '@/shared/hooks/use-data-by-name';
 import { Title, TitleType } from '@/shared/ui/title';
 
@@ -13,19 +15,13 @@ export const Courses = () => {
   if (error) return <h2>{error.message}</h2>;
   if (!courses || courses.length === 0) return null;
 
-  const nearestCourse = finedNearestCourse(courses);
-  const nearestCourseStartDate = nearestCourse ? Date.parse(nearestCourse.startDate) : Date.now();
+  const sortParams = {
+    dataList: courses.filter(isCourse),
+    actualDelayInDays: COURSE_STALE_AFTER_DAYS,
+    filtered: false,
+  };
 
-  const sortedCourses = courses
-    .filter(isCourse)
-    .sort((a, b) => compareNumbers(a, b, nearestCourseStartDate))
-    .map((course) => {
-      return {
-        ...course,
-        startDate:
-          nearestCourseStartDate <= Date.parse(course.startDate) ? course.startDate : '(TBD)',
-      };
-    });
+  const sortedCourses = getActualDataList(sortParams) as Course[];
 
   return (
     <section className="rs-courses container" id="upcoming-courses">
