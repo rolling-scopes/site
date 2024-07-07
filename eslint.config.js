@@ -1,4 +1,5 @@
 import js from '@eslint/js';
+import { FlatCompat } from '@eslint/eslintrc';
 import stylistic from '@stylistic/eslint-plugin';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
@@ -10,6 +11,13 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import sortExports from 'eslint-plugin-sort-exports';
 import vitestPlugin from 'eslint-plugin-vitest';
 import globals from 'globals';
+
+const DIRNAME = import.meta.dirname;
+const compat = new FlatCompat({ baseDirectory: DIRNAME });
+const fsdConfig = compat.extends('@feature-sliced/eslint-config');
+
+// Pop is needed to remove 'ecmaVersion: 2015' to fix the error 💫
+fsdConfig.pop();
 
 export default [
   {
@@ -26,6 +34,7 @@ export default [
     ],
   },
   stylistic.configs['recommended-flat'],
+  ...fsdConfig,
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
     languageOptions: {
@@ -76,6 +85,7 @@ export default [
       ...vitestPlugin.configs['recommended'].rules,
       ...cssImportOrder.configs['recommended'].rules,
 
+      'boundaries/element-types': 'warn',
       'no-undef': 'off',
       'no-restricted-exports': [
         'warn',
@@ -92,7 +102,7 @@ export default [
       'react/prop-types': 'off',
       'react/react-in-jsx-scope': 'off',
       'react-refresh/only-export-components': [
-        'warn',
+        'off',
         { allowConstantExport: true },
       ],
 
@@ -102,6 +112,7 @@ export default [
       'import/no-namespace': ['error', { ignore: ['*.ext'] }],
       'import/newline-after-import': 'error',
       'import/no-duplicates': 'error',
+      'import/no-internal-modules': 'warn',
       'import/order': [
         'error',
         {

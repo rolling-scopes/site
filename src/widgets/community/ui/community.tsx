@@ -3,7 +3,7 @@ import { FacebookIcon, InstagramIcon, LinkedInIcon, TelegramIcon, YouTubeIcon } 
 import Image from '@/shared/ui/image';
 import { SocialMedia, SocialMediaProps } from '@/shared/ui/social-media';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { Title, TitleType } from '@/shared/ui/title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import './community.scss';
 
@@ -59,7 +59,7 @@ export const Community = () => (
   <div id="community" className="community container">
     <div className="community content column-2">
       <div className="info">
-        <Title text="Join RS Community" type={TitleType.Big} hasAsterisk={false} hasLines={true} />
+        <WidgetTitle size="large" mods="lines">Join RS Community</WidgetTitle>
         <Subtitle text="If you want to learn coding or be a RS School mentor, speaking at developers meetups and conferences or taking part in RS clubs welcome to the Rolling Scopes community! Join us in social networks to be in touch!" />
         <div className="social-media-container">
           {communityGroups.map(({ title, href, icon }) => (

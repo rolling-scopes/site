@@ -11,7 +11,7 @@ import Image from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { Title } from '@/shared/ui/title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './course-main.module.scss';
 
@@ -47,7 +47,7 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
         <Image className={styles.icon} src={secondaryIcon} alt={title} lazy="false" />
         <div className={styles.info}>
           <SectionLabel label={status} />
-          <Title text={`${altTitle || title} Course`} />
+          <WidgetTitle size="medium">{`${altTitle || title} Course`}</WidgetTitle>
           {type && <Subtitle text={type} type="course-main" />}
           <DateLang startDate={date} language={language} mode={mode} withMargin />
           <LinkCustom

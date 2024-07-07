@@ -4,7 +4,7 @@ import { CourseCard } from '@/entities/courses';
 import { isCourse } from '@/entities/courses/helpers/is-course';
 import { getActualDataList } from '@/shared/helpers/getActualDataList';
 import { useDataByName } from '@/shared/hooks/use-data-by-name';
-import { Title, TitleType } from '@/shared/ui/title';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import './courses.scss';
 
@@ -26,7 +26,7 @@ export const Courses = () => {
   return (
     <section className="rs-courses container" id="upcoming-courses">
       <div className="rs-courses content">
-        <Title text="All courses" type={TitleType.Regular} />
+        <WidgetTitle size="medium">All courses</WidgetTitle>
         <div className="rs-courses-wrapper" data-testid="courses-fancy">
           {sortedCourses.map((course) => {
             return <CourseCard key={course.id} {...course} />;
