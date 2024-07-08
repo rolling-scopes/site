@@ -49,13 +49,7 @@ export const CourseCard = ({
           </div>
         </div>
         <div className="rs-course-card__right">
-          <LinkCustom
-            href={detailsUrl}
-            icon={<ArrowIcon size="16px" />}
-            variant="colored"
-            button
-            size="small"
-          >
+          <LinkCustom href={detailsUrl} icon={<ArrowIcon size="16px" />} variant="roundedSmall">
             View details
           </LinkCustom>
         </div>
