@@ -47,7 +47,7 @@ export const Courses = () => {
         <div className={cx('column-2')}>
           <div className={cx('course-list')} data-testid="courses-list">
             {coursesContent}
-            <LinkCustom href={ROUTES.COURSES} icon={<ArrowIcon />} variant="colored" button>
+            <LinkCustom href={ROUTES.COURSES} icon={<ArrowIcon />} variant="coloredSquare">
               Go to courses
             </LinkCustom>
           </div>
