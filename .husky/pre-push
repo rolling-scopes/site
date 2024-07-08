@@ -1,11 +1,9 @@
-npm run test
-
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
 BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
 
-BRANCH_REGEX="^(main|develop|((feat|fix|refactor|docs|chore|test)\/\d{1,5}-[a-zA-Z0-9-]{2,}))$"
+BRANCH_REGEX="^(main|develop|((feat|fix|refactor|docs|chore|test)\/\d{1,5}-[a-zA-Z-]{2,}))$"
 
 if ! echo "$BRANCH_NAME" | grep -Eq "$BRANCH_REGEX";
 then
@@ -28,3 +26,5 @@ fi
 echo "-"
 echo "Your branch name is OK 😎"
 echo "-"
+
+npm run test
