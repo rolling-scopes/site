@@ -23,8 +23,7 @@ export const Mentors = () => {
           <LinkCustom
             href={LINKS.BECOME_MENTOR}
             icon={<ArrowIcon />}
-            variant="colored"
-            button
+            variant="coloredSquare"
             target="_blank"
           >
             Become a mentor
