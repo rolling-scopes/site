@@ -30,7 +30,9 @@ jobs:
             exit 0
           fi
 
-          FORMATTED_DESCRIPTION=$(echo "$DESCRIPTION" | sed -E 's/([a-zA-Z0-9]+)/\L\1/g' | sed -E 's/^([a-zA-Z0-9]+)/\u\1/' | sed 's/-/ /g')
+          #FORMATTED_DESCRIPTION=$(echo "$DESCRIPTION" | sed -E 's/([a-zA-Z0-9]+)/\L\1/g' | sed -E 's/^([a-zA-Z0-9]+)/\u\1/' | sed 's/-/ /g')
+
+          FORMATTED_DESCRIPTION=$(echo "$DESCRIPTION" | sed -E 's/-/ /g' | awk '{print toupper(substr($1,1,1)) tolower(substr($1,2)) substr($0,length($1)+1)}')
 
           NEW_TITLE="$NUMBER-$TYPE: $FORMATTED_DESCRIPTION"
 
