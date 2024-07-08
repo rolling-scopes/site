@@ -71,8 +71,7 @@ export const About = ({ courseName, type = 'en' }: AboutProps) => {
         <LinkCustom
           href={course.enroll}
           icon={<ArrowIcon />}
-          variant="colored"
-          button
+          variant="coloredSquare"
           target="_blank"
         >
           {localizedContent[type].linkLabel}
