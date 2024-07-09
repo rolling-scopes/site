@@ -1,8 +1,8 @@
-import { dayJS } from '@/app/services/dayjs';
+import dayjs from 'dayjs';
 
 export const getCourseDate = (startDate: string, staleAfterDays: number) => {
-  const isValidDate = dayJS(startDate).isValid();
-  const isStale = !isValidDate || dayJS(startDate) < dayJS().subtract(staleAfterDays, 'day');
+  const isValidDate = dayjs(startDate).isValid();
+  const isStale = !isValidDate || dayjs(startDate) < dayjs().subtract(staleAfterDays, 'day');
 
   return isStale ? 'TBD' : startDate;
 };

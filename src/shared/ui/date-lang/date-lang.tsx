@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { dayJS } from '@/app/services/dayjs';
+import dayjs from 'dayjs';
 import micIcon from '@/shared/assets/icons/mic.svg';
 import noteIcon from '@/shared/assets/icons/note-icon.svg';
 import Image from '@/shared/ui/image';
@@ -16,7 +16,7 @@ interface DateLangProps {
 }
 
 export const DateLang = ({ startDate, language, mode, withMargin }: DateLangProps) => {
-  const dateAttr = dayJS(startDate).format('YYYY-MM-DD');
+  const dateAttr = dayjs(startDate).format('YYYY-MM-DD');
 
   return (
     <section className={cx('info', { margin: withMargin })}>

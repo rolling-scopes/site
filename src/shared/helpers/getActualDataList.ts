@@ -1,5 +1,5 @@
+import dayjs from 'dayjs';
 import { getCourseDate } from './getCourseDate';
-import { dayJS } from '@/app/services/dayjs';
 import { Course } from '@/app/types';
 import { isCourse } from '@/entities/courses/helpers/is-course';
 import { EventCardProps } from '@/entities/events';
@@ -30,7 +30,7 @@ const sortDataList = (dataList: DataListType) =>
       return dateA === 'TBD' ? 1 : -1;
     }
 
-    return dayJS(dateA).diff(dayJS(dateB));
+    return dayjs(dateA).diff(dayjs(dateB));
   });
 
 export const getActualDataList: getActualDataListType = ({
