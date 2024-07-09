@@ -47,7 +47,7 @@ export const getActualDataList: getActualDataListType = ({
   });
 
   if (filtered) {
-    data = filterDataList(dataList);
+    data = filterDataList(data);
   }
 
   return sortDataList(data);
