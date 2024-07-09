@@ -26,7 +26,9 @@ const sortDataList = (dataList: DataListType) =>
     const dateA = isCourse(a) ? a.startDate : a.date;
     const dateB = isCourse(b) ? b.startDate : b.date;
 
-    if (dateA === 'TBD' || dateB === 'TBD') return 1;
+    if (dateA === 'TBD' || dateB === 'TBD') {
+      return dateA === 'TBD' ? 1 : -1;
+    }
 
     return dayJS(dateA).diff(dayJS(dateB));
   });
