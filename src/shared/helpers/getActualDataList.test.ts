@@ -8,7 +8,7 @@ import { EventCardProps } from '@/entities/events';
 const staleAfterDays = 14;
 
 const dayInFuture = dayJS().add(2, 'month').toISOString();
-const nonStaleDayInpast = dayJS().subtract(1, 'day').toISOString();
+const nonStaleDayInPast = dayJS().subtract(1, 'day').toISOString();
 const staleDayInPast = dayJS().subtract(staleAfterDays + 100, 'day').toISOString();
 
 const coursesMock: Course[] = [
@@ -53,7 +53,7 @@ const coursesMock: Course[] = [
     iconSrc: 'icon',
     iconSmall: 'iconSmall',
     secondaryIcon: 'secondaryIcon',
-    startDate: nonStaleDayInpast,
+    startDate: nonStaleDayInPast,
     language: ['ru'],
     mode: 'online',
     detailsUrl: `url`,
@@ -68,7 +68,7 @@ const coursesMock: Course[] = [
 const eventsMock = [
   { date: staleDayInPast },
   { date: dayInFuture },
-  { date: nonStaleDayInpast },
+  { date: nonStaleDayInPast },
 ] as unknown as EventCardProps[];
 
 describe('getActualDataList', () => {
@@ -101,7 +101,7 @@ describe('getActualDataList', () => {
       filtered: false,
     }).filter(isCourse);
 
-    expect(data[0].startDate).toBe(nonStaleDayInpast);
+    expect(data[0].startDate).toBe(nonStaleDayInPast);
     expect(data[1].startDate).toBe(dayInFuture);
     expect(data[2].startDate).toBe('TBD');
   });

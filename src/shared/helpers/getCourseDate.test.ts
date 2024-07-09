@@ -11,7 +11,7 @@ describe('getCourseDate', () => {
     expect(result).toBe('TBD');
   });
 
-  it('should return "TBD" for empty datee', () => {
+  it('should return "TBD" for empty date', () => {
     const date = '';
     const result = getCourseDate(date, staleAfterDays);
 
