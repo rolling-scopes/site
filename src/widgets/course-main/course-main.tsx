@@ -45,7 +45,7 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
         <div className={styles.info}>
           <SectionLabel label={status} />
           <WidgetTitle size="medium">{`${altTitle || title} Course`}</WidgetTitle>
-          {type && <Subtitle text={type} type="course-main" />}
+          {type && <Subtitle text={type} />}
           <DateLang startDate={startDate} language={language} mode={mode} type="main" />
           <LinkCustom
             href={enroll}
