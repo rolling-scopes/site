@@ -14,7 +14,7 @@ export const StudyWithUs = () => (
     <div className="school content">
       <div className="study">
         <div className="left">
-          <SectionLabel fontSize="small" marginSize="large" label="education" />
+          <SectionLabel>education</SectionLabel>
           <WidgetTitle size="medium" mods="asterisk">Study with RS School</WidgetTitle>
           <Subtitle text="RS School is a free and community-based online education program conducted by The Rolling Scopes Community since 2013. " />
           <Paragraph>

@@ -17,7 +17,7 @@ export const Merch = () => (
   <div id="merch" className={cx('container')}>
     <div className={cx('content', 'merch', 'column-2')}>
       <div className={cx('info')}>
-        <SectionLabel fontSize="large" marginSize="large" label="merch" />
+        <SectionLabel>merch</SectionLabel>
         <WidgetTitle size="medium" mods="asterisk">RS merch</WidgetTitle>
         <Subtitle text="Are you an RS sloth fan and looking for RS merch?" />
         <Paragraph>

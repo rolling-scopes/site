@@ -4,46 +4,17 @@ import classNames from 'classnames/bind';
 
 import styles from './section-label.module.scss';
 
-type SectionLabelProps = HTMLAttributes<HTMLDivElement> &
-  VariantProps<typeof sectionLabelVariants> & { label: string };
+type SectionLabelProps = HTMLAttributes<HTMLParagraphElement> &
+  VariantProps<typeof sectionLabelVariants> & { children: string };
 
 export const cx = classNames.bind(styles);
 
-const sectionLabelVariants = cva(cx('label'), {
-  variants: {
-    marginSize: {
-      small: cx('margin-small'),
-      medium: cx('margin-medium'),
-      large: cx('margin-large'),
-    },
-    fontSize: {
-      small: cx('font-small'),
-      large: cx('font-large'),
-    },
-  },
-  defaultVariants: {
-    marginSize: 'large',
-    fontSize: 'large',
-  },
-});
+const sectionLabelVariants = cva(cx('label'));
 
-export const SectionLabel = ({
-  label,
-  marginSize,
-  fontSize,
-  className,
-  ...props
-}: SectionLabelProps) => {
+export const SectionLabel = ({ children, className, ...props }: SectionLabelProps) => {
   return (
-    <div
-      {...props}
-      className={sectionLabelVariants({
-        marginSize,
-        fontSize,
-        className,
-      })}
-    >
-      {label}
-    </div>
+    <p {...props} className={sectionLabelVariants({ className })}>
+      {children}
+    </p>
   );
 };

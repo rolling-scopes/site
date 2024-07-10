@@ -1,28 +1,10 @@
 .label {
+  margin: 8px 8px 8px 0;
+
+  font-size: 14px;
   font-weight: $font-weight-regular;
+  line-height: 16px;
   color: $color-gray-600;
   text-transform: uppercase;
   letter-spacing: 0;
-}
-
-.margin-small {
-  margin-bottom: 8px;
-}
-
-.margin-medium {
-  margin-bottom: 24px;
-}
-
-.margin-large {
-  margin-bottom: 40px;
-}
-
-.font-small {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.font-large {
-  font-size: 14px;
-  line-height: 20px;
 }
