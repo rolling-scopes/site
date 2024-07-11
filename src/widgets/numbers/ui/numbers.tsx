@@ -26,11 +26,13 @@ export const Numbers = () => {
       <div className="numbers content">
         <div className="text-container">
           <div>
-            <WidgetTitle size="medium" mods="asterisk">The Rolling Scopes in numbers</WidgetTitle>
-            <Subtitle
-              text="Everyone can discover our community, regardless of age, professional employment, or
-            place of residence."
-            />
+            <WidgetTitle size="medium" mods="asterisk">
+              The Rolling Scopes in numbers
+            </WidgetTitle>
+            <Subtitle>
+              Everyone can discover our community, regardless of age, professional employment, or
+              place of residence.
+            </Subtitle>
             <Paragraph>
               Developers from different companies and countries are connected to pass on your
               knowledge, enrich your network and just have fun.

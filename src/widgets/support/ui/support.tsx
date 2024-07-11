@@ -12,9 +12,14 @@ export const Support = () => (
   <div className="support container">
     <div className="support content">
       <div className="info">
-        <WidgetTitle size="large" mods="lines">Support Us</WidgetTitle>
-        <Subtitle text="Your donations help us cover hosting, domains, licenses, and advertising for courses and events. Every donation, big or small, helps!" />
-        <Subtitle text="Thank you for your support!" />
+        <WidgetTitle size="large" mods="lines">
+          Support Us
+        </WidgetTitle>
+        <Subtitle>
+          Your donations help us cover hosting, domains, licenses, and advertising for courses and
+          events. Every donation, big or small, helps!
+        </Subtitle>
+        <Subtitle>Thank you for your support!</Subtitle>
         <LinkCustom
           href={LINKS.DONATE}
           icon={<ArrowIcon />}

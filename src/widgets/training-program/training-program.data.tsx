@@ -50,7 +50,7 @@ export const contentMap: ContentMap = {
         Be well-prepared to pass the &quot;AWS Certified Developer - Associate&quot; certification
         and confidently apply your skills in real-world projects by the end of the course.
       </Paragraph>,
-      <Subtitle key="aws cloud dev 03" text="Course highlights:" />,
+      <Subtitle key="aws cloud dev 03">Course highlights:</Subtitle>,
       <Actions
         key="aws cloud dev 04"
         actions={[
@@ -255,10 +255,10 @@ export const contentMap: ContentMap = {
         ]}
         marked
       />,
-      <Subtitle
-        key="react 03"
-        text="Attention! Mentors on this course will be first assigned to the graduates of the RS School Stage #2."
-      />,
+      <Subtitle key="react 03">
+        Attention! Mentors on this course will be first assigned to the graduates of the RS School
+        Stage #2.
+      </Subtitle>,
     ],
     image: reactEnImg,
   },

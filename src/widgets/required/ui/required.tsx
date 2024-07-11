@@ -34,7 +34,7 @@ export const Required = ({ courseName, marked1, marked2 }: RequiredProps) => {
         <div className="column-2">
           {isKnowBeforeExist && (
             <article>
-              <Subtitle text={knowBefore.title} />
+              <Subtitle>{knowBefore.title}</Subtitle>
               <Actions actions={knowBefore.description} marked={marked1} />
             </article>
           )}
@@ -43,7 +43,7 @@ export const Required = ({ courseName, marked1, marked2 }: RequiredProps) => {
               ? willLearn.map((willLearn) => {
                 return (
                   <article key={willLearn.title}>
-                    <Subtitle text={willLearn.title} />
+                    <Subtitle>{willLearn.title}</Subtitle>
                     <Actions actions={willLearn.description} marked={marked2} />
                   </article>
                 );

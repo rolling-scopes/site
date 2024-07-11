@@ -29,8 +29,13 @@ export const Contribute = () => (
     <div className="contribute content">
       <div className="general">
         <div className="info">
-          <WidgetTitle size="medium" mods="asterisk">How to Contribute</WidgetTitle>
-          <Subtitle text="Contributing to The Rolling Scopes is not only a great way to give back to the community, but it's also an excellent way to enhance your own knowledge." />
+          <WidgetTitle size="medium" mods="asterisk">
+            How to Contribute
+          </WidgetTitle>
+          <Subtitle>
+            Contributing to The Rolling Scopes is not only a great way to give back to the
+            community, but it&apos;s also an excellent way to enhance your own knowledge.
+          </Subtitle>
           <Paragraph>
             Remember, teaching others is one of the best ways to learn - this is known as The
             Protégé Effect! There are several ways you can contribute, choose yours.

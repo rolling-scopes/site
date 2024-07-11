@@ -11,7 +11,7 @@ export const About = () => {
         <div className="column-2">
           <div className="info">
             <WidgetTitle size="medium" mods="asterisk">About RS School</WidgetTitle>
-            <Subtitle text="No matter your age, professional employment, or place of residence." />
+            <Subtitle>No matter your age, professional employment, or place of residence.</Subtitle>
             <Paragraph>
               RS School offers a unique learning experience as a free, community-based online
               education initiative. The RS School has been run by the Rolling Scopes community since

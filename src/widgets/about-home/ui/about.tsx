@@ -11,11 +11,13 @@ export const About = () => {
     <div className="about container" id="about">
       <div className="about content column-2">
         <div className="left">
-          <WidgetTitle size="medium" mods="asterisk">Who we are</WidgetTitle>
-          <Subtitle
-            text="Our mission is to provide free education in intriguing subjects, connect people, and grow
-          together."
-          />
+          <WidgetTitle size="medium" mods="asterisk">
+            Who we are
+          </WidgetTitle>
+          <Subtitle>
+            Our mission is to provide free education in intriguing subjects, connect people, and
+            grow together.
+          </Subtitle>
           <Paragraph>
             The Rolling Scopes was founded in 2013 in Minsk as a community of Front-end developers.
             It has since grown into an enormous international developers community.

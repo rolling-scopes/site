@@ -1,5 +1,11 @@
 import image from '@/shared/assets/welcome.webp';
-import { FacebookIcon, InstagramIcon, LinkedInIcon, TelegramIcon, YouTubeIcon } from '@/shared/icons';
+import {
+  FacebookIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  TelegramIcon,
+  YouTubeIcon,
+} from '@/shared/icons';
 import Image from '@/shared/ui/image';
 import { SocialMedia, SocialMediaProps } from '@/shared/ui/social-media';
 import { Subtitle } from '@/shared/ui/subtitle';
@@ -59,8 +65,14 @@ export const Community = () => (
   <div id="community" className="community container">
     <div className="community content column-2">
       <div className="info">
-        <WidgetTitle size="large" mods="lines">Join RS Community</WidgetTitle>
-        <Subtitle text="If you want to learn coding or be a RS School mentor, speaking at developers meetups and conferences or taking part in RS clubs welcome to the Rolling Scopes community! Join us in social networks to be in touch!" />
+        <WidgetTitle size="large" mods="lines">
+          Join RS Community
+        </WidgetTitle>
+        <Subtitle>
+          If you want to learn coding or be a RS School mentor, speaking at developers meetups and
+          conferences or taking part in RS clubs welcome to the Rolling Scopes community! Join us in
+          social networks to be in touch!
+        </Subtitle>
         <div className="social-media-container">
           {communityGroups.map(({ title, href, icon }) => (
             <SocialMedia key={title} title={title} href={href} icon={icon} />

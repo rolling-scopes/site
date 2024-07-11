@@ -4,9 +4,7 @@ import classNames from 'classnames/bind';
 
 import styles from './subtitle.module.scss';
 
-type SubtitleProps = HTMLAttributes<HTMLHeadingElement> & VariantProps<typeof subtitleVariants> & {
-  text: string;
-};
+type SubtitleProps = HTMLAttributes<HTMLHeadingElement> & VariantProps<typeof subtitleVariants>;
 
 export const cx = classNames.bind(styles);
 
@@ -27,16 +25,17 @@ const subtitleVariants = cva(cx('subtitle'), {
   },
 });
 
-export const Subtitle = ({ text, size, color, ...props }: SubtitleProps) => {
+export const Subtitle = ({ children, size, color, ...props }: SubtitleProps) => {
   return (
     <h3
       {...props}
       className={subtitleVariants({
         size,
         color,
+        className: 'subtitle',
       })}
     >
-      {text}
+      {children}
     </h3>
   );
 };

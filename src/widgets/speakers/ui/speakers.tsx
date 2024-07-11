@@ -10,9 +10,14 @@ export const Speakers = () => (
   <div className="speakers container">
     <div className="speakers content">
       <div className="info">
-        <WidgetTitle size="large" mods="lines">Speakers wanted</WidgetTitle>
-        <Subtitle text="If you want to give a talk or conduct a workshop, present your open source project or share a success story, the Rolling Scopes welcomes all kinds of talk proposals." />
-        <Subtitle text="So don't hesitate to drop a short synopsis to RS Head " />
+        <WidgetTitle size="large" mods="lines">
+          Speakers wanted
+        </WidgetTitle>
+        <Subtitle>
+          If you want to give a talk or conduct a workshop, present your open source project or
+          share a success story, the Rolling Scopes welcomes all kinds of talk proposals.
+        </Subtitle>
+        <Subtitle>So don&apos;t hesitate to drop a short synopsis to RS Head</Subtitle>
 
         <div className="name" data-testid="contact-name">
           Dzmitry Varabei
