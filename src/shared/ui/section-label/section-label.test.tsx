@@ -4,7 +4,7 @@ import { SectionLabel } from './section-label';
 
 describe('SectionLabel component', () => {
   it('converts non-string label props to string', () => {
-    const nonStringChildren = '12345';
+    const nonStringChildren = 12345;
 
     render(<SectionLabel>{nonStringChildren}</SectionLabel>);
     const labelElement = screen.getByText('12345');

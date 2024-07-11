@@ -4,8 +4,8 @@ import classNames from 'classnames/bind';
 
 import styles from './section-label.module.scss';
 
-type SectionLabelProps = HTMLAttributes<HTMLParagraphElement> &
-  VariantProps<typeof sectionLabelVariants> & { children: string };
+type SectionLabelProps = HTMLAttributes<HTMLHeadingElement> &
+  VariantProps<typeof sectionLabelVariants>;
 
 export const cx = classNames.bind(styles);
 
@@ -13,8 +13,8 @@ const sectionLabelVariants = cva(cx('label'));
 
 export const SectionLabel = ({ children, className, ...props }: SectionLabelProps) => {
   return (
-    <p {...props} className={sectionLabelVariants({ className })}>
+    <h4 {...props} className={sectionLabelVariants({ className })}>
       {children}
-    </p>
+    </h4>
   );
 };
