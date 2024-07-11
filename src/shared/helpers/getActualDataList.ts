@@ -1,4 +1,4 @@
-import { dayJS } from '@/app/services/dayjs';
+import { dayJS } from '../dayjs';
 
 type DataListType<T> = Array<T>;
 type DataItem = Record<string, string | HTMLElement>;
