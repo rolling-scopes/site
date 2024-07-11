@@ -13,7 +13,6 @@ export const cx = classNames.bind(styles);
 const subtitleVariants = cva(cx('subtitle'), {
   variants: {
     size: {
-      small: cx('small'),
       medium: cx('medium'),
       large: cx('large'),
     },
