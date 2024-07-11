@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from "@chromatic-com/playwright";
 
 test('Main page full screenshots (match or capture if not exist)', async ({ page }) => {
   await page.goto('/');

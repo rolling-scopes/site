@@ -43,7 +43,8 @@
     "src/shared/__tests__/visualTesting/footer.spec.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/shared/__tests__/visualTesting/results"
   ],
   "references": [
     {
