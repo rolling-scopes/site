@@ -1,26 +1,56 @@
-import { dayJS } from '@/app/services/dayjs';
+import dayjs from 'dayjs';
+import { getCourseDate } from './getCourseDate';
+import { Course } from '@/app/types';
+import { isCourse } from '@/entities/courses/helpers/is-course';
+import { EventCardProps } from '@/entities/events';
 
-type DataListType<T> = Array<T>;
-type DataItem = Record<string, string | HTMLElement>;
-interface DataItemWithDate extends DataItem {
-  date: string; // 'YYYY-MM-DD'
-}
+type DataListType = (Course | EventCardProps)[];
 
-export type ActualDataListProps = {
-  dataList: DataListType<DataItemWithDate>;
+export type ActualDataListParams = {
+  dataList: DataListType;
   actualDelayInDays: number;
-  sorted?: boolean;
+  filtered?: boolean;
 };
 
-export const getActualDataList = ({
+type getActualDataListType = (props: ActualDataListParams) => DataListType;
+
+const filterDataList = (dataList: DataListType) =>
+  dataList.filter((item) => {
+    const date = isCourse(item) ? item.startDate : item.date;
+
+    return date !== 'TBD';
+  });
+
+const sortDataList = (dataList: DataListType) =>
+  dataList.sort((a, b) => {
+    const dateA = isCourse(a) ? a.startDate : a.date;
+    const dateB = isCourse(b) ? b.startDate : b.date;
+
+    if (dateA === 'TBD' || dateB === 'TBD') {
+      return dateA === 'TBD' ? 1 : -1;
+    }
+
+    return dayjs(dateA).diff(dayjs(dateB));
+  });
+
+export const getActualDataList: getActualDataListType = ({
   dataList,
   actualDelayInDays,
-  sorted = true,
-}: ActualDataListProps): DataListType<DataItemWithDate> | [] => {
-  const postponeDate = dayJS().subtract(actualDelayInDays, 'day');
-  const actualDataList = dataList.filter((item) => dayJS(item.date, 'YYYY-MM-DD') >= postponeDate);
+  filtered = true,
+}) => {
+  let data = dataList.map((item) => {
+    const datePath = isCourse(item) ? 'startDate' : 'date';
+    const date = isCourse(item) ? item.startDate : item.date;
 
-  const sortedList = (actualDataList as DataListType<DataItemWithDate>).sort((a, b) => dayJS(a.date).diff(b.date));
+    return {
+      ...item,
+      [datePath]: getCourseDate(date, actualDelayInDays),
+    };
+  });
 
-  return sorted ? sortedList : actualDataList;
+  if (filtered) {
+    data = filterDataList(data);
+  }
+
+  return sortDataList(data);
 };
