@@ -3,7 +3,7 @@ import { CourseMain } from './course-main';
 import { CourseStatus } from '@/app/types';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { dayJS } from '@/shared/dayjs';
+import { dayJS } from '@/shared/helpers/dayJS';
 
 vi.mock('@/app/hooks/use-course-by-title');
 vi.mock('react-router-dom', async (importOriginal) => {
