@@ -1,3 +1,5 @@
+export const COURSE_STALE_AFTER_DAYS = 14;
+
 export const LINKS = {
   BECOME_MENTOR: 'https://app.rs.school/registry/mentor',
   MERCH: 'https://sloths.rs.school/',
