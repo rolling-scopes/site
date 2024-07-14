@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import { CourseCard } from './CourseCard';
+import { MAX_COURSE_COUNT } from '../model/constants';
 import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/app/const';
 import { courses } from '@/app/services/data';
 import { Course } from '@/app/types';
@@ -12,8 +13,6 @@ import { WidgetTitle } from '@/shared/ui/widget-title';
 import styles from './courses.module.scss';
 
 const cx = classNames.bind(styles);
-
-const MAX_COURSE_COUNT = 5;
 
 export const Courses = () => {
   const size = useWindowSize();
