@@ -23,10 +23,10 @@ type LinkCustomAdditionalProps = {
 const linkCustomVariants = cva('', {
   variants: {
     variant: {
-      roundedSmall: cx('button, colored, small'),
-      coloredSquare: cx('button, colored'),
-      outlined: cx('button, outlined'),
-      outlinedBig: cx('button, medium'),
+      roundedSmall: cx('button', 'colored', 'small'),
+      coloredSquare: cx('button', 'colored', 'large'),
+      outlined: cx('button', 'outlined', 'large'),
+      outlinedBig: cx('button', 'medium', 'outlined'),
       textLink: cx('textLink'),
     },
     defaultVariants: { variant: 'textLink' },
