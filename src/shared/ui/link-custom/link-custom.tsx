@@ -1,4 +1,3 @@
-/* eslint-disable @stylistic/jsx-one-expression-per-line */
 import { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
 import { type VariantProps, cva } from 'class-variance-authority';
 import classNames from 'classnames/bind';
@@ -51,7 +50,8 @@ export const LinkCustom = ({
       {...props}
       rel="noreferrer"
     >
-      {children} {icon}
+      {children}
+      {icon}
     </Link>
   );
 };
