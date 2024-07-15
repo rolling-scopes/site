@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import { getActualDataList } from './getActualDataList';
-import { dayJS } from '@/app/services/dayjs';
 import { Course } from '@/app/types';
 import { isCourse } from '@/entities/courses/helpers/is-course';
 import { EventCardProps } from '@/entities/events';
+import { dayJS } from '@/shared/helpers/dayJS';
 
 const staleAfterDays = 14;
 
