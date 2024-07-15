@@ -68,14 +68,7 @@
       line-height: 20px;
     }
 
-    margin: 0;
-
     font-family: Inter-Medium, Inter, sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 28px;
-    color: $color-yellow-700;
-    letter-spacing: 0;
 
     &-container {
       @include media-tablet {

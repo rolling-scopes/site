@@ -61,7 +61,7 @@ export const Communication = ({ courseName, lang = 'en' }: RequiredProps) => {
             <DiscordLogo />
           </figure>
           <div>
-            <Subtitle>{localizedContent[lang].subTitle}</Subtitle>
+            <Subtitle size="large">{localizedContent[lang].subTitle}</Subtitle>
             <Paragraph>
               {localizedContent[lang].firstParagraphFirstHalf}{' '}
               <LinkCustom href={DISCORD_LINKS[courseName]} icon={<TextLinkIcon />} target="_blank">
