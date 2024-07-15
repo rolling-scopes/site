@@ -4,13 +4,13 @@
   gap: 16px;
   align-items: flex-start;
 
-  &.main {
+  &.margin {
     margin: 16px 0 40px;
   }
 }
 
 .date,
-.lang {
+.additional-info {
   display: flex;
   gap: 4px;
   align-items: center;
@@ -22,8 +22,7 @@
   color: $color-gray-600;
 }
 
-.note,
-.microphone {
+.icon {
   width: 16px;
 }
 
