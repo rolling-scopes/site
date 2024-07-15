@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react';
+import { AnchorHTMLAttributes, ReactNode } from 'react';
 import { type VariantProps, cva } from 'class-variance-authority';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
@@ -7,12 +7,9 @@ import styles from './link-custom.module.scss';
 
 export const cx = classNames.bind(styles);
 
-type LinkCustomProps = DetailedHTMLProps<
-  AnchorHTMLAttributes<HTMLAnchorElement>,
-  HTMLAnchorElement
-> &
-VariantProps<typeof linkCustomVariants> &
-LinkCustomAdditionalProps;
+type LinkCustomProps = AnchorHTMLAttributes<HTMLAnchorElement> &
+  VariantProps<typeof linkCustomVariants> &
+  LinkCustomAdditionalProps;
 
 type LinkCustomAdditionalProps = {
   href: string;
