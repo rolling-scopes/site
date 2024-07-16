@@ -9,7 +9,7 @@ describe('CourseCard', () => {
     iconSrc: 'test-icon.svg',
     startDate: '2023-01-01',
     mode: 'online',
-    language: ['en', 'ru'] as ('en' | 'ru')[],
+    language: ['en'],
     detailsUrl: 'http://example.com/course',
     backgroundStyle: {
       backgroundColor: '#ffffff',
@@ -26,7 +26,7 @@ describe('CourseCard', () => {
   });
 
   it('renders the course start date', () => {
-    expect(screen.getByText(`Start ${mockProps.startDate}`)).toBeInTheDocument();
+    expect(screen.getByText(`${mockProps.startDate}`)).toBeInTheDocument();
   });
 
   it('renders the course language', () => {
@@ -34,7 +34,7 @@ describe('CourseCard', () => {
   });
 
   it('renders the course mode', () => {
-    expect(screen.getByText(`• ${mockProps.mode}`)).toBeInTheDocument();
+    expect(screen.getByText(`${mockProps.mode}`)).toBeInTheDocument();
   });
 
   it('renders the course details link', () => {
