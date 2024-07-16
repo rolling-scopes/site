@@ -17,11 +17,26 @@ const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
   const decoding: DecodingAttr = isLazy ? 'async' : 'auto';
   const srcAttr = IS_DEV ? src : srcWebp;
 
+  const isImageSvg = src ? src.toLowerCase().endsWith('.svg') || src.toLowerCase().includes('data:image/svg') : false;
+
   const handleError = () => {
     // fallback to basic src if there are no responsive sizes for an image
     setSrcSet(undefined);
     setSizes(undefined);
   };
+
+  if (isImageSvg) {
+    return (
+      <img
+        decoding={decoding}
+        src={srcAttr}
+        alt={alt}
+        draggable="false"
+        onError={handleError}
+        {...props}
+      />
+    );
+  }
 
   return (
     <img
