@@ -2,6 +2,7 @@ import { type Mock, describe, expect, it } from 'vitest';
 import { Footer } from './footer';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
+import { cx } from '@/shared/ui/logo/logo.tsx';
 
 vi.mock('@/shared/hooks/use-window-size', () => ({ useWindowSize: vi.fn().mockImplementation(() => ({ width: 1200 })) }));
 vi.mock('@/shared/hooks/use-data-by-name', () => ({ useDataByName: vi.fn().mockImplementation(() => ({ data: [] })) }));
@@ -16,9 +17,9 @@ describe('Footer', () => {
 
   it('displays logo', () => {
     const { getByTestId } = renderWithRouter(<Footer />);
-    const logoElement = getByTestId('logo-footer');
+    const logoElement = getByTestId('logo');
 
-    expect(logoElement).toBeInTheDocument();
+    expect(logoElement).toHaveClass(cx('with-border'));
   });
 
   it('displays copyright in the footer', () => {
