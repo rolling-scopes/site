@@ -3,7 +3,6 @@ import { CourseCard } from './CourseCard';
 import { MAX_COURSE_COUNT } from '../model/constants';
 import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/app/const';
 import { courses } from '@/app/services/data';
-import { Course } from '@/app/types';
 import { getActualData } from '@/shared/helpers/getActualDataList';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { ArrowIcon, RsBanner } from '@/shared/icons';
@@ -22,7 +21,7 @@ export const Courses = () => {
     data: courses,
     staleAfter: COURSE_STALE_AFTER_DAYS,
     filterStale: true,
-  }) as Course[];
+  });
 
   let linkLabel = 'More details';
 
