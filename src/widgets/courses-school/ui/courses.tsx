@@ -1,8 +1,10 @@
 import classNames from 'classnames/bind';
 import { CourseCard } from './CourseCard';
-import { selectCourses } from '../lib/selectCourses';
-import { ROUTES } from '@/app/const';
+import { MAX_COURSE_COUNT } from '../model/constants';
+import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/app/const';
 import { courses } from '@/app/services/data';
+import { Course } from '@/app/types';
+import { getActualDataList } from '@/shared/helpers/getActualDataList';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { ArrowIcon, RsBanner } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -16,7 +18,11 @@ export const Courses = () => {
   const size = useWindowSize();
   const laptopScreenBreakPoint = 1440;
   const tabletScreenBreakPoint = 810;
-  const coursesData = selectCourses(courses);
+  const coursesData = getActualDataList({
+    dataList: courses,
+    actualDelayInDays: COURSE_STALE_AFTER_DAYS,
+    filtered: true,
+  }) as Course[];
 
   let linkLabel = 'More details';
 
@@ -26,19 +32,21 @@ export const Courses = () => {
     linkLabel = 'More';
   }
 
-  const coursesContent = coursesData?.map(({ title, language, startDate, detailsUrl, iconSrc }) => {
-    return (
-      <CourseCard
-        title={title}
-        language={language}
-        startDate={startDate}
-        detailsUrl={detailsUrl}
-        iconSrc={iconSrc}
-        buttonText={linkLabel}
-        key={title}
-      />
-    );
-  });
+  const coursesContent = coursesData
+    .slice(0, Math.min(coursesData.length, MAX_COURSE_COUNT))
+    .map(({ title, language, startDate, detailsUrl, iconSrc }) => {
+      return (
+        <CourseCard
+          title={title}
+          language={language}
+          startDate={startDate}
+          detailsUrl={detailsUrl}
+          iconSrc={iconSrc}
+          buttonText={linkLabel}
+          key={title}
+        />
+      );
+    });
 
   return (
     <article id="upcoming-courses" className={cx('container')}>

@@ -46,7 +46,7 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
       <div className={`content ${styles.content}`}>
         <Image className={styles.icon} src={secondaryIcon} alt={title} lazy="false" />
         <div className={styles.info}>
-          <SectionLabel label={status} />
+          <SectionLabel>{status}</SectionLabel>
           <WidgetTitle size="medium">{`${altTitle || title} Course`}</WidgetTitle>
           {type && <Subtitle text={type} type="course-main" />}
           <DateLang startDate={date} language={language} mode={mode} withMargin />
