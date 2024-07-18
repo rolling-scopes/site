@@ -4,50 +4,48 @@ import { isCourse } from '@/entities/courses/helpers/is-course';
 import { EventCardProps } from '@/entities/events';
 import { dayJS } from '@/shared/helpers/dayJS';
 
-type DataListType = Course[] | EventCardProps[];
+type DataType = Course[] | EventCardProps[];
 
-type ActualDataListParams<T extends DataListType> = {
-  dataList: T;
-  actualDelayInDays: number;
-  filtered?: boolean;
+type getActualDataParams<T extends DataType> = {
+  data: T;
+  staleAfter: number;
+  filterStale?: boolean;
 };
 
-type getActualDataListType = <T extends DataListType>(props: ActualDataListParams<T>) => T;
+type getActualDataType = <T extends DataType>(props: getActualDataParams<T>) => T;
 
-export const getActualDataList: getActualDataListType = ({
-  dataList,
-  actualDelayInDays,
-  filtered = true,
+export const getActualData: getActualDataType = ({
+  data,
+  staleAfter,
+  filterStale = true,
 }) => {
-  let data = mapDataListWithTBD(dataList, actualDelayInDays);
+  let dataWithTBD = mapStaleAsTBD(data, staleAfter);
 
-  if (filtered) {
-    data = filterDataList(data);
-  }
+  if (filterStale) dataWithTBD = filterData(dataWithTBD);
 
-  return sortDataList(data);
+  return sortDataList(dataWithTBD);
 };
 
-const mapDataListWithTBD = <T extends DataListType>(dataList: T, actualDelayInDays: number): T =>
-  dataList.map((item) => {
+const mapStaleAsTBD = <T extends DataType>(data: T, staleAfter: number): T =>
+  data.map((item) => {
     const datePath = isCourse(item) ? 'startDate' : 'date';
     const date = isCourse(item) ? item.startDate : item.date;
 
     return {
       ...item,
-      [datePath]: getCourseDate(date, actualDelayInDays),
+      [datePath]: getCourseDate(date, staleAfter),
     };
   }) as T;
 
-const filterDataList = <T extends DataListType>(dataList: T): T =>
-  dataList.filter((item) => {
+const filterData = <T extends DataType>(data: T): T =>
+  data.filter((item) => {
     const date = isCourse(item) ? item.startDate : item.date;
 
     return date !== 'TBD';
   }) as T;
 
-const sortDataList = <T extends DataListType>(dataList: T): T =>
-  dataList.sort((a, b) => {
+const sortDataList = <T extends DataType>(data: T): T =>
+  data.sort((a, b) => {
     const dateA = isCourse(a) ? a.startDate : a.date;
     const dateB = isCourse(b) ? b.startDate : b.date;
 

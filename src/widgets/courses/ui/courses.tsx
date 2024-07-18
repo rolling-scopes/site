@@ -1,7 +1,7 @@
 import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
 import { CourseCard } from '@/entities/courses';
 import { isCourse } from '@/entities/courses/helpers/is-course';
-import { getActualDataList } from '@/shared/helpers/getActualDataList';
+import { getActualData } from '@/shared/helpers/getActualDataList';
 import { useDataByName } from '@/shared/hooks/use-data-by-name';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
@@ -15,12 +15,12 @@ export const Courses = () => {
   if (!courses || courses.length === 0) return null;
 
   const sortParams = {
-    dataList: courses.filter(isCourse),
-    actualDelayInDays: COURSE_STALE_AFTER_DAYS,
-    filtered: false,
+    data: courses.filter(isCourse),
+    staleAfter: COURSE_STALE_AFTER_DAYS,
+    filterStale: false,
   };
 
-  const sortedCourses = getActualDataList(sortParams);
+  const sortedCourses = getActualData(sortParams);
 
   return (
     <section className="rs-courses container" id="upcoming-courses">
