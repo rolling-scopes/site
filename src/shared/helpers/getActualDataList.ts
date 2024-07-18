@@ -6,7 +6,7 @@ import { dayJS } from '@/shared/helpers/dayJS';
 
 type DataListType = Course[] | EventCardProps[];
 
-export type ActualDataListParams<T extends DataListType> = {
+type ActualDataListParams<T extends DataListType> = {
   dataList: T;
   actualDelayInDays: number;
   filtered?: boolean;
