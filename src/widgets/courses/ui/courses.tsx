@@ -1,5 +1,4 @@
 import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
-import { Course } from '@/app/types';
 import { CourseCard } from '@/entities/courses';
 import { isCourse } from '@/entities/courses/helpers/is-course';
 import { getActualDataList } from '@/shared/helpers/getActualDataList';
@@ -21,7 +20,7 @@ export const Courses = () => {
     filtered: false,
   };
 
-  const sortedCourses = getActualDataList(sortParams) as Course[];
+  const sortedCourses = getActualDataList(sortParams);
 
   return (
     <section className="rs-courses container" id="upcoming-courses">
