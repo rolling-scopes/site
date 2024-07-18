@@ -14,6 +14,20 @@ type ActualDataListParams<T extends DataListType> = {
 
 type getActualDataListType = <T extends DataListType>(props: ActualDataListParams<T>) => T;
 
+export const getActualDataList: getActualDataListType = ({
+  dataList,
+  actualDelayInDays,
+  filtered = true,
+}) => {
+  let data = mapDataListWithTBD(dataList, actualDelayInDays);
+
+  if (filtered) {
+    data = filterDataList(data);
+  }
+
+  return sortDataList(data);
+};
+
 const mapDataListWithTBD = <T extends DataListType>(dataList: T, actualDelayInDays: number): T =>
   dataList.map((item) => {
     const datePath = isCourse(item) ? 'startDate' : 'date';
@@ -43,17 +57,3 @@ const sortDataList = <T extends DataListType>(dataList: T): T =>
 
     return dayJS(dateA).diff(dayJS(dateB));
   }) as T;
-
-export const getActualDataList: getActualDataListType = ({
-  dataList,
-  actualDelayInDays,
-  filtered = true,
-}) => {
-  let data = mapDataListWithTBD(dataList, actualDelayInDays);
-
-  if (filtered) {
-    data = filterDataList(data);
-  }
-
-  return sortDataList(data);
-};
