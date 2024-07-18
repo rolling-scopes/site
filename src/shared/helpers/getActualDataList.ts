@@ -6,24 +6,24 @@ import { dayJS } from '@/shared/helpers/dayJS';
 
 type DataType = Course[] | EventCardProps[];
 
-type getActualDataParams<T extends DataType> = {
+type GetActualDataParams<T extends DataType> = {
   data: T;
   staleAfter: number;
   filterStale?: boolean;
 };
 
-type getActualDataType = <T extends DataType>(props: getActualDataParams<T>) => T;
+type GetActualDataType = <T extends DataType>(params: GetActualDataParams<T>) => T;
 
-export const getActualData: getActualDataType = ({
+export const getActualData: GetActualDataType = ({
   data,
   staleAfter,
   filterStale = true,
 }) => {
   let dataWithTBD = mapStaleAsTBD(data, staleAfter);
 
-  if (filterStale) dataWithTBD = filterData(dataWithTBD);
+  if (filterStale) dataWithTBD = filterStaleData(dataWithTBD);
 
-  return sortDataList(dataWithTBD);
+  return sortData(dataWithTBD);
 };
 
 const mapStaleAsTBD = <T extends DataType>(data: T, staleAfter: number): T =>
@@ -37,14 +37,14 @@ const mapStaleAsTBD = <T extends DataType>(data: T, staleAfter: number): T =>
     };
   }) as T;
 
-const filterData = <T extends DataType>(data: T): T =>
+const filterStaleData = <T extends DataType>(data: T): T =>
   data.filter((item) => {
     const date = isCourse(item) ? item.startDate : item.date;
 
     return date !== 'TBD';
   }) as T;
 
-const sortDataList = <T extends DataType>(data: T): T =>
+const sortData = <T extends DataType>(data: T): T =>
   data.sort((a, b) => {
     const dateA = isCourse(a) ? a.startDate : a.date;
     const dateB = isCourse(b) ? b.startDate : b.date;
