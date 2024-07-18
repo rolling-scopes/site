@@ -1,7 +1,7 @@
 import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
 import { CourseCard } from '@/entities/courses';
 import { isCourse } from '@/entities/courses/helpers/is-course';
-import { getActualData } from '@/shared/helpers/getActualDataList';
+import { getActualData } from '@/shared/helpers/getActualData';
 import { useDataByName } from '@/shared/hooks/use-data-by-name';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 

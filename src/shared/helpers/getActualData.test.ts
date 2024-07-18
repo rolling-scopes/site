@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getActualData } from './getActualDataList';
+import { getActualData } from './getActualData';
 import { Course } from '@/app/types';
 import { isCourse } from '@/entities/courses/helpers/is-course';
 import { EventCardProps } from '@/entities/events';
