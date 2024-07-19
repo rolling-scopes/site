@@ -25,8 +25,8 @@ const linkCustomVariants = cva('', {
       outlinedBig: cx('button', 'medium', 'outlined'),
       textLink: cx('textLink'),
     },
-    defaultVariants: { variant: 'textLink' },
   },
+  defaultVariants: { variant: 'textLink' },
 });
 
 export const LinkCustom = ({
