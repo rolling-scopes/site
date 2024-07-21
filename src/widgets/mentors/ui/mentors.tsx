@@ -13,10 +13,10 @@ export const Mentors = () => {
     <section className="mentors container" id="mentors-wanted">
       <div className="mentors content column-2">
         <div className="mentors-info">
-          <WidgetTitle size="large" mods="lines">
+          <WidgetTitle marginSize="medium" size="large" mods="lines">
             Mentors wanted!
           </WidgetTitle>
-          <Subtitle>
+          <Subtitle className="subtitle" marginSize="medium">
             The Rolling Scopes School is constantly looking for mentors from all over the world to
             teach everyone who wants to learn the JavaScript language and the world of Front-end.
             Over the past few years, over 1500+ people have successfully completed our six month

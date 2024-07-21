@@ -20,10 +20,6 @@
       width: 640px;
       text-align: left;
 
-      & .subtitle {
-        margin-top: 8px;
-      }
-
       & .social-media-container {
         @include media-tablet {
           display: grid;

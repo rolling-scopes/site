@@ -10,8 +10,8 @@ export const Hero = () => {
           <h1 className="title-main">The Rolling Scopes</h1>
 
           <div className="subtitle-container">
-            <Subtitle color="black">an international community of developers</Subtitle>
-            <Subtitle color="black">since 2013</Subtitle>
+            <Subtitle className="subtitle" color="black">an international community of developers</Subtitle>
+            <Subtitle className="subtitle" color="black">since 2013</Subtitle>
           </div>
         </div>
         <h2 className="description-title">Connecting people, growing together, having fun</h2>

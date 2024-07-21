@@ -34,10 +34,10 @@ export const Events = () => {
       <div className={cn(cx('events', 'content'), 'content')}>
         <section className={cx('info')}>
           <SectionLabel label="events & meetups" />
-          <WidgetTitle size="medium" mods="asterisk">
+          <WidgetTitle marginSize="medium" size="medium" mods="asterisk">
             Meet us at events
           </WidgetTitle>
-          <Subtitle>
+          <Subtitle marginSize="medium">
             For years we have been organizing meetups and conferences, where you can always learn
             something new, share your knowledge, discover new technologies, meet old and find new
             friends.

@@ -11,10 +11,10 @@ export const About = () => {
     <div className="about container" id="about">
       <div className="about content column-2">
         <div className="left">
-          <WidgetTitle size="medium" mods="asterisk">
+          <WidgetTitle marginSize="medium" size="medium" mods="asterisk">
             Who we are
           </WidgetTitle>
-          <Subtitle>
+          <Subtitle marginSize="medium">
             Our mission is to provide free education in intriguing subjects, connect people, and
             grow together.
           </Subtitle>

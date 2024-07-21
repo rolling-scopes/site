@@ -29,10 +29,10 @@ export const Contribute = () => (
     <div className="contribute content">
       <div className="general">
         <div className="info">
-          <WidgetTitle size="medium" mods="asterisk">
+          <WidgetTitle marginSize="medium" size="medium" mods="asterisk">
             How to Contribute
           </WidgetTitle>
-          <Subtitle>
+          <Subtitle marginSize="medium">
             Contributing to The Rolling Scopes is not only a great way to give back to the
             community, but it&apos;s also an excellent way to enhance your own knowledge.
           </Subtitle>

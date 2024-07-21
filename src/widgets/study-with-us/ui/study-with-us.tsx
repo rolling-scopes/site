@@ -15,10 +15,10 @@ export const StudyWithUs = () => (
       <div className="study">
         <div className="left">
           <SectionLabel label="education" />
-          <WidgetTitle size="medium" mods="asterisk">
+          <WidgetTitle marginSize="medium" size="medium" mods="asterisk">
             Study with RS School
           </WidgetTitle>
-          <Subtitle>
+          <Subtitle marginSize="medium">
             RS School is a free and community-based online education program conducted by The
             Rolling Scopes Community since 2013.
           </Subtitle>

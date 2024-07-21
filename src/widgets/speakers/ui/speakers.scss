@@ -26,10 +26,6 @@
       color: $color-black;
       text-align: left;
 
-      & .subtitle {
-        margin-top: 8px;
-      }
-
       & .name {
         @include media-tablet {
           font-size: 24px;

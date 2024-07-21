@@ -10,10 +10,10 @@ export const Speakers = () => (
   <div className="speakers container">
     <div className="speakers content">
       <div className="info">
-        <WidgetTitle size="large" mods="lines">
+        <WidgetTitle marginSize="small" size="large" mods="lines">
           Speakers wanted
         </WidgetTitle>
-        <Subtitle>
+        <Subtitle marginSize="small">
           If you want to give a talk or conduct a workshop, present your open source project or
           share a success story, the Rolling Scopes welcomes all kinds of talk proposals.
         </Subtitle>
