@@ -4,7 +4,7 @@
   line-height: 28px;
   letter-spacing: 0;
 
-  &.medium {
+  &.font-medium {
     font-size: 20px;
 
     @include media-tablet {
@@ -13,7 +13,7 @@
     }
   }
 
-  &.large {
+  &.font-large {
     font-size: 24px;
 
     @include media-tablet {
@@ -28,5 +28,13 @@
 
   &.black {
     color: $color-black;
+  }
+
+  &.margin-small {
+    margin-bottom: 8px;
+  }
+
+  &.margin-medium {
+    margin-bottom: 16px;
   }
 }

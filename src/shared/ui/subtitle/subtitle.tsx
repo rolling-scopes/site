@@ -10,28 +10,34 @@ export const cx = classNames.bind(styles);
 
 const subtitleVariants = cva(cx('subtitle'), {
   variants: {
-    size: {
-      medium: cx('medium'),
-      large: cx('large'),
+    fontSize: {
+      medium: cx('font-medium'),
+      large: cx('font-large'),
     },
     color: {
       gray: cx('gray'),
       black: cx('black'),
     },
+    marginSize: {
+      small: cx('margin-small'),
+      medium: cx('margin-medium'),
+    },
   },
   defaultVariants: {
-    size: 'medium',
+    fontSize: 'medium',
     color: 'gray',
+    marginSize: null,
   },
 });
 
-export const Subtitle = ({ children, size, color, ...props }: SubtitleProps) => {
+export const Subtitle = ({ children, fontSize, color, marginSize, ...props }: SubtitleProps) => {
   return (
     <h3
       {...props}
       className={subtitleVariants({
-        size,
+        fontSize,
         color,
+        marginSize,
         className: 'subtitle',
       })}
     >
