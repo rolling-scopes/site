@@ -14,9 +14,10 @@ describe('Speakers', () => {
   });
 
   it('renders both subtitles correctly', () => {
-    const subtitleElements = document.getElementsByClassName('subtitle');
+    render(<Speakers />);
+    const subtitleElements = screen.getAllByRole('heading', { level: 3 });
 
-    expect(subtitleElements.length).toBe(2);
+    expect(subtitleElements).toHaveLength(4);
   });
 
   it('renders the name correctly', () => {
