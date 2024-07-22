@@ -1,6 +1,8 @@
 import { useLoaderData } from 'react-router-dom';
 import { getCourseStatus } from './utils/get-course-status';
+import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
 import { Course } from '@/app/types';
+import { getCourseDate } from '@/shared/helpers/getCourseDate';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { useTitle } from '@/shared/hooks/use-title';
 import { ArrowIcon } from '@/shared/icons';
@@ -37,20 +39,21 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
 
   const { title, altTitle, language, mode, enroll, secondaryIcon, startDate } = course;
   const status = getCourseStatus(startDate);
+  const date = getCourseDate(startDate, COURSE_STALE_AFTER_DAYS);
 
   return (
     <main className={`container ${styles.container}`}>
       <div className={`content ${styles.content}`}>
         <Image className={styles.icon} src={secondaryIcon} alt={title} lazy="false" />
         <div className={styles.info}>
-          <SectionLabel label={status} />
+          <SectionLabel>{status}</SectionLabel>
           <WidgetTitle size="medium">{`${altTitle || title} Course`}</WidgetTitle>
           {type && (
             <Subtitle fontSize="large" color="black">
               {type}
             </Subtitle>
           )}
-          <DateLang startDate={startDate} language={language} mode={mode} type="main" />
+          <DateLang startDate={date} language={language} mode={mode} withMargin />
           <LinkCustom
             href={enroll}
             icon={<ArrowIcon />}

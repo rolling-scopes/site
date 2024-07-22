@@ -14,7 +14,7 @@ export const StudyWithUs = () => (
     <div className="school content">
       <div className="study">
         <div className="left">
-          <SectionLabel label="education" />
+          <SectionLabel>education</SectionLabel>
           <WidgetTitle marginSize="medium" size="medium" mods="asterisk">
             Study with RS School
           </WidgetTitle>

@@ -30,11 +30,13 @@ export const Trainers = ({ trainers, lang = 'en' }: TrainersProps) => {
   return (
     <section className="nodejs-trainer container">
       <div className="nodejs-trainer content gap">
-        <WidgetTitle size="medium" mods="lines">{title}</WidgetTitle>
+        <WidgetTitle size="medium" mods="lines">
+          {title}
+        </WidgetTitle>
         <div className="trainers-list">
-          {trainers.map(({ name, bio, photo, role }) => (
+          {trainers.map(({ name, bio, photo, role }, index) => (
             <TrainerCard
-              key={name}
+              key={index}
               name={name}
               role={role}
               bio={bio}

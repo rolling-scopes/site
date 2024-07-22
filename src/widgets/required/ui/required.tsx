@@ -40,9 +40,9 @@ export const Required = ({ courseName, marked1, marked2 }: RequiredProps) => {
           )}
           <div className="will-learn">
             {isWillLearnExist
-              ? willLearn.map((willLearn) => {
+              ? willLearn.map((willLearn, index) => {
                 return (
-                  <article key={willLearn.title}>
+                  <article key={index}>
                     <Subtitle>{willLearn.title}</Subtitle>
                     <Actions actions={willLearn.description} marked={marked2} />
                   </article>

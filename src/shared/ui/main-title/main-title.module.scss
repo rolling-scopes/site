@@ -1,11 +1,13 @@
 .title {
   font-size: 96px;
-  font-weight: 700;
+  font-weight: $font-weight-bold;
+  line-height: 125px;
   color: $color-black;
   text-align: left;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
 
   @include media-tablet {
     font-size: 60px;
+    line-height: 78px;
   }
 }

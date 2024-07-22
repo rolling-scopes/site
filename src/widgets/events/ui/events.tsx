@@ -33,7 +33,7 @@ export const Events = () => {
     <article id="events" className={cn(cx('events'), 'container')}>
       <div className={cn(cx('events', 'content'), 'content')}>
         <section className={cx('info')}>
-          <SectionLabel label="events & meetups" />
+          <SectionLabel>events & meetups</SectionLabel>
           <WidgetTitle marginSize="medium" size="medium" mods="asterisk">
             Meet us at events
           </WidgetTitle>
