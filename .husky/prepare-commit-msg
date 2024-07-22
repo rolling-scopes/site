@@ -13,7 +13,7 @@ then
 
   MODIFIED_MSG=$(echo "$COMMIT_MSG" | sed "s/^\(.*: \)\(.*\)/\1$BRANCH_NUMBER - \2/")
 
-  COMMIT_REGEX="^(feat|fix|refactor|docs|chore|test): [0-9]{1,5} - ([a-zA-Z]+ )"
+  COMMIT_REGEX="^(feat|fix|refactor|docs|chore|test): [0-9]{1,5} \-( [a-zA-Z-]+){2,}$"
 
   if ! echo "$MODIFIED_MSG" | grep -Eq "$COMMIT_REGEX";
   then
@@ -21,12 +21,23 @@ then
     echo "ERROR: Invalid commit message format. 😕"
     echo "-"
     echo "The commit message must have this format:"
-    echo "<commit type>: <what was done>"
+    echo "  - <commit type>: <what was done>"
+    echo "-"
     echo "Allowed commit types: feat, fix, refactor, docs, chore, test"
+    echo "-"
     echo "Example: feat: add login button"
     echo "-"
     exit 1
   fi
 
   echo "$MODIFIED_MSG" > "$COMMIT_MSG_FILE"
+  echo "-"
+  echo "-"
+  echo "-"
+  echo "The name of your commit has been changed to '$MODIFIED_MSG' according to the styleguide 😎"
+  echo "-"
+  echo "-"
+  echo "-" "precommit": "concurrently \"chmod +x .husky/pre-commit\" \"npx lint-staged\" \"npm:build\"",
 fi
+
+npm run precommit
