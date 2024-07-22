@@ -16,7 +16,7 @@ describe('Speakers', () => {
   it('renders both subtitles correctly', () => {
     const subtitleElements = screen.getAllByRole('heading', { level: 3 });
 
-    expect(subtitleElements).toHaveLength(4);
+    expect(subtitleElements).toHaveLength(2);
   });
 
   it('renders the name correctly', () => {
