@@ -14,7 +14,6 @@ describe('Speakers', () => {
   });
 
   it('renders both subtitles correctly', () => {
-    render(<Speakers />);
     const subtitleElements = screen.getAllByRole('heading', { level: 3 });
 
     expect(subtitleElements).toHaveLength(4);
