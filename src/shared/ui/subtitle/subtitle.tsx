@@ -11,11 +11,11 @@ export const cx = classNames.bind(styles);
 const subtitleVariants = cva(cx('subtitle'), {
   variants: {
     fontSize: {
-      medium: cx('font-medium'),
-      large: cx('font-large'),
+      medium: cx('medium'),
+      large: cx('large'),
     },
     color: {
-      gray: cx('gray'),
+      gray: cx('gray-600'),
       black: cx('black'),
     },
     marginSize: {
