@@ -8,8 +8,8 @@ export const Hero = () => {
       <div className="main content">
         <div className="title-container">
           <div className="subtitle-container">
-            <Subtitle className="subtitle" color="black">an international community of developers</Subtitle>
-            <Subtitle className="subtitle" color="black">since 2013</Subtitle>
+            <Subtitle className="subtitle" marginSize="medium" color="black">an international community of developers</Subtitle>
+            <Subtitle className="subtitle" marginSize="medium" color="black">since 2013</Subtitle>
           </div>
 
           <h1 className="title-main">The Rolling Scopes</h1>

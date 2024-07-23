@@ -23,10 +23,7 @@
   .title-container {
     display: flex;
     flex-direction: column;
-    gap: 4px;
-
     width: fit-content;
-
     text-align: left;
 
     .title-main {
@@ -67,23 +64,15 @@
     @include media-tablet {
       flex-direction: column;
       align-items: flex-start;
-
       font-size: 18px;
-      font-weight: $font-weight-regular;
       line-height: 23px;
     }
 
     font-family: Inter-Medium, Inter, sans-serif;
-    font-size: 20px;
-    font-weight: $font-weight-medium;
-    line-height: 26px;
-    color: $color-black;
-    letter-spacing: 0;
 
     &-container {
       @include media-tablet {
         flex-direction: column;
-        gap: 4px;
         align-items: flex-start;
       }
 
