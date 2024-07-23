@@ -5,6 +5,7 @@ import tsPlugin from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 import cssImportOrder from 'eslint-plugin-css-import-order';
 import importPlugin from 'eslint-plugin-import';
+import importNewlines from 'eslint-plugin-import-newlines';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
@@ -64,6 +65,7 @@ export default [
       'vitest': vitestPlugin,
       'css-import-order': cssImportOrder,
       'sort-exports': sortExports,
+      'import-newlines': importNewlines,
       '@stylistic': stylistic,
     },
     settings: {
@@ -87,6 +89,7 @@ export default [
 
       'boundaries/element-types': 'warn',
       'no-undef': 'off',
+      'curly': 'error',
       'no-restricted-exports': [
         'warn',
         { 'restrictDefaultExports':
@@ -104,6 +107,15 @@ export default [
       'react-refresh/only-export-components': [
         'off',
         { allowConstantExport: true },
+      ],
+
+      'import-newlines/enforce': [
+        'error',
+        {
+          'items': 5,
+          'max-len': 100,
+          'semi': true,
+        },
       ],
 
       'import/prefer-default-export': 'off',
