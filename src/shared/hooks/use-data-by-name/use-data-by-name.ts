@@ -18,7 +18,9 @@ export const useDataByName = <K extends keyof DataMap>(
 
         setData(fetchedData as DataMap[K]);
       } catch (error) {
-        if (error instanceof Error) setError(error);
+        if (error instanceof Error) {
+          setError(error);
+        }
       } finally {
         setLoading(false);
       }
