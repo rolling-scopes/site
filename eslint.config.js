@@ -258,13 +258,13 @@ export default [
       '@stylistic/max-len': [
         'error',
         {
-          'code': 120,
+          'code': 100,
           'tabWidth': 2,
-          'comments': 120,
-          'ignoreTrailingComments': true,
+          'ignoreComments': true,
           'ignoreUrls': true,
           'ignoreStrings': true,
           'ignoreTemplateLiterals': true,
+          "ignoreRegExpLiterals": true,
         },
       ],
     },
