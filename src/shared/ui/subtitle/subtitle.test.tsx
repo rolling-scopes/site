@@ -4,14 +4,14 @@ import { Subtitle } from './subtitle';
 
 describe('Subtitle component', () => {
   it('renders without crashing', () => {
-    render(<Subtitle text="Test Subtitle" />);
+    render(<Subtitle>Test Subtitle</Subtitle>);
     const subtitle = screen.getByText('Test Subtitle');
 
     expect(subtitle).toBeInTheDocument();
   });
 
   it('displays correct text', () => {
-    render(<Subtitle text="Another Test Subtitle" />);
+    render(<Subtitle>Another Test Subtitle</Subtitle>);
     const text = screen.getByText('Another Test Subtitle');
 
     expect(text).toBeInTheDocument();

@@ -1,3 +1,5 @@
+import { Subtitle } from '@/shared/ui/subtitle';
+
 import './hero.scss';
 
 export const Hero = () => {
@@ -6,8 +8,8 @@ export const Hero = () => {
       <div className="main content">
         <div className="title-container">
           <div className="subtitle-container">
-            <h2 className="subtitle">an international community of developers</h2>
-            <h2 className="subtitle">since 2013</h2>
+            <Subtitle className="subtitle" marginSize="medium" color="black">an international community of developers</Subtitle>
+            <Subtitle className="subtitle" marginSize="medium" color="black">since 2013</Subtitle>
           </div>
 
           <h1 className="title-main">The Rolling Scopes</h1>

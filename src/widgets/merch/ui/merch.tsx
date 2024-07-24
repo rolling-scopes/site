@@ -18,8 +18,8 @@ export const Merch = () => (
     <div className={cx('content', 'merch', 'column-2')}>
       <div className={cx('info')}>
         <SectionLabel>merch</SectionLabel>
-        <WidgetTitle size="medium" mods="asterisk">RS merch</WidgetTitle>
-        <Subtitle text="Are you an RS sloth fan and looking for RS merch?" />
+        <WidgetTitle marginSize="medium" size="medium" mods="asterisk">RS merch</WidgetTitle>
+        <Subtitle marginSize="medium">Are you an RS sloth fan and looking for RS merch?</Subtitle>
         <Paragraph>
           The wait is almost over as we&apos;re gearing up for the catalog of free web and print
           assets where you will find all merch collections and can print your own Rolling Scopes

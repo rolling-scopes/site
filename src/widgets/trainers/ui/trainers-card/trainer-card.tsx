@@ -1,7 +1,8 @@
 import { Trainer } from '../../trainers.types';
 import Image from '@/shared/ui/image';
+import { Subtitle } from '@/shared/ui/subtitle';
 
-interface TrainerProps extends Trainer { }
+interface TrainerProps extends Trainer {}
 
 export const TrainerCard = ({ name, bio, role, photo }: TrainerProps) => {
   return (
@@ -11,7 +12,7 @@ export const TrainerCard = ({ name, bio, role, photo }: TrainerProps) => {
       </div>
       <div className="right">
         <h2 className="card-title">{name}</h2>
-        <h3 className="card-subtitle">{role}</h3>
+        <Subtitle>{role}</Subtitle>
         <p className="card-content">{bio}</p>
       </div>
     </div>

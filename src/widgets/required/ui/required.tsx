@@ -29,14 +29,12 @@ export const Required = ({ courseName, marked1, marked2 }: RequiredProps) => {
   return (
     <section className="required container">
       <div className="required content info-wrapper">
-        <WidgetTitle size="medium" mods="asterisk">
-          {title}
-        </WidgetTitle>
+        <WidgetTitle marginSize="medium" size="medium" mods="asterisk">{title}</WidgetTitle>
 
         <div className="column-2">
           {isKnowBeforeExist && (
             <article>
-              <Subtitle text={knowBefore.title} />
+              <Subtitle>{knowBefore.title}</Subtitle>
               <Actions actions={knowBefore.description} marked={marked1} />
             </article>
           )}
@@ -45,7 +43,7 @@ export const Required = ({ courseName, marked1, marked2 }: RequiredProps) => {
               ? willLearn.map((willLearn, index) => {
                 return (
                   <article key={index}>
-                    <Subtitle text={willLearn.title} />
+                    <Subtitle>{willLearn.title}</Subtitle>
                     <Actions actions={willLearn.description} marked={marked2} />
                   </article>
                 );
