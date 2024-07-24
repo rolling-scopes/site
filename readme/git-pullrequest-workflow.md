@@ -39,7 +39,7 @@ Please note that at RS School, we strive to follow the [Conventional Commits 1.0
 
 ## Pull Requests
 
-When you finish your work in a branch, make a pull request against the main branch. While you are editing your pull request, it will be named after your branch. After opening the pull request, it will be automatically renamed according to the template.
+When you finish your work in a branch, make a pull request against the main branch. Initially, the pull request will be named after your branch. However, be aware that once the pull request is opened, an automatic script will rename it according to a predefined template, overwriting the title you initially provided.
 
 <issue number>-<type of work>: <Title>
 
