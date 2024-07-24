@@ -24,6 +24,7 @@ then
     echo "  - <commit type>: <what was done>"
     echo "-"
     echo "Allowed commit types: feat, fix, refactor, docs, chore, test"
+    echo "Allowed characters in commit description: [a-zA-Z_'&:.-]"
     echo "-"
     echo "Example: feat: add login button"
     echo "-"
