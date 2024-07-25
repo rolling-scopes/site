@@ -1,4 +1,11 @@
-import { angularPath, awsDevPath, courses, coursesPath, jsPath, jsPathRu } from '../data';
+import {
+  angularPath,
+  awsDevPath,
+  courses,
+  coursesPath,
+  jsPath,
+  jsPathRu,
+} from '../data';
 import { type DataMap } from '../data';
 
 const dataProviders: DataMap = {

@@ -6,8 +6,9 @@ const convertToWebp = (src: string) => {
     || srcLowCase.includes('base64')
     || srcLowCase.endsWith('.svg')
     || srcLowCase.endsWith('.webp')
-  )
+  ) {
     return src;
+  }
   return `${src.slice(0, src.lastIndexOf('.'))}.webp`;
 };
 
