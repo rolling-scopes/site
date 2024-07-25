@@ -21,7 +21,9 @@ export const getActualData: GetActualDataType = ({
 }) => {
   let dataWithTBD = mapStaleAsTBD(data, staleAfter);
 
-  if (filterStale) dataWithTBD = filterStaleData(dataWithTBD);
+  if (filterStale) {
+    dataWithTBD = filterStaleData(dataWithTBD);
+  }
 
   return sortData(dataWithTBD);
 };
