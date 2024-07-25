@@ -1,1 +1,30 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+
+BRANCH_REGEX="^(main|develop|((feat|fix|refactor|docs|chore|test)\/\d{1,5}-[a-zA-Z-]{2,}))$"
+
+if ! echo "$BRANCH_NAME" | grep -Eq "$BRANCH_REGEX";
+then
+  echo "-"
+  echo "Error: Branch name '$BRANCH_NAME' does not match the required pattern."
+  echo "-"
+  echo "Allowed patterns are:"
+  echo "  - main"
+  echo "  - develop"
+  echo "  - feat/<number>-<description>"
+  echo "  - fix/<number>-<description>"
+  echo "  - refactor/<number>-<description>"
+  echo "  - docs/<number>-<description>"
+  echo "  - chore/<number>-<description>"
+  echo "  - test/<number>-<description>"
+  echo "-"
+  exit 1
+fi
+
+echo "-"
+echo "Your branch name is OK 😎"
+echo "-"
+
 npm run test

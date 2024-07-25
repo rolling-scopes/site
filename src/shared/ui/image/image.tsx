@@ -17,6 +17,8 @@ const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
   const decoding: DecodingAttr = isLazy ? 'async' : 'auto';
   const srcAttr = IS_DEV ? src : srcWebp;
 
+  const isImageSvg = src ? src.toLowerCase().endsWith('.svg') || src.toLowerCase().includes('data:image/svg') : false;
+
   const handleError = () => {
     // fallback to basic src if there are no responsive sizes for an image
     setSrcSet(undefined);
@@ -28,8 +30,8 @@ const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
       // ⚠️ Firefox and Safari wants the loading attribute to be BEFORE the src, in order lazy loading to work
       // see https://github.com/facebook/react/issues/25883#issuecomment-1410060269
       loading={loading}
-      srcSet={srcSet}
-      sizes={sizes}
+      srcSet={isImageSvg ? undefined : srcSet}
+      sizes={isImageSvg ? undefined : sizes}
       decoding={decoding}
       // FIXME: remove this line when fetchPriority prop will be fixed
       // see https://github.com/facebook/react/issues/27233#issuecomment-2035176576
@@ -39,7 +41,7 @@ const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
       src={srcAttr}
       alt={alt}
       draggable="false"
-      onError={handleError}
+      onError={isImageSvg ? undefined : handleError}
       {...props}
     />
   );
