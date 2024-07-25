@@ -8,7 +8,9 @@ export interface StagesProps {
 }
 
 export const Stages = ({ stages, marked }: StagesProps) => {
-  if (stages === null || stages.length === 0) return null;
+  if (stages === null || stages.length === 0) {
+    return null;
+  }
 
   return (
     <div className="stages">
