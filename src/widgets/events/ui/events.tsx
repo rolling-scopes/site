@@ -17,8 +17,8 @@ const cx = classNames.bind(styles);
 
 const displayedCardsQuantity = 2;
 
-const actualEvents = getActualData({
-  data: events as EventCardProps[],
+const actualEvents: EventCardProps[] = getActualData({
+  data: events,
   staleAfter: 3,
 });
 
