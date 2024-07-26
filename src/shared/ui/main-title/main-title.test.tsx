@@ -4,8 +4,8 @@ import { MainTitle, cx } from './main-title';
 
 describe('MainTitle component', () => {
   it('renders without crashing', () => {
-    render(<MainTitle>TestTitle</MainTitle>);
-    const title = screen.getByText('TestTitle');
+    render(<MainTitle />);
+    const title = screen.getByTestId('main-title');
 
     expect(title).toBeInTheDocument();
   });
@@ -21,7 +21,7 @@ describe('MainTitle component', () => {
     render(<MainTitle />);
     const element = screen.getByRole('heading', { level: 1 });
 
-    expect(element).toHaveClass(cx('title'));
+    expect(element).toHaveClass(cx('main-title'));
   });
 
   it('renders children correctly', () => {
