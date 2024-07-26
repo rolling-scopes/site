@@ -7,7 +7,14 @@ describe('MainTitle component', () => {
     render(<MainTitle />);
     const title = screen.getByTestId('main-title');
 
-    expect(title).toBeInTheDocument();
+    expect(title).toBeVisible();
+  });
+
+  it('displays correct text', () => {
+    render(<MainTitle>Test Title</MainTitle>);
+    const title = screen.getByText('Test Title');
+
+    expect(title).toBeVisible();
   });
 
   it('displays h1 tag', () => {
