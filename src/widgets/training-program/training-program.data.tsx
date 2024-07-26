@@ -8,7 +8,7 @@ import jsImg from '@/shared/assets/rs-slope-js.webp';
 import nodejsImg from '@/shared/assets/rs-slope-nodejs.webp';
 import reactEnImg from '@/shared/assets/rs-slope-react-en.webp';
 import reactRuImg from '@/shared/assets/rs-slope-react-ru.webp';
-import { Actions } from '@/shared/ui/actions/actions';
+import { List } from '@/shared/ui/list/list';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
 
@@ -51,7 +51,7 @@ export const contentMap: ContentMap = {
         and confidently apply your skills in real-world projects by the end of the course.
       </Paragraph>,
       <Subtitle key="aws cloud dev 03" text="Course highlights:" />,
-      <Actions
+      <List
         key="aws cloud dev 04"
         actions={[
           'Build a single-page application (SPA) using AWS S3 and CloudFront',
@@ -99,7 +99,7 @@ export const contentMap: ContentMap = {
         The course consists of weekly assignments that you can complete at your own pace, followed
         by a test that will help you evaluate your understanding of the materials
       </Paragraph>,
-      <Actions
+      <List
         key="node.js 03"
         actions={[
           'Node.js basics',
@@ -242,7 +242,7 @@ export const contentMap: ContentMap = {
         RS School students who have completed RS School Stage #2 and new students with strong
         CoreJS/TS/Frontend skills:
       </Paragraph>,
-      <Actions
+      <List
         key="react 02"
         actions={[
           'JavaScript',

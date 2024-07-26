@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import { TextWithLink } from '../text-with-link';
 import { Description } from '@/widgets/required/required.types';
 
-import styles from './actions.module.scss';
+import styles from './list.module.scss';
 
 export const cx = classNames.bind(styles);
 
@@ -12,7 +12,7 @@ interface ActionsProps {
   marked?: boolean;
 }
 
-export const Actions = ({ actions, marked = false }: ActionsProps) => {
+export const List = ({ actions, marked = false }: ActionsProps) => {
   return (
     <ul className={cx('stage-actions')}>
       {actions.map((action) => {
