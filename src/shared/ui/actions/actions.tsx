@@ -1,8 +1,11 @@
 // todo delete TextWithLink
+import classNames from 'classnames/bind';
 import { TextWithLink } from '../text-with-link';
 import { Description } from '@/widgets/required/required.types';
 
-import './actions.scss';
+import styles from './actions.module.scss';
+
+export const cx = classNames.bind(styles);
 
 interface ActionsProps {
   actions: Description;
@@ -11,7 +14,7 @@ interface ActionsProps {
 
 export const Actions = ({ actions, marked = false }: ActionsProps) => {
   return (
-    <ul className="stage-actions">
+    <ul className={cx('stage-actions')}>
       {actions.map((action) => {
         const isLink = typeof action !== 'string';
         const itemClassName = isLink || marked ? 'marked' : undefined;
