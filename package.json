@@ -17,7 +17,7 @@
     "test:playWright": "npx playwright test",
     "test:playWrightWithUpdate": "npx playwright test --update-snapshots",
     "coverage": "vitest run --coverage",
-    "precommit": "concurrently \"npx lint-staged\" \"npm:build\"",
+    "precommit": "npx lint-staged && npm run build",
     "prepare": "husky"
   },
   "dependencies": {
