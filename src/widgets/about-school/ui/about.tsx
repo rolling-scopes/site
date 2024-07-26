@@ -10,7 +10,7 @@ export const About = () => {
       <div className="rs-about content">
         <div className="column-2">
           <div className="info">
-            <WidgetTitle size="medium" mods="asterisk">About RS School</WidgetTitle>
+            <WidgetTitle mods="asterisk">About RS School</WidgetTitle>
             <Subtitle text="No matter your age, professional employment, or place of residence." />
             <Paragraph>
               RS School offers a unique learning experience as a free, community-based online

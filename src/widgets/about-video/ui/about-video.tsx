@@ -13,7 +13,7 @@ export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
   return (
     <div className="about-video container">
       <div className="about-video content">
-        <WidgetTitle size="medium" mods="lines">{localizedContent[lang].title}</WidgetTitle>
+        <WidgetTitle mods="lines">{localizedContent[lang].title}</WidgetTitle>
         <div className="video-wrapper">
           <div className="video-container">
             <iframe

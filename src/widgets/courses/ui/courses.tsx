@@ -32,7 +32,7 @@ export const Courses = () => {
   return (
     <section className="rs-courses container" id="upcoming-courses">
       <div className="rs-courses content">
-        <WidgetTitle size="medium">All courses</WidgetTitle>
+        <WidgetTitle>All courses</WidgetTitle>
         <div className="rs-courses-wrapper" data-testid="courses-fancy">
           {sortedCourses.map((course) => {
             return <CourseCard key={course.id} {...course} />;
