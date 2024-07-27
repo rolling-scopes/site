@@ -40,3 +40,5 @@ then
   echo "-"
   echo "-" "precommit": "concurrently \"chmod +x .husky/pre-commit\" \"npx lint-staged\" \"npm:build\"",
 fi
+
+npm run build
