@@ -20,13 +20,13 @@ const logoVariants = cva(cx('logo'), {
   defaultVariants: { type: 'default' },
 });
 
-export const Logo = ({ type, ...props }: LogoProps) => {
+export const Logo = ({ type = 'default' }: LogoProps) => {
   return (
-    <div className={logoVariants({ type })} {...props} data-testid="logo">
+    <figure className={logoVariants({ type })} data-testid={`logo-${type}`}>
       <Image
         src={logo}
-        alt="logo"
+        alt="RSS-logo"
       />
-    </div>
+    </figure>
   );
 };
