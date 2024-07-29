@@ -38,6 +38,7 @@ then
   echo "The name of your commit has been changed to '$MODIFIED_MSG' according to the styleguide 😎"
   echo "-"
   echo "-"
+  echo "-"
 fi
 
 npm run build
