@@ -12,6 +12,11 @@
     }
 
     & .partners {
+      @include media-tablet {
+        row-gap: 16px;
+        padding: 16px 0;
+      }
+
       display: flex;
       flex-flow: row wrap;
       align-items: center;
@@ -22,20 +27,15 @@
       max-width: 500px;
       padding: 16px;
 
-      @include media-tablet {
-        row-gap: 16px;
-        padding: 16px 0;
-      }
-
       .partner-logo-container {
+        @include media-tablet {
+          flex-basis: 50%;
+        }
+
         display: flex;
         flex-basis: 20%;
         align-items: center;
         justify-content: center;
-
-        @include media-tablet {
-          flex-basis: 50%;
-        }
       }
     }
   }
