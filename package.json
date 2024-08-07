@@ -17,19 +17,19 @@
     "test:playWright": "npx playwright test",
     "test:playWrightWithUpdate": "npx playwright test --update-snapshots",
     "coverage": "vitest run --coverage",
-    "precommit": "concurrently \"npx lint-staged\" \"npm:build\"",
+    "precommit": "npx lint-staged",
     "prepare": "husky"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
-    "dayjs": "^1.11.11",
+    "dayjs": "^1.11.12",
     "nextjs-toploader": "^1.6.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-double-marquee": "^1.1.0",
     "react-responsive-carousel": "^3.2.23",
-    "react-router-dom": "^6.24.1"
+    "react-router-dom": "^6.26.0"
   },
   "devDependencies": {
     "@feature-sliced/eslint-config": "^0.1.1",
