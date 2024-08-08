@@ -13,8 +13,8 @@ const sectionLabelVariants = cva(cx('label'));
 
 export const SectionLabel = ({ children, className, ...props }: SectionLabelProps) => {
   return (
-    <h4 {...props} className={sectionLabelVariants({ className })}>
+    <p {...props} className={sectionLabelVariants({ className })}>
       {children}
-    </h4>
+    </p>
   );
 };
