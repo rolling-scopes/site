@@ -4,7 +4,7 @@ import { MAX_COURSE_COUNT } from '../model/constants';
 import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/app/const';
 import { courses } from '@/app/services/data';
 import { Course } from '@/app/types';
-import { getActualDataList } from '@/shared/helpers/getActualDataList';
+import { getActualData } from '@/shared/helpers/getActualData';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { ArrowIcon, RsBanner } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -18,11 +18,11 @@ export const Courses = () => {
   const size = useWindowSize();
   const laptopScreenBreakPoint = 1440;
   const tabletScreenBreakPoint = 810;
-  const coursesData = getActualDataList({
-    dataList: courses,
-    actualDelayInDays: COURSE_STALE_AFTER_DAYS,
-    filtered: true,
-  }) as Course[];
+  const coursesData: Course[] = getActualData({
+    data: courses,
+    staleAfter: COURSE_STALE_AFTER_DAYS,
+    filterStale: true,
+  });
 
   let linkLabel = 'More details';
 

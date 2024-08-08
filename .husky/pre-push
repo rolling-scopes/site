@@ -3,7 +3,7 @@
 
 BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
 
-BRANCH_REGEX="^(main|develop|((feat|fix|refactor|docs|chore|test)\/\d{1,5}-[a-zA-Z-]{2,}))$"
+BRANCH_REGEX="^(main|develop)|((feat|fix|refactor|docs|chore|test)\/[0-9]{3,}-[a-zA-Z-]{2,})$"
 
 if ! echo "$BRANCH_NAME" | grep -Eq "$BRANCH_REGEX";
 then
