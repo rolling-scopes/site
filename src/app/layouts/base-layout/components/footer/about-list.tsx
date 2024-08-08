@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ROUTES } from '@/app/const';
-import { LogoWrapper } from '@/shared/ui/logo-wrapper';
+import { Logo } from '@/shared/ui/logo';
 
 const aboutList = [
   {
@@ -25,7 +25,7 @@ export const AboutList = () => {
   return (
     <div className="about-list">
       <Link to={ROUTES.HOME}>
-        <LogoWrapper type="footer" />
+        <Logo type="with-border" />
       </Link>
       <ul className="about-links">
         {aboutList.map(({ title, to }) => (

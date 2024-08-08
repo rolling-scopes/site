@@ -10,7 +10,6 @@ export { InstagramIcon } from './instagram';
 export { JavascriptIcon } from './javascript-icon';
 export { JetBrainsLogo } from './jetbrains';
 export { LinkedInIcon } from './linkedIn';
-export { Logo } from './logo';
 export { NodeJsIcon } from './nodejs-icon';
 export { OpenSourcePhilosophyIcon } from './open-source-philosophy-icon';
 export { OpenToEveryoneIcon } from './open-to-everyone-icon';

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ROUTES } from '@/app/const';
-import { LogoWrapper } from '@/shared/ui/logo-wrapper';
+import { Logo } from '@/shared/ui/logo';
 import { SchoolMenu } from '@/widgets/school-menu';
 
 import './mobile-view.scss';
@@ -15,11 +15,12 @@ const Divider = ({ type }: MobileViewProps) => (
 
 export const MobileView = ({ type }: MobileViewProps) => {
   const color = type === 'header' ? 'dark' : 'light';
+  const logoView = type === 'header' ? 'default' : 'with-border';
 
   return (
     <div className="mobile-view" data-testid="mobile-view">
       <Link to={ROUTES.HOME}>
-        <LogoWrapper type={type} />
+        <Logo type={logoView} />
       </Link>
 
       <Link to={`/${ROUTES.COMMUNITY}/#about`} className={`main-link ${color}`}>

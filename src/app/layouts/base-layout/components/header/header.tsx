@@ -5,7 +5,7 @@ import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
 import { ROUTES } from '@/app/const';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
-import { LogoWrapper } from '@/shared/ui/logo-wrapper';
+import { Logo } from '@/shared/ui/logo';
 import { MobileView } from '@/widgets/mobile-view';
 import { SchoolMenu } from '@/widgets/school-menu';
 
@@ -72,7 +72,7 @@ export const Header = () => {
     <nav className={cx('navbar', color)} data-testid="navigation">
       <section className={cx('navbar-content')}>
         <Link to="/" onClick={() => window.scrollTo({ top: 0 })}>
-          <LogoWrapper type="header" />
+          <Logo />
         </Link>
 
         {isMobile && (
