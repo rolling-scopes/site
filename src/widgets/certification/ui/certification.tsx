@@ -44,7 +44,7 @@ export const Certification = ({ courseName }: RequiredProps) => {
   return (
     <section className={cx('certification', 'container')}>
       <article className={cx('certification', 'content', 'info-wrapper')}>
-        <WidgetTitle size="medium" mods="asterisk">{title}</WidgetTitle>
+        <WidgetTitle mods="asterisk">{title}</WidgetTitle>
         <div className={cx('paragraphs-wrapper')}>
           <Paragraph>{firstParagraph}</Paragraph>
           {secondParagraph && <Paragraph>{secondParagraph}</Paragraph>}

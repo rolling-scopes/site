@@ -8,10 +8,18 @@ export const Partnered = () => (
     <div className="partnered content">
       <WidgetTitle size="small">Partnered with</WidgetTitle>
       <div className="partners">
-        <EpamLogo />
-        <JetBrainsLogo />
-        <AwsLogo />
-        <GithubLogo />
+        <div className="partner-logo-container">
+          <EpamLogo />
+        </div>
+        <div className="partner-logo-container">
+          <JetBrainsLogo />
+        </div>
+        <div className="partner-logo-container">
+          <AwsLogo />
+        </div>
+        <div className="partner-logo-container">
+          <GithubLogo />
+        </div>
       </div>
     </div>
   </div>

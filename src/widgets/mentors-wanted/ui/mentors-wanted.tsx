@@ -16,7 +16,7 @@ export const MentorsWanted = () => {
     <section className={cx('mentors-wanted', 'container')}>
       <article className={classNames('content', cx('content'))}>
         <div className={cx('content-left')}>
-          <WidgetTitle size="medium" mods="lines">Mentors Wanted!</WidgetTitle>
+          <WidgetTitle mods="lines">Mentors Wanted!</WidgetTitle>
           <Paragraph>
             If&nbsp;you are interested in mentoring our students, please go through the
             {' '}

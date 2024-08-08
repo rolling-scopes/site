@@ -29,7 +29,7 @@ export const Required = ({ courseName, marked1, marked2 }: RequiredProps) => {
   return (
     <section className="required container">
       <div className="required content info-wrapper">
-        <WidgetTitle size="medium" mods="asterisk">
+        <WidgetTitle mods="asterisk">
           {title}
         </WidgetTitle>
 
