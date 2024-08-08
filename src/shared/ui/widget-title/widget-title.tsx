@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 
 import styles from './widget-title.module.scss';
 
-type WidgetTitleProps = HTMLAttributes<HTMLHeadingElement>
+type WidgetTitleProps = Pick<HTMLAttributes<HTMLHeadingElement>, 'className' | 'children'>
   & VariantProps<typeof widgetTitleVariants>;
 
 export const cx = classNames.bind(styles);
