@@ -13,24 +13,30 @@
 
     & .partners {
       @include media-tablet {
-        flex-direction: column;
-        width: 100%;
-
-        & > img {
-          margin-top: 24px;
-        }
+        row-gap: 16px;
+        padding: 16px 0;
       }
 
-      overflow: hidden;
       display: flex;
-      flex-flow: row nowrap;
-      place-content: center space-between;
+      flex-flow: row wrap;
       align-items: center;
       align-self: center;
+      justify-content: space-between;
 
-      width: 500px;
-      height: min-content;
-      padding: 16px 16px 16px 16px;
+      width: 100%;
+      max-width: 500px;
+      padding: 16px;
+
+      .partner-logo-container {
+        @include media-tablet {
+          flex-basis: 50%;
+        }
+
+        display: flex;
+        flex-basis: 20%;
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 }
