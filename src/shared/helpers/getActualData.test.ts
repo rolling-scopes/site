@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getActualDataList } from './getActualDataList';
+import { getActualData } from './getActualData';
 import { Course } from '@/app/types';
 import { isCourse } from '@/entities/courses/helpers/is-course';
 import { EventCardProps } from '@/entities/events';
@@ -71,11 +71,11 @@ const eventsMock = [
   { date: nonStaleDayInPast },
 ] as unknown as EventCardProps[];
 
-describe('getActualDataList', () => {
+describe('getActualData', () => {
   it('can handle courses and filters stale by default', () => {
-    const data = getActualDataList({
-      dataList: coursesMock,
-      actualDelayInDays: staleAfterDays,
+    const data = getActualData({
+      data: coursesMock,
+      staleAfter: staleAfterDays,
     }).filter(isCourse);
 
     const noTBDinCourses = !data.some((course) => course.startDate === 'TBD');
@@ -84,9 +84,9 @@ describe('getActualDataList', () => {
   });
 
   it('can handle events and filters stale by default', () => {
-    const data = getActualDataList({
-      dataList: eventsMock,
-      actualDelayInDays: staleAfterDays,
+    const data = getActualData({
+      data: eventsMock,
+      staleAfter: staleAfterDays,
     });
 
     const noTBDinEvents = !data.some((event) => 'date' in event && event.date === 'TBD');
@@ -95,10 +95,10 @@ describe('getActualDataList', () => {
   });
 
   it('sorts by date ascending and puts TBD in end', () => {
-    const data = getActualDataList({
-      dataList: coursesMock,
-      actualDelayInDays: staleAfterDays,
-      filtered: false,
+    const data = getActualData({
+      data: coursesMock,
+      staleAfter: staleAfterDays,
+      filterStale: false,
     }).filter(isCourse);
 
     expect(data[0].startDate).toBe(nonStaleDayInPast);
