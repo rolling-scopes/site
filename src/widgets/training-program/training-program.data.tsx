@@ -53,7 +53,7 @@ export const contentMap: ContentMap = {
       <Subtitle key="aws cloud dev 03" text="Course highlights:" />,
       <List
         key="aws cloud dev 04"
-        actions={[
+        data={[
           'Build a single-page application (SPA) using AWS S3 and CloudFront',
           'Develop serverless APIs with AWS API Gateway and Lambda',
           'Integrate with databases and S3',
@@ -62,7 +62,7 @@ export const contentMap: ContentMap = {
           'Learn containerization with Docker and Elastic Beanstalk',
           'Implement backend-for-frontend using API Gateway',
         ]}
-        marked
+        type="marked"
       />,
     ],
     image: awsDevImg,
@@ -101,7 +101,7 @@ export const contentMap: ContentMap = {
       </Paragraph>,
       <List
         key="node.js 03"
-        actions={[
+        data={[
           'Node.js basics',
           'Network communication. HTTP & WebSockets',
           'Testing of Node.js application',
@@ -112,7 +112,7 @@ export const contentMap: ContentMap = {
           'Authentication & authorization, JWT',
           'Nest.js',
         ]}
-        marked
+        type="marked"
       />,
     ],
     image: nodejsImg,
@@ -244,7 +244,7 @@ export const contentMap: ContentMap = {
       </Paragraph>,
       <List
         key="react 02"
-        actions={[
+        data={[
           'JavaScript',
           'TypeScript',
           'Git, GitHub (clone, add, commit, push, pull, merge, rebase, working with Pull Request)',
@@ -253,7 +253,7 @@ export const contentMap: ContentMap = {
           'Chrome DevTools, Figma',
           'Understanding of the REST',
         ]}
-        marked
+        type="marked"
       />,
       <Subtitle
         key="react 03"

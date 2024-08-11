@@ -24,7 +24,7 @@ export const AngularTopics = () => {
     <section className={cx('angular-topics', 'container')}>
       <article className={cx('content', 'angular-topics-content')}>
         <WidgetTitle size="medium" mods="asterisk">Topics Covered:</WidgetTitle>
-        <List actions={topicsList} marked />
+        <List data={topicsList} type="marked" />
       </article>
     </section>
   );

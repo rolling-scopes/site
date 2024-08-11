@@ -12,7 +12,7 @@ interface RequiredProps {
   marked2?: boolean;
 }
 
-export const Required = ({ courseName, marked1, marked2 }: RequiredProps) => {
+export const Required = ({ courseName }: RequiredProps) => {
   const requiredKnowledge = courseDataMap[courseName];
 
   const { knowBefore, willLearn, title } = requiredKnowledge;
@@ -37,7 +37,7 @@ export const Required = ({ courseName, marked1, marked2 }: RequiredProps) => {
           {isKnowBeforeExist && (
             <article>
               <Subtitle text={knowBefore.title} />
-              <List actions={knowBefore.description} marked={marked1} />
+              <List data={knowBefore.description} type="marked" />
             </article>
           )}
           <div className="will-learn">
@@ -46,7 +46,7 @@ export const Required = ({ courseName, marked1, marked2 }: RequiredProps) => {
                 return (
                   <article key={index}>
                     <Subtitle text={willLearn.title} />
-                    <List actions={willLearn.description} marked={marked2} />
+                    <List data={willLearn.description} type="marked" />
                   </article>
                 );
               })
