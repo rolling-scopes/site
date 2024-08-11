@@ -6,7 +6,7 @@ import Image from '@/shared/ui/image';
 
 import styles from './logo.module.scss';
 
-type LogoProps = HTMLAttributes<HTMLElement> & VariantProps<typeof logoVariants>;
+type LogoProps = Pick<HTMLAttributes<HTMLElement>, 'className'> & VariantProps<typeof logoVariants>;
 
 export const cx = classNames.bind(styles);
 
@@ -20,9 +20,15 @@ const logoVariants = cva(cx('logo'), {
   defaultVariants: { type: 'default' },
 });
 
-export const Logo = ({ type = 'default' }: LogoProps) => {
+export const Logo = ({ type = 'default', className }: LogoProps) => {
   return (
-    <figure className={logoVariants({ type })} data-testid={`logo-${type}`}>
+    <figure
+      className={logoVariants({
+        type,
+        className,
+      })}
+      data-testid={`logo-${type}`}
+    >
       <Image
         src={logo}
         alt="RSS-logo"
