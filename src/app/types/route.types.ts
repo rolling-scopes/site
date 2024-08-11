@@ -1,4 +1,4 @@
-import { ROUTES } from '@/app/const';
+import { type ROUTES } from '@/app/const';
 
 export type Route = typeof ROUTES;
 

@@ -8,13 +8,13 @@ type MainTitleProps = HTMLAttributes<HTMLHeadingElement> & VariantProps<typeof m
 
 export const cx = classNames.bind(styles);
 
-const mainTitleVariants = cva(cx('title'));
+const mainTitleVariants = cva(cx('main-title'));
 
-export const MainTitle = ({ children, className, ...props }: MainTitleProps) => {
+export const MainTitle = ({ children, className }: MainTitleProps) => {
   return (
     <h1
-      {...props}
       className={mainTitleVariants({ className })}
+      data-testid="main-title"
     >
       {children}
     </h1>

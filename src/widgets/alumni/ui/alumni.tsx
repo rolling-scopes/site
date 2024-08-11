@@ -27,7 +27,7 @@ export const Alumni = () => {
   return (
     <article className="alumni container">
       <section className="alumni content">
-        <WidgetTitle size="medium" mods="asterisk">Our alumni</WidgetTitle>
+        <WidgetTitle mods="asterisk">Our alumni</WidgetTitle>
         <Paragraph>
           We are immensely proud of RS School alumni who build their successful careers in ambitious
           IT companies

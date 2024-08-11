@@ -25,7 +25,8 @@ describe('useTitle', () => {
 
     document.title = originalTitle;
 
-    const { rerender, unmount } = renderHook((title) => useTitle(title), { initialProps: newTitle });
+    const { rerender, unmount } = renderHook((title) =>
+      useTitle(title), { initialProps: newTitle });
 
     expect(document.title).toBe(newTitle);
 

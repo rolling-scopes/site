@@ -57,7 +57,7 @@ const convertCompressImageToWebp = async (imgName, quality) => {
       return convertedImgName;
     }
 
-    await rm(fullname, () => {});
+    rm(fullname, () => {});
     logConverted(imgName);
     return convertedImgName;
   } catch (e) {
@@ -79,13 +79,13 @@ const generateSizesForMultipleDevices = async (imgName) => {
 
   RESIZE_VALUES.map(async (size) => {
     const isImageAlreadySmall = imgWidth <= size;
-    if (isImageAlreadySmall) {
-      return;
-    }
-
     const outFIle = `${fullnameNoExtension}-${size}.webp`;
+
     try {
-      await sharpImg.resize(size).toFile(outFIle);
+      if (!isImageAlreadySmall) {
+        sharpImg.resize(size);
+      }
+      await sharpImg.toFile(outFIle);
       logVariant(size, imgName);
     } catch (e) {
       logError(fullname, e);
