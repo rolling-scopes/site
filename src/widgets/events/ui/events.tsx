@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import { events } from '../events.data';
 import { EventCard, EventCardProps } from '@/entities/events';
 import photo3 from '@/shared/assets/photo-3.webp';
-import { getActualDataList } from '@/shared/helpers/getActualDataList';
+import { getActualData } from '@/shared/helpers/getActualData';
 import Image from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
@@ -17,9 +17,9 @@ const cx = classNames.bind(styles);
 
 const displayedCardsQuantity = 2;
 
-const actualEvents = getActualDataList({
-  dataList: events as EventCardProps[],
-  actualDelayInDays: 3,
+const actualEvents: EventCardProps[] = getActualData({
+  data: events,
+  staleAfter: 3,
 });
 
 const nearestEvents = actualEvents.slice(0, displayedCardsQuantity);
@@ -34,7 +34,7 @@ export const Events = () => {
       <div className={cn(cx('events', 'content'), 'content')}>
         <section className={cx('info')}>
           <SectionLabel>events & meetups</SectionLabel>
-          <WidgetTitle size="medium" mods="asterisk">Meet us at events</WidgetTitle>
+          <WidgetTitle mods="asterisk">Meet us at events</WidgetTitle>
           <Subtitle text="For years we have been organizing meetups and conferences, where you can always learn something new, share your knowledge, discover new technologies, meet old and find new friends." />
           <Paragraph>
             During

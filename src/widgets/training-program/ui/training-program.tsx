@@ -33,7 +33,7 @@ export const TrainingProgram = ({ courseName, lang = 'en' }: TrainingProgramProp
     <section className="training-program container">
       <div className="training-program content column-2">
         <div className="left">
-          <WidgetTitle size="medium" mods="asterisk">{title}</WidgetTitle>
+          <WidgetTitle mods="asterisk">{title}</WidgetTitle>
 
           {content.map((component, index) => cloneElement(component, { key: index }))}
 
