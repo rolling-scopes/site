@@ -24,12 +24,6 @@
       color: $color-gray-600;
     }
 
-    & .description {
-      font-size: 18px;
-      line-height: 28px;
-      color: $color-gray-600;
-    }
-
     .requirements-info {
       @include media-laptop {
         flex-direction: column;

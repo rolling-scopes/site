@@ -1,6 +1,6 @@
 import { courseDataMap } from '../required.data';
 import type { CourseName } from '../required.types';
-import { List } from '@/shared/ui/list/list';
+import { List } from '@/shared/ui/list';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
@@ -37,7 +37,7 @@ export const Required = ({ courseName }: RequiredProps) => {
           {isKnowBeforeExist && (
             <article>
               <Subtitle text={knowBefore.title} />
-              <List data={knowBefore.description} type="marked" />
+              <List data={knowBefore.description} />
             </article>
           )}
           <div className="will-learn">
@@ -46,7 +46,7 @@ export const Required = ({ courseName }: RequiredProps) => {
                 return (
                   <article key={index}>
                     <Subtitle text={willLearn.title} />
-                    <List data={willLearn.description} type="marked" />
+                    <List data={willLearn.description} />
                   </article>
                 );
               })

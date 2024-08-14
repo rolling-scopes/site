@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { List } from '@/shared/ui/list/list';
+import { List } from '@/shared/ui/list';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './angular-topics.module.scss';
@@ -24,7 +24,7 @@ export const AngularTopics = () => {
     <section className={cx('angular-topics', 'container')}>
       <article className={cx('content', 'angular-topics-content')}>
         <WidgetTitle size="medium" mods="asterisk">Topics Covered:</WidgetTitle>
-        <List data={topicsList} type="marked" />
+        <List data={topicsList} />
       </article>
     </section>
   );
