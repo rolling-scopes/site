@@ -15,7 +15,7 @@ const Divider = ({ type }: MobileViewProps) => (
 
 export const MobileView = ({ type }: MobileViewProps) => {
   const color = type === 'header' ? 'dark' : 'light';
-  const logoView = type === 'header' ? 'default' : 'with-border';
+  const logoView = type === 'header' ? null : 'with-border';
 
   return (
     <div className="mobile-view" data-testid="mobile-view">

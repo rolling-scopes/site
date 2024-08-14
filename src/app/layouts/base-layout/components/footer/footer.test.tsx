@@ -16,7 +16,7 @@ describe('Footer', () => {
 
   it('displays logo', () => {
     const { getByTestId } = renderWithRouter(<Footer />);
-    const logoElement = getByTestId('logo-with-border');
+    const logoElement = getByTestId('logo');
 
     expect(logoElement).toBeInTheDocument();
   });

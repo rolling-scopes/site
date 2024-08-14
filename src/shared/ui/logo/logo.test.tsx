@@ -10,16 +10,16 @@ describe('Logo component', () => {
     expect(altLogoText).toBeInTheDocument();
   });
 
-  it('displays correctly when default type', () => {
+  it('displays correctly when not have type', () => {
     render(<Logo />);
-    const element = screen.getByTestId('logo-default');
+    const element = screen.getByTestId('logo');
 
     expect(element).not.toHaveClass(cx('with-border'));
   });
 
   it('displays correctly when type=with-border', () => {
     render(<Logo type="with-border" />);
-    const element = screen.getByTestId('logo-with-border');
+    const element = screen.getByTestId('logo');
 
     expect(element).toHaveClass(cx('with-border'));
   });

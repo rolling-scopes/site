@@ -47,7 +47,7 @@ describe('Header', () => {
     });
 
     it('renders RsLogo', () => {
-      const logoElement = screen.getByTestId('logo-default');
+      const logoElement = screen.getByTestId('logo');
 
       expect(logoElement).toBeInTheDocument();
     });
@@ -85,7 +85,7 @@ describe('Header', () => {
     });
 
     it('renders RsLogo in mobile view', async () => {
-      const logoElement = screen.getAllByTestId('logo-default');
+      const logoElement = screen.getAllByTestId('logo');
 
       expect(logoElement).toHaveLength(2);
     });

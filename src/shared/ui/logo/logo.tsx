@@ -10,29 +10,21 @@ type LogoProps = Pick<HTMLAttributes<HTMLElement>, 'className'> & VariantProps<t
 
 export const cx = classNames.bind(styles);
 
-const logoVariants = cva(cx('logo'), {
-  variants: {
-    type: {
-      default: cx(''),
-      'with-border': cx('with-border'),
-    },
-  },
-  defaultVariants: { type: 'default' },
-});
+const logoVariants = cva(cx('logo'), { variants: { type: { 'with-border': cx('with-border') } } });
 
-export const Logo = ({ type = 'default', className }: LogoProps) => {
+export const Logo = ({ type, className }: LogoProps) => {
   return (
-    <figure
+    <div
       className={logoVariants({
         type,
         className,
       })}
-      data-testid={`logo-${type}`}
+      data-testid="logo"
     >
       <Image
         src={logo}
         alt="RSS-logo"
       />
-    </figure>
+    </div>
   );
 };
