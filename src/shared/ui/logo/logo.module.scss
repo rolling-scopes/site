@@ -1,4 +1,4 @@
-.logo-wrapper {
+.logo {
   @include media-tablet {
     max-width: 40px;
     max-height: 40px;
@@ -10,10 +10,12 @@
   img {
     width: 100%;
     height: 100%;
+  }
+}
 
-    &.white-logo {
-      border: 2px solid white;
-      border-radius: 50%;
-    }
+.with-border {
+  img {
+    border: 2px solid $color-white;
+    border-radius: 50%;
   }
 }
