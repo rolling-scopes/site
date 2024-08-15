@@ -1,3 +1,1 @@
-export { List } from './list';
-export { type ListData } from './list';
-export { type ListProps } from './list';
+export { List, type ListData, type ListProps } from './list';

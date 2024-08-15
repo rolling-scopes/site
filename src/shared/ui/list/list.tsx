@@ -15,18 +15,18 @@ export type ListData = (string | LinkList)[] | [] | undefined;
 export const cx = classNames.bind(styles);
 
 export const List = ({ data, marked = true }: ListProps) => {
-  if (!data || !data.length) {
+  if (!data?.length) {
     return <ul data-testid="list"></ul>;
   }
 
   return (
     <ul
-      className={cx('list', { marked: marked === true })}
+      className={cx('list', { marked })}
       data-testid="list"
     >
       {data.map((listItem) => {
         const isLink = typeof listItem !== 'string';
-        const itemClassName = cx({ marked: marked === true });
+        const itemClassName = cx('list-item');
         const keyListItem = isLink ? listItem[0].id : listItem;
 
         return (
@@ -34,7 +34,7 @@ export const List = ({ data, marked = true }: ListProps) => {
             {
               isLink
                 ? <TextWithLink data={listItem} />
-                : <>{listItem}</>
+                : listItem
             }
           </li>
         );

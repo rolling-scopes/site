@@ -67,11 +67,9 @@ describe('StudyPath Component', () => {
         });
       }
 
-      if (list) {
-        list.forEach((listItem) => {
-          expect(screen.getByText(listItem)).toBeInTheDocument();
-        });
-      }
+      list?.forEach((listItem) => {
+        expect(screen.getByText(listItem)).toBeInTheDocument();
+      });
     });
   });
 });

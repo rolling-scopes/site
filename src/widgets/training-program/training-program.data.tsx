@@ -195,34 +195,41 @@ export const contentMap: ContentMap = {
     content: [
       <Paragraph key="js / front-end pre-school ru 01">
         <span>Введение в RS School:</span>
-        <List data={['Знакомство со школой, профессией JS/Front-end разработчика и системой контроля версий Git.']} />
+        <List
+          data={['Знакомство со школой, профессией JS/Front-end разработчика и системой контроля версий Git.']}
+          marked={false}
+        />
       </Paragraph>,
       <Paragraph key="js / front-end pre-school ru 02">
         <span>Основы веб-разработки:</span>
-        <List data={[
-          'HTML и CSS: Основы, позиционирование с Flexbox и адаптивные макеты.',
-          'JavaScript: Основы, функции, объекты, массивы и работа с DOM.',
-          'Инструменты: Chrome Dev Tools, VS Code, Терминал и Figma.',
-        ]}
+        <List
+          data={[
+            'HTML и CSS: Основы, позиционирование с Flexbox и адаптивные макеты.',
+            'JavaScript: Основы, функции, объекты, массивы и работа с DOM.',
+            'Инструменты: Chrome Dev Tools, VS Code, Терминал и Figma.',
+          ]}
+          marked={false}
         />
       </Paragraph>,
       <Paragraph key="js / front-end pre-school ru 03">
         <span>Проектное обучение:</span>
-        <List data={[
-          'Проект CV: Markdown, HTML, CSS и Git.',
-          'Проект Library: Фиксированная и адаптивная вёрстка, добавление функционала.',
-          'CSS Mem Slider: Продвинутый проект по CSS.',
-          'Проекты JS-30: Аудиоплеер, галерея изображений и случайная игра.',
-        ]}
+        <List
+          data={[
+            'Проект CV: Markdown, HTML, CSS и Git.',
+            'Проект Library: Фиксированная и адаптивная вёрстка, добавление функционала.',
+            'CSS Mem Slider: Продвинутый проект по CSS.',
+            'Проекты JS-30: Аудиоплеер, галерея изображений и случайная игра.',
+          ]}
+          marked={false}
         />
       </Paragraph>,
       <Paragraph key="js / front-end pre-school ru 04">
         <span>Задачи Codewars:</span>
-        <List data={['Еженедельные задачи по алгоритмам и структурам данных.']} />
+        <List data={['Еженедельные задачи по алгоритмам и структурам данных.']} marked={false} />
       </Paragraph>,
       <Paragraph key="js / front-end pre-school ru 05">
         <span>Итоговая аттестация:</span>
-        <List data={['Кросс-чек проектов, тесты и ревью кода. Выдача сертификата.']} />
+        <List data={['Кросс-чек проектов, тесты и ревью кода. Выдача сертификата.']} marked={false} />
       </Paragraph>,
     ],
     image: jsImg,

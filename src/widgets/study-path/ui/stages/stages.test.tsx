@@ -38,11 +38,9 @@ describe('Stages Component', () => {
         });
       }
 
-      if (list && list.length) {
-        list.forEach((listItem) => {
-          expect(screen.getByText(listItem)).toBeInTheDocument();
-        });
-      }
+      list?.forEach((listItem) => {
+        expect(screen.getByText(listItem)).toBeInTheDocument();
+      });
     });
   });
 

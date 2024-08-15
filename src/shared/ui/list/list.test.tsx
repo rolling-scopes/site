@@ -33,7 +33,7 @@ describe('List Component', () => {
 
     const items = screen.getAllByTestId('list-item');
 
-    items.forEach((item) => {
+    items?.forEach((item) => {
       expect(item).toBeVisible();
     });
   });
@@ -50,10 +50,8 @@ describe('List Component', () => {
     render(<List data={data} marked={false} />);
     const items = screen.getAllByTestId('list-item');
 
-    if (items) {
-      items.forEach((listItem) => {
-        expect(listItem).not.toHaveClass(cx('marked'));
-      });
-    }
+    items?.forEach((listItem) => {
+      expect(listItem).not.toHaveClass(cx('marked'));
+    });
   });
 });
