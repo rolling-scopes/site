@@ -1,6 +1,9 @@
 import { ReactNode } from 'react';
+import classNames from 'classnames/bind';
 
-import './social-media.scss';
+import styles from './social-media.module.scss';
+
+export const cx = classNames.bind(styles);
 
 export type SocialMediaProps = {
   title: string;
