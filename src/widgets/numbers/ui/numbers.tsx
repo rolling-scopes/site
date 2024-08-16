@@ -26,7 +26,7 @@ export const Numbers = () => {
       <div className="numbers content">
         <div className="text-container">
           <div>
-            <WidgetTitle size="medium" mods="asterisk">The Rolling Scopes in numbers</WidgetTitle>
+            <WidgetTitle mods="asterisk">The Rolling Scopes in numbers</WidgetTitle>
             <Subtitle
               text="Everyone can discover our community, regardless of age, professional employment, or
             place of residence."

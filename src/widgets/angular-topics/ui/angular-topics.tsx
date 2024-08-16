@@ -23,7 +23,7 @@ export const AngularTopics = () => {
   return (
     <section className={cx('angular-topics', 'container')}>
       <article className={cx('content', 'angular-topics-content')}>
-        <WidgetTitle size="medium" mods="asterisk">Topics Covered:</WidgetTitle>
+        <WidgetTitle mods="asterisk">Topics Covered:</WidgetTitle>
         <Actions actions={topicsList} marked />
       </article>
     </section>

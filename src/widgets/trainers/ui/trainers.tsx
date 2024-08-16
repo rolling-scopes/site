@@ -30,7 +30,7 @@ export const Trainers = ({ trainers, lang = 'en' }: TrainersProps) => {
   return (
     <section className="nodejs-trainer container">
       <div className="nodejs-trainer content gap">
-        <WidgetTitle size="medium" mods="lines">
+        <WidgetTitle mods="lines">
           {title}
         </WidgetTitle>
         <div className="trainers-list">

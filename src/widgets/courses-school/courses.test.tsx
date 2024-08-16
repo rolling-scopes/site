@@ -1,5 +1,12 @@
 import { screen } from '@testing-library/react';
-import { Mock, beforeEach, describe, expect, it, vi } from 'vitest';
+import {
+  Mock,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi,
+} from 'vitest';
 import { Courses } from './ui/courses';
 import { ROUTES } from '@/app/const';
 

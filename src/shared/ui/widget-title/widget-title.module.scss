@@ -1,4 +1,4 @@
-.title {
+.widget-title {
   font-weight: $font-weight-medium;
   letter-spacing: -0.04em;
 
@@ -9,29 +9,34 @@
 }
 
 .small {
+  padding-bottom: 24px;
   font-size: 36px;
   line-height: 44px;
   letter-spacing: 0;
 }
 
 .medium {
-  font-size: 44px;
-  line-height: 52px;
-
   @include media-tablet {
+    padding-bottom: 16px;
     font-size: 36px;
     line-height: 44px;
   }
+
+  padding-bottom: 20px;
+  font-size: 44px;
+  line-height: 52px;
 }
 
 .large {
-  font-size: 52px;
-  line-height: 64px;
-
   @include media-tablet {
+    padding-bottom: 16px;
     font-size: 36px;
     line-height: 44px;
   }
+
+  padding-bottom: 24px;
+  font-size: 52px;
+  line-height: 64px;
 }
 
 .lines::before {

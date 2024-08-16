@@ -63,7 +63,7 @@ export const About = ({ courseName, type = 'en' }: AboutProps) => {
   return (
     <section className="course-about container">
       <div className="course-about content">
-        <WidgetTitle size="medium">{localizedContent[type].title}</WidgetTitle>
+        <WidgetTitle>{localizedContent[type].title}</WidgetTitle>
         {localizedContent[type].paragraph && (
           <Paragraph>{localizedContent[type].paragraph}</Paragraph>
         )}
