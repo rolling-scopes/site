@@ -36,7 +36,7 @@ export const CourseCard = ({
       <div className="rs-course-card__bottom">
         <DateLang startDate={startDate} language={language} mode={mode} />
         <div className="rs-course-card__right">
-          <LinkCustom href={detailsUrl} icon={<ArrowIcon size="16px" />} variant="roundedSmall">
+          <LinkCustom href={detailsUrl} icon={<ArrowIcon size="16px" />} variant="rounded">
             View details
           </LinkCustom>
         </div>

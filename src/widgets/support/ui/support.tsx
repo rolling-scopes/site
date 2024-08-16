@@ -18,7 +18,7 @@ export const Support = () => (
         <LinkCustom
           href={LINKS.DONATE}
           icon={<ArrowIcon />}
-          variant="coloredSquare"
+          variant="primarySquare"
           target="_blank"
         >
           Donate now

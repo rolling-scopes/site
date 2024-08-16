@@ -21,7 +21,7 @@ export const OptionItem = ({ title, description, linkLabel, href = '' }: OptionI
       <LinkCustom
         href={href}
         icon={<ArrowIcon size="16px" />}
-        variant="outlinedBig"
+        variant="primarySquare"
         target="_blank"
       >
         {linkLabel}

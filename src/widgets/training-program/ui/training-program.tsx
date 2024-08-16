@@ -40,7 +40,7 @@ export const TrainingProgram = ({ courseName, lang = 'en' }: TrainingProgramProp
           <LinkCustom
             href={course?.enroll}
             icon={<ArrowIcon />}
-            variant="coloredSquare"
+            variant="primarySquare"
             target="_blank"
           >
             {localizedContent[lang].linkLabel}
