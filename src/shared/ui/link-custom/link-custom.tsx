@@ -7,9 +7,9 @@ import styles from './link-custom.module.scss';
 
 export const cx = classNames.bind(styles);
 
-type LinkCustomProps = AnchorHTMLAttributes<HTMLAnchorElement> &
-  VariantProps<typeof linkCustomVariants> &
-  LinkCustomAdditionalProps;
+type LinkCustomProps = AnchorHTMLAttributes<HTMLAnchorElement>
+  & VariantProps<typeof linkCustomVariants>
+  & LinkCustomAdditionalProps;
 
 type LinkCustomAdditionalProps = {
   href: string;
@@ -19,10 +19,9 @@ type LinkCustomAdditionalProps = {
 const linkCustomVariants = cva('', {
   variants: {
     variant: {
-      roundedSmall: cx('button', 'colored', 'small'),
-      coloredSquare: cx('button', 'colored', 'large'),
-      outlined: cx('button', 'outlined', 'large'),
-      outlinedBig: cx('button', 'medium', 'outlined'),
+      rounded: cx('button', 'rounded'),
+      primarySquare: cx('button', 'primary-square'),
+      secondarySquare: cx('button', 'secondary-square'),
       textLink: cx('textLink'),
     },
   },
@@ -45,7 +44,7 @@ export const LinkCustom = ({
       })}
       to={href}
       {...props}
-      rel="noreferrer"
+      rel="noopener noreferrer"
     >
       {children}
       {icon}
