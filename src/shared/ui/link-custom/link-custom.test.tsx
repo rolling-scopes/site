@@ -31,7 +31,7 @@ describe('LinkCustom', () => {
     const { getByRole } = renderWithRouter(<LinkCustom href={href}>{label}</LinkCustom>);
     const link = getByRole('link');
 
-    expect(link).toHaveAttribute('rel', 'noreferrer');
+    expect(link).toHaveAttribute('rel', 'noopener noreferrer');
     expect(link).toHaveTextContent('Click me');
     expect(link).not.toHaveAttribute('target', '_blank');
   });
