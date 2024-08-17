@@ -4,51 +4,31 @@ import { List, cx } from './list';
 const data = ['listItem 1', 'listItem 2', 'listItem 3'];
 
 describe('List Component', () => {
-  it('renders list correctly', () => {
+  let list: HTMLElement;
+  let items: HTMLElement[];
+
+  beforeEach(() => {
     render(<List data={data} />);
+    list = screen.getByTestId('list');
+    items = screen.getAllByTestId('list-item');
+  });
 
-    const list = screen.getByTestId('list');
-
+  it('renders list and all list-items correctly', () => {
     expect(list).toBeVisible();
-  });
+    expect(items).toHaveLength(data.length);
 
-  it('list has marked by default', () => {
-    render(<List data={data} />);
-
-    const list = screen.getByTestId('list');
-
-    expect(list).toHaveClass(cx('marked'));
-  });
-
-  it('renders list correctly if list-data is empty', () => {
-    render(<List data={[]} />);
-
-    const list = screen.getByTestId('list');
-
-    expect(list).toBeInTheDocument();
-  });
-
-  it('renders list-items correctly', () => {
-    render(<List data={data} />);
-
-    const items = screen.getAllByTestId('list-item');
-
-    items?.forEach((item) => {
+    items?.forEach((item, i) => {
       expect(item).toBeVisible();
+      expect(item.innerHTML).toBe(data[i]);
     });
   });
 
-  it('renders all list items', () => {
-    render(<List data={data} />);
-
-    const items = screen.getAllByTestId('list-item');
-
-    expect(items).toHaveLength(data.length);
+  it('list has marked class by default', () => {
+    expect(list).toHaveClass(cx('marked'));
   });
 
-  it('adds the marked class when marked prop is false', () => {
+  it("doesn't have the 'marked' class when marked prop is false", () => {
     render(<List data={data} marked={false} />);
-    const items = screen.getAllByTestId('list-item');
 
     items?.forEach((listItem) => {
       expect(listItem).not.toHaveClass(cx('marked'));

@@ -16,7 +16,7 @@ export const cx = classNames.bind(styles);
 
 export const List = ({ data, marked = true }: ListProps) => {
   if (!data?.length) {
-    return <ul data-testid="list"></ul>;
+    return <></>;
   }
 
   return (
