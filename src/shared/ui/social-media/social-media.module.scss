@@ -1,14 +1,40 @@
-/* stylelint-disable custom-property-pattern */
 .social-media {
-  --_transition: 0.4s;
+  $transition-social: all 0.4s ease-in-out;
 
-  @extend %transition-all;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+
+  width: 112px;
+  padding-top: 36px;
+
+  font-size: 14px;
+  font-weight: $font-weight-medium;
+  line-height: 16px;
+  color: $color-gray-600;
+  text-align: center;
+  text-decoration: none;
+
+  figure {
+    display: flex;
+    background-color: $color-gray-200;
+    border-radius: 50%;
+    transition: $transition-social;
+
+    > img {
+      width: 56px;
+      height: 56px;
+      transition: $transition-social;
+    }
+  }
 
   @include media-hover {
     &:hover {
       color: $color-black;
 
-      .icon-surface {
+      figure {
         background-color: $color-gray-600;
 
         > img {
@@ -21,37 +47,5 @@
   @include media-tablet {
     font-size: 12px;
     line-height: 16px;
-  }
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  width: 112px;
-  margin-top: 36px;
-
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 16px;
-  color: $color-gray-600;
-  text-align: center;
-  text-decoration: none;
-
-  .icon-surface {
-    display: flex;
-    background-color: $color-gray-200;
-    border-radius: 50%;
-    transition: all var(--_transition) ease-in-out;
-
-    > img {
-      width: 56px;
-      height: 56px;
-      transition: filter var(--_transition) ease-in-out;
-    }
-  }
-
-  & .text {
-    margin-top: 8px;
   }
 }
