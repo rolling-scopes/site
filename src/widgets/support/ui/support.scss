@@ -4,12 +4,6 @@
   }
 
   &.content {
-    @include media-tablet-large {
-      flex-direction: column;
-      gap: 0;
-      align-items: center;
-    }
-
     display: flex;
     flex-direction: row;
     gap: 50px;
@@ -17,10 +11,6 @@
     justify-content: space-between;
 
     & .info {
-      @include media-laptop {
-        width: 100%;
-      }
-
       width: 640px;
       font-weight: 500;
       color: $color-black;
@@ -33,9 +23,20 @@
       & .button {
         margin-top: 24px;
       }
+
+      @include media-laptop {
+        width: 100%;
+      }
     }
 
     & .picture {
+      width: 348px;
+      height: 288px;
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
       @include media-laptop {
         width: 300px;
         height: auto;
@@ -46,13 +47,12 @@
       @include media-tablet {
         width: 280px;
       }
+    }
 
-      width: 348px;
-      height: 288px;
-
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
+    @include media-tablet-large {
+      flex-direction: column;
+      gap: 0;
+      align-items: center;
     }
   }
 }

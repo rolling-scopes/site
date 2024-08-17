@@ -51,10 +51,6 @@
   }
 
   &.medium {
-    @include media-mobile-landscape {
-      width: 100%;
-    }
-
     width: 240px;
     padding: 8px 24px;
     font-size: 16px;
@@ -63,6 +59,10 @@
     &:hover {
       background-color: $color-gray-200;
     }
+
+    @include media-mobile-landscape {
+      width: 100%;
+    }
   }
 }
 
@@ -70,10 +70,6 @@
   width: min-content;
 
   &.large {
-    @include media-tablet {
-      width: 100%;
-    }
-
     overflow: visible;
 
     margin-top: 24px;
@@ -88,17 +84,13 @@
     &:hover {
       background-color: $color-gray-600;
     }
+
+    @include media-tablet {
+      width: 100%;
+    }
   }
 
   &.small {
-    @include media-tablet {
-      gap: 0;
-
-      &.regular {
-        margin-right: 8px;
-      }
-    }
-
     overflow: hidden;
 
     height: 36px;
@@ -118,15 +110,19 @@
     &:hover {
       background-color: hsla(from $color-gray-600 h s l/ $opacity-50);
     }
+
+    @include media-tablet {
+      gap: 0;
+
+      &.regular {
+        margin-right: 8px;
+      }
+    }
   }
 }
 
 .text-link {
   @extend %transition-all;
-
-  @include media-tablet {
-    font-size: 16px;
-  }
 
   font-size: 20px;
   font-weight: 600;
@@ -134,5 +130,9 @@
 
   &:hover {
     color: $color-black;
+  }
+
+  @include media-tablet {
+    font-size: 16px;
   }
 }

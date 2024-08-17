@@ -4,25 +4,6 @@
 
   @extend %transition-all;
 
-  @include media-hover {
-    &:hover {
-      color: $color-black;
-
-      .icon-surface {
-        background-color: $color-gray-600;
-
-        > img {
-          filter: invert(100%);
-        }
-      }
-    }
-  }
-
-  @include media-tablet {
-    font-size: 12px;
-    line-height: 16px;
-  }
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,5 +34,24 @@
 
   & .text {
     margin-top: 8px;
+  }
+
+  @include media-hover {
+    &:hover {
+      color: $color-black;
+
+      .icon-surface {
+        background-color: $color-gray-600;
+
+        > img {
+          filter: invert(100%);
+        }
+      }
+    }
+  }
+
+  @include media-tablet {
+    font-size: 12px;
+    line-height: 16px;
   }
 }
