@@ -1,5 +1,9 @@
 {
   "extends": ["stylelint-config-standard-scss", "stylelint-config-clean-order", "stylelint-prettier/recommended"],
+	"plugins": [
+    "stylelint-order"
+  ],
+
   "rules": {
     "shorthand-property-no-redundant-values": null,
 
@@ -13,6 +17,38 @@
 				"ignore": ["after-comment", "inside-single-line-block"],
 				"disableFix": true
 			}
-		]
+		],
+
+		"order/order": [
+      "custom-properties",
+      "dollar-variables",
+      {
+        "type": "at-rule",
+        "name": "extend"
+      },
+      {
+        "type": "at-rule",
+        "name": "extend",
+				"hasBlock": true
+      },
+			"declarations",
+			"rules",
+			{
+        "type": "at-rule",
+        "name": "include"
+      },
+      {
+        "type": "at-rule",
+        "name": "include",
+        "hasBlock": true
+      },
+			{
+        "type": "at-rule"
+      },
+      {
+        "type": "at-rule",
+        "hasBlock": true
+      }
+    ]
 	}
 }
