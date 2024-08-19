@@ -1,12 +1,21 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { FC, useState } from 'react';
-import { IS_DEV } from './constants';
-import { DecodingAttr, FetchPriorityAttr, ImageProps, LoadingAttr } from './types';
-import convertToWebp from './utils/convertToWebp';
-import generateSizes from './utils/generateSizes';
-import generateSrcSet from './utils/generateSrcSet';
+import { FC, ImgHTMLAttributes, useState } from 'react';
+import { IS_DEV } from '@/shared/constants.ts';
+import { convertToWebp } from '@/shared/helpers/convertToWebp.ts';
+import { generateSizes } from '@/shared/helpers/generateSizes.ts';
+import { generateSrcSet } from '@/shared/helpers/generateSrcSet.ts';
 
-const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
+type ImageProps = ImgHTMLAttributes<HTMLImageElement> & {
+  lazy?: 'false' | 'true';
+};
+
+type LoadingAttr = ImgHTMLAttributes<HTMLImageElement>['loading'];
+
+type FetchPriorityAttr = ImgHTMLAttributes<HTMLImageElement>['fetchPriority'];
+
+type DecodingAttr = ImgHTMLAttributes<HTMLImageElement>['decoding'];
+
+export const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
   const srcWebp = convertToWebp(src);
   const [srcSet, setSrcSet] = useState(() => (IS_DEV ? undefined : generateSrcSet(srcWebp)));
   const [sizes, setSizes] = useState(() => (IS_DEV ? undefined : generateSizes()));
@@ -46,5 +55,3 @@ const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
     />
   );
 };
-
-export default Image;
