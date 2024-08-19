@@ -7,7 +7,7 @@ import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-co
 import { useTitle } from '@/shared/hooks/use-title';
 import { ArrowIcon } from '@/shared/icons';
 import { DateLang } from '@/shared/ui/date-lang';
-import Image from '@/shared/ui/image';
+import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';

@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import dayjs from 'dayjs';
 import micIcon from '@/shared/assets/icons/mic.svg';
 import noteIcon from '@/shared/assets/icons/note-icon.svg';
-import Image from '@/shared/ui/image';
+import { Image } from '@/shared/ui/image';
 
 import styles from './date-lang.module.scss';
 

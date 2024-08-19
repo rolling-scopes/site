@@ -1,5 +1,5 @@
 import image from '@/shared/assets/about.webp';
-import Image from '@/shared/ui/image';
+import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';

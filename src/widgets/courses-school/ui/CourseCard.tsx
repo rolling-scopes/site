@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import { Course } from '@/app/types';
 import { ArrowIcon } from '@/shared/icons';
-import Image from '@/shared/ui/image';
+import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 
 import styles from './courses.module.scss';
