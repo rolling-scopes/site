@@ -23,37 +23,29 @@ export const MobileView = ({ type }: MobileViewProps) => {
         <Logo type={logoView} />
       </Link>
 
-      <Link to={`/${ROUTES.COMMUNITY}/#about`} className={`main-link ${color}`}>
-        About Community
+      <Divider type={type} />
+
+      <Link to={ROUTES.HOME} className={`main-link ${color}`}>
+        RS School
       </Link>
 
-      <Divider type={type} />
-
-      <SchoolMenu heading="rs school" color={color} />
+      <SchoolMenu heading="rs school" hasTitle={false} color={color} />
 
       <Divider type={type} />
 
-      <SchoolMenu heading="all courses" color={color} />
+      <Link to={ROUTES.COURSES} className={`main-link ${color}`}>
+        Courses
+      </Link>
+
+      <SchoolMenu heading="all courses" hasTitle={false} color={color} />
 
       <Divider type={type} />
 
-      <Link to={`/${ROUTES.COMMUNITY}/#community`} className={`main-link mt ${color}`}>
+      <Link to={ROUTES.COMMUNITY} className={`main-link mt ${color}`}>
         Community
       </Link>
 
-      <Divider type={type} />
-
-      <Link to={`/${ROUTES.COMMUNITY}/#events`} className={`main-link ${color}`}>
-        Events
-      </Link>
-
-      <Divider type={type} />
-
-      <Link to={`/${ROUTES.COMMUNITY}/#merch`} className={`main-link ${color}`}>
-        Merch
-      </Link>
-
-      <Divider type={type} />
+      <SchoolMenu heading="community" hasTitle={false} color={color} />
     </div>
   );
 };
