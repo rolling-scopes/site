@@ -48,7 +48,7 @@ export const TrainingProgram = ({ courseName, lang = 'en' }: TrainingProgramProp
           </LinkCustom>
         </div>
         <div className={`right ${courseName.includes('badge') ? 'badge' : ''}`}>
-          <Image src={image} alt={course?.title} lazy="false" />
+          <Image src={image} alt={course?.title} lazy={false} />
         </div>
       </div>
     </section>

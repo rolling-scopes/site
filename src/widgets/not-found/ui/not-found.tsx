@@ -13,7 +13,7 @@ export const NotFound = () => {
   return (
     <main className="not-found">
       <div className="image-wrapper">
-        <Image src={notFoundImg} alt="not found" lazy="false" />
+        <Image src={notFoundImg} alt="not found" lazy={false} />
       </div>
       <Paragraph>
         The page you are looking for doesn&apos;t exist or has been moved. Please go back to the

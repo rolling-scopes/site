@@ -35,7 +35,7 @@ describe('Image', () => {
   });
 
   it('renders the eager image correctly', () => {
-    renderWithRouter(<Image src={rsSchool} alt="rs-school" lazy="false" />);
+    renderWithRouter(<Image src={rsSchool} alt="rs-school" lazy={false} />);
 
     const img = screen.getByRole('img');
 

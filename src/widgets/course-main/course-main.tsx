@@ -44,7 +44,7 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
   return (
     <main className={`container ${styles.container}`}>
       <div className={`content ${styles.content}`}>
-        <Image className={styles.icon} src={secondaryIcon} alt={title} lazy="false" />
+        <Image className={styles.icon} src={secondaryIcon} alt={title} lazy={false} />
         <div className={styles.info}>
           <SectionLabel>{status}</SectionLabel>
           <WidgetTitle>{`${altTitle || title} Course`}</WidgetTitle>
