@@ -20,8 +20,8 @@ const linkCustomVariants = cva('', {
   variants: {
     variant: {
       rounded: cx('button', 'rounded'),
-      primary: cx('button', 'primary-square'),
-      secondary: cx('button', 'secondary-square'),
+      primary: cx('button', 'primary'),
+      secondary: cx('button', 'secondary'),
       textLink: cx('textLink'),
     },
   },
