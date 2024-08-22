@@ -19,7 +19,7 @@ export const NotFound = () => {
         The page you are looking for doesn&apos;t exist or has been moved. Please go back to the
         homepage.
       </Paragraph>
-      <LinkCustom href="/" icon={<ArrowIcon />} variant="primarySquare">
+      <LinkCustom href="/" icon={<ArrowIcon />} variant="primary">
         Go back home
       </LinkCustom>
     </main>
