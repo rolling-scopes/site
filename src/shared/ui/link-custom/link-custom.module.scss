@@ -14,7 +14,7 @@
   white-space: pre;
 }
 
-.secondary-square {
+.secondary {
   width: max-content;
   padding: 12px 24px;
 
@@ -32,10 +32,8 @@
   }
 }
 
-.primary-square {
-  overflow: visible;
-
-  width: min-content;
+.primary {
+  width: max-content;
   padding: 16px 24px;
 
   font-size: 18px;
@@ -54,9 +52,7 @@
 }
 
 .rounded {
-  overflow: hidden;
-
-  width: min-content;
+  width: max-content;
   height: 36px;
   padding: 10px 12px;
 
@@ -68,11 +64,7 @@
   border-radius: 9999px;
 
   @include media-tablet {
-    gap: 0;
-
-    &.regular {
-      margin-right: 8px;
-    }
+    gap: 4px;
   }
 
   img {
