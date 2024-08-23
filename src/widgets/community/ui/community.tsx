@@ -65,7 +65,7 @@ export const Community = () => (
   <div id="community" className="community container">
     <div className="community content column-2">
       <div className="info">
-        <WidgetTitle marginSize="small" size="large" mods="lines">
+        <WidgetTitle size="large" mods="lines">
           Join RS Community
         </WidgetTitle>
         <Subtitle>

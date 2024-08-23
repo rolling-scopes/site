@@ -29,7 +29,9 @@ export const Required = ({ courseName, marked1, marked2 }: RequiredProps) => {
   return (
     <section className="required container">
       <div className="required content info-wrapper">
-        <WidgetTitle marginSize="medium" size="medium" mods="asterisk">{title}</WidgetTitle>
+        <WidgetTitle mods="asterisk">
+          {title}
+        </WidgetTitle>
 
         <div className="column-2">
           {isKnowBeforeExist && (

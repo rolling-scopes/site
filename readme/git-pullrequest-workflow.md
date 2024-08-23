@@ -10,11 +10,17 @@ Pick a name for your branch that tells us what it's for. Use this format:
 - `<issue number>`: This is the number of the task or issue in Github Projects you're working on.
 - `short-description`: This is a quick summary of what you're doing. Use hyphens instead of spaces.
 
+❗Please note - the `short-description` shouldn't contain numbers.
+
 Example: `feat/123-add-login-button`
 
 ## Commit Messages
 
 Your commit messages should be short, but they should tell us what changes you made. Use this format:
+
+`<type of work>: <summary>`
+
+Your commit message will be automatically converted to the following format:
 
 `<type of work>: <issue number> - <summary>`
 
@@ -22,14 +28,22 @@ Your commit messages should be short, but they should tell us what changes you m
 - `<issue number>`: This is the number of the task or issue in Github Projects you're working on.
 - `<summary>`: This is a quick summary of what changes you made.
 
-Example: `doc: 159 - add login button functionality`
+❗Please note - the `summary` shouldn't contain numbers.
+
+Example:
+  your commit message `docs: add login button functionality`
+  will be automatically converted to `docs: 159 - add login button functionality`
 
 
 Please note that at RS School, we strive to follow the [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/). In case of uncertainty, feel free to refer to this source that inspired us in writing these guidelines.
 
 ## Pull Requests
 
-When you finish your work in a branch, make a pull request against the main branch. Use the same format as commit messages for your pull request title.
+When you finish your work in a branch, make a pull request against the main branch. Initially, the pull request will be named after your branch. However, be aware that once the pull request is opened, an automatic script will rename it according to a predefined template, overwriting the title you initially provided.
+
+<issue number>-<type of work>: <Title>
+
+If necessary, you can adjust the pull request' <Title> after PR has been created. Below is the final look of your pull request title.
 
 Example: `123-feat: Complete addition of login button functionality`.
 
@@ -45,7 +59,7 @@ Please use English for all discussions, pull requests, issues, and comments.
 
 ## Note
 
-Always get the latest updates from the main branch before you push your own changes or make a pull request.
+Always get the latest updates from the main branch and `npm install` before you push your own changes or make a pull request.
 
 ## Conclusion
 

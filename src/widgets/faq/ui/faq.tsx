@@ -12,7 +12,7 @@ export const Faq = () => {
   return (
     <section className={cx('faq', 'container')}>
       <div className={cx('content', 'info-wrapper')}>
-        <WidgetTitle size="medium" mods="asterisk">FAQ</WidgetTitle>
+        <WidgetTitle mods="asterisk">FAQ</WidgetTitle>
         <ol className={cx('list')}>
           {faqData.map(({ question, answer }, index) => (
             <li className={cx('list-item')} key={question}>

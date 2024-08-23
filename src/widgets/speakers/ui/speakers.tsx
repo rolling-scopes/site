@@ -10,7 +10,7 @@ export const Speakers = () => (
   <div className="speakers container">
     <div className="speakers content">
       <div className="info">
-        <WidgetTitle marginSize="small" size="large" mods="lines">
+        <WidgetTitle size="large" mods="lines">
           Speakers wanted
         </WidgetTitle>
         <Subtitle marginSize="small">

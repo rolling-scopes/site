@@ -18,7 +18,7 @@ export interface JSPath {
   actions?: string[];
 }
 
-export interface AngularAwsPath extends Pick<JSPath, 'id' | 'title' | 'actions'> {}
+export type AngularAwsPath = Pick<JSPath, 'id' | 'title' | 'actions'>;
 
 export interface CoursesPath {
   id: number;

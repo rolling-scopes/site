@@ -12,7 +12,7 @@ export const Support = () => (
   <div className="support container">
     <div className="support content">
       <div className="info">
-        <WidgetTitle marginSize="small" size="large" mods="lines">
+        <WidgetTitle size="large" mods="lines">
           Support Us
         </WidgetTitle>
         <Subtitle marginSize="small">

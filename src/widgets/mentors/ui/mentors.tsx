@@ -13,7 +13,7 @@ export const Mentors = () => {
     <section className="mentors container" id="mentors-wanted">
       <div className="mentors content column-2">
         <div className="mentors-info">
-          <WidgetTitle marginSize="medium" size="large" mods="lines">
+          <WidgetTitle size="large" mods="lines">
             Mentors wanted!
           </WidgetTitle>
           <Subtitle className="subtitle" marginSize="medium">

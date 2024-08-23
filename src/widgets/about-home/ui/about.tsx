@@ -1,6 +1,7 @@
 import image from '@/shared/assets/about.webp';
 import Image from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
+import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
@@ -11,9 +12,8 @@ export const About = () => {
     <div className="about container" id="about">
       <div className="about content column-2">
         <div className="left">
-          <WidgetTitle marginSize="medium" size="medium" mods="asterisk">
-            Who we are
-          </WidgetTitle>
+          <SectionLabel>community</SectionLabel>
+          <WidgetTitle mods="asterisk">Who we are</WidgetTitle>
           <Subtitle marginSize="medium">
             Our mission is to provide free education in intriguing subjects, connect people, and
             grow together.

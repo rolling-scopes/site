@@ -55,7 +55,7 @@ export const Communication = ({ courseName, lang = 'en' }: RequiredProps) => {
   return (
     <section className="communication container">
       <article className="communication content info-wrapper">
-        <WidgetTitle size="medium" mods="asterisk">{localizedContent[lang].title}</WidgetTitle>
+        <WidgetTitle mods="asterisk">{localizedContent[lang].title}</WidgetTitle>
         <div className="column-2">
           <figure className="disclogo-wrapper">
             <DiscordLogo />

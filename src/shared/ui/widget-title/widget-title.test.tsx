@@ -4,10 +4,17 @@ import { WidgetTitle, cx } from './widget-title';
 
 describe('WidgetTitle component', () => {
   it('renders without crashing', () => {
-    render(<WidgetTitle>TestTitle</WidgetTitle>);
-    const title = screen.getByText('TestTitle');
+    render(<WidgetTitle />);
+    const title = screen.getByTestId('widget-title');
 
-    expect(title).toBeInTheDocument();
+    expect(title).toBeVisible();
+  });
+
+  it('displays correct text', () => {
+    render(<WidgetTitle>Test Title</WidgetTitle>);
+    const title = screen.getByText('Test Title');
+
+    expect(title).toBeVisible();
   });
 
   it('displays h2 tag', () => {
@@ -18,35 +25,35 @@ describe('WidgetTitle component', () => {
   });
 
   it('displays size correctly when size=small', () => {
-    render(<WidgetTitle size="small">TestTitle</WidgetTitle>);
+    render(<WidgetTitle size="small" />);
     const element = screen.getByRole('heading', { level: 2 });
 
     expect(element).toHaveClass(cx('small'));
   });
 
-  it('displays size correctly when size=medium', () => {
-    render(<WidgetTitle size="medium">TestTitle</WidgetTitle>);
+  it('displays size correctly when size=medium (default)', () => {
+    render(<WidgetTitle />);
     const element = screen.getByRole('heading', { level: 2 });
 
     expect(element).toHaveClass(cx('medium'));
   });
 
   it('displays size correctly when size=large', () => {
-    render(<WidgetTitle size="large">TestTitle</WidgetTitle>);
+    render(<WidgetTitle size="large" />);
     const element = screen.getByRole('heading', { level: 2 });
 
     expect(element).toHaveClass(cx('large'));
   });
 
   it('displays an asterisk when mods=asterisk', () => {
-    render(<WidgetTitle mods="asterisk">TestTitle</WidgetTitle>);
+    render(<WidgetTitle mods="asterisk" />);
     const asterisk = screen.getByRole('heading', { level: 2 });
 
     expect(asterisk).toHaveClass(cx('asterisk'));
   });
 
   it('displays lines when mods=lines', () => {
-    render(<WidgetTitle mods="lines">TestTitle</WidgetTitle>);
+    render(<WidgetTitle mods="lines" />);
     const lines = screen.getByRole('heading', { level: 2 });
 
     expect(lines).toHaveClass(cx('lines'));

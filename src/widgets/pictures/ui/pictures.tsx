@@ -46,7 +46,7 @@ const photos = [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, 
 export const Pictures = () => (
   <div className="pictures container">
     <div className="pictures content">
-      <WidgetTitle size="medium" mods="asterisk">The Rolling Scopes in pictures</WidgetTitle>
+      <WidgetTitle mods="asterisk">The Rolling Scopes in pictures</WidgetTitle>
       <Carousel
         className="carousel"
         showArrows={true}
