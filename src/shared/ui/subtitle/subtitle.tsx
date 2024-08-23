@@ -47,6 +47,7 @@ export const Subtitle = ({
         marginSize,
         className,
       })}
+      data-testid="subtitle"
     >
       {children}
     </h3>
