@@ -8,13 +8,17 @@ import styles from './mobile-view.module.scss';
 
 const cx = classNames.bind(styles);
 
-interface MobileViewProps {
-  type: 'header' | 'footer';
-}
+type DividerProps = {
+  color: 'light' | 'dark';
+};
 
-const Divider = ({ type }: MobileViewProps) => (
-  <hr className={cx('divider', type === 'header' ? 'dark' : 'light')} />
+const Divider = ({ color }: DividerProps) => (
+  <hr className={cx('divider', color)} />
 );
+
+type MobileViewProps = {
+  type: 'header' | 'footer';
+};
 
 export const MobileView = ({ type }: MobileViewProps) => {
   const color = type === 'header' ? 'dark' : 'light';
@@ -26,7 +30,7 @@ export const MobileView = ({ type }: MobileViewProps) => {
         <Logo type={logoView} />
       </Link>
 
-      <Divider type={type} />
+      <Divider color={color} />
 
       <Link to={ROUTES.HOME} className={cx('category-link', color)}>
         RS School
@@ -34,7 +38,7 @@ export const MobileView = ({ type }: MobileViewProps) => {
 
       <SchoolMenu heading="rs school" hasTitle={false} color={color} />
 
-      <Divider type={type} />
+      <Divider color={color} />
 
       <Link to={ROUTES.COURSES} className={cx('category-link', color)}>
         Courses
@@ -42,7 +46,7 @@ export const MobileView = ({ type }: MobileViewProps) => {
 
       <SchoolMenu heading="all courses" hasTitle={false} color={color} />
 
-      <Divider type={type} />
+      <Divider color={color} />
 
       <Link to={ROUTES.COMMUNITY} className={cx('category-link', color)}>
         Community
