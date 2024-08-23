@@ -13,7 +13,7 @@ interface MobileViewProps {
 }
 
 const Divider = ({ type }: MobileViewProps) => (
-  <div className={cx('divider', type === 'header' ? 'dark' : 'light')} />
+  <hr className={cx('divider', type === 'header' ? 'dark' : 'light')} />
 );
 
 export const MobileView = ({ type }: MobileViewProps) => {
@@ -21,7 +21,7 @@ export const MobileView = ({ type }: MobileViewProps) => {
   const logoView = type === 'header' ? null : 'with-border';
 
   return (
-    <div className={cx('mobile-view')} data-testid="mobile-view">
+    <nav className={cx('mobile-view')} data-testid="mobile-view">
       <Link to={ROUTES.HOME}>
         <Logo type={logoView} />
       </Link>
@@ -49,6 +49,6 @@ export const MobileView = ({ type }: MobileViewProps) => {
       </Link>
 
       <SchoolMenu heading="community" hasTitle={false} color={color} />
-    </div>
+    </nav>
   );
 };

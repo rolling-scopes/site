@@ -16,7 +16,8 @@
 
 .divider {
   width: 100%;
-  border-bottom: 1px solid;
+  border: none;
+  border-bottom: 1px solid currentcolor;
 }
 
 .dark {
