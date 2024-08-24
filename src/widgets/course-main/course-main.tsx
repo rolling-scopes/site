@@ -7,7 +7,7 @@ import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-co
 import { useTitle } from '@/shared/hooks/use-title';
 import { ArrowIcon } from '@/shared/icons';
 import { DateLang } from '@/shared/ui/date-lang';
-import Image from '@/shared/ui/image';
+import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';
@@ -44,7 +44,7 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
   return (
     <main className={`container ${styles.container}`}>
       <div className={`content ${styles.content}`}>
-        <Image className={styles.icon} src={secondaryIcon} alt={title} lazy="false" />
+        <Image className={styles.icon} src={secondaryIcon} alt={title} lazy={false} />
         <div className={styles.info}>
           <SectionLabel>{status}</SectionLabel>
           <WidgetTitle>{`${altTitle || title} Course`}</WidgetTitle>

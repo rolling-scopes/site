@@ -3,7 +3,7 @@ import { type CourseNames, contentMap } from '../training-program.data';
 import type { Course } from '@/app/types';
 import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';
 import { ArrowIcon } from '@/shared/icons';
-import Image from '@/shared/ui/image';
+import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
@@ -48,7 +48,7 @@ export const TrainingProgram = ({ courseName, lang = 'en' }: TrainingProgramProp
           </LinkCustom>
         </div>
         <div className={`right ${courseName.includes('badge') ? 'badge' : ''}`}>
-          <Image src={image} alt={course?.title} lazy="false" />
+          <Image src={image} alt={course?.title} lazy={false} />
         </div>
       </div>
     </section>

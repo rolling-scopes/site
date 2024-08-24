@@ -1,4 +1,4 @@
-const convertToWebp = (src: string) => {
+export const convertToWebp = (src: string) => {
   const srcLowCase = src.toLowerCase();
 
   if (
@@ -11,5 +11,3 @@ const convertToWebp = (src: string) => {
   }
   return `${src.slice(0, src.lastIndexOf('.'))}.webp`;
 };
-
-export default convertToWebp;

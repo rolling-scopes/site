@@ -1,7 +1,7 @@
 import { type Course } from '@/app/types';
 import { ArrowIcon } from '@/shared/icons';
 import { DateLang } from '@/shared/ui/date-lang';
-import Image from '@/shared/ui/image';
+import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 
 import './course-card.scss';
