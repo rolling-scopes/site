@@ -7,7 +7,7 @@ import styles from './link-custom.module.scss';
 
 export const cx = classNames.bind(styles);
 
-type LinkCustomProps = AnchorHTMLAttributes<HTMLAnchorElement> &
+type LinkCustomProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'rel'> &
   VariantProps<typeof linkCustomVariants> &
   LinkCustomAdditionalProps;
 
