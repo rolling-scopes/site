@@ -16,7 +16,7 @@
 
 .secondary {
   width: max-content;
-  padding: 12px 24px;
+  padding: 16px 24px;
 
   font-size: 18px;
   color: $color-black;
@@ -41,6 +41,7 @@
   color: $color-white;
 
   background-color: $color-black;
+  border: 2px solid $color-black;
 
   @include media-tablet {
     width: 100%;
@@ -48,6 +49,7 @@
 
   &:hover {
     background-color: $color-gray-600;
+    border-color: $color-gray-600;
   }
 }
 
