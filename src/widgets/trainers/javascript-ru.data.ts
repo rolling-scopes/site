@@ -2,7 +2,7 @@ import type { Trainer } from './trainers.types';
 import annaMusikhinaImg from '@/shared/assets/mentors/a-musikhina.webp';
 import vadimAntonauImg from '@/shared/assets/mentors/v-antonau.webp';
 import valeryDluskiImg from '@/shared/assets/mentors/v-dluski.webp';
-import vitaliiRogozinImg from '@/shared/assets/mentors/Vitalii-Rogozin.png';
+import vitaliiRogozinImg from '@/shared/assets/mentors/v-rogozin.webp';
 import yuliaKursevichImg from '@/shared/assets/mentors/y-kursevich.webp';
 
 export const javaScriptRu: Trainer[] = [
