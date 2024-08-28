@@ -1,7 +1,9 @@
 import type { Trainer } from './trainers.types';
 import annaMusikhinaImg from '@/shared/assets/mentors/a-musikhina.webp';
 import vadimAntonauImg from '@/shared/assets/mentors/v-antonau.webp';
+import valeryDluskiImg from '@/shared/assets/mentors/v-dluski.webp';
 import vitaliiRogozinImg from '@/shared/assets/mentors/Vitalii-Rogozin.png';
+import yuliaKursevichImg from '@/shared/assets/mentors/y-kursevich.webp';
 
 export const javaScriptRu: Trainer[] = [
   {
@@ -23,5 +25,19 @@ export const javaScriptRu: Trainer[] = [
     role: '',
     bio: 'Пришел в конце 2021 года в RSS просто «посмотреть», что это такое, и как-то незаметно для себя прошел сначала подготовительный этап, а потом и основной курс. Учился параллельно работе разработчиком web-приложений (Vue). Во время обучения понял одну интересную вещь: когда объясняешь другим какой-то материал, то и сам начинаешь в нем лучше разбираться. И сейчас продолжаю, в меру своих возможностей, помогать студентам начинать этот сложный путь.',
     photo: vitaliiRogozinImg,
+  },
+
+  {
+    name: 'Юлия Курсевич',
+    role: '',
+    bio: 'Закончила курс в 2024. Я верю, что помогая другим, мы растем и развиваемся сами. Мне знакомы все трудности, с которыми сталкиваются студенты, и я здесь, чтобы поддержать и облегчить ваш путь. Будем вместе делать наш курс удивительным и волшебным местом для взращивания новых талантов в мире фронтенда!',
+    photo: yuliaKursevichImg,
+  },
+
+  {
+    name: 'Валерий Длусский',
+    role: 'EPAM, Full Stack developer',
+    bio: 'Валера родом из Беларуси, а сейчас живёт в Польше. С самого детства он увлекался технологиями, и эта тяга привела его к тому, что после универа он семь лет настраивал системы безопасности. Но помимо техники, он ещё обожает футбол — играть, смотреть и даже гонять в футбольные игры на приставке. Но больше всего он любит путешествовать: особенно нравится брать рюкзак и исследовать новые культуры и места, как только есть возможность.',
+    photo: valeryDluskiImg,
   },
 ];
