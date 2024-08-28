@@ -30,8 +30,12 @@
         margin-top: 8px;
       }
 
-      & .button {
+      a {
         margin-top: 24px;
+
+        @include media-tablet {
+          margin-bottom: 24px;
+        }
       }
     }
 

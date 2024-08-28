@@ -1,43 +1,53 @@
-/* eslint-disable @stylistic/jsx-one-expression-per-line */
-import { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
+import { AnchorHTMLAttributes, ReactNode } from 'react';
+import { type VariantProps, cva } from 'class-variance-authority';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 
 import styles from './link-custom.module.scss';
 
-type LinkCustomProps = DetailedHTMLProps<
-  AnchorHTMLAttributes<HTMLAnchorElement>,
-  HTMLAnchorElement
-> & {
+export const cx = classNames.bind(styles);
+
+type LinkCustomProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'rel'> &
+  VariantProps<typeof linkCustomVariants> &
+  LinkCustomAdditionalProps;
+
+type LinkCustomAdditionalProps = {
   href: string;
-  icon?: JSX.Element;
-  button?: boolean;
-  size?: 'large' | 'medium' | 'small';
-  variant?: 'outlined' | 'colored' | '';
-  rounded?: boolean;
-  className?: string;
+  icon?: ReactNode;
 };
+
+const linkCustomVariants = cva('', {
+  variants: {
+    variant: {
+      rounded: cx('button', 'rounded'),
+      primary: cx('button', 'primary'),
+      secondary: cx('button', 'secondary'),
+      textLink: cx('textLink'),
+    },
+  },
+  defaultVariants: { variant: 'textLink' },
+});
 
 export const LinkCustom = ({
   children,
   href,
   icon = <></>,
-  button = false,
-  size = 'large',
-  variant = '',
-  rounded = false,
   className = '',
+  variant,
   ...props
 }: LinkCustomProps) => {
-  const cx = classNames.bind(styles);
-
-  const linkClassName = button
-    ? cx('button', [size], [variant], { rounded })
-    : 'text-link';
-
   return (
-    <Link className={cx(linkClassName, className)} to={href} {...props} rel="noreferrer">
-      {children} {icon}
+    <Link
+      className={linkCustomVariants({
+        variant,
+        className,
+      })}
+      to={href}
+      {...props}
+      rel="noopener noreferrer"
+    >
+      {children}
+      {icon}
     </Link>
   );
 };
