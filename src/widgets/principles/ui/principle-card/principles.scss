@@ -12,20 +12,16 @@
   }
 
   & .cards {
+    gap: 16px;
+    align-items: stretch;
     margin-top: 24px;
 
     @include media-laptop {
       width: 100%;
-
-      & > div {
-        margin-top: 16px;
-      }
     }
 
     @include media-tablet {
-      & > div {
-        margin-top: 8px;
-      }
+      gap: 8px;
     }
   }
 }
