@@ -6,7 +6,7 @@ interface InfoGridProps {
   items: {
     id: number;
     title: string;
-    info: string;
+    info: string | JSX.Element;
     icon: string;
   }[];
   hasTitle?: boolean;
@@ -21,7 +21,7 @@ export const InfoGrid = ({ items }: InfoGridProps) => {
             <Image src={icon} alt={title} />
             <h2>{title}</h2>
           </div>
-          <p dangerouslySetInnerHTML={{ __html: info }} />
+          { typeof info === 'string' ? <p>{info}</p> : info }
         </div>
       ))}
     </div>

@@ -6,11 +6,12 @@ import personIcon from '@/shared/assets/icons/person-icon.webp';
 import planetIcon from '@/shared/assets/icons/planet.webp';
 import type { CourseNames } from '@/shared/data/communication.data';
 import { DISCORD_LINKS } from '@/shared/data/communication.data';
+import { LinkCustom } from '@/shared/ui/link-custom';
 
 type AboutInfo = {
   id: number;
   title: string;
-  info: string;
+  info: string | JSX.Element;
   icon: string;
 };
 
@@ -146,7 +147,16 @@ const reactEn: AboutInfo[] = javaScriptEN().map((item) => {
     return {
       ...item,
       title: 'Materials',
-      info: `<li>School <a href='https://docs.rs.school'>documentation</a></li><li>All materials are publicly available on the YouTube channel and GitHub</li>`,
+      info: (
+        <ul>
+          <li>
+            School
+            {' '}
+            <LinkCustom href="https://docs.rs.school" external>documentation</LinkCustom>
+          </li>
+          <li>All materials are publicly available on the YouTube channel and GitHub</li>
+        </ul>
+      ),
       icon: paperIcon,
     };
   }

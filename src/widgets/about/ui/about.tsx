@@ -1,6 +1,6 @@
 /* eslint-disable @stylistic/jsx-one-expression-per-line */
 import { InfoGrid } from './info-grid/info-grid';
-import { contentMap } from '../about.data';
+import { contentMap } from '../about.data.tsx';
 import { type Course } from '@/app/types';
 import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';
 import { ArrowIcon } from '@/shared/icons';
