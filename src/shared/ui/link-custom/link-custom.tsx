@@ -2,6 +2,7 @@ import { AnchorHTMLAttributes, ReactNode } from 'react';
 import { type VariantProps, cva } from 'class-variance-authority';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
+import { TextLinkIcon } from '@/shared/icons';
 
 import styles from './link-custom.module.scss';
 
@@ -14,6 +15,7 @@ type LinkCustomProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'rel'> &
 type LinkCustomAdditionalProps = {
   href: string;
   icon?: ReactNode;
+  external?: boolean;
 };
 
 const linkCustomVariants = cva('', {
@@ -28,14 +30,22 @@ const linkCustomVariants = cva('', {
   defaultVariants: { variant: 'textLink' },
 });
 
+const externalLinkAttributes = {
+  target: '_blank',
+  rel: 'noopener noreferrer',
+};
+
 export const LinkCustom = ({
   children,
   href,
   icon = <></>,
   className = '',
-  variant,
+  variant = 'textLink',
+  external = false,
   ...props
 }: LinkCustomProps) => {
+  const iconElement = external && variant === 'textLink' ? <TextLinkIcon /> : icon;
+
   return (
     <Link
       className={linkCustomVariants({
@@ -44,10 +54,10 @@ export const LinkCustom = ({
       })}
       to={href}
       {...props}
-      rel="noopener noreferrer"
+      {...(external && externalLinkAttributes)}
     >
       {children}
-      {icon}
+      {iconElement}
     </Link>
   );
 };
