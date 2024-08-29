@@ -10,9 +10,7 @@ export const TextWithLink = ({ data }: TextWithLinkProps) => {
   return data.map(({ id, text, link, title }) => (
     <Fragment key={id}>
       {text && <span>{text}</span>}
-      <LinkCustom href={link} external>
-        {title}
-      </LinkCustom>
+      {link && <LinkCustom href={link} external>{title}</LinkCustom>}
     </Fragment>
   ));
 };
