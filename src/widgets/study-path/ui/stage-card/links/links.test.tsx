@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import { Links } from './links';
 
 describe('Links Component', () => {
@@ -7,16 +8,14 @@ describe('Links Component', () => {
       {
         href: 'https://example.com',
         linkTitle: 'Example',
-        isActive: true,
       },
       {
         href: 'https://dummy.com',
         linkTitle: 'Dummy',
-        isActive: false,
       },
     ];
 
-    render(<Links links={testLinks} />);
+    render(<MemoryRouter><Links links={testLinks} /></MemoryRouter>);
 
     testLinks.forEach(({ href, linkTitle }) => {
       const linkElement = screen.getByText(linkTitle);
@@ -24,19 +23,5 @@ describe('Links Component', () => {
       expect(linkElement).toBeInTheDocument();
       expect(linkElement).toHaveAttribute('href', href);
     });
-  });
-
-  it('applies "disabled" class correctly', () => {
-    const testLink = {
-      href: 'https://dummy.com',
-      linkTitle: 'Dummy',
-      isActive: false,
-    };
-
-    render(<Links links={[testLink]} />);
-
-    const linkElement = screen.getByText(testLink.linkTitle);
-
-    expect(linkElement).toHaveClass('disabled');
   });
 });

@@ -30,12 +30,12 @@ describe('LinkCustom', () => {
   });
 
   it('should have attribute', () => {
-    const { getByRole } = renderWithRouter(<LinkCustom href={href}>{label}</LinkCustom>);
+    const { getByRole } = renderWithRouter(<LinkCustom href={href} external>{label}</LinkCustom>);
     const link = getByRole('link');
 
     expect(link).toHaveAttribute('rel', 'noopener noreferrer');
     expect(link).toHaveTextContent('Click me');
-    expect(link).not.toHaveAttribute('target', '_blank');
+    expect(link).toHaveAttribute('target', '_blank');
   });
 
   it('after click on link should go to http://example.com', async () => {

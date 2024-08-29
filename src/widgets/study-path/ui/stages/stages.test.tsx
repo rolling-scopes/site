@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import { Stages, StagesProps } from './stages';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 
@@ -21,7 +22,7 @@ describe('Stages Component', () => {
   ];
 
   it('renders stages and their details correctly', () => {
-    render(<Stages stages={testStages} />);
+    render(<MemoryRouter><Stages stages={testStages} /></MemoryRouter>);
 
     testStages.forEach((stage) => {
       const { title, description, topics, actions } = stage;
@@ -47,13 +48,13 @@ describe('Stages Component', () => {
   });
 
   it('returns null when stages is null', () => {
-    const { container } = render(<Stages stages={null} />);
+    const { container } = render(<MemoryRouter><Stages stages={null} /></MemoryRouter>);
 
     expect(container.firstChild).toBeNull();
   });
 
   it('returns null when stages is an empty array', () => {
-    const { container } = render(<Stages stages={[]} />);
+    const { container } = render(<MemoryRouter><Stages stages={[]} /></MemoryRouter>);
 
     expect(container.firstChild).toBeNull();
   });
