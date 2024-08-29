@@ -25,7 +25,7 @@ export const Merch = () => (
           assets where you will find all merch collections and can print your own Rolling Scopes
           t-shirts, stickers etc.
         </Paragraph>
-        <LinkCustom href={LINKS.MERCH} icon={<ArrowIcon />} variant="primary" target="_blank">
+        <LinkCustom href={LINKS.MERCH} icon={<ArrowIcon />} variant="primary" external>
           Discover merch assets
         </LinkCustom>
       </div>

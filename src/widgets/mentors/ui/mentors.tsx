@@ -26,7 +26,7 @@ export const Mentors = () => {
             href={LINKS.BECOME_MENTOR}
             icon={<ArrowIcon />}
             variant="primary"
-            target="_blank"
+            external
           >
             Become a mentor
           </LinkCustom>

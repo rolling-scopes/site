@@ -50,7 +50,7 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
           <WidgetTitle>{`${altTitle || title} Course`}</WidgetTitle>
           {type && <Subtitle text={type} type="course-main" />}
           <DateLang startDate={date} language={language} mode={mode} withMargin />
-          <LinkCustom href={enroll} icon={<ArrowIcon />} variant="secondary" target="_blank">
+          <LinkCustom href={enroll} icon={<ArrowIcon />} variant="secondary" external>
             {localizedContent[lang].linkLabel}
           </LinkCustom>
         </div>

@@ -33,7 +33,7 @@ export const Requirements = () => {
           href={LINKS.BECOME_MENTOR}
           icon={<ArrowIcon />}
           variant="primary"
-          target="_blank"
+          external
         >
           Register as a mentor
         </LinkCustom>

@@ -60,7 +60,7 @@ export const EventCard = ({
           <br />
           {city}
         </address>
-        <LinkCustom href={href} variant="rounded" target="_blank">
+        <LinkCustom href={href} variant="rounded" external>
           View details
         </LinkCustom>
       </div>
