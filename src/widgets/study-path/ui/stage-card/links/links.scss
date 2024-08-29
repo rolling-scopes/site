@@ -11,22 +11,4 @@
   justify-content: flex-start;
 
   margin: 0;
-
-  & > a {
-    @extend %transition-all;
-
-    color: $color-gray-600;
-    text-decoration: underline;
-
-    &.disabled {
-      pointer-events: none;
-      line-height: 1em;
-      color: $color-gray-200;
-      text-decoration: none;
-    }
-
-    &:hover {
-      color: $color-gray-400;
-    }
-  }
 }
