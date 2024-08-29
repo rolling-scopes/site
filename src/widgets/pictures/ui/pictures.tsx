@@ -57,6 +57,7 @@ export const Pictures = () => (
         autoPlay={true}
         transitionTime={1000}
         useKeyboardArrows={true}
+        infiniteLoop={true}
         renderIndicator={(onClickHandler, isSelected, index) => (
           <li
             className={isSelected ? 'dot selected' : 'dot'}

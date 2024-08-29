@@ -5,9 +5,26 @@
     gap: 10px;
   }
 
+  .carousel-slider {
+    .control-next,
+    .control-prev {
+      top: calc(50% - 50px);
+
+      height: 100px;
+
+      opacity: $opacity-100;
+      backdrop-filter: blur(20px);
+      border-radius: 8px;
+    }
+  }
+
   .control-dots {
+    left: calc(50% - 150px);
+
+    width: 300px;
     margin: 0;
     padding: 8px;
+
     backdrop-filter: blur(10px);
   }
 
