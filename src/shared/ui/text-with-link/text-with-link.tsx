@@ -1,8 +1,6 @@
 import { Fragment } from 'react/jsx-runtime';
-import { Link } from 'react-router-dom';
+import { LinkCustom } from '../link-custom';
 import { LinkList } from '@/widgets/required/required.types';
-
-import './text-with-link.scss';
 
 interface TextWithLinkProps {
   data: LinkList;
@@ -12,9 +10,9 @@ export const TextWithLink = ({ data }: TextWithLinkProps) => {
   return data.map(({ id, text, link, title }) => (
     <Fragment key={id}>
       {text && <span>{text}</span>}
-      <Link className="required-link" to={link}>
+      <LinkCustom href={link} external>
         {title}
-      </Link>
+      </LinkCustom>
     </Fragment>
   ));
 };

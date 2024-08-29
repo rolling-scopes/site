@@ -1,8 +1,4 @@
 .training-program {
-  .link {
-    text-decoration: underline;
-  }
-
   &.content {
     @include media-laptop {
       padding: 75px 40px 40px;

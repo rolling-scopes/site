@@ -62,17 +62,6 @@
           padding: 0;
           font-size: 18px;
           line-height: 28px;
-
-          a {
-            @extend %transition-all;
-
-            color: $color-gray-600;
-            text-decoration: underline;
-
-            &:hover {
-              color: $color-gray-400;
-            }
-          }
         }
       }
 

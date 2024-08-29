@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import './general.scss';
@@ -13,9 +13,9 @@ export const General = () => {
             <h2 className="title">Materials</h2>
             <ul className="description">
               <li>
-                <Link to="https://docs.rs.school" target="_blank" rel="noopener noreferrer">
+                <LinkCustom href="https://docs.rs.school" external>
                   School documentation
-                </Link>
+                </LinkCustom>
               </li>
               <li>All materials are publicly available on YouTube and GitHub</li>
               <li>
