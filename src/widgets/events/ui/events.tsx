@@ -24,7 +24,7 @@ const actualEvents: EventCardProps[] = getActualData({
 
 const nearestEvents = actualEvents.slice(0, displayedCardsQuantity);
 
-const Stub = <Image src={photo3} />;
+const Stub = <Image src={photo3} alt="Community event" />;
 
 export const Events = () => {
   const rsLifetime = dayjs().diff('2013', 'year');

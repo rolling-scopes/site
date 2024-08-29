@@ -44,8 +44,8 @@ const socialMedia: SocialMediaProps[] = [
 const photos = [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9];
 
 export const Pictures = () => (
-  <div className="pictures container">
-    <div className="pictures content">
+  <section className="container">
+    <div className="content">
       <WidgetTitle mods="asterisk">The Rolling Scopes in pictures</WidgetTitle>
       <Carousel
         className="carousel"
@@ -53,9 +53,22 @@ export const Pictures = () => (
         showThumbs={false}
         showStatus={false}
         centerMode={true}
+        emulateTouch={true}
+        autoPlay={true}
+        transitionTime={1000}
+        useKeyboardArrows={true}
+        renderIndicator={(onClickHandler, isSelected, index) => (
+          <li
+            className={isSelected ? 'dot selected' : 'dot'}
+            onClick={isSelected ? undefined : onClickHandler}
+            value={index}
+            key={index}
+            tabIndex={0}
+          />
+        )}
       >
-        {photos.map((photo) => (
-          <Image src={photo} key={photo} data-testid="carousel-image" />
+        {photos.map((photo, index) => (
+          <Image src={photo} key={index} data-testid="carousel-image" />
         ))}
       </Carousel>
       <Paragraph>
@@ -68,5 +81,5 @@ export const Pictures = () => (
         ))}
       </div>
     </div>
-  </div>
+  </section>
 );

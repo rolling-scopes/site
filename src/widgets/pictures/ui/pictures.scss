@@ -1,85 +1,30 @@
-.pictures {
-  & .social-media-container {
-    @include media-tablet {
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-    }
-
-    display: flex;
-    align-items: flex-start;
-  }
-}
-
-.pictures .carousel-root {
-  @include media-laptop {
-    width: 100%;
-    max-width: 730px;
-    height: 369px;
-  }
-
-  @include media-tablet {
-    width: 100%;
-    max-width: 358px;
-    height: 210px;
-    padding: 0 0 25px;
-  }
-
-  @include media-mobile {
-    width: 100%;
-    height: auto;
-  }
-
-  width: 1200px;
-  height: 540px;
-  margin: 16px auto;
-  padding: 10px 10px 40px;
-}
-
 .carousel {
-  @include media-laptop {
-    height: 369px;
+  .slider {
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
   }
 
-  @include media-tablet {
-    height: 210px;
+  .control-dots {
+    margin: 0;
+    padding: 8px;
+    backdrop-filter: blur(10px);
   }
 
-  height: 540px;
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+  }
 }
 
-.slider {
-  @include media-laptop {
-    height: 325px;
-  }
-
+.social-media-container {
   @include media-tablet {
-    height: 175px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
 
-  @include media-mobile {
-    height: auto;
-  }
-
-  height: 468px;
-}
-
-.carousel .slide {
-  @include media-laptop {
-    width: 730px;
-    height: 369px;
-  }
-
-  @include media-tablet {
-    width: 358px;
-    height: 210px;
-  }
-
-  @include media-mobile {
-    height: auto;
-  }
-
-  width: 750px;
-  height: 468px;
-  margin-right: 10px;
+  display: flex;
+  align-items: flex-start;
 }
