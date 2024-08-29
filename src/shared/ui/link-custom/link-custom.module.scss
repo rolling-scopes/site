@@ -81,11 +81,6 @@
 .text-link {
   @extend %transition-all;
 
-  @include media-tablet {
-    font-size: 16px;
-  }
-
-  font-size: 20px;
   color: $color-blue;
   text-decoration: underline;
 
