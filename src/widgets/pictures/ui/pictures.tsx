@@ -68,7 +68,12 @@ export const Pictures = () => (
         )}
       >
         {photos.map((photo, index) => (
-          <Image src={photo} key={index} data-testid="carousel-image" />
+          <Image
+            src={photo}
+            key={index}
+            data-testid="carousel-image"
+            alt="Photo of our community"
+          />
         ))}
       </Carousel>
       <Paragraph>
