@@ -29,13 +29,21 @@ describe('LinkCustom', () => {
     expect(link.textContent).toContain(label);
   });
 
-  it('should have attribute', () => {
+  it('should be external', () => {
     const { getByRole } = renderWithRouter(<LinkCustom href={href} external>{label}</LinkCustom>);
     const link = getByRole('link');
 
     expect(link).toHaveAttribute('rel', 'noopener noreferrer');
     expect(link).toHaveTextContent('Click me');
     expect(link).toHaveAttribute('target', '_blank');
+  });
+
+  it('should be inner', () => {
+    const { getByRole } = renderWithRouter(<LinkCustom href={href}>{label}</LinkCustom>);
+    const link = getByRole('link');
+
+    expect(link).not.toHaveAttribute('rel', 'noopener noreferrer');
+    expect(link).not.toHaveAttribute('target', '_blank');
   });
 
   it('after click on link should go to http://example.com', async () => {
