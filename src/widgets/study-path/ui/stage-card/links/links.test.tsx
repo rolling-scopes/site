@@ -1,6 +1,6 @@
-import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { screen } from '@testing-library/react';
 import { Links } from './links';
+import { renderWithRouter } from '@/shared/__tests__/utils';
 
 describe('Links Component', () => {
   it('renders links correctly', () => {
@@ -15,7 +15,7 @@ describe('Links Component', () => {
       },
     ];
 
-    render(<MemoryRouter><Links links={testLinks} /></MemoryRouter>);
+    renderWithRouter(<Links links={testLinks} />);
 
     testLinks.forEach(({ href, linkTitle }) => {
       const linkElement = screen.getByText(linkTitle);
