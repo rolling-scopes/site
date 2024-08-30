@@ -3,7 +3,7 @@ import { Stages } from './stages';
 import { useDataByName } from '@/shared/hooks/use-data-by-name';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { type DataMap } from 'data';
+import type { DataMap } from 'data';
 
 import './study-path.scss';
 
