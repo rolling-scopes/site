@@ -27,7 +27,6 @@ const linkCustomVariants = cva('', {
       textLink: cx('textLink'),
     },
   },
-  defaultVariants: { variant: 'textLink' },
 });
 
 const externalLinkAttributes = {
