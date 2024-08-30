@@ -67,7 +67,15 @@ const javaScriptEN: () => AboutInfo[] = () => {
     {
       id: 2,
       title: 'Worldwide mentors and trainers',
-      info: 'The Mentors and trainers of our school are front-end and javascript developers from different companies/countries. How to become a <a href="/courses#mentors-wanted">mentor</a>?',
+      info: (
+        <p>
+          The Mentors and trainers of our school are front-end and javascript developers from
+          different companies/countries. How to
+          {' '}
+          <LinkCustom href="/courses#mentors-wanted">become a mentor</LinkCustom>
+          ?
+        </p>
+      ),
       icon: planetIcon,
     },
     {
@@ -163,7 +171,14 @@ const reactEn: AboutInfo[] = javaScriptEN().map((item) => {
   if (item.id === 5) {
     return {
       ...item,
-      info: `Throughout the course, we mostly use <a href=${DISCORD_LINKS['react']}>Discord chat</a>.`,
+      info: (
+        <p>
+          Throughout the course, we mostly use
+          {' '}
+          <LinkCustom href={DISCORD_LINKS['react']} external>Discord chat</LinkCustom>
+          .
+        </p>
+      ),
     };
   }
   return item;
