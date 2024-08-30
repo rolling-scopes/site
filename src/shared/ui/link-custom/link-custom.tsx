@@ -2,7 +2,7 @@ import { AnchorHTMLAttributes, ReactNode } from 'react';
 import { type VariantProps, cva } from 'class-variance-authority';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
-import { TextLinkIcon } from '@/shared/icons';
+import { ArrowIcon, TextLinkIcon } from '@/shared/icons';
 
 import styles from './link-custom.module.scss';
 
@@ -37,13 +37,27 @@ const externalLinkAttributes = {
 export const LinkCustom = ({
   children,
   href,
-  icon = <></>,
+  icon,
   className = '',
   variant = 'textLink',
   external = false,
   ...props
 }: LinkCustomProps) => {
-  const iconElement = external && variant === 'textLink' ? <TextLinkIcon /> : icon;
+  const resolveIcon = () => {
+    switch (true) {
+      case external && variant === 'textLink':
+        return <TextLinkIcon />;
+      case icon:
+        return icon;
+      case variant === 'primary':
+      case variant === 'secondary':
+        return <ArrowIcon />;
+      case variant === 'rounded':
+        return <ArrowIcon size="16px" />;
+      default:
+        return <></>;
+    }
+  };
 
   return (
     <Link
@@ -56,7 +70,7 @@ export const LinkCustom = ({
       {...(external && externalLinkAttributes)}
     >
       {children}
-      {iconElement}
+      {resolveIcon()}
     </Link>
   );
 };
