@@ -1,4 +1,4 @@
-import type { Trainer } from './trainers.types';
+import type { Trainer } from '../src/widgets/trainers/trainers.types';
 import reactRuImg3 from '@/shared/assets/mentors/d-cebruk.webp';
 import reactRuImg2 from '@/shared/assets/mentors/p-razuvalov.webp';
 import reactRuImg4 from '@/shared/assets/mentors/s-shalyapin.webp';

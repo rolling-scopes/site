@@ -7,8 +7,8 @@ import { CourseMain } from '@/widgets/course-main';
 import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
-import { javaScriptRu } from '@/widgets/trainers/javascript-ru.data';
 import { TrainingProgram } from '@/widgets/training-program';
+import { javaScriptRu } from 'data';
 
 const COURSE_NAME = 'js / front-end ru';
 

@@ -6,8 +6,8 @@ import { CourseMain } from '@/widgets/course-main';
 import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
-import { awsDev } from '@/widgets/trainers/awsDev.data';
 import { TrainingProgram } from '@/widgets/training-program';
+import { awsDev } from 'data';
 
 const COURSE_NAME = 'aws cloud dev';
 

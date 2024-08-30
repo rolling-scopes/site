@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { fetchDataByName } from '@/app/services/api';
-import { type DataMap } from '@/app/services/data/courses-data.types';
+import { type DataMap } from 'data';
 
 export const useDataByName = <K extends keyof DataMap>(
   dataName: keyof DataMap,

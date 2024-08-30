@@ -8,8 +8,8 @@ import { MentorsWanted } from '@/widgets/mentors-wanted';
 import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
-import { angular } from '@/widgets/trainers/angular.data';
 import { TrainingProgram } from '@/widgets/training-program';
+import { angular } from 'data';
 
 const COURSE_NAME = 'angular';
 

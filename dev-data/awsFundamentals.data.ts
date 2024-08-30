@@ -1,4 +1,4 @@
-import type { Trainer } from './trainers.types';
+import type { Trainer } from '../src/widgets/trainers/trainers.types';
 import awsImg2 from '@/shared/assets/mentors/v-antonau.webp';
 import awsImg1 from '@/shared/assets/mentors/v-kavaliou.webp';
 

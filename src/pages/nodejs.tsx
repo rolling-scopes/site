@@ -6,8 +6,8 @@ import { Communication } from '@/widgets/communication';
 import { CourseMain } from '@/widgets/course-main';
 import { Required } from '@/widgets/required';
 import { Trainers } from '@/widgets/trainers';
-import { nodejs } from '@/widgets/trainers/nodejs.data';
 import { TrainingProgram } from '@/widgets/training-program';
+import { nodejs } from 'data';
 
 const COURSE_NAME = 'node.js';
 
