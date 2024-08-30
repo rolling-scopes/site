@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import awardIcon from '@/shared/assets/icons/award-icon.webp';
 import giftIcon from '@/shared/assets/icons/gift.webp';
 import noteIcon from '@/shared/assets/icons/note-icon.webp';
@@ -11,7 +12,7 @@ import { LinkCustom } from '@/shared/ui/link-custom';
 type AboutInfo = {
   id: number;
   title: string;
-  info: string | JSX.Element;
+  info: string | ReactNode;
   icon: string;
 };
 

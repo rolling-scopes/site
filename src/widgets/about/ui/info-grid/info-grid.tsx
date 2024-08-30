@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { Image } from '@/shared/ui/image';
 
 import './info-grid.scss';
@@ -6,7 +7,7 @@ interface InfoGridProps {
   items: {
     id: number;
     title: string;
-    info: string | JSX.Element;
+    info: string | ReactNode;
     icon: string;
   }[];
   hasTitle?: boolean;
