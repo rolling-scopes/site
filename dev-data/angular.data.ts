@@ -1,4 +1,3 @@
-import type { Trainer } from '../src/widgets/trainers/trainers.types';
 import aSacca from '@/shared/assets/mentors/a-sacca.webp';
 import aSerhiyenia from '@/shared/assets/mentors/a-serhiyenia.webp';
 import dKohut from '@/shared/assets/mentors/d-kohut.webp';
@@ -6,6 +5,7 @@ import kBritsyn from '@/shared/assets/mentors/k-britsyn.webp';
 import nLoginova from '@/shared/assets/mentors/n-loginova.webp';
 import oDuleba from '@/shared/assets/mentors/o-duleba.webp';
 import rSaltykov from '@/shared/assets/mentors/r-saltykov.webp';
+import type { Trainer } from 'data';
 
 export const angular: Trainer[] = [
   {
