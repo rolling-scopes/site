@@ -1,6 +1,6 @@
-import { ReactNode, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { DropdownWrapper } from '../dropdown/dropdown-wrapper';
 import { DropdownArrow } from '@/shared/icons/dropdown-arrow';
 
@@ -20,6 +20,8 @@ export const NavItem = ({ label, href, dropdownInner }: NavItemProps) => {
   const onClose = () => setDropdownOpen(false);
   const onOpen = () => setDropdownOpen(true);
 
+  const location = useLocation();
+
   const handleKeyPress = (e: React.KeyboardEvent<HTMLButtonElement>) => {
     if (e.key === 'Enter') {
       e.preventDefault();
@@ -32,6 +34,10 @@ export const NavItem = ({ label, href, dropdownInner }: NavItemProps) => {
       onClose();
     }
   };
+
+  useEffect(() => {
+    onClose();
+  }, [location]);
 
   return (
     <div className={cx('menu-item-wrapper')} onBlur={handleBlur}>
