@@ -1,5 +1,4 @@
 // todo it not widget
-import { ArrowIcon } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
 
 import './option-item.scss';
@@ -18,7 +17,7 @@ export const OptionItem = ({ title, description, linkLabel, href = '' }: OptionI
       {description}
     </p>
     {linkLabel && (
-      <LinkCustom href={href} icon={<ArrowIcon size="16px" />} variant="primary" external>
+      <LinkCustom href={href} variant="primary" external>
         {linkLabel}
       </LinkCustom>
     )}

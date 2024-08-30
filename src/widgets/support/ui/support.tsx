@@ -1,6 +1,5 @@
 import { LINKS } from '@/app/const';
 import image from '@/shared/assets/support.webp';
-import { ArrowIcon } from '@/shared/icons';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Subtitle } from '@/shared/ui/subtitle';
@@ -17,7 +16,7 @@ export const Support = () => (
         </WidgetTitle>
         <Subtitle text="Your donations help us cover hosting, domains, licenses, and advertising for courses and events. Every donation, big or small, helps!" />
         <Subtitle text="Thank you for your support!" />
-        <LinkCustom href={LINKS.DONATE} icon={<ArrowIcon />} variant="primary" external>
+        <LinkCustom href={LINKS.DONATE} variant="primary" external>
           Donate now
         </LinkCustom>
       </div>

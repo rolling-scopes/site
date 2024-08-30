@@ -1,6 +1,5 @@
 import { LINKS } from '@/app/const';
 import mentorImg from '@/shared/assets/mentors-wanted.webp';
-import { ArrowIcon } from '@/shared/icons';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Subtitle } from '@/shared/ui/subtitle';
@@ -24,7 +23,6 @@ export const Mentors = () => {
           />
           <LinkCustom
             href={LINKS.BECOME_MENTOR}
-            icon={<ArrowIcon />}
             variant="primary"
             external
           >
