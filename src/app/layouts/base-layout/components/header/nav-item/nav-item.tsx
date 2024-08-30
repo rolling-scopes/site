@@ -52,7 +52,11 @@ export const NavItem = ({ label, href, dropdownInner }: NavItemProps) => {
       >
         <p className={cx('label')}>{label}</p>
         {dropdownInner && (
-          <button onKeyDown={handleKeyPress} className={cx('dropdown-arrow')}>
+          <button
+            onKeyDown={handleKeyPress}
+            className={cx('dropdown-arrow')}
+            aria-expanded={isDropdownOpen}
+          >
             <DropdownArrow />
           </button>
         )}
