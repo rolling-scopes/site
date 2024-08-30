@@ -56,7 +56,7 @@ export const NavItem = ({ label, href, dropdownInner }: NavItemProps) => {
         onMouseEnter={onOpen}
         end
       >
-        <p className={cx('label')}>{label}</p>
+        <span className={cx('label')}>{label}</span>
         {dropdownInner && (
           <button
             onKeyDown={handleKeyPress}
