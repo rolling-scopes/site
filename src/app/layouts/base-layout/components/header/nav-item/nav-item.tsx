@@ -20,8 +20,21 @@ export const NavItem = ({ label, href, dropdownInner }: NavItemProps) => {
   const onClose = () => setDropdownOpen(false);
   const onOpen = () => setDropdownOpen(true);
 
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      setDropdownOpen((prev) => !prev);
+    }
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLDivElement>) => {
+    if (!e.currentTarget.contains(e.relatedTarget)) {
+      onClose();
+    }
+  };
+
   return (
-    <div className={cx('menu-item-wrapper')}>
+    <div className={cx('menu-item-wrapper')} onBlur={handleBlur}>
       <NavLink
         to={href}
         className={
@@ -39,9 +52,9 @@ export const NavItem = ({ label, href, dropdownInner }: NavItemProps) => {
       >
         <p className={cx('label')}>{label}</p>
         {dropdownInner && (
-          <span className={cx('dropdown-arrow')}>
+          <button onKeyDown={handleKeyPress} className={cx('dropdown-arrow')}>
             <DropdownArrow />
-          </span>
+          </button>
         )}
       </NavLink>
       {dropdownInner && (
