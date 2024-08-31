@@ -62,4 +62,41 @@ describe('LinkCustom', () => {
     expect(screen.queryByText(/Go to About/i)).not.toBeInTheDocument();
     expect(screen.getByText(/About Page/i)).toBeInTheDocument();
   });
+
+  it('renders TextLinkIcon when link is external and variant is textLink', () => {
+    renderWithRouter(<LinkCustom href="/" variant="textLink" external>{label}</LinkCustom>);
+
+    const icon = screen.getByTestId('text-link-icon');
+
+    expect(icon).toBeInTheDocument();
+  });
+
+  it('renders ArrowIcon when variant is primary', () => {
+    renderWithRouter(<LinkCustom href="/" variant="primary">{label}</LinkCustom>);
+
+    const icon = screen.getByTestId('arrow-icon');
+
+    expect(icon).toBeInTheDocument();
+  });
+
+  it('renders ArrowIcon with small size when variant is rounded', () => {
+    renderWithRouter(<LinkCustom href="/" variant="rounded">{label}</LinkCustom>);
+
+    const icon = screen.getByTestId('arrow-icon');
+
+    expect(icon).toBeInTheDocument();
+    expect(icon).toHaveAttribute('height', '16px');
+  });
+
+  it('renders provided icon when icon prop is passed', () => {
+    const CustomIcon = () => <div data-testid="custom-icon">custom</div>;
+
+    renderWithRouter(<LinkCustom href="/" variant="primary" icon={<CustomIcon />}>{label}</LinkCustom>);
+
+    const providedIcon = screen.getByTestId('custom-icon');
+    const defaultIcon = screen.queryByTestId('arrow-icon');
+
+    expect(providedIcon).toBeInTheDocument();
+    expect(defaultIcon).toBeNull();
+  });
 });
