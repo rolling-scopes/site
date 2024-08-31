@@ -24,6 +24,7 @@ const linkCustomVariants = cva('', {
       rounded: cx('button', 'rounded'),
       primary: cx('button', 'primary'),
       secondary: cx('button', 'secondary'),
+      custom: '', // relies on external classes
       textLink: cx('textLink'),
     },
   },
@@ -47,7 +48,7 @@ export const LinkCustom = ({
     switch (true) {
       case external && variant === 'textLink':
         return <TextLinkIcon />;
-      case icon:
+      case icon !== undefined:
         return icon;
       case variant === 'primary':
       case variant === 'secondary':

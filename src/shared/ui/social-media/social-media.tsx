@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { LinkCustom } from '../link-custom';
 
 import './social-media.scss';
 
@@ -9,8 +10,13 @@ export type SocialMediaProps = {
 };
 
 export const SocialMedia = ({ title, href, icon }: SocialMediaProps) => (
-  <a className="social-media" href={href} target="_blank" rel="noreferrer">
+  <LinkCustom
+    className="social-media"
+    href={href}
+    variant="custom"
+    external
+  >
     {icon}
     <span className="text">{title}</span>
-  </a>
+  </LinkCustom>
 );
