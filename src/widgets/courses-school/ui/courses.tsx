@@ -51,11 +51,13 @@ export const Courses = () => {
   return (
     <article id="upcoming-courses" className={cx('container')}>
       <section className={cx('content')}>
-        <WidgetTitle size="small" className={cx('course-title')}>Upcoming courses</WidgetTitle>
+        <WidgetTitle size="small" className={cx('course-title')}>
+          Upcoming courses
+        </WidgetTitle>
         <div className={cx('column-2')}>
           <div className={cx('course-list')} data-testid="courses-list">
             {coursesContent}
-            <LinkCustom href={ROUTES.COURSES} icon={<ArrowIcon />} variant="colored" button>
+            <LinkCustom href={ROUTES.COURSES} icon={<ArrowIcon />} variant="primary">
               Go to courses
             </LinkCustom>
           </div>

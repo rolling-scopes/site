@@ -1,7 +1,7 @@
 import { type Course } from '@/app/types';
 import { ArrowIcon } from '@/shared/icons';
 import { DateLang } from '@/shared/ui/date-lang';
-import Image from '@/shared/ui/image';
+import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 
 import './course-card.scss';
@@ -36,13 +36,7 @@ export const CourseCard = ({
       <div className="rs-course-card__bottom">
         <DateLang startDate={startDate} language={language} mode={mode} />
         <div className="rs-course-card__right">
-          <LinkCustom
-            href={detailsUrl}
-            icon={<ArrowIcon size="16px" />}
-            variant="colored"
-            button
-            size="small"
-          >
+          <LinkCustom href={detailsUrl} icon={<ArrowIcon size="16px" />} variant="rounded">
             View details
           </LinkCustom>
         </div>

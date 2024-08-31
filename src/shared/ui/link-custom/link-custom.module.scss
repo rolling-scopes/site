@@ -14,110 +14,67 @@
   white-space: pre;
 }
 
-.outlined {
-  margin: 24px 0;
+.secondary {
+  width: max-content;
+  padding: 16px 24px;
+
+  font-size: 18px;
   color: $color-black;
+
   border: 2px solid $color-black;
 
   img {
     filter: invert(100%);
   }
 
-  &.large {
-    width: max-content;
-    padding: 12px 24px;
-    font-size: 18px;
-
-    &:hover {
-      background-color: $color-gray-100;
-    }
-
-    &.rounded {
-      width: fit-content;
-      margin: 0;
-      padding: 8px 16px;
-
-      color: $color-white;
-
-      border: 2px solid $color-yellow-50;
-      border-radius: 24px;
-
-      &:hover {
-        color: $color-gray-600;
-        background-color: $color-white;
-        box-shadow: 0 0 16px 0 rgba(from rgb(114 92 19) r g b / $opacity-8);
-      }
-    }
-  }
-
-  &.medium {
-    width: 240px;
-    padding: 8px 24px;
-    font-size: 16px;
-    line-height: 24px;
-
-    &:hover {
-      background-color: $color-gray-200;
-    }
-
-    @include media-mobile-landscape {
-      width: 100%;
-    }
+  &:hover {
+    background-color: $color-gray-100;
   }
 }
 
-.colored {
-  width: min-content;
+.primary {
+  width: max-content;
+  padding: 16px 24px;
 
-  &.large {
-    overflow: visible;
+  font-size: 18px;
+  line-height: 24px;
+  color: $color-white;
 
-    margin-top: 24px;
-    padding: 16px 24px;
+  background-color: $color-black;
+  border: 2px solid $color-black;
 
-    font-size: 18px;
-    line-height: 24px;
-    color: $color-white;
-
-    background-color: $color-black;
-
-    &:hover {
-      background-color: $color-gray-600;
-    }
-
-    @include media-tablet {
-      width: 100%;
-    }
+  &:hover {
+    background-color: $color-gray-600;
+    border-color: $color-gray-600;
   }
 
-  &.small {
-    overflow: hidden;
+  @include media-tablet {
+    width: 100%;
+  }
+}
 
-    height: 36px;
-    padding: 10px 12px;
+.rounded {
+  width: max-content;
+  height: 36px;
+  padding: 10px 12px;
 
-    font-size: 14px;
-    line-height: 16px;
-    color: $color-black;
+  font-size: 14px;
+  line-height: 16px;
+  color: $color-black;
 
-    background-color: #eee;
-    border-radius: 9999px;
+  background-color: #eee;
+  border-radius: 9999px;
 
-    img {
-      filter: invert(100%);
-    }
+  img {
+    filter: invert(100%);
+  }
 
-    &:hover {
-      background-color: hsla(from $color-gray-600 h s l/ $opacity-50);
-    }
+  &:hover {
+    background-color: hsla(from $color-gray-600 h s l/ $opacity-50);
+  }
 
-    @include media-tablet {
-      gap: 0;
-
-      &.regular {
-        margin-right: 8px;
-      }
-    }
+  @include media-tablet {
+    gap: 4px;
   }
 }
 
