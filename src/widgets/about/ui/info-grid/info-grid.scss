@@ -1,14 +1,4 @@
 .about-grid {
-  @include media-laptop {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  @include media-tablet {
-    gap: 16px;
-  }
-
   display: grid;
   grid-template-areas:
     'a a b'
@@ -19,10 +9,6 @@
   margin-top: 24px;
 
   .item {
-    @include media-laptop {
-      font-size: 16px;
-    }
-
     width: 100%;
     padding: 24px;
 
@@ -58,6 +44,10 @@
     & a {
       text-decoration: underline;
     }
+
+    @include media-laptop {
+      font-size: 16px;
+    }
   }
 
   .item:nth-child(1) {
@@ -78,5 +68,15 @@
 
   .item:nth-child(5) {
     grid-area: e;
+  }
+
+  @include media-laptop {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  @include media-tablet {
+    gap: 16px;
   }
 }

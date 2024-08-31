@@ -6,30 +6,6 @@
       gap: 16px;
 
       .column-2 {
-        @include media-laptop {
-          gap: 5rem;
-        }
-
-        @include media-laptop-medium {
-          flex-direction: column;
-          gap: 32px;
-          align-items: flex-start;
-
-          & > * {
-            max-width: 80%;
-          }
-
-          & div > .stage-actions {
-            font-size: 18px;
-          }
-        }
-
-        @include media-tablet {
-          & > * {
-            max-width: 100%;
-          }
-        }
-
         flex-direction: row;
         gap: 8rem;
         align-items: start;
@@ -52,6 +28,30 @@
         & div > .subtitle {
           margin-bottom: 16px;
           font-size: 28px;
+        }
+
+        @include media-laptop {
+          gap: 5rem;
+        }
+
+        @include media-laptop-medium {
+          flex-direction: column;
+          gap: 32px;
+          align-items: flex-start;
+
+          & > * {
+            max-width: 80%;
+          }
+
+          & div > .stage-actions {
+            font-size: 18px;
+          }
+        }
+
+        @include media-tablet {
+          & > * {
+            max-width: 100%;
+          }
         }
       }
     }

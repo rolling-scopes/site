@@ -1,13 +1,5 @@
 .breadcrumbs {
   &.content {
-    @include media-laptop {
-      padding: 24px 40px 10px;
-    }
-
-    @include media-tablet {
-      padding: 24px 15px 10px;
-    }
-
     padding: 24px 120px 10px;
 
     ul {
@@ -34,6 +26,14 @@
       &:hover {
         color: $color-gray-600;
       }
+    }
+
+    @include media-laptop {
+      padding: 24px 40px 10px;
+    }
+
+    @include media-tablet {
+      padding: 24px 15px 10px;
     }
   }
 }

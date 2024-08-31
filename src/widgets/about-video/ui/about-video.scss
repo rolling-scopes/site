@@ -1,18 +1,10 @@
 .about-video {
   &.content {
     & > .video-wrapper {
-      @include media-tablet-large {
-        padding: 0;
-      }
-
       margin-top: 24px;
       padding: 0 67px;
 
       .video-container {
-        @include media-laptop-medium {
-          max-height: 411px;
-        }
-
         position: relative;
 
         overflow: hidden;
@@ -31,6 +23,14 @@
 
           border: 0;
         }
+
+        @include media-laptop-medium {
+          max-height: 411px;
+        }
+      }
+
+      @include media-tablet-large {
+        padding: 0;
       }
     }
   }
