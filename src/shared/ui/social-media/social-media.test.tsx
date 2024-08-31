@@ -13,45 +13,33 @@ describe('SocialMedia component', () => {
     icon: mockIcon,
   };
 
-  it('renders without crashing', () => {
-    renderWithRouter(<SocialMedia {...props} />);
-    const linkElement = screen.getByRole('link');
+  let linkElement: HTMLElement;
 
+  beforeEach(() => {
+    renderWithRouter(<SocialMedia {...props} />);
+    linkElement = screen.getByTestId('social-media');
+  });
+
+  it('renders without crashing', () => {
     expect(linkElement).toBeInTheDocument();
   });
 
   it('renders correct icon', () => {
-    renderWithRouter(<SocialMedia {...props} />);
     const icon = screen.getByText('mockIcon');
 
-    expect(icon).toBeInTheDocument();
+    expect(icon).toBeVisible();
   });
 
   it('displays correct title', () => {
-    renderWithRouter(<SocialMedia {...props} />);
-    const title = screen.getByText('TestSocialMedia');
+    const title = screen.getByTestId('media-title');
 
-    expect(title).toBeInTheDocument();
+    expect(title).toBeVisible();
+    expect(title.innerHTML).toBe(props.title);
   });
 
-  it('has correct href', () => {
-    renderWithRouter(<SocialMedia {...props} />);
-    const linkElement = screen.getByRole('link');
-
-    expect(linkElement).toHaveAttribute('href', 'https://test.com');
-  });
-
-  it('opens link in new window', () => {
-    renderWithRouter(<SocialMedia {...props} />);
-    const linkElement = screen.getByRole('link');
-
+  it('has correct link attributes', () => {
+    expect(linkElement.getAttribute('href')).toBe(props.href);
     expect(linkElement).toHaveAttribute('target', '_blank');
-  });
-
-  it('has no referrer', () => {
-    renderWithRouter(<SocialMedia {...props} />);
-    const linkElement = screen.getByRole('link');
-
     expect(linkElement).toHaveAttribute('rel', 'noopener noreferrer');
   });
 });
