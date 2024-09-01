@@ -1,6 +1,6 @@
-import { EventCardProps } from '@/entities/events';
+import { Event } from '@/entities/events';
 
-export const events: EventCardProps[] = [
+export const events: Event[] = [
   {
     eventType: 'Meetup',
     title: 'Autoscaling strategies for ECS Fargate',

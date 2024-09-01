@@ -1,21 +1,8 @@
 import classNames from 'classnames/bind';
+import { Event } from '@/entities/events';
 import { LinkCustom } from '@/shared/ui/link-custom';
 
 import styles from './event-card.module.scss';
-
-export type EventCardProps = {
-  eventType: string;
-  title: string;
-  organizedBy: string; // organizer name or place (e.g. 'Vilnius, Lithuania' or 'online')
-  organization: string;
-  additionalInfo?: string;
-  date: string;
-  time: string;
-  type: string;
-  address: string;
-  city: string;
-  href: string;
-};
 
 const cx = classNames.bind(styles);
 
@@ -31,7 +18,7 @@ export const EventCard = ({
   address,
   city,
   href,
-}: EventCardProps) => {
+}: Event) => {
   const dateInfo: string =
     organizedBy.toLowerCase() === 'online'
       ? `• ${date} • ${time}`
