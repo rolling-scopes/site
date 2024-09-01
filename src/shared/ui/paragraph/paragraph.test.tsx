@@ -1,33 +1,74 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import { Paragraph } from './paragraph';
+import { Paragraph, cx } from './paragraph';
 
 describe('Paragraph component', () => {
-  it('renders children text correctly', () => {
-    render(<Paragraph>Test Text</Paragraph>);
+  it('renders without crashing', () => {
+    render(<Paragraph />);
+    const paragraph = screen.getByTestId('my-paragraph');
 
-    const paragraphElement = screen.getByText('Test Text');
-
-    expect(paragraphElement).toBeInTheDocument();
+    expect(paragraph).toBeVisible();
   });
 
-  it('renders children components correctly', () => {
+  it('displays correct text', () => {
+    render(<Paragraph>Test Paragraph</Paragraph>);
+    const paragraph = screen.getByText('Test Paragraph');
+
+    expect(paragraph).toBeVisible();
+  });
+
+  it('displays p tag', () => {
+    render(<Paragraph />);
+    const element = screen.getByTestId('my-paragraph');
+
+    expect(element.tagName).toBe('P');
+  });
+
+  it('displays size correctly when size=small', () => {
+    render(<Paragraph size="small" />);
+    const element = screen.getByTestId('my-paragraph');
+
+    expect(element).toHaveClass(cx('small'));
+  });
+
+  it('displays size correctly when size=medium (default)', () => {
+    render(<Paragraph />);
+    const element = screen.getByTestId('my-paragraph');
+
+    expect(element).toHaveClass(cx('medium'));
+  });
+
+  it('applies custom className when provided', () => {
+    render(<Paragraph className="custom-class" />);
+    const element = screen.getByTestId('my-paragraph');
+
+    expect(element).toHaveClass('custom-class');
+  });
+
+  it('renders children correctly', () => {
     render(
       <Paragraph>
-        <span>Child Component</span>
+        <span>Child element</span>
       </Paragraph>,
     );
 
-    const spanElement = screen.getByText('Child Component');
+    const child = screen.getByText('Child element');
 
-    expect(spanElement).toBeInTheDocument();
+    expect(child).toBeInTheDocument();
   });
 
-  it('should not be in the document when no children is provided', () => {
-    render(<Paragraph></Paragraph>);
+  it('applies both size and custom classes correctly', () => {
+    render(<Paragraph size="small" className="custom-class" />);
+    const element = screen.getByTestId('my-paragraph');
 
-    const paragraphElement = screen.queryByTestId('paragraph');
+    expect(element).toHaveClass(cx('small'));
+    expect(element).toHaveClass('custom-class');
+  });
 
-    expect(paragraphElement).not.toBeInTheDocument();
+  it('renders an empty paragraph when no children provided', () => {
+    render(<Paragraph />);
+    const element = screen.getByTestId('my-paragraph');
+
+    expect(element).toBeEmptyDOMElement();
   });
 });
