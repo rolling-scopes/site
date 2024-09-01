@@ -36,7 +36,7 @@ export const Events = () => {
           <SectionLabel>events & meetups</SectionLabel>
           <WidgetTitle mods="asterisk">Meet us at events</WidgetTitle>
           <Subtitle text="For years we have been organizing meetups and conferences, where you can always learn something new, share your knowledge, discover new technologies, meet old and find new friends." />
-          <Paragraph>
+          <Paragraph size="small">
             During
             {' '}
             {rsLifetime}

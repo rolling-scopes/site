@@ -31,7 +31,7 @@ export const Numbers = () => {
               text="Everyone can discover our community, regardless of age, professional employment, or
             place of residence."
             />
-            <Paragraph>
+            <Paragraph size="small">
               Developers from different companies and countries are connected to pass on your
               knowledge, enrich your network and just have fun.
             </Paragraph>

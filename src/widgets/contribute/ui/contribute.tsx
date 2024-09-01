@@ -31,7 +31,7 @@ export const Contribute = () => (
         <div className="info">
           <WidgetTitle mods="asterisk">How to Contribute</WidgetTitle>
           <Subtitle text="Contributing to The Rolling Scopes is not only a great way to give back to the community, but it's also an excellent way to enhance your own knowledge." />
-          <Paragraph>
+          <Paragraph size="small">
             Remember, teaching others is one of the best ways to learn - this is known as The
             Protégé Effect! There are several ways you can contribute, choose yours.
           </Paragraph>
@@ -49,7 +49,7 @@ export const Contribute = () => (
           />
         ))}
       </div>
-      <Paragraph>
+      <Paragraph size="small" className="paragraph">
         Additionally, we provide feedback on LinkedIn, which can be a valuable asset for your
         professional development.
       </Paragraph>

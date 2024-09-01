@@ -20,7 +20,7 @@ export const Merch = () => (
         <SectionLabel>merch</SectionLabel>
         <WidgetTitle mods="asterisk">RS merch</WidgetTitle>
         <Subtitle text="Are you an RS sloth fan and looking for RS merch?" />
-        <Paragraph>
+        <Paragraph size="small">
           The wait is almost over as we&apos;re gearing up for the catalog of free web and print
           assets where you will find all merch collections and can print your own Rolling Scopes
           t-shirts, stickers etc.
