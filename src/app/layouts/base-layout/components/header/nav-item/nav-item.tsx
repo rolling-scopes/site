@@ -35,7 +35,6 @@ export const NavItem = ({ label, href, dropdownInner }: NavItemProps) => {
         }
         onMouseLeave={onClose}
         onMouseEnter={onOpen}
-        end
       >
         <p className={cx('label')}>{label}</p>
         {dropdownInner && (

@@ -1,9 +1,4 @@
 .navbar {
-  @include media-tablet {
-    height: 48px;
-    padding: 0 16px;
-  }
-
   position: fixed;
   z-index: 100;
   top: 0;
@@ -31,6 +26,11 @@
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
     box-shadow: rgb(0 0 0 / 8.2%) 0 1.026px 8.0694px 0;
+  }
+
+  @include media-tablet {
+    height: 48px;
+    padding: 0 16px;
   }
 }
 

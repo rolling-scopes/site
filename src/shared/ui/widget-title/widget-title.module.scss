@@ -16,27 +16,27 @@
 }
 
 .medium {
-  @include media-tablet {
-    padding-bottom: 16px;
-    font-size: 36px;
-    line-height: 44px;
-  }
-
   padding-bottom: 20px;
   font-size: 44px;
   line-height: 52px;
-}
 
-.large {
   @include media-tablet {
     padding-bottom: 16px;
     font-size: 36px;
     line-height: 44px;
   }
+}
 
+.large {
   padding-bottom: 24px;
   font-size: 52px;
   line-height: 64px;
+
+  @include media-tablet {
+    padding-bottom: 16px;
+    font-size: 36px;
+    line-height: 44px;
+  }
 }
 
 .lines::before {
