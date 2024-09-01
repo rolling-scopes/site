@@ -7,24 +7,42 @@
   .carousel-slider {
     .control-next,
     .control-prev {
-      top: calc(50% - 50px);
+      --slide-arrow-btn-height: 45px;
 
-      height: 100px;
+      top: calc(50% - var(--slide-arrow-btn-height) / 2);
+
+      height: var(--slide-arrow-btn-height);
+      margin: 2px;
 
       opacity: $opacity-100;
       backdrop-filter: blur(20px);
       border-radius: 8px;
+
+      &:hover {
+        background-color: $color-white;
+
+        &::before {
+          filter: invert(60%);
+        }
+      }
+
+      @include media-mobile-landscape {
+        display: none;
+      }
     }
   }
 
   .control-dots {
-    left: calc(50% - 150px);
+    --slide-control-dots-width: 240px;
 
-    width: 300px;
+    left: calc(50% - var(--slide-control-dots-width) / 2);
+
+    width: var(--slide-control-dots-width);
     margin: 0;
     padding: 8px;
 
     backdrop-filter: blur(10px);
+    border-radius: 8px;
   }
 
   .dot {
