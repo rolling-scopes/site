@@ -7,11 +7,11 @@
   .carousel-slider {
     .control-next,
     .control-prev {
-      --slide-arrow-btn-height: 45px;
+      --slider-arrow-btn-height: 45px;
 
-      top: calc(50% - var(--slide-arrow-btn-height) / 2);
+      top: calc(50% - var(--slider-arrow-btn-height) / 2);
 
-      height: var(--slide-arrow-btn-height);
+      height: var(--slider-arrow-btn-height);
       margin: 2px;
 
       opacity: $opacity-100;
@@ -33,11 +33,11 @@
   }
 
   .control-dots {
-    --slide-control-dots-width: 240px;
+    --slider-control-dots-width: 240px;
 
-    left: calc(50% - var(--slide-control-dots-width) / 2);
+    left: calc(50% - var(--slider-control-dots-width) / 2);
 
-    width: var(--slide-control-dots-width);
+    width: var(--slider-control-dots-width);
     margin: 0;
     padding: 8px;
 
@@ -53,12 +53,12 @@
 }
 
 .social-media-container {
+  display: flex;
+  align-items: flex-start;
+
   @include media-tablet {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
   }
-
-  display: flex;
-  align-items: flex-start;
 }
