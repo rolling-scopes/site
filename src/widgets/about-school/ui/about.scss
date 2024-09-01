@@ -1,29 +1,20 @@
 .rs-about {
   .content {
     > .column-2 {
-      @include media-laptop {
-        gap: 40px;
-        align-items: flex-start;
-      }
-
       display: flex;
       gap: 120px;
       justify-content: flex-start;
       width: 100%;
 
       .card-wrapper {
+        width: 380px;
+
         @include media-tablet {
           max-width: 100%;
         }
-
-        width: 380px;
       }
 
       .info {
-        @include media-laptop {
-          width: 100%;
-        }
-
         display: flex;
         flex-direction: column;
         gap: 16px;

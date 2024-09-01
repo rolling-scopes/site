@@ -1,25 +1,25 @@
 .paragraph {
+  font-weight: $font-weight-regular;
+  color: $color-gray-600;
+  letter-spacing: 0;
+
   @include media-laptop {
     font-size: 16px;
     line-height: 24px;
   }
+}
 
-  font-weight: $font-weight-regular;
-  color: $color-gray-600;
-  letter-spacing: 0;
+.medium {
+  font-size: 18px;
+  line-height: 28px;
+
+  @include media-tablet {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 .small {
   font-size: 16px;
   line-height: 24px;
-}
-
-.medium {
-  @include media-tablet {
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  font-size: 18px;
-  line-height: 28px;
 }

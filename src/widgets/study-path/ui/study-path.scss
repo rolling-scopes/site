@@ -1,5 +1,29 @@
 .study-path {
   &.content {
+    padding: 40px 120px;
+
+    & > .title {
+      margin-bottom: 10px;
+      font-size: 36px;
+      line-height: 44px;
+      letter-spacing: -0.02em;
+
+      @include media-tablet {
+        font-size: 28px;
+        line-height: 36px;
+      }
+    }
+
+    & > .paragraph {
+      font-size: 18px;
+      line-height: 28px;
+
+      @include media-tablet {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
     @include media-laptop {
       padding: 40px;
     }
@@ -11,20 +35,6 @@
     @include media-tablet {
       justify-content: flex-start;
       padding: 40px 16px;
-    }
-
-    padding: 40px 120px;
-
-    & > .title {
-      @include media-tablet {
-        font-size: 28px;
-        line-height: 36px;
-      }
-
-      margin-bottom: 10px;
-      font-size: 36px;
-      line-height: 44px;
-      letter-spacing: -0.02em;
     }
   }
 }

@@ -4,16 +4,6 @@
 }
 
 .menu-item {
-  @include media-hover {
-    &:hover::after {
-      transform: scaleX(1);
-    }
-
-    &:hover .label {
-      color: $color-black;
-    }
-  }
-
   cursor: pointer;
 
   position: relative;
@@ -75,6 +65,16 @@
 
       -webkit-text-stroke-color: currentcolor;
       -webkit-text-stroke-width: 1.25px;
+    }
+  }
+
+  @include media-hover {
+    &:hover::after {
+      transform: scaleX(1);
+    }
+
+    &:hover .label {
+      color: $color-black;
     }
   }
 }
