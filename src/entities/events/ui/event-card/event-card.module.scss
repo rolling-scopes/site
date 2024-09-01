@@ -13,8 +13,8 @@
     height: 304px;
     padding: 32px 24px 24px 24px;
 
-    background-color: #f4f1fa;
-    border: solid #e2e2e2;
+    background-color: $color-purple-50;
+    border: solid $color-gray-200;
     border-width: 1px 1px 0 1px;
     border-radius: 12px 12px 0 0;
 
@@ -38,8 +38,7 @@
       line-height: 1.2;
       color: $color-gray-600;
 
-      background-color: rgb(255 255 255 / 5%);
-      border: 4px solid #cdbaeb;
+      border: 2px solid $color-purple-400;
       border-radius: 36px;
     }
 
@@ -102,8 +101,8 @@
     height: 192px;
     padding: 24px;
 
-    background-color: #fefefe;
-    border: solid #e2e2e2;
+    background-color: $color-white;
+    border: solid $color-gray-200;
     border-width: 0 1px 1px 1px;
     border-radius: 0 0 12px 12px;
 
@@ -117,7 +116,7 @@
 
       font-size: 14px;
       font-weight: $font-weight-medium;
-      color: #9fa1ad;
+      color: $color-gray-500;
     }
 
     .event-address {
