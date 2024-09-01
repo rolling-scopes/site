@@ -66,6 +66,10 @@
 
       background-color: transparent;
       border: none;
+
+      &:focus {
+        outline-offset: 3px;
+      }
     }
 
     &.rotate .dropdown-arrow {
