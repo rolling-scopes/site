@@ -23,7 +23,7 @@ export const NavItem = ({ label, href, dropdownInner }: NavItemProps) => {
   const location = useLocation();
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLButtonElement>) => {
-    if (e.key === 'Enter') {
+    if (e.code === 'Enter' || e.code === 'Space') {
       e.preventDefault();
       setDropdownOpen((prev) => !prev);
     }
