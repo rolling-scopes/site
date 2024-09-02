@@ -3,6 +3,8 @@ import stage1 from '@/shared/assets/stages/stage-1.webp';
 import stage2 from '@/shared/assets/stages/stage-2.webp';
 import stage3 from '@/shared/assets/stages/stage-3.webp';
 
+// TODO Change 'topics' to string
+
 export const jsPath: JSPath[] = [
   {
     id: 1,
@@ -11,6 +13,7 @@ export const jsPath: JSPath[] = [
       'Everyone registered is automatically eligible for this stage. The first stage lasts 15 weeks. This stage includes practical assignments and tests. Evaluation is either automatic or in the form of cross-checking between students.',
     imageSrc: stage1,
     topics: ['Git', 'HTML', 'CSS', 'Javascript basics'],
+    list: [],
   },
   {
     id: 2,
@@ -26,6 +29,7 @@ export const jsPath: JSPath[] = [
       'Networking',
       'web development tools',
     ],
+    list: [],
   },
   {
     id: 3,
@@ -33,10 +37,12 @@ export const jsPath: JSPath[] = [
     description:
       'Learning either React or Angular Framework (the choice belongs to the student). To enroll, you need to successfully complete two stages of training. Format: mentoring, self-study, webinars, and communication on Discord. Practical sessions are reviewed and evaluated by mentors, as well as through cross-checking methods. Throughout the training, mock interviews are conducted with different mentors.',
     imageSrc: stage3,
-    actions: [
+    list:
+    [
       'Choose a Framework: React or Angular.',
       'Collaborative development of a final project.',
       'Framework-based interviews.',
     ],
+    marked: true,
   },
 ];

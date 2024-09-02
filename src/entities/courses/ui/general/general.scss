@@ -40,26 +40,6 @@
           padding: 0;
           font-size: 18px;
           line-height: 28px;
-
-          a {
-            @extend %transition-all;
-
-            color: $color-gray-600;
-            text-decoration: underline;
-
-            &:hover {
-              color: $color-gray-400;
-            }
-          }
-
-          @include media-tablet {
-            font-size: 16px;
-            line-height: 24px;
-          }
-        }
-
-        @include media-laptop {
-          max-width: 640px;
         }
       }
 
