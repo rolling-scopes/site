@@ -1,4 +1,11 @@
-import { ReactNode, useEffect, useRef, useState } from 'react';
+import {
+  FocusEvent,
+  KeyboardEvent,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import classNames from 'classnames/bind';
 import { NavLink, useLocation } from 'react-router-dom';
 import { DropdownWrapper } from '../dropdown/dropdown-wrapper';
@@ -24,21 +31,21 @@ export const NavItem = ({ label, href, dropdownInner }: NavItemProps) => {
 
   const location = useLocation();
 
-  const handleConfirmKeyPress = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+  const handleConfirmKeyPress = (e: KeyboardEvent<HTMLButtonElement>) => {
     if (e.code === 'Enter' || e.code === 'Space') {
       e.preventDefault();
       setDropdownOpen((prev) => !prev);
     }
   };
 
-  const handleEscKeyPress = (e: React.KeyboardEvent<HTMLElement>) => {
+  const handleEscKeyPress = (e: KeyboardEvent<HTMLElement>) => {
     if (e.code === 'Escape') {
       onClose();
       dropdownToggleRef.current?.focus();
     }
   };
 
-  const handleBlur = (e: React.FocusEvent<HTMLDivElement>) => {
+  const handleBlur = (e: FocusEvent<HTMLDivElement>) => {
     if (!e.currentTarget.contains(e.relatedTarget)) {
       onClose();
     }
