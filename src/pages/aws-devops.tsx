@@ -3,6 +3,8 @@ import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
 import { CourseMain } from '@/widgets/course-main';
+import { Trainers } from '@/widgets/trainers';
+import { awsDevops } from '@/widgets/trainers/awsDevops';
 import { TrainingProgram } from '@/widgets/training-program';
 
 const COURSE_NAME = 'aws devops';
@@ -16,6 +18,7 @@ export const AwsDevOps = () => {
       <About courseName={COURSE_NAME} />
       <Certification courseName={COURSE_NAME} />
       <Communication courseName={COURSE_NAME} />
+      <Trainers trainers={awsDevops} />
     </>
   );
 };
