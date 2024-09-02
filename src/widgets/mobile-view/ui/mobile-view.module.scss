@@ -1,0 +1,29 @@
+.mobile-view {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 16px;
+  align-items: baseline;
+  justify-content: flex-start;
+
+  width: 100%;
+}
+
+.category-link {
+  font-size: 24px;
+  font-weight: $font-weight-bold;
+}
+
+.divider {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid currentcolor;
+}
+
+.dark {
+  color: $color-gray-600;
+}
+
+.light {
+  color: $color-gray-100;
+}

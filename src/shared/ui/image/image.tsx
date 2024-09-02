@@ -1,20 +1,28 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { FC, useState } from 'react';
-import { IS_DEV } from './constants';
-import { DecodingAttr, FetchPriorityAttr, ImageProps, LoadingAttr } from './types';
-import convertToWebp from './utils/convertToWebp';
-import generateSizes from './utils/generateSizes';
-import generateSrcSet from './utils/generateSrcSet';
+import { ImgHTMLAttributes, useState } from 'react';
+import { IS_DEV } from '@/shared/constants.ts';
+import { convertToWebp } from '@/shared/helpers/convertToWebp.ts';
+import { generateSizes } from '@/shared/helpers/generateSizes.ts';
+import { generateSrcSet } from '@/shared/helpers/generateSrcSet.ts';
 
-const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
+type ImageProps = ImgHTMLAttributes<HTMLImageElement> & {
+  lazy?: boolean;
+};
+
+type LoadingAttr = ImgHTMLAttributes<HTMLImageElement>['loading'];
+
+type FetchPriorityAttr = ImgHTMLAttributes<HTMLImageElement>['fetchPriority'];
+
+type DecodingAttr = ImgHTMLAttributes<HTMLImageElement>['decoding'];
+
+export const Image = ({ alt, src = '', lazy = true, ...props }: ImageProps) => {
   const srcWebp = convertToWebp(src);
   const [srcSet, setSrcSet] = useState(() => (IS_DEV ? undefined : generateSrcSet(srcWebp)));
   const [sizes, setSizes] = useState(() => (IS_DEV ? undefined : generateSizes()));
 
-  const isLazy = lazy === 'true';
-  const loading: LoadingAttr = IS_DEV ? 'eager' : isLazy ? 'lazy' : 'eager';
-  const fetchPriority: FetchPriorityAttr = isLazy ? 'low' : 'high';
-  const decoding: DecodingAttr = isLazy ? 'async' : 'auto';
+  const loading: LoadingAttr = IS_DEV ? 'eager' : lazy ? 'lazy' : 'eager';
+  const fetchPriority: FetchPriorityAttr = lazy ? 'low' : 'high';
+  const decoding: DecodingAttr = lazy ? 'async' : 'auto';
   const srcAttr = IS_DEV ? src : srcWebp;
 
   const isImageSvg = src ? src.toLowerCase().endsWith('.svg') || src.toLowerCase().includes('data:image/svg') : false;
@@ -46,5 +54,3 @@ const Image: FC<ImageProps> = ({ alt, src = '', lazy = 'true', ...props }) => {
     />
   );
 };
-
-export default Image;

@@ -5,7 +5,7 @@ import { events } from '../events.data';
 import { EventCard, EventCardProps } from '@/entities/events';
 import photo3 from '@/shared/assets/photo-3.webp';
 import { getActualData } from '@/shared/helpers/getActualData';
-import Image from '@/shared/ui/image';
+import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';

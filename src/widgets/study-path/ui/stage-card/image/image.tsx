@@ -1,4 +1,4 @@
-import LazyImage from '@/shared/ui/image';
+import { Image as LazyImage } from '@/shared/ui/image';
 
 import './image.scss';
 

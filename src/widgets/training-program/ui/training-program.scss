@@ -4,23 +4,9 @@
   }
 
   &.content {
-    @include media-laptop {
-      padding: 75px 40px 40px;
-    }
-
-    @include media-tablet {
-      padding: 16px;
-    }
-
     padding: 80px 120px;
 
     &.column-2 {
-      @include media-tablet-large {
-        flex-direction: column;
-        gap: 40px;
-        align-items: flex-start;
-      }
-
       display: flex;
       flex-direction: row;
       gap: 100px;
@@ -28,10 +14,6 @@
       justify-content: flex-start;
 
       .left {
-        @include media-laptop-medium {
-          max-width: 100%;
-        }
-
         display: flex;
         flex: 1 1 55%;
         flex-direction: column;
@@ -46,22 +28,20 @@
         & > .button {
           margin-top: 24px;
         }
+
+        @include media-laptop-medium {
+          max-width: 100%;
+        }
       }
 
       .right {
-        @include media-tablet-large {
-          align-self: center;
-
-          width: 320px;
-          max-width: 60%;
-          height: auto;
-          max-height: 511px;
-        }
-
         flex: 1 1 30%;
         max-width: 30%;
 
         &.badge {
+          max-width: 276px;
+          height: auto;
+
           @include media-tablet-large {
             max-width: 220px;
           }
@@ -73,9 +53,6 @@
           @include media-mobile {
             max-width: 135px;
           }
-
-          max-width: 276px;
-          height: auto;
         }
 
         img {
@@ -83,7 +60,30 @@
           // height: min-content; // need to check on mobile
           object-fit: contain;
         }
+
+        @include media-tablet-large {
+          align-self: center;
+
+          width: 320px;
+          max-width: 60%;
+          height: auto;
+          max-height: 511px;
+        }
       }
+
+      @include media-tablet-large {
+        flex-direction: column;
+        gap: 40px;
+        align-items: flex-start;
+      }
+    }
+
+    @include media-laptop {
+      padding: 75px 40px 40px;
+    }
+
+    @include media-tablet {
+      padding: 16px;
     }
   }
 }

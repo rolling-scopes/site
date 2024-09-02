@@ -1,7 +1,7 @@
 import { LINKS } from '@/app/const';
 import mentorImg from '@/shared/assets/mentors-wanted.webp';
 import { ArrowIcon } from '@/shared/icons';
-import Image from '@/shared/ui/image';
+import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -13,7 +13,9 @@ export const Mentors = () => {
     <section className="mentors container" id="mentors-wanted">
       <div className="mentors content column-2">
         <div className="mentors-info">
-          <WidgetTitle size="large" mods="lines">Mentors wanted!</WidgetTitle>
+          <WidgetTitle size="large" mods="lines">
+            Mentors wanted!
+          </WidgetTitle>
           <Subtitle
             text="The Rolling Scopes School is constantly looking for mentors from all over the world to
             teach everyone who wants to learn the JavaScript language and the world of Front-end.
@@ -23,8 +25,7 @@ export const Mentors = () => {
           <LinkCustom
             href={LINKS.BECOME_MENTOR}
             icon={<ArrowIcon />}
-            variant="colored"
-            button
+            variant="primary"
             target="_blank"
           >
             Become a mentor

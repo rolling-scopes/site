@@ -1,19 +1,4 @@
 .burger {
-  @include media-hover {
-    &:hover {
-      .top,
-      .mid,
-      .bottom {
-        height: 3px;
-      }
-    }
-  }
-
-  @include media-tablet {
-    z-index: 10;
-    display: block;
-  }
-
   cursor: pointer;
 
   position: relative;
@@ -71,5 +56,20 @@
     .bottom {
       transform: rotate(45deg) translate(-5px, -6px);
     }
+  }
+
+  @include media-hover {
+    &:hover {
+      .top,
+      .mid,
+      .bottom {
+        height: 3px;
+      }
+    }
+  }
+
+  @include media-tablet {
+    z-index: 10;
+    display: block;
   }
 }

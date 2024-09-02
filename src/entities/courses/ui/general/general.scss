@@ -1,14 +1,5 @@
 .general {
   & .content {
-    @include media-laptop {
-      width: 100%;
-      padding: 40px 40px 0;
-    }
-
-    @include media-tablet {
-      padding: 40px 16px;
-    }
-
     padding: 40px 120px;
 
     & .title {
@@ -18,10 +9,6 @@
     }
 
     & .general-info {
-      @include media-laptop {
-        flex-direction: column;
-      }
-
       display: flex;
       gap: 24px;
       align-items: flex-start;
@@ -30,13 +17,13 @@
       color: $color-gray-600;
 
       & > div {
-        @include media-laptop {
-          max-width: 640px;
-        }
-
         max-width: 380px;
 
         & .title {
+          margin-top: 0;
+          font-size: 28px;
+          color: $color-gray-600;
+
           @include media-laptop {
             font-size: 22px;
             line-height: 36px;
@@ -46,18 +33,9 @@
             font-size: 28px;
             line-height: 36px;
           }
-
-          margin-top: 0;
-          font-size: 28px;
-          color: $color-gray-600;
         }
 
         & .description {
-          @include media-tablet {
-            font-size: 16px;
-            line-height: 24px;
-          }
-
           margin: 0;
           padding: 0;
           font-size: 18px;
@@ -71,6 +49,19 @@
           line-height: 28px;
         }
       }
+
+      @include media-laptop {
+        flex-direction: column;
+      }
+    }
+
+    @include media-laptop {
+      width: 100%;
+      padding: 40px 40px 0;
+    }
+
+    @include media-tablet {
+      padding: 40px 16px;
     }
   }
 }

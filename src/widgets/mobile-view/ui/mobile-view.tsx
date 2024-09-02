@@ -1,59 +1,58 @@
+import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '@/app/const';
 import { Logo } from '@/shared/ui/logo';
 import { SchoolMenu } from '@/widgets/school-menu';
 
-import './mobile-view.scss';
+import styles from './mobile-view.module.scss';
 
-interface MobileViewProps {
-  type: 'header' | 'footer';
-}
+const cx = classNames.bind(styles);
 
-const Divider = ({ type }: MobileViewProps) => (
-  <div className={`divider ${type === 'header' ? 'dark' : 'light'}`} />
+type DividerProps = {
+  color: 'light' | 'dark';
+};
+
+const Divider = ({ color }: DividerProps) => (
+  <hr className={cx('divider', color)} />
 );
+
+type MobileViewProps = {
+  type: 'header' | 'footer';
+};
 
 export const MobileView = ({ type }: MobileViewProps) => {
   const color = type === 'header' ? 'dark' : 'light';
   const logoView = type === 'header' ? null : 'with-border';
 
   return (
-    <div className="mobile-view" data-testid="mobile-view">
+    <nav className={cx('mobile-view')} data-testid="mobile-view">
       <Link to={ROUTES.HOME}>
         <Logo type={logoView} />
       </Link>
 
-      <Link to={`/${ROUTES.COMMUNITY}/#about`} className={`main-link ${color}`}>
-        About Community
+      <Divider color={color} />
+
+      <Link to={ROUTES.HOME} className={cx('category-link', color)}>
+        RS School
       </Link>
 
-      <Divider type={type} />
+      <SchoolMenu heading="rs school" hasTitle={false} color={color} />
 
-      <SchoolMenu heading="rs school" color={color} />
+      <Divider color={color} />
 
-      <Divider type={type} />
+      <Link to={ROUTES.COURSES} className={cx('category-link', color)}>
+        Courses
+      </Link>
 
-      <SchoolMenu heading="all courses" color={color} />
+      <SchoolMenu heading="all courses" hasTitle={false} color={color} />
 
-      <Divider type={type} />
+      <Divider color={color} />
 
-      <Link to={`/${ROUTES.COMMUNITY}/#community`} className={`main-link mt ${color}`}>
+      <Link to={ROUTES.COMMUNITY} className={cx('category-link', color)}>
         Community
       </Link>
 
-      <Divider type={type} />
-
-      <Link to={`/${ROUTES.COMMUNITY}/#events`} className={`main-link ${color}`}>
-        Events
-      </Link>
-
-      <Divider type={type} />
-
-      <Link to={`/${ROUTES.COMMUNITY}/#merch`} className={`main-link ${color}`}>
-        Merch
-      </Link>
-
-      <Divider type={type} />
-    </div>
+      <SchoolMenu heading="community" hasTitle={false} color={color} />
+    </nav>
   );
 };

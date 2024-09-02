@@ -1,16 +1,11 @@
 .mentoring {
   &.content {
-    @include media-laptop {
-      padding: 40px;
-    }
-
-    @include media-tablet {
-      padding: 40px 16px;
-    }
-
     padding: 40px 120px;
 
     & > .title {
+      font-size: 36px;
+      letter-spacing: 0;
+
       @include media-laptop {
         font-size: 29px;
         line-height: 44px;
@@ -19,22 +14,9 @@
       @include media-tablet {
         font-size: 23px;
       }
-
-      font-size: 36px;
-      letter-spacing: 0;
     }
 
     & > .benefits {
-      @include media-laptop {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-      }
-
-      @include media-tablet {
-        gap: 16px;
-      }
-
       display: grid;
       grid-template-areas:
         'a b c'
@@ -77,6 +59,24 @@
       .benefit:nth-child(5) {
         grid-area: e;
       }
+
+      @include media-laptop {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      @include media-tablet {
+        gap: 16px;
+      }
+    }
+
+    @include media-laptop {
+      padding: 40px;
+    }
+
+    @include media-tablet {
+      padding: 40px 16px;
     }
   }
 }

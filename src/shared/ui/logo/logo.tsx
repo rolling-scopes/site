@@ -2,7 +2,7 @@ import { HTMLAttributes } from 'react';
 import { VariantProps, cva } from 'class-variance-authority';
 import classNames from 'classnames/bind';
 import logo from '@/shared/assets/svg/rss-logo.svg';
-import Image from '@/shared/ui/image';
+import { Image } from '@/shared/ui/image';
 
 import styles from './logo.module.scss';
 

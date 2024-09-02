@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import { Course } from '@/app/types';
 import { ArrowIcon } from '@/shared/icons';
-import Image from '@/shared/ui/image';
+import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 
 import styles from './courses.module.scss';
@@ -33,14 +33,7 @@ export const CourseCard = ({
         <p className={cx('date')}>{`${startDate} • ${language[0].toUpperCase()}`}</p>
       </div>
       <div className={cx('details-container')}>
-        <LinkCustom
-          href={detailsUrl}
-          icon={<ArrowIcon size="16px" />}
-          variant="colored"
-          button
-          size="small"
-          rounded
-        >
+        <LinkCustom href={detailsUrl} icon={<ArrowIcon size="16px" />} variant="rounded">
           {buttonText}
         </LinkCustom>
       </div>
