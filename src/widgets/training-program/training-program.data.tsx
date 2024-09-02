@@ -308,6 +308,18 @@ export const contentMap: ContentMap = {
           'Become a DevOps engineer who is ready to face engineering challenges',
         ]}
       />,
+      <Subtitle
+        key="aws devops 03"
+        text="What do we offer?"
+      />,
+      <List
+        key="aws devops 04"
+        data={[
+          'Support: you will get regular feedback and guidance on practical tasks, helping refine your skills to the next level',
+          'Flexibility: depending on your weekly engagement, the recommendation is 3-4 hours daily',
+          'Community-based education: the community will help you explore emerging technologies and best practices, ensuring you are equipped with the knowledge that the current market seeks',
+        ]}
+      />,
     ],
     image: awsDevImg,
   },

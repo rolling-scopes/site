@@ -316,4 +316,26 @@ export const courseDataMap: CourseMap = {
     },
     willLearn: [],
   },
+  awsDevops: {
+    title: 'What is required for training?',
+    knowBefore: {
+      title: 'Required before the start',
+      description: [
+        'English proficiency level from B1 (Intermediate) and higher',
+        'Solid knowledge of Git',
+        'Good understanding of hypervisors and networking',
+        'Solid knowledge of OS (Linux/Windows)',
+        'Experience in scripting languages: PowerShell, Bash, or Python',
+        'Expertise and practice with Docker',
+      ],
+    },
+    willLearn: [
+      {
+        title: 'Nice to have:',
+        description: [
+          'Knowledge and experience with any cloud platforms (AWS, GCP, Azure)',
+        ],
+      },
+    ],
+  },
 };
