@@ -164,8 +164,8 @@ export const courses: Course[] = [
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.AWS_DEVOPS}`,
     enroll: 'https://wearecommunity.io/events/aws-devops-course',
     backgroundStyle: {
-      backgroundColor: '#FFDB201A',
-      accentColor: '#FFDB204D',
+      backgroundColor: '#F4F1FA',
+      accentColor: '#7356BF',
     },
   },
 ];
