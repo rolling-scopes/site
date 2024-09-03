@@ -1,3 +1,4 @@
+// TODO separate data and markup
 import { Link } from 'react-router-dom';
 
 import awsPractitionerBadge from '@/shared/assets/aws-cloud-pract-badge.webp';
@@ -8,7 +9,7 @@ import jsImg from '@/shared/assets/rs-slope-js.webp';
 import nodejsImg from '@/shared/assets/rs-slope-nodejs.webp';
 import reactEnImg from '@/shared/assets/rs-slope-react-en.webp';
 import reactRuImg from '@/shared/assets/rs-slope-react-ru.webp';
-import { Actions } from '@/shared/ui/actions/actions';
+import { List } from '@/shared/ui/list';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
 
@@ -51,9 +52,9 @@ export const contentMap: ContentMap = {
         and confidently apply your skills in real-world projects by the end of the course.
       </Paragraph>,
       <Subtitle key="aws cloud dev 03" text="Course highlights:" />,
-      <Actions
+      <List
         key="aws cloud dev 04"
-        actions={[
+        data={[
           'Build a single-page application (SPA) using AWS S3 and CloudFront',
           'Develop serverless APIs with AWS API Gateway and Lambda',
           'Integrate with databases and S3',
@@ -62,7 +63,6 @@ export const contentMap: ContentMap = {
           'Learn containerization with Docker and Elastic Beanstalk',
           'Implement backend-for-frontend using API Gateway',
         ]}
-        marked
       />,
     ],
     image: awsDevImg,
@@ -99,9 +99,9 @@ export const contentMap: ContentMap = {
         The course consists of weekly assignments that you can complete at your own pace, followed
         by a test that will help you evaluate your understanding of the materials
       </Paragraph>,
-      <Actions
+      <List
         key="node.js 03"
-        actions={[
+        data={[
           'Node.js basics',
           'Network communication. HTTP & WebSockets',
           'Testing of Node.js application',
@@ -112,7 +112,6 @@ export const contentMap: ContentMap = {
           'Authentication & authorization, JWT',
           'Nest.js',
         ]}
-        marked
       />,
     ],
     image: nodejsImg,
@@ -196,41 +195,41 @@ export const contentMap: ContentMap = {
     content: [
       <Paragraph key="js / front-end pre-school ru 01">
         <span>Введение в RS School:</span>
-        <br />
-        Знакомство со школой, профессией JS/Front-end разработчика и системой контроля версий Git.
+        <List
+          data={['Знакомство со школой, профессией JS/Front-end разработчика и системой контроля версий Git.']}
+          marked={false}
+        />
       </Paragraph>,
       <Paragraph key="js / front-end pre-school ru 02">
         <span>Основы веб-разработки:</span>
-        <br />
-        HTML и CSS: Основы, позиционирование с Flexbox и адаптивные макеты.
-        <br />
-        JavaScript: Основы, функции, объекты, массивы и работа с DOM.
-        <br />
-        Инструменты: Chrome Dev Tools, VS Code, Терминал и Figma.
+        <List
+          data={[
+            'HTML и CSS: Основы, позиционирование с Flexbox и адаптивные макеты.',
+            'JavaScript: Основы, функции, объекты, массивы и работа с DOM.',
+            'Инструменты: Chrome Dev Tools, VS Code, Терминал и Figma.',
+          ]}
+          marked={false}
+        />
       </Paragraph>,
       <Paragraph key="js / front-end pre-school ru 03">
-        <span>
-          Проектное обучение:
-          <br />
-        </span>
-        Проект CV: Markdown, HTML, CSS и Git.
-        <br />
-        Проект Library: Фиксированная и адаптивная вёрстка, добавление функционала.
-        <br />
-        CSS Mem Slider: Продвинутый проект по CSS.
-        <br />
-        Проекты JS-30: Аудиоплеер, галерея изображений и случайная игра.
-        <br />
+        <span>Проектное обучение:</span>
+        <List
+          data={[
+            'Проект CV: Markdown, HTML, CSS и Git.',
+            'Проект Library: Фиксированная и адаптивная вёрстка, добавление функционала.',
+            'CSS Mem Slider: Продвинутый проект по CSS.',
+            'Проекты JS-30: Аудиоплеер, галерея изображений и случайная игра.',
+          ]}
+          marked={false}
+        />
       </Paragraph>,
       <Paragraph key="js / front-end pre-school ru 04">
         <span>Задачи Codewars:</span>
-        <br />
-        Еженедельные задачи по алгоритмам и структурам данных.
+        <List data={['Еженедельные задачи по алгоритмам и структурам данных.']} marked={false} />
       </Paragraph>,
       <Paragraph key="js / front-end pre-school ru 05">
         <span>Итоговая аттестация:</span>
-        <br />
-        Кросс-чек проектов, тесты и ревью кода. Выдача сертификата.
+        <List data={['Кросс-чек проектов, тесты и ревью кода. Выдача сертификата.']} marked={false} />
       </Paragraph>,
     ],
     image: jsImg,
@@ -242,9 +241,9 @@ export const contentMap: ContentMap = {
         RS School students who have completed RS School Stage #2 and new students with strong
         CoreJS/TS/Frontend skills:
       </Paragraph>,
-      <Actions
+      <List
         key="react 02"
-        actions={[
+        data={[
           'JavaScript',
           'TypeScript',
           'Git, GitHub (clone, add, commit, push, pull, merge, rebase, working with Pull Request)',
@@ -253,7 +252,6 @@ export const contentMap: ContentMap = {
           'Chrome DevTools, Figma',
           'Understanding of the REST',
         ]}
-        marked
       />,
       <Subtitle
         key="react 03"

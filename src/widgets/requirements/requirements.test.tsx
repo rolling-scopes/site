@@ -14,7 +14,7 @@ describe('Requirements', () => {
 
   it('renders the "Requirements for mentors" description', () => {
     const requirement1 =
-      "Desire to help students. If you've been working with JS/TS in production for more than 6 months, then that's great.";
+      "Desire to help students. If you've been working with JS/TS in production for more than 6 months, then that's great";
 
     expect(screen.getByText(requirement1)).toBeVisible();
     expect(screen.getByText('Desire to mentor 2 to 6 students online or in person')).toBeVisible();

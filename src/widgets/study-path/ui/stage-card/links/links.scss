@@ -1,10 +1,4 @@
 .stage-links {
-  @include media-laptop {
-    flex-direction: column;
-    gap: 16px;
-    align-items: flex-start;
-  }
-
   display: flex;
   gap: 24px;
   align-items: center;
@@ -28,5 +22,11 @@
     &:hover {
       color: $color-gray-400;
     }
+  }
+
+  @include media-laptop {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
   }
 }

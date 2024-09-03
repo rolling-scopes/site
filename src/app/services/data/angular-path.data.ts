@@ -4,7 +4,7 @@ export const angularPath: AngularAwsPath[] = [
   {
     id: 1,
     title: 'Week #1',
-    actions: [
+    list: [
       'Module "Angular Intro. TypeScript."',
       'Module "Angular. Components"',
       'Module "Angular. Directives & Pipes"',
@@ -13,7 +13,7 @@ export const angularPath: AngularAwsPath[] = [
   {
     id: 2,
     title: 'Week #2',
-    actions: [
+    list: [
       'Module "Angular Intro. Task Review."',
       'Angular. Modules & Services, Dependency Injection',
       'Module "Angular. Directives & Pipes"',
@@ -24,7 +24,7 @@ export const angularPath: AngularAwsPath[] = [
   {
     id: 3,
     title: 'Week #3',
-    actions: [
+    list: [
       '"Angular. Components, Directives, Pipes" task review',
       'Module "RxJS & Observables"',
       'Module "Angular. HTTP"',
@@ -35,7 +35,7 @@ export const angularPath: AngularAwsPath[] = [
   {
     id: 4,
     title: 'Week #4',
-    actions: [
+    list: [
       '"Angular. Modules, Services, Routing" task review',
       'Module "Angular. Redux & NgRx"',
       'Module "Angular. Unit Test"',
@@ -45,7 +45,7 @@ export const angularPath: AngularAwsPath[] = [
   {
     id: 5,
     title: 'Week #5-8',
-    actions: [
+    list: [
       '"Angular. RxJS & HTTPClient & NgRx & Forms", task review',
       'Final Angular test',
       'Workshop',
@@ -55,6 +55,6 @@ export const angularPath: AngularAwsPath[] = [
   {
     id: 6,
     title: 'Week #9',
-    actions: ['Cross-checking the "Project management application" final task'],
+    list: ['Cross-checking the "Project management application" final task'],
   },
 ];

@@ -1,14 +1,6 @@
 .rs-course-card {
   @extend %transition-all;
 
-  @include media-laptop {
-    width: 100%;
-  }
-
-  @include media-tablet {
-    max-width: 100%;
-  }
-
   cursor: pointer;
 
   display: flex;
@@ -75,14 +67,6 @@
   }
 
   &__title {
-    @include media-laptop {
-      font-size: 19px;
-    }
-
-    @include media-tablet {
-      font-size: 24px;
-    }
-
     width: 100%;
     height: auto;
 
@@ -93,6 +77,14 @@
     color: $color-gray-600;
     text-align: left;
     letter-spacing: 0;
+
+    @include media-laptop {
+      font-size: 19px;
+    }
+
+    @include media-tablet {
+      font-size: 24px;
+    }
   }
 
   &__bottom {
@@ -118,6 +110,14 @@
     & > * {
       font-weight: 400;
     }
+  }
+
+  @include media-laptop {
+    width: 100%;
+  }
+
+  @include media-tablet {
+    max-width: 100%;
   }
 }
 

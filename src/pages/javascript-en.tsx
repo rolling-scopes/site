@@ -20,7 +20,7 @@ export const JavaScriptEn = () => {
       <Certification courseName={COURSE_NAME} />
       <Communication courseName={COURSE_NAME} />
       <AboutVideo />
-      <StudyPath path="javascript" />
+      <StudyPath path="javascript" marked />
       <Required courseName={COURSE_NAME} />
     </>
   );
