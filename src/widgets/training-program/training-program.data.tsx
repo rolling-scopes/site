@@ -297,7 +297,7 @@ export const contentMap: ContentMap = {
         text="Showcase your level of expertise and join this expert-led program to:"
       />,
       <List
-        key="aws devops 02"
+        key="aws devops 03"
         data={[
           'Discover how to develop and manage cloud infrastructure using the Infrastructure as Code (IaC) approach',
           'Learn how to install and configure a Kubernetes cluster, describe Kubernetes components and their purpose',
@@ -309,11 +309,11 @@ export const contentMap: ContentMap = {
         ]}
       />,
       <Subtitle
-        key="aws devops 03"
+        key="aws devops 04"
         text="What do we offer?"
       />,
       <List
-        key="aws devops 04"
+        key="aws devops 05"
         data={[
           'Support: you will get regular feedback and guidance on practical tasks, helping refine your skills to the next level',
           'Flexibility: depending on your weekly engagement, the recommendation is 3-4 hours daily',
