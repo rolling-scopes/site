@@ -44,9 +44,9 @@ describe('Trainer', () => {
 
   it('renders all the trainers if passed several (8 in items)', () => {
     const { container } = render(<Trainers trainers={MOCKED_SEVERAL_TRAINERS} />);
-    const trainers = container.getElementsByClassName('trainer-card');
+    const trainers = container.getElementsByClassName('trainers-list')[0];
 
-    expect(trainers).toHaveLength(8);
+    expect(trainers.childNodes).toHaveLength(8);
   });
 
   it('renders the image with correct alt text', () => {

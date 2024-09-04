@@ -1,3 +1,4 @@
+import type { Trainer } from '@/entities/trainer/types';
 import annaMusikhinaImg from '@/shared/assets/mentors/a-musikhina.webp';
 import margaritaGolubevaImg from '@/shared/assets/mentors/m-golubeva.webp';
 import mikhailOleinikImg from '@/shared/assets/mentors/m-oleinik.webp';
@@ -5,7 +6,6 @@ import sergeyKoksharovImg from '@/shared/assets/mentors/s-koksharov.webp';
 import vadimAntonauImg from '@/shared/assets/mentors/v-antonau.webp';
 import vitaliiRogozinImg from '@/shared/assets/mentors/v-rogozin.webp';
 import yuliaKursevichImg from '@/shared/assets/mentors/y-kursevich.webp';
-import type { Trainer } from 'data';
 
 export const javaScriptRu: Trainer[] = [
   {

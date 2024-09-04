@@ -1,10 +1,10 @@
+import type { Trainer } from '@/entities/trainer/types';
 import artsiomParfianenkau from '@/shared/assets/mentors/a-parfianenkau.webp';
 import andrejPodlubnyj from '@/shared/assets/mentors/a-podlubnyj.webp';
 import dzmitryYarmoshkin from '@/shared/assets/mentors/d-yarmoshkin.png';
 import iharKrasiuk from '@/shared/assets/mentors/i-krasiuk.webp';
 import marharytaMalets from '@/shared/assets/mentors/m-malets.webp';
 import valeryDluski from '@/shared/assets/mentors/v-dluski.webp';
-import type { Trainer } from 'data';
 
 export const reactEn: Trainer[] = [
   {

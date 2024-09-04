@@ -1,6 +1,5 @@
-import { TrainerCard } from './trainers-card/trainer-card';
+import { Trainer, TrainerCard } from '@/entities/trainer';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { Trainer } from 'data';
 
 import './trainers.scss';
 
@@ -28,8 +27,8 @@ export const Trainers = ({ trainers, lang = 'en' }: TrainersProps) => {
   const title = trainersTitle[lang][isMultipleTrainers];
 
   return (
-    <section className="nodejs-trainer container">
-      <div className="nodejs-trainer content gap">
+    <section className="trainers container">
+      <div className="trainers__content content">
         <WidgetTitle mods="lines">
           {title}
         </WidgetTitle>
