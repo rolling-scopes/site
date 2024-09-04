@@ -159,6 +159,16 @@ const reactEn: AboutInfo[] = javaScriptEN().map((item) => {
   return item;
 });
 
+const awsDevops: AboutInfo[] = [
+  ...structuredClone(reactEn),
+  {
+    id: 5,
+    title: 'Duration',
+    info: '12 weeks',
+    icon: noteIcon,
+  },
+];
+
 const reactRuAbout: AboutInfo[] = [
   {
     id: 1,
@@ -196,4 +206,5 @@ export const contentMap: ContentMap = {
   'node.js': angularNodejsAwsFundamentals('node.js'),
   'aws fundamentals': angularNodejsAwsFundamentals('aws fundamentals'),
   'aws cloud dev': awsCloudDeveloper,
+  'aws devops': awsDevops,
 };

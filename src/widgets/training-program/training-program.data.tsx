@@ -23,7 +23,8 @@ export type CourseNames =
   | 'node.js'
   | 'react'
   | 'react ru'
-  | 'aws fundamentals badge';
+  | 'aws fundamentals badge'
+  | 'aws devops';
 
 interface CourseInfo {
   title: string;
@@ -283,5 +284,43 @@ export const contentMap: ContentMap = {
       </Paragraph>,
     ],
     image: awsPractitionerBadge,
+  },
+  'aws devops': {
+    title: 'Details',
+    content: [
+      <Paragraph key="aws devops 01">
+        If you are looking for an entry point to kickstart your IT career as a DevOps engineer,
+        then this AWS course challenge is what you need.
+      </Paragraph>,
+      <Subtitle
+        key="aws devops 02"
+        text="Showcase your level of expertise and join this expert-led program to:"
+      />,
+      <List
+        key="aws devops 03"
+        data={[
+          'Discover how to develop and manage cloud infrastructure using the Infrastructure as Code (IaC) approach',
+          'Learn how to install and configure a Kubernetes cluster, describe Kubernetes components and their purpose',
+          'Explore CI/CD techniques to deploy containerized applications to the Kubernetes cluster',
+          'Develop a monitoring solution',
+          'Investigate how to troubleshoot distributed containerized application configurations',
+          'Explore DevOps specialist vocabulary',
+          'Become a DevOps engineer who is ready to face engineering challenges',
+        ]}
+      />,
+      <Subtitle
+        key="aws devops 04"
+        text="What do we offer?"
+      />,
+      <List
+        key="aws devops 05"
+        data={[
+          'Support: you will get regular feedback and guidance on practical tasks, helping refine your skills to the next level',
+          'Flexibility: depending on your weekly engagement, the recommendation is 3-4 hours daily',
+          'Community-based education: the community will help you explore emerging technologies and best practices, ensuring you are equipped with the knowledge that the current market seeks',
+        ]}
+      />,
+    ],
+    image: awsDevImg,
   },
 };
