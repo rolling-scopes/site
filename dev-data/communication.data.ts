@@ -14,4 +14,4 @@ export const DISCORD_LINKS = {
   'aws devops': 'https://discord.com/invite/WEZxwRa4J6',
 };
 
-export type CourseNames = keyof typeof DISCORD_LINKS;
+export type CourseNamesChannels = keyof typeof DISCORD_LINKS;

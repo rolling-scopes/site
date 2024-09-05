@@ -1,5 +1,5 @@
-import { Trainer } from '../../trainers.types';
 import { Image } from '@/shared/ui/image';
+import { Trainer } from 'data';
 
 type TrainerProps = Trainer;
 

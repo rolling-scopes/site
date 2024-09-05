@@ -5,8 +5,8 @@ import { Communication } from '@/widgets/communication';
 import { CourseMain } from '@/widgets/course-main';
 import { Required } from '@/widgets/required';
 import { Trainers } from '@/widgets/trainers';
-import { awsDevops } from '@/widgets/trainers/awsDevops';
 import { TrainingProgram } from '@/widgets/training-program';
+import { awsDevops } from 'data';
 
 const COURSE_NAME = 'aws devops';
 

@@ -4,8 +4,8 @@ import noteIcon from '@/shared/assets/icons/note-icon.webp';
 import paperIcon from '@/shared/assets/icons/paper-icon.webp';
 import personIcon from '@/shared/assets/icons/person-icon.webp';
 import planetIcon from '@/shared/assets/icons/planet.webp';
-import type { CourseNames } from '@/shared/data/communication.data';
-import { DISCORD_LINKS } from '@/shared/data/communication.data';
+import type { CourseNamesChannels } from 'data';
+import { DISCORD_LINKS } from 'data';
 
 type AboutInfo = {
   id: number;
@@ -15,7 +15,7 @@ type AboutInfo = {
 };
 
 type ContentMap = {
-  [key in CourseNames]: AboutInfo[];
+  [key in CourseNamesChannels]: AboutInfo[];
 };
 
 const angularNodejsAwsFundamentals: (course: string) => AboutInfo[] = () => [
@@ -196,7 +196,7 @@ const reactRuAbout: AboutInfo[] = [
   },
 ];
 
-export const contentMap: ContentMap = {
+export const contentMapAbout: ContentMap = {
   'js / front-end ru': javaScriptRU(),
   'js / front-end en': javaScriptEN(),
   'js / front-end pre-school ru': javaScriptPreSchoolRU(),
