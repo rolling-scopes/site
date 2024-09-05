@@ -57,7 +57,7 @@ const angularPath: DataMap['angular'] = [
   {
     id: 1,
     title: 'Week #1',
-    actions: [
+    list: [
       'Module "Angular Intro. TypeScript."',
       'Module "Angular. Components"',
       'Module "Angular. Directives & Pipes"',
@@ -69,7 +69,7 @@ const awsDevPath: DataMap['awsDev'] = [
   {
     id: 1,
     title: 'Module 1. Cloud Introduction',
-    actions: [
+    list: [
       'Fundamental theory about cloud computing',
       'Cloud service models, cloud deployment models, infrastructure-as-code',
       'Monolith vs microservices vs serverless',

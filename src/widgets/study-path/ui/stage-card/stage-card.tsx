@@ -1,10 +1,10 @@
-import { Actions } from './actions';
 import { Image } from './image';
 import { Links } from './links';
 import { LogoIcon } from './logo-icon';
 import type { StageCardProps } from './stage-card.types';
 import { Step } from './step';
 import { Topics } from './topics';
+import { List } from '@/shared/ui/list';
 
 import './stage-card.scss';
 
@@ -15,8 +15,8 @@ export const StageCard = ({
   logoIcon,
   links,
   topics,
-  actions,
   imageSrc,
+  list,
   marked,
 }: StageCardProps) => {
   return (
@@ -27,7 +27,7 @@ export const StageCard = ({
         {description && <p className="stage-description">{description}</p>}
         {links && <Links links={links} />}
         {topics && <Topics topics={topics} />}
-        {actions && <Actions actions={actions} marked={marked} />}
+        {list && <List data={list} marked={marked} />}
       </div>
 
       {logoIcon && <LogoIcon icon={logoIcon} title={title} />}

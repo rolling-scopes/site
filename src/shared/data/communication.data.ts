@@ -11,6 +11,7 @@ export const DISCORD_LINKS = {
   'node.js': 'https://discord.com/invite/8BFb8va',
   'aws fundamentals': 'https://discord.com/invite/WEZxwRa4J6',
   'aws cloud dev': 'https://discord.com/invite/WEZxwRa4J6',
+  'aws devops': 'https://discord.com/invite/WEZxwRa4J6',
 };
 
 export type CourseNames = keyof typeof DISCORD_LINKS;

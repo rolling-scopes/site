@@ -1,4 +1,5 @@
 import { type Course } from '@/app/types';
+import { type ListData } from '@/shared/ui/list';
 
 export type DataMap = {
   courses: Course[];
@@ -15,10 +16,11 @@ export interface JSPath {
   description: string;
   imageSrc: string;
   topics?: string[];
-  actions?: string[];
+  list?: ListData;
+  marked?: boolean;
 }
 
-export type AngularAwsPath = Pick<JSPath, 'id' | 'title' | 'actions'>;
+export type AngularAwsPath = Pick<JSPath, 'id' | 'title' | 'list'>;
 
 export interface CoursesPath {
   id: number;
@@ -30,4 +32,5 @@ export interface CoursesPath {
     href: string;
     isActive?: boolean;
   }[];
+  list?: ListData;
 }

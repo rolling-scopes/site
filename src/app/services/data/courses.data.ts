@@ -152,4 +152,20 @@ export const courses: Course[] = [
       accentColor: '#7356BF',
     },
   },
+  {
+    id: '9',
+    title: COURSE_TITLES.AWS_DEVOPS,
+    iconSrc: aws,
+    iconSmall: awsDevSmall,
+    secondaryIcon: awsSecondary,
+    startDate: 'Sep 23, 2024',
+    language: ['en'],
+    mode: 'online',
+    detailsUrl: `/${ROUTES.COURSES}/${ROUTES.AWS_DEVOPS}`,
+    enroll: 'https://wearecommunity.io/events/aws-devops-course',
+    backgroundStyle: {
+      backgroundColor: '#F4F1FA',
+      accentColor: '#7356BF',
+    },
+  },
 ];

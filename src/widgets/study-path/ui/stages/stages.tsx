@@ -14,7 +14,7 @@ export const Stages = ({ stages, marked }: StagesProps) => {
 
   return (
     <div className="stages">
-      {stages.map(({ id, title, description, logoIcon, links, topics, imageSrc, actions }) => (
+      {stages.map(({ id, title, description, logoIcon, links, topics, imageSrc, list }) => (
         <StageCard
           key={id}
           id={id}
@@ -24,7 +24,7 @@ export const Stages = ({ stages, marked }: StagesProps) => {
           links={links}
           topics={topics}
           imageSrc={imageSrc}
-          actions={actions}
+          list={list}
           marked={marked}
         />
       ))}
