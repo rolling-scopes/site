@@ -31,7 +31,7 @@
     background-color: $color-black;
   }
 
-  & .label {
+  .label {
     @extend %transition-all;
 
     font-family: Inter, sans-serif;
@@ -49,8 +49,6 @@
     .dropdown-arrow {
       @extend %transition-all;
 
-      width: 16px;
-      height: 17px;
       margin-left: 10px;
 
       > img {
