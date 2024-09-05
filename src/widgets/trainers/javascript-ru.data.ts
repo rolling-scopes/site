@@ -2,7 +2,7 @@ import type { Trainer } from './trainers.types';
 import annaMusikhinaImg from '@/shared/assets/mentors/a-musikhina.webp';
 import margaritaGolubevaImg from '@/shared/assets/mentors/m-golubeva.webp';
 import mikhailOleinikImg from '@/shared/assets/mentors/m-oleinik.webp';
-import sergeyKoksharov from '@/shared/assets/mentors/s-koksharov.webp';
+import sergeyKoksharovImg from '@/shared/assets/mentors/s-koksharov.webp';
 import vadimAntonauImg from '@/shared/assets/mentors/v-antonau.webp';
 import vitaliiRogozinImg from '@/shared/assets/mentors/v-rogozin.webp';
 import yuliaKursevichImg from '@/shared/assets/mentors/y-kursevich.webp';
@@ -54,6 +54,6 @@ export const javaScriptRu: Trainer[] = [
     name: 'Сергей Кокшаров',
     role: '',
     bio: 'Сергей родился и вырос в маленьком городе недалеко от Петербурга. Увлекался шахматами в детстве, а программирование и алгоритмические задачи полюбил в старших классах. Ему всегда было интересно, как что-то работает под капотом. В RS School записался в 2022-м из любопытства, оказался успешным студентом и прошел почти все доступные курсы. В начале 2024-го начал коммерческую карьеру в качестве фронтенд-разработчика и теперь помогает другим студентам в осуществлении их мечты. Кроме программирования обожает ОС семейства *nix, настольные игры, и своего рыжего кота.',
-    photo: sergeyKoksharov,
+    photo: sergeyKoksharovImg,
   },
 ];
