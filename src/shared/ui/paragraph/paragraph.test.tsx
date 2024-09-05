@@ -5,7 +5,7 @@ import { Paragraph, cx } from './paragraph';
 describe('Paragraph component', () => {
   it('renders without crashing', () => {
     render(<Paragraph />);
-    const paragraph = screen.getByTestId('my-paragraph');
+    const paragraph = screen.getByTestId('paragraph');
 
     expect(paragraph).toBeVisible();
   });
@@ -17,30 +17,32 @@ describe('Paragraph component', () => {
     expect(paragraph).toBeVisible();
   });
 
-  it('displays p tag', () => {
+  it('renders an empty p tag when no children provided', () => {
     render(<Paragraph />);
-    const element = screen.getByTestId('my-paragraph');
+    const element = screen.getByTestId('paragraph');
 
     expect(element.tagName).toBe('P');
+    expect(element).toBeEmptyDOMElement();
+    expect(element).toHaveClass(cx('paragraph'));
   });
 
-  it('displays size correctly when size=small', () => {
-    render(<Paragraph size="small" />);
-    const element = screen.getByTestId('my-paragraph');
+  it('applies top spacing class when withTopSpacing is true', () => {
+    render(<Paragraph withTopSpacing />);
+    const element = screen.getByTestId('paragraph');
 
-    expect(element).toHaveClass(cx('small'));
+    expect(element).toHaveClass(cx('top-spacing'));
   });
 
-  it('displays size correctly when size=medium (default)', () => {
+  it('does not apply top spacing class when withTopSpacing is false', () => {
     render(<Paragraph />);
-    const element = screen.getByTestId('my-paragraph');
+    const element = screen.getByTestId('paragraph');
 
-    expect(element).toHaveClass(cx('medium'));
+    expect(element).not.toHaveClass(cx('top-spacing'));
   });
 
   it('applies custom className when provided', () => {
     render(<Paragraph className="custom-class" />);
-    const element = screen.getByTestId('my-paragraph');
+    const element = screen.getByTestId('paragraph');
 
     expect(element).toHaveClass('custom-class');
   });
@@ -57,18 +59,12 @@ describe('Paragraph component', () => {
     expect(child).toBeInTheDocument();
   });
 
-  it('applies both size and custom classes correctly', () => {
-    render(<Paragraph size="small" className="custom-class" />);
-    const element = screen.getByTestId('my-paragraph');
+  it('applies base paragraph class and additional classes correctly', () => {
+    render(<Paragraph withTopSpacing className="custom-class" />);
+    const element = screen.getByTestId('paragraph');
 
-    expect(element).toHaveClass(cx('small'));
+    expect(element).toHaveClass(cx('paragraph'));
+    expect(element).toHaveClass(cx('top-spacing'));
     expect(element).toHaveClass('custom-class');
-  });
-
-  it('renders an empty paragraph when no children provided', () => {
-    render(<Paragraph />);
-    const element = screen.getByTestId('my-paragraph');
-
-    expect(element).toBeEmptyDOMElement();
   });
 });

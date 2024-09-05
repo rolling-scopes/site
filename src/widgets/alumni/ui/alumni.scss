@@ -1,7 +1,7 @@
 .alumni {
   &.content {
     & .title,
-    & .paragraph {
+    & .alumni-paragraph {
       width: 640px;
 
       @include media-tablet {

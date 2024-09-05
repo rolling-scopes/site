@@ -58,7 +58,7 @@ export const Pictures = () => (
           <Image src={photo} key={photo} data-testid="carousel-image" />
         ))}
       </Carousel>
-      <Paragraph size="small">
+      <Paragraph>
         Want to see photos of our community? A vast collection of photographs from our events is
         available on our Facebook Albums and Instagram pages.
       </Paragraph>

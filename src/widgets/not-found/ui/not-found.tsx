@@ -15,7 +15,7 @@ export const NotFound = () => {
       <div className="image-wrapper">
         <Image src={notFoundImg} alt="not found" lazy={false} />
       </div>
-      <Paragraph size="small" className="paragraph">
+      <Paragraph className="not-found-paragraph">
         The page you are looking for doesn&apos;t exist or has been moved. Please go back to the
         homepage.
       </Paragraph>

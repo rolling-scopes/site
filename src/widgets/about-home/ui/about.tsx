@@ -18,11 +18,11 @@ export const About = () => {
             text="Our mission is to provide free education in intriguing subjects, connect people, and grow
           together."
           />
-          <Paragraph size="small">
+          <Paragraph>
             The Rolling Scopes was founded in 2013 in Minsk as a community of Front-end developers.
             It has since grown into an enormous international developers community.
           </Paragraph>
-          <Paragraph size="small">
+          <Paragraph>
             The Rolling Scopes brings together developers of all levels who are passionate about
             technologies such as JavaScript, Front-end development, AWS, and more. Currently, many
             developers around the world recognize The Rolling Scopes for its community-based

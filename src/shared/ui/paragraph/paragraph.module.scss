@@ -1,5 +1,10 @@
 .paragraph {
+  margin: 0;
+  padding-bottom: 18px;
+
+  font-size: 18px;
   font-weight: $font-weight-regular;
+  line-height: 28px;
   color: $color-gray-600;
   letter-spacing: 0;
 
@@ -9,17 +14,6 @@
   }
 }
 
-.medium {
-  font-size: 18px;
-  line-height: 28px;
-
-  @include media-tablet {
-    font-size: 16px;
-    line-height: 24px;
-  }
-}
-
-.small {
-  font-size: 16px;
-  line-height: 24px;
+.top-spacing {
+  padding-top: 18px;
 }

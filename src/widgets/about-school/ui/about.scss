@@ -14,10 +14,21 @@
         }
       }
 
+      .about-school-paragraph {
+        @include media-laptop {
+          font-size: 18px;
+          line-height: 28px;
+        }
+
+        @include media-tablet {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+
       .info {
         display: flex;
         flex-direction: column;
-        gap: 16px;
         min-width: 300px;
       }
     }
