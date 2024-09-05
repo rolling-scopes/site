@@ -19,7 +19,8 @@ export type CourseNames =
   | 'angular'
   | 'node.js'
   | 'aws fundamentals'
-  | 'aws cloud dev';
+  | 'aws cloud dev'
+  | 'aws devops';
 
 interface AboutProps {
   courseName: CourseNames;

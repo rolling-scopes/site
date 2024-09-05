@@ -26,9 +26,7 @@ export const MobileView = ({ type }: MobileViewProps) => {
 
   return (
     <nav className={cx('mobile-view')} data-testid="mobile-view">
-      <Link to={ROUTES.HOME}>
-        <Logo type={logoView} />
-      </Link>
+      <Logo type={logoView} />
 
       <Divider color={color} />
 

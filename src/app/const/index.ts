@@ -17,6 +17,7 @@ export const ROUTES = {
   ANGULAR: 'angular',
   AWS_DEVELOPER: 'aws-cloud-developer',
   AWS_FUNDAMENTALS: 'aws-fundamentals',
+  AWS_DEVOPS: 'aws-devops',
   REACT: 'reactjs',
   NOT_FOUND: '*',
 } as const;

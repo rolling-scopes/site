@@ -95,4 +95,17 @@ export const coursesPath: CoursesPath[] = [
       },
     ],
   },
+  {
+    id: 7,
+    title: 'AWS DevOps',
+    description:
+      'If you are looking for an entry point to kickstart your IT career as a DevOps engineer, then this AWS course challenge is what you need.',
+    logoIcon: AWSDeveloperIcon,
+    links: [
+      {
+        linkTitle: 'AWS DevOps',
+        href: `/${ROUTES.COURSES}/${ROUTES.AWS_DEVOPS}`,
+      },
+    ],
+  },
 ];
