@@ -7,6 +7,7 @@ export { angular } from './angular.data';
 export { angularPath } from './angular-path.data';
 export { awsDev } from './awsDev.data';
 export { awsDevPath } from './aws-dev-path.data';
+export { awsDevops } from './aws-devops.data';
 export { awsFundamentals } from './awsFundamentals.data';
 export { contentMapAbout } from './about.data';
 export { courseDataMap } from './required.data';
