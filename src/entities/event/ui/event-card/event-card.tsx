@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { Event } from '@/entities/events';
+import { Event } from '@/entities/event';
 import { LinkCustom } from '@/shared/ui/link-custom';
 
 import styles from './event-card.module.scss';

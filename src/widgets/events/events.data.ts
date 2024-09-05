@@ -1,4 +1,4 @@
-import { Event } from '@/entities/events';
+import { Event } from '@/entities/event';
 
 export const events: Event[] = [
   {

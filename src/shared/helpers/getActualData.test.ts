@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { getActualData } from './getActualData';
 import { Course } from '@/app/types';
 import { isCourse } from '@/entities/courses/helpers/is-course';
-import { Event } from '@/entities/events';
+import { Event } from '@/entities/event';
 import { dayJS } from '@/shared/helpers/dayJS';
 
 const staleAfterDays = 14;

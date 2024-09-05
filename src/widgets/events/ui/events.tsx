@@ -2,7 +2,7 @@ import cn from 'classnames';
 import classNames from 'classnames/bind';
 import dayjs from 'dayjs';
 import { events } from '../events.data';
-import { Event, EventCard } from '@/entities/events';
+import { Event, EventCard } from '@/entities/event';
 import photo3 from '@/shared/assets/photo-3.webp';
 import { getActualData } from '@/shared/helpers/getActualData';
 import { Image } from '@/shared/ui/image';

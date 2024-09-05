@@ -1,7 +1,7 @@
 import { getCourseDate } from './getCourseDate';
 import { Course } from '@/app/types';
 import { isCourse } from '@/entities/courses/helpers/is-course';
-import { Event } from '@/entities/events';
+import { Event } from '@/entities/event';
 import { dayJS } from '@/shared/helpers/dayJS';
 
 type DataType = Course[] | Event[];
