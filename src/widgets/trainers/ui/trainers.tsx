@@ -28,7 +28,7 @@ export const Trainers = ({ trainers, lang = 'en' }: TrainersProps) => {
 
   return (
     <section className="trainers container">
-      <div className="trainers__content content">
+      <div className="trainers-content content">
         <WidgetTitle mods="lines">
           {title}
         </WidgetTitle>

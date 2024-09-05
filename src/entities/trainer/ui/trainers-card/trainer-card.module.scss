@@ -10,7 +10,7 @@
   border-radius: 16px;
   box-shadow: 0 4px 16px 0 rgb(0 0 0 / 12%);
 
-  &__picture {
+  .card-picture {
     max-width: 120px;
     max-height: 120px;
 
@@ -21,11 +21,11 @@
     }
   }
 
-  &__right {
+  .card-text {
     width: fit-content;
   }
 
-  &__title {
+  .card-title {
     margin: 0;
     font-size: 24px;
     font-weight: $font-weight-medium;
@@ -36,7 +36,7 @@
     }
   }
 
-  &__subtitle {
+  .card-subtitle {
     margin: 0;
     font-size: 18px;
     font-weight: $font-weight-medium;
@@ -47,7 +47,7 @@
     }
   }
 
-  &__content {
+  .card-content {
     font-size: 16px;
     font-weight: $font-weight-regular;
     line-height: 24px;

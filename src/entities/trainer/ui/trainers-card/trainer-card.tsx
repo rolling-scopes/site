@@ -11,15 +11,15 @@ type TrainerProps = Trainer;
 export const TrainerCard = ({ name, bio, role, photo }: TrainerProps) => {
   return (
     <article className={cx('trainer-card')}>
-      <div className={cx('trainer-card__picture')}>
+      <div className={cx('card-picture')}>
         <Image src={photo} alt={`${name} ${role}`} />
       </div>
-      <div className={cx('trainer-card__right')}>
+      <div className={cx('card-text')}>
         <header>
-          <h3 className={cx('trainer-card__title')}>{name}</h3>
-          <h4 className={cx('trainer-card__subtitle')}>{role}</h4>
+          <h3 className={cx('card-title')}>{name}</h3>
+          <h4 className={cx('card-subtitle')}>{role}</h4>
         </header>
-        <p className={cx('trainer-card__content')}>{bio}</p>
+        <p className={cx('card-content')}>{bio}</p>
       </div>
     </article>
   );
