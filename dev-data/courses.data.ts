@@ -17,7 +17,7 @@ import nodejs from '@/shared/assets/icons/node.svg';
 import nodejsSecondary from '@/shared/assets/icons/nodejs-secondary.webp';
 import reactSecondary from '@/shared/assets/icons/react-secondary.webp';
 import react from '@/shared/assets/icons/react.svg';
-import { COURSE_TITLES } from '@/shared/data/courseTitles.data';
+import { COURSE_TITLES } from 'data';
 
 export const courses: Course[] = [
   {

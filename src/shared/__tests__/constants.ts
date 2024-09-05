@@ -1,5 +1,5 @@
 import nodejsImg1 from '@/shared/assets/mentors/m-shylau.webp';
-import { Trainer } from '@/widgets/trainers/trainers.types';
+import { Trainer } from 'data';
 
 export const MOCKED_IMAGE_PATH = 'mocked-image-path.webp';
 const MOCKED_TRAINER = {

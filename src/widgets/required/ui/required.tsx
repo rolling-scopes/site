@@ -1,8 +1,8 @@
-import { courseDataMap } from '../required.data';
 import type { CourseName } from '../required.types';
 import { List } from '@/shared/ui/list';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { courseDataMap } from 'data';
 
 import './required.scss';
 
