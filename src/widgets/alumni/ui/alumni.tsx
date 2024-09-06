@@ -1,10 +1,13 @@
+import classNames from 'classnames/bind';
 import { alumni } from '../constants';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
-import './alumni.scss';
+import styles from './alumni.module.scss';
+
+const cx = classNames.bind(styles);
 
 export interface AlumniProps {
   id: string;
@@ -25,17 +28,17 @@ export const Alumni = () => {
   }
 
   return (
-    <article className="alumni container">
-      <section className="alumni content">
+    <article className={cx('container')}>
+      <section className={cx('content')}>
         <WidgetTitle mods="asterisk">Our alumni</WidgetTitle>
         <Paragraph>
           We are immensely proud of RS School alumni who build their successful careers in ambitious
           IT companies
         </Paragraph>
-        <section className="alumni">
+        <section className={cx('alumni')}>
           {alumniArr.map(({ id, image }) => (
-            <figure key={id} className="alumni-logo-container">
-              <Image className="alumni-logo" src={image} alt={id} />
+            <figure key={id} className={cx('alumni-logo-container')}>
+              <Image className={cx('alumni-logo')} src={image} alt={id} />
             </figure>
           ))}
         </section>
