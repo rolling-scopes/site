@@ -5,9 +5,8 @@ import noteIcon from '@/shared/assets/icons/note-icon.webp';
 import paperIcon from '@/shared/assets/icons/paper-icon.webp';
 import personIcon from '@/shared/assets/icons/person-icon.webp';
 import planetIcon from '@/shared/assets/icons/planet.webp';
-import type { CourseNames } from '@/shared/data/communication.data';
-import { DISCORD_LINKS } from '@/shared/data/communication.data';
 import { LinkCustom } from '@/shared/ui/link-custom';
+import { type CourseNamesChannels, DISCORD_LINKS } from 'data';
 
 type AboutInfo = {
   id: number;
@@ -17,7 +16,7 @@ type AboutInfo = {
 };
 
 type ContentMap = {
-  [key in CourseNames]: AboutInfo[];
+  [key in CourseNamesChannels]: AboutInfo[];
 };
 
 const angularNodejsAwsFundamentals: (course: string) => AboutInfo[] = () => [
@@ -185,6 +184,16 @@ const reactEn: AboutInfo[] = javaScriptEN().map((item) => {
   return item;
 });
 
+const awsDevops: AboutInfo[] = [
+  ...reactEn,
+  {
+    id: 5,
+    title: 'Duration',
+    info: '12 weeks',
+    icon: noteIcon,
+  },
+];
+
 const reactRuAbout: AboutInfo[] = [
   {
     id: 1,
@@ -195,7 +204,15 @@ const reactRuAbout: AboutInfo[] = [
   {
     id: 2,
     title: 'Материалы',
-    info: 'Документация школы - https://docs.rs.schoolВсе материалы находятся в открытом доступе на YouTube и GitHub.Также предлагаем ознакомиться с конспектом первого этапа обучения.',
+    info: (
+      <p>
+        Throughout the course, we mostly use
+        {' '}
+        <LinkCustom href="https://docs.rs.school" external>Документация школы</LinkCustom>
+        . Все материалы находятся в открытом доступе на YouTube и GitHub.Также предлагаем
+        ознакомиться с конспектом первого этапа обучения.
+      </p>
+    ),
     icon: paperIcon,
   },
   {
@@ -212,7 +229,7 @@ const reactRuAbout: AboutInfo[] = [
   },
 ];
 
-export const contentMap: ContentMap = {
+export const contentMapAbout: ContentMap = {
   'js / front-end ru': javaScriptRU(),
   'js / front-end en': javaScriptEN(),
   'js / front-end pre-school ru': javaScriptPreSchoolRU(),
@@ -222,4 +239,5 @@ export const contentMap: ContentMap = {
   'node.js': angularNodejsAwsFundamentals('node.js'),
   'aws fundamentals': angularNodejsAwsFundamentals('aws fundamentals'),
   'aws cloud dev': awsCloudDeveloper,
+  'aws devops': awsDevops,
 };

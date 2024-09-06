@@ -24,9 +24,8 @@ const aboutList = [
 export const AboutList = () => {
   return (
     <div className="about-list">
-      <Link to={ROUTES.HOME}>
-        <Logo type="with-border" />
-      </Link>
+      <Logo type="with-border" />
+
       <ul className="about-links">
         {aboutList.map(({ title, to }) => (
           <li key={to}>

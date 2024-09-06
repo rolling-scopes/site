@@ -60,10 +60,10 @@
 }
 
 @mixin card-corner-accent-hover {
-  @include card-corner-accent;
-
   right: -130px;
   bottom: -160px;
   width: 279px;
   height: 270px;
+
+  @include card-corner-accent;
 }

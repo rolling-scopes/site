@@ -85,6 +85,15 @@ const coursesRoute: RouteObject = {
         return { Component: React };
       },
     },
+    {
+      path: ROUTES.AWS_DEVOPS,
+      loader: courseLoader,
+      lazy: async () => {
+        const { AwsDevOps } = await import('@/pages/aws-devops');
+
+        return { Component: AwsDevOps };
+      },
+    },
   ],
 };
 

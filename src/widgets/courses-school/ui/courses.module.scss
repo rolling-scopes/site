@@ -3,21 +3,17 @@
 }
 
 .image {
-  @include media-laptop {
-    margin-top: 24px;
-  }
-
   img {
     width: 299px;
     height: 193px;
   }
+
+  @include media-laptop {
+    margin-top: 24px;
+  }
 }
 
 .course-list {
-  @include media-laptop {
-    width: 100%;
-  }
-
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -28,12 +24,6 @@
 
   .course-card {
     @extend %transition-all;
-
-    @include media-hover {
-      &:hover {
-        box-shadow: 0 4px 16px 0 rgb(0 0 0 / 12%);
-      }
-    }
 
     display: flex;
     align-items: center;
@@ -80,5 +70,15 @@
     .details-container {
       padding: 16px;
     }
+
+    @include media-hover {
+      &:hover {
+        box-shadow: 0 4px 16px 0 rgb(0 0 0 / 12%);
+      }
+    }
+  }
+
+  @include media-laptop {
+    width: 100%;
   }
 }

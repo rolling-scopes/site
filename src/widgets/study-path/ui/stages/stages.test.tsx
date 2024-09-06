@@ -1,10 +1,10 @@
 import { screen } from '@testing-library/react';
-import { Stages, StagesProps } from './stages';
+import { Stages } from './stages';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 describe('Stages Component', () => {
-  const testStages: StagesProps['stages'] = [
+  const testStages = [
     {
       id: '1',
       title: 'Stage 1',
@@ -17,7 +17,7 @@ describe('Stages Component', () => {
       }],
       topics: ['Advanced Javascript', 'Security'],
       imageSrc: MOCKED_IMAGE_PATH,
-      actions: ['Action 1', 'Action 2'],
+      list: ['Item 1', 'Item 2'],
     },
   ];
 
@@ -25,7 +25,7 @@ describe('Stages Component', () => {
     renderWithRouter(<Stages stages={testStages} />);
 
     testStages.forEach((stage) => {
-      const { title, description, topics, actions } = stage;
+      const { title, description, topics, list } = stage;
 
       expect(screen.getByText(title)).toBeInTheDocument();
 
@@ -39,11 +39,9 @@ describe('Stages Component', () => {
         });
       }
 
-      if (actions) {
-        actions.forEach((action) => {
-          expect(screen.getByText(action)).toBeInTheDocument();
-        });
-      }
+      list?.forEach((listItem) => {
+        expect(screen.getByText(listItem)).toBeInTheDocument();
+      });
     });
   });
 

@@ -16,7 +16,7 @@ const testStages = [
     }],
     topics: ['Advanced Javascript', 'Security'],
     imageSrc: MOCKED_IMAGE_PATH,
-    actions: ['Action 1', 'Action 2'],
+    list: ['Item 1', 'Item 2'],
   },
 ];
 
@@ -54,7 +54,7 @@ describe('StudyPath Component', () => {
     renderWithRouter(<StudyPath path="angular" />);
 
     testStages.forEach((stage) => {
-      const { title, description, topics, actions } = stage;
+      const { title, description, topics, list } = stage;
 
       expect(screen.getByText(title)).toBeInTheDocument();
 
@@ -68,11 +68,9 @@ describe('StudyPath Component', () => {
         });
       }
 
-      if (actions) {
-        actions.forEach((action) => {
-          expect(screen.getByText(action)).toBeInTheDocument();
-        });
-      }
+      list?.forEach((listItem) => {
+        expect(screen.getByText(listItem)).toBeInTheDocument();
+      });
     });
   });
 });

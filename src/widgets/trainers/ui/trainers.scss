@@ -1,13 +1,5 @@
 .nodejs-trainer {
   & .content {
-    @include media-laptop {
-      padding: 40px;
-    }
-
-    @include media-tablet {
-      padding: 40px 16px;
-    }
-
     padding: 40px 120px;
 
     &.gap {
@@ -17,24 +9,16 @@
     }
 
     .trainers-list {
-      @include media-tablet-large {
-        grid-template-columns: 1fr;
-      }
-
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
       gap: 32px;
+
+      @include media-tablet-large {
+        grid-template-columns: 1fr;
+      }
     }
 
     .trainer-card {
-      @include media-tablet-large {
-        max-width: 100%;
-      }
-
-      @include media-mobile-landscape {
-        flex-direction: column;
-      }
-
       display: flex;
       gap: 24px;
       align-items: flex-start;
@@ -61,25 +45,25 @@
         width: fit-content;
 
         & > .card-title {
-          @include media-tablet {
-            font-size: 20px;
-          }
-
           margin: 0;
           font-size: 24px;
           font-weight: $font-weight-medium;
           line-height: 32px;
+
+          @include media-tablet {
+            font-size: 20px;
+          }
         }
 
         & > .card-subtitle {
-          @include media-tablet {
-            font-size: 18px;
-          }
-
           margin: 0;
           font-size: 18px;
           font-weight: $font-weight-medium;
           color: $color-gray-500;
+
+          @include media-tablet {
+            font-size: 18px;
+          }
         }
 
         & .card-content {
@@ -89,6 +73,22 @@
           color: $color-gray-600;
         }
       }
+
+      @include media-tablet-large {
+        max-width: 100%;
+      }
+
+      @include media-mobile-landscape {
+        flex-direction: column;
+      }
+    }
+
+    @include media-laptop {
+      padding: 40px;
+    }
+
+    @include media-tablet {
+      padding: 40px 16px;
     }
   }
 }

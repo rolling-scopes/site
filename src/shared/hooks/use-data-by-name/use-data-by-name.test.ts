@@ -3,8 +3,8 @@ import { MockedFunction, describe, expect, it, vi } from 'vitest';
 import { useDataByName } from './use-data-by-name';
 import { ROUTES } from '@/app/const';
 import { fetchDataByName } from '@/app/services/api';
-import { DataMap } from '@/app/services/data/courses-data.types';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
+import { DataMap } from 'data';
 
 const courses: DataMap['courses'] = [
   {
@@ -57,7 +57,7 @@ const angularPath: DataMap['angular'] = [
   {
     id: 1,
     title: 'Week #1',
-    actions: [
+    list: [
       'Module "Angular Intro. TypeScript."',
       'Module "Angular. Components"',
       'Module "Angular. Directives & Pipes"',
@@ -69,7 +69,7 @@ const awsDevPath: DataMap['awsDev'] = [
   {
     id: 1,
     title: 'Module 1. Cloud Introduction',
-    actions: [
+    list: [
       'Fundamental theory about cloud computing',
       'Cloud service models, cloud deployment models, infrastructure-as-code',
       'Monolith vs microservices vs serverless',

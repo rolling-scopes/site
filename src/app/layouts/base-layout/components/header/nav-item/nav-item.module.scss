@@ -4,16 +4,6 @@
 }
 
 .menu-item {
-  @include media-hover {
-    &:hover::after {
-      transform: scaleX(1);
-    }
-
-    &:hover .label {
-      color: $color-black;
-    }
-  }
-
   cursor: pointer;
 
   position: relative;
@@ -41,7 +31,7 @@
     background-color: $color-black;
   }
 
-  & .label {
+  .label {
     @extend %transition-all;
 
     font-family: Inter, sans-serif;
@@ -59,9 +49,12 @@
     .dropdown-arrow {
       @extend %transition-all;
 
-      width: 16px;
-      height: 17px;
       margin-left: 10px;
+
+      > img {
+        width: 16px;
+        height: 16px;
+      }
     }
 
     &.rotate .dropdown-arrow {
@@ -75,6 +68,16 @@
 
       -webkit-text-stroke-color: currentcolor;
       -webkit-text-stroke-width: 1.25px;
+    }
+  }
+
+  @include media-hover {
+    &:hover::after {
+      transform: scaleX(1);
+    }
+
+    &:hover .label {
+      color: $color-black;
     }
   }
 }

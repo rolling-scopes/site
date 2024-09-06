@@ -17,7 +17,7 @@ import nodejs from '@/shared/assets/icons/node.svg';
 import nodejsSecondary from '@/shared/assets/icons/nodejs-secondary.webp';
 import reactSecondary from '@/shared/assets/icons/react-secondary.webp';
 import react from '@/shared/assets/icons/react.svg';
-import { COURSE_TITLES } from '@/shared/data/courseTitles.data';
+import { COURSE_TITLES } from 'data';
 
 export const courses: Course[] = [
   {
@@ -147,6 +147,22 @@ export const courses: Course[] = [
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.AWS_DEVELOPER}`,
     enroll: 'https://wearecommunity.io/events/aws-cloud-dev-rs2024q2',
+    backgroundStyle: {
+      backgroundColor: '#F4F1FA',
+      accentColor: '#7356BF',
+    },
+  },
+  {
+    id: '9',
+    title: COURSE_TITLES.AWS_DEVOPS,
+    iconSrc: aws,
+    iconSmall: awsDevSmall,
+    secondaryIcon: awsSecondary,
+    startDate: 'Sep 23, 2024',
+    language: ['en'],
+    mode: 'online',
+    detailsUrl: `/${ROUTES.COURSES}/${ROUTES.AWS_DEVOPS}`,
+    enroll: 'https://wearecommunity.io/events/aws-devops-course',
     backgroundStyle: {
       backgroundColor: '#F4F1FA',
       accentColor: '#7356BF',

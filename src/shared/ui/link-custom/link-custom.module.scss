@@ -43,13 +43,13 @@
   background-color: $color-black;
   border: 2px solid $color-black;
 
-  @include media-tablet {
-    width: 100%;
-  }
-
   &:hover {
     background-color: $color-gray-600;
     border-color: $color-gray-600;
+  }
+
+  @include media-tablet {
+    width: 100%;
   }
 }
 
@@ -65,16 +65,16 @@
   background-color: #eee;
   border-radius: 9999px;
 
-  @include media-tablet {
-    gap: 4px;
-  }
-
   img {
     filter: invert(100%);
   }
 
   &:hover {
     background-color: hsla(from $color-gray-600 h s l/ $opacity-50);
+  }
+
+  @include media-tablet {
+    gap: 4px;
   }
 }
 

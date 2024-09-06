@@ -1,14 +1,14 @@
 .stage-links {
-  @include media-laptop {
-    flex-direction: column;
-    gap: 16px;
-    align-items: flex-start;
-  }
-
   display: flex;
   gap: 24px;
   align-items: center;
   justify-content: flex-start;
 
   margin: 0;
+
+  @include media-laptop {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
 }

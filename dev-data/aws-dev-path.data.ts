@@ -4,7 +4,7 @@ export const awsDevPath: AngularAwsPath[] = [
   {
     id: 1,
     title: 'Module 1. Cloud Introduction',
-    actions: [
+    list: [
       'Fundamental theory about cloud computing',
       'Cloud service models, cloud deployment models, infrastructure-as-code',
       'Monolith vs microservices vs serverless',
@@ -14,7 +14,7 @@ export const awsDevPath: AngularAwsPath[] = [
   {
     id: 2,
     title: 'Module 2. Serving SPA',
-    actions: [
+    list: [
       'AWS Simple Storage Service overview',
       'Services & tools overview',
       'AWS CloudFront overview',
@@ -25,7 +25,7 @@ export const awsDevPath: AngularAwsPath[] = [
   {
     id: 3,
     title: 'Module 3. Serverless API',
-    actions: [
+    list: [
       'AWS Lambda overview',
       'Introduction to collecting logs with AWS CloudWatch',
       'Lambda advanced features and configuration',
@@ -34,12 +34,12 @@ export const awsDevPath: AngularAwsPath[] = [
   {
     id: 4,
     title: 'Module 4. Integration with NoSQL Database',
-    actions: ['Easy way to store data in cloud', 'AWS DynamoDB and how to use it'],
+    list: ['Easy way to store data in cloud', 'AWS DynamoDB and how to use it'],
   },
   {
     id: 5,
     title: 'Module 5. Integration with S3',
-    actions: [
+    list: [
       'AWS S3 in-depth introduction',
       'S3 storage classes and their use cases',
       'S3 access control & encryption',
@@ -50,7 +50,7 @@ export const awsDevPath: AngularAwsPath[] = [
   {
     id: 6,
     title: 'Module 6. Async Microservices Communication',
-    actions: [
+    list: [
       'Async messaging overview',
       'AWS SQS overview',
       'AWS SNS overview',
@@ -60,7 +60,7 @@ export const awsDevPath: AngularAwsPath[] = [
   {
     id: 7,
     title: 'Module 7. Authorization',
-    actions: [
+    list: [
       'Authentication & authorization overview',
       'Lambda authorizer & API Gateway',
       'AWS Cognito overview',
@@ -71,7 +71,7 @@ export const awsDevPath: AngularAwsPath[] = [
   {
     id: 8,
     title: 'Module 8. Integration with SQL Database',
-    actions: [
+    list: [
       'Relational databases theory',
       'SQL overview',
       'Overview of AWS database offering',
@@ -82,7 +82,7 @@ export const awsDevPath: AngularAwsPath[] = [
   {
     id: 9,
     title: 'Module 9. Containerization',
-    actions: [
+    list: [
       'Docker overview',
       'Dockerfiles & images',
       'Containers & VMs',
@@ -94,7 +94,7 @@ export const awsDevPath: AngularAwsPath[] = [
   {
     id: 10,
     title: 'Module 10. Backend for Frontend',
-    actions: [
+    list: [
       'Backend for frontend overview',
       'BFF as pattern',
       'API Gateway as BFF',
