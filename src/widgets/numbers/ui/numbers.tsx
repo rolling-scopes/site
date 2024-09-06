@@ -27,7 +27,7 @@ export const Numbers = () => {
         <div className="text-container">
           <div>
             <WidgetTitle mods="asterisk">The Rolling Scopes in numbers</WidgetTitle>
-            <Subtitle marginSize="medium">
+            <Subtitle>
               Everyone can discover our community, regardless of age, professional employment, or
               place of residence.
             </Subtitle>

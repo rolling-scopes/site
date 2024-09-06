@@ -4,29 +4,27 @@ import classNames from 'classnames/bind';
 
 import styles from './subtitle.module.scss';
 
-type SubtitleProps = HTMLAttributes<HTMLHeadingElement> & VariantProps<typeof subtitleVariants>;
+type SubtitleProps = Pick<HTMLAttributes<HTMLHeadingElement>, 'className' | 'children'> &
+  VariantProps<typeof subtitleVariants>;
 
 export const cx = classNames.bind(styles);
 
 const subtitleVariants = cva(cx('subtitle'), {
   variants: {
     fontSize: {
-      medium: cx('medium'),
-      large: cx('large'),
+      small: cx('small-font-size'),
+      large: cx('large-font-size'),
     },
     color: {
       gray: cx('gray-600'),
       black: cx('black'),
     },
-    marginSize: {
-      small: cx('margin-small'),
-      medium: cx('margin-medium'),
-    },
+    withoutPadding: { true: cx('without-padding') },
   },
   defaultVariants: {
-    fontSize: 'medium',
+    fontSize: 'small',
     color: 'gray',
-    marginSize: null,
+    withoutPadding: false,
   },
 });
 
@@ -34,17 +32,15 @@ export const Subtitle = ({
   children,
   fontSize,
   color,
-  marginSize,
+  withoutPadding,
   className,
-  ...props
 }: SubtitleProps) => {
   return (
     <h3
-      {...props}
       className={subtitleVariants({
         fontSize,
         color,
-        marginSize,
+        withoutPadding,
         className,
       })}
       data-testid="subtitle"

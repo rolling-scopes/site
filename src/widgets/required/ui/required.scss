@@ -24,11 +24,6 @@
           flex: 1;
         }
 
-        & div > .subtitle {
-          margin-bottom: 16px;
-          font-size: 28px;
-        }
-
         @include media-laptop {
           gap: 5rem;
         }

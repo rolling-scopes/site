@@ -1,27 +1,15 @@
 .subtitle {
-  @include media-tablet {
-    font-size: 18px;
-    font-weight: $font-weight-regular;
-  }
-
   margin: 0;
   font-weight: $font-weight-medium;
   line-height: 28px;
 
-  &.medium {
+  &.small-font-size {
+    padding-bottom: 16px;
     font-size: 20px;
   }
 
-  &.large {
-    font-size: 24px;
-  }
-
-  &.margin-small {
-    margin-bottom: 8px;
-  }
-
-  &.margin-medium {
-    margin-bottom: 16px;
+  &.large-font-size {
+    font-size: 28px;
   }
 
   &.gray-600 {
@@ -30,5 +18,14 @@
 
   &.black {
     color: $color-black;
+  }
+
+  &.without-padding {
+    padding-bottom: 0;
+  }
+
+  @include media-tablet {
+    font-size: 18px;
+    font-weight: $font-weight-regular;
   }
 }

@@ -35,7 +35,7 @@ export const Events = () => {
         <section className={cx('info')}>
           <SectionLabel>events & meetups</SectionLabel>
           <WidgetTitle mods="asterisk">Meet us at events</WidgetTitle>
-          <Subtitle marginSize="medium">
+          <Subtitle>
             For years we have been organizing meetups and conferences, where you can always learn
             something new, share your knowledge, discover new technologies, meet old and find new
             friends.

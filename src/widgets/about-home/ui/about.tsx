@@ -14,7 +14,7 @@ export const About = () => {
         <div className="left">
           <SectionLabel>community</SectionLabel>
           <WidgetTitle mods="asterisk">Who we are</WidgetTitle>
-          <Subtitle marginSize="medium">
+          <Subtitle>
             Our mission is to provide free education in intriguing subjects, connect people, and
             grow together.
           </Subtitle>

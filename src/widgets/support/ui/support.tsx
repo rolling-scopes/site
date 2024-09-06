@@ -15,7 +15,7 @@ export const Support = () => (
         <WidgetTitle size="large" mods="lines">
           Support Us
         </WidgetTitle>
-        <Subtitle marginSize="small">
+        <Subtitle>
           Your donations help us cover hosting, domains, licenses, and advertising for courses and
           events. Every donation, big or small, helps!
         </Subtitle>

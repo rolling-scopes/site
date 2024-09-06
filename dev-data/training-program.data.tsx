@@ -52,7 +52,9 @@ export const contentMap: ContentMap = {
         Be well-prepared to pass the &quot;AWS Certified Developer - Associate&quot; certification
         and confidently apply your skills in real-world projects by the end of the course.
       </Paragraph>,
-      <Subtitle key="aws cloud dev 03">Course highlights:</Subtitle>,
+      <Subtitle key="aws cloud dev 03">
+        Course highlights:
+      </Subtitle>,
       <List
         key="aws cloud dev 04"
         data={[
@@ -312,7 +314,9 @@ export const contentMap: ContentMap = {
           'Become a DevOps engineer who is ready to face engineering challenges',
         ]}
       />,
-      <Subtitle key="aws devops 04">What do we offer?</Subtitle>,
+      <Subtitle key="aws devops 04">
+        What do we offer?
+      </Subtitle>,
       <List
         key="aws devops 05"
         data={[

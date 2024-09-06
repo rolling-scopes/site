@@ -68,7 +68,7 @@ export const Community = () => (
         <WidgetTitle size="large" mods="lines">
           Join RS Community
         </WidgetTitle>
-        <Subtitle>
+        <Subtitle withoutPadding>
           If you want to learn coding or be a RS School mentor, speaking at developers meetups and
           conferences or taking part in RS clubs welcome to the Rolling Scopes community! Join us in
           social networks to be in touch!
