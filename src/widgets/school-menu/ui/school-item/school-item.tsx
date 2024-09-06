@@ -3,7 +3,7 @@ import { GenericItemProps } from '../school-list/school-list';
 import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
 import { type Course } from '@/app/types';
 import { getCourseDate } from '@/shared/helpers/getCourseDate';
-import Image from '@/shared/ui/image';
+import { Image } from '@/shared/ui/image';
 
 interface SchoolItemProps {
   item: Course | GenericItemProps;

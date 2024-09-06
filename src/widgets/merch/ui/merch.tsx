@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import { LINKS } from '@/app/const';
 import image from '@/shared/assets/merch.webp';
 import { ArrowIcon } from '@/shared/icons';
-import Image from '@/shared/ui/image';
+import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
@@ -25,13 +25,7 @@ export const Merch = () => (
           assets where you will find all merch collections and can print your own Rolling Scopes
           t-shirts, stickers etc.
         </Paragraph>
-        <LinkCustom
-          href={LINKS.MERCH}
-          icon={<ArrowIcon />}
-          button
-          variant="colored"
-          target="_blank"
-        >
+        <LinkCustom href={LINKS.MERCH} icon={<ArrowIcon />} variant="primary" target="_blank">
           Discover merch assets
         </LinkCustom>
       </div>

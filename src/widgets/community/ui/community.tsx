@@ -6,7 +6,7 @@ import {
   TelegramIcon,
   YouTubeIcon,
 } from '@/shared/icons';
-import Image from '@/shared/ui/image';
+import { Image } from '@/shared/ui/image';
 import { SocialMedia, SocialMediaProps } from '@/shared/ui/social-media';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';

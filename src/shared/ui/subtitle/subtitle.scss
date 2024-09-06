@@ -1,0 +1,18 @@
+.subtitle {
+  font-size: 20px;
+  font-weight: $font-weight-medium;
+  line-height: 28px;
+  color: $color-gray-600;
+  letter-spacing: 0;
+
+  &.course-main {
+    font-size: 24px;
+    color: $color-black;
+  }
+
+  @include media-tablet {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+  }
+}

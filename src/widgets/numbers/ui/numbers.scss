@@ -2,14 +2,6 @@
   align-items: center;
 
   &.content {
-    @include media-laptop {
-      padding: 80px 40px;
-    }
-
-    @include media-tablet {
-      padding: 40px 16px;
-    }
-
     position: relative;
 
     display: flex;
@@ -18,17 +10,18 @@
     justify-content: center;
 
     padding: 40px 120px 80px;
+
+    @include media-laptop {
+      padding: 80px 40px;
+    }
+
+    @include media-tablet {
+      padding: 40px 16px;
+    }
   }
 }
 
 .map {
-  @include media-tablet {
-    width: 100%;
-    max-width: none;
-    height: auto;
-    max-height: none;
-  }
-
   position: absolute;
   z-index: -1;
   left: 0;
@@ -39,37 +32,40 @@
   max-width: 986px;
   height: auto;
   max-height: 650px;
+
+  @include media-tablet {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    max-height: none;
+  }
 }
 
 .numbers .text-container {
+  display: flex;
+  flex-direction: column;
+
   @include media-laptop {
     flex-direction: row;
     align-self: flex-start;
   }
-
-  display: flex;
-  flex-direction: column;
 }
 
 .numbers .text-container > div {
-  @include media-laptop {
-    width: 100%;
-  }
-
   align-self: flex-end;
   width: 50%;
   text-align: left;
+
+  & .subtitle {
+    margin: 16px 0;
+  }
+
+  @include media-laptop {
+    width: 100%;
+  }
 }
 
 .numbers .info {
-  @include media-tablet {
-    flex-direction: column;
-  }
-
-  @include media-mobile {
-    padding: 0;
-  }
-
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -97,15 +93,6 @@
   }
 
   .info-cell {
-    @include media-laptop {
-      width: 150px;
-      margin: 0;
-    }
-
-    @include media-tablet {
-      padding: 0 8px;
-    }
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -116,39 +103,56 @@
     padding: 8px 16px;
 
     .number {
-      @include media-laptop {
-        font-size: 44px;
-        line-height: 52px;
-      }
-
       font-size: 52px;
       font-weight: 500;
       line-height: 64px;
       color: $color-black;
       letter-spacing: 0.04em;
+
+      @include media-laptop {
+        font-size: 44px;
+        line-height: 52px;
+      }
     }
 
     .text {
-      @include media-laptop {
-        font-size: 12px;
-        line-height: 16px;
-      }
-
       font-size: 16px;
       font-weight: 400;
       line-height: 20px;
       color: $color-gray-600;
       letter-spacing: 0;
+
+      @include media-laptop {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+
+    @include media-laptop {
+      width: 150px;
+      margin: 0;
+    }
+
+    @include media-tablet {
+      padding: 0 8px;
     }
   }
 
   .info-divider {
-    @include media-tablet {
-      height: 140px;
-    }
-
     width: 3px;
     height: 180px;
     background-color: #e2e2e2;
+
+    @include media-tablet {
+      height: 140px;
+    }
+  }
+
+  @include media-tablet {
+    flex-direction: column;
+  }
+
+  @include media-mobile {
+    padding: 0;
   }
 }

@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import mentorImg from '@/shared/assets/mentors-wanted-poster.webp';
-import Image from '@/shared/ui/image';
+import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 

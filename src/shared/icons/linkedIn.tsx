@@ -1,5 +1,5 @@
 import linkedIn from '@/shared/assets/svg/linkedIn.svg';
-import Image from '@/shared/ui/image';
+import { Image } from '@/shared/ui/image';
 
 export const LinkedInIcon = () => {
   return (

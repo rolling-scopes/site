@@ -36,23 +36,22 @@ describe('Footer', () => {
     expect(desktopView).toBeInTheDocument();
   });
 
-  it('should render mobile view and have correct class - mobile-view', () => {
+  it('should render mobile view', () => {
     (useWindowSize as Mock).mockReturnValueOnce({ width: 800 });
 
     const { getByTestId } = renderWithRouter(<Footer />);
     const mobileView = getByTestId('mobile-view');
 
     expect(mobileView).toBeInTheDocument();
-    expect(mobileView).toHaveClass('mobile-view');
   });
 
-  it('should render "About Community" link and correct href in mobile view', () => {
+  it('should render "Community" link and correct href in mobile view', () => {
     (useWindowSize as Mock).mockReturnValueOnce({ width: 800 });
 
     const { getByText } = renderWithRouter(<Footer />);
-    const aboutLink = getByText('About Community');
+    const communityLink = getByText('Community');
 
-    expect(aboutLink).toBeInTheDocument();
-    expect(aboutLink).toHaveAttribute('href', '/community/#about');
+    expect(communityLink).toBeInTheDocument();
+    expect(communityLink).toHaveAttribute('href', '/community');
   });
 });

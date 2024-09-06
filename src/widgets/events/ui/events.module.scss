@@ -1,21 +1,16 @@
 .events {
   &.content {
-    @include media-laptop-medium {
-      flex-direction: column;
-      align-items: start;
-    }
-
     display: flex;
     align-items: start;
     justify-content: space-between;
     text-align: left;
 
     .info {
+      width: 460px;
+
       @include media-laptop-medium {
         width: 100%;
       }
-
-      width: 460px;
     }
 
     .paragraph {
@@ -23,6 +18,11 @@
     }
 
     .cards {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+
       @include media-laptop {
         align-self: center;
       }
@@ -30,19 +30,19 @@
       @include media-tablet {
         flex-direction: column;
       }
-
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      justify-content: space-between;
     }
 
     img {
+      width: 500px;
+
       @include media-mobile-landscape {
         width: 100%;
       }
+    }
 
-      width: 500px;
+    @include media-laptop-medium {
+      flex-direction: column;
+      align-items: start;
     }
   }
 }

@@ -1,16 +1,6 @@
 .event-card {
   @extend %transition-all;
 
-  @include media-hover {
-    &:hover {
-      box-shadow: 0 4px 16px 0 rgb(0 0 0 / 14%);
-    }
-  }
-
-  @include media-mobile {
-    width: 100%;
-  }
-
   width: 320px;
   padding: 0;
   border-radius: 12px;
@@ -75,20 +65,21 @@
       height: 112px;
 
       .event-title {
-        @include media-mobile {
-          width: 100%;
-        }
-
         margin-top: 16px;
         margin-bottom: 0;
         font-weight: $font-weight-medium;
         line-height: 32px;
+
+        @include media-mobile {
+          width: 100%;
+        }
       }
 
       .event-additional-info {
         overflow: hidden;
         display: -webkit-box;
         -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
 
         max-height: 40px;
         margin-top: 0;
@@ -96,17 +87,11 @@
 
         font-size: 16px;
         text-overflow: ellipsis;
-
-        -webkit-line-clamp: 2;
       }
     }
   }
 
   &__info {
-    @include media-mobile {
-      width: 100%;
-    }
-
     position: relative;
 
     display: flex;
@@ -142,6 +127,20 @@
         margin-top: 32px;
       }
     }
+
+    @include media-mobile {
+      width: 100%;
+    }
+  }
+
+  @include media-hover {
+    &:hover {
+      box-shadow: 0 4px 16px 0 rgb(0 0 0 / 14%);
+    }
+  }
+
+  @include media-mobile {
+    width: 100%;
   }
 }
 

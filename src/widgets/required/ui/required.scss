@@ -5,6 +5,30 @@
       flex-direction: column;
 
       .column-2 {
+        flex-direction: row;
+        gap: 8rem;
+        align-items: start;
+        justify-content: flex-start;
+
+        .will-learn {
+          & article {
+            margin-top: 20px;
+          }
+
+          & article:first-child {
+            margin-top: 0;
+          }
+        }
+
+        & > * {
+          flex: 1;
+        }
+
+        & div > .subtitle {
+          margin-bottom: 16px;
+          font-size: 28px;
+        }
+
         @include media-laptop {
           gap: 5rem;
         }
@@ -27,25 +51,6 @@
           & > * {
             max-width: 100%;
           }
-        }
-
-        flex-direction: row;
-        gap: 8rem;
-        align-items: start;
-        justify-content: flex-start;
-
-        .will-learn {
-          & article {
-            margin-top: 20px;
-          }
-
-          & article:first-child {
-            margin-top: 0;
-          }
-        }
-
-        & > * {
-          flex: 1;
         }
       }
     }

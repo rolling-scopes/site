@@ -2,13 +2,13 @@ import classNames from 'classnames/bind';
 import { CourseCard } from './CourseCard';
 import { MAX_COURSE_COUNT } from '../model/constants';
 import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/app/const';
-import { courses } from '@/app/services/data';
 import { Course } from '@/app/types';
 import { getActualData } from '@/shared/helpers/getActualData';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { ArrowIcon, RsBanner } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { courses } from 'data';
 
 import styles from './courses.module.scss';
 
@@ -51,11 +51,13 @@ export const Courses = () => {
   return (
     <article id="upcoming-courses" className={cx('container')}>
       <section className={cx('content')}>
-        <WidgetTitle size="small" className={cx('course-title')}>Upcoming courses</WidgetTitle>
+        <WidgetTitle size="small" className={cx('course-title')}>
+          Upcoming courses
+        </WidgetTitle>
         <div className={cx('column-2')}>
           <div className={cx('course-list')} data-testid="courses-list">
             {coursesContent}
-            <LinkCustom href={ROUTES.COURSES} icon={<ArrowIcon />} variant="colored" button>
+            <LinkCustom href={ROUTES.COURSES} icon={<ArrowIcon />} variant="primary">
               Go to courses
             </LinkCustom>
           </div>

@@ -8,13 +8,6 @@
   height: auto;
 
   .stage-number {
-    @include media-tablet {
-      width: 40px;
-      height: 40px;
-      font-size: 16px;
-      line-height: 20px;
-    }
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,16 +21,23 @@
     background-color: #fffaf0;
     border: 1px solid #fff2d9;
     border-radius: 50%;
+
+    @include media-tablet {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+      line-height: 20px;
+    }
   }
 
   .stage-line {
-    @include media-tablet {
-      height: calc(100% - 40px - 10px);
-    }
-
     width: 2px;
     height: calc(100% - 80px - 10px);
     background-color: $color-gray-400;
+
+    @include media-tablet {
+      height: calc(100% - 40px - 10px);
+    }
   }
 }
 

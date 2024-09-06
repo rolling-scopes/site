@@ -23,18 +23,13 @@
   }
 
   .school-list {
-    @include media-mobile-landscape {
-      column-gap: 10px;
-      max-height: 600px;
-    }
-
     display: flex;
     flex-flow: column wrap;
     gap: 19px;
     column-gap: 40px;
     align-items: baseline;
 
-    max-height: 260px;
+    max-height: 280px;
 
     list-style-type: none;
 
@@ -93,6 +88,11 @@
         font-size: 12px;
         color: $color-gray-500;
       }
+    }
+
+    @include media-mobile-landscape {
+      column-gap: 10px;
+      max-height: 600px;
     }
   }
 }
