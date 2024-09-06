@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { Mock, describe, expect, it, vi } from 'vitest';
-import { Alumni } from './ui/alumni';
+import { Alumni } from './alumni';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
 
 vi.mock('@/shared/hooks/use-window-size', () => ({
