@@ -14,41 +14,44 @@
 }
 
 .alumni {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  row-gap: 48px;
+  place-items: center;
 
   margin-top: 40px;
+  margin-bottom: 48px;
 
   @include media-laptop {
+    .logo-container {
+      grid-column: span 3;
+    }
+
     .logo-container:nth-child(n + 13) {
       display: none;
     }
   }
 
   @include media-tablet {
+    .logo-container {
+      grid-column: span 6;
+    }
+
     .logo-container:nth-child(n + 7) {
       display: none;
+    }
+  }
+
+  @include media-mobile {
+    .logo-container {
+      grid-column: span 12;
     }
   }
 }
 
 .logo-container {
-  display: flex;
-  flex-basis: 16.5%;
-  align-items: center;
-  justify-content: center;
-
-  margin-bottom: 48px;
-
-  @include media-laptop {
-    flex-basis: 25%;
-  }
-
-  @include media-tablet {
-    flex-basis: 50%;
-  }
+  display: block;
+  grid-column: span 2;
 }
 
 .logo {
