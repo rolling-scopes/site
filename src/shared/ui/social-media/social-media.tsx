@@ -16,7 +16,7 @@ export const SocialMedia = ({ title, href, icon }: SocialMediaProps) => (
   <LinkCustom
     className={cx('social-media')}
     href={href}
-    variant="custom"
+    variant="withCustomClassName"
     external
     data-testid="social-media"
   >

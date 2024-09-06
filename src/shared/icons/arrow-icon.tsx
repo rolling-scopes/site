@@ -5,7 +5,7 @@ export const ArrowIcon = ({ size = '24px' }: { size?: string }) => {
   return (
     <Image
       src={arrow}
-      alt=""
+      alt="arrow icon"
       height={size}
       width={size}
       data-testid="arrow-icon"

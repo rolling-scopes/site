@@ -8,9 +8,9 @@ import styles from './link-custom.module.scss';
 
 export const cx = classNames.bind(styles);
 
-type LinkCustomProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'rel' | 'target'> &
-  VariantProps<typeof linkCustomVariants> &
-  LinkCustomAdditionalProps;
+type LinkCustomProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'rel' | 'target'>
+  & VariantProps<typeof linkCustomVariants>
+  & LinkCustomAdditionalProps;
 
 type LinkCustomAdditionalProps = {
   href: string;
@@ -24,7 +24,7 @@ const linkCustomVariants = cva('', {
       rounded: cx('button', 'rounded'),
       primary: cx('button', 'primary'),
       secondary: cx('button', 'secondary'),
-      custom: '', // relies on external classes
+      withCustomClassName: '', // relies on external classes
       textLink: cx('textLink'),
     },
   },

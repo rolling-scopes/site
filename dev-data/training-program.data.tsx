@@ -130,7 +130,7 @@ export const contentMap: ContentMap = {
 
       <Paragraph key="angular 03">
         {`All webinars are recorded and available on our `}
-        <LinkCustom href="https://www.youtube.com/c/rollingscopesschool" variant="custom" external>
+        <LinkCustom href="https://www.youtube.com/c/rollingscopesschool" variant="withCustomClassName" external>
           Youtube
         </LinkCustom>
         . Theoretical materials are provided as recorded lectures from previous courses.
