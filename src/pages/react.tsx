@@ -4,8 +4,8 @@ import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
 import { CourseMain } from '@/widgets/course-main';
 import { Trainers } from '@/widgets/trainers';
-import { reactEn } from '@/widgets/trainers/react-en.data';
 import { TrainingProgram } from '@/widgets/training-program';
+import { reactEn } from 'data';
 
 const COURSE_NAME = 'react';
 
