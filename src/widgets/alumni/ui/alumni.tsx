@@ -9,11 +9,6 @@ import styles from './alumni.module.scss';
 
 const cx = classNames.bind(styles);
 
-export interface AlumniProps {
-  id: string;
-  image: string;
-}
-
 export const Alumni = () => {
   const size = useWindowSize();
 
