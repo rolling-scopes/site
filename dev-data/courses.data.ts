@@ -34,7 +34,7 @@ export const courses: Course[] = [
     enroll: 'https://wearecommunity.io/events/js-stage0-rs-2024q2',
     backgroundStyle: {
       backgroundColor: '#FFDB201A',
-      accentColor: '#FFDB204D',
+      accentColor: '#EFC91F',
     },
   },
   {
@@ -51,7 +51,7 @@ export const courses: Course[] = [
     enroll: 'https://wearecommunity.io/events/js-en-2024q4',
     backgroundStyle: {
       backgroundColor: '#FFDB201A',
-      accentColor: '#FFDB204D',
+      accentColor: '#EFC91F',
     },
   },
   {
@@ -68,7 +68,7 @@ export const courses: Course[] = [
     enroll: 'https://wearecommunity.io/events/js-stage1-2024q4',
     backgroundStyle: {
       backgroundColor: '#FFDB201A',
-      accentColor: '#FFDB204D',
+      accentColor: '#EFC91F',
     },
   },
   {
