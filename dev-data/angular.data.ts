@@ -1,4 +1,4 @@
-import type { Trainer } from '@/entities/trainer/types';
+import type { Trainer } from '@/entities/trainer';
 import aSacca from '@/shared/assets/mentors/a-sacca.webp';
 import aSerhiyenia from '@/shared/assets/mentors/a-serhiyenia.webp';
 import dKohut from '@/shared/assets/mentors/d-kohut.webp';

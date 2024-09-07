@@ -1,5 +1,4 @@
 export type { AngularAwsPath, CoursesPath, DataMap, JSPath } from './courses-data.types';
-export type { Trainer } from '@/entities/trainer/types';
 export { COURSE_TITLES } from './courseTitles.data';
 export { type CourseNames, contentMap } from './training-program.data';
 export { type CourseNamesChannels, DISCORD_LINKS, RS_DOCS_COMMUNICATION_LINK, RS_DOCS_TELEGRAM_CHATS_LINK } from './communication.data';

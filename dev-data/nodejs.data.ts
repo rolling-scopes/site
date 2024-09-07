@@ -1,4 +1,4 @@
-import type { Trainer } from '@/entities/trainer/types';
+import type { Trainer } from '@/entities/trainer';
 import nodejsImg2 from '@/shared/assets/mentors/a-auchynikau.webp';
 import nodejsImg1 from '@/shared/assets/mentors/m-shylau.webp';
 import nodejsImg3 from '@/shared/assets/mentors/v-antonau.webp';

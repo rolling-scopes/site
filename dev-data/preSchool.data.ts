@@ -1,4 +1,4 @@
-import type { Trainer } from '@/entities/trainer/types';
+import type { Trainer } from '@/entities/trainer';
 import preSchoolImg2 from '@/shared/assets/mentors/a-musikhina.webp';
 import preSchoolImg1 from '@/shared/assets/mentors/v-kavaliou.webp';
 import preSchoolImg3 from '@/shared/assets/mentors/v-rogozin.webp';

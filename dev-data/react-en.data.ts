@@ -1,4 +1,4 @@
-import type { Trainer } from '@/entities/trainer/types';
+import type { Trainer } from '@/entities/trainer';
 import artsiomParfianenkau from '@/shared/assets/mentors/a-parfianenkau.webp';
 import andrejPodlubnyj from '@/shared/assets/mentors/a-podlubnyj.webp';
 import dzmitryYarmoshkin from '@/shared/assets/mentors/d-yarmoshkin.png';

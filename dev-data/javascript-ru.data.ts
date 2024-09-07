@@ -1,4 +1,4 @@
-import type { Trainer } from '@/entities/trainer/types';
+import type { Trainer } from '@/entities/trainer';
 import annaMusikhinaImg from '@/shared/assets/mentors/a-musikhina.webp';
 import margaritaGolubevaImg from '@/shared/assets/mentors/m-golubeva.webp';
 import mikhailOleinikImg from '@/shared/assets/mentors/m-oleinik.webp';
