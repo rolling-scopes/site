@@ -5,7 +5,7 @@
   padding: 0;
   border-radius: 12px;
 
-  &__header {
+  .card-header {
     position: relative;
 
     overflow: hidden;
@@ -90,7 +90,7 @@
     }
   }
 
-  &__info {
+  .card-info {
     position: relative;
 
     display: flex;
@@ -145,7 +145,7 @@
 
 @include media-hover {
   .event-card {
-    &:hover &__header::after {
+    &:hover .card-header::after {
       @include card-corner-accent-hover;
     }
   }

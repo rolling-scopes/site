@@ -26,7 +26,7 @@ export const EventCard = ({
 
   return (
     <article className={cx('event-card')} data-testid="event-card">
-      <div className={cx('event-card__header')} data-testid="card-header">
+      <div className={cx('card-header')} data-testid="card-header">
         <p className={cx('event-tag')}>{eventType}</p>
         <section className={cx('about-organization')} data-testid="organization-section">
           <h4 className={cx('organized-by')}>{organizedBy}</h4>
@@ -38,7 +38,7 @@ export const EventCard = ({
         </section>
       </div>
 
-      <div className={cx('event-card__info')} data-testid="event-info">
+      <div className={cx('card-info')} data-testid="event-info">
         <time dateTime={date} className={cx('event-date')}>
           {dateInfo}
         </time>
