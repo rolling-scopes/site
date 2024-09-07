@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 import { hasDayInDate } from './has-day';
-import { CourseStatus } from '@/app/types';
+import { CourseStatus } from '@/entities/course';
 
 export function getCourseStatus(courseStartDate: string): CourseStatus {
   const now = dayjs();

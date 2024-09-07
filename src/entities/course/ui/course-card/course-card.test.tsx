@@ -1,6 +1,7 @@
 import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
-import { CourseCard, type CourseCardProps } from './course-card';
+import { CourseCard } from './course-card';
+import type { CourseCardProps } from '../../types';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 describe('CourseCard', () => {

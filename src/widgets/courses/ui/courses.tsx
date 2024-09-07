@@ -1,6 +1,5 @@
 import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
-import { Course } from '@/app/types';
-import { CourseCard } from '@/entities/course';
+import { type Course, CourseCard } from '@/entities/course';
 import { getActualData } from '@/shared/helpers/getActualData';
 import { isCourse } from '@/shared/helpers/is-course';
 import { useDataByName } from '@/shared/hooks/use-data-by-name';

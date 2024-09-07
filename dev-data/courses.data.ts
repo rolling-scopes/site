@@ -1,5 +1,5 @@
 import { ROUTES } from '@/app/const';
-import { type Course } from '@/app/types';
+import type { Course } from '@/entities/course';
 import angularSecondary from '@/shared/assets/icons/angular-secondary.webp';
 import angular from '@/shared/assets/icons/angular.svg';
 import awsSecondary from '@/shared/assets/icons/aws-secondary.webp';

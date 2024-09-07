@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import { CourseCard } from './CourseCard';
 import { MAX_COURSE_COUNT } from '../model/constants';
 import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/app/const';
-import { Course } from '@/app/types';
+import type { Course } from '@/entities/course';
 import { getActualData } from '@/shared/helpers/getActualData';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { ArrowIcon, RsBanner } from '@/shared/icons';

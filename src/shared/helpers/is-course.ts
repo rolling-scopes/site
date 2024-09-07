@@ -1,4 +1,4 @@
-import { Course } from '@/app/types';
+import type { Course } from '@/entities/course';
 
 export function isCourse(obj: object): obj is Course {
   return (

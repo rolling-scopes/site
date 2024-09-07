@@ -1,5 +1,5 @@
 import { cloneElement } from 'react';
-import type { Course } from '@/app/types';
+import type { Course } from '@/entities/course';
 import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';
 import { ArrowIcon } from '@/shared/icons';
 import { Image } from '@/shared/ui/image';
