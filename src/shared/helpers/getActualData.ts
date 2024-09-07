@@ -1,6 +1,6 @@
 import { getCourseDate } from './getCourseDate';
+import { isCourse } from './is-course';
 import { Course } from '@/app/types';
-import { isCourse } from '@/entities/courses/helpers/is-course';
 import { EventCardProps } from '@/entities/events';
 import { dayJS } from '@/shared/helpers/dayJS';
 
