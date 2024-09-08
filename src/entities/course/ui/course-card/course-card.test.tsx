@@ -22,20 +22,24 @@ describe('CourseCard', () => {
     renderWithRouter(<CourseCard {...mockProps} />);
   });
 
+  it('renders the course card correctly', () => {
+    expect(screen.getByTestId('course-card')).toBeInTheDocument();
+  });
+
   it('renders the course card title', () => {
-    expect(screen.getByText(mockProps.title)).toBeInTheDocument();
+    expect(screen.getByText(mockProps.title)).toBeVisible();
   });
 
   it('renders the course start date', () => {
-    expect(screen.getByText(`${mockProps.startDate}`)).toBeInTheDocument();
+    expect(screen.getByText(`${mockProps.startDate}`)).toBeVisible();
   });
 
   it('renders the course language', () => {
-    expect(screen.getByText(mockProps.language.join(' / '))).toBeInTheDocument();
+    expect(screen.getByText(mockProps.language.join(' / '))).toBeVisible();
   });
 
   it('renders the course mode', () => {
-    expect(screen.getByText(`${mockProps.mode}`)).toBeInTheDocument();
+    expect(screen.getByText(`${mockProps.mode}`)).toBeVisible();
   });
 
   it('renders the course details link', () => {

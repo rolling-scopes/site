@@ -1,10 +1,13 @@
+import classNames from 'classnames/bind';
 import type { CourseCardProps } from '../../types';
 import { ArrowIcon } from '@/shared/icons';
 import { DateLang } from '@/shared/ui/date-lang';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 
-import './course-card.scss';
+import styles from './course-card.module.scss';
+
+export const cx = classNames.bind(styles);
 
 export const CourseCard = ({
   title,
@@ -23,19 +26,23 @@ export const CourseCard = ({
   };
 
   return (
-    <div className="rs-course-card">
-      <div className="rs-course-card__top" style={cardStyle}>
+    <article className={cx('course-card')} data-testid="course-card">
+      <div className={cx('card-header')} style={cardStyle}>
         <Image src={iconSrc} alt={title} />
-        <h3 className="rs-course-card__title">{title}</h3>
+        { /* TODO change <h3> to Subtitle */ }
+        <h3 className={cx('card-title')}>{title}</h3>
       </div>
-      <div className="rs-course-card__bottom">
+      <div className={cx('course-info')}>
         <DateLang startDate={startDate} language={language} mode={mode} />
-        <div className="rs-course-card__right">
-          <LinkCustom href={detailsUrl} icon={<ArrowIcon size="16px" />} variant="rounded">
-            View details
-          </LinkCustom>
-        </div>
+        <LinkCustom
+          href={detailsUrl}
+          icon={<ArrowIcon size="16px" />}
+          variant="rounded"
+          aria-label="View course details"
+        >
+          View details
+        </LinkCustom>
       </div>
-    </div>
+    </article>
   );
 };
