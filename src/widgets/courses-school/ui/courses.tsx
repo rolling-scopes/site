@@ -16,7 +16,6 @@ const cx = classNames.bind(styles);
 
 export const Courses = () => {
   const size = useWindowSize();
-  const laptopScreenBreakPoint = 1440;
   const tabletScreenBreakPoint = 810;
   const coursesData: Course[] = getActualData({
     data: courses,
@@ -28,8 +27,6 @@ export const Courses = () => {
 
   if (size.width <= tabletScreenBreakPoint) {
     linkLabel = '';
-  } else if (size.width <= laptopScreenBreakPoint) {
-    linkLabel = 'More';
   }
 
   const coursesContent = coursesData
