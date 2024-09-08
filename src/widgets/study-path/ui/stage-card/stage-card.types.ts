@@ -1,3 +1,5 @@
+import { type ListData } from '@/shared/ui/list';
+
 export interface Stage {
   id: number | string;
   title: string;
@@ -9,8 +11,8 @@ export interface Stage {
     isActive?: boolean;
   }[];
   topics?: string[];
-  actions?: string[];
   imageSrc?: string;
+  list?: ListData;
 }
 
 export interface StageCardProps extends Stage {

@@ -6,12 +6,6 @@
       gap: 26px;
 
       .column-2 {
-        @include media-tablet-large {
-          flex-direction: column;
-          gap: 40px;
-          align-items: flex-start;
-        }
-
         display: flex;
         flex-direction: row;
         gap: 100px;
@@ -27,11 +21,6 @@
         }
 
         .disclogo-wrapper {
-          @include media-tablet {
-            width: 150px;
-            padding: 15px;
-          }
-
           flex-shrink: 0;
           align-self: center;
 
@@ -40,6 +29,17 @@
 
           background-color: #5865f2;
           border-radius: 30px;
+
+          @include media-tablet {
+            width: 150px;
+            padding: 15px;
+          }
+        }
+
+        @include media-tablet-large {
+          flex-direction: column;
+          gap: 40px;
+          align-items: flex-start;
         }
       }
     }

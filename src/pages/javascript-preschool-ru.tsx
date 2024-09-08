@@ -6,8 +6,8 @@ import { CourseMain } from '@/widgets/course-main';
 import { Faq } from '@/widgets/faq';
 import { Required } from '@/widgets/required';
 import { Trainers } from '@/widgets/trainers';
-import { preSchoolRu } from '@/widgets/trainers/preSchool.data';
 import { TrainingProgram } from '@/widgets/training-program';
+import { preSchoolRu } from 'data';
 
 const COURSE_NAME = 'js / front-end pre-school ru';
 

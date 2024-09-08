@@ -8,7 +8,7 @@ export const Principles = () => (
   <div className="principles container">
     <div className="principles content">
       <WidgetTitle size="large" mods="lines">RS School Principles are an ability to complete our mission</WidgetTitle>
-      <div className="cards column-3 ">
+      <div className="column-3 cards">
         {cards.map(({ title, description, icon }) => (
           <PrincipleCard key={title} description={description} icon={icon} title={title} />
         ))}

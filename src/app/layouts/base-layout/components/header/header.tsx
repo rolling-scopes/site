@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
 import { ROUTES } from '@/app/const';
@@ -71,9 +71,7 @@ export const Header = () => {
   return (
     <nav className={cx('navbar', color)} data-testid="navigation">
       <section className={cx('navbar-content')}>
-        <Link to="/" onClick={() => window.scrollTo({ top: 0 })}>
-          <Logo />
-        </Link>
+        <Logo />
 
         {isMobile && (
           <>

@@ -1,8 +1,4 @@
 .stage-topics {
-  @include media-tablet {
-    font-size: 16px;
-  }
-
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
@@ -20,5 +16,9 @@
       content: ',';
       margin-right: 6px;
     }
+  }
+
+  @include media-tablet {
+    font-size: 16px;
   }
 }

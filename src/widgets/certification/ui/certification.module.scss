@@ -1,5 +1,17 @@
 .certification {
   &.info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    align-items: start;
+    justify-content: flex-start;
+
+    font-size: 20px;
+
+    .subtitle {
+      font-size: 28px;
+    }
+
     @include media-tablet-large {
       flex-direction: column;
       gap: 40px;
@@ -14,26 +26,14 @@
         justify-content: flex-start;
       }
     }
-
-    display: flex;
-    flex-direction: column;
-    gap: 26px;
-    align-items: start;
-    justify-content: flex-start;
-
-    font-size: 20px;
-
-    .subtitle {
-      font-size: 28px;
-    }
   }
 
   p {
+    padding-top: 5px;
+    font-size: 18px;
+
     @include media-tablet-large {
       font-size: 16px;
     }
-
-    padding-top: 5px;
-    font-size: 18px;
   }
 }
