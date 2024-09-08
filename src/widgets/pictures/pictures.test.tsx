@@ -22,7 +22,7 @@ describe('Pictures', () => {
   it('renders the carousel with images', () => {
     const images = screen.getAllByTestId('carousel-image');
 
-    expect(images.length).toBe(9);
+    expect(images.length).toBe(11);
   });
 
   it('renders the social media links correctly', () => {
