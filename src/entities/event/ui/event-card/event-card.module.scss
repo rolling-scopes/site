@@ -1,4 +1,6 @@
 .event-card {
+  $accent-color: $color-purple-400;
+
   @extend %transition-all;
 
   width: 320px;
@@ -21,7 +23,7 @@
     &::after {
       @extend %transition-all;
 
-      @include card-corner-accent;
+      @include card-corner-accent($accent-color);
     }
 
     .event-tag {
@@ -132,6 +134,10 @@
     }
   }
 
+  &:hover .card-header::after {
+    @include card-corner-accent($accent-color, $isHovered: true);
+  }
+
   @include media-hover {
     &:hover {
       box-shadow: 0 4px 16px 0 rgb(0 0 0 / 14%);
@@ -140,13 +146,5 @@
 
   @include media-mobile {
     width: 100%;
-  }
-}
-
-@include media-hover {
-  .event-card {
-    &:hover .card-header::after {
-      @include card-corner-accent-hover;
-    }
   }
 }
