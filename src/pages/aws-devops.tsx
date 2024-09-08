@@ -6,11 +6,11 @@ import { CourseMain } from '@/widgets/course-main';
 import { Required } from '@/widgets/required';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
-import { awsFundamentals } from 'data';
+import { awsDevops } from 'data';
 
-const COURSE_NAME = 'aws fundamentals';
+const COURSE_NAME = 'aws devops';
 
-export const AwsFundamentals = () => {
+export const AwsDevOps = () => {
   return (
     <>
       <CourseMain courseName={COURSE_NAME} />
@@ -19,9 +19,8 @@ export const AwsFundamentals = () => {
       <About courseName={COURSE_NAME} />
       <Certification courseName={COURSE_NAME} />
       <Communication courseName={COURSE_NAME} />
-      <Required courseName="awsFundamentals" marked2 />
-      <TrainingProgram courseName="aws fundamentals badge" />
-      <Trainers trainers={awsFundamentals} />
+      <Required courseName="awsDevops" marked1 />
+      <Trainers trainers={awsDevops} />
     </>
   );
 };

@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
-import { CourseNames } from '@/shared/data/communication.data';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { CourseNames } from 'data';
 
 import styles from './certification.module.scss';
 

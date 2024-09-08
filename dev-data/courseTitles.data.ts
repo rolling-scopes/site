@@ -7,4 +7,5 @@ export const COURSE_TITLES = {
   NODE: 'Node.js',
   AWS_FUNDAMENTALS: 'AWS Fundamentals',
   AWS_CLOUD_DEVELOPER: 'AWS Cloud Developer',
+  AWS_DEVOPS: 'AWS DevOps',
 };
