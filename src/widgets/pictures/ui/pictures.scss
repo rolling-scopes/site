@@ -18,16 +18,18 @@
       backdrop-filter: blur(20px);
       border-radius: 8px;
 
-      &:hover {
-        background-color: $color-white;
-
-        &::before {
-          filter: invert(60%);
-        }
-      }
-
       @include media-mobile-landscape {
         display: none;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: $color-white;
+
+          &::before {
+            filter: invert(60%);
+          }
+        }
       }
     }
   }
