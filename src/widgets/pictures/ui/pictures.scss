@@ -32,23 +32,9 @@
     }
   }
 
-  .control-dots {
-    --slider-control-dots-width: 240px;
-
-    left: calc(50% - var(--slider-control-dots-width) / 2);
-
-    width: var(--slider-control-dots-width);
-    margin: 0;
-    padding: 8px;
-
-    backdrop-filter: blur(10px);
-    border-radius: 8px;
-  }
-
   .dot {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    padding: 7px;
   }
 }
 
