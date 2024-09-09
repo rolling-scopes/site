@@ -21,7 +21,7 @@ export type CourseCardProps = Pick<
   'title' | 'iconSrc' | 'startDate' | 'detailsUrl' | 'mode' | 'language' | 'backgroundStyle'
 >;
 
-export enum CourseStatus {
+export const enum CourseStatus {
   PLANNED = 'planned',
   AVAILABLE = 'available',
   UPCOMING = 'upcoming',
