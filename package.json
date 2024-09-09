@@ -15,6 +15,7 @@
     "preview": "vite preview",
     "test": "vitest --run",
     "test:playwright": "npx playwright test",
+    "test:visual": "npx percy exec -- npm run test:playwright",
     "coverage": "vitest run --coverage",
     "precommit": "npx lint-staged",
     "prepare": "husky"
