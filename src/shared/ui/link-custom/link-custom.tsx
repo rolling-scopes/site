@@ -24,7 +24,7 @@ const linkCustomVariants = cva('', {
       rounded: cx('button', 'rounded'),
       primary: cx('button', 'primary'),
       secondary: cx('button', 'secondary'),
-      withCustomClassName: '', // relies on external classes
+      withCustomClassName: '',
       textLink: cx('textLink'),
     },
   },
