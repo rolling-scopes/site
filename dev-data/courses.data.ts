@@ -33,8 +33,8 @@ export const courses: Course[] = [
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.JS_PRESCHOOL_RU}`,
     enroll: 'https://wearecommunity.io/events/js-stage0-rs-2024q2',
     backgroundStyle: {
-      backgroundColor: '#FFDB201A',
-      accentColor: '#EFC91F',
+      backgroundColor: '#FFFCE9',
+      accentColor: '#FFDB20',
     },
   },
   {
@@ -50,8 +50,8 @@ export const courses: Course[] = [
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.JS}`,
     enroll: 'https://wearecommunity.io/events/js-en-2024q4',
     backgroundStyle: {
-      backgroundColor: '#FFDB201A',
-      accentColor: '#EFC91F',
+      backgroundColor: '#FFFCE9',
+      accentColor: '#FFDB20',
     },
   },
   {
@@ -67,8 +67,8 @@ export const courses: Course[] = [
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.JS_RU}`,
     enroll: 'https://wearecommunity.io/events/js-stage1-2024q4',
     backgroundStyle: {
-      backgroundColor: '#FFDB201A',
-      accentColor: '#EFC91F',
+      backgroundColor: '#FFFCE9',
+      accentColor: '#FFDB20',
     },
   },
   {
@@ -83,8 +83,8 @@ export const courses: Course[] = [
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.REACT}`,
     enroll: 'https://wearecommunity.io/events/rs-react-2024q3',
     backgroundStyle: {
-      backgroundColor: '#EEF3FE',
-      accentColor: '#7356BF',
+      backgroundColor: '#EAF8FE',
+      accentColor: '#2BB4EF',
     },
   },
   {
@@ -99,8 +99,8 @@ export const courses: Course[] = [
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.ANGULAR}`,
     enroll: 'https://wearecommunity.io/events/rs-angular-2024q3',
     backgroundStyle: {
-      backgroundColor: '#F4F1FA',
-      accentColor: '#F4AFA7',
+      backgroundColor: '#FFEFF2',
+      accentColor: '#F95879',
     },
   },
   {
