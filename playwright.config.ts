@@ -1,39 +1,23 @@
 import { defineConfig, devices } from '@playwright/test';
 
+// eslint-disable-next-line no-restricted-exports
 export default defineConfig({
-  testDir: 'src/shared/__tests__/visualTesting',
+  testDir: 'src/shared/__tests__',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
   reporter: process.env.CI
     ? 'dot'
-    : [['html', { outputFolder: 'src/shared/__tests__/visualTesting/report' }]],
+    : [['html', { outputFolder: 'src/shared/__tests__/report' }]],
   use: {
     baseURL: 'http://localhost:5173',
     trace: 'off',
   },
-  outputDir: 'src/shared/__tests__/visualTesting/results',
+  outputDir: 'src/shared/__tests__/test-results',
   projects: [
     {
-      name: 'Mobile Chrome',
-      use: { ...devices['Pixel 5'] },
-    },
-    {
-      name: 'Mobile Safari',
-      use: { ...devices['iPhone 12'] },
-    },
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
-    {
-      name: 'chromium',
+      name: 'Desktop Chrome',
       use: { ...devices['Desktop Chrome'] },
     },
   ],

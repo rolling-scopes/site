@@ -38,10 +38,7 @@
     "src",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/shared/__tests__/setup-tests.ts",
-    "src/shared/__tests__/visualTesting/main.spec.ts",
-    "src/shared/__tests__/visualTesting/navbar.spec.ts",
-    "src/shared/__tests__/visualTesting/footer.spec.ts",
+    "src/shared/__tests__/**/*.ts",
     "dev-data/**/*.ts",
     "dev-data/**/*.tsx"
   ],
