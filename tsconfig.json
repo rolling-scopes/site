@@ -38,7 +38,6 @@
     "src",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/shared/__tests__/**/*.ts",
     "dev-data/**/*.ts",
     "dev-data/**/*.tsx"
   ],
