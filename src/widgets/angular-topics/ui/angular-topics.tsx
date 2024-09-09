@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 
 export const AngularTopics = () => {
   return (
-    <section className={cx('angular-topics', 'container')}>
+    <section className={cx('angular-topics', 'container')} data-testid="angular-topics">
       <article className={cx('content', 'angular-topics-content')}>
         <WidgetTitle size="medium" mods="asterisk">Topics Covered:</WidgetTitle>
         <List data={topicsList} />
