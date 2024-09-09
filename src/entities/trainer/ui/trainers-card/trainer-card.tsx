@@ -6,9 +6,7 @@ import styles from './trainer-card.module.scss';
 
 const cx = classNames.bind(styles);
 
-type TrainerProps = Trainer;
-
-export const TrainerCard = ({ name, bio, role, photo }: TrainerProps) => {
+export const TrainerCard = ({ name, bio, role, photo }: Trainer) => {
   return (
     <article className={cx('trainer-card')}>
       <div className={cx('card-picture')}>
