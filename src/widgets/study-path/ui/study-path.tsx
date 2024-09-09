@@ -46,7 +46,7 @@ export const StudyPath = ({ path, marked, lang = 'en' }: StudyPathProps) => {
       <section className="study-path container" id="learning-path">
         <div className="study-path content upd">
           <WidgetTitle size="small" mods="asterisk">{title}</WidgetTitle>
-          <Paragraph>{paragraph}</Paragraph>
+          <Paragraph className="study-path-paragraph">{paragraph}</Paragraph>
           <Stages stages={coursesPath} marked={marked} />
         </div>
       </section>

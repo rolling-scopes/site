@@ -2,7 +2,6 @@ import image from '@/shared/assets/about.webp';
 import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
-import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import './about.scss';
@@ -14,10 +13,10 @@ export const About = () => {
         <div className="left">
           <SectionLabel>community</SectionLabel>
           <WidgetTitle mods="asterisk">Who we are</WidgetTitle>
-          <Subtitle
-            text="Our mission is to provide free education in intriguing subjects, connect people, and grow
-          together."
-          />
+          <Paragraph fontSize="large">
+            Our mission is to provide free education in intriguing subjects, connect people, and
+            grow together.
+          </Paragraph>
           <Paragraph>
             The Rolling Scopes was founded in 2013 in Minsk as a community of Front-end developers.
             It has since grown into an enormous international developers community.

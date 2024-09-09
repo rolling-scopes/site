@@ -6,7 +6,7 @@ import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
-import { Subtitle } from '@/shared/ui/subtitle';
+
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './merch.module.scss';
@@ -19,7 +19,7 @@ export const Merch = () => (
       <div className={cx('info')}>
         <SectionLabel>merch</SectionLabel>
         <WidgetTitle mods="asterisk">RS merch</WidgetTitle>
-        <Subtitle text="Are you an RS sloth fan and looking for RS merch?" />
+        <Paragraph fontSize="large">Are you an RS sloth fan and looking for RS merch?</Paragraph>
         <Paragraph>
           The wait is almost over as we&apos;re gearing up for the catalog of free web and print
           assets where you will find all merch collections and can print your own Rolling Scopes
