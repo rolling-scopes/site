@@ -2,18 +2,27 @@
   margin: 0;
   padding-bottom: 18px;
 
-  font-size: 18px;
   font-weight: $font-weight-regular;
   line-height: 28px;
   color: $color-gray-600;
   letter-spacing: 0;
 
-  @include media-laptop {
-    font-size: 16px;
-    line-height: 24px;
+  &.medium-font-size {
+    font-size: 18px;
   }
-}
 
-.top-spacing {
-  padding-top: 18px;
+  &.large-font-size {
+    font-size: 20px;
+  }
+
+  @include media-tablet {
+    &.medium-font-size {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &.large-font-size {
+      font-size: 18px;
+    }
+  }
 }

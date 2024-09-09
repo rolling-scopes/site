@@ -3,7 +3,7 @@ import mentorImg from '@/shared/assets/mentors-wanted.webp';
 import { ArrowIcon } from '@/shared/icons';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
-import { Subtitle } from '@/shared/ui/subtitle';
+import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import './mentors.scss';
@@ -16,12 +16,12 @@ export const Mentors = () => {
           <WidgetTitle size="large" mods="lines">
             Mentors wanted!
           </WidgetTitle>
-          <Subtitle
-            text="The Rolling Scopes School is constantly looking for mentors from all over the world to
+          <Paragraph fontSize="large" className="paragraph">
+            The Rolling Scopes School is constantly looking for mentors from all over the world to
             teach everyone who wants to learn the JavaScript language and the world of Front-end.
             Over the past few years, over 1500+ people have successfully completed our six month
-            training program."
-          />
+            training program.
+          </Paragraph>
           <LinkCustom
             href={LINKS.BECOME_MENTOR}
             icon={<ArrowIcon />}

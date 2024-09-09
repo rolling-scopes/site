@@ -4,20 +4,26 @@ import classNames from 'classnames/bind';
 
 import styles from './paragraph.module.scss';
 
-type ParagraphProps = HTMLAttributes<HTMLParagraphElement> & VariantProps<typeof paragraphVariants>;
+type ParagraphProps = Pick<HTMLAttributes<HTMLParagraphElement>, 'className' | 'children'> &
+  VariantProps<typeof paragraphVariants>;
 
 export const cx = classNames.bind(styles);
 
 const paragraphVariants = cva(cx('paragraph'), {
-  variants: { withTopSpacing: { true: cx('top-spacing') } },
-  defaultVariants: { withTopSpacing: false },
+  variants: {
+    fontSize: {
+      medium: cx('medium-font-size'),
+      large: cx('large-font-size'),
+    },
+  },
+  defaultVariants: { fontSize: 'medium' },
 });
 
-export const Paragraph = ({ children, withTopSpacing, className }: ParagraphProps) => {
+export const Paragraph = ({ children, fontSize, className }: ParagraphProps) => {
   return (
     <p
       className={paragraphVariants({
-        withTopSpacing,
+        fontSize,
         className,
       })}
       data-testid="paragraph"
