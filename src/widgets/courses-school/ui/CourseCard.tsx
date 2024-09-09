@@ -37,7 +37,7 @@ export const CourseCard = ({
           href={detailsUrl}
           icon={<ArrowIcon size="16px" />}
           variant="rounded"
-          aria-label="View course details"
+          aria-label="More details"
         >
           {buttonText}
         </LinkCustom>
