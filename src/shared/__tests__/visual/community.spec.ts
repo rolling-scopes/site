@@ -1,10 +1,8 @@
-import percyScreenshot from '@percy/playwright';
 import { test } from '@playwright/test';
+import { takeScreenshot } from './utils';
 
 test('Community page', async ({ page }) => {
   await page.goto('/community');
-  await page.waitForLoadState('networkidle');
-  await page.waitForLoadState('domcontentloaded');
 
-  await percyScreenshot(page, 'Community page');
+  await takeScreenshot(page, 'Community page');
 });
