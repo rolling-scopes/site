@@ -1,11 +1,11 @@
 import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
-import { About } from './ui/about';
+import { AboutCommunity } from './about-community';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
-describe('About', () => {
+describe('AboutCommunity component', () => {
   beforeEach(() => {
-    renderWithRouter(<About />);
+    renderWithRouter(<AboutCommunity />);
   });
 
   it('renders the title correctly', () => {

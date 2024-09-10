@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useTitle } from '@/shared/hooks/use-title';
-import { About } from '@/widgets/about-home';
+import { AboutCommunity } from '@/widgets/about-community';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Community as CommunitySection } from '@/widgets/community';
 import { Contribute } from '@/widgets/contribute';
@@ -20,7 +20,7 @@ export const Community: FC = () => {
     <>
       <Hero />
       <Breadcrumbs />
-      <About />
+      <AboutCommunity />
       <Numbers />
       <Places />
       <Pictures />

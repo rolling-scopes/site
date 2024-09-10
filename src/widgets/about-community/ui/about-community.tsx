@@ -1,16 +1,19 @@
+import classNames from 'classnames/bind';
 import image from '@/shared/assets/about.webp';
 import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
-import './about.scss';
+import styles from './about-community.module.scss';
 
-export const About = () => {
+export const cx = classNames.bind(styles);
+
+export const AboutCommunity = () => {
   return (
-    <div className="about container" id="about">
-      <div className="about content column-2">
-        <div className="left">
+    <div className={cx('about container')} id="about">
+      <div className={cx('about content column-2')}>
+        <div className={cx('left')}>
           <SectionLabel>community</SectionLabel>
           <WidgetTitle mods="asterisk">Who we are</WidgetTitle>
           <Paragraph fontSize="large">
@@ -29,7 +32,7 @@ export const About = () => {
             Sloth.
           </Paragraph>
         </div>
-        <Image className="right picture" src={image} alt="Logo" />
+        <Image className={cx('right picture')} src={image} alt="Logo" />
       </div>
     </div>
   );
