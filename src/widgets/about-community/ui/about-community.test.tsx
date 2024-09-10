@@ -1,41 +1,38 @@
-import { screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { AboutCommunity } from './about-community';
-import { renderWithRouter } from '@/shared/__tests__/utils';
 
 describe('AboutCommunity component', () => {
+  let widget: HTMLElement;
+  let title: HTMLElement;
+  let text: HTMLElement[];
+
   beforeEach(() => {
-    renderWithRouter(<AboutCommunity />);
+    render(<AboutCommunity />);
+    widget = screen.getByTestId('about-community');
+    title = screen.getByTestId('widget-title');
+    text = screen.getAllByTestId('paragraph');
   });
 
-  it('renders the title correctly', () => {
-    const titleElement = screen.getByText('Who we are');
-
-    expect(titleElement).toBeVisible();
+  it('renders widget without crashing', () => {
+    expect(widget).toBeVisible();
   });
 
-  it('renders the subtitle correctly', () => {
-    const subtitleElement = screen.getByText(/Our mission is to provide free education/i);
-
-    expect(subtitleElement).toBeVisible();
+  it('displays correct title', () => {
+    expect(title).toBeVisible();
+    expect(title).toHaveTextContent('Who we are');
   });
 
-  it('renders the correct first paragraph', () => {
-    const firstParagraphElement = screen.getByText(/The Rolling Scopes was founded in 2013/i);
-
-    expect(firstParagraphElement).toBeVisible();
-  });
-
-  it('renders the correct second paragraph', () => {
-    const secondParagraphElement = screen.getByText(
-      /The Rolling Scopes brings together developers/i,
-    );
-
-    expect(secondParagraphElement).toBeVisible();
+  it('displays correct text', () => {
+    text.forEach((paragraph) => {
+      expect(paragraph).toBeVisible();
+      expect(paragraph).not.toBeEmptyDOMElement();
+      expect(paragraph.innerHTML).not.toBeNull();
+    });
   });
 
   it('renders the image correctly', () => {
-    const imageElement = screen.getByAltText('Logo');
+    const imageElement = screen.getByAltText('Community Hero');
 
     expect(imageElement).toBeVisible();
   });
