@@ -21,5 +21,10 @@
       font-size: 16px;
       line-height: 24px;
     }
+
+    &.large-font-size {
+      font-size: 18px;
+      font-weight: $font-weight-regular;
+    }
   }
 }
