@@ -90,9 +90,9 @@ describe('Courses', () => {
 
   it.skip('renders no more than 5 course cards', () => {
     // TODO remove 'skip' after 'data-testid' will be added to CourseCard
-    const courseCards = screen.getAllByRole('link', { name: 'More' });
+    const courseCards = screen.getAllByRole('link');
 
-    expect(courseCards.length).toBeLessThan(8);
+    expect(courseCards.length).toBeLessThan(5);
   });
 
   it('renders link with "More details" on window size more than 810px', () => {
@@ -101,9 +101,9 @@ describe('Courses', () => {
       height: 900,
     });
     renderWithRouter(<Courses />);
-    const courseCards = screen.getAllByRole('link', { name: 'More details' });
+    const courseCards = screen.getAllByText('More details');
 
-    expect(courseCards.length).toBeLessThanOrEqual(8);
+    expect(courseCards.length).toBeLessThanOrEqual(5);
   });
 
   it('renders the Go to RS School button', () => {
