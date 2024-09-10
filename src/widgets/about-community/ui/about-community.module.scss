@@ -1,26 +1,12 @@
-.about {
-  &.content {
-    &.column-2 {
-      @include media-laptop {
-        flex-direction: row;
-        gap: 50px;
-      }
+.about-community {
+  gap: 176px;
 
-      @include media-tablet-large {
-        flex-direction: column;
-        gap: 0;
-      }
-    }
-  }
-
-  & .left {
+  .about-info {
     min-width: 640px;
-    margin-right: 200px;
-    text-align: left;
 
     @include media-laptop {
+      gap: 20px;
       min-width: 400px;
-      margin-right: 20px;
     }
 
     @include media-tablet {
@@ -28,18 +14,23 @@
     }
   }
 
-  .picture {
+  img {
     width: 370px;
     height: 340px;
-
-    @include media-laptop {
-      margin-top: 32px;
-    }
 
     @include media-tablet {
       width: 296px;
       height: 272px;
-      margin: 32px 0;
     }
+  }
+
+  @include media-laptop {
+    flex-direction: row;
+    gap: 50px;
+  }
+
+  @include media-tablet-large {
+    flex-direction: column;
+    gap: 32px;
   }
 }

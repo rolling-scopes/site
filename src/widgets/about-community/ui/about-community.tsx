@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import image from '@/shared/assets/about.webp';
+import imageAbout from '@/shared/assets/about.webp';
 import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
@@ -11,9 +11,9 @@ export const cx = classNames.bind(styles);
 
 export const AboutCommunity = () => {
   return (
-    <div className={cx('about container')} id="about-community">
-      <div className={cx('about content column-2')}>
-        <div className={cx('left')}>
+    <section className={cx('about-community', 'container')} id="about-community" data-testid="about-community">
+      <div className={cx('about-community', 'content', 'column-2')}>
+        <article className={cx('about-info')}>
           <SectionLabel>community</SectionLabel>
           <WidgetTitle mods="asterisk">Who we are</WidgetTitle>
           <Paragraph fontSize="large">
@@ -31,9 +31,9 @@ export const AboutCommunity = () => {
             education program, RS School, along with fascinating events and its groovy mascot,
             Sloth.
           </Paragraph>
-        </div>
-        <Image className={cx('right picture')} src={image} alt="Logo" />
+        </article>
+        <Image src={imageAbout} alt="Community Hero" />
       </div>
-    </div>
+    </section>
   );
 };
