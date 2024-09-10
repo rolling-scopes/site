@@ -23,16 +23,16 @@
       }
     }
 
-    & .paragraph {
+    & .contribute-paragraph {
       width: 100%;
+      padding-top: 18px;
     }
 
     & .info {
       width: 640px;
       text-align: left;
 
-      & .subtitle,
-      & .paragraph {
+      & .subtitle {
         margin-top: 16px;
       }
 
