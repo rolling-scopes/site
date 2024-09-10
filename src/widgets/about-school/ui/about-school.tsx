@@ -8,23 +8,20 @@ export const cx = classNames.bind(styles);
 
 export const AboutSchool = () => {
   return (
-    <div id="about-school" className={cx('about-school container')}>
-      <div className={cx('content')}>
-        <div className={cx('column-2')}>
-          <div className={cx('info')}>
-            <WidgetTitle mods="asterisk">About RS School</WidgetTitle>
-            <Paragraph fontSize="large">
-              No matter your age, professional employment, or place of residence.
-            </Paragraph>
-            <Paragraph>
-              RS School offers a unique learning experience as a free, community-based online
-              education initiative. The RS School has been run by the Rolling Scopes community since
-              2013. Today, over 600 developer-volunteers from various countries and companies assist
-              as mentors. We believe in important ideas that guide our mission.
-            </Paragraph>
-          </div>
-        </div>
-      </div>
-    </div>
+    <section id="about-school" className={cx('about-school container')}>
+      <article className={cx('about-school', 'content')}>
+        <WidgetTitle mods="asterisk">About RS School</WidgetTitle>
+        <Paragraph fontSize="large">
+          No matter your age, professional employment, or place of residence.
+        </Paragraph>
+        <Paragraph>
+          RS School offers a unique learning experience as a&#160;free, community-based online
+          education initiative. The RS&#160;School has been run by the Rolling&#160;Scopes
+          community since&#160;2013. Today, over 600&#160;developer-volunteers from various
+          countries and companies assist as mentors.
+          We believe in important ideas that guide our mission.
+        </Paragraph>
+      </article>
+    </section>
   );
 };
