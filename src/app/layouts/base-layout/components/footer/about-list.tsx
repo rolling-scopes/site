@@ -5,7 +5,7 @@ import { Logo } from '@/shared/ui/logo';
 const aboutList = [
   {
     title: 'About RS',
-    to: `/${ROUTES.COMMUNITY}/#about`,
+    to: `/${ROUTES.COMMUNITY}/#about-school`,
   },
   {
     title: 'Events',

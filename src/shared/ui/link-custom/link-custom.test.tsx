@@ -41,8 +41,8 @@ describe('LinkCustom', () => {
   it('after click on link should go to http://example.com', async () => {
     renderWithRouter(
       <Routes>
-        <Route path="/" element={<LinkCustom href="/about">Go to About</LinkCustom>} />
-        <Route path="/about" element={<div>About Page</div>} />
+        <Route path="/" element={<LinkCustom href="/about-school">Go to About</LinkCustom>} />
+        <Route path="/about-school" element={<div>About Page</div>} />
       </Routes>,
     );
     const linkElement = screen.getByText(/Go to About/i);

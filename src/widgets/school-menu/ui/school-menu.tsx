@@ -8,7 +8,7 @@ import './school-menu.scss';
 const schoolMenuStaticLinks = [
   {
     title: 'About RS School',
-    detailsUrl: '/#about',
+    detailsUrl: '/#about-school',
     description: 'Free online education',
   },
   {

@@ -8,8 +8,8 @@ export const cx = classNames.bind(styles);
 
 export const AboutSchool = () => {
   return (
-    <div id="about" className={cx('rs-about container')}>
-      <div className={cx('rs-about content')}>
+    <div id="about-school" className={cx('about-school container')}>
+      <div className={cx('content')}>
         <div className={cx('column-2')}>
           <div className={cx('info')}>
             <WidgetTitle mods="asterisk">About RS School</WidgetTitle>
