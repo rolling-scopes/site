@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useTitle } from '@/shared/hooks/use-title';
-import { About } from '@/widgets/about-school';
+import { AboutSchool } from '@/widgets/about-school';
 import { Alumni } from '@/widgets/alumni';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Courses } from '@/widgets/courses-school';
@@ -18,7 +18,7 @@ export const Home: FC = () => {
     <>
       <Main />
       <Breadcrumbs />
-      <About />
+      <AboutSchool />
       <Principles />
       <StudyWithUs />
       <Courses />

@@ -1,14 +1,17 @@
+import classNames from 'classnames/bind';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
-import './about.scss';
+import styles from './about-school.module.scss';
 
-export const About = () => {
+export const cx = classNames.bind(styles);
+
+export const AboutSchool = () => {
   return (
-    <div id="about" className="rs-about container">
-      <div className="rs-about content">
-        <div className="column-2">
-          <div className="info">
+    <div id="about" className={cx('rs-about container')}>
+      <div className={cx('rs-about content')}>
+        <div className={cx('column-2')}>
+          <div className={cx('info')}>
             <WidgetTitle mods="asterisk">About RS School</WidgetTitle>
             <Paragraph fontSize="large">
               No matter your age, professional employment, or place of residence.
