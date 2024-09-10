@@ -26,7 +26,7 @@ const schoolMenuStaticLinks = [
 const communityMenuStaticLinks = [
   {
     title: 'About',
-    detailsUrl: '/community/#about',
+    detailsUrl: '/community/#about-community',
     description: 'Who we are',
   },
   {

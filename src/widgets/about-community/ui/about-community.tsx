@@ -11,7 +11,7 @@ export const cx = classNames.bind(styles);
 
 export const AboutCommunity = () => {
   return (
-    <div className={cx('about container')} id="about">
+    <div className={cx('about container')} id="about-community">
       <div className={cx('about content column-2')}>
         <div className={cx('left')}>
           <SectionLabel>community</SectionLabel>
