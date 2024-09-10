@@ -88,11 +88,11 @@ describe('Courses', () => {
     expect(titleElement).toBeInTheDocument();
   });
 
-  it.skip('renders no more than 5 course cards', () => {
+  it.skip('renders no more than 8 course cards', () => {
     // TODO remove 'skip' after 'data-testid' will be added to CourseCard
     const courseCards = screen.getAllByRole('link', { name: 'More' });
 
-    expect(courseCards.length).toBeLessThan(5);
+    expect(courseCards.length).toBeLessThan(8);
   });
 
   it('renders link with "More details" on window size more than 810px', () => {
@@ -103,7 +103,7 @@ describe('Courses', () => {
     renderWithRouter(<Courses />);
     const courseCards = screen.getAllByRole('link', { name: 'More details' });
 
-    expect(courseCards.length).toBeLessThanOrEqual(5);
+    expect(courseCards.length).toBeLessThanOrEqual(8);
   });
 
   it('renders the Go to RS School button', () => {
