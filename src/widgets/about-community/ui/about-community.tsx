@@ -32,7 +32,7 @@ export const AboutCommunity = () => {
             Sloth.
           </Paragraph>
         </article>
-        <Image src={imageAbout} alt="Community Hero" />
+        <Image src={imageAbout} alt="Sloth mascot dressed in a red superhero cape" />
       </div>
     </section>
   );
