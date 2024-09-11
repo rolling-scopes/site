@@ -33,7 +33,12 @@ export const CourseCard = ({
         <p className={cx('date')}>{`${startDate} • ${language[0].toUpperCase()}`}</p>
       </div>
       <div className={cx('details-container')}>
-        <LinkCustom href={detailsUrl} icon={<ArrowIcon size="16px" />} variant="rounded">
+        <LinkCustom
+          href={detailsUrl}
+          icon={<ArrowIcon size="16px" />}
+          variant="rounded"
+          aria-label="More details"
+        >
           {buttonText}
         </LinkCustom>
       </div>

@@ -3,7 +3,6 @@ import image from '@/shared/assets/rs-school.webp';
 import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
-import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { OptionItem } from '@/widgets/option-item';
 
@@ -16,7 +15,10 @@ export const StudyWithUs = () => (
         <div className="left">
           <SectionLabel>education</SectionLabel>
           <WidgetTitle mods="asterisk">Study with RS School</WidgetTitle>
-          <Subtitle text="RS School is a free and community-based online education program conducted by The Rolling Scopes Community since 2013. " />
+          <Paragraph fontSize="large">
+            RS School is a free and community-based online education program conducted by The
+            Rolling Scopes Community since 2013.
+          </Paragraph>
           <Paragraph>
             Currently 500+ developers from different countries and companies involve in the
             education process as mentors.

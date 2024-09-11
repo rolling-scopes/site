@@ -16,9 +16,8 @@
         flex-direction: column;
         gap: 16px;
 
-        > .subtitle {
+        > .paragraph {
           max-width: 640px;
-          font-weight: $font-weight-regular;
 
           @include media-tablet-large {
             max-width: 100%;
