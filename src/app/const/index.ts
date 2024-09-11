@@ -1,3 +1,5 @@
+export const ANCHORS = { ABOUT_SCHOOL: 'about-school' };
+
 export const COURSE_STALE_AFTER_DAYS = 14;
 
 export const LINKS = {

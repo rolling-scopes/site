@@ -8,8 +8,8 @@ export const cx = classNames.bind(styles);
 
 export const AboutSchool = () => {
   return (
-    <section id="about-school" className={cx('about-school', 'container')} data-testid="about-school">
-      <article className={cx('about-school', 'content')}>
+    <section className={cx('about-school', 'container')} id="about-school" data-testid="about-school">
+      <article className={cx('content')}>
         <WidgetTitle mods="asterisk">About RS School</WidgetTitle>
         <Paragraph fontSize="large">
           No matter your age, professional employment, or place of residence.
