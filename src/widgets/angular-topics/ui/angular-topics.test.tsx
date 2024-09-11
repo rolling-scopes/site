@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { AngularTopics } from './angular-topics';
+import { topicsList } from '../constants';
 
 describe('AngularTopics component', () => {
   it('renders without crashing', () => {
@@ -18,10 +19,11 @@ describe('AngularTopics component', () => {
     expect(title).toHaveTextContent('Topics Covered:');
   });
 
-  it('displays topics list', () => {
+  it('displays the topics list with correct text', () => {
     render(<AngularTopics />);
     const list = screen.getByTestId('list');
 
     expect(list).toBeVisible();
+    expect(list).toHaveTextContent(topicsList.join(''));
   });
 });
