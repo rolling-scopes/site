@@ -75,16 +75,14 @@
     border-radius: 0 0 12px 12px;
   }
 
-  &:hover .card-header::after {
-    @include card-corner-accent($accent-color, $isHovered: true);
+  @include media-hover {
+    &:hover .card-header::after {
+      @include card-corner-accent($accent-color, $isHovered: true);
+    }
   }
 
   @include media-laptop {
     width: 100%;
-  }
-
-  @include media-tablet {
-    max-width: 100%;
   }
 }
 
