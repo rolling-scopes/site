@@ -1,4 +1,5 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { Breadcrumb } from './breadcrumb';
 import { breadcrumbNameMap } from '../constants';
 import { ROUTES } from '@/app/const';
 import { RouteValues } from '@/app/types/route.types.ts';
@@ -7,42 +8,22 @@ import './breadcrumbs.scss';
 
 export const Breadcrumbs = () => {
   const location = useLocation();
-
   const crumbs = location.pathname.split('/').filter(Boolean) as RouteValues[];
 
-  const transformedCrumbs = crumbs.map((crumb) => breadcrumbNameMap[crumb] || crumb);
+  const transformedCrumbs = crumbs.map((crumb, i) => ({
+    text: breadcrumbNameMap[crumb] || crumb,
+    linkTo: `/${crumbs.slice(0, i + 1).join('/')}/`,
+    isLastLink: i === crumbs.length - 1,
+  }));
 
   return (
     <nav className="breadcrumbs container">
       <div className="breadcrumbs content">
         <ul>
-          <li>
-            <Link to={ROUTES.HOME} className="link">
-              Home
-            </Link>
-            <span className="separator">/</span>
-          </li>
-          {transformedCrumbs.map((crumb, i) => {
-            const isLast = i === transformedCrumbs.length - 1;
-            const to = `/${crumbs.slice(0, i + 1).join('/')}/`;
-
-            return (
-              <li key={i}>
-                {!isLast
-                  ? (
-                      <>
-                        <Link to={to} className="link">
-                          {crumb}
-                        </Link>
-                        <span className="separator">/</span>
-                      </>
-                    )
-                  : (
-                      <span className="link disabled">{crumb}</span>
-                    )}
-              </li>
-            );
-          })}
+          <Breadcrumb linkTo={ROUTES.HOME} text="Home" />
+          {transformedCrumbs.map((crumb, i) => (
+            <Breadcrumb key={`${crumb.text}${i}`} {...crumb} />
+          ))}
         </ul>
       </div>
     </nav>
