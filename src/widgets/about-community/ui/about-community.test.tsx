@@ -32,7 +32,7 @@ describe('AboutCommunity component', () => {
   });
 
   it('renders the image correctly', () => {
-    const imageElement = screen.getByAltText('Community Hero');
+    const imageElement = screen.getByAltText('Sloth mascot dressed in a red superhero cape');
 
     expect(imageElement).toBeVisible();
   });
