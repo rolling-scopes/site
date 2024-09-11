@@ -103,7 +103,7 @@
     height: 192px;
     padding: 24px;
 
-    background-color: $color-white;
+    background-color: hsla(from $color-gray-100 h s l/ $opacity-20);
     border: solid $color-gray-200;
     border-width: 0 1px 1px 1px;
     border-radius: 0 0 12px 12px;
@@ -134,13 +134,13 @@
     }
   }
 
-  &:hover .card-header::after {
-    @include card-corner-accent($accent-color, $isHovered: true);
-  }
-
   @include media-hover {
     &:hover {
-      box-shadow: 0 4px 16px 0 rgb(0 0 0 / 14%);
+      box-shadow: 0 4px 16px 0 hsla(from $color-black h s l/ $opacity-20);
+
+      .card-header::after {
+        @include card-corner-accent($accent-color, $isHovered: true);
+      }
     }
   }
 
