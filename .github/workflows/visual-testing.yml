@@ -20,6 +20,9 @@ jobs:
 
       - uses: bahmutov/npm-install@v1
 
+      - name: Install Playwright browsers and dependencies
+        run: npx playwright install --with-deps
+
       - run: npm run test:visual
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
