@@ -23,18 +23,28 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: Check head ref value
-        run: echo ${{ github.event.issue.pull_request.head.ref }}
+      - name: Get the pull request information
+        id: get_pr
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const issueNumber = context.issue.number;
+            const { data: pullRequest } = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: issueNumber,
+            });
+
+            core.setOutput('branch_name', pullRequest.head.ref);
+
+      - uses: bahmutov/npm-install@v1
+
+      - name: Install Playwright browsers and dependencies
+        run: npx playwright install --with-deps
+
+      - run: npm run test:visual
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # - uses: bahmutov/npm-install@v1
-
-      # - name: Install Playwright browsers and dependencies
-      #   run: npx playwright install --with-deps
-
-      # - run: npm run test:visual
-      #   env:
-      #     PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-      #     PERCY_PULL_REQUEST: ${{ github.event.issue.number }}
-      #     PERCY_TARGET_BRANCH: main
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          PERCY_PULL_REQUEST: ${{ github.event.issue.number }}
+          PERCY_BRANCH: ${{ steps.get_pr.outputs.branch_name }}
+          PERCY_TARGET_BRANCH: main
