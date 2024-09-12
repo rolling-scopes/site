@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import type { CourseCardProps } from '../../types';
+import type { Course } from '../../types';
 import { ArrowIcon } from '@/shared/icons';
 import { DateLang } from '@/shared/ui/date-lang';
 import { Image } from '@/shared/ui/image';
@@ -8,6 +8,11 @@ import { LinkCustom } from '@/shared/ui/link-custom';
 import styles from './course-card.module.scss';
 
 export const cx = classNames.bind(styles);
+
+export type CourseCardProps = Pick<
+  Course,
+  'title' | 'iconSrc' | 'startDate' | 'detailsUrl' | 'mode' | 'language' | 'backgroundStyle'
+>;
 
 export const CourseCard = ({
   title,

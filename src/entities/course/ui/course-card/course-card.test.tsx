@@ -1,7 +1,6 @@
 import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
-import { CourseCard } from './course-card';
-import type { CourseCardProps } from '../../types';
+import { CourseCard, type CourseCardProps, cx } from './course-card';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 describe('CourseCard', () => {
@@ -18,31 +17,36 @@ describe('CourseCard', () => {
     },
   };
 
+  let card: HTMLElement;
+
   beforeEach(() => {
     renderWithRouter(<CourseCard {...mockProps} />);
+    card = screen.getByTestId('course-card');
   });
 
   it('renders the course card correctly', () => {
-    expect(screen.getByTestId('course-card')).toBeInTheDocument();
+    expect(card).toBeInTheDocument();
   });
 
-  it('renders the course card title', () => {
+  it('renders the course card content correctly', () => {
     expect(screen.getByText(mockProps.title)).toBeVisible();
-  });
-
-  it('renders the course start date', () => {
     expect(screen.getByText(`${mockProps.startDate}`)).toBeVisible();
-  });
-
-  it('renders the course language', () => {
     expect(screen.getByText(mockProps.language.join(' / '))).toBeVisible();
-  });
-
-  it('renders the course mode', () => {
     expect(screen.getByText(`${mockProps.mode}`)).toBeVisible();
+    expect(screen.getByRole('link')).toHaveAttribute('href', mockProps.detailsUrl);
   });
 
-  it('renders the course details link', () => {
-    expect(screen.getByRole('link')).toHaveAttribute('href', mockProps.detailsUrl);
+  it('renders the course card colors correctly', () => {
+    const cardHeader = card.querySelector('.card-header');
+
+    if (cardHeader) {
+      const accentBlock = getComputedStyle(cardHeader, '::after');
+
+      expect(cardHeader).toHaveClass(cx('card-header'));
+      expect(cardHeader)
+        .toHaveStyle({ backgroundColor: mockProps.backgroundStyle.backgroundColor });
+      expect(accentBlock)
+        .toHaveStyle({ backgroundColor: mockProps.backgroundStyle.accentColor });
+    }
   });
 });

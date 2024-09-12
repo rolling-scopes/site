@@ -16,9 +16,4 @@ export type Course = {
   };
 };
 
-export type CourseCardProps = Pick<
-  Course,
-  'title' | 'iconSrc' | 'startDate' | 'detailsUrl' | 'mode' | 'language' | 'backgroundStyle'
->;
-
 export type CourseStatus = 'planned' | 'available' | 'upcoming';
