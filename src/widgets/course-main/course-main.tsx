@@ -49,7 +49,7 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
           <SectionLabel>{status}</SectionLabel>
           <WidgetTitle>{`${altTitle || title} Course`}</WidgetTitle>
           {type && (
-            <Subtitle fontSize="large" color="black">
+            <Subtitle fontSize="small" color="black">
               {type}
             </Subtitle>
           )}

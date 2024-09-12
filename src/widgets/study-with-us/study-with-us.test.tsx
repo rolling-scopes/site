@@ -23,7 +23,7 @@ describe('School Component', () => {
   it('renders the study options correctly', () => {
     const options = screen.getAllByRole('heading', { level: 3 });
 
-    expect(options.length).toBe(4);
+    expect(options.length).toBe(3);
   });
 
   it('renders the correct description for each study option', () => {

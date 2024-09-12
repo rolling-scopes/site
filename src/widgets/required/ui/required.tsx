@@ -36,7 +36,7 @@ export const Required = ({ courseName }: RequiredProps) => {
         <div className="column-2">
           {isKnowBeforeExist && (
             <article>
-              <Subtitle>{knowBefore.title}</Subtitle>
+              <Subtitle fontSize="extraSmall">{knowBefore.title}</Subtitle>
               <List data={knowBefore.description} />
             </article>
           )}
@@ -45,7 +45,7 @@ export const Required = ({ courseName }: RequiredProps) => {
               ? willLearn.map((willLearn, index) => {
                 return (
                   <article key={index}>
-                    <Subtitle>{willLearn.title}</Subtitle>
+                    <Subtitle fontSize="extraSmall">{willLearn.title}</Subtitle>
                     <List data={willLearn.description} />
                   </article>
                 );
