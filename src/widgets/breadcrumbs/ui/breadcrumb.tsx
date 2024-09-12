@@ -1,6 +1,9 @@
+import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 
-import './breadcrumbs.scss';
+import styles from './breadcrumbs.module.scss';
+
+const cx = classNames.bind(styles);
 
 interface BreadcrumbProps {
   linkTo: string;
@@ -12,15 +15,15 @@ export function Breadcrumb(props: BreadcrumbProps) {
   const { linkTo, text, isLastLink } = props;
 
   if (isLastLink) {
-    return <li><span className="link disabled">{text}</span></li>;
+    return <li><span className={cx('link', 'disabled')}>{text}</span></li>;
   }
 
   return (
     <li>
-      <Link to={linkTo} className="link">
+      <Link to={linkTo} className={cx('link')}>
         {text}
       </Link>
-      <span className="separator">/</span>
+      <span className={cx('separator')}>/</span>
     </li>
   );
 }

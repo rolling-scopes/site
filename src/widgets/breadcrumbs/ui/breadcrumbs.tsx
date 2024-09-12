@@ -1,10 +1,13 @@
+import classNames from 'classnames/bind';
 import { useLocation } from 'react-router-dom';
 import { Breadcrumb } from './breadcrumb';
 import { breadcrumbNameMap } from '../constants';
 import { ROUTES } from '@/app/const';
 import { RouteValues } from '@/app/types/route.types.ts';
 
-import './breadcrumbs.scss';
+import styles from './breadcrumbs.module.scss';
+
+const cx = classNames.bind(styles);
 
 export const Breadcrumbs = () => {
   const location = useLocation();
@@ -17,8 +20,8 @@ export const Breadcrumbs = () => {
   }));
 
   return (
-    <nav className="breadcrumbs container">
-      <div className="breadcrumbs content">
+    <nav className={cx('container')}>
+      <div className={cx('content', 'breadcrumbs-content')}>
         <ul>
           <Breadcrumb linkTo={ROUTES.HOME} text="Home" />
           {transformedCrumbs.map((crumb, i) => (
