@@ -1,11 +1,11 @@
 import nodejsImg1 from '@/shared/assets/mentors/m-shylau.webp';
-import { Trainer } from 'data';
+import type { Trainer } from '@/entities/trainer';
 
 export const MOCKED_IMAGE_PATH = 'mocked-image-path.webp';
-const MOCKED_TRAINER = {
-  name: 'Maksim Shylau',
-  role: 'Senior Software Engineer at Epam',
-  bio: "Maksim Shylau is a professional with around 6 years of programming experience. Initially a hobby, programming evolved into Maxim's current profession as a full-stack developer (proficient in JavaScript, TypeScript, React, Node.js, and AWS) at EPAM Systems, where he holds the position of Senior Software Engineer. Maksim actively contributes to RS School in his leisure time by leading a Node.js course, delivering lectures, creating educational tasks, and participating in various events. He is committed to continuous learning, constantly exploring new technologies, and extends his passion to helping students master web development.",
+export const MOCKED_TRAINER = {
+  name: 'Max Power',
+  role: 'Executive Pastry Chef at The Cloud Cafe',
+  bio: "Max Power is a pastry master with a passion for crafting sweet treats. With over 7 years of experience whipping up delicious pastries and desserts, Max has honed their skills as the Head Pastry Chef on the prestigious Cloud Cafe. When not busy creating new recipes, Max enjoys leading baking classes and participating in friendly cooking competitions.",
   photo: nodejsImg1,
 };
 export const MOCKED_ONE_TRAINER: Trainer[] = [MOCKED_TRAINER];

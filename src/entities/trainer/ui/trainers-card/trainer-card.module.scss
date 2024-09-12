@@ -1,0 +1,64 @@
+.trainer-card {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  max-width: 700px;
+  padding: 40px 32px 40px 32px;
+
+  border-radius: 16px;
+  box-shadow: 0 4px 16px 0 rgb(0 0 0 / 12%);
+
+  .card-picture {
+    max-width: 120px;
+    max-height: 120px;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+  }
+
+  .card-text {
+    width: fit-content;
+  }
+
+  .card-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: $font-weight-medium;
+    line-height: 32px;
+
+    @include media-tablet {
+      font-size: 20px;
+    }
+  }
+
+  .card-subtitle {
+    margin: 0;
+    font-size: 18px;
+    font-weight: $font-weight-medium;
+    color: $color-gray-500;
+
+    @include media-tablet {
+      font-size: 18px;
+    }
+  }
+
+  .card-content {
+    font-size: 16px;
+    font-weight: $font-weight-regular;
+    line-height: 24px;
+    color: $color-gray-600;
+  }
+
+  @include media-tablet-large {
+    max-width: 100%;
+  }
+
+  @include media-mobile-landscape {
+    flex-direction: column;
+  }
+}
