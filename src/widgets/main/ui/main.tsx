@@ -10,7 +10,9 @@ export const Main = () => {
         <div className="left">
           <div className="title-container">
             <MainTitle>RS School</MainTitle>
-            <Subtitle text="Free courses. High motivation" />
+            <Subtitle className="main-subtitle" fontSize="extra-small">
+              Free courses. High motivation
+            </Subtitle>
           </div>
           <h2 className="description">Connecting people, growing together, having fun</h2>
         </div>
