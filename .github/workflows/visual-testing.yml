@@ -25,6 +25,8 @@ jobs:
 
       - name: Check head ref value
         run: echo ${{ github.event.issue.pull_request.head.ref }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # - uses: bahmutov/npm-install@v1
 
