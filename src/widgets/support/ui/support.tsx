@@ -12,9 +12,7 @@ export const Support = () => (
   <div className="support container">
     <div className="support content">
       <div className="info">
-        <WidgetTitle size="large" mods="lines">
-          Support Us
-        </WidgetTitle>
+        <WidgetTitle size="large" mods="lines">Support Us</WidgetTitle>
         <Paragraph fontSize="large">
           Your donations help us cover hosting, domains, licenses, and advertising for courses and
           events. Every donation, big or small, helps!
