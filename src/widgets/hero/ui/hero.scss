@@ -62,7 +62,13 @@
 
   .subtitle {
     margin: 0;
-    font-family: Inter-Medium, Inter, sans-serif;
+
+    font-family: $font-primary;
+    font-size: 20px;
+    font-weight: $font-weight-medium;
+    line-height: 26px;
+    color: $color-black;
+    letter-spacing: 0;
 
     &-container {
       display: flex;

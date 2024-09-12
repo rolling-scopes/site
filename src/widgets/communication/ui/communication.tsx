@@ -62,14 +62,14 @@ export const Communication = ({ courseName, lang = 'en' }: RequiredProps) => {
           </figure>
           <div>
             <Subtitle fontSize="large">{localizedContent[lang].subTitle}</Subtitle>
-            <Paragraph>
+            <Paragraph className="communication-paragraph">
               {localizedContent[lang].firstParagraphFirstHalf}{' '}
               <LinkCustom href={DISCORD_LINKS[courseName]} icon={<TextLinkIcon />} target="_blank">
                 {localizedContent[lang].discordLink}
               </LinkCustom>
               {localizedContent[lang].firstParagraphSecondHalf}
             </Paragraph>
-            <Paragraph>
+            <Paragraph className="communication-paragraph">
               {localizedContent[lang].secondParagraphFirstHalf}{' '}
               <LinkCustom
                 href={RS_DOCS_TELEGRAM_CHATS_LINK}
@@ -80,7 +80,7 @@ export const Communication = ({ courseName, lang = 'en' }: RequiredProps) => {
               </LinkCustom>
               {localizedContent[lang].secondParagraphSecondHalf}
             </Paragraph>
-            <Paragraph>
+            <Paragraph className="communication-paragraph">
               {localizedContent[lang].thirdParagraphFirstHalf}{' '}
               <LinkCustom href={RS_DOCS_COMMUNICATION_LINK} icon={<TextLinkIcon />} target="_blank">
                 {localizedContent[lang].rsDocsLink}

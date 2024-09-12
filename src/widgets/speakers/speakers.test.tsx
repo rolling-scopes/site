@@ -13,10 +13,10 @@ describe('Speakers', () => {
     expect(titleElement).toBeVisible();
   });
 
-  it('renders both subtitles correctly', () => {
-    const subtitleElements = screen.getAllByRole('heading', { level: 3 });
+  it('renders both paragraphs correctly', () => {
+    const paragraphs = screen.getAllByTestId('paragraph');
 
-    expect(subtitleElements).toHaveLength(2);
+    expect(paragraphs.length).toBe(2);
   });
 
   it('renders the name correctly', () => {

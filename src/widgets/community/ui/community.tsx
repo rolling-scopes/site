@@ -7,8 +7,8 @@ import {
   YouTubeIcon,
 } from '@/shared/icons';
 import { Image } from '@/shared/ui/image';
+import { Paragraph } from '@/shared/ui/paragraph';
 import { SocialMedia, SocialMediaProps } from '@/shared/ui/social-media';
-import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import './community.scss';
@@ -68,11 +68,11 @@ export const Community = () => (
         <WidgetTitle size="large" mods="lines">
           Join RS Community
         </WidgetTitle>
-        <Subtitle withoutPadding>
+        <Paragraph fontSize="large">
           If you want to learn coding or be a RS School mentor, speaking at developers meetups and
           conferences or taking part in RS clubs welcome to the Rolling Scopes community! Join us in
           social networks to be in touch!
-        </Subtitle>
+        </Paragraph>
         <div className="social-media-container">
           {communityGroups.map(({ title, href, icon }) => (
             <SocialMedia key={title} title={title} href={href} icon={icon} />
