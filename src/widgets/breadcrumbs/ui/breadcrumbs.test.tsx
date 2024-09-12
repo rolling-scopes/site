@@ -5,9 +5,9 @@ import { ROUTES } from '@/app/const';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 describe('Breadcrumbs', () => {
-  it('renders "Home"', async () => {
+  it('renders "Home"', () => {
     renderWithRouter(<Breadcrumbs />, { route: ROUTES.HOME });
-    const homeLink = await screen.findByText(/Home/i);
+    const homeLink = screen.getByText(/Home/i);
 
     expect(homeLink).toBeInTheDocument();
   });
@@ -21,14 +21,14 @@ describe('Breadcrumbs', () => {
     });
   });
 
-  test('renders un-mapped Breadcrumbs', () => {
+  it('renders un-mapped Breadcrumbs', () => {
     renderWithRouter(<Breadcrumbs />, { route: '/unmapped-route' });
     const unmappedBreadcrumb = screen.getByText(/unmapped-route/i);
 
     expect(unmappedBreadcrumb).toBeInTheDocument();
   });
 
-  test('renders Breadcrumbs for nested route', () => {
+  it('renders Breadcrumbs for nested route', () => {
     renderWithRouter(<Breadcrumbs />, { route: `/${ROUTES.COURSES}/${ROUTES.NODE_JS}` });
     const parentBreadcrumb = screen.getByText(breadcrumbNameMap[ROUTES.COURSES]);
     const childBreadcrumb = screen.getByText(breadcrumbNameMap[ROUTES.NODE_JS]);

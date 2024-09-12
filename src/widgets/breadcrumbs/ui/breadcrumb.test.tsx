@@ -4,7 +4,7 @@ import { Breadcrumb } from './breadcrumb';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 describe('Breadcrumb', () => {
-  it('should render breadcrumb correctly', async () => {
+  it('should render breadcrumb correctly', () => {
     const props = {
       linkTo: '/some-link/',
       text: 'Some text',
@@ -19,7 +19,7 @@ describe('Breadcrumb', () => {
     expect(link.getAttribute('href')).toEqual(props.linkTo);
   });
 
-  it('should render last breadcrumb correctly', async () => {
+  it('should render last breadcrumb correctly', () => {
     const props = {
       linkTo: '/some-link/',
       text: 'Some text',
@@ -31,7 +31,7 @@ describe('Breadcrumb', () => {
     const link = screen.getByText(props.text);
 
     expect(link).toBeVisible();
-    expect(screen.queryByText('/')).toBeNull();
     expect(link.tagName).not.toEqual('A');
+    expect(screen.queryByText('/')).toBeNull();
   });
 });
