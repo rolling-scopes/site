@@ -8,10 +8,10 @@ export const Hero = () => {
       <div className="main content">
         <div className="title-container">
           <div className="subtitle-container">
-            <Subtitle fontSize="extraSmall" color="black">
+            <Subtitle fontSize="extra-small" color="black">
               an international community of developers
             </Subtitle>
-            <Subtitle fontSize="extraSmall" color="black">
+            <Subtitle fontSize="extra-small" color="black">
               since 2013
             </Subtitle>
           </div>

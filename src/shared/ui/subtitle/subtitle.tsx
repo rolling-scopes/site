@@ -4,19 +4,19 @@ import classNames from 'classnames/bind';
 
 import styles from './subtitle.module.scss';
 
-type SubtitleProps = Pick<HTMLAttributes<HTMLHeadingElement>, 'className' | 'children'>
-  & VariantProps<typeof subtitleVariants>;
+type SubtitleProps = Pick<HTMLAttributes<HTMLHeadingElement>, 'className' | 'children'> &
+  VariantProps<typeof subtitleVariants>;
 
 export const cx = classNames.bind(styles);
 
 const subtitleVariants = cva(cx('subtitle'), {
   variants: {
     fontSize: {
-      extraSmall: cx('extra-small-font-size'),
+      'extra-small': cx('extra-small-font-size'),
       small: cx('small-font-size'),
       medium: cx('medium-font-size'),
       large: cx('large-font-size'),
-      extraLarge: cx('extra-large-font-size'),
+      'extra-large': cx('extra-large-font-size'),
     },
     color: {
       gray: cx('gray-600'),

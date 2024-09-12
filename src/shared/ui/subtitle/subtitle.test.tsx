@@ -27,7 +27,7 @@ describe('Subtitle component', () => {
   });
 
   it('applies correct font size classes when specified', () => {
-    const sizes = ['extraSmall', 'small', 'medium', 'large', 'extraLarge'] as const;
+    const sizes = ['extra-small', 'small', 'medium', 'large', 'extra-large'] as const;
 
     sizes.forEach((size) => {
       const { getByTestId } = render(
@@ -38,10 +38,7 @@ describe('Subtitle component', () => {
       );
       const subtitle = getByTestId('subtitle');
 
-      expect(subtitle).toHaveClass(
-        cx(`${size.replace(/([A-Z])/g, '-$1').toLowerCase()}-font-size`),
-      );
-
+      expect(subtitle).toHaveClass(cx(`${size}-font-size`));
       cleanup();
     });
   });
