@@ -90,7 +90,7 @@ describe('Courses', () => {
 
   it.skip('renders no more than 5 course cards', () => {
     // TODO remove 'skip' after 'data-testid' will be added to CourseCard
-    const courseCards = screen.getAllByRole('link', { name: 'More' });
+    const courseCards = screen.getAllByRole('link');
 
     expect(courseCards.length).toBeLessThan(5);
   });
@@ -112,7 +112,7 @@ describe('Courses', () => {
       height: 900,
     });
     renderWithRouter(<Courses />);
-    const courseCards = screen.getAllByRole('link', { name: 'More details' });
+    const courseCards = screen.getAllByText('More details');
 
     expect(courseCards.length).toBeLessThanOrEqual(5);
   });

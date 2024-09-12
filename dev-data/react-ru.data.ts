@@ -1,8 +1,8 @@
+import type { Trainer } from '@/entities/trainer';
 import reactRuImg3 from '@/shared/assets/mentors/d-cebruk.webp';
 import reactRuImg2 from '@/shared/assets/mentors/p-razuvalov.webp';
 import reactRuImg4 from '@/shared/assets/mentors/s-shalyapin.webp';
 import reactRuImg1 from '@/shared/assets/mentors/v-kovalev.webp';
-import type { Trainer } from 'data';
 
 export const reactRu: Trainer[] = [
   {

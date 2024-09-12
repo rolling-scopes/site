@@ -1,0 +1,62 @@
+.subtitle {
+  margin: 0;
+  font-weight: $font-weight-medium;
+
+  &.extra-small-font-size {
+    font-size: 20px;
+    line-height: 28px;
+
+    @include media-tablet {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  &.small-font-size {
+    font-size: 24px;
+    line-height: 32px;
+
+    @include media-tablet {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+
+  &.medium-font-size {
+    font-size: 28px;
+    line-height: 36px;
+
+    @include media-tablet {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  &.large-font-size {
+    font-size: 32px;
+    line-height: 40px;
+
+    @include media-tablet {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  }
+
+  &.extra-large-font-size {
+    font-size: 36px;
+    line-height: 44px;
+
+    @include media-tablet {
+      font-size: 32px;
+      line-height: 36px;
+    }
+  }
+
+  &.gray-600 {
+    color: $color-gray-600;
+  }
+
+  &.black {
+    color: $color-black;
+  }
+}

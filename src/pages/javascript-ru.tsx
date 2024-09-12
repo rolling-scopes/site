@@ -17,7 +17,7 @@ export const JavaScriptRu = () => {
 
   return (
     <>
-      <CourseMain courseName={COURSE_NAME} type="Менторская программа RU" lang={lang} />
+      <CourseMain courseName={COURSE_NAME} lang={lang} />
       <Breadcrumbs />
       <TrainingProgram courseName={COURSE_NAME} lang={lang} />
       <About courseName={COURSE_NAME} type={lang} />

@@ -60,15 +60,15 @@ export const Communication = ({ courseName, lang = 'en' }: RequiredProps) => {
             <DiscordLogo />
           </figure>
           <div>
-            <Subtitle text={localizedContent[lang].subTitle} />
-            <Paragraph>
+            <Subtitle>{localizedContent[lang].subTitle}</Subtitle>
+            <Paragraph className="communication-paragraph">
               {localizedContent[lang].firstParagraphFirstHalf}{' '}
               <LinkCustom href={DISCORD_LINKS[courseName]} external>
                 {localizedContent[lang].discordLink}
               </LinkCustom>
               {localizedContent[lang].firstParagraphSecondHalf}
             </Paragraph>
-            <Paragraph>
+            <Paragraph className="communication-paragraph">
               {localizedContent[lang].secondParagraphFirstHalf}{' '}
               <LinkCustom
                 href={RS_DOCS_TELEGRAM_CHATS_LINK}
@@ -78,7 +78,7 @@ export const Communication = ({ courseName, lang = 'en' }: RequiredProps) => {
               </LinkCustom>
               {localizedContent[lang].secondParagraphSecondHalf}
             </Paragraph>
-            <Paragraph>
+            <Paragraph className="communication-paragraph">
               {localizedContent[lang].thirdParagraphFirstHalf}{' '}
               <LinkCustom href={RS_DOCS_COMMUNICATION_LINK} external>
                 {localizedContent[lang].rsDocsLink}
