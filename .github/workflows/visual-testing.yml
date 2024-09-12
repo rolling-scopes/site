@@ -23,13 +23,16 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - uses: bahmutov/npm-install@v1
+      - name: Check head ref value
+        run: echo ${{ github.event.issue.pull_request.head.ref }}
 
-      - name: Install Playwright browsers and dependencies
-        run: npx playwright install --with-deps
+      # - uses: bahmutov/npm-install@v1
 
-      - run: npm run test:visual
-        env:
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-          PERCY_PULL_REQUEST: ${{ github.event.issue.number }}
-          PERCY_TARGET_BRANCH: main
+      # - name: Install Playwright browsers and dependencies
+      #   run: npx playwright install --with-deps
+
+      # - run: npm run test:visual
+      #   env:
+      #     PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+      #     PERCY_PULL_REQUEST: ${{ github.event.issue.number }}
+      #     PERCY_TARGET_BRANCH: main
