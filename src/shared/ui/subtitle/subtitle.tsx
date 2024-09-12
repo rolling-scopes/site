@@ -4,8 +4,8 @@ import classNames from 'classnames/bind';
 
 import styles from './subtitle.module.scss';
 
-type SubtitleProps = Pick<HTMLAttributes<HTMLHeadingElement>, 'className' | 'children'> &
-  VariantProps<typeof subtitleVariants>;
+type SubtitleProps = Pick<HTMLAttributes<HTMLHeadingElement>, 'className' | 'children'>
+  & VariantProps<typeof subtitleVariants>;
 
 export const cx = classNames.bind(styles);
 
