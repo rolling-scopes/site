@@ -17,13 +17,13 @@ test('Courses javascript-preschool-ru page', async ({ page }) => {
 test('Courses javascript-en page', async ({ page }) => {
   await page.goto(`${ROUTES.COURSES}/${ROUTES.JS}`);
 
-  await takeScreenshot(page, 'Courses javascript-en page');
+  await takeScreenshot(page, 'Courses javascript-en page', { percyCSS: `iframe { display: none; }` });
 });
 
 test('Courses javascript-ru page', async ({ page }) => {
   await page.goto(`${ROUTES.COURSES}/${ROUTES.JS_RU}`);
 
-  await takeScreenshot(page, 'Courses javascript-ru page');
+  await takeScreenshot(page, 'Courses javascript-ru page', { percyCSS: `iframe { display: none; }` });
 });
 
 test('Courses react page', async ({ page }) => {
