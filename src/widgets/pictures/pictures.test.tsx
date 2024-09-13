@@ -1,10 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { Pictures } from './ui/pictures';
+import { renderWithRouter } from '@/shared/__tests__/utils';
 
 describe('Pictures', () => {
   beforeEach(() => {
-    render(<Pictures />);
+    renderWithRouter(<Pictures />);
   });
 
   it('renders the title correctly', () => {
@@ -22,7 +23,7 @@ describe('Pictures', () => {
   it('renders the carousel with images', () => {
     const images = screen.getAllByTestId('carousel-image');
 
-    expect(images.length).toBe(9);
+    expect(images.length).toBe(11);
   });
 
   it('renders the social media links correctly', () => {

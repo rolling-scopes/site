@@ -1,7 +1,7 @@
+import type { Trainer } from '@/entities/trainer';
 import awsImg3 from '@/shared/assets/mentors/a-khatseyeva.webp';
 import awsImg2 from '@/shared/assets/mentors/ac-danilov.webp';
 import awsImg1 from '@/shared/assets/mentors/ac-kustikov.webp';
-import type { Trainer } from 'data';
 
 export const awsDevops: Trainer[] = [
   {

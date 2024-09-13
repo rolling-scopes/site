@@ -31,10 +31,10 @@
     background-color: $color-black;
   }
 
-  & .label {
+  .label {
     @extend %transition-all;
 
-    font-family: Inter, sans-serif;
+    font-family: $font-primary;
     font-size: 16px;
     font-weight: $font-weight-regular;
     line-height: 20px;
@@ -49,9 +49,19 @@
     .dropdown-arrow {
       @extend %transition-all;
 
-      width: 16px;
-      height: 17px;
       margin-left: 10px;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+
+      &:focus {
+        outline-offset: 3px;
+      }
+
+      > img {
+        width: 16px;
+        height: 16px;
+      }
     }
 
     &.rotate .dropdown-arrow {
@@ -60,7 +70,7 @@
   }
 
   &.active {
-    & > p {
+    & > span {
       color: $color-black;
 
       -webkit-text-stroke-color: currentcolor;

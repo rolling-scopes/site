@@ -1,5 +1,4 @@
 import { LINKS } from '@/app/const';
-import { ArrowIcon } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 
@@ -33,9 +32,8 @@ export const Requirements = () => {
         </div>
         <LinkCustom
           href={LINKS.BECOME_MENTOR}
-          icon={<ArrowIcon />}
           variant="primary"
-          target="_blank"
+          external
         >
           Register as a mentor
         </LinkCustom>
