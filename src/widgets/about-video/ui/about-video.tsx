@@ -11,7 +11,7 @@ const localizedContent = {
 
 export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
   // Needed to prevent flakiness in screenshot tests
-  const isRunningInPlaywright = navigator.webdriver;
+  const isRunningInCI = process.env.CI === 'true';
 
   return (
     <div className="about-video container">
@@ -19,7 +19,7 @@ export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
         <WidgetTitle mods="lines">{localizedContent[lang].title}</WidgetTitle>
         <div className="video-wrapper">
           <div className="video-container">
-            {isRunningInPlaywright
+            {isRunningInCI
               ? (
                   <div className="video-placeholder">Video Placeholder</div>
                 )
