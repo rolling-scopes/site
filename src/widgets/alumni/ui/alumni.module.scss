@@ -1,15 +1,11 @@
 .info-wrapper {
-  h2,
   p {
     width: 640px;
+    margin-top: 0;
 
     @include media-tablet {
       width: 100%;
     }
-  }
-
-  p {
-    margin-top: 16px;
   }
 }
 
@@ -19,8 +15,7 @@
   row-gap: 48px;
   place-items: center;
 
-  margin-top: 40px;
-  margin-bottom: 48px;
+  padding: 40px 0 48px;
 }
 
 .logo-container {
@@ -49,6 +44,6 @@
 }
 
 .logo {
-  width: 141px;
+  width: 136px;
   height: 40px;
 }
