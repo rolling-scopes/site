@@ -1,11 +1,13 @@
 .event-card {
+  $accent-color: $color-purple-400;
+
   @extend %transition-all;
 
   width: 320px;
   padding: 0;
   border-radius: 12px;
 
-  &__header {
+  .card-header {
     position: relative;
 
     overflow: hidden;
@@ -13,15 +15,15 @@
     height: 304px;
     padding: 32px 24px 24px 24px;
 
-    background-color: #f4f1fa;
-    border: solid #e2e2e2;
+    background-color: $color-purple-50;
+    border: solid $color-gray-200;
     border-width: 1px 1px 0 1px;
     border-radius: 12px 12px 0 0;
 
     &::after {
       @extend %transition-all;
 
-      @include card-corner-accent;
+      @include card-corner-accent($accent-color);
     }
 
     .event-tag {
@@ -38,8 +40,7 @@
       line-height: 1.2;
       color: $color-gray-600;
 
-      background-color: rgb(255 255 255 / 5%);
-      border: 4px solid #cdbaeb;
+      border: 4px solid $color-purple-100;
       border-radius: 36px;
     }
 
@@ -91,7 +92,7 @@
     }
   }
 
-  &__info {
+  .card-info {
     position: relative;
 
     display: flex;
@@ -102,8 +103,8 @@
     height: 192px;
     padding: 24px;
 
-    background-color: #fefefe;
-    border: solid #e2e2e2;
+    background-color: hsla(from $color-gray-100 h s l/ $opacity-20);
+    border: solid $color-gray-200;
     border-width: 0 1px 1px 1px;
     border-radius: 0 0 12px 12px;
 
@@ -117,7 +118,7 @@
 
       font-size: 14px;
       font-weight: $font-weight-medium;
-      color: #9fa1ad;
+      color: $color-gray-500;
     }
 
     .event-address {
@@ -135,19 +136,15 @@
 
   @include media-hover {
     &:hover {
-      box-shadow: 0 4px 16px 0 rgb(0 0 0 / 14%);
+      box-shadow: 0 4px 16px 0 hsla(from $color-black h s l/ $opacity-20);
+
+      .card-header::after {
+        @include card-corner-accent($accent-color, $isHovered: true);
+      }
     }
   }
 
   @include media-mobile {
     width: 100%;
-  }
-}
-
-@include media-hover {
-  .event-card {
-    &:hover &__header::after {
-      @include card-corner-accent-hover;
-    }
   }
 }
