@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { hideIframes, takeScreenshot } from './utils';
+import { takeScreenshot } from './utils';
 import { ROUTES } from '@/app/const';
 
 test('Courses main page', async ({ page }) => {
@@ -17,15 +17,11 @@ test('Courses javascript-preschool-ru page', async ({ page }) => {
 test('Courses javascript-en page', async ({ page }) => {
   await page.goto(`${ROUTES.COURSES}/${ROUTES.JS}`);
 
-  await hideIframes(page);
-
   await takeScreenshot(page, 'Courses javascript-en page');
 });
 
 test('Courses javascript-ru page', async ({ page }) => {
   await page.goto(`${ROUTES.COURSES}/${ROUTES.JS_RU}`);
-
-  await hideIframes(page);
 
   await takeScreenshot(page, 'Courses javascript-ru page');
 });
