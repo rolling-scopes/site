@@ -36,6 +36,7 @@ jobs:
             });
 
             core.setOutput('branch_name', pullRequest.head.ref);
+            core.setOutput('commit_sha', pullRequest.head.sha);
 
       - uses: bahmutov/npm-install@v1
 
@@ -46,5 +47,6 @@ jobs:
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
           PERCY_PULL_REQUEST: ${{ github.event.issue.number }}
+          PERCY_COMMIT: ${{ steps.get_pr.outputs.commit_sha }}
           PERCY_BRANCH: ${{ steps.get_pr.outputs.branch_name }}
           PERCY_TARGET_BRANCH: main
