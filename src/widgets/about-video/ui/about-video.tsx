@@ -9,17 +9,17 @@ const localizedContent = {
   ru: { title: 'Видео RS School' },
 };
 
-// Needed to prevent flakiness in screenshot tests
-const isRunningInCI = import.meta.env.CI === 'true';
-
 export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
+  // Needed to prevent flakiness in screenshot tests
+  const isRunningInDev = import.meta.env.DEV;
+
   return (
     <div className="about-video container">
       <div className="about-video content">
         <WidgetTitle mods="lines">{localizedContent[lang].title}</WidgetTitle>
         <div className="video-wrapper">
           <div className="video-container">
-            {isRunningInCI
+            {isRunningInDev
               ? (
                   <div className="video-placeholder">Video Placeholder</div>
                 )
