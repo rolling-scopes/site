@@ -9,10 +9,10 @@ const localizedContent = {
   ru: { title: 'Видео RS School' },
 };
 
-export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
-  // Needed to prevent flakiness in screenshot tests
-  const isRunningInCI = process.env.CI === 'true';
+// Needed to prevent flakiness in screenshot tests
+const isRunningInCI = import.meta.env.CI === 'true';
 
+export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
   return (
     <div className="about-video container">
       <div className="about-video content">
