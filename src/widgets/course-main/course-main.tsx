@@ -18,7 +18,7 @@ import styles from './course-main.module.scss';
 interface CourseMainProps {
   courseName: string;
   lang?: 'ru' | 'en';
-  type?: 'Mentoring Program EN' | 'Pre-school RU' | 'Менторская программа RU';
+  type?: 'Pre-school RU';
 }
 
 const localizedContent = {
@@ -48,7 +48,11 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
         <div className={styles.info}>
           <SectionLabel>{status}</SectionLabel>
           <WidgetTitle>{`${altTitle || title} Course`}</WidgetTitle>
-          {type && <Subtitle text={type} type="course-main" />}
+          {type && (
+            <Subtitle fontSize="small" color="black">
+              {type}
+            </Subtitle>
+          )}
           <DateLang startDate={date} language={language} mode={mode} withMargin />
           <LinkCustom href={enroll} icon={<ArrowIcon />} variant="secondary" target="_blank">
             {localizedContent[lang].linkLabel}

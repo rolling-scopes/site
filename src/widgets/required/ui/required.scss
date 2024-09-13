@@ -3,7 +3,6 @@
     &.info-wrapper {
       display: flex;
       flex-direction: column;
-      gap: 16px;
 
       .column-2 {
         flex-direction: row;
@@ -23,11 +22,6 @@
 
         & > * {
           flex: 1;
-        }
-
-        & div > .subtitle {
-          margin-bottom: 16px;
-          font-size: 28px;
         }
 
         @include media-laptop {

@@ -1,7 +1,6 @@
 import image from '@/shared/assets/map.webp';
 import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
-import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import './numbers.scss';
@@ -27,10 +26,10 @@ export const Numbers = () => {
         <div className="text-container">
           <div>
             <WidgetTitle mods="asterisk">The Rolling Scopes in numbers</WidgetTitle>
-            <Subtitle
-              text="Everyone can discover our community, regardless of age, professional employment, or
-            place of residence."
-            />
+            <Paragraph fontSize="large">
+              Everyone can discover our community, regardless of age, professional employment, or
+              place of residence.
+            </Paragraph>
             <Paragraph>
               Developers from different companies and countries are connected to pass on your
               knowledge, enrich your network and just have fun.
