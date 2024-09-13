@@ -25,7 +25,7 @@ const linkCustomVariants = cva('', {
       primary: cx('button', 'primary'),
       secondary: cx('button', 'secondary'),
       withCustomClassName: '',
-      textLink: cx('textLink'),
+      textLink: cx('text-link'),
     },
   },
 });
