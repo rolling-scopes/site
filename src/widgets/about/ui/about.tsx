@@ -2,7 +2,6 @@
 import { InfoGrid } from './info-grid/info-grid';
 import { type Course } from '@/app/types';
 import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';
-import { ArrowIcon } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -69,7 +68,7 @@ export const About = ({ courseName, type = 'en' }: AboutProps) => {
           <Paragraph>{localizedContent[type].paragraph}</Paragraph>
         )}
         <InfoGrid items={infoList} hasTitle />
-        <LinkCustom href={course.enroll} icon={<ArrowIcon />} variant="primary" target="_blank">
+        <LinkCustom href={course.enroll} variant="primary" external>
           {localizedContent[type].linkLabel}
         </LinkCustom>
       </div>

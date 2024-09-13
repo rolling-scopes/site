@@ -5,7 +5,6 @@ import { Course } from '@/app/types';
 import { getCourseDate } from '@/shared/helpers/getCourseDate';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { useTitle } from '@/shared/hooks/use-title';
-import { ArrowIcon } from '@/shared/icons';
 import { DateLang } from '@/shared/ui/date-lang';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -54,7 +53,7 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
             </Subtitle>
           )}
           <DateLang startDate={date} language={language} mode={mode} withMargin />
-          <LinkCustom href={enroll} icon={<ArrowIcon />} variant="secondary" target="_blank">
+          <LinkCustom href={enroll} variant="secondary" external>
             {localizedContent[lang].linkLabel}
           </LinkCustom>
         </div>

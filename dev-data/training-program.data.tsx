@@ -1,6 +1,4 @@
 // TODO separate data and markup
-import { Link } from 'react-router-dom';
-
 import awsPractitionerBadge from '@/shared/assets/aws-cloud-pract-badge.webp';
 import angularImg from '@/shared/assets/rs-slope-angular.webp';
 import awsDevImg from '@/shared/assets/rs-slope-aws-dev.webp';
@@ -9,6 +7,7 @@ import jsImg from '@/shared/assets/rs-slope-js.webp';
 import nodejsImg from '@/shared/assets/rs-slope-nodejs.webp';
 import reactEnImg from '@/shared/assets/rs-slope-react-en.webp';
 import reactRuImg from '@/shared/assets/rs-slope-react-ru.webp';
+import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
@@ -130,12 +129,12 @@ export const contentMap: ContentMap = {
       <Paragraph key="angular 02">
         The course lasts 11 weeks, requiring approximately 20-40 hours of study per week.
       </Paragraph>,
-      // todo use custom link
+
       <Paragraph key="angular 03">
         {`All webinars are recorded and available on our `}
-        <Link className="link" to="https://www.youtube.com/c/rollingscopesschool" target="blank">
+        <LinkCustom href="https://www.youtube.com/c/rollingscopesschool" external>
           Youtube
-        </Link>
+        </LinkCustom>
         . Theoretical materials are provided as recorded lectures from previous courses.
       </Paragraph>,
     ],

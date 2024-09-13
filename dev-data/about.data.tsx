@@ -1,16 +1,17 @@
+import { ReactNode } from 'react';
 import awardIcon from '@/shared/assets/icons/award-icon.webp';
 import giftIcon from '@/shared/assets/icons/gift.webp';
 import noteIcon from '@/shared/assets/icons/note-icon.webp';
 import paperIcon from '@/shared/assets/icons/paper-icon.webp';
 import personIcon from '@/shared/assets/icons/person-icon.webp';
 import planetIcon from '@/shared/assets/icons/planet.webp';
-import type { CourseNamesChannels } from 'data';
-import { DISCORD_LINKS } from 'data';
+import { LinkCustom } from '@/shared/ui/link-custom';
+import { type CourseNamesChannels, DISCORD_LINKS } from 'data';
 
 type AboutInfo = {
   id: number;
   title: string;
-  info: string;
+  info: string | ReactNode;
   icon: string;
 };
 
@@ -66,7 +67,15 @@ const javaScriptEN: () => AboutInfo[] = () => {
     {
       id: 2,
       title: 'Worldwide mentors and trainers',
-      info: 'The Mentors and trainers of our school are front-end and javascript developers from different companies/countries. How to become a <a href="/courses#mentors-wanted">mentor</a>?',
+      info: (
+        <p>
+          The Mentors and trainers of our school are front-end and javascript developers from
+          different companies/countries. How to
+          {' '}
+          <LinkCustom href="/courses#mentors-wanted">become a mentor</LinkCustom>
+          ?
+        </p>
+      ),
       icon: planetIcon,
     },
     {
@@ -146,21 +155,37 @@ const reactEn: AboutInfo[] = javaScriptEN().map((item) => {
     return {
       ...item,
       title: 'Materials',
-      info: `<li>School <a href='https://docs.rs.school'>documentation</a></li><li>All materials are publicly available on the YouTube channel and GitHub</li>`,
+      info: (
+        <ul>
+          <li>
+            School
+            {' '}
+            <LinkCustom href="https://docs.rs.school" external>documentation</LinkCustom>
+          </li>
+          <li>All materials are publicly available on the YouTube channel and GitHub</li>
+        </ul>
+      ),
       icon: paperIcon,
     };
   }
   if (item.id === 5) {
     return {
       ...item,
-      info: `Throughout the course, we mostly use <a href=${DISCORD_LINKS['react']}>Discord chat</a>.`,
+      info: (
+        <p>
+          Throughout the course, we mostly use
+          {' '}
+          <LinkCustom href={DISCORD_LINKS['react']} external>Discord chat</LinkCustom>
+          .
+        </p>
+      ),
     };
   }
   return item;
 });
 
 const awsDevops: AboutInfo[] = [
-  ...structuredClone(reactEn),
+  ...reactEn,
   {
     id: 5,
     title: 'Duration',
@@ -179,7 +204,15 @@ const reactRuAbout: AboutInfo[] = [
   {
     id: 2,
     title: 'Материалы',
-    info: 'Документация школы - https://docs.rs.schoolВсе материалы находятся в открытом доступе на YouTube и GitHub.Также предлагаем ознакомиться с конспектом первого этапа обучения.',
+    info: (
+      <p>
+        Throughout the course, we mostly use
+        {' '}
+        <LinkCustom href="https://docs.rs.school" external>Документация школы</LinkCustom>
+        . Все материалы находятся в открытом доступе на YouTube и GitHub.Также предлагаем
+        ознакомиться с конспектом первого этапа обучения.
+      </p>
+    ),
     icon: paperIcon,
   },
   {
