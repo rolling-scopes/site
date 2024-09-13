@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { takeScreenshot } from './utils';
+import { hideIframes, takeScreenshot } from './utils';
 import { ROUTES } from '@/app/const';
 
 test('Courses main page', async ({ page }) => {
@@ -17,13 +17,17 @@ test('Courses javascript-preschool-ru page', async ({ page }) => {
 test('Courses javascript-en page', async ({ page }) => {
   await page.goto(`${ROUTES.COURSES}/${ROUTES.JS}`);
 
-  await takeScreenshot(page, 'Courses javascript-en page', { percyCSS: `iframe { display: none; }` });
+  await hideIframes(page);
+
+  await takeScreenshot(page, 'Courses javascript-en page');
 });
 
 test('Courses javascript-ru page', async ({ page }) => {
   await page.goto(`${ROUTES.COURSES}/${ROUTES.JS_RU}`);
 
-  await takeScreenshot(page, 'Courses javascript-ru page', { percyCSS: `iframe { display: none; }` });
+  await hideIframes(page);
+
+  await takeScreenshot(page, 'Courses javascript-ru page');
 });
 
 test('Courses react page', async ({ page }) => {
