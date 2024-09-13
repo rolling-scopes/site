@@ -7,7 +7,6 @@ import { getActualData } from '@/shared/helpers/getActualData';
 import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
-import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { events } from 'data';
 
@@ -24,7 +23,7 @@ const actualEvents: Event[] = getActualData({
 
 const nearestEvents = actualEvents.slice(0, displayedCardsQuantity);
 
-const Stub = <Image src={photo3} />;
+const Stub = <Image src={photo3} alt="Community event" />;
 
 export const Events = () => {
   const rsLifetime = dayjs().diff('2013', 'year');
@@ -35,7 +34,11 @@ export const Events = () => {
         <section className={cx('info')}>
           <SectionLabel>events & meetups</SectionLabel>
           <WidgetTitle mods="asterisk">Meet us at events</WidgetTitle>
-          <Subtitle text="For years we have been organizing meetups and conferences, where you can always learn something new, share your knowledge, discover new technologies, meet old and find new friends." />
+          <Paragraph fontSize="large">
+            For years we have been organizing meetups and conferences, where you can always learn
+            something new, share your knowledge, discover new technologies, meet old and find new
+            friends.
+          </Paragraph>
           <Paragraph>
             During
             {' '}

@@ -23,10 +23,7 @@
   .title-container {
     display: flex;
     flex-direction: column;
-    gap: 4px;
-
     width: fit-content;
-
     text-align: left;
 
     .title-main {
@@ -63,31 +60,20 @@
     }
   }
 
-  .subtitle {
+  .subtitle-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
     margin: 0;
+    padding: 0;
 
-    font-family: Inter-Medium, Inter, sans-serif;
-    font-size: 20px;
-    font-weight: $font-weight-medium;
-    line-height: 26px;
-    color: $color-black;
-    letter-spacing: 0;
-
-    &-container {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-
-      width: 100%;
-      margin: 0;
-      padding: 0;
-
-      @include media-tablet {
-        flex-direction: column;
-        gap: 4px;
-        align-items: flex-start;
-      }
+    @include media-tablet {
+      flex-direction: column;
+      gap: 4px;
+      align-items: flex-start;
     }
 
     @include media-tablet {

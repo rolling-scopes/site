@@ -5,7 +5,7 @@ import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/app/const';
 import { Course } from '@/app/types';
 import { getActualData } from '@/shared/helpers/getActualData';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
-import { ArrowIcon, RsBanner } from '@/shared/icons';
+import { RsBanner } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { courses } from 'data';
@@ -16,7 +16,6 @@ const cx = classNames.bind(styles);
 
 export const Courses = () => {
   const size = useWindowSize();
-  const laptopScreenBreakPoint = 1440;
   const tabletScreenBreakPoint = 810;
   const coursesData: Course[] = getActualData({
     data: courses,
@@ -28,8 +27,6 @@ export const Courses = () => {
 
   if (size.width <= tabletScreenBreakPoint) {
     linkLabel = '';
-  } else if (size.width <= laptopScreenBreakPoint) {
-    linkLabel = 'More';
   }
 
   const coursesContent = coursesData
@@ -57,7 +54,7 @@ export const Courses = () => {
         <div className={cx('column-2')}>
           <div className={cx('course-list')} data-testid="courses-list">
             {coursesContent}
-            <LinkCustom href={ROUTES.COURSES} icon={<ArrowIcon />} variant="primary">
+            <LinkCustom href={ROUTES.COURSES} variant="primary">
               Go to courses
             </LinkCustom>
           </div>

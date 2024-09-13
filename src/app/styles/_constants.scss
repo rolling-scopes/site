@@ -6,7 +6,8 @@ $mobile-landscape-width: 568px;
 $mobile-width: 375px;
 
 // font-family
-$font-primary: 'Inter', sans-serif;
+$font-primary: -apple-system, blinkmacsystemfont, 'Segoe UI', 'Noto Sans', helvetica, arial,
+  sans-serif;
 
 // font weights
 $font-weight-light: 300;
@@ -41,6 +42,9 @@ $color-gray-500: hsl(0deg 0% 46%); // #757575
 $color-gray-400: hsl(0deg 0% 69%); // #afafaf
 $color-gray-200: hsl(0deg 0% 90%); // #e6e6e6
 $color-gray-100: hsl(0deg 0% 95%); // #f2f2f2
+
+// Link color
+$color-blue: hsl(202deg 89% 65%);
 
 // OPACITY
 $opacity-100: 1;
