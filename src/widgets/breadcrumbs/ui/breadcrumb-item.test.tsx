@@ -1,16 +1,16 @@
 import { screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import { Breadcrumb } from './breadcrumb';
+import { BreadcrumbItem } from './breadcrumb-item';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
-describe('Breadcrumb', () => {
+describe('BreadcrumbItem', () => {
   it('should render breadcrumb correctly', () => {
     const props = {
       linkTo: '/some-link/',
       text: 'Some text',
     };
 
-    renderWithRouter(<Breadcrumb {...props} />);
+    renderWithRouter(<BreadcrumbItem {...props} />);
 
     const link = screen.getByText(props.text);
 
@@ -26,7 +26,7 @@ describe('Breadcrumb', () => {
       isLastLink: true,
     };
 
-    renderWithRouter(<Breadcrumb {...props} />);
+    renderWithRouter(<BreadcrumbItem {...props} />);
 
     const link = screen.getByText(props.text);
 

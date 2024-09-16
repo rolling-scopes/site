@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import { useLocation } from 'react-router-dom';
-import { Breadcrumb } from './breadcrumb';
+import { BreadcrumbItem } from './breadcrumb-item';
 import { breadcrumbNameMap } from '../constants';
 import { ROUTES } from '@/app/const';
 import { RouteValues } from '@/app/types/route.types.ts';
@@ -23,9 +23,9 @@ export const Breadcrumbs = () => {
     <nav className={cx('container')}>
       <div className={cx('content', 'breadcrumbs-content')}>
         <ul>
-          <Breadcrumb linkTo={ROUTES.HOME} text="Home" />
+          <BreadcrumbItem linkTo={ROUTES.HOME} text="Home" />
           {transformedCrumbs.map((crumb, i) => (
-            <Breadcrumb key={`${crumb.text}${i}`} {...crumb} />
+            <BreadcrumbItem key={`${crumb.text}${i}`} {...crumb} />
           ))}
         </ul>
       </div>

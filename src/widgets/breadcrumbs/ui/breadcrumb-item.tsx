@@ -11,7 +11,7 @@ interface BreadcrumbProps {
   isLastLink?: boolean;
 }
 
-export function Breadcrumb({ linkTo, text, isLastLink = false }: BreadcrumbProps) {
+export function BreadcrumbItem({ linkTo, text, isLastLink = false }: BreadcrumbProps) {
   if (isLastLink) {
     return <li><span className={cx('link', 'disabled')}>{text}</span></li>;
   }
