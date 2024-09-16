@@ -11,6 +11,10 @@
 
       top: calc(50% - var(--slider-arrow-btn-height) / 2);
 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       height: var(--slider-arrow-btn-height);
       margin: 2px;
 
