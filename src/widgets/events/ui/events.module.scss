@@ -33,7 +33,7 @@
       }
     }
 
-    img {
+    > img {
       width: 500px;
 
       @include media-mobile-landscape {
