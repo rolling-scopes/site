@@ -24,7 +24,7 @@
       align-items: center;
       justify-content: space-between;
 
-      > img {
+      .event-img {
         width: 500px;
 
         @include media-mobile-landscape {

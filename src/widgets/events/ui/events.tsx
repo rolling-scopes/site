@@ -23,7 +23,7 @@ const actualEvents: Event[] = getActualData({
 
 const nearestEvents = actualEvents.slice(0, displayedCardsQuantity);
 
-const Stub = <Image src={photo3} alt="Community event" />;
+const Stub = <Image src={photo3} alt="Community event" className={cx('event-img')} />;
 
 export const Events = () => {
   const rsLifetime = dayjs().diff('2013', 'year');
