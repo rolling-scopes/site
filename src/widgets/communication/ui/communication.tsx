@@ -1,4 +1,3 @@
-/* eslint-disable @stylistic/jsx-one-expression-per-line */
 import { DiscordLogo } from '@/shared/icons/discord-logo';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -13,10 +12,10 @@ import {
 
 import './communication.scss';
 
-interface RequiredProps {
+type CommunicationProps = {
   courseName: CourseNamesChannels;
   lang?: 'ru' | 'en';
-}
+};
 
 const localizedContent = {
   en: {
@@ -50,7 +49,7 @@ const localizedContent = {
   },
 };
 
-export const Communication = ({ courseName, lang = 'en' }: RequiredProps) => {
+export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) => {
   return (
     <section className="communication container">
       <article className="communication content info-wrapper">
@@ -62,14 +61,16 @@ export const Communication = ({ courseName, lang = 'en' }: RequiredProps) => {
           <div>
             <Subtitle>{localizedContent[lang].subTitle}</Subtitle>
             <Paragraph className="communication-paragraph">
-              {localizedContent[lang].firstParagraphFirstHalf}{' '}
+              {localizedContent[lang].firstParagraphFirstHalf}
+              {' '}
               <LinkCustom href={DISCORD_LINKS[courseName]} external>
                 {localizedContent[lang].discordLink}
               </LinkCustom>
               {localizedContent[lang].firstParagraphSecondHalf}
             </Paragraph>
             <Paragraph className="communication-paragraph">
-              {localizedContent[lang].secondParagraphFirstHalf}{' '}
+              {localizedContent[lang].secondParagraphFirstHalf}
+              {' '}
               <LinkCustom
                 href={RS_DOCS_TELEGRAM_CHATS_LINK}
                 external
@@ -79,7 +80,8 @@ export const Communication = ({ courseName, lang = 'en' }: RequiredProps) => {
               {localizedContent[lang].secondParagraphSecondHalf}
             </Paragraph>
             <Paragraph className="communication-paragraph">
-              {localizedContent[lang].thirdParagraphFirstHalf}{' '}
+              {localizedContent[lang].thirdParagraphFirstHalf}
+              {' '}
               <LinkCustom href={RS_DOCS_COMMUNICATION_LINK} external>
                 {localizedContent[lang].rsDocsLink}
               </LinkCustom>
