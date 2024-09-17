@@ -19,42 +19,50 @@ type CommunicationProps = {
 };
 
 export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) => {
+  const {
+    title,
+    subTitle,
+    firstParagraphFirstHalf,
+    discordLink,
+    firstParagraphSecondHalf,
+    secondParagraphFirstHalf,
+    telegramLink,
+    secondParagraphSecondHalf,
+    thirdParagraphFirstHalf,
+    rsDocsLink,
+    thirdParagraphSecondHalf,
+  } = communicationSectionLocales[lang];
+
   return (
     <section className="communication container">
       <article className="communication content info-wrapper">
-        <WidgetTitle mods="asterisk">{communicationSectionLocales[lang].title}</WidgetTitle>
+        <WidgetTitle mods="asterisk">{title}</WidgetTitle>
         <div className="column-2">
           <figure className="disclogo-wrapper">
             <DiscordLogo />
           </figure>
           <div>
-            <Subtitle>{communicationSectionLocales[lang].subTitle}</Subtitle>
+            <Subtitle>{subTitle}</Subtitle>
             <Paragraph className="communication-paragraph">
-              {communicationSectionLocales[lang].firstParagraphFirstHalf}
-              {' '}
+              {firstParagraphFirstHalf}
               <LinkCustom href={DISCORD_LINKS[courseName]} external>
-                {communicationSectionLocales[lang].discordLink}
+                {discordLink}
               </LinkCustom>
-              {communicationSectionLocales[lang].firstParagraphSecondHalf}
+              {firstParagraphSecondHalf}
             </Paragraph>
             <Paragraph className="communication-paragraph">
-              {communicationSectionLocales[lang].secondParagraphFirstHalf}
-              {' '}
-              <LinkCustom
-                href={RS_DOCS_TELEGRAM_CHATS_LINK}
-                external
-              >
-                {communicationSectionLocales[lang].telegramLink}
+              {secondParagraphFirstHalf}
+              <LinkCustom href={RS_DOCS_TELEGRAM_CHATS_LINK} external>
+                {telegramLink}
               </LinkCustom>
-              {communicationSectionLocales[lang].secondParagraphSecondHalf}
+              {secondParagraphSecondHalf}
             </Paragraph>
             <Paragraph className="communication-paragraph">
-              {communicationSectionLocales[lang].thirdParagraphFirstHalf}
-              {' '}
+              {thirdParagraphFirstHalf}
               <LinkCustom href={RS_DOCS_COMMUNICATION_LINK} external>
-                {communicationSectionLocales[lang].rsDocsLink}
+                {rsDocsLink}
               </LinkCustom>
-              {communicationSectionLocales[lang].thirdParagraphSecondHalf}
+              {thirdParagraphSecondHalf}
             </Paragraph>
           </div>
         </div>
