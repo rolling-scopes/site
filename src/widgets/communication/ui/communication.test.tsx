@@ -1,37 +1,58 @@
-import { screen } from '@testing-library/react';
+import { cleanup, screen } from '@testing-library/react';
 import { Communication } from './communication';
+import { communicationSectionLocales } from './locales';
 import { renderWithRouter } from '@/shared/__tests__/utils';
+import { DISCORD_LINKS } from 'data';
 
-const jsCourseName = 'js / front-end en';
-const nodeCourseName = 'node.js';
-const jsDiscLink = 'https://discord.com/invite/uW5cCHR';
-const nodeDiscLink = 'https://discord.com/invite/8BFb8va';
+describe('Communication section', () => {
+  it('should render "Communication" section texts correctly', async () => {
+    const firstCourse = Object.keys(DISCORD_LINKS)[0] as keyof typeof DISCORD_LINKS;
 
-describe('Communication section tests', () => {
-  it('Renders correct title "Communication"', async () => {
-    renderWithRouter(<Communication courseName={jsCourseName} />);
-    const title = screen.getByText('Communication');
+    const {
+      title,
+      firstParagraphFirstHalf,
+      discordLink,
+    } = communicationSectionLocales.en;
 
-    expect(title).toBeVisible();
+    renderWithRouter(<Communication courseName={firstCourse} />);
+    const titleElement = screen.getByText(title);
+    const subtitleElement = screen.getByText(`${firstParagraphFirstHalf}`, { exact: false });
+    const linkElement = screen.getByText(discordLink);
+
+    expect(titleElement).toBeVisible();
+    expect(subtitleElement).toBeVisible();
+    expect(linkElement).toBeVisible();
+    expect(linkElement.getAttribute('href')).toMatch(DISCORD_LINKS[firstCourse]);
   });
-  it('Renders correct title "Discord is the main communication channel in RS School"', () => {
-    renderWithRouter(<Communication courseName={jsCourseName} />);
-    const subtitle = screen.getByText(/Discord is the main communication channel in RS School/i);
 
-    expect(subtitle).toBeVisible();
+  it('should render "Communication" section texts correctly on russian language', async () => {
+    const firstCourse = Object.keys(DISCORD_LINKS)[0] as keyof typeof DISCORD_LINKS;
+
+    const {
+      title,
+      firstParagraphFirstHalf,
+      discordLink,
+    } = communicationSectionLocales.ru;
+
+    renderWithRouter(<Communication courseName={firstCourse} lang="ru" />);
+    const titleElement = screen.getByText(title);
+    const subtitleElement = screen.getByText(`${firstParagraphFirstHalf}`, { exact: false });
+    const linkElement = screen.getByText(discordLink);
+
+    expect(titleElement).toBeVisible();
+    expect(subtitleElement).toBeVisible();
+    expect(linkElement).toBeVisible();
+    expect(linkElement.getAttribute('href')).toMatch(DISCORD_LINKS[firstCourse]);
   });
-  it('Renders correct link to the js course', () => {
-    renderWithRouter(<Communication courseName={jsCourseName} />);
-    const link = screen.getByText(/course discord server/i);
 
-    expect(link).toBeVisible();
-    expect(link.getAttribute('href')).toMatch(jsDiscLink);
-  });
-  it('Renders correct link to the nodeJs course', () => {
-    renderWithRouter(<Communication courseName={nodeCourseName} />);
-    const link = screen.getByText(/course discord server/i);
+  Object.entries(DISCORD_LINKS).forEach(([courseName, link]) => {
+    it(`should render correct link of ${courseName}`, () => {
+      renderWithRouter(<Communication courseName={courseName as keyof typeof DISCORD_LINKS} />);
+      const linkElement = screen.getByText(/course discord server/i);
 
-    expect(link).toBeVisible();
-    expect(link.getAttribute('href')).toMatch(nodeDiscLink);
+      expect(linkElement).toBeVisible();
+      expect(linkElement.getAttribute('href')).toMatch(link);
+      cleanup();
+    });
   });
 });
