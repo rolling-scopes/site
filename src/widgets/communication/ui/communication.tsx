@@ -1,3 +1,4 @@
+import classNames from 'classnames/bind';
 import { communicationSectionLocales } from './locales';
 import { DiscordLogo } from '@/shared/icons/discord-logo';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -11,7 +12,9 @@ import {
   RS_DOCS_TELEGRAM_CHATS_LINK,
 } from 'data';
 
-import './communication.scss';
+import styles from './communication.module.scss';
+
+const cx = classNames.bind(styles);
 
 type CommunicationProps = {
   courseName: CourseNamesChannels;
@@ -34,30 +37,30 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
   } = communicationSectionLocales[lang];
 
   return (
-    <section className="communication container">
-      <article className="communication content info-wrapper">
+    <section className={cx('container')}>
+      <article className={cx('content', 'communication-content')}>
         <WidgetTitle mods="asterisk">{title}</WidgetTitle>
-        <div className="column-2">
-          <figure className="disclogo-wrapper">
+        <div className={cx('communication-text')}>
+          <figure className={cx('discord-logo-wrapper')}>
             <DiscordLogo />
           </figure>
           <div>
             <Subtitle>{subTitle}</Subtitle>
-            <Paragraph className="communication-paragraph">
+            <Paragraph className={cx('communication-paragraph')}>
               {firstParagraphFirstHalf}
               <LinkCustom href={DISCORD_LINKS[courseName]} external>
                 {discordLink}
               </LinkCustom>
               {firstParagraphSecondHalf}
             </Paragraph>
-            <Paragraph className="communication-paragraph">
+            <Paragraph className={cx('communication-paragraph')}>
               {secondParagraphFirstHalf}
               <LinkCustom href={RS_DOCS_TELEGRAM_CHATS_LINK} external>
                 {telegramLink}
               </LinkCustom>
               {secondParagraphSecondHalf}
             </Paragraph>
-            <Paragraph className="communication-paragraph">
+            <Paragraph className={cx('communication-paragraph')}>
               {thirdParagraphFirstHalf}
               <LinkCustom href={RS_DOCS_COMMUNICATION_LINK} external>
                 {rsDocsLink}
