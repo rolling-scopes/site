@@ -1,4 +1,4 @@
-import { BreadcrumbNameMap } from './breadcrumbs.types';
+import { BreadcrumbNameMap } from './types';
 
 export const breadcrumbNameMap: BreadcrumbNameMap = {
   courses: 'Courses',
