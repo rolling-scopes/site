@@ -10,17 +10,20 @@ describe('Communication section', () => {
 
     const {
       title,
-      firstParagraphFirstHalf,
+      subTitle,
+      firstParagraph,
       discordLink,
     } = communicationSectionLocales.en;
 
     renderWithRouter(<Communication courseName={firstCourse} />);
     const titleElement = screen.getByText(title);
-    const subtitleElement = screen.getByText(`${firstParagraphFirstHalf}`, { exact: false });
+    const subtitleElement = screen.getByText(subTitle);
+    const firstParagraphElement = screen.getByText(`${firstParagraph.split('<discord-link>')[0]}`, { exact: false });
     const linkElement = screen.getByText(discordLink);
 
     expect(titleElement).toBeVisible();
     expect(subtitleElement).toBeVisible();
+    expect(firstParagraphElement).toBeVisible();
     expect(linkElement).toBeVisible();
     expect(linkElement.getAttribute('href')).toMatch(DISCORD_LINKS[firstCourse]);
   });
@@ -30,17 +33,20 @@ describe('Communication section', () => {
 
     const {
       title,
-      firstParagraphFirstHalf,
+      subTitle,
+      firstParagraph,
       discordLink,
     } = communicationSectionLocales.ru;
 
     renderWithRouter(<Communication courseName={firstCourse} lang="ru" />);
     const titleElement = screen.getByText(title);
-    const subtitleElement = screen.getByText(`${firstParagraphFirstHalf}`, { exact: false });
+    const subtitleElement = screen.getByText(subTitle);
+    const firstParagraphElement = screen.getByText(`${firstParagraph.split('<discord-link>')[0]}`, { exact: false });
     const linkElement = screen.getByText(discordLink);
 
     expect(titleElement).toBeVisible();
     expect(subtitleElement).toBeVisible();
+    expect(firstParagraphElement).toBeVisible();
     expect(linkElement).toBeVisible();
     expect(linkElement.getAttribute('href')).toMatch(DISCORD_LINKS[firstCourse]);
   });

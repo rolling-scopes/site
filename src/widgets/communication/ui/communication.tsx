@@ -1,8 +1,8 @@
 import classNames from 'classnames/bind';
 import { communicationSectionLocales } from './locales';
+import { replaceLinkInText } from '../utils/replace-link-in-text';
 import discordLogo from '@/shared/assets/svg/discord-logo.svg';
 import { Image } from '@/shared/ui/image';
-import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -26,15 +26,12 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
   const {
     title,
     subTitle,
-    firstParagraphFirstHalf,
+    firstParagraph,
     discordLink,
-    firstParagraphSecondHalf,
-    secondParagraphFirstHalf,
+    secondParagraph,
     telegramLink,
-    secondParagraphSecondHalf,
-    thirdParagraphFirstHalf,
+    thirdParagraph,
     rsDocsLink,
-    thirdParagraphSecondHalf,
   } = communicationSectionLocales[lang];
 
   return (
@@ -48,25 +45,28 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
           <div>
             <Subtitle>{subTitle}</Subtitle>
             <Paragraph className={cx('communication-paragraph')}>
-              {firstParagraphFirstHalf}
-              <LinkCustom href={DISCORD_LINKS[courseName]} external>
-                {discordLink}
-              </LinkCustom>
-              {firstParagraphSecondHalf}
+              {replaceLinkInText(
+                firstParagraph,
+                '<discord-link>',
+                DISCORD_LINKS[courseName],
+                discordLink,
+              )}
             </Paragraph>
             <Paragraph className={cx('communication-paragraph')}>
-              {secondParagraphFirstHalf}
-              <LinkCustom href={RS_DOCS_TELEGRAM_CHATS_LINK} external>
-                {telegramLink}
-              </LinkCustom>
-              {secondParagraphSecondHalf}
+              {replaceLinkInText(
+                secondParagraph,
+                '<telegram-link>',
+                RS_DOCS_TELEGRAM_CHATS_LINK,
+                telegramLink,
+              )}
             </Paragraph>
             <Paragraph className={cx('communication-paragraph')}>
-              {thirdParagraphFirstHalf}
-              <LinkCustom href={RS_DOCS_COMMUNICATION_LINK} external>
-                {rsDocsLink}
-              </LinkCustom>
-              {thirdParagraphSecondHalf}
+              {replaceLinkInText(
+                thirdParagraph,
+                '<rs-docs-link>',
+                RS_DOCS_COMMUNICATION_LINK,
+                rsDocsLink,
+              )}
             </Paragraph>
           </div>
         </div>
