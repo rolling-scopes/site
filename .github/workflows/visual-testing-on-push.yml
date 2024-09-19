@@ -1,0 +1,26 @@
+name: Run Visual Testing on Push
+
+on:
+  push:
+    branches: main
+
+env:
+  NODE_VERSION: 20.x
+
+jobs:
+  visial-testing:
+    runs-on: ubuntu-latest
+    container: mcr.microsoft.com/playwright:v1.47.1-noble
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - uses: bahmutov/npm-install@v1
+
+      - run: npm run test:visual
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
