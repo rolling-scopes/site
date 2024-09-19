@@ -10,7 +10,6 @@ env:
 jobs:
   visial-testing:
     runs-on: ubuntu-latest
-    container: mcr.microsoft.com/playwright:v1.47.1-noble
 
     steps:
       - uses: actions/checkout@v4
@@ -20,6 +19,9 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
 
       - uses: bahmutov/npm-install@v1
+
+      - name: Install Playwright browsers and dependencies
+        run: npx playwright install --with-deps
 
       - run: npm run test:visual
         env:
