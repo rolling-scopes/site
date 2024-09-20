@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { ANCHORS } from '@/app/const';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
@@ -8,7 +9,7 @@ export const cx = classNames.bind(styles);
 
 export const AboutSchool = () => {
   return (
-    <section className={cx('about-school', 'container')} id="about-school" data-testid="about-school">
+    <section className={cx('about-school', 'container')} id={ANCHORS.ABOUT_SCHOOL} data-testid="about-school">
       <article className={cx('content')}>
         <WidgetTitle mods="asterisk">About RS School</WidgetTitle>
         <Paragraph fontSize="large">

@@ -3,6 +3,7 @@ import { userEvent } from '@testing-library/user-event';
 import { Route, Routes } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
 import { LinkCustom } from './link-custom';
+import { ANCHORS } from '@/app/const';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 describe('LinkCustom', () => {
@@ -41,8 +42,8 @@ describe('LinkCustom', () => {
   it('after click on link should go to http://example.com', async () => {
     renderWithRouter(
       <Routes>
-        <Route path="/" element={<LinkCustom href="/about-school">Go to About</LinkCustom>} />
-        <Route path="/about-school" element={<div>About Page</div>} />
+        <Route path="/" element={<LinkCustom href={`/${ANCHORS.ABOUT_SCHOOL}`}>Go to About</LinkCustom>} />
+        <Route path={`/${ANCHORS.ABOUT_SCHOOL}`} element={<div>About Page</div>} />
       </Routes>,
     );
     const linkElement = screen.getByText(/Go to About/i);
