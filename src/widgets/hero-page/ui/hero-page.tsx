@@ -1,8 +1,11 @@
+import classNames from 'classnames/bind';
 import { Subtitle } from '@/shared/ui/subtitle';
 
-import './hero.scss';
+import styles from './hero-page.module.scss';
 
-export const Hero = () => {
+export const cx = classNames.bind(styles);
+
+export const HeroPage = () => {
   return (
     <main id="main" className="main container">
       <div className="main content">

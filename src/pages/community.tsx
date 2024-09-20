@@ -5,7 +5,7 @@ import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Community as CommunitySection } from '@/widgets/community';
 import { Contribute } from '@/widgets/contribute';
 import { Events } from '@/widgets/events';
-import { Hero } from '@/widgets/hero';
+import { HeroPage } from '@/widgets/hero-page';
 import { Merch } from '@/widgets/merch';
 import { Numbers } from '@/widgets/numbers';
 import { Pictures } from '@/widgets/pictures';
@@ -18,7 +18,7 @@ export const Community: FC = () => {
 
   return (
     <>
-      <Hero />
+      <HeroPage />
       <Breadcrumbs />
       <About />
       <Numbers />
