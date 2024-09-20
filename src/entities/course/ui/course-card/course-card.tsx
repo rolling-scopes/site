@@ -1,9 +1,9 @@
 import classNames from 'classnames/bind';
 import type { Course } from '../../types';
-import { ArrowIcon } from '@/shared/icons';
 import { DateLang } from '@/shared/ui/date-lang';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
+import { Subtitle } from '@/shared/ui/subtitle';
 
 import styles from './course-card.module.scss';
 
@@ -34,14 +34,12 @@ export const CourseCard = ({
     <article className={cx('course-card')} data-testid="course-card">
       <div className={cx('card-header')} style={cardStyle}>
         <Image src={iconSrc} alt={title} />
-        { /* TODO change <h3> to Subtitle */ }
-        <h3 className={cx('card-title')}>{title}</h3>
+        <Subtitle fontSize="small">{title}</Subtitle>
       </div>
       <div className={cx('course-info')}>
         <DateLang startDate={startDate} language={language} mode={mode} />
         <LinkCustom
           href={detailsUrl}
-          icon={<ArrowIcon size="16px" />}
           variant="rounded"
           aria-label="View course details"
         >

@@ -35,30 +35,9 @@
       @include card-corner-accent($accent-color);
     }
 
-    h3 {
-      margin: 0;
-    }
-
     img {
       width: 60px;
       height: 54px;
-    }
-  }
-
-  .card-title {
-    width: 100%;
-
-    font-size: 24px;
-    font-weight: $font-weight-medium;
-    line-height: 32px;
-    color: $color-gray-600;
-
-    @include media-laptop {
-      font-size: 20px;
-    }
-
-    @include media-tablet {
-      font-size: 24px;
     }
   }
 
