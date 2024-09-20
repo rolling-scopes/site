@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { Course } from '@/app/types';
+import type { Course } from '@/entities/course';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 

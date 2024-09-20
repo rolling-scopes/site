@@ -1,4 +1,4 @@
-import { type Course } from '@/app/types';
+import type { Course } from '@/entities/course';
 import { type ListData } from '@/shared/ui/list';
 
 export type DataMap = {

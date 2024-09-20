@@ -1,6 +1,6 @@
 /* eslint-disable @stylistic/jsx-one-expression-per-line */
 import { InfoGrid } from './info-grid/info-grid';
-import { type Course } from '@/app/types';
+import type { Course } from '@/entities/course';
 import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';

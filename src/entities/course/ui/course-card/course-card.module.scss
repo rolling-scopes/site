@@ -1,0 +1,74 @@
+.course-card {
+  $accent-color: var(--accent-bg-color);
+
+  @extend %transition-all;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 380px;
+  min-width: 100px;
+  height: 100%;
+
+  border-radius: 12px;
+
+  .card-header {
+    position: relative;
+
+    overflow: hidden;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+
+    height: 100%;
+    min-height: 112px;
+    padding: 0 24px;
+
+    background-color: $color-purple-50;
+    border: solid $color-gray-200;
+    border-width: 1px 1px 0 1px;
+    border-radius: 12px 12px 0 0;
+
+    &::after {
+      @extend %transition-all;
+
+      @include card-corner-accent($accent-color);
+    }
+
+    img {
+      width: 60px;
+      height: 54px;
+    }
+  }
+
+  .course-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 24px;
+
+    background-color: hsla(from $color-gray-100 h s l/ $opacity-20);
+    border: solid $color-gray-200;
+    border-width: 0 1px 1px 1px;
+    border-radius: 0 0 12px 12px;
+  }
+
+  @include media-hover {
+    &:hover .card-header::after {
+      @include card-corner-accent($accent-color, $isHovered: true);
+    }
+  }
+
+  @include media-laptop {
+    width: 100%;
+  }
+}
+
+@include media-hover {
+  .course-card {
+    &:hover {
+      box-shadow: 0 4px 16px 0 hsla(from $color-black h s l/ $opacity-20);
+    }
+  }
+}

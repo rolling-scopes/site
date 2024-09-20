@@ -15,3 +15,5 @@ export type Course = {
     accentColor: string;
   };
 };
+
+export type CourseStatus = 'planned' | 'available' | 'upcoming';

@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 import { hasDayInDate } from './has-day';
-import { CourseStatus } from '@/app/types';
+import type { CourseStatus } from '@/entities/course';
 
 export function getCourseStatus(courseStartDate: string): CourseStatus {
   const now = dayjs();
@@ -15,14 +15,14 @@ export function getCourseStatus(courseStartDate: string): CourseStatus {
   const isUpcoming = startDate.isBetween(now, now.add(3, 'month'));
 
   // Other dates
-  let label = CourseStatus.PLANNED;
+  let label: CourseStatus = 'planned';
 
   if (isAvailable) {
-    label = CourseStatus.AVAILABLE;
+    label = 'available';
   }
 
   if (isUpcoming) {
-    label = CourseStatus.UPCOMING;
+    label = 'upcoming';
   }
 
   return label;

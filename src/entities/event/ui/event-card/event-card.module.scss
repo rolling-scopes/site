@@ -134,6 +134,10 @@
     }
   }
 
+  &:hover &__header::after {
+    @include card-corner-accent($accent-color, $isHovered: true);
+  }
+
   @include media-hover {
     &:hover {
       box-shadow: 0 4px 16px 0 hsla(from $color-black h s l/ $opacity-20);

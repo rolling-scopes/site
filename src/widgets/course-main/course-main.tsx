@@ -1,7 +1,7 @@
 import { useLoaderData } from 'react-router-dom';
 import { getCourseStatus } from './utils/get-course-status';
 import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
-import { Course } from '@/app/types';
+import type { Course } from '@/entities/course';
 import { getCourseDate } from '@/shared/helpers/getCourseDate';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { useTitle } from '@/shared/hooks/use-title';

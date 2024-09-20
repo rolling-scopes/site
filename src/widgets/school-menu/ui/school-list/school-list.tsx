@@ -1,5 +1,5 @@
 import { SchoolItem } from '../school-item/school-item';
-import { Course } from '@/app/types';
+import type { Course } from '@/entities/course';
 
 export interface GenericItemProps {
   title: string;
