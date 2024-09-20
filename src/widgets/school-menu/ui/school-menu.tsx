@@ -1,4 +1,5 @@
 import { GenericItemProps, SchoolList } from './school-list/school-list';
+import { ANCHORS } from '@/app/const';
 
 import { type Course } from '@/app/types';
 import { useDataByName } from '@/shared/hooks/use-data-by-name';
@@ -26,7 +27,7 @@ const schoolMenuStaticLinks = [
 const communityMenuStaticLinks = [
   {
     title: 'About',
-    detailsUrl: '/community/#about-community',
+    detailsUrl: `/community/#${ANCHORS.ABOUT_COMMUNITY}`,
     description: 'Who we are',
   },
   {
