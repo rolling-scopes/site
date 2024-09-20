@@ -26,9 +26,8 @@
     max-width: 100%;
 
     .title-container {
-      > .subtitle {
+      > .main-subtitle {
         padding-left: 4px;
-        line-height: 26px;
 
         @include media-tablet {
           line-height: 23px;

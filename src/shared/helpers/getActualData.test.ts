@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { getActualData } from './getActualData';
 import type { Course } from '@/entities/course';
-import { EventCardProps } from '@/entities/events';
+import { Event } from '@/entities/event';
 import { dayJS } from '@/shared/helpers/dayJS';
 import { isCourse } from '@/shared/helpers/is-course';
 
@@ -69,7 +69,7 @@ const eventsMock = [
   { date: staleDayInPast },
   { date: dayInFuture },
   { date: nonStaleDayInPast },
-] as unknown as EventCardProps[];
+] as unknown as Event[];
 
 describe('getActualData', () => {
   it('can handle courses and filters stale by default', () => {

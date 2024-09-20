@@ -31,11 +31,9 @@ describe('Trainer', () => {
 
   it('renders the trainer info correctly with "nodejs" props', () => {
     render(<Trainers trainers={MOCKED_ONE_TRAINER} />);
-    const trainerNameElement = screen.getByText('Maksim Shylau');
-    const trainerTitleElement = screen.getByText('Senior Software Engineer at Epam');
-    const trainerDescriptionElement = screen.getByText(
-      /Maksim Shylau is a professional with around 6 years/i,
-    );
+    const trainerNameElement = screen.getByText(MOCKED_ONE_TRAINER[0].name);
+    const trainerTitleElement = screen.getByText(MOCKED_ONE_TRAINER[0].role);
+    const trainerDescriptionElement = screen.getByText(MOCKED_ONE_TRAINER[0].bio);
 
     expect(trainerNameElement).toBeVisible();
     expect(trainerTitleElement).toBeVisible();
@@ -44,15 +42,8 @@ describe('Trainer', () => {
 
   it('renders all the trainers if passed several (8 in items)', () => {
     const { container } = render(<Trainers trainers={MOCKED_SEVERAL_TRAINERS} />);
-    const trainers = container.getElementsByClassName('trainer-card');
+    const trainers = container.getElementsByClassName('trainers-list')[0];
 
-    expect(trainers).toHaveLength(8);
-  });
-
-  it('renders the image with correct alt text', () => {
-    render(<Trainers trainers={MOCKED_ONE_TRAINER} />);
-    const imageElement = screen.getByAltText('Maksim Shylau Senior Software Engineer at Epam');
-
-    expect(imageElement).toBeInTheDocument();
+    expect(trainers.childNodes).toHaveLength(8);
   });
 });

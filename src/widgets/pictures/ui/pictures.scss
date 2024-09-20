@@ -1,85 +1,56 @@
-.pictures {
-  & .social-media-container {
-    display: flex;
-    align-items: flex-start;
+.carousel {
+  .slide {
+    cursor: pointer;
+    padding: 0 5px;
+  }
 
-    @include media-tablet {
-      flex-wrap: wrap;
+  .carousel-slider {
+    .control-next,
+    .control-prev {
+      --slider-arrow-btn-height: 45px;
+
+      top: calc(50% - var(--slider-arrow-btn-height) / 2);
+
+      display: flex;
       align-items: center;
       justify-content: center;
+
+      height: var(--slider-arrow-btn-height);
+      margin: 2px;
+
+      opacity: $opacity-100;
+      backdrop-filter: blur(20px);
+      border-radius: 8px;
+
+      @include media-mobile-landscape {
+        display: none;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: $color-white;
+
+          &::before {
+            filter: invert(60%);
+          }
+        }
+      }
     }
   }
-}
 
-.pictures .carousel-root {
-  width: 1200px;
-  height: 540px;
-  margin: 16px auto;
-  padding: 10px 10px 40px;
-
-  @include media-laptop {
-    width: 100%;
-    max-width: 730px;
-    height: 369px;
-  }
-
-  @include media-tablet {
-    width: 100%;
-    max-width: 358px;
-    height: 210px;
-    padding: 0 0 25px;
-  }
-
-  @include media-mobile {
-    width: 100%;
-    height: auto;
+  .dot {
+    display: inline-block;
+    padding: 7px;
   }
 }
 
-.carousel {
-  height: 540px;
-
-  @include media-laptop {
-    height: 369px;
-  }
+.social-media-container {
+  display: flex;
+  align-items: flex-start;
 
   @include media-tablet {
-    height: 210px;
-  }
-}
-
-.slider {
-  height: 468px;
-
-  @include media-laptop {
-    height: 325px;
-  }
-
-  @include media-tablet {
-    height: 175px;
-  }
-
-  @include media-mobile {
-    height: auto;
-  }
-}
-
-.carousel .slide {
-  width: 750px;
-  height: 468px;
-  margin-right: 10px;
-
-  @include media-laptop {
-    width: 730px;
-    height: 369px;
-  }
-
-  @include media-tablet {
-    width: 358px;
-    height: 210px;
-  }
-
-  @include media-mobile {
-    height: auto;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
 }

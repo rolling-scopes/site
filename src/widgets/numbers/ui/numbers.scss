@@ -56,10 +56,6 @@
   width: 50%;
   text-align: left;
 
-  & .subtitle {
-    margin: 16px 0;
-  }
-
   @include media-laptop {
     width: 100%;
   }

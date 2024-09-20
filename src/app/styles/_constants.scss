@@ -6,7 +6,8 @@ $mobile-landscape-width: 568px;
 $mobile-width: 375px;
 
 // font-family
-$font-primary: 'Inter', sans-serif;
+$font-primary: -apple-system, blinkmacsystemfont, 'Segoe UI', 'Noto Sans', helvetica, arial,
+  sans-serif;
 
 // font weights
 $font-weight-light: 300;
@@ -32,6 +33,7 @@ $color-red: hsl(6deg 65% 52%); // #d44333
 
 // Purple colors
 $color-purple-400: hsl(257deg 45% 54%); // #7356bf
+$color-purple-100: hsl(263deg 55% 83%); // #cebceb
 $color-purple-50: hsl(260deg 47% 96%); // #f4f1fa
 
 // Technologies theme colors
@@ -52,6 +54,9 @@ $color-gray-500: hsl(0deg 0% 46%); // #757575
 $color-gray-400: hsl(0deg 0% 69%); // #afafaf
 $color-gray-200: hsl(0deg 0% 90%); // #e6e6e6
 $color-gray-100: hsl(0deg 0% 95%); // #f2f2f2
+
+// Link color
+$color-blue: hsl(202deg 89% 65%);
 
 // OPACITY
 $opacity-100: 1;

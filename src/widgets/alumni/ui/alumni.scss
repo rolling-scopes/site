@@ -1,16 +1,12 @@
 .alumni {
   &.content {
     & .title,
-    & .paragraph {
+    & .alumni-paragraph {
       width: 640px;
 
       @include media-tablet {
         width: 100%;
       }
-    }
-
-    & .paragraph {
-      margin-top: 16px;
     }
 
     & .alumni {
