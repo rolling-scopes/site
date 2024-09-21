@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 type AboutVideoProps = { lang?: 'en' | 'ru' };
 
-const localizedContent = {
+export const localizedContent = {
   en: { title: 'RS School video' },
   ru: { title: 'Видео RS School' },
 };
@@ -17,7 +17,7 @@ export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
   const isRunningInDev = import.meta.env.DEV;
 
   return (
-    <section className={cx('container')}>
+    <section className={cx('container')} data-testid="about-video">
       <article className={cx('content')}>
         <WidgetTitle mods="lines">{localizedContent[lang].title}</WidgetTitle>
         <div className={cx('video-wrapper')}>
