@@ -17,8 +17,8 @@ export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
   const isRunningInDev = import.meta.env.DEV;
 
   return (
-    <section className={cx('about-video container')}>
-      <article className={cx('about-video content')}>
+    <section className={cx('container')}>
+      <article className={cx('content')}>
         <WidgetTitle mods="lines">{localizedContent[lang].title}</WidgetTitle>
         <div className={cx('video-wrapper')}>
           <div className={cx('video-container')}>
@@ -28,6 +28,7 @@ export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
                 )
               : (
                   <iframe
+                    className={cx('video-frame')}
                     loading="lazy"
                     title="RS School Intro"
                     src="https://www.youtube.com/embed/n4unZLVpnaU"
