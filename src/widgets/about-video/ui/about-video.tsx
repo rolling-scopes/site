@@ -1,6 +1,9 @@
+import classNames from 'classnames/bind';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
-import './about-video.scss';
+import styles from './about-video.module.scss';
+
+const cx = classNames.bind(styles);
 
 type AboutVideoProps = { lang?: 'en' | 'ru' };
 
@@ -14,14 +17,14 @@ export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
   const isRunningInDev = import.meta.env.DEV;
 
   return (
-    <div className="about-video container">
-      <div className="about-video content">
+    <div className={cx('about-video container')}>
+      <div className={cx('about-video content')}>
         <WidgetTitle mods="lines">{localizedContent[lang].title}</WidgetTitle>
-        <div className="video-wrapper">
-          <div className="video-container">
+        <div className={cx('video-wrapper')}>
+          <div className={cx('video-container')}>
             {isRunningInDev
               ? (
-                  <div className="video-placeholder">Video Placeholder</div>
+                  <div className={cx('video-placeholder')}>Video Placeholder</div>
                 )
               : (
                   <iframe
