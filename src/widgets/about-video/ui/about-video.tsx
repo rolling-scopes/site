@@ -17,8 +17,8 @@ export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
   const isRunningInDev = import.meta.env.DEV;
 
   return (
-    <div className={cx('about-video container')}>
-      <div className={cx('about-video content')}>
+    <section className={cx('about-video container')}>
+      <article className={cx('about-video content')}>
         <WidgetTitle mods="lines">{localizedContent[lang].title}</WidgetTitle>
         <div className={cx('video-wrapper')}>
           <div className={cx('video-container')}>
@@ -38,7 +38,7 @@ export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
                 )}
           </div>
         </div>
-      </div>
-    </div>
+      </article>
+    </section>
   );
 };
