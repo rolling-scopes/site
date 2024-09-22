@@ -1,7 +1,7 @@
 export const heroPageData = {
   school: {
     mainTitle: 'RS School',
-    widgetTitle: 'Connecting people, growing together, having fun',
+    widgetTitle: 'Connecting people, growing together, having fun',
     subTitle: ['Free courses. High motivation'],
     heroImageSrc: '',
     imageAltText: '',
@@ -15,7 +15,7 @@ export const heroPageData = {
   },
   community: {
     mainTitle: 'The Rolling Scopes',
-    widgetTitle: 'Connecting people, growing together, having fun',
+    widgetTitle: 'Connecting people, growing together, having fun',
     subTitle: ['an international community of developers', 'since 2013'],
     heroImageSrc: '',
     imageAltText: '',
