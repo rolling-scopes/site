@@ -6,6 +6,12 @@ export const LINKS = {
   DONATE: 'https://opencollective.com/rsschool',
 };
 
+export const PAGE_NAMES = {
+  SCHOOL: 'school',
+  COURSES: 'courses',
+  COMMUNITY: 'community',
+} as const;
+
 export const ROUTES = {
   HOME: '/',
   COMMUNITY: 'community',
