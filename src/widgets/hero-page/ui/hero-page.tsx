@@ -56,7 +56,7 @@ export const HeroPage = ({ pageName }: PageName) => {
           <MainTitle className={cx('title-main')}>{mainTitle}</MainTitle>
           <WidgetTitle size="small" className={cx('description-title')}>{widgetTitle}</WidgetTitle>
         </article>
-        {hasImage && <Image className={cx('sloth-mascot')} src={heroImageSrc} alt={heroImageAltText} />}
+        {hasImage && <Image className={cx('sloth-mascot')} src={heroImageSrc} alt={heroImageAltText} data-testid="sloth-mascot" />}
       </div>
     </section>
   );
