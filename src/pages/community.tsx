@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { PAGE_NAMES } from '@/app/const';
 import { useTitle } from '@/shared/hooks/use-title';
 import { About } from '@/widgets/about-home';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
@@ -18,7 +19,7 @@ export const Community: FC = () => {
 
   return (
     <>
-      <HeroPage />
+      <HeroPage pageName={PAGE_NAMES.COMMUNITY} />
       <Breadcrumbs />
       <About />
       <Numbers />
