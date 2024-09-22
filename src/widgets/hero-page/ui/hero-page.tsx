@@ -1,28 +1,63 @@
 import classNames from 'classnames/bind';
+import { PageName } from '../types';
+import { Image } from '@/shared/ui/image';
+import { MainTitle } from '@/shared/ui/main-title';
 import { Subtitle } from '@/shared/ui/subtitle';
+import { WidgetTitle } from '@/shared/ui/widget-title';
+import { heroPageData } from 'data';
 
 import styles from './hero-page.module.scss';
 
 export const cx = classNames.bind(styles);
 
-export const HeroPage = () => {
-  return (
-    <main id="main" className="main container">
-      <div className="main content">
-        <div className="title-container">
-          <div className="subtitle-container">
-            <Subtitle fontSize="extra-small" color="black">
-              an international community of developers
-            </Subtitle>
-            <Subtitle fontSize="extra-small" color="black">
-              since 2013
-            </Subtitle>
-          </div>
+export type HeroPageProps = {
+  mainTitle: string;
+  widgetTitle: string;
+  subTitle: string[] | [];
+  heroImageSrc: string;
+  imageAltText: string;
+};
 
-          <h1 className="title-main">The Rolling Scopes</h1>
-        </div>
-        <h2 className="description-title">Connecting people, growing together, having fun</h2>
+type SubTitle = Pick<HeroPageProps, 'subTitle'>;
+
+const HeroSubTitle = ({ subTitle }: SubTitle) => {
+  if (!subTitle?.length) {
+    return null;
+  }
+
+  return (
+    <div className={cx('subtitle-container')}>
+      {subTitle.map((item: string, index: number) => {
+        return (
+          <Subtitle key={index} fontSize="extra-small" color="black">
+            {item}
+          </Subtitle>
+        );
+      })}
+    </div>
+  );
+};
+
+export const HeroPage = ({ pageName }: PageName) => {
+  const { mainTitle,
+    widgetTitle,
+    subTitle = [],
+    heroImageSrc = '',
+    imageAltText = '' }: HeroPageProps = heroPageData[pageName];
+
+  const hasImage = !!heroImageSrc.length;
+  const heroImageAltText = imageAltText.length ? imageAltText : '';
+
+  return (
+    <section id="hero-page" className={cx('hero-page', 'container')} data-testid="hero-page">
+      <div className={cx('hero-page', 'content')}>
+        <article className={cx('title-container')}>
+          <HeroSubTitle subTitle={subTitle} />
+          <MainTitle className={cx('title-main')}>{mainTitle}</MainTitle>
+          <WidgetTitle size="small" className={cx('description-title')}>{widgetTitle}</WidgetTitle>
+        </article>
+        {hasImage && <Image className={cx('sloth-mascot')} src={heroImageSrc} alt={heroImageAltText} />}
       </div>
-    </main>
+    </section>
   );
 };

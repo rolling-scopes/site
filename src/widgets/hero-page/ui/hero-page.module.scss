@@ -1,24 +1,13 @@
-.main {
+.hero-page {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  min-height: 800px;
+  flex-direction: row;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: space-between;
 
-  &.container {
-    background: $color-yellow;
-  }
+  min-height: 440px; // TODO ask about design in Figma - 700px there and check @media tablet etc
 
-  &.content {
-    padding: 208px 100px 100px;
-
-    @include media-laptop {
-      padding: 120px 45px 120px;
-    }
-
-    @include media-tablet {
-      padding: 120px 15px 120px;
-    }
-  }
+  background: $color-yellow;
 
   .title-container {
     display: flex;
@@ -26,82 +15,40 @@
     width: fit-content;
     text-align: left;
 
-    .title-main {
+    .subtitle-container {
       display: flex;
-
-      margin: 0;
-
-      font-size: 96px;
-      font-weight: $font-weight-bold;
-      line-height: 125px;
-      letter-spacing: 0;
+      flex-direction: row;
+      justify-content: space-between;
 
       @include media-tablet {
-        font-size: 60px;
-        line-height: 78px;
+        flex-direction: column;
       }
     }
 
-    .title-icon {
-      display: inline-block;
-      width: 91px;
-      height: 91px;
-      margin-left: 8px;
+    .description-title {
+      @include media-tablet {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
 
-      @include media-laptop {
-        width: 71px;
-        height: 71px;
+    ~ img.sloth-mascot {
+      max-width: 336px;
+      height: auto;
+      object-fit: contain;
+
+      @include media-tablet-large {
+        height: 260px;
       }
 
       @include media-tablet {
-        width: 55px;
-        height: 55px;
+        display: none;
       }
     }
   }
 
-  .subtitle-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-
-    width: 100%;
-    margin: 0;
-    padding: 0;
-
-    @include media-tablet {
-      flex-direction: column;
-      gap: 4px;
-      align-items: flex-start;
-    }
-
-    @include media-tablet {
-      flex-direction: column;
-      align-items: flex-start;
-
-      font-size: 18px;
-      font-weight: $font-weight-regular;
-      line-height: 23px;
-    }
-  }
-}
-
-.description-title {
-  width: 100%;
-  height: auto;
-  margin: 0;
-  padding: 0;
-
-  font-size: 36px;
-  font-weight: $font-weight-medium;
-  line-height: 47px;
-  color: $color-black;
-  text-align: left;
-  letter-spacing: 0;
-
-  @include media-tablet {
-    font-size: 24px;
-    line-height: 32px;
+  @include media-tablet-large {
+    flex-direction: column;
+    gap: 0;
   }
 }
