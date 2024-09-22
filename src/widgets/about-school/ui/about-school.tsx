@@ -1,11 +1,7 @@
-import classNames from 'classnames/bind';
+import cx from 'classnames';
 import { ANCHORS } from '@/app/const';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-
-import styles from './about-school.module.scss';
-
-export const cx = classNames.bind(styles);
 
 export const AboutSchool = () => {
   return (
