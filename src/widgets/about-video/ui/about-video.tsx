@@ -1,16 +1,12 @@
 import classNames from 'classnames/bind';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { video } from 'data';
 
 import styles from './about-video.module.scss';
 
 const cx = classNames.bind(styles);
 
 type AboutVideoProps = { lang?: 'en' | 'ru' };
-
-export const localizedContent = {
-  en: { title: 'RS School video' },
-  ru: { title: 'Видео RS School' },
-};
 
 export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
   // Needed to prevent flakiness in screenshot tests
@@ -19,7 +15,7 @@ export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
   return (
     <section className={cx('container')} data-testid="about-video">
       <article className={cx('content')}>
-        <WidgetTitle mods="lines">{localizedContent[lang].title}</WidgetTitle>
+        <WidgetTitle mods="lines">{video[lang].title}</WidgetTitle>
         <div className={cx('video-wrapper')}>
           <div className={cx('video-container')}>
             {isRunningInDev

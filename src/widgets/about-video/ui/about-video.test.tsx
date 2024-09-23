@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { AboutVideo, localizedContent } from './about-video';
+import { AboutVideo } from './about-video';
+import { video } from 'data';
 
 describe('AboutVideo component', () => {
   it('renders without crashing with default title', () => {
@@ -9,14 +10,14 @@ describe('AboutVideo component', () => {
 
     expect(aboutVideo).toBeVisible();
     expect(title).toBeVisible();
-    expect(title).toHaveTextContent(localizedContent['en'].title);
+    expect(title).toHaveTextContent(video['en'].title);
   });
 
   it('displays the RU title correctly', () => {
     render(<AboutVideo lang="ru" />);
     const title = screen.getByTestId('widget-title');
 
-    expect(title).toHaveTextContent(localizedContent['ru'].title);
+    expect(title).toHaveTextContent(video['ru'].title);
   });
 
   it('renders the placeholder in development mode', () => {
