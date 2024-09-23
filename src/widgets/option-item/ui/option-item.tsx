@@ -1,5 +1,6 @@
 // todo it not widget
 import { LinkCustom } from '@/shared/ui/link-custom';
+import { Paragraph } from '@/shared/ui/paragraph';
 
 import './option-item.scss';
 
@@ -13,9 +14,7 @@ type OptionItemProps = {
 export const OptionItem = ({ title, description, linkLabel, href = '' }: OptionItemProps) => (
   <article key={title} className="option">
     <h3 className="option-title">{title}</h3>
-    <p className="option-description" role="text">
-      {description}
-    </p>
+    <Paragraph className="option-description">{description}</Paragraph>
     {linkLabel && (
       <LinkCustom href={href} variant="primary" external>
         {linkLabel}
