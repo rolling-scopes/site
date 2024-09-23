@@ -11,7 +11,7 @@ type OptionItemProps = {
 };
 
 export const OptionItem = ({ title, description, linkLabel, href = '' }: OptionItemProps) => (
-  <div key={title} className="option">
+  <article key={title} className="option">
     <h3 className="option-title">{title}</h3>
     <p className="option-description" role="text">
       {description}
@@ -21,5 +21,5 @@ export const OptionItem = ({ title, description, linkLabel, href = '' }: OptionI
         {linkLabel}
       </LinkCustom>
     )}
-  </div>
+  </article>
 );
