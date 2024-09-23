@@ -1,0 +1,24 @@
+.option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  max-width: 380px;
+
+  color: $color-gray-600;
+
+  @include media-laptop {
+    max-width: 600px;
+    margin-top: 24px;
+  }
+
+  @include media-tablet {
+    max-width: 100%;
+  }
+}
+
+.option-description {
+  margin: 16px 0 24px;
+  padding: 0;
+  text-align: left;
+}
