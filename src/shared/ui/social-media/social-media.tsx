@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import classNames from 'classnames/bind';
+import { LinkCustom } from '../link-custom';
 
 import styles from './social-media.module.scss';
 
@@ -12,14 +13,14 @@ export type SocialMediaProps = {
 };
 
 export const SocialMedia = ({ title, href, icon }: SocialMediaProps) => (
-  <a
+  <LinkCustom
     className={cx('social-media')}
     href={href}
-    target="_blank"
-    rel="noopener noreferrer"
+    variant="withCustomClassName"
+    external
     data-testid="social-media"
   >
     {icon}
     <span className={cx('media-title')} data-testid="media-title">{title}</span>
-  </a>
+  </LinkCustom>
 );

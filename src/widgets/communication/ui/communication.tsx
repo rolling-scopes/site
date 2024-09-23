@@ -1,5 +1,4 @@
 /* eslint-disable @stylistic/jsx-one-expression-per-line */
-import { TextLinkIcon } from '@/shared/icons';
 import { DiscordLogo } from '@/shared/icons/discord-logo';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -61,10 +60,10 @@ export const Communication = ({ courseName, lang = 'en' }: RequiredProps) => {
             <DiscordLogo />
           </figure>
           <div>
-            <Subtitle text={localizedContent[lang].subTitle} />
+            <Subtitle>{localizedContent[lang].subTitle}</Subtitle>
             <Paragraph className="communication-paragraph">
               {localizedContent[lang].firstParagraphFirstHalf}{' '}
-              <LinkCustom href={DISCORD_LINKS[courseName]} icon={<TextLinkIcon />} target="_blank">
+              <LinkCustom href={DISCORD_LINKS[courseName]} external>
                 {localizedContent[lang].discordLink}
               </LinkCustom>
               {localizedContent[lang].firstParagraphSecondHalf}
@@ -73,8 +72,7 @@ export const Communication = ({ courseName, lang = 'en' }: RequiredProps) => {
               {localizedContent[lang].secondParagraphFirstHalf}{' '}
               <LinkCustom
                 href={RS_DOCS_TELEGRAM_CHATS_LINK}
-                icon={<TextLinkIcon />}
-                target="_blank"
+                external
               >
                 {localizedContent[lang].telegramLink}
               </LinkCustom>
@@ -82,7 +80,7 @@ export const Communication = ({ courseName, lang = 'en' }: RequiredProps) => {
             </Paragraph>
             <Paragraph className="communication-paragraph">
               {localizedContent[lang].thirdParagraphFirstHalf}{' '}
-              <LinkCustom href={RS_DOCS_COMMUNICATION_LINK} icon={<TextLinkIcon />} target="_blank">
+              <LinkCustom href={RS_DOCS_COMMUNICATION_LINK} external>
                 {localizedContent[lang].rsDocsLink}
               </LinkCustom>
               {localizedContent[lang].thirdParagraphSecondHalf}

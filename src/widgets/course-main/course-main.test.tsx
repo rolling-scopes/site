@@ -1,6 +1,5 @@
 import { screen } from '@testing-library/react';
 import { CourseMain } from './course-main';
-import { CourseStatus } from '@/app/types';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { dayJS } from '@/shared/helpers/dayJS';
@@ -52,7 +51,7 @@ describe('CourseMain', () => {
   });
 
   it('renders the section label "PLANNED" correctly', () => {
-    const labelElement = screen.getByText(CourseStatus.PLANNED);
+    const labelElement = screen.getByText('planned');
 
     expect(labelElement).toBeVisible();
   });
@@ -78,14 +77,14 @@ describe('CourseMain', () => {
 describe('Course labels are correct', () => {
   it('renders the section with correct label "AVAILABLE"', () => {
     renderWithRouter(<CourseMain courseName={reactCourseTitle} />);
-    const labelElement = screen.getByText(CourseStatus.AVAILABLE);
+    const labelElement = screen.getByText('available');
 
     expect(labelElement).toBeVisible();
   });
 
   it('renders the section with correct label "UPCOMING"', () => {
     renderWithRouter(<CourseMain courseName={angularCourseTitle} />);
-    const labelElement = screen.getByText(CourseStatus.UPCOMING);
+    const labelElement = screen.getByText('upcoming');
 
     expect(labelElement).toBeVisible();
   });

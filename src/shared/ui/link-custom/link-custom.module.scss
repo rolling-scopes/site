@@ -81,15 +81,10 @@
 .text-link {
   @extend %transition-all;
 
-  font-size: 20px;
-  font-weight: 600;
-  color: $color-gray-600;
+  color: $color-blue;
+  text-decoration: underline;
 
   &:hover {
-    color: $color-black;
-  }
-
-  @include media-tablet {
-    font-size: 16px;
+    text-decoration: none;
   }
 }

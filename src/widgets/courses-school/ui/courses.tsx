@@ -2,10 +2,10 @@ import classNames from 'classnames/bind';
 import { CourseCard } from './CourseCard';
 import { MAX_COURSE_COUNT } from '../model/constants';
 import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/app/const';
-import { Course } from '@/app/types';
+import type { Course } from '@/entities/course';
 import { getActualData } from '@/shared/helpers/getActualData';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
-import { ArrowIcon, RsBanner } from '@/shared/icons';
+import { RsBanner } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { courses } from 'data';
@@ -54,7 +54,7 @@ export const Courses = () => {
         <div className={cx('column-2')}>
           <div className={cx('course-list')} data-testid="courses-list">
             {coursesContent}
-            <LinkCustom href={ROUTES.COURSES} icon={<ArrowIcon />} variant="primary">
+            <LinkCustom href={ROUTES.COURSES} variant="primary">
               Go to courses
             </LinkCustom>
           </div>

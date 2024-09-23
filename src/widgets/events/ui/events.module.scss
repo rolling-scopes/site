@@ -24,20 +24,20 @@
       align-items: center;
       justify-content: space-between;
 
+      .event-img {
+        width: 500px;
+
+        @include media-mobile-landscape {
+          width: 100%;
+        }
+      }
+
       @include media-laptop {
         align-self: center;
       }
 
       @include media-tablet {
         flex-direction: column;
-      }
-    }
-
-    img {
-      width: 500px;
-
-      @include media-mobile-landscape {
-        width: 100%;
       }
     }
 

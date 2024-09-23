@@ -1,3 +1,5 @@
+import { LinkCustom } from '@/shared/ui/link-custom';
+
 import './links.scss';
 
 interface LinksProps {
@@ -11,10 +13,10 @@ interface LinksProps {
 export const Links = ({ links }: LinksProps) => {
   return (
     <p className="stage-links">
-      {links.map(({ href, linkTitle, isActive = true }) => (
-        <a href={href} key={linkTitle} className={`${isActive ? '' : 'disabled'}`} target="blank">
+      {links.map(({ href, linkTitle }) => (
+        <LinkCustom href={href} key={linkTitle}>
           {linkTitle}
-        </a>
+        </LinkCustom>
       ))}
     </p>
   );

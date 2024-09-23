@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import classNames from 'classnames/bind';
 import dayjs from 'dayjs';
-import { EventCard, EventCardProps } from '@/entities/events';
+import { Event, EventCard } from '@/entities/event';
 import photo3 from '@/shared/assets/photo-3.webp';
 import { getActualData } from '@/shared/helpers/getActualData';
 import { Image } from '@/shared/ui/image';
@@ -16,14 +16,14 @@ const cx = classNames.bind(styles);
 
 const displayedCardsQuantity = 2;
 
-const actualEvents: EventCardProps[] = getActualData({
+const actualEvents: Event[] = getActualData({
   data: events,
   staleAfter: 3,
 });
 
 const nearestEvents = actualEvents.slice(0, displayedCardsQuantity);
 
-const Stub = <Image src={photo3} alt="Community event" />;
+const Stub = <Image src={photo3} alt="Community event" className={cx('event-img')} />;
 
 export const Events = () => {
   const rsLifetime = dayjs().diff('2013', 'year');
@@ -52,7 +52,7 @@ export const Events = () => {
         <section className={cx('cards')}>
           {!actualEvents.length && Stub}
 
-          {(nearestEvents as EventCardProps[]).map((i) => (
+          {(nearestEvents as Event[]).map((i) => (
             <EventCard key={i.title} {...i} date={dayjs(i.date).format('DD MMM YYYY')} />
           ))}
         </section>

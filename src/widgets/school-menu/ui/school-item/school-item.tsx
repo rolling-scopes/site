@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { GenericItemProps } from '../school-list/school-list';
 import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
-import { type Course } from '@/app/types';
+import type { Course } from '@/entities/course';
 import { getCourseDate } from '@/shared/helpers/getCourseDate';
 import { Image } from '@/shared/ui/image';
 
