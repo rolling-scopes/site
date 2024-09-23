@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { useLoaderData } from 'react-router-dom';
 import { getCourseStatus } from '../helpers/get-course-status';
 import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
@@ -13,6 +14,8 @@ import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './course-main.module.scss';
+
+const cx = classNames.bind(styles);
 
 export type CourseMainProps = {
   courseName: string;
@@ -41,10 +44,10 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
   const date = getCourseDate(startDate, COURSE_STALE_AFTER_DAYS);
 
   return (
-    <main className={`container ${styles.container}`}>
-      <div className={`content ${styles.content}`}>
-        <Image className={styles.icon} src={secondaryIcon} alt={title} lazy={false} />
-        <div className={styles.info}>
+    <main className={cx('container')}>
+      <div className={cx('content')}>
+        <Image className={cx('icon')} src={secondaryIcon} alt={title} lazy={false} />
+        <div className={cx('info')}>
           <SectionLabel>{status}</SectionLabel>
           <WidgetTitle>{`${altTitle || title} Course`}</WidgetTitle>
           {type && (
