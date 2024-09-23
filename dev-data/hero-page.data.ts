@@ -9,7 +9,7 @@ export const heroPageData = {
   courses: {
     mainTitle: 'Our Courses',
     widgetTitle: 'Journey to full stack mastery',
-    subTitle: [],
+    subTitle: ['Community driven. 100% free of charge'],
     heroImageSrc: 'src/shared/assets/mentor-with-his-students.webp',
     imageAltText: 'Sloth mascot mentor with his sloths students',
   },
