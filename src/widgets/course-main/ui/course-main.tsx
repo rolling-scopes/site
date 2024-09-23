@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 import { useLoaderData } from 'react-router-dom';
 import { getCourseStatus } from '../helpers/get-course-status';
 import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
