@@ -1,5 +1,6 @@
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
+import { Subtitle } from '@/shared/ui/subtitle';
 
 import './option-item.scss';
 
@@ -12,7 +13,7 @@ type OptionItemProps = {
 
 export const OptionItem = ({ title, description, linkLabel, href = '' }: OptionItemProps) => (
   <article key={title} className="option">
-    <h3 className="option-title">{title}</h3>
+    <Subtitle className="option-title">{title}</Subtitle>
     <Paragraph className="option-description">{description}</Paragraph>
     {linkLabel && (
       <LinkCustom href={href} variant="primary" external>
