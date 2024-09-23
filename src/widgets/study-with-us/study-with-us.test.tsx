@@ -27,9 +27,13 @@ describe('School Component', () => {
   });
 
   it('renders the correct description for each study option', () => {
-    const descriptions = screen.getAllByRole('text');
+    const descriptions = screen.getAllByTestId('paragraph');
 
-    descriptions.forEach((description, index) => {
+    const optionDescription = descriptions.filter((paragraph) =>
+      paragraph.classList.contains('option-description'),
+    );
+
+    optionDescription.forEach((description, index) => {
       expect(description.textContent).toBe(studyOptions[index].description);
     });
   });
