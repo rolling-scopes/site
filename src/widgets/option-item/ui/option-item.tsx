@@ -3,7 +3,7 @@ import { LinkCustom } from '@/shared/ui/link-custom';
 
 import './option-item.scss';
 
-export type OptionItemProps = {
+type OptionItemProps = {
   title: string;
   description: string;
   linkLabel?: string;
