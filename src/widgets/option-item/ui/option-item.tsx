@@ -1,4 +1,3 @@
-// todo it not widget
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 
