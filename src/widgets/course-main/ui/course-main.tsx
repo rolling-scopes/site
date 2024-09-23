@@ -47,7 +47,7 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
     <main className={cx('container')}>
       <div className={cx('content')}>
         <Image className={cx('icon')} src={secondaryIcon} alt={title} lazy={false} />
-        <div className={cx('info')}>
+        <div>
           <SectionLabel>{status}</SectionLabel>
           <WidgetTitle>{`${altTitle || title} Course`}</WidgetTitle>
           {type && (
