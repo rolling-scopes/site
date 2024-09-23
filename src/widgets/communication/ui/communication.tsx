@@ -1,5 +1,4 @@
 import classNames from 'classnames/bind';
-import { communicationSectionLocales } from './locales';
 import discordLogo from '@/shared/assets/svg/discord-logo.svg';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -11,6 +10,7 @@ import {
   DISCORD_LINKS,
   RS_DOCS_COMMUNICATION_LINK,
   RS_DOCS_TELEGRAM_CHATS_LINK,
+  communicationText,
 } from 'data';
 
 import styles from './communication.module.scss';
@@ -35,7 +35,7 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
     thirdParagraphFirstHalf,
     rsDocsLink,
     thirdParagraphSecondHalf,
-  } = communicationSectionLocales[lang];
+  } = communicationText[lang];
 
   return (
     <section className={cx('container')}>

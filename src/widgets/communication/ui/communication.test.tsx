@@ -1,8 +1,7 @@
 import { cleanup, screen } from '@testing-library/react';
 import { Communication } from './communication';
-import { communicationSectionLocales } from './locales';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { DISCORD_LINKS } from 'data';
+import { DISCORD_LINKS, communicationText } from 'data';
 
 describe('Communication section', () => {
   it('should render "Communication" section texts correctly', async () => {
@@ -13,7 +12,7 @@ describe('Communication section', () => {
       subTitle,
       firstParagraphFirstHalf,
       discordLink,
-    } = communicationSectionLocales.en;
+    } = communicationText.en;
 
     renderWithRouter(<Communication courseName={firstCourse} />);
     const titleElement = screen.getByText(title);
@@ -36,7 +35,7 @@ describe('Communication section', () => {
       subTitle,
       firstParagraphFirstHalf,
       discordLink,
-    } = communicationSectionLocales.ru;
+    } = communicationText.ru;
 
     renderWithRouter(<Communication courseName={firstCourse} lang="ru" />);
     const titleElement = screen.getByText(title);

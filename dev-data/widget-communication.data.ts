@@ -1,4 +1,4 @@
-export const communicationSectionLocales = {
+export const communicationText = {
   en: {
     title: 'Communication',
     subTitle: 'Discord is the main communication channel in RS School',
