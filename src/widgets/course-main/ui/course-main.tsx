@@ -1,5 +1,5 @@
 import { useLoaderData } from 'react-router-dom';
-import { getCourseStatus } from './utils/get-course-status';
+import { getCourseStatus } from '../helpers/get-course-status';
 import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
 import type { Course } from '@/entities/course';
 import { getCourseDate } from '@/shared/helpers/getCourseDate';
@@ -14,11 +14,11 @@ import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './course-main.module.scss';
 
-interface CourseMainProps {
+export type CourseMainProps = {
   courseName: string;
   lang?: 'ru' | 'en';
   type?: 'Pre-school RU';
-}
+};
 
 const localizedContent = {
   en: { linkLabel: 'Enroll' },

@@ -1,6 +1,6 @@
 import { RouteObject } from 'react-router-dom';
 import { ROUTES } from '@/app/const';
-import { courseLoader } from '@/widgets/course-main/courseLoader.ts';
+import { loader } from '@/widgets/course-main';
 
 const coursesRoute: RouteObject = {
   path: ROUTES.COURSES,
@@ -15,7 +15,7 @@ const coursesRoute: RouteObject = {
     },
     {
       path: ROUTES.NODE_JS,
-      loader: courseLoader,
+      loader,
       async lazy() {
         const { Nodejs } = await import('@/pages/nodejs.tsx');
 
@@ -24,7 +24,7 @@ const coursesRoute: RouteObject = {
     },
     {
       path: ROUTES.JS,
-      loader: courseLoader,
+      loader,
       async lazy() {
         const { JavaScriptEn } = await import('@/pages/javascript-en.tsx');
 
@@ -33,7 +33,7 @@ const coursesRoute: RouteObject = {
     },
     {
       path: ROUTES.JS_RU,
-      loader: courseLoader,
+      loader,
       async lazy() {
         const { JavaScriptRu } = await import('@/pages/javascript-ru.tsx');
 
@@ -42,7 +42,7 @@ const coursesRoute: RouteObject = {
     },
     {
       path: ROUTES.JS_PRESCHOOL_RU,
-      loader: courseLoader,
+      loader,
       async lazy() {
         const { JavaScriptPreSchoolRu } = await import('@/pages/javascript-preschool-ru.tsx');
 
@@ -51,7 +51,7 @@ const coursesRoute: RouteObject = {
     },
     {
       path: ROUTES.ANGULAR,
-      loader: courseLoader,
+      loader,
       lazy: async () => {
         const { Angular } = await import('@/pages/angular.tsx');
 
@@ -60,7 +60,7 @@ const coursesRoute: RouteObject = {
     },
     {
       path: ROUTES.AWS_DEVELOPER,
-      loader: courseLoader,
+      loader,
       lazy: async () => {
         const { AwsDeveloper } = await import('@/pages/aws-developer.tsx');
 
@@ -69,7 +69,7 @@ const coursesRoute: RouteObject = {
     },
     {
       path: ROUTES.AWS_FUNDAMENTALS,
-      loader: courseLoader,
+      loader,
       lazy: async () => {
         const { AwsFundamentals } = await import('@/pages/aws-fundamentals.tsx');
 
@@ -78,7 +78,7 @@ const coursesRoute: RouteObject = {
     },
     {
       path: ROUTES.REACT,
-      loader: courseLoader,
+      loader,
       lazy: async () => {
         const { React } = await import('@/pages/react.tsx');
 
@@ -87,7 +87,7 @@ const coursesRoute: RouteObject = {
     },
     {
       path: ROUTES.AWS_DEVOPS,
-      loader: courseLoader,
+      loader,
       lazy: async () => {
         const { AwsDevOps } = await import('@/pages/aws-devops');
 
