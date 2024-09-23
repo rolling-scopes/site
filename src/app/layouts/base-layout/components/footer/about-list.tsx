@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import { ROUTES } from '@/app/const';
+import { ANCHORS, ROUTES } from '@/app/const';
 import { Logo } from '@/shared/ui/logo';
 
 const aboutList = [
   {
     title: 'About RS',
-    to: `/${ROUTES.COMMUNITY}/#about`,
+    to: `/${ROUTES.COMMUNITY}/#${ANCHORS.ABOUT_SCHOOL}`,
   },
   {
     title: 'Events',

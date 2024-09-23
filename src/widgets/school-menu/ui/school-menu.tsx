@@ -1,4 +1,5 @@
 import { GenericItemProps, SchoolList } from './school-list/school-list';
+import { ANCHORS } from '@/app/const';
 import type { Course } from '@/entities/course';
 import { useDataByName } from '@/shared/hooks/use-data-by-name';
 
@@ -7,7 +8,7 @@ import './school-menu.scss';
 const schoolMenuStaticLinks = [
   {
     title: 'About RS School',
-    detailsUrl: '/#about',
+    detailsUrl: `/#${ANCHORS.ABOUT_SCHOOL}`,
     description: 'Free online education',
   },
   {
