@@ -3,7 +3,7 @@ import { AboutVideo } from '@/widgets/about-video';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
-import { CourseMain } from '@/widgets/course-main';
+import { CourseMain } from '@/widgets/hero-course';
 import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
 import { TrainingProgram } from '@/widgets/training-program';

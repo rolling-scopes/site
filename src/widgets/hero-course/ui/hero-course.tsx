@@ -13,7 +13,7 @@ import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
-import styles from './course-main.module.scss';
+import styles from './hero-course.module.scss';
 
 const cx = classNames.bind(styles);
 

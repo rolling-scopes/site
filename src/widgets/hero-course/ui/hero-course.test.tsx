@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { CourseMain } from './course-main';
+import { CourseMain } from './hero-course';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { dayJS } from '@/shared/helpers/dayJS';

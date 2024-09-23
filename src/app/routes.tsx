@@ -1,6 +1,6 @@
 import { RouteObject } from 'react-router-dom';
 import { ROUTES } from '@/app/const';
-import { loader } from '@/widgets/course-main';
+import { loader } from '@/widgets/hero-course';
 
 const coursesRoute: RouteObject = {
   path: ROUTES.COURSES,

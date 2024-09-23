@@ -3,7 +3,7 @@ import { AngularTopics } from '@/widgets/angular-topics';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
-import { CourseMain } from '@/widgets/course-main';
+import { CourseMain } from '@/widgets/hero-course';
 import { MentorsWanted } from '@/widgets/mentors-wanted';
 import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
