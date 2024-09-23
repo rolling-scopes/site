@@ -4,33 +4,57 @@ import { OptionItem } from './option-item';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 describe('OptionItem component', () => {
-  it('renders title and description', () => {
-    renderWithRouter(<OptionItem title="My Title" description="My Description" />);
+  let widget: HTMLElement;
+  let title: HTMLElement;
+  let description: HTMLElement;
 
-    expect(screen.getByText('My Title')).toBeInTheDocument();
-    expect(screen.getByText('My Description')).toBeInTheDocument();
+  describe('without buttonLabel', () => {
+    beforeEach(() => {
+      renderWithRouter(<OptionItem title="My Title" description="My Description" />);
+      widget = screen.getByTestId('option');
+      title = screen.getByTestId('subtitle');
+      description = screen.getByTestId('paragraph');
+    });
+
+    it('renders widget without crashing', () => {
+      expect(widget).toBeVisible();
+    });
+
+    it('displays correct title', () => {
+      expect(title).toBeVisible();
+      expect(title).toHaveTextContent('My Title');
+    });
+
+    it('displays correct description', () => {
+      expect(description).toBeVisible();
+      expect(description).not.toBeEmptyDOMElement();
+      expect(description.innerHTML).not.toBeNull();
+      expect(description).toHaveTextContent('My Description');
+    });
+
+    it('does not render button when buttonLabel is not provided', () => {
+      expect(screen.queryByRole('link')).not.toBeInTheDocument();
+    });
   });
 
-  it('does not render button when buttonLabel is not provided', () => {
-    renderWithRouter(<OptionItem title="My Title" description="My Description" />);
+  describe('with buttonLabel', () => {
+    beforeEach(() => {
+      renderWithRouter(
+        <OptionItem
+          title="My Title"
+          description="My Description"
+          linkLabel="My Button"
+          href="http://my-link.com"
+        />,
+      );
+    });
 
-    expect(screen.queryByRole('link')).not.toBeInTheDocument();
-  });
+    it('renders button with correct label and href when buttonLabel is provided', () => {
+      const button = screen.getByRole('link', { name: /My Button/i });
 
-  it('renders button with correct label and href when buttonLabel is provided', () => {
-    renderWithRouter(
-      <OptionItem
-        title="My Title"
-        description="My Description"
-        linkLabel="My Button"
-        href="http://my-link.com"
-      />,
-    );
-
-    const button = screen.getByRole('link', { name: /My Button/i });
-
-    expect(button).toBeInTheDocument();
-    expect(button).toHaveAttribute('href', 'http://my-link.com');
-    expect(button).toHaveAttribute('target', '_blank');
+      expect(button).toBeInTheDocument();
+      expect(button).toHaveAttribute('href', 'http://my-link.com');
+      expect(button).toHaveAttribute('target', '_blank');
+    });
   });
 });

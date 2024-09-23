@@ -12,7 +12,7 @@ type OptionItemProps = {
 };
 
 export const OptionItem = ({ title, description, linkLabel, href = '' }: OptionItemProps) => (
-  <article key={title} className="option">
+  <article key={title} className="option" data-testid="option">
     <Subtitle className="option-title">{title}</Subtitle>
     <Paragraph className="option-description">{description}</Paragraph>
     {linkLabel && (

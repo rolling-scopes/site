@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { studyOptions } from './constants';
 import { StudyWithUs } from './ui/study-with-us';
@@ -27,13 +27,12 @@ describe('School Component', () => {
   });
 
   it('renders the correct description for each study option', () => {
-    const descriptions = screen.getAllByTestId('paragraph');
+    const options = screen.getAllByTestId('option');
 
-    const optionDescription = descriptions.filter((paragraph) =>
-      paragraph.classList.contains('option-description'),
-    );
+    options.forEach((option, index) => {
+      const description = within(option).getByTestId('paragraph');
 
-    optionDescription.forEach((description, index) => {
+      expect(description).toBeInTheDocument();
       expect(description.textContent).toBe(studyOptions[index].description);
     });
   });
