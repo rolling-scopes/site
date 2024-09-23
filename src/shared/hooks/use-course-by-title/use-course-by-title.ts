@@ -1,7 +1,7 @@
 import { selectCourse } from './utils/select-course';
 import { useDataByName } from '../use-data-by-name';
 
-import { Course } from '@/app/types';
+import type { Course } from '@/entities/course';
 
 export const useCourseByTitle = (titleStartsWith: string) => {
   const { data: coursesData, error, loading } = useDataByName('courses');

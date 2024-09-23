@@ -1,10 +1,10 @@
 import { getCourseDate } from './getCourseDate';
-import { Course } from '@/app/types';
-import { isCourse } from '@/entities/courses/helpers/is-course';
-import { EventCardProps } from '@/entities/events';
+import { isCourse } from './is-course';
+import type { Course } from '@/entities/course';
+import { Event } from '@/entities/event';
 import { dayJS } from '@/shared/helpers/dayJS';
 
-type DataType = Course[] | EventCardProps[];
+type DataType = Course[] | Event[];
 
 type GetActualDataParams<T extends DataType> = {
   data: T;

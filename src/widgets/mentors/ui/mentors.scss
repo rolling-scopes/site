@@ -14,14 +14,12 @@
       .mentors-info {
         display: flex;
         flex-direction: column;
-        gap: 16px;
 
         > .paragraph {
           max-width: 640px;
 
           @include media-tablet-large {
             max-width: 100%;
-            font-size: 20px;
           }
         }
 

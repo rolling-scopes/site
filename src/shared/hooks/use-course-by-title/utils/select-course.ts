@@ -1,5 +1,5 @@
 import isCourse from './is-course';
-import { Course } from '@/app/types';
+import type { Course } from '@/entities/course';
 
 export const selectCourse = (coursesData: Course[], titleStartsWith: string) => {
   const courses = coursesData.filter(isCourse);

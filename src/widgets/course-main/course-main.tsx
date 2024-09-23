@@ -1,11 +1,10 @@
 import { useLoaderData } from 'react-router-dom';
 import { getCourseStatus } from './utils/get-course-status';
 import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
-import { Course } from '@/app/types';
+import type { Course } from '@/entities/course';
 import { getCourseDate } from '@/shared/helpers/getCourseDate';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { useTitle } from '@/shared/hooks/use-title';
-import { ArrowIcon } from '@/shared/icons';
 import { DateLang } from '@/shared/ui/date-lang';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -18,7 +17,7 @@ import styles from './course-main.module.scss';
 interface CourseMainProps {
   courseName: string;
   lang?: 'ru' | 'en';
-  type?: 'Mentoring Program EN' | 'Pre-school RU' | 'Менторская программа RU';
+  type?: 'Pre-school RU';
 }
 
 const localizedContent = {
@@ -48,9 +47,13 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
         <div className={styles.info}>
           <SectionLabel>{status}</SectionLabel>
           <WidgetTitle>{`${altTitle || title} Course`}</WidgetTitle>
-          {type && <Subtitle text={type} type="course-main" />}
+          {type && (
+            <Subtitle fontSize="small" color="black">
+              {type}
+            </Subtitle>
+          )}
           <DateLang startDate={date} language={language} mode={mode} withMargin />
-          <LinkCustom href={enroll} icon={<ArrowIcon />} variant="secondary" target="_blank">
+          <LinkCustom href={enroll} variant="secondary" external>
             {localizedContent[lang].linkLabel}
           </LinkCustom>
         </div>

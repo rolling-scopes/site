@@ -40,7 +40,7 @@
   }
 }
 
-@mixin card-corner-accent {
+@mixin card-corner-accent($bg-color, $isHovered: false) {
   content: '';
 
   position: absolute;
@@ -54,16 +54,14 @@
   height: 248px;
 
   opacity: 0.5;
-  background-color: #7356bf;
+  background-color: $bg-color;
   filter: blur(32px);
   border-radius: 100%;
-}
 
-@mixin card-corner-accent-hover {
-  right: -130px;
-  bottom: -160px;
-  width: 279px;
-  height: 270px;
-
-  @include card-corner-accent;
+  @if $isHovered {
+    right: -130px;
+    bottom: -160px;
+    width: 279px;
+    height: 270px;
+  }
 }

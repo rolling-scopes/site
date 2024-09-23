@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { Image } from '@/shared/ui/image';
 
 import './info-grid.scss';
@@ -6,7 +7,7 @@ interface InfoGridProps {
   items: {
     id: number;
     title: string;
-    info: string;
+    info: string | ReactNode;
     icon: string;
   }[];
   hasTitle?: boolean;
@@ -21,7 +22,7 @@ export const InfoGrid = ({ items }: InfoGridProps) => {
             <Image src={icon} alt={title} />
             <h2>{title}</h2>
           </div>
-          <p dangerouslySetInnerHTML={{ __html: info }} />
+          { typeof info === 'string' ? <p>{info}</p> : info }
         </div>
       ))}
     </div>

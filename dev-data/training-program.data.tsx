@@ -1,6 +1,4 @@
 // TODO separate data and markup
-import { Link } from 'react-router-dom';
-
 import awsPractitionerBadge from '@/shared/assets/aws-cloud-pract-badge.webp';
 import angularImg from '@/shared/assets/rs-slope-angular.webp';
 import awsDevImg from '@/shared/assets/rs-slope-aws-dev.webp';
@@ -9,6 +7,7 @@ import jsImg from '@/shared/assets/rs-slope-js.webp';
 import nodejsImg from '@/shared/assets/rs-slope-nodejs.webp';
 import reactEnImg from '@/shared/assets/rs-slope-react-en.webp';
 import reactRuImg from '@/shared/assets/rs-slope-react-ru.webp';
+import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
@@ -52,7 +51,9 @@ export const contentMap: ContentMap = {
         Be well-prepared to pass the &quot;AWS Certified Developer - Associate&quot; certification
         and confidently apply your skills in real-world projects by the end of the course.
       </Paragraph>,
-      <Subtitle key="aws cloud dev 03" text="Course highlights:" />,
+      <Subtitle key="aws cloud dev 03">
+        Course highlights:
+      </Subtitle>,
       <List
         key="aws cloud dev 04"
         data={[
@@ -128,12 +129,12 @@ export const contentMap: ContentMap = {
       <Paragraph key="angular 02">
         The course lasts 11 weeks, requiring approximately 20-40 hours of study per week.
       </Paragraph>,
-      // todo use custom link
+
       <Paragraph key="angular 03">
         {`All webinars are recorded and available on our `}
-        <Link className="link" to="https://www.youtube.com/c/rollingscopesschool" target="blank">
+        <LinkCustom href="https://www.youtube.com/c/rollingscopesschool" external>
           Youtube
-        </Link>
+        </LinkCustom>
         . Theoretical materials are provided as recorded lectures from previous courses.
       </Paragraph>,
     ],
@@ -197,7 +198,9 @@ export const contentMap: ContentMap = {
       <Paragraph key="js / front-end pre-school ru 01">
         <span>Введение в RS School:</span>
         <List
-          data={['Знакомство со школой, профессией JS/Front-end разработчика и системой контроля версий Git.']}
+          data={[
+            'Знакомство со школой, профессией JS/Front-end разработчика и системой контроля версий Git.',
+          ]}
           marked={false}
         />
       </Paragraph>,
@@ -230,7 +233,10 @@ export const contentMap: ContentMap = {
       </Paragraph>,
       <Paragraph key="js / front-end pre-school ru 05">
         <span>Итоговая аттестация:</span>
-        <List data={['Кросс-чек проектов, тесты и ревью кода. Выдача сертификата.']} marked={false} />
+        <List
+          data={['Кросс-чек проектов, тесты и ревью кода. Выдача сертификата.']}
+          marked={false}
+        />
       </Paragraph>,
     ],
     image: jsImg,
@@ -254,10 +260,10 @@ export const contentMap: ContentMap = {
           'Understanding of the REST',
         ]}
       />,
-      <Subtitle
-        key="react 03"
-        text="Attention! Mentors on this course will be first assigned to the graduates of the RS School Stage #2."
-      />,
+      <Subtitle key="react 03">
+        Attention! Mentors on this course will be first assigned to the graduates of the RS School
+        Stage #2.
+      </Subtitle>,
     ],
     image: reactEnImg,
   },
@@ -289,13 +295,12 @@ export const contentMap: ContentMap = {
     title: 'Details',
     content: [
       <Paragraph key="aws devops 01">
-        If you are looking for an entry point to kickstart your IT career as a DevOps engineer,
-        then this AWS course challenge is what you need.
+        If you are looking for an entry point to kickstart your IT career as a DevOps engineer, then
+        this AWS course challenge is what you need.
       </Paragraph>,
-      <Subtitle
-        key="aws devops 02"
-        text="Showcase your level of expertise and join this expert-led program to:"
-      />,
+      <Subtitle key="aws devops 02">
+        Showcase your level of expertise and join this expert-led program to:
+      </Subtitle>,
       <List
         key="aws devops 03"
         data={[
@@ -308,10 +313,9 @@ export const contentMap: ContentMap = {
           'Become a DevOps engineer who is ready to face engineering challenges',
         ]}
       />,
-      <Subtitle
-        key="aws devops 04"
-        text="What do we offer?"
-      />,
+      <Subtitle key="aws devops 04">
+        What do we offer?
+      </Subtitle>,
       <List
         key="aws devops 05"
         data={[
