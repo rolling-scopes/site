@@ -50,7 +50,7 @@ export const HeroPage = ({ pageName }: PageName) => {
 
   return (
     <section id="hero-page" className={cx('hero-page', 'container')} data-testid="hero-page">
-      <div className={cx('hero-page', 'content')}>
+      <div className={cx('hero-page-content', 'content')}>
         <article className={cx('title-container')}>
           <HeroSubTitle subTitle={subTitle} />
           <MainTitle className={cx('title-main')}>{mainTitle}</MainTitle>

@@ -52,6 +52,7 @@ describe('HeroPage component', () => {
       heroPage = screen.getByTestId('hero-page');
       mainTitle = screen.getByTestId('main-title');
       widgetTitle = screen.getByTestId('widget-title');
+      subTitles = screen.getAllByTestId('subtitle');
       image = screen.getByTestId('sloth-mascot');
     });
 
@@ -62,10 +63,14 @@ describe('HeroPage component', () => {
     it('renders component content correctly', () => {
       expect(mainTitle).toBeVisible();
       expect(widgetTitle).toBeVisible();
-      expect(heroPage).not.toContainHTML('h3');
 
       expect(mainTitle.innerHTML).toBe(pageData.mainTitle);
       expect(widgetTitle.innerHTML).toBe(pageData.widgetTitle);
+
+      subTitles.forEach((subTitle, index) => {
+        expect(subTitle).toBeVisible();
+        expect(subTitle.innerHTML).toBe(pageData.subTitle[index]);
+      });
 
       expect(image).toBeVisible();
       expect(image).toHaveAttribute('src', pageData.heroImageSrc);

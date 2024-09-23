@@ -1,39 +1,39 @@
 .hero-page {
-  display: flex;
-  flex-direction: row;
   gap: 16px;
-  align-items: flex-start;
-  justify-content: space-between;
-
   min-height: 440px; // TODO ask about design in Figma - 700px there and check @media tablet etc
-
   background: $color-yellow;
 
-  .title-container {
+  &-content {
     display: flex;
-    flex-direction: column;
-    width: fit-content;
-    text-align: left;
+    flex-direction: row;
+    justify-content: space-between;
 
-    .subtitle-container {
+    .title-container {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      flex-direction: column;
+      width: fit-content;
+      text-align: left;
 
-      @include media-tablet {
-        flex-direction: column;
+      .subtitle-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        @include media-tablet {
+          flex-direction: column;
+        }
+      }
+
+      .description-title {
+        @include media-tablet {
+          font-size: 24px;
+          line-height: 32px;
+        }
       }
     }
 
-    .description-title {
-      @include media-tablet {
-        font-size: 24px;
-        line-height: 32px;
-      }
-    }
-
-    ~ img.sloth-mascot {
-      max-width: 336px;
+    .sloth-mascot {
+      max-width: 300px; // TODO change if sloth pic will be changed
       height: auto;
       object-fit: contain;
 
