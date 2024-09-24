@@ -43,10 +43,10 @@ export const Courses = ({ lang = 'en' }: CoursesProps) => {
   const sortedCourses: Course[] = getActualData(sortParams);
 
   return (
-    <section className={cx('courses')} id="upcoming-courses">
+    <section className={cx('courses')} id="upcoming-courses" data-testid="courses">
       <div className={cx('courses-content')}>
         <WidgetTitle>{localizedContent[lang].title}</WidgetTitle>
-        <ul className={cx('course-list')} data-testid="courses">
+        <ul className={cx('course-list')}>
           {sortedCourses.map((course) => {
             return (
               <li key={course.id}>
