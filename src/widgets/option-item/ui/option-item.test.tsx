@@ -10,6 +10,7 @@ describe('OptionItem component', () => {
     linkLabel: 'Test link',
     href: 'http://link.com',
   };
+
   let widget: HTMLElement;
   let title: HTMLElement;
   let description: HTMLElement;
@@ -43,14 +44,7 @@ describe('OptionItem component', () => {
 
   describe('with linkLabel', () => {
     beforeEach(() => {
-      renderWithRouter(
-        <OptionItem
-          title={mockProps.title}
-          description={mockProps.description}
-          linkLabel={mockProps.linkLabel}
-          href={mockProps.href}
-        />,
-      );
+      renderWithRouter(<OptionItem {...mockProps} />);
     });
 
     it('renders link with correct label and href when linkLabel is provided', () => {
@@ -58,8 +52,8 @@ describe('OptionItem component', () => {
 
       expect(link).toBeInTheDocument();
       expect(link).toHaveAttribute('href', mockProps.href);
-      expect(link).toHaveTextContent(mockProps.linkLabel);
       expect(link).toHaveAttribute('target', '_blank');
+      expect(link).toHaveTextContent(mockProps.linkLabel);
     });
   });
 });
