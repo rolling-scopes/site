@@ -41,7 +41,7 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
     <section className={cx('container')}>
       <article className={cx('content', 'communication-content')}>
         <WidgetTitle mods="asterisk">{title}</WidgetTitle>
-        <div className={cx('communication-text')}>
+        <div className={cx('communication-wrapper')}>
           <figure className={cx('discord-logo-wrapper')}>
             <Image src={discordLogo} alt="discord logo" />
           </figure>
