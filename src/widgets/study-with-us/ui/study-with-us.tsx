@@ -3,8 +3,8 @@ import image from '@/shared/assets/rs-school.webp';
 import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
+import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { OptionItem } from '@/widgets/option-item';
 
 import './study-with-us.scss';
 
@@ -28,7 +28,10 @@ export const StudyWithUs = () => (
       </div>
       <div className="study-options column-3 ">
         {studyOptions.map((i) => (
-          <OptionItem {...i} key={i.title} />
+          <article key={i.title} className="option-item" data-testid="option-item">
+            <Subtitle>{i.title}</Subtitle>
+            <Paragraph fontSize="large">{i.description}</Paragraph>
+          </article>
         ))}
       </div>
     </div>

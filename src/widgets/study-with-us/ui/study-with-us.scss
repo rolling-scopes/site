@@ -57,4 +57,19 @@
       gap: 0;
     }
   }
+
+  .option-item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 380px;
+
+    @include media-laptop {
+      max-width: 600px;
+    }
+
+    @include media-tablet {
+      max-width: 100%;
+    }
+  }
 }

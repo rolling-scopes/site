@@ -18,10 +18,8 @@ export const OptionItem = ({ title, description, linkLabel, href = '' }: OptionI
   <article key={title} className={cx('option-item')} data-testid="option-item">
     <Subtitle>{title}</Subtitle>
     <Paragraph fontSize="large">{description}</Paragraph>
-    {linkLabel && (
-      <LinkCustom href={href} variant="primary" external>
-        {linkLabel}
-      </LinkCustom>
-    )}
+    <LinkCustom href={href} variant="primary" external>
+      {linkLabel}
+    </LinkCustom>
   </article>
 );
