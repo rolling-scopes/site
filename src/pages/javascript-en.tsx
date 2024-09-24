@@ -3,7 +3,7 @@ import { AboutVideo } from '@/widgets/about-video';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
-import { CourseMain } from '@/widgets/hero-course';
+import { HeroCourse } from '@/widgets/hero-course';
 import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
 import { TrainingProgram } from '@/widgets/training-program';
@@ -13,7 +13,7 @@ const COURSE_NAME = 'js / front-end en';
 export const JavaScriptEn = () => {
   return (
     <>
-      <CourseMain courseName={COURSE_NAME} />
+      <HeroCourse courseName={COURSE_NAME} />
       <Breadcrumbs />
       <TrainingProgram courseName={COURSE_NAME} />
       <About courseName={COURSE_NAME} />

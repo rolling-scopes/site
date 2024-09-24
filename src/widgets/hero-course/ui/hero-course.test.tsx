@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { CourseMain } from './hero-course';
+import { HeroCourse } from './hero-course';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { dayJS } from '@/shared/helpers/dayJS';
@@ -39,9 +39,9 @@ const mockedCourseUpcoming = {
   startDate: dayJS().add(1, 'month').format('D MMM, YYYY'),
 };
 
-describe('CourseMain', () => {
+describe('HeroCourse', () => {
   beforeEach(() => {
-    renderWithRouter(<CourseMain courseName="Node.js" />);
+    renderWithRouter(<HeroCourse courseName="Node.js" />);
   });
 
   it('renders the title correctly', async () => {
@@ -76,14 +76,14 @@ describe('CourseMain', () => {
 
 describe('Course labels are correct', () => {
   it('renders the section with correct label "AVAILABLE"', () => {
-    renderWithRouter(<CourseMain courseName={reactCourseTitle} />);
+    renderWithRouter(<HeroCourse courseName={reactCourseTitle} />);
     const labelElement = screen.getByText('available');
 
     expect(labelElement).toBeVisible();
   });
 
   it('renders the section with correct label "UPCOMING"', () => {
-    renderWithRouter(<CourseMain courseName={angularCourseTitle} />);
+    renderWithRouter(<HeroCourse courseName={angularCourseTitle} />);
     const labelElement = screen.getByText('upcoming');
 
     expect(labelElement).toBeVisible();

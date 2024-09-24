@@ -3,7 +3,7 @@ import { AngularTopics } from '@/widgets/angular-topics';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
-import { CourseMain } from '@/widgets/hero-course';
+import { HeroCourse } from '@/widgets/hero-course';
 import { MentorsWanted } from '@/widgets/mentors-wanted';
 import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
@@ -16,7 +16,7 @@ const COURSE_NAME = 'angular';
 export const Angular = () => {
   return (
     <>
-      <CourseMain courseName={COURSE_NAME} />
+      <HeroCourse courseName={COURSE_NAME} />
       <Breadcrumbs />
       <TrainingProgram courseName={COURSE_NAME} />
       <AngularTopics />

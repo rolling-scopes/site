@@ -17,7 +17,7 @@ import styles from './hero-course.module.scss';
 
 const cx = classNames.bind(styles);
 
-export type CourseMainProps = {
+export type HeroCourseProps = {
   courseName: string;
   lang?: 'ru' | 'en';
   type?: 'Pre-school RU';
@@ -28,7 +28,7 @@ const localizedContent = {
   ru: { linkLabel: 'Присоединиться' },
 };
 
-export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) => {
+export const HeroCourse = ({ courseName, lang = 'en', type }: HeroCourseProps) => {
   const courses = useLoaderData() as Course[];
 
   const course = selectCourse(courses, courseName);
