@@ -27,7 +27,7 @@ describe('School Component', () => {
   });
 
   it('renders the correct description for each study option', () => {
-    const options = screen.getAllByTestId('option');
+    const options = screen.getAllByTestId('option-item');
 
     options.forEach((option, index) => {
       const description = within(option).getByTestId('paragraph');

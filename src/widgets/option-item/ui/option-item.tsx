@@ -15,7 +15,7 @@ type OptionItemProps = {
 };
 
 export const OptionItem = ({ title, description, linkLabel, href = '' }: OptionItemProps) => (
-  <article key={title} className={cx('option')} data-testid="option">
+  <article key={title} className={cx('option-item')} data-testid="option-item">
     <Subtitle fontSize="medium" color="gray">
       {title}
     </Subtitle>

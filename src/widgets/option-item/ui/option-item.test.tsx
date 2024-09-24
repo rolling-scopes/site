@@ -11,7 +11,7 @@ describe('OptionItem component', () => {
   describe('without buttonLabel', () => {
     beforeEach(() => {
       renderWithRouter(<OptionItem title="My Title" description="My Description" />);
-      widget = screen.getByTestId('option');
+      widget = screen.getByTestId('option-item');
       title = screen.getByTestId('subtitle');
       description = screen.getByTestId('paragraph');
     });
