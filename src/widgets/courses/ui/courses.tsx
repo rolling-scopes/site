@@ -46,7 +46,7 @@ export const Courses = ({ lang = 'en' }: CoursesProps) => {
     <section className={cx('container')} id="upcoming-courses">
       <div className={cx('content')}>
         <WidgetTitle>{localizedContent[lang].title}</WidgetTitle>
-        <article className={cx('wrapper')} data-testid="courses-fancy">
+        <article className={cx('wrapper')} data-testid="courses">
           {sortedCourses.map((course) => {
             return <CourseCard key={course.id} {...course} />;
           })}
