@@ -4,6 +4,7 @@ import { getActualData } from '@/shared/helpers/getActualData';
 import { isCourse } from '@/shared/helpers/is-course';
 import { useDataByName } from '@/shared/hooks/use-data-by-name';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { DataMap } from 'data';
 
 import './courses.scss';
 
@@ -14,8 +15,11 @@ const localizedContent = {
   ru: { title: 'Все курсы' },
 };
 
+type PathNames = keyof DataMap;
+const PATH: PathNames = 'courses';
+
 export const Courses = ({ lang = 'en' }: CoursesProps) => {
-  const { data: courses, loading, error } = useDataByName('courses');
+  const { data: courses, loading, error } = useDataByName<PathNames>(PATH);
 
   if (loading) {
     return <h2>Loading...</h2>;
