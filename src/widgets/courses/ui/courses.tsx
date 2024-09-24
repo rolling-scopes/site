@@ -1,3 +1,4 @@
+import classNames from 'classnames/bind';
 import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
 import { type Course, CourseCard } from '@/entities/course';
 import { getActualData } from '@/shared/helpers/getActualData';
@@ -6,7 +7,9 @@ import { useDataByName } from '@/shared/hooks/use-data-by-name';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { DataMap } from 'data';
 
-import './courses.scss';
+import styles from './courses.module.scss';
+
+const cx = classNames.bind(styles);
 
 type CoursesProps = { lang?: 'en' | 'ru' };
 
@@ -40,10 +43,10 @@ export const Courses = ({ lang = 'en' }: CoursesProps) => {
   const sortedCourses: Course[] = getActualData(sortParams);
 
   return (
-    <section className="rs-courses container" id="upcoming-courses">
-      <div className="rs-courses content">
+    <section className={cx('container')} id="upcoming-courses">
+      <div className={cx('content')}>
         <WidgetTitle>{localizedContent[lang].title}</WidgetTitle>
-        <article className="rs-courses-wrapper" data-testid="courses-fancy">
+        <article className={cx('wrapper')} data-testid="courses-fancy">
           {sortedCourses.map((course) => {
             return <CourseCard key={course.id} {...course} />;
           })}
