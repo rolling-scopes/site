@@ -43,11 +43,11 @@ export const Courses = ({ lang = 'en' }: CoursesProps) => {
     <section className="rs-courses container" id="upcoming-courses">
       <div className="rs-courses content">
         <WidgetTitle>{localizedContent[lang].title}</WidgetTitle>
-        <div className="rs-courses-wrapper" data-testid="courses-fancy">
+        <article className="rs-courses-wrapper" data-testid="courses-fancy">
           {sortedCourses.map((course) => {
             return <CourseCard key={course.id} {...course} />;
           })}
-        </div>
+        </article>
       </div>
     </section>
   );
