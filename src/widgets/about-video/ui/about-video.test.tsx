@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { AboutVideo } from './about-video';
+import { RS_INTRO_URL } from '@/shared/constants';
 import { videoTitleLocalized } from 'data';
 
 describe('AboutVideo component', () => {
@@ -31,8 +32,8 @@ describe('AboutVideo component', () => {
   it('renders the YouTube embed in production mode', () => {
     vi.stubEnv('DEV', false);
     render(<AboutVideo />);
-    const video = screen.getByTitle('RS School Intro');
+    const video = screen.getByTitle('Introduction to The Rolling Scopes School Online Courses');
 
-    expect(video).toHaveAttribute('src', 'https://www.youtube.com/embed/n4unZLVpnaU');
+    expect(video).toHaveAttribute('src', RS_INTRO_URL);
   });
 });

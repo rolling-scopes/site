@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { RS_INTRO_URL } from '@/shared/constants';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { videoTitleLocalized } from 'data';
 
@@ -26,8 +27,8 @@ export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
                   <iframe
                     className={cx('video-frame')}
                     loading="lazy"
-                    title="RS School Intro"
-                    src="https://www.youtube.com/embed/n4unZLVpnaU"
+                    title="Introduction to The Rolling Scopes School Online Courses"
+                    src={RS_INTRO_URL}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   >
