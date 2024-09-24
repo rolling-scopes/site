@@ -4,13 +4,19 @@ import { OptionItem } from './option-item';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 describe('OptionItem component', () => {
+  const mockProps = {
+    title: 'Title',
+    description: 'Description',
+    linkLabel: 'Test link',
+    href: 'http://link.com',
+  };
   let widget: HTMLElement;
   let title: HTMLElement;
   let description: HTMLElement;
 
-  describe('without buttonLabel', () => {
+  describe('without linkLabel', () => {
     beforeEach(() => {
-      renderWithRouter(<OptionItem title="My Title" description="My Description" />);
+      renderWithRouter(<OptionItem title={mockProps.title} description={mockProps.description} />);
       widget = screen.getByTestId('option-item');
       title = screen.getByTestId('subtitle');
       description = screen.getByTestId('paragraph');
@@ -22,39 +28,38 @@ describe('OptionItem component', () => {
 
     it('displays correct title', () => {
       expect(title).toBeVisible();
-      expect(title).toHaveTextContent('My Title');
+      expect(title).toHaveTextContent(mockProps.title);
     });
 
     it('displays correct description', () => {
       expect(description).toBeVisible();
-      expect(description).not.toBeEmptyDOMElement();
-      expect(description.innerHTML).not.toBeNull();
-      expect(description).toHaveTextContent('My Description');
+      expect(description).toHaveTextContent(mockProps.description);
     });
 
-    it('does not render button when buttonLabel is not provided', () => {
+    it('does not render link when linkLabel is not provided', () => {
       expect(screen.queryByRole('link')).not.toBeInTheDocument();
     });
   });
 
-  describe('with buttonLabel', () => {
+  describe('with linkLabel', () => {
     beforeEach(() => {
       renderWithRouter(
         <OptionItem
-          title="My Title"
-          description="My Description"
-          linkLabel="My Button"
-          href="http://my-link.com"
+          title={mockProps.title}
+          description={mockProps.description}
+          linkLabel={mockProps.linkLabel}
+          href={mockProps.href}
         />,
       );
     });
 
-    it('renders button with correct label and href when buttonLabel is provided', () => {
-      const button = screen.getByRole('link', { name: /My Button/i });
+    it('renders link with correct label and href when linkLabel is provided', () => {
+      const link = screen.getByRole('link');
 
-      expect(button).toBeInTheDocument();
-      expect(button).toHaveAttribute('href', 'http://my-link.com');
-      expect(button).toHaveAttribute('target', '_blank');
+      expect(link).toBeInTheDocument();
+      expect(link).toHaveAttribute('href', mockProps.href);
+      expect(link).toHaveTextContent(mockProps.linkLabel);
+      expect(link).toHaveAttribute('target', '_blank');
     });
   });
 });
