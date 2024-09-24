@@ -16,12 +16,8 @@ type OptionItemProps = {
 
 export const OptionItem = ({ title, description, linkLabel, href = '' }: OptionItemProps) => (
   <article key={title} className={cx('option-item')} data-testid="option-item">
-    <Subtitle fontSize="medium" color="gray">
-      {title}
-    </Subtitle>
-    <Paragraph fontSize="large" className={cx('option-description')}>
-      {description}
-    </Paragraph>
+    <Subtitle>{title}</Subtitle>
+    <Paragraph fontSize="large">{description}</Paragraph>
     {linkLabel && (
       <LinkCustom href={href} variant="primary" external>
         {linkLabel}
