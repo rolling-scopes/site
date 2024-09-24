@@ -26,4 +26,4 @@ export { nodejs } from './nodejs.data';
 export { preSchoolEn, preSchoolRu } from './preSchool.data';
 export { reactEn } from './react-en.data';
 export { reactRu } from './react-ru.data';
-export { video } from './about-video.data';
+export { videoTitleLocalized } from './about-video.data';
