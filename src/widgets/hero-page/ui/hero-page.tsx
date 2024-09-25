@@ -18,9 +18,9 @@ export type HeroPageProps = {
   imageAltText: string;
 };
 
-type SubTitle = Pick<HeroPageProps, 'subTitle'>;
+type SubTitleProps = Pick<HeroPageProps, 'subTitle'>;
 
-const HeroSubTitle = ({ subTitle }: SubTitle) => {
+const HeroSubTitle = ({ subTitle }: SubTitleProps) => {
   if (!subTitle?.length) {
     return null;
   }
@@ -45,9 +45,6 @@ export const HeroPage = ({ pageName }: PageName) => {
     heroImageSrc = '',
     imageAltText = '' }: HeroPageProps = heroPageData[pageName];
 
-  const hasImage = !!heroImageSrc.length;
-  const heroImageAltText = imageAltText.length ? imageAltText : '';
-
   return (
     <section id="hero-page" className={cx('hero-page', 'container')} data-testid="hero-page">
       <div className={cx('hero-page-content', 'content')}>
@@ -56,7 +53,7 @@ export const HeroPage = ({ pageName }: PageName) => {
           <MainTitle className={cx('title-main')}>{mainTitle}</MainTitle>
           <WidgetTitle size="small" className={cx('description-title')}>{widgetTitle}</WidgetTitle>
         </article>
-        {hasImage && <Image className={cx('sloth-mascot')} src={heroImageSrc} alt={heroImageAltText} data-testid="sloth-mascot" />}
+        {heroImageSrc && <Image className={cx('sloth-mascot')} src={heroImageSrc} alt={imageAltText} data-testid="sloth-mascot" />}
       </div>
     </section>
   );

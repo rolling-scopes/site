@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { PAGE_NAMES } from '@/app/const';
+import { PAGE_NAMES } from '@/shared/constants';
 import { useTitle } from '@/shared/hooks/use-title';
 import { About } from '@/widgets/about-school';
 import { Alumni } from '@/widgets/alumni';

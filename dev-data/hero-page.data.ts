@@ -1,3 +1,5 @@
+import coursesPageHeroImg from '@/shared/assets/mentor-with-his-students.webp';
+
 export const heroPageData = {
   school: {
     mainTitle: 'RS School',
@@ -10,7 +12,7 @@ export const heroPageData = {
     mainTitle: 'Our Courses',
     widgetTitle: 'Journey to full stack mastery',
     subTitle: ['Community driven. 100% free of charge'],
-    heroImageSrc: 'src/shared/assets/mentor-with-his-students.webp',
+    heroImageSrc: coursesPageHeroImg,
     imageAltText: 'Sloth mascot mentor with his sloths students',
   },
   community: {
