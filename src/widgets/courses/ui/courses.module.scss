@@ -1,4 +1,4 @@
-.courses {
+.all-courses {
   @include media-laptop {
     padding: 40px;
   }
@@ -31,8 +31,6 @@
 
   width: 100%;
   padding-top: 24px;
-
-  list-style: none;
 
   @include media-laptop-medium {
     grid-template: 1fr / repeat(2, 1fr);

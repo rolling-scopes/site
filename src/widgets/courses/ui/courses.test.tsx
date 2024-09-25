@@ -41,7 +41,7 @@ describe('Courses (other courses) component', () => {
   describe('Check render component', () => {
     beforeEach(() => {
       renderWithRouter(<Courses />);
-      widget = screen.getByTestId('courses');
+      widget = screen.getByTestId('all-courses');
       title = screen.getByTestId('widget-title');
       courseCard = screen.getByTestId('course-card');
     });
