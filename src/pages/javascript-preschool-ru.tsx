@@ -2,8 +2,8 @@ import { About } from '@/widgets/about';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
-import { CourseMain } from '@/widgets/course-main';
 import { Faq } from '@/widgets/faq';
+import { HeroCourse } from '@/widgets/hero-course';
 import { Required } from '@/widgets/required';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
@@ -17,7 +17,7 @@ export const JavaScriptPreSchoolRu = () => {
 
   return (
     <>
-      <CourseMain courseName={COURSE_NAME} type={type} lang={lang} />
+      <HeroCourse courseName={COURSE_NAME} type={type} lang={lang} />
       <Breadcrumbs />
       <About courseName={COURSE_NAME} type={type} />
       <TrainingProgram courseName={COURSE_NAME} lang={lang} />
