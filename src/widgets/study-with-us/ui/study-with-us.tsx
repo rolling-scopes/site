@@ -12,7 +12,7 @@ import styles from './study-with-us.module.scss';
 const cx = classNames.bind(styles);
 
 export const StudyWithUs = () => (
-  <section id="school" className="container">
+  <section id="school" className="container" data-testid="study-with-us">
     <div className={cx('content', 'study')}>
       <div className={cx('study-wrap')}>
         <article className={cx('study-general')}>
@@ -30,7 +30,7 @@ export const StudyWithUs = () => (
         <Image
           className={cx('picture')}
           src={rsSchool}
-          alt="Slot - mascot in glasses and works at a laptop."
+          alt="Slot - mascot in glasses and works at a laptop"
         />
       </div>
       <div className={cx('study-options')}>

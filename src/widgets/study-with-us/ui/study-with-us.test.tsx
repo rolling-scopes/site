@@ -4,41 +4,44 @@ import { StudyWithUs } from './study-with-us';
 import { studyOptions } from '../constants';
 
 describe('School Component', () => {
+  let widget: HTMLElement;
+  let title: HTMLElement;
+  let description: HTMLElement[];
+  let options: HTMLElement[];
+
   beforeEach(() => {
     render(<StudyWithUs />);
+    widget = screen.getByTestId('study-with-us');
+    title = screen.getByTestId('widget-title');
+    description = screen.getAllByTestId('paragraph');
+    options = screen.getAllByTestId('option-item');
   });
 
-  it('renders the component title correctly', () => {
-    const titleElement = screen.getByText('Study with RS School');
-
-    expect(titleElement).toBeVisible();
+  it('renders widget without crashing', () => {
+    expect(widget).toBeVisible();
   });
 
-  it('renders the component subtitle correctly', () => {
-    const subtitleElement = screen.getByText(/RS School is a free/i);
-
-    expect(subtitleElement).toBeVisible();
+  it('renders the component content correctly', () => {
+    expect(title).toBeVisible();
+    description.forEach((item) => {
+      expect(item).toBeVisible();
+    });
   });
 
-  it('renders the study options correctly', () => {
-    const options = screen.getAllByRole('heading', { level: 3 });
-
-    expect(options.length).toBe(3);
-  });
-
-  it('renders the correct description for each study option', () => {
-    const options = screen.getAllByTestId('option-item');
-
+  it('renders the correct options content', () => {
     options.forEach((option, index) => {
+      const subtitle = within(option).getByTestId('subtitle');
       const description = within(option).getByTestId('paragraph');
 
+      expect(subtitle).toBeInTheDocument();
+      expect(subtitle.textContent).toBe(studyOptions[index].title);
       expect(description).toBeInTheDocument();
       expect(description.textContent).toBe(studyOptions[index].description);
     });
   });
 
   it('renders the picture with correct alt text', () => {
-    const image = screen.getByAltText('education');
+    const image = screen.getByAltText('Slot - mascot in glasses and works at a laptop');
 
     expect(image).toBeInTheDocument();
   });
