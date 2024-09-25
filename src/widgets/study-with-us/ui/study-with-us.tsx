@@ -9,9 +9,9 @@ import { WidgetTitle } from '@/shared/ui/widget-title';
 import './study-with-us.scss';
 
 export const StudyWithUs = () => (
-  <div id="school" className="school container">
+  <section id="school" className="school container">
     <div className="school content">
-      <div className="study">
+      <article className="study">
         <div className="left">
           <SectionLabel>education</SectionLabel>
           <WidgetTitle mods="asterisk">Study with RS School</WidgetTitle>
@@ -25,7 +25,7 @@ export const StudyWithUs = () => (
           </Paragraph>
         </div>
         <Image className="right picture" src={image} alt="education" />
-      </div>
+      </article>
       <div className="study-options column-3 ">
         {studyOptions.map((i) => (
           <article key={i.title} className="option-item" data-testid="option-item">
@@ -35,5 +35,5 @@ export const StudyWithUs = () => (
         ))}
       </div>
     </div>
-  </div>
+  </section>
 );
