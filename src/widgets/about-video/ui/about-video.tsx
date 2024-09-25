@@ -1,33 +1,34 @@
+import classNames from 'classnames/bind';
+import { RS_INTRO_URL } from '@/shared/constants';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { videoTitleLocalized } from 'data';
 
-import './about-video.scss';
+import styles from './about-video.module.scss';
+
+const cx = classNames.bind(styles);
 
 type AboutVideoProps = { lang?: 'en' | 'ru' };
-
-const localizedContent = {
-  en: { title: 'RS School video' },
-  ru: { title: 'Видео RS School' },
-};
 
 export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
   // Needed to prevent flakiness in screenshot tests
   const isRunningInDev = import.meta.env.DEV;
 
   return (
-    <div className="about-video container">
-      <div className="about-video content">
-        <WidgetTitle mods="lines">{localizedContent[lang].title}</WidgetTitle>
-        <div className="video-wrapper">
-          <div className="video-container">
+    <section className={cx('container')} data-testid="about-video">
+      <article className={cx('content')}>
+        <WidgetTitle mods="lines">{videoTitleLocalized[lang].title}</WidgetTitle>
+        <div className={cx('video-wrapper')}>
+          <div className={cx('video-container')}>
             {isRunningInDev
               ? (
-                  <div className="video-placeholder">Video Placeholder</div>
+                  <div className={cx('video-placeholder')}>Video Placeholder</div>
                 )
               : (
                   <iframe
+                    className={cx('video-frame')}
                     loading="lazy"
-                    title="RS School Intro"
-                    src="https://www.youtube.com/embed/n4unZLVpnaU"
+                    title="Introduction to The Rolling Scopes School Online Courses"
+                    src={RS_INTRO_URL}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   >
@@ -35,7 +36,7 @@ export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
                 )}
           </div>
         </div>
-      </div>
-    </div>
+      </article>
+    </section>
   );
 };
