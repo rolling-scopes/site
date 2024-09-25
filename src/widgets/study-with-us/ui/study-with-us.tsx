@@ -37,7 +37,7 @@ export const StudyWithUs = () => (
         {studyOptions.map((i) => (
           <article key={i.title} className={cx('option-item')} data-testid="option-item">
             <Subtitle>{i.title}</Subtitle>
-            <Paragraph fontSize="large">{i.description}</Paragraph>
+            <Paragraph>{i.description}</Paragraph>
           </article>
         ))}
       </div>
