@@ -1,3 +1,4 @@
+import classNames from 'classnames/bind';
 import { studyOptions } from '../constants';
 import rsSchool from '@/shared/assets/rs-school.webp';
 import { Image } from '@/shared/ui/image';
@@ -6,13 +7,15 @@ import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
-import './study-with-us.scss';
+import styles from './study-with-us.module.scss';
+
+const cx = classNames.bind(styles);
 
 export const StudyWithUs = () => (
-  <section id="school" className="school container">
-    <div className="school content">
-      <article className="study">
-        <div className="left">
+  <section id="school" className="container">
+    <div className={cx('content', 'study')}>
+      <div className={cx('study-wrap')}>
+        <article className={cx('study-general')}>
           <SectionLabel>education</SectionLabel>
           <WidgetTitle mods="asterisk">Study with RS School</WidgetTitle>
           <Paragraph fontSize="large">
@@ -23,16 +26,16 @@ export const StudyWithUs = () => (
             Currently 500+ developers from different countries and companies involve in the
             education process as mentors.
           </Paragraph>
-        </div>
+        </article>
         <Image
-          className="right picture"
+          className={cx('picture')}
           src={rsSchool}
           alt="Slot - mascot in glasses and works at a laptop."
         />
-      </article>
-      <div className="study-options column-3 ">
+      </div>
+      <div className={cx('study-options')}>
         {studyOptions.map((i) => (
-          <article key={i.title} className="option-item" data-testid="option-item">
+          <article key={i.title} className={cx('option-item')} data-testid="option-item">
             <Subtitle>{i.title}</Subtitle>
             <Paragraph fontSize="large">{i.description}</Paragraph>
           </article>
