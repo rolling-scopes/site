@@ -50,12 +50,9 @@ describe('Courses (other courses) component', () => {
       expect(widget).toBeVisible();
     });
 
-    it('displays correct title', () => {
+    it('displays correct content', () => {
       expect(title).toBeVisible();
       expect(title).toHaveTextContent(widgetTitle);
-    });
-
-    it('displays course card', () => {
       expect(courseCard).toBeVisible();
       expect(courseCard).toHaveTextContent(mockCourses[0].title);
     });
