@@ -36,8 +36,8 @@ export const Courses = () => {
   const sortedCourses: Course[] = getActualData(sortParams);
 
   return (
-    <section className={cx('courses')} id="upcoming-courses" data-testid="courses">
-      <div className={cx('courses-content')}>
+    <section className={cx('container', 'courses')} id="upcoming-courses" data-testid="courses">
+      <div className={cx('content', 'courses-content')}>
         <WidgetTitle>All courses</WidgetTitle>
         <ul className={cx('course-list')}>
           {sortedCourses.map((course) => {

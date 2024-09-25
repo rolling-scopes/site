@@ -1,14 +1,5 @@
 .courses {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 100%;
-
-  text-align: left;
-
   @include media-laptop {
-    margin: 0 auto;
     padding: 40px;
   }
 
@@ -18,7 +9,7 @@
 }
 
 .courses-content {
-  padding: 40px 120px 40px;
+  padding-top: 40px;
 
   @include media-laptop {
     flex-wrap: wrap;
