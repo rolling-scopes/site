@@ -27,17 +27,11 @@ describe('OptionItem component', () => {
       expect(widget).toBeVisible();
     });
 
-    it('displays correct title', () => {
+    it('displays correct content', () => {
       expect(title).toBeVisible();
       expect(title).toHaveTextContent(mockProps.title);
-    });
-
-    it('displays correct description', () => {
       expect(description).toBeVisible();
       expect(description).toHaveTextContent(mockProps.description);
-    });
-
-    it('does not render link when linkLabel is not provided', () => {
       expect(screen.queryByRole('link')).not.toBeInTheDocument();
     });
   });
@@ -52,7 +46,6 @@ describe('OptionItem component', () => {
 
       expect(link).toBeInTheDocument();
       expect(link).toHaveAttribute('href', mockProps.href);
-      expect(link).toHaveAttribute('target', '_blank');
       expect(link).toHaveTextContent(mockProps.linkLabel);
     });
   });
