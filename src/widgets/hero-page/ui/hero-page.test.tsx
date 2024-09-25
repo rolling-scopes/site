@@ -37,7 +37,6 @@ describe('HeroPage component', () => {
       it('renders component content correctly', () => {
         expect(mainTitle).toBeVisible();
         expect(widgetTitle).toBeVisible();
-        // expect(heroPage).not.toContainHTML('img');
 
         expect(mainTitle.innerHTML).toBe(pageData.mainTitle);
         expect(widgetTitle.innerHTML).toBe(pageData.widgetTitle);
