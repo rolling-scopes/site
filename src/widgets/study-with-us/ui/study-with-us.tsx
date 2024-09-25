@@ -1,5 +1,5 @@
 import { studyOptions } from '../constants';
-import image from '@/shared/assets/rs-school.webp';
+import rsSchool from '@/shared/assets/rs-school.webp';
 import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
@@ -24,7 +24,11 @@ export const StudyWithUs = () => (
             education process as mentors.
           </Paragraph>
         </div>
-        <Image className="right picture" src={image} alt="education" />
+        <Image
+          className="right picture"
+          src={rsSchool}
+          alt="Slot - mascot in glasses and works at a laptop."
+        />
       </article>
       <div className="study-options column-3 ">
         {studyOptions.map((i) => (
