@@ -11,17 +11,10 @@ import styles from './courses.module.scss';
 
 const cx = classNames.bind(styles);
 
-type CoursesProps = { lang?: 'en' | 'ru' };
-
-const localizedContent = {
-  en: { title: 'All courses' },
-  ru: { title: 'Все курсы' },
-};
-
 type PathNames = keyof DataMap;
 const PATH: PathNames = 'courses';
 
-export const Courses = ({ lang = 'en' }: CoursesProps) => {
+export const Courses = () => {
   const { data: courses, loading, error } = useDataByName<PathNames>(PATH);
 
   if (loading) {
@@ -45,7 +38,7 @@ export const Courses = ({ lang = 'en' }: CoursesProps) => {
   return (
     <section className={cx('courses')} id="upcoming-courses" data-testid="courses">
       <div className={cx('courses-content')}>
-        <WidgetTitle>{localizedContent[lang].title}</WidgetTitle>
+        <WidgetTitle>All courses</WidgetTitle>
         <ul className={cx('course-list')}>
           {sortedCourses.map((course) => {
             return (
