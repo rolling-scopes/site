@@ -53,6 +53,11 @@
 
   @include media-tablet-large {
     flex-direction: column;
+    gap: 32px;
+  }
+
+  @include media-tablet {
+    gap: 28px;
   }
 }
 
@@ -64,11 +69,9 @@
 
   @include media-laptop {
     max-width: 600px;
-    padding-bottom: 8px;
   }
 
   @include media-tablet {
     max-width: 100%;
-    padding-bottom: 0;
   }
 }
