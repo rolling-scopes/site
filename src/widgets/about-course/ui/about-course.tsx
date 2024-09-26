@@ -1,6 +1,6 @@
 /* eslint-disable @stylistic/jsx-one-expression-per-line */
 import classNames from 'classnames/bind';
-import { InfoGrid } from './about-course-grid/about-course-grid';
+import { AboutCourseGrid } from './about-course-grid/about-course-grid';
 import type { Course } from '@/entities/course';
 import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -64,13 +64,13 @@ export const AboutCourse = ({ courseName, type = 'en' }: AboutProps) => {
   }
 
   return (
-    <section className={cx('course-about container')}>
-      <div className={cx('course-about content')}>
+    <section className={cx('container')}>
+      <div className={cx('course-about', 'content')}>
         <WidgetTitle>{localizedContent[type].title}</WidgetTitle>
         {localizedContent[type].paragraph && (
           <Paragraph>{localizedContent[type].paragraph}</Paragraph>
         )}
-        <InfoGrid items={infoList} hasTitle />
+        <AboutCourseGrid items={infoList} />
         <LinkCustom href={course.enroll} variant="primary" external>
           {localizedContent[type].linkLabel}
         </LinkCustom>
