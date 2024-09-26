@@ -1,4 +1,4 @@
-.info-wrapper {
+.alumni {
   p {
     width: 640px;
     margin-top: 0;
@@ -9,7 +9,7 @@
   }
 }
 
-.alumni {
+.alumni-list {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   row-gap: 48px;
