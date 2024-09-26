@@ -36,7 +36,7 @@ export const Courses = () => {
     <section className={cx('container')} data-testid="all-courses">
       <div className={cx('content', 'courses-content')}>
         <WidgetTitle>All courses</WidgetTitle>
-        <div className={cx('course-list')}>
+        <div className={cx('courses-list')}>
           {sortedCourses.map((course) => {
             return <CourseCard key={course.id} {...course} />;
           })}

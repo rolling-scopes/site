@@ -51,12 +51,13 @@ describe('Courses (other courses) component', () => {
     renderWithRouter(<Courses />);
     const widget = screen.getByTestId('all-courses');
     const title = screen.getByTestId('widget-title');
-    const courseCard = screen.getAllByTestId('course-card');
+    const courseCards = screen.getAllByTestId('course-card');
 
     expect(widget).toBeVisible();
     expect(title).toBeVisible();
     expect(title).toHaveTextContent(widgetTitle);
-    courseCard.forEach((card, index) => {
+    expect(courseCards.length).toBe(mockCourses.length);
+    courseCards.forEach((card, index) => {
       expect(card).toBeVisible();
       expect(card).toHaveTextContent(mockCourses[index].title);
     });
