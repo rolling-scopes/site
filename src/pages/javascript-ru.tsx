@@ -1,4 +1,4 @@
-import { About } from '@/widgets/about';
+import { AboutCourse } from '@/widgets/about-course';
 import { AboutVideo } from '@/widgets/about-video';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
@@ -20,7 +20,7 @@ export const JavaScriptRu = () => {
       <CourseMain courseName={COURSE_NAME} lang={lang} />
       <Breadcrumbs />
       <TrainingProgram courseName={COURSE_NAME} lang={lang} />
-      <About courseName={COURSE_NAME} type={lang} />
+      <AboutCourse courseName={COURSE_NAME} type={lang} />
       <Certification courseName={COURSE_NAME} />
       <Communication courseName={COURSE_NAME} lang={lang} />
       <AboutVideo lang={lang} />

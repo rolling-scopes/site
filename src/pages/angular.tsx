@@ -1,4 +1,4 @@
-import { About } from '@/widgets/about';
+import { AboutCourse } from '@/widgets/about-course';
 import { AngularTopics } from '@/widgets/angular-topics';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
@@ -20,7 +20,7 @@ export const Angular = () => {
       <Breadcrumbs />
       <TrainingProgram courseName={COURSE_NAME} />
       <AngularTopics />
-      <About courseName={COURSE_NAME} />
+      <AboutCourse courseName={COURSE_NAME} />
       <Certification courseName={COURSE_NAME} />
       <Communication courseName={COURSE_NAME} />
       <StudyPath path={COURSE_NAME} />

@@ -1,7 +1,10 @@
 import { ReactNode } from 'react';
+import classNames from 'classnames/bind';
 import { Image } from '@/shared/ui/image';
 
-import './info-grid.scss';
+import styles from './about-course-grid.module.scss';
+
+export const cx = classNames.bind(styles);
 
 interface InfoGridProps {
   items: {

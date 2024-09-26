@@ -1,17 +1,17 @@
 import { screen } from '@testing-library/react';
 import { type Mock, beforeEach } from 'vitest';
-import { About } from './ui/about';
+import { AboutCourse } from './about-course';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';
 
 vi.mock('@/shared/hooks/use-course-by-title');
 
-describe('About', () => {
+describe('AboutCourse', () => {
   describe('with "react" props', () => {
     beforeEach(() => {
       (useCourseByTitle as Mock).mockReturnValue({ course: { enroll: 'http://course-url.com' } });
-      renderWithRouter(<About courseName="react" />);
+      renderWithRouter(<AboutCourse courseName="react" />);
     });
 
     it('renders "Become a student" button with correct href when courseName is "react"', async () => {
@@ -33,7 +33,7 @@ describe('About', () => {
   describe('with "angular" props', () => {
     beforeEach(() => {
       (useCourseByTitle as Mock).mockReturnValue({ course: { enroll: 'http://course-url.com' } });
-      renderWithRouter(<About courseName="angular" />);
+      renderWithRouter(<AboutCourse courseName="angular" />);
     });
 
     it('renders "Become a student" button with correct href', async () => {

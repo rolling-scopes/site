@@ -1,5 +1,6 @@
 /* eslint-disable @stylistic/jsx-one-expression-per-line */
-import { InfoGrid } from './info-grid/info-grid';
+import classNames from 'classnames/bind';
+import { InfoGrid } from './about-course-grid/about-course-grid';
 import type { Course } from '@/entities/course';
 import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -7,7 +8,9 @@ import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { contentMapAbout } from 'data';
 
-import './about.scss';
+import styles from './about-course.module.scss';
+
+export const cx = classNames.bind(styles);
 
 export type CourseNames =
   | 'js / front-end en'
@@ -45,7 +48,7 @@ const localizedContent = {
   },
 };
 
-export const About = ({ courseName, type = 'en' }: AboutProps) => {
+export const AboutCourse = ({ courseName, type = 'en' }: AboutProps) => {
   const { course: data, error, loading, hasError } = useCourseByTitle(courseName);
 
   const course = data as Course;
