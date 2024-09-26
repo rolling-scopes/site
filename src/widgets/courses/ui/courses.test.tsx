@@ -21,6 +21,19 @@ const mockCourses = [
       accentColor: '#7356BF',
     },
   },
+  {
+    id: '2',
+    title: 'React course 2',
+    iconSrc: MOCKED_IMAGE_PATH,
+    startDate: '23 Oct, 2023',
+    language: ['ru', 'en'],
+    mode: 'online',
+    detailsUrl: 'https://rs.school/react/',
+    backgroundStyle: {
+      backgroundColor: '#EEF3FE',
+      accentColor: '#7356BF',
+    },
+  },
 ];
 
 vi.mock('@/shared/hooks/use-data-by-name', () => {
@@ -38,13 +51,15 @@ describe('Courses (other courses) component', () => {
     renderWithRouter(<Courses />);
     const widget = screen.getByTestId('all-courses');
     const title = screen.getByTestId('widget-title');
-    const courseCard = screen.getByTestId('course-card');
+    const courseCard = screen.getAllByTestId('course-card');
 
     expect(widget).toBeVisible();
     expect(title).toBeVisible();
     expect(title).toHaveTextContent(widgetTitle);
-    expect(courseCard).toBeVisible();
-    expect(courseCard).toHaveTextContent(mockCourses[0].title);
+    courseCard.forEach((card, index) => {
+      expect(card).toBeVisible();
+      expect(card).toHaveTextContent(mockCourses[index].title);
+    });
   });
 
   it('displays a loading state for other courses', () => {
