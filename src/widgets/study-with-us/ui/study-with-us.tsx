@@ -13,7 +13,7 @@ const cx = classNames.bind(styles);
 
 export const StudyWithUs = () => (
   <section id="school" className="container" data-testid="study-with-us">
-    <div className={cx('content', 'study')}>
+    <div className={cx('content', 'stud-with-us')}>
       <div className={cx('study-wrap')}>
         <article className={cx('study-general')}>
           <SectionLabel>education</SectionLabel>
@@ -34,10 +34,10 @@ export const StudyWithUs = () => (
         />
       </div>
       <div className={cx('study-options')}>
-        {studyOptions.map((i) => (
-          <article key={i.title} className={cx('option-item')} data-testid="option-item">
-            <Subtitle>{i.title}</Subtitle>
-            <Paragraph>{i.description}</Paragraph>
+        {studyOptions.map((studyOption) => (
+          <article key={studyOption.title} className={cx('option-item')} data-testid="option-item">
+            <Subtitle>{studyOption.title}</Subtitle>
+            <Paragraph>{studyOption.description}</Paragraph>
           </article>
         ))}
       </div>
