@@ -38,12 +38,12 @@ describe('HeroPage component', () => {
         expect(mainTitle).toBeVisible();
         expect(widgetTitle).toBeVisible();
 
-        expect(mainTitle.innerHTML).toBe(pageData.mainTitle);
-        expect(widgetTitle.innerHTML).toBe(pageData.widgetTitle);
+        expect(mainTitle.textContent).toBe(pageData.mainTitle);
+        expect(widgetTitle.textContent).toBe(pageData.widgetTitle);
 
         subTitles.forEach((subTitle, index) => {
           expect(subTitle).toBeVisible();
-          expect(subTitle.innerHTML).toBe(pageData.subTitle[index]);
+          expect(subTitle.textContent).toBe(pageData.subTitle[index]);
         });
 
         if (pageName === PAGE_NAMES.COURSES) {
