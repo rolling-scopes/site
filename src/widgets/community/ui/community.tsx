@@ -1,3 +1,4 @@
+import classNames from 'classnames/bind';
 import image from '@/shared/assets/welcome.webp';
 import {
   FacebookIcon,
@@ -11,7 +12,9 @@ import { Paragraph } from '@/shared/ui/paragraph';
 import { SocialMedia, SocialMediaProps } from '@/shared/ui/social-media';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
-import './community.scss';
+import styles from './community.module.scss';
+
+const cx = classNames.bind(styles);
 
 const communityGroups: SocialMediaProps[] = [
   {
@@ -62,9 +65,9 @@ const communityGroups: SocialMediaProps[] = [
 ];
 
 export const Community = () => (
-  <div id="community" className="community container">
-    <div className="community content column-2">
-      <div className="info">
+  <div id="community" className={cx('community', 'container')}>
+    <div className={cx('community', 'content', 'column-2')}>
+      <div className={cx('info')}>
         <WidgetTitle size="large" mods="lines">
           Join RS Community
         </WidgetTitle>
@@ -73,13 +76,13 @@ export const Community = () => (
           conferences or taking part in RS clubs welcome to the Rolling Scopes community! Join us in
           social networks to be in touch!
         </Paragraph>
-        <div className="social-media-container">
+        <div className={cx('social-media-container')}>
           {communityGroups.map(({ title, href, icon }) => (
             <SocialMedia key={title} title={title} href={href} icon={icon} />
           ))}
         </div>
       </div>
-      <Image className="right picture" src={image} alt="community-welcome" />
+      <Image className={cx('right', 'picture')} src={image} alt="community-welcome" />
     </div>
   </div>
 );
