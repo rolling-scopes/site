@@ -70,10 +70,9 @@ const javaScriptEN: () => AboutInfo[] = () => {
       info: (
         <p>
           The Mentors and trainers of our school are front-end and javascript developers from
-          different companies/countries. How to
+          different companies/countries.
           {' '}
-          <LinkCustom href="/courses#mentors-wanted">become a mentor</LinkCustom>
-          ?
+          <LinkCustom href="/#mentors-wanted">How to become a mentor?</LinkCustom>
         </p>
       ),
       icon: planetIcon,
@@ -160,7 +159,9 @@ const reactEn: AboutInfo[] = javaScriptEN().map((item) => {
           <li>
             School
             {' '}
-            <LinkCustom href="https://docs.rs.school" external>documentation</LinkCustom>
+            <LinkCustom href="https://docs.rs.school" external>
+              documentation
+            </LinkCustom>
           </li>
           <li>All materials are publicly available on the YouTube channel and GitHub</li>
         </ul>
@@ -175,7 +176,9 @@ const reactEn: AboutInfo[] = javaScriptEN().map((item) => {
         <p>
           Throughout the course, we mostly use
           {' '}
-          <LinkCustom href={DISCORD_LINKS['react']} external>Discord chat</LinkCustom>
+          <LinkCustom href={DISCORD_LINKS['react']} external>
+            Discord chat
+          </LinkCustom>
           .
         </p>
       ),
@@ -208,7 +211,9 @@ const reactRuAbout: AboutInfo[] = [
       <p>
         Throughout the course, we mostly use
         {' '}
-        <LinkCustom href="https://docs.rs.school" external>Документация школы</LinkCustom>
+        <LinkCustom href="https://docs.rs.school" external>
+          Документация школы
+        </LinkCustom>
         . Все материалы находятся в открытом доступе на YouTube и GitHub.Также предлагаем
         ознакомиться с конспектом первого этапа обучения.
       </p>
