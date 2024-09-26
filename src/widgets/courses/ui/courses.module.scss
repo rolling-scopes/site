@@ -1,42 +1,24 @@
-.all-courses {
-  @include media-laptop {
-    padding: 40px;
-  }
-
-  @include media-tablet {
-    padding: 0;
-  }
-}
-
 .courses-content {
-  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 
   @include media-laptop {
-    flex-wrap: wrap;
-    gap: 24px;
     width: 100%;
-    padding: 8px 6px;
-  }
-
-  @include media-tablet {
-    padding: 0 16px;
   }
 }
 
 .course-list {
   display: grid;
-  grid-auto-flow: row;
   grid-template: 1fr / repeat(3, 1fr);
   gap: 22px;
-
   width: 100%;
-  padding-top: 24px;
 
   @include media-laptop-medium {
     grid-template: 1fr / repeat(2, 1fr);
   }
 
   @include media-tablet {
-    grid-template: 1fr / repeat(1, 1fr);
+    grid-template: 1fr / 1fr;
   }
 }
