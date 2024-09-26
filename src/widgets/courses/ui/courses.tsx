@@ -1,21 +1,18 @@
 import classNames from 'classnames/bind';
+import { path } from '../constants';
 import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
 import { type Course, CourseCard } from '@/entities/course';
 import { getActualData } from '@/shared/helpers/getActualData';
 import { isCourse } from '@/shared/helpers/is-course';
 import { useDataByName } from '@/shared/hooks/use-data-by-name';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { DataMap } from 'data';
 
 import styles from './courses.module.scss';
 
 const cx = classNames.bind(styles);
 
-type PathNames = keyof DataMap;
-const PATH: PathNames = 'courses';
-
 export const Courses = () => {
-  const { data: courses, loading, error } = useDataByName<PathNames>(PATH);
+  const { data: courses, loading, error } = useDataByName(path);
 
   if (loading) {
     return <h2>Loading...</h2>;
