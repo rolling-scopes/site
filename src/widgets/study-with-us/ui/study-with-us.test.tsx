@@ -2,12 +2,14 @@ import { render, screen, within } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { StudyWithUs } from './study-with-us';
 import { studyOptions } from '../constants';
+import rsSchool from '@/shared/assets/rs-school.webp';
 
 describe('School Component', () => {
   let widget: HTMLElement;
   let title: HTMLElement;
   let description: HTMLElement[];
   let options: HTMLElement[];
+  let image: HTMLElement;
 
   beforeEach(() => {
     render(<StudyWithUs />);
@@ -15,17 +17,18 @@ describe('School Component', () => {
     title = screen.getByTestId('widget-title');
     description = screen.getAllByTestId('paragraph');
     options = screen.getAllByTestId('option-item');
-  });
-
-  it('renders widget without crashing', () => {
-    expect(widget).toBeVisible();
+    image = screen.getByTestId('study-image');
   });
 
   it('renders the component content correctly', () => {
+    expect(widget).toBeVisible();
     expect(title).toBeVisible();
     description.forEach((item) => {
       expect(item).toBeVisible();
     });
+    expect(image).toBeInTheDocument();
+    expect(image).toHaveAttribute('alt', 'Sloth - mascot in glasses and works at a laptop');
+    expect(image).toHaveAttribute('src', rsSchool);
   });
 
   it('renders the correct options content', () => {
@@ -38,11 +41,5 @@ describe('School Component', () => {
       expect(description).toBeInTheDocument();
       expect(description.textContent).toBe(studyOptions[index].description);
     });
-  });
-
-  it('renders the picture with correct alt text', () => {
-    const image = screen.getByAltText('Slot - mascot in glasses and works at a laptop');
-
-    expect(image).toBeInTheDocument();
   });
 });

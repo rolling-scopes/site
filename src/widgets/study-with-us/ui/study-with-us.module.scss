@@ -1,4 +1,4 @@
-.stud-with-us {
+.study-with-us {
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -21,16 +21,15 @@
   }
 }
 
-.study-general {
+.study-description {
   width: 640px;
-  text-align: left;
 
   @include media-tablet-large {
     width: 100%;
   }
 }
 
-.picture {
+.sloth-mascot {
   width: 347px;
   height: 327px;
 
@@ -50,6 +49,7 @@
   flex-direction: row;
   gap: 24px;
   align-items: flex-start;
+  justify-content: space-between;
 
   @include media-tablet-large {
     flex-direction: column;

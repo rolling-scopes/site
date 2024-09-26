@@ -13,9 +13,9 @@ const cx = classNames.bind(styles);
 
 export const StudyWithUs = () => (
   <section className="container" data-testid="study-with-us">
-    <div className={cx('content', 'stud-with-us')}>
+    <div className={cx('content', 'study-with-us')}>
       <div className={cx('study-wrap')}>
-        <article className={cx('study-general')}>
+        <article className={cx('study-description')}>
           <SectionLabel>education</SectionLabel>
           <WidgetTitle mods="asterisk">Study with RS School</WidgetTitle>
           <Paragraph fontSize="large">
@@ -28,9 +28,10 @@ export const StudyWithUs = () => (
           </Paragraph>
         </article>
         <Image
-          className={cx('picture')}
+          data-testid="study-image"
+          className={cx('sloth-mascot')}
           src={rsSchool}
-          alt="Slot - mascot in glasses and works at a laptop"
+          alt="Sloth - mascot in glasses and works at a laptop"
         />
       </div>
       <div className={cx('study-options')}>
