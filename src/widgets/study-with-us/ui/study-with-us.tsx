@@ -12,7 +12,7 @@ import styles from './study-with-us.module.scss';
 const cx = classNames.bind(styles);
 
 export const StudyWithUs = () => (
-  <section id="school" className="container" data-testid="study-with-us">
+  <section className="container" data-testid="study-with-us">
     <div className={cx('content', 'stud-with-us')}>
       <div className={cx('study-wrap')}>
         <article className={cx('study-general')}>
