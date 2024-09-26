@@ -1,16 +1,20 @@
-import image from '@/shared/assets/about.webp';
+import classNames from 'classnames/bind';
+import { ANCHORS } from '@/app/const';
+import imageAbout from '@/shared/assets/about.webp';
 import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
-import './about.scss';
+import styles from './about-community.module.scss';
 
-export const About = () => {
+export const cx = classNames.bind(styles);
+
+export const AboutCommunity = () => {
   return (
-    <div className="about container" id="about">
-      <div className="about content column-2">
-        <div className="left">
+    <section className={cx('about-community', 'container')} id={ANCHORS.ABOUT_COMMUNITY} data-testid="about-community">
+      <div className={cx('about-community', 'content', 'column-2')}>
+        <article className={cx('about-info')}>
           <SectionLabel>community</SectionLabel>
           <WidgetTitle mods="asterisk">Who we are</WidgetTitle>
           <Paragraph fontSize="large">
@@ -28,9 +32,9 @@ export const About = () => {
             education program, RS School, along with fascinating events and its groovy mascot,
             Sloth.
           </Paragraph>
-        </div>
-        <Image className="right picture" src={image} alt="Logo" />
+        </article>
+        <Image className="sloth-mascot" src={imageAbout} alt="Sloth mascot dressed in a red superhero cape" />
       </div>
-    </div>
+    </section>
   );
 };

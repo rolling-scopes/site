@@ -1,0 +1,36 @@
+.about-community {
+  gap: 176px;
+
+  .about-info {
+    min-width: 640px;
+
+    @include media-laptop {
+      gap: 20px;
+      min-width: 400px;
+    }
+
+    @include media-tablet {
+      min-width: auto;
+    }
+  }
+
+  .sloth-mascot {
+    width: 370px;
+    height: 340px;
+
+    @include media-tablet {
+      width: 296px;
+      height: 272px;
+    }
+  }
+
+  @include media-laptop {
+    flex-direction: row;
+    gap: 50px;
+  }
+
+  @include media-tablet-large {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
