@@ -34,45 +34,32 @@ vi.mock('@/shared/hooks/use-data-by-name', () => {
 });
 
 describe('Courses (other courses) component', () => {
-  let widget: HTMLElement;
-  let title: HTMLElement;
-  let courseCard: HTMLElement;
+  it('renders widget without crashing and display correct content', () => {
+    renderWithRouter(<Courses />);
+    const widget = screen.getByTestId('all-courses');
+    const title = screen.getByTestId('widget-title');
+    const courseCard = screen.getByTestId('course-card');
 
-  describe('Check render component', () => {
-    beforeEach(() => {
-      renderWithRouter(<Courses />);
-      widget = screen.getByTestId('all-courses');
-      title = screen.getByTestId('widget-title');
-      courseCard = screen.getByTestId('course-card');
-    });
-
-    it('renders widget without crashing', () => {
-      expect(widget).toBeVisible();
-    });
-
-    it('displays correct content', () => {
-      expect(title).toBeVisible();
-      expect(title).toHaveTextContent(widgetTitle);
-      expect(courseCard).toBeVisible();
-      expect(courseCard).toHaveTextContent(mockCourses[0].title);
-    });
+    expect(widget).toBeVisible();
+    expect(title).toBeVisible();
+    expect(title).toHaveTextContent(widgetTitle);
+    expect(courseCard).toBeVisible();
+    expect(courseCard).toHaveTextContent(mockCourses[0].title);
   });
 
-  describe('Check loading and error state', () => {
-    it('displays a loading state for other courses', () => {
-      (useDataByName as Mock).mockImplementation(() => ({ loading: true }));
-      renderWithRouter(<Courses />);
+  it('displays a loading state for other courses', () => {
+    (useDataByName as Mock).mockImplementation(() => ({ loading: true }));
+    renderWithRouter(<Courses />);
 
-      expect(screen.getByText('Loading...')).toBeVisible();
-    });
+    expect(screen.getByText('Loading...')).toBeVisible();
+  });
 
-    it('displays a error state for other courses', () => {
-      const errorMessage = 'Something went wrong';
+  it('displays a error state for other courses', () => {
+    const errorMessage = 'Something went wrong';
 
-      (useDataByName as Mock).mockImplementation(() => ({ error: new Error(errorMessage) }));
-      renderWithRouter(<Courses />);
+    (useDataByName as Mock).mockImplementation(() => ({ error: new Error(errorMessage) }));
+    renderWithRouter(<Courses />);
 
-      expect(screen.getByText(errorMessage)).toBeVisible();
-    });
+    expect(screen.getByText(errorMessage)).toBeVisible();
   });
 });
