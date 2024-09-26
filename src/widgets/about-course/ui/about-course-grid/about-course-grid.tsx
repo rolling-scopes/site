@@ -18,10 +18,10 @@ interface InfoGridProps {
 // removed hasTitle props temp
 export const InfoGrid = ({ items }: InfoGridProps) => {
   return (
-    <div className="about-grid">
+    <div className={cx('about-grid')}>
       {items.map(({ id, title, info, icon }) => (
-        <div key={id} className="item" data-testid="info-grid-item">
-          <div className="item-title">
+        <div key={id} className={cx('item')} data-testid="info-grid-item">
+          <div className={cx('item-title')}>
             <Image src={icon} alt={title} />
             <h2>{title}</h2>
           </div>

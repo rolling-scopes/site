@@ -64,8 +64,8 @@ export const AboutCourse = ({ courseName, type = 'en' }: AboutProps) => {
   }
 
   return (
-    <section className="course-about container">
-      <div className="course-about content">
+    <section className={cx('course-about container')}>
+      <div className={cx('course-about content')}>
         <WidgetTitle>{localizedContent[type].title}</WidgetTitle>
         {localizedContent[type].paragraph && (
           <Paragraph>{localizedContent[type].paragraph}</Paragraph>
