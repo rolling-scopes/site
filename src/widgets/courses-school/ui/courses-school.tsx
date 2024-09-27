@@ -1,5 +1,4 @@
 import classNames from 'classnames/bind';
-import { MAX_COURSE_COUNT } from '../model/constants';
 import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/app/const';
 import type { Course } from '@/entities/course';
 import { CourseItem } from '@/entities/course/ui/course-item/course-item.tsx';
@@ -9,7 +8,7 @@ import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { tabletScreenBreakPoint } from '@/widgets/courses-school/constants.ts';
+import { maxCourseCount, tabletScreenBreakPoint } from '@/widgets/courses-school/constants.ts';
 import { courses } from 'data';
 
 import styles from './courses-school.module.scss';
@@ -31,7 +30,7 @@ export const CoursesSchool = () => {
   }
 
   const coursesContent = coursesData
-    .slice(0, Math.min(coursesData.length, MAX_COURSE_COUNT))
+    .slice(0, Math.min(coursesData.length, maxCourseCount))
     .map(({ title, language, startDate, detailsUrl, iconSrc }) => {
       return (
         <CourseItem
