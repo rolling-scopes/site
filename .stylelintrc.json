@@ -1,24 +1,29 @@
 {
-  "extends": ["stylelint-config-standard-scss", "stylelint-config-clean-order", "stylelint-prettier/recommended"],
-  "plugins": [
-    "stylelint-order"
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-clean-order",
+    "stylelint-prettier/recommended"
   ],
+  "plugins": ["stylelint-order"],
 
   "rules": {
     "shorthand-property-no-redundant-values": null,
-
     "scss/load-no-partial-leading-underscore": null,
     "scss/double-slash-comment-empty-line-before": null,
-
     "scss/dollar-variable-empty-line-before": [
       "always",
       {
-      "except": ["after-dollar-variable", "first-nested"],
-      "ignore": ["after-comment", "inside-single-line-block"],
-      "disableFix": true
+        "except": ["after-dollar-variable", "first-nested"],
+        "ignore": ["after-comment", "inside-single-line-block"],
+        "disableFix": true
       }
     ],
-
+    "prettier/prettier": [
+      true,
+      {
+        "semi": true
+      }
+    ],
     "order/order": [
       "custom-properties",
       "dollar-variables",

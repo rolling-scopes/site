@@ -1,9 +1,22 @@
+import { vitePlugin as remix } from '@remix-run/dev';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig } from 'vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    remix({
+      future: {
+        v3_fetcherPersist: true,
+        v3_relativeSplatPath: true,
+        v3_throwAbortReason: true,
+      },
+    }),
+
+    tsconfigPaths(),
+  ],
   build: {
     outDir: 'build',
     assetsInlineLimit: 0,
@@ -14,22 +27,25 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
-      'data': path.resolve(__dirname, 'dev-data'),
+      '@': path.resolve(__dirname, 'app'),
+      data: path.resolve(__dirname, 'dev-data'),
     },
   },
   css: {
     preprocessorOptions: {
       scss: {
         additionalData: `
-          @import "./src/app/styles/_constants.scss";
-          @import "./src/app/styles/_mixins.scss";
-          @import "./src/app/styles/_placeholders.scss";
+          @import "./app/app/styles/_constants.scss";
+          @import "./app/app/styles/_mixins.scss";
+          @import "./app/app/styles/_placeholders.scss";
         `,
       },
     },
     modules: {
       localsConvention: 'camelCase',
     },
+  },
+  optimizeDeps: {
+    exclude: ['app/shared/__tests__/setup-tests.ts'],
   },
 });

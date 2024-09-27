@@ -39,5 +39,3 @@ export const CourseCard = ({
     </section>
   );
 };
-
-export default CourseCard;

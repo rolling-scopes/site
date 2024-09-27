@@ -1,12 +1,9 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "ES2022",
     "useDefineForClassFields": true,
-    "lib": [
-      "ES2020",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "esModuleInterop": true,
     "module": "ESNext",
     "skipLibCheck": true,
     /* Bundler mode */
@@ -24,26 +21,25 @@
     "types": [
       "node",
       "@testing-library/jest-dom",
-      "vitest/globals"
+      "vitest/globals",
+      "@remix-run/node",
+      "vite/client"
     ],
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "*"
-      ],
-      "data": [ "../dev-data" ]
+      "@/*": ["app/*"],
+      "data": ["dev-data/index.ts"]
     }
   },
   "include": [
-    "src",
-    "src/**/*.ts",
-    "src/**/*.tsx",
+    "app",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "dev-data",
     "dev-data/**/*.ts",
     "dev-data/**/*.tsx"
   ],
-  "exclude": [
-    "node_modules"
-  ],
+  "exclude": ["node_modules"],
   "references": [
     {
       "path": "./tsconfig.node.json"

@@ -1,4 +1,4 @@
-import isCourse from './is-course';
+import { isCourse } from './is-course';
 import type { Course } from '@/entities/course';
 
 export const selectCourse = (coursesData: Course[], titleStartsWith: string) => {

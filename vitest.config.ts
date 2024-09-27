@@ -7,14 +7,14 @@ export default defineConfig({
   plugins: [react(), stubAssetImport()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
-      'data': path.resolve(__dirname, 'dev-data'),
+      '@': path.resolve(__dirname, 'app'),
+      data: path.resolve(__dirname, 'dev-data'),
     },
   },
   test: {
     environment: 'jsdom',
     globals: true,
-    setupFiles: ['src/shared/__tests__/setup-tests.ts'],
+    setupFiles: ['app/shared/__tests__/setup-tests.ts'],
     exclude: [
       '**/node_modules/**',
       '**/dist/**',

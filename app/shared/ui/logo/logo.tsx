@@ -1,5 +1,5 @@
 import { HTMLAttributes } from 'react';
-import { VariantProps, cva } from 'class-variance-authority';
+import { type VariantProps, cva } from 'class-variance-authority';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '@/app/const';
@@ -25,10 +25,7 @@ export const Logo = ({ type, className }: LogoProps) => {
       data-testid="logo"
       onClick={() => window.scrollTo({ top: 0 })}
     >
-      <Image
-        src={logo}
-        alt="RSS-logo"
-      />
+      <Image src={logo} alt="RSS-logo" />
     </Link>
   );
 };

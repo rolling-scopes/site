@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && npx cross-env VITE_TABLET=768 VITE_MOBILE=425 vite build && npm run optimizeImages",
+    "dev": "remix vite:dev",
+    "build": "tsc && npx cross-env VITE_TABLET=768 VITE_MOBILE=425 remix vite:build",
+    "start": "remix-serve ./build/server/index.js",
     "optimizeImages": "npx cross-env VITE_TABLET=768 VITE_MOBILE=425 VITE_COMPRESS_QUALITY=80 node optimizeImages/optimizeImages.js",
     "stylelint": "npx stylelint \"**/*.scss\"",
     "stylelint:fix": "npx stylelint \"**/*.scss\" --fix",
@@ -21,21 +22,25 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@remix-run/node": "^2.12.1",
+    "@remix-run/react": "^2.12.1",
+    "@remix-run/serve": "^2.12.1",
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.13",
+    "isbot": "^4.1.0",
     "nextjs-toploader": "^3.6.15",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-double-marquee": "^1.1.0",
-    "react-responsive-carousel": "^3.2.23",
-    "react-router-dom": "^6.26.1"
+    "react-responsive-carousel": "^3.2.23"
   },
   "devDependencies": {
     "@feature-sliced/eslint-config": "^0.1.1",
     "@percy/cli": "^1.29.3",
     "@percy/playwright": "^1.0.6",
     "@playwright/test": "^1.46.1",
+    "@remix-run/dev": "^2.12.1",
     "@stylistic/eslint-plugin": "^2.7.2",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.5.0",
@@ -46,7 +51,7 @@
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.2.25",
     "@typescript-eslint/eslint-plugin": "^8.3.0",
-    "@typescript-eslint/parser": "^8.3.0",
+    "@typescript-eslint/parser": "^8.7.0",
     "@vitejs/plugin-react": "^4.3.1",
     "@vitest/coverage-v8": "^2.0.5",
     "chalk": "^5.3.0",
@@ -77,6 +82,7 @@
     "svgo": "^3.3.2",
     "typescript": "^5.5.4",
     "vite": "^5.4.6",
+    "vite-tsconfig-paths": "^5.0.1",
     "vitest": "^2.0.5"
   }
 }

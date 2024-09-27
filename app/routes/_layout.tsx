@@ -1,5 +1,10 @@
 import { Outlet, ScrollRestoration } from 'react-router-dom';
-import { Footer, Header, Partnered, ScrollToHashElement } from './components';
+import {
+  Footer,
+  Header,
+  Partnered,
+  ScrollToHashElement,
+} from '@/app/layouts/base-layout/components';
 
 export const BaseLayout = () => {
   return (
