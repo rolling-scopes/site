@@ -1,4 +1,3 @@
-import { AlumniProps } from './ui/alumni';
 import aesoft from '@/shared/assets/alumni/aesoft.svg';
 import andersen from '@/shared/assets/alumni/andersen.svg';
 import coherent from '@/shared/assets/alumni/coherent.svg';
@@ -18,7 +17,7 @@ import sberbank from '@/shared/assets/alumni/sberbank.svg';
 import toptal from '@/shared/assets/alumni/toptal.svg';
 import visualfabriq from '@/shared/assets/alumni/visualfabriq.svg';
 
-export const alumni: AlumniProps[] = [
+export const alumni = [
   {
     id: 'epam',
     image: epam,
@@ -91,4 +90,4 @@ export const alumni: AlumniProps[] = [
     id: 'aesoft',
     image: aesoft,
   },
-];
+] as const;
