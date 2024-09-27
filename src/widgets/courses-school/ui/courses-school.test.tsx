@@ -1,7 +1,6 @@
 import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ROUTES } from '@/app/const';
-
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { CoursesSchool } from '@/widgets/courses-school';
 
