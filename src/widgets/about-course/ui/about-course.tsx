@@ -1,7 +1,9 @@
 import classNames from 'classnames/bind';
 import { AboutCourseGrid } from './about-course-grid/about-course-grid';
+import { localizedContent } from '../constants';
 import type { Course } from '@/entities/course';
 import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';
+import type { CourseName } from '@/shared/types';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
@@ -12,40 +14,9 @@ import styles from './about-course.module.scss';
 
 export const cx = classNames.bind(styles);
 
-export type CourseNames =
-  | 'js / front-end en'
-  | 'js / front-end ru'
-  | 'js / front-end pre-school ru'
-  | 'react'
-  | 'react ru'
-  | 'angular'
-  | 'node.js'
-  | 'aws fundamentals'
-  | 'aws cloud dev'
-  | 'aws devops';
-
-interface AboutCourseProps {
-  courseName: CourseNames;
+type AboutCourseProps = {
+  courseName: CourseName;
   type?: 'ru' | 'en' | 'Pre-school RU';
-}
-
-const localizedContent = {
-  en: {
-    title: 'About the course',
-    linkLabel: 'Become a student',
-    paragraph: '',
-  },
-  ru: {
-    title: 'О курсе',
-    linkLabel: 'Cтать студентом',
-    paragraph: '',
-  },
-  'Pre-school RU': {
-    title: 'JS/Frontend-разработка. Подготовительный этап',
-    linkLabel: 'Стать студентом',
-    paragraph:
-      'Подготовительный этап поможет тем, кто мало знаком или совсем не знаком с программированием и хотел бы впоследствии учиться на основном курсе «JavaScript/Front-end».',
-  },
 };
 
 export const AboutCourse = ({ courseName, type = 'en' }: AboutCourseProps) => {
