@@ -28,7 +28,7 @@ export const CommunityMedia = () => (
           ))}
         </div>
       </article>
-      <Image className={cx('picture')} src={image} alt="A sloth mascot with a welcome" />
+      <Image className={cx('sloth-mascot')} src={image} alt="A sloth mascot with a welcome" />
     </div>
   </section>
 );
