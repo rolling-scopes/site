@@ -1,68 +1,14 @@
 import classNames from 'classnames/bind';
 import image from '@/shared/assets/welcome.webp';
-import {
-  FacebookIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  TelegramIcon,
-  YouTubeIcon,
-} from '@/shared/icons';
 import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
-import { SocialMediaItem, SocialMediaProps } from '@/shared/ui/social-media-item';
+import { SocialMediaItem } from '@/shared/ui/social-media-item';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { communityGroups } from 'data';
 
 import styles from './community-media.module.scss';
 
 const cx = classNames.bind(styles);
-
-const communityGroups: SocialMediaProps[] = [
-  {
-    title: 'LinkedIn',
-    href: 'https://www.linkedin.com/company/the-rolling-scopes-school/',
-    icon: <LinkedInIcon />,
-  },
-  {
-    title: 'Instagram RU',
-    href: 'https://www.instagram.com/rsschool_news/',
-    icon: <InstagramIcon />,
-  },
-  {
-    title: 'Instagram EN',
-    href: 'https://www.instagram.com/rsschool_en/',
-    icon: <InstagramIcon />,
-  },
-  {
-    title: 'YouTube RU',
-    href: 'https://www.youtube.com/c/RollingScopesSchool',
-    icon: <YouTubeIcon />,
-  },
-  {
-    title: 'YouTube EN',
-    href: 'https://www.youtube.com/c/RSschool',
-    icon: <YouTubeIcon />,
-  },
-  {
-    title: 'Telegram RU',
-    href: 'https://t.me/AfishaRSSchool',
-    icon: <TelegramIcon />,
-  },
-  {
-    title: 'Facebook RU',
-    href: 'https://www.facebook.com/RollingScopesSchool',
-    icon: <FacebookIcon />,
-  },
-  {
-    title: 'Facebook EN',
-    href: 'https://www.facebook.com/rsschoolEN',
-    icon: <FacebookIcon />,
-  },
-  {
-    title: 'Facebook Group RU & EN',
-    href: 'https://www.facebook.com/groups/TheRollingScopes',
-    icon: <FacebookIcon />,
-  },
-];
 
 export const CommunityMedia = () => (
   <div id="community" className={cx('community', 'container')}>
