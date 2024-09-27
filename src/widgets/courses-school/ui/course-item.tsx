@@ -23,7 +23,7 @@ export const CourseItem = ({
   iconSrc,
 }: PropsType) => {
   return (
-    <section className={cx('course-card')}>
+    <section className={cx('course-item')}>
       <figure className={cx('icon-container')}>
         <Image src={iconSrc} alt={title} />
       </figure>
