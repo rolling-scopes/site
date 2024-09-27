@@ -19,7 +19,13 @@ export const CourseItem = ({
   return (
     <section className={cx('course-item')}>
       <figure className={cx('icon-container')}>
-        <Image className={cx('course-icon')} src={iconSrc} alt={title} data-testid="course-image" />
+        <Image
+          className={cx('course-icon')}
+          src={iconSrc}
+          alt=""
+          aria-hidden="true"
+          data-testid="course-image"
+        />
       </figure>
       <article className={cx('course-info')}>
         <Subtitle color="black" fontSize="extra-small">
