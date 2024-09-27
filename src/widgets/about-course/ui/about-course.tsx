@@ -1,10 +1,10 @@
-/* eslint-disable @stylistic/jsx-one-expression-per-line */
 import classNames from 'classnames/bind';
 import { AboutCourseGrid } from './about-course-grid/about-course-grid';
 import type { Course } from '@/entities/course';
 import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
+import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { contentMapAbout } from 'data';
 
@@ -24,7 +24,7 @@ export type CourseNames =
   | 'aws cloud dev'
   | 'aws devops';
 
-interface AboutProps {
+interface AboutCourseProps {
   courseName: CourseNames;
   type?: 'ru' | 'en' | 'Pre-school RU';
 }
@@ -48,29 +48,34 @@ const localizedContent = {
   },
 };
 
-export const AboutCourse = ({ courseName, type = 'en' }: AboutProps) => {
+export const AboutCourse = ({ courseName, type = 'en' }: AboutCourseProps) => {
   const { course: data, error, loading, hasError } = useCourseByTitle(courseName);
 
   const course = data as Course;
 
-  const infoList = contentMapAbout[courseName];
+  const courseInfoList = contentMapAbout[courseName];
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <Paragraph>Loading...</Paragraph>;
   }
 
   if ((error && hasError) || !course) {
-    return <h3>Error: {error?.message || 'Course not found'}</h3>;
+    return (
+      <Subtitle>
+        Error:
+        {error?.message || 'Course not found'}
+      </Subtitle>
+    );
   }
 
   return (
     <section className={cx('container')}>
-      <div className={cx('course-about', 'content')}>
+      <div className={cx('about-course', 'content')}>
         <WidgetTitle>{localizedContent[type].title}</WidgetTitle>
         {localizedContent[type].paragraph && (
           <Paragraph>{localizedContent[type].paragraph}</Paragraph>
         )}
-        <AboutCourseGrid items={infoList} />
+        <AboutCourseGrid items={courseInfoList} />
         <LinkCustom href={course.enroll} variant="primary" external>
           {localizedContent[type].linkLabel}
         </LinkCustom>
