@@ -12,6 +12,10 @@ import { ROUTES } from '@/app/const';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { CoursesSchool } from '@/widgets/courses-school';
+import { tabletScreenBreakPoint } from '@/widgets/courses-school/constants.ts';
+
+const height = 900;
+const width = tabletScreenBreakPoint;
 
 const mockedData = [
   {
@@ -97,8 +101,8 @@ describe('Courses', () => {
 
   it.skip('renders link with "More" on window size 810px', () => {
     (useWindowSize as Mock).mockReturnValue({
-      width: 810,
-      height: 900,
+      width,
+      height,
     });
     renderWithRouter(<CoursesSchool />);
     const courseCards = screen.getAllByRole('link', { name: 'More' });
@@ -108,8 +112,8 @@ describe('Courses', () => {
 
   it.skip('renders link with "More details" on window size more than 810px', () => {
     (useWindowSize as Mock).mockReturnValue({
-      width: 811,
-      height: 900,
+      width: width + 1,
+      height,
     });
     renderWithRouter(<CoursesSchool />);
     const courseCards = screen.getAllByText('More details');
