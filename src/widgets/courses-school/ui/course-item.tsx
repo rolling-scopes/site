@@ -14,7 +14,7 @@ type addFields = {
 
 type PropsType = Pick<Course, 'title' | 'language' | 'startDate' | 'detailsUrl'> & addFields;
 
-export const CourseCard = ({
+export const CourseItem = ({
   title,
   language,
   startDate,
@@ -39,5 +39,3 @@ export const CourseCard = ({
     </section>
   );
 };
-
-export default CourseCard;
