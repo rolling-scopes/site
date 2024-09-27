@@ -14,7 +14,7 @@ import styles from './courses.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const Courses = () => {
+export const CoursesSchool = () => {
   const size = useWindowSize();
   const tabletScreenBreakPoint = 810;
   const coursesData: Course[] = getActualData({

@@ -1,1 +1,1 @@
-export { Courses } from './ui/courses';
+export { CoursesSchool } from './ui/courses-school';

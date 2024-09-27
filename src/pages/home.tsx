@@ -4,7 +4,7 @@ import { useTitle } from '@/shared/hooks/use-title';
 import { AboutSchool } from '@/widgets/about-school';
 import { Alumni } from '@/widgets/alumni';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
-import { Courses } from '@/widgets/courses-school';
+import { CoursesSchool } from '@/widgets/courses-school';
 import { HeroPage } from '@/widgets/hero-page';
 import { Mentoring } from '@/widgets/mentoring';
 import { Mentors } from '@/widgets/mentors';
@@ -22,7 +22,7 @@ export const Home: FC = () => {
       <AboutSchool />
       <Principles />
       <StudyWithUs />
-      <Courses />
+      <CoursesSchool />
       <Alumni />
       <Mentors />
       <Mentoring />

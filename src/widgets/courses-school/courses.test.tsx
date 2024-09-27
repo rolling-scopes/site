@@ -7,11 +7,11 @@ import {
   it,
   vi,
 } from 'vitest';
-import { Courses } from './ui/courses';
 import { ROUTES } from '@/app/const';
 
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
+import { CoursesSchool } from '@/widgets/courses-school';
 
 const mockedData = [
   {
@@ -79,7 +79,7 @@ vi.mock('@/shared/hooks/use-window-size', () => {
 
 describe('Courses', () => {
   beforeEach(() => {
-    renderWithRouter(<Courses />);
+    renderWithRouter(<CoursesSchool />);
   });
 
   it('renders the title correctly', () => {
@@ -100,7 +100,7 @@ describe('Courses', () => {
       width: 810,
       height: 900,
     });
-    renderWithRouter(<Courses />);
+    renderWithRouter(<CoursesSchool />);
     const courseCards = screen.getAllByRole('link', { name: 'More' });
 
     expect(courseCards.length).toBeLessThanOrEqual(5);
@@ -111,7 +111,7 @@ describe('Courses', () => {
       width: 811,
       height: 900,
     });
-    renderWithRouter(<Courses />);
+    renderWithRouter(<CoursesSchool />);
     const courseCards = screen.getAllByText('More details');
 
     expect(courseCards.length).toBeLessThanOrEqual(5);
