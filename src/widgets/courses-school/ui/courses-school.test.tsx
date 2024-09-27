@@ -1,21 +1,9 @@
 import { screen } from '@testing-library/react';
-import {
-  Mock,
-  beforeEach,
-  describe,
-  expect,
-  it,
-  vi,
-} from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ROUTES } from '@/app/const';
 
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { CoursesSchool } from '@/widgets/courses-school';
-import { tabletScreenBreakPoint } from '@/widgets/courses-school/constants.ts';
-
-const height = 900;
-const width = tabletScreenBreakPoint;
 
 const mockedData = [
   {
@@ -92,33 +80,10 @@ describe('Courses', () => {
     expect(titleElement).toBeInTheDocument();
   });
 
-  it.skip('renders no more than 5 course cards', () => {
-    // TODO remove 'skip' after 'data-testid' will be added to CourseCard
-    const courseCards = screen.getAllByRole('link');
+  it('renders no more than 5 course cards', () => {
+    const courseCards = screen.getByTestId('courses-list');
 
-    expect(courseCards.length).toBeLessThan(5);
-  });
-
-  it.skip('renders link with "More" on window size 810px', () => {
-    (useWindowSize as Mock).mockReturnValue({
-      width,
-      height,
-    });
-    renderWithRouter(<CoursesSchool />);
-    const courseCards = screen.getAllByRole('link', { name: 'More' });
-
-    expect(courseCards.length).toBeLessThanOrEqual(5);
-  });
-
-  it.skip('renders link with "More details" on window size more than 810px', () => {
-    (useWindowSize as Mock).mockReturnValue({
-      width: width + 1,
-      height,
-    });
-    renderWithRouter(<CoursesSchool />);
-    const courseCards = screen.getAllByText('More details');
-
-    expect(courseCards.length).toBeLessThanOrEqual(5);
+    expect(courseCards.children.length).toEqual(5);
   });
 
   it('renders the Go to RS School button', () => {
