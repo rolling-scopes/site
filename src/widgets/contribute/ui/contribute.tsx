@@ -2,11 +2,11 @@ import image from '@/shared/assets/contribute.webp';
 import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { OptionItem, OptionItemProps } from '@/widgets/option-item';
+import { OptionItem } from '@/widgets/option-item';
 
 import './contribute.scss';
 
-const contributeOptions: OptionItemProps[] = [
+const contributeOptions = [
   {
     title: 'Mentorship',
     description:
