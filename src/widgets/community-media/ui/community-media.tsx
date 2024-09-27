@@ -11,9 +11,9 @@ import styles from './community-media.module.scss';
 const cx = classNames.bind(styles);
 
 export const CommunityMedia = () => (
-  <div id="community" className={cx('community', 'container')}>
-    <div className={cx('community', 'content', 'column-2')}>
-      <div className={cx('info')}>
+  <section className={cx('container')}>
+    <div className={cx('content', 'column-2', 'community-media-content')}>
+      <article className={cx('community-join-info')}>
         <WidgetTitle size="large" mods="lines">
           Join RS Community
         </WidgetTitle>
@@ -27,8 +27,8 @@ export const CommunityMedia = () => (
             <SocialMediaItem key={title} title={title} href={href} icon={icon} />
           ))}
         </div>
-      </div>
-      <Image className={cx('right', 'picture')} src={image} alt="community-welcome" />
+      </article>
+      <Image className={cx('picture')} src={image} alt="A sloth mascot with a welcome" />
     </div>
-  </div>
+  </section>
 );
