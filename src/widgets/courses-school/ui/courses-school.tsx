@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/app/const';
 import type { Course } from '@/entities/course';
-import { CourseItem } from '@/entities/course/ui/course-item/course-item.tsx';
+import { CourseItem } from '@/entities/course';
 import RSBanner from '@/shared/assets/svg/RsBanner.svg';
 import { getActualData } from '@/shared/helpers/getActualData';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
