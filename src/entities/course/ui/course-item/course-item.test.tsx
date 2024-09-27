@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
+import { CourseItem, PropsType } from '@/entities/course/ui/course-item/course-item.tsx';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { CourseItem, PropsType } from '@/widgets/courses-school/ui/course-item.tsx';
 
 const mockedProps: PropsType = {
   title: 'Introduction to React',

@@ -3,7 +3,7 @@ import type { Course } from '@/entities/course';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 
-import styles from './courses.module.scss';
+import styles from './course-item.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -12,7 +12,7 @@ type addFields = {
   iconSrc: string;
 };
 
-type PropsType = Pick<Course, 'title' | 'language' | 'startDate' | 'detailsUrl'> & addFields;
+export type PropsType = Pick<Course, 'title' | 'language' | 'startDate' | 'detailsUrl'> & addFields;
 
 export const CourseItem = ({
   title,
@@ -25,14 +25,19 @@ export const CourseItem = ({
   return (
     <section className={cx('course-item')}>
       <figure className={cx('icon-container')}>
-        <Image src={iconSrc} alt={title} />
+        <Image src={iconSrc} alt={title} data-testid="course-image" />
       </figure>
       <div className={cx('course-info')}>
         <p className={cx('name')}>{title}</p>
         <p className={cx('date')}>{`${startDate} • ${language[0].toUpperCase()}`}</p>
       </div>
       <div className={cx('details-container')}>
-        <LinkCustom href={detailsUrl} variant="rounded" aria-label="More details">
+        <LinkCustom
+          href={detailsUrl}
+          variant="rounded"
+          aria-label="More details"
+          data-testid="course-link"
+        >
           {buttonText}
         </LinkCustom>
       </div>
