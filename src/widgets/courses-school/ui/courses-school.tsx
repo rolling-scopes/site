@@ -8,6 +8,7 @@ import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { RsBanner } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { tabletScreenBreakPoint } from '@/widgets/courses-school/constants.ts';
 import { courses } from 'data';
 
 import styles from './courses-school.module.scss';
@@ -16,7 +17,6 @@ const cx = classNames.bind(styles);
 
 export const CoursesSchool = () => {
   const size = useWindowSize();
-  const tabletScreenBreakPoint = 810;
   const coursesData: Course[] = getActualData({
     data: courses,
     staleAfter: COURSE_STALE_AFTER_DAYS,
