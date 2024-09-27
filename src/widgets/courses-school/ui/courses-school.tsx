@@ -10,7 +10,7 @@ import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { courses } from 'data';
 
-import styles from './courses.module.scss';
+import styles from './courses-school.module.scss';
 
 const cx = classNames.bind(styles);
 
