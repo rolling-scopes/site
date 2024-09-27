@@ -59,7 +59,7 @@ export const CoursesSchool = () => {
             </LinkCustom>
           </div>
           <Image
-            className={cx('image')}
+            className={cx('rs-banner')}
             data-testid="rs-banner"
             src={RSBanner}
             alt="The Rolling Scopes organization logo"
