@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import dayjs from 'dayjs';
 import type { CourseItem as TCourseItem } from '@/entities/course';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -16,6 +17,8 @@ export const CourseItem = ({
   buttonText,
   iconSrc,
 }: TCourseItem) => {
+  const dateTime = dayjs(startDate).toISOString();
+
   return (
     <section className={cx('course-item')}>
       <figure className={cx('icon-container')}>
@@ -31,7 +34,10 @@ export const CourseItem = ({
         <Subtitle color="black" fontSize="extra-small">
           {title}
         </Subtitle>
-        <span className={cx('date')}>{`${startDate} • ${language[0].toUpperCase()}`}</span>
+        <span className={cx('date')}>
+          <time dateTime={dateTime}>{startDate}</time>
+          {` • ${language[0].toUpperCase()}`}
+        </span>
       </article>
       <LinkCustom
         className={cx('details-link')}
