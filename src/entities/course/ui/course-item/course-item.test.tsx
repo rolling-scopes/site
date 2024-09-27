@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/react';
+import dayjs from 'dayjs';
 import { CourseItem, CourseItemData } from '@/entities/course';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
@@ -10,6 +11,8 @@ const mockedProps: CourseItemData = {
   buttonText: 'View Details',
   iconSrc: '/images/react-icon.png',
 };
+
+const expectedDate = dayjs(mockedProps.startDate).toISOString();
 
 describe('CourseItem Component', () => {
   beforeEach(() => {
@@ -24,19 +27,16 @@ describe('CourseItem Component', () => {
 
   it('renders the course language with the first letter capitalized', () => {
     const languageInitial = mockedProps.language[0].toUpperCase();
-    const dateElement = screen.getByText(`${mockedProps.startDate} • ${languageInitial}`);
+    const dateElement = screen.getByTestId('course-language');
 
     expect(dateElement).toBeInTheDocument();
+    expect(dateElement).toHaveTextContent(`• ${languageInitial}`);
   });
 
   it('renders the start date correctly', () => {
-    const dateElement = screen.getByText(
-      `${mockedProps.startDate} • ${mockedProps.language[0].toUpperCase()}`,
-    );
+    const courseDate = screen.getByTestId('course-date');
 
-    expect(dateElement).toHaveTextContent(
-      `${mockedProps.startDate} • ${mockedProps.language[0].toUpperCase()}`,
-    );
+    expect(courseDate).toHaveAttribute('datetime', expectedDate);
   });
 
   it('renders the LinkCustom component with correct href and text', () => {
