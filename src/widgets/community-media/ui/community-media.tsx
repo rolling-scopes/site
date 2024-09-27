@@ -9,7 +9,7 @@ import {
 } from '@/shared/icons';
 import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
-import { SocialMedia, SocialMediaProps } from '@/shared/ui/social-media';
+import { SocialMediaItem, SocialMediaProps } from '@/shared/ui/social-media-item';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './community-media.module.scss';
@@ -78,7 +78,7 @@ export const CommunityMedia = () => (
         </Paragraph>
         <div className={cx('social-media-container')}>
           {communityGroups.map(({ title, href, icon }) => (
-            <SocialMedia key={title} title={title} href={href} icon={icon} />
+            <SocialMediaItem key={title} title={title} href={href} icon={icon} />
           ))}
         </div>
       </div>
