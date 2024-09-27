@@ -1,11 +1,11 @@
 import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
-import { Community } from './community';
+import { CommunityMedia } from './community-media';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 describe('Community', () => {
   beforeEach(() => {
-    renderWithRouter(<Community />);
+    renderWithRouter(<CommunityMedia />);
   });
 
   it('Displays Heading Correctly', () => {

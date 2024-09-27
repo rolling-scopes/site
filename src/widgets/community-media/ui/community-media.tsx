@@ -12,7 +12,7 @@ import { Paragraph } from '@/shared/ui/paragraph';
 import { SocialMedia, SocialMediaProps } from '@/shared/ui/social-media';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
-import styles from './community.module.scss';
+import styles from './community-media.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -64,7 +64,7 @@ const communityGroups: SocialMediaProps[] = [
   },
 ];
 
-export const Community = () => (
+export const CommunityMedia = () => (
   <div id="community" className={cx('community', 'container')}>
     <div className={cx('community', 'content', 'column-2')}>
       <div className={cx('info')}>
