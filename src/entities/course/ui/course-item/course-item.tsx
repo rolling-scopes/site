@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import type { Course } from '@/entities/course';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
+import { Subtitle } from '@/shared/ui/subtitle';
 
 import styles from './course-item.module.scss';
 
@@ -25,22 +26,23 @@ export const CourseItem = ({
   return (
     <section className={cx('course-item')}>
       <figure className={cx('icon-container')}>
-        <Image src={iconSrc} alt={title} data-testid="course-image" />
+        <Image className={cx('course-icon')} src={iconSrc} alt={title} data-testid="course-image" />
       </figure>
-      <div className={cx('course-info')}>
-        <p className={cx('name')}>{title}</p>
-        <p className={cx('date')}>{`${startDate} • ${language[0].toUpperCase()}`}</p>
-      </div>
-      <div className={cx('details-container')}>
-        <LinkCustom
-          href={detailsUrl}
-          variant="rounded"
-          aria-label="More details"
-          data-testid="course-link"
-        >
-          {buttonText}
-        </LinkCustom>
-      </div>
+      <article className={cx('course-info')}>
+        <Subtitle color="black" fontSize="extra-small">
+          {title}
+        </Subtitle>
+        <span className={cx('date')}>{`${startDate} • ${language[0].toUpperCase()}`}</span>
+      </article>
+      <LinkCustom
+        className={cx('details-link')}
+        href={detailsUrl}
+        variant="rounded"
+        aria-label="More details"
+        data-testid="course-link"
+      >
+        {buttonText}
+      </LinkCustom>
     </section>
   );
 };
