@@ -3,9 +3,10 @@ import { MAX_COURSE_COUNT } from '../model/constants';
 import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/app/const';
 import type { Course } from '@/entities/course';
 import { CourseItem } from '@/entities/course/ui/course-item/course-item.tsx';
+import RSBanner from '@/shared/assets/svg/RsBanner.svg';
 import { getActualData } from '@/shared/helpers/getActualData';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
-import { RsBanner } from '@/shared/icons';
+import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { tabletScreenBreakPoint } from '@/widgets/courses-school/constants.ts';
@@ -58,9 +59,12 @@ export const CoursesSchool = () => {
               Go to courses
             </LinkCustom>
           </div>
-          <figure className={cx('image')}>
-            <RsBanner />
-          </figure>
+          <Image
+            className={cx('image')}
+            data-testid="rs-banner"
+            src={RSBanner}
+            alt="The Rolling Scopes organization logo"
+          />
         </div>
       </section>
     </article>
