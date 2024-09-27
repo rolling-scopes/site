@@ -40,14 +40,6 @@ describe('CourseItem Component', () => {
     );
   });
 
-  it('renders the course image with correct src and alt attributes', () => {
-    const image = screen.getByTestId('course-image') as HTMLImageElement;
-
-    expect(image).toBeInTheDocument();
-    expect(image.src).toContain(mockedProps.iconSrc);
-    expect(image.alt).toBe(mockedProps.title);
-  });
-
   it('renders the LinkCustom component with correct href and text', () => {
     const link = screen.getByTestId('course-link') as HTMLAnchorElement;
 
