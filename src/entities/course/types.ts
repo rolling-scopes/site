@@ -18,7 +18,7 @@ export type Course = {
 
 export type CourseStatus = 'planned' | 'available' | 'upcoming';
 
-export type CourseItem = Pick<Course, 'title' | 'language' | 'startDate' | 'detailsUrl'> & {
+export type CourseItemData = Pick<Course, 'title' | 'language' | 'startDate' | 'detailsUrl'> & {
   buttonText: string;
   iconSrc: string;
 };

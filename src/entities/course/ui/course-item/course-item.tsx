@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import dayjs from 'dayjs';
-import type { CourseItem as TCourseItem } from '@/entities/course';
+import { CourseItemData } from '@/entities/course';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Subtitle } from '@/shared/ui/subtitle';
@@ -16,7 +16,7 @@ export const CourseItem = ({
   detailsUrl,
   buttonText,
   iconSrc,
-}: TCourseItem) => {
+}: CourseItemData) => {
   const dateTime = dayjs(startDate).toISOString();
 
   return (
