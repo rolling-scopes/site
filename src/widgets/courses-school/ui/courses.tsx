@@ -1,8 +1,8 @@
 import classNames from 'classnames/bind';
-import { CourseCard } from './CourseCard';
 import { MAX_COURSE_COUNT } from '../model/constants';
 import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/app/const';
 import type { Course } from '@/entities/course';
+import { CourseItem } from '@/entities/course/ui/course-item/course-item.tsx';
 import { getActualData } from '@/shared/helpers/getActualData';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { RsBanner } from '@/shared/icons';
@@ -33,7 +33,7 @@ export const Courses = () => {
     .slice(0, Math.min(coursesData.length, MAX_COURSE_COUNT))
     .map(({ title, language, startDate, detailsUrl, iconSrc }) => {
       return (
-        <CourseCard
+        <CourseItem
           title={title}
           language={language}
           startDate={startDate}
