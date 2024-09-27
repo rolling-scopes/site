@@ -34,10 +34,12 @@ export const CourseItem = ({
         <Subtitle color="black" fontSize="extra-small">
           {title}
         </Subtitle>
-        <span className={cx('date')}>
-          <time dateTime={dateTime}>{startDate}</time>
-          {` • ${language[0].toUpperCase()}`}
-        </span>
+        <p className={cx('date')}>
+          <time dateTime={dateTime} data-testid="course-date">
+            {startDate}
+          </time>
+          <span data-testid="course-language">{` • ${language[0].toUpperCase()}`}</span>
+        </p>
       </article>
       <LinkCustom
         className={cx('details-link')}
