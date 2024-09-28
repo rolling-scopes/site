@@ -1,1 +1,1 @@
-export { OptionItem, type OptionItemProps } from './ui/option-item';
+export { OptionItem } from './ui/option-item';

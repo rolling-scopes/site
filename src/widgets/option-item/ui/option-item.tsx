@@ -1,9 +1,13 @@
-// todo it not widget
+import classNames from 'classnames/bind';
 import { LinkCustom } from '@/shared/ui/link-custom';
+import { Paragraph } from '@/shared/ui/paragraph';
+import { Subtitle } from '@/shared/ui/subtitle';
 
-import './option-item.scss';
+import styles from './option-item.module.scss';
 
-export type OptionItemProps = {
+const cx = classNames.bind(styles);
+
+type OptionItemProps = {
   title: string;
   description: string;
   linkLabel?: string;
@@ -11,15 +15,13 @@ export type OptionItemProps = {
 };
 
 export const OptionItem = ({ title, description, linkLabel, href = '' }: OptionItemProps) => (
-  <div key={title} className="option">
-    <h3 className="option-title">{title}</h3>
-    <p className="option-description" role="text">
-      {description}
-    </p>
+  <article key={title} className={cx('option-item')} data-testid="option-item">
+    <Subtitle>{title}</Subtitle>
+    <Paragraph fontSize="large">{description}</Paragraph>
     {linkLabel && (
       <LinkCustom href={href} variant="primary" external>
         {linkLabel}
       </LinkCustom>
     )}
-  </div>
+  </article>
 );

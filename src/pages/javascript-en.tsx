@@ -6,7 +6,9 @@ import { Communication } from '@/widgets/communication';
 import { CourseMain } from '@/widgets/course-main';
 import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
+import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
+import { javaScriptEn } from 'data';
 
 const COURSE_NAME = 'js / front-end en';
 
@@ -22,6 +24,7 @@ export const JavaScriptEn = () => {
       <AboutVideo />
       <StudyPath path="javascript" marked />
       <Required courseName={COURSE_NAME} />
+      <Trainers trainers={javaScriptEn} />
     </>
   );
 };

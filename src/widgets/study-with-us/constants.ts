@@ -1,6 +1,4 @@
-import { OptionItemProps } from '@/widgets/option-item/ui/option-item';
-
-export const studyOptions: OptionItemProps[] = [
+export const studyOptions = [
   {
     title: 'Teach and empower',
     description:
