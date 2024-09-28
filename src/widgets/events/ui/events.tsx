@@ -34,7 +34,7 @@ export const Events = () => {
         </section>
 
         <section className={cx('cards')}>
-          {!actualEvents.length && (<Image src={photo3} alt="Community event" className={cx('event-img')} />)}
+          {!actualEvents.length && (<Image src={photo3} alt="Speaker presenting at a event" className={cx('event-img')} />)}
 
           {(nearestEvents).map((event) => (
             <EventCard key={event.title} {...event} date={dayjs(event.date).format('DD MMM YYYY')} />
