@@ -5,10 +5,10 @@ import noteIcon from '@/shared/assets/icons/note-icon.webp';
 import paperIcon from '@/shared/assets/icons/paper-icon.webp';
 import personIcon from '@/shared/assets/icons/person-icon.webp';
 import planetIcon from '@/shared/assets/icons/planet.webp';
-import { LinkCustom } from '@/shared/ui/link-custom';
-import { type CourseNamesChannels, DISCORD_LINKS } from 'data';
+import { List } from '@/shared/ui/list';
+import { type CourseNamesChannels } from 'data';
 
-type AboutInfo = {
+type AboutCourseInfo = {
   id: number;
   title: string;
   info: string | ReactNode;
@@ -16,10 +16,39 @@ type AboutInfo = {
 };
 
 type ContentMap = {
-  [key in CourseNamesChannels]: AboutInfo[];
+  [key in CourseNamesChannels]: AboutCourseInfo[];
 };
 
-const angularNodejsAwsFundamentals: (course: string) => AboutInfo[] = () => [
+const listData = {
+  javaScriptEN: [
+    [{
+      id: 1,
+      text: 'The Mentors and trainers of our school are front-end and javascript developers from different companies/countries. ',
+      title: 'How to become a mentor?',
+      link: '/#mentors-wanted',
+    }],
+  ],
+  reactEn: [
+    [{
+      id: 1,
+      text: 'School ',
+      title: 'documentation',
+      link: 'https://docs.rs.school',
+    }],
+    'All materials are publicly available on the YouTube channel and GitHub',
+  ],
+  reactRu: [
+    [{
+      id: 1,
+      text: '',
+      title: 'Документация школы',
+      link: 'https://docs.rs.school',
+    }],
+    'Все материалы находятся в открытом доступе на YouTube и GitHub.Также предлагаем ознакомиться с конспектом первого этапа обучения.',
+  ],
+};
+
+const angularNodejsAwsFundamentals: (course: string) => AboutCourseInfo[] = () => [
   {
     id: 1,
     title: 'For everyone',
@@ -46,7 +75,7 @@ const angularNodejsAwsFundamentals: (course: string) => AboutInfo[] = () => [
   },
 ];
 
-const awsCloudDeveloper: AboutInfo[] = angularNodejsAwsFundamentals('aws cloud dev').map((item) => {
+const awsCloudDeveloper: AboutCourseInfo[] = angularNodejsAwsFundamentals('aws cloud dev').map((item) => {
   if (item.id === 3) {
     return {
       ...item,
@@ -56,7 +85,7 @@ const awsCloudDeveloper: AboutInfo[] = angularNodejsAwsFundamentals('aws cloud d
   return item;
 });
 
-const javaScriptEN: () => AboutInfo[] = () => {
+const javaScriptEN: () => AboutCourseInfo[] = () => {
   return [
     {
       id: 1,
@@ -68,12 +97,7 @@ const javaScriptEN: () => AboutInfo[] = () => {
       id: 2,
       title: 'Worldwide mentors and trainers',
       info: (
-        <p>
-          The Mentors and trainers of our school are front-end and javascript developers from
-          different companies/countries.
-          {' '}
-          <LinkCustom href="/#mentors-wanted">How to become a mentor?</LinkCustom>
-        </p>
+        <List data={listData.javaScriptEN} marked={false} />
       ),
       icon: planetIcon,
     },
@@ -91,7 +115,7 @@ const javaScriptEN: () => AboutInfo[] = () => {
     },
   ];
 };
-const javaScriptRU: () => AboutInfo[] = () => {
+const javaScriptRU: () => AboutCourseInfo[] = () => {
   return [
     {
       id: 1,
@@ -120,7 +144,7 @@ const javaScriptRU: () => AboutInfo[] = () => {
   ];
 };
 
-const javaScriptPreSchoolRU: () => AboutInfo[] = () => {
+const javaScriptPreSchoolRU: () => AboutCourseInfo[] = () => {
   return [
     {
       id: 1,
@@ -149,45 +173,21 @@ const javaScriptPreSchoolRU: () => AboutInfo[] = () => {
   ];
 };
 
-const reactEn: AboutInfo[] = javaScriptEN().map((item) => {
+const reactEn: AboutCourseInfo[] = javaScriptEN().map((item) => {
   if (item.id === 2) {
     return {
       ...item,
       title: 'Materials',
       info: (
-        <ul>
-          <li>
-            School
-            {' '}
-            <LinkCustom href="https://docs.rs.school" external>
-              documentation
-            </LinkCustom>
-          </li>
-          <li>All materials are publicly available on the YouTube channel and GitHub</li>
-        </ul>
+        <List data={listData.reactEn} />
       ),
       icon: paperIcon,
-    };
-  }
-  if (item.id === 5) {
-    return {
-      ...item,
-      info: (
-        <p>
-          Throughout the course, we mostly use
-          {' '}
-          <LinkCustom href={DISCORD_LINKS['react']} external>
-            Discord chat
-          </LinkCustom>
-          .
-        </p>
-      ),
     };
   }
   return item;
 });
 
-const awsDevops: AboutInfo[] = [
+const awsDevops: AboutCourseInfo[] = [
   ...reactEn,
   {
     id: 5,
@@ -197,7 +197,7 @@ const awsDevops: AboutInfo[] = [
   },
 ];
 
-const reactRuAbout: AboutInfo[] = [
+const reactRu: AboutCourseInfo[] = [
   {
     id: 1,
     title: 'Для всех желающих',
@@ -208,15 +208,7 @@ const reactRuAbout: AboutInfo[] = [
     id: 2,
     title: 'Материалы',
     info: (
-      <p>
-        Throughout the course, we mostly use
-        {' '}
-        <LinkCustom href="https://docs.rs.school" external>
-          Документация школы
-        </LinkCustom>
-        . Все материалы находятся в открытом доступе на YouTube и GitHub.Также предлагаем
-        ознакомиться с конспектом первого этапа обучения.
-      </p>
+      <List data={listData.reactRu} />
     ),
     icon: paperIcon,
   },
@@ -239,7 +231,7 @@ export const contentMapAbout: ContentMap = {
   'js / front-end en': javaScriptEN(),
   'js / front-end pre-school ru': javaScriptPreSchoolRU(),
   react: reactEn,
-  'react ru': reactRuAbout,
+  'react ru': reactRu,
   angular: angularNodejsAwsFundamentals('angular'),
   'node.js': angularNodejsAwsFundamentals('node.js'),
   'aws fundamentals': angularNodejsAwsFundamentals('aws fundamentals'),
