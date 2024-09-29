@@ -6,7 +6,6 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
   plugins: [
-    react(),
     remix({
       future: {
         v3_fetcherPersist: true,
@@ -27,25 +26,24 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'app'),
+      '@': path.resolve(__dirname, './app'),
+      '@styles': path.resolve(__dirname, './app/app/styles'),
       data: path.resolve(__dirname, 'dev-data'),
     },
   },
   css: {
     preprocessorOptions: {
       scss: {
+        api: 'modern',
         additionalData: `
-          @import "./app/app/styles/_constants.scss";
-          @import "./app/app/styles/_mixins.scss";
-          @import "./app/app/styles/_placeholders.scss";
+          @import "@styles/_constants.scss";
+          @import "@styles/_mixins.scss";
+          @import "@styles/_placeholders.scss";
         `,
       },
     },
     modules: {
       localsConvention: 'camelCase',
     },
-  },
-  optimizeDeps: {
-    exclude: ['app/shared/__tests__/setup-tests.ts'],
   },
 });

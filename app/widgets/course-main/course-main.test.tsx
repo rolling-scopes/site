@@ -41,7 +41,7 @@ const mockedCourseUpcoming = {
 
 describe('CourseMain', () => {
   beforeEach(() => {
-    renderWithRouter(<CourseMain courseName="Node.js" />);
+    renderWithRouter(<CourseMain courseName="Node.js" courses={[]} />);
   });
 
   it('renders the title correctly', async () => {
@@ -76,14 +76,14 @@ describe('CourseMain', () => {
 
 describe('Course labels are correct', () => {
   it('renders the section with correct label "AVAILABLE"', () => {
-    renderWithRouter(<CourseMain courseName={reactCourseTitle} />);
+    renderWithRouter(<CourseMain courseName={reactCourseTitle} courses={[]} />);
     const labelElement = screen.getByText('available');
 
     expect(labelElement).toBeVisible();
   });
 
   it('renders the section with correct label "UPCOMING"', () => {
-    renderWithRouter(<CourseMain courseName={angularCourseTitle} />);
+    renderWithRouter(<CourseMain courseName={angularCourseTitle} courses={[]} />);
     const labelElement = screen.getByText('upcoming');
 
     expect(labelElement).toBeVisible();

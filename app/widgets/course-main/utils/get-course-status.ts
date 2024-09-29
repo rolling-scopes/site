@@ -1,6 +1,9 @@
 import dayjs from 'dayjs';
+import isBetween from 'dayjs/plugin/isBetween';
 import { hasDayInDate } from './has-day';
 import type { CourseStatus } from '@/entities/course';
+
+dayjs.extend(isBetween);
 
 export function getCourseStatus(courseStartDate: string): CourseStatus {
   const now = dayjs();

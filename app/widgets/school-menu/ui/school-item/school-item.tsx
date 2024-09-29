@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from '@remix-run/react';
 import { GenericItemProps } from '../school-list/school-list';
 import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
 import type { Course } from '@/entities/course';
@@ -21,13 +21,22 @@ export const SchoolItem = ({ item, color }: SchoolItemProps) => {
     </>
   );
 
-  const descriptionBlock = ('description' in item)
-    ? (descriptionContent)
-    : (<div className="details">{descriptionContent}</div>);
+  const descriptionBlock =
+    'description' in item
+      ? (
+          descriptionContent
+        )
+      : (
+          <div className="details">{descriptionContent}</div>
+        );
 
+  console.log('item', item.detailsUrl);
   return (
     <li key={'id' in item ? item.id : item.title}>
-      <Link to={item.detailsUrl} className={'id' in item ? 'school-item with-icon' : 'school-item'}>
+      <NavLink
+        to={item.detailsUrl}
+        className={'id' in item ? 'school-item with-icon' : 'school-item'}
+      >
         {'iconSmall' in item && (
           <Image
             className="icon-wrapper"
@@ -38,7 +47,7 @@ export const SchoolItem = ({ item, color }: SchoolItemProps) => {
           />
         )}
         {descriptionBlock}
-      </Link>
+      </NavLink>
     </li>
   );
 };

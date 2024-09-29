@@ -54,7 +54,7 @@ export const Courses = () => {
         <div className={cx('column-2')}>
           <div className={cx('course-list')} data-testid="courses-list">
             {coursesContent}
-            <LinkCustom href={ROUTES.COURSES} variant="primary">
+            <LinkCustom href={`/${ROUTES.COURSES}`} variant="primary">
               Go to courses
             </LinkCustom>
           </div>

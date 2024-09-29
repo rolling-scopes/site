@@ -21,12 +21,12 @@ const navLinks = [
   },
   {
     label: 'Courses',
-    href: ROUTES.COURSES,
+    href: `/${ROUTES.COURSES}`,
     dropdownInner: <SchoolMenu heading="all courses" color="dark" hasTitle={false} />,
   },
   {
     label: 'Community',
-    href: ROUTES.COMMUNITY,
+    href: `/${ROUTES.COMMUNITY}`,
     dropdownInner: <SchoolMenu heading="community" color="dark" hasTitle={false} />,
   },
 ];

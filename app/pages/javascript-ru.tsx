@@ -1,3 +1,4 @@
+import { Course } from '@/entities/course';
 import { About } from '@/widgets/about';
 import { AboutVideo } from '@/widgets/about-video';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
@@ -12,12 +13,16 @@ import { javaScriptRu } from 'data';
 
 const COURSE_NAME = 'js / front-end ru';
 
-export const JavaScriptRu = () => {
+type JavaScriptRuProps = {
+  courses: Course[];
+};
+
+export const JavaScriptRu = ({ courses }: JavaScriptRuProps) => {
   const lang = 'ru';
 
   return (
     <>
-      <CourseMain courseName={COURSE_NAME} lang={lang} />
+      <CourseMain courseName={COURSE_NAME} lang={lang} courses={courses} />
       <Breadcrumbs />
       <TrainingProgram courseName={COURSE_NAME} lang={lang} />
       <About courseName={COURSE_NAME} type={lang} />

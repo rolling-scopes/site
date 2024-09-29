@@ -96,7 +96,7 @@ export default [
         'warn',
         {
           restrictDefaultExports: {
-            direct: true,
+            direct: false,
             named: true,
             defaultFrom: true,
             namedFrom: true,
@@ -118,7 +118,7 @@ export default [
       ],
 
       'import/prefer-default-export': 'off',
-      'import/no-default-export': 'error',
+      'import/no-default-export': 'off',
       'import/no-unresolved': ['error', { commonjs: true, amd: true }],
       'import/no-namespace': ['error', { ignore: ['*.ext'] }],
       'import/newline-after-import': 'error',

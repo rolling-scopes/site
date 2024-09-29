@@ -1,5 +1,5 @@
+import { NavLink } from '@remix-run/react';
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
 
 import styles from './breadcrumbs.module.scss';
 
@@ -13,14 +13,18 @@ interface BreadcrumbProps {
 
 export function BreadcrumbItem({ linkTo, text, isLastLink = false }: BreadcrumbProps) {
   if (isLastLink) {
-    return <li><span className={cx('link', 'disabled')}>{text}</span></li>;
+    return (
+      <li>
+        <span className={cx('link', 'disabled')}>{text}</span>
+      </li>
+    );
   }
 
   return (
     <li>
-      <Link to={linkTo} className={cx('link')}>
+      <NavLink to={linkTo} className={cx('link')}>
         {text}
-      </Link>
+      </NavLink>
       <span className={cx('separator')}>/</span>
     </li>
   );

@@ -1,8 +1,9 @@
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
-import NextTopLoader from 'nextjs-toploader';
+// import NextTopLoader from 'nextjs-toploader';
 import type { LinksFunction } from '@remix-run/node';
 
 import './app.scss';
+import '@/app/styles/index.scss';
 
 export const links: LinksFunction = () => [
   {
@@ -58,19 +59,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function App() {
-  if (typeof window !== 'undefined' && window.location.hostname.includes('rollingscopes.com')) {
-    window.location.href = 'https://rs.school';
-  }
-  <div className="app-styles">
-    <NextTopLoader
-      color="black"
-      initialPosition={0.0001}
-      crawl={false}
-      easing="ease-in-out"
-      showSpinner={false}
-      speed={300}
-    />
-    <Outlet />
-  </div>;
+export default function App() {
+  return (
+    <div className="app-styles">
+      {/* <NextTopLoader
+        color="black"
+        initialPosition={0.0001}
+        crawl={false}
+        easing="ease-in-out"
+        showSpinner={false}
+        speed={300}
+      /> */}
+      <Outlet />
+    </div>
+  );
 }

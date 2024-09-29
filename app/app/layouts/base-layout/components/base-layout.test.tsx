@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { BaseLayout } from './_layout';
+import { BaseLayout } from './base-layout';
 
 vi.mock('react-router-dom', () => ({
   Outlet: vi.fn(() => <div data-testid="mockOutlet" />),
@@ -16,7 +16,11 @@ vi.mock('./components/footer', () => ({ Footer: vi.fn(() => <div data-testid="mo
 
 describe('BaseLayout', () => {
   beforeEach(() => {
-    render(<BaseLayout />);
+    render(
+      <BaseLayout>
+        <></>
+      </BaseLayout>,
+    );
   });
 
   it('renders Header component', () => {

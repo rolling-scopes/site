@@ -1,5 +1,5 @@
+import { NavLink } from '@remix-run/react';
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
 import { ROUTES } from '@/app/const';
 import { Logo } from '@/shared/ui/logo';
 import { SchoolMenu } from '@/widgets/school-menu';
@@ -12,9 +12,7 @@ type DividerProps = {
   color: 'light' | 'dark';
 };
 
-const Divider = ({ color }: DividerProps) => (
-  <hr className={cx('divider', color)} />
-);
+const Divider = ({ color }: DividerProps) => <hr className={cx('divider', color)} />;
 
 type MobileViewProps = {
   type: 'header' | 'footer';
@@ -30,25 +28,25 @@ export const MobileView = ({ type }: MobileViewProps) => {
 
       <Divider color={color} />
 
-      <Link to={ROUTES.HOME} className={cx('category-link', color)}>
+      <NavLink to={ROUTES.HOME} className={cx('category-link', color)}>
         RS School
-      </Link>
+      </NavLink>
 
       <SchoolMenu heading="rs school" hasTitle={false} color={color} />
 
       <Divider color={color} />
 
-      <Link to={ROUTES.COURSES} className={cx('category-link', color)}>
+      <NavLink to={`/${ROUTES.COURSES}`} className={cx('category-link', color)}>
         Courses
-      </Link>
+      </NavLink>
 
       <SchoolMenu heading="all courses" hasTitle={false} color={color} />
 
       <Divider color={color} />
 
-      <Link to={ROUTES.COMMUNITY} className={cx('category-link', color)}>
+      <NavLink to={`/${ROUTES.COMMUNITY}`} className={cx('category-link', color)}>
         Community
-      </Link>
+      </NavLink>
 
       <SchoolMenu heading="community" hasTitle={false} color={color} />
     </nav>

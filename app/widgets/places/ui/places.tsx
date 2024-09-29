@@ -1,5 +1,4 @@
-// @ts-expect-error no types
-import Marquee from 'react-double-marquee';
+// import Marquee from 'react-double-marquee';
 
 import './places.scss';
 
@@ -20,16 +19,16 @@ const places: string[] = [
 export const Places = () => (
   <div className="places container" data-testid="places">
     <div className="places content">
-      <Marquee direction="left" childMargin={0}>
-        {places.map((place) => (
-          <span key={place} className="place-container">
-            <span className="place">{place}</span>
-            <span className="divider" data-testid="divider">
-              *
-            </span>
+      {/* <Marquee direction="left" childMargin={0}> */}
+      {places.map((place) => (
+        <span key={place} className="place-container">
+          <span className="place">{place}</span>
+          <span className="divider" data-testid="divider">
+            *
           </span>
-        ))}
-      </Marquee>
+        </span>
+      ))}
+      {/* </Marquee> */}
     </div>
   </div>
 );

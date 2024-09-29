@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from '@remix-run/react';
 import { ANCHORS, ROUTES } from '@/app/const';
 import { Logo } from '@/shared/ui/logo';
 
@@ -29,7 +29,7 @@ export const AboutList = () => {
       <ul className="about-links">
         {aboutList.map(({ title, to }) => (
           <li key={to}>
-            <Link to={to}>{title}</Link>
+            <NavLink to={to}>{title}</NavLink>
           </li>
         ))}
       </ul>

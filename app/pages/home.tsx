@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import ClientOnly from '@/app/layouts/base-layout/client-only/client-only';
 import { useTitle } from '@/shared/hooks/use-title';
 import { AboutSchool } from '@/widgets/about-school';
 import { Alumni } from '@/widgets/alumni';
@@ -21,8 +22,10 @@ export const Home: FC = () => {
       <AboutSchool />
       <Principles />
       <StudyWithUs />
-      <Courses />
-      <Alumni />
+      <ClientOnly>
+        <Courses />
+        <Alumni />
+      </ClientOnly>
       <Mentors />
       <Mentoring />
       <Requirements />

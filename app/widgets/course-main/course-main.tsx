@@ -1,4 +1,3 @@
-import { useLoaderData } from 'react-router-dom';
 import { getCourseStatus } from './utils/get-course-status';
 import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
 import type { Course } from '@/entities/course';
@@ -16,6 +15,7 @@ import styles from './course-main.module.scss';
 
 interface CourseMainProps {
   courseName: string;
+  courses: Course[];
   lang?: 'ru' | 'en';
   type?: 'Pre-school RU';
 }
@@ -25,9 +25,7 @@ const localizedContent = {
   ru: { linkLabel: 'Присоединиться' },
 };
 
-export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) => {
-  const courses = useLoaderData() as Course[];
-
+export const CourseMain = ({ courseName, courses, lang = 'en', type }: CourseMainProps) => {
   const course = selectCourse(courses, courseName);
 
   useTitle(`${course?.title || ''} · The Rolling Scopes School`);
