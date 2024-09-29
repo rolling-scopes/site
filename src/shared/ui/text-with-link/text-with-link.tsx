@@ -1,6 +1,6 @@
 import { Fragment } from 'react/jsx-runtime';
 import { LinkCustom } from '../link-custom';
-import { LinkList } from '@/widgets/required';
+import { LinkList } from '@/shared/types';
 
 interface TextWithLinkProps {
   data: LinkList;

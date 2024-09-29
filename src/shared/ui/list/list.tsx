@@ -1,7 +1,7 @@
 // todo delete TextWithLink
 import classNames from 'classnames/bind';
 import { TextWithLink } from '../text-with-link';
-import { LinkList } from '@/widgets/required';
+import { LinkList } from '@/shared/types';
 
 import styles from './list.module.scss';
 
