@@ -1,4 +1,4 @@
-import type { CourseMap } from '@/widgets/required/required.types';
+import type { CourseMap } from '@/widgets/required';
 
 export const courseDataMap: CourseMap = {
   'js / front-end en': {

@@ -1,4 +1,4 @@
-import type { CourseName } from '../required.types';
+import type { CourseName } from '../types';
 import { List } from '@/shared/ui/list';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
