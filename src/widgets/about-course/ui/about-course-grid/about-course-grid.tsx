@@ -19,7 +19,7 @@ type AboutCourseGridProps = {
 
 export const AboutCourseGrid = ({ items }: AboutCourseGridProps) => {
   return (
-    <div className={cx('about-course-grid')}>
+    <div className={cx('about-course-grid')} data-testid="about-course-grid">
       {items.map(({ id, title, info, icon }) => (
         <article key={id} className={cx('grid-item')} data-testid="about-course-grid-item">
           <header className={cx('item-title')}>

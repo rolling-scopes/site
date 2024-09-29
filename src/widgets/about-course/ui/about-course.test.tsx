@@ -1,17 +1,27 @@
 import { screen } from '@testing-library/react';
 import { type Mock, beforeEach } from 'vitest';
 import { AboutCourse } from './about-course';
-import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';
 
 vi.mock('@/shared/hooks/use-course-by-title');
 
-describe('AboutCourse', () => {
-  describe('with "react" props', () => {
+describe('AboutCourse component', () => {
+  describe('render with "react" props', () => {
     beforeEach(() => {
       (useCourseByTitle as Mock).mockReturnValue({ course: { enroll: 'http://course-url.com' } });
       renderWithRouter(<AboutCourse courseName="react" />);
+    });
+
+    it('renders correct content for component', async () => {
+      const title = await screen.findByTestId('widget-title');
+      const aboutCourseGrid = await screen.findByTestId('about-course-grid');
+
+      expect(title).toBeVisible();
+      expect(title.textContent).toBe('About the course');
+
+      expect(aboutCourseGrid).toBeVisible();
+      expect(aboutCourseGrid.children).toHaveLength(4);
     });
 
     it('renders "Become a student" button with correct href when courseName is "react"', async () => {
@@ -20,43 +30,28 @@ describe('AboutCourse', () => {
         'http://course-url.com',
       );
     });
+  });
 
-    // TODO fix tests
-    it.skip('renders "Free education" item and correct icon', () => {
-      expect(screen.getByText('Free education')).toBeVisible();
-      expect(screen.getByRole('img', { name: 'Free education' })).toHaveAttribute(
-        'src',
-        MOCKED_IMAGE_PATH,
-      );
+  describe('render 5 grid-items with "aws-devops" props', () => {
+    it('render 5 grid-items with "aws-devops" props', async () => {
+      (useCourseByTitle as Mock).mockReturnValue({ course: { enroll: 'http://course-url.com' } });
+      renderWithRouter(<AboutCourse courseName="aws devops" />);
+
+      const aboutCourseGrid = await screen.findByTestId('about-course-grid');
+
+      expect(aboutCourseGrid).toBeVisible();
+      expect(aboutCourseGrid.children).toHaveLength(5);
     });
   });
 
-  describe('with "angular" props', () => {
-    beforeEach(() => {
+  describe('render "Paragraph" with "js / front-end pre-school ru" props', () => {
+    it("renders 'Paragraph' and its' content", async () => {
       (useCourseByTitle as Mock).mockReturnValue({ course: { enroll: 'http://course-url.com' } });
-      renderWithRouter(<AboutCourse courseName="angular" />);
-    });
+      renderWithRouter(<AboutCourse courseName="js / front-end pre-school ru" type="Pre-school RU" />);
 
-    it('renders "Become a student" button with correct href', async () => {
-      expect(await screen.findByRole('link', { name: /Become a student/i })).toHaveAttribute(
-        'href',
-        'http://course-url.com',
-      );
-    });
+      const paragraph = await screen.findByText(/Подготовительный этап поможет тем/i);
 
-    // TODO fix tests
-    it.skip('renders "Schedule" item and correct icon', () => {
-      expect(screen.getByText('Schedule')).toBeVisible();
-      expect(screen.getByRole('img', { name: 'Schedule' })).toHaveAttribute(
-        'src',
-        MOCKED_IMAGE_PATH,
-      );
-    });
-
-    it('renders correct "Schedule" description', () => {
-      expect(
-        screen.getByText(/Twice a week in the evenings. Duration: 9 weeks./i),
-      ).toBeInTheDocument();
+      expect(paragraph).toBeVisible();
     });
   });
 });

@@ -3,45 +3,53 @@ import { describe, expect, it } from 'vitest';
 import { AboutCourseGrid } from './about-course-grid';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 
+const mockedData = [
+  {
+    id: 1,
+    title: 'Title 1',
+    info: 'Info 1',
+    icon: MOCKED_IMAGE_PATH,
+    alt: 'facts about the course - Title 1',
+  },
+  {
+    id: 2,
+    title: 'Title 2',
+    info: 'Info 2',
+    icon: MOCKED_IMAGE_PATH,
+    alt: 'facts about the course - Title 2',
+  },
+];
+
 describe('AboutCourseGrid component', () => {
-  const dummyData = [
-    {
-      id: 1,
-      title: 'Title 1',
-      info: 'Info 1',
-      icon: MOCKED_IMAGE_PATH,
-    },
-    {
-      id: 2,
-      title: 'Title 2',
-      info: 'Info 2',
-      icon: MOCKED_IMAGE_PATH,
-    },
-  ];
+  let itemElements: HTMLElement[];
+
+  beforeEach(() => {
+    render(<AboutCourseGrid items={mockedData} />);
+    itemElements = screen.getAllByTestId('about-course-grid-item');
+  });
 
   it('renders correct number of items', () => {
-    render(<AboutCourseGrid items={dummyData} />);
-
-    const itemElements = screen.getAllByTestId('about-course-grid-item');
-
-    expect(itemElements).toHaveLength(dummyData.length);
+    expect(itemElements).toHaveLength(mockedData.length);
   });
 
   it('renders correct content for each item', () => {
-    render(<AboutCourseGrid items={dummyData} />);
+    itemElements.forEach((item, index) => {
+      const titles = screen.getAllByTestId('subtitle');
+      const infoArray = screen.getAllByTestId('paragraph');
 
-    dummyData.forEach(({ title, info }) => {
-      expect(screen.getByText(title)).toBeInTheDocument();
-      expect(screen.getByText(info)).toBeInTheDocument();
+      expect(item).toBeVisible();
+      expect(titles[index].textContent).toBe(mockedData[index].title);
+      expect(infoArray[index].textContent).toBe(mockedData[index].info);
     });
   });
 
-  // TODO fix tests
-  it.skip('renders correct image for each item', () => {
-    render(<AboutCourseGrid items={dummyData} />);
+  it('renders correct image for each item', () => {
+    const images = screen.getAllByTestId('grid-icon');
 
-    dummyData.forEach(({ title }) => {
-      expect(screen.getByAltText(title).getAttribute('src')).toEqual(MOCKED_IMAGE_PATH);
+    images.forEach((image, index) => {
+      expect(image).toBeVisible();
+      expect(image).toHaveAttribute('src', MOCKED_IMAGE_PATH);
+      expect(image).toHaveAttribute('alt', mockedData[index].alt);
     });
   });
 });
