@@ -1,4 +1,3 @@
-import { Course } from '@/entities/course';
 import { About } from '@/widgets/about';
 import { AngularTopics } from '@/widgets/angular-topics';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
@@ -14,13 +13,10 @@ import { angular } from 'data';
 
 const COURSE_NAME = 'angular';
 
-type AngularProps = {
-  courses: Course[];
-};
-export const Angular = ({ courses }: AngularProps) => {
+export const Angular = () => {
   return (
     <>
-      <CourseMain courseName={COURSE_NAME} courses={courses} />
+      <CourseMain courseName={COURSE_NAME} />
       <Breadcrumbs />
       <TrainingProgram courseName={COURSE_NAME} />
       <AngularTopics />

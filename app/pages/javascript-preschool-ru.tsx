@@ -1,4 +1,3 @@
-import { Course } from '@/entities/course';
 import { About } from '@/widgets/about';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
@@ -12,17 +11,13 @@ import { preSchoolRu } from 'data';
 
 const COURSE_NAME = 'js / front-end pre-school ru';
 
-type JavaScriptPreSchoolRuProps = {
-  courses: Course[];
-};
-
-export const JavaScriptPreSchoolRu = ({ courses }: JavaScriptPreSchoolRuProps) => {
+export const JavaScriptPreSchoolRu = () => {
   const lang = 'ru';
   const type = 'Pre-school RU';
 
   return (
     <>
-      <CourseMain courseName={COURSE_NAME} type={type} lang={lang} courses={courses} />
+      <CourseMain courseName={COURSE_NAME} type={type} lang={lang} />
       <Breadcrumbs />
       <About courseName={COURSE_NAME} type={type} />
       <TrainingProgram courseName={COURSE_NAME} lang={lang} />

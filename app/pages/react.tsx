@@ -1,4 +1,3 @@
-import { Course } from '@/entities/course';
 import { About } from '@/widgets/about';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
@@ -10,14 +9,10 @@ import { reactEn } from 'data';
 
 const COURSE_NAME = 'react';
 
-type ReactProps = {
-  courses: Course[];
-};
-
-export const React = ({ courses }: ReactProps) => {
+export const React = () => {
   return (
     <>
-      <CourseMain courseName={COURSE_NAME} courses={courses} />
+      <CourseMain courseName={COURSE_NAME} />
       <Breadcrumbs />
       <TrainingProgram courseName={COURSE_NAME} />
       <About courseName={COURSE_NAME} />

@@ -1,6 +1,5 @@
 import { getCourseStatus } from './utils/get-course-status';
 import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
-import type { Course } from '@/entities/course';
 import { getCourseDate } from '@/shared/helpers/getCourseDate';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { useTitle } from '@/shared/hooks/use-title';
@@ -10,12 +9,12 @@ import { LinkCustom } from '@/shared/ui/link-custom';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { courses } from 'data';
 
 import styles from './course-main.module.scss';
 
 interface CourseMainProps {
   courseName: string;
-  courses: Course[];
   lang?: 'ru' | 'en';
   type?: 'Pre-school RU';
 }
@@ -25,7 +24,7 @@ const localizedContent = {
   ru: { linkLabel: 'Присоединиться' },
 };
 
-export const CourseMain = ({ courseName, courses, lang = 'en', type }: CourseMainProps) => {
+export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) => {
   const course = selectCourse(courses, courseName);
 
   useTitle(`${course?.title || ''} · The Rolling Scopes School`);
