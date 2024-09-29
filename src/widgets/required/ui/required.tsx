@@ -1,6 +1,5 @@
+import { CourseModuleElement } from './know-before';
 import type { CourseName } from '../types';
-import { List } from '@/shared/ui/list';
-import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { courseDataMap } from 'data';
 
@@ -38,23 +37,12 @@ export const Required = ({ courseName }: RequiredProps) => {
         </WidgetTitle>
 
         <div className="column-2">
-          {isKnowBeforeExist && (
-            <article>
-              <Subtitle fontSize="extra-small">{knowBefore.title}</Subtitle>
-              <List data={knowBefore.description} />
-            </article>
-          )}
+          {isKnowBeforeExist && <CourseModuleElement courseModule={knowBefore} />}
           <div className="will-learn">
             {isWillLearnExist
-              ? willLearn.map((willLearn, index) => {
-                return (
-                  <article key={index}>
-                    <Subtitle fontSize="extra-small">{willLearn.title}</Subtitle>
-                    <List data={willLearn.description} />
-                  </article>
-                );
-              })
-              : ''}
+            && willLearn.map((willLearn, index) => (
+              <CourseModuleElement key={index} courseModule={willLearn} />
+            ))}
           </div>
         </div>
       </div>
