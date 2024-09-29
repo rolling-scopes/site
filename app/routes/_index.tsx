@@ -1,6 +1,7 @@
-import { LoaderFunction } from '@remix-run/node';
 import { BaseLayout } from '@/app/layouts/base-layout/components/base-layout';
 import { Home } from '@/pages/home';
+
+export const handle = { static: true };
 
 export default function HomeRout() {
   return (
@@ -9,7 +10,3 @@ export default function HomeRout() {
     </BaseLayout>
   );
 }
-
-export const loader: LoaderFunction = async () => {
-  return {};
-};
