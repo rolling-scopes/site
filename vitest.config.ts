@@ -11,6 +11,13 @@ export default defineConfig({
       data: path.resolve(__dirname, 'dev-data'),
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern',
+      },
+    },
+  },
   test: {
     environment: 'jsdom',
     globals: true,
