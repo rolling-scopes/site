@@ -39,9 +39,11 @@ export const Required = ({ courseName }: RequiredProps) => {
           {title}
         </WidgetTitle>
 
-        <div className={cx('column-2')}>
-          {isKnowBeforeExist && <CourseModuleElement courseModule={knowBefore} />}
-          <div className={cx('will-learn')}>
+        <div className={cx('course-module-columns-layout')}>
+          <div className={cx('course-module-elements-column')}>
+            {isKnowBeforeExist && <CourseModuleElement courseModule={knowBefore} />}
+          </div>
+          <div className={cx('course-module-elements-column')}>
             {isWillLearnExist
             && willLearn.map((willLearn, index) => (
               <CourseModuleElement key={index} courseModule={willLearn} />
