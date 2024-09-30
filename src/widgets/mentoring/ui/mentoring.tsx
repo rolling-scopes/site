@@ -1,6 +1,10 @@
+import cn from 'classnames';
+import classNames from 'classnames/bind';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
-import './mentoring.scss';
+import styles from './mentoring.module.scss';
+
+const cx = classNames.bind(styles);
 
 const mentorshipBenefits = [
   {
@@ -27,12 +31,12 @@ const mentorshipBenefits = [
 
 export const Mentoring = () => {
   return (
-    <section className="mentoring container">
-      <div className="mentoring content">
+    <section className="container">
+      <div className={cn(cx('mentoring-content'), 'content')}>
         <WidgetTitle size="small">Mentoring is for you if you</WidgetTitle>
-        <div className="benefits">
+        <div className={cx('benefits')}>
           {mentorshipBenefits.map(({ id, info }) => (
-            <div key={id} className="benefit">
+            <div key={id} className={cx('benefit')}>
               {info}
             </div>
           ))}
