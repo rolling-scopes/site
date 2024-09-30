@@ -7,7 +7,7 @@ import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { actualEvents, nearestEvents, rsLifetime } from '@/widgets/events/constants.ts';
+import { actualEvents, nearestEvents, rsLifetime } from '@/widgets/events/constants';
 
 import styles from './events.module.scss';
 
@@ -27,17 +27,24 @@ export const Events = () => {
           </Paragraph>
           <Paragraph>
             During
+            {' '}
             {rsLifetime}
-            years we have organized 150+ events for developers in different
-            cities and countries.
+            {' '}
+            years we have organized 150+ events for developers in different cities and countries.
           </Paragraph>
         </section>
 
         <section className={cx('cards')}>
-          {!actualEvents.length && (<Image src={photo3} alt="Speaker presenting at a event" className={cx('event-img')} />)}
+          {!actualEvents.length && (
+            <Image src={photo3} alt="Speaker presenting at a event" className={cx('event-img')} />
+          )}
 
-          {(nearestEvents).map((event) => (
-            <EventCard key={event.title} {...event} date={dayjs(event.date).format('DD MMM YYYY')} />
+          {nearestEvents.map((event) => (
+            <EventCard
+              key={event.title}
+              {...event}
+              date={dayjs(event.date).format('DD MMM YYYY')}
+            />
           ))}
         </section>
       </div>
