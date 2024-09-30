@@ -36,9 +36,9 @@ export const Mentoring = () => {
         <WidgetTitle size="small">Mentoring is for you if you</WidgetTitle>
         <div className={cx('benefits')}>
           {mentorshipBenefits.map(({ id, info }) => (
-            <div key={id} className={cx('benefit')}>
+            <article key={id} className={cx('benefit')}>
               {info}
-            </div>
+            </article>
           ))}
         </div>
       </div>
