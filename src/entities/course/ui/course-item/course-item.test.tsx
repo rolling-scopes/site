@@ -40,7 +40,7 @@ describe('CourseItem Component', () => {
   });
 
   it('renders the LinkCustom component with correct href and text', () => {
-    const link = screen.getByTestId('course-link') as HTMLAnchorElement;
+    const link = screen.getByTestId('course-link');
 
     expect(link).toBeInTheDocument();
     expect(link).toHaveAttribute('href', mockedProps.detailsUrl);
