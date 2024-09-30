@@ -1,13 +1,14 @@
 import dayjs from 'dayjs';
-import { getActualData } from '@/shared/helpers/getActualData.ts';
+import { RS_FOUNDATION_YEAR } from '@/shared/constants';
+import { getActualData } from '@/shared/helpers/getActualData';
 import { events } from 'data';
 
-export const displayedCardsQuantity = 2;
+export const maxEventsCount = 2;
 export const actualEvents = getActualData({
   data: events,
   staleAfter: 3,
 });
 
-export const nearestEvents = actualEvents.slice(0, displayedCardsQuantity);
+export const nearestEvents = actualEvents.slice(0, maxEventsCount);
 
-export const rsLifetime = dayjs().diff('2013', 'year');
+export const rsLifetime = dayjs().diff(RS_FOUNDATION_YEAR, 'year');
