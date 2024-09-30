@@ -11,7 +11,7 @@ import styles from './community-media.module.scss';
 const cx = classNames.bind(styles);
 
 export const CommunityMedia = () => (
-  <section className={cx('container')}>
+  <section className={cx('container')} data-testid="community-media">
     <div className={cx('content', 'column-2', 'community-media-content')}>
       <article className={cx('community-join-info')}>
         <WidgetTitle size="large" mods="lines">
@@ -28,7 +28,7 @@ export const CommunityMedia = () => (
           ))}
         </div>
       </article>
-      <Image className={cx('sloth-mascot')} src={image} alt="A sloth mascot with a welcome" />
+      <Image className={cx('sloth-mascot')} src={image} alt="A sloth mascot with a welcome" data-testid="welcome-sloth" />
     </div>
   </section>
 );

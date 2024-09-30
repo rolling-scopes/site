@@ -2,35 +2,42 @@ import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { CommunityMedia } from './community-media';
 import { renderWithRouter } from '@/shared/__tests__/utils';
+import image from '@/shared/assets/welcome.webp';
+import { communityGroups } from 'data';
 
-describe('Community', () => {
+let communityMedia: HTMLElement;
+let title: HTMLElement;
+let paragraph: HTMLElement;
+let socialMediaItems: HTMLElement[];
+let imgElement: HTMLElement;
+let slothImage: HTMLElement;
+
+describe('CommunityMedia component', () => {
   beforeEach(() => {
     renderWithRouter(<CommunityMedia />);
+    communityMedia = screen.getByTestId('community-media');
+    title = screen.getByTestId('widget-title');
+    paragraph = screen.getByTestId('paragraph');
+    socialMediaItems = screen.getAllByTestId('social-media');
+    slothImage = screen.getByTestId('welcome-sloth');
+    imgElement = screen.getByAltText('A sloth mascot with a welcome');
   });
 
-  it('Displays Heading Correctly', () => {
-    const headingElement = screen.getByText('Join RS Community');
-
-    expect(headingElement).toBeVisible();
+  it('renders the component without crashing', () => {
+    expect(communityMedia).toBeVisible();
   });
 
-  it('Displays Subtitle Correctly', () => {
-    const subtitleElement = screen.getByText(
-      /If you want to learn coding or be a RS School mentor/i,
-    );
+  it('renders the component content correctly', () => {
+    expect(title).toBeVisible();
+    expect(paragraph).toBeVisible();
+    expect(slothImage).toBeVisible();
 
-    expect(subtitleElement).toBeVisible();
-  });
+    expect(socialMediaItems.length).toBe(communityGroups.length);
 
-  it('Renders all social media links', () => {
-    const socialMediaLinks = screen.getAllByRole('link');
+    expect(title).toHaveTextContent('Join RS Community');
+    expect(paragraph).toHaveTextContent(/If you want to learn coding or be a RS School mentor/i);
 
-    expect(socialMediaLinks.length).toBe(9);
-  });
-
-  it('Displays community image correctly', () => {
-    const imgElement = screen.getByAltText('community-welcome');
-
-    expect(imgElement).toBeVisible();
+    expect(imgElement).toHaveAttribute('src', image);
+    expect(imgElement).toHaveAttribute('alt', 'A sloth mascot with a welcome');
   });
 });
