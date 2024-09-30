@@ -8,14 +8,14 @@ import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { maxCourseCount, tabletScreenBreakPoint } from '@/widgets/courses-school/constants.ts';
+import { maxCourseCount, tabletScreenBreakPoint } from '@/widgets/upcoming-courses/constants.ts';
 import { courses } from 'data';
 
-import styles from './courses-school.module.scss';
+import styles from './upcoming-courses.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const CoursesSchool = () => {
+export const UpcomingCourses = () => {
   const size = useWindowSize();
   const coursesData: Course[] = getActualData({
     data: courses,

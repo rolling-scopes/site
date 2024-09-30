@@ -4,13 +4,13 @@ import { useTitle } from '@/shared/hooks/use-title';
 import { AboutSchool } from '@/widgets/about-school';
 import { Alumni } from '@/widgets/alumni';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
-import { CoursesSchool } from '@/widgets/courses-school';
 import { HeroPage } from '@/widgets/hero-page';
 import { Mentoring } from '@/widgets/mentoring';
 import { Mentors } from '@/widgets/mentors';
 import { Principles } from '@/widgets/principles';
 import { Requirements } from '@/widgets/requirements';
 import { StudyWithUs } from '@/widgets/study-with-us';
+import { UpcomingCourses } from '@/widgets/upcoming-courses';
 
 export const Home: FC = () => {
   useTitle('Home · The Rolling Scopes School');
@@ -22,7 +22,7 @@ export const Home: FC = () => {
       <AboutSchool />
       <Principles />
       <StudyWithUs />
-      <CoursesSchool />
+      <UpcomingCourses />
       <Alumni />
       <Mentors />
       <Mentoring />

@@ -10,8 +10,8 @@ import {
 import { ROUTES } from '@/app/const';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
-import { CoursesSchool } from '@/widgets/courses-school';
-import { tabletScreenBreakPoint } from '@/widgets/courses-school/constants.ts';
+import { UpcomingCourses } from '@/widgets/upcoming-courses';
+import { tabletScreenBreakPoint } from '@/widgets/upcoming-courses/constants.ts';
 
 const mockedData = [
   {
@@ -83,7 +83,7 @@ vi.mock('@/shared/hooks/use-window-size', () => {
 
 describe('Courses', () => {
   beforeEach(() => {
-    renderWithRouter(<CoursesSchool />);
+    renderWithRouter(<UpcomingCourses />);
   });
 
   it('renders the title correctly', () => {
@@ -118,7 +118,7 @@ describe('School Courses on different screen sizes', () => {
       height,
     });
 
-    renderWithRouter(<CoursesSchool />);
+    renderWithRouter(<UpcomingCourses />);
     const courseCards = screen.getAllByTestId('course-link').at(0);
 
     expect(courseCards).toHaveTextContent('');
@@ -130,7 +130,7 @@ describe('School Courses on different screen sizes', () => {
       height,
     });
 
-    renderWithRouter(<CoursesSchool />);
+    renderWithRouter(<UpcomingCourses />);
     const courseCards = screen.getAllByTestId('course-link').at(0);
 
     expect(courseCards).toHaveTextContent('More details');
