@@ -1,8 +1,17 @@
 import { screen } from '@testing-library/react';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import {
+  Mock,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi,
+} from 'vitest';
 import { ROUTES } from '@/app/const';
 import { renderWithRouter } from '@/shared/__tests__/utils';
+import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { CoursesSchool } from '@/widgets/courses-school';
+import { tabletScreenBreakPoint } from '@/widgets/courses-school/constants.ts';
 
 const mockedData = [
   {
@@ -48,6 +57,10 @@ const mockedData = [
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.AWS_FUNDAMENTALS}`,
   },
 ];
+
+const height = 900;
+const widthMobile = tabletScreenBreakPoint;
+const widthDesktop = widthMobile + 100;
 
 vi.mock('@/app/hooks/use-data-by-name', () => {
   return {
@@ -95,5 +108,31 @@ describe('Courses', () => {
     const rsBanner = screen.getByTestId('rs-banner');
 
     expect(rsBanner).toBeInTheDocument();
+  });
+});
+
+describe('School Courses on different screen sizes', () => {
+  it('renders link with icon only on window size 810px', () => {
+    (useWindowSize as Mock).mockReturnValue({
+      width: widthMobile,
+      height,
+    });
+
+    renderWithRouter(<CoursesSchool />);
+    const courseCards = screen.getAllByTestId('course-link').at(0);
+
+    expect(courseCards).toHaveTextContent('');
+  });
+
+  it('renders link with "More details" on window size more than 810px', () => {
+    (useWindowSize as Mock).mockReturnValue({
+      width: widthDesktop,
+      height,
+    });
+
+    renderWithRouter(<CoursesSchool />);
+    const courseCards = screen.getAllByTestId('course-link').at(0);
+
+    expect(courseCards).toHaveTextContent('More details');
   });
 });
