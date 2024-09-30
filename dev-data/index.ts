@@ -25,6 +25,7 @@ export { javaScriptEn } from './javascript-en.data';
 export { javaScriptRu } from './javascript-ru.data';
 export { jsPath } from './js-path.data';
 export { jsPathRu } from './js-ru-path.data';
+export { mentorshipBenefits } from './mentoring.data.ts';
 export { nodejs } from './nodejs.data';
 export { preSchoolEn, preSchoolRu } from './preSchool.data';
 export { reactEn } from './react-en.data';
