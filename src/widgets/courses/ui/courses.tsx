@@ -1,3 +1,5 @@
+import classNames from 'classnames/bind';
+import { path } from '../constants';
 import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
 import { type Course, CourseCard } from '@/entities/course';
 import { getActualData } from '@/shared/helpers/getActualData';
@@ -5,10 +7,12 @@ import { isCourse } from '@/shared/helpers/is-course';
 import { useDataByName } from '@/shared/hooks/use-data-by-name';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
-import './courses.scss';
+import styles from './courses.module.scss';
+
+const cx = classNames.bind(styles);
 
 export const Courses = () => {
-  const { data: courses, loading, error } = useDataByName('courses');
+  const { data: courses, loading, error } = useDataByName(path);
 
   if (loading) {
     return <h2>Loading...</h2>;
@@ -29,10 +33,10 @@ export const Courses = () => {
   const sortedCourses: Course[] = getActualData(sortParams);
 
   return (
-    <section className="rs-courses container" id="upcoming-courses">
-      <div className="rs-courses content">
+    <section className={cx('container')} data-testid="all-courses">
+      <div className={cx('content', 'courses-content')}>
         <WidgetTitle>All courses</WidgetTitle>
-        <div className="rs-courses-wrapper" data-testid="courses-fancy">
+        <div className={cx('courses-list')}>
           {sortedCourses.map((course) => {
             return <CourseCard key={course.id} {...course} />;
           })}

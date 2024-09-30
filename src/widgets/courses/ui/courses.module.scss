@@ -1,0 +1,24 @@
+.courses-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @include media-laptop {
+    width: 100%;
+  }
+}
+
+.courses-list {
+  display: grid;
+  grid-template: 1fr / repeat(3, 1fr);
+  gap: 22px;
+  width: 100%;
+
+  @include media-laptop-medium {
+    grid-template: 1fr / repeat(2, 1fr);
+  }
+
+  @include media-tablet {
+    grid-template: 1fr / 1fr;
+  }
+}

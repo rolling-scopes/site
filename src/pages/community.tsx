@@ -1,11 +1,12 @@
 import { FC } from 'react';
+import { PAGE_NAMES } from '@/shared/constants';
 import { useTitle } from '@/shared/hooks/use-title';
 import { AboutCommunity } from '@/widgets/about-community';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { CommunityMedia } from '@/widgets/community-media';
 import { Contribute } from '@/widgets/contribute';
 import { Events } from '@/widgets/events';
-import { Hero } from '@/widgets/hero';
+import { HeroPage } from '@/widgets/hero-page';
 import { Merch } from '@/widgets/merch';
 import { Numbers } from '@/widgets/numbers';
 import { Pictures } from '@/widgets/pictures';
@@ -18,7 +19,7 @@ export const Community: FC = () => {
 
   return (
     <>
-      <Hero />
+      <HeroPage pageName={PAGE_NAMES.COMMUNITY} />
       <Breadcrumbs />
       <AboutCommunity />
       <Numbers />

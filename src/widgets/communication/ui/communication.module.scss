@@ -1,0 +1,39 @@
+.communication-content {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.communication-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  align-items: center;
+  justify-content: flex-start;
+
+  @include media-tablet-large {
+    flex-direction: column;
+    gap: 40px;
+    align-items: flex-start;
+  }
+}
+
+.communication-paragraph {
+  padding-top: 5px;
+}
+
+.discord-logo-wrapper {
+  flex-shrink: 0;
+  align-self: center;
+
+  width: 250px;
+  padding: 30px;
+
+  background-color: hsl(234.9deg 85.6% 64.7%);
+  border-radius: 30px;
+
+  @include media-tablet {
+    width: 150px;
+    padding: 15px;
+  }
+}
