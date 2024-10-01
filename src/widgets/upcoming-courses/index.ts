@@ -1,1 +1,1 @@
-export { UpcomingCourses } from './ui/upcoming-courses.tsx';
+export { UpcomingCourses } from './ui/upcoming-courses';
