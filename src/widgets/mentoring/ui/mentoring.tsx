@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { mentorshipBenefits } from 'data';
 
@@ -13,9 +14,9 @@ export const Mentoring = () => {
         <WidgetTitle size="small">Mentoring is for you if you</WidgetTitle>
         <div className={cx('mentorship-benefits')}>
           {mentorshipBenefits.map(({ id, info }) => (
-            <article key={id} className={cx('benefit-item')}>
+            <Paragraph key={id} className={cx('benefit-item')}>
               {info}
-            </article>
+            </Paragraph>
           ))}
         </div>
       </div>
