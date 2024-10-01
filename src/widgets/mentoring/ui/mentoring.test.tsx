@@ -13,8 +13,8 @@ describe('Mentoring', () => {
     expect(screen.getByText('Mentoring is for you if you')).toBeVisible();
   });
 
-  it.each(mentorshipBenefits)('renders the benefit $id with the given info', ({ info }) => {
-    const benefit = screen.getByText(info);
+  it.each(mentorshipBenefits)('renders the benefit $id with the given info', ({ id, info }) => {
+    const benefit = screen.getAllByTestId('paragraph').at(id - 1);
 
     expect(benefit).toHaveTextContent(info);
   });
