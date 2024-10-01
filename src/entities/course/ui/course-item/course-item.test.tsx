@@ -19,23 +19,15 @@ describe('CourseItem Component', () => {
     renderWithRouter(<CourseItem {...mockedProps} />);
   });
 
-  it('renders the course title', () => {
+  it('renders the component data as expected', () => {
     const titleElement = screen.getByText(mockedProps.title);
-
-    expect(titleElement).toBeInTheDocument();
-  });
-
-  it('renders the course language with the first letter capitalized', () => {
     const languageInitial = mockedProps.language[0].toUpperCase();
     const dateElement = screen.getByTestId('course-language');
-
-    expect(dateElement).toBeInTheDocument();
-    expect(dateElement).toHaveTextContent(`• ${languageInitial}`);
-  });
-
-  it('renders the start date correctly', () => {
     const courseDate = screen.getByTestId('course-date');
 
+    expect(titleElement).toBeInTheDocument();
+    expect(dateElement).toBeInTheDocument();
+    expect(dateElement).toHaveTextContent(`• ${languageInitial}`);
     expect(courseDate).toHaveAttribute('datetime', expectedDate);
   });
 
