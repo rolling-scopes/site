@@ -11,7 +11,7 @@ import { ROUTES } from '@/app/const';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { UpcomingCourses } from '@/widgets/upcoming-courses';
-import { tabletScreenBreakPoint } from '@/widgets/upcoming-courses/constants.ts';
+import { tabletScreenBreakPoint } from '@/widgets/upcoming-courses/constants';
 
 const mockedData = [
   {
