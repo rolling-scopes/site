@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { BaseLayout } from './base-layout';
 
-vi.mock('react-router-dom', () => ({
+vi.mock('react-router', () => ({
   Outlet: vi.fn(() => <div data-testid="mockOutlet" />),
   useLocation: vi.fn(() => ({ hash: 'testHash' })),
   ScrollRestoration: vi.fn(() => null),

@@ -1,5 +1,5 @@
 import NextTopLoader from 'nextjs-toploader';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router';
 import { routes } from './routes';
 
 import './app.scss';

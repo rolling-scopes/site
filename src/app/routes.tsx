@@ -1,4 +1,4 @@
-import { RouteObject } from 'react-router-dom';
+import { RouteObject } from 'react-router';
 import { ROUTES } from '@/app/const';
 import { courseLoader } from '@/widgets/course-main/courseLoader.ts';
 
