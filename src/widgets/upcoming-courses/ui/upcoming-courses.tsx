@@ -8,7 +8,10 @@ import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { maxCourseCount, tabletScreenBreakPoint } from '@/widgets/upcoming-courses/constants.ts';
+import {
+  maxUpcomingCoursesQuantity,
+  tabletScreenBreakPoint,
+} from '@/widgets/upcoming-courses/constants.ts';
 import { courses } from 'data';
 
 import styles from './upcoming-courses.module.scss';
@@ -30,7 +33,7 @@ export const UpcomingCourses = () => {
   }
 
   const coursesContent = coursesData
-    .slice(0, Math.min(coursesData.length, maxCourseCount))
+    .slice(0, Math.min(coursesData.length, maxUpcomingCoursesQuantity))
     .map(({ title, language, startDate, detailsUrl, iconSrc }) => {
       return (
         <CourseItem
