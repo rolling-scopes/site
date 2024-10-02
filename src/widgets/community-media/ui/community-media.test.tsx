@@ -36,6 +36,6 @@ describe('CommunityMedia component', () => {
     expect(paragraph).toHaveTextContent(/If you want to learn coding or be a RS School mentor/i);
 
     expect(slothImage).toHaveAttribute('src', image);
-    expect(slothImage).toHaveAttribute('alt', 'A sloth mascot with a welcome');
+    expect(slothImage).toHaveAttribute('alt', 'A sloth mascot with arms raised under a welcome sign');
   });
 });
