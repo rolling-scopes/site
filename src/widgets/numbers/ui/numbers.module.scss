@@ -54,12 +54,11 @@
   justify-content: space-between;
   margin: 24px;
 
-  .left,
-  .right {
+  &-block {
     display: flex;
   }
 
-  .info-cell {
+  &-cell {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,8 +68,7 @@
     padding: 8px 16px;
 
     .number {
-      font-size: 52px;
-      line-height: 64px;
+      padding: 0;
       letter-spacing: 0.04em;
 
       @include media-laptop {
@@ -79,16 +77,8 @@
       }
     }
 
-    .text {
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 20px;
-      color: $color-gray-600;
-
-      @include media-laptop {
-        font-size: 12px;
-        line-height: 16px;
-      }
+    &-text {
+      height: 56px;
     }
 
     @include media-laptop {
@@ -101,10 +91,11 @@
     }
   }
 
-  .info-divider {
+  &-divider {
     width: 3px;
     height: 180px;
     background-color: $color-gray-200;
+    border: none;
 
     @include media-tablet {
       height: 140px;
