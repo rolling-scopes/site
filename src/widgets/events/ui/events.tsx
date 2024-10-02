@@ -36,7 +36,7 @@ export const Events = () => {
 
         <section className={cx('cards')}>
           {!actualEvents.length && (
-            <Image src={photo3} alt="Speaker presenting at a event" className={cx('event-img')} />
+            <Image src={photo3} alt="Speaker presenting at an event" className={cx('event-img')} />
           )}
 
           {nearestEvents.map((event) => (
