@@ -1,23 +1,21 @@
-.numbers {
+.content {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 
-  &.content {
-    position: relative;
+  width: 100%;
+  max-width: 1440px;
+  padding: 40px 120px 80px;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  @include media-laptop {
+    padding: 80px 40px;
+  }
 
-    padding: 40px 120px 80px;
-
-    @include media-laptop {
-      padding: 80px 40px;
-    }
-
-    @include media-tablet {
-      padding: 40px 16px;
-    }
+  @include media-tablet {
+    padding: 40px 16px;
   }
 }
 
@@ -30,68 +28,40 @@
 
   width: 90%;
   max-width: 986px;
-  height: auto;
   max-height: 650px;
 
   @include media-tablet {
     width: 100%;
     max-width: none;
-    height: auto;
     max-height: none;
   }
 }
 
-.numbers .text-container {
-  display: flex;
-  flex-direction: column;
-
-  @include media-laptop {
-    flex-direction: row;
-    align-self: flex-start;
-  }
-}
-
-.numbers .text-container > div {
+.text-container {
   align-self: flex-end;
   width: 50%;
-  text-align: left;
+  text-wrap: balance;
 
   @include media-laptop {
+    align-self: flex-start;
     width: 100%;
   }
 }
 
-.numbers .info {
+.info {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
-  margin-top: 24px;
-  padding: 0 24px;
+  margin: 24px;
 
   .left,
   .right {
     display: flex;
-    flex-direction: row;
-  }
-
-  .left div:nth-child(4) {
-    @include media-tablet {
-      display: none;
-    }
-  }
-
-  .right {
-    @include media-tablet {
-      margin-top: 16px;
-    }
   }
 
   .info-cell {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
 
     width: 192px;
@@ -100,9 +70,7 @@
 
     .number {
       font-size: 52px;
-      font-weight: 500;
       line-height: 64px;
-      color: $color-black;
       letter-spacing: 0.04em;
 
       @include media-laptop {
@@ -116,7 +84,6 @@
       font-weight: 400;
       line-height: 20px;
       color: $color-gray-600;
-      letter-spacing: 0;
 
       @include media-laptop {
         font-size: 12px;
@@ -137,15 +104,20 @@
   .info-divider {
     width: 3px;
     height: 180px;
-    background-color: #e2e2e2;
+    background-color: $color-gray-200;
 
     @include media-tablet {
       height: 140px;
+
+      &:nth-child(4) {
+        display: none;
+      }
     }
   }
 
   @include media-tablet {
     flex-direction: column;
+    gap: 16px;
   }
 
   @include media-mobile {
