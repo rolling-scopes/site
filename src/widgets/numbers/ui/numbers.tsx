@@ -14,19 +14,23 @@ interface InfoCellProps {
 }
 
 const InfoCell = ({ title, description }: InfoCellProps) => (
-  <div className={cx('info-cell')}>
-    <div className={cx('number')}>{title}</div>
-    <div className={cx('text')}>{description}</div>
-  </div>
+  <article className={cx('info-cell')}>
+    <WidgetTitle size="large" className={cx('number')}>
+      {title}
+    </WidgetTitle>
+    <Paragraph fontSize="medium" className={cx('info-cell-text')}>
+      {description}
+    </Paragraph>
+  </article>
 );
 
-const InfoCellDivider = () => <div className={cx('info-divider')} />;
+const InfoCellDivider = () => <hr className={cx('info-divider')} />;
 
 export const Numbers = () => {
   return (
-    <div className={cx('container')}>
+    <section className={cx('container')}>
       <div className={cx('content')}>
-        <div className={cx('text-container')}>
+        <article className={cx('text-container')}>
           <WidgetTitle mods="asterisk">The Rolling Scopes in numbers</WidgetTitle>
           <Paragraph fontSize="large">
             Everyone can discover our community, regardless of age, professional employment, or
@@ -36,15 +40,15 @@ export const Numbers = () => {
             Developers from different companies and countries are connected to pass on your
             knowledge, enrich your network and just have fun.
           </Paragraph>
-        </div>
+        </article>
         <div className={cx('info')}>
-          <div className={cx('left')}>
+          <div className={cx('info-block')}>
             <InfoCell title="62k+" description="members" />
             <InfoCellDivider />
             <InfoCell title="500+" description="events" />
             <InfoCellDivider />
           </div>
-          <div className={cx('right')}>
+          <div className={cx('info-block')}>
             <InfoCell title="600+" description="videos on YouTube" />
             <InfoCellDivider />
             <InfoCell title="1800+" description="RS School alumni per year" />
@@ -52,6 +56,6 @@ export const Numbers = () => {
         </div>
         <Image className={cx('map')} src={image} alt="map" />
       </div>
-    </div>
+    </section>
   );
 };
