@@ -21,7 +21,7 @@
 .social-media-container {
   display: grid;
   grid-template-columns: repeat(3, auto);
-  place-items: center;
+  align-items: start;
   justify-content: space-between;
 
   width: 416px;
@@ -36,10 +36,6 @@
   width: 390px;
   height: 390px;
 
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-
   @include media-laptop {
     width: 350px;
     height: 350px;
@@ -48,6 +44,5 @@
   @include media-mobile {
     width: 100%;
     height: auto;
-    object-fit: contain;
   }
 }
