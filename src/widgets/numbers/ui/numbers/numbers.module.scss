@@ -9,7 +9,8 @@
   .numbers-map {
     position: absolute;
     z-index: -1;
-    left: 0;
+    top: -40px;
+    left: 36px;
 
     overflow: hidden;
 
@@ -41,7 +42,7 @@
     align-items: center;
     justify-content: space-between;
 
-    margin: 0 24px;
+    margin: 0 24px 40px 24px;
 
     :last-child::after {
       display: none;
