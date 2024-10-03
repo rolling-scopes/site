@@ -36,14 +36,12 @@
   }
 
   .info {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
     align-items: center;
     justify-content: space-between;
-    margin: 0 24px;
 
-    &-block {
-      display: flex;
-    }
+    margin: 0 24px;
 
     &-cell {
       display: flex;
@@ -57,11 +55,6 @@
       .number {
         padding: 0;
         letter-spacing: 0.04em;
-
-        @include media-laptop {
-          font-size: 44px;
-          line-height: 52px;
-        }
       }
 
       &-text {
@@ -94,8 +87,11 @@
     }
 
     @include media-tablet {
-      flex-direction: column;
-      gap: 16px;
+      grid-auto-flow: row;
+
+      & > :nth-child(n + 4) {
+        grid-row: 2 / 3;
+      }
     }
 
     @include media-mobile {

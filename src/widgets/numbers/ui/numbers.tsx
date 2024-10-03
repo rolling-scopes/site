@@ -42,17 +42,13 @@ export const Numbers = () => {
           </Paragraph>
         </article>
         <div className={cx('info')}>
-          <div className={cx('info-block')}>
-            <InfoCell title="62k+" description="members" />
-            <InfoCellDivider />
-            <InfoCell title="500+" description="events" />
-            <InfoCellDivider />
-          </div>
-          <div className={cx('info-block')}>
-            <InfoCell title="600+" description="videos on YouTube" />
-            <InfoCellDivider />
-            <InfoCell title="1800+" description="RS School alumni per year" />
-          </div>
+          <InfoCell title="62k+" description="members" />
+          <InfoCellDivider />
+          <InfoCell title="500+" description="events" />
+          <InfoCellDivider />
+          <InfoCell title="600+" description="videos on YouTube" />
+          <InfoCellDivider />
+          <InfoCell title="1800+" description="RS School alumni per year" />
         </div>
         <Image className={cx('map')} src={image} alt="map" />
       </div>
