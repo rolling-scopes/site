@@ -29,7 +29,7 @@ const InfoCellDivider = () => <hr className={cx('info-divider')} />;
 export const Numbers = () => {
   return (
     <section className={cx('container')}>
-      <div className={cx('content')}>
+      <div className={cx('numbers-content', 'content')}>
         <article className={cx('text-container')}>
           <WidgetTitle mods="asterisk">The Rolling Scopes in numbers</WidgetTitle>
           <Paragraph fontSize="large">
