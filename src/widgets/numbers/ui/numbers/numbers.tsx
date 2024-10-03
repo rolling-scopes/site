@@ -25,12 +25,12 @@ export const Numbers = () => {
             knowledge, enrich your network and just have fun.
           </Paragraph>
         </article>
-        <div className={cx('info')}>
+        <div className={cx('numbers-info')}>
           {rsInNumbers.map(({ id, title, description }) => (
             <InfoCell key={id} title={title} description={description} />
           ))}
         </div>
-        <Image className={cx('map')} src={image} alt="map" />
+        <Image className={cx('numbers-map')} src={image} alt="map" />
       </div>
     </section>
   );

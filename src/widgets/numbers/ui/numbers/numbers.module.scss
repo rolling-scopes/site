@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
 
-  .map {
+  .numbers-map {
     position: absolute;
     z-index: -1;
     left: 0;
@@ -35,7 +35,7 @@
     }
   }
 
-  .info {
+  .numbers-info {
     display: grid;
     grid-auto-flow: column;
     align-items: center;
