@@ -43,14 +43,34 @@
 
     margin: 0 24px;
 
+    :last-child::after {
+      display: none;
+    }
+
     &-cell {
+      position: relative;
+
       display: flex;
       flex-direction: column;
       justify-content: center;
 
-      width: 192px;
-      margin: 0 24px;
-      padding: 8px 16px;
+      width: 240px;
+      height: 180px;
+      padding: 8px 40px;
+
+      &::after {
+        content: '';
+
+        position: absolute;
+        top: 50%;
+        right: 0;
+        translate: 0 -50%;
+
+        width: 3px;
+        height: 100%;
+
+        background-color: $color-gray-200;
+      }
 
       .number {
         padding: 0;
@@ -62,35 +82,25 @@
       }
 
       @include media-laptop {
+        width: 200px;
+      }
+
+      @include media-tablet {
         width: 150px;
-        margin: 0;
-      }
-
-      @include media-tablet {
         padding: 0 8px;
-      }
-    }
-
-    &-divider {
-      width: 3px;
-      height: 180px;
-      background-color: $color-gray-200;
-      border: none;
-
-      @include media-tablet {
-        height: 140px;
-
-        &:nth-child(4) {
-          display: none;
-        }
       }
     }
 
     @include media-tablet {
       grid-auto-flow: row;
+      gap: 16px;
 
-      & > :nth-child(n + 4) {
+      :nth-child(n + 3) {
         grid-row: 2 / 3;
+      }
+
+      :nth-child(2)::after {
+        display: none;
       }
     }
 

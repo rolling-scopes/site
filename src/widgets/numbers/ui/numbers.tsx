@@ -24,8 +24,6 @@ const InfoCell = ({ title, description }: InfoCellProps) => (
   </article>
 );
 
-const InfoCellDivider = () => <hr className={cx('info-divider')} />;
-
 export const Numbers = () => {
   return (
     <section className={cx('container')}>
@@ -43,11 +41,8 @@ export const Numbers = () => {
         </article>
         <div className={cx('info')}>
           <InfoCell title="62k+" description="members" />
-          <InfoCellDivider />
           <InfoCell title="500+" description="events" />
-          <InfoCellDivider />
           <InfoCell title="600+" description="videos on YouTube" />
-          <InfoCellDivider />
           <InfoCell title="1800+" description="RS School alumni per year" />
         </div>
         <Image className={cx('map')} src={image} alt="map" />
