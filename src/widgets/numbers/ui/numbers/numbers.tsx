@@ -1,4 +1,5 @@
 import classnames from 'classnames/bind';
+import { InfoCell } from '../info-cell/info-cell.tsx';
 import image from '@/shared/assets/map.webp';
 import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -7,22 +8,6 @@ import { WidgetTitle } from '@/shared/ui/widget-title';
 import styles from './numbers.module.scss';
 
 const cx = classnames.bind(styles);
-
-type InfoCellProps = {
-  title: string;
-  description: string;
-};
-
-const InfoCell = ({ title, description }: InfoCellProps) => (
-  <article className={cx('info-cell')}>
-    <WidgetTitle size="large" className={cx('number')}>
-      {title}
-    </WidgetTitle>
-    <Paragraph fontSize="medium" className={cx('info-cell-text')}>
-      {description}
-    </Paragraph>
-  </article>
-);
 
 export const Numbers = () => {
   return (
