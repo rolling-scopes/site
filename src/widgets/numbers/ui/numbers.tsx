@@ -8,10 +8,10 @@ import styles from './numbers.module.scss';
 
 const cx = classnames.bind(styles);
 
-interface InfoCellProps {
+type InfoCellProps = {
   title: string;
   description: string;
-}
+};
 
 const InfoCell = ({ title, description }: InfoCellProps) => (
   <article className={cx('info-cell')}>
