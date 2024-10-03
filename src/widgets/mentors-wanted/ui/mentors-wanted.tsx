@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
+import { LINKS } from '@/app/const';
 import mentorImg from '@/shared/assets/mentors-wanted-poster.webp';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -22,7 +23,7 @@ export const MentorsWanted = () => {
             If&nbsp;you are interested in mentoring our students, please go through the
             {' '}
             <LinkCustom
-              href="https://github.com/rolling-scopes-school/tasks/tree/master/angular/mentoring"
+              href={LINKS.ANGULAR_MENTORING}
               external
             >
               Mentoring Documentation
