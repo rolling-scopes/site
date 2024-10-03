@@ -34,6 +34,7 @@ export const Numbers = () => {
           className={cx('numbers-map')}
           src={map}
           alt="World map showing yellow dots marking various countries"
+          data-testid="numbers-map"
         />
       </div>
     </section>
