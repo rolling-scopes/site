@@ -7,27 +7,15 @@ describe('Numbers', () => {
     render(<Numbers />);
   });
 
-  it('renders the title correctly', () => {
-    const titleElement = screen.getByText('The Rolling Scopes in numbers');
-
-    expect(titleElement).toBeVisible();
-  });
-
-  it('renders the subtitle correctly', () => {
-    const subtitleElement = screen.getByText(/Everyone can discover/i);
-
-    expect(subtitleElement).toBeInTheDocument();
-  });
-
-  it('renders the numbers correctly', () => {
+  it('renders the component data correctly', () => {
+    const title = screen.getByText('The Rolling Scopes in numbers');
+    const subtitle = screen.getByText(/Everyone can discover/i);
+    const mapImage = screen.getByTestId('numbers-map');
     const numbers = screen.getAllByText(/\d+\+?/, { exact: false });
 
+    expect(title).toBeVisible();
+    expect(subtitle).toBeVisible();
+    expect(mapImage).toBeVisible();
     expect(numbers.length).toBe(4);
-  });
-
-  it('renders the map image', () => {
-    const mapImage = screen.getByTestId('numbers-map');
-
-    expect(mapImage).toBeInTheDocument();
   });
 });
