@@ -1,6 +1,6 @@
 import classnames from 'classnames/bind';
 import { InfoCell } from '../info-cell/info-cell.tsx';
-import image from '@/shared/assets/map.webp';
+import map from '@/shared/assets/map.webp';
 import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -30,7 +30,11 @@ export const Numbers = () => {
             <InfoCell key={id} title={title} description={description} />
           ))}
         </div>
-        <Image className={cx('numbers-map')} src={image} alt="map" />
+        <Image
+          className={cx('numbers-map')}
+          src={map}
+          alt="World map showing yellow dots marking various countries"
+        />
       </div>
     </section>
   );
