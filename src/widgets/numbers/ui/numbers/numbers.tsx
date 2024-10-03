@@ -1,5 +1,5 @@
 import classnames from 'classnames/bind';
-import { InfoCell } from '../info-cell/info-cell.tsx';
+import { InfoCell } from '../info-cell/info-cell';
 import map from '@/shared/assets/map.webp';
 import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
