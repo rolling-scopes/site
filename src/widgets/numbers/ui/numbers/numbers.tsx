@@ -4,6 +4,7 @@ import image from '@/shared/assets/map.webp';
 import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { rsInNumbers } from 'data';
 
 import styles from './numbers.module.scss';
 
@@ -25,10 +26,9 @@ export const Numbers = () => {
           </Paragraph>
         </article>
         <div className={cx('info')}>
-          <InfoCell title="62k+" description="members" />
-          <InfoCell title="500+" description="events" />
-          <InfoCell title="600+" description="videos on YouTube" />
-          <InfoCell title="1800+" description="RS School alumni per year" />
+          {rsInNumbers.map(({ id, title, description }) => (
+            <InfoCell key={id} title={title} description={description} />
+          ))}
         </div>
         <Image className={cx('map')} src={image} alt="map" />
       </div>
