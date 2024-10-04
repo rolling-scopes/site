@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router';
 import { BreadcrumbItem } from './breadcrumb-item';
 import { breadcrumbNameMap } from '../constants';
 import { ROUTES } from '@/app/const';

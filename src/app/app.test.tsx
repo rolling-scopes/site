@@ -1,7 +1,7 @@
 import { act } from 'react';
 import { render } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import App from './app';
+import App from './root';
 
 describe('App component tests', () => {
   it('renders without crashing', async () => {

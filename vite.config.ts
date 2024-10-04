@@ -1,9 +1,14 @@
-import react from '@vitejs/plugin-react';
+import { reactRouter } from '@react-router/dev/vite';
 import path from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    reactRouter({
+      appDirectory: 'src/app',
+      prerender: true,
+    }),
+  ],
   build: {
     outDir: 'build',
     assetsInlineLimit: 0,
@@ -15,7 +20,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
-      'data': path.resolve(__dirname, 'dev-data'),
+      data: path.resolve(__dirname, 'dev-data'),
     },
   },
   css: {

@@ -3,11 +3,16 @@ import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
 import { CourseMain } from '@/widgets/course-main';
+import { courseLoader } from '@/widgets/course-main/courseLoader';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
 import { reactEn } from 'data';
 
 const COURSE_NAME = 'react';
+
+export async function loader() {
+  return await courseLoader();
+}
 
 export const React = () => {
   return (
@@ -22,3 +27,5 @@ export const React = () => {
     </>
   );
 };
+
+export default React;

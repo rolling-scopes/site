@@ -4,6 +4,7 @@ import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
 import { CourseMain } from '@/widgets/course-main';
+import { courseLoader } from '@/widgets/course-main/courseLoader';
 import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
@@ -12,7 +13,11 @@ import { javaScriptRu } from 'data';
 
 const COURSE_NAME = 'js / front-end ru';
 
-export const JavaScriptRu = () => {
+export async function loader() {
+  return await courseLoader();
+}
+
+const JavaScriptRu = () => {
   const lang = 'ru';
 
   return (
@@ -30,3 +35,5 @@ export const JavaScriptRu = () => {
     </>
   );
 };
+
+export default JavaScriptRu;

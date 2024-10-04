@@ -14,7 +14,7 @@ import { Places } from '@/widgets/places';
 import { Speakers } from '@/widgets/speakers';
 import { Support } from '@/widgets/support';
 
-export const Community: FC = () => {
+const Community: FC = () => {
   useTitle(`Community · The Rolling Scopes School`);
 
   return (
@@ -34,3 +34,5 @@ export const Community: FC = () => {
     </>
   );
 };
+
+export default Community;

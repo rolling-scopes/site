@@ -4,6 +4,7 @@ import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
 import { CourseMain } from '@/widgets/course-main';
+import { courseLoader } from '@/widgets/course-main/courseLoader';
 import { MentorsWanted } from '@/widgets/mentors-wanted';
 import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
@@ -12,6 +13,10 @@ import { TrainingProgram } from '@/widgets/training-program';
 import { angular } from 'data';
 
 const COURSE_NAME = 'angular';
+
+export async function loader() {
+  return await courseLoader();
+}
 
 export const Angular = () => {
   return (
@@ -30,3 +35,5 @@ export const Angular = () => {
     </>
   );
 };
+
+export default Angular;

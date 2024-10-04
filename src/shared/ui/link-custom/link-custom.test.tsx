@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router';
 import { describe, expect, it } from 'vitest';
 import { LinkCustom } from './link-custom';
 import { ANCHORS } from '@/app/const';

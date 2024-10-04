@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && npx cross-env VITE_TABLET=768 VITE_MOBILE=425 vite build && npm run optimizeImages",
+    "dev": "react-router dev",
+    "build": "react-router build",
     "optimizeImages": "npx cross-env VITE_TABLET=768 VITE_MOBILE=425 VITE_COMPRESS_QUALITY=80 node optimizeImages/optimizeImages.js",
     "stylelint": "npx stylelint \"**/*.scss\"",
     "stylelint:fix": "npx stylelint \"**/*.scss\" --fix",
@@ -21,21 +21,23 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@react-router/node": "^7.0.0-pre.0",
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.13",
+    "isbot": "^5",
     "nextjs-toploader": "^3.6.15",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-double-marquee": "^1.1.0",
-    "react-responsive-carousel": "^3.2.23",
-    "react-router-dom": "^6.26.2"
+    "react-responsive-carousel": "^3.2.23"
   },
   "devDependencies": {
     "@feature-sliced/eslint-config": "^0.1.1",
     "@percy/cli": "^1.29.4",
     "@percy/playwright": "^1.0.6",
     "@playwright/test": "^1.47.2",
+    "@react-router/dev": "7.0.0-pre.0",
     "@stylistic/eslint-plugin": "^2.8.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.5.0",

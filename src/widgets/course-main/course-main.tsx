@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router';
 import { getCourseStatus } from './utils/get-course-status';
 import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
 import type { Course } from '@/entities/course';

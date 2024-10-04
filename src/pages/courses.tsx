@@ -7,7 +7,7 @@ import { General } from '@/widgets/general';
 import { HeroPage } from '@/widgets/hero-page';
 import { StudyPath } from '@/widgets/study-path';
 
-export const Courses: FC = () => {
+const Courses: FC = () => {
   useTitle('Courses · The Rolling Scopes School');
 
   return (
@@ -20,3 +20,5 @@ export const Courses: FC = () => {
     </>
   );
 };
+
+export default Courses;

@@ -7,7 +7,7 @@ import {
   useState,
 } from 'react';
 import classNames from 'classnames/bind';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router';
 import { DropdownWrapper } from '../dropdown/dropdown-wrapper';
 import { DropdownArrow } from '@/shared/icons/dropdown-arrow';
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router';
 import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
 import { ROUTES } from '@/app/const';

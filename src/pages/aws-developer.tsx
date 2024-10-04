@@ -3,6 +3,7 @@ import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
 import { CourseMain } from '@/widgets/course-main';
+import { courseLoader } from '@/widgets/course-main/courseLoader';
 import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
@@ -10,6 +11,10 @@ import { TrainingProgram } from '@/widgets/training-program';
 import { awsDev } from 'data';
 
 const COURSE_NAME = 'aws cloud dev';
+
+export async function loader() {
+  return await courseLoader();
+}
 
 export const AwsDeveloper = () => {
   return (
@@ -26,3 +31,5 @@ export const AwsDeveloper = () => {
     </>
   );
 };
+
+export default AwsDeveloper;

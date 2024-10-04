@@ -12,7 +12,7 @@ import { Principles } from '@/widgets/principles';
 import { Requirements } from '@/widgets/requirements';
 import { StudyWithUs } from '@/widgets/study-with-us';
 
-export const Home: FC = () => {
+const Home: FC = () => {
   useTitle('Home · The Rolling Scopes School');
 
   return (
@@ -30,3 +30,5 @@ export const Home: FC = () => {
     </>
   );
 };
+
+export default Home;
