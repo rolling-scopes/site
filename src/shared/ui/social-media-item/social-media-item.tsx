@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import classNames from 'classnames/bind';
 import { LinkCustom } from '../link-custom';
 
-import styles from './social-media.module.scss';
+import styles from './social-media-item.module.scss';
 
 export const cx = classNames.bind(styles);
 
@@ -12,7 +12,7 @@ export type SocialMediaProps = {
   icon: ReactNode;
 };
 
-export const SocialMedia = ({ title, href, icon }: SocialMediaProps) => (
+export const SocialMediaItem = ({ title, href, icon }: SocialMediaProps) => (
   <LinkCustom
     className={cx('social-media')}
     href={href}
