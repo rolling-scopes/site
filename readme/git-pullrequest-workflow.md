@@ -13,9 +13,9 @@
 - After the testers' approval and if there are no unresolved comments, you can perform a `'Squash and merge'`.
 
 If you want to create an issue:
-- Click on the Dashboard '+ Add item'.
+- Click on the Dashboard `'+ Add item'`.
 - Type `#site` to select a repository.
-- Click '+ Create new issue'.
+- Click `'+ Create new issue'`.
 - Select the type of task you need and fill out the instructions provided.
 
 ## Branch Naming
