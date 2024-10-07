@@ -1,4 +1,3 @@
-import cn from 'classnames';
 import classNames from 'classnames/bind';
 import { Carousel } from 'react-responsive-carousel';
 import photo1 from '@/shared/assets/photo-1.webp';
@@ -62,7 +61,7 @@ export const Pictures = () => (
         infiniteLoop={true}
         renderIndicator={(onClickHandler, isSelected, index) => (
           <li
-            className={cn('dot', { selected: isSelected })}
+            className={cx('dot', { selected: isSelected })}
             onClick={isSelected ? undefined : onClickHandler}
             value={index}
             key={index}
