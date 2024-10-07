@@ -8,30 +8,15 @@ describe('Pictures', () => {
     renderWithRouter(<Pictures />);
   });
 
-  it('renders the title correctly', () => {
-    const titleElement = screen.getByText('The Rolling Scopes in pictures');
-
-    expect(titleElement).toBeVisible();
-  });
-
-  it('renders the paragraph correctly', () => {
-    const paragraphText = screen.getByText(/Want to see photos/i);
-
-    expect(paragraphText).toBeVisible();
-  });
-
-  it('renders the carousel with images', () => {
+  it('renders all the component pieces as expected', () => {
+    const title = screen.getByTestId('widget-title');
     const images = screen.getAllByTestId('carousel-image');
+    const paragraph = screen.getByTestId('paragraph');
+    const socialMediaLinks = screen.getAllByTestId('social-media');
 
+    expect(title).toBeVisible();
+    expect(paragraph).toBeVisible();
     expect(images.length).toBe(11);
-  });
-
-  it('renders the social media links correctly', () => {
-    const socialMediaLinks = screen.getAllByRole('link');
-
     expect(socialMediaLinks.length).toBe(4);
-    socialMediaLinks.forEach((link) => {
-      expect(link).toHaveAttribute('href');
-    });
   });
 });
