@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
-import { Pictures } from './ui/pictures';
 import { renderWithRouter } from '@/shared/__tests__/utils';
+import { Pictures } from '@/widgets/pictures';
 
 describe('Pictures', () => {
   beforeEach(() => {
