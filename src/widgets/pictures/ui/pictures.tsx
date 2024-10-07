@@ -1,48 +1,15 @@
 import classNames from 'classnames/bind';
 import { Carousel } from 'react-responsive-carousel';
-import photo1 from '@/shared/assets/photo-1.webp';
-import photo2 from '@/shared/assets/photo-2.webp';
-import photo3 from '@/shared/assets/photo-3.webp';
-import photo4 from '@/shared/assets/photo-4.webp';
-import photo5 from '@/shared/assets/photo-5.webp';
-import photo6 from '@/shared/assets/photo-6.webp';
-import photo7 from '@/shared/assets/photo-7.webp';
-import photo8 from '@/shared/assets/photo-8.webp';
-import photo9 from '@/shared/assets/photo-9.webp';
-import { FacebookIcon, InstagramIcon } from '@/shared/icons';
 import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
-import { SocialMediaItem, SocialMediaProps } from '@/shared/ui/social-media-item';
+import { SocialMediaItem } from '@/shared/ui/social-media-item';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { photos } from '@/widgets/pictures/constants.ts';
+import { pictures } from 'data';
 
 import styles from './pictures.module.scss';
 
 const cx = classNames.bind(styles);
-
-const socialMedia: SocialMediaProps[] = [
-  {
-    title: 'Albums',
-    href: 'https://www.facebook.com/groups/186362068186532/media/albums',
-    icon: <FacebookIcon />,
-  },
-  {
-    title: 'The Rolling Scopes',
-    href: 'https://www.instagram.com/rollingscopes/',
-    icon: <InstagramIcon />,
-  },
-  {
-    title: 'RS School EN',
-    href: 'https://www.instagram.com/rsschool_en/',
-    icon: <InstagramIcon />,
-  },
-  {
-    title: 'RS School RU',
-    href: 'https://www.instagram.com/rsschool_news',
-    icon: <InstagramIcon />,
-  },
-];
-
-const photos = [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9];
 
 export const Pictures = () => (
   <section className={cx('container')}>
@@ -69,13 +36,8 @@ export const Pictures = () => (
           />
         )}
       >
-        {photos.map((photo, index) => (
-          <Image
-            src={photo}
-            key={index}
-            data-testid="carousel-image"
-            alt="Photo of our community"
-          />
+        {photos.map(({ id, src, alt }) => (
+          <Image key={id} src={src} alt={alt} data-testid="carousel-image" />
         ))}
       </Carousel>
       <Paragraph>
@@ -83,7 +45,7 @@ export const Pictures = () => (
         available on our Facebook Albums and Instagram pages.
       </Paragraph>
       <div className={cx('social-media-container')}>
-        {socialMedia.map(({ title, href, icon }) => (
+        {pictures.map(({ title, href, icon }) => (
           <SocialMediaItem key={title} title={title} href={href} icon={icon} />
         ))}
       </div>
