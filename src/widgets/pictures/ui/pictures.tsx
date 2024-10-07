@@ -1,4 +1,3 @@
-// requires a loader
 import cn from 'classnames';
 import classNames from 'classnames/bind';
 import { Carousel } from 'react-responsive-carousel';
