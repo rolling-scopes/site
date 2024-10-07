@@ -1,4 +1,5 @@
 import coursesPageHeroImg from '@/shared/assets/mentor-with-his-students.webp';
+import mentorWantedImg from '@/shared/assets/mentors-wanted-poster.webp';
 
 export const heroPageData = {
   school: {
@@ -20,6 +21,13 @@ export const heroPageData = {
     widgetTitle: 'Connecting people, growing together, having fun',
     subTitle: ['an international community of developers', 'since 2013'],
     heroImageSrc: '',
+    imageAltText: '',
+  },
+  mentorship: {
+    mainTitle: 'The Rolling Scopes',
+    widgetTitle: 'By teaching others, you learn yourself',
+    subTitle: ['an international community of developers', 'since 2013'],
+    heroImageSrc: mentorWantedImg,
     imageAltText: '',
   },
 };

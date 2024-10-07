@@ -5,6 +5,24 @@ import { useDataByName } from '@/shared/hooks/use-data-by-name';
 
 import './school-menu.scss';
 
+const mentorshipMenuStaticLinks = [
+  {
+    title: 'About',
+    detailsUrl: `/#${ANCHORS.MENTORSHIP_ABOUT}`,
+    description: 'Why is mentor',
+  },
+  {
+    title: 'Process',
+    detailsUrl: `/#${ANCHORS.MENTORSHIP_PROCESS}`,
+    description: 'What to do',
+  },
+  {
+    title: 'Register',
+    detailsUrl: `/#${ANCHORS.MENTORSHIP_REGISTER}`,
+    description: 'How to register',
+  },
+];
+
 const schoolMenuStaticLinks = [
   {
     title: 'About RS School',
@@ -47,7 +65,7 @@ const communityMenuStaticLinks = [
 ];
 
 interface SchoolMenuProps {
-  heading: 'rs school' | 'all courses' | 'community';
+  heading: 'rs school' | 'all courses' | 'community' | 'mentorship';
   hasTitle?: boolean;
   color?: 'dark' | 'light';
 }
@@ -63,6 +81,8 @@ function getMenuItems(
       return schoolMenuStaticLinks;
     case 'community':
       return communityMenuStaticLinks;
+    case 'mentorship':
+      return mentorshipMenuStaticLinks;
     default:
       return [];
   }

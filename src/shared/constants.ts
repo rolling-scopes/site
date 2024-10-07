@@ -8,4 +8,5 @@ export const PAGE_NAMES = {
   SCHOOL: 'school',
   COURSES: 'courses',
   COMMUNITY: 'community',
+  MENTORSHIP: 'mentorship',
 } as const;
