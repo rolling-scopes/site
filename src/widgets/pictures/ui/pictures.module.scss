@@ -1,0 +1,10 @@
+.social-media-container {
+  display: flex;
+  align-items: flex-start;
+
+  @include media-tablet {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}

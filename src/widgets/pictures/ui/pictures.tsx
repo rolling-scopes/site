@@ -1,4 +1,6 @@
 // requires a loader
+import cn from 'classnames';
+import classNames from 'classnames/bind';
 import { Carousel } from 'react-responsive-carousel';
 import photo1 from '@/shared/assets/photo-1.webp';
 import photo2 from '@/shared/assets/photo-2.webp';
@@ -15,8 +17,9 @@ import { Paragraph } from '@/shared/ui/paragraph';
 import { SocialMediaItem, SocialMediaProps } from '@/shared/ui/social-media-item';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import './pictures.scss';
+import styles from './pictures.module.scss';
+
+const cx = classNames.bind(styles);
 
 const socialMedia: SocialMediaProps[] = [
   {
@@ -44,11 +47,11 @@ const socialMedia: SocialMediaProps[] = [
 const photos = [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9];
 
 export const Pictures = () => (
-  <section className="container">
-    <div className="content">
+  <section className={cx('container')}>
+    <div className={cx('content')}>
       <WidgetTitle mods="asterisk">The Rolling Scopes in pictures</WidgetTitle>
       <Carousel
-        className="carousel"
+        className={cx('carousel')}
         showArrows={true}
         showThumbs={false}
         showStatus={false}
@@ -60,7 +63,7 @@ export const Pictures = () => (
         infiniteLoop={true}
         renderIndicator={(onClickHandler, isSelected, index) => (
           <li
-            className={isSelected ? 'dot selected' : 'dot'}
+            className={cn('dot', { selected: isSelected })}
             onClick={isSelected ? undefined : onClickHandler}
             value={index}
             key={index}
@@ -81,7 +84,7 @@ export const Pictures = () => (
         Want to see photos of our community? A vast collection of photographs from our events is
         available on our Facebook Albums and Instagram pages.
       </Paragraph>
-      <div className="social-media-container">
+      <div className={cx('social-media-container')}>
         {socialMedia.map(({ title, href, icon }) => (
           <SocialMediaItem key={title} title={title} href={href} icon={icon} />
         ))}
