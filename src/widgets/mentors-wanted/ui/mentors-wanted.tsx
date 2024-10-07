@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import { LINKS } from '@/app/const';
 import mentorImg from '@/shared/assets/mentors-wanted-poster.webp';
@@ -14,7 +13,7 @@ const cx = classNamesBind.bind(styles);
 export const MentorsWanted = () => {
   return (
     <section className={cx('mentors-wanted', 'container')}>
-      <article className={classNames('content', cx('content'))}>
+      <article className={cx('mentors-wanted-content', 'content')}>
         <div className={cx('content-left')}>
           <WidgetTitle id="mentors-wanted" mods="lines">
             Mentors Wanted!
@@ -22,19 +21,18 @@ export const MentorsWanted = () => {
           <Paragraph>
             If&nbsp;you are interested in mentoring our students, please go through the
             {' '}
-            <LinkCustom
-              href={LINKS.ANGULAR_MENTORING}
-              external
-            >
+            <LinkCustom href={LINKS.ANGULAR_MENTORING} external>
               Mentoring Documentation
             </LinkCustom>
             {' '}
             for&nbsp;the Angular Course.
           </Paragraph>
         </div>
-        <div className={cx('picture')}>
-          <Image src={mentorImg} alt="Sloth - mascot dresses as a detective" />
-        </div>
+        <Image
+          className={cx('sloth-mascot')}
+          src={mentorImg}
+          alt="Sloth - mascot dresses as a detective"
+        />
       </article>
     </section>
   );
