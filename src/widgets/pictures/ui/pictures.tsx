@@ -29,7 +29,7 @@ export const Pictures = () => (
         renderIndicator={(onClickHandler, isSelected, index) => (
           <li
             className={cx('dot', { selected: isSelected })}
-            onClick={isSelected ? undefined : onClickHandler}
+            onClick={onClickHandler}
             value={index}
             key={index}
             tabIndex={0}
