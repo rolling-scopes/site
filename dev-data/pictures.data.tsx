@@ -1,6 +1,6 @@
 import { FacebookIcon, InstagramIcon } from '@/shared/icons';
 
-export const pictures = [
+export const picturesSocialMediaLinks = [
   {
     title: 'Albums',
     href: 'https://www.facebook.com/groups/186362068186532/media/albums',

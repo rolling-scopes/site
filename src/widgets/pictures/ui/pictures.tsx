@@ -5,7 +5,7 @@ import { Paragraph } from '@/shared/ui/paragraph';
 import { SocialMediaItem } from '@/shared/ui/social-media-item';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { photos } from '@/widgets/pictures/constants.ts';
-import { pictures } from 'data';
+import { picturesSocialMediaLinks } from 'data';
 
 import styles from './pictures.module.scss';
 
@@ -45,7 +45,7 @@ export const Pictures = () => (
         available on our Facebook Albums and Instagram pages.
       </Paragraph>
       <div className={cx('social-media-container')}>
-        {pictures.map(({ title, href, icon }) => (
+        {picturesSocialMediaLinks.map(({ title, href, icon }) => (
           <SocialMediaItem key={title} title={title} href={href} icon={icon} />
         ))}
       </div>
