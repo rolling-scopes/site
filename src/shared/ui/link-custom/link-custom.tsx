@@ -1,16 +1,16 @@
 import { AnchorHTMLAttributes, ReactNode } from 'react';
 import { type VariantProps, cva } from 'class-variance-authority';
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { ArrowIcon, TextLinkIcon } from '@/shared/icons';
 
 import styles from './link-custom.module.scss';
 
 export const cx = classNames.bind(styles);
 
-type LinkCustomProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'rel' | 'target'>
-  & VariantProps<typeof linkCustomVariants>
-  & LinkCustomAdditionalProps;
+type LinkCustomProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'rel' | 'target'> &
+  VariantProps<typeof linkCustomVariants> &
+  LinkCustomAdditionalProps;
 
 type LinkCustomAdditionalProps = {
   href: string;
@@ -66,7 +66,7 @@ export const LinkCustom = ({
         variant,
         className,
       })}
-      to={href}
+      href={href}
       {...props}
       {...(external && externalLinkAttributes)}
     >

@@ -11,7 +11,7 @@ type AboutVideoProps = { lang?: 'en' | 'ru' };
 
 export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
   // Needed to prevent flakiness in screenshot tests
-  const isRunningInDev = import.meta.env.DEV;
+  const isRunningInDev = process.env.NEXT_PUBLIC_DEV;
 
   return (
     <section className={cx('container')} data-testid="about-video">
@@ -31,8 +31,7 @@ export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
                     src={RS_INTRO_URL}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
-                  >
-                  </iframe>
+                  />
                 )}
           </div>
         </div>

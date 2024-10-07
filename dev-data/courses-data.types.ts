@@ -1,4 +1,5 @@
 import type { Course } from '@/entities/course';
+import { ImageType } from '@/shared/ui/image/image';
 import { type ListData } from '@/shared/ui/list';
 
 export type DataMap = {
@@ -14,7 +15,7 @@ export interface JSPath {
   id: number;
   title: string;
   description: string;
-  imageSrc: string;
+  imageSrc: ImageType;
   topics?: string[];
   list?: ListData;
   marked?: boolean;
@@ -26,7 +27,7 @@ export interface CoursesPath {
   id: number;
   title: string;
   description: string;
-  logoIcon: string;
+  logoIcon: ImageType;
   links: {
     linkTitle: string;
     href: string;

@@ -8,10 +8,9 @@ import {
   vi,
 } from 'vitest';
 import { Courses } from './ui/courses';
-import { ROUTES } from '@/app/const';
+import { ROUTES } from '@/core/const';
 
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { useWindowSize } from '@/shared/hooks/use-window-size';
 
 const mockedData = [
   {

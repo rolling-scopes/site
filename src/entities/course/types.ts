@@ -1,10 +1,12 @@
+import { ImageType } from '@/shared/ui/image/image';
+
 export type Course = {
   id: string;
   title: string;
   altTitle?: string;
-  iconSrc: string;
-  secondaryIcon: string;
-  iconSmall: string;
+  iconSrc: ImageType;
+  secondaryIcon: ImageType;
+  iconSmall: ImageType;
   startDate: string;
   language: ('en' | 'ru')[];
   mode: 'online' | 'offline';

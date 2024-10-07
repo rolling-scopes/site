@@ -15,7 +15,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
@@ -31,15 +31,27 @@
       "@/*": [
         "*"
       ],
-      "data": [ "../dev-data" ]
-    }
+      "data": [
+        "../dev-data"
+      ]
+    },
+    "allowJs": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "src",
     "src/**/*.ts",
     "src/**/*.tsx",
     "dev-data/**/*.ts",
-    "dev-data/**/*.tsx"
+    "dev-data/**/*.tsx",
+    "./build/types/**/*.ts",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

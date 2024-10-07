@@ -15,7 +15,7 @@
 
   .content {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     justify-content: space-between;
     padding: 80px 120px;
 
@@ -47,7 +47,7 @@
     .content {
       flex-direction: column;
       gap: 40px;
-      align-items: start;
+      align-items: flex-start;
       padding: 40px 16px;
     }
 

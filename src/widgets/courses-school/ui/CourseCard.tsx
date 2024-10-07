@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import type { Course } from '@/entities/course';
 import { Image } from '@/shared/ui/image';
+import { ImageType } from '@/shared/ui/image/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 
 import styles from './courses.module.scss';
@@ -9,7 +10,7 @@ const cx = classNames.bind(styles);
 
 type addFields = {
   buttonText: string;
-  iconSrc: string;
+  iconSrc: ImageType;
 };
 
 type PropsType = Pick<Course, 'title' | 'language' | 'startDate' | 'detailsUrl'> & addFields;
@@ -25,7 +26,7 @@ export const CourseCard = ({
   return (
     <section className={cx('course-card')}>
       <figure className={cx('icon-container')}>
-        <Image src={iconSrc} alt={title} />
+        <Image img={iconSrc} alt={title} />
       </figure>
       <div className={cx('course-info')}>
         <p className={cx('name')}>{title}</p>

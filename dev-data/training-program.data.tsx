@@ -1,4 +1,5 @@
 // TODO separate data and markup
+import { COURSE_TITLES, CourseName } from './courseTitles.data';
 import awsPractitionerBadge from '@/shared/assets/aws-cloud-pract-badge.webp';
 import angularImg from '@/shared/assets/rs-slope-angular.webp';
 import awsDevImg from '@/shared/assets/rs-slope-aws-dev.webp';
@@ -7,55 +8,41 @@ import jsImg from '@/shared/assets/rs-slope-js.webp';
 import nodejsImg from '@/shared/assets/rs-slope-nodejs.webp';
 import reactEnImg from '@/shared/assets/rs-slope-react-en.webp';
 import reactRuImg from '@/shared/assets/rs-slope-react-ru.webp';
+import { ImageType } from '@/shared/ui/image/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
 
-export type CourseNames =
-  | 'aws cloud dev'
-  | 'angular'
-  | 'js / front-end en'
-  | 'js / front-end ru'
-  | 'js / front-end pre-school ru'
-  | 'aws fundamentals'
-  | 'node.js'
-  | 'react'
-  | 'react ru'
-  | 'aws fundamentals badge'
-  | 'aws devops';
-
 interface CourseInfo {
   title: string;
   content: JSX.Element[];
-  image: string;
+  image: ImageType;
 }
 
 type ContentMap = {
-  [key in CourseNames]: CourseInfo;
+  [key in CourseName]: CourseInfo;
 };
 
 export const contentMap: ContentMap = {
-  'aws cloud dev': {
+  [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: {
     title: 'Training Program',
     content: [
       // TODO delete keys
-      <Paragraph key="aws cloud dev 01">
+      <Paragraph key="awsDev 01">
         This course is a step-by-step journey to become an AWS Certified Developer ‒ Associate
         through this course. You will gain practical experience working with various AWS services
         and technologies via over 10 hands-on tasks. During the course, you&apos;ll dive deep into
         AWS, from cloud computing basics to advanced integrations and deployment strategies, through
         nine carefully designed modules.
       </Paragraph>,
-      <Paragraph key="aws cloud dev 02">
+      <Paragraph key="awsDev 02">
         Be well-prepared to pass the &quot;AWS Certified Developer - Associate&quot; certification
         and confidently apply your skills in real-world projects by the end of the course.
       </Paragraph>,
-      <Subtitle key="aws cloud dev 03">
-        Course highlights:
-      </Subtitle>,
+      <Subtitle key="awsDev 03">Course highlights:</Subtitle>,
       <List
-        key="aws cloud dev 04"
+        key="awsDev 04"
         data={[
           'Build a single-page application (SPA) using AWS S3 and CloudFront',
           'Develop serverless APIs with AWS API Gateway and Lambda',
@@ -69,7 +56,7 @@ export const contentMap: ContentMap = {
     ],
     image: awsDevImg,
   },
-  'aws fundamentals': {
+  [COURSE_TITLES.AWS_FUNDAMENTALS]: {
     title: 'Training Program',
     content: [
       <Paragraph key="aws fundamentals 01">
@@ -90,7 +77,7 @@ export const contentMap: ContentMap = {
     ],
     image: awsFundamentalsImg,
   },
-  'node.js': {
+  [COURSE_TITLES.NODE]: {
     title: 'Course Topics',
     content: [
       <Paragraph key="node.js 01">
@@ -118,7 +105,7 @@ export const contentMap: ContentMap = {
     ],
     image: nodejsImg,
   },
-  angular: {
+  [COURSE_TITLES.ANGULAR]: {
     title: 'Training Program',
     content: [
       <Paragraph key="angular 01">
@@ -140,8 +127,7 @@ export const contentMap: ContentMap = {
     ],
     image: angularImg,
   },
-
-  'js / front-end en': {
+  [COURSE_TITLES.JS_EN]: {
     title: 'Training Program',
     content: [
       <Paragraph key="js / front-end en 01">
@@ -165,8 +151,7 @@ export const contentMap: ContentMap = {
     ],
     image: jsImg,
   },
-
-  'js / front-end ru': {
+  [COURSE_TITLES.JS_RU]: {
     title: 'Программа обучения',
     content: [
       <Paragraph key="js / front-end ru 01">
@@ -191,8 +176,7 @@ export const contentMap: ContentMap = {
     ],
     image: jsImg,
   },
-
-  'js / front-end pre-school ru': {
+  [COURSE_TITLES.JS_PRESCHOOL_RU]: {
     title: 'Программа обучения',
     content: [
       <Paragraph key="js / front-end pre-school ru 01">
@@ -241,7 +225,7 @@ export const contentMap: ContentMap = {
     ],
     image: jsImg,
   },
-  react: {
+  [COURSE_TITLES.REACT]: {
     title: 'Target audience',
     content: [
       <Paragraph key="react 01">
@@ -267,7 +251,7 @@ export const contentMap: ContentMap = {
     ],
     image: reactEnImg,
   },
-  'react ru': {
+  [`${COURSE_TITLES.REACT} ru`]: {
     title: 'Для кого',
     content: [
       <Paragraph key="react ru 01">
@@ -278,7 +262,7 @@ export const contentMap: ContentMap = {
     ],
     image: reactRuImg,
   },
-  'aws fundamentals badge': {
+  [`${COURSE_TITLES.AWS_FUNDAMENTALS} badge`]: {
     title: 'AWS DIGITAL BADGE',
     content: [
       <Paragraph key="aws fundamentals badge 01">
@@ -291,7 +275,7 @@ export const contentMap: ContentMap = {
     ],
     image: awsPractitionerBadge,
   },
-  'aws devops': {
+  [COURSE_TITLES.AWS_DEVOPS]: {
     title: 'Details',
     content: [
       <Paragraph key="aws devops 01">
@@ -313,9 +297,7 @@ export const contentMap: ContentMap = {
           'Become a DevOps engineer who is ready to face engineering challenges',
         ]}
       />,
-      <Subtitle key="aws devops 04">
-        What do we offer?
-      </Subtitle>,
+      <Subtitle key="aws devops 04">What do we offer?</Subtitle>,
       <List
         key="aws devops 05"
         data={[

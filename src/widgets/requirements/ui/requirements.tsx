@@ -1,4 +1,4 @@
-import { LINKS } from '@/app/const';
+import { LINKS } from '@/core/const';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 
@@ -30,11 +30,7 @@ export const Requirements = () => {
             <List data={mentorResponsibilities} />
           </div>
         </div>
-        <LinkCustom
-          href={LINKS.BECOME_MENTOR}
-          variant="primary"
-          external
-        >
+        <LinkCustom href={LINKS.BECOME_MENTOR} variant="primary" external>
           Register as a mentor
         </LinkCustom>
       </div>

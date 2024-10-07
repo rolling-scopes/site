@@ -20,16 +20,22 @@ export type Course = {
   willLearn?: CourseModule[];
 };
 
-export type CourseName =
-  | 'awsFundamentals'
-  | 'awsDev'
-  | 'nodejs'
-  | 'angular'
-  | 'js / front-end en'
-  | 'js / front-end ru'
-  | 'js / front-end pre-school ru'
-  | 'awsDevops';
+// export type CourseName =
+//   // | 'awsFundamentals'
+//   // | 'awsDev'
+//   // | 'awsDevops'
+//   // | 'nodejs'
+//   | 'angular'
+//   | 'js / front-end en'
+//   | 'js / front-end ru'
+//   | 'js / front-end pre-school ru'
+//   | 'react'
+//   | 'react ru'
+//   | 'node.js'
+//   | 'aws fundamentals'
+//   | 'aws cloud dev'
+//   | 'aws devops';
 
-export type CourseMap = {
-  [courseName in CourseName]: Course;
-};
+// export type CourseMap = {
+//   [courseName in CourseName]: Course;
+// };

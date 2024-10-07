@@ -32,7 +32,7 @@ export const MentorsWanted = () => {
           </Paragraph>
         </div>
         <div className={cx('picture')}>
-          <Image src={mentorImg} alt="Sloth - mascot dresses as a detective" />
+          <Image img={mentorImg} alt="Sloth - mascot dresses as a detective" />
         </div>
       </article>
     </section>

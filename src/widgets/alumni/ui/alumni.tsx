@@ -20,7 +20,7 @@ export const Alumni = () => {
         <section className={cx('alumni-list')}>
           {alumni.map(({ id, image }) => (
             <figure key={id} className={cx('logo-container')}>
-              <Image className={cx('logo')} src={image} alt={id} />
+              <Image className={cx('logo')} img={image} alt={id} />
             </figure>
           ))}
         </section>

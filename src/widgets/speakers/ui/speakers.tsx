@@ -29,7 +29,7 @@ export const Speakers = () => (
           <span>rolling.scopes@gmail.com</span>
         </div>
       </div>
-      <Image className="right picture" src={image} alt="speakers-wanted" />
+      <Image className="right picture" img={image} alt="speakers-wanted" />
     </div>
   </div>
 );

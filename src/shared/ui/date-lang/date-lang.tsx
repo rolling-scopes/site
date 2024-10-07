@@ -21,12 +21,12 @@ export const DateLang = ({ startDate, language, mode, withMargin }: DateLangProp
   return (
     <section className={cx('info', { margin: withMargin })}>
       <p className={cx('date')}>
-        <Image className={cx('icon')} src={noteIcon} alt="note-icon" lazy={false} />
+        <Image className={cx('icon')} img={noteIcon} alt="note-icon" lazy={false} />
         <span>Start:</span>
         <time dateTime={dateAttr}>{startDate}</time>
       </p>
       <p className={cx('additional-info')}>
-        <Image className={cx('icon')} src={micIcon} alt="microphone-icon" lazy={false} />
+        <Image className={cx('icon')} img={micIcon} alt="microphone-icon" lazy={false} />
         <span className={cx('language')}>{language}</span>
         <span>•</span>
         <span className={cx('mode')}>{mode}</span>

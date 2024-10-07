@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { ANCHORS } from '@/app/const';
+import { ANCHORS } from '@/core/const';
 import imageAbout from '@/shared/assets/about.webp';
 import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -12,7 +12,11 @@ export const cx = classNames.bind(styles);
 
 export const AboutCommunity = () => {
   return (
-    <section className={cx('about-community', 'container')} id={ANCHORS.ABOUT_COMMUNITY} data-testid="about-community">
+    <section
+      className={cx('about-community', 'container')}
+      id={ANCHORS.ABOUT_COMMUNITY}
+      data-testid="about-community"
+    >
       <div className={cx('about-community', 'content', 'column-2')}>
         <article className={cx('about-info')}>
           <SectionLabel>community</SectionLabel>
@@ -33,7 +37,11 @@ export const AboutCommunity = () => {
             Sloth.
           </Paragraph>
         </article>
-        <Image className="sloth-mascot" src={imageAbout} alt="Sloth mascot dressed in a red superhero cape" />
+        <Image
+          className="sloth-mascot"
+          img={imageAbout}
+          alt="Sloth mascot dressed in a red superhero cape"
+        />
       </div>
     </section>
   );

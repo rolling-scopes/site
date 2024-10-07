@@ -79,7 +79,7 @@ export const Community = () => (
           ))}
         </div>
       </div>
-      <Image className="right picture" src={image} alt="community-welcome" />
+      <Image className="right picture" img={image} alt="community-welcome" />
     </div>
   </div>
 );

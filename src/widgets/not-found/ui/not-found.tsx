@@ -1,18 +1,15 @@
 import notFoundImg from '@/shared/assets/404.webp';
-import { useTitle } from '@/shared/hooks/use-title';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 
 import './not-found.scss';
 
-export const NotFound = () => {
-  useTitle('404 Not Found');
-
+const NotFound = () => {
   return (
     <main className="not-found">
       <div className="image-wrapper">
-        <Image src={notFoundImg} alt="not found" lazy={false} />
+        <Image img={notFoundImg} alt="not found" lazy={false} />
       </div>
       <Paragraph className="not-found-paragraph">
         The page you are looking for doesn&apos;t exist or has been moved. Please go back to the
@@ -24,3 +21,5 @@ export const NotFound = () => {
     </main>
   );
 };
+
+export default NotFound;

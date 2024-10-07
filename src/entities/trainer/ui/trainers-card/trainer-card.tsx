@@ -10,7 +10,7 @@ export const TrainerCard = ({ name, bio, role, photo }: Trainer) => {
   return (
     <article className={cx('trainer-card')}>
       <div className={cx('card-picture')}>
-        <Image src={photo} alt={`${name} ${role}`} />
+        <Image img={photo} alt={`${name} ${role}`} />
       </div>
       <div className={cx('card-text')}>
         <header>

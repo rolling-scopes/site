@@ -4,7 +4,7 @@ import { Image } from '@/shared/ui/image';
 export const InstagramIcon = () => {
   return (
     <figure className="icon-surface">
-      <Image src={instagram} alt="instagram icon" />
+      <Image img={instagram} alt="instagram icon" />
     </figure>
   );
 };

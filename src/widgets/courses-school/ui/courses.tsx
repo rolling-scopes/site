@@ -1,10 +1,9 @@
 import classNames from 'classnames/bind';
 import { CourseCard } from './CourseCard';
 import { MAX_COURSE_COUNT } from '../model/constants';
-import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/app/const';
+import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
 import { getActualData } from '@/shared/helpers/getActualData';
-import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { RsBanner } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -15,7 +14,7 @@ import styles from './courses.module.scss';
 const cx = classNames.bind(styles);
 
 export const Courses = () => {
-  const size = useWindowSize();
+  const size = { width: 1200 }; // useWindowSize();
   const tabletScreenBreakPoint = 810;
   const coursesData: Course[] = getActualData({
     data: courses,

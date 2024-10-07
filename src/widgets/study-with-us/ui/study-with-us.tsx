@@ -30,7 +30,7 @@ export const StudyWithUs = () => (
         <Image
           data-testid="study-image"
           className={cx('sloth-mascot')}
-          src={rsSchool}
+          img={rsSchool}
           alt="Sloth - mascot in glasses and works at a laptop"
         />
       </div>

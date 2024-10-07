@@ -5,18 +5,19 @@ import noteIcon from '@/shared/assets/icons/note-icon.webp';
 import paperIcon from '@/shared/assets/icons/paper-icon.webp';
 import personIcon from '@/shared/assets/icons/person-icon.webp';
 import planetIcon from '@/shared/assets/icons/planet.webp';
+import { ImageType } from '@/shared/ui/image/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
-import { type CourseNamesChannels, DISCORD_LINKS } from 'data';
+import { COURSE_TITLES, type CourseName, DISCORD_LINKS } from 'data';
 
 type AboutInfo = {
   id: number;
   title: string;
   info: string | ReactNode;
-  icon: string;
+  icon: ImageType;
 };
 
 type ContentMap = {
-  [key in CourseNamesChannels]: AboutInfo[];
+  [key in CourseName]: AboutInfo[];
 };
 
 const angularNodejsAwsFundamentals: (course: string) => AboutInfo[] = () => [
@@ -176,7 +177,7 @@ const reactEn: AboutInfo[] = javaScriptEN().map((item) => {
         <p>
           Throughout the course, we mostly use
           {' '}
-          <LinkCustom href={DISCORD_LINKS['react']} external>
+          <LinkCustom href={DISCORD_LINKS[COURSE_TITLES.REACT]} external>
             Discord chat
           </LinkCustom>
           .
@@ -235,14 +236,14 @@ const reactRuAbout: AboutInfo[] = [
 ];
 
 export const contentMapAbout: ContentMap = {
-  'js / front-end ru': javaScriptRU(),
-  'js / front-end en': javaScriptEN(),
-  'js / front-end pre-school ru': javaScriptPreSchoolRU(),
-  react: reactEn,
-  'react ru': reactRuAbout,
-  angular: angularNodejsAwsFundamentals('angular'),
-  'node.js': angularNodejsAwsFundamentals('node.js'),
-  'aws fundamentals': angularNodejsAwsFundamentals('aws fundamentals'),
-  'aws cloud dev': awsCloudDeveloper,
-  'aws devops': awsDevops,
+  [COURSE_TITLES.JS_RU]: javaScriptRU(),
+  [COURSE_TITLES.JS_EN]: javaScriptEN(),
+  [COURSE_TITLES.JS_PRESCHOOL_RU]: javaScriptPreSchoolRU(),
+  [COURSE_TITLES.REACT]: reactEn,
+  [`${COURSE_TITLES.REACT} ru`]: reactRuAbout,
+  [COURSE_TITLES.ANGULAR]: angularNodejsAwsFundamentals('angular'),
+  [COURSE_TITLES.NODE]: angularNodejsAwsFundamentals('node.js'),
+  [COURSE_TITLES.AWS_FUNDAMENTALS]: angularNodejsAwsFundamentals('aws fundamentals'),
+  [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: awsCloudDeveloper,
+  [COURSE_TITLES.AWS_DEVOPS]: awsDevops,
 };

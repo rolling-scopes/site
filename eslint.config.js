@@ -68,12 +68,12 @@ export default [
       '@stylistic': stylistic,
     },
     settings: {
-      react: {
+      'react': {
         version: 'detect',
       },
       'import/resolver': {
-        'typescript': {
-          'alwaysTryTypes': true,
+        typescript: {
+          alwaysTryTypes: true,
         },
       },
     },
@@ -89,24 +89,10 @@ export default [
       'boundaries/element-types': 'warn',
       'no-undef': 'off',
       'curly': 'error',
-      'no-restricted-exports': [
-        'warn',
-        { 'restrictDefaultExports':
-          {
-            'direct': true,
-            'named': true,
-            'defaultFrom': true,
-            'namedFrom': true,
-            'namespaceFrom': true,
-          }
-        }
-      ],
+      'no-restricted-exports': 'off',
       'react/prop-types': 'off',
       'react/react-in-jsx-scope': 'off',
-      'react-refresh/only-export-components': [
-        'off',
-        { allowConstantExport: true },
-      ],
+      'react-refresh/only-export-components': ['off', { allowConstantExport: true }],
 
       'import-newlines/enforce': [
         'error',
@@ -118,7 +104,7 @@ export default [
       ],
 
       'import/prefer-default-export': 'off',
-      'import/no-default-export': 'error',
+      'import/no-default-export': 'off',
       'import/no-unresolved': ['error', { commonjs: true, amd: true }],
       'import/no-namespace': ['error', { ignore: ['*.ext'] }],
       'import/newline-after-import': 'error',
@@ -127,8 +113,11 @@ export default [
       'import/order': [
         'error',
         {
-          groups:
-          [['builtin', 'external'], ['internal', 'parent', 'sibling', 'index', 'type'], ['object']],
+          groups: [
+            ['builtin', 'external'],
+            ['internal', 'parent', 'sibling', 'index', 'type'],
+            ['object'],
+          ],
           pathGroups: [
             {
               pattern: '{react,react-dom/**,redux}',
@@ -136,18 +125,18 @@ export default [
               position: 'before',
             },
             {
-              pattern: '{.,..}/**/*\.(svg|webp)',
+              pattern: '{.,..}/**/*.(svg|webp)',
               group: 'object',
               position: 'after',
             },
             {
-              pattern: '{.,..}/**/*\module.scss',
+              pattern: '{.,..}/**/*module.scss',
               group: 'object',
               position: 'after',
             },
           ],
           pathGroupsExcludedImportTypes: ['react', 'react-dom/**'],
-          'distinctGroup': false,
+          distinctGroup: false,
           alphabetize: {
             order: 'asc',
             orderImportKind: 'asc',
@@ -158,11 +147,11 @@ export default [
       'sort-imports': [
         'error',
         {
-          'ignoreCase': false,
-          'ignoreDeclarationSort': true,
-          'ignoreMemberSort': false,
-          'memberSyntaxSortOrder': ['all', 'multiple', 'single', 'none'],
-          'allowSeparatedGroups': false,
+          ignoreCase: false,
+          ignoreDeclarationSort: true,
+          ignoreMemberSort: false,
+          memberSyntaxSortOrder: ['all', 'multiple', 'single', 'none'],
+          allowSeparatedGroups: false,
         },
       ],
       'sort-exports/sort-exports': [
@@ -182,29 +171,29 @@ export default [
       '@stylistic/no-extra-semi': 'error',
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
 
-      '@stylistic/jsx-curly-brace-presence': ['warn', { 'propElementValues': 'always' }],
+      '@stylistic/jsx-curly-brace-presence': ['warn', { propElementValues: 'always' }],
       '@stylistic/jsx-wrap-multilines': [
         'error',
         {
-          'declaration': 'parens-new-line',
-          'assignment': 'parens-new-line',
-          'return': 'parens-new-line',
-          'arrow': 'parens-new-line',
-          'condition': 'parens-new-line',
-          'logical': 'ignore',
-          'prop': 'parens-new-line',
-          'propertyValue': 'parens-new-line',
+          declaration: 'parens-new-line',
+          assignment: 'parens-new-line',
+          return: 'parens-new-line',
+          arrow: 'parens-new-line',
+          condition: 'parens-new-line',
+          logical: 'ignore',
+          prop: 'parens-new-line',
+          propertyValue: 'parens-new-line',
         },
       ],
-      '@stylistic/jsx-one-expression-per-line': ['error', { 'allow': 'single-child' }],
-      '@stylistic/jsx-max-props-per-line': ['error', { 'maximum': { 'single': 4, 'multi': 1 } }],
+      '@stylistic/jsx-one-expression-per-line': ['error', { allow: 'single-child' }],
+      '@stylistic/jsx-max-props-per-line': ['error', { maximum: { single: 4, multi: 1 } }],
       '@stylistic/jsx-child-element-spacing': 'warn',
 
-      '@stylistic/brace-style': ['error', '1tbs', { 'allowSingleLine': false }],
+      '@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: false }],
       '@stylistic/array-bracket-newline': ['error', 'consistent'],
-      '@stylistic/quotes': ['error', 'single', { 'avoidEscape': true, 'allowTemplateLiterals': true }],
-      '@stylistic/operator-linebreak': ['error', 'before', { 'overrides': { '=': 'after' } }],
-      '@stylistic/newline-per-chained-call': ['error', { 'ignoreChainWithDepth': 4 }],
+      '@stylistic/quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
+      '@stylistic/operator-linebreak': ['error', 'before', { overrides: { '=': 'after' } }],
+      '@stylistic/newline-per-chained-call': ['error', { ignoreChainWithDepth: 4 }],
       '@stylistic/multiline-ternary': ['error', 'always-multiline'],
       '@stylistic/padding-line-between-statements': [
         'error',
@@ -213,57 +202,60 @@ export default [
           prev: ['const', 'let', 'var'],
           next: '*',
         },
-        { blankLine: 'any',
-          prev: ['const', 'let', 'var'],
-          next: ['const', 'let', 'var'],
-        },
+        { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
       ],
       '@stylistic/array-element-newline': [
         'error',
         'consistent',
         {
-          'multiline': true,
-          'minItems': 5,
+          multiline: true,
+          minItems: 5,
         },
       ],
-      '@stylistic/object-curly-newline': ['error', {
-        'ObjectExpression': { 'multiline': true, 'minProperties': 2 },
-      }],
-      '@stylistic/object-property-newline': ['error', { 'allowAllPropertiesOnSameLine': false }],
+      '@stylistic/object-curly-newline': [
+        'error',
+        {
+          ObjectExpression: { multiline: true, minProperties: 2 },
+        },
+      ],
+      '@stylistic/object-property-newline': ['error', { allowAllPropertiesOnSameLine: false }],
 
       '@stylistic/member-delimiter-style': [
         'error',
         {
-          'multiline': {
-            'delimiter': 'semi',
-            'requireLast': true,
+          multiline: {
+            delimiter: 'semi',
+            requireLast: true,
           },
-          'singleline': {
-            'delimiter': 'semi',
-            'requireLast': false,
+          singleline: {
+            delimiter: 'semi',
+            requireLast: false,
           },
         },
       ],
       '@stylistic/arrow-parens': ['error', 'always'],
       '@stylistic/no-mixed-operators': 'error',
       '@stylistic/quote-props': ['error', 'as-needed'],
-      '@stylistic/space-before-function-paren': ['error', {
-        'anonymous': 'always',
-        'named': 'never',
-        'asyncArrow': 'always'
-      }],
+      '@stylistic/space-before-function-paren': [
+        'error',
+        {
+          anonymous: 'always',
+          named: 'never',
+          asyncArrow: 'always',
+        },
+      ],
 
       '@stylistic/no-floating-decimal': 'error',
       '@stylistic/max-len': [
         'error',
         {
-          'code': 100,
-          'tabWidth': 2,
-          'ignoreComments': true,
-          'ignoreUrls': true,
-          'ignoreStrings': true,
-          'ignoreTemplateLiterals': true,
-          "ignoreRegExpLiterals": true,
+          code: 100,
+          tabWidth: 2,
+          ignoreComments: true,
+          ignoreUrls: true,
+          ignoreStrings: true,
+          ignoreTemplateLiterals: true,
+          ignoreRegExpLiterals: true,
         },
       ],
     },

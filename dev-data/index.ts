@@ -1,12 +1,6 @@
 export type { AngularAwsPath, CoursesPath, DataMap, JSPath } from './courses-data.types';
-export { COURSE_TITLES } from './courseTitles.data';
-export { type CourseNames, contentMap } from './training-program.data';
-export {
-  type CourseNamesChannels,
-  DISCORD_LINKS,
-  RS_DOCS_COMMUNICATION_LINK,
-  RS_DOCS_TELEGRAM_CHATS_LINK,
-} from './communication.data';
+export { COURSE_TITLES, type CourseMap, type CourseName, DISCORD_LINKS } from './courseTitles.data';
+export { RS_DOCS_COMMUNICATION_LINK, RS_DOCS_TELEGRAM_CHATS_LINK } from './communication.data';
 export { angular } from './angular.data';
 export { angularPath } from './angular-path.data';
 export { awsDev } from './awsDev.data';
@@ -14,6 +8,7 @@ export { awsDevPath } from './aws-dev-path.data';
 export { awsDevops } from './aws-devops.data';
 export { awsFundamentals } from './awsFundamentals.data';
 export { communicationText } from './widget-communication.data';
+export { contentMap } from './training-program.data';
 export { contentMapAbout } from './about.data';
 export { courseDataMap } from './required.data';
 export { courses } from './courses.data';

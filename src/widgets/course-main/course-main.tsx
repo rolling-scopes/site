@@ -1,10 +1,7 @@
-import { useLoaderData } from 'react-router-dom';
 import { getCourseStatus } from './utils/get-course-status';
-import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
-import type { Course } from '@/entities/course';
+import { COURSE_STALE_AFTER_DAYS } from '@/core/const';
+import { Course } from '@/entities/course';
 import { getCourseDate } from '@/shared/helpers/getCourseDate';
-import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
-import { useTitle } from '@/shared/hooks/use-title';
 import { DateLang } from '@/shared/ui/date-lang';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -15,7 +12,7 @@ import { WidgetTitle } from '@/shared/ui/widget-title';
 import styles from './course-main.module.scss';
 
 interface CourseMainProps {
-  courseName: string;
+  course: Course;
   lang?: 'ru' | 'en';
   type?: 'Pre-school RU';
 }
@@ -25,12 +22,10 @@ const localizedContent = {
   ru: { linkLabel: 'Присоединиться' },
 };
 
-export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) => {
-  const courses = useLoaderData() as Course[];
+export const CourseMain = ({ lang = 'en', type, course }: CourseMainProps) => {
+  // const course = selectCourse(courses, courseName);
 
-  const course = selectCourse(courses, courseName);
-
-  useTitle(`${course?.title || ''} · The Rolling Scopes School`);
+  // useTitle(`${course?.title || ''} · The Rolling Scopes School`);
 
   if (!course) {
     return <p>Error fetching course. Try again.</p>;
@@ -43,7 +38,7 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
   return (
     <main className={`container ${styles.container}`}>
       <div className={`content ${styles.content}`}>
-        <Image className={styles.icon} src={secondaryIcon} alt={title} lazy={false} />
+        <Image className={styles.icon} img={secondaryIcon} alt={title} lazy={false} />
         <div className={styles.info}>
           <SectionLabel>{status}</SectionLabel>
           <WidgetTitle>{`${altTitle || title} Course`}</WidgetTitle>

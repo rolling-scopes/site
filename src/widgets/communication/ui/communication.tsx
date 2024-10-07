@@ -6,7 +6,7 @@ import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import {
-  CourseNamesChannels,
+  CourseName,
   DISCORD_LINKS,
   RS_DOCS_COMMUNICATION_LINK,
   RS_DOCS_TELEGRAM_CHATS_LINK,
@@ -18,7 +18,7 @@ import styles from './communication.module.scss';
 const cx = classNames.bind(styles);
 
 type CommunicationProps = {
-  courseName: CourseNamesChannels;
+  courseName: CourseName;
   lang?: 'ru' | 'en';
 };
 
@@ -43,7 +43,7 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
         <WidgetTitle mods="asterisk">{title}</WidgetTitle>
         <div className={cx('communication-wrapper')}>
           <figure className={cx('discord-logo-wrapper')}>
-            <Image src={discordLogo} alt="discord logo" />
+            <Image img={discordLogo} alt="discord logo" />
           </figure>
           <div>
             <Subtitle>{subTitle}</Subtitle>

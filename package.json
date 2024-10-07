@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && npx cross-env VITE_TABLET=768 VITE_MOBILE=425 vite build && npm run optimizeImages",
-    "optimizeImages": "npx cross-env VITE_TABLET=768 VITE_MOBILE=425 VITE_COMPRESS_QUALITY=80 node optimizeImages/optimizeImages.js",
+    "dev": "next dev",
+    "build": "next build",
+    "optimizeImages": "node optimizeImages/optimizeImages.js",
     "stylelint": "npx stylelint \"**/*.scss\"",
     "stylelint:fix": "npx stylelint \"**/*.scss\" --fix",
     "lint": "npx eslint . --report-unused-disable-directives --max-warnings 400",
@@ -24,12 +24,12 @@
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.13",
+    "next": "^14.2.13",
     "nextjs-toploader": "^3.6.15",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-double-marquee": "^1.1.0",
-    "react-responsive-carousel": "^3.2.23",
-    "react-router-dom": "^6.26.1"
+    "react-responsive-carousel": "^3.2.23"
   },
   "devDependencies": {
     "@feature-sliced/eslint-config": "^0.1.1",
@@ -47,11 +47,9 @@
     "@types/react-dom": "^18.2.25",
     "@typescript-eslint/eslint-plugin": "^8.3.0",
     "@typescript-eslint/parser": "^8.3.0",
-    "@vitejs/plugin-react": "^4.3.1",
     "@vitest/coverage-v8": "^2.0.5",
     "chalk": "^5.3.0",
     "concurrently": "^8.2.2",
-    "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
     "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-css-import-order": "^1.1.0",
@@ -76,7 +74,6 @@
     "stylelint-prettier": "^5.0.2",
     "svgo": "^3.3.2",
     "typescript": "^5.5.4",
-    "vite": "^5.4.6",
     "vitest": "^2.0.5"
   }
 }

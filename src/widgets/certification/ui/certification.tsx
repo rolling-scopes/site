@@ -1,12 +1,12 @@
 import classNames from 'classnames/bind';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { CourseNames } from 'data';
+import { COURSE_TITLES, CourseName } from 'data';
 
 import styles from './certification.module.scss';
 
 interface RequiredProps {
-  courseName: CourseNames;
+  courseName: CourseName;
 }
 
 const localizedContent = {
@@ -16,13 +16,13 @@ const localizedContent = {
       "To earn a course certificate, you must complete all assignments, finish the final project, and achieve at least 70% of the top student's score in the course. The certificate is a recognition of your hard work and dedication.",
     secondParagraph: '',
   },
-  'js / front-end ru': {
+  [COURSE_TITLES.JS_RU]: {
     title: 'Сертификат',
     firstParagraph:
       'Чтобы получить сертификат о прохождении курса вам необходимо набрать 70% от результата TOP-1 студента. Сертификат является признанием вашего усердного труда и преданности делу.',
     secondParagraph: '',
   },
-  'js / front-end pre-school ru': {
+  [COURSE_TITLES.JS_PRESCHOOL_RU]: {
     title: 'Сертификат',
     firstParagraph:
       'Чтобы получить сертификат о прохождении подготовительного этапа вам необходимо набрать 70% от результата TOP-1 студента. Например, если в конце этапа у лучшего студента 1000 баллов, проходной для всех студентов 700 баллов (1000 * 0.7).',

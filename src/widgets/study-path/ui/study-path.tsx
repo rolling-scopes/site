@@ -1,9 +1,9 @@
+'use client';
 import { createContext } from 'react';
 import { Stages } from './stages';
-import { useDataByName } from '@/shared/hooks/use-data-by-name';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import type { DataMap } from 'data';
+import { type DataMap, coursesPath } from 'data';
 
 import './study-path.scss';
 
@@ -31,7 +31,7 @@ const localizedContent = {
 export const LangContext = createContext<'ru' | 'en'>('en');
 
 export const StudyPath = ({ path, marked, lang = 'en' }: StudyPathProps) => {
-  const { data: coursesPath } = useDataByName<PathNames>(path);
+  // const { data: coursesPath } = useDataByName<PathNames>(path);
 
   const isAngularOrAwsDev = path === 'angular' || path === 'awsDev';
 
@@ -45,7 +45,9 @@ export const StudyPath = ({ path, marked, lang = 'en' }: StudyPathProps) => {
     <LangContext.Provider value={lang}>
       <section className="study-path container" id="learning-path">
         <div className="study-path content upd">
-          <WidgetTitle size="small" mods="asterisk">{title}</WidgetTitle>
+          <WidgetTitle size="small" mods="asterisk">
+            {title}
+          </WidgetTitle>
           <Paragraph>{paragraph}</Paragraph>
           <Stages stages={coursesPath} marked={marked} />
         </div>

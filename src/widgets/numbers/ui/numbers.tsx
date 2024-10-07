@@ -49,7 +49,7 @@ export const Numbers = () => {
             <InfoCell title="1800+" description="RS School alumni per year" />
           </div>
         </div>
-        <Image className="map" src={image} alt="map" />
+        <Image className="map" img={image} alt="map" />
       </div>
     </div>
   );

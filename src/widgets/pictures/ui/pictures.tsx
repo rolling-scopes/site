@@ -1,3 +1,4 @@
+'use client';
 // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import photo1 from '@/shared/assets/photo-1.webp';
@@ -70,7 +71,7 @@ export const Pictures = () => (
       >
         {photos.map((photo, index) => (
           <Image
-            src={photo}
+            img={photo}
             key={index}
             data-testid="carousel-image"
             alt="Photo of our community"

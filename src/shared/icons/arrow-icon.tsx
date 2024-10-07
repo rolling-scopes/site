@@ -4,7 +4,7 @@ import { Image } from '@/shared/ui/image';
 export const ArrowIcon = ({ size = '24px' }: { size?: string }) => {
   return (
     <Image
-      src={arrow}
+      img={arrow}
       alt="arrow icon"
       height={size}
       width={size}

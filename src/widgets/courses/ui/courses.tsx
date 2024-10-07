@@ -1,25 +1,26 @@
 import classNames from 'classnames/bind';
-import { path } from '../constants';
-import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
+import { COURSE_STALE_AFTER_DAYS } from '@/core/const';
 import { type Course, CourseCard } from '@/entities/course';
 import { getActualData } from '@/shared/helpers/getActualData';
 import { isCourse } from '@/shared/helpers/is-course';
-import { useDataByName } from '@/shared/hooks/use-data-by-name';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './courses.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const Courses = () => {
-  const { data: courses, loading, error } = useDataByName(path);
+interface CoursesProps {
+  courses: Course[];
+}
+export const Courses = ({ courses }: CoursesProps) => {
+  // const { data: courses, loading, error } = useDataByName(path);
 
-  if (loading) {
-    return <h2>Loading...</h2>;
-  }
-  if (error) {
-    return <h2>{error.message}</h2>;
-  }
+  // if (loading) {
+  //   return <h2>Loading...</h2>;
+  // }
+  // if (error) {
+  //   return <h2>{error.message}</h2>;
+  // }
   if (!courses || courses.length === 0) {
     return null;
   }
