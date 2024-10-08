@@ -1,4 +1,4 @@
-import { LINKS } from '@/app/const';
+import { ROUTES } from '@/app/const';
 import mentorImg from '@/shared/assets/mentors-wanted.webp';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -20,11 +20,10 @@ export const Mentors = () => {
             training program.
           </Paragraph>
           <LinkCustom
-            href={LINKS.BECOME_MENTOR}
+            href={ROUTES.MENTORSHIP}
             variant="primary"
-            external
           >
-            Become a mentor
+            Read more
           </LinkCustom>
         </div>
         <div className="picture">
