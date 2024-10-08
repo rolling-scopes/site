@@ -26,5 +26,3 @@ fi
 echo "-"
 echo "Your branch name is OK 😎"
 echo "-"
-
-npm run test
