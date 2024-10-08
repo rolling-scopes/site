@@ -4,6 +4,74 @@ import { MentorshipCourse } from 'data';
 
 export const mentorshipCourses: MentorshipCourse[] = [
   {
+    id: 0,
+    courseTitle: '',
+    lang: 'en',
+    pageUrl: ROUTES.MENTORSHIP,
+    description: [
+      'The duration of mentoring is 8 - 10 weeks',
+      'Format: online',
+      'A desire to mentor from 2 to 6 students online or in person',
+      'An ability to dedicate 3 to 5 hours per week',
+    ],
+    mentorActivities: [
+      {
+        id: 1,
+        title: 'Best practices',
+        description: 'The mentor shows what code constructs are best to use based on his experience',
+      },
+      {
+        id: 2,
+        title: 'Code review',
+        description: 'The mentor reviews the code, points out inaccuracies, suggests how to improve them. The code review helps the student to develop the necessary skills to work in a team',
+        links: [
+          {
+            href: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/pull-request-review-process.md',
+            linkTitle: 'Read more',
+          },
+        ],
+      },
+      {
+        id: 3,
+        title: 'Conducting technical interview',
+        description: 'The mentor makes a decision about working with the student. Interviews are conducted with 2+ students - the total size of their team is determined by the mentor based on their workload',
+        links: [
+          {
+            href: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/first-interview.md',
+            linkTitle: 'Read more',
+          },
+        ],
+      },
+      {
+        id: 4,
+        title: 'Conducting two CoreJS interviews',
+        description: 'The mentor conducts two interviews with students of other mentors on major topics of the course',
+      },
+      {
+        id: 5,
+        title: 'Supervising a team assignment',
+        description: 'The mentor\'s experience and practical knowledge will help organize students to work on a team project',
+        links: [
+          {
+            href: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/modules/final-task/README.md',
+            linkTitle: 'Read more',
+          },
+        ],
+      },
+    ],
+    mentorDocsUrl: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
+    courseDocsUrl: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/README.md',
+    benefits: [
+      'Opportunity to develop a new colleague',
+      'Gaining new experience, search for new colleagues',
+      'Opportunity to share knowledge',
+      'You have completed the school course, feel confident and now it\'s your time to “Teach It Forward”',
+      'Teaching others, you learn yourself',
+      'Opportunity to improve tasks or create your own',
+      'You\'re on the lookout for a great community that will always help you learn and grow.',
+    ],
+  },
+  {
     id: 1,
     courseTitle: COURSE_TITLES.ANGULAR,
     lang: 'en',

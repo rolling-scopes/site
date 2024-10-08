@@ -12,7 +12,7 @@ export type RouteName = typeof ROUTES[RoutesKey];
 
 export type MentorshipCourse = {
   id: number;
-  courseTitle: CourseTitle;
+  courseTitle: '' | CourseTitle;
   lang: 'en' | 'ru';
   pageUrl: RouteName;
   description: string[];
