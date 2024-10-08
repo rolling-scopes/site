@@ -7,7 +7,7 @@ export {
   RS_DOCS_COMMUNICATION_LINK,
   RS_DOCS_TELEGRAM_CHATS_LINK,
 } from './communication.data';
-export { type MentorshipCourse, type RouteName } from './mentorship-data.types.ts';
+export { type CourseTitle, type MentorshipCourse, type RouteName } from './mentorship-data.types.ts';
 export { angular } from './angular.data';
 export { angularPath } from './angular-path.data';
 export { awsDev } from './awsDev.data';
