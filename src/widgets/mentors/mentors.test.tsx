@@ -21,10 +21,10 @@ describe('Mentors', () => {
   });
 
   it('renders the become a mentor button', () => {
-    const button = screen.getByRole('link', { name: /Become a mentor/i });
+    const button = screen.getByRole('link', { name: /Read more/i });
 
     expect(button).toBeVisible();
-    expect(button).toHaveAttribute('href', 'https://app.rs.school/registry/mentor');
+    expect(button).toHaveAttribute('href', '/mentorship');
   });
 
   it('renders the mentor image', () => {
