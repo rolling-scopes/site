@@ -60,7 +60,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
       },
     ],
     mentorDocsUrl: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
-    courseDocsUrl: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/README.md',
+    courseDocsUrl: 'https://github.com/rolling-scopes-school/tasks/blob/master/README.md',
     benefits: [
       'Opportunity to develop a new colleague',
       'Gaining new experience, search for new colleagues',
