@@ -8,7 +8,7 @@ import styles from './list.module.scss';
 
 type ListProps = Pick<HTMLAttributes<HTMLElement>, 'className'>
   & VariantProps<typeof listVariants>
-  & Record<'data', ListData>;
+  & { data: ListData };
 
 export const cx = classNames.bind(styles);
 
