@@ -3,10 +3,10 @@ import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import './trainers.scss';
 
-interface TrainersProps {
+type TrainersProps = {
   trainers: Trainer[];
   lang?: 'en' | 'ru';
-}
+};
 
 const trainersTitle = {
   ru: 'Команда курса',
