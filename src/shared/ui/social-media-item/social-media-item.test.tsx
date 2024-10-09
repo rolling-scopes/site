@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
 import { screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import { SocialMedia } from './social-media';
+import { SocialMediaItem } from './social-media-item';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
-describe('SocialMedia component', () => {
+describe('SocialMediaItem component', () => {
   const mockIcon: ReactNode = <div>mockIcon</div>;
 
   const props = {
@@ -16,7 +16,7 @@ describe('SocialMedia component', () => {
   let linkElement: HTMLElement;
 
   beforeEach(() => {
-    renderWithRouter(<SocialMedia {...props} />);
+    renderWithRouter(<SocialMediaItem {...props} />);
     linkElement = screen.getByTestId('social-media');
   });
 

@@ -14,6 +14,7 @@ export { awsDevPath } from './aws-dev-path.data';
 export { awsDevops } from './aws-devops.data';
 export { awsFundamentals } from './awsFundamentals.data';
 export { communicationText } from './widget-communication.data';
+export { communityGroups } from './community-media.data';
 export { contentMapAbout } from './about.data';
 export { courseDataMap } from './required.data';
 export { courses } from './courses.data';
