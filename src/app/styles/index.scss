@@ -6,6 +6,8 @@ html {
 
 body {
   font-family: $font-primary;
+  // https://github.com/rolling-scopes/site/issues/590
+  text-wrap: pretty;
 }
 
 * {
