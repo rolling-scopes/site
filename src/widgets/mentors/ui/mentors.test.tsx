@@ -1,6 +1,7 @@
 import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { Mentors } from './mentors';
+import { LINKS } from '@/app/const';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
@@ -24,7 +25,7 @@ describe('Mentors', () => {
     const button = screen.getByRole('link', { name: /Become a mentor/i });
 
     expect(button).toBeVisible();
-    expect(button).toHaveAttribute('href', 'https://app.rs.school/registry/mentor');
+    expect(button).toHaveAttribute('href', LINKS.BECOME_MENTOR);
   });
 
   it('renders the mentor image', () => {
