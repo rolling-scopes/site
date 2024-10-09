@@ -4,7 +4,7 @@
   gap: 32px;
 
   width: 100%;
-  max-width: 1440px;
+  max-width: $content-width;
   padding: 40px 120px;
 
   @include media-laptop {
@@ -24,7 +24,7 @@
   margin-inline-end: unset;
 
   font-size: 28px;
-  font-weight: normal;
+  font-weight: $font-weight-regular;
   line-height: 36px;
   color: $color-gray-600;
 
