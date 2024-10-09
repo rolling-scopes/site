@@ -8,23 +8,13 @@ interface TrainersProps {
   lang?: 'en' | 'ru';
 }
 
-const ONE_TRAINER = 'oneTrainer';
-const MULTIPLE_TRAINERS = 'multipleTrainers';
-
 const trainersTitle = {
-  ru: {
-    [ONE_TRAINER]: 'Преподаватель курса',
-    [MULTIPLE_TRAINERS]: 'Преподаватели курса',
-  },
-  en: {
-    [ONE_TRAINER]: 'Our trainer',
-    [MULTIPLE_TRAINERS]: 'Our mentors and trainers',
-  },
+  ru: 'Команда курса',
+  en: 'Course Team',
 } as const;
 
 export const Trainers = ({ trainers, lang = 'en' }: TrainersProps) => {
-  const isMultipleTrainers = trainers.length > 1 ? MULTIPLE_TRAINERS : ONE_TRAINER;
-  const title = trainersTitle[lang][isMultipleTrainers];
+  const title = trainersTitle[lang];
 
   return (
     <section className="trainers container">
