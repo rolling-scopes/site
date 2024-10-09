@@ -1,6 +1,5 @@
 import classNames from 'classnames/bind';
-import { AboutCourseGrid } from './about-course-grid/about-course-grid';
-import { localizedContent } from '../constants';
+import { AboutCourseGrid } from '../about-course-grid/about-course-grid';
 import type { Course } from '@/entities/course';
 import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';
 import type { CourseName } from '@/shared/types';
@@ -8,7 +7,7 @@ import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { contentMapAbout } from 'data';
+import { contentMapAbout, introLocalizedContent } from 'data';
 
 import styles from './about-course.module.scss';
 
@@ -42,13 +41,13 @@ export const AboutCourse = ({ courseName, type = 'en' }: AboutCourseProps) => {
   return (
     <section className={cx('container')}>
       <div className={cx('about-course', 'content')}>
-        <WidgetTitle>{localizedContent[type].title}</WidgetTitle>
-        {localizedContent[type].paragraph && (
-          <Paragraph>{localizedContent[type].paragraph}</Paragraph>
+        <WidgetTitle>{introLocalizedContent[type].title}</WidgetTitle>
+        {introLocalizedContent[type].paragraph && (
+          <Paragraph>{introLocalizedContent[type].paragraph}</Paragraph>
         )}
         <AboutCourseGrid items={courseInfoList} />
         <LinkCustom href={course.enroll} variant="primary" external>
-          {localizedContent[type].linkLabel}
+          {introLocalizedContent[type].linkLabel}
         </LinkCustom>
       </div>
     </section>
