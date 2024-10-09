@@ -47,6 +47,14 @@ const listData = {
       link: '/#mentors-wanted',
     }],
   ],
+  javaScriptRU: [
+    [{
+      id: 1,
+      text: 'Наставники и тренеры нашей школы - это фронтенд и разработчики JavaScript из разных компаний и стран. ',
+      title: 'Как стать наставником?',
+      link: '/#mentors-wanted',
+    }],
+  ],
   reactEn: [
     [{
       id: 1,
@@ -145,7 +153,9 @@ const javaScriptRU: () => AboutCourseInfo[] = () => {
     {
       id: 2,
       title: 'Наставники и тренеры со всего мира',
-      info: 'Наставники и тренеры нашей школы - это фронтенд и разработчики JavaScript из разных компаний и стран. Как стать наставником?',
+      info: (
+        <List data={listData.javaScriptRU} marked={false} />
+      ),
       icon: planetIcon,
     },
     {
