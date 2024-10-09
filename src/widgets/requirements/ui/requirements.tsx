@@ -1,8 +1,11 @@
+import classNames from 'classnames/bind';
 import { LINKS } from '@/app/const';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 
-import './requirements.scss';
+import styles from './requirements.module.scss';
+
+const cx = classNames.bind(styles);
 
 const mentorRequirements = [
   "Desire to help students. If you've been working with JS/TS in production for more than 6 months, then that's great",
@@ -18,15 +21,15 @@ const mentorResponsibilities = [
 
 export const Requirements = () => {
   return (
-    <section className="requirements container">
-      <div className="requirements content">
-        <div className="requirements-info">
-          <div className="requirements-list">
-            <div className="title">Requirements for mentors</div>
+    <section className={cx('container')}>
+      <article className={cx('content')}>
+        <div className={cx('requirements-info')}>
+          <div className={cx('requirements-list')}>
+            <h3 className={cx('title')}>Requirements for mentors</h3>
             <List data={mentorRequirements} />
           </div>
-          <div className="responsibilities">
-            <div className="title">Mentor responsibilities</div>
+          <div className={cx('responsibilities')}>
+            <h3 className={cx('title')}>Mentor responsibilities</h3>
             <List data={mentorResponsibilities} />
           </div>
         </div>
@@ -37,7 +40,7 @@ export const Requirements = () => {
         >
           Register as a mentor
         </LinkCustom>
-      </div>
+      </article>
     </section>
   );
 };

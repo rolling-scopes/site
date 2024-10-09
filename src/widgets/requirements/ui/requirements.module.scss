@@ -18,7 +18,13 @@
 
 .title {
   margin-bottom: 16px;
+  margin-block-start: unset;
+  margin-block-end: unset;
+  margin-inline-start: unset;
+  margin-inline-end: unset;
+
   font-size: 28px;
+  font-weight: normal;
   line-height: 36px;
   color: $color-gray-600;
 
