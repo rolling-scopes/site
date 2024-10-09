@@ -17,7 +17,7 @@ export const Requirements = () => {
             <h3 className={cx('title', 'title-margin')}>{textContent.headerRequirements}</h3>
             <List data={textContent.requirements} />
           </div>
-          <div className={cx('responsibilities')}>
+          <div>
             <h3 className={cx('title', 'title-margin')}>{textContent.headerTask}</h3>
             <List data={textContent.tasks} />
           </div>

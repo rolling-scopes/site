@@ -17,7 +17,6 @@
 }
 
 .title {
-  margin-bottom: 16px;
   margin-block-start: unset;
   margin-block-end: unset;
   margin-inline-start: unset;
@@ -31,6 +30,10 @@
   @include media-laptop {
     font-size: 22px;
   }
+}
+
+.title-margin {
+  margin-bottom: 16px;
 }
 
 .requirements-info {
