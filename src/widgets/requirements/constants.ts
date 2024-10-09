@@ -7,7 +7,7 @@ export const buttonLink = {
 export const buttonVariant = 'primary';
 
 export const textContent = {
-  button: 'Read more',
+  button: 'Register as a mentor',
   headerRequirements: 'Requirements for mentors',
   headerTask: 'Mentor responsibilities',
   requirements: [

@@ -3,6 +3,8 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { Requirements } from './requirements.tsx';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
+const registerLink = 'https://app.rs.school/registry/mentor';
+
 describe('Requirements', () => {
   beforeEach(() => {
     renderWithRouter(<Requirements />);
@@ -35,6 +37,6 @@ describe('Requirements', () => {
     const button = screen.getByRole('link', { name: /Register as a mentor/i });
 
     expect(button).toBeVisible();
-    expect(button).toHaveAttribute('href', 'https://app.rs.school/registry/mentor');
+    expect(button).toHaveAttribute('href', registerLink);
   });
 });
