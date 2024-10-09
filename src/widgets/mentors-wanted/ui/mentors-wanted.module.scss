@@ -16,7 +16,6 @@
 .content-left {
   display: flex;
   flex-direction: column;
-  gap: 26px;
   max-width: 50%;
 
   @include media-tablet {
