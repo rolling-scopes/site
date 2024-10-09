@@ -23,6 +23,7 @@ export const Mentors = () => {
             training program.
           </Paragraph>
           <LinkCustom
+            className={cx('link-custom')}
             href={LINKS.BECOME_MENTOR}
             variant="primary"
             external
@@ -31,7 +32,7 @@ export const Mentors = () => {
           </LinkCustom>
         </div>
         <div className={cx('picture')}>
-          <Image src={mentorImg} alt="Sloth - mascot dressed as a detective" />
+          <Image className={cx('image')} src={mentorImg} alt="Sloth - mascot dressed as a detective" />
         </div>
       </div>
     </section>
