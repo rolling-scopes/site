@@ -17,9 +17,16 @@ describe('WidgetTitle component', () => {
     expect(title).toBeVisible();
   });
 
-  it('displays h2 tag', () => {
+  it('displays h2 tag by default', () => {
     render(<WidgetTitle />);
     const element = screen.getByRole('heading', { level: 2 });
+
+    expect(element).toBeInTheDocument();
+  });
+
+  it('displays h1 tag if needed', () => {
+    render(<WidgetTitle as="h1" />);
+    const element = screen.getByRole('heading', { level: 1 });
 
     expect(element).toBeInTheDocument();
   });

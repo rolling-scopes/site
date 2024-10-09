@@ -46,7 +46,7 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
         <Image className={styles.icon} src={secondaryIcon} alt={title} lazy={false} />
         <div className={styles.info}>
           <SectionLabel>{status}</SectionLabel>
-          <WidgetTitle>{`${altTitle || title} Course`}</WidgetTitle>
+          <WidgetTitle as="h1">{`${altTitle || title} Course`}</WidgetTitle>
           {type && (
             <Subtitle fontSize="small" color="black">
               {type}
