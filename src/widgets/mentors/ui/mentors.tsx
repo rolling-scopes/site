@@ -13,7 +13,7 @@ const cx = classNames.bind(styles);
 export const Mentors = () => {
   return (
     <section className={cx('container', 'mentors-container')} id="mentors-wanted">
-      <div className={cx('content', 'column-2', 'mentors-content')}>
+      <article className={cx('content', 'column-2', 'mentors-content')}>
         <div className={cx('mentors-info')}>
           <WidgetTitle size="large" mods="lines">Mentors wanted!</WidgetTitle>
           <Paragraph fontSize="large" className={cx('paragraph')}>
@@ -31,10 +31,10 @@ export const Mentors = () => {
             Become a mentor
           </LinkCustom>
         </div>
-        <div className={cx('picture')}>
+        <figure className={cx('picture')}>
           <Image className={cx('image')} src={mentorImg} alt="Sloth - mascot dressed as a detective" />
-        </div>
-      </div>
+        </figure>
+      </article>
     </section>
   );
 };
