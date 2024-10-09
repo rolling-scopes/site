@@ -1,5 +1,6 @@
 import { Trainer, TrainerCard } from '@/entities/trainer';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { trainersTitle } from '@/widgets/trainers/constants';
 
 import './trainers.scss';
 
@@ -7,11 +8,6 @@ type TrainersProps = {
   trainers: Trainer[];
   lang?: 'en' | 'ru';
 };
-
-const trainersTitle = {
-  ru: 'Команда курса',
-  en: 'Course Team',
-} as const;
 
 export const Trainers = ({ trainers, lang = 'en' }: TrainersProps) => {
   const title = trainersTitle[lang];
