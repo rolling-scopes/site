@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import image from '@/shared/assets/contribute.webp';
+import contributeImage from '@/shared/assets/contribute.webp';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -42,7 +42,11 @@ export const Contribute = () => (
             Protégé Effect! There are several ways you can contribute, choose yours.
           </Paragraph>
         </div>
-        <Image className="right picture" src={image} alt="contribute" />
+        <Image
+          className="right picture"
+          src={contributeImage}
+          alt="Sloth mascot dressed in a superhero costume"
+        />
       </div>
       <div className="contribute-options">
         {contributeOptions.map(({ title, description, linkLabel, href }) => (
