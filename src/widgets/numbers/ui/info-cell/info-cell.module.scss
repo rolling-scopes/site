@@ -1,0 +1,43 @@
+.info-cell {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 240px;
+  height: 180px;
+  padding: 8px 40px;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    translate: 0 -50%;
+
+    width: 3px;
+    height: 100%;
+
+    background-color: $color-gray-200;
+  }
+
+  &-number {
+    padding: 0;
+    letter-spacing: 0.04em;
+  }
+
+  &-text {
+    height: 56px;
+  }
+
+  @include media-laptop {
+    width: 200px;
+  }
+
+  @include media-tablet {
+    width: 150px;
+    padding: 0 8px;
+  }
+}
