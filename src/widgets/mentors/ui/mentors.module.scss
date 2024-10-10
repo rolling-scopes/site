@@ -14,18 +14,7 @@
 .mentors-info {
   display: flex;
   flex-direction: column;
-
-  .paragraph {
-    max-width: 640px;
-
-    @include media-tablet-large {
-      max-width: 100%;
-    }
-  }
-
-  .link-custom {
-    margin-top: 24px;
-  }
+  max-width: 640px;
 
   @include media-tablet-large {
     width: 100%;

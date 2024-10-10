@@ -16,14 +16,13 @@ export const Mentors = () => {
       <article className={cx('content', 'column-2', 'mentors-content')}>
         <div className={cx('mentors-info')}>
           <WidgetTitle size="large" mods="lines">Mentors wanted!</WidgetTitle>
-          <Paragraph fontSize="large" className={cx('paragraph')}>
+          <Paragraph fontSize="large">
             The Rolling Scopes School is constantly looking for mentors from all over the world to
             teach everyone who wants to learn the JavaScript language and the world of Front-end.
             Over the past few years, over 1500+ people have successfully completed our six month
             training program.
           </Paragraph>
           <LinkCustom
-            className={cx('link-custom')}
             href={LINKS.BECOME_MENTOR}
             variant="primary"
             external
