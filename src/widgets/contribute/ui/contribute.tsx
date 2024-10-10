@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { contributeOptions } from '../constants';
 import contributeImage from '@/shared/assets/contribute.webp';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -10,28 +11,11 @@ import styles from './contribute.module.scss';
 
 const cx = classNames.bind(styles);
 
-const contributeOptions = [
-  {
-    title: 'Mentorship',
-    description:
-      'Become a mentor and guide the next generation of developers. Sign up as a mentor here.',
-    linkLabel: 'Register as a mentor',
-    href: 'https://app.rs.school/registry/mentor',
-  },
-  {
-    title: 'Developer / Coordinator / Trainer',
-    description:
-      'Contribute your skills as a developer, coordinator, or trainer. Fill out this form to get started.',
-    linkLabel: 'Become a contributor',
-    href: 'https://docs.google.com/forms/d/e/1FAIpQLSdGKdEHK1CnZjgll9PpMU0xD1m0hm6xGoXc98H7woCDulyQkg/viewform',
-  },
-];
-
 export const Contribute = () => (
-  <div id="contribute" className="contribute container">
+  <section id="contribute" className="contribute container">
     <div className="contribute content">
       <div className="general">
-        <div className="info">
+        <article className="info">
           <WidgetTitle mods="asterisk">How to Contribute</WidgetTitle>
           <Paragraph fontSize="large">
             Contributing to The Rolling Scopes is not only a great way to give back to the
@@ -41,7 +25,7 @@ export const Contribute = () => (
             Remember, teaching others is one of the best ways to learn - this is known as The
             Protégé Effect! There are several ways you can contribute, choose yours.
           </Paragraph>
-        </div>
+        </article>
         <Image
           className="right picture"
           src={contributeImage}
@@ -66,5 +50,5 @@ export const Contribute = () => (
         professional development.
       </Paragraph>
     </div>
-  </div>
+  </section>
 );
