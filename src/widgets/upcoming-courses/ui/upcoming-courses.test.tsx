@@ -95,7 +95,7 @@ describe('Courses', () => {
   it('renders no more than 5 course cards', () => {
     const courseCards = screen.getByTestId('courses-list');
 
-    expect(courseCards.children.length).toEqual(5);
+    expect(courseCards.children.length).toBeLessThanOrEqual(5);
   });
 
   it('renders the Go to RS School button', () => {

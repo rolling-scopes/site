@@ -1,5 +1,5 @@
-import { selectCourse } from './utils/select-course';
 import { useDataByName } from '../use-data-by-name';
+import { selectCourse } from './utils/select-course';
 
 import type { Course } from '@/entities/course';
 
