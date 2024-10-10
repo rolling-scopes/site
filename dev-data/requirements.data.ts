@@ -1,12 +1,11 @@
 import { LINKS } from '@/app/const';
 
-export const buttonLink = {
-  href: LINKS.BECOME_MENTOR,
-  external: true,
-};
-
-export const textContent = {
-  button: 'Register as a mentor',
+export const requirementsData = {
+  button: {
+    text: 'Register as a mentor',
+    href: LINKS.BECOME_MENTOR,
+    external: true,
+  },
   headerRequirements: 'Requirements for mentors',
   headerTask: 'Mentor responsibilities',
   requirements: [

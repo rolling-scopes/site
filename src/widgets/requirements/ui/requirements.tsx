@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { buttonLink, textContent } from 'data';
+import { requirementsData } from 'data';
 
 import styles from './requirements.module.scss';
 
@@ -10,28 +10,28 @@ const cx = classNames.bind(styles);
 
 export const Requirements = () => {
   return (
-    <section className={cx('container')}>
+    <section className={cx('container')} data-testid="requirements">
       <div className={cx('content', 'requirements')}>
         <div className={cx('requirements-info')}>
           <article className={cx('requirements-list-wrapper')}>
             <Subtitle fontSize="medium" className={cx('title')}>
-              {textContent.headerRequirements}
+              {requirementsData.headerRequirements}
             </Subtitle>
-            <List data={textContent.requirements} />
+            <List data={requirementsData.requirements} />
           </article>
           <article>
             <Subtitle fontSize="medium" className={cx('title')}>
-              {textContent.headerTask}
+              {requirementsData.headerTask}
             </Subtitle>
-            <List data={textContent.tasks} />
+            <List data={requirementsData.tasks} />
           </article>
         </div>
         <LinkCustom
-          href={buttonLink.href}
+          href={requirementsData.button.href}
           variant="primary"
-          external={buttonLink.external}
+          external={requirementsData.button.external}
         >
-          {textContent.button}
+          {requirementsData.button.text}
         </LinkCustom>
       </div>
     </section>
