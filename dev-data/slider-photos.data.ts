@@ -8,7 +8,7 @@ import photo7 from '@/shared/assets/photo-7.webp';
 import photo8 from '@/shared/assets/photo-8.webp';
 import photo9 from '@/shared/assets/photo-9.webp';
 
-export const photos = [
+export const sliderPhotos = [
   {
     id: 1,
     src: photo1,

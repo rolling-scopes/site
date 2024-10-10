@@ -4,8 +4,7 @@ import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SocialMediaItem } from '@/shared/ui/social-media-item';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { photos } from '@/widgets/pictures/constants';
-import { picturesSocialMediaLinks } from 'data';
+import { picturesSocialMediaLinks, sliderPhotos } from 'data';
 
 import styles from './pictures.module.scss';
 
@@ -36,7 +35,7 @@ export const Pictures = () => (
           />
         )}
       >
-        {photos.map(({ id, src, alt }) => (
+        {sliderPhotos.map(({ id, src, alt }) => (
           <Image key={id} src={src} alt={alt} data-testid="carousel-image" />
         ))}
       </Carousel>
