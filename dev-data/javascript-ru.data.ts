@@ -1,7 +1,9 @@
 import type { Trainer } from '@/entities/trainer';
 import annaMusikhinaImg from '@/shared/assets/mentors/a-musikhina.webp';
+import lyusyaCoolImg from '@/shared/assets/mentors/l-cool.webp';
 import margaritaGolubevaImg from '@/shared/assets/mentors/m-golubeva.webp';
 import mikhailOleinikImg from '@/shared/assets/mentors/m-oleinik.webp';
+import nataliaLebedevaImg from '@/shared/assets/mentors/n-lebedeva.webp';
 import sergeyKoksharovImg from '@/shared/assets/mentors/s-koksharov.webp';
 import vadimAntonauImg from '@/shared/assets/mentors/v-antonau.webp';
 import vitaliiRogozinImg from '@/shared/assets/mentors/v-rogozin.webp';
@@ -55,5 +57,17 @@ export const javaScriptRu: Trainer[] = [
     role: '',
     bio: 'Сергей родился и вырос в маленьком городе недалеко от Петербурга. Увлекался шахматами в детстве, а программирование и алгоритмические задачи полюбил в старших классах. Ему всегда было интересно, как что-то работает под капотом. В RS School записался в 2022-м из любопытства, оказался успешным студентом и прошел почти все доступные курсы. В начале 2024-го начал коммерческую карьеру в качестве фронтенд-разработчика и теперь помогает другим студентам в осуществлении их мечты. Кроме программирования обожает ОС семейства *nix, настольные игры, и своего рыжего кота.',
     photo: sergeyKoksharovImg,
+  },
+  {
+    name: 'Lyusya Cool',
+    role: '',
+    bio: 'Люся, также известная как Cherry в сообществе Discord RS School, теперь активно помогает в роли модератора, делая сервер еще более дружелюбным и ярким. Изначально ее привело сюда стремление создавать потрясающие визуальные вещи. Люся закончила два университета в Санкт-Петербурге (один по специальности железнодорожный инженер и другой по связям с общественностью). Однажды, создавая фавиконку для работы, она задумалась: «Хм, а как они делают так, чтобы эта крошечная красивая картинка появлялась на вкладке Google?» Это любопытство, вместе с ее художественным образованием, привело ее к тому, что она нашла наибольший интерес в Angular, особенно после того, как увидела его новый градиентный логотип и обновленный сайт.',
+    photo: lyusyaCoolImg,
+  },
+  {
+    name: 'Наталья Лебедева',
+    role: 'EPAM, Junior Software Engineer',
+    bio: 'Наталья прошла обучение в RS School, прониклась духом школы и стала ее ментором и контрибьютором. Пройдя через лабораторию EPAM, воплотила свою мечту и стала разработчиком. Обожает проводить время в компании единомышленников и организует встречи RS School community в Алматы. Хочет помочь другим на их нелегком пути.',
+    photo: nataliaLebedevaImg,
   },
 ];

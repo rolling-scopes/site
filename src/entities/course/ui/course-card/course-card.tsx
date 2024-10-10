@@ -42,6 +42,7 @@ export const CourseCard = ({
           href={detailsUrl}
           variant="rounded"
           aria-label="View course details"
+          data-testid="course-link"
         >
           View details
         </LinkCustom>
