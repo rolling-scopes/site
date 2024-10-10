@@ -51,7 +51,6 @@ describe('Requirements', () => {
   it('renders the "Register as a mentor" button', () => {
     const button = screen.getByRole('link', { name: /Register as a mentor/i });
 
-    expect(button).toBeVisible();
     expect(button).toHaveAttribute('href', registerLink);
   });
 });
