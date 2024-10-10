@@ -12,10 +12,10 @@ import styles from './contribute.module.scss';
 const cx = classNames.bind(styles);
 
 export const Contribute = () => (
-  <section id="contribute" className="contribute container">
-    <div className="contribute content">
-      <div className="general">
-        <article className="info">
+  <section id="contribute" className={cx('container')}>
+    <div className={cx('contribute', ' content')}>
+      <div className={cx('general')}>
+        <article className={cx('info')}>
           <WidgetTitle mods="asterisk">How to Contribute</WidgetTitle>
           <Paragraph fontSize="large">
             Contributing to The Rolling Scopes is not only a great way to give back to the
@@ -27,12 +27,12 @@ export const Contribute = () => (
           </Paragraph>
         </article>
         <Image
-          className="right picture"
+          className={cx('picture')}
           src={contributeImage}
           alt="Sloth mascot dressed in a superhero costume"
         />
       </div>
-      <div className="contribute-options">
+      <div className={cx('contribute-options')}>
         {contributeOptions.map(({ title, description, linkLabel, href }) => (
           <article key={title} className={cx('option-item')} data-testid="option-item">
             <Subtitle>{title}</Subtitle>
@@ -43,7 +43,7 @@ export const Contribute = () => (
           </article>
         ))}
       </div>
-      <Paragraph className="contribute-paragraph">
+      <Paragraph className={cx('contribute-paragraph')}>
         Additionally, we provide feedback on LinkedIn, which can be a valuable asset for your
         professional development.
       </Paragraph>
