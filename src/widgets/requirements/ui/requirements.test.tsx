@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
-import { Requirements } from './requirements.tsx';
+import { Requirements } from './requirements';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 const registerLink = 'https://app.rs.school/registry/mentor';
@@ -10,17 +10,26 @@ describe('Requirements', () => {
     renderWithRouter(<Requirements />);
   });
 
+  it('renders without crashing', () => {
+    const requirementWidget = screen.getByTestId('requirements');
+
+    expect(requirementWidget).toBeVisible();
+  });
+
   it('renders the "Requirements for mentors" title', () => {
     expect(screen.getByText('Requirements for mentors')).toBeVisible();
   });
 
   it('renders the "Requirements for mentors" description', () => {
-    const requirement1 =
-      "Desire to help students. If you've been working with JS/TS in production for more than 6 months, then that's great";
+    const requirements = [
+      "Desire to help students. If you've been working with JS/TS in production for more than 6 months, then that's great",
+      'Desire to mentor 2 to 6 students online or in person',
+      'Ability to spend 3 to 5 hours per week',
+    ];
 
-    expect(screen.getByText(requirement1)).toBeVisible();
-    expect(screen.getByText('Desire to mentor 2 to 6 students online or in person')).toBeVisible();
-    expect(screen.getByText('Ability to spend 3 to 5 hours per week')).toBeVisible();
+    requirements.forEach((requirement) => {
+      expect(screen.getByText(new RegExp(requirement, 'i'))).toBeVisible();
+    });
   });
 
   it('renders the "Mentor responsibilities" title', () => {
@@ -28,9 +37,15 @@ describe('Requirements', () => {
   });
 
   it('renders the "Mentor responsibilities" description', () => {
-    expect(screen.getByText('Conducting an interview')).toBeVisible();
-    expect(screen.getByText('Code review tasks')).toBeVisible();
-    expect(screen.getByText("Answers to students' questions")).toBeVisible();
+    const requirements = [
+      'Conducting an interview',
+      'Code review tasks',
+      "Answers to students' questions",
+    ];
+
+    requirements.forEach((requirement) => {
+      expect(screen.getByText(new RegExp(requirement, 'i'))).toBeVisible();
+    });
   });
 
   it('renders the "Register as a mentor" button', () => {
