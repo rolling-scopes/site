@@ -4,7 +4,7 @@ import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SocialMediaItem } from '@/shared/ui/social-media-item';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { photos } from '@/widgets/pictures/constants.ts';
+import { photos } from '@/widgets/pictures/constants';
 import { picturesSocialMediaLinks } from 'data';
 
 import styles from './pictures.module.scss';
