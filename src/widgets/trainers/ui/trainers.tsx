@@ -16,7 +16,7 @@ export const Trainers = ({ trainers, lang = 'en' }: TrainersProps) => {
   const title = trainersTitle[lang];
 
   return (
-    <section className={cx('trainers', 'container')}>
+    <section className={cx('container')}>
       <div className={cx('trainers-content', 'content')}>
         <WidgetTitle mods="lines">
           {title}
