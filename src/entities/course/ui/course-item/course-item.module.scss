@@ -1,0 +1,44 @@
+.course-item {
+  @extend %transition-all;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+
+    .course-icon {
+      width: 48px;
+      height: 36px;
+      object-fit: contain;
+    }
+  }
+
+  .course-info {
+    width: 100%;
+
+    .date {
+      margin-top: 8px;
+      margin-bottom: 0;
+
+      font-size: 14px;
+      line-height: 20px;
+      color: $color-gray-600;
+    }
+  }
+
+  .details-link {
+    margin: 16px;
+  }
+
+  @include media-hover {
+    &:hover {
+      box-shadow: 0 4px 16px 0 rgb(0 0 0 / 12%);
+    }
+  }
+}
