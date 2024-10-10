@@ -1,35 +1,11 @@
-.content {
+.requirements {
   display: flex;
   flex-direction: column;
   gap: 32px;
-
-  width: 100%;
-  max-width: $content-width;
-  padding: 40px 120px;
-
-  @include media-laptop {
-    padding: 40px 40px;
-  }
-
-  @include media-tablet {
-    padding: 40px 16px;
-  }
 }
 
 .title {
-  margin-block-start: unset;
-  margin-block-end: unset;
-  margin-inline-start: unset;
-  margin-inline-end: unset;
-
-  font-size: 28px;
-  font-weight: $font-weight-regular;
-  line-height: 36px;
-  color: $color-gray-600;
-
-  @include media-laptop {
-    font-size: 22px;
-  }
+  margin-bottom: 16px;
 }
 
 .title-margin {
@@ -45,10 +21,10 @@
   }
 }
 
-.requirements-list {
+.requirements-list-wrapper {
   max-width: 600px;
 
-  @include media-laptop {
+  @include media-tablet-large {
     max-width: 100%;
   }
 }

@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
-
+import { Subtitle } from '@/shared/ui/subtitle';
 import { buttonLink, buttonVariant, textContent } from '@/widgets/requirements/constants.ts';
 
 import styles from './requirements.module.scss';
@@ -11,16 +11,20 @@ const cx = classNames.bind(styles);
 export const Requirements = () => {
   return (
     <section className={cx('container')}>
-      <article className={cx('content')}>
+      <div className={cx('content', 'requirements')}>
         <div className={cx('requirements-info')}>
-          <div className={cx('requirements-list')}>
-            <h3 className={cx('title', 'title-margin')}>{textContent.headerRequirements}</h3>
+          <article className={cx('requirements-list-wrapper')}>
+            <Subtitle fontSize="medium" className={cx('title')}>
+              {textContent.headerRequirements}
+            </Subtitle>
             <List data={textContent.requirements} />
-          </div>
-          <div>
-            <h3 className={cx('title', 'title-margin')}>{textContent.headerTask}</h3>
+          </article>
+          <article>
+            <Subtitle fontSize="medium" className={cx('title')}>
+              {textContent.headerTask}
+            </Subtitle>
             <List data={textContent.tasks} />
-          </div>
+          </article>
         </div>
         <LinkCustom
           href={buttonLink.href}
@@ -29,7 +33,7 @@ export const Requirements = () => {
         >
           {textContent.button}
         </LinkCustom>
-      </article>
+      </div>
     </section>
   );
 };
