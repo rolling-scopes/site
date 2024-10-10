@@ -1,10 +1,14 @@
+import classNames from 'classnames/bind';
 import image from '@/shared/assets/contribute.webp';
 import { Image } from '@/shared/ui/image';
+import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
+import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { OptionItem } from '@/widgets/option-item';
 
-import './contribute.scss';
+import styles from './contribute.module.scss';
+
+const cx = classNames.bind(styles);
 
 const contributeOptions = [
   {
@@ -42,13 +46,15 @@ export const Contribute = () => (
       </div>
       <div className="contribute-options">
         {contributeOptions.map(({ title, description, linkLabel, href }) => (
-          <OptionItem
-            key={title}
-            title={title}
-            description={description}
-            linkLabel={linkLabel}
-            href={href}
-          />
+          <article key={title} className={cx('option-item')} data-testid="option-item">
+            <Subtitle>{title}</Subtitle>
+            <Paragraph fontSize="large">{description}</Paragraph>
+            {linkLabel && (
+              <LinkCustom href={href} variant="primary" external>
+                {linkLabel}
+              </LinkCustom>
+            )}
+          </article>
         ))}
       </div>
       <Paragraph className="contribute-paragraph">
