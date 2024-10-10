@@ -19,7 +19,10 @@
     "test:visual": "npx percy exec -- npm run test:playwright",
     "coverage": "vitest run --coverage",
     "precommit": "npx lint-staged",
-    "prepare": "husky"
+    "prepare": "husky",
+    "spider": "node ./spider --build ../build/server/index.js --dir public",
+    "ssg": "npm run build && npm run spider",
+    "serve": "http-server public"
   },
   "dependencies": {
     "@remix-run/node": "^2.12.1",
@@ -28,7 +31,8 @@
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.13",
-    "isbot": "^4.1.0",
+    "http-server": "^14.1.1",
+    "isbot": "^4.4.0",
     "nextjs-toploader": "^3.6.15",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

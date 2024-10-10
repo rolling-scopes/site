@@ -1,0 +1,1 @@
+import{j as e}from"./jsx-runtime-d4vcKfGz.js";import{c as l,a as o}from"./use-title-CuwTejxA.js";const c="_label_gvvzp_1",n={label:c},r=l.bind(n),b=o(r("label")),p=({children:s,className:a,...t})=>e.jsx("p",{...t,className:b({className:a}),children:s});export{p as S};

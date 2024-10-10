@@ -1,5 +1,5 @@
-import { BaseLayout } from '@/app/layouts/base-layout/components/base-layout';
-import { Community } from '@/pages/community';
+import { BaseLayout } from '@/app/layouts/base-layout/components/base-layout.tsx';
+import { Community } from '@/widgets/community';
 
 export default function CommunityRout() {
   return (

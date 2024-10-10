@@ -1,0 +1,17 @@
+{
+  "name": "spider",
+  "version": "0.1.0",
+  "description": "Spidering tool to crawl your Remix app and write out HTML files",
+  "main": "index.js",
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {},
+  "author": "matt@brophy.org",
+  "license": "ISC",
+  "dependencies": {
+    "@remix-run/server-runtime": "^2.9.0-pre.0",
+    "fs-extra": "^11.2.0",
+    "node-html-parser": "^6.1.11",
+    "tiny-invariant": "^1.3.1"
+  }
+}

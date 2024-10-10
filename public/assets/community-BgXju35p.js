@@ -1,0 +1,1 @@
+import{j as t}from"./jsx-runtime-d4vcKfGz.js";function n(){return t.jsxs("div",{children:[t.jsx("h1",{children:"testing ssg"}),t.jsx("p",{children:"super funny 😭"})]})}const e={static:!0};export{n as default,e as handle};

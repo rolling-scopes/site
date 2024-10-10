@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="RS School offers free, community-driven education courses run by The Rolling Scopes developer community since 2013. Enhance your web development, JavaScript, and front-end skills with us."
+    />
+    <title>RS Site</title>
+    <link rel="stylesheet" href="/assets/root-CfqoSIvB.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <div class="app-styles">
+      <div>
+        <h1>testing ssg 123</h1>
+        <p>super funny 😭</p>
+      </div>
+    </div>
+    <script>
+      ((STORAGE_KEY, restoreKey) => {
+        if (!window.history.state || !window.history.state.key) {
+          let key = Math.random().toString(32).slice(2);
+          window.history.replaceState(
+            {
+              key,
+            },
+            '',
+          );
+        }
+        try {
+          let positions = JSON.parse(sessionStorage.getItem(STORAGE_KEY) || '{}');
+          let storedY = positions[restoreKey || window.history.state.key];
+          if (typeof storedY === 'number') {
+            window.scrollTo(0, storedY);
+          }
+        } catch (error) {
+          console.error(error);
+          sessionStorage.removeItem(STORAGE_KEY);
+        }
+      })('positions', null);
+    </script>
+    <link rel="modulepreload" href="/assets/manifest-20066de6.js" /><link
+      rel="modulepreload"
+      href="/assets/entry.client-5T6EMXmo.js"
+    /><link rel="modulepreload" href="/assets/jsx-runtime-d4vcKfGz.js" /><link
+      rel="modulepreload"
+      href="/assets/components-Dzs4Fdn2.js"
+    /><link rel="modulepreload" href="/assets/root-BEUsvBEY.js" /><link
+      rel="modulepreload"
+      href="/assets/community-Bfe9vZsM.js"
+    />
+    <script>
+      window.__remixContext = {
+        url: '/community/',
+        basename: '/',
+        future: {
+          v3_fetcherPersist: true,
+          v3_relativeSplatPath: true,
+          v3_throwAbortReason: true,
+          unstable_singleFetch: false,
+          unstable_lazyRouteDiscovery: false,
+          unstable_optimizeDeps: false,
+        },
+        isSpaMode: false,
+        state: {
+          loaderData: { root: null, 'routes/community': null },
+          actionData: null,
+          errors: null,
+        },
+      };
+    </script>
+    <script type="module" async="">
+      import '/assets/manifest-20066de6.js';
+      import * as route0 from '/assets/root-BEUsvBEY.js';
+      import * as route1 from '/assets/community-Bfe9vZsM.js';
+
+      window.__remixRouteModules = { root: route0, 'routes/community': route1 };
+
+      import('/assets/entry.client-5T6EMXmo.js');
+    </script>
+  </body>
+</html>
