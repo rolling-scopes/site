@@ -4,7 +4,6 @@ export const buttonLink = {
   href: LINKS.BECOME_MENTOR,
   external: true,
 };
-export const buttonVariant = 'primary';
 
 export const textContent = {
   button: 'Register as a mentor',

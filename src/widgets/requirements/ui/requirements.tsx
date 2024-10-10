@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { buttonLink, buttonVariant, textContent } from '@/widgets/requirements/constants.ts';
+import { buttonLink, textContent } from 'data';
 
 import styles from './requirements.module.scss';
 
@@ -28,7 +28,7 @@ export const Requirements = () => {
         </div>
         <LinkCustom
           href={buttonLink.href}
-          variant={buttonVariant}
+          variant="primary"
           external={buttonLink.external}
         >
           {textContent.button}

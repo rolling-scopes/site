@@ -13,6 +13,7 @@ export { awsDev } from './awsDev.data';
 export { awsDevPath } from './aws-dev-path.data';
 export { awsDevops } from './aws-devops.data';
 export { awsFundamentals } from './awsFundamentals.data';
+export { buttonLink, textContent } from './requirements.data';
 export { communicationText } from './widget-communication.data';
 export { communityGroups } from './community-media.data';
 export { contentMapAbout } from './about.data';
