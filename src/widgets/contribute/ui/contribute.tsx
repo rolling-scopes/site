@@ -12,7 +12,7 @@ import styles from './contribute.module.scss';
 const cx = classNames.bind(styles);
 
 export const Contribute = () => (
-  <section id="contribute" className={cx('container')}>
+  <section id="contribute" className={cx('container')} data-testid="contribute">
     <div className={cx('contribute', ' content')}>
       <div className={cx('general')}>
         <article className={cx('info')}>
@@ -30,6 +30,7 @@ export const Contribute = () => (
           className={cx('picture')}
           src={contributeImage}
           alt="Sloth mascot dressed in a superhero costume"
+          data-testid="contribute-image"
         />
       </div>
       <div className={cx('contribute-options')}>
