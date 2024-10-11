@@ -9,14 +9,14 @@ const mockedData = [
     title: 'Title 1',
     info: 'Info 1',
     icon: MOCKED_IMAGE_PATH,
-    alt: 'facts about the course - Title 1',
+    alt: '',
   },
   {
     id: 2,
     title: 'Title 2',
     info: 'Info 2',
     icon: MOCKED_IMAGE_PATH,
-    alt: 'facts about the course - Title 2',
+    alt: '',
   },
 ];
 
@@ -32,24 +32,21 @@ describe('AboutCourseGrid component', () => {
     expect(itemElements).toHaveLength(mockedData.length);
   });
 
-  it('renders correct content for each item', () => {
-    itemElements.forEach((item, index) => {
-      const titles = screen.getAllByTestId('subtitle');
-      const infoArray = screen.getAllByTestId('paragraph');
+  it.each([[mockedData[0]], [mockedData[1]]])(
+    'should render title, info and image with its attributes of %o grid-item',
+    (o) => {
+      const title = screen.getByText(o.title);
+      const info = screen.getByText(o.info);
+      const images = screen.getAllByTestId('grid-icon');
 
-      expect(item).toBeVisible();
-      expect(titles[index].textContent).toBe(mockedData[index].title);
-      expect(infoArray[index].textContent).toBe(mockedData[index].info);
-    });
-  });
+      expect(title).toBeVisible();
+      expect(info).toBeVisible();
 
-  it('renders correct image for each item', () => {
-    const images = screen.getAllByTestId('grid-icon');
-
-    images.forEach((image, index) => {
-      expect(image).toBeVisible();
-      expect(image).toHaveAttribute('src', MOCKED_IMAGE_PATH);
-      expect(image).toHaveAttribute('alt', mockedData[index].alt);
-    });
-  });
+      images.forEach((image) => {
+        expect(image).toBeVisible();
+        expect(image).toHaveAttribute('src', o.icon);
+        expect(image).toHaveAttribute('alt', o.alt);
+      });
+    },
+  );
 });

@@ -26,7 +26,8 @@ export const AboutCourseGrid = ({ items }: AboutCourseGridProps) => {
             <Image
               className={cx('grid-icon')}
               src={icon}
-              alt={`facts about the course - ${title}`}
+              aria-hidden="true"
+              alt=""
               data-testid="grid-icon"
             />
 
