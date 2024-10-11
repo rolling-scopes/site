@@ -16,12 +16,12 @@ export const Trainers = ({ trainers, lang = 'en' }: TrainersProps) => {
   const title = trainersTitle[lang];
 
   return (
-    <section className={cx('container')}>
+    <section className={cx('container')} data-testid="trainers">
       <div className={cx('trainers-content', 'content')}>
         <WidgetTitle mods="lines">
           {title}
         </WidgetTitle>
-        <div className={cx('trainers-list')}>
+        <div className={cx('trainers-list')} data-testid="trainers-list">
           {trainers.map(({ name, bio, photo, role }, index) => (
             <TrainerCard
               key={index}
