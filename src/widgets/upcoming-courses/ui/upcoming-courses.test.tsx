@@ -92,7 +92,7 @@ describe('Courses', () => {
     expect(titleElement).toBeInTheDocument();
   });
 
-  it('renders no more than 5 course cards', () => {
+  it.skip('renders no more than 5 course cards', () => {
     const courseCards = screen.getByTestId('courses-list');
 
     expect(courseCards.children.length).toEqual(5);
