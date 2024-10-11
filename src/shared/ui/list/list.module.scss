@@ -9,6 +9,15 @@
   letter-spacing: 0.5px;
   list-style-type: none;
 
+  &.compact {
+    gap: 0;
+    letter-spacing: 0;
+
+    @include media-laptop {
+      font-size: 16px;
+    }
+  }
+
   &.marked {
     list-style-type: disc;
   }

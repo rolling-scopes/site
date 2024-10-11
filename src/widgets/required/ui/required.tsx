@@ -29,7 +29,11 @@ export const Required = ({ courseName }: RequiredProps) => {
   return (
     <section className="required container">
       <div className="required content info-wrapper">
-        <WidgetTitle mods="asterisk">
+        <WidgetTitle
+          // id is used on WeAreCommunity for direct link
+          id="basic-knowledge"
+          mods="asterisk"
+        >
           {title}
         </WidgetTitle>
 
