@@ -20,7 +20,7 @@ const cx = classNames.bind(styles);
 
 const { locales } = heroCourseData;
 
-export type HeroCourseProps = {
+type HeroCourseProps = {
   courseName: string;
   lang?: 'ru' | 'en';
   type?: 'Pre-school RU';
