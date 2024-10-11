@@ -1,6 +1,4 @@
-export const heroCourseData = {
-  locales: {
-    en: { linkLabel: 'Enroll' },
-    ru: { linkLabel: 'Присоединиться' },
-  },
+export const heroCourseLocalized = {
+  en: { linkLabel: 'Enroll' },
+  ru: { linkLabel: 'Присоединиться' },
 } as const;

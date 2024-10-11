@@ -12,13 +12,11 @@ import { LinkCustom } from '@/shared/ui/link-custom';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { heroCourseData } from 'data';
+import { heroCourseLocalized } from 'data';
 
 import styles from './hero-course.module.scss';
 
 const cx = classNames.bind(styles);
-
-const { locales } = heroCourseData;
 
 type HeroCourseProps = {
   courseName: string;
@@ -55,7 +53,7 @@ export const HeroCourse = ({ courseName, lang = 'en', type }: HeroCourseProps) =
           )}
           <DateLang startDate={date} language={language} mode={mode} withMargin />
           <LinkCustom href={enroll} variant="secondary" external>
-            {locales[lang].linkLabel}
+            {heroCourseLocalized[lang].linkLabel}
           </LinkCustom>
         </div>
       </div>
