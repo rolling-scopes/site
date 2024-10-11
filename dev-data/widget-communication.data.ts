@@ -5,6 +5,7 @@ export const communicationText = {
     firstParagraphFirstHalf: 'Here is link for the ',
     discordLink: 'course Discord server',
     firstParagraphSecondHalf: ', where you can see latest news and chat with students.',
+    discordNote: 'Attention! In some countries, access to Discord requires the use of a VPN. If you are having trouble connecting, please try using a reliable VPN service.',
     secondParagraphFirstHalf: 'There are channels in ',
     telegramLink: 'Telegram',
     secondParagraphSecondHalf:
@@ -20,6 +21,7 @@ export const communicationText = {
     discordLink: 'Дискорд сервер курса',
     firstParagraphSecondHalf:
       ', где вы можете посмотреть последние новости, задать вопросы и общаться со студентами.',
+    discordNote: 'Внимание! В некоторых странах для доступа к Discord требуется использование VPN. Если у вас возникают трудности с подключением, попробуйте использовать надёжный VPN- сервис.',
     secondParagraphFirstHalf: 'Также есть каналы в ',
     telegramLink: 'Телеграм',
     secondParagraphSecondHalf:
