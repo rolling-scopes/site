@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { LINKS } from '@/app/const';
+import { ANCHORS, LINKS } from '@/app/const';
 import mentorImg from '@/shared/assets/mentors-wanted.webp';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 
 export const Mentors = () => {
   return (
-    <section className={cx('mentors-container', 'container')} id="mentors-wanted">
+    <section className={cx('mentors-container', 'container')} id={ANCHORS.MENTORS_WANTED} data-testid="mentors-wanted">
       <div className={cx('mentors-content', 'content', 'column-2')}>
         <article className={cx('mentors-info')}>
           <WidgetTitle size="large" mods="lines">Mentors wanted!</WidgetTitle>
