@@ -16,7 +16,7 @@
   display: flex;
   gap: 32px;
 
-  @include media-laptop {
+  @include media-tablet-large {
     flex-direction: column;
   }
 }

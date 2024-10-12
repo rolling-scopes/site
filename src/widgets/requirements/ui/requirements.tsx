@@ -14,20 +14,20 @@ export const Requirements = () => {
       <div className={cx('content', 'requirements')}>
         <div className={cx('requirements-info')}>
           <article className={cx('requirements-list-wrapper')}>
-            <Subtitle fontSize="medium" className={cx('title')}>
+            <Subtitle className={cx('title')}>
               {requirementsData.headerRequirements}
             </Subtitle>
             <List data={requirementsData.requirements} />
           </article>
           <article>
-            <Subtitle fontSize="medium" className={cx('title')}>
+            <Subtitle className={cx('title')}>
               {requirementsData.headerTask}
             </Subtitle>
             <List data={requirementsData.tasks} />
           </article>
         </div>
         <LinkCustom
-          href={requirementsData.button.href}
+          href={requirementsData.button.link}
           variant="primary"
           external={requirementsData.button.external}
         >
