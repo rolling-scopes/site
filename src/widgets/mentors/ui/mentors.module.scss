@@ -1,33 +1,27 @@
 .mentors-container {
   background: $color-gray-100;
-}
 
-.mentors-content {
-  flex-direction: row;
+  .mentors-content {
+    flex-direction: row;
 
-  @include media-tablet-large {
-    flex-direction: column;
-    gap: 40px;
-  }
-}
+    .mentors-info {
+      max-width: 640px;
 
-.mentors-info {
-  display: flex;
-  flex-direction: column;
-  max-width: 640px;
+      @include media-tablet-large {
+        width: 100%;
+      }
+    }
 
-  @include media-tablet-large {
-    width: 100%;
-  }
-}
+    .sloth-mascot {
+      @include media-tablet {
+        width: 296px;
+        height: 272px;
+      }
+    }
 
-.picture {
-  max-width: 420px;
-  max-height: 420px;
-
-  .image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    @include media-tablet-large {
+      flex-direction: column;
+      gap: 40px;
+    }
   }
 }

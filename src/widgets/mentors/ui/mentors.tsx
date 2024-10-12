@@ -12,9 +12,9 @@ const cx = classNames.bind(styles);
 
 export const Mentors = () => {
   return (
-    <section className={cx('container', 'mentors-container')} id="mentors-wanted">
-      <article className={cx('content', 'column-2', 'mentors-content')}>
-        <div className={cx('mentors-info')}>
+    <section className={cx('mentors-container', 'container')} id="mentors-wanted">
+      <div className={cx('mentors-content', 'content', 'column-2')}>
+        <article className={cx('mentors-info')}>
           <WidgetTitle size="large" mods="lines">Mentors wanted!</WidgetTitle>
           <Paragraph fontSize="large">
             The Rolling Scopes School is constantly looking for mentors from all over the world to
@@ -29,11 +29,14 @@ export const Mentors = () => {
           >
             Become a mentor
           </LinkCustom>
-        </div>
-        <figure className={cx('picture')}>
-          <Image className={cx('image')} src={mentorImg} alt="Sloth - mascot dressed as a detective" />
-        </figure>
-      </article>
+        </article>
+        <Image
+          className={cx('sloth-mascot')}
+          src={mentorImg}
+          alt="Sloth - mascot dresses as a detective"
+          data-testid="sloth-mascot"
+        />
+      </div>
     </section>
   );
 };
