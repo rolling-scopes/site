@@ -11,15 +11,25 @@ describe('Mentors', () => {
     renderWithRouter(<Mentors />);
   });
 
-  it('renders the title', () => {
-    expect(screen.getByText('Mentors wanted!')).toBeVisible();
+  it('renders the widget', () => {
+    const widget = screen.getByTestId('mentors-wanted');
+
+    expect(widget).toBeVisible();
   });
 
-  it('renders the subtitle', () => {
-    const subtitle =
-      'The Rolling Scopes School is constantly looking for mentors from all over the world to teach everyone who wants to learn the JavaScript language and the world of Front-end. Over the past few years, over 1500+ people have successfully completed our six month training program.';
+  it('renders the title', () => {
+    const title = screen.getByTestId('widget-title');
 
-    expect(screen.getByText(subtitle)).toBeVisible();
+    expect(title).toBeVisible();
+  });
+
+  it('renders the paragraph', () => {
+    const text =
+      'The Rolling Scopes School is constantly looking for mentors from all over the world to teach everyone who wants to learn the JavaScript language and the world of Front-end. Over the past few years, over 1500+ people have successfully completed our six month training program.';
+    const paragraph = screen.getByTestId('paragraph');
+
+    expect(paragraph).toBeVisible();
+    expect(paragraph).toHaveTextContent(text);
   });
 
   it('renders the become a mentor button', () => {

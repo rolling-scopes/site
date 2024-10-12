@@ -33,7 +33,7 @@ export const Mentors = () => {
         <Image
           className={cx('sloth-mascot')}
           src={mentorImg}
-          alt="Sloth - mascot dresses as a detective"
+          alt="Sloth - mascot dressed as a detective"
           data-testid="sloth-mascot"
         />
       </div>
