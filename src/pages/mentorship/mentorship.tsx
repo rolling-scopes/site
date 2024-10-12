@@ -4,7 +4,7 @@ import { useTitle } from '@/shared/hooks/use-title';
 import { AboutMentorship } from '@/widgets/about-mentorship';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { HeroPage } from '@/widgets/hero-page';
-import { MentorsDocs } from '@/widgets/mentors-docs/ui/mentors-docs.tsx';
+import { MentorsDocs } from '@/widgets/mentors-docs';
 import { MentorshipCourse } from 'data';
 
 export const Mentorship = () => {
@@ -18,7 +18,7 @@ export const Mentorship = () => {
       <Breadcrumbs />
       <AboutMentorship benefits={pageProps.benefits} lang={pageProps.lang} />
       <MentorsDocs
-        detailsUrl={pageProps.mentorDocsUrl}
+        link={pageProps.mentorDocsUrl}
         courseTitle={pageProps.courseTitle}
         lang={pageProps.lang}
       />

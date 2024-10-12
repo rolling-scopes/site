@@ -1,66 +1,48 @@
-import classNames from 'classnames';
-import classNamesBind from 'classnames/bind';
+import classNames from 'classnames/bind';
 import mentorImg from '@/shared/assets/mentor-with-his-students.webp';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { CourseTitle } from 'data';
+import { CourseTitle, mentorDocsData } from 'data';
 
 import styles from './mentors-docs.module.scss';
 
-const cx = classNamesBind.bind(styles);
+const cx = classNames.bind(styles);
 
 type MentorsDocsProps = {
-  detailsUrl: string;
+  link: string;
   courseTitle: '' | CourseTitle;
   lang?: 'en' | 'ru';
 };
 
-const textContent = {
-  en: {
-    header: 'Course Curriculum',
-    textInfo: 'If you are interested in mentoring our students, please go through the',
-    textLink: 'Mentoring Documentation',
-    textAfterLink: 'for the',
-    textEnd: 'Course.',
-  },
-  ru: {
-    header: 'Учебная программа курса',
-    textInfo: 'Если вы хотите стать ментором, пожалуйста, ознакомьтесь с ',
-    textLink: 'Документацией школы',
-    textAfterLink: 'для',
-    textEnd: 'курса.',
-  },
-};
-
-export const MentorsDocs = ({ detailsUrl, courseTitle, lang = 'en' }: MentorsDocsProps) => {
+export const MentorsDocs = ({ link, courseTitle, lang = 'en' }: MentorsDocsProps) => {
   return (
-    <section className={cx('mentors-docs', 'container')}>
-      <article className={classNames('content', cx('content'))}>
-        <div className={cx('content-left')}>
-          <WidgetTitle id="mentors-wanted" mods="lines">
-            {textContent[lang].header}
+    <section className={cx('container', 'mentors-docs')}>
+      <article className={cx('content', 'docs-wrapper')}>
+        <div className={cx('docs')}>
+          <WidgetTitle mods="asterisk">
+            {mentorDocsData[lang].header}
           </WidgetTitle>
           <Paragraph>
-            {textContent[lang].textInfo}
+            {mentorDocsData[lang].textInfo}
             {' '}
             <LinkCustom
-              href={detailsUrl}
+              href={link}
               external
             >
-              {textContent[lang].textLink}
+              {mentorDocsData[lang].textLink}
             </LinkCustom>
             {' '}
-            {textContent[lang].textAfterLink}
+            {mentorDocsData[lang].textAfterLink}
             {' '}
             {courseTitle}
             {' '}
-            {textContent[lang].textEnd}
+            {mentorDocsData[lang].textEnd}
           </Paragraph>
         </div>
-        <div className={cx('picture')}>
-          <Image src={mentorImg} alt="Sloth - mascot dresses as a detective" />
+        <div className={cx('picture-wrapper')}>
+          <Image src={mentorImg} alt={mentorDocsData[lang].pictureAlt} className={cx('picture')} />
         </div>
       </article>
     </section>
