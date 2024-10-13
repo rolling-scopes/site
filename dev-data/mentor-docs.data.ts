@@ -6,6 +6,7 @@ export const mentorDocsData = {
     textAfterLink: 'for the',
     textEnd: 'Course.',
     pictureAlt: 'Mentor and its students',
+    additional: 'You can also ask questions ',
   },
   ru: {
     header: 'Остались вопросы?',
@@ -14,5 +15,6 @@ export const mentorDocsData = {
     textAfterLink: 'для',
     textEnd: 'курса.',
     pictureAlt: 'Ментор и его студенты',
+    additional: 'Вы так же можете задать вопросы ',
   },
 };

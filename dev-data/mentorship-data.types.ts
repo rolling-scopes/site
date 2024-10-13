@@ -2,7 +2,7 @@ import { COURSE_TITLES } from './courseTitles.data.ts';
 import { ROUTES } from '@/app/const';
 import { Stage } from '@/widgets/study-path/ui/stage-card';
 
-type MentorActions = Pick<Stage, 'id' | 'title' | 'description' | 'links'>;
+export type MentorActions = Pick<Stage, 'id' | 'title' | 'description' | 'links'>;
 
 type CourseTitleKey = keyof typeof COURSE_TITLES;
 export type CourseTitle = typeof COURSE_TITLES[CourseTitleKey];
@@ -14,10 +14,14 @@ export type MentorshipCourse = {
   id: number;
   courseTitle: '' | CourseTitle;
   lang: 'en' | 'ru';
-  pageUrl: RouteName;
+  links: {
+    page: RouteName;
+    mentorDocs: string;
+    courseDocs: string;
+    telegram: string;
+    discord: string;
+  };
   description: string[];
   mentorActivities: MentorActions[];
-  mentorDocsUrl: string;
-  courseDocsUrl: string;
   benefits: string[];
 };

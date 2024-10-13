@@ -7,7 +7,13 @@ export const mentorshipCourses: MentorshipCourse[] = [
     id: 0,
     courseTitle: '',
     lang: 'en',
-    pageUrl: ROUTES.MENTORSHIP,
+    links: {
+      page: ROUTES.MENTORSHIP,
+      mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
+      courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/README.md',
+      telegram: '',
+      discord: '',
+    },
     description: [
       'The duration of mentoring is 8 - 10 weeks',
       'Format: online',
@@ -59,8 +65,6 @@ export const mentorshipCourses: MentorshipCourse[] = [
         ],
       },
     ],
-    mentorDocsUrl: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
-    courseDocsUrl: 'https://github.com/rolling-scopes-school/tasks/blob/master/README.md',
     benefits: [
       'Opportunity to develop a new colleague',
       'Gaining new experience, search for new colleagues',
@@ -75,7 +79,13 @@ export const mentorshipCourses: MentorshipCourse[] = [
     id: 1,
     courseTitle: COURSE_TITLES.ANGULAR,
     lang: 'en',
-    pageUrl: ROUTES.ANGULAR,
+    links: {
+      page: ROUTES.ANGULAR,
+      mentorDocs: 'https://github.com/rolling-scopes-school/tasks/tree/master/angular/mentoring',
+      courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/angular/README.md',
+      telegram: '',
+      discord: '',
+    },
     description: [
       'The duration of mentoring is 8 - 10 weeks',
       'Format: online',
@@ -110,8 +120,6 @@ export const mentorshipCourses: MentorshipCourse[] = [
         description: 'The mentor\'s experience and practical knowledge will help organize students to work on a team project',
       },
     ],
-    mentorDocsUrl: 'https://github.com/rolling-scopes-school/tasks/tree/master/angular/mentoring',
-    courseDocsUrl: 'https://github.com/rolling-scopes-school/tasks/blob/master/angular/README.md',
     benefits: [
       'Opportunity to develop a new colleague',
       'Gaining new experience, search for new colleagues',
@@ -126,7 +134,13 @@ export const mentorshipCourses: MentorshipCourse[] = [
     id: 2,
     courseTitle: COURSE_TITLES.REACT,
     lang: 'en',
-    pageUrl: ROUTES.REACT,
+    links: {
+      page: ROUTES.REACT,
+      mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
+      courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/react/README.md',
+      telegram: '',
+      discord: '',
+    },
     description: [
       'The duration of mentoring is 12 weeks',
       'Format: online',
@@ -172,8 +186,6 @@ export const mentorshipCourses: MentorshipCourse[] = [
         description: 'The mentor\'s experience and practical knowledge will help organize students to work on a team project',
       },
     ],
-    mentorDocsUrl: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
-    courseDocsUrl: 'https://github.com/rolling-scopes-school/tasks/blob/master/react/README.md',
     benefits: [
       'Opportunity to develop a new colleague',
       'Gaining new experience, search for new colleagues',
@@ -188,7 +200,13 @@ export const mentorshipCourses: MentorshipCourse[] = [
     id: 3,
     courseTitle: COURSE_TITLES.JS_EN,
     lang: 'en',
-    pageUrl: ROUTES.JS,
+    links: {
+      page: ROUTES.JS,
+      mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
+      courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/README.md',
+      telegram: '',
+      discord: '',
+    },
     description: [
       'The duration of mentoring is 18 - 19 weeks',
       'Format: online',
@@ -240,8 +258,6 @@ export const mentorshipCourses: MentorshipCourse[] = [
         ],
       },
     ],
-    mentorDocsUrl: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
-    courseDocsUrl: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/README.md',
     benefits: [
       'Opportunity to develop a new colleague',
       'Gaining new experience, search for new colleagues',
@@ -256,7 +272,13 @@ export const mentorshipCourses: MentorshipCourse[] = [
     id: 4,
     courseTitle: COURSE_TITLES.JS_RU,
     lang: 'ru',
-    pageUrl: ROUTES.JS_RU,
+    links: {
+      page: ROUTES.JS_RU,
+      mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/rs-school-mentor.md',
+      courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/README.md',
+      telegram: '',
+      discord: '',
+    },
     description: [
       'Длительность менторства 18 - 19 недель',
       'Формат: онлайн',
@@ -302,8 +324,6 @@ export const mentorshipCourses: MentorshipCourse[] = [
         description: 'Опыт и практические знания ментора помогут организовать студентов для работы над командным проектом',
       },
     ],
-    mentorDocsUrl: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/rs-school-mentor.md',
-    courseDocsUrl: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/README.md',
     benefits: [
       'Ищете новых коллег для работы',
       'Закончили один из курсов школы и теперь пришло ваше время для “Teach It Forward”',
