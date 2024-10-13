@@ -1,11 +1,11 @@
 import classNames from 'classnames/bind';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
-import styles from './about-mentorship.module.scss';
+import styles from './mentors-benefit.module.scss';
 
 const cx = classNames.bind(styles);
 
-type AboutMentorshipProps = {
+type MentorsBenefitsProps = {
   benefits: string[];
   lang?: 'en' | 'ru';
 };
@@ -16,7 +16,7 @@ const textContent = {
   ru: { header: 'Быть ментором для вас если вы' },
 };
 
-export const AboutMentorship = ({ benefits, lang = 'en' }: AboutMentorshipProps) => {
+export const MentorsBenefits = ({ benefits, lang = 'en' }: MentorsBenefitsProps) => {
   return (
     <section className={cx('container')}>
       <div className={cx('about-mentorship', 'content')}>
