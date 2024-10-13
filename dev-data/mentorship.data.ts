@@ -1,5 +1,8 @@
 import { COURSE_TITLES } from './courseTitles.data.ts';
 import { ROUTES } from '@/app/const';
+import angular from '@/shared/assets/icons/angular.svg';
+import javascript from '@/shared/assets/icons/javascript.webp';
+import react from '@/shared/assets/icons/react.svg';
 import { MentorshipCourse } from 'data';
 
 export const mentorshipCourses: MentorshipCourse[] = [
@@ -9,6 +12,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
     lang: 'en',
     links: {
       page: ROUTES.MENTORSHIP,
+      icon: [angular, react, javascript],
       mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
       courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/README.md',
       telegram: '',
@@ -81,6 +85,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
     lang: 'en',
     links: {
       page: ROUTES.ANGULAR,
+      icon: [angular],
       mentorDocs: 'https://github.com/rolling-scopes-school/tasks/tree/master/angular/mentoring',
       courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/angular/README.md',
       telegram: '',
@@ -136,6 +141,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
     lang: 'en',
     links: {
       page: ROUTES.REACT,
+      icon: [react],
       mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
       courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/react/README.md',
       telegram: '',
@@ -202,6 +208,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
     lang: 'en',
     links: {
       page: ROUTES.JS,
+      icon: [javascript],
       mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
       courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/README.md',
       telegram: '',
@@ -274,6 +281,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
     lang: 'ru',
     links: {
       page: ROUTES.JS_RU,
+      icon: [javascript],
       mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/rs-school-mentor.md',
       courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/README.md',
       telegram: '',

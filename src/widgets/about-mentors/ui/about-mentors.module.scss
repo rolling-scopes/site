@@ -1,0 +1,31 @@
+.title {
+  font-size: 36px;
+  letter-spacing: 0;
+
+  @include media-laptop {
+    font-size: 29px;
+    line-height: 44px;
+  }
+
+  @include media-tablet {
+    font-size: 23px;
+  }
+}
+
+.mentors-register-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.picture-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+.picture {
+  position: relative;
+  width: 140px;
+  max-height: 140px;
+}

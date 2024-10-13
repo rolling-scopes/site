@@ -1,6 +1,7 @@
 import { useLoaderData } from 'react-router-dom';
 import { PAGE_NAMES } from '@/shared/constants.ts';
 import { useTitle } from '@/shared/hooks/use-title';
+import { AboutMentors } from '@/widgets/about-mentors';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { HeroPage } from '@/widgets/hero-page';
 import { MentorsActivity } from '@/widgets/mentors-activity';
@@ -18,7 +19,11 @@ export const Mentorship = () => {
     <>
       <HeroPage pageName={PAGE_NAMES.MENTORSHIP} />
       <Breadcrumbs />
-      {/* Блок с description полем + лого курса */}
+      <AboutMentors
+        description={pageProps.description}
+        icons={pageProps.links.icon}
+        lang={pageProps.lang}
+      />
       <MentorsBenefits benefits={pageProps.benefits} lang={pageProps.lang} />
       <MentorsActivity activities={pageProps.mentorActivities} lang={pageProps.lang} />
       <MentorsRegister lang={pageProps.lang} />

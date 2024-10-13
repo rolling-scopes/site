@@ -9,6 +9,20 @@
   justify-content: space-between;
 }
 
+.title {
+  font-size: 36px;
+  letter-spacing: 0;
+
+  @include media-laptop {
+    font-size: 29px;
+    line-height: 44px;
+  }
+
+  @include media-tablet {
+    font-size: 23px;
+  }
+}
+
 .docs {
   display: flex;
   flex-direction: column;
@@ -17,6 +31,16 @@
   max-width: 45%;
 
   text-align: left;
+}
+
+.additional {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.social-media {
+  display: flex;
 }
 
 .picture-wrapper {

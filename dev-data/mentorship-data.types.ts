@@ -16,6 +16,7 @@ export type MentorshipCourse = {
   lang: 'en' | 'ru';
   links: {
     page: RouteName;
+    icon: string[];
     mentorDocs: string;
     courseDocs: string;
     telegram: string;
