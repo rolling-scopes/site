@@ -1,0 +1,41 @@
+.mentoring-register {
+  display: flex;
+  flex-direction: column;
+
+  @include media-laptop-medium {
+    flex-direction: column;
+    align-items: flex-start;
+
+    * {
+      max-width: 80%;
+    }
+  }
+
+  @include media-tablet {
+    * {
+      max-width: 100%;
+    }
+  }
+}
+
+.title {
+  font-size: 36px;
+  letter-spacing: 0;
+
+  @include media-laptop {
+    font-size: 29px;
+    line-height: 44px;
+  }
+
+  @include media-tablet {
+    font-size: 23px;
+  }
+}
+
+.step-wrapper {
+  margin-bottom: 18px;
+}
+
+.note {
+  margin-bottom: 18px;
+}

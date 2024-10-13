@@ -29,6 +29,7 @@ export { jsPath } from './js-path.data';
 export { jsPathRu } from './js-ru-path.data';
 export { mentorDocsData } from './mentor-docs.data';
 export { mentorsActivityData } from './mentors-activity.data';
+export { mentorsRegisterData } from './mentors-register.data';
 export { mentorshipCourses } from './mentorship.data';
 export { nodejs } from './nodejs.data';
 export { preSchoolEn, preSchoolRu } from './preSchool.data';
