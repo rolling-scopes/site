@@ -8,6 +8,7 @@ export {
   RS_DOCS_TELEGRAM_CHATS_LINK,
 } from './communication.data';
 export { type CourseTitle, type MentorActions, type MentorshipCourse, type RouteName } from './mentorship-data.types';
+export { aboutMentorsData } from './about-mentors.data.ts';
 export { angular } from './angular.data';
 export { angularPath } from './angular-path.data';
 export { awsDev } from './awsDev.data';
@@ -29,6 +30,7 @@ export { jsPath } from './js-path.data';
 export { jsPathRu } from './js-ru-path.data';
 export { mentorDocsData } from './mentor-docs.data';
 export { mentorsActivityData } from './mentors-activity.data';
+export { mentorsBenefitData } from './mentors-benefit.data.ts';
 export { mentorsRegisterData } from './mentors-register.data';
 export { mentorshipCourses } from './mentorship.data';
 export { nodejs } from './nodejs.data';

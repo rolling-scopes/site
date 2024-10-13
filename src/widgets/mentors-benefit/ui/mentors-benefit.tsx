@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { mentorsBenefitData } from 'data';
 
 import styles from './mentors-benefit.module.scss';
 
@@ -11,16 +12,12 @@ type MentorsBenefitsProps = {
 };
 
 const COUNT_SYMBOLS = 60;
-const textContent = {
-  en: { header: 'Mentorship is for you if you' },
-  ru: { header: 'Быть ментором для вас если вы' },
-};
 
 export const MentorsBenefits = ({ benefits, lang = 'en' }: MentorsBenefitsProps) => {
   return (
     <section className={cx('container')}>
       <div className={cx('about-mentorship', 'content')}>
-        <WidgetTitle className={cx('title')}>{textContent[lang].header}</WidgetTitle>
+        <WidgetTitle className={cx('title')}>{mentorsBenefitData[lang].header}</WidgetTitle>
         <ul className={cx('benefits')}>
           {benefits.map((info, index) => {
             let classNameWidth = ((info.length > COUNT_SYMBOLS) ? 'benefit-long' : 'benefit-short');
