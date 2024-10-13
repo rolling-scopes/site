@@ -1,3 +1,4 @@
+import { ROUTES } from '@/app/const';
 import image from '@/shared/assets/contribute.webp';
 import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -11,8 +12,8 @@ const contributeOptions = [
     title: 'Mentorship',
     description:
       'Become a mentor and guide the next generation of developers. Sign up as a mentor here.',
-    linkLabel: 'Register as a mentor',
-    href: 'https://app.rs.school/registry/mentor',
+    linkLabel: 'Read more',
+    href: `/${ROUTES.MENTORSHIP}`,
   },
   {
     title: 'Developer / Coordinator / Trainer',
