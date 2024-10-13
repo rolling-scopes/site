@@ -9,9 +9,9 @@ import styles from './mentors-register.module.scss';
 
 const cx = classNames.bind(styles);
 
-interface MentorsRegisterProps {
+type MentorsRegisterProps = {
   lang?: 'ru' | 'en';
-}
+};
 
 export const MentorsRegister = ({ lang = 'en' }: MentorsRegisterProps) => {
   return (
