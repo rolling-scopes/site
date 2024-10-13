@@ -4,8 +4,8 @@ import { useTitle } from '@/shared/hooks/use-title';
 import { AboutMentorship } from '@/widgets/about-mentorship';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { HeroPage } from '@/widgets/hero-page';
+import { MentorsActivity } from '@/widgets/mentors-activity';
 import { MentorsDocs } from '@/widgets/mentors-docs';
-import { MentorsPath } from '@/widgets/mentors-path';
 import { MentorshipCourse } from 'data';
 
 export const Mentorship = () => {
@@ -19,7 +19,7 @@ export const Mentorship = () => {
       <Breadcrumbs />
       {/* Блок с description полем + лого курса */}
       <AboutMentorship benefits={pageProps.benefits} lang={pageProps.lang} />
-      <MentorsPath activities={pageProps.mentorActivities} lang={pageProps.lang} />
+      <MentorsActivity activities={pageProps.mentorActivities} lang={pageProps.lang} />
       <MentorsDocs
         linkDocs={pageProps.links.mentorDocs}
         linkTelegram={pageProps.links.telegram}
