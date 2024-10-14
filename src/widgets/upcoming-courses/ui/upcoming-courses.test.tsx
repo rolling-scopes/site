@@ -62,14 +62,8 @@ const height = 900;
 const widthMobile = tabletScreenBreakPoint;
 const widthDesktop = widthMobile + 100;
 
-vi.mock('@/app/hooks/use-data-by-name', () => {
-  return {
-    useDataByName: vi.fn().mockImplementation(() => ({
-      data: mockedData,
-      error: null,
-      loading: false,
-    })),
-  };
+vi.mock('@/shared/helpers/getActualData', () => {
+  return { getActualData: vi.fn().mockImplementation(() => mockedData) };
 });
 
 vi.mock('@/shared/hooks/use-window-size', () => {
@@ -93,9 +87,10 @@ describe('Courses', () => {
   });
 
   it('renders no more than 5 course cards', () => {
-    const courseCards = screen.getByTestId('courses-list');
+    const coursesList = screen.getByTestId('courses-list');
+    const courseCardsWithoutButton = coursesList.children.length - 1;
 
-    expect(courseCards.children.length).toEqual(5);
+    expect(courseCardsWithoutButton).toEqual(5);
   });
 
   it('renders the Go to RS School button', () => {
