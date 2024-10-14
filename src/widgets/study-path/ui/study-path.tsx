@@ -1,4 +1,5 @@
 'use client';
+
 import { createContext } from 'react';
 import { Stages } from './stages';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -31,8 +32,6 @@ const localizedContent = {
 export const LangContext = createContext<'ru' | 'en'>('en');
 
 export const StudyPath = ({ path, marked, lang = 'en' }: StudyPathProps) => {
-  // const { data: coursesPath } = useDataByName<PathNames>(path);
-
   const isAngularOrAwsDev = path === 'angular' || path === 'awsDev';
 
   const title = isAngularOrAwsDev ? 'Course Curriculum' : localizedContent[lang].title;

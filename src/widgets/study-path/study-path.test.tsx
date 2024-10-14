@@ -1,26 +1,36 @@
 import { screen } from '@testing-library/react';
+import { vi } from 'vitest';
 import { StudyPath } from './ui/study-path';
-import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
-const testStages = [
-  {
-    id: '1',
-    title: 'Stage 1',
-    description: 'Stages Description',
-    logoIcon: MOCKED_IMAGE_PATH,
-    links: [{
-      href: 'test.com',
-      linkTitle: 'test title',
-      isActive: true,
-    }],
-    topics: ['Advanced Javascript', 'Security'],
-    imageSrc: MOCKED_IMAGE_PATH,
-    list: ['Item 1', 'Item 2'],
-  },
-];
+const { testStages } = await vi.hoisted(async () => {
+  const { MOCKED_IMAGE_PATH } = await import('@/shared/__tests__/constants');
 
-vi.mock('@/shared/hooks/use-data-by-name', () => ({ useDataByName: vi.fn().mockImplementation(() => ({ data: testStages })) }));
+  return {
+    testStages: [
+      {
+        id: '1',
+        title: 'Stage 1',
+        description: 'Stages Description',
+        logoIcon: MOCKED_IMAGE_PATH,
+        links: [
+          {
+            href: 'test.com',
+            linkTitle: 'test title',
+            isActive: true,
+          },
+        ],
+        topics: ['Advanced Javascript', 'Security'],
+        imageSrc: MOCKED_IMAGE_PATH,
+        list: ['Item 1', 'Item 2'],
+      },
+    ],
+  };
+});
+
+vi.mock('data/index.ts', () => {
+  return { coursesPath: testStages };
+});
 
 describe('StudyPath Component', () => {
   it('renders the title and paragraph text correctly for angularPath', () => {
