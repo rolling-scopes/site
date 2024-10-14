@@ -1,12 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { BaseLayout } from './base-layout';
+import { ROUTES } from '@/core/const';
 
-vi.mock('react-router-dom', () => ({
-  Outlet: vi.fn(() => <div data-testid="mockOutlet" />),
-  useLocation: vi.fn(() => ({ hash: 'testHash' })),
-  ScrollRestoration: vi.fn(() => null),
-}));
+const mockUsePathname = vi.fn();
 
 vi.mock('./components/header', () => ({ Header: vi.fn(() => <div data-testid="mockHeader" />) }));
 
@@ -14,17 +11,20 @@ vi.mock('./components/partnered', () => ({ Partnered: vi.fn(() => <div data-test
 
 vi.mock('./components/footer', () => ({ Footer: vi.fn(() => <div data-testid="mockFooter" />) }));
 
+vi.mock('next/navigation', () => ({
+  usePathname() {
+    return mockUsePathname();
+  },
+}));
+
 describe('BaseLayout', () => {
   beforeEach(() => {
-    render(<BaseLayout />);
+    mockUsePathname.mockImplementation(() => ROUTES.HOME);
+    render(<BaseLayout>{null}</BaseLayout>);
   });
 
   it('renders Header component', () => {
     expect(screen.getByTestId('mockHeader')).toBeInTheDocument();
-  });
-
-  it('renders Outlet component', () => {
-    expect(screen.getByTestId('mockOutlet')).toBeInTheDocument();
   });
 
   it('renders Partnered component', () => {
