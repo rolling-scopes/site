@@ -1,7 +1,7 @@
 import { act } from 'react';
 import { fireEvent, screen } from '@testing-library/react';
 import classNames from 'classnames/bind';
-import { Mock, beforeEach, vi } from 'vitest';
+import { beforeEach } from 'vitest';
 import { DropdownWrapper } from './dropdown/dropdown-wrapper';
 import { Header } from './header';
 import { renderWithRouter } from '@/shared/__tests__/utils';
@@ -14,40 +14,16 @@ const cxDropdown = classNames.bind(stylesDropdown);
 const cxHeader = classNames.bind(stylesHeader);
 const cxNavItem = classNames.bind(stylesNavItem);
 
-vi.mock('@/shared/hooks/use-window-size', async (importOriginal) => {
-  const originalModule = await importOriginal<typeof import('@/shared/hooks/use-window-size')>();
-
-  return {
-    ...originalModule,
-    useWindowSize: vi.fn(),
-    usePositionDropdown: vi.fn(() => ({ current: null })),
-  };
-});
-
 describe('Header', () => {
   describe('Desktop view', () => {
-    beforeEach(async () => {
-      (useWindowSize as Mock).mockReturnValue({
-        width: 1280,
-        height: 600,
-      });
-      await act(async () => renderWithRouter(<Header />));
-    });
-
-    afterEach(() => {
-      vi.clearAllMocks();
+    beforeEach(() => {
+      renderWithRouter(<Header />);
     });
 
     it('renders without crashing', () => {
       const headerElement = screen.getByTestId('navigation');
 
       expect(headerElement).toBeInTheDocument();
-    });
-
-    it('renders RsLogo', () => {
-      const logoElement = screen.getByTestId('logo');
-
-      expect(logoElement).toBeInTheDocument();
     });
 
     it('set color as gray when scrollbar is at the top', () => {
@@ -71,15 +47,7 @@ describe('Header', () => {
 
   describe('Mobile view', () => {
     beforeEach(async () => {
-      (useWindowSize as Mock).mockReturnValue({
-        width: 800,
-        height: 600,
-      });
       await act(async () => renderWithRouter(<Header />));
-    });
-
-    afterEach(() => {
-      vi.clearAllMocks();
     });
 
     it('renders RsLogo in mobile view', async () => {

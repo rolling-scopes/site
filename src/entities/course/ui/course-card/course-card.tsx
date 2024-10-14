@@ -38,7 +38,12 @@ export const CourseCard = ({
       </div>
       <div className={cx('course-info')}>
         <DateLang startDate={startDate} language={language} mode={mode} />
-        <LinkCustom href={detailsUrl} variant="rounded" aria-label="View course details">
+        <LinkCustom
+          href={detailsUrl}
+          variant="rounded"
+          aria-label="View course details"
+          data-testid="course-link"
+        >
           View details
         </LinkCustom>
       </div>

@@ -48,6 +48,10 @@
         }
       }
 
+      @include media-tablet {
+        display: none;
+      }
+
       @include media-laptop-medium {
         gap: 50px;
 

@@ -1,44 +1,36 @@
 import classNames from 'classnames/bind';
-import { CourseCard } from './CourseCard';
-import { MAX_COURSE_COUNT } from '../model/constants';
 import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
+import { CourseItem } from '@/entities/course/ui/course-item/course-item.tsx';
+import RSBanner from '@/shared/assets/svg/RsBanner.svg';
 import { getActualData } from '@/shared/helpers/getActualData';
-import { RsBanner } from '@/shared/icons';
+import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { maxUpcomingCoursesQuantity } from '@/widgets/upcoming-courses/constants.ts';
 import { courses } from 'data';
 
-import styles from './courses.module.scss';
+import styles from './upcoming-courses.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const Courses = () => {
-  const size = { width: 1200 }; // useWindowSize();
-  const tabletScreenBreakPoint = 810;
+export const UpcomingCourses = () => {
   const coursesData: Course[] = getActualData({
     data: courses,
     staleAfter: COURSE_STALE_AFTER_DAYS,
     filterStale: true,
   });
 
-  let linkLabel = 'More details';
-
-  if (size.width <= tabletScreenBreakPoint) {
-    linkLabel = '';
-  }
-
   const coursesContent = coursesData
-    .slice(0, Math.min(coursesData.length, MAX_COURSE_COUNT))
+    .slice(0, Math.min(coursesData.length, maxUpcomingCoursesQuantity))
     .map(({ title, language, startDate, detailsUrl, iconSrc }) => {
       return (
-        <CourseCard
+        <CourseItem
           title={title}
           language={language}
           startDate={startDate}
           detailsUrl={detailsUrl}
           iconSrc={iconSrc}
-          buttonText={linkLabel}
           key={title}
         />
       );
@@ -47,9 +39,7 @@ export const Courses = () => {
   return (
     <article id="upcoming-courses" className={cx('container')}>
       <section className={cx('content')}>
-        <WidgetTitle size="small" className={cx('course-title')}>
-          Upcoming courses
-        </WidgetTitle>
+        <WidgetTitle size="small">Upcoming courses</WidgetTitle>
         <div className={cx('column-2')}>
           <div className={cx('course-list')} data-testid="courses-list">
             {coursesContent}
@@ -57,9 +47,12 @@ export const Courses = () => {
               Go to courses
             </LinkCustom>
           </div>
-          <figure className={cx('image')}>
-            <RsBanner />
-          </figure>
+          <Image
+            className={cx('rs-banner')}
+            data-testid="rs-banner"
+            img={RSBanner}
+            alt="The Rolling Scopes organization logo"
+          />
         </div>
       </section>
     </article>
