@@ -38,8 +38,6 @@ export const renderWithRouter = (
   ui: ReactNode,
   { route = ROUTES.HOME }: RenderWithRouterProps = {},
 ) => {
-  // window.history.pushState({}, 'Test page', route);
-
   const mockRouter = createMockRouter(route);
 
   const Wrapper = ({ children }: { children?: ReactNode }) => {
