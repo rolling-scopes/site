@@ -5,7 +5,7 @@ import { Required } from './ui/required';
 
 describe('Required', () => {
   it('renders the title and subtitle correctly', () => {
-    render(<Required courseName="nodejs" />);
+    render(<Required courseName="Node.js" />);
     const titleElement = screen.getByText('What you should know before starting');
     const subtitleElement = screen.getByText('What you should know before starting');
 
@@ -14,7 +14,7 @@ describe('Required', () => {
   });
 
   it('renders correct requirement with "nodejs" props', () => {
-    render(<Required courseName="nodejs" />);
+    render(<Required courseName="Node.js" />);
     const requirement = screen.getByText(
       /Solid knowledge of JavaScript, including ES6, is required for this course./i,
     );
@@ -23,7 +23,7 @@ describe('Required', () => {
   });
 
   it('renders correct requirements with "angular" props', () => {
-    render(<Required courseName="angular" />);
+    render(<Required courseName="Angular" />);
     const requirements = [
       'JavaScript, TypeScript Basics, CSS3, HTML5, NPM',
       'Git, GitHub',
@@ -38,7 +38,7 @@ describe('Required', () => {
   });
 
   it('renders correct requirements with "awsDev" props', () => {
-    render(<Required courseName="awsDev" />);
+    render(<Required courseName="AWS Cloud Developer" />);
     const requirements = [
       'You should be comfortable with at',
       'English language level: Intermediate',
@@ -51,7 +51,7 @@ describe('Required', () => {
   });
 
   it('renders correct requirements with "awsFundamentals" props', () => {
-    render(<Required courseName="awsFundamentals" />);
+    render(<Required courseName="AWS Fundamentals" />);
     const requirements = [
       'Beginners welcome!',
       'No AWS Cloud experience is necessary.',
