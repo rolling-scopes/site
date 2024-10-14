@@ -29,7 +29,7 @@ export const Requirements = () => {
         <LinkCustom
           href={requirementsData.button.link}
           variant="primary"
-          external={requirementsData.button.external}
+          external
         >
           {requirementsData.button.text}
         </LinkCustom>
