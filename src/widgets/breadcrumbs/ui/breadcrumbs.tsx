@@ -1,4 +1,5 @@
 'use client';
+
 import classNames from 'classnames/bind';
 import { usePathname } from 'next/navigation';
 import { BreadcrumbItem } from './breadcrumb-item';
