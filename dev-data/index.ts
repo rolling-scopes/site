@@ -33,6 +33,7 @@ export { mentorsActivityData } from './mentors-activity.data';
 export { mentorsBenefitData } from './mentors-benefit.data.ts';
 export { mentorsRegisterData } from './mentors-register.data';
 export { mentorshipCourses } from './mentorship.data';
+export { mentorshipBenefits } from './mentoring.data.ts';
 export { nodejs } from './nodejs.data';
 export { preSchoolEn, preSchoolRu } from './preSchool.data';
 export { reactEn } from './react-en.data';

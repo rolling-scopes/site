@@ -24,7 +24,7 @@ export const JavaScriptEn = () => {
       <Certification courseName={COURSE_NAME} />
       <Communication courseName={COURSE_NAME} />
       <AboutVideo />
-      <StudyPath path="javascript" marked />
+      <StudyPath path="javascript" type="marked" />
       <Required courseName={COURSE_NAME} />
       <Mentors route={ROUTES.JS} />
       <Trainers trainers={javaScriptEn} />
