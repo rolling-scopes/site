@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { ANCHORS } from '@/app/const';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 // TODO move Stages to shared?
@@ -16,7 +17,7 @@ type MentorsPathProps = {
 
 export const MentorsActivity = ({ activities, lang = 'en' }: MentorsPathProps) => {
   return (
-    <section className={cx('container')}>
+    <section className={cx('container')} id={ANCHORS.MENTORSHIP_PROCESS}>
       <article className={cx('content', 'mentoring-path')}>
         <WidgetTitle mods="lines" className={cx('title')}>
           {mentorsActivityData[lang].header}

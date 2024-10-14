@@ -1,5 +1,5 @@
 import { GenericItemProps, SchoolList } from './school-list/school-list';
-import { ANCHORS } from '@/app/const';
+import { ANCHORS, ROUTES } from '@/app/const';
 import type { Course } from '@/entities/course';
 import { useDataByName } from '@/shared/hooks/use-data-by-name';
 
@@ -8,17 +8,17 @@ import './school-menu.scss';
 const mentorshipMenuStaticLinks = [
   {
     title: 'About',
-    detailsUrl: `/#${ANCHORS.MENTORSHIP_ABOUT}`,
+    detailsUrl: `/${ROUTES.MENTORSHIP}/#${ANCHORS.MENTORSHIP_ABOUT}`,
     description: 'Why is mentor',
   },
   {
     title: 'Process',
-    detailsUrl: `/#${ANCHORS.MENTORSHIP_PROCESS}`,
+    detailsUrl: `/${ROUTES.MENTORSHIP}/#${ANCHORS.MENTORSHIP_PROCESS}`,
     description: 'What to do',
   },
   {
     title: 'Register',
-    detailsUrl: `/#${ANCHORS.MENTORSHIP_REGISTER}`,
+    detailsUrl: `/${ROUTES.MENTORSHIP}/#${ANCHORS.MENTORSHIP_REGISTER}`,
     description: 'How to register',
   },
 ];
