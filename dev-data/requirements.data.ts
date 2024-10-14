@@ -4,7 +4,6 @@ export const requirementsData = {
   button: {
     text: 'Register as a mentor',
     link: LINKS.BECOME_MENTOR,
-    external: true,
   },
   headerRequirements: 'Requirements for mentors',
   headerTask: 'Mentor responsibilities',
