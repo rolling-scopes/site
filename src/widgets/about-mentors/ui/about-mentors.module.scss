@@ -6,26 +6,69 @@
     font-size: 29px;
     line-height: 44px;
   }
-
-  @include media-tablet {
-    font-size: 23px;
-  }
 }
 
 .mentors-register-wrapper {
+  position: relative;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
 
 .picture-wrapper {
   display: flex;
-  flex-direction: row;
-  justify-content: left;
+
+  @include media-tablet {
+    position: absolute;
+    top: -55px;
+    right: 0;
+  }
+
+  @include media-mobile {
+    top: -50px;
+  }
 }
 
 .picture {
   position: relative;
   width: 140px;
-  max-height: 140px;
+  height: 140px;
+
+  @include media-tablet-large {
+    width: 100px;
+    height: 100px;
+  }
+
+  @include media-tablet {
+    width: 50px;
+    height: 50px;
+  }
+
+  @include media-mobile {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.picture:nth-child(3) {
+  left: -140px;
+
+  @include media-tablet-large {
+    left: -100px;
+  }
+
+  @include media-tablet {
+    left: -30px;
+  }
+}
+
+.picture:nth-child(2) {
+  left: -70px;
+
+  @include media-tablet-large {
+    left: -50px;
+  }
+
+  @include media-tablet {
+    left: -15px;
+  }
 }

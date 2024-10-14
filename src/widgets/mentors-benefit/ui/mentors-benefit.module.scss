@@ -6,10 +6,6 @@
     font-size: 29px;
     line-height: 44px;
   }
-
-  @include media-tablet {
-    font-size: 23px;
-  }
 }
 
 .benefits {
@@ -28,6 +24,7 @@
   }
 
   @include media-tablet {
+    flex-direction: column;
     gap: 16px;
   }
 }
@@ -48,8 +45,16 @@
 
 .benefit-short {
   max-width: 30%;
+
+  @include media-tablet {
+    max-width: unset;
+  }
 }
 
 .benefit-long {
   max-width: 65%;
+
+  @include media-tablet {
+    max-width: unset;
+  }
 }

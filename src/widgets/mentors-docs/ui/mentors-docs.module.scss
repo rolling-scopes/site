@@ -7,6 +7,21 @@
   flex-direction: row;
   gap: 20px;
   justify-content: space-between;
+
+  @include media-tablet {
+    flex-direction: column;
+  }
+}
+
+.docs {
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+  text-align: left;
+
+  @include media-tablet {
+    max-width: unset;
+  }
 }
 
 .title {
@@ -17,20 +32,6 @@
     font-size: 29px;
     line-height: 44px;
   }
-
-  @include media-tablet {
-    font-size: 23px;
-  }
-}
-
-.docs {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-
-  max-width: 45%;
-
-  text-align: left;
 }
 
 .picture-wrapper {

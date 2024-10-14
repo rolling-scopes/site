@@ -15,14 +15,10 @@ type AdditionalProps = {
 
 export const Additional = ({ text, linkDiscord, linkTelegram }: AdditionalProps) => {
   return (
-    <div className={cx('additional')}>
-      <Paragraph>
-        {text}
-      </Paragraph>
-      <div className={cx('social-media')}>
-        <SocialMediaItem title="Telegram" href={linkTelegram} icon={TelegramIcon()} />
-        <SocialMediaItem title="Discord" href={linkDiscord} icon={DiscordIcon()} />
-      </div>
-    </div>
+    <Paragraph className={cx('additional')}>
+      {text}
+      <SocialMediaItem title="Telegram" href={linkTelegram} icon={TelegramIcon()} />
+      <SocialMediaItem title="Discord" href={linkDiscord} icon={DiscordIcon()} />
+    </Paragraph>
   );
 };
