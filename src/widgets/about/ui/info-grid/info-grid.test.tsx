@@ -40,7 +40,7 @@ describe('InfoGrid component', () => {
     render(<InfoGrid items={dummyData} />);
 
     dummyData.forEach(({ title }) => {
-      expect(screen.getByAltText(title).getAttribute('src')).toEqual(MOCKED_IMAGE_PATH);
+      expect(screen.getByAltText(title).getAttribute('src')).toEqual(MOCKED_IMAGE_PATH.src);
     });
   });
 });

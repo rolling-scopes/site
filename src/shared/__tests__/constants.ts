@@ -1,7 +1,12 @@
 import type { Trainer } from '@/entities/trainer';
 import nodejsImg1 from '@/shared/assets/mentors/m-shylau.webp';
+import { ImageType } from '@/shared/ui/image/image.tsx';
 
-export const MOCKED_IMAGE_PATH = 'mocked-image-path.webp';
+export const MOCKED_IMAGE_PATH: ImageType = {
+  src: 'mocked-image-path.webp',
+  height: 250,
+  width: 250,
+};
 export const MOCKED_TRAINER = {
   name: 'Max Power',
   role: 'Executive Pastry Chef at The Cloud Cafe',

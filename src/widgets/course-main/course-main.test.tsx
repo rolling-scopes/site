@@ -70,7 +70,7 @@ describe('CourseMain', () => {
     const imageElement = screen.getByRole('img', { name: /Node.js/i });
 
     expect(imageElement).toBeInTheDocument();
-    expect(imageElement).toHaveAttribute('src', MOCKED_IMAGE_PATH);
+    expect(imageElement).toHaveAttribute('src', MOCKED_IMAGE_PATH.src);
   });
 });
 
