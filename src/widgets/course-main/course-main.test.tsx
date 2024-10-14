@@ -1,39 +1,39 @@
 import { screen } from '@testing-library/react';
 import { CourseMain } from './course-main';
+import { Course } from '@/entities/course';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { dayJS } from '@/shared/helpers/dayJS';
 
 vi.mock('@/app/hooks/use-course-by-title');
-vi.mock('react-router-dom', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('react-router-dom')>();
-
-  return {
-    ...actual,
-    useLoaderData: vi.fn(() => [mockedCourse, mockedCourseAvailable, mockedCourseUpcoming]),
-  };
-});
 
 const reactCourseTitle = 'React';
 const angularCourseTitle = 'Angular';
 
-const mockedCourse = {
+const mockedCourse: Course = {
+  id: '1',
+  backgroundStyle: {
+    accentColor: '',
+    backgroundColor: '',
+  },
+  detailsUrl: '',
+  iconSmall: MOCKED_IMAGE_PATH,
+  iconSrc: MOCKED_IMAGE_PATH,
   title: 'Node.js',
-  language: ['English'],
-  type: 'Mentoring Program',
+  language: ['en'],
   mode: 'online',
   enroll: 'https://wearecommunity.io/events/nodejs-rs-2024q1',
   secondaryIcon: MOCKED_IMAGE_PATH,
   startDate: dayJS().subtract(2, 'month').format('D MMM, YYYY'),
 };
 
-const mockedCourseAvailable = {
+const mockedCourseAvailable: Course = {
   ...mockedCourse,
   title: reactCourseTitle,
   startDate: dayJS().format('D MMM, YYYY'),
 };
 
-const mockedCourseUpcoming = {
+const mockedCourseUpcoming: Course = {
   ...mockedCourse,
   title: angularCourseTitle,
   startDate: dayJS().add(1, 'month').format('D MMM, YYYY'),
@@ -41,7 +41,7 @@ const mockedCourseUpcoming = {
 
 describe('CourseMain', () => {
   beforeEach(() => {
-    renderWithRouter(<CourseMain courseName="Node.js" />);
+    renderWithRouter(<CourseMain course={mockedCourse} />);
   });
 
   it('renders the title correctly', async () => {
@@ -76,14 +76,14 @@ describe('CourseMain', () => {
 
 describe('Course labels are correct', () => {
   it('renders the section with correct label "AVAILABLE"', () => {
-    renderWithRouter(<CourseMain courseName={reactCourseTitle} />);
+    renderWithRouter(<CourseMain course={mockedCourseAvailable} />);
     const labelElement = screen.getByText('available');
 
     expect(labelElement).toBeVisible();
   });
 
   it('renders the section with correct label "UPCOMING"', () => {
-    renderWithRouter(<CourseMain courseName={angularCourseTitle} />);
+    renderWithRouter(<CourseMain course={mockedCourseUpcoming} />);
     const labelElement = screen.getByText('upcoming');
 
     expect(labelElement).toBeVisible();

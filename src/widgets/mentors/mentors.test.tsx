@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { Mentors } from './ui/mentors';
-import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
+import mentorImg from '@/shared/assets/mentors-wanted.webp';
 
 describe('Mentors', () => {
   beforeEach(() => {
@@ -31,6 +31,6 @@ describe('Mentors', () => {
     const img = screen.getByAltText('Sloth - mascot dressed as a detective');
 
     expect(img).toBeVisible();
-    expect(img).toHaveAttribute('src', MOCKED_IMAGE_PATH.src);
+    expect(img).toHaveAttribute('src', mentorImg.src);
   });
 });
