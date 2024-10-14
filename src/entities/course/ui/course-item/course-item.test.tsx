@@ -1,6 +1,8 @@
 import { screen } from '@testing-library/react';
 import dayjs from 'dayjs';
-import { CourseItem, CourseItemData } from '@/entities/course';
+import { CourseItemData } from '@/entities/course';
+import { CourseItem } from '@/entities/course/ui/course-item/course-item.tsx';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants.ts';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 const mockedProps: CourseItemData = {
@@ -8,7 +10,7 @@ const mockedProps: CourseItemData = {
   language: ['en'],
   startDate: '2024-05-01',
   detailsUrl: '/courses/react-intro',
-  iconSrc: '/images/react-icon.png',
+  iconSrc: MOCKED_IMAGE_PATH,
 };
 
 const expectedDate = dayjs(mockedProps.startDate).toISOString();
