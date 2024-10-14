@@ -1,7 +1,6 @@
 'use client';
 
 import { ImgHTMLAttributes, useState } from 'react';
-import { IS_DEV } from '@/shared/constants.ts';
 import { convertToWebp } from '@/shared/helpers/convertToWebp.ts';
 import { generateSizes } from '@/shared/helpers/generateSizes.ts';
 import { generateSrcSet } from '@/shared/helpers/generateSrcSet.ts';
@@ -28,6 +27,8 @@ type DecodingAttr = ImgHTMLAttributes<HTMLImageElement>['decoding'];
 export const Image = ({ alt, img, lazy = true, ...props }: ImageProps) => {
   const { src } = img;
   const srcWebp = convertToWebp(src);
+  const IS_DEV = process.env.NEXT_PUBLIC_DEV === 'true';
+
   const [srcSet, setSrcSet] = useState(() => (IS_DEV ? undefined : generateSrcSet(srcWebp)));
   const [sizes, setSizes] = useState(() => (IS_DEV ? undefined : generateSizes()));
 

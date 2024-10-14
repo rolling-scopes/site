@@ -1,5 +1,5 @@
 import { act, screen } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+import { beforeAll, describe, expect, it, vi } from 'vitest';
 import { Image } from './image';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants.ts';
 import { renderWithRouter } from '@/shared/__tests__/utils';
@@ -13,9 +13,11 @@ vi.mock('@/shared/helpers/generateSrcSet.ts', () => ({ generateSrcSet: vi.fn().m
 
 vi.mock('@/shared/helpers/generateSizes.ts', () => ({ generateSizes: vi.fn().mockReturnValue('sizes') }));
 
-vi.mock('@/shared/constants.ts', () => ({ IS_DEV: false }));
-
 describe('Image', () => {
+  beforeAll(() => {
+    vi.stubEnv('NEXT_PUBLIC_DEV', 'false');
+  });
+
   it('renders the lazy image correctly', () => {
     renderWithRouter(<Image img={MOCKED_IMAGE_PATH} alt="rs-school" />);
 
