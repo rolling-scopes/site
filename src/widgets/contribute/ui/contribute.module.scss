@@ -2,13 +2,9 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  align-items: flex-start;
   justify-content: space-between;
 
-  text-align: left;
-
   @include media-laptop {
-    flex-direction: column;
     align-items: center;
   }
 }
@@ -26,7 +22,6 @@
 
 .info {
   width: 640px;
-  text-align: left;
 
   @include media-laptop {
     width: 100%;
@@ -43,11 +38,8 @@
 
 .general {
   display: flex;
-  flex-direction: row;
   gap: 50px;
-  align-items: flex-start;
   justify-content: space-between;
-
   width: 100%;
 
   @include media-tablet-large {
@@ -59,7 +51,6 @@
 
 .contribute-options {
   display: flex;
-  flex-direction: row;
   gap: 24px;
   align-items: center;
   justify-content: space-between;
