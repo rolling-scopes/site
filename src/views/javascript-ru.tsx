@@ -6,7 +6,7 @@ import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
 import { CourseMain } from '@/widgets/course-main';
 import { Required } from '@/widgets/required';
-import { StudyPath } from '@/widgets/study-path/ui/study-path';
+import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
 import { CourseName, javaScriptRu } from 'data';

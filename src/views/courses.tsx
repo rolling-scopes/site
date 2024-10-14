@@ -5,7 +5,7 @@ import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { RSCourses } from '@/widgets/courses';
 import { General } from '@/widgets/general';
 import { HeroPage } from '@/widgets/hero-page';
-import { StudyPath } from '@/widgets/study-path/ui/study-path';
+import { StudyPath } from '@/widgets/study-path';
 
 interface CourseProps {
   courses: Course[];
