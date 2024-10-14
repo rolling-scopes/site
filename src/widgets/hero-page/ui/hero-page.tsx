@@ -58,7 +58,7 @@ export const HeroPage = ({ pageName }: PageName) => {
             {widgetTitle}
           </WidgetTitle>
         </article>
-        {heroImageSrc && (
+        {heroImageSrc.src && (
           <Image
             className={cx('sloth-mascot')}
             img={heroImageSrc}
