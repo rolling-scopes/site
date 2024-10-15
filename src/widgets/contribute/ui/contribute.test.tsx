@@ -26,13 +26,13 @@ const optionsMock = [
   },
 ];
 
-describe('Contribute component', () => {
-  let widget: HTMLElement;
-  let title: HTMLElement;
-  let paragraph: HTMLElement[];
-  let options: HTMLElement[];
-  let image: HTMLElement;
+let widget: HTMLElement;
+let title: HTMLElement;
+let paragraph: HTMLElement[];
+let options: HTMLElement[];
+let image: HTMLElement;
 
+describe('Contribute component', () => {
   beforeEach(() => {
     renderWithRouter(<Contribute />);
     widget = screen.getByTestId('contribute');
@@ -45,29 +45,33 @@ describe('Contribute component', () => {
   it('renders the component content correctly', () => {
     expect(widget).toBeVisible();
     expect(title).toBeVisible();
-    expect(title.textContent).toBe('How to Contribute');
-    paragraph.forEach((item) => {
-      expect(item).toBeVisible();
-    });
-    descriptions.forEach((desc) => {
-      const matches = paragraph.some((item) => desc.test(item.textContent || ''));
-
-      expect(matches).toBe(true);
-    });
+    expect(title).toHaveTextContent('How to Contribute');
     expect(image).toBeInTheDocument();
     expect(image).toHaveAttribute('alt', 'Sloth mascot dressed in a superhero costume');
     expect(image).toHaveAttribute('src', contributeImage);
   });
 
-  it('renders the correct options content', () => {
-    options.forEach((option, index) => {
-      const subtitle = within(option).getByTestId('subtitle');
-      const description = within(option).getByTestId('paragraph');
+  describe('Paragraph content checks', () => {
+    test.each(descriptions)('checks that the paragraph contains the text: %s', (description) => {
+      const matches = paragraph.some((item) => description.test(item.textContent || ''));
 
-      expect(subtitle).toBeInTheDocument();
-      expect(subtitle.textContent).toBe(optionsMock[index].title);
-      expect(description).toBeInTheDocument();
-      expect(description.textContent).toBe(optionsMock[index].description);
+      expect(matches).toBe(true);
     });
+  });
+
+  describe('Option content checks', () => {
+    it.each(optionsMock.map((option, index) => [option, index]))(
+      'renders the correct options content for option %#',
+      (option, index) => {
+        const optionElement = options[index];
+        const subtitle = within(optionElement).getByTestId('subtitle');
+        const description = within(optionElement).getByTestId('paragraph');
+
+        expect(subtitle).toBeInTheDocument();
+        expect(subtitle).toHaveTextContent(option.title);
+        expect(description).toBeInTheDocument();
+        expect(description).toHaveTextContent(option.description);
+      },
+    );
   });
 });
