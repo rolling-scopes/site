@@ -12,7 +12,7 @@ import photo9 from '@/shared/assets/photo-9.webp';
 import { FacebookIcon, InstagramIcon } from '@/shared/icons';
 import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
-import { SocialMedia, SocialMediaProps } from '@/shared/ui/social-media';
+import { SocialMediaItem, SocialMediaProps } from '@/shared/ui/social-media-item';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -83,7 +83,7 @@ export const Pictures = () => (
       </Paragraph>
       <div className="social-media-container">
         {socialMedia.map(({ title, href, icon }) => (
-          <SocialMedia key={title} title={title} href={href} icon={icon} />
+          <SocialMediaItem key={title} title={title} href={href} icon={icon} />
         ))}
       </div>
     </div>

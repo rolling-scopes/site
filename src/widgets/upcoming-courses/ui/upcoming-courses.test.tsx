@@ -7,11 +7,11 @@ import {
   it,
   vi,
 } from 'vitest';
-import { Courses } from './ui/courses';
 import { ROUTES } from '@/app/const';
-
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { useWindowSize } from '@/shared/hooks/use-window-size';
+import { UpcomingCourses } from '@/widgets/upcoming-courses';
+import { tabletScreenBreakPoint } from '@/widgets/upcoming-courses/constants';
 
 const mockedData = [
   {
@@ -58,6 +58,10 @@ const mockedData = [
   },
 ];
 
+const height = 900;
+const widthMobile = tabletScreenBreakPoint;
+const widthDesktop = widthMobile + 100;
+
 vi.mock('@/app/hooks/use-data-by-name', () => {
   return {
     useDataByName: vi.fn().mockImplementation(() => ({
@@ -79,7 +83,7 @@ vi.mock('@/shared/hooks/use-window-size', () => {
 
 describe('Courses', () => {
   beforeEach(() => {
-    renderWithRouter(<Courses />);
+    renderWithRouter(<UpcomingCourses />);
   });
 
   it('renders the title correctly', () => {
@@ -88,33 +92,10 @@ describe('Courses', () => {
     expect(titleElement).toBeInTheDocument();
   });
 
-  it.skip('renders no more than 5 course cards', () => {
-    // TODO remove 'skip' after 'data-testid' will be added to CourseCard
-    const courseCards = screen.getAllByRole('link');
+  it('renders no more than 5 course cards', () => {
+    const courseCards = screen.getByTestId('courses-list');
 
-    expect(courseCards.length).toBeLessThan(5);
-  });
-
-  it.skip('renders link with "More" on window size 810px', () => {
-    (useWindowSize as Mock).mockReturnValue({
-      width: 810,
-      height: 900,
-    });
-    renderWithRouter(<Courses />);
-    const courseCards = screen.getAllByRole('link', { name: 'More' });
-
-    expect(courseCards.length).toBeLessThanOrEqual(5);
-  });
-
-  it.skip('renders link with "More details" on window size more than 810px', () => {
-    (useWindowSize as Mock).mockReturnValue({
-      width: 811,
-      height: 900,
-    });
-    renderWithRouter(<Courses />);
-    const courseCards = screen.getAllByText('More details');
-
-    expect(courseCards.length).toBeLessThanOrEqual(5);
+    expect(courseCards.children.length).toEqual(5);
   });
 
   it('renders the Go to RS School button', () => {
@@ -127,5 +108,31 @@ describe('Courses', () => {
     const rsBanner = screen.getByTestId('rs-banner');
 
     expect(rsBanner).toBeInTheDocument();
+  });
+});
+
+describe('School Courses on different screen sizes', () => {
+  it('renders link with icon only on window size 810px', () => {
+    (useWindowSize as Mock).mockReturnValue({
+      width: widthMobile,
+      height,
+    });
+
+    renderWithRouter(<UpcomingCourses />);
+    const courseCards = screen.getAllByTestId('course-link').at(0);
+
+    expect(courseCards).toHaveTextContent('');
+  });
+
+  it('renders link with "More details" on window size more than 810px', () => {
+    (useWindowSize as Mock).mockReturnValue({
+      width: widthDesktop,
+      height,
+    });
+
+    renderWithRouter(<UpcomingCourses />);
+    const courseCards = screen.getAllByTestId('course-link').at(0);
+
+    expect(courseCards).toHaveTextContent('More details');
   });
 });

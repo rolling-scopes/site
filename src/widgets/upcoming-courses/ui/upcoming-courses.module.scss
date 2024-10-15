@@ -1,0 +1,22 @@
+.rs-banner {
+  width: 300px;
+  height: 200px;
+
+  @include media-laptop {
+    margin-top: 24px;
+  }
+}
+
+.course-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  width: 800px;
+
+  @include media-laptop {
+    width: 100%;
+  }
+}
