@@ -42,7 +42,6 @@
   }
 
   &.open {
-    display: block;
     background-color: white;
 
     .top {
@@ -55,6 +54,10 @@
 
     .bottom {
       transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    @include media-tablet {
+      display: block;
     }
   }
 

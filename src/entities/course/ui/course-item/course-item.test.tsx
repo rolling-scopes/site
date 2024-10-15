@@ -8,7 +8,6 @@ const mockedProps: CourseItemData = {
   language: ['en'],
   startDate: '2024-05-01',
   detailsUrl: '/courses/react-intro',
-  buttonText: 'View Details',
   iconSrc: '/images/react-icon.png',
 };
 
@@ -36,6 +35,5 @@ describe('CourseItem Component', () => {
 
     expect(link).toBeInTheDocument();
     expect(link).toHaveAttribute('href', mockedProps.detailsUrl);
-    expect(link).toHaveTextContent(mockedProps.buttonText);
   });
 });

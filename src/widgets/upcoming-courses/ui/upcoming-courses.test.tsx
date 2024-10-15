@@ -1,17 +1,8 @@
 import { screen } from '@testing-library/react';
-import {
-  Mock,
-  beforeEach,
-  describe,
-  expect,
-  it,
-  vi,
-} from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ROUTES } from '@/app/const';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { useWindowSize } from '@/shared/hooks/use-window-size';
 import { UpcomingCourses } from '@/widgets/upcoming-courses';
-import { tabletScreenBreakPoint } from '@/widgets/upcoming-courses/constants';
 
 const mockedData = [
   {
@@ -58,21 +49,8 @@ const mockedData = [
   },
 ];
 
-const height = 900;
-const widthMobile = tabletScreenBreakPoint;
-const widthDesktop = widthMobile + 100;
-
 vi.mock('@/shared/helpers/getActualData', () => {
   return { getActualData: vi.fn().mockImplementation(() => mockedData) };
-});
-
-vi.mock('@/shared/hooks/use-window-size', () => {
-  return {
-    useWindowSize: vi.fn().mockReturnValue({
-      width: 810,
-      height: 900,
-    }),
-  };
 });
 
 describe('Courses', () => {
@@ -103,31 +81,5 @@ describe('Courses', () => {
     const rsBanner = screen.getByTestId('rs-banner');
 
     expect(rsBanner).toBeInTheDocument();
-  });
-});
-
-describe('School Courses on different screen sizes', () => {
-  it('renders link with icon only on window size 810px', () => {
-    (useWindowSize as Mock).mockReturnValue({
-      width: widthMobile,
-      height,
-    });
-
-    renderWithRouter(<UpcomingCourses />);
-    const courseCards = screen.getAllByTestId('course-link').at(0);
-
-    expect(courseCards).toHaveTextContent('');
-  });
-
-  it('renders link with "More details" on window size more than 810px', () => {
-    (useWindowSize as Mock).mockReturnValue({
-      width: widthDesktop,
-      height,
-    });
-
-    renderWithRouter(<UpcomingCourses />);
-    const courseCards = screen.getAllByTestId('course-link').at(0);
-
-    expect(courseCards).toHaveTextContent('More details');
   });
 });
