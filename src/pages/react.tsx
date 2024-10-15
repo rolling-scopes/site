@@ -1,8 +1,10 @@
+import { ROUTES } from '@/app/const';
 import { About } from '@/widgets/about';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
 import { CourseMain } from '@/widgets/course-main';
+import { Mentors } from '@/widgets/mentors';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
 import { reactEn } from 'data';
@@ -18,6 +20,7 @@ export const React = () => {
       <About courseName={COURSE_NAME} />
       <Certification courseName={COURSE_NAME} />
       <Communication courseName={COURSE_NAME} />
+      <Mentors route={ROUTES.REACT} />
       <Trainers trainers={reactEn} />
     </>
   );

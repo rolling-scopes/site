@@ -1,9 +1,11 @@
+import { ROUTES } from '@/app/const';
 import { About } from '@/widgets/about';
 import { AboutVideo } from '@/widgets/about-video';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
 import { CourseMain } from '@/widgets/course-main';
+import { Mentors } from '@/widgets/mentors';
 import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
@@ -26,6 +28,7 @@ export const JavaScriptRu = () => {
       <AboutVideo lang={lang} />
       <StudyPath path="javascriptRu" lang={lang} />
       <Required courseName={COURSE_NAME} />
+      <Mentors route={ROUTES.JS_RU} lang={lang} />
       <Trainers trainers={javaScriptRu} lang={lang} />
     </>
   );

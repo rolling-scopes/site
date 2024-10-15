@@ -72,7 +72,7 @@ const javaScriptEN: () => AboutInfo[] = () => {
           The Mentors and trainers of our school are front-end and javascript developers from
           different companies/countries.
           {' '}
-          <LinkCustom href="/#mentors-wanted">How to become a mentor?</LinkCustom>
+          <LinkCustom href="/mentorship/javascript">How to become a mentor?</LinkCustom>
         </p>
       ),
       icon: planetIcon,
@@ -102,7 +102,14 @@ const javaScriptRU: () => AboutInfo[] = () => {
     {
       id: 2,
       title: 'Наставники и тренеры со всего мира',
-      info: 'Наставники и тренеры нашей школы - это фронтенд и разработчики JavaScript из разных компаний и стран. Как стать наставником?',
+      info: (
+        <p>
+          Наставники и тренеры нашей школы - это фронтенд и разработчики JavaScript
+          из разных компаний и стран.
+          {' '}
+          <LinkCustom href="/mentorship/javascript-ru">Как стать ментором?</LinkCustom>
+        </p>
+      ),
       icon: planetIcon,
     },
     {
