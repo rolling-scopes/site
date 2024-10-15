@@ -1,13 +1,14 @@
 import { type Stage, StageCard } from '../stage-card';
+import type { ListType } from '@/shared/types';
 
 import './stages.scss';
 
 export interface StagesProps {
   stages: Stage[] | null;
-  marked?: boolean;
+  type?: ListType;
 }
 
-export const Stages = ({ stages, marked }: StagesProps) => {
+export const Stages = ({ stages, type }: StagesProps) => {
   if (stages === null || stages.length === 0) {
     return null;
   }
@@ -25,7 +26,7 @@ export const Stages = ({ stages, marked }: StagesProps) => {
           topics={topics}
           imageSrc={imageSrc}
           list={list}
-          marked={marked}
+          type={type}
         />
       ))}
     </div>

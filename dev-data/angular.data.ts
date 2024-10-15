@@ -3,6 +3,7 @@ import aSacca from '@/shared/assets/mentors/a-sacca.webp';
 import aSerhiyenia from '@/shared/assets/mentors/a-serhiyenia.webp';
 import dKohut from '@/shared/assets/mentors/d-kohut.webp';
 import kBritsyn from '@/shared/assets/mentors/k-britsyn.webp';
+import lCool from '@/shared/assets/mentors/l-cool.webp';
 import nLoginova from '@/shared/assets/mentors/n-loginova.webp';
 import oDuleba from '@/shared/assets/mentors/o-duleba.webp';
 import rSaltykov from '@/shared/assets/mentors/r-saltykov.webp';
@@ -49,5 +50,11 @@ export const angular: Trainer[] = [
     role: 'Front-end/Full Stack developer',
     bio: 'Rustam Satlykov lives in Tashkent, Uzbekistan. He obtained a bachelor\'s degree in Power Engineering from Tashkent State Technical University (TSTU) in 2016 and worked for CDC "Energia" for six years. Rustam attended the JS/FE course at RS School three times before graduating in 2022, followed by an Angular course. In 2022, he joined EPAM Systems. He\'s mentored at RS School five times, serves as an Angular course coordinator, and is an RS local coordinator in Uzbekistan. Rustam wishes for everyone to find and pursue their passions.',
     photo: rSaltykov,
+  },
+  {
+    name: 'Lyusya Cool',
+    role: '',
+    bio: 'Lyusya, also known as Cherry in the RS School Discord community, is now actively contributing as a moderator, making the server even more welcoming and colourful. She was initially drawn to the community by her passion for creating stunning visual designs. Lyusya completed two degrees in St. Petersburg (one in railway engineering and another in public relations). At one point, while designing a favicon for a job, she wondered, "Hmm, how do they get this tiny, pretty picture to show up on a Google tab?" This curiosity, combined with her background in painting, led her to discover a deep interest in Angular—especially after seeing its new gradient logo and updated site.',
+    photo: lCool,
   },
 ];
