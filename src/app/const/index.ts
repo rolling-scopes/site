@@ -8,6 +8,7 @@ export const LINKS = {
   BECOME_MENTOR: 'https://app.rs.school/registry/mentor',
   MERCH: 'https://sloths.rs.school/',
   DONATE: 'https://opencollective.com/rsschool',
+  ANGULAR_MENTORING: 'https://github.com/rolling-scopes-school/tasks/tree/master/angular/mentoring',
 };
 
 export const ROUTES = {
