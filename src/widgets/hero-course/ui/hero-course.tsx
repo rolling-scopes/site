@@ -9,9 +9,9 @@ import { useTitle } from '@/shared/hooks/use-title';
 import { DateLang } from '@/shared/ui/date-lang';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
+import { MainTitle } from '@/shared/ui/main-title';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { WidgetTitle } from '@/shared/ui/widget-title';
 import { heroCourseLocalized } from 'data';
 
 import styles from './hero-course.module.scss';
@@ -40,12 +40,12 @@ export const HeroCourse = ({ courseName, lang = 'en', type }: HeroCourseProps) =
   const date = getCourseDate(startDate, COURSE_STALE_AFTER_DAYS);
 
   return (
-    <main className={cx('container')}>
-      <div className={cx('content')}>
-        <Image className={cx('icon')} src={secondaryIcon} alt={title} lazy={false} />
-        <div>
+    <section className={cx('hero-course', 'container')} data-testid="hero-course">
+      <div className={cx('hero-course-content', 'content')}>
+        <Image className={cx('course-logo')} src={secondaryIcon} alt={`${title}-logo`} lazy={false} />
+        <article>
           <SectionLabel>{status}</SectionLabel>
-          <WidgetTitle>{`${altTitle || title} Course`}</WidgetTitle>
+          <MainTitle size="small">{`${altTitle || title} Course`}</MainTitle>
           {type && (
             <Subtitle fontSize="small" color="black">
               {type}
@@ -55,8 +55,8 @@ export const HeroCourse = ({ courseName, lang = 'en', type }: HeroCourseProps) =
           <LinkCustom href={enroll} variant="secondary" external>
             {heroCourseLocalized[lang].linkLabel}
           </LinkCustom>
-        </div>
+        </article>
       </div>
-    </main>
+    </section>
   );
 };

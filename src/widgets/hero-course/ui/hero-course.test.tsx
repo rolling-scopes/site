@@ -39,53 +39,49 @@ const mockedCourseUpcoming = {
   startDate: dayJS().add(1, 'month').format('D MMM, YYYY'),
 };
 
-describe('HeroCourse', () => {
-  beforeEach(() => {
-    renderWithRouter(<HeroCourse courseName="Node.js" />);
+describe('HeroCourse component', () => {
+  describe("Component and its' parts render correctly", () => {
+    beforeEach(() => {
+      renderWithRouter(<HeroCourse courseName="Node.js" />);
+    });
+
+    it('renders the title and label correctly', async () => {
+      const titleElement = await screen.findByText('Node.js Course');
+      const labelElement = screen.getByText('planned');
+
+      expect(titleElement).toBeVisible();
+      expect(labelElement).toBeVisible();
+    });
+
+    it('renders enroll button with correct label and href', () => {
+      const buttonElement = screen.getByRole('link', { name: /enroll/i });
+
+      expect(buttonElement).toBeVisible();
+      expect(buttonElement).toHaveAttribute(
+        'href',
+        'https://wearecommunity.io/events/nodejs-rs-2024q1',
+      );
+    });
+
+    it('renders the image with correct source', () => {
+      const imageElement = screen.getByRole('img', { name: /Node.js/i });
+
+      expect(imageElement).toBeInTheDocument();
+      expect(imageElement).toHaveAttribute('src', MOCKED_IMAGE_PATH);
+    });
   });
 
-  it('renders the title correctly', async () => {
-    const titleElement = await screen.findByText('Node.js Course');
+  describe('Course labels are correct', () => {
+    it('renders the section with correct label "AVAILABLE"', () => {
+      renderWithRouter(<HeroCourse courseName={reactCourseTitle} />);
 
-    expect(titleElement).toBeVisible();
-  });
+      expect(screen.getByText('available')).toBeVisible();
+    });
 
-  it('renders the section label "PLANNED" correctly', () => {
-    const labelElement = screen.getByText('planned');
+    it('renders the section with correct label "UPCOMING"', () => {
+      renderWithRouter(<HeroCourse courseName={angularCourseTitle} />);
 
-    expect(labelElement).toBeVisible();
-  });
-
-  it('renders enroll button with correct label and href', () => {
-    const buttonElement = screen.getByRole('link', { name: /enroll/i });
-
-    expect(buttonElement).toBeVisible();
-    expect(buttonElement).toHaveAttribute(
-      'href',
-      'https://wearecommunity.io/events/nodejs-rs-2024q1',
-    );
-  });
-
-  it('renders the image with correct source', () => {
-    const imageElement = screen.getByRole('img', { name: /Node.js/i });
-
-    expect(imageElement).toBeInTheDocument();
-    expect(imageElement).toHaveAttribute('src', MOCKED_IMAGE_PATH);
-  });
-});
-
-describe('Course labels are correct', () => {
-  it('renders the section with correct label "AVAILABLE"', () => {
-    renderWithRouter(<HeroCourse courseName={reactCourseTitle} />);
-    const labelElement = screen.getByText('available');
-
-    expect(labelElement).toBeVisible();
-  });
-
-  it('renders the section with correct label "UPCOMING"', () => {
-    renderWithRouter(<HeroCourse courseName={angularCourseTitle} />);
-    const labelElement = screen.getByText('upcoming');
-
-    expect(labelElement).toBeVisible();
+      expect(screen.getByText('upcoming')).toBeVisible();
+    });
   });
 });
