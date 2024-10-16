@@ -30,10 +30,6 @@
 
 .contribute-paragraph {
   width: 100%;
-
-  @include media-laptop {
-    align-self: flex-start;
-  }
 }
 
 .general {
