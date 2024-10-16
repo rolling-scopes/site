@@ -1,5 +1,4 @@
 'use client';
-// requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import photo1 from '@/shared/assets/photo-1.webp';
 import photo2 from '@/shared/assets/photo-2.webp';

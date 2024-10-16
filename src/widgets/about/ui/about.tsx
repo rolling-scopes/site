@@ -7,18 +7,6 @@ import { CourseNamesKeys, contentMapAbout } from 'data';
 
 import './about.scss';
 
-// export type CourseNames =
-//   | 'js / front-end en'
-//   | 'js / front-end ru'
-//   | 'js / front-end pre-school ru'
-//   | 'react'
-//   | 'react ru'
-//   | 'angular'
-//   | 'node.js'
-//   | 'aws fundamentals'
-//   | 'aws cloud dev'
-//   | 'aws devops';
-
 type AboutProps = {
   courseName: CourseNamesKeys;
   type?: 'ru' | 'en' | 'Pre-school RU';
@@ -45,19 +33,7 @@ const localizedContent = {
 };
 
 export const About = ({ courseName, type = 'en', course }: AboutProps) => {
-  // const { course: data, error, loading, hasError } = useCourseByTitle(courseName);
-
-  // const course = data as Course;
-
   const infoList = contentMapAbout[courseName];
-
-  // if (loading) {
-  //   return <p>Loading...</p>;
-  // }
-
-  // if ((error && hasError) || !course) {
-  //   return <h3>Error: {error?.message || 'Course not found'}</h3>;
-  // }
 
   return (
     <section className="course-about container">

@@ -11,8 +11,6 @@ import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
 import { CourseNames, javaScriptRu } from 'data';
 
-// const COURSE_NAME = 'js / front-end ru';
-
 type JavaScriptRuProps = {
   lang: 'ru' | 'en';
   course: Course;
@@ -20,8 +18,6 @@ type JavaScriptRuProps = {
 };
 
 export const JavaScriptRu = ({ lang, course, courseName }: JavaScriptRuProps) => {
-  // const lang = 'ru';
-
   return (
     <>
       <CourseMain course={course} lang={lang} />

@@ -69,8 +69,6 @@ function getMenuItems(
 }
 
 export const SchoolMenu = ({ heading, hasTitle = true, color = 'light' }: SchoolMenuProps) => {
-  // const { data } = useDataByName('courses');
-  // const courses = data as Course[];
   const menuItems = getMenuItems(heading, courses);
 
   return (

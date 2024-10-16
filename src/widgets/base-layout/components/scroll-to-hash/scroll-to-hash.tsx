@@ -2,9 +2,6 @@ import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
 export const ScrollToHashElement = () => {
-  // const location = useLocation();
-  // const { key } = useLocation();
-
   const pathname = usePathname();
 
   useEffect(() => {

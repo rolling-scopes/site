@@ -13,14 +13,6 @@ type CoursesProps = {
   courses: Course[];
 };
 export const Courses = ({ courses }: CoursesProps) => {
-  // const { data: courses, loading, error } = useDataByName(path);
-
-  // if (loading) {
-  //   return <h2>Loading...</h2>;
-  // }
-  // if (error) {
-  //   return <h2>{error.message}</h2>;
-  // }
   if (!courses || courses.length === 0) {
     return null;
   }

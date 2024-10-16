@@ -14,11 +14,9 @@ export const BaseLayout = ({ children }: BaseLayoutProps) => {
   }, []);
   return (
     <>
-      {/* <ScrollRestoration /> */}
       <ScrollToHashElement />
       <Header />
       {children}
-      {/* <Outlet /> */}
       <Partnered />
       <Footer />
     </>

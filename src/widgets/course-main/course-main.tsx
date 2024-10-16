@@ -23,10 +23,6 @@ const localizedContent = {
 };
 
 export const CourseMain = ({ lang = 'en', type, course }: CourseMainProps) => {
-  // const course = selectCourse(courses, courseName);
-
-  // useTitle(`${course?.title || ''} · The Rolling Scopes School`);
-
   if (!course) {
     return <p>Error fetching course. Try again.</p>;
   }

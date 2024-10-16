@@ -19,12 +19,6 @@ const localizedContent = {
 };
 
 export const TrainingProgram = ({ courseName, lang = 'en', course }: TrainingProgramProps) => {
-  // const { course: data } = useCourseByTitle(
-  //   courseName.includes('badge') ? 'aws fundamentals' : courseName,
-  // );
-
-  // const course = data as Course;
-
   const { title, content, image } = contentMap[courseName];
 
   // TODO remove 'cloneElement' on 37 line due 'Using cloneElement is uncommon and can lead to fragile code' https://react.dev/reference/react/cloneElement
