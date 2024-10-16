@@ -32,5 +32,6 @@ export { picturesSocialMediaLinks } from './pictures.data';
 export { preSchoolEn, preSchoolRu } from './preSchool.data';
 export { reactEn } from './react-en.data';
 export { reactRu } from './react-ru.data';
+export { requirementsData } from './requirements.data';
 export { sliderPhotos } from './slider-photos.data';
 export { videoTitleLocalized } from './about-video.data';
