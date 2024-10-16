@@ -9,10 +9,10 @@ import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
 import { CourseNames, awsDevops } from 'data';
 
-interface AwsDevOpsProps {
+type AwsDevOpsProps = {
   courseName: CourseNames['AWS_DEVOPS'];
   course: Course;
-}
+};
 
 export const AwsDevOps = ({ course, courseName }: AwsDevOpsProps) => {
   return (

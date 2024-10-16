@@ -5,11 +5,11 @@ import { CoursesWithRequirementsNames, courseDataMap } from 'data';
 
 import './required.scss';
 
-interface RequiredProps {
+type RequiredProps = {
   courseName: CoursesWithRequirementsNames;
   marked1?: boolean;
   marked2?: boolean;
-}
+};
 
 export const Required = ({ courseName }: RequiredProps) => {
   const requiredKnowledge = courseDataMap[courseName];

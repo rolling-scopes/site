@@ -7,11 +7,11 @@ import { TrainingProgramType, contentMap } from 'data';
 
 import './training-program.scss';
 
-interface TrainingProgramProps {
+type TrainingProgramProps = {
   courseName: TrainingProgramType;
   lang?: 'ru' | 'en';
   course: Course;
-}
+};
 
 const localizedContent = {
   en: { linkLabel: 'Register' },

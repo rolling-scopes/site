@@ -8,10 +8,10 @@ import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
 import { CourseNames, reactEn } from 'data';
 
-interface ReactProps {
+type ReactProps = {
   courseName: CourseNames['REACT'];
   course: Course;
-}
+};
 export const React = ({ course, courseName }: ReactProps) => {
   return (
     <>

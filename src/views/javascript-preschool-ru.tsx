@@ -10,12 +10,12 @@ import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
 import { CourseNames, preSchoolRu } from 'data';
 
-interface JavaScriptPreSchoolRuProps {
+type JavaScriptPreSchoolRuProps = {
   course: Course;
   lang: 'ru' | 'en';
   type?: 'Pre-school RU';
   courseName: CourseNames['JS_PRESCHOOL_RU'];
-}
+};
 
 export const JavaScriptPreSchoolRu = ({
   lang,

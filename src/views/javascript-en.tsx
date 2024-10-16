@@ -11,10 +11,10 @@ import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
 import { CourseNames, javaScriptEn } from 'data';
 
-interface JavaScriptEnProps {
+type JavaScriptEnProps = {
   courseName: CourseNames['JS_EN'];
   course: Course;
-}
+};
 export const JavaScriptEn = ({ course, courseName }: JavaScriptEnProps) => {
   return (
     <>

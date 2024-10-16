@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Course } from '@/entities/course';
 import { About } from '@/widgets/about';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
@@ -10,12 +9,12 @@ import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
 import { CourseNames, nodejs } from 'data';
 
-interface NodejsProps {
+type NodejsProps = {
   course: Course;
   courseName: CourseNames['NODE'];
-}
+};
 
-export const Nodejs: FC<NodejsProps> = ({ course, courseName }) => {
+export const Nodejs = ({ course, courseName }: NodejsProps) => {
   return (
     <>
       <CourseMain course={course} />

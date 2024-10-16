@@ -19,11 +19,11 @@ import './about.scss';
 //   | 'aws cloud dev'
 //   | 'aws devops';
 
-interface AboutProps {
+type AboutProps = {
   courseName: CourseNamesKeys;
   type?: 'ru' | 'en' | 'Pre-school RU';
   course: Course;
-}
+};
 
 const localizedContent = {
   en: {

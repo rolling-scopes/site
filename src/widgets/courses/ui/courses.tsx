@@ -9,9 +9,9 @@ import styles from './courses.module.scss';
 
 const cx = classNames.bind(styles);
 
-interface CoursesProps {
+type CoursesProps = {
   courses: Course[];
-}
+};
 export const Courses = ({ courses }: CoursesProps) => {
   // const { data: courses, loading, error } = useDataByName(path);
 

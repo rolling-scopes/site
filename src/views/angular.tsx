@@ -12,10 +12,10 @@ import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
 import { CourseNames, angular } from 'data';
 
-interface AngularProps {
+type AngularProps = {
   course: Course;
   courseName: CourseNames['ANGULAR'];
-}
+};
 
 export const Angular = ({ course, courseName }: AngularProps) => {
   return (

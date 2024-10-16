@@ -13,11 +13,11 @@ import { CourseNames, javaScriptRu } from 'data';
 
 // const COURSE_NAME = 'js / front-end ru';
 
-interface JavaScriptRuProps {
+type JavaScriptRuProps = {
   lang: 'ru' | 'en';
   course: Course;
   courseName: CourseNames['JS_RU'];
-}
+};
 
 export const JavaScriptRu = ({ lang, course, courseName }: JavaScriptRuProps) => {
   // const lang = 'ru';

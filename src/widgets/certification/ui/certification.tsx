@@ -5,9 +5,9 @@ import { COURSE_TITLES, CourseNamesKeys } from 'data';
 
 import styles from './certification.module.scss';
 
-interface RequiredProps {
+type RequiredProps = {
   courseName: CourseNamesKeys;
-}
+};
 
 const localizedContent = {
   default: {
