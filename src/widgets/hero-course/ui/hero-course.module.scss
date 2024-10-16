@@ -10,11 +10,25 @@
     justify-content: flex-start;
 
     .course-logo {
+      width: 200px;
       min-width: 150px;
-      max-width: 200px;
+      height: 192px;
+      min-height: 144px;
 
       @include media-tablet {
         display: none;
+      }
+    }
+
+    .hero-subtitle {
+      margin: 0;
+      font-size: 24px;
+      font-weight: $font-weight-medium;
+      line-height: 32px;
+
+      @include media-tablet {
+        font-size: 20px;
+        line-height: 28px;
       }
     }
   }

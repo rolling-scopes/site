@@ -11,7 +11,6 @@ import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { MainTitle } from '@/shared/ui/main-title';
 import { SectionLabel } from '@/shared/ui/section-label';
-import { Subtitle } from '@/shared/ui/subtitle';
 import { heroCourseLocalized } from 'data';
 
 import styles from './hero-course.module.scss';
@@ -47,9 +46,9 @@ export const HeroCourse = ({ courseName, lang = 'en', type }: HeroCourseProps) =
           <SectionLabel>{status}</SectionLabel>
           <MainTitle size="small">{`${altTitle || title} Course`}</MainTitle>
           {type && (
-            <Subtitle fontSize="small" color="black">
+            <p className={cx('hero-subtitle')}>
               {type}
-            </Subtitle>
+            </p>
           )}
           <DateLang startDate={date} language={language} mode={mode} withMargin />
           <LinkCustom href={enroll} variant="secondary" external>
