@@ -6,6 +6,7 @@
   &-content {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
 
     .title-container {
@@ -35,6 +36,7 @@
     .sloth-mascot {
       max-width: 300px; // TODO change if sloth pic will be changed
       height: auto;
+      max-height: 235px;
       object-fit: contain;
 
       @include media-tablet-large {
@@ -51,4 +53,8 @@
     flex-direction: column;
     gap: 0;
   }
+}
+
+.hero-page-mentorship {
+  background: $color-mentorship-banner;
 }

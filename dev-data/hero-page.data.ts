@@ -24,9 +24,9 @@ export const heroPageData = {
     imageAltText: '',
   },
   mentorship: {
-    mainTitle: 'The Rolling Scopes',
-    widgetTitle: 'By teaching others, you learn yourself',
-    subTitle: ['an international community of developers', 'since 2013'],
+    mainTitle: 'RS Mentorship',
+    widgetTitle: 'Teach It Forward',
+    subTitle: ['By teaching others, you learn yourself'],
     heroImageSrc: mentorWantedImg,
     imageAltText: '',
   },

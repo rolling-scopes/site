@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import { PageName } from '../types';
+import { PAGE_NAMES } from '@/shared/constants.ts';
 import { Image } from '@/shared/ui/image';
 import { MainTitle } from '@/shared/ui/main-title';
 import { Subtitle } from '@/shared/ui/subtitle';
@@ -44,9 +45,12 @@ export const HeroPage = ({ pageName }: PageName) => {
     subTitle = [],
     heroImageSrc = '',
     imageAltText = '' }: HeroPageProps = heroPageData[pageName];
+  const classNames = [
+    'hero-page', 'container', pageName === PAGE_NAMES.MENTORSHIP ? 'hero-page-mentorship' : '',
+  ];
 
   return (
-    <section id="hero-page" className={cx('hero-page', 'container')} data-testid="hero-page">
+    <section id="hero-page" className={cx(...classNames)} data-testid="hero-page">
       <div className={cx('hero-page-content', 'content')}>
         <article className={cx('title-container')}>
           <HeroSubTitle subTitle={subTitle} />

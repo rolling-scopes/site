@@ -38,8 +38,21 @@ const navLinks = [
 
 export const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const [color, setColor] = useState('gray');
   const { key, hash, pathname } = useLocation();
+
+  // TODO eliminate color blink
+  useEffect(() => {
+    if (pathname === `/${ROUTES.MENTORSHIP}`) {
+      setColor('blue');
+      setColorName('blue');
+    } else {
+      setColor('gray');
+      setColorName('gray');
+    }
+  }, [pathname]);
+  const [colorName, setColorName] = useState('white');
+  const [color, setColor] = useState(colorName);
+
   const { width } = useWindowSize();
   const isMobile = width <= 810;
 
@@ -54,7 +67,7 @@ export const Header = () => {
       // setting the class depending on the scrolled height
       // class changes the background color of the header
       if (scrollY < 500) {
-        setColor('gray');
+        setColor(colorName);
       } else {
         setColor('white');
       }
@@ -65,7 +78,7 @@ export const Header = () => {
     return () => {
       window.removeEventListener('scroll', listenScrollEvent);
     };
-  }, []);
+  }, [colorName]);
 
   useEffect(() => {
     if (width > 810 || location.pathname) {
