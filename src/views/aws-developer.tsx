@@ -8,10 +8,10 @@ import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
-import { CourseName, awsDev } from 'data';
+import { CourseNames, awsDev } from 'data';
 
 interface AwsDeveloperProps {
-  courseName: CourseName;
+  courseName: CourseNames['AWS_CLOUD_DEVELOPER'];
   course: Course;
 }
 

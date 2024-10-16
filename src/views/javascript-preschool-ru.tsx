@@ -8,13 +8,13 @@ import { Faq } from '@/widgets/faq';
 import { Required } from '@/widgets/required';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
-import { CourseName, preSchoolRu } from 'data';
+import { CourseNames, preSchoolRu } from 'data';
 
 interface JavaScriptPreSchoolRuProps {
   course: Course;
   lang: 'ru' | 'en';
   type?: 'Pre-school RU';
-  courseName: CourseName;
+  courseName: CourseNames['JS_PRESCHOOL_RU'];
 }
 
 export const JavaScriptPreSchoolRu = ({

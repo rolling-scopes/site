@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { Nodejs } from '@/views/nodejs';
-import { COURSE_TITLES, CourseName, courses } from 'data';
+import { COURSE_TITLES, courses } from 'data';
 
-const courseName: CourseName = COURSE_TITLES.NODE;
+const courseName = COURSE_TITLES.NODE;
 
 export async function generateMetadata(): Promise<Metadata> {
   const course = selectCourse(courses, courseName);

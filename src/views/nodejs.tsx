@@ -8,11 +8,11 @@ import { CourseMain } from '@/widgets/course-main';
 import { Required } from '@/widgets/required';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
-import { CourseName, nodejs } from 'data';
+import { CourseNames, nodejs } from 'data';
 
 interface NodejsProps {
   course: Course;
-  courseName: CourseName;
+  courseName: CourseNames['NODE'];
 }
 
 export const Nodejs: FC<NodejsProps> = ({ course, courseName }) => {

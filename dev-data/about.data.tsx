@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { CourseNamesKeys } from './courseTitles.data';
 import awardIcon from '@/shared/assets/icons/award-icon.webp';
 import giftIcon from '@/shared/assets/icons/gift.webp';
 import noteIcon from '@/shared/assets/icons/note-icon.webp';
@@ -7,7 +8,7 @@ import personIcon from '@/shared/assets/icons/person-icon.webp';
 import planetIcon from '@/shared/assets/icons/planet.webp';
 import { ImageType } from '@/shared/ui/image/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
-import { COURSE_TITLES, type CourseName, DISCORD_LINKS } from 'data';
+import { COURSE_TITLES, DISCORD_LINKS } from 'data';
 
 type AboutInfo = {
   id: number;
@@ -17,7 +18,7 @@ type AboutInfo = {
 };
 
 type ContentMap = {
-  [key in CourseName]: AboutInfo[];
+  [key in CourseNamesKeys]: AboutInfo[];
 };
 
 const angularNodejsAwsFundamentals: (course: string) => AboutInfo[] = () => [
@@ -198,49 +199,11 @@ const awsDevops: AboutInfo[] = [
   },
 ];
 
-const reactRuAbout: AboutInfo[] = [
-  {
-    id: 1,
-    title: 'Для всех желающих',
-    info: 'Новый набор студентов стартует каждые полгода и насчитывает около 6000-7000 человек.В RS School может учиться каждый, независимо от возраста, профессиональной занятости и места жительства. Однако для обучения необходимо иметь базовые знания.',
-    icon: personIcon,
-  },
-  {
-    id: 2,
-    title: 'Материалы',
-    info: (
-      <p>
-        Throughout the course, we mostly use
-        {' '}
-        <LinkCustom href="https://docs.rs.school" external>
-          Документация школы
-        </LinkCustom>
-        . Все материалы находятся в открытом доступе на YouTube и GitHub.Также предлагаем
-        ознакомиться с конспектом первого этапа обучения.
-      </p>
-    ),
-    icon: paperIcon,
-  },
-  {
-    id: 3,
-    title: 'Сертификат',
-    info: 'При успешном прохождении курса выдается электронный сертификат.',
-    icon: awardIcon,
-  },
-  {
-    id: 4,
-    title: 'Менторы и Тренеры',
-    info: 'В обучении участвуют 430 менторов. Наши менторы — это front-end и javascript разработчики из различных компаний и стран. Как стать ментором?',
-    icon: planetIcon,
-  },
-];
-
 export const contentMapAbout: ContentMap = {
   [COURSE_TITLES.JS_RU]: javaScriptRU(),
   [COURSE_TITLES.JS_EN]: javaScriptEN(),
   [COURSE_TITLES.JS_PRESCHOOL_RU]: javaScriptPreSchoolRU(),
   [COURSE_TITLES.REACT]: reactEn,
-  [`${COURSE_TITLES.REACT} ru`]: reactRuAbout,
   [COURSE_TITLES.ANGULAR]: angularNodejsAwsFundamentals('angular'),
   [COURSE_TITLES.NODE]: angularNodejsAwsFundamentals('node.js'),
   [COURSE_TITLES.AWS_FUNDAMENTALS]: angularNodejsAwsFundamentals('aws fundamentals'),

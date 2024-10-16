@@ -8,11 +8,11 @@ import { CourseMain } from '@/widgets/course-main';
 import { Required } from '@/widgets/required';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
-import { CourseName } from 'data';
+import { CourseNames } from 'data';
 
 interface AwsFundamentalsProps {
   course: Course;
-  courseName: CourseName;
+  courseName: CourseNames['AWS_FUNDAMENTALS'];
 }
 export const AwsFundamentals = ({ course, courseName }: AwsFundamentalsProps) => {
   return (

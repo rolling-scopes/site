@@ -3,7 +3,7 @@ import type { Course } from '@/entities/course';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { CourseName, contentMapAbout } from 'data';
+import { CourseNamesKeys, contentMapAbout } from 'data';
 
 import './about.scss';
 
@@ -20,7 +20,7 @@ import './about.scss';
 //   | 'aws devops';
 
 interface AboutProps {
-  courseName: CourseName;
+  courseName: CourseNamesKeys;
   type?: 'ru' | 'en' | 'Pre-school RU';
   course: Course;
 }

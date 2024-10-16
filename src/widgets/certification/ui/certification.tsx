@@ -1,12 +1,12 @@
 import classNames from 'classnames/bind';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { COURSE_TITLES, CourseName } from 'data';
+import { COURSE_TITLES, CourseNamesKeys } from 'data';
 
 import styles from './certification.module.scss';
 
 interface RequiredProps {
-  courseName: CourseName;
+  courseName: CourseNamesKeys;
 }
 
 const localizedContent = {

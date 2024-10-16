@@ -7,10 +7,10 @@ import { CourseMain } from '@/widgets/course-main';
 import { Required } from '@/widgets/required';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
-import { CourseName, awsDevops } from 'data';
+import { CourseNames, awsDevops } from 'data';
 
 interface AwsDevOpsProps {
-  courseName: CourseName;
+  courseName: CourseNames['AWS_DEVOPS'];
   course: Course;
 }
 

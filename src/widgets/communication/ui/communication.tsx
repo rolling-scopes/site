@@ -6,7 +6,7 @@ import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import {
-  CourseName,
+  CourseNamesKeys,
   DISCORD_LINKS,
   RS_DOCS_COMMUNICATION_LINK,
   RS_DOCS_TELEGRAM_CHATS_LINK,
@@ -18,7 +18,7 @@ import styles from './communication.module.scss';
 const cx = classNames.bind(styles);
 
 type CommunicationProps = {
-  courseName: CourseName;
+  courseName: CourseNamesKeys;
   lang?: 'ru' | 'en';
 };
 

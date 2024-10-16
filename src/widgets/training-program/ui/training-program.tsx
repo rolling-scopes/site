@@ -3,12 +3,12 @@ import type { Course } from '@/entities/course';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { CourseName, contentMap } from 'data';
+import { TrainingProgramType, contentMap } from 'data';
 
 import './training-program.scss';
 
 interface TrainingProgramProps {
-  courseName: CourseName;
+  courseName: TrainingProgramType;
   lang?: 'ru' | 'en';
   course: Course;
 }

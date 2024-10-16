@@ -10,11 +10,11 @@ import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
-import { CourseName, angular } from 'data';
+import { CourseNames, angular } from 'data';
 
 interface AngularProps {
   course: Course;
-  courseName: CourseName;
+  courseName: CourseNames['ANGULAR'];
 }
 
 export const Angular = ({ course, courseName }: AngularProps) => {

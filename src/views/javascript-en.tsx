@@ -9,10 +9,10 @@ import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
-import { CourseName, javaScriptEn } from 'data';
+import { CourseNames, javaScriptEn } from 'data';
 
 interface JavaScriptEnProps {
-  courseName: CourseName;
+  courseName: CourseNames['JS_EN'];
   course: Course;
 }
 export const JavaScriptEn = ({ course, courseName }: JavaScriptEnProps) => {

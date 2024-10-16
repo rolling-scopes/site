@@ -6,10 +6,10 @@ import { Communication } from '@/widgets/communication';
 import { CourseMain } from '@/widgets/course-main';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
-import { CourseName, reactEn } from 'data';
+import { CourseNames, reactEn } from 'data';
 
 interface ReactProps {
-  courseName: CourseName;
+  courseName: CourseNames['REACT'];
   course: Course;
 }
 export const React = ({ course, courseName }: ReactProps) => {

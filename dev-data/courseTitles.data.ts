@@ -10,18 +10,19 @@ export const COURSE_TITLES = {
   AWS_FUNDAMENTALS: 'AWS Fundamentals',
   AWS_CLOUD_DEVELOPER: 'AWS Cloud Developer',
   AWS_DEVOPS: 'AWS DevOps',
-};
+} as const;
 
-export type CourseName =
-  | (typeof COURSE_TITLES)[keyof typeof COURSE_TITLES]
-  | `${(typeof COURSE_TITLES)[keyof typeof COURSE_TITLES]} ru`
-  | `${(typeof COURSE_TITLES)[keyof typeof COURSE_TITLES]} badge`;
-
+export const AWS_FUNDAMENTALS_BADGE = `${COURSE_TITLES.AWS_FUNDAMENTALS} badge` as const;
+export type AwsFundamentalsBadge = typeof AWS_FUNDAMENTALS_BADGE;
+export type CourseNames = typeof COURSE_TITLES;
+export type CourseNamesKeys = CourseNames[keyof CourseNames];
+export type CoursesWithRequirementsNames = Exclude<CourseNamesKeys, CourseNames['REACT']>;
 export type CourseMap = {
-  [courseName in CourseName]: Course;
+  [courseName in CoursesWithRequirementsNames]: Course;
 };
+export type TrainingProgramType = CourseNamesKeys | AwsFundamentalsBadge;
 
-export const DISCORD_LINKS: Record<(typeof COURSE_TITLES)[keyof typeof COURSE_TITLES], string> = {
+export const DISCORD_LINKS = {
   [COURSE_TITLES.JS_PRESCHOOL_RU]: 'https://discord.com/invite/gFnRh8Sudg',
   [COURSE_TITLES.JS_EN]: 'https://discord.com/invite/uW5cCHR',
   [COURSE_TITLES.JS_RU]: 'https://discord.com/invite/QvEYg7EaQ4',
@@ -31,4 +32,4 @@ export const DISCORD_LINKS: Record<(typeof COURSE_TITLES)[keyof typeof COURSE_TI
   [COURSE_TITLES.AWS_FUNDAMENTALS]: 'https://discord.com/invite/WEZxwRa4J6',
   [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: 'https://discord.com/invite/WEZxwRa4J6',
   [COURSE_TITLES.AWS_DEVOPS]: 'https://discord.com/invite/WEZxwRa4J6',
-};
+} as const;

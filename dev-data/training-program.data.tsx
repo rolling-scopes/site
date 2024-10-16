@@ -1,5 +1,10 @@
 // TODO separate data and markup
-import { COURSE_TITLES, CourseName } from './courseTitles.data';
+import {
+  AWS_FUNDAMENTALS_BADGE,
+  AwsFundamentalsBadge,
+  COURSE_TITLES,
+  CourseNamesKeys,
+} from './courseTitles.data';
 import awsPractitionerBadge from '@/shared/assets/aws-cloud-pract-badge.webp';
 import angularImg from '@/shared/assets/rs-slope-angular.webp';
 import awsDevImg from '@/shared/assets/rs-slope-aws-dev.webp';
@@ -7,7 +12,6 @@ import awsFundamentalsImg from '@/shared/assets/rs-slope-aws-fundamentals.webp';
 import jsImg from '@/shared/assets/rs-slope-js.webp';
 import nodejsImg from '@/shared/assets/rs-slope-nodejs.webp';
 import reactEnImg from '@/shared/assets/rs-slope-react-en.webp';
-import reactRuImg from '@/shared/assets/rs-slope-react-ru.webp';
 import { ImageType } from '@/shared/ui/image/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
@@ -21,7 +25,7 @@ interface CourseInfo {
 }
 
 type ContentMap = {
-  [key in CourseName]: CourseInfo;
+  [key in CourseNamesKeys | AwsFundamentalsBadge]: CourseInfo;
 };
 
 export const contentMap: ContentMap = {
@@ -251,18 +255,7 @@ export const contentMap: ContentMap = {
     ],
     image: reactEnImg,
   },
-  [`${COURSE_TITLES.REACT} ru`]: {
-    title: 'Для кого',
-    content: [
-      <Paragraph key="react ru 01">
-        Бесплатный курс от сообщества The Rolling Scopes для тех, кто хочет получить знания и опыт,
-        достаточные для трудоустройства на позицию Junior Software Engineer в области
-        JavaScript/Front-end.
-      </Paragraph>,
-    ],
-    image: reactRuImg,
-  },
-  [`${COURSE_TITLES.AWS_FUNDAMENTALS} badge`]: {
+  [AWS_FUNDAMENTALS_BADGE]: {
     title: 'AWS DIGITAL BADGE',
     content: [
       <Paragraph key="aws fundamentals badge 01">

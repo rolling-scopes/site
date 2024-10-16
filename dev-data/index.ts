@@ -1,5 +1,13 @@
 export type { AngularAwsPath, CoursesPath, DataMap, JSPath } from './courses-data.types';
-export { COURSE_TITLES, type CourseMap, type CourseName, DISCORD_LINKS } from './courseTitles.data';
+export {
+  COURSE_TITLES,
+  type CourseMap,
+  type CourseNames,
+  type CourseNamesKeys,
+  type CoursesWithRequirementsNames,
+  DISCORD_LINKS,
+  type TrainingProgramType,
+} from './courseTitles.data';
 export { RS_DOCS_COMMUNICATION_LINK, RS_DOCS_TELEGRAM_CHATS_LINK } from './communication.data';
 export { angular } from './angular.data';
 export { angularPath } from './angular-path.data';

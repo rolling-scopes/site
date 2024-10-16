@@ -9,14 +9,14 @@ import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
-import { CourseName, javaScriptRu } from 'data';
+import { CourseNames, javaScriptRu } from 'data';
 
 // const COURSE_NAME = 'js / front-end ru';
 
 interface JavaScriptRuProps {
   lang: 'ru' | 'en';
   course: Course;
-  courseName: CourseName;
+  courseName: CourseNames['JS_RU'];
 }
 
 export const JavaScriptRu = ({ lang, course, courseName }: JavaScriptRuProps) => {
