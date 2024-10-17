@@ -55,7 +55,7 @@ describe('SchoolMenu', () => {
   it('displays correct links and descriptions with "rs school" props', () => {
     const { container } = renderWithRouter(<SchoolMenu heading="rs school" />);
 
-    expect(screen.getAllByRole('link')).toHaveLength(3);
+    expect(screen.getAllByRole('link')).toHaveLength(2);
 
     const links = screen.getAllByRole('link');
 
