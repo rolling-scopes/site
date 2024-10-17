@@ -57,7 +57,6 @@ export const Image = ({ alt, img, lazy = true, ...props }: ImageProps) => {
       decoding={decoding}
       // FIXME: remove this line when fetchPriority prop will be fixed
       // see https://github.com/facebook/react/issues/27233#issuecomment-2035176576
-
       fetchPriority={fetchPriority}
       src={srcAttr}
       alt={alt}

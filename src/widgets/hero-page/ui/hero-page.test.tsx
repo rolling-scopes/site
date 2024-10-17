@@ -50,7 +50,7 @@ describe('HeroPage component', () => {
           const image: HTMLElement = screen.getByTestId('sloth-mascot');
 
           expect(image).toBeVisible();
-          expect(image).toHaveAttribute('src', pageData.heroImageSrc.src);
+          expect(image).toHaveAttribute('src', pageData.heroImageSrc?.src);
           expect(image).toHaveAttribute('alt', pageData.imageAltText);
         } else {
           const image = screen.queryByTestId('sloth-mascot');

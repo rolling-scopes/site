@@ -5,11 +5,6 @@ export const heroPageData = {
     mainTitle: 'RS School',
     widgetTitle: 'Connecting people, growing together, having fun',
     subTitle: ['Free courses. High motivation'],
-    heroImageSrc: {
-      src: '',
-      height: 0,
-      width: 0,
-    },
     imageAltText: '',
   },
   courses: {
@@ -23,11 +18,6 @@ export const heroPageData = {
     mainTitle: 'The Rolling Scopes',
     widgetTitle: 'Connecting people, growing together, having fun',
     subTitle: ['an international community of developers', 'since 2013'],
-    heroImageSrc: {
-      src: '',
-      height: 0,
-      width: 0,
-    },
     imageAltText: '',
   },
 };

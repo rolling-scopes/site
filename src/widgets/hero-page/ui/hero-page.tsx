@@ -15,7 +15,7 @@ export type HeroPageProps = {
   mainTitle: string;
   widgetTitle: string;
   subTitle: string[] | [];
-  heroImageSrc: ImageType;
+  heroImageSrc?: ImageType;
   imageAltText: string;
 };
 
@@ -58,7 +58,7 @@ export const HeroPage = ({ pageName }: PageName) => {
             {widgetTitle}
           </WidgetTitle>
         </article>
-        {heroImageSrc.src && (
+        {heroImageSrc?.src && (
           <Image
             className={cx('sloth-mascot')}
             img={heroImageSrc}
