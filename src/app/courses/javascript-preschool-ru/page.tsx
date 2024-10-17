@@ -13,14 +13,17 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function JsPreRoute() {
-  const lang = 'ru';
-  const type = 'Pre-school RU';
   const course = selectCourse(courses, courseName);
 
   return (
     <>
       {course && (
-        <JavaScriptPreSchoolRu lang={lang} type={type} course={course} courseName={courseName} />
+        <JavaScriptPreSchoolRu
+          lang="ru"
+          type="Pre-school RU"
+          course={course}
+          courseName={courseName}
+        />
       )}
     </>
   );

@@ -13,8 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function JsRuRoute() {
-  const lang = 'ru';
   const course = selectCourse(courses, courseName);
 
-  return <>{course && <JavaScriptRu lang={lang} course={course} courseName={courseName} />}</>;
+  return <>{course && <JavaScriptRu lang="ru" course={course} courseName={courseName} />}</>;
 }
