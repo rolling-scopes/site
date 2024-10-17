@@ -40,7 +40,7 @@
     align-items: center;
     justify-content: space-between;
 
-    margin: 0 24px 40px 24px;
+    margin: 24px 24px 40px 24px;
 
     :last-child::after {
       display: none;
@@ -48,7 +48,12 @@
 
     @include media-tablet {
       grid-auto-flow: row;
-      gap: 16px;
+      grid-template-columns: min-content;
+      gap: 24px;
+
+      :nth-child(odd) {
+        width: 123px;
+      }
 
       :nth-child(n + 3) {
         grid-row: 2 / 3;

@@ -21,6 +21,10 @@
     height: 100%;
 
     background-color: $color-gray-200;
+
+    @include media-tablet {
+      right: -12px;
+    }
   }
 
   &-number {
@@ -38,6 +42,12 @@
 
   &-text {
     height: 56px;
+    font-weight: 400;
+    color: $color-gray-600;
+
+    @include media-tablet {
+      height: auto;
+    }
   }
 
   @include media-laptop {
@@ -46,6 +56,7 @@
 
   @include media-tablet {
     width: 150px;
+    height: 140px;
     padding: 0 8px;
   }
 }

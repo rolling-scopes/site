@@ -1,5 +1,4 @@
 import classnames from 'classnames/bind';
-import { Paragraph } from '@/shared/ui/paragraph';
 
 import styles from './info-cell.module.scss';
 
@@ -13,8 +12,6 @@ type InfoCellProps = {
 export const InfoCell = ({ title, description }: InfoCellProps) => (
   <article className={cx('info-cell')}>
     <div className={cx('info-cell-number')}>{title}</div>
-    <Paragraph fontSize="medium" className={cx('info-cell-text')}>
-      {description}
-    </Paragraph>
+    <div className={cx('info-cell-text')}>{description}</div>
   </article>
 );
