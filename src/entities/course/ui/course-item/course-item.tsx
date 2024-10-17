@@ -14,7 +14,6 @@ export const CourseItem = ({
   language,
   startDate,
   detailsUrl,
-  buttonText,
   iconSrc,
 }: CourseItemData) => {
   const dateTime = dayjs(startDate).toISOString();
@@ -47,9 +46,7 @@ export const CourseItem = ({
         variant="rounded"
         aria-label="More details"
         data-testid="course-link"
-      >
-        {buttonText}
-      </LinkCustom>
+      />
     </section>
   );
 };
