@@ -8,6 +8,10 @@ interface RenderWithRouterProps {
   route?: string;
 }
 
+type PropsWithChildren = {
+  children: ReactNode;
+};
+
 const createMockRouter = (route: string): NextRouter => ({
   basePath: '',
   pathname: route,
@@ -40,7 +44,7 @@ export const renderWithRouter = (
 ) => {
   const mockRouter = createMockRouter(route);
 
-  const Wrapper = ({ children }: { children?: ReactNode }) => {
+  const Wrapper = ({ children }: PropsWithChildren) => {
     return <RouterContext.Provider value={mockRouter}>{children}</RouterContext.Provider>;
   };
 
