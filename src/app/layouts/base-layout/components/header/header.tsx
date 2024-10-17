@@ -41,7 +41,7 @@ export const Header = () => {
   const { key, hash, pathname } = useLocation();
 
   useEffect(() => {
-    if (pathname === `/${ROUTES.MENTORSHIP}`) {
+    if (pathname.includes(ROUTES.MENTORSHIP)) {
       setColorName('blue');
     } else {
       setColorName('gray');

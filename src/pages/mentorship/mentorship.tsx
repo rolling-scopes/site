@@ -13,26 +13,26 @@ import { MentorshipCourse } from 'data';
 export const Mentorship = () => {
   const pageProps = useLoaderData() as MentorshipCourse;
 
-  useTitle(`Mentorship ${pageProps.courseTitle} · The Rolling Scopes School`);
+  useTitle(`Mentorship ${pageProps.title} · The Rolling Scopes School`);
 
   return (
     <>
       <HeroPage pageName={PAGE_NAMES.MENTORSHIP} />
       <Breadcrumbs />
       <AboutMentors
-        description={pageProps.description}
+        description={pageProps.details}
         icons={pageProps.links.icon}
         lang={pageProps.lang}
       />
       <MentorsBenefits benefits={pageProps.benefits} lang={pageProps.lang} />
-      <MentorsActivity activities={pageProps.mentorActivities} lang={pageProps.lang} />
+      <MentorsActivity activities={pageProps.activities} lang={pageProps.lang} />
       <MentorsRegister lang={pageProps.lang} />
       <MentorsDocs
         linkMentorDocs={pageProps.links.mentorDocs}
         linkCourseDocs={pageProps.links.courseDocs}
         linkTelegram={pageProps.links.telegram}
         linkDiscord={pageProps.links.discord}
-        courseTitle={pageProps.courseTitle}
+        courseTitle={pageProps.title}
         lang={pageProps.lang}
       />
     </>

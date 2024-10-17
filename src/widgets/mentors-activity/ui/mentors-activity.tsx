@@ -4,14 +4,14 @@ import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 // TODO move Stages to shared?
 import { Stages } from '@/widgets/study-path/ui/stages';
-import { MentorActions, mentorsActivityData } from 'data';
+import { MentorActivities, mentorsActivityData } from 'data';
 
 import styles from './mentors-activity.module.scss';
 
 const cx = classNames.bind(styles);
 
 type MentorsPathProps = {
-  activities: MentorActions[];
+  activities: MentorActivities[];
   lang?: 'en' | 'ru';
 };
 

@@ -20,7 +20,7 @@ export const React = () => {
       <About courseName={COURSE_NAME} />
       <Certification courseName={COURSE_NAME} />
       <Communication courseName={COURSE_NAME} />
-      <Mentors route={ROUTES.REACT} />
+      <Mentors route={`/${ROUTES.MENTORSHIP}/${ROUTES.REACT}`} />
       <Trainers trainers={reactEn} />
     </>
   );

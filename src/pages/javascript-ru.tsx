@@ -28,7 +28,7 @@ export const JavaScriptRu = () => {
       <AboutVideo lang={lang} />
       <StudyPath path="javascriptRu" lang={lang} />
       <Required courseName={COURSE_NAME} />
-      <Mentors route={ROUTES.JS_RU} lang={lang} />
+      <Mentors route={`/${ROUTES.MENTORSHIP}/${ROUTES.JS_RU}`} />
       <Trainers trainers={javaScriptRu} lang={lang} />
     </>
   );

@@ -28,7 +28,7 @@ export const Angular = () => {
       <StudyPath path={COURSE_NAME} />
       <Required courseName={COURSE_NAME} marked1 />
       <MentorsWanted />
-      <Mentors route={ROUTES.ANGULAR} />
+      <Mentors route={`/${ROUTES.MENTORSHIP}/${ROUTES.ANGULAR}`} />
       <Trainers trainers={angular} />
     </>
   );

@@ -26,7 +26,7 @@ export const JavaScriptEn = () => {
       <AboutVideo />
       <StudyPath path="javascript" type="marked" />
       <Required courseName={COURSE_NAME} />
-      <Mentors route={ROUTES.JS} />
+      <Mentors route={`/${ROUTES.MENTORSHIP}/${ROUTES.JS}`} />
       <Trainers trainers={javaScriptEn} />
     </>
   );

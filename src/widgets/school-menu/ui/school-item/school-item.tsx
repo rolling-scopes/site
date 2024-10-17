@@ -4,9 +4,10 @@ import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
 import type { Course } from '@/entities/course';
 import { getCourseDate } from '@/shared/helpers/getCourseDate';
 import { Image } from '@/shared/ui/image';
+import { MentorshipCourse } from 'data';
 
 interface SchoolItemProps {
-  item: Course | GenericItemProps;
+  item: MentorshipCourse | Course | GenericItemProps;
   color: 'dark' | 'light';
 }
 

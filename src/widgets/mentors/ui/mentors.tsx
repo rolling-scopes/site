@@ -4,12 +4,12 @@ import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { RouteName } from 'data';
+import { MentorshipRoute } from 'data';
 
 import './mentors.scss';
 
 type MentorsProps = {
-  route?: RouteName;
+  route?: MentorshipRoute;
   lang?: 'en' | 'ru';
 };
 const textContent = {
@@ -23,9 +23,7 @@ const textContent = {
   },
 };
 
-export const Mentors = ({ route = ROUTES.MENTORSHIP, lang = 'en' }: MentorsProps) => {
-  const pageUrl = route === ROUTES.MENTORSHIP ? ROUTES.MENTORSHIP : `/${ROUTES.MENTORSHIP}/${route}`;
-
+export const Mentors = ({ route = `/${ROUTES.MENTORSHIP}`, lang = 'en' }: MentorsProps) => {
   return (
     <section className="mentors container" id="mentors-wanted">
       <div className="mentors content column-2">
@@ -35,7 +33,7 @@ export const Mentors = ({ route = ROUTES.MENTORSHIP, lang = 'en' }: MentorsProps
             {textContent[lang].info}
           </Paragraph>
           <LinkCustom
-            href={pageUrl}
+            href={route}
             variant="primary"
           >
             {textContent[lang].button}
