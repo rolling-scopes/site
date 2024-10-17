@@ -24,8 +24,16 @@
   }
 
   &-number {
-    padding: 0;
+    font-size: 52px;
+    font-weight: 500;
+    line-height: 64px;
+    color: $color-black;
     letter-spacing: 0.04em;
+
+    @include media-laptop {
+      font-size: 44px;
+      line-height: 52px;
+    }
   }
 
   &-text {

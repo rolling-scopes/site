@@ -1,6 +1,5 @@
 import classnames from 'classnames/bind';
 import { Paragraph } from '@/shared/ui/paragraph';
-import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './info-cell.module.scss';
 
@@ -13,9 +12,7 @@ type InfoCellProps = {
 
 export const InfoCell = ({ title, description }: InfoCellProps) => (
   <article className={cx('info-cell')}>
-    <WidgetTitle size="large" className={cx('info-cell-number')}>
-      {title}
-    </WidgetTitle>
+    <div className={cx('info-cell-number')}>{title}</div>
     <Paragraph fontSize="medium" className={cx('info-cell-text')}>
       {description}
     </Paragraph>
