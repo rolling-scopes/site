@@ -9,7 +9,7 @@
   .numbers-map {
     position: absolute;
     z-index: -1;
-    top: -40px;
+    top: -56px;
     left: 0;
 
     width: 90%;
@@ -17,6 +17,7 @@
     max-height: 650px;
 
     @include media-tablet {
+      top: 56px;
       width: 100%;
       max-width: none;
       max-height: none;
