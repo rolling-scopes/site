@@ -8,15 +8,7 @@ type MainTitleProps = HTMLAttributes<HTMLHeadingElement> & VariantProps<typeof m
 
 export const cx = classNames.bind(styles);
 
-const mainTitleVariants = cva(cx('main-title'), {
-  variants: {
-    size: {
-      small: cx('small'),
-      medium: '',
-    },
-  },
-  defaultVariants: { size: 'medium' },
-});
+const mainTitleVariants = cva(cx('main-title'), { variants: { size: { small: cx('small') } } });
 
 export const MainTitle = ({ children, className, size }: MainTitleProps) => {
   return (
