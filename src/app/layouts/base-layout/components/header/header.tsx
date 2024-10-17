@@ -40,13 +40,10 @@ export const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const { key, hash, pathname } = useLocation();
 
-  // TODO eliminate color blink
   useEffect(() => {
     if (pathname === `/${ROUTES.MENTORSHIP}`) {
-      setColor('blue');
       setColorName('blue');
     } else {
-      setColor('gray');
       setColorName('gray');
     }
   }, [pathname]);
@@ -61,6 +58,8 @@ export const Header = () => {
   };
 
   useEffect(() => {
+    setColor(colorName);
+
     const listenScrollEvent = () => {
       const scrollY = window.scrollY;
 
