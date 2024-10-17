@@ -1,5 +1,5 @@
 export function hasDayInDate(date: string) {
-  const dateWithoutYear = date.split(',')[0];
+  const dateWithoutDay = date.split(',')[0];
 
-  return /\d/.test(dateWithoutYear);
+  return /\d/.test(dateWithoutDay);
 }
