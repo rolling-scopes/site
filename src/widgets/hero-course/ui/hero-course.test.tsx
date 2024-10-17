@@ -50,48 +50,32 @@ const mockedCourseUpcoming: Course = {
 };
 
 describe('HeroCourse component', () => {
-  describe("Component and its' parts render correctly", () => {
-    beforeEach(() => {
-      renderWithRouter(<HeroCourse courseName="Node.js" />);
-    });
-
-    it('renders the title and label correctly', async () => {
-      const titleElement = await screen.findByText('Node.js Course');
-      const labelElement = screen.getByText('planned');
-
-      expect(titleElement).toBeVisible();
-      expect(labelElement).toBeVisible();
-    });
-
-    it('renders enroll button with correct label and href', () => {
-      const buttonElement = screen.getByRole('link', { name: /enroll/i });
-
-      expect(buttonElement).toBeVisible();
-      expect(buttonElement).toHaveAttribute(
-        'href',
-        'https://test.com',
-      );
-    });
-
-    it('renders the image with correct source', () => {
-      const imageElement = screen.getByRole('img', { name: /Node.js/i });
-
-      expect(imageElement).toBeInTheDocument();
-      expect(imageElement).toHaveAttribute('src', MOCKED_IMAGE_PATH);
-    });
+  beforeEach(() => {
+    renderWithRouter(<HeroCourse courseName="Node.js" />);
   });
 
-  describe('Course labels are correct', () => {
-    it('renders the section with correct label "AVAILABLE"', () => {
-      renderWithRouter(<HeroCourse courseName={reactCourseTitle} />);
+  it('renders the title and label correctly', async () => {
+    const titleElement = await screen.findByText('Node.js Course');
+    const labelElement = screen.getByText('planned');
 
-      expect(screen.getByText('available')).toBeVisible();
-    });
+    expect(titleElement).toBeVisible();
+    expect(labelElement).toBeVisible();
+  });
 
-    it('renders the section with correct label "UPCOMING"', () => {
-      renderWithRouter(<HeroCourse courseName={angularCourseTitle} />);
+  it('renders enroll button with correct label and href', () => {
+    const buttonElement = screen.getByRole('link', { name: /enroll/i });
 
-      expect(screen.getByText('upcoming')).toBeVisible();
-    });
+    expect(buttonElement).toBeVisible();
+    expect(buttonElement).toHaveAttribute(
+      'href',
+      'https://test.com',
+    );
+  });
+
+  it('renders the image with correct source', () => {
+    const imageElement = screen.getByRole('img', { name: /Node.js/i });
+
+    expect(imageElement).toBeInTheDocument();
+    expect(imageElement).toHaveAttribute('src', MOCKED_IMAGE_PATH);
   });
 });

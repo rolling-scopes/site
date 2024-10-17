@@ -43,7 +43,7 @@ export const HeroCourse = ({ courseName, lang = 'en', type }: HeroCourseProps) =
       <div className={cx('hero-course-content', 'content')}>
         <Image className={cx('course-logo')} src={secondaryIcon} alt={`${title}-logo`} lazy={false} />
         <article>
-          <SectionLabel>{status}</SectionLabel>
+          <SectionLabel data-testid="course-label">{status}</SectionLabel>
           <MainTitle size="small">{`${altTitle || title} Course`}</MainTitle>
           {type && (
             <p className={cx('hero-subtitle')}>
