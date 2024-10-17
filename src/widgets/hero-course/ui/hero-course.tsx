@@ -1,5 +1,6 @@
+import classNames from 'classnames/bind';
 import { useLoaderData } from 'react-router-dom';
-import { getCourseStatus } from './utils/get-course-status';
+import { getCourseStatus } from '../helpers/get-course-status';
 import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
 import type { Course } from '@/entities/course';
 import { getCourseDate } from '@/shared/helpers/getCourseDate';
@@ -8,24 +9,21 @@ import { useTitle } from '@/shared/hooks/use-title';
 import { DateLang } from '@/shared/ui/date-lang';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
+import { MainTitle } from '@/shared/ui/main-title';
 import { SectionLabel } from '@/shared/ui/section-label';
-import { Subtitle } from '@/shared/ui/subtitle';
-import { WidgetTitle } from '@/shared/ui/widget-title';
+import { heroCourseLocalized } from 'data';
 
-import styles from './course-main.module.scss';
+import styles from './hero-course.module.scss';
 
-interface CourseMainProps {
+const cx = classNames.bind(styles);
+
+type HeroCourseProps = {
   courseName: string;
   lang?: 'ru' | 'en';
   type?: 'Pre-school RU';
-}
-
-const localizedContent = {
-  en: { linkLabel: 'Enroll' },
-  ru: { linkLabel: 'Присоединиться' },
 };
 
-export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) => {
+export const HeroCourse = ({ courseName, lang = 'en', type }: HeroCourseProps) => {
   const courses = useLoaderData() as Course[];
 
   const course = selectCourse(courses, courseName);
@@ -41,23 +39,23 @@ export const CourseMain = ({ courseName, lang = 'en', type }: CourseMainProps) =
   const date = getCourseDate(startDate, COURSE_STALE_AFTER_DAYS);
 
   return (
-    <main className={`container ${styles.container}`}>
-      <div className={`content ${styles.content}`}>
-        <Image className={styles.icon} src={secondaryIcon} alt={title} lazy={false} />
-        <div className={styles.info}>
-          <SectionLabel>{status}</SectionLabel>
-          <WidgetTitle>{`${altTitle || title} Course`}</WidgetTitle>
+    <section className={cx('hero-course', 'container')} data-testid="hero-course">
+      <div className={cx('hero-course-content', 'content')}>
+        <Image className={cx('course-logo')} src={secondaryIcon} alt={`${title}-logo`} lazy={false} />
+        <article>
+          <SectionLabel data-testid="course-label">{status}</SectionLabel>
+          <MainTitle size="small">{`${altTitle || title} Course`}</MainTitle>
           {type && (
-            <Subtitle fontSize="small" color="black">
+            <p className={cx('hero-subtitle')}>
               {type}
-            </Subtitle>
+            </p>
           )}
           <DateLang startDate={date} language={language} mode={mode} withMargin />
           <LinkCustom href={enroll} variant="secondary" external>
-            {localizedContent[lang].linkLabel}
+            {heroCourseLocalized[lang].linkLabel}
           </LinkCustom>
-        </div>
+        </article>
       </div>
-    </main>
+    </section>
   );
 };

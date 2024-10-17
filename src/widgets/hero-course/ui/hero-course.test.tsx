@@ -1,8 +1,11 @@
 import { screen } from '@testing-library/react';
-import { CourseMain } from './course-main';
+import { HeroCourse } from './hero-course';
+import { ROUTES } from '@/app/const';
+import type { Course } from '@/entities/course';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { dayJS } from '@/shared/helpers/dayJS';
+import { COURSE_TITLES } from 'data';
 
 vi.mock('@/app/hooks/use-course-by-title');
 vi.mock('react-router-dom', async (importOriginal) => {
@@ -17,42 +20,45 @@ vi.mock('react-router-dom', async (importOriginal) => {
 const reactCourseTitle = 'React';
 const angularCourseTitle = 'Angular';
 
-const mockedCourse = {
-  title: 'Node.js',
-  language: ['English'],
-  type: 'Mentoring Program',
-  mode: 'online',
-  enroll: 'https://wearecommunity.io/events/nodejs-rs-2024q1',
+const mockedCourse: Course = {
+  id: '6',
+  title: COURSE_TITLES.NODE,
+  iconSrc: MOCKED_IMAGE_PATH,
+  iconSmall: MOCKED_IMAGE_PATH,
   secondaryIcon: MOCKED_IMAGE_PATH,
   startDate: dayJS().subtract(2, 'month').format('D MMM, YYYY'),
+  language: ['en'],
+  mode: 'online',
+  detailsUrl: `/${ROUTES.COURSES}/${ROUTES.NODE_JS}`,
+  enroll: 'https://test.com',
+  backgroundStyle: {
+    backgroundColor: '#F0F9F4',
+    accentColor: '#AEDF36',
+  },
 };
 
-const mockedCourseAvailable = {
+const mockedCourseAvailable: Course = {
   ...mockedCourse,
   title: reactCourseTitle,
   startDate: dayJS().format('D MMM, YYYY'),
 };
 
-const mockedCourseUpcoming = {
+const mockedCourseUpcoming: Course = {
   ...mockedCourse,
   title: angularCourseTitle,
   startDate: dayJS().add(1, 'month').format('D MMM, YYYY'),
 };
 
-describe('CourseMain', () => {
+describe('HeroCourse component', () => {
   beforeEach(() => {
-    renderWithRouter(<CourseMain courseName="Node.js" />);
+    renderWithRouter(<HeroCourse courseName="Node.js" />);
   });
 
-  it('renders the title correctly', async () => {
+  it('renders the title and label correctly', async () => {
     const titleElement = await screen.findByText('Node.js Course');
-
-    expect(titleElement).toBeVisible();
-  });
-
-  it('renders the section label "PLANNED" correctly', () => {
     const labelElement = screen.getByText('planned');
 
+    expect(titleElement).toBeVisible();
     expect(labelElement).toBeVisible();
   });
 
@@ -62,7 +68,7 @@ describe('CourseMain', () => {
     expect(buttonElement).toBeVisible();
     expect(buttonElement).toHaveAttribute(
       'href',
-      'https://wearecommunity.io/events/nodejs-rs-2024q1',
+      'https://test.com',
     );
   });
 
@@ -71,21 +77,5 @@ describe('CourseMain', () => {
 
     expect(imageElement).toBeInTheDocument();
     expect(imageElement).toHaveAttribute('src', MOCKED_IMAGE_PATH);
-  });
-});
-
-describe('Course labels are correct', () => {
-  it('renders the section with correct label "AVAILABLE"', () => {
-    renderWithRouter(<CourseMain courseName={reactCourseTitle} />);
-    const labelElement = screen.getByText('available');
-
-    expect(labelElement).toBeVisible();
-  });
-
-  it('renders the section with correct label "UPCOMING"', () => {
-    renderWithRouter(<CourseMain courseName={angularCourseTitle} />);
-    const labelElement = screen.getByText('upcoming');
-
-    expect(labelElement).toBeVisible();
   });
 });

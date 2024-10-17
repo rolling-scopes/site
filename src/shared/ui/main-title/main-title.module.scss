@@ -6,6 +6,21 @@
   line-height: 125px;
   color: $color-black;
 
+  &.small {
+    padding-bottom: 20px;
+
+    font-size: 44px;
+    font-weight: $font-weight-medium;
+    line-height: 52px;
+    letter-spacing: -0.04em;
+
+    @include media-tablet {
+      padding-bottom: 16px;
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+
   @include media-tablet {
     font-size: 60px;
     line-height: 78px;
