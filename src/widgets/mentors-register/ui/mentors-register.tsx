@@ -1,5 +1,4 @@
 import classNames from 'classnames/bind';
-import { ANCHORS } from '@/app/const';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 import { Subtitle } from '@/shared/ui/subtitle';
@@ -16,7 +15,7 @@ type MentorsRegisterProps = {
 
 export const MentorsRegister = ({ lang = 'en' }: MentorsRegisterProps) => {
   return (
-    <section className={cx('container')} id={ANCHORS.MENTORSHIP_REGISTER}>
+    <section className={cx('container')}>
       <div className={cx('content', 'mentoring-register')}>
         <WidgetTitle className={cx('title')}>{mentorsRegisterData[lang].header}</WidgetTitle>
         <Subtitle className={cx('note')} fontSize="extra-small">{mentorsRegisterData[lang].note}</Subtitle>

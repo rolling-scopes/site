@@ -1,9 +1,6 @@
 export const ANCHORS = {
   ABOUT_COMMUNITY: 'about-community',
   ABOUT_SCHOOL: 'about-school',
-  MENTORSHIP_ABOUT: 'mentorship-about',
-  MENTORSHIP_PROCESS: 'mentorship-process',
-  MENTORSHIP_REGISTER: 'mentorship-register',
 };
 export const COURSE_STALE_AFTER_DAYS = 14;
 
