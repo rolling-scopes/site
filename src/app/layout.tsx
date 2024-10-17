@@ -1,14 +1,10 @@
-import { ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 import NextTopLoader from 'nextjs-toploader';
 import { BaseLayout } from '@/widgets/base-layout';
 import type { Metadata } from 'next';
 import '@/shared/helpers/dayJS';
 
 import '@/core/styles/index.scss';
-
-type LayoutProps = {
-  children: ReactNode;
-};
 
 export const metadata: Metadata = {
   title: 'RS Site',
@@ -36,7 +32,7 @@ export const metadata: Metadata = {
   other: { preconnect: ['https://fonts.googleapis.com', 'https://fonts.gstatic.com'] },
 };
 
-function RootLayout({ children }: LayoutProps) {
+function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
       <body>
