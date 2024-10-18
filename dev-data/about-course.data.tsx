@@ -1,25 +1,74 @@
-import { ReactNode } from 'react';
+import { ANCHORS } from '@/app/const';
 import awardIcon from '@/shared/assets/icons/award-icon.webp';
 import giftIcon from '@/shared/assets/icons/gift.webp';
 import noteIcon from '@/shared/assets/icons/note-icon.webp';
 import paperIcon from '@/shared/assets/icons/paper-icon.webp';
 import personIcon from '@/shared/assets/icons/person-icon.webp';
 import planetIcon from '@/shared/assets/icons/planet.webp';
-import { LinkCustom } from '@/shared/ui/link-custom';
-import { type CourseNamesChannels, DISCORD_LINKS } from 'data';
-
-type AboutInfo = {
-  id: number;
-  title: string;
-  info: string | ReactNode;
-  icon: string;
-};
+import { List } from '@/shared/ui/list';
+import type { AboutCourseInfo, CourseNamesChannels } from 'data';
 
 type ContentMap = {
-  [key in CourseNamesChannels]: AboutInfo[];
+  [key in CourseNamesChannels]: AboutCourseInfo[];
 };
 
-const angularNodejsAwsFundamentals: (course: string) => AboutInfo[] = () => [
+export const introLocalizedContent = {
+  en: {
+    title: 'About the course',
+    linkLabel: 'Become a student',
+    paragraph: '',
+  },
+  ru: {
+    title: 'О курсе',
+    linkLabel: 'Cтать студентом',
+    paragraph: '',
+  },
+  'pre-school-ru': {
+    title: 'JS/Frontend-разработка. Подготовительный этап',
+    linkLabel: 'Стать студентом',
+    paragraph:
+      'Подготовительный этап поможет тем, кто мало знаком или совсем не знаком с программированием и хотел бы впоследствии учиться на основном курсе «JavaScript/Front-end».',
+  },
+};
+
+const listData = {
+  javaScriptEN: [
+    [{
+      id: 1,
+      text: 'The Mentors and trainers of our school are front-end and javascript developers from different companies/countries. ',
+      title: 'How to become a mentor?',
+      link: `/#${ANCHORS.MENTORS_WANTED}`,
+    }],
+  ],
+  javaScriptRU: [
+    [{
+      id: 1,
+      text: 'Наставники и тренеры нашей школы - это фронтенд и разработчики JavaScript из разных компаний и стран. ',
+      title: 'Как стать наставником?',
+      link: `/#${ANCHORS.MENTORS_WANTED}`,
+    }],
+  ],
+  reactEn: [
+    [{
+      id: 1,
+      text: 'School ',
+      title: 'documentation',
+      link: 'https://docs.rs.school',
+    }],
+    'All materials are publicly available on the YouTube channel and GitHub',
+  ],
+  reactRu: [
+    [{
+      id: 1,
+      text: '',
+      title: 'Документация школы',
+      link: 'https://docs.rs.school',
+    }],
+    'Все материалы находятся в открытом доступе на YouTube и GitHub.Также предлагаем ознакомиться с конспектом первого этапа обучения.',
+  ],
+};
+
+const angularNodejsAwsFundamentals: (course: string) => AboutCourseInfo[] = () => [
   {
     id: 1,
     title: 'For everyone',
@@ -46,7 +95,7 @@ const angularNodejsAwsFundamentals: (course: string) => AboutInfo[] = () => [
   },
 ];
 
-const awsCloudDeveloper: AboutInfo[] = angularNodejsAwsFundamentals('aws cloud dev').map((item) => {
+const awsCloudDeveloper: AboutCourseInfo[] = angularNodejsAwsFundamentals('aws cloud dev').map((item) => {
   if (item.id === 3) {
     return {
       ...item,
@@ -56,7 +105,7 @@ const awsCloudDeveloper: AboutInfo[] = angularNodejsAwsFundamentals('aws cloud d
   return item;
 });
 
-const javaScriptEN: () => AboutInfo[] = () => {
+const javaScriptEN: () => AboutCourseInfo[] = () => {
   return [
     {
       id: 1,
@@ -68,12 +117,7 @@ const javaScriptEN: () => AboutInfo[] = () => {
       id: 2,
       title: 'Worldwide mentors and trainers',
       info: (
-        <p>
-          The Mentors and trainers of our school are front-end and javascript developers from
-          different companies/countries.
-          {' '}
-          <LinkCustom href="/#mentors-wanted">How to become a mentor?</LinkCustom>
-        </p>
+        <List data={listData.javaScriptEN} type="unmarked" size="compact" />
       ),
       icon: planetIcon,
     },
@@ -91,7 +135,7 @@ const javaScriptEN: () => AboutInfo[] = () => {
     },
   ];
 };
-const javaScriptRU: () => AboutInfo[] = () => {
+const javaScriptRU: () => AboutCourseInfo[] = () => {
   return [
     {
       id: 1,
@@ -102,7 +146,9 @@ const javaScriptRU: () => AboutInfo[] = () => {
     {
       id: 2,
       title: 'Наставники и тренеры со всего мира',
-      info: 'Наставники и тренеры нашей школы - это фронтенд и разработчики JavaScript из разных компаний и стран. Как стать наставником?',
+      info: (
+        <List data={listData.javaScriptRU} type="unmarked" size="compact" />
+      ),
       icon: planetIcon,
     },
     {
@@ -120,7 +166,7 @@ const javaScriptRU: () => AboutInfo[] = () => {
   ];
 };
 
-const javaScriptPreSchoolRU: () => AboutInfo[] = () => {
+const javaScriptPreSchoolRU: () => AboutCourseInfo[] = () => {
   return [
     {
       id: 1,
@@ -149,45 +195,21 @@ const javaScriptPreSchoolRU: () => AboutInfo[] = () => {
   ];
 };
 
-const reactEn: AboutInfo[] = javaScriptEN().map((item) => {
+const reactEn: AboutCourseInfo[] = javaScriptEN().map((item) => {
   if (item.id === 2) {
     return {
       ...item,
       title: 'Materials',
       info: (
-        <ul>
-          <li>
-            School
-            {' '}
-            <LinkCustom href="https://docs.rs.school" external>
-              documentation
-            </LinkCustom>
-          </li>
-          <li>All materials are publicly available on the YouTube channel and GitHub</li>
-        </ul>
+        <List data={listData.reactEn} size="compact" />
       ),
       icon: paperIcon,
-    };
-  }
-  if (item.id === 5) {
-    return {
-      ...item,
-      info: (
-        <p>
-          Throughout the course, we mostly use
-          {' '}
-          <LinkCustom href={DISCORD_LINKS['react']} external>
-            Discord chat
-          </LinkCustom>
-          .
-        </p>
-      ),
     };
   }
   return item;
 });
 
-const awsDevops: AboutInfo[] = [
+const awsDevops: AboutCourseInfo[] = [
   ...reactEn,
   {
     id: 5,
@@ -197,7 +219,7 @@ const awsDevops: AboutInfo[] = [
   },
 ];
 
-const reactRuAbout: AboutInfo[] = [
+const reactRu: AboutCourseInfo[] = [
   {
     id: 1,
     title: 'Для всех желающих',
@@ -208,15 +230,7 @@ const reactRuAbout: AboutInfo[] = [
     id: 2,
     title: 'Материалы',
     info: (
-      <p>
-        Throughout the course, we mostly use
-        {' '}
-        <LinkCustom href="https://docs.rs.school" external>
-          Документация школы
-        </LinkCustom>
-        . Все материалы находятся в открытом доступе на YouTube и GitHub.Также предлагаем
-        ознакомиться с конспектом первого этапа обучения.
-      </p>
+      <List data={listData.reactRu} size="compact" />
     ),
     icon: paperIcon,
   },
@@ -239,7 +253,7 @@ export const contentMapAbout: ContentMap = {
   'js / front-end en': javaScriptEN(),
   'js / front-end pre-school ru': javaScriptPreSchoolRU(),
   react: reactEn,
-  'react ru': reactRuAbout,
+  'react ru': reactRu,
   angular: angularNodejsAwsFundamentals('angular'),
   'node.js': angularNodejsAwsFundamentals('node.js'),
   'aws fundamentals': angularNodejsAwsFundamentals('aws fundamentals'),

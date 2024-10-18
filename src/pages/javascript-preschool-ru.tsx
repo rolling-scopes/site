@@ -1,4 +1,4 @@
-import { About } from '@/widgets/about';
+import { AboutCourse } from '@/widgets/about-course';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
@@ -13,13 +13,13 @@ const COURSE_NAME = 'js / front-end pre-school ru';
 
 export const JavaScriptPreSchoolRu = () => {
   const lang = 'ru';
-  const type = 'Pre-school RU';
+  const type = 'pre-school-ru';
 
   return (
     <>
       <HeroCourse courseName={COURSE_NAME} type={type} lang={lang} />
       <Breadcrumbs />
-      <About courseName={COURSE_NAME} type={type} />
+      <AboutCourse courseName={COURSE_NAME} type={type} />
       <TrainingProgram courseName={COURSE_NAME} lang={lang} />
       <Required courseName={COURSE_NAME} />
       <Certification courseName={COURSE_NAME} />
