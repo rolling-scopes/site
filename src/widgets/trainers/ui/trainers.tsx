@@ -1,38 +1,27 @@
+import classNames from 'classnames/bind';
 import { Trainer, TrainerCard } from '@/entities/trainer';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { trainersTitle } from '@/widgets/trainers/constants';
 
-import './trainers.scss';
+import styles from './trainers.module.scss';
 
-interface TrainersProps {
+const cx = classNames.bind(styles);
+
+type TrainersProps = {
   trainers: Trainer[];
   lang?: 'en' | 'ru';
-}
-
-const ONE_TRAINER = 'oneTrainer';
-const MULTIPLE_TRAINERS = 'multipleTrainers';
-
-const trainersTitle = {
-  ru: {
-    [ONE_TRAINER]: 'Преподаватель курса',
-    [MULTIPLE_TRAINERS]: 'Преподаватели курса',
-  },
-  en: {
-    [ONE_TRAINER]: 'Our trainer',
-    [MULTIPLE_TRAINERS]: 'Our mentors and trainers',
-  },
-} as const;
+};
 
 export const Trainers = ({ trainers, lang = 'en' }: TrainersProps) => {
-  const isMultipleTrainers = trainers.length > 1 ? MULTIPLE_TRAINERS : ONE_TRAINER;
-  const title = trainersTitle[lang][isMultipleTrainers];
+  const title = trainersTitle[lang];
 
   return (
-    <section className="trainers container">
-      <div className="trainers-content content">
+    <section className={cx('container')} data-testid="trainers">
+      <div className={cx('trainers-content', 'content')}>
         <WidgetTitle mods="lines">
           {title}
         </WidgetTitle>
-        <div className="trainers-list">
+        <div className={cx('trainers-list')} data-testid="trainers-list">
           {trainers.map(({ name, bio, photo, role }, index) => (
             <TrainerCard
               key={index}
