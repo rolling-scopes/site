@@ -1,2 +1,4 @@
-export type { Course, CourseStatus } from './types';
+export type { Course, CourseItemData, CourseStatus } from './types';
 export { CourseCard } from './ui/course-card/course-card';
+export { CourseItem } from './ui/course-item/course-item';
+export { loader } from './api/loader';

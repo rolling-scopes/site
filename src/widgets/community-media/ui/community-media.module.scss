@@ -1,0 +1,48 @@
+.community-media-content {
+  @include media-laptop {
+    flex-direction: row;
+    gap: 50px;
+  }
+
+  @include media-tablet-large {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.community-join-info {
+  width: 640px;
+
+  @include media-laptop {
+    width: 100%;
+  }
+}
+
+.social-media-container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-items: start;
+  justify-content: space-between;
+
+  width: 416px;
+
+  @include media-tablet {
+    justify-content: space-around;
+    width: 100%;
+  }
+}
+
+.sloth-mascot {
+  width: 390px;
+  height: 390px;
+
+  @include media-laptop {
+    width: 350px;
+    height: 350px;
+  }
+
+  @include media-mobile {
+    width: 100%;
+    height: auto;
+  }
+}
