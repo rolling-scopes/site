@@ -1,4 +1,4 @@
-export type { AngularAwsPath, CoursesPath, DataMap, JSPath } from './courses-data.types';
+export type { AboutCourseInfo, AngularAwsPath, CoursesPath, DataMap, JSPath } from './courses-data.types';
 export { COURSE_TITLES } from './courseTitles.data';
 export { type CourseNames, contentMap } from './training-program.data';
 export {

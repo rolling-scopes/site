@@ -1,20 +1,15 @@
-import { ReactNode } from 'react';
 import classNames from 'classnames/bind';
 import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
+import type { AboutCourseInfo } from 'data';
 
 import styles from './about-course-grid.module.scss';
 
 export const cx = classNames.bind(styles);
 
 type AboutCourseGridProps = {
-  items: {
-    id: number;
-    title: string;
-    info: string | ReactNode;
-    icon: string;
-  }[];
+  items: AboutCourseInfo[];
 };
 
 export const AboutCourseGrid = ({ items }: AboutCourseGridProps) => {
