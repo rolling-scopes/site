@@ -47,7 +47,7 @@ describe('AboutCourse component', () => {
   describe('render "Paragraph" with "js / front-end pre-school ru" props', () => {
     it("renders 'Paragraph' and its' content", async () => {
       (useCourseByTitle as Mock).mockReturnValue({ course: { enroll: 'http://course-url.com' } });
-      renderWithRouter(<AboutCourse courseName="js / front-end pre-school ru" type="Pre-school RU" />);
+      renderWithRouter(<AboutCourse courseName="js / front-end pre-school ru" type="pre-school-ru" />);
 
       const paragraph = await screen.findByText(/Подготовительный этап поможет тем/i);
 
