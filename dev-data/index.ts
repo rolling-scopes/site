@@ -17,6 +17,7 @@ export { communicationText } from './widget-communication.data';
 export { communityGroups } from './community-media.data';
 export { contentMapAbout } from './about.data';
 export { courseDataMap } from './required.data';
+export { courseStatus, heroCourseLocalized } from './hero-course.data';
 export { courses } from './courses.data';
 export { coursesPath } from './courses-path.data';
 export { events } from './events.data';
