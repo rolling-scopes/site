@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ANCHORS } from '@/app/const';
 import awardIcon from '@/shared/assets/icons/award-icon.webp';
 import giftIcon from '@/shared/assets/icons/gift.webp';
 import noteIcon from '@/shared/assets/icons/note-icon.webp';
@@ -6,14 +6,7 @@ import paperIcon from '@/shared/assets/icons/paper-icon.webp';
 import personIcon from '@/shared/assets/icons/person-icon.webp';
 import planetIcon from '@/shared/assets/icons/planet.webp';
 import { List } from '@/shared/ui/list';
-import { type CourseNamesChannels } from 'data';
-
-type AboutCourseInfo = {
-  id: number;
-  title: string;
-  info: string | ReactNode;
-  icon: string;
-};
+import type { AboutCourseInfo, CourseNamesChannels } from 'data';
 
 type ContentMap = {
   [key in CourseNamesChannels]: AboutCourseInfo[];
@@ -30,7 +23,7 @@ export const introLocalizedContent = {
     linkLabel: 'Cтать студентом',
     paragraph: '',
   },
-  'Pre-school RU': {
+  'pre-school-ru': {
     title: 'JS/Frontend-разработка. Подготовительный этап',
     linkLabel: 'Стать студентом',
     paragraph:
@@ -44,7 +37,7 @@ const listData = {
       id: 1,
       text: 'The Mentors and trainers of our school are front-end and javascript developers from different companies/countries. ',
       title: 'How to become a mentor?',
-      link: '/#mentors-wanted',
+      link: `/#${ANCHORS.MENTORS_WANTED}`,
     }],
   ],
   javaScriptRU: [
@@ -52,7 +45,7 @@ const listData = {
       id: 1,
       text: 'Наставники и тренеры нашей школы - это фронтенд и разработчики JavaScript из разных компаний и стран. ',
       title: 'Как стать наставником?',
-      link: '/#mentors-wanted',
+      link: `/#${ANCHORS.MENTORS_WANTED}`,
     }],
   ],
   reactEn: [
@@ -124,7 +117,7 @@ const javaScriptEN: () => AboutCourseInfo[] = () => {
       id: 2,
       title: 'Worldwide mentors and trainers',
       info: (
-        <List data={listData.javaScriptEN} marked={false} />
+        <List data={listData.javaScriptEN} type="unmarked" size="compact" />
       ),
       icon: planetIcon,
     },
@@ -154,7 +147,7 @@ const javaScriptRU: () => AboutCourseInfo[] = () => {
       id: 2,
       title: 'Наставники и тренеры со всего мира',
       info: (
-        <List data={listData.javaScriptRU} marked={false} />
+        <List data={listData.javaScriptRU} type="unmarked" size="compact" />
       ),
       icon: planetIcon,
     },
@@ -208,7 +201,7 @@ const reactEn: AboutCourseInfo[] = javaScriptEN().map((item) => {
       ...item,
       title: 'Materials',
       info: (
-        <List data={listData.reactEn} />
+        <List data={listData.reactEn} size="compact" />
       ),
       icon: paperIcon,
     };
@@ -237,7 +230,7 @@ const reactRu: AboutCourseInfo[] = [
     id: 2,
     title: 'Материалы',
     info: (
-      <List data={listData.reactRu} />
+      <List data={listData.reactRu} size="compact" />
     ),
     icon: paperIcon,
   },
