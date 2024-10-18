@@ -6,6 +6,10 @@
   align-items: center;
   justify-content: center;
 
+  .numbers-title {
+    white-space: nowrap;
+  }
+
   .numbers-map {
     position: absolute;
     z-index: -1;

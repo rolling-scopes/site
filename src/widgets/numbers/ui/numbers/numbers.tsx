@@ -15,7 +15,9 @@ export const Numbers = () => {
     <section className={cx('container')}>
       <div className={cx('numbers-content', 'content')}>
         <article className={cx('text-container')}>
-          <WidgetTitle mods="asterisk">The Rolling Scopes in numbers</WidgetTitle>
+          <WidgetTitle className={cx('numbers-title')} mods="asterisk">
+            The Rolling Scopes in numbers
+          </WidgetTitle>
           <Paragraph fontSize="large">
             Everyone can discover our community, regardless of age, professional employment, or
             place of residence.
