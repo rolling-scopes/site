@@ -35,7 +35,7 @@ export const Contribute = () => (
       </div>
       <div className={cx('contribute-options')}>
         {contributeOptions.map(({ id, title, description, linkLabel, href }) => (
-          <article key={id} className={cx('option-item')} data-testid="option-item">
+          <article key={id} className={cx('option-item')} data-testid={`option-item-${id}`}>
             <Subtitle>{title}</Subtitle>
             <Paragraph fontSize="large">{description}</Paragraph>
             <LinkCustom href={href} variant="primary" external>

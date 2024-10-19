@@ -11,6 +11,7 @@ const descriptions = [
 ];
 const optionsMock = [
   {
+    id: 1,
     title: 'Mentorship',
     description:
       'Become a mentor and guide the next generation of developers. Sign up as a mentor here.',
@@ -18,6 +19,7 @@ const optionsMock = [
     href: 'https://app.rs.school/registry/mentor',
   },
   {
+    id: 2,
     title: 'Developer / Coordinator / Trainer',
     description:
       'Contribute your skills as a developer, coordinator, or trainer. Fill out this form to get started.',
@@ -29,7 +31,6 @@ const optionsMock = [
 let widget: HTMLElement;
 let title: HTMLElement;
 let paragraph: HTMLElement[];
-let options: HTMLElement[];
 let image: HTMLElement;
 
 describe('Contribute component', () => {
@@ -38,7 +39,6 @@ describe('Contribute component', () => {
     widget = screen.getByTestId('contribute');
     title = screen.getByTestId('widget-title');
     paragraph = screen.getAllByTestId('paragraph');
-    options = screen.getAllByTestId('option-item');
     image = screen.getByTestId('contribute-image');
   });
 
@@ -60,18 +60,13 @@ describe('Contribute component', () => {
   });
 
   describe('Option content checks', () => {
-    it.each(optionsMock.map((option, index) => [option, index]))(
-      'renders the correct options content for option %#',
-      (option, index) => {
-        const optionElement = options[index];
-        const subtitle = within(optionElement).getByTestId('subtitle');
-        const description = within(optionElement).getByTestId('paragraph');
+    test.each(optionsMock)('renders the correct options content for %s', (option) => {
+      const optionElement = screen.getByTestId(`option-item-${option.id}`);
+      const subtitle = within(optionElement).getByTestId('subtitle');
+      const description = within(optionElement).getByTestId('paragraph');
 
-        expect(subtitle).toBeInTheDocument();
-        expect(subtitle).toHaveTextContent(option.title);
-        expect(description).toBeInTheDocument();
-        expect(description).toHaveTextContent(option.description);
-      },
-    );
+      expect(subtitle).toHaveTextContent(option.title);
+      expect(description).toHaveTextContent(option.description);
+    });
   });
 });
