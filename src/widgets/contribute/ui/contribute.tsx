@@ -13,7 +13,7 @@ const cx = classNames.bind(styles);
 
 export const Contribute = () => (
   <section id="contribute" className={cx('container')} data-testid="contribute">
-    <div className={cx('contribute', ' content')}>
+    <div className={cx('contribute', 'content')}>
       <div className={cx('general')}>
         <article className={cx('info')}>
           <WidgetTitle mods="asterisk">How to Contribute</WidgetTitle>
