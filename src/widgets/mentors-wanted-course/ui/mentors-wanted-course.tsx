@@ -6,11 +6,11 @@ import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
-import styles from './mentors-wanted.module.scss';
+import styles from './mentors-wanted-course.module.scss';
 
 const cx = classNamesBind.bind(styles);
 
-export const MentorsWanted = () => {
+export const MentorsWantedCourse = () => {
   return (
     <section className={cx('mentors-wanted', 'container')} data-testid="mentors-wanted">
       <article className={cx('mentors-wanted-content', 'content')}>

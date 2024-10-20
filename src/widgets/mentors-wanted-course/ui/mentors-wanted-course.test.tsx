@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import { MentorsWanted } from './mentors-wanted';
+import { MentorsWantedCourse } from './mentors-wanted-course';
 import { LINKS } from '@/app/const';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import mentorImg from '@/shared/assets/mentors-wanted-poster.webp';
@@ -15,7 +15,7 @@ const mockedData = {
 
 describe('MentorsWanted component', () => {
   beforeEach(() => {
-    renderWithRouter(<MentorsWanted />);
+    renderWithRouter(<MentorsWantedCourse />);
   });
 
   it('renders without crashing', () => {

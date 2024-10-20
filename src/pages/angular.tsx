@@ -4,7 +4,7 @@ import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
 import { HeroCourse } from '@/widgets/hero-course';
-import { MentorsWanted } from '@/widgets/mentors-wanted';
+import { MentorsWantedCourse } from '@/widgets/mentors-wanted-course';
 import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
@@ -25,7 +25,7 @@ export const Angular = () => {
       <Communication courseName={COURSE_NAME} />
       <StudyPath path={COURSE_NAME} />
       <Required courseName={COURSE_NAME} marked1 />
-      <MentorsWanted />
+      <MentorsWantedCourse />
       <Trainers trainers={angular} />
     </>
   );
