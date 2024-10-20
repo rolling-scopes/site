@@ -1,9 +1,9 @@
 import { FC } from 'react';
-import { About } from '@/widgets/about';
+import { AboutCourse } from '@/widgets/about-course';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
-import { CourseMain } from '@/widgets/course-main';
+import { HeroCourse } from '@/widgets/hero-course';
 import { Required } from '@/widgets/required';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
@@ -14,10 +14,10 @@ const COURSE_NAME = 'node.js';
 export const Nodejs: FC = () => {
   return (
     <>
-      <CourseMain courseName="Node.js" />
+      <HeroCourse courseName="Node.js" />
       <Breadcrumbs />
       <TrainingProgram courseName={COURSE_NAME} />
-      <About courseName={COURSE_NAME} />
+      <AboutCourse courseName={COURSE_NAME} />
       <Certification courseName={COURSE_NAME} />
       <Communication courseName={COURSE_NAME} />
       <Required courseName="nodejs" />

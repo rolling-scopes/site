@@ -1,5 +1,5 @@
 import { courses } from 'data';
 
-export const courseLoader = async () => {
+export const loader = async () => {
   return courses;
 };

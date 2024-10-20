@@ -1,4 +1,4 @@
-export type { AngularAwsPath, CoursesPath, DataMap, JSPath } from './courses-data.types';
+export type { AboutCourseInfo, AngularAwsPath, CoursesPath, DataMap, JSPath } from './courses-data.types';
 export { COURSE_TITLES } from './courseTitles.data';
 export { type CourseNames, contentMap } from './training-program.data';
 export {
@@ -15,8 +15,9 @@ export { awsDevops } from './aws-devops.data';
 export { awsFundamentals } from './awsFundamentals.data';
 export { communicationText } from './widget-communication.data';
 export { communityGroups } from './community-media.data';
-export { contentMapAbout } from './about.data';
+export { contentMapAbout, introLocalizedContent } from './about-course.data';
 export { courseDataMap } from './required.data';
+export { courseStatus, heroCourseLocalized } from './hero-course.data';
 export { courses } from './courses.data';
 export { coursesPath } from './courses-path.data';
 export { events } from './events.data';

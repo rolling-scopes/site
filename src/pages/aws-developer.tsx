@@ -1,8 +1,8 @@
-import { About } from '@/widgets/about';
+import { AboutCourse } from '@/widgets/about-course';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
-import { CourseMain } from '@/widgets/course-main';
+import { HeroCourse } from '@/widgets/hero-course';
 import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
@@ -14,10 +14,10 @@ const COURSE_NAME = 'aws cloud dev';
 export const AwsDeveloper = () => {
   return (
     <>
-      <CourseMain courseName={COURSE_NAME} />
+      <HeroCourse courseName={COURSE_NAME} />
       <Breadcrumbs />
       <TrainingProgram courseName={COURSE_NAME} />
-      <About courseName={COURSE_NAME} />
+      <AboutCourse courseName={COURSE_NAME} />
       <Certification courseName={COURSE_NAME} />
       <Communication courseName={COURSE_NAME} />
       <Required courseName="awsDev" marked1 />
