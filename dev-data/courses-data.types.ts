@@ -1,5 +1,5 @@
+import { StaticImageData } from 'next/image';
 import type { Course } from '@/entities/course';
-import { ImageType } from '@/shared/ui/image/image';
 import { type ListData } from '@/shared/ui/list';
 
 export type DataMap = {
@@ -15,7 +15,7 @@ export interface JSPath {
   id: number;
   title: string;
   description: string;
-  imageSrc: ImageType;
+  imageSrc: StaticImageData;
   topics?: string[];
   list?: ListData;
   marked?: boolean;
@@ -27,7 +27,7 @@ export interface CoursesPath {
   id: number;
   title: string;
   description: string;
-  logoIcon: ImageType;
+  logoIcon: StaticImageData;
   links: {
     linkTitle: string;
     href: string;

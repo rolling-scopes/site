@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { StaticImageData } from 'next/image';
 import { CourseNamesKeys } from './courseTitles.data';
 import awardIcon from '@/shared/assets/icons/award-icon.webp';
 import giftIcon from '@/shared/assets/icons/gift.webp';
@@ -6,7 +7,6 @@ import noteIcon from '@/shared/assets/icons/note-icon.webp';
 import paperIcon from '@/shared/assets/icons/paper-icon.webp';
 import personIcon from '@/shared/assets/icons/person-icon.webp';
 import planetIcon from '@/shared/assets/icons/planet.webp';
-import { ImageType } from '@/shared/ui/image/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { COURSE_TITLES, DISCORD_LINKS } from 'data';
 
@@ -14,7 +14,7 @@ type AboutInfo = {
   id: number;
   title: string;
   info: string | ReactNode;
-  icon: ImageType;
+  icon: StaticImageData;
 };
 
 type ContentMap = {
@@ -72,8 +72,7 @@ const javaScriptEN: () => AboutInfo[] = () => {
       info: (
         <p>
           The Mentors and trainers of our school are front-end and javascript developers from
-          different companies/countries.
-          {' '}
+          different companies/countries.{' '}
           <LinkCustom href="/#mentors-wanted">How to become a mentor?</LinkCustom>
         </p>
       ),
@@ -159,8 +158,7 @@ const reactEn: AboutInfo[] = javaScriptEN().map((item) => {
       info: (
         <ul>
           <li>
-            School
-            {' '}
+            School{' '}
             <LinkCustom href="https://docs.rs.school" external>
               documentation
             </LinkCustom>
@@ -176,8 +174,7 @@ const reactEn: AboutInfo[] = javaScriptEN().map((item) => {
       ...item,
       info: (
         <p>
-          Throughout the course, we mostly use
-          {' '}
+          Throughout the course, we mostly use{' '}
           <LinkCustom href={DISCORD_LINKS[COURSE_TITLES.REACT]} external>
             Discord chat
           </LinkCustom>

@@ -1,8 +1,8 @@
+import { StaticImageData } from 'next/image';
 import type { Trainer } from '@/entities/trainer';
 import nodejsImg1 from '@/shared/assets/mentors/m-shylau.webp';
-import { ImageType } from '@/shared/ui/image/image.tsx';
 
-export const MOCKED_IMAGE_PATH: ImageType = {
+export const MOCKED_IMAGE_PATH: StaticImageData = {
   src: 'mocked-image-path.webp',
   height: 250,
   width: 250,

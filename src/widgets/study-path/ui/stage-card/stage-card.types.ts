@@ -1,18 +1,18 @@
-import { ImageType } from '@/shared/ui/image/image';
+import { StaticImageData } from 'next/image';
 import { type ListData } from '@/shared/ui/list';
 
 export interface Stage {
   id: number | string;
   title: string;
   description?: string;
-  logoIcon?: ImageType;
+  logoIcon?: StaticImageData;
   links?: {
     href: string;
     linkTitle: string;
     isActive?: boolean;
   }[];
   topics?: string[];
-  imageSrc?: ImageType;
+  imageSrc?: StaticImageData;
   list?: ListData;
 }
 

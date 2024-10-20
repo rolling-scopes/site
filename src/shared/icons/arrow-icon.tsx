@@ -1,7 +1,7 @@
 import arrow from '@/shared/assets/svg/arrow.svg';
 import { Image } from '@/shared/ui/image';
 
-export const ArrowIcon = ({ size = '24px' }: { size?: string }) => {
+export const ArrowIcon = ({ size = 24 }: { size?: number }) => {
   return (
     <Image
       img={arrow}

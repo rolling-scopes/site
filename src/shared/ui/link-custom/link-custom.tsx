@@ -54,7 +54,7 @@ export const LinkCustom = ({
       case variant === 'secondary':
         return <ArrowIcon />;
       case variant === 'rounded':
-        return <ArrowIcon size="16px" />;
+        return <ArrowIcon size={16} />;
       default:
         return <></>;
     }

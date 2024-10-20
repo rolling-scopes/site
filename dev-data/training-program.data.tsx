@@ -1,4 +1,5 @@
 // TODO separate data and markup
+import { StaticImageData } from 'next/image';
 import {
   AWS_FUNDAMENTALS_BADGE,
   AwsFundamentalsBadge,
@@ -12,7 +13,6 @@ import awsFundamentalsImg from '@/shared/assets/rs-slope-aws-fundamentals.webp';
 import jsImg from '@/shared/assets/rs-slope-js.webp';
 import nodejsImg from '@/shared/assets/rs-slope-nodejs.webp';
 import reactEnImg from '@/shared/assets/rs-slope-react-en.webp';
-import { ImageType } from '@/shared/ui/image/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -21,7 +21,7 @@ import { Subtitle } from '@/shared/ui/subtitle';
 interface CourseInfo {
   title: string;
   content: JSX.Element[];
-  image: ImageType;
+  image: StaticImageData;
 }
 
 type ContentMap = {

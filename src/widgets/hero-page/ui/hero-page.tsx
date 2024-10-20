@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
+import { StaticImageData } from 'next/image';
 import { PageName } from '../types';
 import { Image } from '@/shared/ui/image';
-import { ImageType } from '@/shared/ui/image/image';
 import { MainTitle } from '@/shared/ui/main-title';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -15,7 +15,7 @@ export type HeroPageProps = {
   mainTitle: string;
   widgetTitle: string;
   subTitle: string[] | [];
-  heroImageSrc?: ImageType;
+  heroImageSrc?: StaticImageData;
   imageAltText: string;
 };
 

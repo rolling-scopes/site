@@ -1,10 +1,10 @@
+import { StaticImageData } from 'next/image';
 import { Image } from '@/shared/ui/image';
-import { ImageType } from '@/shared/ui/image/image';
 
 import './logo-icon.scss';
 
 interface LogoIconProps {
-  icon: ImageType;
+  icon: StaticImageData;
   title: string;
 }
 

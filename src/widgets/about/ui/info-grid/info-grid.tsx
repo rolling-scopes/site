@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
+import { StaticImageData } from 'next/image';
 import { Image } from '@/shared/ui/image';
-import { ImageType } from '@/shared/ui/image/image';
 
 import './info-grid.scss';
 
@@ -9,7 +9,7 @@ interface InfoGridProps {
     id: number;
     title: string;
     info: string | ReactNode;
-    icon: ImageType;
+    icon: StaticImageData;
   }[];
   hasTitle?: boolean;
 }

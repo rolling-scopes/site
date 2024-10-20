@@ -1,12 +1,12 @@
-import { ImageType } from '@/shared/ui/image/image';
+import { StaticImageData } from 'next/image';
 
 export type Course = {
   id: string;
   title: string;
   altTitle?: string;
-  iconSrc: ImageType;
-  secondaryIcon: ImageType;
-  iconSmall: ImageType;
+  iconSrc: StaticImageData;
+  secondaryIcon: StaticImageData;
+  iconSmall: StaticImageData;
   startDate: string;
   language: ('en' | 'ru')[];
   mode: 'online' | 'offline';

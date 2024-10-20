@@ -1,47 +1,28 @@
 declare module '*.svg' {
-  const content: {
-    src: string;
-    height: number;
-    width: number;
-    blurWidth?: number;
-    blurHeight?: number;
-  };
+  import { StaticImageData } from 'next/image';
+
+  const content: StaticImageData;
 
   export default content;
 }
-
 declare module '*.png' {
-  const content: {
-    src: string;
-    height: number;
-    width: number;
-    blurWidth?: number;
-    blurHeight?: number;
-  };
+  import { StaticImageData } from 'next/image';
+
+  const content: StaticImageData;
 
   export default content;
 }
-
 declare module '*.jpg' {
-  const content: {
-    src: string;
-    height: number;
-    width: number;
-    blurWidth?: number;
-    blurHeight?: number;
-  };
+  import { StaticImageData } from 'next/image';
+
+  const content: StaticImageData;
 
   export default content;
 }
-
 declare module '*.webp' {
-  const content: {
-    src: string;
-    height: number;
-    width: number;
-    blurWidth?: number;
-    blurHeight?: number;
-  };
+  import { StaticImageData } from 'next/image';
+
+  const content: StaticImageData;
 
   export default content;
 }

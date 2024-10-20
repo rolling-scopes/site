@@ -5,8 +5,8 @@ export const TextLinkIcon = () => {
   return (
     <Image
       img={textLinkIcon}
-      width="20px"
-      height="20px"
+      width={20}
+      height={20}
       alt="external link icon"
       data-testid="text-link-icon"
     />

@@ -1,10 +1,10 @@
+import { StaticImageData } from 'next/image';
 import { Image as LazyImage } from '@/shared/ui/image';
-import { ImageType } from '@/shared/ui/image/image';
 
 import './image.scss';
 
 interface ImageProps {
-  imageSrc: ImageType;
+  imageSrc: StaticImageData;
   title: string;
 }
 
