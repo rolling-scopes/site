@@ -8,6 +8,10 @@
 
   .numbers-title {
     white-space: nowrap;
+
+    @include media-laptop-medium {
+      white-space: normal;
+    }
   }
 
   .numbers-map {
