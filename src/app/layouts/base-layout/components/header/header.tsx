@@ -40,8 +40,9 @@ export const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const { key, hash, pathname } = useLocation();
 
-  const [colorName, setColorName] = useState('white');
-  const [color, setColor] = useState(colorName);
+  const headerAccentColor = pathname.includes(ROUTES.MENTORSHIP) ? 'blue' : 'gray';
+
+  const [color, setColor] = useState(headerAccentColor);
 
   const { width } = useWindowSize();
   const isMobile = width <= 810;
@@ -51,15 +52,13 @@ export const Header = () => {
   };
 
   useEffect(() => {
-    setColor(colorName);
-
     const listenScrollEvent = () => {
       const scrollY = window.scrollY;
 
       // setting the class depending on the scrolled height
       // class changes the background color of the header
       if (scrollY < 500) {
-        setColor(colorName);
+        setColor(headerAccentColor);
       } else {
         setColor('white');
       }
@@ -70,21 +69,14 @@ export const Header = () => {
     return () => {
       window.removeEventListener('scroll', listenScrollEvent);
     };
-  }, [colorName]);
+  }, [headerAccentColor]);
 
   useEffect(() => {
     if (width > 810 || location.pathname) {
       setMenuOpen(false);
+      setColor(headerAccentColor);
     }
-  }, [width, key, hash, pathname]);
-
-  useEffect(() => {
-    if (pathname.includes(ROUTES.MENTORSHIP)) {
-      setColorName('blue');
-    } else {
-      setColorName('gray');
-    }
-  }, [pathname]);
+  }, [width, key, hash, pathname, headerAccentColor]);
 
   return (
     <nav className={cx('navbar', color)} data-testid="navigation">
