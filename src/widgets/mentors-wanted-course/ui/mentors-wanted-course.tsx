@@ -1,5 +1,4 @@
 import classNamesBind from 'classnames/bind';
-import { LINKS } from '@/app/const';
 import mentorImg from '@/shared/assets/mentors-wanted-poster.webp';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -10,7 +9,11 @@ import styles from './mentors-wanted-course.module.scss';
 
 const cx = classNamesBind.bind(styles);
 
-export const MentorsWantedCourse = () => {
+type MentorsWantedCourseProps = {
+  link: string;
+};
+
+export const MentorsWantedCourse = ({ link }: MentorsWantedCourseProps) => {
   return (
     <section className={cx('mentors-wanted', 'container')} data-testid="mentors-wanted">
       <article className={cx('mentors-wanted-content', 'content')}>
@@ -21,11 +24,11 @@ export const MentorsWantedCourse = () => {
           <Paragraph>
             If&nbsp;you are interested in mentoring our students, please go through the
             {' '}
-            <LinkCustom href={LINKS.ANGULAR_MENTORING} external data-testid="link-custom">
+            <LinkCustom href={link} external data-testid="link-custom">
               Mentoring Documentation
             </LinkCustom>
             {' '}
-            for&nbsp;the Angular Course.
+            for&nbsp;the course.
           </Paragraph>
         </div>
         <Image

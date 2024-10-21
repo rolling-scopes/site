@@ -1,3 +1,4 @@
+import { LINKS } from '@/app/const';
 import { AboutCourse } from '@/widgets/about-course';
 import { AngularTopics } from '@/widgets/angular-topics';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
@@ -25,7 +26,7 @@ export const Angular = () => {
       <Communication courseName={COURSE_NAME} />
       <StudyPath path={COURSE_NAME} />
       <Required courseName={COURSE_NAME} marked1 />
-      <MentorsWantedCourse />
+      <MentorsWantedCourse link={LINKS.ANGULAR_MENTORING} />
       <Trainers trainers={angular} />
     </>
   );

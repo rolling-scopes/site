@@ -13,15 +13,15 @@ const mockedData = {
   alt: 'Sloth - mascot dresses as a detective',
 };
 
-describe('MentorsWanted component', () => {
+describe('MentorsWantedCourse component', () => {
   beforeEach(() => {
-    renderWithRouter(<MentorsWantedCourse />);
+    renderWithRouter(<MentorsWantedCourse link={mockedData.link} />);
   });
 
   it('renders without crashing', () => {
-    const mentorsWanted = screen.getByTestId('mentors-wanted');
+    const mentorsWantedCourse = screen.getByTestId('mentors-wanted');
 
-    expect(mentorsWanted).toBeVisible();
+    expect(mentorsWantedCourse).toBeVisible();
   });
 
   it('renders the component content correctly', () => {
