@@ -15,7 +15,7 @@ type MentorsDocsProps = {
   linkCourseDocs: string;
   linkTelegram: string;
   linkDiscord: string;
-  courseTitle: '' | CourseTitle;
+  courseTitle?: CourseTitle;
   lang?: 'en' | 'ru';
 };
 

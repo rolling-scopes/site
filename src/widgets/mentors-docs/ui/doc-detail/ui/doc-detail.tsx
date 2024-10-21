@@ -2,7 +2,7 @@ import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 
 type DocDetailProps = {
-  courseTitle: string;
+  courseTitle?: string;
   textInfo: string;
   textLink: string;
   textAfterLink: string;
@@ -23,8 +23,7 @@ export const DocDetail = (props: DocDetailProps) => {
       </LinkCustom>
       {' '}
       {props.textAfterLink}
-      {' '}
-      {props.courseTitle}
+      {props.courseTitle && (' ' + props.courseTitle)}
       {' '}
       {props.textEnd}
     </Paragraph>
