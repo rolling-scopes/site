@@ -8,6 +8,7 @@ import { WidgetTitle } from '@/shared/ui/widget-title';
 import {
   CourseNamesChannels,
   DISCORD_LINKS,
+  JS_EN_TELEGRAM_CHAT_LINK,
   RS_DOCS_COMMUNICATION_LINK,
   RS_DOCS_TELEGRAM_CHATS_LINK,
   communicationText,
@@ -16,6 +17,8 @@ import {
 import styles from './communication.module.scss';
 
 const cx = classNames.bind(styles);
+
+const JS_EN_COURSE = 'js / front-end en';
 
 type CommunicationProps = {
   courseName: CourseNamesChannels;
@@ -26,9 +29,13 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
   const {
     title,
     subTitle,
+    subTitleJs,
     firstParagraphFirstHalf,
+    firstParagraphFirstHalfJs,
     discordLink,
+    discordLinkJs,
     firstParagraphSecondHalf,
+    firstParagraphSecondHalfJs,
     secondParagraphFirstHalf,
     telegramLink,
     secondParagraphSecondHalf,
@@ -47,26 +54,48 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
             <Image src={discordLogo} alt="discord logo" />
           </figure>
           <div>
-            <Subtitle>{subTitle}</Subtitle>
-            <Paragraph className={cx('communication-paragraph')}>
-              {firstParagraphFirstHalf}
-              <LinkCustom href={DISCORD_LINKS[courseName]} external>
-                {discordLink}
-              </LinkCustom>
-              {firstParagraphSecondHalf}
-            </Paragraph>
+            {courseName === JS_EN_COURSE
+              ? (
+                  <>
+                    <Subtitle className={cx('communication-subtitle')}>{subTitleJs}</Subtitle>
+                    <Paragraph className={cx('communication-paragraph')}>
+                      <LinkCustom href={DISCORD_LINKS[courseName]} external>
+                        {discordLinkJs}
+                      </LinkCustom>
+                      {firstParagraphFirstHalfJs}
+                    </Paragraph>
+                    <Paragraph>
+                      <LinkCustom href={JS_EN_TELEGRAM_CHAT_LINK} external>
+                        {telegramLink}
+                      </LinkCustom>
+                      {firstParagraphSecondHalfJs}
+                    </Paragraph>
+                  </>
+                )
+              : (
+                  <>
+                    <Subtitle className={cx('communication-subtitle')}>{subTitle}</Subtitle>
+                    <Paragraph>
+                      {firstParagraphFirstHalf}
+                      <LinkCustom href={DISCORD_LINKS[courseName]} external>
+                        {discordLink}
+                      </LinkCustom>
+                      {firstParagraphSecondHalf}
+                    </Paragraph>
+                  </>
+                )}
             <Paragraph>
               &#9888;&#65039;
               {discordNote}
             </Paragraph>
-            <Paragraph className={cx('communication-paragraph')}>
+            <Paragraph>
               {secondParagraphFirstHalf}
               <LinkCustom href={RS_DOCS_TELEGRAM_CHATS_LINK} external>
                 {telegramLink}
               </LinkCustom>
               {secondParagraphSecondHalf}
             </Paragraph>
-            <Paragraph className={cx('communication-paragraph')}>
+            <Paragraph>
               {thirdParagraphFirstHalf}
               <LinkCustom href={RS_DOCS_COMMUNICATION_LINK} external>
                 {rsDocsLink}
