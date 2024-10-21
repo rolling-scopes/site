@@ -1,8 +1,9 @@
 import classNames from 'classnames/bind';
-import { Additional } from './additional';
 import { DocDetail } from './doc-detail';
+import { DocLinks } from './doc-links';
 import mentorImg from '@/shared/assets/mentor-with-his-students.webp';
 import { Image } from '@/shared/ui/image';
+import { SocialMediaProps } from '@/shared/ui/social-media-item';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { CourseTitle, mentorDocsData } from 'data';
 
@@ -11,17 +12,16 @@ import styles from './mentors-docs.module.scss';
 const cx = classNames.bind(styles);
 
 type MentorsDocsProps = {
-  linkMentorDocs: string;
-  linkCourseDocs: string;
-  linkTelegram: string;
-  linkDiscord: string;
+  mentorDocsLink: string;
+  courseDocsLink: string;
+  socialLinks: SocialMediaProps[];
   courseTitle?: CourseTitle;
   lang?: 'en' | 'ru';
 };
 
-export const MentorsDocs = ({ linkMentorDocs, linkCourseDocs, linkTelegram, linkDiscord, courseTitle, lang = 'en' }: MentorsDocsProps) => {
+export const MentorsDocs = ({ mentorDocsLink, courseDocsLink, socialLinks, courseTitle, lang = 'en' }: MentorsDocsProps) => {
   return (
-    <section className={cx('container', 'mentors-docs')}>
+    <section className={cx('container')}>
       <article className={cx('content', 'docs-wrapper')}>
         <div className={cx('docs')}>
           <WidgetTitle className={cx('title')} mods="asterisk">
@@ -33,7 +33,7 @@ export const MentorsDocs = ({ linkMentorDocs, linkCourseDocs, linkTelegram, link
             textLink={mentorDocsData[lang].mentor.textLink}
             textAfterLink={mentorDocsData[lang].mentor.textAfterLink}
             textEnd={mentorDocsData[lang].mentor.textEnd}
-            linkDocs={linkMentorDocs}
+            linkDocs={mentorDocsLink}
           />
           <DocDetail
             courseTitle={courseTitle}
@@ -41,13 +41,10 @@ export const MentorsDocs = ({ linkMentorDocs, linkCourseDocs, linkTelegram, link
             textLink={mentorDocsData[lang].course.textLink}
             textAfterLink={mentorDocsData[lang].course.textAfterLink}
             textEnd={mentorDocsData[lang].course.textEnd}
-            linkDocs={linkCourseDocs}
+            linkDocs={courseDocsLink}
           />
-          <Additional
-            text={mentorDocsData[lang].additional}
-            linkTelegram={linkTelegram}
-            linkDiscord={linkDiscord}
-          />
+          {socialLinks.length > 0
+          && <DocLinks text={mentorDocsData[lang].additional} links={socialLinks} />}
         </div>
         <div className={cx('picture-wrapper')}>
           <Image src={mentorImg} alt={mentorDocsData[lang].pictureAlt} className={cx('picture')} />

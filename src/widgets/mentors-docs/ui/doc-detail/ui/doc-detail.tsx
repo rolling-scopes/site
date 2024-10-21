@@ -1,5 +1,10 @@
+import classNames from 'classnames/bind';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
+
+import styles from './doc-detail.module.scss';
+
+const cx = classNames.bind(styles);
 
 type DocDetailProps = {
   courseTitle?: string;
@@ -12,7 +17,7 @@ type DocDetailProps = {
 
 export const DocDetail = (props: DocDetailProps) => {
   return (
-    <Paragraph>
+    <Paragraph className={cx('doc-detail-wrapper')}>
       {props.textInfo}
       {' '}
       <LinkCustom

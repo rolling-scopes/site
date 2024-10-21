@@ -6,6 +6,7 @@ import jsSmall from '@/shared/assets/icons/footer/javascript.webp';
 import reactSmall from '@/shared/assets/icons/footer/react.webp';
 import javascript from '@/shared/assets/icons/javascript.webp';
 import react from '@/shared/assets/icons/react.svg';
+import { DiscordIcon, TelegramIcon } from '@/shared/icons';
 import { MentorshipCourse } from 'data';
 
 export const mentorshipCoursesDefault: MentorshipCourse = {
@@ -17,8 +18,18 @@ export const mentorshipCoursesDefault: MentorshipCourse = {
     icon: [angular, react, javascript],
     mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
     courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/README.md',
-    telegram: '',
-    discord: '',
+    social: [
+      {
+        title: 'Telegram',
+        href: 'https://t.me/+VgIgfltnf9T1svzN',
+        icon: TelegramIcon(),
+      },
+      {
+        title: 'Discord',
+        href: 'https://discord.gg/fBvpUURPVm',
+        icon: DiscordIcon(),
+      },
+    ],
   },
   details: [
     'The duration of mentoring is 8 - 10 weeks',
@@ -94,8 +105,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
       icon: [javascript],
       mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
       courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/README.md',
-      telegram: '',
-      discord: '',
+      social: [],
     },
     details: [
       'The duration of mentoring is 18 - 19 weeks',
@@ -169,8 +179,18 @@ export const mentorshipCourses: MentorshipCourse[] = [
       icon: [javascript],
       mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/rs-school-mentor.md',
       courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/README.md',
-      telegram: '',
-      discord: '',
+      social: [
+        {
+          title: 'Telegram',
+          href: 'https://t.me/+VgIgfltnf9T1svzN',
+          icon: TelegramIcon(),
+        },
+        {
+          title: 'Discord',
+          href: 'https://discord.gg/fBvpUURPVm',
+          icon: DiscordIcon(),
+        },
+      ],
     },
     details: [
       'Длительность менторства 18 - 19 недель',
@@ -237,8 +257,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
       icon: [react],
       mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
       courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/react/README.md',
-      telegram: '',
-      discord: '',
+      social: [],
     },
     details: [
       'The duration of mentoring is 12 weeks',
@@ -306,8 +325,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
       icon: [angular],
       mentorDocs: 'https://github.com/rolling-scopes-school/tasks/tree/master/angular/mentoring',
       courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/angular/README.md',
-      telegram: '',
-      discord: '',
+      social: [],
     },
     details: [
       'The duration of mentoring is 8 - 10 weeks',

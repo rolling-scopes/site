@@ -28,12 +28,11 @@ export const Mentorship = () => {
       <MentorsActivity activities={pageProps.activities} lang={pageProps.lang} />
       <MentorsRegister lang={pageProps.lang} />
       <MentorsDocs
-        linkMentorDocs={pageProps.links.mentorDocs}
-        linkCourseDocs={pageProps.links.courseDocs}
-        linkTelegram={pageProps.links.telegram}
-        linkDiscord={pageProps.links.discord}
+        mentorDocsLink={pageProps.links.mentorDocs}
+        courseDocsLink={pageProps.links.courseDocs}
         courseTitle={pageProps.title}
         lang={pageProps.lang}
+        socialLinks={pageProps.links.social}
       />
     </>
   );
