@@ -14,7 +14,6 @@ export { NodeJsIcon } from './nodejs-icon';
 export { OpenSourcePhilosophyIcon } from './open-source-philosophy-icon';
 export { OpenToEveryoneIcon } from './open-to-everyone-icon';
 export { ReactIcon } from './react-icon';
-export { RsBanner } from './rs-banner';
 export { TeachItForwardIcon } from './teach-It-forward-icon';
 export { TelegramIcon } from './telegram';
 export { TextLinkIcon } from './text-link-icon';

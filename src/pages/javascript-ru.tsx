@@ -1,9 +1,9 @@
-import { About } from '@/widgets/about';
+import { AboutCourse } from '@/widgets/about-course';
 import { AboutVideo } from '@/widgets/about-video';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
-import { CourseMain } from '@/widgets/course-main';
+import { HeroCourse } from '@/widgets/hero-course';
 import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
@@ -17,10 +17,10 @@ export const JavaScriptRu = () => {
 
   return (
     <>
-      <CourseMain courseName={COURSE_NAME} lang={lang} />
+      <HeroCourse courseName={COURSE_NAME} lang={lang} />
       <Breadcrumbs />
       <TrainingProgram courseName={COURSE_NAME} lang={lang} />
-      <About courseName={COURSE_NAME} type={lang} />
+      <AboutCourse courseName={COURSE_NAME} type={lang} />
       <Certification courseName={COURSE_NAME} />
       <Communication courseName={COURSE_NAME} lang={lang} />
       <AboutVideo lang={lang} />

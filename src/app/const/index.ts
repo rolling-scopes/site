@@ -1,8 +1,11 @@
 export const ANCHORS = {
   ABOUT_COMMUNITY: 'about-community',
   ABOUT_SCHOOL: 'about-school',
+  MENTORS_WANTED: 'mentors-wanted',
 };
+
 export const COURSE_STALE_AFTER_DAYS = 14;
+export const COURSE_UPCOMING_PERIOD_MONTHS = 3;
 
 export const LINKS = {
   BECOME_MENTOR: 'https://app.rs.school/registry/mentor',

@@ -1,5 +1,6 @@
+import { ReactNode } from 'react';
 import type { Course } from '@/entities/course';
-import { type ListData } from '@/shared/ui/list';
+import type { ListData } from '@/shared/types';
 
 export type DataMap = {
   courses: Course[];
@@ -19,6 +20,13 @@ export interface JSPath {
   list?: ListData;
   marked?: boolean;
 }
+
+export type AboutCourseInfo = {
+  id: number;
+  title: string;
+  info: string | ReactNode;
+  icon: string;
+};
 
 export type AngularAwsPath = Pick<JSPath, 'id' | 'title' | 'list'>;
 

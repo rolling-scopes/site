@@ -1,5 +1,5 @@
 .mobile-view {
-  display: flex;
+  display: none;
   flex-direction: column;
   flex-grow: 1;
   gap: 16px;
@@ -7,6 +7,10 @@
   justify-content: flex-start;
 
   width: 100%;
+
+  @include media-tablet {
+    display: flex;
+  }
 }
 
 .category-link {
