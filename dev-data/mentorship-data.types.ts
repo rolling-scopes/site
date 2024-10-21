@@ -18,7 +18,7 @@ export type MentorshipRoute = MentorshipDefaultRoute | MentorshipCourseRoute;
 
 export type MentorshipCourse = {
   id: number;
-  title: '' | CourseTitle;
+  title?: CourseTitle;
   description?: string;
   lang: 'en' | 'ru';
   detailsUrl: MentorshipRoute;

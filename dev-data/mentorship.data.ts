@@ -10,7 +10,6 @@ import { MentorshipCourse } from 'data';
 
 export const mentorshipCoursesDefault: MentorshipCourse = {
   id: 0,
-  title: '',
   lang: 'en',
   detailsUrl: `/${ROUTES.MENTORSHIP}`,
   iconSmall: '',

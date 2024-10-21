@@ -8,4 +8,4 @@ export const COURSE_TITLES = {
   AWS_FUNDAMENTALS: 'AWS Fundamentals',
   AWS_CLOUD_DEVELOPER: 'AWS Cloud Developer',
   AWS_DEVOPS: 'AWS DevOps',
-};
+} as const;

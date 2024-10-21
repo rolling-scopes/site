@@ -40,13 +40,6 @@ export const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const { key, hash, pathname } = useLocation();
 
-  useEffect(() => {
-    if (pathname.includes(ROUTES.MENTORSHIP)) {
-      setColorName('blue');
-    } else {
-      setColorName('gray');
-    }
-  }, [pathname]);
   const [colorName, setColorName] = useState('white');
   const [color, setColor] = useState(colorName);
 
@@ -84,6 +77,14 @@ export const Header = () => {
       setMenuOpen(false);
     }
   }, [width, key, hash, pathname]);
+
+  useEffect(() => {
+    if (pathname.includes(ROUTES.MENTORSHIP)) {
+      setColorName('blue');
+    } else {
+      setColorName('gray');
+    }
+  }, [pathname]);
 
   return (
     <nav className={cx('navbar', color)} data-testid="navigation">
