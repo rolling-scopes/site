@@ -11,7 +11,7 @@ type MentorsBenefitsProps = {
   lang?: 'en' | 'ru';
 };
 
-const COUNT_SYMBOLS = 60;
+const countSymbols = 60;
 
 export const MentorsBenefits = ({ benefits, lang = 'en' }: MentorsBenefitsProps) => {
   return (
@@ -20,7 +20,7 @@ export const MentorsBenefits = ({ benefits, lang = 'en' }: MentorsBenefitsProps)
         <WidgetTitle className={cx('title')}>{mentorsBenefitData[lang].header}</WidgetTitle>
         <ul className={cx('benefits')}>
           {benefits.map((info, index) => {
-            let classNameWidth = ((info.length > COUNT_SYMBOLS) ? 'benefit-long' : 'benefit-short');
+            let classNameWidth = ((info.length > countSymbols) ? 'benefit-long' : 'benefit-short');
 
             return (
               <li key={index} className={cx('benefit', classNameWidth)}>
