@@ -59,7 +59,7 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
                   <>
                     <Subtitle className={cx('communication-subtitle')}>{subTitleJs}</Subtitle>
                     <Paragraph className={cx('communication-paragraph')}>
-                      <LinkCustom href={DISCORD_LINKS[courseName]} external>
+                      <LinkCustom href={DISCORD_LINKS[courseName]} external data-testid="discord-link">
                         {discordLinkJs}
                       </LinkCustom>
                       {firstParagraphFirstHalfJs}
@@ -77,7 +77,7 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
                     <Subtitle className={cx('communication-subtitle')}>{subTitle}</Subtitle>
                     <Paragraph>
                       {firstParagraphFirstHalf}
-                      <LinkCustom href={DISCORD_LINKS[courseName]} external>
+                      <LinkCustom href={DISCORD_LINKS[courseName]} external data-testid="discord-link">
                         {discordLink}
                       </LinkCustom>
                       {firstParagraphSecondHalf}
