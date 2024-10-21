@@ -1,0 +1,62 @@
+.info-cell {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 240px;
+  height: 180px;
+  padding: 8px 40px;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    translate: 0 -50%;
+
+    width: 3px;
+    height: 100%;
+
+    background-color: $color-gray-200;
+
+    @include media-tablet {
+      right: -12px;
+    }
+  }
+
+  &-number {
+    font-size: 52px;
+    font-weight: 500;
+    line-height: 64px;
+    color: $color-black;
+    letter-spacing: 0.04em;
+
+    @include media-laptop {
+      font-size: 44px;
+      line-height: 52px;
+    }
+  }
+
+  &-text {
+    height: 56px;
+    font-weight: 400;
+    color: $color-gray-600;
+
+    @include media-tablet {
+      height: auto;
+    }
+  }
+
+  @include media-laptop {
+    width: 200px;
+  }
+
+  @include media-tablet {
+    width: 150px;
+    height: 140px;
+    padding: 0 8px;
+  }
+}
