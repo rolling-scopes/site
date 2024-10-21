@@ -1,30 +1,30 @@
 .mentors-wanted {
   background-color: $color-yellow-50;
-}
 
-.mentors-wanted-content {
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
+  .mentors-wanted-content {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
 
-  @include media-tablet {
-    flex-direction: column;
-    gap: 40px;
+    .content-left {
+      display: flex;
+      flex-direction: column;
+      max-width: 50%;
+
+      @include media-tablet {
+        max-width: 100%;
+      }
+    }
+
+    .sloth-mascot {
+      align-self: center;
+      max-width: 290px;
+      object-fit: contain;
+    }
+
+    @include media-tablet {
+      flex-direction: column;
+      gap: 40px;
+    }
   }
-}
-
-.content-left {
-  display: flex;
-  flex-direction: column;
-  max-width: 50%;
-
-  @include media-tablet {
-    max-width: 100%;
-  }
-}
-
-.sloth-mascot {
-  align-self: center;
-  max-width: 290px;
-  object-fit: contain;
 }
