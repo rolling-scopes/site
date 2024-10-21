@@ -15,6 +15,6 @@ export const contributeOptions = [
     description:
       'Contribute your skills as a developer, coordinator, or trainer. Fill out this form to get started.',
     linkLabel: 'Become a contributor',
-    href: LINKS.BECOME_CONTRIBUTE,
+    href: LINKS.BECOME_CONTRIBUTOR,
   },
 ];

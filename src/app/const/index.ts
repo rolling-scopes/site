@@ -6,7 +6,7 @@ export const COURSE_STALE_AFTER_DAYS = 14;
 
 export const LINKS = {
   BECOME_MENTOR: 'https://app.rs.school/registry/mentor',
-  BECOME_CONTRIBUTE:
+  BECOME_CONTRIBUTOR:
     'https://docs.google.com/forms/d/e/1FAIpQLSdGKdEHK1CnZjgll9PpMU0xD1m0hm6xGoXc98H7woCDulyQkg/viewform',
   MERCH: 'https://sloths.rs.school/',
   DONATE: 'https://opencollective.com/rsschool',
