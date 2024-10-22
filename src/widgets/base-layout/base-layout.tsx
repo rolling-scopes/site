@@ -1,4 +1,5 @@
 'use client';
+
 import { PropsWithChildren, useEffect } from 'react';
 import { Footer, Header, Partnered, ScrollToHashElement } from './components';
 
