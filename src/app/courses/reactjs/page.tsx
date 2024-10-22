@@ -13,5 +13,5 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function ReactRoute() {
   const course = selectCourse(courses, courseName);
 
-  return <>{course && <React course={course} courseName={courseName} />}</>;
+  return <React course={course} courseName={courseName} />;
 }

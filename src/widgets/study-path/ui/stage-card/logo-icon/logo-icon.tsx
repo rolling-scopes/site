@@ -1,5 +1,4 @@
-import { StaticImageData } from 'next/image';
-import { Image } from '@/shared/ui/image';
+import Image, { StaticImageData } from 'next/image';
 
 import './logo-icon.scss';
 
@@ -11,7 +10,7 @@ interface LogoIconProps {
 export const LogoIcon = ({ icon, title }: LogoIconProps) => {
   return (
     <div className="stage-logo">
-      <Image img={icon} alt={title} />
+      <Image src={icon} alt={title} />
     </div>
   );
 };

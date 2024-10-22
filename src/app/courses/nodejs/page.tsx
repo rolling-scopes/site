@@ -13,5 +13,5 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function NodeRoute() {
   const course = selectCourse(courses, courseName);
 
-  return <>{course && <Nodejs course={course} courseName={courseName} />}</>;
+  return <Nodejs course={course} courseName={courseName} />;
 }

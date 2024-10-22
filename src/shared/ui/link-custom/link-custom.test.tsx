@@ -82,7 +82,7 @@ describe('LinkCustom', () => {
     const icon = screen.getByTestId('arrow-icon');
 
     expect(icon).toBeInTheDocument();
-    expect(icon).toHaveAttribute('height', '16px');
+    expect(icon).toHaveAttribute('height', '1');
   });
 
   it('renders provided icon when icon prop is passed', () => {

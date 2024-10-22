@@ -1,5 +1,4 @@
-import { StaticImageData } from 'next/image';
-import { Image as LazyImage } from '@/shared/ui/image';
+import NextImage, { StaticImageData } from 'next/image';
 
 import './image.scss';
 
@@ -11,7 +10,7 @@ interface ImageProps {
 export const Image = ({ imageSrc, title }: ImageProps) => {
   return (
     <div className="stage-image">
-      <LazyImage img={imageSrc} className="mic-icon" alt={title} />
+      <NextImage src={imageSrc} className="mic-icon" alt={title} />
     </div>
   );
 };

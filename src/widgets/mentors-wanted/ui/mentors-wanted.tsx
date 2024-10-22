@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
+import Image from 'next/image';
 import mentorImg from '@/shared/assets/mentors-wanted-poster.webp';
-import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -32,7 +32,7 @@ export const MentorsWanted = () => {
           </Paragraph>
         </div>
         <div className={cx('picture')}>
-          <Image img={mentorImg} alt="Sloth - mascot dresses as a detective" />
+          <Image src={mentorImg} alt="Sloth - mascot dresses as a detective" />
         </div>
       </article>
     </section>

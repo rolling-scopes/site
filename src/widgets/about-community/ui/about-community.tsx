@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
+import Image from 'next/image';
 import { ANCHORS } from '@/core/const';
 import imageAbout from '@/shared/assets/about.webp';
-import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -39,7 +39,7 @@ export const AboutCommunity = () => {
         </article>
         <Image
           className="sloth-mascot"
-          img={imageAbout}
+          src={imageAbout}
           alt="Sloth mascot dressed in a red superhero cape"
         />
       </div>

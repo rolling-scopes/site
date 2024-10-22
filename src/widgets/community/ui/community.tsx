@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import image from '@/shared/assets/welcome.webp';
 import {
   FacebookIcon,
@@ -6,7 +7,6 @@ import {
   TelegramIcon,
   YouTubeIcon,
 } from '@/shared/icons';
-import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SocialMedia, SocialMediaProps } from '@/shared/ui/social-media';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -79,7 +79,7 @@ export const Community = () => (
           ))}
         </div>
       </div>
-      <Image className="right picture" img={image} alt="community-welcome" />
+      <Image className="right picture" src={image} alt="community-welcome" />
     </div>
   </div>
 );

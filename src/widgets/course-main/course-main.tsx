@@ -1,9 +1,9 @@
+import Image from 'next/image';
 import { getCourseStatus } from './utils/get-course-status';
 import { COURSE_STALE_AFTER_DAYS } from '@/core/const';
 import { Course } from '@/entities/course';
 import { getCourseDate } from '@/shared/helpers/getCourseDate';
 import { DateLang } from '@/shared/ui/date-lang';
-import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';
@@ -34,7 +34,7 @@ export const CourseMain = ({ lang = 'en', type, course }: CourseMainProps) => {
   return (
     <main className={`container ${styles.container}`}>
       <div className={`content ${styles.content}`}>
-        <Image className={styles.icon} img={secondaryIcon} alt={title} lazy={false} />
+        <Image className={styles.icon} src={secondaryIcon} alt={title} />
         <div className={styles.info}>
           <SectionLabel>{status}</SectionLabel>
           <WidgetTitle>{`${altTitle || title} Course`}</WidgetTitle>

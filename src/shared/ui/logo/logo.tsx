@@ -1,10 +1,10 @@
 import { HTMLAttributes } from 'react';
 import { VariantProps, cva } from 'class-variance-authority';
 import classNames from 'classnames/bind';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ROUTES } from '@/core/const';
 import logo from '@/shared/assets/svg/rss-logo.svg';
-import { Image } from '@/shared/ui/image';
 
 import styles from './logo.module.scss';
 
@@ -25,7 +25,7 @@ export const Logo = ({ type, className }: LogoProps) => {
       data-testid="logo"
       onClick={() => window.scrollTo({ top: 0 })}
     >
-      <Image img={logo} alt="RSS-logo" />
+      <Image src={logo} alt="RSS-logo" />
     </Link>
   );
 };

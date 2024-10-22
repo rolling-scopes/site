@@ -13,5 +13,5 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function AngularRoute() {
   const course = selectCourse(courses, courseName);
 
-  return <>{course && <Angular course={course} courseName={courseName} />}</>;
+  return <Angular course={course} courseName={courseName} />;
 }

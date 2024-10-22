@@ -1,6 +1,6 @@
+import Image from 'next/image';
 import { LINKS } from '@/core/const';
 import image from '@/shared/assets/support.webp';
-import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -23,7 +23,7 @@ export const Support = () => (
           Donate now
         </LinkCustom>
       </div>
-      <Image className="right picture" img={image} alt="support-us" />
+      <Image className="right picture" src={image} alt="support-us" />
     </div>
   </div>
 );

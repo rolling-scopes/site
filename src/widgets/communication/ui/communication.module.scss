@@ -32,6 +32,11 @@
   background-color: hsl(234.9deg 85.6% 64.7%);
   border-radius: 30px;
 
+  img {
+    width: 100%;
+    height: auto;
+  }
+
   @include media-tablet {
     width: 150px;
     padding: 15px;

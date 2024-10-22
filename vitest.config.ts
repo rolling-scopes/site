@@ -14,7 +14,7 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     globals: true,
-    setupFiles: ['src/shared/__tests__/setup-tests.ts'],
+    setupFiles: ['src/shared/__tests__/setup-tests.tsx'],
     exclude: [
       '**/node_modules/**',
       '**/dist/**',
@@ -63,7 +63,7 @@ function stubNextAssetImport() {
       if (/(jpg|jpeg|png|webp|gif|svg)$/.test(id)) {
         const imgSrc = path.relative(process.cwd(), id);
         return {
-          code: `export default { src: '${imgSrc}', height: 1, width: 1 }`,
+          code: `export default { src: '/${imgSrc}', height: 1, width: 1 }`,
         };
       }
     },

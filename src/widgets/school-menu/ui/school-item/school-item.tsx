@@ -1,9 +1,9 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { GenericItemProps } from '../school-list/school-list';
 import { COURSE_STALE_AFTER_DAYS } from '@/core/const';
 import type { Course } from '@/entities/course';
 import { getCourseDate } from '@/shared/helpers/getCourseDate';
-import { Image } from '@/shared/ui/image';
 
 interface SchoolItemProps {
   item: Course | GenericItemProps;
@@ -39,7 +39,7 @@ export const SchoolItem = ({ item, color }: SchoolItemProps) => {
         {'iconSmall' in item && (
           <Image
             className="icon-wrapper"
-            img={item.iconSmall}
+            src={item.iconSmall}
             alt={item.title}
             width={32}
             height={32}

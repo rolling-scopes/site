@@ -1,5 +1,5 @@
+import Image from 'next/image';
 import image from '@/shared/assets/contribute.webp';
-import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { OptionItem } from '@/widgets/option-item';
@@ -38,7 +38,7 @@ export const Contribute = () => (
             Protégé Effect! There are several ways you can contribute, choose yours.
           </Paragraph>
         </div>
-        <Image className="right picture" img={image} alt="contribute" />
+        <Image className="right picture" src={image} alt="contribute" />
       </div>
       <div className="contribute-options">
         {contributeOptions.map(({ title, description, linkLabel, href }) => (

@@ -1,6 +1,6 @@
+import Image from 'next/image';
 import openSourcePhilosophyIcon from '@/shared/assets/svg/openSourcePhilosophyIcon.svg';
-import { Image } from '@/shared/ui/image';
 
 export const OpenSourcePhilosophyIcon = () => {
-  return <Image img={openSourcePhilosophyIcon} alt="Open Source Philosophy Icon" />;
+  return <Image src={openSourcePhilosophyIcon} alt="Open Source Philosophy Icon" />;
 };

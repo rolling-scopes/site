@@ -2,6 +2,10 @@
   .slide {
     cursor: pointer;
     padding: 0 5px;
+
+    img {
+      height: auto;
+    }
   }
 
   .carousel-slider {

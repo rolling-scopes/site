@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
+import Image from 'next/image';
 import { Trainer } from '../../types';
-import { Image } from '@/shared/ui/image';
 
 import styles from './trainer-card.module.scss';
 
@@ -10,7 +10,7 @@ export const TrainerCard = ({ name, bio, role, photo }: Trainer) => {
   return (
     <article className={cx('trainer-card')}>
       <div className={cx('card-picture')}>
-        <Image img={photo} alt={`${name} ${role}`} />
+        <Image src={photo} alt={`${name} ${role}`} />
       </div>
       <div className={cx('card-text')}>
         <header>

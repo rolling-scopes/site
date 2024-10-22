@@ -1,4 +1,6 @@
 'use client';
+
+import Image from 'next/image';
 import { Carousel } from 'react-responsive-carousel';
 import photo1 from '@/shared/assets/photo-1.webp';
 import photo2 from '@/shared/assets/photo-2.webp';
@@ -10,7 +12,6 @@ import photo7 from '@/shared/assets/photo-7.webp';
 import photo8 from '@/shared/assets/photo-8.webp';
 import photo9 from '@/shared/assets/photo-9.webp';
 import { FacebookIcon, InstagramIcon } from '@/shared/icons';
-import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SocialMedia, SocialMediaProps } from '@/shared/ui/social-media';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -70,7 +71,7 @@ export const Pictures = () => (
       >
         {photos.map((photo, index) => (
           <Image
-            img={photo}
+            src={photo}
             key={index}
             data-testid="carousel-image"
             alt="Photo of our community"

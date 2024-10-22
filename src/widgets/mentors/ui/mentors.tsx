@@ -1,6 +1,6 @@
+import Image from 'next/image';
 import { LINKS } from '@/core/const';
 import mentorImg from '@/shared/assets/mentors-wanted.webp';
-import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -26,7 +26,7 @@ export const Mentors = () => {
           </LinkCustom>
         </div>
         <div className="picture">
-          <Image img={mentorImg} alt="Sloth - mascot dressed as a detective" />
+          <Image src={mentorImg} alt="Sloth - mascot dressed as a detective" />
         </div>
       </div>
     </section>

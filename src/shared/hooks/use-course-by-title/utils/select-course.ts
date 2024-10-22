@@ -13,5 +13,5 @@ export const selectCourse = (coursesData: Course[], titleStartsWith: string) => 
     return titleMatches;
   });
 
-  return course;
+  return course as Course;
 };

@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
-import { StaticImageData } from 'next/image';
-import { Image } from '@/shared/ui/image';
+import Image, { StaticImageData } from 'next/image';
 
 import './info-grid.scss';
 
@@ -20,7 +19,7 @@ export const InfoGrid = ({ items }: InfoGridProps) => {
       {items.map(({ id, title, info, icon }) => (
         <div key={id} className="item" data-testid="info-grid-item">
           <div className="item-title">
-            <Image img={icon} alt={title} />
+            <Image src={icon} alt={title} />
             <h2>{title}</h2>
           </div>
           {typeof info === 'string' ? <p>{info}</p> : info}

@@ -72,7 +72,8 @@ const javaScriptEN: () => AboutInfo[] = () => {
       info: (
         <p>
           The Mentors and trainers of our school are front-end and javascript developers from
-          different companies/countries.{' '}
+          different companies/countries.
+          {' '}
           <LinkCustom href="/#mentors-wanted">How to become a mentor?</LinkCustom>
         </p>
       ),
@@ -158,7 +159,8 @@ const reactEn: AboutInfo[] = javaScriptEN().map((item) => {
       info: (
         <ul>
           <li>
-            School{' '}
+            School
+            {' '}
             <LinkCustom href="https://docs.rs.school" external>
               documentation
             </LinkCustom>
@@ -174,7 +176,8 @@ const reactEn: AboutInfo[] = javaScriptEN().map((item) => {
       ...item,
       info: (
         <p>
-          Throughout the course, we mostly use{' '}
+          Throughout the course, we mostly use
+          {' '}
           <LinkCustom href={DISCORD_LINKS[COURSE_TITLES.REACT]} external>
             Discord chat
           </LinkCustom>

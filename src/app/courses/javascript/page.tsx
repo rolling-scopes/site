@@ -13,5 +13,5 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function JsEnRoute() {
   const course = selectCourse(courses, courseName);
 
-  return <>{course && <JavaScriptEn course={course} courseName={courseName} />}</>;
+  return <JavaScriptEn course={course} courseName={courseName} />;
 }

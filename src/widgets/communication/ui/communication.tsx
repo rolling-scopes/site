@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
+import Image from 'next/image';
 import discordLogo from '@/shared/assets/svg/discord-logo.svg';
-import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
@@ -43,7 +43,7 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
         <WidgetTitle mods="asterisk">{title}</WidgetTitle>
         <div className={cx('communication-wrapper')}>
           <figure className={cx('discord-logo-wrapper')}>
-            <Image img={discordLogo} alt="discord logo" />
+            <Image src={discordLogo} alt="discord logo" />
           </figure>
           <div>
             <Subtitle>{subTitle}</Subtitle>

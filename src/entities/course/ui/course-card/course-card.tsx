@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
+import Image from 'next/image';
 import type { Course } from '../../types';
 import { DateLang } from '@/shared/ui/date-lang';
-import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Subtitle } from '@/shared/ui/subtitle';
 
@@ -33,7 +33,7 @@ export const CourseCard = ({
   return (
     <article className={cx('course-card')} data-testid="course-card">
       <div className={cx('card-header')} style={cardStyle}>
-        <Image img={iconSrc} alt={title} />
+        <Image src={iconSrc} alt={title} />
         <Subtitle fontSize="small">{title}</Subtitle>
       </div>
       <div className={cx('course-info')}>

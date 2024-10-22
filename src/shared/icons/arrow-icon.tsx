@@ -1,10 +1,10 @@
+import Image from 'next/image';
 import arrow from '@/shared/assets/svg/arrow.svg';
-import { Image } from '@/shared/ui/image';
 
 export const ArrowIcon = ({ size = 24 }: { size?: number }) => {
   return (
     <Image
-      img={arrow}
+      src={arrow}
       alt="arrow icon"
       height={size}
       width={size}

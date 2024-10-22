@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import dayjs from 'dayjs';
+import Image from 'next/image';
 import { CourseItemData } from '@/entities/course';
-import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Subtitle } from '@/shared/ui/subtitle';
 
@@ -17,7 +17,7 @@ export const CourseItem = ({ title, language, startDate, detailsUrl, iconSrc }: 
       <figure className={cx('icon-container')}>
         <Image
           className={cx('course-icon')}
-          img={iconSrc}
+          src={iconSrc}
           alt=""
           aria-hidden="true"
           data-testid="course-image"

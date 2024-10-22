@@ -1,5 +1,5 @@
+import Image from 'next/image';
 import image from '@/shared/assets/map.webp';
-import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
@@ -49,7 +49,7 @@ export const Numbers = () => {
             <InfoCell title="1800+" description="RS School alumni per year" />
           </div>
         </div>
-        <Image className="map" img={image} alt="map" />
+        <Image className="map" src={image} alt="map" />
       </div>
     </div>
   );

@@ -26,6 +26,7 @@
 
       .event-img {
         width: 500px;
+        height: auto;
 
         @include media-mobile-landscape {
           width: 100%;

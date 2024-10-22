@@ -1,6 +1,6 @@
+import Image from 'next/image';
 import image from '@/shared/assets/speakers-wanted.webp';
 import { EmailIcon } from '@/shared/icons';
-import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
@@ -29,7 +29,7 @@ export const Speakers = () => (
           <span>rolling.scopes@gmail.com</span>
         </div>
       </div>
-      <Image className="right picture" img={image} alt="speakers-wanted" />
+      <Image className="right picture" src={image} alt="speakers-wanted" />
     </div>
   </div>
 );

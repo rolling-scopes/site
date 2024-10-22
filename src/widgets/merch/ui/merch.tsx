@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
+import Image from 'next/image';
 import { LINKS } from '@/core/const';
 import image from '@/shared/assets/merch.webp';
-import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
@@ -28,7 +28,7 @@ export const Merch = () => (
           Discover merch assets
         </LinkCustom>
       </div>
-      <Image className={cx('right', 'picture')} img={image} alt="speakers-wanted" />
+      <Image className={cx('right', 'picture')} src={image} alt="speakers-wanted" />
     </div>
   </div>
 );

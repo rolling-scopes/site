@@ -1,6 +1,6 @@
 import { cloneElement } from 'react';
+import Image from 'next/image';
 import type { Course } from '@/entities/course';
-import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { TrainingProgramType, contentMap } from 'data';
@@ -38,7 +38,7 @@ export const TrainingProgram = ({ courseName, lang = 'en', course }: TrainingPro
           )}
         </div>
         <div className={`right ${courseName.includes('badge') ? 'badge' : ''}`}>
-          <Image img={image} alt={course?.title} lazy={false} />
+          <Image src={image} alt={course?.title} />
         </div>
       </div>
     </section>

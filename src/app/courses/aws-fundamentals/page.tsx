@@ -13,5 +13,5 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function AwsFundRoute() {
   const course = selectCourse(courses, courseName);
 
-  return <>{course && <AwsFundamentals course={course} courseName={courseName} />}</>;
+  return <AwsFundamentals course={course} courseName={courseName} />;
 }

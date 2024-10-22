@@ -1,7 +1,6 @@
 import classNames from 'classnames/bind';
-import { StaticImageData } from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { PageName } from '../types';
-import { Image } from '@/shared/ui/image';
 import { MainTitle } from '@/shared/ui/main-title';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -61,7 +60,7 @@ export const HeroPage = ({ pageName }: PageName) => {
         {heroImageSrc?.src && (
           <Image
             className={cx('sloth-mascot')}
-            img={heroImageSrc}
+            src={heroImageSrc}
             alt={imageAltText}
             data-testid="sloth-mascot"
           />

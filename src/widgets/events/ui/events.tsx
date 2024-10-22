@@ -1,10 +1,10 @@
 import cn from 'classnames';
 import classNames from 'classnames/bind';
 import dayjs from 'dayjs';
+import Image from 'next/image';
 import { Event, EventCard } from '@/entities/event';
 import photo3 from '@/shared/assets/photo-3.webp';
 import { getActualData } from '@/shared/helpers/getActualData';
-import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -23,7 +23,7 @@ const actualEvents: Event[] = getActualData({
 
 const nearestEvents = actualEvents.slice(0, displayedCardsQuantity);
 
-const Stub = <Image img={photo3} alt="Community event" className={cx('event-img')} />;
+const Stub = <Image src={photo3} alt="Community event" className={cx('event-img')} />;
 
 export const Events = () => {
   const rsLifetime = dayjs().diff('2013', 'year');
