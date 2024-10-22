@@ -1,4 +1,4 @@
 export const aboutMentorsData = {
-  en: { header: 'Mentorship detail' },
+  en: { header: 'Mentorship details' },
   ru: { header: 'Краткая информация' },
 };

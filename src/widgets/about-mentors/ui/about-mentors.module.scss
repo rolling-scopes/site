@@ -18,13 +18,7 @@
   display: flex;
 
   @include media-tablet {
-    position: absolute;
-    top: -55px;
-    right: 0;
-  }
-
-  @include media-mobile {
-    top: -50px;
+    display: none;
   }
 }
 
@@ -37,16 +31,6 @@
     width: 100px;
     height: 100px;
   }
-
-  @include media-tablet {
-    width: 50px;
-    height: 50px;
-  }
-
-  @include media-mobile {
-    width: 35px;
-    height: 35px;
-  }
 }
 
 .picture:nth-child(3) {
@@ -55,10 +39,6 @@
   @include media-tablet-large {
     left: -100px;
   }
-
-  @include media-tablet {
-    left: -30px;
-  }
 }
 
 .picture:nth-child(2) {
@@ -66,9 +46,5 @@
 
   @include media-tablet-large {
     left: -50px;
-  }
-
-  @include media-tablet {
-    left: -15px;
   }
 }
