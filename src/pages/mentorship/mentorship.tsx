@@ -13,7 +13,7 @@ import { MentorshipCourse } from 'data';
 export const Mentorship = () => {
   const pageProps = useLoaderData() as MentorshipCourse;
 
-  useTitle(`Mentorship ${pageProps.title} · The Rolling Scopes School`);
+  useTitle(`Mentorship ${pageProps.title || ''} · The Rolling Scopes School`);
 
   return (
     <>
