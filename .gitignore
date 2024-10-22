@@ -17,7 +17,7 @@ dist
 dist-ssr
 *.local
 .next
-"!**/*.tsbuildinfo",
+*.tsbuildinfo
 
 # Editor directories and files
 !.vscode/extensions.json
