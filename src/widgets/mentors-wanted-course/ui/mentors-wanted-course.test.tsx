@@ -6,40 +6,35 @@ import { renderWithRouter } from '@/shared/__tests__/utils';
 import mentorImg from '@/shared/assets/mentors-wanted-poster.webp';
 
 const mockedData = {
-  title: 'Mentors Wanted!',
-  paragraph: /If you are interested in mentoring our students/i,
-  link: LINKS.ANGULAR_MENTORING,
+  titleText: 'Mentors Wanted!',
+  paragraphText: /If you are interested in mentoring our students/i,
+  href: LINKS.ANGULAR_MENTORING,
   image: mentorImg,
   alt: 'Sloth - mascot dresses as a detective',
 };
 
+const { titleText, paragraphText, href, image, alt } = mockedData;
+
 describe('MentorsWantedCourse component', () => {
-  beforeEach(() => {
-    renderWithRouter(<MentorsWantedCourse link={mockedData.link} />);
-  });
-
-  it('renders without crashing', () => {
-    const mentorsWantedCourse = screen.getByTestId('mentors-wanted');
-
-    expect(mentorsWantedCourse).toBeVisible();
-  });
-
   it('renders the component content correctly', () => {
+    renderWithRouter(<MentorsWantedCourse link={href} />);
+    const mentorsWantedCourse = screen.getByTestId('mentors-wanted');
     const title = screen.getByTestId('widget-title');
     const paragraph = screen.getByTestId('paragraph');
     const link = screen.getByTestId('link-custom');
     const slothImage = screen.getByTestId('sloth-mascot');
 
+    expect(mentorsWantedCourse).toBeVisible();
     expect(title).toBeVisible();
     expect(paragraph).toBeVisible();
     expect(link).toBeVisible();
     expect(slothImage).toBeVisible();
 
-    expect(title).toHaveTextContent(mockedData.title);
-    expect(paragraph).toHaveTextContent(mockedData.paragraph);
+    expect(title).toHaveTextContent(titleText);
+    expect(paragraph).toHaveTextContent(paragraphText);
 
-    expect(link).toHaveAttribute('href', mockedData.link);
-    expect(slothImage).toHaveAttribute('src', mockedData.image);
-    expect(slothImage).toHaveAttribute('alt', mockedData.alt);
+    expect(link).toHaveAttribute('href', href);
+    expect(slothImage).toHaveAttribute('src', image);
+    expect(slothImage).toHaveAttribute('alt', alt);
   });
 });
