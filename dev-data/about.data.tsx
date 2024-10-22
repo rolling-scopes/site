@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { ROUTES } from '@/app/const';
 import awardIcon from '@/shared/assets/icons/award-icon.webp';
 import giftIcon from '@/shared/assets/icons/gift.webp';
 import noteIcon from '@/shared/assets/icons/note-icon.webp';
@@ -72,7 +73,7 @@ const javaScriptEN: () => AboutInfo[] = () => {
           The Mentors and trainers of our school are front-end and javascript developers from
           different companies/countries.
           {' '}
-          <LinkCustom href="/mentorship/javascript">How to become a mentor?</LinkCustom>
+          <LinkCustom href={`/${ROUTES.MENTORSHIP}/${ROUTES.JS}`}>How to become a mentor?</LinkCustom>
         </p>
       ),
       icon: planetIcon,
@@ -107,7 +108,7 @@ const javaScriptRU: () => AboutInfo[] = () => {
           Наставники и тренеры нашей школы - это фронтенд и разработчики JavaScript
           из разных компаний и стран.
           {' '}
-          <LinkCustom href="/mentorship/javascript-ru">Как стать ментором?</LinkCustom>
+          <LinkCustom href={`/${ROUTES.MENTORSHIP}/${ROUTES.JS_RU}`}>Как стать ментором?</LinkCustom>
         </p>
       ),
       icon: planetIcon,
