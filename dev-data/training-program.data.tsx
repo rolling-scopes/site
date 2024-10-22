@@ -1,4 +1,5 @@
 // TODO separate data and markup
+import { JSX } from 'react';
 import { StaticImageData } from 'next/image';
 import {
   AWS_FUNDAMENTALS_BADGE,
@@ -183,17 +184,17 @@ export const contentMap: ContentMap = {
   [COURSE_TITLES.JS_PRESCHOOL_RU]: {
     title: 'Программа обучения',
     content: [
-      <Paragraph key="js / front-end pre-school ru 01">
-        <span>Введение в RS School:</span>
+      <div key="js / front-end pre-school ru 01">
+        <Paragraph>Введение в RS School:</Paragraph>
         <List
           data={[
             'Знакомство со школой, профессией JS/Front-end разработчика и системой контроля версий Git.',
           ]}
           marked={false}
         />
-      </Paragraph>,
-      <Paragraph key="js / front-end pre-school ru 02">
-        <span>Основы веб-разработки:</span>
+      </div>,
+      <div key="js / front-end pre-school ru 02">
+        <Paragraph>Основы веб-разработки:</Paragraph>
         <List
           data={[
             'HTML и CSS: Основы, позиционирование с Flexbox и адаптивные макеты.',
@@ -202,9 +203,9 @@ export const contentMap: ContentMap = {
           ]}
           marked={false}
         />
-      </Paragraph>,
-      <Paragraph key="js / front-end pre-school ru 03">
-        <span>Проектное обучение:</span>
+      </div>,
+      <div key="js / front-end pre-school ru 03">
+        <Paragraph>Проектное обучение:</Paragraph>
         <List
           data={[
             'Проект CV: Markdown, HTML, CSS и Git.',
@@ -214,18 +215,18 @@ export const contentMap: ContentMap = {
           ]}
           marked={false}
         />
-      </Paragraph>,
-      <Paragraph key="js / front-end pre-school ru 04">
-        <span>Задачи Codewars:</span>
+      </div>,
+      <div key="js / front-end pre-school ru 04">
+        <Paragraph>Задачи Codewars:</Paragraph>
         <List data={['Еженедельные задачи по алгоритмам и структурам данных.']} marked={false} />
-      </Paragraph>,
-      <Paragraph key="js / front-end pre-school ru 05">
-        <span>Итоговая аттестация:</span>
+      </div>,
+      <div key="js / front-end pre-school ru 05">
+        <Paragraph>Итоговая аттестация:</Paragraph>
         <List
           data={['Кросс-чек проектов, тесты и ревью кода. Выдача сертификата.']}
           marked={false}
         />
-      </Paragraph>,
+      </div>,
     ],
     image: jsImg,
   },

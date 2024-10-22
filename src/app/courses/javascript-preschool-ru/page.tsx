@@ -14,15 +14,6 @@ export default function JsPreRoute() {
   const course = selectCourse(courses, courseName);
 
   return (
-    <>
-      {course && (
-        <JavaScriptPreSchoolRu
-          lang="ru"
-          type="Pre-school RU"
-          course={course}
-          courseName={courseName}
-        />
-      )}
-    </>
+    <JavaScriptPreSchoolRu lang="ru" type="Pre-school RU" course={course} courseName={courseName} />
   );
 }
