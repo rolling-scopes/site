@@ -1,13 +1,10 @@
-import dayjs from 'dayjs';
-import isBetween from 'dayjs/plugin/isBetween';
 import { hasDayInDate } from './has-day';
 import type { CourseStatus } from '@/entities/course';
-
-dayjs.extend(isBetween);
+import { dayJS } from '@/shared/helpers/dayJS.ts';
 
 export function getCourseStatus(courseStartDate: string): CourseStatus {
-  const now = dayjs();
-  const startDate = dayjs(courseStartDate);
+  const now = dayJS();
+  const startDate = dayJS(courseStartDate);
 
   // Status is "Available" if a start date is set and it is within 2 weeks before or after the current date
   const isAvailable =
