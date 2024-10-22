@@ -32,5 +32,4 @@ export type MentorshipCourse = {
   };
   details: string[];
   activities: MentorActivities[];
-  benefits: string[];
 };

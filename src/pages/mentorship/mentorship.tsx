@@ -24,7 +24,7 @@ export const Mentorship = () => {
         icons={pageProps.links.icon}
         lang={pageProps.lang}
       />
-      <MentorsBenefits benefits={pageProps.benefits} lang={pageProps.lang} />
+      {!pageProps.title && <MentorsBenefits />}
       <MentorsActivity activities={pageProps.activities} lang={pageProps.lang} />
       <MentorsRegister lang={pageProps.lang} />
       <MentorsDocs

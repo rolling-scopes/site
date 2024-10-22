@@ -6,20 +6,15 @@ import styles from './mentors-benefit.module.scss';
 
 const cx = classNames.bind(styles);
 
-type MentorsBenefitsProps = {
-  benefits: string[];
-  lang?: 'en' | 'ru';
-};
-
 const shortBenefitMaxChars = 60;
 
-export const MentorsBenefits = ({ benefits, lang = 'en' }: MentorsBenefitsProps) => {
+export const MentorsBenefits = () => {
   return (
     <section className={cx('container')}>
       <div className={cx('about-mentorship', 'content')}>
-        <WidgetTitle className={cx('title')}>{mentorsBenefitData[lang].header}</WidgetTitle>
+        <WidgetTitle className={cx('title')}>{mentorsBenefitData.header}</WidgetTitle>
         <ul className={cx('benefits')}>
-          {benefits.map((info, index) => {
+          {mentorsBenefitData.benefits.map((info, index) => {
             let classNameWidth = ((info.length > shortBenefitMaxChars) ? 'benefit-long' : 'benefit-short');
 
             return (

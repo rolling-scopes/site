@@ -32,9 +32,9 @@ export const mentorshipCoursesDefault: MentorshipCourse = {
     ],
   },
   details: [
-    'The duration of mentoring is 8 - 10 weeks',
+    'The duration of mentoring is 8 - 19 weeks',
     'Format: online',
-    'A desire to mentor from 2 to 6 students online or in person',
+    'A desire to mentor from 2 to 6 students online',
     'An ability to dedicate 3 to 5 hours per week',
   ],
   activities: [
@@ -82,15 +82,6 @@ export const mentorshipCoursesDefault: MentorshipCourse = {
       ],
     },
   ],
-  benefits: [
-    'Opportunity to develop a new colleague',
-    'Gaining new experience, search for new colleagues',
-    'Opportunity to share knowledge',
-    'You have completed the school course, feel confident and now it\'s your time to “Teach It Forward”',
-    'Teaching others, you learn yourself',
-    'Opportunity to improve tasks or create your own',
-    'You\'re on the lookout for a great community that will always help you learn and grow.',
-  ],
 };
 
 export const mentorshipCourses: MentorshipCourse[] = [
@@ -110,7 +101,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
     details: [
       'The duration of mentoring is 18 - 19 weeks',
       'Format: online',
-      'A desire to mentor from 2 to 6 students online or in person',
+      'A desire to mentor from 2 to 6 students online',
       'An ability to dedicate 3 to 5 hours per week',
     ],
     activities: [
@@ -157,15 +148,6 @@ export const mentorshipCourses: MentorshipCourse[] = [
           },
         ],
       },
-    ],
-    benefits: [
-      'Opportunity to develop a new colleague',
-      'Gaining new experience, search for new colleagues',
-      'Opportunity to share knowledge',
-      'You have completed the school course, feel confident and now it\'s your time to “Teach It Forward”',
-      'Teaching others, you learn yourself',
-      'Opportunity to improve tasks or create your own',
-      'You\'re on the lookout for a great community that will always help you learn and grow.',
     ],
   },
   {
@@ -237,14 +219,6 @@ export const mentorshipCourses: MentorshipCourse[] = [
         description: 'Опыт и практические знания ментора помогут организовать студентов для работы над командным проектом',
       },
     ],
-    benefits: [
-      'Ищете новых коллег для работы',
-      'Закончили один из курсов школы и теперь пришло ваше время для “Teach It Forward”',
-      'Знаете как улучшить существующие задания курса или хотите создать свое',
-      'Решили попробовать себя в роли наставника',
-      'Хотите делиться своим опытом и знаниями',
-      'Ищете крутое сообщество увлеченных программированием людей, где всегда помогут и поддержат',
-    ],
   },
   {
     id: 3,
@@ -262,7 +236,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
     details: [
       'The duration of mentoring is 12 weeks',
       'Format: online',
-      'A desire to mentor from 2 to 6 students online or in person',
+      'A desire to mentor from 2 to 6 students online',
       'An ability to dedicate 3 to 5 hours per week',
     ],
     activities: [
@@ -304,15 +278,6 @@ export const mentorshipCourses: MentorshipCourse[] = [
         description: 'The mentor\'s experience and practical knowledge will help organize students to work on a team project',
       },
     ],
-    benefits: [
-      'Opportunity to develop a new colleague',
-      'Gaining new experience, search for new colleagues',
-      'Opportunity to share knowledge',
-      'You have completed the school course, feel confident and now it\'s your time to “Teach It Forward”',
-      'Teaching others, you learn yourself',
-      'Opportunity to improve tasks or create your own',
-      'You\'re on the lookout for a great community that will always help you learn and grow.',
-    ],
   },
   {
     id: 4,
@@ -330,7 +295,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
     details: [
       'The duration of mentoring is 8 - 10 weeks',
       'Format: online',
-      'A desire to mentor from 2 to 6 students online or in person',
+      'A desire to mentor from 2 to 6 students online',
       'An ability to dedicate 3 to 5 hours per week',
     ],
     activities: [
@@ -360,15 +325,6 @@ export const mentorshipCourses: MentorshipCourse[] = [
         title: 'Supervising a team assignment',
         description: 'The mentor\'s experience and practical knowledge will help organize students to work on a team project',
       },
-    ],
-    benefits: [
-      'Opportunity to develop a new colleague',
-      'Gaining new experience, search for new colleagues',
-      'Opportunity to share knowledge',
-      'You have completed the school course, feel confident and now it\'s your time to “Teach It Forward”',
-      'Teaching others, you learn yourself',
-      'Opportunity to improve tasks or create your own',
-      'You\'re on the lookout for a great community that will always help you learn and grow.',
     ],
   },
 ];
