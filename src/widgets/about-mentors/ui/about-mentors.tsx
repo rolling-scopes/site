@@ -18,7 +18,7 @@ export const AboutMentors = ({ icons, description, lang = 'en' }: AboutMentorsPr
   return (
     <section className={cx('container')}>
       <div className={cx('content')}>
-        <WidgetTitle mods="lines" className={cx('title')}>{aboutMentorsData[lang].header}</WidgetTitle>
+        <WidgetTitle mods="lines">{aboutMentorsData[lang].header}</WidgetTitle>
         <div className={cx('mentors-register-wrapper')}>
           <List data={description} />
           <div className={cx('picture-wrapper')}>

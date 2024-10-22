@@ -8,16 +8,6 @@
   }
 }
 
-.title {
-  font-size: 36px;
-  letter-spacing: 0;
-
-  @include media-laptop {
-    font-size: 29px;
-    line-height: 44px;
-  }
-}
-
 .step-wrapper {
   margin-bottom: 18px;
 }

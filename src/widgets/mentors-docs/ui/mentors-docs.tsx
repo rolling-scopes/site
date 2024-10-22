@@ -24,7 +24,7 @@ export const MentorsDocs = ({ mentorDocsLink, courseDocsLink, socialLinks, cours
     <section className={cx('container')}>
       <article className={cx('content', 'docs-wrapper')}>
         <div className={cx('docs')}>
-          <WidgetTitle className={cx('title')} mods="asterisk">
+          <WidgetTitle mods="asterisk">
             {mentorDocsData[lang].header}
           </WidgetTitle>
           <DocDetail

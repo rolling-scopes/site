@@ -18,7 +18,7 @@ export const MentorsActivity = ({ activities, lang = 'en' }: MentorsPathProps) =
   return (
     <section className={cx('container')}>
       <article className={cx('content', 'mentoring-path')}>
-        <WidgetTitle mods="lines" className={cx('title')}>
+        <WidgetTitle mods="lines">
           {mentorsActivityData[lang].header}
         </WidgetTitle>
         <Stages stages={activities} />

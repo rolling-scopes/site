@@ -17,7 +17,7 @@ export const MentorsRegister = ({ lang = 'en' }: MentorsRegisterProps) => {
   return (
     <section className={cx('container')}>
       <div className={cx('content', 'mentoring-register')}>
-        <WidgetTitle className={cx('title')}>{mentorsRegisterData[lang].header}</WidgetTitle>
+        <WidgetTitle>{mentorsRegisterData[lang].header}</WidgetTitle>
         <Subtitle className={cx('note')} fontSize="extra-small">{mentorsRegisterData[lang].note}</Subtitle>
         <div className={cx('step-wrapper')}>
           <List data={mentorsRegisterData[lang].steps} />

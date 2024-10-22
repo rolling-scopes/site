@@ -12,7 +12,7 @@ export const MentorsBenefits = () => {
   return (
     <section className={cx('container')}>
       <div className={cx('about-mentorship', 'content')}>
-        <WidgetTitle className={cx('title')}>{mentorsBenefitData.header}</WidgetTitle>
+        <WidgetTitle>{mentorsBenefitData.header}</WidgetTitle>
         <ul className={cx('benefits')}>
           {mentorsBenefitData.benefits.map((info, index) => {
             let classNameWidth = ((info.length > shortBenefitMaxChars) ? 'benefit-long' : 'benefit-short');
