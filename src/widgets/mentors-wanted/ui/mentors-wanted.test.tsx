@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
-import { Mentors } from './mentors';
+import { MentorsWanted } from './mentors-wanted';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
@@ -8,7 +8,7 @@ const registerLink = 'https://app.rs.school/registry/mentor';
 
 describe('Mentors', () => {
   beforeEach(() => {
-    renderWithRouter(<Mentors />);
+    renderWithRouter(<MentorsWanted />);
   });
 
   it('renders the widget', () => {
