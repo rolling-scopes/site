@@ -14,7 +14,7 @@ export const mentorsRegisterData = {
       link: LINKS.BECOME_MENTOR,
       external: true,
     },
-    note: 'You need a valid Github account to complete registration and access the RS-App application',
+    note: 'You need a Github account to complete registration and access the RS-App application',
   },
   ru: {
     header: 'Регистрация ментором',
@@ -23,13 +23,12 @@ export const mentorsRegisterData = {
       'Выбрать курс на котором вы будете курировать студентов',
       'Ответить на вопросы о количестве студентов и их локации',
       'Перед началом курса проверить почту и подтвердить регистрацию',
-      'Просматривать Дискорд сервер и Телеграмм канал ',
     ],
     button: {
       text: 'Регистрация',
       link: LINKS.BECOME_MENTOR,
       external: true,
     },
-    note: 'Для прохождения регистрации и доступа в приложение RS-App вам необходим действующий Github аккаунт',
+    note: 'Для прохождения регистрации и доступа в приложение RS-App вам необходим Github аккаунт',
   },
 };
