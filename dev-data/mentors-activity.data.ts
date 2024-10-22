@@ -4,7 +4,7 @@ export const mentorsActivityData = {
     info: 'The main tasks of a mentor for the duration of the course, but if you are willing to give students more - the list is not limited to anything',
   },
   ru: {
-    header: 'Деятельность наставника',
+    header: 'Деятельность ментора',
     info: 'Основные задачи ментора на период курса, но если вы готовы дать студентам больше - список не ограничен ни чем',
   },
 };

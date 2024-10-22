@@ -28,6 +28,6 @@ export const heroPageData = {
     widgetTitle: 'Teach It Forward',
     subTitle: ['By teaching others, you learn yourself'],
     heroImageSrc: mentorWantedImg,
-    imageAltText: '',
+    imageAltText: 'Wanted poster featuring a cartoon sloth in a fedora, labeled Wanted Mentor',
   },
 };

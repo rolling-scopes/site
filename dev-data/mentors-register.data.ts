@@ -2,7 +2,7 @@ import { LINKS } from '@/app/const';
 
 export const mentorsRegisterData = {
   en: {
-    header: 'Registration by mentor',
+    header: 'Registration as a mentor',
     steps: [
       'Go to the mentor registration page',
       'Choose the course in which you will supervise students',

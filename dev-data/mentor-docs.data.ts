@@ -21,14 +21,14 @@ export const mentorDocsData = {
     mentor: {
       textInfo: 'Если у вас остались вопросы по процессу менторинга, пожалуйста, ознакомьтесь с ',
       textLink: 'Документацией о менторинге',
-      textAfterLink: 'для',
-      textEnd: 'курса.',
+      textAfterLink: 'для курса',
+      textEnd: '.',
     },
     course: {
       textInfo: 'Вы так же можете ознакомиться с актуальной ',
       textLink: 'Программой обучения',
-      textAfterLink: 'для',
-      textEnd: 'курса.',
+      textAfterLink: 'для курса',
+      textEnd: '.',
     },
     pictureAlt: 'Ментор и его студенты',
     additional: 'Вы так же можете задать вопросы ',
