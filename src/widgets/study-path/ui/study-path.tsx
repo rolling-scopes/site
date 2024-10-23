@@ -2,6 +2,7 @@
 
 import { createContext } from 'react';
 import { Stages } from './stages';
+import type { ListType } from '@/shared/types';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { type DataMap, coursesPath } from 'data';
@@ -12,7 +13,7 @@ type PathNames = Exclude<keyof DataMap, 'courses'>;
 
 interface StudyPathProps {
   path: PathNames;
-  marked?: boolean;
+  type?: ListType;
   lang?: 'ru' | 'en';
 }
 
@@ -31,7 +32,7 @@ const localizedContent = {
 
 export const LangContext = createContext<'ru' | 'en'>('en');
 
-export const StudyPath = ({ path, marked, lang = 'en' }: StudyPathProps) => {
+export const StudyPath = ({ path, type, lang = 'en' }: StudyPathProps) => {
   const isAngularOrAwsDev = path === 'angular' || path === 'awsDev';
 
   const title = isAngularOrAwsDev ? 'Course Curriculum' : localizedContent[lang].title;
@@ -48,7 +49,7 @@ export const StudyPath = ({ path, marked, lang = 'en' }: StudyPathProps) => {
             {title}
           </WidgetTitle>
           <Paragraph>{paragraph}</Paragraph>
-          <Stages stages={coursesPath} marked={marked} />
+          <Stages stages={coursesPath} type={type} />
         </div>
       </section>
     </LangContext.Provider>

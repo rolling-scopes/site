@@ -18,7 +18,7 @@ const schoolMenuStaticLinks = [
   },
   {
     title: 'Mentoring',
-    detailsUrl: '/#mentors-wanted',
+    detailsUrl: `/#${ANCHORS.MENTORS_WANTED}`,
     description: 'Contribute and study',
   },
 ];

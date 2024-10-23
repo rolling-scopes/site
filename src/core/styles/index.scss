@@ -6,6 +6,7 @@ html {
 
 body {
   font-family: $font-primary;
+  text-wrap: pretty;
 }
 
 * {
@@ -94,4 +95,54 @@ figure {
   flex-direction: column;
   min-height: 100vh;
   text-align: center;
+}
+
+.carousel {
+  .slide {
+    cursor: pointer;
+    padding: 0 5px;
+
+    img {
+      height: auto;
+    }
+  }
+
+  .carousel-slider {
+    .control-next,
+    .control-prev {
+      --slider-arrow-btn-height: 45px;
+
+      top: calc(50% - var(--slider-arrow-btn-height) / 2);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      height: var(--slider-arrow-btn-height);
+      margin: 2px;
+
+      opacity: $opacity-100;
+      backdrop-filter: blur(20px);
+      border-radius: 8px;
+
+      @include media-mobile-landscape {
+        display: none;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: $color-white;
+
+          &::before {
+            filter: invert(60%);
+          }
+        }
+      }
+    }
+  }
+
+  .dot {
+    display: inline-block;
+    padding: 7px;
+  }
 }

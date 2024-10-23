@@ -35,6 +35,7 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
     thirdParagraphFirstHalf,
     rsDocsLink,
     thirdParagraphSecondHalf,
+    discordNote,
   } = communicationText[lang];
 
   return (
@@ -53,6 +54,10 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
                 {discordLink}
               </LinkCustom>
               {firstParagraphSecondHalf}
+            </Paragraph>
+            <Paragraph>
+              &#9888;&#65039;
+              {discordNote}
             </Paragraph>
             <Paragraph className={cx('communication-paragraph')}>
               {secondParagraphFirstHalf}

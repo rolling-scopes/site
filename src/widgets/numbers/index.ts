@@ -1,1 +1,1 @@
-export { Numbers } from './ui/numbers';
+export { Numbers } from './ui/numbers/numbers';

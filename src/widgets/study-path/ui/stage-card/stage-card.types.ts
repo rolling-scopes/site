@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image';
-import { type ListData } from '@/shared/ui/list';
+import type { ListData, ListType } from '@/shared/types';
 
 export interface Stage {
   id: number | string;
@@ -17,5 +17,5 @@ export interface Stage {
 }
 
 export interface StageCardProps extends Stage {
-  marked?: boolean;
+  type?: ListType;
 }

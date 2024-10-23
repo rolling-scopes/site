@@ -1,11 +1,12 @@
+import { LINKS } from '@/core/const';
 import { Course } from '@/entities/course';
-import { About } from '@/widgets/about';
+import { AboutCourse } from '@/widgets/about-course';
 import { AngularTopics } from '@/widgets/angular-topics';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
-import { CourseMain } from '@/widgets/course-main';
-import { MentorsWanted } from '@/widgets/mentors-wanted';
+import { HeroCourse } from '@/widgets/hero-course';
+import { MentorsWantedCourse } from '@/widgets/mentors-wanted-course';
 import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
@@ -20,16 +21,16 @@ type AngularProps = {
 export const Angular = ({ course, courseName }: AngularProps) => {
   return (
     <>
-      <CourseMain course={course} />
+      <HeroCourse course={course} />
       <Breadcrumbs />
       <TrainingProgram course={course} courseName={courseName} />
       <AngularTopics />
-      <About course={course} courseName={courseName} />
+      <AboutCourse course={course} courseName={courseName} />
       <Certification courseName={courseName} />
       <Communication courseName={courseName} />
       <StudyPath path="angular" />
       <Required courseName={courseName} marked1 />
-      <MentorsWanted />
+      <MentorsWantedCourse link={LINKS.ANGULAR_MENTORING} />
       <Trainers trainers={angular} />
     </>
   );

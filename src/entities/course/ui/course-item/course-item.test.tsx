@@ -1,7 +1,6 @@
 import { screen } from '@testing-library/react';
 import dayjs from 'dayjs';
-import { CourseItemData } from '@/entities/course';
-import { CourseItem } from '@/entities/course/ui/course-item/course-item.tsx';
+import { CourseItem, CourseItemData } from '@/entities/course';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants.ts';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 

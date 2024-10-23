@@ -1,6 +1,7 @@
+import { ReactNode } from 'react';
 import { StaticImageData } from 'next/image';
 import type { Course } from '@/entities/course';
-import { type ListData } from '@/shared/ui/list';
+import type { ListData } from '@/shared/types';
 
 export type DataMap = {
   courses: Course[];
@@ -20,6 +21,13 @@ export interface JSPath {
   list?: ListData;
   marked?: boolean;
 }
+
+export type AboutCourseInfo = {
+  id: number;
+  title: string;
+  info: string | ReactNode;
+  icon: StaticImageData;
+};
 
 export type AngularAwsPath = Pick<JSPath, 'id' | 'title' | 'list'>;
 

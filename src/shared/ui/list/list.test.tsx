@@ -27,8 +27,8 @@ describe('List Component', () => {
     expect(list).toHaveClass(cx('marked'));
   });
 
-  it("doesn't have the 'marked' class when marked prop is false", () => {
-    render(<List data={data} marked={false} />);
+  it("doesn't have the 'marked' class when 'type' prop is 'unmarked", () => {
+    render(<List data={data} type="unmarked" />);
 
     items?.forEach((listItem) => {
       expect(listItem).not.toHaveClass(cx('marked'));

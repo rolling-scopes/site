@@ -190,7 +190,7 @@ export const contentMap: ContentMap = {
           data={[
             'Знакомство со школой, профессией JS/Front-end разработчика и системой контроля версий Git.',
           ]}
-          marked={false}
+          type="unmarked"
         />
       </div>,
       <div key="js / front-end pre-school ru 02">
@@ -201,7 +201,7 @@ export const contentMap: ContentMap = {
             'JavaScript: Основы, функции, объекты, массивы и работа с DOM.',
             'Инструменты: Chrome Dev Tools, VS Code, Терминал и Figma.',
           ]}
-          marked={false}
+          type="unmarked"
         />
       </div>,
       <div key="js / front-end pre-school ru 03">
@@ -213,18 +213,18 @@ export const contentMap: ContentMap = {
             'CSS Mem Slider: Продвинутый проект по CSS.',
             'Проекты JS-30: Аудиоплеер, галерея изображений и случайная игра.',
           ]}
-          marked={false}
+          type="unmarked"
         />
       </div>,
       <div key="js / front-end pre-school ru 04">
         <Paragraph>Задачи Codewars:</Paragraph>
-        <List data={['Еженедельные задачи по алгоритмам и структурам данных.']} marked={false} />
+        <List data={['Еженедельные задачи по алгоритмам и структурам данных.']} type="marked" />
       </div>,
       <div key="js / front-end pre-school ru 05">
         <Paragraph>Итоговая аттестация:</Paragraph>
         <List
           data={['Кросс-чек проектов, тесты и ревью кода. Выдача сертификата.']}
-          marked={false}
+          type="unmarked"
         />
       </div>,
     ],

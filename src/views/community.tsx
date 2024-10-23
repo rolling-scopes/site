@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { PAGE_NAMES } from '@/shared/constants';
 import { AboutCommunity } from '@/widgets/about-community';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
-import { Community as CommunitySection } from '@/widgets/community';
+import { CommunityMedia } from '@/widgets/community-media';
 import { Contribute } from '@/widgets/contribute';
 import { Events } from '@/widgets/events';
 import { HeroPage } from '@/widgets/hero-page';
@@ -25,7 +25,7 @@ const Community: FC = () => {
       <Events />
       <Speakers />
       <Merch />
-      <CommunitySection />
+      <CommunityMedia />
       <Contribute />
       <Support />
     </>

@@ -1,10 +1,10 @@
 import { Course } from '@/entities/course';
-import { About } from '@/widgets/about';
+import { AboutCourse } from '@/widgets/about-course';
 import { AboutVideo } from '@/widgets/about-video';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
-import { CourseMain } from '@/widgets/course-main';
+import { HeroCourse } from '@/widgets/hero-course';
 import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
@@ -20,10 +20,10 @@ type JavaScriptRuProps = {
 export const JavaScriptRu = ({ lang, course, courseName }: JavaScriptRuProps) => {
   return (
     <>
-      <CourseMain course={course} lang={lang} />
+      <HeroCourse course={course} lang={lang} />
       <Breadcrumbs />
       <TrainingProgram course={course} courseName={courseName} lang={lang} />
-      <About course={course} courseName={courseName} type={lang} />
+      <AboutCourse course={course} courseName={courseName} type={lang} />
       <Certification courseName={courseName} />
       <Communication courseName={courseName} lang={lang} />
       <AboutVideo lang={lang} />
