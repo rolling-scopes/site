@@ -79,6 +79,14 @@
   },
   "overrides": {
     "@types/react": "npm:types-react@19.0.0-rc.1",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
+    "@testing-library/react": {
+      "react": "19.0.0-rc-65a56d0e-20241020",
+      "react-dom": "19.0.0-rc-65a56d0e-20241020"
+    },
+    "nextjs-toploader": {
+      "react": "19.0.0-rc-65a56d0e-20241020",
+      "react-dom": "19.0.0-rc-65a56d0e-20241020"
+    }
   }
 }
