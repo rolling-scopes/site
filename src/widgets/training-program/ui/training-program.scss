@@ -17,9 +17,12 @@
 
         max-width: 55%;
 
-        & p {
-          padding-bottom: 0;
+        & span {
           font-weight: $font-weight-bold;
+        }
+
+        p {
+          padding-bottom: 0;
         }
 
         & > .button {
