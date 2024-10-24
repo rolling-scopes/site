@@ -11,6 +11,6 @@ describe('LogoIcon Component', () => {
     const imgElement = screen.getByAltText(testTitle);
 
     expect(imgElement).toBeInTheDocument();
-    expect(imgElement).toHaveAttribute('src', MOCKED_IMAGE_PATH);
+    expect(imgElement).toHaveAttribute('src', MOCKED_IMAGE_PATH.src);
   });
 });

@@ -1,5 +1,5 @@
 import { type CoursesPath } from './courses-data.types';
-import { ROUTES } from '@/app/const';
+import { ROUTES } from '@/core/const';
 import AWSDeveloperIcon from '@/shared/assets/icons/aws-developer.webp';
 import AWSFundamentalsIcon from '@/shared/assets/icons/aws-fundamentals.webp';
 import HTMLIcon from '@/shared/assets/icons/html.webp';

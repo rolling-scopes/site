@@ -1,4 +1,9 @@
 .faq {
+  .list {
+    padding: 0;
+    list-style: none;
+  }
+
   .info-wrapper {
     display: flex;
     flex-direction: column;
@@ -31,9 +36,4 @@
   @include media-tablet-large {
     font-size: 16px;
   }
-}
-
-ol {
-  padding: 0;
-  list-style: none;
 }

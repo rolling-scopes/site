@@ -1,24 +1,11 @@
 import { screen } from '@testing-library/react';
 import { HeroCourse } from './hero-course';
-import { ROUTES } from '@/app/const';
+import { ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { dayJS } from '@/shared/helpers/dayJS';
 import { COURSE_TITLES } from 'data';
-
-vi.mock('@/app/hooks/use-course-by-title');
-vi.mock('react-router-dom', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('react-router-dom')>();
-
-  return {
-    ...actual,
-    useLoaderData: vi.fn(() => [mockedCourse, mockedCourseAvailable, mockedCourseUpcoming]),
-  };
-});
-
-const reactCourseTitle = 'React';
-const angularCourseTitle = 'Angular';
 
 const mockedCourse: Course = {
   id: '6',
@@ -37,21 +24,9 @@ const mockedCourse: Course = {
   },
 };
 
-const mockedCourseAvailable: Course = {
-  ...mockedCourse,
-  title: reactCourseTitle,
-  startDate: dayJS().format('D MMM, YYYY'),
-};
-
-const mockedCourseUpcoming: Course = {
-  ...mockedCourse,
-  title: angularCourseTitle,
-  startDate: dayJS().add(1, 'month').format('D MMM, YYYY'),
-};
-
 describe('HeroCourse component', () => {
   beforeEach(() => {
-    renderWithRouter(<HeroCourse courseName="Node.js" />);
+    renderWithRouter(<HeroCourse course={mockedCourse} />);
   });
 
   it('renders the title and label correctly', async () => {
@@ -66,16 +41,13 @@ describe('HeroCourse component', () => {
     const buttonElement = screen.getByRole('link', { name: /enroll/i });
 
     expect(buttonElement).toBeVisible();
-    expect(buttonElement).toHaveAttribute(
-      'href',
-      'https://test.com',
-    );
+    expect(buttonElement).toHaveAttribute('href', 'https://test.com');
   });
 
   it('renders the image with correct source', () => {
     const imageElement = screen.getByRole('img', { name: /Node.js/i });
 
     expect(imageElement).toBeInTheDocument();
-    expect(imageElement).toHaveAttribute('src', MOCKED_IMAGE_PATH);
+    expect(imageElement).toHaveAttribute('src', MOCKED_IMAGE_PATH.src);
   });
 });

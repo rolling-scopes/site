@@ -6,7 +6,7 @@ import { renderWithRouter } from '@/shared/__tests__/utils';
 describe('BreadcrumbItem', () => {
   it('should render breadcrumb correctly', () => {
     const props = {
-      linkTo: '/some-link/',
+      linkTo: '/some-link',
       text: 'Some text',
     };
 

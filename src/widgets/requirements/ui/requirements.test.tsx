@@ -5,14 +5,14 @@ import { renderWithRouter } from '@/shared/__tests__/utils';
 
 const registerLink = 'https://app.rs.school/registry/mentor';
 const requirements = [
-  'Desire to help students. If you\'ve been working with JS/TS in production for more than 6 months, then that\'s great',
+  "Desire to help students. If you've been working with JS/TS in production for more than 6 months, then that's great",
   'Desire to mentor 2 to 6 students online or in person',
   'Ability to spend 3 to 5 hours per week',
 ];
 const responsibilities = [
   'Conducting an interview',
   'Code review tasks',
-  'Answers to students\' questions',
+  "Answers to students' questions",
 ];
 
 describe('Requirements', () => {

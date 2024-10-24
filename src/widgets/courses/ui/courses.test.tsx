@@ -1,16 +1,20 @@
 import { screen } from '@testing-library/react';
-import { Mock, describe, expect, it, vi } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { Courses } from './courses';
-import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
+import { Course } from '@/entities/course';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants.ts';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { useDataByName } from '@/shared/hooks/use-data-by-name';
 
 const widgetTitle = 'All courses';
-const mockCourses = [
+const mockCourses: Course[] = [
   {
     id: '1',
     title: 'React course',
     iconSrc: MOCKED_IMAGE_PATH,
+    altTitle: MOCKED_IMAGE_PATH.src,
+    iconSmall: MOCKED_IMAGE_PATH,
+    secondaryIcon: MOCKED_IMAGE_PATH,
+    enroll: 'enroll',
     startDate: '23 Oct, 2023',
     language: ['ru', 'en'],
     mode: 'online',
@@ -24,6 +28,10 @@ const mockCourses = [
     id: '2',
     title: 'React course 2',
     iconSrc: MOCKED_IMAGE_PATH,
+    altTitle: MOCKED_IMAGE_PATH.src,
+    iconSmall: MOCKED_IMAGE_PATH,
+    secondaryIcon: MOCKED_IMAGE_PATH,
+    enroll: 'enroll',
     startDate: '23 Oct, 2023',
     language: ['ru', 'en'],
     mode: 'online',
@@ -35,19 +43,9 @@ const mockCourses = [
   },
 ];
 
-vi.mock('@/shared/hooks/use-data-by-name', () => {
-  return {
-    useDataByName: vi.fn(() => ({
-      data: mockCourses,
-      loading: false,
-      error: undefined,
-    })),
-  };
-});
-
 describe('Courses (other courses) component', () => {
   it('renders widget without crashing and display correct content', () => {
-    renderWithRouter(<Courses />);
+    renderWithRouter(<Courses courses={mockCourses} />);
     const widget = screen.getByTestId('all-courses');
     const title = screen.getByTestId('widget-title');
     const courseCards = screen.getAllByTestId('course-card');
@@ -60,21 +58,5 @@ describe('Courses (other courses) component', () => {
       expect(card).toBeVisible();
       expect(card).toHaveTextContent(mockCourses[index].title);
     });
-  });
-
-  it('displays a loading state for other courses', () => {
-    (useDataByName as Mock).mockImplementation(() => ({ loading: true }));
-    renderWithRouter(<Courses />);
-
-    expect(screen.getByText('Loading...')).toBeVisible();
-  });
-
-  it('displays a error state for other courses', () => {
-    const errorMessage = 'Something went wrong';
-
-    (useDataByName as Mock).mockImplementation(() => ({ error: new Error(errorMessage) }));
-    renderWithRouter(<Courses />);
-
-    expect(screen.getByText(errorMessage)).toBeVisible();
   });
 });

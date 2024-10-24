@@ -1,12 +1,12 @@
 import classNames from 'classnames/bind';
+import Image from 'next/image';
 import discordLogo from '@/shared/assets/svg/discord-logo.svg';
-import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import {
-  CourseNamesChannels,
+  CourseNamesKeys,
   DISCORD_LINKS,
   RS_DOCS_COMMUNICATION_LINK,
   RS_DOCS_TELEGRAM_CHATS_LINK,
@@ -18,7 +18,7 @@ import styles from './communication.module.scss';
 const cx = classNames.bind(styles);
 
 type CommunicationProps = {
-  courseName: CourseNamesChannels;
+  courseName: CourseNamesKeys;
   lang?: 'ru' | 'en';
 };
 

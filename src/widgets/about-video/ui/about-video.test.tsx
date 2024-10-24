@@ -22,7 +22,7 @@ describe('AboutVideo component', () => {
   });
 
   it('renders the placeholder in development mode', () => {
-    vi.stubEnv('DEV', true);
+    vi.stubEnv('NEXT_PUBLIC_DEV', 'true');
     render(<AboutVideo />);
     const placeholder = screen.getByText('Video Placeholder');
 
@@ -30,7 +30,7 @@ describe('AboutVideo component', () => {
   });
 
   it('renders the YouTube embed in production mode', () => {
-    vi.stubEnv('DEV', false);
+    vi.stubEnv('NEXT_PUBLIC_DEV', 'false');
     render(<AboutVideo />);
     const video = screen.getByTitle('Introduction to The Rolling Scopes School Online Courses');
 

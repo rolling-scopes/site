@@ -18,7 +18,11 @@
 
     .sloth-mascot {
       align-self: center;
+
+      width: auto;
       max-width: 290px;
+      height: auto;
+
       object-fit: contain;
     }
 

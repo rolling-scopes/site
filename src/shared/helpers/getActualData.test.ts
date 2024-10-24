@@ -9,16 +9,30 @@ const staleAfterDays = 14;
 
 const dayInFuture = dayJS().add(2, 'month').toISOString();
 const nonStaleDayInPast = dayJS().subtract(1, 'day').toISOString();
-const staleDayInPast = dayJS().subtract(staleAfterDays + 100, 'day').toISOString();
+const staleDayInPast = dayJS()
+  .subtract(staleAfterDays + 100, 'day')
+  .toISOString();
 
 const coursesMock: Course[] = [
   {
     id: '1',
     title: 'title',
     altTitle: 'altTitle',
-    iconSrc: 'icon',
-    iconSmall: 'iconSmall',
-    secondaryIcon: 'secondaryIcon',
+    iconSrc: {
+      src: 'icon',
+      height: 100,
+      width: 100,
+    },
+    iconSmall: {
+      src: 'iconSmall',
+      height: 100,
+      width: 100,
+    },
+    secondaryIcon: {
+      src: 'secondaryIcon',
+      height: 100,
+      width: 100,
+    },
     startDate: staleDayInPast,
     language: ['ru'],
     mode: 'online',
@@ -33,9 +47,21 @@ const coursesMock: Course[] = [
     id: '2',
     title: 'title',
     altTitle: 'altTitle',
-    iconSrc: 'icon',
-    iconSmall: 'iconSmall',
-    secondaryIcon: 'secondaryIcon',
+    iconSrc: {
+      src: 'icon',
+      height: 100,
+      width: 100,
+    },
+    iconSmall: {
+      src: 'iconSmall',
+      height: 100,
+      width: 100,
+    },
+    secondaryIcon: {
+      src: 'secondaryIcon',
+      height: 100,
+      width: 100,
+    },
     startDate: dayInFuture,
     language: ['ru'],
     mode: 'online',
@@ -50,9 +76,21 @@ const coursesMock: Course[] = [
     id: '3',
     title: 'title',
     altTitle: 'altTitle',
-    iconSrc: 'icon',
-    iconSmall: 'iconSmall',
-    secondaryIcon: 'secondaryIcon',
+    iconSrc: {
+      src: 'icon',
+      height: 100,
+      width: 100,
+    },
+    iconSmall: {
+      src: 'iconSmall',
+      height: 100,
+      width: 100,
+    },
+    secondaryIcon: {
+      src: 'secondaryIcon',
+      height: 100,
+      width: 100,
+    },
     startDate: nonStaleDayInPast,
     language: ['ru'],
     mode: 'online',

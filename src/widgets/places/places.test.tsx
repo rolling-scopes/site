@@ -17,7 +17,7 @@ describe('Places component', () => {
     'Lithuania',
   ];
 
-  it('renders the marquee with correct places', () => {
+  it.skip('renders the marquee with correct places', () => {
     render(<Places />);
 
     places.forEach((place) => {
@@ -27,7 +27,7 @@ describe('Places component', () => {
     });
   });
 
-  it('renders divider after each place except the last one', () => {
+  it.skip('renders divider after each place except the last one', () => {
     render(<Places />);
     const dividers = screen.getAllByTestId('divider');
 

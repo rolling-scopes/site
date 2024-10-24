@@ -1,20 +1,18 @@
-import type { CourseName } from '../required.types';
 import { List } from '@/shared/ui/list';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { courseDataMap } from 'data';
+import { CoursesWithRequirementsNames, courseDataMap } from 'data';
 
 import './required.scss';
 
-interface RequiredProps {
-  courseName: CourseName;
+type RequiredProps = {
+  courseName: CoursesWithRequirementsNames;
   marked1?: boolean;
   marked2?: boolean;
-}
+};
 
 export const Required = ({ courseName }: RequiredProps) => {
   const requiredKnowledge = courseDataMap[courseName];
-
   const { knowBefore, willLearn, title } = requiredKnowledge;
 
   const isKnowBeforeExist =

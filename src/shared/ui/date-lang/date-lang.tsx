@@ -1,8 +1,8 @@
 import classNames from 'classnames/bind';
 import dayjs from 'dayjs';
+import Image from 'next/image';
 import micIcon from '@/shared/assets/icons/mic.svg';
 import noteIcon from '@/shared/assets/icons/note-icon.svg';
-import { Image } from '@/shared/ui/image';
 
 import styles from './date-lang.module.scss';
 
@@ -21,12 +21,12 @@ export const DateLang = ({ startDate, language, mode, withMargin }: DateLangProp
   return (
     <section className={cx('info', { margin: withMargin })}>
       <p className={cx('date')}>
-        <Image className={cx('icon')} src={noteIcon} alt="note-icon" lazy={false} />
+        <Image className={cx('icon')} src={noteIcon} alt="note-icon" />
         <span>Start:</span>
         <time dateTime={dateAttr}>{startDate}</time>
       </p>
       <p className={cx('additional-info')}>
-        <Image className={cx('icon')} src={micIcon} alt="microphone-icon" lazy={false} />
+        <Image className={cx('icon')} src={micIcon} alt="microphone-icon" />
         <span className={cx('language')}>{language}</span>
         <span>•</span>
         <span className={cx('mode')}>{mode}</span>

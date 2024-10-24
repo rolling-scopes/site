@@ -1,4 +1,4 @@
-import { ROUTES } from '@/app/const';
+import { ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
 import angularSecondary from '@/shared/assets/icons/angular-secondary.webp';
 import angular from '@/shared/assets/icons/angular.svg';

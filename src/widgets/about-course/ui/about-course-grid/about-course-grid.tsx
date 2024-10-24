@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { Image } from '@/shared/ui/image';
+import Image from 'next/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
 import type { AboutCourseInfo } from 'data';
@@ -28,9 +28,7 @@ export const AboutCourseGrid = ({ items }: AboutCourseGridProps) => {
 
             <Subtitle fontSize="extra-small">{title}</Subtitle>
           </header>
-          { typeof info === 'string'
-            ? <Paragraph>{info}</Paragraph>
-            : info }
+          {typeof info === 'string' ? <Paragraph>{info}</Paragraph> : info}
         </article>
       ))}
     </div>

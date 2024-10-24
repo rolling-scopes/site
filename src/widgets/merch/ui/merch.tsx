@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
-import { LINKS } from '@/app/const';
+import Image from 'next/image';
+import { LINKS } from '@/core/const';
 import image from '@/shared/assets/merch.webp';
-import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
@@ -18,9 +18,7 @@ export const Merch = () => (
       <div className={cx('info')}>
         <SectionLabel>merch</SectionLabel>
         <WidgetTitle mods="asterisk">RS merch</WidgetTitle>
-        <Paragraph fontSize="large">
-          Are you an RS sloth fan and looking for RS merch?
-        </Paragraph>
+        <Paragraph fontSize="large">Are you an RS sloth fan and looking for RS merch?</Paragraph>
         <Paragraph>
           The wait is almost over as we&apos;re gearing up for the catalog of free web and print
           assets where you will find all merch collections and can print your own Rolling Scopes

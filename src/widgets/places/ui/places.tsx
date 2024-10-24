@@ -1,3 +1,5 @@
+'use client';
+
 // @ts-expect-error no types
 import Marquee from 'react-double-marquee';
 

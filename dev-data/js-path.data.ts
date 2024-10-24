@@ -37,8 +37,7 @@ export const jsPath: JSPath[] = [
     description:
       'Learning either React or Angular Framework (the choice belongs to the student). To enroll, you need to successfully complete two stages of training. Format: mentoring, self-study, webinars, and communication on Discord. Practical sessions are reviewed and evaluated by mentors, as well as through cross-checking methods. Throughout the training, mock interviews are conducted with different mentors.',
     imageSrc: stage3,
-    list:
-    [
+    list: [
       'Choose a Framework: React or Angular.',
       'Collaborative development of a final project.',
       'Framework-based interviews.',

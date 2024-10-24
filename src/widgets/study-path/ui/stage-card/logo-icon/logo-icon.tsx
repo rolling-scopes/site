@@ -1,9 +1,9 @@
-import { Image } from '@/shared/ui/image';
+import Image, { StaticImageData } from 'next/image';
 
 import './logo-icon.scss';
 
 interface LogoIconProps {
-  icon: string;
+  icon: StaticImageData;
   title: string;
 }
 

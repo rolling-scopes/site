@@ -1,3 +1,3 @@
-import { RouteValues } from '@/app/types/route.types.ts';
+import { RouteValues } from '@/core/types/route.types';
 
 export type BreadcrumbNameMap = Record<RouteValues, string>;

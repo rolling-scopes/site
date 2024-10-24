@@ -1,9 +1,6 @@
 import { screen } from '@testing-library/react';
-import { userEvent } from '@testing-library/user-event';
-import { Route, Routes } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
 import { LinkCustom } from './link-custom';
-import { ANCHORS } from '@/app/const';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 describe('LinkCustom', () => {
@@ -31,7 +28,11 @@ describe('LinkCustom', () => {
   });
 
   it('should be external', () => {
-    const { getByRole } = renderWithRouter(<LinkCustom href={href} external>{label}</LinkCustom>);
+    const { getByRole } = renderWithRouter(
+      <LinkCustom href={href} external>
+        {label}
+      </LinkCustom>,
+    );
     const link = getByRole('link');
 
     expect(link).toHaveAttribute('rel', 'noopener noreferrer');
@@ -47,25 +48,12 @@ describe('LinkCustom', () => {
     expect(link).not.toHaveAttribute('target', '_blank');
   });
 
-  it('after click on link should go to http://example.com', async () => {
-    renderWithRouter(
-      <Routes>
-        <Route path="/" element={<LinkCustom href={`/${ANCHORS.ABOUT_SCHOOL}`}>Go to About</LinkCustom>} />
-        <Route path={`/${ANCHORS.ABOUT_SCHOOL}`} element={<div>About Page</div>} />
-      </Routes>,
-    );
-    const linkElement = screen.getByText(/Go to About/i);
-
-    expect(screen.getByText(/Go to About/i)).toBeInTheDocument();
-
-    await userEvent.click(linkElement);
-
-    expect(screen.queryByText(/Go to About/i)).not.toBeInTheDocument();
-    expect(screen.getByText(/About Page/i)).toBeInTheDocument();
-  });
-
   it('renders TextLinkIcon when link is external and variant is textLink', () => {
-    renderWithRouter(<LinkCustom href="/" variant="textLink" external>{label}</LinkCustom>);
+    renderWithRouter(
+      <LinkCustom href="/" variant="textLink" external>
+        {label}
+      </LinkCustom>,
+    );
 
     const icon = screen.getByTestId('text-link-icon');
 
@@ -73,7 +61,11 @@ describe('LinkCustom', () => {
   });
 
   it('renders ArrowIcon when variant is primary', () => {
-    renderWithRouter(<LinkCustom href="/" variant="primary">{label}</LinkCustom>);
+    renderWithRouter(
+      <LinkCustom href="/" variant="primary">
+        {label}
+      </LinkCustom>,
+    );
 
     const icon = screen.getByTestId('arrow-icon');
 
@@ -81,18 +73,26 @@ describe('LinkCustom', () => {
   });
 
   it('renders ArrowIcon with small size when variant is rounded', () => {
-    renderWithRouter(<LinkCustom href="/" variant="rounded">{label}</LinkCustom>);
+    renderWithRouter(
+      <LinkCustom href="/" variant="rounded">
+        {label}
+      </LinkCustom>,
+    );
 
     const icon = screen.getByTestId('arrow-icon');
 
     expect(icon).toBeInTheDocument();
-    expect(icon).toHaveAttribute('height', '16px');
+    expect(icon).toHaveAttribute('height', '1');
   });
 
   it('renders provided icon when icon prop is passed', () => {
     const CustomIcon = () => <div data-testid="custom-icon">custom</div>;
 
-    renderWithRouter(<LinkCustom href="/" variant="primary" icon={<CustomIcon />}>{label}</LinkCustom>);
+    renderWithRouter(
+      <LinkCustom href="/" variant="primary" icon={<CustomIcon />}>
+        {label}
+      </LinkCustom>,
+    );
 
     const providedIcon = screen.getByTestId('custom-icon');
     const defaultIcon = screen.queryByTestId('arrow-icon');
