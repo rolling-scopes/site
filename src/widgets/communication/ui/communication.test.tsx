@@ -43,7 +43,7 @@ describe('Communication section', () => {
     'should render correct link of %s course',
     (courseName, link) => {
       renderWithRouter(<Communication courseName={courseName as keyof typeof DISCORD_LINKS} />);
-      const linkElement = screen.getByText(/course discord server/i);
+      const linkElement = screen.getByTestId('discord-link');
 
       expect(linkElement).toBeVisible();
       expect(linkElement.getAttribute('href')).toMatch(link);

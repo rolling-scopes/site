@@ -2,9 +2,13 @@ export const communicationText = {
   en: {
     title: 'Communication',
     subTitle: 'Discord is the main communication channel in RS School',
+    subTitleJs: 'RS School uses two main communication channels:',
     firstParagraphFirstHalf: 'Here is link for the ',
+    firstParagraphFirstHalfJs: ': Join the Discord server to see the latest news and chat with students.',
     discordLink: 'course Discord server',
+    discordLinkJs: 'Discord',
     firstParagraphSecondHalf: ', where you can see latest news and chat with students.',
+    firstParagraphSecondHalfJs: ': You can also join the official Telegram channel for updates and discussions.',
     discordNote: 'Attention! In some countries, access to Discord requires the use of a VPN. If you are having trouble connecting, please try using a reliable VPN service.',
     secondParagraphFirstHalf: 'There are channels in ',
     telegramLink: 'Telegram',
@@ -17,10 +21,14 @@ export const communicationText = {
   ru: {
     title: 'Общение',
     subTitle: 'Дискорд — основной способ общения в RS School',
+    subTitleJs: '',
     firstParagraphFirstHalf: 'Вот ссылка на ',
+    firstParagraphFirstHalfJs: '',
     discordLink: 'Дискорд сервер курса',
+    discordLinkJs: '',
     firstParagraphSecondHalf:
       ', где вы можете посмотреть последние новости, задать вопросы и общаться со студентами.',
+    firstParagraphSecondHalfJs: '',
     discordNote: 'Внимание! В некоторых странах для доступа к Discord требуется использование VPN. Если у вас возникают трудности с подключением, попробуйте использовать надёжный VPN-сервис.',
     secondParagraphFirstHalf: 'Также есть каналы в ',
     telegramLink: 'Телеграм',
