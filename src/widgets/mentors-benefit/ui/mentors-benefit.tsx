@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { Image } from '@/shared/ui/image';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { mentorsBenefitData } from 'data';
 
@@ -15,11 +16,12 @@ export const MentorsBenefits = () => {
         <WidgetTitle>{mentorsBenefitData.header}</WidgetTitle>
         <ul className={cx('benefits')}>
           {mentorsBenefitData.benefits.map((info, index) => {
-            let classNameWidth = ((info.length > shortBenefitMaxChars) ? 'benefit-long' : 'benefit-short');
+            let classNameWidth = ((info.text.length > shortBenefitMaxChars) ? 'benefit-long' : 'benefit-short');
 
             return (
               <li key={index} className={cx('benefit', classNameWidth)}>
-                {info}
+                {(info.icon && info.iconAlt) && <Image className={cx('benefit-icon')} src={info.icon} alt={info.iconAlt} />}
+                {info.text}
               </li>
             );
           })}

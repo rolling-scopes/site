@@ -20,6 +20,10 @@
 }
 
 .benefit {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
   width: 100%;
   padding: 24px;
 
@@ -47,4 +51,9 @@
   @include media-tablet {
     max-width: unset;
   }
+}
+
+.benefit-icon {
+  max-width: 50px;
+  max-height: 40px;
 }
