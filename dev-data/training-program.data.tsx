@@ -218,7 +218,7 @@ export const contentMap: ContentMap = {
       </div>,
       <div key="js / front-end pre-school ru 04">
         <Paragraph>Задачи Codewars:</Paragraph>
-        <List data={['Еженедельные задачи по алгоритмам и структурам данных.']} type="marked" />
+        <List data={['Еженедельные задачи по алгоритмам и структурам данных.']} type="unmarked" />
       </div>,
       <div key="js / front-end pre-school ru 05">
         <Paragraph>Итоговая аттестация:</Paragraph>

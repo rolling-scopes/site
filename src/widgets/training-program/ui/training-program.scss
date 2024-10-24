@@ -13,11 +13,12 @@
         display: flex;
         flex: 1 1 55%;
         flex-direction: column;
-        gap: 26px;
+        gap: 44px;
 
         max-width: 55%;
 
         & p {
+          padding-bottom: 0;
           font-weight: $font-weight-bold;
         }
 
