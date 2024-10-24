@@ -13,7 +13,7 @@
         display: flex;
         flex: 1 1 55%;
         flex-direction: column;
-        gap: 44px;
+        gap: 26px;
 
         max-width: 55%;
 
@@ -21,8 +21,13 @@
           font-weight: $font-weight-bold;
         }
 
-        p {
-          padding-bottom: 0;
+        div {
+          padding-bottom: 18px;
+
+          p {
+            padding-bottom: 0;
+            font-weight: $font-weight-bold;
+          }
         }
 
         & > .button {
