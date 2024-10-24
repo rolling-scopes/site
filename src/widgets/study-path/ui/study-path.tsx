@@ -2,10 +2,11 @@
 
 import { createContext } from 'react';
 import { Stages } from './stages';
+import { dataProviders } from '@/core/services/api';
 import type { ListType } from '@/shared/types';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { type DataMap, coursesPath } from 'data';
+import { type DataMap } from 'data';
 
 import './study-path.scss';
 
@@ -33,6 +34,8 @@ const localizedContent = {
 export const LangContext = createContext<'ru' | 'en'>('en');
 
 export const StudyPath = ({ path, type, lang = 'en' }: StudyPathProps) => {
+  const coursesPath = dataProviders[path];
+
   const isAngularOrAwsDev = path === 'angular' || path === 'awsDev';
 
   const title = isAngularOrAwsDev ? 'Course Curriculum' : localizedContent[lang].title;
