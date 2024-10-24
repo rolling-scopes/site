@@ -14,6 +14,7 @@ const contributeOptions = [
       'Become a mentor and guide the next generation of developers. Sign up as a mentor here.',
     linkLabel: 'Read more',
     href: `/${ROUTES.MENTORSHIP}`,
+    external: false,
   },
   {
     title: 'Developer / Coordinator / Trainer',
@@ -42,13 +43,14 @@ export const Contribute = () => (
         <Image className="right picture" src={image} alt="contribute" />
       </div>
       <div className="contribute-options">
-        {contributeOptions.map(({ title, description, linkLabel, href }) => (
+        {contributeOptions.map(({ title, description, linkLabel, href, external }) => (
           <OptionItem
             key={title}
             title={title}
             description={description}
             linkLabel={linkLabel}
             href={href}
+            external={external}
           />
         ))}
       </div>

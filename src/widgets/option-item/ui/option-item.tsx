@@ -12,14 +12,15 @@ type OptionItemProps = {
   description: string;
   linkLabel?: string;
   href?: string;
+  external?: boolean;
 };
 
-export const OptionItem = ({ title, description, linkLabel, href = '' }: OptionItemProps) => (
+export const OptionItem = ({ title, description, linkLabel, href = '', external = true }: OptionItemProps) => (
   <article key={title} className={cx('option-item')} data-testid="option-item">
     <Subtitle>{title}</Subtitle>
     <Paragraph fontSize="large">{description}</Paragraph>
     {linkLabel && (
-      <LinkCustom href={href} variant="primary" external>
+      <LinkCustom href={href} variant="primary" external={external}>
         {linkLabel}
       </LinkCustom>
     )}
