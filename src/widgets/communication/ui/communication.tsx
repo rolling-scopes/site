@@ -29,11 +29,11 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
     subTitle,
     subTitleJs,
     firstParagraphFirstHalf,
-    firstParagraphFirstHalfJs,
+    discordParagraphTextJs,
     discordLink,
     discordLinkJs,
     firstParagraphSecondHalf,
-    firstParagraphSecondHalfJs,
+    telegramParagraphTextJs,
     secondParagraphFirstHalf,
     telegramLink,
     secondParagraphSecondHalf,
@@ -44,6 +44,11 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
   } = communicationText[lang];
 
   const isJsEnCourse = courseName === 'js / front-end en';
+  const courseSubTitle = isJsEnCourse ? subTitleJs : subTitle;
+  const paragraphClassName = isJsEnCourse ? cx('communication-paragraph') : undefined;
+  const courseDiscordLink = isJsEnCourse ? discordLinkJs : discordLink;
+  const discordFirstHalfText = !isJsEnCourse ? firstParagraphFirstHalf : null;
+  const discordSecondHalfText = isJsEnCourse ? discordParagraphTextJs : firstParagraphSecondHalf;
 
   return (
     <section className={cx('container')}>
@@ -55,21 +60,21 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
           </figure>
           <div>
             <Subtitle className={cx('communication-subtitle')}>
-              {isJsEnCourse ? subTitleJs : subTitle}
+              {courseSubTitle}
             </Subtitle>
-            <Paragraph className={isJsEnCourse ? cx('communication-paragraph') : undefined}>
-              {!isJsEnCourse && firstParagraphFirstHalf}
+            <Paragraph className={paragraphClassName}>
+              {discordFirstHalfText}
               <LinkCustom href={DISCORD_LINKS[courseName]} external data-testid="discord-link">
-                {isJsEnCourse ? discordLinkJs : discordLink}
+                {courseDiscordLink}
               </LinkCustom>
-              {isJsEnCourse ? firstParagraphFirstHalfJs : firstParagraphSecondHalf}
+              {discordSecondHalfText}
             </Paragraph>
             {isJsEnCourse && (
               <Paragraph>
                 <LinkCustom href={JS_EN_TELEGRAM_CHAT_LINK} external>
                   {telegramLink}
                 </LinkCustom>
-                {firstParagraphSecondHalfJs}
+                {telegramParagraphTextJs}
               </Paragraph>
             )}
             <Paragraph>
