@@ -54,6 +54,10 @@
   align-items: center;
 
   height: 100%;
+
+  @include media-tablet {
+    display: none;
+  }
 }
 
 .menu.open {
@@ -100,4 +104,9 @@
 
 .mobile-menu.open {
   transform: translateY(0);
+  display: none;
+
+  @include media-tablet {
+    display: block;
+  }
 }

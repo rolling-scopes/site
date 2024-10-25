@@ -1,41 +1,37 @@
-import { LINKS } from '@/app/const';
+import classNames from 'classnames/bind';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
+import { Subtitle } from '@/shared/ui/subtitle';
+import { requirementsData } from 'data';
 
-import './requirements.scss';
+import styles from './requirements.module.scss';
 
-const mentorRequirements = [
-  "Desire to help students. If you've been working with JS/TS in production for more than 6 months, then that's great",
-  'Desire to mentor 2 to 6 students online or in person',
-  'Ability to spend 3 to 5 hours per week',
-];
-
-const mentorResponsibilities = [
-  'Conducting an interview',
-  'Code review tasks',
-  "Answers to students' questions",
-];
+const cx = classNames.bind(styles);
 
 export const Requirements = () => {
   return (
-    <section className="requirements container">
-      <div className="requirements content">
-        <div className="requirements-info">
-          <div className="requirements-list">
-            <div className="title">Requirements for mentors</div>
-            <List data={mentorRequirements} />
-          </div>
-          <div className="responsibilities">
-            <div className="title">Mentor responsibilities</div>
-            <List data={mentorResponsibilities} />
-          </div>
+    <section className={cx('container')} data-testid="requirements">
+      <div className={cx('content', 'requirements')}>
+        <div className={cx('requirements-info')}>
+          <article className={cx('requirements-list-wrapper')}>
+            <Subtitle className={cx('title')}>
+              {requirementsData.headerRequirements}
+            </Subtitle>
+            <List data={requirementsData.requirements} />
+          </article>
+          <article>
+            <Subtitle className={cx('title')}>
+              {requirementsData.headerTask}
+            </Subtitle>
+            <List data={requirementsData.tasks} />
+          </article>
         </div>
         <LinkCustom
-          href={LINKS.BECOME_MENTOR}
+          href={requirementsData.button.link}
           variant="primary"
           external
         >
-          Register as a mentor
+          {requirementsData.button.text}
         </LinkCustom>
       </div>
     </section>

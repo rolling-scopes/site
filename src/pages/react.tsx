@@ -1,10 +1,10 @@
 import { ROUTES } from '@/app/const';
-import { About } from '@/widgets/about';
+import { AboutCourse } from '@/widgets/about-course';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
-import { CourseMain } from '@/widgets/course-main';
-import { Mentors } from '@/widgets/mentors';
+import { HeroCourse } from '@/widgets/hero-course';
+import { MentorsWanted } from '@/widgets/mentors-wanted';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
 import { reactEn } from 'data';
@@ -14,13 +14,13 @@ const COURSE_NAME = 'react';
 export const React = () => {
   return (
     <>
-      <CourseMain courseName={COURSE_NAME} />
+      <HeroCourse courseName={COURSE_NAME} />
       <Breadcrumbs />
       <TrainingProgram courseName={COURSE_NAME} />
-      <About courseName={COURSE_NAME} />
+      <AboutCourse courseName={COURSE_NAME} />
       <Certification courseName={COURSE_NAME} />
       <Communication courseName={COURSE_NAME} />
-      <Mentors route={`/${ROUTES.MENTORSHIP}/${ROUTES.REACT}`} />
+      <MentorsWanted route={`/${ROUTES.MENTORSHIP}/${ROUTES.REACT}`} />
       <Trainers trainers={reactEn} />
     </>
   );

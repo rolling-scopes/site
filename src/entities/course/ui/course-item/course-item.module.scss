@@ -34,6 +34,16 @@
 
   .details-link {
     margin: 16px;
+
+    &::before {
+      content: 'More details';
+    }
+
+    @include media-tablet {
+      &::before {
+        content: '';
+      }
+    }
   }
 
   @include media-hover {

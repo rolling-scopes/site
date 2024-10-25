@@ -6,7 +6,7 @@ import { Alumni } from '@/widgets/alumni';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { HeroPage } from '@/widgets/hero-page';
 import { Mentoring } from '@/widgets/mentoring';
-import { Mentors } from '@/widgets/mentors';
+import { MentorsWanted } from '@/widgets/mentors-wanted';
 import { Principles } from '@/widgets/principles';
 import { Requirements } from '@/widgets/requirements';
 import { StudyWithUs } from '@/widgets/study-with-us';
@@ -24,7 +24,7 @@ export const Home: FC = () => {
       <StudyWithUs />
       <UpcomingCourses />
       <Alumni />
-      <Mentors />
+      <MentorsWanted />
       <Mentoring />
       <Requirements />
     </>

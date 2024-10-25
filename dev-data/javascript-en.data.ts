@@ -3,6 +3,7 @@ import andreiMilashevichImg from '@/shared/assets/mentors/a-milashevich.webp';
 import denisSaripovImg from '@/shared/assets/mentors/d-saripov.webp';
 import hannaPratasevichImg from '@/shared/assets/mentors/h-pratasevich.webp';
 import margaritaGolubevaImg from '@/shared/assets/mentors/m-golubeva.webp';
+import nataliaVolkovaImg from '@/shared/assets/mentors/n-volkova.webp';
 
 export const javaScriptEn: Trainer[] = [
   {
@@ -28,5 +29,11 @@ export const javaScriptEn: Trainer[] = [
     role: 'Frontend Developer at Yandex Serbia',
     bio: 'Denis is a Frontend Developer at Yandex with over four years of experience. Prior to joining Yandex, he worked as a Frontend Developer at VK. He possesses expertise in developing complex WYSIWYG and zero-code web applications, as well as collaborative applications that handle extensive graphic rendering, similar to Google Docs, Figma, and Miro.',
     photo: denisSaripovImg,
+  },
+  {
+    name: 'Natalia Volkova',
+    role: 'Sr. Frontend Developer at CRX Markets AG',
+    bio: 'Natalia is a self-learner and a career changer. Before joining IT she had 10+ years of experience in tutoring in Math, Finance, Economics and related subjects along with 5 years of experience as an Economist at the same time. After completed RSS Q3 2019, she rocked her career as a Frontend Developer, becoming a middle Frontend Developer by May 2020 (at Sberbank in Russia) and gaining a Senior level by June 2022 (at CRX Markets in Germany). Meanwhile, she also worked for EPAM in Russia, Callstack.io in Poland, Delivery Hero in Germany. Looking forward to sharing her knowledge and getting you started to work in IT.',
+    photo: nataliaVolkovaImg,
   },
 ];
