@@ -12,6 +12,7 @@ export {
   DISCORD_LINKS,
   JS_EN_TELEGRAM_CHAT_LINK,
   RS_DOCS_COMMUNICATION_LINK,
+  RS_DOCS_EN_LINK,
   RS_DOCS_TELEGRAM_CHATS_LINK,
 } from './communication.data';
 export { angular } from './angular.data';
