@@ -22,12 +22,8 @@ export const mentorsBenefitData = {
       icon: paperIcon,
       iconAlt: 'Paper image',
     },
-    {
-      text: 'You have completed the school course, feel confident and now it\'s your time to “Teach It Forward”',
-    },
-    {
-      text: 'Teaching others, you learn yourself',
-    },
+    { text: 'You have completed the school course, feel confident and now it\'s your time to “Teach It Forward”' },
+    { text: 'Teaching others, you learn yourself' },
     {
       text: 'Opportunity to improve tasks or create your own',
       icon: giftIcon,

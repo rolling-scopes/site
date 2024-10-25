@@ -1,7 +1,7 @@
 import { COURSE_TITLES } from './courseTitles.data.ts';
 import { ROUTES } from '@/app/const';
-import { Stage } from '@/widgets/study-path/ui/stage-card';
 import { SocialMediaProps } from '@/shared/ui/social-media-item';
+import { Stage } from '@/widgets/study-path/ui/stage-card';
 
 export type MentorActivities = Pick<Stage, 'id' | 'title' | 'description' | 'links'>;
 
