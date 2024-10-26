@@ -1,4 +1,3 @@
-import { CourseNamesChannels } from './communication.data.ts';
 import { ANCHORS } from '@/core/const';
 import awardIcon from '@/shared/assets/icons/award-icon.webp';
 import giftIcon from '@/shared/assets/icons/gift.webp';
@@ -9,7 +8,7 @@ import planetIcon from '@/shared/assets/icons/planet.webp';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 import type { AboutCourseInfo } from 'data';
-import { COURSE_TITLES, DISCORD_LINKS } from 'data';
+import { COURSE_TITLES, CourseNamesChannels, DISCORD_LINKS } from 'data';
 
 type ContentMap = {
   [key in CourseNamesChannels]: AboutCourseInfo[];

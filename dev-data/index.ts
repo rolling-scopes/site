@@ -5,16 +5,13 @@ export type {
   DataMap,
   JSPath,
 } from './courses-data.types';
+export { COURSE_TITLES, type CourseNames, type CourseNamesKeys, type CoursesWithRequirementsNames, DISCORD_LINKS, type TrainingProgramType } from './courseTitles.data.ts';
 export {
-  COURSE_TITLES,
-  type CourseMap,
-  type CourseNames,
-  type CourseNamesKeys,
-  type CoursesWithRequirementsNames,
-  DISCORD_LINKS,
-  type TrainingProgramType,
-} from './courseTitles.data';
-export { RS_DOCS_COMMUNICATION_LINK, RS_DOCS_TELEGRAM_CHATS_LINK } from './communication.data';
+  type CourseNamesChannels,
+  JS_EN_TELEGRAM_CHAT_LINK,
+  RS_DOCS_COMMUNICATION_LINK, RS_DOCS_EN_LINK,
+  RS_DOCS_TELEGRAM_CHATS_LINK,
+} from './communication.data';
 export { angular } from './angular.data';
 export { angularPath } from './angular-path.data';
 export { awsDev } from './awsDev.data';

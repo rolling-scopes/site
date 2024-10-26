@@ -19,6 +19,9 @@ const nextConfig = {
       @import "@/core/styles/_placeholders.scss";
     `,
   },
+  devIndicators: {
+    appIsrStatus: false,
+  },
 }
 
 export default nextConfig
