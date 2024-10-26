@@ -1,11 +1,11 @@
 import { PropsWithChildren } from 'react';
 import NextTopLoader from 'nextjs-toploader';
-import { BaseLayout } from '@/widgets/base-layout';
+import { BaseLayout } from '@/core/base-layout';
 import type { Metadata } from 'next';
+
 import '@/shared/helpers/dayJS';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-
 import '@/core/styles/index.scss';
 
 export const metadata: Metadata = {
