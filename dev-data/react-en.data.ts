@@ -21,7 +21,7 @@ export const reactEn: Trainer[] = [
   },
   {
     name: 'Dzmitry Yarmoshkin',
-    role: 'PHP / React front-end developer',
+    role: 'Frontend Developer',
     bio: "While my journey took an unexpected turn, my passion for front-end work has never been stronger. Not a big fan of Redux, but that's the beauty of the tech world - we all have our preferences. Embracing the unpredictability of tech careers, I'm excited to see where my adventure takes me!",
     photo: dzmitryYarmoshkin,
   },
