@@ -14,12 +14,12 @@ export {
   RS_DOCS_COMMUNICATION_LINK,
   RS_DOCS_TELEGRAM_CHATS_LINK,
 } from './communication.data';
-export { type CourseTitle,
-  type MentorActivities,
-  type MentorshipCourse,
-  type MentorshipCourseRouteKeys,
-  type MentorshipDefaultRouteKeys,
-  type MentorshipRoute } from './mentorship-data.types';
+export type { CourseTitle,
+  MentorActivities,
+  MentorshipCourse,
+  MentorshipCourseRouteKeys,
+  MentorshipDefaultRouteKeys,
+  MentorshipRoute } from './mentorship-data.types';
 export { aboutMentorsData } from './about-mentors.data.ts';
 export { angular } from './angular.data';
 export { angularPath } from './angular-path.data';
