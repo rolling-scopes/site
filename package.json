@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev --turbopack",
     "build": "tsc && next build",
     "optimizeImages": "node optimizeImages/optimizeImages.js",
     "stylelint": "npx stylelint \"**/*.scss\"",
@@ -24,10 +24,10 @@
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.13",
-    "next": "15.0.0",
+    "next": "15.0.1",
     "nextjs-toploader": "^3.6.15",
-    "react": "19.0.0-rc-65a56d0e-20241020",
-    "react-dom": "19.0.0-rc-65a56d0e-20241020",
+    "react": "19.0.0-rc-69d4b800-20241021",
+    "react-dom": "19.0.0-rc-69d4b800-20241021",
     "react-double-marquee": "^1.1.0",
     "react-responsive-carousel": "^3.2.23"
   },
@@ -80,12 +80,12 @@
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
     "@testing-library/react": {
-      "react": "19.0.0-rc-65a56d0e-20241020",
-      "react-dom": "19.0.0-rc-65a56d0e-20241020"
+      "react": "19.0.0-rc-69d4b800-20241021",
+      "react-dom": "19.0.0-rc-69d4b800-20241021"
     },
     "nextjs-toploader": {
-      "react": "19.0.0-rc-65a56d0e-20241020",
-      "react-dom": "19.0.0-rc-65a56d0e-20241020"
+      "react": "19.0.0-rc-69d4b800-20241021",
+      "react-dom": "19.0.0-rc-69d4b800-20241021"
     }
   }
 }
