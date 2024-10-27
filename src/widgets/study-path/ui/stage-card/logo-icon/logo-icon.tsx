@@ -1,6 +1,9 @@
+import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
 
-import './logo-icon.scss';
+import styles from './logo-icon.module.scss';
+
+const cx = classNames.bind(styles);
 
 interface LogoIconProps {
   icon: StaticImageData;
@@ -9,8 +12,8 @@ interface LogoIconProps {
 
 export const LogoIcon = ({ icon, title }: LogoIconProps) => {
   return (
-    <div className="stage-logo">
-      <Image src={icon} alt={title} />
+    <div className={cx('stage-logo-wrapper')}>
+      <Image className={cx('stage-logo')} src={icon} alt={title} />
     </div>
   );
 };

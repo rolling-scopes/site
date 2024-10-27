@@ -1,0 +1,14 @@
+.study-path {
+  @include media-laptop {
+    padding: 40px;
+  }
+
+  @include media-laptop {
+    width: 100%;
+  }
+
+  @include media-tablet {
+    justify-content: flex-start;
+    padding: 40px 16px;
+  }
+}

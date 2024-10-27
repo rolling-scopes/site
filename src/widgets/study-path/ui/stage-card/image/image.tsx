@@ -1,6 +1,9 @@
+import classNames from 'classnames/bind';
 import NextImage, { StaticImageData } from 'next/image';
 
-import './image.scss';
+import styles from './image.module.scss';
+
+const cx = classNames.bind(styles);
 
 interface ImageProps {
   imageSrc: StaticImageData;
@@ -9,8 +12,8 @@ interface ImageProps {
 
 export const Image = ({ imageSrc, title }: ImageProps) => {
   return (
-    <div className="stage-image">
-      <NextImage src={imageSrc} className="mic-icon" alt={title} />
+    <div className={cx('stage-image-wrapper')}>
+      <NextImage src={imageSrc} className={cx('stage-image')} alt={title} />
     </div>
   );
 };

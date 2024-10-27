@@ -1,4 +1,4 @@
-.stage-logo {
+.stage-logo-wrapper {
   overflow: hidden;
   display: flex;
   align-items: flex-end;
@@ -8,25 +8,25 @@
   max-height: 102px;
   padding: 0 0 0 60px;
 
-  img {
-    width: auto;
-    max-width: 143px;
-    height: auto;
-    max-height: 102px;
-
-    object-fit: contain;
-    object-position: bottom right;
-
-    @include media-laptop {
-      max-width: 118px;
-    }
-  }
-
   @include media-laptop {
     padding: 0 0 0 71px;
   }
 
   @include media-tablet {
     display: none;
+  }
+}
+
+.stage-logo {
+  width: auto;
+  max-width: 143px;
+  height: auto;
+  max-height: 102px;
+
+  object-fit: contain;
+  object-position: bottom right;
+
+  @include media-laptop {
+    max-width: 118px;
   }
 }

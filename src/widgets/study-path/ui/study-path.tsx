@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext } from 'react';
+import classNames from 'classnames/bind';
 import { Stages } from './stages';
 import { dataProviders } from '@/core/services/api';
 import type { ListType } from '@/shared/types';
@@ -8,7 +9,9 @@ import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { type DataMap } from 'data';
 
-import './study-path.scss';
+import styles from './study-path.module.scss';
+
+const cx = classNames.bind(styles);
 
 type PathNames = Exclude<keyof DataMap, 'courses'>;
 
@@ -46,8 +49,8 @@ export const StudyPath = ({ path, type, lang = 'en' }: StudyPathProps) => {
 
   return (
     <LangContext.Provider value={lang}>
-      <section className="study-path container" id="learning-path">
-        <div className="study-path content upd">
+      <section className={cx('container')} id="learning-path">
+        <div className={cx('content', 'study-path')}>
           <WidgetTitle size="small" mods="asterisk">
             {title}
           </WidgetTitle>

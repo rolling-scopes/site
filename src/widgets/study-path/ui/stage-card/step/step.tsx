@@ -1,4 +1,8 @@
-import './step.scss';
+import classNames from 'classnames/bind';
+
+import styles from './step.module.scss';
+
+const cx = classNames.bind(styles);
 
 interface StepProps {
   id: string | number;
@@ -6,9 +10,9 @@ interface StepProps {
 
 export const Step = ({ id }: StepProps) => {
   return (
-    <div className="stage-step">
-      <span className="stage-number">{id}</span>
-      <div className="stage-line" />
+    <div className={cx('stage-step')}>
+      <span className={cx('stage-number')}>{id}</span>
+      <div className={cx('stage-line')} />
     </div>
   );
 };

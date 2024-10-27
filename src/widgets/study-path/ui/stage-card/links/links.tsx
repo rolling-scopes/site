@@ -1,6 +1,9 @@
+import classNames from 'classnames/bind';
 import { LinkCustom } from '@/shared/ui/link-custom';
 
-import './links.scss';
+import styles from './links.module.scss';
+
+const cx = classNames.bind(styles);
 
 interface LinksProps {
   links: {
@@ -12,7 +15,7 @@ interface LinksProps {
 
 export const Links = ({ links }: LinksProps) => {
   return (
-    <p className="stage-links">
+    <p className={cx('stage-links')}>
       {links.map(({ href, linkTitle }) => (
         <LinkCustom href={href} key={linkTitle}>
           {linkTitle}

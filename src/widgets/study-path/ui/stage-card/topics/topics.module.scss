@@ -9,16 +9,16 @@
   letter-spacing: 0.5px;
   list-style-type: none;
 
-  & > li {
-    margin: 0;
-
-    &:not(:last-child)::after {
-      content: ',';
-      margin-right: 6px;
-    }
-  }
-
   @include media-tablet {
     font-size: 16px;
   }
+}
+
+.topics-item {
+  margin: 0;
+}
+
+.topics-item:not(:last-child)::after {
+  content: ',';
+  margin-right: 6px;
 }
