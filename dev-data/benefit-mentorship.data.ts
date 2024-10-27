@@ -4,12 +4,12 @@ import paperIcon from '@/shared/assets/icons/paper-icon.webp';
 import personIcon from '@/shared/assets/icons/person-icon.webp';
 import planetIcon from '@/shared/assets/icons/planet.webp';
 import { BenefitsProps } from '@/widgets/benefits/ui/benefits.tsx';
+import { Image } from 'data';
 
 export type Benefit = {
   id: number;
   text: string;
-  icon?: string;
-  iconAlt?: string;
+  icon?: Image;
 };
 
 const mentorshipHeader = 'Mentorship is for you if you';
@@ -47,20 +47,26 @@ export const benefitMentorshipMentors: BenefitsProps = {
     {
       id: 1,
       text: 'Opportunity to develop a new colleague',
-      icon: planetIcon,
-      iconAlt: 'Planet image',
+      icon: {
+        href: planetIcon,
+        alt: 'Planet image',
+      },
     },
     {
       id: 2,
       text: 'Gaining new experience, search for new colleagues',
-      icon: personIcon,
-      iconAlt: 'Person image',
+      icon: {
+        href: personIcon,
+        alt: 'Person image',
+      },
     },
     {
       id: 3,
       text: 'Opportunity to share knowledge',
-      icon: paperIcon,
-      iconAlt: 'Paper image',
+      icon: {
+        href: paperIcon,
+        alt: 'Paper image',
+      },
     },
     {
       id: 4,
@@ -73,14 +79,18 @@ export const benefitMentorshipMentors: BenefitsProps = {
     {
       id: 6,
       text: 'Opportunity to improve tasks or create your own',
-      icon: giftIcon,
-      iconAlt: 'Gift image',
+      icon: {
+        href: giftIcon,
+        alt: 'Gift image',
+      },
     },
     {
       id: 7,
       text: 'You\'re on the lookout for a great community that will always help you learn and grow.',
-      icon: chatIcon,
-      iconAlt: 'Chat image',
+      icon: {
+        href: chatIcon,
+        alt: 'Chat image',
+      },
     },
   ],
   flex: true,

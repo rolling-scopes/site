@@ -1,21 +1,30 @@
 import { COURSE_TITLES } from './courseTitles.data.ts';
 import { ROUTES } from '@/app/const';
 import angular from '@/shared/assets/icons/angular.svg';
-import angularSmall from '@/shared/assets/icons/footer/angular.webp';
-import jsSmall from '@/shared/assets/icons/footer/javascript.webp';
-import reactSmall from '@/shared/assets/icons/footer/react.webp';
 import javascript from '@/shared/assets/icons/javascript.webp';
 import react from '@/shared/assets/icons/react.svg';
 import { DiscordIcon, TelegramIcon } from '@/shared/icons';
 import { MentorshipCourse } from 'data';
 
+const angularImage = {
+  href: angular,
+  alt: 'Angular image',
+};
+const reactImage = {
+  href: react,
+  alt: 'React image',
+};
+const javascriptImage = {
+  href: javascript,
+  alt: 'Javascript image',
+};
+
 export const mentorshipCoursesDefault: MentorshipCourse = {
   id: 0,
   lang: 'en',
   detailsUrl: `/${ROUTES.MENTORSHIP}`,
-  iconSmall: '',
   links: {
-    icon: [angular, react, javascript],
+    icon: [angularImage, reactImage, javascriptImage],
     mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
     courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/README.md',
     social: [
@@ -91,9 +100,8 @@ export const mentorshipCourses: MentorshipCourse[] = [
     description: '',
     lang: 'en',
     detailsUrl: `/${ROUTES.MENTORSHIP}/${ROUTES.JS}`,
-    iconSmall: jsSmall,
     links: {
-      icon: [javascript],
+      icon: [javascriptImage],
       mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
       courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/README.md',
       social: [],
@@ -156,9 +164,8 @@ export const mentorshipCourses: MentorshipCourse[] = [
     description: '',
     lang: 'ru',
     detailsUrl: `/${ROUTES.MENTORSHIP}/${ROUTES.JS_RU}`,
-    iconSmall: jsSmall,
     links: {
-      icon: [javascript],
+      icon: [javascriptImage],
       mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/rs-school-mentor.md',
       courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/README.md',
       social: [
@@ -226,9 +233,8 @@ export const mentorshipCourses: MentorshipCourse[] = [
     description: '',
     lang: 'en',
     detailsUrl: `/${ROUTES.MENTORSHIP}/${ROUTES.REACT}`,
-    iconSmall: reactSmall,
     links: {
-      icon: [react],
+      icon: [reactImage],
       mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
       courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/react/README.md',
       social: [],
@@ -285,9 +291,8 @@ export const mentorshipCourses: MentorshipCourse[] = [
     description: '',
     lang: 'en',
     detailsUrl: `/${ROUTES.MENTORSHIP}/${ROUTES.ANGULAR}`,
-    iconSmall: angularSmall,
     links: {
-      icon: [angular],
+      icon: [angularImage],
       mentorDocs: 'https://github.com/rolling-scopes-school/tasks/tree/master/angular/mentoring',
       courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/angular/README.md',
       social: [],

@@ -9,7 +9,10 @@ import styles from './about-mentors.module.scss';
 const cx = classNames.bind(styles);
 
 type AboutMentorsProps = {
-  icons: string[];
+  icons: {
+    href: string;
+    alt: string;
+  }[];
   description: string[];
   lang?: 'en' | 'ru';
 };
@@ -24,7 +27,7 @@ export const AboutMentors = ({ icons, description, lang = 'en' }: AboutMentorsPr
           <div className={cx('picture-wrapper')}>
             {icons.map((icon, index) => {
               return (
-                <Image key={index} src={icon} className={cx('picture')} />
+                <Image key={index} src={icon.href} alt={icon.alt} className={cx('picture')} />
               );
             })}
           </div>

@@ -17,15 +17,19 @@ type MentorshipCourseRoute = `${MentorshipDefaultRoute}/${MentorshipCourseRouteK
 
 export type MentorshipRoute = MentorshipDefaultRoute | MentorshipCourseRoute;
 
+export type Image = {
+  href: string;
+  alt: string;
+};
+
 export type MentorshipCourse = {
   id: number;
   title?: CourseTitle;
   description?: string;
   lang: 'en' | 'ru';
   detailsUrl: MentorshipRoute;
-  iconSmall: string;
   links: {
-    icon: string[];
+    icon: Image[];
     mentorDocs: string;
     courseDocs: string;
     social: SocialMediaProps[];

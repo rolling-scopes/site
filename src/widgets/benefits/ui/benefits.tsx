@@ -24,13 +24,13 @@ export const Benefits = ({ header = benefitMentorshipHome.header,
       <div className={cx('content')}>
         <WidgetTitle size="small">{header}</WidgetTitle>
         <ul className={cx((flex ? 'benefits-flex' : 'benefits-grid'))}>
-          {benefits?.map(({ id, text, icon, iconAlt }) => {
+          {benefits?.map(({ id, text, icon }) => {
             let classNameWidth = ((text.length > shortBenefitMaxChars) ? 'item-long' : 'item-short');
 
             return (
               <li key={id} className={cx(flex ? 'flex-item' : 'grid-item', classNameWidth)} data-testid="benefit">
-                {(icon && iconAlt)
-                && <Image className={cx('benefit-icon')} src={icon} alt={iconAlt} />}
+                {(icon?.href && icon?.alt)
+                && <Image className={cx('benefit-icon')} src={icon.href} alt={icon.alt} />}
                 {text}
               </li>
             );
