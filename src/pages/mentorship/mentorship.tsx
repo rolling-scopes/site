@@ -2,13 +2,13 @@ import { useLoaderData } from 'react-router-dom';
 import { PAGE_NAMES } from '@/shared/constants.ts';
 import { useTitle } from '@/shared/hooks/use-title';
 import { AboutMentors } from '@/widgets/about-mentors';
+import { Benefits } from '@/widgets/benefits';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { HeroPage } from '@/widgets/hero-page';
 import { MentorsActivity } from '@/widgets/mentors-activity';
-import { MentorsBenefits } from '@/widgets/mentors-benefit';
 import { MentorsDocs } from '@/widgets/mentors-docs';
 import { MentorsRegister } from '@/widgets/mentors-register';
-import { MentorshipCourse } from 'data';
+import { MentorshipCourse, benefitMentorshipMentors } from 'data';
 
 export const Mentorship = () => {
   const pageProps = useLoaderData() as MentorshipCourse;
@@ -24,7 +24,7 @@ export const Mentorship = () => {
         icons={pageProps.links.icon}
         lang={pageProps.lang}
       />
-      {!pageProps.title && <MentorsBenefits />}
+      {!pageProps.title && <Benefits {...benefitMentorshipMentors} />}
       <MentorsActivity activities={pageProps.activities} lang={pageProps.lang} />
       <MentorsRegister lang={pageProps.lang} />
       <MentorsDocs

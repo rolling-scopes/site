@@ -5,6 +5,13 @@ export type {
   DataMap,
   JSPath,
 } from './courses-data.types';
+export type { CourseTitle,
+  MentorActivities,
+  MentorshipCourse,
+  MentorshipCourseRouteKeys,
+  MentorshipDefaultRouteKeys,
+  MentorshipRoute } from './mentorship-data.types';
+export { type Benefit } from './benefit-mentorship.data.ts';
 export { COURSE_TITLES } from './courseTitles.data';
 export { type CourseNames, contentMap } from './training-program.data';
 export {
@@ -14,12 +21,6 @@ export {
   RS_DOCS_COMMUNICATION_LINK,
   RS_DOCS_TELEGRAM_CHATS_LINK,
 } from './communication.data';
-export type { CourseTitle,
-  MentorActivities,
-  MentorshipCourse,
-  MentorshipCourseRouteKeys,
-  MentorshipDefaultRouteKeys,
-  MentorshipRoute } from './mentorship-data.types';
 export { aboutMentorsData } from './about-mentors.data.ts';
 export { angular } from './angular.data';
 export { angularPath } from './angular-path.data';
@@ -27,6 +28,7 @@ export { awsDev } from './awsDev.data';
 export { awsDevPath } from './aws-dev-path.data';
 export { awsDevops } from './aws-devops.data';
 export { awsFundamentals } from './awsFundamentals.data';
+export { benefitMentorshipHome, benefitMentorshipMentors } from './benefit-mentorship.data.ts';
 export { communicationText } from './widget-communication.data';
 export { communityGroups } from './community-media.data';
 export { contentMapAbout, introLocalizedContent } from './about-course.data';
@@ -44,10 +46,8 @@ export { jsPath } from './js-path.data';
 export { jsPathRu } from './js-ru-path.data';
 export { mentorDocsData } from './mentor-docs.data';
 export { mentorsActivityData } from './mentors-activity.data';
-export { mentorsBenefitData } from './mentors-benefit.data.ts';
 export { mentorsRegisterData } from './mentors-register.data';
 export { mentorsWantedData } from './mentors-wanted.data.ts';
-export { mentorshipBenefits } from './mentoring.data.ts';
 export { mentorshipCourses, mentorshipCoursesDefault } from './mentorship.data';
 export { nodejs } from './nodejs.data';
 export { picturesSocialMediaLinks } from './pictures.data';
