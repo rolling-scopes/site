@@ -1,6 +1,9 @@
 import { COURSE_TITLES } from './courseTitles.data.ts';
 import { ROUTES } from '@/app/const';
 import angular from '@/shared/assets/icons/angular.svg';
+import angularSmall from '@/shared/assets/icons/footer/angular.webp';
+import jsSmall from '@/shared/assets/icons/footer/javascript.webp';
+import reactSmall from '@/shared/assets/icons/footer/react.webp';
 import javascript from '@/shared/assets/icons/javascript.webp';
 import react from '@/shared/assets/icons/react.svg';
 import { DiscordIcon, TelegramIcon } from '@/shared/icons';
@@ -97,6 +100,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
   {
     id: 1,
     title: COURSE_TITLES.JS_EN,
+    iconSmall: jsSmall,
     description: '',
     lang: 'en',
     detailsUrl: `/${ROUTES.MENTORSHIP}/${ROUTES.JS}`,
@@ -161,6 +165,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
   {
     id: 2,
     title: COURSE_TITLES.JS_RU,
+    iconSmall: jsSmall,
     description: '',
     lang: 'ru',
     detailsUrl: `/${ROUTES.MENTORSHIP}/${ROUTES.JS_RU}`,
@@ -230,6 +235,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
   {
     id: 3,
     title: COURSE_TITLES.REACT,
+    iconSmall: reactSmall,
     description: '',
     lang: 'en',
     detailsUrl: `/${ROUTES.MENTORSHIP}/${ROUTES.REACT}`,
@@ -288,6 +294,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
   {
     id: 4,
     title: COURSE_TITLES.ANGULAR,
+    iconSmall: angularSmall,
     description: '',
     lang: 'en',
     detailsUrl: `/${ROUTES.MENTORSHIP}/${ROUTES.ANGULAR}`,

@@ -25,6 +25,7 @@ export type Image = {
 export type MentorshipCourse = {
   id: number;
   title?: CourseTitle;
+  iconSmall?: string;
   description?: string;
   lang: 'en' | 'ru';
   detailsUrl: MentorshipRoute;
