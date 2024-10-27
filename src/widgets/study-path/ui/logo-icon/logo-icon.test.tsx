@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { LogoIcon } from './logo-icon';
-import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
+import { LogoIcon } from './logo-icon.tsx';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants.ts';
 
 describe('LogoIcon Component', () => {
   it('renders logo image with correct src and alt text', () => {

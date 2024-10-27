@@ -1,14 +1,14 @@
 import { useContext } from 'react';
 import classNames from 'classnames/bind';
-import { LangContext } from '../../study-path';
+import { LangContext } from '../study-path.tsx';
 
 import styles from './topics.module.scss';
 
 const cx = classNames.bind(styles);
 
-interface TopicsProps {
+type TopicsProps = {
   topics: string[];
-}
+};
 
 const localizedContents = {
   en: { topics: 'Topics covered:' },

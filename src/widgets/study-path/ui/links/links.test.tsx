@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { Links } from './links';
+import { Links } from './links.tsx';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 describe('Links Component', () => {

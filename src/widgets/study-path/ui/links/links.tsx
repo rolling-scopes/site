@@ -5,13 +5,13 @@ import styles from './links.module.scss';
 
 const cx = classNames.bind(styles);
 
-interface LinksProps {
+type LinksProps = {
   links: {
     href: string;
     linkTitle: string;
     isActive?: boolean;
   }[];
-}
+};
 
 export const Links = ({ links }: LinksProps) => {
   return (

@@ -1,15 +1,16 @@
 import classNames from 'classnames/bind';
-import { type Stage, StageCard } from '../stage-card';
+import { StageCard } from '../stage-card/stage-card';
+import { type Stage } from '../stage-card/stage-card.types';
 import type { ListType } from '@/shared/types';
 
 import styles from './stages.module.scss';
 
 const cx = classNames.bind(styles);
 
-export interface StagesProps {
+export type StagesProps = {
   stages: Stage[] | null;
   type?: ListType;
-}
+};
 
 export const Stages = ({ stages, type }: StagesProps) => {
   if (stages === null || stages.length === 0) {

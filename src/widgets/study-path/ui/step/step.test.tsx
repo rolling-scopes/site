@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Step } from './step';
+import { Step } from './step.tsx';
 
 describe('Step Component', () => {
   it('renders step number correctly', () => {

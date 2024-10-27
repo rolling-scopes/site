@@ -2,7 +2,7 @@
 
 import { createContext } from 'react';
 import classNames from 'classnames/bind';
-import { Stages } from './stages';
+import { Stages } from './stages/stages';
 import { dataProviders } from '@/core/services/api';
 import type { ListType } from '@/shared/types';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -15,11 +15,11 @@ const cx = classNames.bind(styles);
 
 type PathNames = Exclude<keyof DataMap, 'courses'>;
 
-interface StudyPathProps {
+type StudyPathProps = {
   path: PathNames;
   type?: ListType;
   lang?: 'ru' | 'en';
-}
+};
 
 const localizedContent = {
   en: {
