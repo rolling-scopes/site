@@ -57,7 +57,7 @@ export const mentorshipCoursesDefault: MentorshipCourse = {
       links: [
         {
           href: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/first-interview.md',
-          linkTitle: 'Read more',
+          linkTitle: 'Read more about technical interview',
         },
       ],
     },
@@ -73,7 +73,7 @@ export const mentorshipCoursesDefault: MentorshipCourse = {
       links: [
         {
           href: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/pull-request-review-process.md',
-          linkTitle: 'Read more',
+          linkTitle: 'Read more about code review',
         },
       ],
     },
@@ -84,7 +84,7 @@ export const mentorshipCoursesDefault: MentorshipCourse = {
       links: [
         {
           href: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/modules/final-task/README.md',
-          linkTitle: 'Read more',
+          linkTitle: 'Read more about final task',
         },
       ],
     },
@@ -119,7 +119,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
         links: [
           {
             href: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/first-interview.md',
-            linkTitle: 'Read more',
+            linkTitle: 'Read more about technical interview',
           },
         ],
       },
@@ -135,7 +135,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
         links: [
           {
             href: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/pull-request-review-process.md',
-            linkTitle: 'Read more',
+            linkTitle: 'Read more about code review',
           },
         ],
       },
@@ -151,7 +151,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
         links: [
           {
             href: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/modules/final-task/README.md',
-            linkTitle: 'Read more',
+            linkTitle: 'Read more about CoreJS interviews',
           },
         ],
       },
@@ -195,7 +195,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
         links: [
           {
             href: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/mentoring-first-interview.md',
-            linkTitle: 'Подробнее',
+            linkTitle: 'Подробнее о техническом интервью',
           },
         ],
       },
@@ -211,7 +211,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
         links: [
           {
             href: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/pull-request-review-process.md',
-            linkTitle: 'Подробнее',
+            linkTitle: 'Подробнее о ревью кода',
           },
         ],
       },
@@ -254,7 +254,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
         links: [
           {
             href: 'https://github.com/rolling-scopes-school/tasks/blob/master/react/interview.md',
-            linkTitle: 'Read more',
+            linkTitle: 'Read more about technical interview',
           },
         ],
       },
@@ -270,7 +270,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
         links: [
           {
             href: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/pull-request-review-process.md',
-            linkTitle: 'Read more',
+            linkTitle: 'Read more about code review',
           },
         ],
       },
@@ -318,7 +318,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
         links: [
           {
             href: 'https://github.com/rolling-scopes-school/tasks/blob/master/angular/mentoring/pull-request-review-process.md',
-            linkTitle: 'Read more',
+            linkTitle: 'Read more about code review',
           },
         ],
       },
