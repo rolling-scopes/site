@@ -2,14 +2,14 @@ export const mentorDocsData = {
   en: {
     header: 'Any other questions?',
     mentor: {
-      textInfo: 'If you still have questions about the mentoring process, please go through the',
-      textLink: 'Benefits Documentation',
+      textInfo: 'If you still have questions about the mentoring process, please go through the ',
+      textLink: 'Mentor documentation',
       textAfterLink: 'for the',
       textEnd: 'Course.',
     },
     course: {
       textInfo: 'You can also read the latest ',
-      textLink: 'Training Program',
+      textLink: 'Training program',
       textAfterLink: 'for the',
       textEnd: 'Course.',
     },
