@@ -5,10 +5,12 @@ import { AboutMentors } from '@/widgets/about-mentors';
 import { Benefits } from '@/widgets/benefits';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { HeroPage } from '@/widgets/hero-page';
-import { MentorsActivity } from '@/widgets/mentors-activity';
+import { MemberActivity } from '@/widgets/member-activity';
 import { MentorsDocs } from '@/widgets/mentors-docs';
 import { MentorsRegister } from '@/widgets/mentors-register';
 import { MentorshipCourse, benefitMentorshipMentors } from 'data';
+
+const studyPathName = 'mentorship';
 
 export const Mentorship = () => {
   const pageProps = useLoaderData() as MentorshipCourse;
@@ -25,7 +27,11 @@ export const Mentorship = () => {
         lang={pageProps.lang}
       />
       {!pageProps.title && <Benefits {...benefitMentorshipMentors} />}
-      <MentorsActivity activities={pageProps.activities} lang={pageProps.lang} />
+      <MemberActivity
+        path={studyPathName}
+        activities={pageProps.activities}
+        lang={pageProps.lang}
+      />
       <MentorsRegister lang={pageProps.lang} />
       <MentorsDocs
         mentorDocsLink={pageProps.links.mentorDocs}

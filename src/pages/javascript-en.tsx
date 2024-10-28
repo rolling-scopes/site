@@ -5,9 +5,9 @@ import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
 import { HeroCourse } from '@/widgets/hero-course';
+import { MemberActivity } from '@/widgets/member-activity';
 import { MentorsWanted } from '@/widgets/mentors-wanted';
 import { Required } from '@/widgets/required';
-import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
 import { javaScriptEn } from 'data';
@@ -24,7 +24,7 @@ export const JavaScriptEn = () => {
       <Certification courseName={COURSE_NAME} />
       <Communication courseName={COURSE_NAME} />
       <AboutVideo />
-      <StudyPath path="javascript" type="marked" />
+      <MemberActivity path="javascript" type="marked" />
       <Required courseName={COURSE_NAME} />
       <MentorsWanted route={`/${ROUTES.MENTORSHIP}/${ROUTES.JS}`} />
       <Trainers trainers={javaScriptEn} />

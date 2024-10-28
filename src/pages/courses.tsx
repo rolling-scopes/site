@@ -5,7 +5,7 @@ import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { RSCourses } from '@/widgets/courses';
 import { General } from '@/widgets/general';
 import { HeroPage } from '@/widgets/hero-page';
-import { StudyPath } from '@/widgets/study-path';
+import { MemberActivity } from '@/widgets/member-activity';
 
 export const Courses: FC = () => {
   useTitle('Courses · The Rolling Scopes School');
@@ -15,7 +15,7 @@ export const Courses: FC = () => {
       <HeroPage pageName={PAGE_NAMES.COURSES} />
       <Breadcrumbs />
       <RSCourses />
-      <StudyPath path="coursesPath" />
+      <MemberActivity path="coursesPath" />
       <General />
     </>
   );

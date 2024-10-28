@@ -5,9 +5,9 @@ import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
 import { HeroCourse } from '@/widgets/hero-course';
+import { MemberActivity } from '@/widgets/member-activity';
 import { MentorsWanted } from '@/widgets/mentors-wanted';
 import { Required } from '@/widgets/required';
-import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
 import { angular } from 'data';
@@ -24,7 +24,7 @@ export const Angular = () => {
       <AboutCourse courseName={COURSE_NAME} />
       <Certification courseName={COURSE_NAME} />
       <Communication courseName={COURSE_NAME} />
-      <StudyPath path={COURSE_NAME} />
+      <MemberActivity path={COURSE_NAME} />
       <Required courseName={COURSE_NAME} marked1 />
       <MentorsWanted route={`/${ROUTES.MENTORSHIP}/${ROUTES.ANGULAR}`} />
       <Trainers trainers={angular} />

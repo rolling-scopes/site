@@ -9,6 +9,7 @@ import {
 } from 'data';
 
 const dataProviders: DataMap = {
+  mentorship: [],
   courses: courses,
   coursesPath: coursesPath,
   javascript: jsPath,

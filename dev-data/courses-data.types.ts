@@ -1,8 +1,10 @@
 import { ReactNode } from 'react';
+import { MentorActivities } from './mentorship-data.types.ts';
 import type { Course } from '@/entities/course';
 import type { ListData } from '@/shared/types';
 
 export type DataMap = {
+  mentorship: MentorActivities[];
   courses: Course[];
   coursesPath: CoursesPath[];
   javascript: JSPath[];
