@@ -1,17 +1,18 @@
 import { createContext } from 'react';
 import { Stages } from './stages';
 import { useDataByName } from '@/shared/hooks/use-data-by-name';
-import type { ListType } from '@/shared/types';
+import type { ListType } from '@/shared/types.ts';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import type { DataMap } from 'data';
+import { DataMap, MentorActivities } from 'data';
 
-import './study-path.scss';
+import './member-activity.scss';
 
-type PathNames = Exclude<keyof DataMap, 'courses'>;
+type PathNames = Exclude<keyof DataMap, 'courses'> | 'mentorship';
 
 interface StudyPathProps {
   path: PathNames;
+  activities?: MentorActivities[];
   type?: ListType;
   lang?: 'ru' | 'en';
 }
@@ -29,18 +30,34 @@ const localizedContent = {
   },
 };
 
+const mentorsActivityData = {
+  en: {
+    header: 'Mentor activities',
+    info: 'The main tasks of a mentor for the duration of the course, but if you are willing to give students more - the list is not limited to anything',
+  },
+  ru: {
+    header: 'Деятельность ментора',
+    info: 'Основные задачи ментора на период курса, но если вы готовы дать студентам больше - список не ограничен ни чем',
+  },
+};
+
 export const LangContext = createContext<'ru' | 'en'>('en');
 
-export const StudyPath = ({ path, type, lang = 'en' }: StudyPathProps) => {
-  const { data: coursesPath } = useDataByName<PathNames>(path);
-
+export const MemberActivity = ({ path, type, activities, lang = 'en' }: StudyPathProps) => {
+  let { data: coursesPath } = useDataByName<PathNames>(path);
   const isAngularOrAwsDev = path === 'angular' || path === 'awsDev';
 
-  const title = isAngularOrAwsDev ? 'Course Curriculum' : localizedContent[lang].title;
+  let title = isAngularOrAwsDev ? 'Course Curriculum' : localizedContent[lang].title;
 
-  const paragraph = isAngularOrAwsDev
+  let paragraph = isAngularOrAwsDev
     ? 'This program will have theory and practice on the following topic:'
     : localizedContent[lang].paragraph;
+
+  if (path === 'mentorship' && activities) {
+    title = mentorsActivityData[lang].header;
+    paragraph = mentorsActivityData[lang].info;
+    coursesPath = activities;
+  }
 
   return (
     <LangContext.Provider value={lang}>

@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
-import { Stages } from './stages';
-import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
+import { Stages } from './stages.tsx';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants.ts';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 describe('Stages Component', () => {

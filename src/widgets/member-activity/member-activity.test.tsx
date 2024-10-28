@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
-import { StudyPath } from './ui/study-path';
-import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
+import { MemberActivity } from './ui/member-activity.tsx';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants.ts';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 const testStages = [
@@ -24,7 +24,7 @@ vi.mock('@/shared/hooks/use-data-by-name', () => ({ useDataByName: vi.fn().mockI
 
 describe('StudyPath Component', () => {
   it('renders the title and paragraph text correctly for angularPath', () => {
-    renderWithRouter(<StudyPath path="angular" />);
+    renderWithRouter(<MemberActivity path="angular" />);
 
     expect(screen.getByText('Course Curriculum')).toBeInTheDocument();
     expect(
@@ -33,7 +33,7 @@ describe('StudyPath Component', () => {
   });
 
   it('renders the title and paragraph text correctly for awsDevPath', () => {
-    renderWithRouter(<StudyPath path="awsDev" />);
+    renderWithRouter(<MemberActivity path="awsDev" />);
 
     expect(screen.getByText('Course Curriculum')).toBeInTheDocument();
     expect(
@@ -42,7 +42,7 @@ describe('StudyPath Component', () => {
   });
 
   it('renders the title and paragraph text correctly for other paths', () => {
-    renderWithRouter(<StudyPath path="javascript" />);
+    renderWithRouter(<MemberActivity path="javascript" />);
 
     expect(screen.getByText('Choose what you want to learn')).toBeInTheDocument();
     expect(
@@ -51,7 +51,7 @@ describe('StudyPath Component', () => {
   });
 
   it('renders stages and their details correctly', () => {
-    renderWithRouter(<StudyPath path="angular" />);
+    renderWithRouter(<MemberActivity path="angular" />);
 
     testStages.forEach((stage) => {
       const { title, description, topics, list } = stage;

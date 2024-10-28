@@ -1,5 +1,5 @@
-import { type Stage, StageCard } from '../stage-card';
-import type { ListType } from '@/shared/types';
+import type { ListType } from '@/shared/types.ts';
+import { Stage, StageCard } from '@/widgets/member-activity/ui/stage-card';
 
 import './stages.scss';
 
