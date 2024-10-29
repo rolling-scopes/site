@@ -28,7 +28,6 @@ export const MentorsWanted = ({ route = `/${ROUTES.MENTORSHIP}`, lang = 'en' }: 
           <LinkCustom
             href={route}
             variant="primary"
-            external
           >
             {mentorsWantedData[lang].button}
           </LinkCustom>
