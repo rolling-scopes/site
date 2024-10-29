@@ -5,7 +5,7 @@ import mentorImg from '@/shared/assets/mentor-with-his-students.webp';
 import { Image } from '@/shared/ui/image';
 import { SocialMediaProps } from '@/shared/ui/social-media-item';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { CourseTitle, mentorDocsData } from 'data';
+import { CourseTitle, Language, mentorDocsData } from 'data';
 
 import styles from './mentors-docs.module.scss';
 
@@ -16,7 +16,7 @@ type MentorsDocsProps = {
   courseDocsLink: string;
   socialLinks: SocialMediaProps[];
   courseTitle?: CourseTitle;
-  lang?: 'en' | 'ru';
+  lang?: Language;
 };
 
 export const MentorsDocs = ({ mentorDocsLink, courseDocsLink, socialLinks, courseTitle, lang = 'en' }: MentorsDocsProps) => {
@@ -47,7 +47,7 @@ export const MentorsDocs = ({ mentorDocsLink, courseDocsLink, socialLinks, cours
           && <DocLinks text={mentorDocsData[lang].additional} links={socialLinks} />}
         </div>
         <div className={cx('picture-wrapper')}>
-          <Image src={mentorImg} alt={mentorDocsData[lang].pictureAlt} className={cx('picture')} />
+          <Image src={mentorImg} alt={mentorDocsData[lang].pictureAlt} className={cx('picture')} loading="lazy" />
         </div>
       </article>
     </section>

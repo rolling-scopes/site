@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import classNames from 'classnames/bind';
 import { Image } from '@/shared/ui/image';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { Benefit, benefitMentorshipHome } from 'data';
+import { Benefit, ImageLink, benefitMentorshipHome } from 'data';
 
 import styles from './benefits.module.scss';
 
@@ -13,7 +14,21 @@ export type BenefitsProps = {
   flex?: boolean;
 };
 
+type BenefitItemProps = {
+  classNames?: string;
+  icon?: ImageLink;
+  text: string;
+};
+
 const shortBenefitMaxChars = 60;
+const BenefitItem = memo(({ text, icon, classNames }: BenefitItemProps) => (
+  <li className={cx(classNames)} data-testid="benefit">
+    {(icon?.href && icon?.alt) && <Image className={cx('benefit-icon')} src={icon.href} alt={icon.alt} />}
+    {text}
+  </li>
+));
+
+BenefitItem.displayName = 'BenefitItem';
 
 export const Benefits = ({ header = benefitMentorshipHome.header,
   benefits = benefitMentorshipHome.benefits,
@@ -23,16 +38,18 @@ export const Benefits = ({ header = benefitMentorshipHome.header,
     <section className="container">
       <div className={cx('content')}>
         <WidgetTitle size="small">{header}</WidgetTitle>
-        <ul className={cx((flex ? 'benefits-flex' : 'benefits-grid'))}>
+        <ul className={cx((flex ? 'benefits-flex' : 'benefits-grid'))} aria-label="Member benefits">
           {benefits?.map(({ id, text, icon }) => {
             let classNameWidth = ((text.length > shortBenefitMaxChars) ? 'item-long' : 'item-short');
+            let classNameItem = flex ? 'flex-item' : 'grid-item';
 
             return (
-              <li key={id} className={cx(flex ? 'flex-item' : 'grid-item', classNameWidth)} data-testid="benefit">
-                {(icon?.href && icon?.alt)
-                && <Image className={cx('benefit-icon')} src={icon.href} alt={icon.alt} />}
-                {text}
-              </li>
+              <BenefitItem
+                key={id}
+                text={text}
+                icon={icon}
+                classNames={cx(classNameWidth, classNameItem)}
+              />
             );
           })}
         </ul>

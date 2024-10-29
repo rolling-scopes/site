@@ -3,14 +3,14 @@ import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { mentorsRegisterData } from 'data';
+import { Language, mentorsRegisterData } from 'data';
 
 import styles from './mentors-register.module.scss';
 
 const cx = classNames.bind(styles);
 
 type MentorsRegisterProps = {
-  lang?: 'ru' | 'en';
+  lang?: Language;
 };
 
 export const MentorsRegister = ({ lang = 'en' }: MentorsRegisterProps) => {

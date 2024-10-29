@@ -3,13 +3,13 @@ import giftIcon from '@/shared/assets/icons/gift.webp';
 import paperIcon from '@/shared/assets/icons/paper-icon.webp';
 import personIcon from '@/shared/assets/icons/person-icon.webp';
 import planetIcon from '@/shared/assets/icons/planet.webp';
-import { BenefitsProps } from '@/widgets/benefits/ui/benefits.tsx';
-import { Image } from 'data';
+import { BenefitsProps } from '@/widgets/benefits/ui/benefits';
+import { ImageLink } from 'data';
 
 export type Benefit = {
   id: number;
   text: string;
-  icon?: Image;
+  icon?: ImageLink;
 };
 
 const mentorshipHeader = 'Mentorship is for you if you';

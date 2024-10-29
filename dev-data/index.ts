@@ -6,7 +6,7 @@ export type {
   JSPath,
 } from './courses-data.types';
 export type { CourseTitle,
-  Image,
+  ImageLink,
   Language,
   MentorActivities,
   MentorshipCourse,
