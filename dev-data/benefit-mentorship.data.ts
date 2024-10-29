@@ -86,7 +86,7 @@ export const benefitMentorshipMentors: BenefitsProps = {
     },
     {
       id: 7,
-      text: 'You\'re on the lookout for a great community that will always help you learn and grow.',
+      text: 'You\'re on the lookout for a great community that will always help you learn and grow',
       icon: {
         href: chatIcon,
         alt: 'Chat image',

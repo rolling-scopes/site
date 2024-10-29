@@ -15,14 +15,14 @@ export type BenefitsProps = {
 };
 
 type BenefitItemProps = {
-  classNames?: string;
+  classNames: string;
   icon?: ImageLink;
   text: string;
 };
 
 const shortBenefitMaxChars = 60;
 const BenefitItem = memo(({ text, icon, classNames }: BenefitItemProps) => (
-  <li className={cx(classNames)} data-testid="benefit">
+  <li className={classNames} data-testid="benefit">
     {(icon?.href && icon?.alt) && <Image className={cx('benefit-icon')} src={icon.href} alt={icon.alt} />}
     {text}
   </li>
@@ -40,15 +40,17 @@ export const Benefits = ({ header = benefitMentorshipHome.header,
         <WidgetTitle size="small">{header}</WidgetTitle>
         <ul className={cx((flex ? 'benefits-flex' : 'benefits-grid'))} aria-label="Member benefits">
           {benefits?.map(({ id, text, icon }) => {
-            let classNameWidth = ((text.length > shortBenefitMaxChars) ? 'item-long' : 'item-short');
-            let classNameItem = flex ? 'flex-item' : 'grid-item';
-
             return (
               <BenefitItem
                 key={id}
                 text={text}
                 icon={icon}
-                classNames={cx(classNameWidth, classNameItem)}
+                classNames={cx({
+                  'item-long': text.length > shortBenefitMaxChars,
+                  'item-short': text.length <= shortBenefitMaxChars,
+                  'flex-item': flex,
+                  'grid-item': !flex,
+                })}
               />
             );
           })}
