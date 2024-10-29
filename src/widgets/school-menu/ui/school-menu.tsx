@@ -51,7 +51,7 @@ interface SchoolMenuProps {
 function getMenuItems(
   heading: SchoolMenuProps['heading'],
   courses: Course[],
-  mentorshipCourse: MentorshipCourse[],
+  mentorshipCourses: MentorshipCourse[],
 ): GenericItemProps[] | Course[] | MentorshipCourse[] {
   switch (heading) {
     case 'all courses':
@@ -61,7 +61,7 @@ function getMenuItems(
     case 'community':
       return communityMenuStaticLinks;
     case 'mentorship':
-      return mentorshipCourse;
+      return mentorshipCourses;
     default:
       return [];
   }

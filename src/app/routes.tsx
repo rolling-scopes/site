@@ -123,57 +123,6 @@ const mentorshipRoute: RouteObject = {
   ],
 };
 
-// const mentorshipRoute: RouteObject = {
-//   path: ROUTES.MENTORSHIP,
-//   children: [
-//     {
-//       index: true,
-//       loader: () => mentorshipCoursesLoader(ROUTES.MENTORSHIP),
-//       lazy: async () => {
-//         const { Mentorship } = await import('@/pages/mentorship/mentorship.tsx');
-//
-//         return { Component: Mentorship };
-//       },
-//     },
-//     {
-//       path: ROUTES.JS,
-//       loader: () => mentorshipCoursesLoader(ROUTES.JS),
-//       lazy: async () => {
-//         const { Mentorship } = await import('@/pages/mentorship/mentorship.tsx');
-//
-//         return { Component: Mentorship };
-//       },
-//     },
-//     {
-//       path: ROUTES.JS_RU,
-//       loader: () => mentorshipCoursesLoader(ROUTES.JS_RU),
-//       lazy: async () => {
-//         const { Mentorship } = await import('@/pages/mentorship/mentorship.tsx');
-//
-//         return { Component: Mentorship };
-//       },
-//     },
-//     {
-//       path: ROUTES.ANGULAR,
-//       loader: () => mentorshipCoursesLoader(ROUTES.ANGULAR),
-//       lazy: async () => {
-//         const { Mentorship } = await import('@/pages/mentorship/mentorship.tsx');
-//
-//         return { Component: Mentorship };
-//       },
-//     },
-//     {
-//       path: ROUTES.REACT,
-//       loader: () => mentorshipCoursesLoader(ROUTES.REACT),
-//       lazy: async () => {
-//         const { Mentorship } = await import('@/pages/mentorship/mentorship.tsx');
-//
-//         return { Component: Mentorship };
-//       },
-//     },
-//   ],
-// };
-
 const notFoundRoute: RouteObject = {
   path: ROUTES.NOT_FOUND,
   lazy: async () => {

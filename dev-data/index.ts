@@ -7,7 +7,6 @@ export type {
 } from './courses-data.types';
 export type { CourseTitle,
   ImageLink,
-  Language,
   MentorActivities,
   MentorshipCourse,
   MentorshipCourseRouteKeys,

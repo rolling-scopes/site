@@ -5,3 +5,5 @@ export type CourseName = (typeof COURSE_NAMES)[keyof typeof COURSE_NAMES];
 
 export type ListData = (string | LinkList)[] | [];
 export type ListType = 'marked' | 'unmarked';
+
+export type Language = 'en' | 'ru';

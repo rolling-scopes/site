@@ -13,32 +13,32 @@ import { MentorshipCourse, benefitMentorshipMentors } from 'data';
 const studyPathName = 'mentorship';
 
 export const Mentorship = () => {
-  const pageProps = useLoaderData() as MentorshipCourse;
+  const mentorshipData = useLoaderData() as MentorshipCourse;
 
-  useTitle(`Mentorship ${pageProps.title || ''} · The Rolling Scopes School`);
+  useTitle(`Mentorship ${mentorshipData.title || ''} · The Rolling Scopes School`);
 
   return (
     <>
       <HeroPage pageName={PAGE_NAMES.MENTORSHIP} />
       <Breadcrumbs />
       <AboutMentors
-        description={pageProps.details}
-        icons={pageProps.links.icon}
-        lang={pageProps.lang}
+        description={mentorshipData.details}
+        icons={mentorshipData.links.icon}
+        lang={mentorshipData.lang}
       />
-      {!pageProps.title && <Benefits {...benefitMentorshipMentors} />}
+      {!mentorshipData.title && <Benefits {...benefitMentorshipMentors} />}
       <MemberActivity
         path={studyPathName}
-        activities={pageProps.activities}
-        lang={pageProps.lang}
+        activities={mentorshipData.activities}
+        lang={mentorshipData.lang}
       />
-      <MentorsRegister lang={pageProps.lang} />
+      <MentorsRegister lang={mentorshipData.lang} />
       <MentorsDocs
-        mentorDocsLink={pageProps.links.mentorDocs}
-        courseDocsLink={pageProps.links.courseDocs}
-        courseTitle={pageProps.title}
-        lang={pageProps.lang}
-        socialLinks={pageProps.links.social}
+        mentorDocsLink={mentorshipData.links.mentorDocs}
+        courseDocsLink={mentorshipData.links.courseDocs}
+        courseTitle={mentorshipData.title}
+        lang={mentorshipData.lang}
+        socialLinks={mentorshipData.links.social}
       />
     </>
   );

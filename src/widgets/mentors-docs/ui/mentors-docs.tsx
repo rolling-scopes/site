@@ -2,10 +2,11 @@ import classNames from 'classnames/bind';
 import { DocDetail } from './doc-detail';
 import { DocLinks } from './doc-links';
 import mentorImg from '@/shared/assets/mentor-with-his-students.webp';
+import { Language } from '@/shared/types.ts';
 import { Image } from '@/shared/ui/image';
 import { SocialMediaProps } from '@/shared/ui/social-media-item';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { CourseTitle, Language, mentorDocsData } from 'data';
+import { CourseTitle, mentorDocsData } from 'data';
 
 import styles from './mentors-docs.module.scss';
 

@@ -1,5 +1,6 @@
 import { COURSE_TITLES } from './courseTitles.data.ts';
 import { ROUTES } from '@/app/const';
+import { Language } from '@/shared/types.ts';
 import { SocialMediaProps } from '@/shared/ui/social-media-item';
 import { Stage } from '@/widgets/member-activity/ui/stage-card';
 
@@ -21,7 +22,6 @@ export type ImageLink = {
   href: string;
   alt: string;
 };
-export type Language = 'en' | 'ru';
 
 export type MentorshipCourse = {
   id: number;

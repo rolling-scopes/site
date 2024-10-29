@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import classNames from 'classnames/bind';
 import { Image } from '@/shared/ui/image';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -21,18 +20,20 @@ type BenefitItemProps = {
 };
 
 const shortBenefitMaxChars = 60;
-const BenefitItem = memo(({ text, icon, classNames }: BenefitItemProps) => (
-  <li className={classNames} data-testid="benefit">
-    {(icon?.href && icon?.alt) && <Image className={cx('benefit-icon')} src={icon.href} alt={icon.alt} />}
-    {text}
-  </li>
-));
+const BenefitItem = ({ text, icon, classNames }: BenefitItemProps) => {
+  return (
+    <li className={classNames} data-testid="benefit">
+      {(icon?.href && icon?.alt) && <Image className={cx('benefit-icon')} src={icon.href} alt={icon.alt} />}
+      {text}
+    </li>
+  );
+};
 
-BenefitItem.displayName = 'BenefitItem';
-
-export const Benefits = ({ header = benefitMentorshipHome.header,
+export const Benefits = ({
+  header = benefitMentorshipHome.header,
   benefits = benefitMentorshipHome.benefits,
-  flex = benefitMentorshipHome.flex }: BenefitsProps,
+  flex = benefitMentorshipHome.flex,
+}: BenefitsProps,
 ) => {
   return (
     <section className="container">

@@ -1,18 +1,16 @@
 import classNames from 'classnames/bind';
+import { Language } from '@/shared/types.ts';
 import { Image } from '@/shared/ui/image';
 import { List } from '@/shared/ui/list';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { Language, aboutMentorsData } from 'data';
+import { ImageLink, aboutMentorsData } from 'data';
 
 import styles from './about-mentors.module.scss';
 
 const cx = classNames.bind(styles);
 
 type AboutMentorsProps = {
-  icons: {
-    href: string;
-    alt: string;
-  }[];
+  icons: ImageLink[];
   description: string[];
   lang?: Language;
 };

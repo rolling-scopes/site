@@ -1,9 +1,10 @@
 import classNames from 'classnames/bind';
+import { Language } from '@/shared/types.ts';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { Language, mentorsRegisterData } from 'data';
+import { mentorsRegisterData } from 'data';
 
 import styles from './mentors-register.module.scss';
 

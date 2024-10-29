@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import { ANCHORS, ROUTES } from '@/app/const';
 import mentorImg from '@/shared/assets/mentors-wanted.webp';
+import { Language } from '@/shared/types.ts';
 import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -13,7 +14,7 @@ const cx = classNames.bind(styles);
 
 type MentorsWantedProps = {
   route?: MentorshipRoute;
-  lang?: 'en' | 'ru';
+  lang?: Language;
 };
 
 export const MentorsWanted = ({ route = `/${ROUTES.MENTORSHIP}`, lang = 'en' }: MentorsWantedProps) => {
