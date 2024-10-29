@@ -1,12 +1,14 @@
-import { screen } from '@testing-library/react';
+import { RenderResult, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { Benefits } from '@/widgets/benefits';
 import { benefitMentorshipHome } from 'data';
 
-describe('Mentoring', () => {
+describe('Benefits', () => {
+  let rendered: RenderResult;
+
   beforeEach(() => {
-    renderWithRouter(<Benefits />);
+    rendered = renderWithRouter(<Benefits />);
   });
 
   it('renders the title', () => {
@@ -17,5 +19,9 @@ describe('Mentoring', () => {
     const benefit = screen.getAllByTestId('benefit').at(id - 1);
 
     expect(benefit).toHaveTextContent(text);
+  });
+
+  afterEach(() => {
+    rendered.unmount();
   });
 });

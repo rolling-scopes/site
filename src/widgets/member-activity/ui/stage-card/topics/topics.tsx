@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { LangContext } from '../../member-activity.tsx';
+import { LangContext } from '../../member-activity';
 
 import './topics.scss';
 

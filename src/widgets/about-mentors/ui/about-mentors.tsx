@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import { Image } from '@/shared/ui/image';
 import { List } from '@/shared/ui/list';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { aboutMentorsData } from 'data';
+import { Language, aboutMentorsData } from 'data';
 
 import styles from './about-mentors.module.scss';
 
@@ -14,7 +14,7 @@ type AboutMentorsProps = {
     alt: string;
   }[];
   description: string[];
-  lang?: 'en' | 'ru';
+  lang?: Language;
 };
 
 export const AboutMentors = ({ icons, description, lang = 'en' }: AboutMentorsProps) => {
@@ -25,9 +25,9 @@ export const AboutMentors = ({ icons, description, lang = 'en' }: AboutMentorsPr
         <div className={cx('mentors-register-wrapper')}>
           <List data={description} />
           <div className={cx('picture-wrapper')}>
-            {icons.map((icon, index) => {
+            {icons.map((icon) => {
               return (
-                <Image key={index} src={icon.href} alt={icon.alt} className={cx('picture')} />
+                <Image key={icon.href} src={icon.href} alt={icon.alt} className={cx('picture')} />
               );
             })}
           </div>

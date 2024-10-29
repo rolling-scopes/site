@@ -1,4 +1,4 @@
-import type { ListType } from '@/shared/types.ts';
+import type { ListType } from '@/shared/types';
 import { Stage, StageCard } from '@/widgets/member-activity/ui/stage-card';
 
 import './stages.scss';

@@ -21,13 +21,14 @@ export type Image = {
   href: string;
   alt: string;
 };
+export type Language = 'en' | 'ru';
 
 export type MentorshipCourse = {
   id: number;
   title?: CourseTitle;
   iconSmall?: string;
   description?: string;
-  lang: 'en' | 'ru';
+  lang: Language;
   detailsUrl: MentorshipRoute;
   links: {
     icon: Image[];

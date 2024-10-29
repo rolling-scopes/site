@@ -37,7 +37,7 @@ const navLinks = [
 
 export const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const { key, hash, pathname } = useLocation();
+  const { pathname } = useLocation();
 
   const headerAccentColor = pathname.includes(ROUTES.MENTORSHIP) ? 'blue' : 'gray';
 
@@ -72,7 +72,7 @@ export const Header = () => {
       setMenuOpen(false);
       setColor(headerAccentColor);
     }
-  }, [key, hash, pathname, headerAccentColor]);
+  }, [pathname, headerAccentColor]);
 
   return (
     <nav className={cx('navbar', color)} data-testid="navigation">

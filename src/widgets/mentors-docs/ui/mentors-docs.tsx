@@ -23,7 +23,7 @@ export const MentorsDocs = ({ mentorDocsLink, courseDocsLink, socialLinks, cours
   return (
     <section className={cx('container')}>
       <article className={cx('content', 'docs-wrapper')}>
-        <div className={cx('docs')}>
+        <div className={cx('docs')} aria-label="Documentation links">
           <WidgetTitle mods="asterisk">
             {mentorDocsData[lang].header}
           </WidgetTitle>

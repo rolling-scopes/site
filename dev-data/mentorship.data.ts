@@ -9,17 +9,49 @@ import react from '@/shared/assets/icons/react.svg';
 import { DiscordIcon, TelegramIcon } from '@/shared/icons';
 import { MentorshipCourse } from 'data';
 
-const angularImage = {
-  href: angular,
-  alt: 'Angular image',
+const images = {
+  angular: {
+    href: angular,
+    alt: 'Logo of popular framework Angular',
+  },
+  react: {
+    href: react,
+    alt: 'Logo of popular framework React',
+  },
+  js: {
+    href: javascript,
+    alt: 'Logo of popular language JavaScript',
+  },
 };
-const reactImage = {
-  href: react,
-  alt: 'React image',
+
+const texts = {
+  title: {
+    interview: 'Conducting technical interview',
+    codeReview: 'Code review',
+    bestPracticesFrame: 'Best practices used in the framework',
+    bestPracticesJS: 'Best practices',
+    finalProject: 'Supervising a team assignment',
+  },
+  description: {
+    interview: 'The mentor makes a decision about working with the student. Interviews are conducted with 2+ students - the total size of their team is determined by the mentor based on their workload',
+    codeReview: 'The mentor reviews the code, points out inaccuracies, suggests how to improve them. The code review helps the student to develop the necessary skills to work in a team',
+    bestPracticesFrame: 'The mentor shows what code constructs are best to use based on his experience. Helps to understand possible future problems in the student\'s solution and ways to solve them',
+    bestPracticesJS: 'The mentor shows what code constructs are best to use based on his experience. Suggests how to better organize the structure of the application',
+    finalProject: 'The mentor\'s experience and practical knowledge will help organize students to work on a team project',
+  },
 };
-const javascriptImage = {
-  href: javascript,
-  alt: 'Javascript image',
+
+const socialLink = {
+  telegram: {
+    title: 'Telegram',
+    href: 'https://t.me/+VgIgfltnf9T1svzN',
+    icon: TelegramIcon(),
+  },
+  discord: {
+    title: 'Discord',
+    href: 'https://discord.gg/fBvpUURPVm',
+    icon: DiscordIcon(),
+  },
 };
 
 export const mentorshipCoursesDefault: MentorshipCourse = {
@@ -27,33 +59,22 @@ export const mentorshipCoursesDefault: MentorshipCourse = {
   lang: 'en',
   detailsUrl: `/${ROUTES.MENTORSHIP}`,
   links: {
-    icon: [angularImage, reactImage, javascriptImage],
+    icon: [images.angular, images.react, images.js],
     mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
     courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/README.md',
-    social: [
-      {
-        title: 'Telegram',
-        href: 'https://t.me/+VgIgfltnf9T1svzN',
-        icon: TelegramIcon(),
-      },
-      {
-        title: 'Discord',
-        href: 'https://discord.gg/fBvpUURPVm',
-        icon: DiscordIcon(),
-      },
-    ],
+    social: [socialLink.telegram, socialLink.discord],
   },
   details: [
     'The duration of mentoring is 8 - 19 weeks',
     'Format: online',
-    'A desire to mentor from 2 to 6 students online',
+    'A desire to mentor from 2 to 6 students',
     'An ability to dedicate 3 to 5 hours per week',
   ],
   activities: [
     {
       id: 1,
-      title: 'Conducting technical interview',
-      description: 'The mentor makes a decision about working with the student. Interviews are conducted with 2+ students - the total size of their team is determined by the mentor based on their workload',
+      title: texts.title.interview,
+      description: texts.description.interview,
       links: [
         {
           href: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/first-interview.md',
@@ -63,13 +84,13 @@ export const mentorshipCoursesDefault: MentorshipCourse = {
     },
     {
       id: 2,
-      title: 'Best practices',
-      description: 'The mentor shows what code constructs are best to use based on his experience. Suggests how to better organize the structure of the application',
+      title: texts.title.bestPracticesJS,
+      description: texts.description.bestPracticesJS,
     },
     {
       id: 3,
-      title: 'Code review',
-      description: 'The mentor reviews the code, points out inaccuracies, suggests how to improve them. The code review helps the student to develop the necessary skills to work in a team',
+      title: texts.title.codeReview,
+      description: texts.description.codeReview,
       links: [
         {
           href: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/pull-request-review-process.md',
@@ -79,8 +100,8 @@ export const mentorshipCoursesDefault: MentorshipCourse = {
     },
     {
       id: 4,
-      title: 'Supervising a team assignment',
-      description: 'The mentor\'s experience and practical knowledge will help organize students to work on a team project',
+      title: texts.title.finalProject,
+      description: texts.description.finalProject,
       links: [
         {
           href: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/modules/final-task/README.md',
@@ -96,11 +117,10 @@ export const mentorshipCourses: MentorshipCourse[] = [
     id: 1,
     title: COURSE_TITLES.JS_EN,
     iconSmall: jsSmall,
-    description: '',
     lang: 'en',
     detailsUrl: `/${ROUTES.MENTORSHIP}/${ROUTES.JS}`,
     links: {
-      icon: [javascriptImage],
+      icon: [images.js],
       mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
       courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/README.md',
       social: [],
@@ -108,14 +128,14 @@ export const mentorshipCourses: MentorshipCourse[] = [
     details: [
       'The duration of mentoring is 18 - 19 weeks',
       'Format: online',
-      'A desire to mentor from 2 to 6 students online',
+      'A desire to mentor from 2 to 6 students',
       'An ability to dedicate 3 to 5 hours per week',
     ],
     activities: [
       {
         id: 1,
-        title: 'Conducting technical interview',
-        description: 'The mentor makes a decision about working with the student. Interviews are conducted with 2+ students - the total size of their team is determined by the mentor based on their workload',
+        title: texts.title.interview,
+        description: texts.description.interview,
         links: [
           {
             href: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/first-interview.md',
@@ -125,13 +145,13 @@ export const mentorshipCourses: MentorshipCourse[] = [
       },
       {
         id: 2,
-        title: 'Best practices',
-        description: 'The mentor shows what code constructs are best to use based on his experience. Suggests how to better organize the structure of the application',
+        title: texts.title.bestPracticesJS,
+        description: texts.description.bestPracticesJS,
       },
       {
         id: 3,
-        title: 'Code review',
-        description: 'The mentor reviews the code, points out inaccuracies, suggests how to improve them. The code review helps the student to develop the necessary skills to work in a team',
+        title: texts.title.codeReview,
+        description: texts.description.codeReview,
         links: [
           {
             href: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/pull-request-review-process.md',
@@ -146,12 +166,12 @@ export const mentorshipCourses: MentorshipCourse[] = [
       },
       {
         id: 5,
-        title: 'Supervising a team assignment',
-        description: 'The mentor\'s experience and practical knowledge will help organize students to work on a team project',
+        title: texts.title.finalProject,
+        description: texts.description.finalProject,
         links: [
           {
             href: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/modules/final-task/README.md',
-            linkTitle: 'Details about CoreJS interviews',
+            linkTitle: 'Details about final task',
           },
         ],
       },
@@ -161,25 +181,13 @@ export const mentorshipCourses: MentorshipCourse[] = [
     id: 2,
     title: COURSE_TITLES.JS_RU,
     iconSmall: jsSmall,
-    description: '',
     lang: 'ru',
     detailsUrl: `/${ROUTES.MENTORSHIP}/${ROUTES.JS_RU}`,
     links: {
-      icon: [javascriptImage],
+      icon: [images.js],
       mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/rs-school-mentor.md',
       courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/README.md',
-      social: [
-        {
-          title: 'Telegram',
-          href: 'https://t.me/+VgIgfltnf9T1svzN',
-          icon: TelegramIcon(),
-        },
-        {
-          title: 'Discord',
-          href: 'https://discord.gg/fBvpUURPVm',
-          icon: DiscordIcon(),
-        },
-      ],
+      social: [],
     },
     details: [
       'Длительность менторства 18 - 19 недель',
@@ -231,11 +239,10 @@ export const mentorshipCourses: MentorshipCourse[] = [
     id: 3,
     title: COURSE_TITLES.REACT,
     iconSmall: reactSmall,
-    description: '',
     lang: 'en',
     detailsUrl: `/${ROUTES.MENTORSHIP}/${ROUTES.REACT}`,
     links: {
-      icon: [reactImage],
+      icon: [images.react],
       mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
       courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/react/README.md',
       social: [],
@@ -243,14 +250,14 @@ export const mentorshipCourses: MentorshipCourse[] = [
     details: [
       'The duration of mentoring is 12 weeks',
       'Format: online',
-      'A desire to mentor from 2 to 6 students online',
+      'A desire to mentor from 2 to 6 students',
       'An ability to dedicate 3 to 5 hours per week',
     ],
     activities: [
       {
         id: 1,
-        title: 'Conducting technical interview',
-        description: 'The mentor makes a decision about working with the student. Interviews are conducted with 2+ students - the total size of their team is determined by the mentor based on their workload',
+        title: texts.title.interview,
+        description: texts.description.interview,
         links: [
           {
             href: 'https://github.com/rolling-scopes-school/tasks/blob/master/react/interview.md',
@@ -260,13 +267,13 @@ export const mentorshipCourses: MentorshipCourse[] = [
       },
       {
         id: 2,
-        title: 'Best practices used in the framework',
-        description: 'The mentor shows what code constructs are best to use based on his experience. Helps to understand possible future problems in the student\'s solution and ways to solve them',
+        title: texts.title.bestPracticesFrame,
+        description: texts.description.bestPracticesFrame,
       },
       {
         id: 3,
-        title: 'Code review',
-        description: 'The mentor reviews the code, points out inaccuracies, suggests how to improve them. The code review helps the student to develop the necessary skills to work in a team',
+        title: texts.title.codeReview,
+        description: texts.description.codeReview,
         links: [
           {
             href: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/pull-request-review-process.md',
@@ -276,8 +283,8 @@ export const mentorshipCourses: MentorshipCourse[] = [
       },
       {
         id: 4,
-        title: 'Supervising a team assignment',
-        description: 'The mentor\'s experience and practical knowledge will help organize students to work on a team project',
+        title: texts.title.finalProject,
+        description: texts.description.finalProject,
       },
     ],
   },
@@ -285,11 +292,10 @@ export const mentorshipCourses: MentorshipCourse[] = [
     id: 4,
     title: COURSE_TITLES.ANGULAR,
     iconSmall: angularSmall,
-    description: '',
     lang: 'en',
     detailsUrl: `/${ROUTES.MENTORSHIP}/${ROUTES.ANGULAR}`,
     links: {
-      icon: [angularImage],
+      icon: [images.angular],
       mentorDocs: 'https://github.com/rolling-scopes-school/tasks/tree/master/angular/mentoring',
       courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/angular/README.md',
       social: [],
@@ -297,24 +303,24 @@ export const mentorshipCourses: MentorshipCourse[] = [
     details: [
       'The duration of mentoring is 8 - 10 weeks',
       'Format: online',
-      'A desire to mentor from 2 to 6 students online',
+      'A desire to mentor from 2 to 6 students',
       'An ability to dedicate 3 to 5 hours per week',
     ],
     activities: [
       {
         id: 1,
-        title: 'Conducting technical interview',
-        description: 'The mentor makes a decision about working with the student. Interviews are conducted with 2+ students - the total size of their team is determined by the mentor based on their workload',
+        title: texts.title.interview,
+        description: texts.description.interview,
       },
       {
         id: 2,
-        title: 'Best practices used in the framework',
-        description: 'The mentor shows what code constructs are best to use based on his experience. Helps to understand possible future problems in the student\'s solution and ways to solve them',
+        title: texts.title.bestPracticesFrame,
+        description: texts.description.bestPracticesFrame,
       },
       {
         id: 3,
-        title: 'Code review',
-        description: 'The mentor reviews the code, points out inaccuracies, suggests how to improve them. The code review helps the student to develop the necessary skills to work in a team',
+        title: texts.title.codeReview,
+        description: texts.description.codeReview,
         links: [
           {
             href: 'https://github.com/rolling-scopes-school/tasks/blob/master/angular/mentoring/pull-request-review-process.md',
@@ -324,8 +330,8 @@ export const mentorshipCourses: MentorshipCourse[] = [
       },
       {
         id: 4,
-        title: 'Supervising a team assignment',
-        description: 'The mentor\'s experience and practical knowledge will help organize students to work on a team project',
+        title: texts.title.finalProject,
+        description: texts.description.finalProject,
       },
     ],
   },

@@ -2,6 +2,7 @@ import { RouteObject } from 'react-router-dom';
 import { ROUTES } from '@/app/const';
 import { loader } from '@/entities/course';
 import { mentorshipCoursesLoader } from '@/pages/mentorship/mentorship-courses-loader.ts';
+import { MentorshipCourseRouteKeys, MentorshipDefaultRouteKeys } from 'data';
 
 const coursesRoute: RouteObject = {
   path: ROUTES.COURSES,
@@ -98,54 +99,27 @@ const coursesRoute: RouteObject = {
   ],
 };
 
+const createMentorshipRoute = (path: MentorshipDefaultRouteKeys | MentorshipCourseRouteKeys) => ({
+  path,
+  loader: () => mentorshipCoursesLoader(path),
+  lazy: async () => {
+    const { Mentorship } = await import('@/pages/mentorship/mentorship.tsx');
+
+    return { Component: Mentorship };
+  },
+});
+
 const mentorshipRoute: RouteObject = {
   path: ROUTES.MENTORSHIP,
   children: [
     {
       index: true,
-      loader: () => mentorshipCoursesLoader(ROUTES.MENTORSHIP),
-      lazy: async () => {
-        const { Mentorship } = await import('@/pages/mentorship/mentorship.tsx');
-
-        return { Component: Mentorship };
-      },
+      ...createMentorshipRoute(ROUTES.MENTORSHIP),
     },
-    {
-      path: ROUTES.JS,
-      loader: () => mentorshipCoursesLoader(ROUTES.JS),
-      lazy: async () => {
-        const { Mentorship } = await import('@/pages/mentorship/mentorship.tsx');
-
-        return { Component: Mentorship };
-      },
-    },
-    {
-      path: ROUTES.JS_RU,
-      loader: () => mentorshipCoursesLoader(ROUTES.JS_RU),
-      lazy: async () => {
-        const { Mentorship } = await import('@/pages/mentorship/mentorship.tsx');
-
-        return { Component: Mentorship };
-      },
-    },
-    {
-      path: ROUTES.ANGULAR,
-      loader: () => mentorshipCoursesLoader(ROUTES.ANGULAR),
-      lazy: async () => {
-        const { Mentorship } = await import('@/pages/mentorship/mentorship.tsx');
-
-        return { Component: Mentorship };
-      },
-    },
-    {
-      path: ROUTES.REACT,
-      loader: () => mentorshipCoursesLoader(ROUTES.REACT),
-      lazy: async () => {
-        const { Mentorship } = await import('@/pages/mentorship/mentorship.tsx');
-
-        return { Component: Mentorship };
-      },
-    },
+    createMentorshipRoute(ROUTES.JS),
+    createMentorshipRoute(ROUTES.JS_RU),
+    createMentorshipRoute(ROUTES.ANGULAR),
+    createMentorshipRoute(ROUTES.REACT),
   ],
 };
 

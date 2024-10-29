@@ -14,11 +14,11 @@ export const DocLinks = ({ text, links }: AdditionalProps) => {
   return (
     <div className={cx('doc-links-wrapper')}>
       {text}
-      <div className={cx('doc-links')}>
-        {links.map((link, index) => (
-          <SocialMediaItem key={index} title={link.title} href={link.href} icon={link.icon} />
+      <nav className={cx('doc-links')} aria-label="Social media links">
+        {links.map((link) => (
+          <SocialMediaItem key={link.href} title={link.title} href={link.href} icon={link.icon} />
         ))}
-      </div>
+      </nav>
     </div>
   );
 };
