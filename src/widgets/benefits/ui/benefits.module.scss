@@ -92,8 +92,14 @@
   }
 
   .benefit-icon {
-    max-width: 50px;
-    max-height: 40px;
+    width: 50px;
+    height: 40px;
+    object-fit: contain;
+
+    @include media-tablet {
+      width: 40px;
+      height: 25px;
+    }
   }
 
   @include media-laptop {
