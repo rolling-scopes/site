@@ -34,7 +34,7 @@ describe('Mentors', () => {
   });
 
   it('renders the become a mentor button', () => {
-    const button = screen.getByRole('link', { name: /Read more/i });
+    const button = screen.getByRole('link', { name: /How to become a mentor/i });
 
     expect(button).toBeVisible();
     expect(button).toHaveAttribute('href', readMoreLink);
