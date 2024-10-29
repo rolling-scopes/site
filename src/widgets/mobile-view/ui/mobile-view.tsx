@@ -51,6 +51,14 @@ export const MobileView = ({ type }: MobileViewProps) => {
       </Link>
 
       <SchoolMenu heading="community" hasTitle={false} color={color} />
+
+      <Divider color={color} />
+
+      <Link to={ROUTES.MENTORSHIP} className={cx('category-link', color)}>
+        Mentorship
+      </Link>
+
+      <SchoolMenu heading="mentorship" hasTitle={false} color={color} />
     </nav>
   );
 };
