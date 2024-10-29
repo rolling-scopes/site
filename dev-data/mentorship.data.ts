@@ -119,7 +119,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
         links: [
           {
             href: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/first-interview.md',
-            linkTitle: 'Read more about technical interview',
+            linkTitle: 'Details about technical interview',
           },
         ],
       },
@@ -135,7 +135,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
         links: [
           {
             href: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/pull-request-review-process.md',
-            linkTitle: 'Read more about code review',
+            linkTitle: 'Details about code review',
           },
         ],
       },
@@ -151,7 +151,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
         links: [
           {
             href: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/modules/final-task/README.md',
-            linkTitle: 'Read more about CoreJS interviews',
+            linkTitle: 'Details about CoreJS interviews',
           },
         ],
       },
@@ -254,7 +254,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
         links: [
           {
             href: 'https://github.com/rolling-scopes-school/tasks/blob/master/react/interview.md',
-            linkTitle: 'Read more about technical interview',
+            linkTitle: 'Details about technical interview',
           },
         ],
       },
@@ -270,7 +270,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
         links: [
           {
             href: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/pull-request-review-process.md',
-            linkTitle: 'Read more about code review',
+            linkTitle: 'Details about code review',
           },
         ],
       },
@@ -318,7 +318,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
         links: [
           {
             href: 'https://github.com/rolling-scopes-school/tasks/blob/master/angular/mentoring/pull-request-review-process.md',
-            linkTitle: 'Read more about code review',
+            linkTitle: 'Details about code review',
           },
         ],
       },
