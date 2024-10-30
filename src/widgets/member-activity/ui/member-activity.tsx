@@ -1,10 +1,11 @@
 import { createContext } from 'react';
 import { Stages } from './stages';
+import { ROUTES } from '@/app/const';
 import { useDataByName } from '@/shared/hooks/use-data-by-name';
-import type { ListType } from '@/shared/types.ts';
+import type { Language, ListType } from '@/shared/types';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { DataMap, MentorActivities } from 'data';
+import { DataMap, MentorActivities, MentorshipDefaultRouteKeys } from 'data';
 
 import './member-activity.scss';
 

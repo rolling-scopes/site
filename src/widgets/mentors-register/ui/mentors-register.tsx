@@ -19,10 +19,8 @@ export const MentorsRegister = ({ lang = 'en' }: MentorsRegisterProps) => {
     <section className={cx('container')}>
       <div className={cx('content', 'mentoring-register')}>
         <WidgetTitle>{mentorsRegisterData[lang].header}</WidgetTitle>
-        <Subtitle className={cx('note')} fontSize="extra-small">{mentorsRegisterData[lang].note}</Subtitle>
-        <div className={cx('step-wrapper')}>
-          <List data={mentorsRegisterData[lang].steps} />
-        </div>
+        <Subtitle className={cx('note')} fontSize="extra-small">{mentorsRegisterData[lang].noteBefore}</Subtitle>
+        <List data={mentorsRegisterData[lang].stepsBefore} className={cx('step-before-wrapper')} />
         <LinkCustom
           href={mentorsRegisterData[lang].button.link}
           variant="primary"
@@ -30,6 +28,8 @@ export const MentorsRegister = ({ lang = 'en' }: MentorsRegisterProps) => {
         >
           {mentorsRegisterData[lang].button.text}
         </LinkCustom>
+        <Subtitle className={cx('note', 'header-after')} fontSize="extra-small">{mentorsRegisterData[lang].noteAfter}</Subtitle>
+        <List data={mentorsRegisterData[lang].stepsAfter} />
       </div>
     </section>
   );

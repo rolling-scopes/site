@@ -16,6 +16,8 @@ type DocDetailProps = {
 };
 
 export const DocDetail = (props: DocDetailProps) => {
+  const courseTitleText = props.courseTitle ? ` ${props.courseTitle}` : '';
+
   return (
     <Paragraph className={cx('doc-detail-wrapper')}>
       {`${props.textInfo} `}
@@ -25,7 +27,7 @@ export const DocDetail = (props: DocDetailProps) => {
       >
         {props.textLink}
       </LinkCustom>
-      {` ${props.textAfterLink}${props.courseTitle ? ` ${props.courseTitle}` : ''} ${props.textEnd}`}
+      {` ${props.textAfterLink}${courseTitleText} ${props.textEnd}`}
     </Paragraph>
   );
 };

@@ -1,1 +1,1 @@
-export { Benefits } from './ui/benefits';
+export { Benefits } from './ui/benefits/benefits';

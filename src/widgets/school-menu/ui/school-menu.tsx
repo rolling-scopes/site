@@ -2,7 +2,7 @@ import { GenericItemProps, SchoolList } from './school-list/school-list';
 import { ANCHORS } from '@/app/const';
 import type { Course } from '@/entities/course';
 import { useDataByName } from '@/shared/hooks/use-data-by-name';
-import { MentorshipCourse, mentorshipCourses } from 'data';
+import { MentorshipCourse, MentorshipDefaultRouteKeys, mentorshipCourses } from 'data';
 
 import './school-menu.scss';
 

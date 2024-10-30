@@ -91,17 +91,6 @@
     }
   }
 
-  .benefit-icon {
-    width: 50px;
-    height: 40px;
-    object-fit: contain;
-
-    @include media-tablet {
-      width: 40px;
-      height: 25px;
-    }
-  }
-
   @include media-laptop {
     display: flex;
     gap: 24px;

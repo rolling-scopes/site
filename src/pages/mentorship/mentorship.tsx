@@ -38,7 +38,6 @@ export const Mentorship = () => {
         courseDocsLink={mentorshipData.links.courseDocs}
         courseTitle={mentorshipData.title}
         lang={mentorshipData.lang}
-        socialLinks={mentorshipData.links.social}
       />
     </>
   );

@@ -1,7 +1,6 @@
 import { COURSE_TITLES } from './courseTitles.data';
 import { ROUTES } from '@/app/const';
 import { Language } from '@/shared/types';
-import { SocialMediaProps } from '@/shared/ui/social-media-item';
 import { Stage } from '@/widgets/member-activity/ui/stage-card';
 
 export type MentorActivities = Pick<Stage, 'id' | 'title' | 'description' | 'links'>;
@@ -34,7 +33,6 @@ export type MentorshipCourse = {
     icon: ImageLink[];
     mentorDocs: string;
     courseDocs: string;
-    social: SocialMediaProps[];
   };
   details: string[];
   activities: MentorActivities[];

@@ -6,7 +6,6 @@ import jsSmall from '@/shared/assets/icons/footer/javascript.webp';
 import reactSmall from '@/shared/assets/icons/footer/react.webp';
 import javascript from '@/shared/assets/icons/javascript.webp';
 import react from '@/shared/assets/icons/react.svg';
-import { DiscordIcon, TelegramIcon } from '@/shared/icons';
 import { MentorshipCourse } from 'data';
 
 const images = {
@@ -34,6 +33,7 @@ const texts = {
   },
   description: {
     interview: 'The mentor makes a decision about working with the student. Interviews are conducted with 2+ students - the total size of their team is determined by the mentor based on their workload',
+    interviewCore: 'The mentor conducts interviews with students of other mentors on major topics of the course. Participation in interviews allows students not only to see their knowledge gaps, but also to feel the atmosphere of such meetings',
     codeReview: 'The mentor reviews the code, points out inaccuracies, suggests how to improve them. The code review helps the student to develop the necessary skills to work in a team',
     bestPracticesFrame: 'The mentor shows what code constructs are best to use based on his experience. Helps to understand possible future problems in the student\'s solution and ways to solve them',
     bestPracticesJS: 'The mentor shows what code constructs are best to use based on his experience. Suggests how to better organize the structure of the application',
@@ -41,16 +41,30 @@ const texts = {
   },
 };
 
-const socialLink = {
-  telegram: {
-    title: 'Telegram',
-    href: 'https://t.me/+VgIgfltnf9T1svzN',
-    icon: TelegramIcon(),
+const linkDocs = {
+  js: {
+    mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
+    courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/README.md',
+    interview: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/first-interview.md',
+    codeReview: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/pull-request-review-process.md',
+    finalProject: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/modules/final-task/README.md',
   },
-  discord: {
-    title: 'Discord',
-    href: 'https://discord.gg/fBvpUURPVm',
-    icon: DiscordIcon(),
+  jsRu: {
+    mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/rs-school-mentor.md',
+    courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/README.md',
+    interview: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/mentoring-first-interview.md',
+    codeReview: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/pull-request-review-process.md',
+  },
+  react: {
+    mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
+    courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/react/README.md',
+    codeReview: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/pull-request-review-process.md',
+    interview: 'https://github.com/rolling-scopes-school/tasks/blob/master/react/interview.md',
+  },
+  angular: {
+    mentorDocs: 'https://github.com/rolling-scopes-school/tasks/tree/master/angular/mentoring',
+    courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/angular/README.md',
+    codeReview: 'https://github.com/rolling-scopes-school/tasks/blob/master/angular/mentoring/pull-request-review-process.md'
   },
 };
 
@@ -62,7 +76,6 @@ export const mentorshipCoursesDefault: MentorshipCourse = {
     icon: [images.angular, images.react, images.js],
     mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
     courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/README.md',
-    social: [socialLink.telegram, socialLink.discord],
   },
   details: [
     'The duration of mentoring is 8 - 19 weeks',
@@ -116,14 +129,14 @@ export const mentorshipCourses: MentorshipCourse[] = [
   {
     id: 1,
     title: COURSE_TITLES.JS_EN,
+    description: '',
     iconSmall: jsSmall,
     lang: 'en',
     detailsUrl: `/${ROUTES.MENTORSHIP}/${ROUTES.JS}`,
     links: {
       icon: [images.js],
-      mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
-      courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/README.md',
-      social: [],
+      mentorDocs: linkDocs.js.mentorDocs,
+      courseDocs: linkDocs.js.courseDocs,
     },
     details: [
       'The duration of mentoring is 18 - 19 weeks',
@@ -138,7 +151,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
         description: texts.description.interview,
         links: [
           {
-            href: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/first-interview.md',
+            href: linkDocs.js.interview,
             linkTitle: 'Details about technical interview',
           },
         ],
@@ -154,7 +167,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
         description: texts.description.codeReview,
         links: [
           {
-            href: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/pull-request-review-process.md',
+            href: linkDocs.js.codeReview,
             linkTitle: 'Details about code review',
           },
         ],
@@ -162,7 +175,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
       {
         id: 4,
         title: 'Conducting two CoreJS interviews',
-        description: 'The mentor conducts two interviews with students of other mentors on major topics of the course. Participation in interviews allows students not only to see their knowledge gaps, but also to feel the atmosphere of such meetings',
+        description: texts.description.interviewCore,
       },
       {
         id: 5,
@@ -170,7 +183,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
         description: texts.description.finalProject,
         links: [
           {
-            href: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/modules/final-task/README.md',
+            href: linkDocs.js.finalProject,
             linkTitle: 'Details about final task',
           },
         ],
@@ -180,14 +193,14 @@ export const mentorshipCourses: MentorshipCourse[] = [
   {
     id: 2,
     title: COURSE_TITLES.JS_RU,
+    description: '',
     iconSmall: jsSmall,
     lang: 'ru',
     detailsUrl: `/${ROUTES.MENTORSHIP}/${ROUTES.JS_RU}`,
     links: {
       icon: [images.js],
-      mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/rs-school-mentor.md',
-      courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/stage2/README.md',
-      social: [],
+      mentorDocs: linkDocs.jsRu.mentorDocs,
+      courseDocs: linkDocs.jsRu.courseDocs,
     },
     details: [
       'Длительность менторства 18 - 19 недель',
@@ -202,7 +215,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
         description: 'По результату которого ментор принимает решение о работе со студентом. Интервью проводятся с 2+ студентами - общий размер команды определяется ментором в зависимости от его загруженности',
         links: [
           {
-            href: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/mentoring-first-interview.md',
+            href: linkDocs.jsRu.interview,
             linkTitle: 'Подробнее о техническом интервью',
           },
         ],
@@ -218,7 +231,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
         description: 'Ментор просматривает код, указывает на неточности, предлагает, как их улучшить. Ревью кода помогает студенту развить необходимые навыки для работы в команде',
         links: [
           {
-            href: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/pull-request-review-process.md',
+            href: linkDocs.jsRu.codeReview,
             linkTitle: 'Подробнее о ревью кода',
           },
         ],
@@ -226,7 +239,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
       {
         id: 4,
         title: 'Проведение двух CoreJS интервью',
-        description: 'Ментор проводит два интервью со студентами других менторов по основным темам курса. Участие в интервью позволяет студентам не только увидеть свои пробелы в знаниях, но почувствовать атмосферу подобных встреч ',
+        description: 'Ментор проводит два интервью со студентами других менторов по основным темам курса. Участие в интервью позволяет студентам не только увидеть свои пробелы в знаниях, но почувствовать атмосферу подобных встреч',
       },
       {
         id: 5,
@@ -238,14 +251,14 @@ export const mentorshipCourses: MentorshipCourse[] = [
   {
     id: 3,
     title: COURSE_TITLES.REACT,
+    description: '',
     iconSmall: reactSmall,
     lang: 'en',
     detailsUrl: `/${ROUTES.MENTORSHIP}/${ROUTES.REACT}`,
     links: {
       icon: [images.react],
-      mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
-      courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/react/README.md',
-      social: [],
+      mentorDocs: linkDocs.react.mentorDocs,
+      courseDocs: linkDocs.react.courseDocs,
     },
     details: [
       'The duration of mentoring is 12 weeks',
@@ -256,28 +269,28 @@ export const mentorshipCourses: MentorshipCourse[] = [
     activities: [
       {
         id: 1,
-        title: texts.title.interview,
-        description: texts.description.interview,
-        links: [
-          {
-            href: 'https://github.com/rolling-scopes-school/tasks/blob/master/react/interview.md',
-            linkTitle: 'Details about technical interview',
-          },
-        ],
-      },
-      {
-        id: 2,
         title: texts.title.bestPracticesFrame,
         description: texts.description.bestPracticesFrame,
       },
       {
-        id: 3,
+        id: 2,
         title: texts.title.codeReview,
         description: texts.description.codeReview,
         links: [
           {
-            href: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/pull-request-review-process.md',
+            href: linkDocs.react.codeReview,
             linkTitle: 'Details about code review',
+          },
+        ],
+      },
+      {
+        id: 3,
+        title: texts.title.interview,
+        description: texts.description.interviewCore,
+        links: [
+          {
+            href: linkDocs.react.interview,
+            linkTitle: 'Details about technical interview',
           },
         ],
       },
@@ -291,14 +304,14 @@ export const mentorshipCourses: MentorshipCourse[] = [
   {
     id: 4,
     title: COURSE_TITLES.ANGULAR,
+    description: '',
     iconSmall: angularSmall,
     lang: 'en',
     detailsUrl: `/${ROUTES.MENTORSHIP}/${ROUTES.ANGULAR}`,
     links: {
       icon: [images.angular],
-      mentorDocs: 'https://github.com/rolling-scopes-school/tasks/tree/master/angular/mentoring',
-      courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/angular/README.md',
-      social: [],
+      mentorDocs: linkDocs.angular.mentorDocs,
+      courseDocs: linkDocs.angular.courseDocs,
     },
     details: [
       'The duration of mentoring is 8 - 10 weeks',
@@ -323,7 +336,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
         description: texts.description.codeReview,
         links: [
           {
-            href: 'https://github.com/rolling-scopes-school/tasks/blob/master/angular/mentoring/pull-request-review-process.md',
+            href: linkDocs.angular.codeReview,
             linkTitle: 'Details about code review',
           },
         ],

@@ -1,33 +1,13 @@
 import classNames from 'classnames/bind';
-import { Image } from '@/shared/ui/image';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { Benefit, ImageLink, benefitMentorshipHome } from 'data';
+import { shortBenefitMaxChars } from '@/widgets/benefits/constants';
+import { BenefitsProps } from '@/widgets/benefits/types';
+import { BenefitItem } from '@/widgets/benefits/ui/benefit-item/benefit-item';
+import { benefitMentorshipHome } from 'data';
 
 import styles from './benefits.module.scss';
 
 const cx = classNames.bind(styles);
-
-export type BenefitsProps = {
-  header?: string;
-  benefits?: Benefit[];
-  flex?: boolean;
-};
-
-type BenefitItemProps = {
-  classNames: string;
-  icon?: ImageLink;
-  text: string;
-};
-
-const shortBenefitMaxChars = 60;
-const BenefitItem = ({ text, icon, classNames }: BenefitItemProps) => {
-  return (
-    <li className={classNames} data-testid="benefit">
-      {icon?.href && <Image className={cx('benefit-icon')} src={icon.href} alt={icon.alt} />}
-      {text}
-    </li>
-  );
-};
 
 export const Benefits = ({
   header = benefitMentorshipHome.header,
