@@ -10,6 +10,7 @@ import {
   DISCORD_LINKS,
   JS_EN_TELEGRAM_CHAT_LINK,
   RS_DOCS_COMMUNICATION_LINK,
+  RS_DOCS_EN_LINK,
   RS_DOCS_TELEGRAM_CHATS_LINK,
   communicationText,
 } from 'data';
@@ -49,6 +50,7 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
   const courseDiscordLink = isJsEnCourse ? discordLinkJs : discordLink;
   const discordFirstHalfText = !isJsEnCourse ? firstParagraphFirstHalf : null;
   const discordSecondHalfText = isJsEnCourse ? discordParagraphTextJs : firstParagraphSecondHalf;
+  const rsDocsHref = isJsEnCourse ? RS_DOCS_EN_LINK : RS_DOCS_COMMUNICATION_LINK;
 
   return (
     <section className={cx('container')}>
@@ -90,7 +92,7 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
             </Paragraph>
             <Paragraph>
               {thirdParagraphFirstHalf}
-              <LinkCustom href={RS_DOCS_COMMUNICATION_LINK} external>
+              <LinkCustom href={rsDocsHref} external>
                 {rsDocsLink}
               </LinkCustom>
               {thirdParagraphSecondHalf}
