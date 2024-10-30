@@ -64,7 +64,7 @@ const linkDocs = {
   angular: {
     mentorDocs: 'https://github.com/rolling-scopes-school/tasks/tree/master/angular/mentoring',
     courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/angular/README.md',
-    codeReview: 'https://github.com/rolling-scopes-school/tasks/blob/master/angular/mentoring/pull-request-review-process.md'
+    codeReview: 'https://github.com/rolling-scopes-school/tasks/blob/master/angular/mentoring/pull-request-review-process.md',
   },
 };
 
