@@ -4,7 +4,7 @@ export const mentorsRegisterData = {
   en: {
     header: 'Registration as a mentor',
     steps: [
-      'Go to the mentor registration page',
+      'Click the button below to proceed to the mentor registration page',
       'Choose the course in which you will supervise students',
       'Answer questions about the number of students and their location',
       'Before starting the course, check your email and confirm your registration',

@@ -8,7 +8,7 @@ import { DataMap, MentorActivities } from 'data';
 
 import './member-activity.scss';
 
-type PathNames = Exclude<keyof DataMap, 'courses'> | 'mentorship';
+type PathNames = Exclude<keyof DataMap, 'courses'> | MentorshipDefaultRouteKeys;
 
 interface StudyPathProps {
   path: PathNames;
@@ -41,7 +41,7 @@ const mentorsActivityData = {
   },
 };
 
-export const LangContext = createContext<'ru' | 'en'>('en');
+export const LangContext = createContext<Language>('en');
 
 export const MemberActivity = ({ path, type, activities, lang = 'en' }: StudyPathProps) => {
   let { data: coursesPath } = useDataByName<PathNames>(path);
@@ -53,7 +53,7 @@ export const MemberActivity = ({ path, type, activities, lang = 'en' }: StudyPat
     ? 'This program will have theory and practice on the following topic:'
     : localizedContent[lang].paragraph;
 
-  if (path === 'mentorship' && activities) {
+  if (path === ROUTES.MENTORSHIP && activities) {
     title = mentorsActivityData[lang].header;
     paragraph = mentorsActivityData[lang].info;
     coursesPath = activities;
