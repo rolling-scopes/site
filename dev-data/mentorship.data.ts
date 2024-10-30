@@ -1,4 +1,4 @@
-import { COURSE_TITLES } from './courseTitles.data.ts';
+import { COURSE_TITLES } from './courseTitles.data';
 import { ROUTES } from '@/app/const';
 import angular from '@/shared/assets/icons/angular.svg';
 import angularSmall from '@/shared/assets/icons/footer/angular.webp';
@@ -74,8 +74,8 @@ export const mentorshipCoursesDefault: MentorshipCourse = {
   detailsUrl: `/${ROUTES.MENTORSHIP}`,
   links: {
     icon: [images.angular, images.react, images.js],
-    mentorDocs: 'https://github.com/rolling-scopes-school/docs/blob/master/docs/en/rs-school-mentor.md',
-    courseDocs: 'https://github.com/rolling-scopes-school/tasks/blob/master/README.md',
+    mentorDocs: linkDocs.js.mentorDocs,
+    courseDocs: linkDocs.js.courseDocs,
   },
   details: [
     'The duration of mentoring is 8 - 19 weeks',
