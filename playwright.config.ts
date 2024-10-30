@@ -1,6 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
 
-// eslint-disable-next-line import/no-default-export
 export default defineConfig({
   testDir: 'src/shared/__tests__',
   fullyParallel: true,
