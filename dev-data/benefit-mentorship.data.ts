@@ -49,7 +49,7 @@ export const benefitMentorshipMentors: BenefitsProps = {
       text: 'Opportunity to develop a new colleague',
       icon: {
         href: planetIcon,
-        alt: 'Planet image',
+        alt: '',
       },
     },
     {
@@ -57,7 +57,7 @@ export const benefitMentorshipMentors: BenefitsProps = {
       text: 'Gaining new experience, search for new colleagues',
       icon: {
         href: personIcon,
-        alt: 'Person image',
+        alt: '',
       },
     },
     {
@@ -65,7 +65,7 @@ export const benefitMentorshipMentors: BenefitsProps = {
       text: 'Opportunity to share knowledge',
       icon: {
         href: paperIcon,
-        alt: 'Paper image',
+        alt: '',
       },
     },
     {
@@ -81,7 +81,7 @@ export const benefitMentorshipMentors: BenefitsProps = {
       text: 'Opportunity to improve tasks or create your own',
       icon: {
         href: giftIcon,
-        alt: 'Gift image',
+        alt: '',
       },
     },
     {
@@ -89,7 +89,7 @@ export const benefitMentorshipMentors: BenefitsProps = {
       text: 'You\'re on the lookout for a great community that will always help you learn and grow',
       icon: {
         href: chatIcon,
-        alt: 'Chat image',
+        alt: '',
       },
     },
   ],

@@ -23,7 +23,7 @@ const shortBenefitMaxChars = 60;
 const BenefitItem = ({ text, icon, classNames }: BenefitItemProps) => {
   return (
     <li className={classNames} data-testid="benefit">
-      {(icon?.href && icon?.alt) && <Image className={cx('benefit-icon')} src={icon.href} alt={icon.alt} />}
+      {icon?.href && <Image className={cx('benefit-icon')} src={icon.href} alt={icon.alt} />}
       {text}
     </li>
   );

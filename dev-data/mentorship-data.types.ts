@@ -1,6 +1,6 @@
-import { COURSE_TITLES } from './courseTitles.data.ts';
+import { COURSE_TITLES } from './courseTitles.data';
 import { ROUTES } from '@/app/const';
-import { Language } from '@/shared/types.ts';
+import { Language } from '@/shared/types';
 import { SocialMediaProps } from '@/shared/ui/social-media-item';
 import { Stage } from '@/widgets/member-activity/ui/stage-card';
 
