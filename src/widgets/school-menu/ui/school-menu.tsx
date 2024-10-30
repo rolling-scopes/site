@@ -43,7 +43,7 @@ const communityMenuStaticLinks = [
 ];
 
 interface SchoolMenuProps {
-  heading: 'rs school' | 'all courses' | 'community' | 'mentorship';
+  heading: 'rs school' | 'all courses' | 'community' | MentorshipDefaultRouteKeys;
   hasTitle?: boolean;
   color?: 'dark' | 'light';
 }
