@@ -12,10 +12,8 @@ export type Benefit = {
   icon?: ImageLink;
 };
 
-const mentorshipHeader = 'Mentorship is for you if you';
-
 export const benefitMentorshipHome: BenefitsProps = {
-  header: mentorshipHeader,
+  header: 'Mentorship is for you if you',
   benefits: [
     {
       id: 1,
@@ -42,7 +40,7 @@ export const benefitMentorshipHome: BenefitsProps = {
 };
 
 export const benefitMentorshipMentors: BenefitsProps = {
-  header: mentorshipHeader,
+  header: 'Mentorship is for you if you want',
   benefits: [
     {
       id: 1,
@@ -54,7 +52,7 @@ export const benefitMentorshipMentors: BenefitsProps = {
     },
     {
       id: 2,
-      text: 'Gaining new experience, search for new colleagues',
+      text: 'Gain new experience, search for new colleagues',
       icon: {
         href: personIcon,
         alt: '',
@@ -74,7 +72,7 @@ export const benefitMentorshipMentors: BenefitsProps = {
     },
     {
       id: 5,
-      text: 'Teaching others, you learn yourself',
+      text: 'Learn yourself by teaching others',
     },
     {
       id: 6,

@@ -35,8 +35,8 @@ const texts = {
     interview: 'The mentor makes a decision about working with the student. Interviews are conducted with 2+ students - the total size of their team is determined by the mentor based on their workload',
     interviewCore: 'The mentor conducts interviews with students of other mentors on major topics of the course. Participation in interviews allows students not only to see their knowledge gaps, but also to feel the atmosphere of such meetings',
     codeReview: 'The mentor reviews the code, points out inaccuracies, suggests how to improve them. The code review helps the student to develop the necessary skills to work in a team',
-    bestPracticesFrame: 'The mentor shows what code constructs are best to use based on his experience. Helps to understand possible future problems in the student\'s solution and ways to solve them',
-    bestPracticesJS: 'The mentor shows what code constructs are best to use based on his experience. Suggests how to better organize the structure of the application',
+    bestPracticesFrame: 'The mentor shows what code structures are best to use based on their experience. Helps to understand possible future problems in the student\'s solution and ways to solve them',
+    bestPracticesJS: 'The mentor shows what code structures are best to use based on their experience. Suggests how to better organize the structure of the application',
     finalProject: 'The mentor\'s experience and practical knowledge will help organize students to work on a team project',
   },
 };
@@ -78,7 +78,7 @@ export const mentorshipCoursesDefault: MentorshipCourse = {
     courseDocs: linkDocs.js.courseDocs,
   },
   details: [
-    'The duration of mentoring is 8 - 19 weeks',
+    'The duration of mentoring is 8-19 weeks',
     'Format: online',
     'A desire to mentor from 2 to 6 students',
     'An ability to dedicate 3 to 5 hours per week',
@@ -139,7 +139,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
       courseDocs: linkDocs.js.courseDocs,
     },
     details: [
-      'The duration of mentoring is 18 - 19 weeks',
+      'The duration of mentoring is 18-19 weeks',
       'Format: online',
       'A desire to mentor from 2 to 6 students',
       'An ability to dedicate 3 to 5 hours per week',
@@ -203,10 +203,10 @@ export const mentorshipCourses: MentorshipCourse[] = [
       courseDocs: linkDocs.jsRu.courseDocs,
     },
     details: [
-      'Длительность менторства 18 - 19 недель',
+      'Длительность менторства 18-19 недель',
       'Формат: онлайн',
       'Ментор курирует от 2 до 6 студентов',
-      'Необходимо уделять 3 - 5 часов в неделю',
+      'Необходимо уделять от 3 до 5 часов в неделю',
     ],
     activities: [
       {
@@ -239,7 +239,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
       {
         id: 4,
         title: 'Проведение двух CoreJS интервью',
-        description: 'Ментор проводит два интервью со студентами других менторов по основным темам курса. Участие в интервью позволяет студентам не только увидеть свои пробелы в знаниях, но почувствовать атмосферу подобных встреч',
+        description: 'Ментор проводит два интервью со студентами других менторов по основным темам курса. Участие в интервью позволяет студентам не только увидеть свои пробелы в знаниях, но и почувствовать атмосферу подобных встреч',
       },
       {
         id: 5,
@@ -314,7 +314,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
       courseDocs: linkDocs.angular.courseDocs,
     },
     details: [
-      'The duration of mentoring is 8 - 10 weeks',
+      'The duration of mentoring is 8-10 weeks',
       'Format: online',
       'A desire to mentor from 2 to 6 students',
       'An ability to dedicate 3 to 5 hours per week',
