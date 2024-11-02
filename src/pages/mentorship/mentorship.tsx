@@ -37,6 +37,7 @@ export const Mentorship = () => {
         mentorDocsLink={mentorshipData.links.mentorDocs}
         courseDocsLink={mentorshipData.links.courseDocs}
         courseTitle={mentorshipData.title}
+        onboardLinks={mentorshipData.links.onboard}
         lang={mentorshipData.lang}
       />
     </>

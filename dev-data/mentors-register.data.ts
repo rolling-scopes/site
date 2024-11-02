@@ -3,12 +3,6 @@ import { LINKS } from '@/app/const';
 export const mentorsRegisterData = {
   en: {
     header: 'Registration as a mentor',
-    stepsBefore: [
-      'Click the button below to proceed to the mentor registration page',
-      'Choose the course in which you will supervise students',
-      'Answer questions about the number of students and their location',
-      'Complete the registration and await notification by email',
-    ],
     stepsAfter: [
       'An email with instructions will be sent to you before mentoring begins',
       'Confirm your participation in the mentoring program by clicking on the link in the email',
@@ -24,12 +18,6 @@ export const mentorsRegisterData = {
   },
   ru: {
     header: 'Регистрация ментором',
-    stepsBefore: [
-      'Перейти на страницу регистрации менторов',
-      'Выбрать курс на котором вы будете курировать студентов',
-      'Ответить на вопросы о количестве студентов и их локации',
-      'Завершить регистрацию и ожидать уведомления на электронную почту',
-    ],
     stepsAfter: [
       'Перед началом менторинга вам будет направлено письмо с инструкциями на электронную почту',
       'Подтвердите участие в программе менторинга перейдя по ссылке в письме',

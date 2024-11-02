@@ -2,16 +2,16 @@ export const mentorDocsData = {
   en: {
     header: 'Any other questions?',
     mentor: {
-      textInfo: 'If you still have questions about the mentoring process, please go through the ',
+      textBeforeLink: 'If you still have questions about the mentoring process, please go through the ',
       textLink: 'Mentor documentation',
       textAfterLink: 'for the',
-      textEnd: 'Course.',
+      textAfterCourseName: 'Course.',
     },
     course: {
-      textInfo: 'You can also read the latest ',
+      textBeforeLink: 'You can also read the latest ',
       textLink: 'Training program',
       textAfterLink: 'for the',
-      textEnd: 'Course.',
+      textAfterCourseName: 'Course.',
     },
     pictureAlt: 'Mentor and its students',
     additional: 'You can also ask questions ',
@@ -19,16 +19,16 @@ export const mentorDocsData = {
   ru: {
     header: 'Остались вопросы?',
     mentor: {
-      textInfo: 'Если у вас остались вопросы по процессу менторинга, пожалуйста, ознакомьтесь с ',
+      textBeforeLink: 'Если у вас остались вопросы по процессу менторинга, пожалуйста, ознакомьтесь с ',
       textLink: 'Документацией о менторинге',
       textAfterLink: 'для курса',
-      textEnd: '.',
+      textAfterCourseName: '.',
     },
     course: {
-      textInfo: 'Вы так же можете ознакомиться с актуальной ',
+      textBeforeLink: 'Вы так же можете ознакомиться с актуальной ',
       textLink: 'Программой обучения',
       textAfterLink: 'для курса',
-      textEnd: '.',
+      textAfterCourseName: '.',
     },
     pictureAlt: 'Ментор и его студенты',
     additional: 'Вы так же можете задать вопросы ',

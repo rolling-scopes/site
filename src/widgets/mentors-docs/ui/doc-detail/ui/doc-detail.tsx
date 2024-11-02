@@ -7,27 +7,27 @@ import styles from './doc-detail.module.scss';
 const cx = classNames.bind(styles);
 
 type DocDetailProps = {
-  courseTitle?: string;
-  textInfo: string;
+  textBeforeLink: string;
   textLink: string;
   textAfterLink: string;
-  textEnd: string;
-  linkDocs: string;
+  linkDocs?: string;
 };
 
 export const DocDetail = (props: DocDetailProps) => {
-  const courseTitleText = props.courseTitle ? ` ${props.courseTitle}` : '';
+  if (!props.linkDocs) {
+    return null;
+  }
 
   return (
     <Paragraph className={cx('doc-detail-wrapper')}>
-      {`${props.textInfo} `}
+      {`${props.textBeforeLink} `}
       <LinkCustom
         href={props.linkDocs}
         external
       >
         {props.textLink}
       </LinkCustom>
-      {` ${props.textAfterLink}${courseTitleText} ${props.textEnd}`}
+      {` ${props.textAfterLink}`}
     </Paragraph>
   );
 };

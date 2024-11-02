@@ -1,10 +1,13 @@
 import classNames from 'classnames/bind';
+import { useLocation } from 'react-router-dom';
+import { ROUTES } from '@/app/const';
 import { Language } from '@/shared/types.ts';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { mentorsRegisterData } from 'data';
+import { DocDetail } from '@/widgets/mentors-docs/ui/doc-detail';
+import { mentorDocsData, mentorsRegisterData, mentorshipCoursesDefault } from 'data';
 
 import styles from './mentors-register.module.scss';
 
@@ -15,12 +18,23 @@ type MentorsRegisterProps = {
 };
 
 export const MentorsRegister = ({ lang = 'en' }: MentorsRegisterProps) => {
+  const { pathname } = useLocation();
+  const isCommonMentorship = pathname === `/${ROUTES.MENTORSHIP}`;
+
   return (
     <section className={cx('container')}>
       <div className={cx('content', 'mentoring-register')}>
         <WidgetTitle>{mentorsRegisterData[lang].header}</WidgetTitle>
         <Subtitle className={cx('note')} fontSize="extra-small">{mentorsRegisterData[lang].noteBefore}</Subtitle>
-        <List data={mentorsRegisterData[lang].stepsBefore} className={cx('step-before-wrapper')} />
+        {isCommonMentorship
+        && (
+          <DocDetail
+            textBeforeLink={mentorDocsData[lang].mentor.textBeforeLink}
+            textLink={mentorDocsData[lang].mentor.textLink}
+            textAfterLink={`${mentorDocsData[lang].mentor.textAfterLink} ${mentorDocsData[lang].mentor.textAfterCourseName}`}
+            linkDocs={mentorshipCoursesDefault.links.mentorDocs}
+          />
+        )}
         <LinkCustom
           href={mentorsRegisterData[lang].button.link}
           variant="primary"
