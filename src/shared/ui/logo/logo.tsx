@@ -23,7 +23,6 @@ export const Logo = ({ type, className }: LogoProps) => {
         className,
       })}
       data-testid="logo"
-      onClick={() => window.scrollTo({ top: 0 })}
     >
       <Image src={logo} alt="RSS-logo" />
     </Link>
