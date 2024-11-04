@@ -46,7 +46,7 @@ jobs:
   create-preview:
     name: Create Preview
     runs-on: ubuntu-latest
-    needs: [build-rs-school, build-rolling-scopes]
+    needs: [build-rs-school]
     steps:
       - name: Trigger Preview Deployment
         uses: peter-evans/repository-dispatch@v3
