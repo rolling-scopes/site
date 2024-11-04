@@ -48,7 +48,7 @@ describe('Contribute component', () => {
     expect(title).toHaveTextContent('How to Contribute');
     expect(image).toBeInTheDocument();
     expect(image).toHaveAttribute('alt', 'Sloth mascot dressed in a superhero costume');
-    expect(image).toHaveAttribute('src', contributeImage);
+    expect(image).toHaveAttribute('src', contributeImage.src);
   });
 
   describe('Paragraph content checks', () => {

@@ -44,7 +44,7 @@ describe('AboutCourseGrid component', () => {
 
       images.forEach((image) => {
         expect(image).toBeVisible();
-        expect(image).toHaveAttribute('src', o.icon);
+        expect(image).toHaveAttribute('src', o.icon.src);
         expect(image).toHaveAttribute('alt', o.alt);
       });
     },

@@ -1,10 +1,10 @@
 import classNames from 'classnames/bind';
-import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/app/const';
+import Image from 'next/image';
+import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
-import { CourseItem } from '@/entities/course';
+import { CourseItem } from '@/entities/course/ui/course-item/course-item.tsx';
 import RSBanner from '@/shared/assets/svg/RsBanner.svg';
 import { getActualData } from '@/shared/helpers/getActualData';
-import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { maxUpcomingCoursesQuantity } from '@/widgets/upcoming-courses/constants.ts';

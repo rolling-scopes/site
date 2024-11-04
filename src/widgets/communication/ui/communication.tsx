@@ -1,12 +1,13 @@
 import classNames from 'classnames/bind';
+import Image from 'next/image';
 import discordLogo from '@/shared/assets/svg/discord-logo.svg';
-import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import {
-  CourseNamesChannels,
+  COURSE_TITLES,
+  CourseNamesKeys,
   DISCORD_LINKS,
   JS_EN_TELEGRAM_CHAT_LINK,
   RS_DOCS_COMMUNICATION_LINK,
@@ -20,7 +21,7 @@ import styles from './communication.module.scss';
 const cx = classNames.bind(styles);
 
 type CommunicationProps = {
-  courseName: CourseNamesChannels;
+  courseName: CourseNamesKeys;
   lang?: 'ru' | 'en';
 };
 
@@ -44,7 +45,7 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
     discordNote,
   } = communicationText[lang];
 
-  const isJsEnCourse = courseName === 'js / front-end en';
+  const isJsEnCourse = courseName === COURSE_TITLES.JS_EN;
   const courseSubTitle = isJsEnCourse ? subTitleJs : subTitle;
   const paragraphClassName = isJsEnCourse ? cx('communication-paragraph') : undefined;
   const courseDiscordLink = isJsEnCourse ? discordLinkJs : discordLink;
@@ -61,9 +62,7 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
             <Image src={discordLogo} alt="discord logo" />
           </figure>
           <div>
-            <Subtitle className={cx('communication-subtitle')}>
-              {courseSubTitle}
-            </Subtitle>
+            <Subtitle className={cx('communication-subtitle')}>{courseSubTitle}</Subtitle>
             <Paragraph className={paragraphClassName}>
               {discordFirstHalfText}
               <LinkCustom href={DISCORD_LINKS[courseName]} external data-testid="discord-link">

@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { MentorsWantedCourse } from './mentors-wanted-course';
-import { LINKS } from '@/app/const';
+import { LINKS } from '@/core/const';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import mentorImg from '@/shared/assets/mentors-wanted-poster.webp';
 
@@ -34,7 +34,7 @@ describe('MentorsWantedCourse component', () => {
     expect(paragraph).toHaveTextContent(paragraphText);
 
     expect(link).toHaveAttribute('href', href);
-    expect(slothImage).toHaveAttribute('src', image);
+    expect(slothImage).toHaveAttribute('src', image.src);
     expect(slothImage).toHaveAttribute('alt', alt);
   });
 });

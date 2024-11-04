@@ -1,17 +1,19 @@
+'use client';
+
 import classNames from 'classnames/bind';
-import { useLocation } from 'react-router-dom';
+import { usePathname } from 'next/navigation';
 import { BreadcrumbItem } from './breadcrumb-item';
 import { breadcrumbNameMap } from '../constants';
-import { ROUTES } from '@/app/const';
-import { RouteValues } from '@/app/types/route.types.ts';
+import { ROUTES } from '@/core/const';
+import { RouteValues } from '@/core/types/route.types';
 
 import styles from './breadcrumbs.module.scss';
 
 const cx = classNames.bind(styles);
 
 export const Breadcrumbs = () => {
-  const location = useLocation();
-  const crumbs = location.pathname.split('/').filter(Boolean) as RouteValues[];
+  const pathname = usePathname();
+  const crumbs = pathname.split('/').filter(Boolean) as RouteValues[];
 
   const transformedCrumbs = crumbs.map((crumb, i) => ({
     text: breadcrumbNameMap[crumb] || crumb,

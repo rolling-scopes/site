@@ -1,8 +1,8 @@
 import classNames from 'classnames/bind';
 import dayjs from 'dayjs';
+import Image from 'next/image';
 import { EventCard } from '@/entities/event';
 import photo3 from '@/shared/assets/photo-3.webp';
-import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -29,7 +29,8 @@ export const Events = () => {
             {' '}
             {rsLifetime}
             {' '}
-            years we have organized 150+ events for developers in different cities and countries.
+            years we have organized 150+ events for developers in different
+            cities and countries.
           </Paragraph>
         </section>
 

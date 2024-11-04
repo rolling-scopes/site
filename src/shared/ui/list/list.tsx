@@ -6,9 +6,8 @@ import { ListData } from '@/shared/types';
 
 import styles from './list.module.scss';
 
-type ListProps = Pick<HTMLAttributes<HTMLElement>, 'className'>
-  & VariantProps<typeof listVariants>
-  & { data: ListData };
+type ListProps = Pick<HTMLAttributes<HTMLElement>, 'className'> &
+  VariantProps<typeof listVariants> & { data: ListData };
 
 export const cx = classNames.bind(styles);
 
@@ -50,11 +49,7 @@ export const List = ({ data, className = '', size, type }: ListProps) => {
 
         return (
           <li className={itemClassName} key={keyListItem} data-testid="list-item">
-            {
-              isLink
-                ? <TextWithLink data={listItem} />
-                : listItem
-            }
+            {isLink ? <TextWithLink data={listItem} /> : listItem}
           </li>
         );
       })}

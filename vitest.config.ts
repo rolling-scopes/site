@@ -1,10 +1,10 @@
 /// <reference types="vitest" />
 import react from '@vitejs/plugin-react';
-import path from 'path';
-import { defineConfig } from 'vite';
+import * as path from 'path';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  plugins: [react(), stubAssetImport()],
+  plugins: [react(), stubNextAssetImport()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
@@ -14,7 +14,7 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     globals: true,
-    setupFiles: ['src/shared/__tests__/setup-tests.ts'],
+    setupFiles: ['src/shared/__tests__/setup-tests.tsx'],
     exclude: [
       '**/node_modules/**',
       '**/dist/**',
@@ -46,12 +46,25 @@ export default defineConfig({
   },
 });
 
-function stubAssetImport() {
+
+/**
+ * We need this custom plugin, because of the difference between Vite and Next.js
+ * in terms of static asset import is as follows
+ *
+ * import vercelLogo from "../public/vercel.svg";
+ * 
+ * In Vite: vercelLogo is a string
+ * In Next.js: vercelLogo is an object { src: string; width: number; height: number}
+ */
+function stubNextAssetImport() {
   return {
-    name: 'stub-asset-import',
+    name: 'stub-next-asset-import',
     transform(_code: string, id: string) {
-      if (id.endsWith('.svg') || id.endsWith('.webp')) {
-        return `export default 'mocked-image-path.webp'`;
+      if (/(jpg|jpeg|png|webp|gif|svg)$/.test(id)) {
+        const imgSrc = path.relative(process.cwd(), id);
+        return {
+          code: `export default { src: '/${imgSrc}', height: 1, width: 1 }`,
+        };
       }
     },
   };

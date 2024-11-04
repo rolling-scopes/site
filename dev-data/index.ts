@@ -5,14 +5,11 @@ export type {
   DataMap,
   JSPath,
 } from './courses-data.types';
-export { COURSE_TITLES } from './courseTitles.data';
-export { type CourseNames, contentMap } from './training-program.data';
+export { COURSE_TITLES, type CourseNames, type CourseNamesKeys, type CoursesWithRequirementsNames, DISCORD_LINKS, type TrainingProgramType } from './courseTitles.data.ts';
 export {
   type CourseNamesChannels,
-  DISCORD_LINKS,
   JS_EN_TELEGRAM_CHAT_LINK,
-  RS_DOCS_COMMUNICATION_LINK,
-  RS_DOCS_EN_LINK,
+  RS_DOCS_COMMUNICATION_LINK, RS_DOCS_EN_LINK,
   RS_DOCS_TELEGRAM_CHATS_LINK,
 } from './communication.data';
 export { angular } from './angular.data';
@@ -23,6 +20,7 @@ export { awsDevops } from './aws-devops.data';
 export { awsFundamentals } from './awsFundamentals.data';
 export { communicationText } from './widget-communication.data';
 export { communityGroups } from './community-media.data';
+export { contentMap } from './training-program.data';
 export { contentMapAbout, introLocalizedContent } from './about-course.data';
 export { contributeOptions } from './contribute-options.data';
 export { courseDataMap } from './required.data';

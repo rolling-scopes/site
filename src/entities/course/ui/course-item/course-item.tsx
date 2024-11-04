@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import dayjs from 'dayjs';
+import Image from 'next/image';
 import { CourseItemData } from '@/entities/course';
-import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Subtitle } from '@/shared/ui/subtitle';
 
@@ -9,13 +9,7 @@ import styles from './course-item.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const CourseItem = ({
-  title,
-  language,
-  startDate,
-  detailsUrl,
-  iconSrc,
-}: CourseItemData) => {
+export const CourseItem = ({ title, language, startDate, detailsUrl, iconSrc }: CourseItemData) => {
   const dateTime = dayjs(startDate).toISOString();
 
   return (

@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
+import Image from 'next/image';
 import type { Course } from '../../types';
 import { DateLang } from '@/shared/ui/date-lang';
-import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Subtitle } from '@/shared/ui/subtitle';
 

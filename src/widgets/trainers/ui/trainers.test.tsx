@@ -31,7 +31,7 @@ describe('Trainers component', () => {
     expect(trainerImageElement).toBeVisible();
 
     expect(titleElement).toHaveTextContent(mockedTitle.en);
-    expect(trainerImageElement).toHaveAttribute('src', photo);
+    expect(trainerImageElement).toHaveAttribute('src', photo.src);
   });
 
   it('renders the title content correctly with lang ru prop', () => {
