@@ -8,25 +8,9 @@
   height: 64px;
   padding: 0 40px;
 
-  border-radius: 0;
-
-  transition: background-color 0.2s;
-
-  &.gray {
-    background-color: $color-yellow-500;
-  }
-
-  &.none {
-    display: none;
-  }
-
-  &.white {
-    opacity: 1;
-    background-color: rgb(255 255 255);
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-    box-shadow: rgb(0 0 0 / 8.2%) 0 1.026px 8.0694px 0;
-  }
+  background-color: rgb(255 255 255 / 10%);
+  backdrop-filter: blur(24px) saturate(1);
+  box-shadow: rgb(0 0 0 / 8.2%) 0 1.026px 8.0694px 0;
 
   @include media-tablet {
     height: 48px;

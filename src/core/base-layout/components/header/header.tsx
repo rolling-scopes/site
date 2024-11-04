@@ -1,8 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import classNames from 'classnames/bind';
-import { usePathname } from 'next/navigation';
 import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
 import { ROUTES } from '@/core/const';
@@ -34,50 +33,13 @@ const navLinks = [
 
 export const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const [color, setColor] = useState('gray');
-  const [hash, setHash] = useState('');
-  const [key, setKey] = useState('');
-  const pathname = usePathname();
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
 
-  useEffect(() => {
-    const listenScrollEvent = () => {
-      const scrollY = window.scrollY;
-
-      // setting the class depending on the scrolled height
-      // class changes the background color of the header
-      if (scrollY < 500) {
-        setColor('gray');
-      } else {
-        setColor('white');
-      }
-    };
-
-    window.addEventListener('scroll', listenScrollEvent);
-
-    return () => {
-      window.removeEventListener('scroll', listenScrollEvent);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setHash(window.location.hash);
-      setKey(window.location.href);
-    }
-  }, [pathname]);
-
-  useEffect(() => {
-    if (location.pathname) {
-      setMenuOpen(false);
-    }
-  }, [key, hash, pathname]);
-
   return (
-    <nav className={cx('navbar', color)} data-testid="navigation">
+    <nav className={cx('navbar')} data-testid="navigation">
       <section className={cx('navbar-content')}>
         <Logo />
 

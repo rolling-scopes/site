@@ -26,12 +26,6 @@ describe('Header', () => {
       expect(headerElement).toBeInTheDocument();
     });
 
-    it('set color as gray when scrollbar is at the top', () => {
-      const headerElement = screen.getByTestId('navigation');
-
-      expect(headerElement).toHaveClass(cxHeader('gray'));
-    });
-
     it('renders all the header links', () => {
       const headerElement = screen.getAllByText(/.*/, { selector: `span.${cxNavItem('label')}` });
 
