@@ -1,7 +1,7 @@
 import type { Trainer } from '@/entities/trainer';
 import artsiomParfianenkau from '@/shared/assets/mentors/a-parfianenkau.webp';
 import andrejPodlubnyj from '@/shared/assets/mentors/a-podlubnyj.webp';
-import dzmitryYarmoshkin from '@/shared/assets/mentors/d-yarmoshkin.png';
+import dzmitryYarmoshkin from '@/shared/assets/mentors/d-yarmoshkin.webp';
 import iharKrasiuk from '@/shared/assets/mentors/i-krasiuk.webp';
 import marharytaMalets from '@/shared/assets/mentors/m-malets.webp';
 import valeryDluski from '@/shared/assets/mentors/v-dluski.webp';
@@ -21,7 +21,7 @@ export const reactEn: Trainer[] = [
   },
   {
     name: 'Dzmitry Yarmoshkin',
-    role: 'PHP / React front-end developer',
+    role: 'Frontend Developer',
     bio: "While my journey took an unexpected turn, my passion for front-end work has never been stronger. Not a big fan of Redux, but that's the beauty of the tech world - we all have our preferences. Embracing the unpredictability of tech careers, I'm excited to see where my adventure takes me!",
     photo: dzmitryYarmoshkin,
   },

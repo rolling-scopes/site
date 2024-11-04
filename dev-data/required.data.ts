@@ -1,7 +1,7 @@
-import type { CourseMap } from '@/widgets/required/required.types';
+import { COURSE_TITLES, CourseMap } from './courseTitles.data';
 
 export const courseDataMap: CourseMap = {
-  'js / front-end en': {
+  [COURSE_TITLES.JS_EN]: {
     title: 'What you should know before starting',
     knowBefore: {
       title: 'Required before the start',
@@ -78,7 +78,7 @@ export const courseDataMap: CourseMap = {
       },
     ],
   },
-  'js / front-end ru': {
+  [COURSE_TITLES.JS_RU]: {
     title: 'Что нужно знать до начала',
     knowBefore: {
       title: 'Требуется до начала',
@@ -155,7 +155,7 @@ export const courseDataMap: CourseMap = {
       },
     ],
   },
-  'js / front-end pre-school ru': {
+  [COURSE_TITLES.JS_PRESCHOOL_RU]: {
     title: 'Что следует сделать до старта курса',
     willLearn: [
       {
@@ -259,7 +259,7 @@ export const courseDataMap: CourseMap = {
       },
     ],
   },
-  awsFundamentals: {
+  [COURSE_TITLES.AWS_FUNDAMENTALS]: {
     title: 'What you should know before starting',
     knowBefore: {
       title: 'Required before the start',
@@ -282,7 +282,7 @@ export const courseDataMap: CourseMap = {
       },
     ],
   },
-  awsDev: {
+  [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: {
     title: 'What you should know before starting',
     knowBefore: {
       title: 'Required before the start',
@@ -294,7 +294,7 @@ export const courseDataMap: CourseMap = {
     },
     willLearn: [],
   },
-  nodejs: {
+  [COURSE_TITLES.NODE]: {
     title: 'What you should know before starting',
     knowBefore: {
       title: 'Required before the start',
@@ -302,7 +302,7 @@ export const courseDataMap: CourseMap = {
     },
     willLearn: [],
   },
-  angular: {
+  [COURSE_TITLES.ANGULAR]: {
     title: 'What you should know before starting',
     knowBefore: {
       title: 'Required before the start',
@@ -316,7 +316,7 @@ export const courseDataMap: CourseMap = {
     },
     willLearn: [],
   },
-  awsDevops: {
+  [COURSE_TITLES.AWS_DEVOPS]: {
     title: 'What is required for training?',
     knowBefore: {
       title: 'Required before the start',
@@ -332,9 +332,7 @@ export const courseDataMap: CourseMap = {
     willLearn: [
       {
         title: 'Nice to have:',
-        description: [
-          'Knowledge and experience with any cloud platforms (AWS, GCP, Azure)',
-        ],
+        description: ['Knowledge and experience with any cloud platforms (AWS, GCP, Azure)'],
       },
     ],
   },

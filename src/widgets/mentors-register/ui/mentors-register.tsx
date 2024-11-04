@@ -1,6 +1,5 @@
 import classNames from 'classnames/bind';
-import { useLocation } from 'react-router-dom';
-import { ROUTES } from '@/app/const';
+// import { ROUTES } from '@/core/const';
 import { Language } from '@/shared/types.ts';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
@@ -18,8 +17,9 @@ type MentorsRegisterProps = {
 };
 
 export const MentorsRegister = ({ lang = 'en' }: MentorsRegisterProps) => {
-  const { pathname } = useLocation();
-  const isCommonMentorship = pathname === `/${ROUTES.MENTORSHIP}`;
+  // const { pathname } = useLocation();
+  // const isCommonMentorship = pathname === `/${ROUTES.MENTORSHIP}`;
+  const isCommonMentorship = true;
 
   return (
     <section className={cx('container')}>

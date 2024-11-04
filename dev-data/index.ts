@@ -13,11 +13,9 @@ export type { CourseTitle,
   MentorshipDefaultRouteKeys,
   MentorshipRoute } from './mentorship-data.types';
 export { type Benefit } from './benefit-mentorship.data';
-export { COURSE_TITLES } from './courseTitles.data';
-export { type CourseNames, contentMap } from './training-program.data';
+export { COURSE_TITLES, type CourseNames, type CourseNamesKeys, type CoursesWithRequirementsNames, DISCORD_LINKS, type TrainingProgramType } from './courseTitles.data.ts';
 export {
   type CourseNamesChannels,
-  DISCORD_LINKS,
   JS_EN_TELEGRAM_CHAT_LINK,
   MENTOR_ONBOARD_TELEGRAM_EN,
   MENTOR_ONBOARD_TELEGRAM_RU,
@@ -35,6 +33,7 @@ export { awsFundamentals } from './awsFundamentals.data';
 export { benefitMentorshipHome, benefitMentorshipMentors } from './benefit-mentorship.data';
 export { communicationText } from './widget-communication.data';
 export { communityGroups } from './community-media.data';
+export { contentMap } from './training-program.data';
 export { contentMapAbout, introLocalizedContent } from './about-course.data';
 export { contributeOptions } from './contribute-options.data';
 export { courseDataMap } from './required.data';

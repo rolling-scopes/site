@@ -1,4 +1,4 @@
-import { LINKS } from '@/app/const';
+import { LINKS } from '@/core/const';
 
 export const mentorsRegisterData = {
   en: {

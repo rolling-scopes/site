@@ -74,6 +74,6 @@ describe('StageCard component', () => {
     renderWithRouter(<StageCard {...props} />);
     const logo = screen.getByAltText('TestTitle');
 
-    expect(logo).toHaveAttribute('src', MOCKED_IMAGE_PATH);
+    expect(logo).toHaveAttribute('src', MOCKED_IMAGE_PATH.src);
   });
 });

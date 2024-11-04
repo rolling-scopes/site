@@ -1,5 +1,6 @@
+import { StaticImageData } from 'next/image';
 import { COURSE_TITLES } from './courseTitles.data';
-import { ROUTES } from '@/app/const';
+import { ROUTES } from '@/core/const';
 import { Language } from '@/shared/types';
 import { SocialMediaProps } from '@/shared/ui/social-media-item';
 import { Stage } from '@/widgets/member-activity/ui/stage-card';
@@ -19,14 +20,14 @@ type MentorshipCourseRoute = `${MentorshipDefaultRoute}/${MentorshipCourseRouteK
 export type MentorshipRoute = MentorshipDefaultRoute | MentorshipCourseRoute;
 
 export type ImageLink = {
-  href: string;
+  href: StaticImageData;
   alt: string;
 };
 
 export type MentorshipCourse = {
   id: number;
-  title?: CourseTitle;
-  iconSmall?: string;
+  title: CourseTitle;
+  iconSmall: StaticImageData;
   description?: string;
   lang: Language;
   detailsUrl: MentorshipRoute;

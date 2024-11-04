@@ -1,6 +1,6 @@
 .events-content {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: space-between;
 
   .info {
@@ -19,6 +19,7 @@
 
     .event-img {
       width: 500px;
+      height: auto;
 
       @include media-mobile-landscape {
         width: 100%;
@@ -36,6 +37,6 @@
 
   @include media-laptop-medium {
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
   }
 }

@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
+import Image from 'next/image';
 import { Language } from '@/shared/types.ts';
-import { Image } from '@/shared/ui/image';
 import { List } from '@/shared/ui/list';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { ImageLink, aboutMentorsData } from 'data';
@@ -23,9 +23,9 @@ export const AboutMentors = ({ icons, description, lang = 'en' }: AboutMentorsPr
         <div className={cx('mentors-register-wrapper')}>
           <List data={description} />
           <div className={cx('picture-wrapper')}>
-            {icons.map((icon) => {
+            {icons.map((icon, index) => {
               return (
-                <Image key={icon.href} src={icon.href} alt={icon.alt} className={cx('picture')} />
+                <Image key={index} src={icon.href} alt={icon.alt} className={cx('picture')} />
               );
             })}
           </div>

@@ -1,16 +1,42 @@
 import { screen } from '@testing-library/react';
-import { type Mock, beforeEach } from 'vitest';
+import { beforeEach } from 'vitest';
 import { AboutCourse } from './about-course';
+import { Course } from '@/entities/course';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants.ts';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { useCourseByTitle } from '@/shared/hooks/use-course-by-title';
+import { dayJS } from '@/shared/helpers/dayJS.ts';
 
-vi.mock('@/shared/hooks/use-course-by-title');
+const mockedReactCourse: Course = {
+  id: '1',
+  backgroundStyle: {
+    accentColor: '',
+    backgroundColor: '',
+  },
+  detailsUrl: '',
+  iconSmall: MOCKED_IMAGE_PATH,
+  iconSrc: MOCKED_IMAGE_PATH,
+  title: 'React.js',
+  language: ['en'],
+  mode: 'online',
+  enroll: 'http://course-url.com',
+  secondaryIcon: MOCKED_IMAGE_PATH,
+  startDate: dayJS().subtract(2, 'month').format('D MMM, YYYY'),
+};
+
+const mockedAwsDevopsCourse = {
+  ...mockedReactCourse,
+  title: 'Aws Devops',
+};
+
+const mockedPreSchoolCourse = {
+  ...mockedReactCourse,
+  title: 'Pre School',
+};
 
 describe('AboutCourse component', () => {
   describe('render with "react" props', () => {
     beforeEach(() => {
-      (useCourseByTitle as Mock).mockReturnValue({ course: { enroll: 'http://course-url.com' } });
-      renderWithRouter(<AboutCourse courseName="react" />);
+      renderWithRouter(<AboutCourse course={mockedReactCourse} courseName="React" />);
     });
 
     it('renders correct content for component', async () => {
@@ -34,8 +60,7 @@ describe('AboutCourse component', () => {
 
   describe('render 5 grid-items with "aws-devops" props', () => {
     it('render 5 grid-items with "aws-devops" props', async () => {
-      (useCourseByTitle as Mock).mockReturnValue({ course: { enroll: 'http://course-url.com' } });
-      renderWithRouter(<AboutCourse courseName="aws devops" />);
+      renderWithRouter(<AboutCourse course={mockedAwsDevopsCourse} courseName="AWS DevOps" />);
 
       const aboutCourseGrid = await screen.findByTestId('about-course-grid');
 
@@ -46,8 +71,13 @@ describe('AboutCourse component', () => {
 
   describe('render "Paragraph" with "js / front-end pre-school ru" props', () => {
     it("renders 'Paragraph' and its' content", async () => {
-      (useCourseByTitle as Mock).mockReturnValue({ course: { enroll: 'http://course-url.com' } });
-      renderWithRouter(<AboutCourse courseName="js / front-end pre-school ru" type="pre-school-ru" />);
+      renderWithRouter(
+        <AboutCourse
+          course={mockedPreSchoolCourse}
+          courseName="JS / Front-end Pre-school RU"
+          type="pre-school-ru"
+        />,
+      );
 
       const paragraph = await screen.findByText(/Подготовительный этап поможет тем/i);
 

@@ -1,12 +1,13 @@
 import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { CourseCard, type CourseCardProps, cx } from './course-card';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants.ts';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 describe('CourseCard', () => {
   const mockProps: CourseCardProps = {
     title: 'Introduction to Testing',
-    iconSrc: 'test-icon.svg',
+    iconSrc: MOCKED_IMAGE_PATH,
     startDate: '2023-01-01',
     mode: 'online',
     language: ['en'],
@@ -43,10 +44,8 @@ describe('CourseCard', () => {
       const accentBlock = getComputedStyle(cardHeader, '::after');
 
       expect(cardHeader).toHaveClass(cx('card-header'));
-      expect(cardHeader)
-        .toHaveStyle({ backgroundColor: mockProps.backgroundStyle.backgroundColor });
-      expect(accentBlock)
-        .toHaveStyle({ backgroundColor: mockProps.backgroundStyle.accentColor });
+      expect(cardHeader).toHaveStyle({ backgroundColor: mockProps.backgroundStyle.backgroundColor });
+      expect(accentBlock).toHaveStyle({ backgroundColor: mockProps.backgroundStyle.accentColor });
     }
   });
 });

@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
+import Image, { StaticImageData } from 'next/image';
 import { PageName } from '../types';
 import { PAGE_NAMES } from '@/shared/constants.ts';
-import { Image } from '@/shared/ui/image';
 import { MainTitle } from '@/shared/ui/main-title';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -15,7 +15,7 @@ export type HeroPageProps = {
   mainTitle: string;
   widgetTitle: string;
   subTitle: string[] | [];
-  heroImageSrc: string;
+  heroImageSrc?: StaticImageData;
   imageAltText: string;
 };
 
@@ -40,11 +40,13 @@ const HeroSubTitle = ({ subTitle }: SubTitleProps) => {
 };
 
 export const HeroPage = ({ pageName }: PageName) => {
-  const { mainTitle,
+  const {
+    mainTitle,
     widgetTitle,
     subTitle = [],
-    heroImageSrc = '',
-    imageAltText = '' }: HeroPageProps = heroPageData[pageName];
+    heroImageSrc,
+    imageAltText = '',
+  }: HeroPageProps = heroPageData[pageName];
   const isMentorshipPage = pageName === PAGE_NAMES.MENTORSHIP;
 
   return (
@@ -53,9 +55,18 @@ export const HeroPage = ({ pageName }: PageName) => {
         <article className={cx('title-container')}>
           <HeroSubTitle subTitle={subTitle} />
           <MainTitle className={cx('title-main')}>{mainTitle}</MainTitle>
-          <WidgetTitle size="small" className={cx('description-title')}>{widgetTitle}</WidgetTitle>
+          <WidgetTitle size="small" className={cx('description-title')}>
+            {widgetTitle}
+          </WidgetTitle>
         </article>
-        {heroImageSrc && <Image className={cx('sloth-mascot')} src={heroImageSrc} alt={imageAltText} data-testid="sloth-mascot" />}
+        {heroImageSrc?.src && (
+          <Image
+            className={cx('sloth-mascot')}
+            src={heroImageSrc}
+            alt={imageAltText}
+            data-testid="sloth-mascot"
+          />
+        )}
       </div>
     </section>
   );

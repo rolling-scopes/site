@@ -4,45 +4,51 @@ import { SchoolMenu } from './ui/school-menu';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
-const testCourses = [
-  {
-    id: '1',
-    title: 'AWS Fundamentals',
-    iconSrc: MOCKED_IMAGE_PATH,
-    iconSmall: MOCKED_IMAGE_PATH,
-    secondaryIcon: MOCKED_IMAGE_PATH,
-    startDate: 'Sept 18, 2023',
-    language: ['en'],
-    mode: 'online',
-    detailsUrl: 'https://rs.school/aws-fundamentals/',
-    backgroundStyle: {
-      backgroundColor: '#F4F1FA',
-      accentColor: '#7356BF',
-    },
-  },
-  {
-    id: '2',
-    title: 'React JS course',
-    iconSrc: MOCKED_IMAGE_PATH,
-    iconSmall: MOCKED_IMAGE_PATH,
-    secondaryIcon: MOCKED_IMAGE_PATH,
-    startDate: 'Sept 18, 2060',
-    language: ['ru', 'en'],
-    mode: 'online',
-    detailsUrl: 'https://rs.school/react/',
-    backgroundStyle: {
-      backgroundColor: '#EEF3FE',
-      accentColor: '#7356BF',
-    },
-  },
-];
+const { mockedTests } = await vi.hoisted(async () => {
+  const { MOCKED_IMAGE_PATH } = await import('@/shared/__tests__/constants');
 
-vi.mock('@/shared/hooks/use-data-by-name', () => {
-  return { useDataByName: vi.fn().mockImplementation(() => ({ data: testCourses })) };
+  return {
+    mockedTests: [
+      {
+        id: '1',
+        title: 'AWS Fundamentals',
+        iconSrc: MOCKED_IMAGE_PATH,
+        iconSmall: MOCKED_IMAGE_PATH,
+        secondaryIcon: MOCKED_IMAGE_PATH,
+        startDate: 'Sept 18, 2023',
+        language: ['en'],
+        mode: 'online',
+        detailsUrl: 'https://rs.school/aws-fundamentals/',
+        backgroundStyle: {
+          backgroundColor: '#F4F1FA',
+          accentColor: '#7356BF',
+        },
+      },
+      {
+        id: '2',
+        title: 'React JS course',
+        iconSrc: MOCKED_IMAGE_PATH,
+        iconSmall: MOCKED_IMAGE_PATH,
+        secondaryIcon: MOCKED_IMAGE_PATH,
+        startDate: 'Sept 18, 2060',
+        language: ['ru', 'en'],
+        mode: 'online',
+        detailsUrl: 'https://rs.school/react/',
+        backgroundStyle: {
+          backgroundColor: '#EEF3FE',
+          accentColor: '#7356BF',
+        },
+      },
+    ],
+  };
+});
+
+vi.mock('data/index.ts', async () => {
+  return { courses: mockedTests };
 });
 
 describe('SchoolMenu', () => {
-  const [aws, react] = testCourses;
+  const [aws, react] = mockedTests;
 
   it('renders without crashing and displays "rs school" heading', () => {
     renderWithRouter(<SchoolMenu heading="rs school" />);
@@ -83,10 +89,10 @@ describe('SchoolMenu', () => {
 
     const imageAWS = screen.getByRole('img', { name: aws.title });
 
-    expect(imageAWS).toHaveAttribute('src', MOCKED_IMAGE_PATH);
+    expect(imageAWS).toHaveAttribute('src', MOCKED_IMAGE_PATH.src);
     const imageReact = screen.getByRole('img', { name: react.title });
 
-    expect(imageReact).toHaveAttribute('src', MOCKED_IMAGE_PATH);
+    expect(imageReact).toHaveAttribute('src', MOCKED_IMAGE_PATH.src);
   });
 
   it('renders correct link description when date is passed', () => {

@@ -1,8 +1,7 @@
 import { GenericItemProps, SchoolList } from './school-list/school-list';
-import { ANCHORS } from '@/app/const';
+import { ANCHORS } from '@/core/const';
 import type { Course } from '@/entities/course';
-import { useDataByName } from '@/shared/hooks/use-data-by-name';
-import { MentorshipCourse, MentorshipDefaultRouteKeys, mentorshipCourses } from 'data';
+import { MentorshipCourse, MentorshipDefaultRouteKeys, courses, mentorshipCourses } from 'data';
 
 import './school-menu.scss';
 
@@ -68,8 +67,6 @@ function getMenuItems(
 }
 
 export const SchoolMenu = ({ heading, hasTitle = true, color = 'light' }: SchoolMenuProps) => {
-  const { data } = useDataByName('courses');
-  const courses = data as Course[];
   const menuItems = getMenuItems(heading, courses, mentorshipCourses);
 
   return (

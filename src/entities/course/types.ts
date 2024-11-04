@@ -1,10 +1,12 @@
+import { StaticImageData } from 'next/image';
+
 export type Course = {
   id: string;
   title: string;
   altTitle?: string;
-  iconSrc: string;
-  secondaryIcon: string;
-  iconSmall: string;
+  iconSrc: StaticImageData;
+  secondaryIcon: StaticImageData;
+  iconSmall: StaticImageData;
   startDate: string;
   language: ('en' | 'ru')[];
   mode: 'online' | 'offline';
@@ -19,5 +21,5 @@ export type Course = {
 export type CourseStatus = 'planned' | 'available' | 'upcoming';
 
 export type CourseItemData = Pick<Course, 'title' | 'language' | 'startDate' | 'detailsUrl'> & {
-  iconSrc: string;
+  iconSrc: StaticImageData;
 };

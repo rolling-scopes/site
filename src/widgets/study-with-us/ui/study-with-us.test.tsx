@@ -28,7 +28,7 @@ describe('School Component', () => {
     });
     expect(image).toBeInTheDocument();
     expect(image).toHaveAttribute('alt', 'Sloth - mascot in glasses and works at a laptop');
-    expect(image).toHaveAttribute('src', rsSchool);
+    expect(image).toHaveAttribute('src', rsSchool.src);
   });
 
   it('renders the correct options content', () => {

@@ -1,8 +1,8 @@
 import classNames from 'classnames/bind';
-import { ANCHORS, ROUTES } from '@/app/const';
+import Image from 'next/image';
+import { ANCHORS, ROUTES } from '@/core/const';
 import mentorImg from '@/shared/assets/mentors-wanted.webp';
 import { Language } from '@/shared/types.ts';
-import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -19,10 +19,16 @@ type MentorsWantedProps = {
 
 export const MentorsWanted = ({ route = `/${ROUTES.MENTORSHIP}`, lang = 'en' }: MentorsWantedProps) => {
   return (
-    <section className={cx('mentors-container', 'container')} id={ANCHORS.MENTORS_WANTED} data-testid="mentors-wanted">
+    <section
+      className={cx('mentors-container', 'container')}
+      id={ANCHORS.MENTORS_WANTED}
+      data-testid="mentors-wanted"
+    >
       <div className={cx('mentors-content', 'content', 'column-2')}>
         <article className={cx('mentors-info')}>
-          <WidgetTitle size="large" mods="lines">Mentors wanted!</WidgetTitle>
+          <WidgetTitle size="large" mods="lines">
+            Mentors wanted!
+          </WidgetTitle>
           <Paragraph fontSize="large">
             {mentorsWantedData[lang].info}
           </Paragraph>

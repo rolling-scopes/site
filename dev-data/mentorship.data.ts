@@ -1,5 +1,5 @@
 import { COURSE_TITLES } from './courseTitles.data';
-import { ROUTES } from '@/app/const';
+import { ROUTES } from '@/core/const';
 import angular from '@/shared/assets/icons/angular.svg';
 import angularSmall from '@/shared/assets/icons/footer/angular.webp';
 import jsSmall from '@/shared/assets/icons/footer/javascript.webp';
@@ -71,6 +71,8 @@ const onboardLinks = {
 
 export const mentorshipCoursesDefault: MentorshipCourse = {
   id: 0,
+  title: COURSE_TITLES.JS_EN,
+  iconSmall: jsSmall,
   lang: 'en',
   detailsUrl: `/${ROUTES.MENTORSHIP}`,
   links: {

@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
-import { ROUTES } from '@/app/const';
+import Link from 'next/link';
+import { ROUTES } from '@/core/const';
 import { Logo } from '@/shared/ui/logo';
 import { SchoolMenu } from '@/widgets/school-menu';
 
@@ -12,9 +12,7 @@ type DividerProps = {
   color: 'light' | 'dark';
 };
 
-const Divider = ({ color }: DividerProps) => (
-  <hr className={cx('divider', color)} />
-);
+const Divider = ({ color }: DividerProps) => <hr className={cx('divider', color)} />;
 
 type MobileViewProps = {
   type: 'header' | 'footer';
@@ -30,7 +28,7 @@ export const MobileView = ({ type }: MobileViewProps) => {
 
       <Divider color={color} />
 
-      <Link to={ROUTES.HOME} className={cx('category-link', color)}>
+      <Link href={ROUTES.HOME} className={cx('category-link', color)}>
         RS School
       </Link>
 
@@ -38,7 +36,7 @@ export const MobileView = ({ type }: MobileViewProps) => {
 
       <Divider color={color} />
 
-      <Link to={ROUTES.COURSES} className={cx('category-link', color)}>
+      <Link href={ROUTES.COURSES} className={cx('category-link', color)}>
         Courses
       </Link>
 
@@ -46,7 +44,7 @@ export const MobileView = ({ type }: MobileViewProps) => {
 
       <Divider color={color} />
 
-      <Link to={ROUTES.COMMUNITY} className={cx('category-link', color)}>
+      <Link href={ROUTES.COMMUNITY} className={cx('category-link', color)}>
         Community
       </Link>
 
@@ -54,7 +52,7 @@ export const MobileView = ({ type }: MobileViewProps) => {
 
       <Divider color={color} />
 
-      <Link to={ROUTES.MENTORSHIP} className={cx('category-link', color)}>
+      <Link href={ROUTES.MENTORSHIP} className={cx('category-link', color)}>
         Mentorship
       </Link>
 

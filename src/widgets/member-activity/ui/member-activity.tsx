@@ -1,11 +1,13 @@
+'use client';
+
 import { createContext } from 'react';
 import { Stages } from './stages';
-import { ROUTES } from '@/app/const';
-import { useDataByName } from '@/shared/hooks/use-data-by-name';
+import { ROUTES } from '@/core/const';
+import { dataProviders } from '@/core/services/api';
 import type { Language, ListType } from '@/shared/types';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { DataMap, MentorActivities, MentorshipDefaultRouteKeys } from 'data';
+import { type DataMap, MentorActivities, MentorshipDefaultRouteKeys } from 'data';
 
 import './member-activity.scss';
 
@@ -45,7 +47,8 @@ const mentorsActivityData = {
 export const LangContext = createContext<Language>('en');
 
 export const MemberActivity = ({ path, type, activities, lang = 'en' }: StudyPathProps) => {
-  let { data: coursesPath } = useDataByName<PathNames>(path);
+  let coursesPath = dataProviders[path];
+
   const isAngularOrAwsDev = path === 'angular' || path === 'awsDev';
 
   let title = isAngularOrAwsDev ? 'Course Curriculum' : localizedContent[lang].title;
@@ -64,7 +67,9 @@ export const MemberActivity = ({ path, type, activities, lang = 'en' }: StudyPat
     <LangContext.Provider value={lang}>
       <section className="study-path container" id="learning-path">
         <div className="study-path content upd">
-          <WidgetTitle size="small" mods="asterisk">{title}</WidgetTitle>
+          <WidgetTitle size="small" mods="asterisk">
+            {title}
+          </WidgetTitle>
           <Paragraph>{paragraph}</Paragraph>
           <Stages stages={coursesPath} type={type} />
         </div>

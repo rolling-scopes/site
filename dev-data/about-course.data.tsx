@@ -1,12 +1,14 @@
-import { ROUTES } from '@/app/const';
+import { ROUTES } from '@/core/const';
 import awardIcon from '@/shared/assets/icons/award-icon.webp';
 import giftIcon from '@/shared/assets/icons/gift.webp';
 import noteIcon from '@/shared/assets/icons/note-icon.webp';
 import paperIcon from '@/shared/assets/icons/paper-icon.webp';
 import personIcon from '@/shared/assets/icons/person-icon.webp';
 import planetIcon from '@/shared/assets/icons/planet.webp';
+import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
-import type { AboutCourseInfo, CourseNamesChannels } from 'data';
+import type { AboutCourseInfo } from 'data';
+import { COURSE_TITLES, CourseNamesChannels, DISCORD_LINKS } from 'data';
 
 type ContentMap = {
   [key in CourseNamesChannels]: AboutCourseInfo[];
@@ -33,37 +35,45 @@ export const introLocalizedContent = {
 
 const listData = {
   javaScriptEN: [
-    [{
-      id: 1,
-      text: 'The Mentors and trainers of our school are front-end and javascript developers from different companies/countries. ',
-      title: 'How to become a mentor?',
-      link: `/${ROUTES.MENTORSHIP}/${ROUTES.JS}`,
-    }],
+    [
+      {
+        id: 1,
+        text: 'The Mentors and trainers of our school are front-end and javascript developers from different companies/countries. ',
+        title: 'How to become a mentor?',
+        link: `/${ROUTES.MENTORSHIP}/${ROUTES.JS}`,
+      },
+    ],
   ],
   javaScriptRU: [
-    [{
-      id: 1,
-      text: 'Наставники и тренеры нашей школы - это фронтенд и разработчики JavaScript из разных компаний и стран. ',
-      title: 'Как стать наставником?',
-      link: `/${ROUTES.MENTORSHIP}/${ROUTES.JS_RU}`,
-    }],
+    [
+      {
+        id: 1,
+        text: 'Наставники и тренеры нашей школы - это фронтенд и разработчики JavaScript из разных компаний и стран. ',
+        title: 'Как стать наставником?',
+        link: `/${ROUTES.MENTORSHIP}/${ROUTES.JS_RU}`,
+      },
+    ],
   ],
   reactEn: [
-    [{
-      id: 1,
-      text: 'School ',
-      title: 'documentation',
-      link: 'https://docs.rs.school',
-    }],
+    [
+      {
+        id: 1,
+        text: 'School ',
+        title: 'documentation',
+        link: 'https://docs.rs.school',
+      },
+    ],
     'All materials are publicly available on the YouTube channel and GitHub',
   ],
   reactRu: [
-    [{
-      id: 1,
-      text: '',
-      title: 'Документация школы',
-      link: 'https://docs.rs.school',
-    }],
+    [
+      {
+        id: 1,
+        text: '',
+        title: 'Документация школы',
+        link: 'https://docs.rs.school',
+      },
+    ],
     'Все материалы находятся в открытом доступе на YouTube и GitHub.Также предлагаем ознакомиться с конспектом первого этапа обучения.',
   ],
 };
@@ -95,15 +105,17 @@ const angularNodejsAwsFundamentals: (course: string) => AboutCourseInfo[] = () =
   },
 ];
 
-const awsCloudDeveloper: AboutCourseInfo[] = angularNodejsAwsFundamentals('aws cloud dev').map((item) => {
-  if (item.id === 3) {
-    return {
-      ...item,
-      info: 'Duration: 10 weeks.',
-    };
-  }
-  return item;
-});
+const awsCloudDeveloper: AboutCourseInfo[] = angularNodejsAwsFundamentals('aws cloud dev').map(
+  (item) => {
+    if (item.id === 3) {
+      return {
+        ...item,
+        info: 'Duration: 10 weeks.',
+      };
+    }
+    return item;
+  },
+);
 
 const javaScriptEN: () => AboutCourseInfo[] = () => {
   return [
@@ -116,9 +128,7 @@ const javaScriptEN: () => AboutCourseInfo[] = () => {
     {
       id: 2,
       title: 'Worldwide mentors and trainers',
-      info: (
-        <List data={listData.javaScriptEN} type="unmarked" size="compact" />
-      ),
+      info: <List data={listData.javaScriptEN} type="unmarked" size="compact" />,
       icon: planetIcon,
     },
     {
@@ -146,9 +156,7 @@ const javaScriptRU: () => AboutCourseInfo[] = () => {
     {
       id: 2,
       title: 'Наставники и тренеры со всего мира',
-      info: (
-        <List data={listData.javaScriptRU} type="unmarked" size="compact" />
-      ),
+      info: <List data={listData.javaScriptRU} type="unmarked" size="compact" />,
       icon: planetIcon,
     },
     {
@@ -200,10 +208,23 @@ const reactEn: AboutCourseInfo[] = javaScriptEN().map((item) => {
     return {
       ...item,
       title: 'Materials',
-      info: (
-        <List data={listData.reactEn} size="compact" />
-      ),
+      info: <List data={listData.reactEn} size="compact" />,
       icon: paperIcon,
+    };
+  }
+  if (item.id === 5) {
+    return {
+      ...item,
+      info: (
+        <p>
+          Throughout the course, we mostly use
+          {' '}
+          <LinkCustom href={DISCORD_LINKS[COURSE_TITLES.REACT]} external>
+            Discord chat
+          </LinkCustom>
+          .
+        </p>
+      ),
     };
   }
   return item;
@@ -219,44 +240,14 @@ const awsDevops: AboutCourseInfo[] = [
   },
 ];
 
-const reactRu: AboutCourseInfo[] = [
-  {
-    id: 1,
-    title: 'Для всех желающих',
-    info: 'Новый набор студентов стартует каждые полгода и насчитывает около 6000-7000 человек.В RS School может учиться каждый, независимо от возраста, профессиональной занятости и места жительства. Однако для обучения необходимо иметь базовые знания.',
-    icon: personIcon,
-  },
-  {
-    id: 2,
-    title: 'Материалы',
-    info: (
-      <List data={listData.reactRu} size="compact" />
-    ),
-    icon: paperIcon,
-  },
-  {
-    id: 3,
-    title: 'Сертификат',
-    info: 'При успешном прохождении курса выдается электронный сертификат.',
-    icon: awardIcon,
-  },
-  {
-    id: 4,
-    title: 'Менторы и Тренеры',
-    info: 'В обучении участвуют 430 менторов. Наши менторы — это front-end и javascript разработчики из различных компаний и стран. Как стать ментором?',
-    icon: planetIcon,
-  },
-];
-
 export const contentMapAbout: ContentMap = {
-  'js / front-end ru': javaScriptRU(),
-  'js / front-end en': javaScriptEN(),
-  'js / front-end pre-school ru': javaScriptPreSchoolRU(),
-  react: reactEn,
-  'react ru': reactRu,
-  angular: angularNodejsAwsFundamentals('angular'),
-  'node.js': angularNodejsAwsFundamentals('node.js'),
-  'aws fundamentals': angularNodejsAwsFundamentals('aws fundamentals'),
-  'aws cloud dev': awsCloudDeveloper,
-  'aws devops': awsDevops,
+  [COURSE_TITLES.JS_RU]: javaScriptRU(),
+  [COURSE_TITLES.JS_EN]: javaScriptEN(),
+  [COURSE_TITLES.JS_PRESCHOOL_RU]: javaScriptPreSchoolRU(),
+  [COURSE_TITLES.REACT]: reactEn,
+  [COURSE_TITLES.ANGULAR]: angularNodejsAwsFundamentals('angular'),
+  [COURSE_TITLES.NODE]: angularNodejsAwsFundamentals('node.js'),
+  [COURSE_TITLES.AWS_FUNDAMENTALS]: angularNodejsAwsFundamentals('aws fundamentals'),
+  [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: awsCloudDeveloper,
+  [COURSE_TITLES.AWS_DEVOPS]: awsDevops,
 };

@@ -21,6 +21,15 @@
           font-weight: $font-weight-bold;
         }
 
+        div {
+          padding-bottom: 18px;
+
+          p {
+            padding-bottom: 0;
+            font-weight: $font-weight-bold;
+          }
+        }
+
         & > .button {
           margin-top: 24px;
         }
@@ -53,7 +62,7 @@
 
         img {
           width: 100%;
-          // height: min-content; // need to check on mobile
+          height: auto;
           object-fit: contain;
         }
 
