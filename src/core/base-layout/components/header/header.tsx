@@ -43,7 +43,14 @@ export const Header = () => {
   const [hash, setHash] = useState('');
   const [key, setKey] = useState('');
   const pathname = usePathname();
-  const headerAccentColor = pathname.includes(ROUTES.MENTORSHIP) ? 'blue' : 'gray';
+
+  // const headerAccentColor = pathname.includes(ROUTES.MENTORSHIP) ? 'blue' : 'gray';
+  let headerAccentColor = 'gray';
+
+  if (pathname) {
+    headerAccentColor = pathname.includes(ROUTES.MENTORSHIP) ? 'blue' : 'gray';
+  }
+
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
