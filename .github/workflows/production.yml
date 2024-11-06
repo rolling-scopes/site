@@ -24,14 +24,16 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: build
-        run: |
-          npm install
-          npm run build
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+      
+      - name: Build
+        run: npm run build
 
       # Copy the static files to the S3 bucket from _next folder (js, css, images)
       # Set the cache-control header to 30 days
-      - uses: jakejarvis/s3-sync-action@master
+      - name: Copy Static Assets to S3
+        uses: jakejarvis/s3-sync-action@master
         with:
           args: --cache-control max-age=2592000 --exclude '*' --include '_next/*'
         env:
@@ -40,7 +42,8 @@ jobs:
 
       # Copy the rest of the files to the S3 bucket
       # Set the cache-control header to 5 minutes (mostly pages)
-      - uses: jakejarvis/s3-sync-action@master
+      - name: Copy Pages to S3
+        uses: jakejarvis/s3-sync-action@master
         with:
           args: --cache-control max-age=300 --exclude '_next/*'
         env:
