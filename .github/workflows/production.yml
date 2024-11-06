@@ -33,7 +33,7 @@ jobs:
       # Set the cache-control header to 30 days
       - uses: jakejarvis/s3-sync-action@master
         with:
-          args: '--cache-control max-age=2592000 --exclude "*" --include "_next/*"'
+          args: --cache-control max-age=2592000 --exclude '*' --include '_next/*'
         env:
           SOURCE_DIR: 'build'
           DEST_DIR: rs-school
@@ -42,7 +42,7 @@ jobs:
       # Set the cache-control header to 5 minutes (mostly pages)
       - uses: jakejarvis/s3-sync-action@master
         with:
-          args: '--cache-control max-age=300 --exclude "_next/*"'
+          args: --cache-control max-age=300 --exclude '_next/*'
         env:
           SOURCE_DIR: 'build'
           DEST_DIR: rs-school
