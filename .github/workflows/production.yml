@@ -35,7 +35,7 @@ jobs:
       - name: Copy Static Assets to S3
         uses: jakejarvis/s3-sync-action@master
         with:
-          args: --cache-control max-age=2592000 --exclude '*' --include '_next/*'
+          args: --cache-control max-age=31536000 --exclude '*' --include '_next/*'
         env:
           SOURCE_DIR: 'build'
           DEST_DIR: rs-school
