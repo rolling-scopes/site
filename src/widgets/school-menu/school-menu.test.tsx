@@ -47,7 +47,6 @@
 //   return { courses: mockedTests };
 // });
 
-// eslint-disable-next-line vitest/no-commented-out-tests
 describe('SchoolMenu', () => {
   it('empty test', () => {
     expect(true).toEqual(true);
