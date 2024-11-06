@@ -13,8 +13,6 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title };
 }
 
-// TODO but return 404 page not working
-export const dynamic = 'error';
 export const dynamicParams = false;
 
 export async function generateStaticParams():
