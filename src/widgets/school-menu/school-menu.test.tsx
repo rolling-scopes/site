@@ -58,7 +58,6 @@ vi.mock(import('data'), async (importOriginal) => {
 describe('SchoolMenu', () => {
   const [aws, react] = mockedCourse;
 
-  // eslint-disable-next-line vitest/no-commented-out-tests
   it('renders without crashing and displays "rs school" heading', () => {
     renderWithRouter(<SchoolMenu heading="rs school" />);
 
@@ -67,7 +66,6 @@ describe('SchoolMenu', () => {
     expect(headingElement).toBeInTheDocument();
   });
 
-  // eslint-disable-next-line vitest/no-commented-out-tests
   it('displays correct links and descriptions with "rs school" props', () => {
     const { container } = renderWithRouter(<SchoolMenu heading="rs school" />);
 
@@ -86,7 +84,6 @@ describe('SchoolMenu', () => {
     }
   });
 
-  // eslint-disable-next-line vitest/no-commented-out-tests
   it('renders without crashing and displays "all courses" heading', () => {
     renderWithRouter(<SchoolMenu heading="all courses" />);
 
@@ -95,7 +92,6 @@ describe('SchoolMenu', () => {
     expect(headingElement).toBeInTheDocument();
   });
 
-  // eslint-disable-next-line vitest/no-commented-out-tests
   it('renders [mentorshipId] correct when "all courses" heading is passed', () => {
     renderWithRouter(<SchoolMenu heading="all courses" />);
 
@@ -107,7 +103,6 @@ describe('SchoolMenu', () => {
     expect(imageReact).toHaveAttribute('src', MOCKED_IMAGE_PATH.src);
   });
 
-  // eslint-disable-next-line vitest/no-commented-out-tests
   it('renders correct link description when date is passed', () => {
     const { container } = renderWithRouter(<SchoolMenu heading="all courses" />);
 
@@ -118,7 +113,6 @@ describe('SchoolMenu', () => {
     expect(descriptions[1]).toHaveTextContent(`${react.startDate}`);
   });
 
-  // eslint-disable-next-line vitest/no-commented-out-tests
   it('renders correct link for "AWS Fundamentals" and "React JS [mentorshipId]"', () => {
     renderWithRouter(<SchoolMenu heading="all courses" />);
 
