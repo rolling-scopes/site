@@ -30,6 +30,10 @@ const navLinks = [
     href: `/${ROUTES.COMMUNITY}`,
     dropdownInner: <SchoolMenu heading="community" color="dark" hasTitle={false} />,
   },
+  {
+    label: 'Docs',
+    href: `/${ROUTES.DOCS}`,
+  },
 ];
 
 export const Header = () => {

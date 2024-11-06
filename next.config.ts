@@ -1,4 +1,5 @@
 import { NextConfig } from 'next';
+import nextra from 'nextra';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -20,4 +21,9 @@ const nextConfig: NextConfig = {
   devIndicators: { appIsrStatus: false },
 };
 
-export default nextConfig;
+const withNextra = nextra({
+  theme: 'nextra-theme-docs',
+  themeConfig: './theme.config.jsx',
+});
+
+export default withNextra(nextConfig);

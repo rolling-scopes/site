@@ -20,6 +20,7 @@ export const ROUTES = {
   HOME: '/',
   COMMUNITY: 'community',
   COURSES: 'courses',
+  DOCS: 'docs',
   NODE_JS: 'nodejs',
   JS: 'javascript',
   JS_RU: 'javascript-ru',

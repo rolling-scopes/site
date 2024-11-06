@@ -1,0 +1,1 @@
+export default { docs: 'Docs' };

@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "tsc && next build",
     "stylelint": "npx stylelint \"**/*.scss\"",
     "stylelint:fix": "npx stylelint \"**/*.scss\" --fix",
@@ -25,6 +25,8 @@
     "dayjs": "^1.11.13",
     "next": "15.0.2",
     "nextjs-toploader": "^3.6.15",
+    "nextra": "^3.2.3",
+    "nextra-theme-docs": "^3.2.3",
     "react": "19.0.0-rc-02c0e824-20241028",
     "react-dom": "19.0.0-rc-02c0e824-20241028",
     "react-double-marquee": "^1.1.0",
