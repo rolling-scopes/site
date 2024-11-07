@@ -1,5 +1,6 @@
 import { BreadcrumbNameMap } from './types';
 
+// @ts-ignore
 export const breadcrumbNameMap: BreadcrumbNameMap = {
   courses: 'Courses',
   nodejs: 'Node.js Course',

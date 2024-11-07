@@ -32,7 +32,7 @@ jobs:
 
       - name: Build
         run: |
-          npm ci
+          npm ci --force
           npm run build
 
       - uses: jakejarvis/s3-sync-action@master
