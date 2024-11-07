@@ -1,0 +1,7 @@
+{
+  "user": "rolling-scopes-school",
+  "repo": "docs",
+  "branch": "master",
+  "docsPath": "docs/",
+  "filePaths": ["README.md", "rs-app.md"]
+}

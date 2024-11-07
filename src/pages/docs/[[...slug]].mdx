@@ -1,0 +1,34 @@
+import { Callout, RemoteContent, Tabs } from 'nextra/components'
+import { buildDynamicMDX, buildDynamicMeta } from 'nextra/remote'
+import json from './data.json'
+
+export async function getStaticProps({ params }) {
+  const { user, repo, branch, docsPath, filePaths } = json
+  const path = params.slug?.join('/') ?? 'index'
+  const foundPath = filePaths.find(
+    filePath => filePath.replace(/\.mdx?/, '') === path
+  )
+  const url = `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${docsPath}${foundPath}`
+  const response = await fetch(url)
+  const data = await response.text()
+  console.log(data)
+  const { __nextra_pageMap } = await buildDynamicMeta()
+  const dynamicMdx = await buildDynamicMDX(data, {
+    defaultShowCopyCode: true
+  })
+  return {
+    props: {
+      __nextra_pageMap,
+      ...dynamicMdx
+    }
+  }
+}
+
+export const getStaticPaths = () => ({
+  fallback: 'blocking',
+  paths: json.filePaths.map(filePath => ({
+    params: { slug: filePath.replace(/\.mdx?$/, '').split('/') }
+  }))
+})
+
+<RemoteContent components={{ Callout, $Tabs: Tabs }} />

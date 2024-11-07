@@ -1,0 +1,19 @@
+{
+  "user": "rolling-scopes-school",
+  "repo": "docs",
+  "branch": "master",
+  "docsPath": "docs/",
+  "filePaths": ["README.md", "rs-app.md"],
+  "nestedMeta": {
+    "index": "Introduction",
+    "getting-started": {
+      "type": "folder",
+      "items": {
+        "parser-options": "Parser Options",
+        "parser": "Parser"
+      }
+    },
+    "configs": "Configs",
+    "custom-rules": "Custom Rules"
+  }
+}
