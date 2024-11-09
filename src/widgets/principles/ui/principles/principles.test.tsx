@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
-import { cards } from './constants';
-import { Principles } from '@/widgets/principles/ui/principles/principles.tsx';
+import { Principles } from '@/widgets/principles';
+import { cards } from '@/widgets/principles/constants.tsx';
 
 describe('Principles', () => {
   beforeEach(() => {
@@ -27,7 +27,7 @@ describe('Principles', () => {
   });
 
   it('renders the correct number of PrincipleCards', () => {
-    const principleCards = document.getElementsByClassName('principle-card');
+    const principleCards = screen.getAllByTestId('principle-card');
 
     expect(principleCards).toHaveLength(cards.length);
   });

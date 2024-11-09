@@ -14,7 +14,7 @@ export interface PrincipleCardProps {
 }
 
 export const PrincipleCard = ({ title, description, icon }: PrincipleCardProps) => (
-  <article className={cx('principle-card')}>
+  <article className={cx('principle-card')} data-testid="principle-card">
     <span className={cx('icon')}>{icon}</span>
     <WidgetTitle className={cx('card-title')}>{title}</WidgetTitle>
     <Paragraph className={cx('card-description')}>{description}</Paragraph>
