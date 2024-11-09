@@ -51,7 +51,8 @@
     "dev-data/**/*.ts",
     "dev-data/**/*.tsx",
     "./build/types/**/*.ts",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "env.d.ts"
   ],
   "exclude": [
     "node_modules"
