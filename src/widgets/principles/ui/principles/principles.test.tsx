@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { Principles } from '@/widgets/principles';
-import { cards } from '@/widgets/principles/constants.tsx';
+import { principleCards } from 'data';
 
 describe('Principles', () => {
   beforeEach(() => {
@@ -17,7 +17,7 @@ describe('Principles', () => {
   });
 
   it('renders PrincipleCards correctly', () => {
-    cards.forEach(({ title, description }) => {
+    principleCards.forEach(({ title, description }) => {
       const titleElement = screen.getByText(title);
       const descriptionElement = screen.getByText(description);
 
@@ -29,6 +29,6 @@ describe('Principles', () => {
   it('renders the correct number of PrincipleCards', () => {
     const principleCards = screen.getAllByTestId('principle-card');
 
-    expect(principleCards).toHaveLength(cards.length);
+    expect(principleCards).toHaveLength(principleCards.length);
   });
 });
