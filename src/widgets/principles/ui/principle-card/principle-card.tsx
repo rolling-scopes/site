@@ -1,6 +1,9 @@
 import { ReactNode } from 'react';
+import classnames from 'classnames/bind';
 
-import './principle-card.scss';
+import styles from './principle-card.module.scss';
+
+const cx = classnames.bind(styles);
 
 export interface PrincipleCardProps {
   title: string;
@@ -9,15 +12,15 @@ export interface PrincipleCardProps {
 }
 
 export const PrincipleCard = ({ title, description, icon }: PrincipleCardProps) => (
-  <div className="principle-card">
-    <div className="card-header">
-      <div className="icon-wrapper">
-        <div className="accent" />
+  <div className={cx('principle-card')}>
+    <div className={cx('card-header')}>
+      <div className={cx('icon-wrapper')}>
+        <div className={cx('accent')} />
         <span>{icon}</span>
       </div>
-      <div className="card-title">{title}</div>
+      <div className={cx('card-title')}>{title}</div>
     </div>
-    <div className="card-description">{description}</div>
-    <div className="accent-corner" />
+    <div className={cx('card-description')}>{description}</div>
+    <div className={cx('accent-corner')} />
   </div>
 );
