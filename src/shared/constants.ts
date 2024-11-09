@@ -6,3 +6,16 @@ export const PAGE_NAMES = {
   COURSES: 'courses',
   COMMUNITY: 'community',
 } as const;
+
+export const COURSE_ALIASES = {
+  JS_EN: 'js-fe-en',
+  JS_RU: 'js-fe',
+  // TODO: check that the aliases below is correct
+  JS_PRESCHOOL_RU: 'js-ps',
+  REACT: 'react',
+  ANGULAR: 'angular',
+  NODE: 'node',
+  AWS_FUNDAMENTALS: 'aws-fundamentals',
+  AWS_CLOUD_DEVELOPER: 'aws-cloud',
+  AWS_DEVOPS: 'aws-devops',
+} as const;

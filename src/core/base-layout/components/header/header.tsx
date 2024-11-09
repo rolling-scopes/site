@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
 import { ROUTES } from '@/core/const';
+import { Course } from '@/entities/course';
 import { Logo } from '@/shared/ui/logo';
 import { MobileView } from '@/widgets/mobile-view';
 import { SchoolMenu } from '@/widgets/school-menu';
@@ -14,25 +15,29 @@ import styles from './header.module.scss';
 
 const cx = classNames.bind(styles);
 
+type HeaderProps = {
+  courses: Course[];
+};
+
 const navLinks = [
   {
     label: 'RS School',
     href: ROUTES.HOME,
-    dropdownInner: <SchoolMenu heading="rs school" color="dark" hasTitle={false} />,
+    heading: 'rs school',
   },
   {
     label: 'Courses',
     href: `/${ROUTES.COURSES}`,
-    dropdownInner: <SchoolMenu heading="all courses" color="dark" hasTitle={false} />,
+    heading: 'all courses',
   },
   {
     label: 'Community',
     href: `/${ROUTES.COMMUNITY}`,
-    dropdownInner: <SchoolMenu heading="community" color="dark" hasTitle={false} />,
+    heading: 'community',
   },
-];
+] as const;
 
-export const Header = () => {
+export const Header = ({ courses }: HeaderProps) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [color, setColor] = useState('gray');
   const [hash, setHash] = useState('');
@@ -93,7 +98,14 @@ export const Header = () => {
                 key={link.label}
                 label={link.label}
                 href={link.href}
-                dropdownInner={link.dropdownInner}
+                dropdownInner={(
+                  <SchoolMenu
+                    courses={courses}
+                    heading={link.heading}
+                    color="dark"
+                    hasTitle={false}
+                  />
+                )}
               />
             );
           })}

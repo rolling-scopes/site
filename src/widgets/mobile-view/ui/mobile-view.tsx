@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import Link from 'next/link';
 import { ROUTES } from '@/core/const';
+import { mockedCourses } from '@/shared/__tests__/constants.ts';
 import { Logo } from '@/shared/ui/logo';
 import { SchoolMenu } from '@/widgets/school-menu';
 
@@ -32,7 +33,7 @@ export const MobileView = ({ type }: MobileViewProps) => {
         RS School
       </Link>
 
-      <SchoolMenu heading="rs school" hasTitle={false} color={color} />
+      <SchoolMenu courses={mockedCourses} heading="rs school" hasTitle={false} color={color} />
 
       <Divider color={color} />
 
@@ -40,7 +41,7 @@ export const MobileView = ({ type }: MobileViewProps) => {
         Courses
       </Link>
 
-      <SchoolMenu heading="all courses" hasTitle={false} color={color} />
+      <SchoolMenu courses={mockedCourses} heading="all courses" hasTitle={false} color={color} />
 
       <Divider color={color} />
 
@@ -48,7 +49,7 @@ export const MobileView = ({ type }: MobileViewProps) => {
         Community
       </Link>
 
-      <SchoolMenu heading="community" hasTitle={false} color={color} />
+      <SchoolMenu courses={mockedCourses} heading="community" hasTitle={false} color={color} />
     </nav>
   );
 };

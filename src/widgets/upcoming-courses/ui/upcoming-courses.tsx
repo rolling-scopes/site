@@ -2,19 +2,20 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
+import { getCourses } from '@/entities/course/api/course-api.ts';
 import { CourseItem } from '@/entities/course/ui/course-item/course-item.tsx';
 import RSBanner from '@/shared/assets/svg/RsBanner.svg';
 import { getActualData } from '@/shared/helpers/getActualData';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { maxUpcomingCoursesQuantity } from '@/widgets/upcoming-courses/constants.ts';
-import { courses } from 'data';
 
 import styles from './upcoming-courses.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const UpcomingCourses = () => {
+export const UpcomingCourses = async () => {
+  const courses = await getCourses();
   const coursesData: Course[] = getActualData({
     data: courses,
     staleAfter: COURSE_STALE_AFTER_DAYS,

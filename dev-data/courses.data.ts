@@ -17,12 +17,14 @@ import nodejs from '@/shared/assets/icons/node.svg';
 import nodejsSecondary from '@/shared/assets/icons/nodejs-secondary.webp';
 import reactSecondary from '@/shared/assets/icons/react-secondary.webp';
 import react from '@/shared/assets/icons/react.svg';
+import { COURSE_ALIASES } from '@/shared/constants.ts';
 import { COURSE_TITLES } from 'data';
 
 export const courses: Course[] = [
   {
     id: '1',
     title: COURSE_TITLES.JS_PRESCHOOL_RU,
+    alias: COURSE_ALIASES.JS_PRESCHOOL_RU,
     altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
     iconSmall: htmlSmall,
@@ -40,6 +42,7 @@ export const courses: Course[] = [
   {
     id: '2',
     title: COURSE_TITLES.JS_EN,
+    alias: COURSE_ALIASES.JS_EN,
     altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
     iconSmall: jsSmall,
@@ -57,6 +60,7 @@ export const courses: Course[] = [
   {
     id: '3',
     title: COURSE_TITLES.JS_RU,
+    alias: COURSE_ALIASES.JS_RU,
     altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
     iconSmall: jsSmall,
@@ -74,6 +78,7 @@ export const courses: Course[] = [
   {
     id: '4',
     title: COURSE_TITLES.REACT,
+    alias: COURSE_ALIASES.REACT,
     iconSrc: react,
     iconSmall: reactSmall,
     secondaryIcon: reactSecondary,
@@ -90,6 +95,7 @@ export const courses: Course[] = [
   {
     id: '5',
     title: COURSE_TITLES.ANGULAR,
+    alias: COURSE_ALIASES.ANGULAR,
     iconSrc: angular,
     iconSmall: angularSmall,
     secondaryIcon: angularSecondary,
@@ -106,6 +112,7 @@ export const courses: Course[] = [
   {
     id: '6',
     title: COURSE_TITLES.NODE,
+    alias: COURSE_ALIASES.NODE,
     iconSrc: nodejs,
     iconSmall: nodejsSmall,
     secondaryIcon: nodejsSecondary,
@@ -122,6 +129,7 @@ export const courses: Course[] = [
   {
     id: '7',
     title: COURSE_TITLES.AWS_FUNDAMENTALS,
+    alias: COURSE_ALIASES.AWS_FUNDAMENTALS,
     iconSrc: aws,
     iconSmall: awsFundSmall,
     secondaryIcon: awsSecondary,
@@ -139,6 +147,7 @@ export const courses: Course[] = [
   {
     id: '8',
     title: COURSE_TITLES.AWS_CLOUD_DEVELOPER,
+    alias: COURSE_ALIASES.AWS_CLOUD_DEVELOPER,
     iconSrc: aws,
     iconSmall: awsDevSmall,
     secondaryIcon: awsSecondary,
@@ -155,6 +164,7 @@ export const courses: Course[] = [
   {
     id: '9',
     title: COURSE_TITLES.AWS_DEVOPS,
+    alias: COURSE_ALIASES.AWS_DEVOPS,
     iconSrc: aws,
     iconSmall: awsDevSmall,
     secondaryIcon: awsSecondary,

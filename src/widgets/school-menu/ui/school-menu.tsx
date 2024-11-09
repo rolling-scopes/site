@@ -1,7 +1,6 @@
 import { GenericItemProps, SchoolList } from './school-list/school-list';
 import { ANCHORS } from '@/core/const';
 import type { Course } from '@/entities/course';
-import { courses } from 'data';
 
 import './school-menu.scss';
 
@@ -48,6 +47,7 @@ const communityMenuStaticLinks = [
 
 interface SchoolMenuProps {
   heading: 'rs school' | 'all courses' | 'community';
+  courses: Course[];
   hasTitle?: boolean;
   color?: 'dark' | 'light';
 }
@@ -68,7 +68,12 @@ function getMenuItems(
   }
 }
 
-export const SchoolMenu = ({ heading, hasTitle = true, color = 'light' }: SchoolMenuProps) => {
+export const SchoolMenu = ({
+  heading,
+  courses,
+  hasTitle = true,
+  color = 'light',
+}: SchoolMenuProps) => {
   const menuItems = getMenuItems(heading, courses);
 
   return (

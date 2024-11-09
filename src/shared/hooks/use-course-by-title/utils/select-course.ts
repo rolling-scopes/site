@@ -1,17 +1,9 @@
-import isCourse from './is-course';
 import type { Course } from '@/entities/course';
+import { getCourses } from '@/entities/course/api/course-api.ts';
+import { CourseNamesKeys } from 'data';
 
-export const selectCourse = (coursesData: Course[], titleStartsWith: string) => {
-  const courses = coursesData.filter(isCourse);
-  const titleLower = titleStartsWith.toLowerCase();
+export const selectCourse = async (courseName: CourseNamesKeys) => {
+  const courses = await getCourses();
 
-  const course = courses.find((course) => {
-    const titleMatches =
-      course.title.toLowerCase().startsWith(titleLower)
-      || course.altTitle?.toLowerCase().startsWith(titleLower);
-
-    return titleMatches;
-  });
-
-  return course as Course;
+  return courses.find((course) => course.title === courseName) as Course;
 };
