@@ -1,1 +1,1 @@
-export { Principles } from './ui/principle-card/principles';
+export { Principles } from './ui/principles/principles';

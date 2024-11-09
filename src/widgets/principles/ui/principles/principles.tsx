@@ -1,7 +1,7 @@
 import classnames from 'classnames/bind';
-import { PrincipleCard } from './principle-card';
 import { cards } from '../../constants';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { PrincipleCard } from '@/widgets/principles/ui/principle-card/principle-card.tsx';
 
 import styles from './principles.module.scss';
 
