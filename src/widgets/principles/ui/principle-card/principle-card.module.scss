@@ -4,10 +4,9 @@
   position: relative;
 
   overflow: hidden;
-  display: flex;
-  flex-flow: column nowrap;
-  place-content: center flex-start;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 16px;
 
   width: 100%;
   padding: 24px;
@@ -17,6 +16,22 @@
   background-color: $color-yellow-50;
   border: 1px solid rgb(255 219 32 / 8%);
   border-radius: 12px;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    z-index: 1;
+    right: -160px;
+    bottom: -150px;
+
+    width: 310px;
+    height: 300px;
+
+    background-color: rgb(255 219 32 / 20%);
+    filter: blur(32px);
+    border-radius: 100%;
+  }
 
   .card-header {
     display: flex;
@@ -31,14 +46,11 @@
     }
   }
 
-  .icon-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   .card-description {
+    z-index: 2;
+
+    grid-column: span 2;
+
     font-size: 18px;
     font-weight: $font-weight-regular;
     line-height: 1.4;
@@ -46,25 +58,29 @@
     letter-spacing: 0;
   }
 
-  span > img {
-    width: 44px;
-    height: 44px;
-  }
+  .icon {
+    display: flex;
+    justify-content: center;
 
-  .accent {
-    position: absolute;
-    z-index: 1;
+    img {
+      position: relative;
+      width: 44px;
+      height: 44px;
+    }
 
-    display: block;
-    flex-shrink: 0;
-    align-self: flex-start;
+    &::before {
+      content: '';
 
-    width: 20px;
-    height: 19px;
+      position: absolute;
+      z-index: 1;
 
-    background-color: rgba($color-yellow, $opacity-80);
-    filter: blur(8px);
-    border-radius: 100%;
+      width: 20px;
+      height: 20px;
+
+      background-color: rgba($color-yellow, $opacity-80);
+      filter: blur(8px);
+      border-radius: 100%;
+    }
   }
 
   .card-title {
@@ -82,23 +98,6 @@
       align-self: unset;
       max-width: unset;
     }
-  }
-
-  .accent-corner {
-    position: absolute;
-    z-index: 1;
-    right: -160px;
-    bottom: -150px;
-
-    display: block;
-    flex-shrink: 0;
-
-    width: 310px;
-    height: 300px;
-
-    background-color: rgb(255 219 32 / 20%);
-    filter: blur(32px);
-    border-radius: 100%;
   }
 
   @include media-hover {

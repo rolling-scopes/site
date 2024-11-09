@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 import classnames from 'classnames/bind';
+import { Paragraph } from '@/shared/ui/paragraph';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './principle-card.module.scss';
 
@@ -12,15 +14,9 @@ export interface PrincipleCardProps {
 }
 
 export const PrincipleCard = ({ title, description, icon }: PrincipleCardProps) => (
-  <div className={cx('principle-card')}>
-    <div className={cx('card-header')}>
-      <div className={cx('icon-wrapper')}>
-        <div className={cx('accent')} />
-        <span>{icon}</span>
-      </div>
-      <div className={cx('card-title')}>{title}</div>
-    </div>
-    <div className={cx('card-description')}>{description}</div>
-    <div className={cx('accent-corner')} />
-  </div>
+  <article className={cx('principle-card')}>
+    <span className={cx('icon')}>{icon}</span>
+    <WidgetTitle className={cx('card-title')}>{title}</WidgetTitle>
+    <Paragraph className={cx('card-description')}>{description}</Paragraph>
+  </article>
 );
