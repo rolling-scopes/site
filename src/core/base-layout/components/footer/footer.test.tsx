@@ -1,32 +1,28 @@
 import { describe, expect, it } from 'vitest';
-import { Footer } from './footer';
+import { Copyright } from '@/core/base-layout/components/footer/copyright.tsx';
+import { DesktopView } from '@/core/base-layout/components/footer/desktop-view.tsx';
 import { renderWithRouter } from '@/shared/__tests__/utils';
+import { MobileView } from '@/widgets/mobile-view';
 
 describe('Footer', () => {
-  it('should render without crashing', () => {
-    const { getByRole } = renderWithRouter(<Footer />);
-    const footerElement = getByRole('contentinfo');
-
-    expect(footerElement).toBeInTheDocument();
-  });
-
   it('displays copyright in the footer', () => {
-    const { getByText } = renderWithRouter(<Footer />);
+    const { getByText } = renderWithRouter(<Copyright />);
     const currentYear = new Date().getFullYear();
     const footerElement = getByText(`© ${currentYear} The Rolling Scopes`);
 
     expect(footerElement).toBeInTheDocument();
   });
 
-  it('should render desktop view', () => {
-    const { getByTestId } = renderWithRouter(<Footer />);
+  it('should render desktop view', async () => {
+    const desktopViewElem = await DesktopView();
+    const { getByTestId } = renderWithRouter(desktopViewElem);
     const desktopView = getByTestId('desktop-view');
 
     expect(desktopView).toBeInTheDocument();
   });
 
   it('should render mobile view', () => {
-    const { getByTestId } = renderWithRouter(<Footer />);
+    const { getByTestId } = renderWithRouter(<MobileView type="footer" />);
     const mobileView = getByTestId('mobile-view');
 
     expect(mobileView).toBeInTheDocument();

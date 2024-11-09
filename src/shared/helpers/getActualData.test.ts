@@ -1,9 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import { getActualData } from './getActualData';
-import type { Course } from '@/entities/course';
+import { Course } from '@/entities/course';
 import { Event } from '@/entities/event';
+import { COURSE_ALIASES } from '@/shared/constants.ts';
 import { dayJS } from '@/shared/helpers/dayJS';
 import { isCourse } from '@/shared/helpers/is-course';
+import { COURSE_TITLES } from 'data';
 
 const staleAfterDays = 14;
 
@@ -16,7 +18,8 @@ const staleDayInPast = dayJS()
 const coursesMock: Course[] = [
   {
     id: '1',
-    title: 'title',
+    title: COURSE_TITLES.REACT,
+    alias: COURSE_ALIASES.REACT,
     altTitle: 'altTitle',
     iconSrc: {
       src: 'icon',
@@ -45,7 +48,8 @@ const coursesMock: Course[] = [
   },
   {
     id: '2',
-    title: 'title',
+    title: COURSE_TITLES.REACT,
+    alias: COURSE_ALIASES.REACT,
     altTitle: 'altTitle',
     iconSrc: {
       src: 'icon',
@@ -74,7 +78,8 @@ const coursesMock: Course[] = [
   },
   {
     id: '3',
-    title: 'title',
+    title: COURSE_TITLES.REACT,
+    alias: COURSE_ALIASES.REACT,
     altTitle: 'altTitle',
     iconSrc: {
       src: 'icon',

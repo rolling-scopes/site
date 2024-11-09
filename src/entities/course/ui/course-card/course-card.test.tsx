@@ -3,10 +3,11 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { CourseCard, type CourseCardProps, cx } from './course-card';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants.ts';
 import { renderWithRouter } from '@/shared/__tests__/utils';
+import { COURSE_TITLES } from 'data';
 
 describe('CourseCard', () => {
   const mockProps: CourseCardProps = {
-    title: 'Introduction to Testing',
+    title: COURSE_TITLES.REACT,
     iconSrc: MOCKED_IMAGE_PATH,
     startDate: '2023-01-01',
     mode: 'online',
