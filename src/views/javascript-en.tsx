@@ -1,3 +1,4 @@
+import { ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
 import { AboutCourse } from '@/widgets/about-course';
 import { AboutVideo } from '@/widgets/about-video';
@@ -5,8 +6,9 @@ import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
 import { HeroCourse } from '@/widgets/hero-course';
+import { MemberActivity } from '@/widgets/member-activity';
+import { MentorsWanted } from '@/widgets/mentors-wanted';
 import { Required } from '@/widgets/required';
-import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
 import { CourseNames, javaScriptEn } from 'data';
@@ -25,8 +27,9 @@ export const JavaScriptEn = ({ course, courseName }: JavaScriptEnProps) => {
       <Certification courseName={courseName} />
       <Communication courseName={courseName} />
       <AboutVideo />
-      <StudyPath path="javascript" type="marked" />
+      <MemberActivity path="javascript" type="marked" />
       <Required courseName={courseName} />
+      <MentorsWanted route={`/${ROUTES.MENTORSHIP}/${ROUTES.JS}`} />
       <Trainers trainers={javaScriptEn} />
     </>
   );

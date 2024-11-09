@@ -36,13 +36,13 @@ describe('Header', () => {
     it('renders all the header links', () => {
       const headerElement = screen.getAllByText(/.*/, { selector: `span.${cxNavItem('label')}` });
 
-      expect(headerElement).toHaveLength(3);
+      expect(headerElement).toHaveLength(4);
     });
 
-    it('renders 3 svg arrows', () => {
+    it('renders 4 svg arrows', () => {
       const svg = screen.getAllByLabelText('dropdown-arrow');
 
-      expect(svg).toHaveLength(3);
+      expect(svg).toHaveLength(4);
     });
   });
 

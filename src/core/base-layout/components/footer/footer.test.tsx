@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { Copyright } from '@/core/base-layout/components/footer/copyright.tsx';
 import { DesktopView } from '@/core/base-layout/components/footer/desktop-view.tsx';
+import { mockedCourses } from '@/shared/__tests__/constants.ts';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { MobileView } from '@/widgets/mobile-view';
 
@@ -22,7 +23,7 @@ describe('Footer', () => {
   });
 
   it('should render mobile view', () => {
-    const { getByTestId } = renderWithRouter(<MobileView type="footer" />);
+    const { getByTestId } = renderWithRouter(<MobileView courses={mockedCourses} type="footer" />);
     const mobileView = getByTestId('mobile-view');
 
     expect(mobileView).toBeInTheDocument();

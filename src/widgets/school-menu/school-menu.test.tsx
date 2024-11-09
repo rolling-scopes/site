@@ -24,7 +24,7 @@ describe('SchoolMenu', () => {
       <SchoolMenu courses={mockedCourses} heading="rs school" />,
     );
 
-    expect(screen.getAllByRole('link')).toHaveLength(3);
+    expect(screen.getAllByRole('link')).toHaveLength(2);
 
     const links = screen.getAllByRole('link');
 
@@ -47,7 +47,7 @@ describe('SchoolMenu', () => {
     expect(headingElement).toBeInTheDocument();
   });
 
-  it('renders course correct when "all courses" heading is passed', () => {
+  it('renders [mentorshipId] correct when "all courses" heading is passed', () => {
     renderWithRouter(<SchoolMenu courses={mockedCourses} heading="all courses" />);
 
     const imageAWS = screen.getByRole('img', { name: aws.title });
@@ -70,7 +70,7 @@ describe('SchoolMenu', () => {
     expect(descriptions[3]).toHaveTextContent(/tbd/i);
   });
 
-  it('renders correct link for "AWS Fundamentals" and "React JS course"', () => {
+  it('renders correct link for "AWS Fundamentals" and "React JS [mentorshipId]"', () => {
     renderWithRouter(<SchoolMenu courses={mockedCourses} heading="all courses" />);
 
     const links = screen.getAllByRole('link');

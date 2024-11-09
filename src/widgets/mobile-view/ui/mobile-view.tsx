@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import Link from 'next/link';
 import { ROUTES } from '@/core/const';
-import { mockedCourses } from '@/shared/__tests__/constants.ts';
+import { Course } from '@/entities/course';
 import { Logo } from '@/shared/ui/logo';
 import { SchoolMenu } from '@/widgets/school-menu';
 
@@ -17,9 +17,10 @@ const Divider = ({ color }: DividerProps) => <hr className={cx('divider', color)
 
 type MobileViewProps = {
   type: 'header' | 'footer';
+  courses: Course[];
 };
 
-export const MobileView = ({ type }: MobileViewProps) => {
+export const MobileView = ({ type, courses }: MobileViewProps) => {
   const color = type === 'header' ? 'dark' : 'light';
   const logoView = type === 'header' ? null : 'with-border';
 
@@ -33,7 +34,7 @@ export const MobileView = ({ type }: MobileViewProps) => {
         RS School
       </Link>
 
-      <SchoolMenu courses={mockedCourses} heading="rs school" hasTitle={false} color={color} />
+      <SchoolMenu courses={courses} heading="rs school" hasTitle={false} color={color} />
 
       <Divider color={color} />
 
@@ -41,7 +42,7 @@ export const MobileView = ({ type }: MobileViewProps) => {
         Courses
       </Link>
 
-      <SchoolMenu courses={mockedCourses} heading="all courses" hasTitle={false} color={color} />
+      <SchoolMenu courses={courses} heading="all courses" hasTitle={false} color={color} />
 
       <Divider color={color} />
 
@@ -49,7 +50,15 @@ export const MobileView = ({ type }: MobileViewProps) => {
         Community
       </Link>
 
-      <SchoolMenu courses={mockedCourses} heading="community" hasTitle={false} color={color} />
+      <SchoolMenu courses={courses} heading="community" hasTitle={false} color={color} />
+
+      <Divider color={color} />
+
+      <Link href={ROUTES.MENTORSHIP} className={cx('category-link', color)}>
+        Mentorship
+      </Link>
+
+      <SchoolMenu courses={courses} heading="mentorship" hasTitle={false} color={color} />
     </nav>
   );
 };

@@ -35,6 +35,11 @@ const navLinks = [
     href: `/${ROUTES.COMMUNITY}`,
     heading: 'community',
   },
+  {
+    label: 'Mentorship',
+    href: `/${ROUTES.MENTORSHIP}`,
+    heading: 'mentorship',
+  },
 ] as const;
 
 export const Header = ({ courses }: HeaderProps) => {
@@ -43,6 +48,13 @@ export const Header = ({ courses }: HeaderProps) => {
   const [hash, setHash] = useState('');
   const [key, setKey] = useState('');
   const pathname = usePathname();
+
+  // const headerAccentColor = pathname.includes(ROUTES.MENTORSHIP) ? 'blue' : 'gray';
+  let headerAccentColor = 'gray';
+
+  if (pathname) {
+    headerAccentColor = pathname.includes(ROUTES.MENTORSHIP) ? 'blue' : 'gray';
+  }
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -55,7 +67,7 @@ export const Header = ({ courses }: HeaderProps) => {
       // setting the class depending on the scrolled height
       // class changes the background color of the header
       if (scrollY < 500) {
-        setColor('gray');
+        setColor(headerAccentColor);
       } else {
         setColor('white');
       }
@@ -66,7 +78,7 @@ export const Header = ({ courses }: HeaderProps) => {
     return () => {
       window.removeEventListener('scroll', listenScrollEvent);
     };
-  }, []);
+  }, [headerAccentColor]);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -78,8 +90,9 @@ export const Header = ({ courses }: HeaderProps) => {
   useEffect(() => {
     if (location.pathname) {
       setMenuOpen(false);
+      setColor(headerAccentColor);
     }
-  }, [key, hash, pathname]);
+  }, [key, hash, pathname, headerAccentColor]);
 
   return (
     <nav className={cx('navbar', color)} data-testid="navigation">
@@ -87,7 +100,7 @@ export const Header = ({ courses }: HeaderProps) => {
         <Logo />
 
         <menu className={cx('mobile-menu', { open: isMenuOpen })} data-testid="mobile-menu">
-          <MobileView type="header" />
+          <MobileView courses={courses} type="header" />
         </menu>
         <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 

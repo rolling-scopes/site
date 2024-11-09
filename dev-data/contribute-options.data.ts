@@ -1,4 +1,4 @@
-import { LINKS } from '@/core/const';
+import { LINKS, ROUTES } from '@/core/const';
 
 export const contributeOptions = [
   {
@@ -7,7 +7,7 @@ export const contributeOptions = [
     description:
       'Become a mentor and guide the next generation of developers. Sign up as a mentor here.',
     linkLabel: 'Register as a mentor',
-    href: LINKS.BECOME_MENTOR,
+    href: `/${ROUTES.MENTORSHIP}`,
   },
   {
     id: 2,
