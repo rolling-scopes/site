@@ -2,9 +2,9 @@ import { FC } from 'react';
 import { PAGE_NAMES } from '@/shared/constants';
 import { AboutSchool } from '@/widgets/about-school';
 import { Alumni } from '@/widgets/alumni';
+import { Benefits } from '@/widgets/benefits';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { HeroPage } from '@/widgets/hero-page';
-import { Mentoring } from '@/widgets/mentoring';
 import { MentorsWanted } from '@/widgets/mentors-wanted';
 import { Principles } from '@/widgets/principles';
 import { Requirements } from '@/widgets/requirements';
@@ -22,7 +22,7 @@ export const Home: FC = () => {
       <UpcomingCourses />
       <Alumni />
       <MentorsWanted />
-      <Mentoring />
+      <Benefits />
       <Requirements />
     </>
   );

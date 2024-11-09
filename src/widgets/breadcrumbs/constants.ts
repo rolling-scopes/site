@@ -12,4 +12,5 @@ export const breadcrumbNameMap: BreadcrumbNameMap = {
   reactjs: 'React Course',
   community: 'Community',
   'aws-devops': 'AWS DevOps',
+  mentorship: 'Mentorship',
 } as const;

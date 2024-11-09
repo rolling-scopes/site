@@ -1,0 +1,5 @@
+.doc-detail-wrapper {
+  @include media-tablet {
+    text-align: justify;
+  }
+}

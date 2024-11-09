@@ -1,5 +1,6 @@
 import { SchoolItem } from '../school-item/school-item';
 import type { Course } from '@/entities/course';
+import { MentorshipCourse } from 'data';
 
 export interface GenericItemProps {
   title: string;
@@ -8,7 +9,7 @@ export interface GenericItemProps {
 }
 
 interface SchoolListProps {
-  list: Course[] | GenericItemProps[];
+  list: MentorshipCourse[] | Course[] | GenericItemProps[];
   color: 'dark' | 'light';
 }
 
