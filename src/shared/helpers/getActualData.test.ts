@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { getActualData } from './getActualData';
 import { Course } from '@/entities/course';
 import { Event } from '@/entities/event';
-import { COURSE_ALIASES } from '@/shared/constants.ts';
+import { COURSE_ALIASES, TO_BE_DETERMINED } from '@/shared/constants.ts';
 import { dayJS } from '@/shared/helpers/dayJS';
 import { isCourse } from '@/shared/helpers/is-course';
 import { COURSE_TITLES } from 'data';
@@ -121,7 +121,7 @@ describe('getActualData', () => {
       staleAfter: staleAfterDays,
     }).filter(isCourse);
 
-    const noTBDinCourses = !data.some((course) => course.startDate === 'TBD');
+    const noTBDinCourses = !data.some((course) => course.startDate === TO_BE_DETERMINED);
 
     expect(noTBDinCourses).toBeTruthy();
   });
@@ -132,7 +132,7 @@ describe('getActualData', () => {
       staleAfter: staleAfterDays,
     });
 
-    const noTBDinEvents = !data.some((event) => 'date' in event && event.date === 'TBD');
+    const noTBDinEvents = !data.some((event) => 'date' in event && event.date === TO_BE_DETERMINED);
 
     expect(noTBDinEvents).toBeTruthy();
   });
@@ -146,6 +146,6 @@ describe('getActualData', () => {
 
     expect(data[0].startDate).toBe(nonStaleDayInPast);
     expect(data[1].startDate).toBe(dayInFuture);
-    expect(data[2].startDate).toBe('TBD');
+    expect(data[2].startDate).toBe(TO_BE_DETERMINED);
   });
 });

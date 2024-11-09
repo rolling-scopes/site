@@ -17,7 +17,7 @@ import nodejs from '@/shared/assets/icons/node.svg';
 import nodejsSecondary from '@/shared/assets/icons/nodejs-secondary.webp';
 import reactSecondary from '@/shared/assets/icons/react-secondary.webp';
 import react from '@/shared/assets/icons/react.svg';
-import { COURSE_ALIASES } from '@/shared/constants.ts';
+import { COURSE_ALIASES, TO_BE_DETERMINED } from '@/shared/constants.ts';
 import { COURSE_TITLES } from 'data';
 
 export const courses: Course[] = [
@@ -29,7 +29,7 @@ export const courses: Course[] = [
     iconSrc: javascript,
     iconSmall: htmlSmall,
     secondaryIcon: jsSecondary,
-    startDate: 'Jun 24, 2024',
+    startDate: TO_BE_DETERMINED,
     language: ['ru'],
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.JS_PRESCHOOL_RU}`,
@@ -47,7 +47,7 @@ export const courses: Course[] = [
     iconSrc: javascript,
     iconSmall: jsSmall,
     secondaryIcon: jsSecondary,
-    startDate: 'Oct 28, 2024',
+    startDate: TO_BE_DETERMINED,
     language: ['en'],
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.JS}`,
@@ -65,7 +65,7 @@ export const courses: Course[] = [
     iconSrc: javascript,
     iconSmall: jsSmall,
     secondaryIcon: jsSecondary,
-    startDate: 'Oct 27, 2024',
+    startDate: TO_BE_DETERMINED,
     language: ['ru'],
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.JS_RU}`,
@@ -82,7 +82,7 @@ export const courses: Course[] = [
     iconSrc: react,
     iconSmall: reactSmall,
     secondaryIcon: reactSecondary,
-    startDate: 'Jul 1, 2024',
+    startDate: TO_BE_DETERMINED,
     language: ['en'],
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.REACT}`,
@@ -99,7 +99,7 @@ export const courses: Course[] = [
     iconSrc: angular,
     iconSmall: angularSmall,
     secondaryIcon: angularSecondary,
-    startDate: 'Jul 1, 2024',
+    startDate: TO_BE_DETERMINED,
     language: ['en'],
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.ANGULAR}`,
@@ -116,7 +116,7 @@ export const courses: Course[] = [
     iconSrc: nodejs,
     iconSmall: nodejsSmall,
     secondaryIcon: nodejsSecondary,
-    startDate: 'Sep 30, 2024',
+    startDate: TO_BE_DETERMINED,
     language: ['en'],
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.NODE_JS}`,
@@ -133,7 +133,7 @@ export const courses: Course[] = [
     iconSrc: aws,
     iconSmall: awsFundSmall,
     secondaryIcon: awsSecondary,
-    startDate: 'Apr 15, 2024',
+    startDate: TO_BE_DETERMINED,
     language: ['en'],
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.AWS_FUNDAMENTALS}`,
@@ -151,7 +151,7 @@ export const courses: Course[] = [
     iconSrc: aws,
     iconSmall: awsDevSmall,
     secondaryIcon: awsSecondary,
-    startDate: 'May 28, 2024',
+    startDate: TO_BE_DETERMINED,
     language: ['en'],
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.AWS_DEVELOPER}`,
@@ -168,7 +168,7 @@ export const courses: Course[] = [
     iconSrc: aws,
     iconSmall: awsDevSmall,
     secondaryIcon: awsSecondary,
-    startDate: 'Sep 23, 2024',
+    startDate: TO_BE_DETERMINED,
     language: ['en'],
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.AWS_DEVOPS}`,

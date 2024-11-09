@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { getCourseDate } from './getCourseDate';
+import { TO_BE_DETERMINED } from '@/shared/constants.ts';
 
 const staleAfterDays = 30;
 
@@ -8,14 +9,14 @@ describe('getCourseDate', () => {
     const date = 'invalid-date';
     const result = getCourseDate(date, staleAfterDays);
 
-    expect(result).toBe('TBD');
+    expect(result).toBe(TO_BE_DETERMINED);
   });
 
   it('should return "TBD" for empty date', () => {
     const date = '';
     const result = getCourseDate(date, staleAfterDays);
 
-    expect(result).toBe('TBD');
+    expect(result).toBe(TO_BE_DETERMINED);
   });
 
   it('should return date if valid and non stale', () => {
