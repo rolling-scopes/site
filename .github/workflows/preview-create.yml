@@ -34,6 +34,8 @@ jobs:
         run: |
           npm ci
           npm run build
+        env:
+          API_URL: ${{ secrets.API_URL }}
 
       - uses: jakejarvis/s3-sync-action@master
         name: Sync to S3
