@@ -11,8 +11,6 @@ export const getCourses = async () => {
   const data = await fetch(process.env.API_URL, { cache: 'force-cache' });
   const courses = (await data.json()) as ApiCoursesResponse[];
 
-  console.log(courses);
-
   cache = syncWithApiData(courses);
 
   return cache;
