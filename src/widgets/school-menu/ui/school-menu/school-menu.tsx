@@ -1,4 +1,4 @@
-import { GenericItemProps, SchoolList } from './school-list/school-list';
+import { GenericItemProps, SchoolList } from '../school-list/school-list';
 import { ANCHORS } from '@/core/const';
 import type { Course } from '@/entities/course';
 import { MentorshipCourse, MentorshipDefaultRouteKeys, courses, mentorshipCourses } from 'data';
