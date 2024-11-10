@@ -8,10 +8,14 @@ export const getCourses = async () => {
     return cache;
   }
 
-  const data = await fetch(process.env.API_URL, { cache: 'force-cache' });
-  const courses = (await data.json()) as ApiCoursesResponse[];
+  try {
+    const data = await fetch(process.env.API_URL, { cache: 'force-cache' });
+    const courses = (await data.json()) as ApiCoursesResponse[];
 
-  cache = syncWithApiData(courses);
+    cache = syncWithApiData(courses);
 
-  return cache;
+    return cache;
+  } catch (e) {
+    throw new Error(`Something went wrong fetching courses! (${e})`);
+  }
 };
