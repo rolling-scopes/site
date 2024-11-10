@@ -1,6 +1,11 @@
+import classNames from 'classnames/bind';
 import { SchoolItem } from '../school-item/school-item';
 import type { Course } from '@/entities/course';
 import { MentorshipCourse } from 'data';
+
+import styles from './school-list.module.scss';
+
+const cx = classNames.bind(styles);
 
 export interface GenericItemProps {
   title: string;
@@ -14,13 +19,10 @@ interface SchoolListProps {
 }
 
 export const SchoolList = ({ list, color }: SchoolListProps) => {
-  const className =
-    !!list && !!list[0] && 'description' in list[0]
-      ? 'school-list'
-      : 'school-list school-list_width';
+  const isSchoolListFixed = !('description' in list[0]);
 
   return (
-    <ul className={className}>
+    <ul className={cx('school-list', { 'school-list-fixed': isSchoolListFixed })}>
       {list?.map((item) => <SchoolItem item={item} key={item.title} color={color} />)}
     </ul>
   );

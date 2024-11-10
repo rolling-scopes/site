@@ -1,0 +1,24 @@
+.school-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: baseline;
+  justify-content: flex-start;
+
+  color: $color-gray-100;
+
+  .heading {
+    margin: 0;
+    font-size: 12px;
+    font-weight: $font-weight-medium;
+    text-transform: uppercase;
+
+    &.dark {
+      color: $color-black;
+    }
+
+    &.light {
+      color: $color-gray-400;
+    }
+  }
+}

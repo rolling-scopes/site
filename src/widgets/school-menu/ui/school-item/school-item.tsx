@@ -1,3 +1,4 @@
+import classNames from 'classnames/bind';
 import Image from 'next/image';
 import Link from 'next/link';
 import { GenericItemProps } from '../school-list/school-list';
@@ -5,6 +6,10 @@ import { COURSE_STALE_AFTER_DAYS } from '@/core/const';
 import type { Course } from '@/entities/course';
 import { getCourseDate } from '@/shared/helpers/getCourseDate';
 import { MentorshipCourse } from 'data';
+
+import styles from './school-item.module.scss';
+
+const cx = classNames.bind(styles);
 
 interface SchoolItemProps {
   item: MentorshipCourse | Course | GenericItemProps;
@@ -14,32 +19,31 @@ interface SchoolItemProps {
 export const SchoolItem = ({ item, color }: SchoolItemProps) => {
   const courseDate = 'startDate' in item && getCourseDate(item.startDate, COURSE_STALE_AFTER_DAYS);
   const descriptionText = 'description' in item ? item.description : courseDate;
+  const isIdExist = 'id' in item;
+  const isIconSmallExist = 'iconSmall' in item;
+  const isDescriptionExist = 'description' in item;
 
   const descriptionContent = (
     <>
-      <span className={color}>{item.title}</span>
+      <span className={cx(color)}>{item.title}</span>
       <small>{descriptionText}</small>
     </>
   );
 
-  const descriptionBlock =
-    'description' in item
-      ? (
-          descriptionContent
-        )
-      : (
-          <div className="details">{descriptionContent}</div>
-        );
+  const descriptionBlock = isDescriptionExist
+    ? (
+        descriptionContent
+      )
+    : (
+        <div className={cx('details')}>{descriptionContent}</div>
+      );
 
   return (
-    <li key={'id' in item ? item.id : item.title}>
-      <Link
-        href={item.detailsUrl}
-        className={'id' in item ? 'school-item with-icon' : 'school-item'}
-      >
-        {'iconSmall' in item && (
+    <li key={isIdExist ? item.id : item.title}>
+      <Link href={item.detailsUrl} className={cx('school-item', { 'with-icon': isIdExist })}>
+        {isIconSmallExist && (
           <Image
-            className="icon-wrapper"
+            className={cx('icon-wrapper')}
             src={item.iconSmall}
             alt={item.title}
             width={32}

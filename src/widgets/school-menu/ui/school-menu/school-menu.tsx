@@ -1,9 +1,12 @@
+import classNames from 'classnames/bind';
 import { GenericItemProps, SchoolList } from '../school-list/school-list';
 import { ANCHORS } from '@/core/const';
 import type { Course } from '@/entities/course';
 import { MentorshipCourse, MentorshipDefaultRouteKeys, courses, mentorshipCourses } from 'data';
 
-import './school-menu.scss';
+import styles from './school-menu.module.scss';
+
+const cx = classNames.bind(styles);
 
 const schoolMenuStaticLinks = [
   {
@@ -70,8 +73,8 @@ export const SchoolMenu = ({ heading, hasTitle = true, color = 'light' }: School
   const menuItems = getMenuItems(heading, courses, mentorshipCourses);
 
   return (
-    <div className="school-menu">
-      {hasTitle && <h3 className={`heading ${color}`}>{heading}</h3>}
+    <div className={cx('school-menu')}>
+      {hasTitle && <h3 className={cx('heading', { color })}>{heading}</h3>}
       <SchoolList list={menuItems} color={color} />
     </div>
   );
