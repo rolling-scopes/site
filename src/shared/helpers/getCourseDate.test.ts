@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { getCourseDate } from './getCourseDate';
-import { TO_BE_DETERMINED } from '@/shared/constants.ts';
+import { TO_BE_DETERMINED } from '@/shared/constants';
 
 const staleAfterDays = 30;
 

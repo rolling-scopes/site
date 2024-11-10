@@ -1,5 +1,5 @@
 import type { Course } from '@/entities/course';
-import { getCourses } from '@/entities/course/api/course-api.ts';
+import { getCourses } from '@/entities/course/api/course-api';
 import { CourseNamesKeys } from 'data';
 
 export const selectCourse = async (courseName: CourseNamesKeys) => {

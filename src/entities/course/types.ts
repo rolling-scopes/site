@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image';
-import { COURSE_ALIASES } from '@/shared/constants.ts';
+import { COURSE_ALIASES } from '@/shared/constants';
 import { CourseNamesKeys } from 'data';
 
 type CourseAliases = typeof COURSE_ALIASES;

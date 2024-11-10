@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { CourseCard, type CourseCardProps, cx } from './course-card';
-import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants.ts';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { COURSE_TITLES } from 'data';
 

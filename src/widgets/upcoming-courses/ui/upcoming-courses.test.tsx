@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { mockedCourses } from '@/shared/__tests__/constants.ts';
+import { mockedCourses } from '@/shared/__tests__/constants';
 import { UpcomingCourses } from '@/widgets/upcoming-courses';
 
 vi.mock('@/shared/helpers/getActualData', () => ({ getActualData: vi.fn().mockImplementation(() => mockedCourses) }));

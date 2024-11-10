@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
-import { getCourses } from '@/entities/course/api/course-api.ts';
+import { getCourses } from '@/entities/course/api/course-api';
 import { CourseItem } from '@/entities/course/ui/course-item/course-item.tsx';
 import RSBanner from '@/shared/assets/svg/RsBanner.svg';
 import { getActualData } from '@/shared/helpers/getActualData';

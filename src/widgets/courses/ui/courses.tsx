@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import { COURSE_STALE_AFTER_DAYS } from '@/core/const';
 import { type Course, CourseCard } from '@/entities/course';
-import { getCourses } from '@/entities/course/api/course-api.ts';
+import { getCourses } from '@/entities/course/api/course-api';
 import { getActualData } from '@/shared/helpers/getActualData';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 

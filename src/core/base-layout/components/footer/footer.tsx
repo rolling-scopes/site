@@ -1,7 +1,7 @@
 import { Copyright } from './copyright';
 import { DesktopView } from './desktop-view';
 
-import { getCourses } from '@/entities/course/api/course-api.ts';
+import { getCourses } from '@/entities/course/api/course-api';
 import { MobileView } from '@/widgets/mobile-view';
 
 import './footer.scss';

@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { getActualData } from './getActualData';
 import { Course } from '@/entities/course';
 import { Event } from '@/entities/event';
-import { COURSE_ALIASES, TO_BE_DETERMINED } from '@/shared/constants.ts';
+import { COURSE_ALIASES, TO_BE_DETERMINED } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/dayJS';
 import { isCourse } from '@/shared/helpers/is-course';
 import { COURSE_TITLES } from 'data';

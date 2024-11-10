@@ -4,7 +4,7 @@ import { AboutCourse } from './about-course';
 import { Course } from '@/entities/course';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants.ts';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { COURSE_ALIASES } from '@/shared/constants.ts';
+import { COURSE_ALIASES } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/dayJS.ts';
 import { COURSE_TITLES } from 'data';
 

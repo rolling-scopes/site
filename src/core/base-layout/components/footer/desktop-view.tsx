@@ -1,5 +1,5 @@
 import { AboutList } from './about-list';
-import { getCourses } from '@/entities/course/api/course-api.ts';
+import { getCourses } from '@/entities/course/api/course-api';
 import { SchoolMenu } from '@/widgets/school-menu';
 
 export const DesktopView = async () => {

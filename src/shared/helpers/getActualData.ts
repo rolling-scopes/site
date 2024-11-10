@@ -2,7 +2,7 @@ import { getCourseDate } from './getCourseDate';
 import { isCourse } from './is-course';
 import type { Course } from '@/entities/course';
 import { Event } from '@/entities/event';
-import { TO_BE_DETERMINED } from '@/shared/constants.ts';
+import { TO_BE_DETERMINED } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/dayJS';
 
 type DataType = Course[] | Event[];

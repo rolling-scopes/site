@@ -3,7 +3,7 @@ import { ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
 import type { Trainer } from '@/entities/trainer';
 import nodejsImg1 from '@/shared/assets/mentors/m-shylau.webp';
-import { COURSE_ALIASES } from '@/shared/constants.ts';
+import { COURSE_ALIASES } from '@/shared/constants';
 import { COURSE_TITLES } from 'data';
 
 export const MOCKED_IMAGE_PATH: StaticImageData = {

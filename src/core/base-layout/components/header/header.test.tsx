@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import { beforeEach } from 'vitest';
 import { DropdownWrapper } from './dropdown/dropdown-wrapper';
 import { Header } from './header';
-import { mockedCourses } from '@/shared/__tests__/constants.ts';
+import { mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 import stylesDropdown from './dropdown/dropdown-wrapper.module.scss';

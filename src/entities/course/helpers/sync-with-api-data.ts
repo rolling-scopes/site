@@ -1,6 +1,6 @@
-import { ALIAS_QUARTER_REGEXP, COURSE_DATE_FORMAT } from '@/entities/course/constants.ts';
-import { ApiCoursesResponse } from '@/entities/course/types.ts';
-import { dayJS } from '@/shared/helpers/dayJS.ts';
+import { ALIAS_QUARTER_REGEXP, COURSE_DATE_FORMAT } from '@/entities/course/constants';
+import { ApiCoursesResponse } from '@/entities/course/types';
+import { dayJS } from '@/shared/helpers/dayJS';
 import { courses as baseCourseData } from 'data';
 
 export const syncWithApiData = (apiCourses: ApiCoursesResponse[]) => {

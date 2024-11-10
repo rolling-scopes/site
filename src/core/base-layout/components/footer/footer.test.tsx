@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { Copyright } from '@/core/base-layout/components/footer/copyright.tsx';
-import { DesktopView } from '@/core/base-layout/components/footer/desktop-view.tsx';
-import { mockedCourses } from '@/shared/__tests__/constants.ts';
+import { Copyright } from '@/core/base-layout/components/footer/copyright';
+import { DesktopView } from '@/core/base-layout/components/footer/desktop-view';
+import { mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { MobileView } from '@/widgets/mobile-view';
 

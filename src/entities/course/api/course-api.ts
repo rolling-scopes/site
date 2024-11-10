@@ -1,5 +1,5 @@
-import { syncWithApiData } from '@/entities/course/helpers/sync-with-api-data.ts';
-import { ApiCoursesResponse, Course } from '@/entities/course/types.ts';
+import { syncWithApiData } from '@/entities/course/helpers/sync-with-api-data';
+import { ApiCoursesResponse, Course } from '@/entities/course/types';
 
 let cache: Course[] | null = null;
 
@@ -10,6 +10,8 @@ export const getCourses = async () => {
 
   const data = await fetch(process.env.API_URL, { cache: 'force-cache' });
   const courses = (await data.json()) as ApiCoursesResponse[];
+
+  console.log(courses);
 
   cache = syncWithApiData(courses);
 
