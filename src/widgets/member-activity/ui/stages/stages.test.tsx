@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
-import { Stages } from './stages.tsx';
-import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants.ts';
+import { Stages } from './stages';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 describe('Stages Component', () => {
@@ -10,11 +10,13 @@ describe('Stages Component', () => {
       title: 'Stage 1',
       description: 'Stages Description',
       logoIcon: MOCKED_IMAGE_PATH,
-      links: [{
-        href: 'test.com',
-        linkTitle: 'test title',
-        isActive: true,
-      }],
+      links: [
+        {
+          href: 'test.com',
+          linkTitle: 'test title',
+          isActive: true,
+        },
+      ],
       topics: ['Advanced Javascript', 'Security'],
       imageSrc: MOCKED_IMAGE_PATH,
       list: ['Item 1', 'Item 2'],

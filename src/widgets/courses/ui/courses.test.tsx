@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { Courses } from './courses';
 import { Course } from '@/entities/course';
-import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants.ts';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 const widgetTitle = 'All courses';

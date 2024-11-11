@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
 import { PageName } from '../types';
-import { PAGE_NAMES } from '@/shared/constants.ts';
+import { PAGE_NAMES } from '@/shared/constants';
 import { MainTitle } from '@/shared/ui/main-title';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -50,7 +50,11 @@ export const HeroPage = ({ pageName }: PageName) => {
   const isMentorshipPage = pageName === PAGE_NAMES.MENTORSHIP;
 
   return (
-    <section id="hero-page" className={cx('hero-page', 'container', { 'hero-page-mentorship': isMentorshipPage })} data-testid="hero-page">
+    <section
+      id="hero-page"
+      className={cx('hero-page', 'container', { 'hero-page-mentorship': isMentorshipPage })}
+      data-testid="hero-page"
+    >
       <div className={cx('hero-page-content', 'content')}>
         <article className={cx('title-container')}>
           <HeroSubTitle subTitle={subTitle} />

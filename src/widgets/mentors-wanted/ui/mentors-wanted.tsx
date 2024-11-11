@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 import { ANCHORS, ROUTES } from '@/core/const';
 import mentorImg from '@/shared/assets/mentors-wanted.webp';
-import { Language } from '@/shared/types.ts';
+import { Language } from '@/shared/types';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -17,7 +17,10 @@ type MentorsWantedProps = {
   lang?: Language;
 };
 
-export const MentorsWanted = ({ route = `/${ROUTES.MENTORSHIP}`, lang = 'en' }: MentorsWantedProps) => {
+export const MentorsWanted = ({
+  route = `/${ROUTES.MENTORSHIP}`,
+  lang = 'en',
+}: MentorsWantedProps) => {
   return (
     <section
       className={cx('mentors-container', 'container')}
@@ -29,13 +32,8 @@ export const MentorsWanted = ({ route = `/${ROUTES.MENTORSHIP}`, lang = 'en' }: 
           <WidgetTitle size="large" mods="lines">
             Mentors wanted!
           </WidgetTitle>
-          <Paragraph fontSize="large">
-            {mentorsWantedData[lang].info}
-          </Paragraph>
-          <LinkCustom
-            href={route}
-            variant="primary"
-          >
+          <Paragraph fontSize="large">{mentorsWantedData[lang].info}</Paragraph>
+          <LinkCustom href={route} variant="primary">
             {mentorsWantedData[lang].button}
           </LinkCustom>
         </article>

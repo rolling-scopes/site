@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
-import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants.ts';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { UpcomingCourses } from '@/widgets/upcoming-courses';
 

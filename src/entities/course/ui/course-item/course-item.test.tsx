@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import dayjs from 'dayjs';
 import { CourseItem, CourseItemData } from '@/entities/course';
-import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants.ts';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 const mockedProps: CourseItemData = {
