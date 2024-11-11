@@ -18,6 +18,9 @@ export const syncWithApiData = (apiCourses: ApiCoursesResponse[]) => {
     const clonedCourse = structuredClone(course);
 
     clonedCourse.startDate = dayJS(currApiCourse.startDate).format(COURSE_DATE_FORMAT);
+    clonedCourse.registrationEndDate = dayJS(currApiCourse.registrationEndDate).format(
+      COURSE_DATE_FORMAT,
+    );
 
     return clonedCourse;
   });

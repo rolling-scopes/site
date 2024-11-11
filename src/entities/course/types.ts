@@ -31,6 +31,7 @@ export type Course = {
   secondaryIcon: StaticImageData;
   iconSmall: StaticImageData;
   startDate: string;
+  registrationEndDate: string;
   language: ('en' | 'ru')[];
   mode: 'online' | 'offline';
   detailsUrl: string;

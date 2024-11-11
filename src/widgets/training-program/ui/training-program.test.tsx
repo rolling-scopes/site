@@ -4,7 +4,7 @@ import { ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { COURSE_ALIASES } from '@/shared/constants';
+import { COURSE_ALIASES, TO_BE_DETERMINED } from '@/shared/constants';
 import { TrainingProgram } from '@/widgets/training-program';
 import { COURSE_TITLES } from 'data';
 
@@ -13,6 +13,7 @@ const mockedCourseAngular: Course = {
   title: COURSE_TITLES.ANGULAR,
   alias: COURSE_ALIASES.ANGULAR,
   startDate: '16 Oct, 2023',
+  registrationEndDate: '16 Oct, 2024',
   iconSmall: MOCKED_IMAGE_PATH,
   iconSrc: MOCKED_IMAGE_PATH,
   secondaryIcon: MOCKED_IMAGE_PATH,
@@ -34,6 +35,7 @@ const mockedCourseAws: Course = {
   secondaryIcon: MOCKED_IMAGE_PATH,
   mode: 'online',
   startDate: '',
+  registrationEndDate: TO_BE_DETERMINED,
   title: COURSE_TITLES.AWS_CLOUD_DEVELOPER,
   alias: COURSE_ALIASES.AWS_CLOUD_DEVELOPER,
   detailsUrl: `/${ROUTES.COURSES}/${ROUTES.AWS_DEVELOPER}`,

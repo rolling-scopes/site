@@ -4,7 +4,7 @@ import { AboutCourse } from './about-course';
 import { Course } from '@/entities/course';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants.ts';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { COURSE_ALIASES } from '@/shared/constants';
+import { COURSE_ALIASES, TO_BE_DETERMINED } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/dayJS.ts';
 import { COURSE_TITLES } from 'data';
 
@@ -24,6 +24,7 @@ const mockedReactCourse: Course = {
   enroll: 'http://course-url.com',
   secondaryIcon: MOCKED_IMAGE_PATH,
   startDate: dayJS().subtract(2, 'month').format('D MMM, YYYY'),
+  registrationEndDate: TO_BE_DETERMINED,
 };
 
 const mockedAwsDevopsCourse = {
