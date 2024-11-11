@@ -1,73 +1,17 @@
 import classNames from 'classnames/bind';
-import { GenericItemProps, SchoolList } from '../school-list/school-list';
-import { ANCHORS, ROUTES } from '@/core/const';
-import type { Course } from '@/entities/course';
-import { MentorshipCourse, MentorshipDefaultRouteKeys, courses, mentorshipCourses } from 'data';
+import { SchoolList } from '../school-list/school-list';
+import { getMenuItems } from '@/widgets/school-menu/helpers/get-menu-item';
+import { MentorshipDefaultRouteKeys, courses, mentorshipCourses } from 'data';
 
 import styles from './school-menu.module.scss';
 
 const cx = classNames.bind(styles);
 
-const schoolMenuStaticLinks = [
-  {
-    title: 'About RS School',
-    detailsUrl: `/#${ANCHORS.ABOUT_SCHOOL}`,
-    description: 'Free online education',
-  },
-  {
-    title: 'Upcoming courses',
-    detailsUrl: `/#${ANCHORS.UPCOMING_COURSES}`,
-    description: 'Schedule your study',
-  },
-];
-
-const communityMenuStaticLinks = [
-  {
-    title: 'About',
-    detailsUrl: `/${ROUTES.COMMUNITY}/#${ANCHORS.ABOUT_COMMUNITY}`,
-    description: 'Who we are',
-  },
-  {
-    title: 'Events',
-    detailsUrl: `/${ROUTES.COMMUNITY}/#${ANCHORS.EVENTS}`,
-    description: 'Meet us at events',
-  },
-  {
-    title: 'Merch',
-    detailsUrl: `/${ROUTES.COMMUNITY}/#${ANCHORS.MERCH}`,
-    description: 'Sloths for your daily life',
-  },
-  {
-    title: 'Contribute',
-    detailsUrl: `/${ROUTES.COMMUNITY}/#${ANCHORS.CONTRIBUTE}`,
-    description: 'Assist us and improve yourself',
-  },
-];
-
-interface SchoolMenuProps {
+export type SchoolMenuProps = {
   heading: 'rs school' | 'all courses' | 'community' | MentorshipDefaultRouteKeys;
   hasTitle?: boolean;
   color?: 'dark' | 'light';
-}
-
-function getMenuItems(
-  heading: SchoolMenuProps['heading'],
-  courses: Course[],
-  mentorshipCourses: MentorshipCourse[],
-): GenericItemProps[] | Course[] | MentorshipCourse[] {
-  switch (heading) {
-    case 'all courses':
-      return courses;
-    case 'rs school':
-      return schoolMenuStaticLinks;
-    case 'community':
-      return communityMenuStaticLinks;
-    case 'mentorship':
-      return mentorshipCourses;
-    default:
-      return [];
-  }
-}
+};
 
 export const SchoolMenu = ({ heading, hasTitle = true, color = 'light' }: SchoolMenuProps) => {
   const menuItems = getMenuItems(heading, courses, mentorshipCourses);

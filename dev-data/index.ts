@@ -33,6 +33,7 @@ export { awsFundamentals } from './awsFundamentals.data';
 export { benefitMentorshipHome, benefitMentorshipMentors } from './benefit-mentorship.data';
 export { communicationText } from './widget-communication.data';
 export { communityGroups } from './community-media.data';
+export { communityMenuStaticLinks, schoolMenuStaticLinks } from './school-menu-links';
 export { contentMap } from './training-program.data';
 export { contentMapAbout, introLocalizedContent } from './about-course.data';
 export { contributeOptions } from './contribute-options.data';
