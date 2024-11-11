@@ -1,11 +1,10 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 import Link from 'next/link';
-import { GenericItemProps } from '../school-list/school-list';
 import { COURSE_STALE_AFTER_DAYS } from '@/core/const';
 import type { Course } from '@/entities/course';
 import { getCourseDate } from '@/shared/helpers/getCourseDate';
-import { Color } from '@/widgets/school-menu/types.ts';
+import { Color, StaticLink } from '@/widgets/school-menu/types';
 import { MentorshipCourse } from 'data';
 
 import styles from './school-item.module.scss';
@@ -13,7 +12,7 @@ import styles from './school-item.module.scss';
 const cx = classNames.bind(styles);
 
 interface SchoolItemProps {
-  item: MentorshipCourse | Course | GenericItemProps;
+  item: MentorshipCourse | Course | StaticLink;
   color: Color;
 }
 
