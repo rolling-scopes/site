@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import { SchoolItem } from '../school-item/school-item';
 import type { Course } from '@/entities/course';
+import { Color } from '@/widgets/school-menu/types.ts';
 import { MentorshipCourse } from 'data';
 
 import styles from './school-list.module.scss';
@@ -15,7 +16,7 @@ export interface GenericItemProps {
 
 interface SchoolListProps {
   list: MentorshipCourse[] | Course[] | GenericItemProps[];
-  color: 'dark' | 'light';
+  color: Color;
 }
 
 export const SchoolList = ({ list, color }: SchoolListProps) => {

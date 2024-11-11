@@ -5,6 +5,7 @@ import { GenericItemProps } from '../school-list/school-list';
 import { COURSE_STALE_AFTER_DAYS } from '@/core/const';
 import type { Course } from '@/entities/course';
 import { getCourseDate } from '@/shared/helpers/getCourseDate';
+import { Color } from '@/widgets/school-menu/types.ts';
 import { MentorshipCourse } from 'data';
 
 import styles from './school-item.module.scss';
@@ -13,7 +14,7 @@ const cx = classNames.bind(styles);
 
 interface SchoolItemProps {
   item: MentorshipCourse | Course | GenericItemProps;
-  color: 'dark' | 'light';
+  color: Color;
 }
 
 export const SchoolItem = ({ item, color }: SchoolItemProps) => {
