@@ -80,7 +80,7 @@ describe('TrainingProgram', () => {
     it('renders correct image with alt text', () => {
       const image = screen.getByRole('img', { name: COURSE_TITLES.ANGULAR });
 
-      expect(image).toHaveAttribute('alt', expect.stringContaining(COURSE_TITLES.ANGULAR));
+      expect(image).toHaveAttribute('alt', expect.stringContaining('Angular'));
     });
   });
 
