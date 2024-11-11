@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import { GenericItemProps, SchoolList } from '../school-list/school-list';
-import { ANCHORS } from '@/core/const';
+import { ANCHORS, ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
 import { MentorshipCourse, MentorshipDefaultRouteKeys, courses, mentorshipCourses } from 'data';
 
@@ -16,7 +16,7 @@ const schoolMenuStaticLinks = [
   },
   {
     title: 'Upcoming courses',
-    detailsUrl: '/#upcoming-courses',
+    detailsUrl: `/#${ANCHORS.UPCOMING_COURSES}`,
     description: 'Schedule your study',
   },
 ];
@@ -24,22 +24,22 @@ const schoolMenuStaticLinks = [
 const communityMenuStaticLinks = [
   {
     title: 'About',
-    detailsUrl: `/community/#${ANCHORS.ABOUT_COMMUNITY}`,
+    detailsUrl: `/${ROUTES.COMMUNITY}/#${ANCHORS.ABOUT_COMMUNITY}`,
     description: 'Who we are',
   },
   {
     title: 'Events',
-    detailsUrl: '/community/#events',
+    detailsUrl: `/${ROUTES.COMMUNITY}/#${ANCHORS.EVENTS}`,
     description: 'Meet us at events',
   },
   {
     title: 'Merch',
-    detailsUrl: '/community/#merch',
+    detailsUrl: `/${ROUTES.COMMUNITY}/#${ANCHORS.MERCH}`,
     description: 'Sloths for your daily life',
   },
   {
     title: 'Contribute',
-    detailsUrl: '/community/#contribute',
+    detailsUrl: `/${ROUTES.COMMUNITY}/#${ANCHORS.CONTRIBUTE}`,
     description: 'Assist us and improve yourself',
   },
 ];
