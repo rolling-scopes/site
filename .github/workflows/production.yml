@@ -6,38 +6,13 @@ on:
       - main
 
 env:
-  NODE_VERSION: '20.x' # set this to the node version to use
+  NODE_VERSION: '22.x' # set this to the node version to use
   AWS_S3_BUCKET: 'sites-frontend'
   AWS_ACCESS_KEY_ID: ${{ secrets.DEPLOY_AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_AWS_SECRET_ACCESS_KEY }}
   AWS_REGION: 'eu-central-1'
 
 jobs:
-  rolling-scopes:
-    name: Build and Deploy (rollingscopes.com)
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: build
-        env:
-          HOST: 'https://rollingscopes.com'
-        run: |
-          npm install
-          npm run build
-
-      - uses: jakejarvis/s3-sync-action@master
-        with:
-          args: --cache-control max-age=300
-        env:
-          SOURCE_DIR: 'build'
-          DEST_DIR: rolling-scopes-com
-
   rs-school:
     name: Build and Deploy (rs.school)
     runs-on: ubuntu-latest
@@ -49,16 +24,28 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: build
-        env:
-          HOST: 'https://rs.school'
-        run: |
-          npm install
-          npm run build
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+      
+      - name: Build
+        run: npm run build
 
-      - uses: jakejarvis/s3-sync-action@master
+      # Copy the static files to the S3 bucket from _next folder (js, css, images)
+      # Set the cache-control header to 30 days
+      - name: Copy Static Assets to S3
+        uses: jakejarvis/s3-sync-action@master
         with:
-          args: --cache-control max-age=300
+          args: --cache-control max-age=31536000 --exclude '*' --include '_next/*'
+        env:
+          SOURCE_DIR: 'build'
+          DEST_DIR: rs-school
+
+      # Copy the rest of the files to the S3 bucket
+      # Set the cache-control header to 5 minutes (mostly pages)
+      - name: Copy Pages to S3
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --cache-control max-age=300 --exclude '_next/*'
         env:
           SOURCE_DIR: 'build'
           DEST_DIR: rs-school

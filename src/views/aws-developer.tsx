@@ -4,8 +4,8 @@ import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
 import { HeroCourse } from '@/widgets/hero-course';
+import { MemberActivity } from '@/widgets/member-activity';
 import { Required } from '@/widgets/required';
-import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
 import { CourseNames, awsDev } from 'data';
@@ -25,7 +25,7 @@ export const AwsDeveloper = ({ course, courseName }: AwsDeveloperProps) => {
       <Certification courseName={courseName} />
       <Communication courseName={courseName} />
       <Required courseName={courseName} marked1 />
-      <StudyPath path="awsDev" />
+      <MemberActivity path="awsDev" />
       <Trainers trainers={awsDev} />
     </>
   );

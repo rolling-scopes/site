@@ -4,9 +4,10 @@ import { GenericItemProps } from '../school-list/school-list';
 import { COURSE_STALE_AFTER_DAYS } from '@/core/const';
 import type { Course } from '@/entities/course';
 import { getCourseDate } from '@/shared/helpers/getCourseDate';
+import { MentorshipCourse } from 'data';
 
 interface SchoolItemProps {
-  item: Course | GenericItemProps;
+  item: MentorshipCourse | Course | GenericItemProps;
   color: 'dark' | 'light';
 }
 

@@ -1,4 +1,4 @@
-import { ANCHORS } from '@/core/const';
+import { ROUTES } from '@/core/const';
 import awardIcon from '@/shared/assets/icons/award-icon.webp';
 import giftIcon from '@/shared/assets/icons/gift.webp';
 import noteIcon from '@/shared/assets/icons/note-icon.webp';
@@ -40,7 +40,7 @@ const listData = {
         id: 1,
         text: 'The Mentors and trainers of our school are front-end and javascript developers from different companies/countries. ',
         title: 'How to become a mentor?',
-        link: `/#${ANCHORS.MENTORS_WANTED}`,
+        link: `/${ROUTES.MENTORSHIP}/${ROUTES.JS}`,
       },
     ],
   ],
@@ -50,7 +50,7 @@ const listData = {
         id: 1,
         text: 'Наставники и тренеры нашей школы - это фронтенд и разработчики JavaScript из разных компаний и стран. ',
         title: 'Как стать наставником?',
-        link: `/#${ANCHORS.MENTORS_WANTED}`,
+        link: `/${ROUTES.MENTORSHIP}/${ROUTES.JS_RU}`,
       },
     ],
   ],

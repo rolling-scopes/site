@@ -1,0 +1,40 @@
+.mentors-register-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.picture-wrapper {
+  display: flex;
+
+  @include media-tablet {
+    display: none;
+  }
+}
+
+.picture {
+  position: relative;
+  width: 140px;
+  height: 140px;
+
+  &:nth-child(3) {
+    left: -140px;
+
+    @include media-tablet-large {
+      left: -100px;
+    }
+  }
+
+  &:nth-child(2) {
+    left: -70px;
+
+    @include media-tablet-large {
+      left: -50px;
+    }
+  }
+
+  @include media-tablet-large {
+    width: 100px;
+    height: 100px;
+  }
+}

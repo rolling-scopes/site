@@ -10,40 +10,13 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  NODE_VERSION: '20.x' # set this to the node version to use
+  NODE_VERSION: '22.x' # set this to the node version to use
   AWS_S3_BUCKET: 'sites-frontend'
   AWS_ACCESS_KEY_ID: ${{ secrets.DEPLOY_AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_AWS_SECRET_ACCESS_KEY }}
   AWS_REGION: 'eu-central-1'
 
 jobs:
-  build-rolling-scopes:
-    name: Build rollingscopes.com
-    if: ${{ github.event.label.name == 'preview' || contains(github.event.pull_request.labels.*.name, 'preview') }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: Build
-        env:
-          HOST: 'https://pr${{ github.event.pull_request.number }}.rollingscopes.com'
-          RS_SCHOOL_HOST: 'https://pr${{ github.event.pull_request.number }}.rs.school'
-        run: |
-          npm ci
-          npm run build
-
-      - uses: jakejarvis/s3-sync-action@master
-        with:
-          args: --cache-control max-age=300
-        env:
-          SOURCE_DIR: 'build'
-          DEST_DIR: rolling-scopes-com-preview/pr${{ github.event.pull_request.number }}
-
   build-rs-school:
     name: Build rs.school
     if: ${{ github.event.label.name == 'preview' || contains(github.event.pull_request.labels.*.name, 'preview') }}
@@ -58,8 +31,6 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
 
       - name: Build
-        env:
-          HOST: 'https://rs.school'
         run: |
           npm ci
           npm run build
@@ -75,7 +46,7 @@ jobs:
   create-preview:
     name: Create Preview
     runs-on: ubuntu-latest
-    needs: [build-rs-school, build-rolling-scopes]
+    needs: [build-rs-school]
     steps:
       - name: Trigger Preview Deployment
         uses: peter-evans/repository-dispatch@v3

@@ -1,16 +1,23 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
-import { ANCHORS, LINKS } from '@/core/const';
+import { ANCHORS, ROUTES } from '@/core/const';
 import mentorImg from '@/shared/assets/mentors-wanted.webp';
+import { Language } from '@/shared/types.ts';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { MentorshipRoute, mentorsWantedData } from 'data';
 
 import styles from './mentors-wanted.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const MentorsWanted = () => {
+type MentorsWantedProps = {
+  route?: MentorshipRoute;
+  lang?: Language;
+};
+
+export const MentorsWanted = ({ route = `/${ROUTES.MENTORSHIP}`, lang = 'en' }: MentorsWantedProps) => {
   return (
     <section
       className={cx('mentors-container', 'container')}
@@ -23,13 +30,13 @@ export const MentorsWanted = () => {
             Mentors wanted!
           </WidgetTitle>
           <Paragraph fontSize="large">
-            The Rolling Scopes School is constantly looking for mentors from all over the world to
-            teach everyone who wants to learn the JavaScript language and the world of Front-end.
-            Over the past few years, over 1500+ people have successfully completed our six month
-            training program.
+            {mentorsWantedData[lang].info}
           </Paragraph>
-          <LinkCustom href={LINKS.BECOME_MENTOR} variant="primary" external>
-            Become a mentor
+          <LinkCustom
+            href={route}
+            variant="primary"
+          >
+            {mentorsWantedData[lang].button}
           </LinkCustom>
         </article>
         <Image

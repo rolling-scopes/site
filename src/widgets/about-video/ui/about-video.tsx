@@ -11,7 +11,7 @@ type AboutVideoProps = { lang?: 'en' | 'ru' };
 
 export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
   // Needed to prevent flakiness in screenshot tests
-  const isRunningInDev = process.env.NEXT_PUBLIC_DEV === 'true';
+  const isRunningInDev = process.env.NODE_ENV === 'development';
 
   return (
     <section className={cx('container')} data-testid="about-video">
