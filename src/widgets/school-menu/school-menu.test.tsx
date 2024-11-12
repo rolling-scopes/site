@@ -7,6 +7,7 @@ import { renderWithRouter } from '@/shared/__tests__/utils';
 
 const { mockedCourse } = await vi.hoisted(async () => {
   const { MOCKED_IMAGE_PATH } = await import('@/shared/__tests__/constants');
+  const { dayJS } = await import('@/shared/helpers/dayJS.ts');
 
   const mockedCourse: Course[] = [
     {
@@ -31,7 +32,7 @@ const { mockedCourse } = await vi.hoisted(async () => {
       iconSrc: MOCKED_IMAGE_PATH,
       iconSmall: MOCKED_IMAGE_PATH,
       secondaryIcon: MOCKED_IMAGE_PATH,
-      startDate: 'Sept 18, 2060',
+      startDate: dayJS().add(1).toISOString(),
       language: ['ru'],
       mode: 'online',
       detailsUrl: 'https://rs.school/react/',
@@ -106,7 +107,7 @@ describe('SchoolMenu', () => {
   it('renders correct link description when date is passed', () => {
     const { container } = renderWithRouter(<SchoolMenu heading="all courses" />);
 
-    const descriptions = container.getElementsByTagName('small');
+    const descriptions = container.getElementsByClassName('description');
 
     expect(descriptions).toHaveLength(2);
     expect(descriptions[0]).toHaveTextContent(/tbd/i);

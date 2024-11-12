@@ -4,6 +4,7 @@ import { GenericItemProps } from '../school-list/school-list';
 import { COURSE_STALE_AFTER_DAYS } from '@/core/const';
 import type { Course } from '@/entities/course';
 import { getCourseDate } from '@/shared/helpers/getCourseDate';
+import { DateStart } from '@/shared/ui/date-start';
 import { MentorshipCourse } from 'data';
 
 interface SchoolItemProps {
@@ -18,7 +19,13 @@ export const SchoolItem = ({ item, color }: SchoolItemProps) => {
   const descriptionContent = (
     <>
       <span className={color}>{item.title}</span>
-      <small>{descriptionText}</small>
+      {courseDate
+        ? (
+            <DateStart className="description" date={courseDate}></DateStart>
+          )
+        : (
+            <small className="description">{descriptionText}</small>
+          )}
     </>
   );
 

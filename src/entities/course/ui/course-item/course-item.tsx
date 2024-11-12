@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
-import dayjs from 'dayjs';
 import Image from 'next/image';
 import { CourseItemData } from '@/entities/course';
+import { DateStart } from '@/shared/ui/date-start';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Subtitle } from '@/shared/ui/subtitle';
 
@@ -10,8 +10,6 @@ import styles from './course-item.module.scss';
 const cx = classNames.bind(styles);
 
 export const CourseItem = ({ title, language, startDate, detailsUrl, iconSrc }: CourseItemData) => {
-  const dateTime = dayjs(startDate).toISOString();
-
   return (
     <section className={cx('course-item')}>
       <figure className={cx('icon-container')}>
@@ -28,9 +26,7 @@ export const CourseItem = ({ title, language, startDate, detailsUrl, iconSrc }: 
           {title}
         </Subtitle>
         <p className={cx('date')}>
-          <time dateTime={dateTime} data-testid="course-date">
-            {startDate}
-          </time>
+          <DateStart date={startDate} data-testid="course-date" />
           <span data-testid="course-language">{` • ${language[0].toUpperCase()}`}</span>
         </p>
       </article>

@@ -1,8 +1,7 @@
 import classNames from 'classnames/bind';
 import { COURSE_STALE_AFTER_DAYS } from '@/core/const';
 import { type Course, CourseCard } from '@/entities/course';
-import { getActualData } from '@/shared/helpers/getActualData';
-import { isCourse } from '@/shared/helpers/is-course';
+import { getActualData } from '@/shared/helpers/getActualData.ts';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './courses.module.scss';
@@ -18,7 +17,7 @@ export const Courses = ({ courses }: CoursesProps) => {
   }
 
   const sortParams = {
-    data: courses.filter(isCourse),
+    data: courses,
     staleAfter: COURSE_STALE_AFTER_DAYS,
     filterStale: false,
   };

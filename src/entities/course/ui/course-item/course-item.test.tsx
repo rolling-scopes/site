@@ -3,11 +3,12 @@ import dayjs from 'dayjs';
 import { CourseItem, CourseItemData } from '@/entities/course';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants.ts';
 import { renderWithRouter } from '@/shared/__tests__/utils';
+import { dayJS } from '@/shared/helpers/dayJS';
 
 const mockedProps: CourseItemData = {
   title: 'Introduction to React',
   language: ['en'],
-  startDate: '2024-05-01',
+  startDate: dayJS().add(1).toISOString(),
   detailsUrl: '/courses/react-intro',
   iconSrc: MOCKED_IMAGE_PATH,
 };
