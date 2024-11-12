@@ -1,2 +1,2 @@
-export type { PrincipleCard } from './types.ts';
+export type { PrincipleCard } from './types';
 export { Principles } from './ui/principles/principles';
