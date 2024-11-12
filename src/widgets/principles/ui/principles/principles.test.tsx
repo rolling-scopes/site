@@ -3,6 +3,8 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { Principles } from '@/widgets/principles';
 import { principleCards } from 'data';
 
+const principleItemsNum = 3;
+
 describe('Principles', () => {
   beforeEach(() => {
     render(<Principles />);
@@ -29,6 +31,6 @@ describe('Principles', () => {
   it('renders the correct number of PrincipleCards', () => {
     const principleCards = screen.getAllByTestId('principle-card');
 
-    expect(principleCards).toHaveLength(principleCards.length);
+    expect(principleCards).toHaveLength(principleItemsNum);
   });
 });
