@@ -55,6 +55,7 @@ export { mentorshipCourses, mentorshipCoursesDefault } from './mentorship.data';
 export { nodejs } from './nodejs.data';
 export { picturesSocialMediaLinks } from './pictures.data';
 export { preSchoolEn, preSchoolRu } from './preSchool.data';
+export { principleCards } from './principle-cards.data';
 export { reactEn } from './react-en.data';
 export { reactRu } from './react-ru.data';
 export { requirementsData } from './requirements.data';
