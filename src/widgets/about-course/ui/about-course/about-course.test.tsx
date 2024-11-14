@@ -2,10 +2,10 @@ import { screen } from '@testing-library/react';
 import { beforeEach } from 'vitest';
 import { AboutCourse } from './about-course';
 import { Course } from '@/entities/course';
-import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants.ts';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { COURSE_ALIASES, TO_BE_DETERMINED } from '@/shared/constants';
-import { dayJS } from '@/shared/helpers/dayJS.ts';
+import { dayJS } from '@/shared/helpers/dayJS';
 import { COURSE_TITLES } from 'data';
 
 const mockedReactCourse: Course = {

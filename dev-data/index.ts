@@ -13,7 +13,7 @@ export type { CourseTitle,
   MentorshipDefaultRouteKeys,
   MentorshipRoute } from './mentorship-data.types';
 export { type Benefit } from './benefit-mentorship.data';
-export { COURSE_TITLES, type CourseNames, type CourseNamesKeys, type CoursesWithRequirementsNames, DISCORD_LINKS, type TrainingProgramType } from './courseTitles.data.ts';
+export { COURSE_TITLES, type CourseNames, type CourseNamesKeys, type CoursesWithRequirementsNames, DISCORD_LINKS, type TrainingProgramType } from './courseTitles.data';
 export {
   type CourseNamesChannels,
   JS_EN_TELEGRAM_CHAT_LINK,

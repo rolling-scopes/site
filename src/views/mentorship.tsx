@@ -1,4 +1,4 @@
-import { PAGE_NAMES } from '@/shared/constants.ts';
+import { PAGE_NAMES } from '@/shared/constants';
 import { AboutMentors } from '@/widgets/about-mentors';
 import { Benefits } from '@/widgets/benefits';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';

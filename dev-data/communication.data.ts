@@ -1,4 +1,4 @@
-import { DISCORD_LINKS } from './courseTitles.data.ts';
+import { DISCORD_LINKS } from './courseTitles.data';
 
 export const RS_DOCS_COMMUNICATION_LINK = 'https://docs.rs.school/#/rs-school-chats';
 export const RS_DOCS_EN_LINK = 'https://docs.rs.school/#/en/';

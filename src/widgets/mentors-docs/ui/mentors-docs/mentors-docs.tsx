@@ -3,10 +3,10 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 import { DocDetail } from '../doc-detail';
 import mentorImg from '@/shared/assets/mentor-with-his-students.webp';
-import { Language } from '@/shared/types.ts';
+import { Language } from '@/shared/types';
 import { SocialMediaProps } from '@/shared/ui/social-media-item';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { OnboardLinks } from '@/widgets/mentors-docs/ui/onboard-links/onboard-links.tsx';
+import { OnboardLinks } from '@/widgets/mentors-docs/ui/onboard-links/onboard-links';
 import { CourseTitle, mentorDocsData } from 'data';
 
 import styles from './mentors-docs.module.scss';
@@ -21,16 +21,19 @@ type MentorsDocsProps = {
   lang?: Language;
 };
 
-export const MentorsDocs = ({ mentorDocsLink, courseDocsLink, courseTitle, onboardLinks, lang = 'en' }: MentorsDocsProps) => {
+export const MentorsDocs = ({
+  mentorDocsLink,
+  courseDocsLink,
+  courseTitle,
+  onboardLinks,
+  lang = 'en',
+}: MentorsDocsProps) => {
   return (
     <section className={cx('container')}>
       <article className={cx('content', 'docs-wrapper')}>
         <div className={cx('docs')} aria-label="Documentation links">
-          <WidgetTitle mods="asterisk">
-            {mentorDocsData[lang].header}
-          </WidgetTitle>
-          {courseTitle
-          && (
+          <WidgetTitle mods="asterisk">{mentorDocsData[lang].header}</WidgetTitle>
+          {courseTitle && (
             <Fragment>
               <DocDetail
                 textBeforeLink={mentorDocsData[lang].mentor.textBeforeLink}
@@ -46,11 +49,17 @@ export const MentorsDocs = ({ mentorDocsLink, courseDocsLink, courseTitle, onboa
               />
             </Fragment>
           )}
-          {onboardLinks
-          && <OnboardLinks text={mentorDocsData[lang].additional} links={onboardLinks} />}
+          {onboardLinks && (
+            <OnboardLinks text={mentorDocsData[lang].additional} links={onboardLinks} />
+          )}
         </div>
         <div className={cx('picture-wrapper')}>
-          <Image src={mentorImg} alt={mentorDocsData[lang].pictureAlt} className={cx('picture')} loading="lazy" />
+          <Image
+            src={mentorImg}
+            alt={mentorDocsData[lang].pictureAlt}
+            className={cx('picture')}
+            loading="lazy"
+          />
         </div>
       </article>
     </section>

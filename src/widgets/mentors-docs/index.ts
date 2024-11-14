@@ -1,1 +1,1 @@
-export { MentorsDocs } from './ui/mentors-docs/mentors-docs.tsx';
+export { MentorsDocs } from './ui/mentors-docs/mentors-docs';
