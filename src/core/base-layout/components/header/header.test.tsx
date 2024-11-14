@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import { beforeEach } from 'vitest';
 import { DropdownWrapper } from './dropdown/dropdown-wrapper';
 import { Header } from './header';
+import { mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 import stylesDropdown from './dropdown/dropdown-wrapper.module.scss';
@@ -17,7 +18,7 @@ const cxNavItem = classNames.bind(stylesNavItem);
 describe('Header', () => {
   describe('Desktop view', () => {
     beforeEach(() => {
-      renderWithRouter(<Header />);
+      renderWithRouter(<Header courses={mockedCourses} />);
     });
 
     it('renders without crashing', () => {
@@ -47,7 +48,7 @@ describe('Header', () => {
 
   describe('Mobile view', () => {
     beforeEach(async () => {
-      await act(async () => renderWithRouter(<Header />));
+      await act(async () => renderWithRouter(<Header courses={mockedCourses} />));
     });
 
     it('renders RsLogo in mobile view', async () => {

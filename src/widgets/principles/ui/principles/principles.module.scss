@@ -1,17 +1,5 @@
 .principles {
-  &.content {
-    padding: 20px 120px 40px;
-
-    @include media-laptop {
-      padding: 20px 40px 40px;
-    }
-
-    @include media-tablet {
-      padding: 20px 16px 40px;
-    }
-  }
-
-  & .cards {
+  .cards {
     gap: 32px;
     align-items: stretch;
     margin-top: 24px;
