@@ -1,10 +1,10 @@
 import { screen } from '@testing-library/react';
 import { vi } from 'vitest';
-import { MemberActivity } from './ui/member-activity.tsx';
+import { MemberActivity } from './member-activity.tsx';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 const mockedDataProviders = await vi.hoisted(async () => {
-  const { MOCKED_IMAGE_PATH } = await import('@/shared/__tests__/constants');
+  const { MOCKED_IMAGE_PATH } = await import('@/shared/__tests__/constants.ts');
 
   const mockedData = [
     {

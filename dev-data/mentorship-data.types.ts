@@ -3,7 +3,7 @@ import { COURSE_TITLES } from './courseTitles.data';
 import { ROUTES } from '@/core/const';
 import { Language } from '@/shared/types';
 import { SocialMediaProps } from '@/shared/ui/social-media-item';
-import { Stage } from '@/widgets/member-activity/ui/stage-card';
+import { Stage } from '@/widgets/member-activity/ui/stage-card/stage-card.types';
 
 export type MentorActivities = Pick<Stage, 'id' | 'title' | 'description' | 'links'>;
 

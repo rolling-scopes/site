@@ -1,1 +1,1 @@
-export { MemberActivity } from './ui/member-activity';
+export { MemberActivity } from './ui/member-activity/member-activity.tsx';

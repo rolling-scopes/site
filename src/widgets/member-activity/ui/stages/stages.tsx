@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import type { ListType } from '@/shared/types';
-import { Stage, StageCard } from '@/widgets/member-activity/ui/stage-card';
+import { StageCard } from '@/widgets/member-activity/ui/stage-card/stage-card';
+import { Stage } from '@/widgets/member-activity/ui/stage-card/stage-card.types';
 
 import styles from './stages.module.scss';
 

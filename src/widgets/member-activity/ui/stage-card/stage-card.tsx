@@ -1,10 +1,10 @@
 import classNames from 'classnames/bind';
-import { Image } from './image';
-import { Links } from './links';
-import { LogoIcon } from './logo-icon';
 import type { StageCardProps } from './stage-card.types';
-import { Step } from './step';
-import { Topics } from './topics';
+import { Image } from '../image';
+import { Links } from '../links';
+import { LogoIcon } from '../logo-icon';
+import { Step } from '../step';
+import { Topics } from '../topics';
 import { List } from '@/shared/ui/list';
 
 import styles from './stage-card.module.scss';

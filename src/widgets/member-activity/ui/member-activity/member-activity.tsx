@@ -2,10 +2,10 @@
 
 import { createContext } from 'react';
 import classNames from 'classnames/bind';
-import { Stages } from './stages';
+import { Stages } from '../stages';
 import { ROUTES } from '@/core/const';
 import { dataProviders } from '@/core/services/api';
-import type { Language, ListType } from '@/shared/types';
+import type { Language, ListType } from '@/shared/types.ts';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { type DataMap, MentorActivities, MentorshipDefaultRouteKeys } from 'data';
@@ -16,12 +16,12 @@ const cx = classNames.bind(styles);
 
 type PathNames = Exclude<keyof DataMap, 'courses'> | MentorshipDefaultRouteKeys;
 
-interface StudyPathProps {
+type StudyPathProps = {
   path: PathNames;
   activities?: MentorActivities[];
   type?: ListType;
-  lang?: 'ru' | 'en';
-}
+  lang?: Language;
+};
 
 const localizedContent = {
   en: {
