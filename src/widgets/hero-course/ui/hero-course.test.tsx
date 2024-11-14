@@ -4,16 +4,19 @@ import { ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
+import { COURSE_ALIASES, TO_BE_DETERMINED } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/dayJS';
 import { COURSE_TITLES } from 'data';
 
 const mockedCourse: Course = {
   id: '6',
   title: COURSE_TITLES.NODE,
+  alias: COURSE_ALIASES.NODE,
   iconSrc: MOCKED_IMAGE_PATH,
   iconSmall: MOCKED_IMAGE_PATH,
   secondaryIcon: MOCKED_IMAGE_PATH,
   startDate: dayJS().subtract(2, 'month').format('D MMM, YYYY'),
+  registrationEndDate: TO_BE_DETERMINED,
   language: ['en'],
   mode: 'online',
   detailsUrl: `/${ROUTES.COURSES}/${ROUTES.NODE_JS}`,

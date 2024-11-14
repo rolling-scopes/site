@@ -4,7 +4,9 @@ import { AboutCourse } from './about-course';
 import { Course } from '@/entities/course';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants.ts';
 import { renderWithRouter } from '@/shared/__tests__/utils';
+import { COURSE_ALIASES, TO_BE_DETERMINED } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/dayJS.ts';
+import { COURSE_TITLES } from 'data';
 
 const mockedReactCourse: Course = {
   id: '1',
@@ -15,22 +17,24 @@ const mockedReactCourse: Course = {
   detailsUrl: '',
   iconSmall: MOCKED_IMAGE_PATH,
   iconSrc: MOCKED_IMAGE_PATH,
-  title: 'React.js',
+  title: COURSE_TITLES.REACT,
+  alias: COURSE_ALIASES.REACT,
   language: ['en'],
   mode: 'online',
   enroll: 'http://course-url.com',
   secondaryIcon: MOCKED_IMAGE_PATH,
   startDate: dayJS().subtract(2, 'month').format('D MMM, YYYY'),
+  registrationEndDate: TO_BE_DETERMINED,
 };
 
 const mockedAwsDevopsCourse = {
   ...mockedReactCourse,
-  title: 'Aws Devops',
+  title: COURSE_TITLES.AWS_DEVOPS,
 };
 
 const mockedPreSchoolCourse = {
   ...mockedReactCourse,
-  title: 'Pre School',
+  title: COURSE_TITLES.JS_PRESCHOOL_RU,
 };
 
 describe('AboutCourse component', () => {

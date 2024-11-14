@@ -4,7 +4,8 @@ import { loadEnvConfig } from '@next/env';
 import * as matchers from '@testing-library/jest-dom/matchers';
 import { cleanup } from '@testing-library/react';
 import { StaticImageData } from 'next/image';
-import { afterEach, expect } from 'vitest';
+import { afterEach, expect, vi } from 'vitest';
+import { mockedCourses } from '@/shared/__tests__/constants';
 
 expect.extend(matchers);
 
@@ -15,6 +16,8 @@ loadEnvConfig(projectDir);
 afterEach(() => {
   cleanup();
 });
+
+vi.mock('@/entities/course/api/course-api', () => ({ getCourses: vi.fn().mockImplementation(() => mockedCourses) }));
 
 vi.mock('next/image', () => ({
   default: (props: {
