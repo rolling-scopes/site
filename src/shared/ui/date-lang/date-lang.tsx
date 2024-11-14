@@ -10,18 +10,25 @@ const cx = classNames.bind(styles);
 
 interface DateLangProps {
   startDate: string;
+  registrationEndDate: string;
   mode: string;
   language: string[];
   withMargin?: boolean;
 }
 
-export const DateLang = ({ startDate, language, mode, withMargin }: DateLangProps) => {
+export const DateLang = ({
+  startDate,
+  registrationEndDate,
+  language,
+  mode,
+  withMargin,
+}: DateLangProps) => {
   return (
     <section className={cx('info', { margin: withMargin })}>
       <p className={cx('date')}>
         <Image className={cx('icon')} src={noteIcon} alt="note-icon" />
         <span>Start:</span>
-        <DateStart date={startDate} />
+        <DateStart courseStartDate={startDate} registrationEndDate={registrationEndDate} />
       </p>
       <p className={cx('additional-info')}>
         <Image className={cx('icon')} src={micIcon} alt="microphone-icon" />

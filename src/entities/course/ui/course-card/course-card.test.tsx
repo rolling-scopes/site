@@ -10,7 +10,8 @@ describe('CourseCard', () => {
   const mockProps: CourseCardProps = {
     title: COURSE_TITLES.REACT,
     iconSrc: MOCKED_IMAGE_PATH,
-    startDate: dayJS().add(1).toISOString(),
+    startDate: dayJS().toISOString(),
+    registrationEndDate: dayJS().add(1, 'd').toISOString(),
     mode: 'online',
     language: ['en'],
     detailsUrl: 'http://example.com/course',

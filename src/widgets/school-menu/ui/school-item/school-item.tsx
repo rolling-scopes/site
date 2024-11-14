@@ -1,9 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { GenericItemProps } from '../school-list/school-list';
-import { COURSE_STALE_AFTER_DAYS } from '@/core/const';
 import type { Course } from '@/entities/course';
-import { getCourseDate } from '@/shared/helpers/getCourseDate';
 import { DateStart } from '@/shared/ui/date-start';
 import { MentorshipCourse } from 'data';
 
@@ -13,15 +11,21 @@ interface SchoolItemProps {
 }
 
 export const SchoolItem = ({ item, color }: SchoolItemProps) => {
-  const courseDate = 'startDate' in item && getCourseDate(item.startDate, COURSE_STALE_AFTER_DAYS);
+  const courseDate = 'startDate' in item && item.startDate;
+  const registrationEndDate = 'registrationEndDate' in item && item.registrationEndDate;
   const descriptionText = 'description' in item ? item.description : courseDate;
 
   const descriptionContent = (
     <>
       <span className={color}>{item.title}</span>
-      {courseDate
+      {courseDate && registrationEndDate
         ? (
-            <DateStart className="description" date={courseDate}></DateStart>
+            <DateStart
+              className="description"
+              courseStartDate={courseDate}
+              registrationEndDate={registrationEndDate}
+            >
+            </DateStart>
           )
         : (
             <small className="description">{descriptionText}</small>

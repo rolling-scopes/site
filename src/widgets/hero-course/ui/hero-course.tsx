@@ -21,7 +21,8 @@ type HeroCourseProps = {
 };
 
 export const HeroCourse = ({ lang = 'en', type, course }: HeroCourseProps) => {
-  const { title, altTitle, language, mode, enroll, secondaryIcon, startDate } = course;
+  const { title, altTitle, language, mode, enroll, secondaryIcon, startDate, registrationEndDate } =
+    course;
   const status = getCourseStatus(startDate);
   const date = getCourseDate(startDate, COURSE_STALE_AFTER_DAYS);
 
@@ -33,7 +34,13 @@ export const HeroCourse = ({ lang = 'en', type, course }: HeroCourseProps) => {
           <SectionLabel data-testid="course-label">{status}</SectionLabel>
           <MainTitle size="small">{`${altTitle || title} Course`}</MainTitle>
           {type && <p className={cx('hero-subtitle')}>{type}</p>}
-          <DateLang startDate={date} language={language} mode={mode} withMargin />
+          <DateLang
+            startDate={date}
+            registrationEndDate={registrationEndDate}
+            language={language}
+            mode={mode}
+            withMargin
+          />
           <LinkCustom href={enroll} variant="secondary" external>
             {heroCourseLocalized[lang].linkLabel}
           </LinkCustom>

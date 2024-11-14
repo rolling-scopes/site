@@ -9,7 +9,14 @@ import styles from './course-item.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const CourseItem = ({ title, language, startDate, detailsUrl, iconSrc }: CourseItemData) => {
+export const CourseItem = ({
+  title,
+  language,
+  startDate,
+  registrationEndDate,
+  detailsUrl,
+  iconSrc,
+}: CourseItemData) => {
   return (
     <section className={cx('course-item')}>
       <figure className={cx('icon-container')}>
@@ -26,7 +33,11 @@ export const CourseItem = ({ title, language, startDate, detailsUrl, iconSrc }: 
           {title}
         </Subtitle>
         <p className={cx('date')}>
-          <DateStart date={startDate} data-testid="course-date" />
+          <DateStart
+            courseStartDate={startDate}
+            registrationEndDate={registrationEndDate}
+            data-testid="course-date"
+          />
           <span data-testid="course-language">{` • ${language[0].toUpperCase()}`}</span>
         </p>
       </article>

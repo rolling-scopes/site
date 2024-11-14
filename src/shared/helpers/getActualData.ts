@@ -9,14 +9,18 @@ type DataType = Course[] | Event[];
 
 type GetActualDataParams<T extends DataType> = {
   data: T;
-  staleAfter: number;
+  staleAfter?: number;
   filterStale?: boolean;
 };
 
 type GetActualDataType = <T extends DataType>(params: GetActualDataParams<T>) => T;
 
 export const getActualData: GetActualDataType = ({ data, staleAfter, filterStale = true }) => {
-  let dataWithTBD = mapStaleAsTBD(data, staleAfter);
+  let dataWithTBD = data;
+
+  if (staleAfter) {
+    dataWithTBD = mapStaleAsTBD(data, staleAfter);
+  }
 
   if (filterStale) {
     dataWithTBD = filterStaleData(dataWithTBD);
