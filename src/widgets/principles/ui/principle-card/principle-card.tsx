@@ -1,23 +1,16 @@
-import { ReactNode } from 'react';
+import classnames from 'classnames/bind';
+import { Paragraph } from '@/shared/ui/paragraph';
+import { WidgetTitle } from '@/shared/ui/widget-title';
+import type { PrincipleCard as TPrincipleCard } from '@/widgets/principles';
 
-import './principle-card.scss';
+import styles from './principle-card.module.scss';
 
-export interface PrincipleCardProps {
-  title: string;
-  description: string;
-  icon: ReactNode;
-}
+const cx = classnames.bind(styles);
 
-export const PrincipleCard = ({ title, description, icon }: PrincipleCardProps) => (
-  <div className="principle-card">
-    <div className="card-header">
-      <div className="icon-wrapper">
-        <div className="accent" />
-        <span>{icon}</span>
-      </div>
-      <div className="card-title">{title}</div>
-    </div>
-    <div className="card-description">{description}</div>
-    <div className="accent-corner" />
-  </div>
+export const PrincipleCard = ({ title, description, icon }: TPrincipleCard) => (
+  <article className={cx('principle-card')} data-testid="principle-card">
+    <span className={cx('icon')}>{icon}</span>
+    <WidgetTitle className={cx('card-title')}>{title}</WidgetTitle>
+    <Paragraph className={cx('card-description')}>{description}</Paragraph>
+  </article>
 );

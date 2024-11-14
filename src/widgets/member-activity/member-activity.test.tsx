@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { vi } from 'vitest';
-import { MemberActivity } from './ui/member-activity.tsx';
+import { MemberActivity } from './ui/member-activity';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 const mockedDataProviders = await vi.hoisted(async () => {

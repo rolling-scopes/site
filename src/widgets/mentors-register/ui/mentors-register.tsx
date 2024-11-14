@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 // import { ROUTES } from '@/core/const';
-import { Language } from '@/shared/types.ts';
+import { Language } from '@/shared/types';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 import { Subtitle } from '@/shared/ui/subtitle';
@@ -25,9 +25,10 @@ export const MentorsRegister = ({ lang = 'en' }: MentorsRegisterProps) => {
     <section className={cx('container')}>
       <div className={cx('content', 'mentoring-register')}>
         <WidgetTitle>{mentorsRegisterData[lang].header}</WidgetTitle>
-        <Subtitle className={cx('note')} fontSize="extra-small">{mentorsRegisterData[lang].noteBefore}</Subtitle>
-        {isCommonMentorship
-        && (
+        <Subtitle className={cx('note')} fontSize="extra-small">
+          {mentorsRegisterData[lang].noteBefore}
+        </Subtitle>
+        {isCommonMentorship && (
           <DocDetail
             textBeforeLink={mentorDocsData[lang].mentor.textBeforeLink}
             textLink={mentorDocsData[lang].mentor.textLink}
@@ -42,7 +43,9 @@ export const MentorsRegister = ({ lang = 'en' }: MentorsRegisterProps) => {
         >
           {mentorsRegisterData[lang].button.text}
         </LinkCustom>
-        <Subtitle className={cx('note', 'header-after')} fontSize="extra-small">{mentorsRegisterData[lang].noteAfter}</Subtitle>
+        <Subtitle className={cx('note', 'header-after')} fontSize="extra-small">
+          {mentorsRegisterData[lang].noteAfter}
+        </Subtitle>
         <List data={mentorsRegisterData[lang].stepsAfter} />
       </div>
     </section>

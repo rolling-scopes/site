@@ -1,7 +1,7 @@
 import { GenericItemProps, SchoolList } from './school-list/school-list';
 import { ANCHORS } from '@/core/const';
 import type { Course } from '@/entities/course';
-import { MentorshipCourse, MentorshipDefaultRouteKeys, courses, mentorshipCourses } from 'data';
+import { MentorshipCourse, MentorshipDefaultRouteKeys, mentorshipCourses } from 'data';
 
 import './school-menu.scss';
 
@@ -43,6 +43,7 @@ const communityMenuStaticLinks = [
 
 interface SchoolMenuProps {
   heading: 'rs school' | 'all courses' | 'community' | MentorshipDefaultRouteKeys;
+  courses: Course[];
   hasTitle?: boolean;
   color?: 'dark' | 'light';
 }
@@ -66,7 +67,12 @@ function getMenuItems(
   }
 }
 
-export const SchoolMenu = ({ heading, hasTitle = true, color = 'light' }: SchoolMenuProps) => {
+export const SchoolMenu = ({
+  heading,
+  courses,
+  hasTitle = true,
+  color = 'light',
+}: SchoolMenuProps) => {
   const menuItems = getMenuItems(heading, courses, mentorshipCourses);
 
   return (

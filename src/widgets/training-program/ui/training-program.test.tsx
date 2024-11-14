@@ -2,14 +2,18 @@ import { screen } from '@testing-library/react';
 import { beforeEach } from 'vitest';
 import { ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
-import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants.ts';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
+import { COURSE_ALIASES, TO_BE_DETERMINED } from '@/shared/constants';
 import { TrainingProgram } from '@/widgets/training-program';
+import { COURSE_TITLES } from 'data';
 
 const mockedCourseAngular: Course = {
   id: '1',
-  title: 'angular',
+  title: COURSE_TITLES.ANGULAR,
+  alias: COURSE_ALIASES.ANGULAR,
   startDate: '16 Oct, 2023',
+  registrationEndDate: '16 Oct, 2024',
   iconSmall: MOCKED_IMAGE_PATH,
   iconSrc: MOCKED_IMAGE_PATH,
   secondaryIcon: MOCKED_IMAGE_PATH,
@@ -31,7 +35,9 @@ const mockedCourseAws: Course = {
   secondaryIcon: MOCKED_IMAGE_PATH,
   mode: 'online',
   startDate: '',
-  title: 'AWS Cloud Developer',
+  registrationEndDate: TO_BE_DETERMINED,
+  title: COURSE_TITLES.AWS_CLOUD_DEVELOPER,
+  alias: COURSE_ALIASES.AWS_CLOUD_DEVELOPER,
   detailsUrl: `/${ROUTES.COURSES}/${ROUTES.AWS_DEVELOPER}`,
   enroll: 'https://wearecommunity.io/events/aws-cloud-dev-rs2023q4',
   backgroundStyle: {
@@ -72,9 +78,9 @@ describe('TrainingProgram', () => {
     });
 
     it('renders correct image with alt text', () => {
-      const image = screen.getByRole('img', { name: 'angular' });
+      const image = screen.getByRole('img', { name: COURSE_TITLES.ANGULAR });
 
-      expect(image).toHaveAttribute('alt', expect.stringContaining('angular'));
+      expect(image).toHaveAttribute('alt', expect.stringContaining('Angular'));
     });
   });
 

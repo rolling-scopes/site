@@ -1,20 +1,16 @@
 import classNames from 'classnames/bind';
 import { COURSE_STALE_AFTER_DAYS } from '@/core/const';
 import { type Course, CourseCard } from '@/entities/course';
-import { getActualData } from '@/shared/helpers/getActualData.ts';
+import { getCourses } from '@/entities/course/api/course-api';
+import { getActualData } from '@/shared/helpers/getActualData';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './courses.module.scss';
 
 const cx = classNames.bind(styles);
 
-type CoursesProps = {
-  courses: Course[];
-};
-export const Courses = ({ courses }: CoursesProps) => {
-  if (!courses || courses.length === 0) {
-    return null;
-  }
+export const Courses = async () => {
+  const courses = await getCourses();
 
   const sortParams = {
     data: courses,

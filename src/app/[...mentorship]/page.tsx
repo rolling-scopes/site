@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { Mentorship } from '@/views/mentorship.tsx';
+import { Mentorship } from '@/views/mentorship';
 import {
   MentorshipCourseRouteKeys,
   MentorshipDefaultRouteKeys,
@@ -15,8 +15,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export const dynamicParams = false;
 
-export async function generateStaticParams():
-Promise<{ mentorship: (MentorshipDefaultRouteKeys | MentorshipCourseRouteKeys)[] }[]> {
+export async function generateStaticParams(): Promise<
+  { mentorship: (MentorshipDefaultRouteKeys | MentorshipCourseRouteKeys)[] }[]
+> {
   return [
     { mentorship: ['mentorship'] },
     { mentorship: ['mentorship', 'reactjs'] },
@@ -33,8 +34,10 @@ type PageParams = Promise<{
 export default async function MentorshipRoute(props: { params: PageParams }) {
   const { mentorship } = await props.params;
 
-  const mentorshipCourse = mentorshipCourses.find((item) =>
-    item.detailsUrl.includes(`/${mentorship[0]}/${mentorship[1]}`)) || mentorshipCoursesDefault;
+  const mentorshipCourse =
+    mentorshipCourses.find((item) =>
+      item.detailsUrl.includes(`/${mentorship[0]}/${mentorship[1]}`),
+    ) || mentorshipCoursesDefault;
 
   return <Mentorship mentorshipData={mentorshipCourse} />;
 }

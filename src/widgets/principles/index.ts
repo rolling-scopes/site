@@ -1,1 +1,2 @@
-export { Principles } from './ui/principle-card/principles';
+export type { PrincipleCard } from './types';
+export { Principles } from './ui/principles/principles';
