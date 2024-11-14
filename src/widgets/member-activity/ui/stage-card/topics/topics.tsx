@@ -1,7 +1,10 @@
 import { useContext } from 'react';
+import classNames from 'classnames/bind';
 import { LangContext } from '../../member-activity';
 
-import './topics.scss';
+import styles from './topics.module.scss';
+
+const cx = classNames.bind(styles);
 
 interface TopicsProps {
   topics: string[];
@@ -16,8 +19,8 @@ export const Topics = ({ topics }: TopicsProps) => {
   const lang = useContext(LangContext);
 
   return (
-    <ul className="stage-topics">
-      <span className="stage-topics-covered">{localizedContents[lang].topics}</span>
+    <ul className={cx('stage-topics')}>
+      <span className={cx('stage-topics-covered')}>{localizedContents[lang].topics}</span>
       {topics.map((topic, index) => (
         <li key={index}>{topic}</li>
       ))}

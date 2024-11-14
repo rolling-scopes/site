@@ -1,3 +1,4 @@
+import classNames from 'classnames/bind';
 import { Image } from './image';
 import { Links } from './links';
 import { LogoIcon } from './logo-icon';
@@ -6,7 +7,9 @@ import { Step } from './step';
 import { Topics } from './topics';
 import { List } from '@/shared/ui/list';
 
-import './stage-card.scss';
+import styles from './stage-card.module.scss';
+
+const cx = classNames.bind(styles);
 
 export const StageCard = ({
   id,
@@ -20,11 +23,11 @@ export const StageCard = ({
   type,
 }: StageCardProps) => {
   return (
-    <div className="stage">
+    <div className={cx('stage')}>
       <Step id={id} />
-      <div className="stage-info">
-        <h2 className="stage-title">{title}</h2>
-        {description && <p className="stage-description">{description}</p>}
+      <div className={cx('stage-info')}>
+        <h2 className={cx('stage-title')}>{title}</h2>
+        {description && <p className={cx('stage-description')}>{description}</p>}
         {links && <Links links={links} />}
         {topics && <Topics topics={topics} />}
         {list && <List data={list} type={type} />}

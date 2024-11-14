@@ -1,7 +1,10 @@
+import classNames from 'classnames/bind';
 import type { ListType } from '@/shared/types';
 import { Stage, StageCard } from '@/widgets/member-activity/ui/stage-card';
 
-import './stages.scss';
+import styles from './stages.module.scss';
+
+const cx = classNames.bind(styles);
 
 export interface StagesProps {
   stages: Stage[] | null;
@@ -14,7 +17,7 @@ export const Stages = ({ stages, type }: StagesProps) => {
   }
 
   return (
-    <div className="stages">
+    <div className={cx('stages')}>
       {stages.map(({ id, title, description, logoIcon, links, topics, imageSrc, list }) => (
         <StageCard
           key={id}

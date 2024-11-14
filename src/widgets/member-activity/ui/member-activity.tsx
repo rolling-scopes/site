@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext } from 'react';
+import classNames from 'classnames/bind';
 import { Stages } from './stages';
 import { ROUTES } from '@/core/const';
 import { dataProviders } from '@/core/services/api';
@@ -9,7 +10,9 @@ import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { type DataMap, MentorActivities, MentorshipDefaultRouteKeys } from 'data';
 
-import './member-activity.scss';
+import styles from './member-activity.module.scss';
+
+const cx = classNames.bind(styles);
 
 type PathNames = Exclude<keyof DataMap, 'courses'> | MentorshipDefaultRouteKeys;
 
@@ -65,8 +68,8 @@ export const MemberActivity = ({ path, type, activities, lang = 'en' }: StudyPat
 
   return (
     <LangContext.Provider value={lang}>
-      <section className="study-path container" id="learning-path">
-        <div className="study-path content upd">
+      <section className={cx('member-activity', 'container')} id="learning-path">
+        <div className={cx('member-activity', 'content')}>
           <WidgetTitle size="small" mods="asterisk">
             {title}
           </WidgetTitle>
