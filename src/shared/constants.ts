@@ -9,6 +9,7 @@ export const PAGE_NAMES = {
   MENTORSHIP: 'mentorship',
 } as const;
 
+// ⚠️ WARNING: The alias may break because it can be changed by the course maintainers
 export const COURSE_ALIASES = {
   JS_EN: 'js-fe-en',
   JS_RU: 'js-fe',
