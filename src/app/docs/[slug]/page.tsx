@@ -8,6 +8,7 @@ import remarkToc from 'remark-toc';
 import files from '../data.json';
 import Search from '../search';
 
+// @ts-ignore
 export async function generateMetadata({ params }): Promise<Metadata> {
   console.log(await params);
   const title = 'Courses · The Rolling Scopes School';

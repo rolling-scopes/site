@@ -119,6 +119,7 @@ export const Header = ({ courses }: HeaderProps) => {
                 dropdownInner={(
                   <SchoolMenu
                     courses={courses}
+                    // @ts-ignore
                     heading={link.heading}
                     color="dark"
                     hasTitle={false}
