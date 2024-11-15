@@ -63,7 +63,7 @@ describe('SchoolMenu', () => {
       <SchoolMenu courses={mockedCourses} heading="all courses" />,
     );
 
-    const descriptions = container.getElementsByTagName('small');
+    const descriptions = container.getElementsByClassName('description');
 
     expect(descriptions).toHaveLength(6);
     expect(descriptions[0]).toHaveTextContent(/tbd/i);

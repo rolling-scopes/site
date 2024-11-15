@@ -1,5 +1,4 @@
 import classNames from 'classnames/bind';
-import { COURSE_STALE_AFTER_DAYS } from '@/core/const';
 import { type Course, CourseCard } from '@/entities/course';
 import { getCourses } from '@/entities/course/api/course-api';
 import { getActualData } from '@/shared/helpers/getActualData';
@@ -14,7 +13,6 @@ export const Courses = async () => {
 
   const sortParams = {
     data: courses,
-    staleAfter: COURSE_STALE_AFTER_DAYS,
     filterStale: false,
   };
 

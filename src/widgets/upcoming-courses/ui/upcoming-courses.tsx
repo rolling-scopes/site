@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
-import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/core/const';
+import { ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
 import { getCourses } from '@/entities/course/api/course-api';
 import { CourseItem } from '@/entities/course/ui/course-item/course-item';
@@ -18,18 +18,18 @@ export const UpcomingCourses = async () => {
   const courses = await getCourses();
   const coursesData: Course[] = getActualData({
     data: courses,
-    staleAfter: COURSE_STALE_AFTER_DAYS,
     filterStale: true,
   });
 
   const coursesContent = coursesData
     .slice(0, Math.min(coursesData.length, maxUpcomingCoursesQuantity))
-    .map(({ title, language, startDate, detailsUrl, iconSrc }) => {
+    .map(({ title, language, startDate, registrationEndDate, detailsUrl, iconSrc }) => {
       return (
         <CourseItem
           title={title}
           language={language}
           startDate={startDate}
+          registrationEndDate={registrationEndDate}
           detailsUrl={detailsUrl}
           iconSrc={iconSrc}
           key={title}
