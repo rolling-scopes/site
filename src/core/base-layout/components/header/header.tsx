@@ -40,6 +40,11 @@ const navLinks = [
     href: `/${ROUTES.MENTORSHIP}`,
     heading: 'mentorship',
   },
+  {
+    label: 'Docs',
+    href: `/${ROUTES.DOCS}`,
+    heading: 'docs',
+  },
 ] as const;
 
 export const Header = ({ courses }: HeaderProps) => {

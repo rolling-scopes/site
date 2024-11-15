@@ -1,0 +1,658 @@
+[
+  {
+    "name": ".nojekyll",
+    "path": "docs/.nojekyll",
+    "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "size": 0,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/.nojekyll?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/.nojekyll",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/.nojekyll",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/.nojekyll?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/.nojekyll"
+    }
+  },
+  {
+    "name": "CNAME",
+    "path": "docs/CNAME",
+    "sha": "175076d3de40fe9875738023f551b59cf90521e5",
+    "size": 14,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/CNAME?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/CNAME",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/175076d3de40fe9875738023f551b59cf90521e5",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/CNAME",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/CNAME?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/175076d3de40fe9875738023f551b59cf90521e5",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/CNAME"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "docs/README.md",
+    "sha": "d5949566c049ac62a1d0ebfa77ee05def434c87f",
+    "size": 6716,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/README.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/README.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/d5949566c049ac62a1d0ebfa77ee05def434c87f",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/README.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/d5949566c049ac62a1d0ebfa77ee05def434c87f",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/README.md"
+    }
+  },
+  {
+    "name": "_navbar.md",
+    "path": "docs/_navbar.md",
+    "sha": "1e6e388da038f75aa43c823f0bc2a9acec2161e8",
+    "size": 68,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/_navbar.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/_navbar.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/1e6e388da038f75aa43c823f0bc2a9acec2161e8",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/_navbar.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/_navbar.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/1e6e388da038f75aa43c823f0bc2a9acec2161e8",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/_navbar.md"
+    }
+  },
+  {
+    "name": "_sidebar.md",
+    "path": "docs/_sidebar.md",
+    "sha": "88cfa82f628fe01cc8475fc00f36e26f25a074a2",
+    "size": 2665,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/_sidebar.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/_sidebar.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/88cfa82f628fe01cc8475fc00f36e26f25a074a2",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/_sidebar.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/_sidebar.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/88cfa82f628fe01cc8475fc00f36e26f25a074a2",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/_sidebar.md"
+    }
+  },
+  {
+    "name": "code-of-conduct.md",
+    "path": "docs/code-of-conduct.md",
+    "sha": "c03d788276c1c0abb564999ec6216f578b44d0a2",
+    "size": 7128,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/code-of-conduct.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/code-of-conduct.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/c03d788276c1c0abb564999ec6216f578b44d0a2",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/code-of-conduct.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/code-of-conduct.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/c03d788276c1c0abb564999ec6216f578b44d0a2",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/code-of-conduct.md"
+    }
+  },
+  {
+    "name": "create-task.md",
+    "path": "docs/create-task.md",
+    "sha": "407df138f27b4de11e05bd204892175a2eea784e",
+    "size": 15475,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/create-task.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/create-task.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/407df138f27b4de11e05bd204892175a2eea784e",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/create-task.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/create-task.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/407df138f27b4de11e05bd204892175a2eea784e",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/create-task.md"
+    }
+  },
+  {
+    "name": "cross-check-flow.md",
+    "path": "docs/cross-check-flow.md",
+    "sha": "5ce0b51f4ff3293178058fd32070b9f55889baed",
+    "size": 23114,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/cross-check-flow.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/cross-check-flow.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/5ce0b51f4ff3293178058fd32070b9f55889baed",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/cross-check-flow.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/cross-check-flow.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/5ce0b51f4ff3293178058fd32070b9f55889baed",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/cross-check-flow.md"
+    }
+  },
+  {
+    "name": "data.json",
+    "path": "docs/data.json",
+    "sha": "ce0f109838ed9179306925d497ca14cdea23f162",
+    "size": 144,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/data.json?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/data.json",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/ce0f109838ed9179306925d497ca14cdea23f162",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/data.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/data.json?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/ce0f109838ed9179306925d497ca14cdea23f162",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/data.json"
+    }
+  },
+  {
+    "name": "dismission.md",
+    "path": "docs/dismission.md",
+    "sha": "d7739d1aab8fbec4492620149c1066fece03b8c5",
+    "size": 2562,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/dismission.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/dismission.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/d7739d1aab8fbec4492620149c1066fece03b8c5",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/dismission.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/dismission.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/d7739d1aab8fbec4492620149c1066fece03b8c5",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/dismission.md"
+    }
+  },
+  {
+    "name": "en",
+    "path": "docs/en",
+    "sha": "2f3b96c8d8d609990f3a9629f05f209250680124",
+    "size": 0,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/en?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/tree/master/docs/en",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/trees/2f3b96c8d8d609990f3a9629f05f209250680124",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/en?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/trees/2f3b96c8d8d609990f3a9629f05f209250680124",
+      "html": "https://github.com/SpaNb4/docs/tree/master/docs/en"
+    }
+  },
+  {
+    "name": "first-home-task.md",
+    "path": "docs/first-home-task.md",
+    "sha": "656d0d2ac526d15883c30221a8db19c82f2757ab",
+    "size": 1061,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/first-home-task.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/first-home-task.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/656d0d2ac526d15883c30221a8db19c82f2757ab",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/first-home-task.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/first-home-task.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/656d0d2ac526d15883c30221a8db19c82f2757ab",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/first-home-task.md"
+    }
+  },
+  {
+    "name": "fix-typo.md",
+    "path": "docs/fix-typo.md",
+    "sha": "8950cc0fa5fdbbff2970e5e7b00e697384f79325",
+    "size": 5165,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/fix-typo.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/fix-typo.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/8950cc0fa5fdbbff2970e5e7b00e697384f79325",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/fix-typo.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/fix-typo.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/8950cc0fa5fdbbff2970e5e7b00e697384f79325",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/fix-typo.md"
+    }
+  },
+  {
+    "name": "fundraiser.md",
+    "path": "docs/fundraiser.md",
+    "sha": "70028521fe05408a4af4f171a8b3cae319e9e728",
+    "size": 534,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/fundraiser.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/fundraiser.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/70028521fe05408a4af4f171a8b3cae319e9e728",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/fundraiser.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/fundraiser.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/70028521fe05408a4af4f171a8b3cae319e9e728",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/fundraiser.md"
+    }
+  },
+  {
+    "name": "git-convention.md",
+    "path": "docs/git-convention.md",
+    "sha": "7eabac515f88449df64caf11253870430d59a002",
+    "size": 2619,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/git-convention.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/git-convention.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/7eabac515f88449df64caf11253870430d59a002",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/git-convention.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/git-convention.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/7eabac515f88449df64caf11253870430d59a002",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/git-convention.md"
+    }
+  },
+  {
+    "name": "images",
+    "path": "docs/images",
+    "sha": "df8462ce3164d8479c50845d0acb469791070e60",
+    "size": 0,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/images?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/tree/master/docs/images",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/trees/df8462ce3164d8479c50845d0acb469791070e60",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/images?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/trees/df8462ce3164d8479c50845d0acb469791070e60",
+      "html": "https://github.com/SpaNb4/docs/tree/master/docs/images"
+    }
+  },
+  {
+    "name": "index.html",
+    "path": "docs/index.html",
+    "sha": "58ba1b53a3bfa38ecd220a101f383e2ddc608e2f",
+    "size": 1710,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/index.html?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/index.html",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/58ba1b53a3bfa38ecd220a101f383e2ddc608e2f",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/index.html",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/index.html?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/58ba1b53a3bfa38ecd220a101f383e2ddc608e2f",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/index.html"
+    }
+  },
+  {
+    "name": "js-fe-course.md",
+    "path": "docs/js-fe-course.md",
+    "sha": "242a92c55111a7dbec033196297398e0fbfab125",
+    "size": 5168,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/js-fe-course.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/js-fe-course.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/242a92c55111a7dbec033196297398e0fbfab125",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/js-fe-course.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/js-fe-course.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/242a92c55111a7dbec033196297398e0fbfab125",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/js-fe-course.md"
+    }
+  },
+  {
+    "name": "learning-process",
+    "path": "docs/learning-process",
+    "sha": "c7df5809900de35171818b9efa63640074b91b48",
+    "size": 0,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/learning-process?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/tree/master/docs/learning-process",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/trees/c7df5809900de35171818b9efa63640074b91b48",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/learning-process?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/trees/c7df5809900de35171818b9efa63640074b91b48",
+      "html": "https://github.com/SpaNb4/docs/tree/master/docs/learning-process"
+    }
+  },
+  {
+    "name": "mentoring-first-interview.md",
+    "path": "docs/mentoring-first-interview.md",
+    "sha": "6e463e2064768f38d635c77074379fff0f1502d5",
+    "size": 9358,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/mentoring-first-interview.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/mentoring-first-interview.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/6e463e2064768f38d635c77074379fff0f1502d5",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/mentoring-first-interview.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/mentoring-first-interview.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/6e463e2064768f38d635c77074379fff0f1502d5",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/mentoring-first-interview.md"
+    }
+  },
+  {
+    "name": "mentoring-kick-off.md",
+    "path": "docs/mentoring-kick-off.md",
+    "sha": "18ed3b67cc0c2d33da59905fb4e104261d8043b7",
+    "size": 11410,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/mentoring-kick-off.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/mentoring-kick-off.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/18ed3b67cc0c2d33da59905fb4e104261d8043b7",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/mentoring-kick-off.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/mentoring-kick-off.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/18ed3b67cc0c2d33da59905fb4e104261d8043b7",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/mentoring-kick-off.md"
+    }
+  },
+  {
+    "name": "mentoring.md",
+    "path": "docs/mentoring.md",
+    "sha": "1d2ae3f296cf5f1a7e1ebff24769c9fdcf8eaf0a",
+    "size": 7674,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/mentoring.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/mentoring.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/1d2ae3f296cf5f1a7e1ebff24769c9fdcf8eaf0a",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/mentoring.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/mentoring.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/1d2ae3f296cf5f1a7e1ebff24769c9fdcf8eaf0a",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/mentoring.md"
+    }
+  },
+  {
+    "name": "ml-intro-course.md",
+    "path": "docs/ml-intro-course.md",
+    "sha": "60924fa3720487b7d7a2dc7486d965e564fa862a",
+    "size": 2632,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/ml-intro-course.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/ml-intro-course.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/60924fa3720487b7d7a2dc7486d965e564fa862a",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/ml-intro-course.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/ml-intro-course.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/60924fa3720487b7d7a2dc7486d965e564fa862a",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/ml-intro-course.md"
+    }
+  },
+  {
+    "name": "notifications.md",
+    "path": "docs/notifications.md",
+    "sha": "d2bf4e921b0ff1b3671084cab0de69959290324a",
+    "size": 1869,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/notifications.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/notifications.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/d2bf4e921b0ff1b3671084cab0de69959290324a",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/notifications.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/notifications.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/d2bf4e921b0ff1b3671084cab0de69959290324a",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/notifications.md"
+    }
+  },
+  {
+    "name": "private-repository.md",
+    "path": "docs/private-repository.md",
+    "sha": "c19e1f80b8e131549a6c4123186fe1e1f838a8aa",
+    "size": 6550,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/private-repository.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/private-repository.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/c19e1f80b8e131549a6c4123186fe1e1f838a8aa",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/private-repository.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/private-repository.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/c19e1f80b8e131549a6c4123186fe1e1f838a8aa",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/private-repository.md"
+    }
+  },
+  {
+    "name": "pull-request-review-process.md",
+    "path": "docs/pull-request-review-process.md",
+    "sha": "e0bcca9e275a64d6e6f12b0b0f0f773a1997b97d",
+    "size": 16283,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/pull-request-review-process.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/pull-request-review-process.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/e0bcca9e275a64d6e6f12b0b0f0f773a1997b97d",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/pull-request-review-process.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/pull-request-review-process.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/e0bcca9e275a64d6e6f12b0b0f0f773a1997b97d",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/pull-request-review-process.md"
+    }
+  },
+  {
+    "name": "rolling-scopes-overview.md",
+    "path": "docs/rolling-scopes-overview.md",
+    "sha": "04f1c423cd7986c7bcd8e0872e798800558101ae",
+    "size": 6365,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rolling-scopes-overview.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/rolling-scopes-overview.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/04f1c423cd7986c7bcd8e0872e798800558101ae",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/rolling-scopes-overview.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rolling-scopes-overview.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/04f1c423cd7986c7bcd8e0872e798800558101ae",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/rolling-scopes-overview.md"
+    }
+  },
+  {
+    "name": "rs-app-add-tests.md",
+    "path": "docs/rs-app-add-tests.md",
+    "sha": "51f36fd87131a0aefaf13df0dcd9fcfd4ead5a07",
+    "size": 6078,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-app-add-tests.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/rs-app-add-tests.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/51f36fd87131a0aefaf13df0dcd9fcfd4ead5a07",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/rs-app-add-tests.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-app-add-tests.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/51f36fd87131a0aefaf13df0dcd9fcfd4ead5a07",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/rs-app-add-tests.md"
+    }
+  },
+  {
+    "name": "rs-app-issues.md",
+    "path": "docs/rs-app-issues.md",
+    "sha": "8a61bfcff00e7f558d739bb9ee5385d4a79904b1",
+    "size": 2636,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-app-issues.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/rs-app-issues.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/8a61bfcff00e7f558d739bb9ee5385d4a79904b1",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/rs-app-issues.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-app-issues.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/8a61bfcff00e7f558d739bb9ee5385d4a79904b1",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/rs-app-issues.md"
+    }
+  },
+  {
+    "name": "rs-app-schedule-admins.md",
+    "path": "docs/rs-app-schedule-admins.md",
+    "sha": "b5cb5ae3d8d2cb84137e50f989f873cc29c8d913",
+    "size": 2130,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-app-schedule-admins.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/rs-app-schedule-admins.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/b5cb5ae3d8d2cb84137e50f989f873cc29c8d913",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/rs-app-schedule-admins.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-app-schedule-admins.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/b5cb5ae3d8d2cb84137e50f989f873cc29c8d913",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/rs-app-schedule-admins.md"
+    }
+  },
+  {
+    "name": "rs-app-schedule.md",
+    "path": "docs/rs-app-schedule.md",
+    "sha": "2f0baaf3440abcbec0014fddeb4f6c39c489f5bb",
+    "size": 1657,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-app-schedule.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/rs-app-schedule.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/2f0baaf3440abcbec0014fddeb4f6c39c489f5bb",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/rs-app-schedule.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-app-schedule.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/2f0baaf3440abcbec0014fddeb4f6c39c489f5bb",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/rs-app-schedule.md"
+    }
+  },
+  {
+    "name": "rs-app-tasks.md",
+    "path": "docs/rs-app-tasks.md",
+    "sha": "79bbb0e5bd773b5ffc8741734e371adadcee2cea",
+    "size": 7646,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-app-tasks.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/rs-app-tasks.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/79bbb0e5bd773b5ffc8741734e371adadcee2cea",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/rs-app-tasks.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-app-tasks.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/79bbb0e5bd773b5ffc8741734e371adadcee2cea",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/rs-app-tasks.md"
+    }
+  },
+  {
+    "name": "rs-app.md",
+    "path": "docs/rs-app.md",
+    "sha": "7bc08dcdae4511c5f4e5b1c04839e45a8e989ed3",
+    "size": 5051,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-app.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/rs-app.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/7bc08dcdae4511c5f4e5b1c04839e45a8e989ed3",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/rs-app.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-app.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/7bc08dcdae4511c5f4e5b1c04839e45a8e989ed3",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/rs-app.md"
+    }
+  },
+  {
+    "name": "rs-app",
+    "path": "docs/rs-app",
+    "sha": "ab9a01a4dcaeee10f041b538bea991ab085f8e20",
+    "size": 0,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-app?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/tree/master/docs/rs-app",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/trees/ab9a01a4dcaeee10f041b538bea991ab085f8e20",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-app?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/trees/ab9a01a4dcaeee10f041b538bea991ab085f8e20",
+      "html": "https://github.com/SpaNb4/docs/tree/master/docs/rs-app"
+    }
+  },
+  {
+    "name": "rs-school-activist.md",
+    "path": "docs/rs-school-activist.md",
+    "sha": "6caf824296c26a1dddebf090b03477d0201600ec",
+    "size": 4737,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-school-activist.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/rs-school-activist.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/6caf824296c26a1dddebf090b03477d0201600ec",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/rs-school-activist.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-school-activist.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/6caf824296c26a1dddebf090b03477d0201600ec",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/rs-school-activist.md"
+    }
+  },
+  {
+    "name": "rs-school-ai.md",
+    "path": "docs/rs-school-ai.md",
+    "sha": "9b2f9331f7f18a59e7dfac380076c11d86c76c15",
+    "size": 2292,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-school-ai.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/rs-school-ai.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/9b2f9331f7f18a59e7dfac380076c11d86c76c15",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/rs-school-ai.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-school-ai.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/9b2f9331f7f18a59e7dfac380076c11d86c76c15",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/rs-school-ai.md"
+    }
+  },
+  {
+    "name": "rs-school-certificate.md",
+    "path": "docs/rs-school-certificate.md",
+    "sha": "3ffbf672e196e38ab5588304605c29ec9e0249b9",
+    "size": 584,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-school-certificate.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/rs-school-certificate.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/3ffbf672e196e38ab5588304605c29ec9e0249b9",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/rs-school-certificate.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-school-certificate.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/3ffbf672e196e38ab5588304605c29ec9e0249b9",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/rs-school-certificate.md"
+    }
+  },
+  {
+    "name": "rs-school-chats.md",
+    "path": "docs/rs-school-chats.md",
+    "sha": "6a74422de481c1178a75f8b73567dad7fe47e111",
+    "size": 14496,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-school-chats.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/rs-school-chats.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/6a74422de481c1178a75f8b73567dad7fe47e111",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/rs-school-chats.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-school-chats.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/6a74422de481c1178a75f8b73567dad7fe47e111",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/rs-school-chats.md"
+    }
+  },
+  {
+    "name": "rs-school-mentor.md",
+    "path": "docs/rs-school-mentor.md",
+    "sha": "51aa521e528dc279c2db13895d6a50ae995ea77a",
+    "size": 4760,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-school-mentor.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/rs-school-mentor.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/51aa521e528dc279c2db13895d6a50ae995ea77a",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/rs-school-mentor.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-school-mentor.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/51aa521e528dc279c2db13895d6a50ae995ea77a",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/rs-school-mentor.md"
+    }
+  },
+  {
+    "name": "rs-school-trainer.md",
+    "path": "docs/rs-school-trainer.md",
+    "sha": "399e495de9f4244030188c33a7ab797cbaf34b99",
+    "size": 9171,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-school-trainer.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/rs-school-trainer.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/399e495de9f4244030188c33a7ab797cbaf34b99",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/rs-school-trainer.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/rs-school-trainer.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/399e495de9f4244030188c33a7ab797cbaf34b99",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/rs-school-trainer.md"
+    }
+  },
+  {
+    "name": "streaming.md",
+    "path": "docs/streaming.md",
+    "sha": "27870b1f8859b08e4958f2fc534a4fcf91b00966",
+    "size": 4284,
+    "url": "https://api.github.com/repos/SpaNb4/docs/contents/docs/streaming.md?ref=master",
+    "html_url": "https://github.com/SpaNb4/docs/blob/master/docs/streaming.md",
+    "git_url": "https://api.github.com/repos/SpaNb4/docs/git/blobs/27870b1f8859b08e4958f2fc534a4fcf91b00966",
+    "download_url": "https://raw.githubusercontent.com/SpaNb4/docs/master/docs/streaming.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/SpaNb4/docs/contents/docs/streaming.md?ref=master",
+      "git": "https://api.github.com/repos/SpaNb4/docs/git/blobs/27870b1f8859b08e4958f2fc534a4fcf91b00966",
+      "html": "https://github.com/SpaNb4/docs/blob/master/docs/streaming.md"
+    }
+  }
+]

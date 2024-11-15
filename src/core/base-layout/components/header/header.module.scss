@@ -1,5 +1,6 @@
 .navbar {
-  position: fixed;
+  // TODO need to this fix another way
+  position: sticky;
   z-index: 100;
   top: 0;
   left: 0;

@@ -1,0 +1,61 @@
+[
+  {
+    "title": "RS School. Общая информация",
+    "items": [
+      {
+        "title": "README",
+        "link": "README"
+      }
+    ]
+  },
+  {
+    "title": "Процесс обучения",
+    "items": [
+      {
+        "title": "Общение. Каналы связи",
+        "link": "rs-school-chats"
+      },
+      {
+        "title": "Нормы поведения",
+        "link": "code-of-conduct"
+      },
+      {
+        "title": "Отчисление",
+        "link": "dismission"
+      },
+      {
+        "title": "Сертификат",
+        "link": "rs-school-certificate"
+      }
+    ]
+  },
+  {
+    "title": "Платформа RS APP",
+    "items": [
+      {
+        "title": "Описание",
+        "link": "rs-app"
+      },
+      {
+        "title": "Расписание",
+        "link": "rs-app-schedule"
+      },
+      {
+        "title": "Сдача заданий в RS APP",
+        "link": "rs-app-tasks"
+      },
+      {
+        "title": "Cross-check",
+        "link": "cross-check-flow"
+      },
+      {
+        "title": "Нотификации",
+        "link": "notifications"
+      },
+      {
+        "title": "Типичные проблемы",
+        "link": "rs-app-issues"
+      }
+    ]
+  }
+]
