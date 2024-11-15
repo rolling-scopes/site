@@ -4,7 +4,10 @@ import type { CourseStatus } from '@/entities/course';
 import { dayJS } from '@/shared/helpers/dayJS';
 import { courseStatus } from 'data';
 
-export function getCourseStatus(courseStartDate: string): CourseStatus {
+export function getCourseStatus(
+  courseStartDate: string,
+  courseStaleAfterDays: number = COURSE_STALE_AFTER_DAYS,
+): CourseStatus {
   const now = dayJS();
   const startDate = dayJS(courseStartDate);
 
@@ -12,8 +15,8 @@ export function getCourseStatus(courseStartDate: string): CourseStatus {
   const isAvailable =
     hasDayInDate(courseStartDate)
     && startDate.isBetween(
-      now.subtract(COURSE_STALE_AFTER_DAYS, 'day'),
-      now.add(COURSE_STALE_AFTER_DAYS, 'day'),
+      now.subtract(courseStaleAfterDays, 'day'),
+      now.add(courseStaleAfterDays, 'day'),
     );
 
   // Status is 'Upcoming' if the course will start within the next 3 months
