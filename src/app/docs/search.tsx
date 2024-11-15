@@ -23,6 +23,7 @@ export default function Search() {
             baseUrl: '/',
             // ... more search options
           });
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (e) {
           // @ts-ignore
           window.pagefind = {

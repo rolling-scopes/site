@@ -1,8 +1,11 @@
 import { PropsWithChildren } from 'react';
-import DocsMenu from './docs-menu'; // Importing the DocsMenu component
+import classNames from 'classnames/bind';
+import DocsMenu from './docs-menu';
 import docs from './docsMenu.json';
 
-import styles from './layout.module.scss'; // Import the layout styles
+import styles from './layout.module.scss';
+
+const cx = classNames.bind(styles);
 
 // Define the type for documentation files
 // interface Doc {
@@ -56,11 +59,11 @@ export default async function DocsIndex({ children }: PropsWithChildren) {
   // const { docs } = await fetchDocs();
   // console.log(docs);
   return (
-    <div className={styles.container}>
-      <div className={styles.menu}>
+    <div className={cx('container')}>
+      <div className={cx('menu')}>
         <DocsMenu docs={docs} />
       </div>
-      <div className={styles.content}>{children}</div>
+      <div className={cx('content')}>{children}</div>
     </div>
   );
 }

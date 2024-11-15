@@ -1,12 +1,7 @@
 [
   {
     "title": "RS School. Общая информация",
-    "items": [
-      {
-        "title": "README",
-        "link": "README"
-      }
-    ]
+    "link": "README"
   },
   {
     "title": "Процесс обучения",
