@@ -2,10 +2,10 @@
 
 import { createContext } from 'react';
 import classNames from 'classnames/bind';
-import { Stages } from '../stages';
+import { Stages } from '../stages/stages';
 import { ROUTES } from '@/core/const';
 import { dataProviders } from '@/core/services/api';
-import type { Language, ListType } from '@/shared/types.ts';
+import type { Language, ListType } from '@/shared/types';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { type DataMap, MentorActivities, MentorshipDefaultRouteKeys } from 'data';
@@ -69,13 +69,13 @@ export const MemberActivity = ({ path, type, activities, lang = 'en' }: StudyPat
   return (
     <LangContext.Provider value={lang}>
       <section className={cx('member-activity', 'container')} id="learning-path">
-        <div className={cx('member-activity', 'content')}>
+        <article className={cx('member-activity', 'content')}>
           <WidgetTitle size="small" mods="asterisk">
             {title}
           </WidgetTitle>
           <Paragraph>{paragraph}</Paragraph>
           <Stages stages={coursesPath} type={type} />
-        </div>
+        </article>
       </section>
     </LangContext.Provider>
   );

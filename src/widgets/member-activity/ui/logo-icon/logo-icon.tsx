@@ -5,10 +5,10 @@ import styles from './logo-icon.module.scss';
 
 const cx = classNames.bind(styles);
 
-interface LogoIconProps {
+type LogoIconProps = {
   icon: StaticImageData;
   title: string;
-}
+};
 
 export const LogoIcon = ({ icon, title }: LogoIconProps) => {
   return (

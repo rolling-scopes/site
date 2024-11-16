@@ -4,9 +4,9 @@ import styles from './step.module.scss';
 
 const cx = classNames.bind(styles);
 
-interface StepProps {
+type StepProps = {
   id: string | number;
-}
+};
 
 export const Step = ({ id }: StepProps) => {
   return (

@@ -1,9 +1,9 @@
 import { screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { StageCard } from './stage-card';
-import { type StageCardProps } from './stage-card.types';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
+import { StageCardProps } from '@/widgets/member-activity/types';
 
 describe('StageCard component', () => {
   const props: StageCardProps = {

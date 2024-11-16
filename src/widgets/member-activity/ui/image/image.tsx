@@ -5,10 +5,10 @@ import styles from './image.module.scss';
 
 const cx = classNames.bind(styles);
 
-interface ImageProps {
+type ImageProps = {
   imageSrc: StaticImageData;
   title: string;
-}
+};
 
 export const Image = ({ imageSrc, title }: ImageProps) => {
   return (

@@ -6,9 +6,9 @@ import styles from './topics.module.scss';
 
 const cx = classNames.bind(styles);
 
-interface TopicsProps {
+type TopicsProps = {
   topics: string[];
-}
+};
 
 const localizedContents = {
   en: { topics: 'Topics covered:' },
