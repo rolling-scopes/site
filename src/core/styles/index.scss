@@ -47,9 +47,7 @@ figure {
 .container {
   display: flex;
   justify-content: center;
-
   width: 100%;
-
   text-align: left;
 }
 
@@ -144,5 +142,26 @@ figure {
   .dot {
     display: inline-block;
     padding: 7px;
+  }
+}
+
+.markdown-body {
+  h2 {
+    a {
+      margin-left: -26px;
+      padding-right: 10px;
+    }
+
+    .icon-link {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  h2:hover {
+    .icon-link::after {
+      content: url('./link.svg');
+    }
   }
 }
