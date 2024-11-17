@@ -13,12 +13,10 @@ import styles from './page.module.scss';
 
 const cx = classNames.bind(styles);
 
-type Params = Promise<{ slug: string }>;
-
 export async function generateMetadata({
   params,
 }: {
-  params: Params;
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
 
@@ -43,7 +41,7 @@ export async function generateMetadata({
   return { title };
 }
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
   // TODO REPLACE IT WITH FETCHING FROM REMOTE
   return docsMenu.flatMap((section) => {
     if (section.items) {
@@ -54,7 +52,7 @@ export async function generateStaticParams() {
   });
 }
 
-export default async function DocPage({ params }: { params: Params }) {
+export default async function DocPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
 
   const fileUrl = `https://raw.githubusercontent.com/spanb4/docs/master/docs/${slug}.md`;
@@ -89,7 +87,7 @@ export default async function DocPage({ params }: { params: Params }) {
         </div>
       </div>
     );
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     notFound();
   }
