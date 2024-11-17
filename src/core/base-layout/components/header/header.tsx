@@ -46,7 +46,7 @@ const navLinks = [
   },
   {
     label: 'Docs',
-    href: `/${ROUTES.DOCS}`,
+    href: `/${ROUTES.DOCS}/en`,
     heading: 'docs',
     hasSubmenu: false,
   },

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Language } from '@/shared/types';
 
 import styles from './docs-menu.module.scss';
 
@@ -15,20 +16,21 @@ interface DocLinkWithChildren {
   items: DocLink[];
 }
 
-type DocLinkType = DocLink | DocLinkWithChildren;
+export type DocLinkType = DocLink | DocLinkWithChildren;
 
 interface DocsMenuProps {
-  docs: DocLinkType[];
+  menu: DocLinkType[];
+  lang: Language;
 }
 
-const DocsMenu = ({ docs }: DocsMenuProps) => {
+const DocsMenu = ({ menu, lang }: DocsMenuProps) => {
   const pathname = usePathname();
   const isActive = (link: string) => pathname.endsWith(link);
 
-  const renderMenuItems = (items: DocLinkType[]) => {
-    return (
+  return (
+    <nav className={styles.menu}>
       <ul>
-        {items.map((doc, index) => {
+        {menu.map((doc, index) => {
           if ('items' in doc) {
             return (
               <li key={index}>
@@ -39,7 +41,7 @@ const DocsMenu = ({ docs }: DocsMenuProps) => {
                       return (
                         <li key={subIndex}>
                           <Link
-                            href={`/docs/${subDoc.link}`}
+                            href={`/docs/${lang}/${subDoc.link}`}
                             className={isActive(subDoc.link) ? styles.active : ''}
                           >
                             {subDoc.title}
@@ -55,7 +57,7 @@ const DocsMenu = ({ docs }: DocsMenuProps) => {
             return (
               <li key={index}>
                 <Link
-                  href={`/docs/${doc.link}`}
+                  href={`/docs/${lang}/${doc.link}`}
                   className={isActive(doc.link) ? styles.active : ''}
                 >
                   {doc.title}
@@ -65,10 +67,8 @@ const DocsMenu = ({ docs }: DocsMenuProps) => {
           }
         })}
       </ul>
-    );
-  };
-
-  return <nav className={styles.menu}>{renderMenuItems(docs)}</nav>;
+    </nav>
+  );
 };
 
 export default DocsMenu;

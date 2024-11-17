@@ -1,17 +1,7 @@
-import classNames from 'classnames/bind';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import ReactMarkdown from 'react-markdown';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypeSlug from 'rehype-slug';
-import remarkGfm from 'remark-gfm';
-import remarkToc from 'remark-toc';
-import docsMenu from '../docsMenu.json';
-import Search from '../search';
-
-import styles from './page.module.scss';
-
-const cx = classNames.bind(styles);
+import { Component } from '../../component';
+import docsMenu from '../docsMenu_ru.json';
 
 export async function generateMetadata({
   params,
@@ -66,27 +56,7 @@ export default async function DocPage({ params }: { params: Promise<{ slug: stri
 
     const markdownContent = await res.text();
 
-    return (
-      <div
-        className={cx('markdown-body')}
-        style={{
-          maxWidth: 1200,
-          margin: 'auto',
-          textAlign: 'left',
-        }}
-        data-pagefind-body
-      >
-        <div>
-          <Search />
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm, remarkToc]}
-            rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings]}
-          >
-            {markdownContent}
-          </ReactMarkdown>
-        </div>
-      </div>
-    );
+    return <Component menu={docsMenu} markdownContent={markdownContent} lang="ru" />;
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     notFound();
