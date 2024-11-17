@@ -24,26 +24,31 @@ const navLinks = [
     label: 'RS School',
     href: ROUTES.HOME,
     heading: 'rs school',
+    hasSubmenu: true,
   },
   {
     label: 'Courses',
     href: `/${ROUTES.COURSES}`,
     heading: 'all courses',
+    hasSubmenu: true,
   },
   {
     label: 'Community',
     href: `/${ROUTES.COMMUNITY}`,
     heading: 'community',
+    hasSubmenu: true,
   },
   {
     label: 'Mentorship',
     href: `/${ROUTES.MENTORSHIP}`,
     heading: 'mentorship',
+    hasSubmenu: true,
   },
   {
     label: 'Docs',
     href: `/${ROUTES.DOCS}`,
     heading: 'docs',
+    hasSubmenu: false,
   },
 ] as const;
 
@@ -54,7 +59,6 @@ export const Header = ({ courses }: HeaderProps) => {
   const [key, setKey] = useState('');
   const pathname = usePathname();
 
-  // const headerAccentColor = pathname.includes(ROUTES.MENTORSHIP) ? 'blue' : 'gray';
   let headerAccentColor = 'gray';
 
   if (pathname) {
@@ -116,15 +120,16 @@ export const Header = ({ courses }: HeaderProps) => {
                 key={link.label}
                 label={link.label}
                 href={link.href}
-                dropdownInner={(
-                  <SchoolMenu
-                    courses={courses}
-                    // @ts-ignore
-                    heading={link.heading}
-                    color="dark"
-                    hasTitle={false}
-                  />
-                )}
+                dropdownInner={link.hasSubmenu
+                  ? (
+                      <SchoolMenu
+                        courses={courses}
+                        heading={link.heading}
+                        color="dark"
+                        hasTitle={false}
+                      />
+                    )
+                  : null}
               />
             );
           })}
