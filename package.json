@@ -18,7 +18,7 @@
     "coverage": "vitest run --coverage",
     "precommit": "npx lint-staged",
     "prepare": "husky",
-    "postbuild": "pagefind --site .next/server/app --output-path build/_next/static/pagefind --force-language ru"
+    "postbuild": "pagefind --site .next/server/app --output-path build/_next/static/pagefind"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",

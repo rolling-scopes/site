@@ -147,6 +147,10 @@ figure {
 }
 
 .markdown-body {
+  li {
+    list-style-position: initial;
+  }
+
   h2 {
     a {
       margin-left: -26px;

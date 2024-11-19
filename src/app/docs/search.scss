@@ -1,0 +1,25 @@
+.results {
+  p {
+    color: #555;
+  }
+}
+
+.subresults {
+  margin-top: 10px;
+  padding-left: 15px;
+  border-left: 2px solid #ccc;
+}
+
+.subresult {
+  margin-bottom: 5px;
+}
+
+.subresult h4 {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+.subresult p {
+  font-size: 0.9em;
+  color: #555;
+}
