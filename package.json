@@ -19,6 +19,9 @@
     "precommit": "npx lint-staged",
     "prepare": "husky"
   },
+  "engines": {
+    "node": ">=20.x"
+  },
   "dependencies": {
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
