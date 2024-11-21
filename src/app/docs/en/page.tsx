@@ -1,5 +1,5 @@
-import { Component } from '../component';
 import docsMenu from './docsMenu_en.json';
+import { DocsLayout } from '../components/docs-layout/docs-layout';
 
 async function fetchDocs() {
   const indexDoc = 'README';
@@ -22,5 +22,5 @@ async function fetchDocs() {
 export default async function DocsIndex() {
   const { indexContent } = await fetchDocs();
 
-  return <Component menu={docsMenu} markdownContent={indexContent} lang="en" />;
+  return <DocsLayout menu={docsMenu} markdownContent={indexContent} lang="en" />;
 }

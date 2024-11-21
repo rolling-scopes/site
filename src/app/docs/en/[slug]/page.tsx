@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Component } from '../../component';
+import { DocsLayout } from '../../components/docs-layout/docs-layout';
 import docsMenu from '../docsMenu_en.json';
 
 export async function generateMetadata({
@@ -56,7 +56,7 @@ export default async function DocPage({ params }: { params: Promise<{ slug: stri
 
     const markdownContent = await res.text();
 
-    return <Component menu={docsMenu} markdownContent={markdownContent} lang="en" />;
+    return <DocsLayout menu={docsMenu} markdownContent={markdownContent} lang="en" />;
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     notFound();

@@ -4,16 +4,16 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import remarkToc from 'remark-toc';
-import DocsMenu, { DocLinkType } from './docs-menu';
-import { LangSwitcher } from './lang-switcher';
-import Search from './search';
+import { LangSwitcher } from '../lang-switcher/lang-switcher';
+import DocsMenu, { DocLinkType } from '../docs-menu/docs-menu';
+import Search from '../search/search';
 import { Language } from '@/shared/types';
 
-import styles from './component.module.scss';
+import styles from './docs-layout.module.scss';
 
 const cx = classNames.bind(styles);
 
-export function Component({
+export function DocsLayout({
   menu,
   markdownContent,
   lang,
@@ -23,7 +23,7 @@ export function Component({
   lang: Language;
 }) {
   return (
-    <div className={cx('container')}>
+    <div className={cx('container', 'docs-layout')}>
       <div className={cx('test')}>
         <div className={cx('menu-wrapper')}>
           <DocsMenu menu={menu} lang={lang} />

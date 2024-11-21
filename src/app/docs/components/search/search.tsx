@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link.js';
-import mockedResults from './mocked_search.json';
+import mockedResults from '../../mocked_search.json';
 
 import './search.scss';
 
