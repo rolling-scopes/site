@@ -234,25 +234,19 @@ export const contentMap: ContentMap = {
     title: 'Target audience',
     content: [
       <Paragraph key="react 01">
-        RS School students who have completed RS School Stage #2 and new students with strong
-        CoreJS/TS/Frontend skills:
+        We are looking for students with strong CoreJS/TS/Frontend skills:
       </Paragraph>,
       <List
         key="react 02"
         data={[
-          'JavaScript',
-          'TypeScript',
-          'Git, GitHub (clone, add, commit, push, pull, merge, rebase, working with Pull Request)',
-          'NPM, Webpack',
-          'CSS3 / HTML5',
-          'Chrome DevTools, Figma',
-          'Understanding of the REST',
+          'Proficiency in JavaScript / TypeScript',
+          'Familiarity with Git and GitHub operations (clone, add, commit, push, pull, merge, rebase, working with Pull Requests)',
+          'Experience with NPM and bundling tools such as Webpack or Rollup',
+          'Strong skills in CSS3 and HTML5',
+          'Proficient use of Chrome DevTools',
+          'Understanding of RESTful services',
         ]}
       />,
-      <Subtitle key="react 03">
-        Attention! Mentors on this course will be first assigned to the graduates of the RS School
-        Stage #2.
-      </Subtitle>,
     ],
     image: reactEnImg,
   },
