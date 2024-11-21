@@ -234,10 +234,11 @@ export const contentMap: ContentMap = {
     title: 'Target audience',
     content: [
       <Paragraph key="react 01">
-        We are looking for students with strong CoreJS/TS/Frontend skills:
+        We are looking for students with strong CoreJS/TS/Frontend skills.
       </Paragraph>,
+      <Subtitle key="react 02">Requirements:</Subtitle>,
       <List
-        key="react 02"
+        key="react 03"
         data={[
           'Proficiency in JavaScript / TypeScript',
           'Familiarity with Git and GitHub operations (clone, add, commit, push, pull, merge, rebase, working with Pull Requests)',
