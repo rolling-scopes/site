@@ -24,7 +24,6 @@
     "classnames": "^2.5.1",
     "dayjs": "^1.11.13",
     "next": "15.0.2",
-    "nextjs-toploader": "^3.6.15",
     "react": "19.0.0-rc-02c0e824-20241028",
     "react-dom": "19.0.0-rc-02c0e824-20241028",
     "react-double-marquee": "^1.1.0",
@@ -76,10 +75,6 @@
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
     "@testing-library/react": {
-      "react": "19.0.0-rc-02c0e824-20241028",
-      "react-dom": "19.0.0-rc-02c0e824-20241028"
-    },
-    "nextjs-toploader": {
       "react": "19.0.0-rc-02c0e824-20241028",
       "react-dom": "19.0.0-rc-02c0e824-20241028"
     }
