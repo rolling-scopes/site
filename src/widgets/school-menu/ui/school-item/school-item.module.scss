@@ -1,9 +1,10 @@
 .school-item {
   display: flex;
-  flex-direction: column;
   gap: 5px;
-  align-items: baseline;
-  justify-content: flex-start;
+  column-gap: 15px;
+  align-items: center;
+
+  opacity: 1 !important;
 
   &.with-icon {
     display: flex;
@@ -18,6 +19,22 @@
       gap: 5px;
       align-items: flex-start;
       justify-content: flex-start;
+    }
+  }
+
+  .icon-wrapper {
+    grid-row: span 2;
+  }
+
+  .description-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+
+    .description {
+      grid-column: 2 /3;
+      grid-row: 2 / 3;
     }
   }
 
@@ -42,6 +59,7 @@
   }
 
   small {
+    justify-self: flex-start;
     font-size: 12px;
     color: $color-gray-500;
   }

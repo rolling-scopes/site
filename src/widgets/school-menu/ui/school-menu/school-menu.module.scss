@@ -30,14 +30,6 @@
 
     list-style-type: none;
 
-    &-fixed {
-      width: 512px;
-
-      @include media-tablet {
-        width: auto;
-      }
-    }
-
     @include media-mobile-landscape {
       column-gap: 10px;
       max-height: 600px;

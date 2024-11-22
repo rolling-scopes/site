@@ -5,37 +5,16 @@ import classNames from 'classnames/bind';
 import { usePathname } from 'next/navigation';
 import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
-import { ROUTES } from '@/core/const';
+import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/core/const';
+import { getCourseDate } from '@/shared/helpers/getCourseDate';
 import { Logo } from '@/shared/ui/logo';
 import { MobileView } from '@/widgets/mobile-view';
 import { SchoolMenu } from '@/widgets/school-menu';
+import { communityMenuStaticLinks, courses, mentorshipCourses, schoolMenuStaticLinks } from 'data';
 
 import styles from './header.module.scss';
 
 const cx = classNames.bind(styles);
-
-const navLinks = [
-  {
-    label: 'RS School',
-    href: ROUTES.HOME,
-    dropdownInner: <SchoolMenu heading="rs school" color="dark" hasTitle={false} />,
-  },
-  {
-    label: 'Courses',
-    href: `/${ROUTES.COURSES}`,
-    dropdownInner: <SchoolMenu heading="all courses" color="dark" hasTitle={false} />,
-  },
-  {
-    label: 'Community',
-    href: `/${ROUTES.COMMUNITY}`,
-    dropdownInner: <SchoolMenu heading="community" color="dark" hasTitle={false} />,
-  },
-  {
-    label: 'Mentorship',
-    href: `/${ROUTES.MENTORSHIP}`,
-    dropdownInner: <SchoolMenu heading="mentorship" color="dark" hasTitle={false} />,
-  },
-];
 
 export const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -100,16 +79,55 @@ export const Header = () => {
         <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 
         <menu className={cx('menu')}>
-          {navLinks.map((link) => {
-            return (
-              <NavItem
-                key={link.label}
-                label={link.label}
-                href={link.href}
-                dropdownInner={link.dropdownInner}
-              />
-            );
-          })}
+          <NavItem label="RS School" href={ROUTES.HOME}>
+            <SchoolMenu>
+              {schoolMenuStaticLinks.map((link, i) => (
+                <SchoolMenu.Item
+                  key={i}
+                  title={link.title}
+                  description={link.description}
+                  url={link.detailsUrl}
+                />
+              ))}
+            </SchoolMenu>
+          </NavItem>
+          <NavItem label="Courses" href={ROUTES.COURSES}>
+            <SchoolMenu>
+              {courses.map((course) => (
+                <SchoolMenu.Item
+                  key={course.id}
+                  icon={course.iconSmall}
+                  title={course.title}
+                  description={getCourseDate(course.startDate, COURSE_STALE_AFTER_DAYS)}
+                  url={course.detailsUrl}
+                />
+              ))}
+            </SchoolMenu>
+          </NavItem>
+          <NavItem label="Community" href={ROUTES.COMMUNITY}>
+            <SchoolMenu>
+              {communityMenuStaticLinks.map((link, i) => (
+                <SchoolMenu.Item
+                  key={i}
+                  title={link.title}
+                  description={link.description}
+                  url={link.detailsUrl}
+                />
+              ))}
+            </SchoolMenu>
+          </NavItem>
+          <NavItem label="Mentorship" href={ROUTES.MENTORSHIP}>
+            <SchoolMenu>
+              {mentorshipCourses.map((course) => (
+                <SchoolMenu.Item
+                  key={course.id}
+                  icon={course.iconSmall}
+                  title={course.title}
+                  url={course.detailsUrl}
+                />
+              ))}
+            </SchoolMenu>
+          </NavItem>
         </menu>
       </section>
     </nav>
