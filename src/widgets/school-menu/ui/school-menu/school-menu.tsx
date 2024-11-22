@@ -7,7 +7,7 @@ import styles from './school-menu.module.scss';
 
 const cx = classNames.bind(styles);
 
-export type SchoolMenuProps = PropsWithChildren &
+type SchoolMenuProps = PropsWithChildren &
   HTMLProps<HTMLUListElement> & {
     heading?: string;
     color?: Color;
