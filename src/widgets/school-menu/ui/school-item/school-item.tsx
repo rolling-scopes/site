@@ -30,7 +30,7 @@ export const SchoolItem = ({ icon, description, title, color = 'dark', url }: Sc
           />
         )}
         <div className={cx('description-wrapper')}>
-          <span className={cx(color)}>{title}</span>
+          <span className={cx('title', color)}>{title}</span>
           {description && <small className={cx('description')}>{description}</small>}
         </div>
       </Link>

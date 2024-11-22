@@ -35,10 +35,14 @@
     .description {
       grid-column: 2 /3;
       grid-row: 2 / 3;
+      justify-self: flex-start;
+
+      font-size: 12px;
+      color: $color-gray-500;
     }
   }
 
-  span {
+  .title {
     @extend %transition-all;
 
     font-weight: $font-weight-medium;
@@ -56,11 +60,5 @@
     &:hover {
       color: $color-gray-400;
     }
-  }
-
-  small {
-    justify-self: flex-start;
-    font-size: 12px;
-    color: $color-gray-500;
   }
 }
