@@ -7,13 +7,13 @@ import styles from './school-item.module.scss';
 
 const cx = classNames.bind(styles);
 
-interface SchoolItemProps {
+type SchoolItemProps = {
   title: string;
   url: string;
   description?: string;
   icon?: StaticImageData;
   color?: Color;
-}
+};
 
 export const SchoolItem = ({ icon, description, title, color = 'dark', url }: SchoolItemProps) => {
   return (
