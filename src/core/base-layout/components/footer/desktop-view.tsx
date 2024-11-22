@@ -1,7 +1,5 @@
 import { AboutList } from './about-list';
-import { COURSE_STALE_AFTER_DAYS } from '@/core/const';
 import { getCourses } from '@/entities/course/api/course-api';
-import { getCourseDate } from '@/shared/helpers/getCourseDate';
 import { SchoolMenu } from '@/widgets/school-menu';
 import { schoolMenuStaticLinks } from 'data';
 
@@ -32,7 +30,7 @@ export const DesktopView = async () => {
               key={course.id}
               icon={course.iconSmall}
               title={course.title}
-              description={getCourseDate(course.startDate, COURSE_STALE_AFTER_DAYS)}
+              description={course.startDate}
               url={course.detailsUrl}
               color="light"
             />

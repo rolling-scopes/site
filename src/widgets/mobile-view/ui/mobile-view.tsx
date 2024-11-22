@@ -1,8 +1,7 @@
 import classNames from 'classnames/bind';
 import Link from 'next/link';
-import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/core/const';
+import { ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
-import { getCourseDate } from '@/shared/helpers/getCourseDate';
 import { Logo } from '@/shared/ui/logo';
 import { SchoolMenu } from '@/widgets/school-menu';
 import { communityMenuStaticLinks, mentorshipCourses, schoolMenuStaticLinks } from 'data';
@@ -60,7 +59,7 @@ export const MobileView = ({ type, courses }: MobileViewProps) => {
             key={course.id}
             icon={course.iconSmall}
             title={course.title}
-            description={getCourseDate(course.startDate, COURSE_STALE_AFTER_DAYS)}
+            description={course.startDate}
             url={course.detailsUrl}
             color={color}
           />

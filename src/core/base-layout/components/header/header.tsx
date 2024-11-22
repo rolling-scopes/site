@@ -5,9 +5,8 @@ import classNames from 'classnames/bind';
 import { usePathname } from 'next/navigation';
 import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
-import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/core/const';
+import { ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
-import { getCourseDate } from '@/shared/helpers/getCourseDate';
 import { Logo } from '@/shared/ui/logo';
 import { MobileView } from '@/widgets/mobile-view';
 import { SchoolMenu } from '@/widgets/school-menu';
@@ -103,7 +102,7 @@ export const Header = ({ courses }: HeaderProps) => {
                   key={course.id}
                   icon={course.iconSmall}
                   title={course.title}
-                  description={getCourseDate(course.startDate, COURSE_STALE_AFTER_DAYS)}
+                  description={course.startDate}
                   url={course.detailsUrl}
                 />
               ))}

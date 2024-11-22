@@ -1,10 +1,8 @@
 import { screen } from '@testing-library/react';
 import { SchoolMenu } from '../school-menu/school-menu';
-import { COURSE_STALE_AFTER_DAYS } from '@/core/const';
 import { Course } from '@/entities/course';
 import { mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { getCourseDate } from '@/shared/helpers/getCourseDate';
 import { COURSE_TITLES, schoolMenuStaticLinks } from 'data';
 
 describe('SchoolMenu', () => {
@@ -68,7 +66,7 @@ describe('SchoolMenu', () => {
           <SchoolMenu.Item
             key={course.id}
             title={course.title}
-            description={getCourseDate(course.startDate, COURSE_STALE_AFTER_DAYS)}
+            description={course.startDate}
             url={course.detailsUrl}
           />
         ))}
@@ -87,7 +85,7 @@ describe('SchoolMenu', () => {
           <SchoolMenu.Item
             key={course.id}
             title={course.title}
-            description={getCourseDate(course.startDate, COURSE_STALE_AFTER_DAYS)}
+            description={course.startDate}
             icon={course.iconSmall}
             url={course.detailsUrl}
           />
@@ -107,7 +105,7 @@ describe('SchoolMenu', () => {
           <SchoolMenu.Item
             key={course.id}
             title={course.title}
-            description={getCourseDate(course.startDate, COURSE_STALE_AFTER_DAYS)}
+            description={course.startDate}
             url={course.detailsUrl}
           />
         ))}
@@ -117,8 +115,8 @@ describe('SchoolMenu', () => {
     const descriptions = screen.getAllByTestId('school-item-description');
 
     expect(descriptions).toHaveLength(6);
-    expect(descriptions[0]).toHaveTextContent(/tbd/i);
-    expect(descriptions[3]).toHaveTextContent(/tbd/i);
+    expect(descriptions[0]).toHaveTextContent(/Jun 24, 2024/i);
+    expect(descriptions[3]).toHaveTextContent(/Jul 1, 2024/i);
   });
 
   it('renders correct link for "AWS Fundamentals" and "React JS [mentorshipId]"', () => {
@@ -128,7 +126,7 @@ describe('SchoolMenu', () => {
           <SchoolMenu.Item
             key={course.id}
             title={course.title}
-            description={getCourseDate(course.startDate, COURSE_STALE_AFTER_DAYS)}
+            description={course.startDate}
             url={course.detailsUrl}
           />
         ))}
