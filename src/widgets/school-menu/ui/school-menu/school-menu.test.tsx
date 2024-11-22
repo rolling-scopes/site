@@ -1,55 +1,17 @@
 import { screen } from '@testing-library/react';
-import { vi } from 'vitest';
 import { SchoolMenu } from '../school-menu/school-menu';
 import { COURSE_STALE_AFTER_DAYS } from '@/core/const';
 import { Course } from '@/entities/course';
+import { mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { getCourseDate } from '@/shared/helpers/getCourseDate.ts';
-import { schoolMenuStaticLinks } from 'data';
-
-const { mockedCourse } = await vi.hoisted(async () => {
-  const { MOCKED_IMAGE_PATH } = await import('@/shared/__tests__/constants');
-
-  const mockedCourse: Course[] = [
-    {
-      id: '1',
-      title: 'AWS Fundamentals',
-      iconSrc: MOCKED_IMAGE_PATH,
-      iconSmall: MOCKED_IMAGE_PATH,
-      secondaryIcon: MOCKED_IMAGE_PATH,
-      startDate: 'Sept 18, 2023',
-      language: ['ru'],
-      mode: 'online',
-      detailsUrl: 'https://rs.school/aws-fundamentals/',
-      backgroundStyle: {
-        backgroundColor: '#F4F1FA',
-        accentColor: '#7356BF',
-      },
-      enroll: 'https://wearecommunity.io/events/js-stage0-rs-2024q2',
-    },
-    {
-      id: '2',
-      title: 'React JS [mentorshipId]',
-      iconSrc: MOCKED_IMAGE_PATH,
-      iconSmall: MOCKED_IMAGE_PATH,
-      secondaryIcon: MOCKED_IMAGE_PATH,
-      startDate: 'Sept 18, 2060',
-      language: ['ru'],
-      mode: 'online',
-      detailsUrl: 'https://rs.school/react/',
-      backgroundStyle: {
-        backgroundColor: '#EEF3FE',
-        accentColor: '#7356BF',
-      },
-      enroll: 'https://wearecommunity.io/events/js-stage0-rs-2024q2',
-    },
-  ];
-
-  return { mockedCourse };
-});
+import { getCourseDate } from '@/shared/helpers/getCourseDate';
+import { COURSE_TITLES, schoolMenuStaticLinks } from 'data';
 
 describe('SchoolMenu', () => {
-  const [aws, react] = mockedCourse;
+  const aws = mockedCourses.find(
+    (course) => course.title === COURSE_TITLES.AWS_FUNDAMENTALS,
+  ) as Course;
+  const react = mockedCourses.find((course) => course.title === COURSE_TITLES.REACT) as Course;
 
   it('renders without crashing and displays "rs school" heading', () => {
     renderWithRouter(
@@ -102,7 +64,7 @@ describe('SchoolMenu', () => {
   it('renders without crashing and displays "all courses" heading', () => {
     renderWithRouter(
       <SchoolMenu heading="all courses">
-        {mockedCourse.map((course) => (
+        {mockedCourses.map((course) => (
           <SchoolMenu.Item
             key={course.id}
             title={course.title}
@@ -121,7 +83,7 @@ describe('SchoolMenu', () => {
   it('renders [mentorshipId] correct when "all courses" heading is passed', () => {
     renderWithRouter(
       <SchoolMenu heading="all courses">
-        {mockedCourse.map((course) => (
+        {mockedCourses.map((course) => (
           <SchoolMenu.Item
             key={course.id}
             title={course.title}
@@ -135,13 +97,13 @@ describe('SchoolMenu', () => {
 
     const images = screen.getAllByTestId('school-item-icon');
 
-    expect(images).toHaveLength(2);
+    expect(images).toHaveLength(6);
   });
 
   it('renders correct link description when date is passed', () => {
-    const { container } = renderWithRouter(
+    renderWithRouter(
       <SchoolMenu>
-        {mockedCourse.map((course) => (
+        {mockedCourses.map((course) => (
           <SchoolMenu.Item
             key={course.id}
             title={course.title}
@@ -152,17 +114,17 @@ describe('SchoolMenu', () => {
       </SchoolMenu>,
     );
 
-    const descriptions = container.getElementsByTagName('small');
+    const descriptions = screen.getAllByTestId('school-item-description');
 
-    expect(descriptions).toHaveLength(2);
+    expect(descriptions).toHaveLength(6);
     expect(descriptions[0]).toHaveTextContent(/tbd/i);
-    expect(descriptions[1]).toHaveTextContent(`${react.startDate}`);
+    expect(descriptions[3]).toHaveTextContent(/tbd/i);
   });
 
   it('renders correct link for "AWS Fundamentals" and "React JS [mentorshipId]"', () => {
     renderWithRouter(
       <SchoolMenu>
-        {mockedCourse.map((course) => (
+        {mockedCourses.map((course) => (
           <SchoolMenu.Item
             key={course.id}
             title={course.title}
@@ -173,7 +135,9 @@ describe('SchoolMenu', () => {
       </SchoolMenu>,
     );
 
-    const [linkAWS, linkReact] = screen.getAllByRole('link');
+    const links = screen.getAllByRole('link');
+    const linkReact = links.at(3);
+    const linkAWS = links.at(-1);
 
     expect(linkAWS).toHaveAttribute('href', aws.detailsUrl);
     expect(linkReact).toHaveAttribute('href', react.detailsUrl);

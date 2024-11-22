@@ -1,10 +1,11 @@
 import classNames from 'classnames/bind';
 import Link from 'next/link';
 import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/core/const';
-import { getCourseDate } from '@/shared/helpers/getCourseDate.ts';
+import { Course } from '@/entities/course';
+import { getCourseDate } from '@/shared/helpers/getCourseDate';
 import { Logo } from '@/shared/ui/logo';
 import { SchoolMenu } from '@/widgets/school-menu';
-import { communityMenuStaticLinks, courses, mentorshipCourses, schoolMenuStaticLinks } from 'data';
+import { communityMenuStaticLinks, mentorshipCourses, schoolMenuStaticLinks } from 'data';
 
 import styles from './mobile-view.module.scss';
 
@@ -18,9 +19,10 @@ const Divider = ({ color }: DividerProps) => <hr className={cx('divider', color)
 
 type MobileViewProps = {
   type: 'header' | 'footer';
+  courses: Course[];
 };
 
-export const MobileView = ({ type }: MobileViewProps) => {
+export const MobileView = ({ type, courses }: MobileViewProps) => {
   const color = type === 'header' ? 'dark' : 'light';
   const logoView = type === 'header' ? null : 'with-border';
 

@@ -18,9 +18,11 @@ vi.mock('next/navigation', () => ({
 }));
 
 describe('BaseLayout', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     mockUsePathname.mockImplementation(() => ROUTES.HOME);
-    render(<BaseLayout>{null}</BaseLayout>);
+    const baseLayout = await BaseLayout({ children: null });
+
+    render(baseLayout);
   });
 
   it('renders Header component', () => {

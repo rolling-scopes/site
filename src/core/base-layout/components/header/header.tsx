@@ -6,17 +6,22 @@ import { usePathname } from 'next/navigation';
 import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
 import { COURSE_STALE_AFTER_DAYS, ROUTES } from '@/core/const';
+import { Course } from '@/entities/course';
 import { getCourseDate } from '@/shared/helpers/getCourseDate';
 import { Logo } from '@/shared/ui/logo';
 import { MobileView } from '@/widgets/mobile-view';
 import { SchoolMenu } from '@/widgets/school-menu';
-import { communityMenuStaticLinks, courses, mentorshipCourses, schoolMenuStaticLinks } from 'data';
+import { communityMenuStaticLinks, mentorshipCourses, schoolMenuStaticLinks } from 'data';
 
 import styles from './header.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const Header = () => {
+type HeaderProps = {
+  courses: Course[];
+};
+
+export const Header = ({ courses }: HeaderProps) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [color, setColor] = useState('gray');
   const [hash, setHash] = useState('');
@@ -74,7 +79,7 @@ export const Header = () => {
         <Logo />
 
         <menu className={cx('mobile-menu', { open: isMenuOpen })} data-testid="mobile-menu">
-          <MobileView type="header" />
+          <MobileView courses={courses} type="header" />
         </menu>
         <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 

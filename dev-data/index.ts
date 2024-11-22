@@ -13,7 +13,7 @@ export type { CourseTitle,
   MentorshipDefaultRouteKeys,
   MentorshipRoute } from './mentorship-data.types';
 export { type Benefit } from './benefit-mentorship.data';
-export { COURSE_TITLES, type CourseNames, type CourseNamesKeys, type CoursesWithRequirementsNames, DISCORD_LINKS, type TrainingProgramType } from './courseTitles.data.ts';
+export { COURSE_TITLES, type CourseNames, type CourseNamesKeys, type CoursesWithRequirementsNames, DISCORD_LINKS, type TrainingProgramType } from './courseTitles.data';
 export {
   type CourseNamesChannels,
   JS_EN_TELEGRAM_CHAT_LINK,
@@ -56,6 +56,7 @@ export { mentorshipCourses, mentorshipCoursesDefault } from './mentorship.data';
 export { nodejs } from './nodejs.data';
 export { picturesSocialMediaLinks } from './pictures.data';
 export { preSchoolEn, preSchoolRu } from './preSchool.data';
+export { principleCards } from './principle-cards.data';
 export { reactEn } from './react-en.data';
 export { reactRu } from './react-ru.data';
 export { requirementsData } from './requirements.data';

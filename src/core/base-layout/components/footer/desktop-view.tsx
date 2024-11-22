@@ -1,10 +1,13 @@
 import { AboutList } from './about-list';
 import { COURSE_STALE_AFTER_DAYS } from '@/core/const';
-import { getCourseDate } from '@/shared/helpers/getCourseDate.ts';
+import { getCourses } from '@/entities/course/api/course-api';
+import { getCourseDate } from '@/shared/helpers/getCourseDate';
 import { SchoolMenu } from '@/widgets/school-menu';
-import { courses, schoolMenuStaticLinks } from 'data';
+import { schoolMenuStaticLinks } from 'data';
 
-export const DesktopView = () => {
+export const DesktopView = async () => {
+  const courses = await getCourses();
+
   return (
     <div className="desktop-view" data-testid="desktop-view">
       <div className="left">

@@ -31,7 +31,11 @@ export const SchoolItem = ({ icon, description, title, color = 'dark', url }: Sc
         )}
         <div className={cx('description-wrapper')}>
           <span className={cx('title', color)}>{title}</span>
-          {description && <small className={cx('description')}>{description}</small>}
+          {description && (
+            <small className={cx('description')} data-testid="school-item-description">
+              {description}
+            </small>
+          )}
         </div>
       </Link>
     </li>
