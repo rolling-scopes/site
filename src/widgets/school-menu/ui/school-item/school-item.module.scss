@@ -6,6 +6,32 @@
 
   opacity: 1 !important;
 
+  .title {
+    font-weight: $font-weight-medium;
+    line-height: 20px;
+    text-align: start;
+
+    &.dark {
+      color: $color-gray-600;
+    }
+
+    &.light {
+      color: $color-gray-200;
+    }
+  }
+
+  &:hover {
+    .title {
+      &.dark {
+        color: $color-black;
+      }
+
+      &.light {
+        color: $color-gray-400;
+      }
+    }
+  }
+
   &.with-icon {
     display: flex;
     flex-direction: row;
@@ -39,26 +65,6 @@
 
       font-size: 12px;
       color: $color-gray-500;
-    }
-  }
-
-  .title {
-    @extend %transition-all;
-
-    font-weight: $font-weight-medium;
-    line-height: 20px;
-    text-align: start;
-
-    &.dark {
-      color: $color-gray-600;
-    }
-
-    &.light {
-      color: $color-gray-200;
-    }
-
-    &:hover {
-      color: $color-gray-400;
     }
   }
 }
