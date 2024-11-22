@@ -137,3 +137,12 @@ export const mockedCourses: Course[] = [
     },
   },
 ];
+
+export const MOCKED_MERCH_DATA = {
+  title: 'RS merch',
+  subtitle: 'Are you an RS sloth fan and looking for RS merch?',
+  paragraph: 'The wait is almost over',
+  buttonText: 'Discover merch assets',
+  buttonLink: 'https://sloths.rs.school/',
+  imageAltText: 'RS School merch',
+};
