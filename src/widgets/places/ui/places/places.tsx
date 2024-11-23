@@ -3,24 +3,11 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import PlaceItem from '../place-item/place-item';
+import { places } from '@/widgets/places/constants';
 
 import styles from './places.module.scss';
 
 const cx = classNames.bind(styles);
-
-const places = [
-  'Kazakhstan',
-  'Belarus',
-  'Latvia',
-  'Poland',
-  'Turkey',
-  'Georgia',
-  'Montenegro',
-  'Uzbekistan',
-  'Online',
-  'Kyrgyzstan',
-  'Lithuania',
-] as const;
 
 export const Places = () => (
   <div className={cx('places', 'container')} data-testid="places">
