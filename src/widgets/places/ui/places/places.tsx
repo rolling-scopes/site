@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import classNames from 'classnames/bind';
 import PlaceItem from '../place-item/place-item';
