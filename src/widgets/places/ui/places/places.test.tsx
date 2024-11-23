@@ -1,36 +1,26 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { Places } from '@/widgets/places';
+import { places } from '@/widgets/places/constants';
+
+const placesItems = 33;
+const placeGroups = 3;
 
 describe('Places component', () => {
-  const places = [
-    'Kazakhstan',
-    'Belarus',
-    'Latvia',
-    'Poland',
-    'Turkey',
-    'Georgia',
-    'Montenegro',
-    'Uzbekistan',
-    'Online',
-    'Kyrgyzstan',
-    'Lithuania',
-  ];
-
-  it.skip('renders the marquee with correct places', () => {
+  it('renders the marquee with correct places', () => {
     render(<Places />);
 
     places.forEach((place) => {
       const allInstances = screen.getAllByText(place);
 
-      expect(allInstances.length).toBe(2);
+      expect(allInstances.length).toBe(placeGroups);
     });
   });
 
-  it.skip('renders divider after each place except the last one', () => {
+  it('renders divider after each place except the last one', () => {
     render(<Places />);
     const dividers = screen.getAllByTestId('divider');
 
-    expect(dividers).toHaveLength(places.length * 2);
+    expect(dividers).toHaveLength(placesItems);
   });
 });
