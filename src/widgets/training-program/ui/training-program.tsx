@@ -30,7 +30,7 @@ export const TrainingProgram = ({ courseName, lang = 'en', course }: TrainingPro
   return (
     <section className={cx('training-program', 'container')}>
       <div className={cx('training-program', 'content', 'column-2')}>
-        <div className={cx('left')}>
+        <article className={cx('left')}>
           <WidgetTitle mods="asterisk">{title}</WidgetTitle>
 
           {content.map((component, index) => cloneElement(component, { key: index }))}
@@ -40,10 +40,13 @@ export const TrainingProgram = ({ courseName, lang = 'en', course }: TrainingPro
               {localizedContent[lang].linkLabel}
             </LinkCustom>
           )}
-        </div>
-        <div className={cx('right', { badge: isCourseWithBadge })}>
-          <Image src={image} alt={course?.title} />
-        </div>
+        </article>
+
+        <Image
+          src={image}
+          alt={course?.title}
+          className={cx('image', { badge: isCourseWithBadge })}
+        />
       </div>
     </section>
   );

@@ -36,9 +36,10 @@
       }
     }
 
-    .right {
+    .image {
       flex: 1 1 30%;
       max-width: 30%;
+      height: auto;
 
       &.badge {
         max-width: 276px;
