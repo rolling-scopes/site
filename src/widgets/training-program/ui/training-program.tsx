@@ -2,9 +2,10 @@ import { cloneElement } from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 import type { Course } from '@/entities/course';
+import { Language } from '@/shared/types';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { TrainingProgramType, contentMap } from 'data';
+import { TrainingProgramType, contentMap, trainingProgramLink } from 'data';
 
 import styles from './training-program.module.scss';
 
@@ -12,13 +13,8 @@ const cx = classNames.bind(styles);
 
 type TrainingProgramProps = {
   courseName: TrainingProgramType;
-  lang?: 'ru' | 'en';
+  lang?: Language;
   course: Course;
-};
-
-const localizedContent = {
-  en: { linkLabel: 'Register' },
-  ru: { linkLabel: 'Зарегистрироваться' },
 };
 
 export const TrainingProgram = ({ courseName, lang = 'en', course }: TrainingProgramProps) => {
@@ -37,7 +33,7 @@ export const TrainingProgram = ({ courseName, lang = 'en', course }: TrainingPro
 
           {course && (
             <LinkCustom href={course?.enroll} variant="primary" external>
-              {localizedContent[lang].linkLabel}
+              {trainingProgramLink[lang].linkLabel}
             </LinkCustom>
           )}
         </article>
