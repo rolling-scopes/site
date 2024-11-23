@@ -6,7 +6,7 @@
   justify-content: space-between;
 
   font-size: 20px;
-  font-weight: 500;
+  font-weight: $font-weight-medium;
   line-height: 28px;
   color: $color-black;
   letter-spacing: 0;
@@ -25,7 +25,7 @@
 
   @include media-tablet {
     font-size: 16px;
-    font-weight: 400;
+    font-weight: $font-weight-regular;
     line-height: 24px;
   }
 }
