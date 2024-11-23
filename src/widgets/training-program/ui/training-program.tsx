@@ -21,8 +21,6 @@ export const TrainingProgram = ({ courseName, lang = 'en', course }: TrainingPro
   const { title, content, image } = contentMap[courseName];
   const isCourseWithBadge = courseName.includes('badge');
 
-  // TODO remove 'cloneElement' on 37 line due 'Using cloneElement is uncommon and can lead to fragile code' https://react.dev/reference/react/cloneElement
-
   return (
     <section className={cx('training-program', 'container')}>
       <div className={cx('training-program', 'content', 'column-2')}>
