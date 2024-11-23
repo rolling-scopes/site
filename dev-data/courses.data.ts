@@ -90,7 +90,7 @@ export const courses: Course[] = [
     language: ['en'],
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.REACT}`,
-    enroll: 'https://wearecommunity.io/events/rs-react-2024q3',
+    enroll: 'https://wearecommunity.io/events/rs-react-2025q1',
     backgroundStyle: {
       backgroundColor: '#EAF8FE',
       accentColor: '#2BB4EF',
