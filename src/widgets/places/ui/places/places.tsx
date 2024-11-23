@@ -8,7 +8,7 @@ import styles from './places.module.scss';
 const cx = classNames.bind(styles);
 
 export const Places = () => (
-  <div className={cx('places', 'container')} data-testid="places">
+  <section className={cx('places', 'container')} data-testid="places">
     <div className={cx('places', 'content')}>
       <div className={cx('marquee-group')}>
         {places.map((place) => (
@@ -26,5 +26,5 @@ export const Places = () => (
         ))}
       </div>
     </div>
-  </div>
+  </section>
 );
