@@ -1,14 +1,12 @@
 'use client';
 
 import classNames from 'classnames/bind';
-// @ts-expect-error no types
-import Marquee from 'react-double-marquee';
 
 import styles from './places.module.scss';
 
 const cx = classNames.bind(styles);
 
-const places: string[] = [
+const places = [
   'Kazakhstan',
   'Belarus',
   'Latvia',
@@ -20,12 +18,12 @@ const places: string[] = [
   'Online',
   'Kyrgyzstan',
   'Lithuania',
-];
+] as const;
 
 export const Places = () => (
   <div className={cx('places', 'container')} data-testid="places">
     <div className={cx('places', 'content')}>
-      <Marquee direction="left" childMargin={0}>
+      <div className={cx('marquee-group')}>
         {places.map((place) => (
           <span key={place} className={cx('place-container')}>
             <span className={cx('place')}>{place}</span>
@@ -34,7 +32,27 @@ export const Places = () => (
             </span>
           </span>
         ))}
-      </Marquee>
+      </div>
+      <div aria-hidden="true" className={cx('marquee-group')}>
+        {places.map((place) => (
+          <span key={place} className={cx('place-container')}>
+            <span className={cx('place')}>{place}</span>
+            <span className={cx('divider')} data-testid="divider">
+              *
+            </span>
+          </span>
+        ))}
+      </div>
+      <div aria-hidden="true" className={cx('marquee-group')}>
+        {places.map((place) => (
+          <span key={place} className={cx('place-container')}>
+            <span className={cx('place')}>{place}</span>
+            <span className={cx('divider')} data-testid="divider">
+              *
+            </span>
+          </span>
+        ))}
+      </div>
     </div>
   </div>
 );

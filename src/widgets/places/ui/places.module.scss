@@ -3,12 +3,24 @@
 
   &.content {
     overflow: hidden;
+    display: flex;
 
     padding: 5px 20px;
 
     border-color: $color-gray-600;
     border-style: solid;
     border-width: 1px 0 1px 0;
+
+    .marquee-group {
+      will-change: transform;
+      animation: marquee 30s linear infinite;
+
+      @keyframes marquee {
+        100% {
+          translate: -100% 0;
+        }
+      }
+    }
   }
 
   .place-container {
