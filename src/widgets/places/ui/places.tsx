@@ -1,9 +1,12 @@
 'use client';
 
+import classNames from 'classnames/bind';
 // @ts-expect-error no types
 import Marquee from 'react-double-marquee';
 
-import './places.scss';
+import styles from './places.module.scss';
+
+const cx = classNames.bind(styles);
 
 const places: string[] = [
   'Kazakhstan',
@@ -20,13 +23,13 @@ const places: string[] = [
 ];
 
 export const Places = () => (
-  <div className="places container" data-testid="places">
-    <div className="places content">
+  <div className={cx('places', 'container')} data-testid="places">
+    <div className={cx('places', 'content')}>
       <Marquee direction="left" childMargin={0}>
         {places.map((place) => (
-          <span key={place} className="place-container">
-            <span className="place">{place}</span>
-            <span className="divider" data-testid="divider">
+          <span key={place} className={cx('place-container')}>
+            <span className={cx('place')}>{place}</span>
+            <span className={cx('divider')} data-testid="divider">
               *
             </span>
           </span>
