@@ -1,6 +1,8 @@
 'use client';
 
+import React from 'react';
 import classNames from 'classnames/bind';
+import PlaceItem from '../place-item/place-item';
 
 import styles from './places.module.scss';
 
@@ -25,32 +27,17 @@ export const Places = () => (
     <div className={cx('places', 'content')}>
       <div className={cx('marquee-group')}>
         {places.map((place) => (
-          <span key={place} className={cx('place-container')}>
-            <span className={cx('place')}>{place}</span>
-            <span className={cx('divider')} data-testid="divider">
-              *
-            </span>
-          </span>
+          <PlaceItem key={place}>{place}</PlaceItem>
         ))}
       </div>
       <div aria-hidden="true" className={cx('marquee-group')}>
         {places.map((place) => (
-          <span key={place} className={cx('place-container')}>
-            <span className={cx('place')}>{place}</span>
-            <span className={cx('divider')} data-testid="divider">
-              *
-            </span>
-          </span>
+          <PlaceItem key={place}>{place}</PlaceItem>
         ))}
       </div>
       <div aria-hidden="true" className={cx('marquee-group')}>
         {places.map((place) => (
-          <span key={place} className={cx('place-container')}>
-            <span className={cx('place')}>{place}</span>
-            <span className={cx('divider')} data-testid="divider">
-              *
-            </span>
-          </span>
+          <PlaceItem key={place}>{place}</PlaceItem>
         ))}
       </div>
     </div>
