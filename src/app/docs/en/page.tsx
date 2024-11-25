@@ -1,4 +1,3 @@
-import docsMenu from './docsMenu_en.json';
 import { DocsLayout } from '../components/docs-layout/docs-layout';
 
 async function fetchDocs() {
@@ -16,11 +15,17 @@ async function fetchDocs() {
     }
   }
 
-  return { indexContent };
+  const data = await fetch('https://raw.githubusercontent.com/SpaNb4/docs/refs/heads/master/docs/en/docsMenu_en.json');
+  const docsMenu = await data.json();
+
+  return {
+    indexContent,
+    docsMenu,
+  };
 }
 
 export default async function DocsIndex() {
-  const { indexContent } = await fetchDocs();
+  const { indexContent, docsMenu } = await fetchDocs();
 
   return <DocsLayout menu={docsMenu} markdownContent={indexContent} lang="en" />;
 }

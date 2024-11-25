@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { DocsLayout } from '../../components/docs-layout/docs-layout';
-import docsMenu from '../docsMenu_en.json';
 
 export async function generateMetadata({
   params,
@@ -9,6 +8,8 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  const data = await fetch('https://raw.githubusercontent.com/SpaNb4/docs/refs/heads/master/docs/en/docsMenu_en.json');
+  const docsMenu = await data.json();
 
   const titles = docsMenu.flatMap((section) => {
     if (section.items) {
@@ -32,7 +33,9 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
-  // TODO REPLACE IT WITH FETCHING FROM REMOTE
+  const data = await fetch('https://raw.githubusercontent.com/SpaNb4/docs/refs/heads/master/docs/en/docsMenu_en.json');
+  const docsMenu = await data.json();
+
   return docsMenu.flatMap((section) => {
     if (section.items) {
       return section.items.map((item) => ({ slug: item.link }));
@@ -55,6 +58,9 @@ export default async function DocPage({ params }: { params: Promise<{ slug: stri
     }
 
     const markdownContent = await res.text();
+
+    const data = await fetch('https://raw.githubusercontent.com/SpaNb4/docs/refs/heads/master/docs/en/docsMenu_en.json');
+    const docsMenu = await data.json();
 
     return <DocsLayout menu={docsMenu} markdownContent={markdownContent} lang="en" />;
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
