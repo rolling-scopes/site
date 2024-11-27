@@ -1,7 +1,7 @@
 import { describe, it } from 'vitest';
 import { ALIAS_QUARTER_REGEXP } from '@/entities/course/constants';
 
-const testCourses = [
+const testAliases = [
   {
     alias: 'react-2025-q1',
     expected: 'react',
@@ -68,7 +68,7 @@ const testCourses = [
   },
   {
     alias: 'js-fe-preschool-2023q4-UZ',
-    expected: 'js-fe-preschool-2023q4-UZ',
+    expected: 'js-fe-preschool-UZ',
   },
   {
     alias: 'angular-2023Q4',
@@ -100,7 +100,7 @@ const testCourses = [
   },
   {
     alias: 'nodejs-2023-uz',
-    expected: 'nodejs-2023-uz',
+    expected: 'nodejs-uz',
   },
   {
     alias: 'react-2023-q1',
@@ -272,7 +272,7 @@ const testCourses = [
   },
   {
     alias: 'st-2021-spring',
-    expected: 'st-2021-spring',
+    expected: 'st-spring',
   },
   {
     alias: 'ios-2021',
@@ -396,8 +396,8 @@ const testCourses = [
   },
 ];
 
-describe('Courses (other courses) component', () => {
-  it.each(testCourses)('$alias -> $expected', ({ alias, expected }) => {
+describe("should cut quarter and a year of the course's alias", () => {
+  it.each(testAliases)('$alias -> $expected', ({ alias, expected }) => {
     expect(alias.replace(ALIAS_QUARTER_REGEXP, '')).toBe(expected);
   });
 });
