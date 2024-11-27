@@ -21,7 +21,7 @@
 .social-media-container {
   display: grid;
   grid-template-columns: repeat(3, auto);
-  align-items: start;
+  align-items: flex-start;
   justify-content: space-between;
 
   width: 416px;
