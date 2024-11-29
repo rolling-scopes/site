@@ -33,7 +33,9 @@ describe('Speakers', () => {
   });
 
   it('renders the image correctly', () => {
-    const imageElement = screen.getByAltText('speakers-wanted');
+    const imageElement = screen.getByAltText(
+      'Cartoon sloth wearing a yellow shirt, gesturing with a speech bubble',
+    );
 
     expect(imageElement).toBeInTheDocument();
   });

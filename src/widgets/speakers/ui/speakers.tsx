@@ -33,7 +33,11 @@ export const Speakers = () => (
           <span className={cx('email')}>rolling.scopes@gmail.com</span>
         </address>
       </article>
-      <Image className={cx('right', 'picture')} src={image} alt="speakers-wanted" />
+      <Image
+        className={cx('right', 'picture')}
+        src={image}
+        alt="Cartoon sloth wearing a yellow shirt, gesturing with a speech bubble"
+      />
     </div>
   </div>
 );
