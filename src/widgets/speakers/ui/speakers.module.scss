@@ -10,19 +10,15 @@
 
     .name {
       margin-top: 16px;
-      font-size: 28px;
-      line-height: 36px;
-
-      @include media-tablet {
-        font-size: 24px;
-        line-height: 32px;
-      }
     }
 
     .email-wrapper {
       display: flex;
+
       margin-top: 8px;
+
       font-size: 18px;
+      font-style: normal;
       line-height: 24px;
 
       .email {
