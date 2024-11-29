@@ -20,7 +20,7 @@ describe('Speakers', () => {
   });
 
   it('renders the name correctly', () => {
-    const nameElement = screen.getByTestId('contact-name');
+    const nameElement = screen.getByTestId('subtitle');
 
     expect(nameElement).toBeInTheDocument();
     expect(nameElement).toBeVisible();
