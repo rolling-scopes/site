@@ -1,15 +1,18 @@
+import classNames from 'classnames/bind';
 import Image from 'next/image';
 import image from '@/shared/assets/speakers-wanted.webp';
 import { EmailIcon } from '@/shared/icons';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
-import './speakers.scss';
+import styles from './speakers.module.scss';
+
+const cx = classNames.bind(styles);
 
 export const Speakers = () => (
-  <div className="speakers container">
-    <div className="speakers content">
-      <div className="info">
+  <div className={cx('speakers', 'container')}>
+    <div className={cx('speakers', 'content')}>
+      <div className={cx('info')}>
         <WidgetTitle size="large" mods="lines">
           Speakers wanted
         </WidgetTitle>
@@ -21,15 +24,15 @@ export const Speakers = () => (
           So don&apos;t hesitate to drop a short synopsis to RS Head
         </Paragraph>
 
-        <div className="name" data-testid="contact-name">
+        <div className={cx('name')} data-testid="contact-name">
           Dzmitry Varabei
         </div>
-        <div className="email">
+        <div className={cx('email')}>
           <EmailIcon />
           <span>rolling.scopes@gmail.com</span>
         </div>
       </div>
-      <Image className="right picture" src={image} alt="speakers-wanted" />
+      <Image className={cx('right', 'picture')} src={image} alt="speakers-wanted" />
     </div>
   </div>
 );
