@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
-import image from '@/shared/assets/speakers-wanted.webp';
+import speakersWanted from '@/shared/assets/speakers-wanted.webp';
 import email from '@/shared/assets/svg/email.svg';
 import { RS_EMAIL } from '@/shared/constants';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -36,7 +36,7 @@ export const Speakers = () => (
       </article>
       <Image
         className={cx('right', 'picture')}
-        src={image}
+        src={speakersWanted}
         alt="Cartoon sloth wearing a yellow shirt, gesturing with a speech bubble"
       />
     </div>
