@@ -1,8 +1,8 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 import image from '@/shared/assets/speakers-wanted.webp';
+import email from '@/shared/assets/svg/email.svg';
 import { RS_EMAIL } from '@/shared/constants';
-import { EmailIcon } from '@/shared/icons';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -30,7 +30,7 @@ export const Speakers = () => (
           Dzmitry Varabei
         </Subtitle>
         <address className={cx('email-wrapper')}>
-          <EmailIcon />
+          <Image src={email} alt="" aria-hidden="true" />
           <span className={cx('email')}>{RS_EMAIL}</span>
         </address>
       </article>
