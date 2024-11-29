@@ -27,9 +27,9 @@ export const Speakers = () => (
         <div className={cx('name')} data-testid="contact-name">
           Dzmitry Varabei
         </div>
-        <div className={cx('email')}>
+        <div className={cx('email-wrapper')}>
           <EmailIcon />
-          <span>rolling.scopes@gmail.com</span>
+          <span className={cx('email')}>rolling.scopes@gmail.com</span>
         </div>
       </div>
       <Image className={cx('right', 'picture')} src={image} alt="speakers-wanted" />

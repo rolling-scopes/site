@@ -5,7 +5,7 @@
 
   .info {
     width: 640px;
-    font-weight: 500;
+    font-weight: $font-weight-medium;
     color: $color-black;
 
     .name {
@@ -19,17 +19,13 @@
       }
     }
 
-    .email {
+    .email-wrapper {
       display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-
       margin-top: 8px;
-
       font-size: 18px;
       line-height: 24px;
 
-      span {
+      .email {
         margin-left: 8px;
       }
 
@@ -49,18 +45,10 @@
     height: 300px;
     margin-left: auto;
 
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-
     @include media-laptop {
       width: 235px;
       height: 240px;
-      margin-top: 16px;
-    }
-
-    @include media-tablet {
-      margin-left: 0;
+      margin: 16px 0 0 0;
     }
   }
 
