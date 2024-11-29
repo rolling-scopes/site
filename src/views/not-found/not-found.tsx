@@ -20,7 +20,7 @@ export const NotFound = () => {
         The page you are looking for doesn&apos;t exist or has been moved. Please go back to the
         homepage.
       </Paragraph>
-      <LinkCustom href="/" variant="primary">
+      <LinkCustom href="/" variant="primary" data-testid="home-link">
         Go back home
       </LinkCustom>
     </main>
