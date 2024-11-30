@@ -4,8 +4,8 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import remarkToc from 'remark-toc';
-import { LangSwitcher } from '../lang-switcher/lang-switcher';
 import DocsMenu, { DocLinkType } from '../docs-menu/docs-menu';
+import { LangSwitcher } from '../lang-switcher/lang-switcher';
 import Search from '../search/search';
 import { Language } from '@/shared/types';
 
@@ -24,13 +24,13 @@ export function DocsLayout({
 }) {
   return (
     <div className={cx('container', 'docs-layout')}>
-      <div className={cx('test')}>
-        <div className={cx('menu-wrapper')}>
+      <div className={cx('menu-wrapper')}>
+        <div className={cx('menu')}>
           <DocsMenu menu={menu} lang={lang} />
           <LangSwitcher />
         </div>
       </div>
-      <div className={cx('content')}>
+      <div className={cx('content', 'docs-content')}>
         <div
           className={cx('markdown-body')}
           style={{

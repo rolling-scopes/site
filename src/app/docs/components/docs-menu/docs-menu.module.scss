@@ -1,4 +1,14 @@
 .menu {
+  width: 300px;
+
+  @include media-tablet {
+    display: none;
+
+    &.open {
+      display: block;
+    }
+  }
+
   ul {
     display: flex;
     flex-direction: column;
@@ -33,5 +43,13 @@
       padding: 6px 8px;
       margin-top: 1.25rem;
     }
+  }
+}
+
+.burger {
+  display: none;
+
+  @include media-tablet {
+    display: block;
   }
 }

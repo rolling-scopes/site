@@ -1,12 +1,18 @@
-.menu-wrapper {
+.menu {
   position: sticky;
   top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 50px;
 }
 
-.test {
-  display: block;
+.menu-wrapper {
+  padding: 0 16px;
+}
+
+.docs-content {
+  @include media-tablet {
+    overflow: hidden;
+  }
 }
