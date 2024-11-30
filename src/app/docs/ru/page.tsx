@@ -1,5 +1,5 @@
-// import docsMenu from './docsMenu_ru.json';
 import { DocsLayout } from '../components/docs-layout/docs-layout';
+import { fetchMenu } from '../utils/fetchMenu';
 
 async function fetchDocs() {
   const indexDoc = 'README';
@@ -16,17 +16,12 @@ async function fetchDocs() {
     }
   }
 
-  const data = await fetch('https://raw.githubusercontent.com/SpaNb4/docs/refs/heads/master/docs/docsMenu_ru.json');
-  const docsMenu = await data.json();
-
-  return {
-    indexContent,
-    docsMenu,
-  };
+  return indexContent;
 }
 
 export default async function DocsIndex() {
-  const { indexContent, docsMenu } = await fetchDocs();
+  const indexContent = await fetchDocs();
+  const docsMenu = await fetchMenu('ru');
 
   return <DocsLayout menu={docsMenu} markdownContent={indexContent} lang="ru" />;
 }

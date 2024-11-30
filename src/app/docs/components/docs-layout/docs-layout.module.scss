@@ -5,6 +5,8 @@
   flex-direction: column;
   align-items: center;
   gap: 50px;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .menu-wrapper {
