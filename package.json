@@ -20,6 +20,9 @@
     "prepare": "husky",
     "postbuild": "pagefind --site .next/server/app --output-path build/_next/static/pagefind"
   },
+  "engines": {
+    "node": ">=20.x"
+  },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
     "@next/mdx": "^15.0.3",
@@ -30,7 +33,6 @@
     "gray-matter": "^4.0.3",
     "marked": "^15.0.0",
     "next": "15.0.2",
-    "nextjs-toploader": "^3.6.15",
     "react": "19.0.0-rc-02c0e824-20241028",
     "react-dom": "19.0.0-rc-02c0e824-20241028",
     "react-double-marquee": "^1.1.0",
@@ -90,10 +92,6 @@
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
     "@testing-library/react": {
-      "react": "19.0.0-rc-02c0e824-20241028",
-      "react-dom": "19.0.0-rc-02c0e824-20241028"
-    },
-    "nextjs-toploader": {
       "react": "19.0.0-rc-02c0e824-20241028",
       "react-dom": "19.0.0-rc-02c0e824-20241028"
     }

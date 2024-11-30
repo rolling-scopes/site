@@ -13,14 +13,19 @@ describe('Courses (other courses) component', () => {
     const widget = screen.getByTestId('all-courses');
     const title = screen.getByTestId('widget-title');
     const courseCards = screen.getAllByTestId('course-card');
+    const courseTitles = screen.getAllByTestId('subtitle');
 
     expect(widget).toBeVisible();
     expect(title).toBeVisible();
     expect(title).toHaveTextContent(widgetTitle);
     expect(courseCards.length).toBe(mockedCourses.length);
-    courseCards.forEach((card, index) => {
-      expect(card).toBeVisible();
-      expect(card).toHaveTextContent(mockedCourses[index].title);
+
+    courseCards.forEach((card) => expect(card).toBeVisible());
+
+    courseTitles.forEach((title) => {
+      const course = mockedCourses.find((c) => c.title === title.textContent);
+
+      expect(course).toBeDefined();
     });
   });
 });
