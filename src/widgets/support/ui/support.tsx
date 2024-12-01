@@ -11,9 +11,9 @@ import styles from './support.module.scss';
 const cx = classNames.bind(styles);
 
 export const Support = () => (
-  <div className={cx('support-container', 'container')}>
+  <section className={cx('support-container', 'container')}>
     <div className={cx('support-content', 'content')}>
-      <div className={cx('support-info')}>
+      <article className={cx('support-info')}>
         <WidgetTitle size="large" mods="lines">
           Support Us
         </WidgetTitle>
@@ -25,8 +25,8 @@ export const Support = () => (
         <LinkCustom className={cx('support-link')} href={LINKS.DONATE} variant="primary" external>
           Donate now
         </LinkCustom>
-      </div>
+      </article>
       <Image className={cx('right', 'support-picture')} src={image} alt="support-us" />
     </div>
-  </div>
+  </section>
 );
