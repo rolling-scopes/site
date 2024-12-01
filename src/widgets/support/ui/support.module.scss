@@ -1,22 +1,19 @@
-.support {
-  &.container {
-    background-color: $color-gray-100;
-  }
+.support-container {
+  background-color: $color-gray-100;
 
-  &.content {
+  .support-content {
     display: flex;
-    flex-direction: row;
     gap: 50px;
     align-items: flex-start;
     justify-content: space-between;
 
-    & .info {
+    .support-info {
       width: 640px;
       font-weight: 500;
       color: $color-black;
       text-align: left;
 
-      a {
+      .support-link {
         margin-top: 24px;
 
         @include media-tablet {
@@ -29,7 +26,7 @@
       }
     }
 
-    & .picture {
+    .support-picture {
       width: 348px;
       height: 288px;
 
