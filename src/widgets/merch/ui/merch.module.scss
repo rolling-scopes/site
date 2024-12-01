@@ -3,7 +3,6 @@
 
   .info {
     width: 600px;
-    text-align: left;
 
     @include media-laptop {
       width: 100%;
@@ -13,13 +12,11 @@
   .image {
     width: 680px;
     height: 700px;
-    margin: 0 auto;
     object-fit: cover;
 
     @include media-laptop {
       width: 680px;
       height: 618px;
-      margin-top: 24px;
     }
 
     @include media-tablet {
@@ -29,6 +26,6 @@
   }
 
   @include media-laptop {
-    flex-direction: column;
+    gap: 74px;
   }
 }

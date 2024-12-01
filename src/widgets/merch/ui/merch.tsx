@@ -24,7 +24,12 @@ export const Merch = () => (
         <Paragraph>{merchData.description}</Paragraph>
         <LinkCustom href={LINKS.MERCH} variant="primary" external>{merchData.linkTitle}</LinkCustom>
       </article>
-      <Image className={cx('image')} src={rsSchoolMerchImage} alt="RS School merch" />
+      <Image
+        className={cx('image')}
+        src={rsSchoolMerchImage}
+        alt="A collage of photos with branded T-shirts, cups, and stickers featuring the RSSchool logo"
+        data-testid="collage-with-merch"
+      />
     </div>
   </section>
 );

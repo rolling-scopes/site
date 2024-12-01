@@ -144,5 +144,5 @@ export const MOCKED_MERCH_DATA = {
   paragraph: 'The wait is almost over',
   buttonText: 'Discover merch assets',
   buttonLink: 'https://sloths.rs.school/',
-  imageAltText: 'RS School merch',
+  imageAltText: 'A collage of photos with branded T-shirts, cups, and stickers featuring the RSSchool logo',
 };

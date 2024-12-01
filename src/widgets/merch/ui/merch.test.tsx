@@ -35,8 +35,9 @@ describe('Merch', () => {
   });
 
   it('renders the image with alt text', () => {
-    const imageElement = screen.getByAltText(MOCKED_MERCH_DATA.imageAltText);
+    const imageElement = screen.getByTestId('collage-with-merch');
 
     expect(imageElement).toBeVisible();
+    expect(imageElement).toHaveAttribute('alt', MOCKED_MERCH_DATA.imageAltText);
   });
 });
