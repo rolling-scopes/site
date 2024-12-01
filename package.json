@@ -23,12 +23,12 @@
     "node": ">=20.x"
   },
   "dependencies": {
-    "class-variance-authority": "^0.7.0",
+    "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.13",
-    "next": "15.0.2",
-    "react": "19.0.0-rc-02c0e824-20241028",
-    "react-dom": "19.0.0-rc-02c0e824-20241028",
+    "next": "15.0.3",
+    "react": "19.0.0-rc.1",
+    "react-dom": "19.0.0-rc.1",
     "react-double-marquee": "^1.1.0",
     "react-responsive-carousel": "^3.2.23"
   },
