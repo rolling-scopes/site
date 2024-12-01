@@ -1,3 +1,4 @@
+import classNames from 'classnames/bind';
 import Image from 'next/image';
 import { LINKS } from '@/core/const';
 import image from '@/shared/assets/support.webp';
@@ -5,12 +6,14 @@ import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
-import './support.scss';
+import styles from './support.module.scss';
+
+const cx = classNames.bind(styles);
 
 export const Support = () => (
-  <div className="support container">
-    <div className="support content">
-      <div className="info">
+  <div className={cx('support', 'container')}>
+    <div className={cx('support', 'content')}>
+      <div className={cx('info')}>
         <WidgetTitle size="large" mods="lines">
           Support Us
         </WidgetTitle>
@@ -23,7 +26,7 @@ export const Support = () => (
           Donate now
         </LinkCustom>
       </div>
-      <Image className="right picture" src={image} alt="support-us" />
+      <Image className={cx('right', 'picture')} src={image} alt="support-us" />
     </div>
   </div>
 );
