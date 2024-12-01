@@ -1,9 +1,8 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 import { getCourseStatus } from '../helpers/get-course-status';
-import { COURSE_STALE_AFTER_DAYS } from '@/core/const';
 import { Course } from '@/entities/course';
-import { getCourseDate } from '@/shared/helpers/getCourseDate';
+import { dayJS } from '@/shared/helpers/dayJS';
 import { DateLang } from '@/shared/ui/date-lang';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { MainTitle } from '@/shared/ui/main-title';
@@ -23,8 +22,7 @@ type HeroCourseProps = {
 export const HeroCourse = ({ lang = 'en', type, course }: HeroCourseProps) => {
   const { title, altTitle, language, mode, enroll, secondaryIcon, startDate, registrationEndDate } =
     course;
-  const status = getCourseStatus(startDate);
-  const date = getCourseDate(startDate, COURSE_STALE_AFTER_DAYS);
+  const status = getCourseStatus(startDate, dayJS(registrationEndDate).diff(startDate, 'd'));
 
   return (
     <section className={cx('hero-course', 'container')} data-testid="hero-course">
@@ -35,7 +33,7 @@ export const HeroCourse = ({ lang = 'en', type, course }: HeroCourseProps) => {
           <MainTitle size="small">{`${altTitle || title} Course`}</MainTitle>
           {type && <p className={cx('hero-subtitle')}>{type}</p>}
           <DateLang
-            startDate={date}
+            startDate={startDate}
             registrationEndDate={registrationEndDate}
             language={language}
             mode={mode}

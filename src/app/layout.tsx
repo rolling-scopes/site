@@ -1,5 +1,4 @@
 import { PropsWithChildren } from 'react';
-import NextTopLoader from 'nextjs-toploader';
 import { BaseLayout } from '@/core/base-layout';
 import type { Metadata } from 'next';
 
@@ -40,14 +39,6 @@ function RootLayout({ children }: PropsWithChildren) {
       <body>
         <div id="root">
           <div className="app-styles">
-            <NextTopLoader
-              color="black"
-              initialPosition={0.0001}
-              crawl={false}
-              easing="ease-in-out"
-              showSpinner={false}
-              speed={300}
-            />
             <BaseLayout>{children}</BaseLayout>
           </div>
         </div>
