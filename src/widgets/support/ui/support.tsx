@@ -26,7 +26,7 @@ export const Support = () => (
           Donate now
         </LinkCustom>
       </article>
-      <Image className={cx('right', 'support-picture')} src={image} alt="support-us" />
+      <Image className={cx('right', 'support-picture')} src={image} alt="A sloth mascot with a piggy bank in his hands" />
     </div>
   </section>
 );
