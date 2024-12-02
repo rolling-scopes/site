@@ -57,7 +57,12 @@ export const NavItem = ({ label, href, children }: NavItemProps) => {
   }, [pathname]);
 
   return (
-    <div className={cx('menu-item-wrapper')} onBlur={handleBlur} onKeyDown={handleEscKeyPress}>
+    <div
+      className={cx('menu-item-wrapper')}
+      onBlur={handleBlur}
+      onKeyDown={handleEscKeyPress}
+      data-testid="menu-item"
+    >
       <Link
         href={`/${href}`}
         className={cx(
