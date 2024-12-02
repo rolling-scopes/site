@@ -46,17 +46,7 @@ describe('SchoolMenu', () => {
 
     expect(screen.getAllByRole('link')).toHaveLength(2);
 
-    const links = screen.getAllByRole('link');
-
-    links.forEach((link) => {
-      expect(link).toBeInTheDocument();
-    });
-
-    const descriptions = container.getElementsByTagName('small');
-
-    for (const description of descriptions) {
-      expect(description).toBeInTheDocument();
-    }
+    expect(container.getElementsByTagName('small')).toHaveLength(2);
   });
 
   it('renders without crashing and displays "all courses" heading', () => {
