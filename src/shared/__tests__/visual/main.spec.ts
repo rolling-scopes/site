@@ -35,8 +35,7 @@ test('Main page desktop menu', async ({ page }) => {
   const elementsCount = await elements.count();
 
   for (let i = 0; i < elementsCount; i++) {
-    await elements.nth(i).hover({ trial: true });
-    await page.waitForTimeout(500);
+    await elements.nth(i).hover();
     await takeScreenshot(page, `Main page desktop - menu open ${i + 1}`);
   }
 });
