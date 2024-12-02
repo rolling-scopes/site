@@ -31,10 +31,11 @@ test('Main page mobile', async ({ page }) => {
 test('Main page desktop menu', async ({ page }) => {
   await page.goto(ROUTES.HOME);
 
-  const elements = await page.getByTestId('menu-item').all();
+  const elements = page.getByTestId('menu-item');
+  const elementsCount = await elements.count();
 
-  for await (const el of elements) {
-    await el.hover();
-    await takeScreenshot(page, 'Main page desktop - menu open');
+  for (let i = 0; i < elementsCount; i++) {
+    await elements.nth(i).hover();
+    await takeScreenshot(page, `Main page desktop - menu open ${i}`);
   }
 });
