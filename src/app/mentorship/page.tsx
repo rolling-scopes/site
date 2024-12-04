@@ -7,6 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return { title };
 }
+
 export default async function MentorshipRoute() {
   return <Mentorship mentorshipData={mentorshipCoursesDefault} />;
 }
