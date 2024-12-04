@@ -79,7 +79,7 @@ describe('AboutCourse component', () => {
         <AboutCourse
           course={mockedPreSchoolCourse}
           courseName="JS / Front-end Pre-school RU"
-          type="pre-school-ru"
+          type="Pre-school RU"
         />,
       );
 

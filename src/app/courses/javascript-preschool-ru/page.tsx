@@ -14,6 +14,6 @@ export default async function JsPreRoute() {
   const course = await selectCourse(courseName);
 
   return (
-    <JavaScriptPreSchoolRu lang="ru" type="pre-school-ru" course={course} courseName={courseName} />
+    <JavaScriptPreSchoolRu lang="ru" type="Pre-school RU" course={course} courseName={courseName} />
   );
 }

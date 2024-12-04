@@ -12,7 +12,7 @@ export const cx = classNames.bind(styles);
 
 type AboutCourseProps = {
   courseName: CourseNamesKeys;
-  type?: 'ru' | 'en' | 'pre-school-ru';
+  type?: 'ru' | 'en' | 'Pre-school RU';
   course: Course;
 };
 

@@ -25,7 +25,7 @@ export const introLocalizedContent = {
     linkLabel: 'Cтать студентом',
     paragraph: '',
   },
-  'pre-school-ru': {
+  'Pre-school RU': {
     title: 'JS/Frontend-разработка. Подготовительный этап',
     linkLabel: 'Стать студентом',
     paragraph:

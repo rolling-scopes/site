@@ -13,7 +13,7 @@ import { CourseNames, preSchoolRu } from 'data';
 type JavaScriptPreSchoolRuProps = {
   course: Course;
   lang: 'ru' | 'en';
-  type?: 'pre-school-ru';
+  type?: 'Pre-school RU';
   courseName: CourseNames['JS_PRESCHOOL_RU'];
 };
 
