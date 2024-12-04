@@ -13,6 +13,8 @@ import styles from './docs-layout.module.scss';
 
 const cx = classNames.bind(styles);
 
+const baseUrl = 'https://raw.githubusercontent.com/SpaNb4/docs/refs/heads/master/docs/images/';
+
 export function DocsLayout({
   menu,
   markdownContent,
@@ -31,24 +33,21 @@ export function DocsLayout({
         </div>
       </div>
       <div className={cx('content', 'docs-content')}>
-        <div
-          className={cx('markdown-body')}
-          style={{
-            maxWidth: 1200,
-            margin: 'auto',
-            textAlign: 'left',
-          }}
-          data-pagefind-body
-        >
-          <div>
-            <Search />
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm, remarkToc]}
-              rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings]}
-            >
-              {markdownContent}
-            </ReactMarkdown>
-          </div>
+        <Search />
+        <div className={cx('markdown-body')} data-pagefind-body>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm, remarkToc]}
+            rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings]}
+            components={{
+              img({ node, ...props }) {
+                const newSrc = props.src ? `${baseUrl}${props.src.split('/').pop()}` : '';
+
+                return <img {...props} src={newSrc} />;
+              },
+            }}
+          >
+            {markdownContent}
+          </ReactMarkdown>
         </div>
       </div>
     </div>

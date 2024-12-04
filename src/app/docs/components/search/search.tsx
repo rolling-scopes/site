@@ -1,10 +1,13 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import classNames from 'classnames/bind';
 import Link from 'next/link.js';
 import mockedResults from '../../mocked_search.json';
 
-import './search.scss';
+import styles from './search.module.scss';
+
+const cx = classNames.bind(styles);
 
 declare global {
   interface Window {
@@ -26,7 +29,7 @@ const isRunningInDev = process.env.NODE_ENV === 'development';
 
 export default function Search() {
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState<unknown[]>([]);
 
   useEffect(() => {
     async function loadPagefind() {
@@ -48,12 +51,9 @@ export default function Search() {
   }, []);
 
   async function handleSearch() {
-    // @ts-ignore
     if (window.pagefind) {
-      // @ts-ignore
       const search = await window.pagefind.search(query);
 
-      // @ts-ignore
       setResults(search.results);
     }
   }
@@ -99,7 +99,7 @@ function Result({ result }) {
   }
 
   return (
-    <div className="results">
+    <div className={cx('results')}>
       {/* @ts-ignore */}
       <Link href={data.url}>
         {/* @ts-ignore */}
@@ -110,10 +110,10 @@ function Result({ result }) {
 
       {/* @ts-ignore */}
       {data.sub_results && data.sub_results.length > 0 && (
-        <div className="subresults">
+        <div className={cx('subresults')}>
           {/* @ts-ignore */}
           {data.sub_results.map((subresult, index) => (
-            <div key={index} className="subresult">
+            <div key={index} className={cx('subresult')}>
               <Link href={subresult.url}>
                 <h4>{subresult.title}</h4>
                 <p>{subresult.excerpt}</p>

@@ -10,11 +10,20 @@
 }
 
 .menu-wrapper {
-  padding: 0 16px;
+  padding: 80px 120px 40px;
+
+  @include media-laptop {
+    padding: 80px 40px 40px;
+  }
+
+  @include media-tablet {
+    padding: 56px 16px;
+  }
 }
 
 .docs-content {
-  @include media-tablet {
-    overflow: hidden;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
+

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { isValidUrl } from '../../utils/isValidUrl';
 import { BurgerMenu } from '@/core/base-layout/components/header/burger/burger';
 import { Language } from '@/shared/types';
 
@@ -15,6 +16,7 @@ interface DocLink {
 
 interface DocLinkWithChildren {
   title: string;
+  link?: string;
   items: DocLink[];
 }
 
@@ -30,48 +32,50 @@ const DocsMenu = ({ menu, lang }: DocsMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const isActive = (link: string) => pathname.endsWith(link);
 
+  const renderMenuItems = (items: DocLinkType[]) => {
+    return items.map((doc, index) => {
+      if ('items' in doc) {
+        return (
+          <li key={index}>
+            {doc.link
+              ? (
+                  <>
+                    <Link
+                      href={isValidUrl(doc.link) ? doc.link : `/docs/${lang}/${doc.link}`}
+                      className={isActive(doc.link) ? styles.active : ''}
+                    >
+                      {doc.title}
+                    </Link>
+                  </>
+                )
+              : (
+                  <>
+                    <span>{doc.title}</span>
+                  </>
+                )}
+            <ul>{renderMenuItems(doc.items)}</ul>
+          </li>
+        );
+      } else {
+        return (
+          <li key={index}>
+            <Link
+              href={isValidUrl(doc.link) ? doc.link : `/docs/${lang}/${doc.link}`}
+              className={isActive(doc.link) ? styles.active : ''}
+            >
+              {doc.title}
+            </Link>
+          </li>
+        );
+      }
+    });
+  };
+
   return (
     <>
       <BurgerMenu isMenuOpen={isOpen} toggleMenu={() => setIsOpen(!isOpen)} />
       <nav className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
-        <ul>
-          {menu.map((doc, index) => {
-            if ('items' in doc) {
-              return (
-                <li key={index}>
-                  <>
-                    <span>{doc.title}</span>
-                    <ul>
-                      {doc.items.map((subDoc, subIndex) => {
-                        return (
-                          <li key={subIndex}>
-                            <Link
-                              href={`/docs/${lang}/${subDoc.link}`}
-                              className={isActive(subDoc.link) ? styles.active : ''}
-                            >
-                              {subDoc.title}
-                            </Link>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </>
-                </li>
-              );
-            } else {
-              return (
-                <li key={index}>
-                  <Link
-                    href={`/docs/${lang}/${doc.link}`}
-                    className={isActive(doc.link) ? styles.active : ''}
-                  >
-                    {doc.title}
-                  </Link>
-                </li>
-              );
-            }
-          })}
-        </ul>
+        <ul>{renderMenuItems(menu)}</ul>
       </nav>
     </>
   );
