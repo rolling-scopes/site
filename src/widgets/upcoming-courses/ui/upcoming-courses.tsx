@@ -38,24 +38,28 @@ export const UpcomingCourses = async () => {
     });
 
   return (
-    <article id="upcoming-courses" className={cx('container')}>
-      <section className={cx('content')}>
-        <WidgetTitle size="small">Upcoming courses</WidgetTitle>
-        <div className={cx('column-2')}>
-          <div className={cx('course-list')} data-testid="courses-list">
-            {coursesContent}
-            <LinkCustom href={ROUTES.COURSES} variant="primary">
-              Go to courses
-            </LinkCustom>
-          </div>
-          <Image
-            className={cx('rs-banner')}
-            data-testid="rs-banner"
-            src={RSBanner}
-            alt="The Rolling Scopes organization logo"
-          />
-        </div>
-      </section>
-    </article>
+    <>
+      {coursesContent.length > 0 && (
+        <article id="upcoming-courses" className={cx('container')}>
+          <section className={cx('content')}>
+            <WidgetTitle size="small">Upcoming courses</WidgetTitle>
+            <div className={cx('column-2')}>
+              <div className={cx('course-list')} data-testid="courses-list">
+                {coursesContent}
+                <LinkCustom href={ROUTES.COURSES} variant="primary">
+                  Go to courses
+                </LinkCustom>
+              </div>
+              <Image
+                className={cx('rs-banner')}
+                data-testid="rs-banner"
+                src={RSBanner}
+                alt="The Rolling Scopes organization logo"
+              />
+            </div>
+          </section>
+        </article>
+      )}
+    </>
   );
 };
