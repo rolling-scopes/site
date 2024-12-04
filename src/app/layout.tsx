@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { Analytics } from './analytics';
 import { BaseLayout } from '@/core/base-layout';
 import type { Metadata } from 'next';
 
@@ -43,7 +43,7 @@ function RootLayout({ children }: PropsWithChildren) {
             <BaseLayout>{children}</BaseLayout>
           </div>
         </div>
-        <GoogleAnalytics gaId="G-THXM004SPR" />
+        <Analytics />
       </body>
     </html>
   );
