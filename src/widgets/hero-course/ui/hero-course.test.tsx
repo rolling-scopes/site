@@ -11,7 +11,7 @@ import { COURSE_TITLES } from 'data';
 const mockedCourse: Course = {
   id: '6',
   title: COURSE_TITLES.NODE,
-  subTitle: null,
+  subTitle: 'Test Subtitle',
   alias: COURSE_ALIASES.NODE,
   iconSrc: MOCKED_IMAGE_PATH,
   iconSmall: MOCKED_IMAGE_PATH,
@@ -53,5 +53,11 @@ describe('HeroCourse component', () => {
 
     expect(imageElement).toBeInTheDocument();
     expect(imageElement).toHaveAttribute('src', MOCKED_IMAGE_PATH.src);
+  });
+
+  it('renders the subtitle when provided', async () => {
+    const subtitleElement = await screen.findByText('Test Subtitle');
+
+    expect(subtitleElement).toBeVisible();
   });
 });
