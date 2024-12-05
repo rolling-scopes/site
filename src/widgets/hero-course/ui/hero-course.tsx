@@ -16,12 +16,20 @@ const cx = classNames.bind(styles);
 type HeroCourseProps = {
   course: Course;
   lang?: 'ru' | 'en';
-  type?: 'Pre-school RU';
 };
 
-export const HeroCourse = ({ lang = 'en', type, course }: HeroCourseProps) => {
-  const { title, altTitle, language, mode, enroll, secondaryIcon, startDate, registrationEndDate } =
-    course;
+export const HeroCourse = ({ lang = 'en', course }: HeroCourseProps) => {
+  const {
+    title,
+    subTitle,
+    altTitle,
+    language,
+    mode,
+    enroll,
+    secondaryIcon,
+    startDate,
+    registrationEndDate,
+  } = course;
   const status = getCourseStatus(startDate, dayJS(registrationEndDate).diff(startDate, 'd'));
 
   return (
@@ -31,7 +39,7 @@ export const HeroCourse = ({ lang = 'en', type, course }: HeroCourseProps) => {
         <article>
           <SectionLabel data-testid="course-label">{status}</SectionLabel>
           <MainTitle size="small">{`${altTitle || title} Course`}</MainTitle>
-          {type && <p className={cx('hero-subtitle')}>{type}</p>}
+          {subTitle && <p className={cx('hero-subtitle')}>{subTitle}</p>}
           <DateLang
             startDate={startDate}
             registrationEndDate={registrationEndDate}

@@ -14,23 +14,33 @@ type ContentMap = {
   [key in CourseNamesChannels]: AboutCourseInfo[];
 };
 
+const enIntro = {
+  title: 'About the course',
+  linkLabel: 'Become a student',
+  paragraph: null,
+};
+const ruIntro = {
+  title: 'О курсе',
+  linkLabel: 'Cтать студентом',
+  paragraph: null,
+};
+const preSchoolIntro = {
+  title: 'JS/Frontend-разработка. Подготовительный этап',
+  linkLabel: 'Стать студентом',
+  paragraph:
+    'Подготовительный этап поможет тем, кто мало знаком или совсем не знаком с программированием и хотел бы впоследствии учиться на основном курсе «JavaScript/Front-end».',
+};
+
 export const introLocalizedContent = {
-  en: {
-    title: 'About the course',
-    linkLabel: 'Become a student',
-    paragraph: '',
-  },
-  ru: {
-    title: 'О курсе',
-    linkLabel: 'Cтать студентом',
-    paragraph: '',
-  },
-  'Pre-school RU': {
-    title: 'JS/Frontend-разработка. Подготовительный этап',
-    linkLabel: 'Стать студентом',
-    paragraph:
-      'Подготовительный этап поможет тем, кто мало знаком или совсем не знаком с программированием и хотел бы впоследствии учиться на основном курсе «JavaScript/Front-end».',
-  },
+  [COURSE_TITLES.JS_PRESCHOOL_RU]: preSchoolIntro,
+  [COURSE_TITLES.JS_EN]: enIntro,
+  [COURSE_TITLES.JS_RU]: ruIntro,
+  [COURSE_TITLES.REACT]: enIntro,
+  [COURSE_TITLES.ANGULAR]: enIntro,
+  [COURSE_TITLES.NODE]: enIntro,
+  [COURSE_TITLES.AWS_FUNDAMENTALS]: enIntro,
+  [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: enIntro,
+  [COURSE_TITLES.AWS_DEVOPS]: enIntro,
 };
 
 const listData = {
@@ -217,8 +227,7 @@ const reactEn: AboutCourseInfo[] = javaScriptEN().map((item) => {
       ...item,
       info: (
         <p>
-          Throughout the course, we mostly use
-          {' '}
+          Throughout the course, we mostly use{' '}
           <LinkCustom href={DISCORD_LINKS[COURSE_TITLES.REACT]} external>
             Discord chat
           </LinkCustom>

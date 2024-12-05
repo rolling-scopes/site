@@ -18,6 +18,7 @@ const mockedReactCourse: Course = {
   iconSmall: MOCKED_IMAGE_PATH,
   iconSrc: MOCKED_IMAGE_PATH,
   title: COURSE_TITLES.REACT,
+  subTitle: null,
   alias: COURSE_ALIASES.REACT,
   language: ['en'],
   mode: 'online',
@@ -76,11 +77,7 @@ describe('AboutCourse component', () => {
   describe('render "Paragraph" with "js / front-end pre-school ru" props', () => {
     it("renders 'Paragraph' and its' content", async () => {
       renderWithRouter(
-        <AboutCourse
-          course={mockedPreSchoolCourse}
-          courseName="JS / Front-end Pre-school RU"
-          type="Pre-school RU"
-        />,
+        <AboutCourse course={mockedPreSchoolCourse} courseName="JS / Front-end Pre-school RU" />,
       );
 
       const paragraph = await screen.findByText(/Подготовительный этап поможет тем/i);

@@ -11,6 +11,7 @@ import { COURSE_TITLES } from 'data';
 const mockedCourse: Course = {
   id: '6',
   title: COURSE_TITLES.NODE,
+  subTitle: null,
   alias: COURSE_ALIASES.NODE,
   iconSrc: MOCKED_IMAGE_PATH,
   iconSmall: MOCKED_IMAGE_PATH,

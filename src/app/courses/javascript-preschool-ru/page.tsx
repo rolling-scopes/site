@@ -13,7 +13,5 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function JsPreRoute() {
   const course = await selectCourse(courseName);
 
-  return (
-    <JavaScriptPreSchoolRu lang="ru" type="Pre-school RU" course={course} courseName={courseName} />
-  );
+  return <JavaScriptPreSchoolRu lang="ru" course={course} courseName={courseName} />;
 }
