@@ -9,21 +9,13 @@ describe('Merch', () => {
     renderWithRouter(<Merch />);
   });
 
-  it('renders the title correctly', () => {
+  it('renders the content correctly', () => {
     const titleElement = screen.getByText(MOCKED_MERCH_DATA.title);
-
-    expect(titleElement).toBeVisible();
-  });
-
-  it('renders the subtitle correctly', () => {
     const subtitleElement = screen.getByText(MOCKED_MERCH_DATA.subtitle);
-
-    expect(subtitleElement).toBeVisible();
-  });
-
-  it('renders the paragraph correctly', () => {
     const paragraphText = screen.getByText(new RegExp(MOCKED_MERCH_DATA.paragraph, 'i'));
 
+    expect(titleElement).toBeVisible();
+    expect(subtitleElement).toBeVisible();
     expect(paragraphText).toBeVisible();
   });
 
