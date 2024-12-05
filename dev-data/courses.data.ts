@@ -144,7 +144,7 @@ export const courses: Course[] = [
     language: ['en'],
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.AWS_FUNDAMENTALS}`,
-    enroll: 'https://wearecommunity.io/events/rs-aws-2024q2',
+    enroll: 'https://wearecommunity.io/events/aws-fundamentals-course-2024q4',
     backgroundStyle: {
       backgroundColor: '#F4F1FA',
       accentColor: '#7356BF',
