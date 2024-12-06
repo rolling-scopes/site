@@ -1,0 +1,31 @@
+.place-container {
+  overflow: hidden;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 20px;
+  font-weight: $font-weight-medium;
+  line-height: 28px;
+  color: $color-black;
+  letter-spacing: 0;
+
+  .place {
+    display: inline-block;
+    padding: 0 16px;
+  }
+
+  .divider {
+    display: inline-block;
+    height: 12px;
+    font-size: 36px;
+    color: $color-red;
+  }
+
+  @include media-tablet {
+    font-size: 16px;
+    font-weight: $font-weight-regular;
+    line-height: 24px;
+  }
+}
