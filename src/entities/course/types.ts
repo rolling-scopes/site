@@ -25,6 +25,7 @@ export type ApiCoursesResponse = Readonly<{
 export type Course = {
   id: string;
   title: CourseNamesKeys;
+  subTitle: string | null;
   alias: CourseAliasValues;
   altTitle?: string;
   iconSrc: StaticImageData;
