@@ -1,14 +1,15 @@
-/* eslint-disable import/no-namespace */
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { mockedCourses } from '@/shared/__tests__/constants';
-import * as helper from '@/shared/helpers/getActualData';
 import { UpcomingCourses } from '@/widgets/upcoming-courses';
+
+let mockData = mockedCourses;
+
+vi.mock('@/shared/helpers/getActualData', () => ({ getActualData: vi.fn().mockImplementation(() => mockData) }));
 
 describe('UpcomingCourses', () => {
   describe('with courses', () => {
     beforeEach(async () => {
-      vi.spyOn(helper, 'getActualData').mockImplementation(() => mockedCourses);
       const upcomingCourses = await UpcomingCourses();
 
       render(upcomingCourses);
@@ -42,8 +43,7 @@ describe('UpcomingCourses', () => {
 
   describe('without courses', () => {
     beforeEach(async () => {
-      mockedCourses.filter(() => []);
-      vi.spyOn(helper, 'getActualData').mockImplementation(() => []);
+      mockData = [];
       const upcomingCourses = await UpcomingCourses();
 
       render(upcomingCourses);
