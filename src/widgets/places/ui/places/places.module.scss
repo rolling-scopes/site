@@ -12,7 +12,6 @@
     border-width: 1px 0 1px 0;
 
     .marquee-group {
-      will-change: transform;
       animation: marquee 30s linear infinite;
 
       @keyframes marquee {
