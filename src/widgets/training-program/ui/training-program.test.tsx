@@ -18,7 +18,7 @@ const mockedCourseAngular: Course = {
   iconSmall: MOCKED_IMAGE_PATH,
   iconSrc: MOCKED_IMAGE_PATH,
   secondaryIcon: MOCKED_IMAGE_PATH,
-  language: ['en'],
+  language: 'en',
   mode: 'online',
   detailsUrl: `/${ROUTES.COURSES}/${ROUTES.ANGULAR}`,
   enroll: 'https://wearecommunity.io/events/rs-angular-2023q4',
@@ -30,7 +30,7 @@ const mockedCourseAngular: Course = {
 
 const mockedCourseAws: Course = {
   id: '8',
-  language: ['en'],
+  language: 'en',
   iconSmall: MOCKED_IMAGE_PATH,
   iconSrc: MOCKED_IMAGE_PATH,
   secondaryIcon: MOCKED_IMAGE_PATH,

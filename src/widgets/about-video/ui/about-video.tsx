@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import { RS_INTRO_URL } from '@/shared/constants';
+import { Language } from '@/shared/types';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { videoTitleLocalized } from 'data';
 
@@ -7,7 +8,7 @@ import styles from './about-video.module.scss';
 
 const cx = classNames.bind(styles);
 
-type AboutVideoProps = { lang?: 'en' | 'ru' };
+type AboutVideoProps = { lang?: Language };
 
 export const AboutVideo = ({ lang = 'en' }: AboutVideoProps) => {
   // Needed to prevent flakiness in screenshot tests

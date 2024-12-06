@@ -27,7 +27,7 @@ export const Angular = ({ course, courseName }: AngularProps) => {
       <AngularTopics />
       <AboutCourse course={course} courseName={courseName} />
       <Certification courseName={courseName} />
-      <Communication courseName={courseName} />
+      <Communication course={course} />
       <MemberActivity path="angular" />
       <Required courseName={courseName} marked1 />
       <MentorsWantedCourse link={`/${ROUTES.MENTORSHIP}/${ROUTES.ANGULAR}`} />
