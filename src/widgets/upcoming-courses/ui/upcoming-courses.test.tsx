@@ -1,15 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { mockedCourses } from '@/shared/__tests__/constants';
+import { getActualData } from '@/shared/helpers/getActualData';
 import { UpcomingCourses } from '@/widgets/upcoming-courses';
 
-let mockData = mockedCourses;
-
-vi.mock('@/shared/helpers/getActualData', () => ({ getActualData: vi.fn().mockImplementation(() => mockData) }));
+vi.mock('@/shared/helpers/getActualData');
 
 describe('UpcomingCourses', () => {
   describe('with courses', () => {
     beforeEach(async () => {
+      vi.mocked(getActualData).mockReturnValue(mockedCourses);
       const upcomingCourses = await UpcomingCourses();
 
       render(upcomingCourses);
@@ -43,7 +43,7 @@ describe('UpcomingCourses', () => {
 
   describe('without courses', () => {
     beforeEach(async () => {
-      mockData = [];
+      vi.mocked(getActualData).mockReturnValue([]);
       const upcomingCourses = await UpcomingCourses();
 
       render(upcomingCourses);
