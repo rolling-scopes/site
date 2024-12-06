@@ -29,35 +29,48 @@ const mockedCourse: Course = {
 };
 
 describe('HeroCourse component', () => {
-  beforeEach(() => {
-    renderWithRouter(<HeroCourse course={mockedCourse} />);
+  describe('Render general content', () => {
+    beforeEach(() => {
+      renderWithRouter(<HeroCourse course={mockedCourse} />);
+    });
+
+    it('renders the title and label correctly', async () => {
+      const titleElement = await screen.findByText('Node.js Course');
+      const labelElement = screen.getByText('planned');
+
+      expect(titleElement).toBeVisible();
+      expect(labelElement).toBeVisible();
+    });
+
+    it('renders enroll button with correct label and href', () => {
+      const buttonElement = screen.getByRole('link', { name: /enroll/i });
+
+      expect(buttonElement).toBeVisible();
+      expect(buttonElement).toHaveAttribute('href', 'https://test.com');
+    });
+
+    it('renders the image with correct source', () => {
+      const imageElement = screen.getByRole('img', { name: /Node.js/i });
+
+      expect(imageElement).toBeInTheDocument();
+      expect(imageElement).toHaveAttribute('src', MOCKED_IMAGE_PATH.src);
+    });
   });
 
-  it('renders the title and label correctly', async () => {
-    const titleElement = await screen.findByText('Node.js Course');
-    const labelElement = screen.getByText('planned');
+  describe('Render subtitle', () => {
+    it('renders the subtitle when provided', async () => {
+      renderWithRouter(<HeroCourse course={mockedCourse} />);
+      const subtitleElement = await screen.findByText('Test Subtitle');
 
-    expect(titleElement).toBeVisible();
-    expect(labelElement).toBeVisible();
-  });
+      expect(subtitleElement).toBeVisible();
+    });
 
-  it('renders enroll button with correct label and href', () => {
-    const buttonElement = screen.getByRole('link', { name: /enroll/i });
+    it('does not display subtitles if they are not provided', () => {
+      mockedCourse.subTitle = null;
+      renderWithRouter(<HeroCourse course={mockedCourse} />);
+      const subtitleElement = screen.queryByText('Test Subtitle');
 
-    expect(buttonElement).toBeVisible();
-    expect(buttonElement).toHaveAttribute('href', 'https://test.com');
-  });
-
-  it('renders the image with correct source', () => {
-    const imageElement = screen.getByRole('img', { name: /Node.js/i });
-
-    expect(imageElement).toBeInTheDocument();
-    expect(imageElement).toHaveAttribute('src', MOCKED_IMAGE_PATH.src);
-  });
-
-  it('renders the subtitle when provided', async () => {
-    const subtitleElement = await screen.findByText('Test Subtitle');
-
-    expect(subtitleElement).toBeVisible();
+      expect(subtitleElement).toBeNull();
+    });
   });
 });
