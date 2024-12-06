@@ -14,25 +14,26 @@ import { TrainingProgram } from '@/widgets/training-program';
 import { CourseNames, javaScriptRu } from 'data';
 
 type JavaScriptRuProps = {
-  lang: 'ru' | 'en';
   course: Course;
   courseName: CourseNames['JS_RU'];
 };
 
-export const JavaScriptRu = ({ lang, course, courseName }: JavaScriptRuProps) => {
+export const JavaScriptRu = ({ course, courseName }: JavaScriptRuProps) => {
+  const { language } = course;
+
   return (
     <>
-      <HeroCourse course={course} lang={lang} />
+      <HeroCourse course={course} />
       <Breadcrumbs />
-      <TrainingProgram course={course} courseName={courseName} lang={lang} />
+      <TrainingProgram course={course} courseName={courseName} />
       <AboutCourse course={course} courseName={courseName} />
       <Certification courseName={courseName} />
-      <Communication courseName={courseName} lang={lang} />
-      <AboutVideo lang={lang} />
-      <MemberActivity path="javascriptRu" lang={lang} />
+      <Communication course={course} />
+      <AboutVideo />
+      <MemberActivity path="javascriptRu" lang={language} />
       <Required courseName={courseName} />
-      <MentorsWanted route={`/${ROUTES.MENTORSHIP}/${ROUTES.JS_RU}`} lang={lang} />
-      <Trainers trainers={javaScriptRu} lang={lang} />
+      <MentorsWanted route={`/${ROUTES.MENTORSHIP}/${ROUTES.JS_RU}`} lang={language} />
+      <Trainers trainers={javaScriptRu} lang={language} />
     </>
   );
 };

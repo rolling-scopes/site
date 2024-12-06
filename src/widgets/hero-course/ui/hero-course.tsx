@@ -15,10 +15,9 @@ const cx = classNames.bind(styles);
 
 type HeroCourseProps = {
   course: Course;
-  lang?: 'ru' | 'en';
 };
 
-export const HeroCourse = ({ lang = 'en', course }: HeroCourseProps) => {
+export const HeroCourse = ({ course }: HeroCourseProps) => {
   const {
     title,
     subTitle,
@@ -48,7 +47,7 @@ export const HeroCourse = ({ lang = 'en', course }: HeroCourseProps) => {
             withMargin
           />
           <LinkCustom href={enroll} variant="secondary" external>
-            {heroCourseLocalized[lang].linkLabel}
+            {heroCourseLocalized[language].linkLabel}
           </LinkCustom>
         </article>
       </div>

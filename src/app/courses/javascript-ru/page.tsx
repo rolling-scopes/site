@@ -13,5 +13,5 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function JsRuRoute() {
   const course = await selectCourse(courseName);
 
-  return <JavaScriptRu lang="ru" course={course} courseName={courseName} />;
+  return <JavaScriptRu course={course} courseName={courseName} />;
 }

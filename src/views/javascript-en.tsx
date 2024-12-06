@@ -25,7 +25,7 @@ export const JavaScriptEn = ({ course, courseName }: JavaScriptEnProps) => {
       <TrainingProgram course={course} courseName={courseName} />
       <AboutCourse course={course} courseName={courseName} />
       <Certification courseName={courseName} />
-      <Communication courseName={courseName} />
+      <Communication course={course} />
       <AboutVideo />
       <MemberActivity path="javascript" type="marked" />
       <Required courseName={courseName} />

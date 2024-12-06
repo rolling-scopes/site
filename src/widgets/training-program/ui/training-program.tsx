@@ -9,7 +9,6 @@ import './training-program.scss';
 
 type TrainingProgramProps = {
   courseName: TrainingProgramType;
-  lang?: 'ru' | 'en';
   course: Course;
 };
 
@@ -18,8 +17,9 @@ const localizedContent = {
   ru: { linkLabel: 'Зарегистрироваться' },
 };
 
-export const TrainingProgram = ({ courseName, lang = 'en', course }: TrainingProgramProps) => {
+export const TrainingProgram = ({ courseName, course }: TrainingProgramProps) => {
   const { title, content, image } = contentMap[courseName];
+  const { language } = course;
 
   // TODO remove 'cloneElement' on 37 line due 'Using cloneElement is uncommon and can lead to fragile code' https://react.dev/reference/react/cloneElement
 
@@ -33,7 +33,7 @@ export const TrainingProgram = ({ courseName, lang = 'en', course }: TrainingPro
 
           {course && (
             <LinkCustom href={course?.enroll} variant="primary" external>
-              {localizedContent[lang].linkLabel}
+              {localizedContent[language].linkLabel}
             </LinkCustom>
           )}
         </div>
