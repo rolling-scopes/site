@@ -20,11 +20,7 @@ export const Required = ({ courseName }: RequiredProps) => {
   const isKnowBeforeExist =
     knowBefore && 'description' in knowBefore && knowBefore.description.length !== 0;
 
-  const isWillLearnExist =
-    willLearn
-    && willLearn.length !== 0
-    && willLearn[0].description.length !== 0
-    && (willLearn.length === 2 ? willLearn[1].description.length !== 0 : true);
+  const isWillLearnExist = willLearn && willLearn.length !== 0;
 
   return (
     <section className={cx('container')}>
