@@ -30,6 +30,10 @@
 
     &:has(:nth-child(5)) {
       width: 512px;
+
+      @include media-tablet {
+        width: unset;
+      }
     }
 
     @include media-mobile-landscape {
