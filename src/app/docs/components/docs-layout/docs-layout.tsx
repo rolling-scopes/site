@@ -4,7 +4,8 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import remarkToc from 'remark-toc';
-import DocsMenu, { DocLinkType } from '../docs-menu/docs-menu';
+import { Menu } from '../../types';
+import DocsMenu from '../docs-menu/docs-menu';
 import { LangSwitcher } from '../lang-switcher/lang-switcher';
 import Search from '../search/search';
 import { Language } from '@/shared/types';
@@ -20,7 +21,7 @@ export function DocsLayout({
   markdownContent,
   lang,
 }: {
-  menu: DocLinkType[];
+  menu: Menu;
   markdownContent: string;
   lang: Language;
 }) {
@@ -39,7 +40,7 @@ export function DocsLayout({
             remarkPlugins={[remarkGfm, remarkToc]}
             rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings]}
             components={{
-              img({ node, ...props }) {
+              img({ _, ...props }) {
                 const newSrc = props.src ? `${baseUrl}${props.src.split('/').pop()}` : '';
 
                 return <img {...props} src={newSrc} />;

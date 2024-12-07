@@ -3,38 +3,29 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Menu } from '../../types';
 import { isValidUrl } from '../../utils/isValidUrl';
 import { BurgerMenu } from '@/core/base-layout/components/header/burger/burger';
 import { Language } from '@/shared/types';
 
 import styles from './docs-menu.module.scss';
 
-interface DocLink {
-  title: string;
-  link: string;
-}
-
-interface DocLinkWithChildren {
-  title: string;
-  link?: string;
-  items: DocLink[];
-}
-
-export type DocLinkType = DocLink | DocLinkWithChildren;
-
 interface DocsMenuProps {
-  menu: DocLinkType[];
+  menu: Menu;
   lang: Language;
 }
 
 const DocsMenu = ({ menu, lang }: DocsMenuProps) => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const isActive = (link: string) => pathname.endsWith(link);
 
-  const renderMenuItems = (items: DocLinkType[]) => {
+  const isActive = (link: string) => {
+    return pathname === `/docs/${lang}/${link}`;
+  };
+
+  const renderMenuItems = (items: Menu) => {
     return items.map((doc, index) => {
-      if ('items' in doc) {
+      if ('items' in doc && doc.items) {
         return (
           <li key={index}>
             {doc.link
@@ -58,14 +49,16 @@ const DocsMenu = ({ menu, lang }: DocsMenuProps) => {
         );
       } else {
         return (
-          <li key={index}>
-            <Link
-              href={isValidUrl(doc.link) ? doc.link : `/docs/${lang}/${doc.link}`}
-              className={isActive(doc.link) ? styles.active : ''}
-            >
-              {doc.title}
-            </Link>
-          </li>
+          doc.link && (
+            <li key={index}>
+              <Link
+                href={isValidUrl(doc.link) ? doc.link : `/docs/${lang}/${doc.link}`}
+                className={isActive(doc.link) ? styles.active : ''}
+              >
+                {doc.title}
+              </Link>
+            </li>
+          )
         );
       }
     });

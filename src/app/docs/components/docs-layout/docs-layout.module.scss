@@ -1,12 +1,14 @@
 .menu {
   position: sticky;
-  top: 100px;
+  top: 143px;
+
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 50px;
-  height: 100vh;
-  overflow-y: auto;
+  align-items: center;
+
+  height: 85vh;
 }
 
 .menu-wrapper {
@@ -26,4 +28,3 @@
   flex-direction: column;
   gap: 40px;
 }
-
