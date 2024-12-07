@@ -1,8 +1,5 @@
-import { List } from '@/shared/ui/list';
-import { Subtitle } from '@/shared/ui/subtitle';
 import classNames from 'classnames/bind';
 import { CourseModuleElement } from './course-module';
-import type { CourseName } from '../types';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { CoursesWithRequirementsNames, courseDataMap } from 'data';
 

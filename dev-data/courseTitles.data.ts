@@ -1,4 +1,4 @@
-import { Course } from '@/widgets/required/required.types';
+import { Course } from '@/widgets/required/types';
 
 export const COURSE_TITLES = {
   JS_PRESCHOOL_RU: 'JS / Front-end Pre-school RU',

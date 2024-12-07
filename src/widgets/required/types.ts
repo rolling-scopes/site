@@ -1,4 +1,11 @@
-import { LinkList } from '@/shared/types';
+type ItemWithLink = {
+  id: number;
+  text: string;
+  title: string;
+  link: string;
+};
+
+export type LinkList = ItemWithLink[];
 
 export type Description = (string | LinkList)[];
 
