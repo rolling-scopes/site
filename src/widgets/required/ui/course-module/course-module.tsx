@@ -3,7 +3,7 @@ import { CourseModule } from '../../types';
 import { List } from '@/shared/ui/list';
 import { Subtitle } from '@/shared/ui/subtitle';
 
-import styles from './required.module.scss';
+import styles from './course-module.module.scss';
 
 export const cx = classNames.bind(styles);
 
@@ -16,7 +16,9 @@ export function CourseModuleElement({ courseModule }: CourseModuleElementProps) 
 
   return (
     <article className={cx('course-module-element')}>
-      <Subtitle className={cx('course-module-title')} fontSize="extra-small">{title}</Subtitle>
+      <Subtitle className={cx('course-module-title')} fontSize="extra-small">
+        {title}
+      </Subtitle>
       <List data={description} />
     </article>
   );
