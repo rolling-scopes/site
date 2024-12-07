@@ -56,7 +56,6 @@ describe('Required', () => {
       'No AWS Cloud experience is necessary.',
       'We will use the AWS Free Tier',
       'No IT prerequisites required',
-      // willLearn part
       'Networking Fundamentals',
       'Cloud Technical Fundamentals',
       'AWS Cloud Essentials',
