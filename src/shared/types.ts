@@ -1,4 +1,4 @@
-import { LinkList } from '@/widgets/required/required.types';
+import { LinkList } from '@/widgets/required/types';
 
 export type ListData = (string | LinkList)[] | [];
 export type ListType = 'marked' | 'unmarked';

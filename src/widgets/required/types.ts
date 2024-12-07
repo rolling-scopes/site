@@ -5,7 +5,7 @@ type ItemWithLink = {
   link: string;
 };
 
-type LinkList = ItemWithLink[];
+export type LinkList = ItemWithLink[];
 
 type Description = (string | LinkList)[];
 
