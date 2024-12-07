@@ -50,10 +50,12 @@ describe('HeroPage component', () => {
           const image: HTMLElement = screen.getByTestId('sloth-mascot');
 
           expect(image).toBeVisible();
-          expect(image).toHaveAttribute('src', pageData.heroImageSrc);
+          expect(image).toHaveAttribute('src', pageData.heroImageSrc?.src);
           expect(image).toHaveAttribute('alt', pageData.imageAltText);
         } else {
-          expect(heroPage).not.toContainHTML('img');
+          const image = screen.queryByTestId('sloth-mascot');
+
+          expect(image).toBeNull();
         }
       });
     });

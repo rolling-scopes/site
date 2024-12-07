@@ -1,13 +1,17 @@
 import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { CourseCard, type CourseCardProps, cx } from './course-card';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
+import { dayJS } from '@/shared/helpers/dayJS';
+import { COURSE_TITLES } from 'data';
 
 describe('CourseCard', () => {
   const mockProps: CourseCardProps = {
-    title: 'Introduction to Testing',
-    iconSrc: 'test-icon.svg',
-    startDate: '2023-01-01',
+    title: COURSE_TITLES.REACT,
+    iconSrc: MOCKED_IMAGE_PATH,
+    startDate: dayJS().toISOString(),
+    registrationEndDate: dayJS().add(1, 'd').toISOString(),
     mode: 'online',
     language: ['en'],
     detailsUrl: 'http://example.com/course',
@@ -43,10 +47,8 @@ describe('CourseCard', () => {
       const accentBlock = getComputedStyle(cardHeader, '::after');
 
       expect(cardHeader).toHaveClass(cx('card-header'));
-      expect(cardHeader)
-        .toHaveStyle({ backgroundColor: mockProps.backgroundStyle.backgroundColor });
-      expect(accentBlock)
-        .toHaveStyle({ backgroundColor: mockProps.backgroundStyle.accentColor });
+      expect(cardHeader).toHaveStyle({ backgroundColor: mockProps.backgroundStyle.backgroundColor });
+      expect(accentBlock).toHaveStyle({ backgroundColor: mockProps.backgroundStyle.accentColor });
     }
   });
 });

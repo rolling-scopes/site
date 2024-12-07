@@ -26,3 +26,4 @@ jobs:
       - run: npm run test:visual
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          API_URL: ${{ secrets.API_URL }}

@@ -1,8 +1,6 @@
-type ItemWithLink = {
-  id: number;
-  text: string;
-  title: string;
-  link: string;
-};
+import { LinkList } from '@/widgets/required/required.types';
 
-export type LinkList = ItemWithLink[];
+export type ListData = (string | LinkList)[] | [];
+export type ListType = 'marked' | 'unmarked';
+
+export type Language = 'en' | 'ru';

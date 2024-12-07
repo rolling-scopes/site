@@ -1,0 +1,72 @@
+// In case of updating any of these variables, please update the viewports.ts file inside e2e/utils folder
+$content-width: 1440px;
+$medium-laptop-width: 1250px;
+$large-tablet-width: 1024px;
+$tablet-width: 810px;
+$mobile-landscape-width: 568px;
+$mobile-width: 375px;
+
+// font-family
+$font-primary: -apple-system, blinkmacsystemfont, 'Segoe UI', 'Noto Sans', helvetica, arial,
+  sans-serif;
+
+// font weights
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// COLORS
+
+// Primary colors
+$color-black: hsl(0deg 0% 0%); // #000
+$color-white: hsl(0deg 0% 100%); // #fff
+
+// Yellow colors
+$color-yellow: hsl(50deg 100% 56%); // #ffdb20
+$color-yellow-700: hsl(40deg 58% 25%); // #664d1b
+$color-yellow-500: hsl(49deg 87% 53%); // #efc91f
+$color-yellow-100: hsl(39deg 100% 93%); // #fff2d9
+$color-yellow-50: hsl(40deg 100% 97%); // #fffaf0
+
+// Red colors
+$color-red: hsl(6deg 65% 52%); // #d44333
+
+// Purple colors
+$color-purple-400: hsl(257deg 45% 54%); // #7356bf
+$color-purple-100: hsl(263deg 55% 83%); // #cebceb
+$color-purple-50: hsl(260deg 47% 96%); // #f4f1fa
+
+// Blue colors
+$color-mentorship-banner: hsl(198deg 83% 70%); // #73ccf2
+$color-mentorship-header: hsl(198deg 86% 55%); // #2BB4EF
+
+// Technologies theme colors
+$color-js-bg: hsl(52deg 100% 96%); // #FFFCE9
+$color-js-accent: hsl(50deg 100% 56%); // #FFDB20
+$color-react-bg: hsl(198deg 91% 96%); // #EAF8FE
+$color-react-accent: hsl(198deg 86% 55%); // #2BB4EF
+$color-angular-bg: hsl(349deg 100% 97%); // #FFEFF2
+$color-angular-accent: hsl(348deg 93% 66%); // #F95879
+$color-node-bg: hsl(147deg 43% 96%); // #F0F9F4
+$color-node-accent: hsl(77deg 73% 54%); // #AEDF36
+$color-aws-bg: hsl(260deg 47% 96%); // #F4F1FA
+$color-aws-accent: hsl(257deg 45% 54%); // #7356BF
+
+// Secondary font colors
+$color-gray-600: hsl(0deg 0% 33%); // #545454
+$color-gray-500: hsl(0deg 0% 46%); // #757575
+$color-gray-400: hsl(0deg 0% 69%); // #afafaf
+$color-gray-200: hsl(0deg 0% 90%); // #e6e6e6
+$color-gray-100: hsl(0deg 0% 95%); // #f2f2f2
+
+// Link color
+$color-blue: hsl(202deg 89% 65%);
+
+// OPACITY  /* Use color-variables with opacity: hsla(from $[color-variable] h s l/ $[opacity-variable]); */
+$opacity-100: 1;
+$opacity-80: 0.8;
+$opacity-50: 0.5;
+$opacity-20: 0.2;
+$opacity-8: 0.08;
+$opacity-0: 0;

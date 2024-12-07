@@ -1,14 +1,17 @@
 import classNames from 'classnames/bind';
+import Image from 'next/image';
 import discordLogo from '@/shared/assets/svg/discord-logo.svg';
-import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import {
-  CourseNamesChannels,
+  COURSE_TITLES,
+  CourseNamesKeys,
   DISCORD_LINKS,
+  JS_EN_TELEGRAM_CHAT_LINK,
   RS_DOCS_COMMUNICATION_LINK,
+  RS_DOCS_EN_LINK,
   RS_DOCS_TELEGRAM_CHATS_LINK,
   communicationText,
 } from 'data';
@@ -18,7 +21,7 @@ import styles from './communication.module.scss';
 const cx = classNames.bind(styles);
 
 type CommunicationProps = {
-  courseName: CourseNamesChannels;
+  courseName: CourseNamesKeys;
   lang?: 'ru' | 'en';
 };
 
@@ -26,16 +29,29 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
   const {
     title,
     subTitle,
+    subTitleJs,
     firstParagraphFirstHalf,
+    discordParagraphTextJs,
     discordLink,
+    discordLinkJs,
     firstParagraphSecondHalf,
+    telegramParagraphTextJs,
     secondParagraphFirstHalf,
     telegramLink,
     secondParagraphSecondHalf,
     thirdParagraphFirstHalf,
     rsDocsLink,
     thirdParagraphSecondHalf,
+    discordNote,
   } = communicationText[lang];
+
+  const isJsEnCourse = courseName === COURSE_TITLES.JS_EN;
+  const courseSubTitle = isJsEnCourse ? subTitleJs : subTitle;
+  const paragraphClassName = isJsEnCourse ? cx('communication-paragraph') : undefined;
+  const courseDiscordLink = isJsEnCourse ? discordLinkJs : discordLink;
+  const discordFirstHalfText = !isJsEnCourse ? firstParagraphFirstHalf : null;
+  const discordSecondHalfText = isJsEnCourse ? discordParagraphTextJs : firstParagraphSecondHalf;
+  const rsDocsHref = isJsEnCourse ? RS_DOCS_EN_LINK : RS_DOCS_COMMUNICATION_LINK;
 
   return (
     <section className={cx('container')}>
@@ -46,24 +62,36 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
             <Image src={discordLogo} alt="discord logo" />
           </figure>
           <div>
-            <Subtitle>{subTitle}</Subtitle>
-            <Paragraph className={cx('communication-paragraph')}>
-              {firstParagraphFirstHalf}
-              <LinkCustom href={DISCORD_LINKS[courseName]} external>
-                {discordLink}
+            <Subtitle className={cx('communication-subtitle')}>{courseSubTitle}</Subtitle>
+            <Paragraph className={paragraphClassName}>
+              {discordFirstHalfText}
+              <LinkCustom href={DISCORD_LINKS[courseName]} external data-testid="discord-link">
+                {courseDiscordLink}
               </LinkCustom>
-              {firstParagraphSecondHalf}
+              {discordSecondHalfText}
             </Paragraph>
-            <Paragraph className={cx('communication-paragraph')}>
+            {isJsEnCourse && (
+              <Paragraph>
+                <LinkCustom href={JS_EN_TELEGRAM_CHAT_LINK} external>
+                  {telegramLink}
+                </LinkCustom>
+                {telegramParagraphTextJs}
+              </Paragraph>
+            )}
+            <Paragraph>
+              &#9888;&#65039;
+              {discordNote}
+            </Paragraph>
+            <Paragraph>
               {secondParagraphFirstHalf}
               <LinkCustom href={RS_DOCS_TELEGRAM_CHATS_LINK} external>
                 {telegramLink}
               </LinkCustom>
               {secondParagraphSecondHalf}
             </Paragraph>
-            <Paragraph className={cx('communication-paragraph')}>
+            <Paragraph>
               {thirdParagraphFirstHalf}
-              <LinkCustom href={RS_DOCS_COMMUNICATION_LINK} external>
+              <LinkCustom href={rsDocsHref} external>
                 {rsDocsLink}
               </LinkCustom>
               {thirdParagraphSecondHalf}

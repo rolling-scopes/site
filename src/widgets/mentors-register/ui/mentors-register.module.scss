@@ -1,0 +1,21 @@
+.mentoring-register {
+  display: flex;
+  flex-direction: column;
+
+  @include media-laptop-medium {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.step-before-wrapper {
+  margin-bottom: 40px;
+}
+
+.header-after {
+  margin-top: 40px;
+}
+
+.note {
+  margin-bottom: 18px;
+}

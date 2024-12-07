@@ -1,36 +1,21 @@
-import cn from 'classnames';
 import classNames from 'classnames/bind';
 import dayjs from 'dayjs';
-import { Event, EventCard } from '@/entities/event';
+import Image from 'next/image';
+import { EventCard } from '@/entities/event';
 import photo3 from '@/shared/assets/photo-3.webp';
-import { getActualData } from '@/shared/helpers/getActualData';
-import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { events } from 'data';
+import { actualEvents, nearestEvents, rsLifetime } from '@/widgets/events/constants';
 
 import styles from './events.module.scss';
 
 const cx = classNames.bind(styles);
 
-const displayedCardsQuantity = 2;
-
-const actualEvents: Event[] = getActualData({
-  data: events,
-  staleAfter: 3,
-});
-
-const nearestEvents = actualEvents.slice(0, displayedCardsQuantity);
-
-const Stub = <Image src={photo3} alt="Community event" className={cx('event-img')} />;
-
 export const Events = () => {
-  const rsLifetime = dayjs().diff('2013', 'year');
-
   return (
-    <article id="events" className={cn(cx('events'), 'container')}>
-      <div className={cn(cx('events', 'content'), 'content')}>
+    <article id="events" className={cx('container')}>
+      <div className={cx('events-content', 'content')}>
         <section className={cx('info')}>
           <SectionLabel>events & meetups</SectionLabel>
           <WidgetTitle mods="asterisk">Meet us at events</WidgetTitle>
@@ -50,10 +35,16 @@ export const Events = () => {
         </section>
 
         <section className={cx('cards')}>
-          {!actualEvents.length && Stub}
+          {!actualEvents.length && (
+            <Image src={photo3} alt="Speaker presenting at an event" className={cx('event-img')} />
+          )}
 
-          {(nearestEvents as Event[]).map((i) => (
-            <EventCard key={i.title} {...i} date={dayjs(i.date).format('DD MMM YYYY')} />
+          {nearestEvents.map((event) => (
+            <EventCard
+              key={event.title}
+              {...event}
+              date={dayjs(event.date).format('DD MMM YYYY')}
+            />
           ))}
         </section>
       </div>

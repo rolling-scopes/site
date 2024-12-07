@@ -1,33 +1,53 @@
-import { Link } from 'react-router-dom';
+import Image from 'next/image';
+import Link from 'next/link';
 import { GenericItemProps } from '../school-list/school-list';
-import { COURSE_STALE_AFTER_DAYS } from '@/app/const';
 import type { Course } from '@/entities/course';
-import { getCourseDate } from '@/shared/helpers/getCourseDate';
-import { Image } from '@/shared/ui/image';
+import { DateStart } from '@/shared/ui/date-start';
+import { MentorshipCourse } from 'data';
 
 interface SchoolItemProps {
-  item: Course | GenericItemProps;
+  item: MentorshipCourse | Course | GenericItemProps;
   color: 'dark' | 'light';
 }
 
 export const SchoolItem = ({ item, color }: SchoolItemProps) => {
-  const courseDate = 'startDate' in item && getCourseDate(item.startDate, COURSE_STALE_AFTER_DAYS);
+  const courseDate = 'startDate' in item && item.startDate;
+  const registrationEndDate = 'registrationEndDate' in item && item.registrationEndDate;
   const descriptionText = 'description' in item ? item.description : courseDate;
 
   const descriptionContent = (
     <>
       <span className={color}>{item.title}</span>
-      <small>{descriptionText}</small>
+      {courseDate && registrationEndDate
+        ? (
+            <DateStart
+              className="description"
+              courseStartDate={courseDate}
+              registrationEndDate={registrationEndDate}
+            >
+            </DateStart>
+          )
+        : (
+            <small className="description">{descriptionText}</small>
+          )}
     </>
   );
 
-  const descriptionBlock = ('description' in item)
-    ? (descriptionContent)
-    : (<div className="details">{descriptionContent}</div>);
+  const descriptionBlock =
+    'description' in item
+      ? (
+          descriptionContent
+        )
+      : (
+          <div className="details">{descriptionContent}</div>
+        );
 
   return (
     <li key={'id' in item ? item.id : item.title}>
-      <Link to={item.detailsUrl} className={'id' in item ? 'school-item with-icon' : 'school-item'}>
+      <Link
+        href={item.detailsUrl}
+        className={'id' in item ? 'school-item with-icon' : 'school-item'}
+      >
         {'iconSmall' in item && (
           <Image
             className="icon-wrapper"

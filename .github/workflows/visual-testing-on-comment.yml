@@ -27,7 +27,7 @@ jobs:
 
       - name: Get the pull request information
         id: get_pr
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const issueNumber = context.issue.number;
@@ -51,3 +51,4 @@ jobs:
           PERCY_PULL_REQUEST: ${{ github.event.issue.number }}
           PERCY_COMMIT: ${{ steps.get_pr.outputs.commit_sha }}
           PERCY_BRANCH: ${{ steps.get_pr.outputs.branch_name }}
+          API_URL: ${{ secrets.API_URL }}

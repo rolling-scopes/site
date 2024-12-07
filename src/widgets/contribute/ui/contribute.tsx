@@ -1,33 +1,21 @@
-import image from '@/shared/assets/contribute.webp';
-import { Image } from '@/shared/ui/image';
+import classNames from 'classnames/bind';
+import Image from 'next/image';
+import contributeImage from '@/shared/assets/contribute.webp';
+import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
+import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { OptionItem } from '@/widgets/option-item';
+import { contributeOptions } from 'data';
 
-import './contribute.scss';
+import styles from './contribute.module.scss';
 
-const contributeOptions = [
-  {
-    title: 'Mentorship',
-    description:
-      'Become a mentor and guide the next generation of developers. Sign up as a mentor here.',
-    linkLabel: 'Register as a mentor',
-    href: 'https://app.rs.school/registry/mentor',
-  },
-  {
-    title: 'Developer / Coordinator / Trainer',
-    description:
-      'Contribute your skills as a developer, coordinator, or trainer. Fill out this form to get started.',
-    linkLabel: 'Become a contributor',
-    href: 'https://docs.google.com/forms/d/e/1FAIpQLSdGKdEHK1CnZjgll9PpMU0xD1m0hm6xGoXc98H7woCDulyQkg/viewform',
-  },
-];
+const cx = classNames.bind(styles);
 
 export const Contribute = () => (
-  <div id="contribute" className="contribute container">
-    <div className="contribute content">
-      <div className="general">
-        <div className="info">
+  <section id="contribute" className={cx('container')} data-testid="contribute">
+    <div className={cx('contribute', 'content')}>
+      <div className={cx('general')}>
+        <article className={cx('info')}>
           <WidgetTitle mods="asterisk">How to Contribute</WidgetTitle>
           <Paragraph fontSize="large">
             Contributing to The Rolling Scopes is not only a great way to give back to the
@@ -37,24 +25,29 @@ export const Contribute = () => (
             Remember, teaching others is one of the best ways to learn - this is known as The
             Protégé Effect! There are several ways you can contribute, choose yours.
           </Paragraph>
-        </div>
-        <Image className="right picture" src={image} alt="contribute" />
+        </article>
+        <Image
+          className={cx('picture')}
+          src={contributeImage}
+          alt="Sloth mascot dressed in a superhero costume"
+          data-testid="contribute-image"
+        />
       </div>
-      <div className="contribute-options">
-        {contributeOptions.map(({ title, description, linkLabel, href }) => (
-          <OptionItem
-            key={title}
-            title={title}
-            description={description}
-            linkLabel={linkLabel}
-            href={href}
-          />
+      <div className={cx('contribute-options')}>
+        {contributeOptions.map(({ id, title, description, linkLabel, href }) => (
+          <article key={id} className={cx('option-item')} data-testid={`option-item-${id}`}>
+            <Subtitle>{title}</Subtitle>
+            <Paragraph fontSize="large">{description}</Paragraph>
+            <LinkCustom href={href} variant="primary" external>
+              {linkLabel}
+            </LinkCustom>
+          </article>
         ))}
       </div>
-      <Paragraph className="contribute-paragraph">
+      <Paragraph className={cx('contribute-paragraph')}>
         Additionally, we provide feedback on LinkedIn, which can be a valuable asset for your
         professional development.
       </Paragraph>
     </div>
-  </div>
+  </section>
 );

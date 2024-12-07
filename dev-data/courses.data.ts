@@ -1,4 +1,4 @@
-import { ROUTES } from '@/app/const';
+import { ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
 import angularSecondary from '@/shared/assets/icons/angular-secondary.webp';
 import angular from '@/shared/assets/icons/angular.svg';
@@ -17,17 +17,21 @@ import nodejs from '@/shared/assets/icons/node.svg';
 import nodejsSecondary from '@/shared/assets/icons/nodejs-secondary.webp';
 import reactSecondary from '@/shared/assets/icons/react-secondary.webp';
 import react from '@/shared/assets/icons/react.svg';
+import { COURSE_ALIASES, TO_BE_DETERMINED } from '@/shared/constants';
 import { COURSE_TITLES } from 'data';
 
 export const courses: Course[] = [
   {
     id: '1',
     title: COURSE_TITLES.JS_PRESCHOOL_RU,
+    subTitle: 'Pre-school RU',
+    alias: COURSE_ALIASES.JS_PRESCHOOL_RU,
     altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
     iconSmall: htmlSmall,
     secondaryIcon: jsSecondary,
-    startDate: 'Jun 24, 2024',
+    startDate: TO_BE_DETERMINED,
+    registrationEndDate: TO_BE_DETERMINED,
     language: ['ru'],
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.JS_PRESCHOOL_RU}`,
@@ -40,11 +44,14 @@ export const courses: Course[] = [
   {
     id: '2',
     title: COURSE_TITLES.JS_EN,
+    subTitle: null,
+    alias: COURSE_ALIASES.JS_EN,
     altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
     iconSmall: jsSmall,
     secondaryIcon: jsSecondary,
-    startDate: 'Oct 28, 2024',
+    startDate: TO_BE_DETERMINED,
+    registrationEndDate: TO_BE_DETERMINED,
     language: ['en'],
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.JS}`,
@@ -57,11 +64,14 @@ export const courses: Course[] = [
   {
     id: '3',
     title: COURSE_TITLES.JS_RU,
+    subTitle: null,
+    alias: COURSE_ALIASES.JS_RU,
     altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
     iconSmall: jsSmall,
     secondaryIcon: jsSecondary,
-    startDate: 'Oct 27, 2024',
+    startDate: TO_BE_DETERMINED,
+    registrationEndDate: TO_BE_DETERMINED,
     language: ['ru'],
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.JS_RU}`,
@@ -74,14 +84,17 @@ export const courses: Course[] = [
   {
     id: '4',
     title: COURSE_TITLES.REACT,
+    subTitle: null,
+    alias: COURSE_ALIASES.REACT,
     iconSrc: react,
     iconSmall: reactSmall,
     secondaryIcon: reactSecondary,
-    startDate: 'Jul 1, 2024',
+    startDate: TO_BE_DETERMINED,
+    registrationEndDate: TO_BE_DETERMINED,
     language: ['en'],
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.REACT}`,
-    enroll: 'https://wearecommunity.io/events/rs-react-2024q3',
+    enroll: 'https://wearecommunity.io/events/rs-react-2025q1',
     backgroundStyle: {
       backgroundColor: '#EAF8FE',
       accentColor: '#2BB4EF',
@@ -90,10 +103,13 @@ export const courses: Course[] = [
   {
     id: '5',
     title: COURSE_TITLES.ANGULAR,
+    subTitle: null,
+    alias: COURSE_ALIASES.ANGULAR,
     iconSrc: angular,
     iconSmall: angularSmall,
     secondaryIcon: angularSecondary,
-    startDate: 'Jul 1, 2024',
+    startDate: TO_BE_DETERMINED,
+    registrationEndDate: TO_BE_DETERMINED,
     language: ['en'],
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.ANGULAR}`,
@@ -106,10 +122,13 @@ export const courses: Course[] = [
   {
     id: '6',
     title: COURSE_TITLES.NODE,
+    subTitle: null,
+    alias: COURSE_ALIASES.NODE,
     iconSrc: nodejs,
     iconSmall: nodejsSmall,
     secondaryIcon: nodejsSecondary,
-    startDate: 'Sep 30, 2024',
+    startDate: TO_BE_DETERMINED,
+    registrationEndDate: TO_BE_DETERMINED,
     language: ['en'],
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.NODE_JS}`,
@@ -122,14 +141,17 @@ export const courses: Course[] = [
   {
     id: '7',
     title: COURSE_TITLES.AWS_FUNDAMENTALS,
+    subTitle: null,
+    alias: COURSE_ALIASES.AWS_FUNDAMENTALS,
     iconSrc: aws,
     iconSmall: awsFundSmall,
     secondaryIcon: awsSecondary,
-    startDate: 'Apr 15, 2024',
+    startDate: TO_BE_DETERMINED,
+    registrationEndDate: TO_BE_DETERMINED,
     language: ['en'],
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.AWS_FUNDAMENTALS}`,
-    enroll: 'https://wearecommunity.io/events/rs-aws-2024q2',
+    enroll: 'https://wearecommunity.io/events/aws-fundamentals-course-2024q4',
     backgroundStyle: {
       backgroundColor: '#F4F1FA',
       accentColor: '#7356BF',
@@ -139,10 +161,13 @@ export const courses: Course[] = [
   {
     id: '8',
     title: COURSE_TITLES.AWS_CLOUD_DEVELOPER,
+    subTitle: null,
+    alias: COURSE_ALIASES.AWS_CLOUD_DEVELOPER,
     iconSrc: aws,
     iconSmall: awsDevSmall,
     secondaryIcon: awsSecondary,
-    startDate: 'May 28, 2024',
+    startDate: TO_BE_DETERMINED,
+    registrationEndDate: TO_BE_DETERMINED,
     language: ['en'],
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.AWS_DEVELOPER}`,
@@ -155,10 +180,13 @@ export const courses: Course[] = [
   {
     id: '9',
     title: COURSE_TITLES.AWS_DEVOPS,
+    subTitle: null,
+    alias: COURSE_ALIASES.AWS_DEVOPS,
     iconSrc: aws,
     iconSmall: awsDevSmall,
     secondaryIcon: awsSecondary,
-    startDate: 'Sep 23, 2024',
+    startDate: TO_BE_DETERMINED,
+    registrationEndDate: TO_BE_DETERMINED,
     language: ['en'],
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.AWS_DEVOPS}`,

@@ -1,0 +1,57 @@
+.required {
+  & .content {
+    &.info-wrapper {
+      display: flex;
+      flex-direction: column;
+
+      .column-2 {
+        flex-direction: row;
+        gap: 8rem;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        .will-learn {
+          & article {
+            margin-top: 20px;
+          }
+
+          & article:first-child {
+            margin-top: 0;
+          }
+        }
+
+        & > * {
+          flex: 1;
+        }
+
+        @include media-laptop {
+          gap: 5rem;
+        }
+
+        @include media-laptop-medium {
+          flex-direction: column;
+          gap: 32px;
+          align-items: flex-start;
+
+          & > * {
+            max-width: 80%;
+          }
+
+          & div > .stage-actions {
+            font-size: 18px;
+          }
+        }
+
+        @include media-tablet {
+          & > * {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+
+    & > .title {
+      margin-bottom: 8px;
+    }
+  }
+}

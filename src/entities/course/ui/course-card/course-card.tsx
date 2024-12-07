@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
+import Image from 'next/image';
 import type { Course } from '../../types';
 import { DateLang } from '@/shared/ui/date-lang';
-import { Image } from '@/shared/ui/image';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Subtitle } from '@/shared/ui/subtitle';
 
@@ -11,13 +11,21 @@ export const cx = classNames.bind(styles);
 
 export type CourseCardProps = Pick<
   Course,
-  'title' | 'iconSrc' | 'startDate' | 'detailsUrl' | 'mode' | 'language' | 'backgroundStyle'
+  | 'title'
+  | 'iconSrc'
+  | 'startDate'
+  | 'detailsUrl'
+  | 'mode'
+  | 'language'
+  | 'backgroundStyle'
+  | 'registrationEndDate'
 >;
 
 export const CourseCard = ({
   title,
   iconSrc,
   startDate,
+  registrationEndDate,
   detailsUrl,
   mode,
   language,
@@ -37,11 +45,17 @@ export const CourseCard = ({
         <Subtitle fontSize="small">{title}</Subtitle>
       </div>
       <div className={cx('course-info')}>
-        <DateLang startDate={startDate} language={language} mode={mode} />
+        <DateLang
+          startDate={startDate}
+          registrationEndDate={registrationEndDate}
+          language={language}
+          mode={mode}
+        />
         <LinkCustom
           href={detailsUrl}
           variant="rounded"
           aria-label="View course details"
+          data-testid="course-link"
         >
           View details
         </LinkCustom>

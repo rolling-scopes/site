@@ -1,0 +1,34 @@
+.mentors-wanted {
+  background-color: $color-yellow-50;
+
+  .mentors-wanted-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .content-left {
+      display: flex;
+      flex-direction: column;
+      max-width: 50%;
+
+      @include media-tablet {
+        max-width: 100%;
+      }
+    }
+
+    .sloth-mascot {
+      align-self: center;
+
+      width: auto;
+      max-width: 290px;
+      height: auto;
+
+      object-fit: contain;
+    }
+
+    @include media-tablet {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+}

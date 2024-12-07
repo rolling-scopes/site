@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
+import Image from 'next/image';
 import { studyOptions } from '../constants';
 import rsSchool from '@/shared/assets/rs-school.webp';
-import { Image } from '@/shared/ui/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { Subtitle } from '@/shared/ui/subtitle';

@@ -12,17 +12,3 @@ export type Course = {
   knowBefore?: CourseModule;
   willLearn?: CourseModule[];
 };
-
-export type CourseName =
-  | 'awsFundamentals'
-  | 'awsDev'
-  | 'nodejs'
-  | 'angular'
-  | 'js / front-end en'
-  | 'js / front-end ru'
-  | 'js / front-end pre-school ru'
-  | 'awsDevops';
-
-export type CourseMap = {
-  [courseName in CourseName]: Course;
-};

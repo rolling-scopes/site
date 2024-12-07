@@ -1,4 +1,12 @@
 // TODO separate data and markup
+import { JSX } from 'react';
+import { StaticImageData } from 'next/image';
+import {
+  AWS_FUNDAMENTALS_BADGE,
+  AwsFundamentalsBadge,
+  COURSE_TITLES,
+  CourseNamesKeys,
+} from './courseTitles.data';
 import awsPractitionerBadge from '@/shared/assets/aws-cloud-pract-badge.webp';
 import angularImg from '@/shared/assets/rs-slope-angular.webp';
 import awsDevImg from '@/shared/assets/rs-slope-aws-dev.webp';
@@ -6,56 +14,40 @@ import awsFundamentalsImg from '@/shared/assets/rs-slope-aws-fundamentals.webp';
 import jsImg from '@/shared/assets/rs-slope-js.webp';
 import nodejsImg from '@/shared/assets/rs-slope-nodejs.webp';
 import reactEnImg from '@/shared/assets/rs-slope-react-en.webp';
-import reactRuImg from '@/shared/assets/rs-slope-react-ru.webp';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
 
-export type CourseNames =
-  | 'aws cloud dev'
-  | 'angular'
-  | 'js / front-end en'
-  | 'js / front-end ru'
-  | 'js / front-end pre-school ru'
-  | 'aws fundamentals'
-  | 'node.js'
-  | 'react'
-  | 'react ru'
-  | 'aws fundamentals badge'
-  | 'aws devops';
-
 interface CourseInfo {
   title: string;
   content: JSX.Element[];
-  image: string;
+  image: StaticImageData;
 }
 
 type ContentMap = {
-  [key in CourseNames]: CourseInfo;
+  [key in CourseNamesKeys | AwsFundamentalsBadge]: CourseInfo;
 };
 
 export const contentMap: ContentMap = {
-  'aws cloud dev': {
+  [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: {
     title: 'Training Program',
     content: [
       // TODO delete keys
-      <Paragraph key="aws cloud dev 01">
+      <Paragraph key="awsDev 01">
         This course is a step-by-step journey to become an AWS Certified Developer ‒ Associate
         through this course. You will gain practical experience working with various AWS services
         and technologies via over 10 hands-on tasks. During the course, you&apos;ll dive deep into
         AWS, from cloud computing basics to advanced integrations and deployment strategies, through
         nine carefully designed modules.
       </Paragraph>,
-      <Paragraph key="aws cloud dev 02">
+      <Paragraph key="awsDev 02">
         Be well-prepared to pass the &quot;AWS Certified Developer - Associate&quot; certification
         and confidently apply your skills in real-world projects by the end of the course.
       </Paragraph>,
-      <Subtitle key="aws cloud dev 03">
-        Course highlights:
-      </Subtitle>,
+      <Subtitle key="awsDev 03">Course highlights:</Subtitle>,
       <List
-        key="aws cloud dev 04"
+        key="awsDev 04"
         data={[
           'Build a single-page application (SPA) using AWS S3 and CloudFront',
           'Develop serverless APIs with AWS API Gateway and Lambda',
@@ -69,7 +61,7 @@ export const contentMap: ContentMap = {
     ],
     image: awsDevImg,
   },
-  'aws fundamentals': {
+  [COURSE_TITLES.AWS_FUNDAMENTALS]: {
     title: 'Training Program',
     content: [
       <Paragraph key="aws fundamentals 01">
@@ -90,7 +82,7 @@ export const contentMap: ContentMap = {
     ],
     image: awsFundamentalsImg,
   },
-  'node.js': {
+  [COURSE_TITLES.NODE]: {
     title: 'Course Topics',
     content: [
       <Paragraph key="node.js 01">
@@ -118,7 +110,7 @@ export const contentMap: ContentMap = {
     ],
     image: nodejsImg,
   },
-  angular: {
+  [COURSE_TITLES.ANGULAR]: {
     title: 'Training Program',
     content: [
       <Paragraph key="angular 01">
@@ -140,8 +132,7 @@ export const contentMap: ContentMap = {
     ],
     image: angularImg,
   },
-
-  'js / front-end en': {
+  [COURSE_TITLES.JS_EN]: {
     title: 'Training Program',
     content: [
       <Paragraph key="js / front-end en 01">
@@ -165,8 +156,7 @@ export const contentMap: ContentMap = {
     ],
     image: jsImg,
   },
-
-  'js / front-end ru': {
+  [COURSE_TITLES.JS_RU]: {
     title: 'Программа обучения',
     content: [
       <Paragraph key="js / front-end ru 01">
@@ -191,32 +181,31 @@ export const contentMap: ContentMap = {
     ],
     image: jsImg,
   },
-
-  'js / front-end pre-school ru': {
+  [COURSE_TITLES.JS_PRESCHOOL_RU]: {
     title: 'Программа обучения',
     content: [
-      <Paragraph key="js / front-end pre-school ru 01">
-        <span>Введение в RS School:</span>
+      <div key="js / front-end pre-school ru 01">
+        <Paragraph>Введение в RS School:</Paragraph>
         <List
           data={[
             'Знакомство со школой, профессией JS/Front-end разработчика и системой контроля версий Git.',
           ]}
-          marked={false}
+          type="unmarked"
         />
-      </Paragraph>,
-      <Paragraph key="js / front-end pre-school ru 02">
-        <span>Основы веб-разработки:</span>
+      </div>,
+      <div key="js / front-end pre-school ru 02">
+        <Paragraph>Основы веб-разработки:</Paragraph>
         <List
           data={[
             'HTML и CSS: Основы, позиционирование с Flexbox и адаптивные макеты.',
             'JavaScript: Основы, функции, объекты, массивы и работа с DOM.',
             'Инструменты: Chrome Dev Tools, VS Code, Терминал и Figma.',
           ]}
-          marked={false}
+          type="unmarked"
         />
-      </Paragraph>,
-      <Paragraph key="js / front-end pre-school ru 03">
-        <span>Проектное обучение:</span>
+      </div>,
+      <div key="js / front-end pre-school ru 03">
+        <Paragraph>Проектное обучение:</Paragraph>
         <List
           data={[
             'Проект CV: Markdown, HTML, CSS и Git.',
@@ -224,61 +213,45 @@ export const contentMap: ContentMap = {
             'CSS Mem Slider: Продвинутый проект по CSS.',
             'Проекты JS-30: Аудиоплеер, галерея изображений и случайная игра.',
           ]}
-          marked={false}
+          type="unmarked"
         />
-      </Paragraph>,
-      <Paragraph key="js / front-end pre-school ru 04">
-        <span>Задачи Codewars:</span>
-        <List data={['Еженедельные задачи по алгоритмам и структурам данных.']} marked={false} />
-      </Paragraph>,
-      <Paragraph key="js / front-end pre-school ru 05">
-        <span>Итоговая аттестация:</span>
+      </div>,
+      <div key="js / front-end pre-school ru 04">
+        <Paragraph>Задачи Codewars:</Paragraph>
+        <List data={['Еженедельные задачи по алгоритмам и структурам данных.']} type="unmarked" />
+      </div>,
+      <div key="js / front-end pre-school ru 05">
+        <Paragraph>Итоговая аттестация:</Paragraph>
         <List
           data={['Кросс-чек проектов, тесты и ревью кода. Выдача сертификата.']}
-          marked={false}
+          type="unmarked"
         />
-      </Paragraph>,
+      </div>,
     ],
     image: jsImg,
   },
-  react: {
+  [COURSE_TITLES.REACT]: {
     title: 'Target audience',
     content: [
       <Paragraph key="react 01">
-        RS School students who have completed RS School Stage #2 and new students with strong
-        CoreJS/TS/Frontend skills:
+        We are looking for students with strong CoreJS/TS/Frontend skills.
       </Paragraph>,
+      <Subtitle key="react 02">Requirements:</Subtitle>,
       <List
-        key="react 02"
+        key="react 03"
         data={[
-          'JavaScript',
-          'TypeScript',
-          'Git, GitHub (clone, add, commit, push, pull, merge, rebase, working with Pull Request)',
-          'NPM, Webpack',
-          'CSS3 / HTML5',
-          'Chrome DevTools, Figma',
-          'Understanding of the REST',
+          'Proficiency in JavaScript / TypeScript',
+          'Familiarity with Git and GitHub operations (clone, add, commit, push, pull, merge, rebase, working with Pull Requests)',
+          'Experience with NPM and bundling tools such as Webpack or Rollup',
+          'Strong skills in CSS3 and HTML5',
+          'Proficient use of Chrome DevTools',
+          'Understanding of RESTful services',
         ]}
       />,
-      <Subtitle key="react 03">
-        Attention! Mentors on this course will be first assigned to the graduates of the RS School
-        Stage #2.
-      </Subtitle>,
     ],
     image: reactEnImg,
   },
-  'react ru': {
-    title: 'Для кого',
-    content: [
-      <Paragraph key="react ru 01">
-        Бесплатный курс от сообщества The Rolling Scopes для тех, кто хочет получить знания и опыт,
-        достаточные для трудоустройства на позицию Junior Software Engineer в области
-        JavaScript/Front-end.
-      </Paragraph>,
-    ],
-    image: reactRuImg,
-  },
-  'aws fundamentals badge': {
+  [AWS_FUNDAMENTALS_BADGE]: {
     title: 'AWS DIGITAL BADGE',
     content: [
       <Paragraph key="aws fundamentals badge 01">
@@ -291,7 +264,7 @@ export const contentMap: ContentMap = {
     ],
     image: awsPractitionerBadge,
   },
-  'aws devops': {
+  [COURSE_TITLES.AWS_DEVOPS]: {
     title: 'Details',
     content: [
       <Paragraph key="aws devops 01">
@@ -313,9 +286,7 @@ export const contentMap: ContentMap = {
           'Become a DevOps engineer who is ready to face engineering challenges',
         ]}
       />,
-      <Subtitle key="aws devops 04">
-        What do we offer?
-      </Subtitle>,
+      <Subtitle key="aws devops 04">What do we offer?</Subtitle>,
       <List
         key="aws devops 05"
         data={[

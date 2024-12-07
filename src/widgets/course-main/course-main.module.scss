@@ -13,8 +13,10 @@
     text-align: left;
 
     .icon {
+      width: auto;
       min-width: 150px;
       max-width: 200px;
+      height: auto;
       margin-top: -36px;
 
       @include media-tablet {
