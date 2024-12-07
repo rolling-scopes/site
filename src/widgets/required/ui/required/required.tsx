@@ -9,18 +9,14 @@ export const cx = classNames.bind(styles);
 
 type RequiredProps = {
   courseName: CoursesWithRequirementsNames;
-  marked1?: boolean;
-  marked2?: boolean;
 };
 
 export const Required = ({ courseName }: RequiredProps) => {
   const requiredKnowledge = courseDataMap[courseName];
   const { knowBefore, willLearn, title } = requiredKnowledge;
 
-  const isKnowBeforeExist =
-    knowBefore && 'description' in knowBefore && knowBefore.description.length !== 0;
-
-  const isWillLearnExist = willLearn && willLearn.length !== 0;
+  const isKnowBeforeExist = knowBefore && knowBefore.description.length;
+  const isWillLearnExist = willLearn && willLearn.length;
 
   return (
     <section className={cx('container')}>
