@@ -1,34 +1,30 @@
 .info-wrapper {
   display: flex;
   flex-direction: column;
-}
 
-.course-module-columns-layout {
-  display: flex;
-  flex-direction: row;
-  gap: 8rem;
-  align-items: start;
-  justify-content: flex-start;
+  .course-module-columns-layout {
+    display: flex;
+    gap: 8rem;
 
-  @include media-laptop {
-    gap: 5rem;
-  }
+    .course-module-elements-column {
+      flex: 1;
 
-  @include media-laptop-medium {
-    flex-direction: column;
-    gap: 32px;
-    align-items: flex-start;
-  }
-}
+      @include media-laptop-medium {
+        max-width: 80%;
+      }
 
-.course-module-elements-column {
-  flex: 1;
+      @include media-tablet {
+        max-width: 100%;
+      }
+    }
 
-  @include media-laptop-medium {
-    max-width: 80%;
-  }
+    @include media-laptop {
+      gap: 5rem;
+    }
 
-  @include media-tablet {
-    max-width: 100%;
+    @include media-laptop-medium {
+      flex-direction: column;
+      gap: 32px;
+    }
   }
 }
