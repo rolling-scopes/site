@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
-import { CourseModuleElement } from './course-module';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { CourseModuleElement } from '@/widgets/required/ui/course-module';
 import { CoursesWithRequirementsNames, courseDataMap } from 'data';
 
 import styles from './required.module.scss';
