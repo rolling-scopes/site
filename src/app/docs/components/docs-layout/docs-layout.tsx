@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import ReactMarkdown from 'react-markdown';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
+import remarkEmoji from 'remark-emoji';
 import remarkGfm from 'remark-gfm';
 import remarkToc from 'remark-toc';
 import { Menu } from '../../types';
@@ -27,7 +28,7 @@ export function DocsLayout({
 }) {
   return (
     <div className={cx('container', 'docs-layout')}>
-      <div className={cx('menu-wrapper')}>
+      <div className={cx('content', 'menu-wrapper')}>
         <div className={cx('menu')}>
           <DocsMenu menu={menu} lang={lang} />
           <LangSwitcher />
@@ -37,7 +38,7 @@ export function DocsLayout({
         <Search />
         <div className={cx('markdown-body')} data-pagefind-body>
           <ReactMarkdown
-            remarkPlugins={[remarkGfm, remarkToc]}
+            remarkPlugins={[remarkGfm, remarkToc, [remarkEmoji, { accessible: true }]]}
             rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings]}
             components={{
               img({ _, ...props }) {

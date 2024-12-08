@@ -11,20 +11,12 @@
   height: 85vh;
 
   @include media-laptop {
-   top: 70px;
+    top: 70px;
   }
 }
 
 .menu-wrapper {
-  padding: 80px 120px 40px;
-
-  @include media-laptop {
-    padding: 80px 40px 40px;
-  }
-
-  @include media-tablet {
-    padding: 56px 16px;
-  }
+  width: initial;
 }
 
 .docs-content {

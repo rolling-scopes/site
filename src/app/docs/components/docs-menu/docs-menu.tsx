@@ -4,8 +4,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu } from '../../types';
-import { isValidUrl } from '../../utils/isValidUrl';
 import { BurgerMenu } from '@/core/base-layout/components/header/burger/burger';
+import { isValidUrl } from '@/shared/helpers/isValidUrl';
 import { Language } from '@/shared/types';
 
 import styles from './docs-menu.module.scss';

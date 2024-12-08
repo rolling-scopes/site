@@ -16,20 +16,19 @@
     text-align: left;
     font-size: 14px;
     margin-left: 15px;
-    gap: 0.25rem;
+    gap: 4px;
 
     li {
       a {
         display: block;
         text-decoration: none;
-        color: rgb(107 114 128 / 1);
-        transition: color 0.2s;
+        color: $color-gray-500;
         padding: 6px 8px;
 
         &.active {
           font-weight: bold;
-          color: rgb(0, 76, 163);
-          background-color: hsl(212deg 100% calc(45% + 49%) / 1);
+          color: $color-blue-800;
+          background-color: $color-blue-background-100;
         }
       }
     }
