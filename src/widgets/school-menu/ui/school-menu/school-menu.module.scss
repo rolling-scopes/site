@@ -1,0 +1,44 @@
+.school-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: $color-gray-100;
+
+  .heading {
+    margin: 0;
+    font-size: 12px;
+    font-weight: $font-weight-medium;
+    text-transform: uppercase;
+
+    &.dark {
+      color: $color-black;
+    }
+
+    &.light {
+      color: $color-gray-400;
+    }
+  }
+
+  .school-list {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 19px 40px;
+
+    max-height: 280px;
+
+    list-style-type: none;
+
+    &:has(:nth-child(5)) {
+      width: 512px;
+
+      @include media-tablet {
+        width: unset;
+      }
+    }
+
+    @include media-mobile-landscape {
+      column-gap: 10px;
+      max-height: 600px;
+    }
+  }
+}
