@@ -9,6 +9,10 @@
   align-items: center;
 
   height: 85vh;
+
+  @include media-laptop {
+   top: 70px;
+  }
 }
 
 .menu-wrapper {
