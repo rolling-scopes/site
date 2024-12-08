@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "tsc && next build",
     "stylelint": "npx stylelint \"**/*.scss\"",
     "stylelint:fix": "npx stylelint \"**/*.scss\" --fix",
     "lint": "npx eslint . --report-unused-disable-directives --max-warnings 500",
@@ -33,6 +33,7 @@
     "gray-matter": "^4.0.3",
     "marked": "^15.0.0",
     "next": "15.0.2",
+    "pagefind": "^1.2.0",
     "react": "19.0.0-rc-02c0e824-20241028",
     "react-dom": "19.0.0-rc-02c0e824-20241028",
     "react-double-marquee": "^1.1.0",

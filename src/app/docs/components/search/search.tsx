@@ -3,33 +3,17 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import Link from 'next/link.js';
-import mockedResults from '../../mocked_search.json';
+import MOCKED_SEARCH from '../../mocked_search';
 
 import styles from './search.module.scss';
 
 const cx = classNames.bind(styles);
 
-declare global {
-  interface Window {
-    pagefind: {
-      options?: (opt: {
-        baseUrl?: string;
-        bundlePath?: string;
-        excerptLength?: number;
-        highlightParam?: 'highlight';
-      }) => Promise<void>;
-      search: (query: string) => Promise<{
-        results: unknown[];
-      }>;
-    };
-  }
-}
-
 const isRunningInDev = process.env.NODE_ENV === 'development';
 
 export default function Search() {
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState<unknown[]>([]);
+  const [results, setResults] = useState<PagefindSearchResult[]>([]);
 
   useEffect(() => {
     async function loadPagefind() {
@@ -43,7 +27,10 @@ export default function Search() {
 
         await window.pagefind.options!({ baseUrl: '/' });
       } else {
-        window.pagefind = { search: async () => ({ results: mockedResults }) };
+        window.pagefind = {
+          search: async () =>
+            ({ results: MOCKED_SEARCH } as unknown as PagefindSearchResults),
+        };
       }
     }
 
@@ -69,26 +56,21 @@ export default function Search() {
       />
       <div id="results">
         {results.map((result, index) => (
-          // @ts-ignore
           <Result key={index} result={result} />
         ))}
       </div>
     </div>
   );
 }
-// @ts-ignore
-function Result({ result }) {
-  const [data, setData] = useState(null);
+
+function Result({ result }: { result: PagefindSearchResult }) {
+  const [data, setData] = useState<PagefindSearchFragment>();
 
   useEffect(() => {
     async function fetchData() {
-      if (isRunningInDev) {
-        setData(result);
-      } else {
-        const data = await result.data();
+      const data = await result.data();
 
-        setData(data);
-      }
+      setData(data);
     }
 
     fetchData();
@@ -100,23 +82,18 @@ function Result({ result }) {
 
   return (
     <div className={cx('results')}>
-      {/* @ts-ignore */}
       <Link href={data.url}>
-        {/* @ts-ignore */}
         <h3>{data.meta.title}</h3>
-        {/* @ts-ignore */}
-        <p>{data.excerpt}</p>
+        <p dangerouslySetInnerHTML={{ __html: data.excerpt }} />
       </Link>
 
-      {/* @ts-ignore */}
       {data.sub_results && data.sub_results.length > 0 && (
         <div className={cx('subresults')}>
-          {/* @ts-ignore */}
           {data.sub_results.map((subresult, index) => (
             <div key={index} className={cx('subresult')}>
               <Link href={subresult.url}>
                 <h4>{subresult.title}</h4>
-                <p>{subresult.excerpt}</p>
+                <p dangerouslySetInnerHTML={{ __html: subresult.excerpt }} />
               </Link>
             </div>
           ))}
