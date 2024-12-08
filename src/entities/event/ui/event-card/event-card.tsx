@@ -34,7 +34,7 @@ export const EventCard = ({
         </section>
         <section className={cx('about-event')} data-testid="about-section">
           <h2 className={cx('event-title')}>{title}</h2>
-          <p className={cx('event-additional-info')}>{additionalInfo}</p>
+          <p title={additionalInfo} className={cx('event-additional-info')}>{additionalInfo}</p>
         </section>
       </div>
 

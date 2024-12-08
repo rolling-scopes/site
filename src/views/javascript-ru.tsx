@@ -25,7 +25,7 @@ export const JavaScriptRu = ({ lang, course, courseName }: JavaScriptRuProps) =>
       <HeroCourse course={course} lang={lang} />
       <Breadcrumbs />
       <TrainingProgram course={course} courseName={courseName} lang={lang} />
-      <AboutCourse course={course} courseName={courseName} type={lang} />
+      <AboutCourse course={course} courseName={courseName} />
       <Certification courseName={courseName} />
       <Communication courseName={courseName} lang={lang} />
       <AboutVideo lang={lang} />

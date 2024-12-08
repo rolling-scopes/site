@@ -7,7 +7,6 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return { title };
 }
-
 export async function generateStaticParams(): Promise<{ course: MentorshipCourseRouteKeys }[]> {
   return [
     { course: 'reactjs' },
@@ -16,7 +15,6 @@ export async function generateStaticParams(): Promise<{ course: MentorshipCourse
     { course: 'javascript-ru' },
   ];
 }
-
 export default async function MentorshipRoute({
   params,
 }: {
@@ -25,8 +23,9 @@ export default async function MentorshipRoute({
   }>;
 }) {
   const { course } = await params;
-
-  const mentorshipCourse = mentorshipCourses.find((item) => item.detailsUrl.includes(`/${course}`)) || mentorshipCoursesDefault;
+  const mentorshipCourse =
+    mentorshipCourses.find((item) => item.detailsUrl.includes(`/${course}`))
+    || mentorshipCoursesDefault;
 
   return <Mentorship mentorshipData={mentorshipCourse} />;
 }
