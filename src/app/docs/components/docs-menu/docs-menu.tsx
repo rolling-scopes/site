@@ -10,10 +10,10 @@ import { Language } from '@/shared/types';
 
 import styles from './docs-menu.module.scss';
 
-interface DocsMenuProps {
+type DocsMenuProps = {
   menu: Menu;
   lang: Language;
-}
+};
 
 export const DocsMenu = ({ menu, lang }: DocsMenuProps) => {
   const pathname = usePathname();

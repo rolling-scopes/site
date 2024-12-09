@@ -20,15 +20,17 @@ const cx = classNames.bind(styles);
 
 const baseUrl = 'https://raw.githubusercontent.com/SpaNb4/docs/refs/heads/master/docs/images/';
 
+type DocsLayoutProps = {
+  menu: Menu;
+  markdownContent: string;
+  lang: Language;
+};
+
 export function DocsLayout({
   menu,
   markdownContent,
   lang,
-}: {
-  menu: Menu;
-  markdownContent: string;
-  lang: Language;
-}) {
+}: DocsLayoutProps) {
   return (
     <div className={cx('container', 'docs-layout')}>
       <div className={cx('content', 'menu-wrapper')}>
@@ -38,7 +40,7 @@ export function DocsLayout({
         </div>
       </div>
       <div className={cx('content', 'docs-content')}>
-        <Search />
+        <Search lang={lang} />
         <div className={cx('markdown-body')} data-pagefind-body>
           <ReactMarkdown
             remarkPlugins={[remarkGfm, remarkToc, [remarkEmoji, { accessible: true }], remarkRemoveComments]}

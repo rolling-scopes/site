@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import Link from 'next/link.js';
 import MOCKED_SEARCH from '../../mocked_search';
+import { Language } from '@/shared/types';
 
 import styles from './search.module.scss';
 
@@ -11,7 +12,26 @@ const cx = classNames.bind(styles);
 
 const isRunningInDev = process.env.NODE_ENV === 'development';
 
-export default function Search() {
+const translations = {
+  en: {
+    search: {
+      placeholder: 'Search docs...',
+      noResults: 'No results found for "{{query}}". Please try a different search.',
+    },
+  },
+  ru: {
+    search: {
+      placeholder: 'Поиск по документации...',
+      noResults: 'Результатов для "{{query}}" не найдено. Пожалуйста, попробуйте другой запрос.',
+    },
+  },
+};
+
+type SearchProps = {
+  lang: Language;
+};
+
+export default function Search({ lang }: SearchProps) {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<PagefindSearchResult[]>([]);
 
@@ -22,20 +42,17 @@ export default function Search() {
           // pagefind.js generated after build
           // @ts-ignore
           // eslint-disable-next-line import/no-unresolved, import/extensions
-          /* webpackIgnore: true */ '/_next/static/pagefind/pagefind.js'
+          /* webpackIgnore: true */ `/_next/static/pagefind/${lang}/pagefind.js`
         );
 
-        await window.pagefind.options!({ baseUrl: '/' });
+        await window.pagefind.options!({ baseUrl: `/_next/static/pagefind/${lang}` });
       } else {
-        window.pagefind = {
-          search: async () =>
-            ({ results: MOCKED_SEARCH } as unknown as PagefindSearchResults),
-        };
+        window.pagefind = { search: async () => ({ results: MOCKED_SEARCH }) as unknown as PagefindSearchResults };
       }
     }
 
     loadPagefind();
-  }, []);
+  }, [lang]);
 
   async function handleSearch() {
     if (window.pagefind) {
@@ -50,15 +67,19 @@ export default function Search() {
       <input
         className={cx('search-input')}
         type="text"
-        placeholder="Search docs..."
+        placeholder={translations[lang].search.placeholder}
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onInput={handleSearch}
       />
-      <div id="results">
-        {query && results.map((result, index) => (
-          <Result key={index} result={result} />
-        ))}
+      <div className={cx('results')}>
+        {query && results.length > 0
+          ? results.map((result, index) => <Result key={index} result={result} />)
+          : query && (
+            <div className={cx('no-results')}>
+              {translations[lang].search.noResults.replace('{{query}}', query)}
+            </div>
+          )}
       </div>
     </div>
   );
@@ -82,7 +103,7 @@ function Result({ result }: { result: PagefindSearchResult }) {
   }
 
   return (
-    <div className={cx('results')}>
+    <div>
       <Link href={data.url}>
         <h3>{data.meta.title}</h3>
         <p dangerouslySetInnerHTML={{ __html: data.excerpt }} />

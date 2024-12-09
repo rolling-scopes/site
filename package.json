@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "tsc && next build",
+    "build": "next build",
     "stylelint": "npx stylelint \"**/*.scss\"",
     "stylelint:fix": "npx stylelint \"**/*.scss\" --fix",
     "lint": "npx eslint . --report-unused-disable-directives --max-warnings 500",
@@ -18,7 +18,7 @@
     "coverage": "vitest run --coverage",
     "precommit": "npx lint-staged",
     "prepare": "husky",
-    "postbuild": "pagefind --site .next/server/app --output-path build/_next/static/pagefind"
+    "postbuild": "pagefind --force-language ru --site .next/server/app/docs/ru --output-path build/_next/static/pagefind/ru && pagefind --force-language en --site .next/server/app/docs/en --output-path build/_next/static/pagefind/en"
   },
   "engines": {
     "node": ">=20.x"
