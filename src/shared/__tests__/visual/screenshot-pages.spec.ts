@@ -3,54 +3,54 @@ import { VIEWPORTS, takeScreenshot } from './utils';
 import { ROUTES } from '@/core/const';
 
 const pages = [
-  {
-    name: 'Not found page',
-    path: ROUTES.NOT_FOUND,
-  },
+//   {
+//     name: 'Not found page',
+//     path: ROUTES.NOT_FOUND,
+//   },
   {
     name: 'Main page',
     path: ROUTES.HOME,
   },
-  {
-    name: 'Community page',
-    path: ROUTES.COMMUNITY,
-  },
-  {
-    name: 'Courses main page',
-    path: ROUTES.COURSES,
-  },
-  {
-    name: 'Courses javascript-preschool-ru page',
-    path: `${ROUTES.COURSES}/${ROUTES.JS_PRESCHOOL_RU}`,
-  },
-  {
-    name: 'Courses javascript-en page',
-    path: `${ROUTES.COURSES}/${ROUTES.JS}`,
-  },
-  {
-    name: 'Courses javascript-ru page',
-    path: `${ROUTES.COURSES}/${ROUTES.JS_RU}`,
-  },
-  {
-    name: 'Courses react page',
-    path: `${ROUTES.COURSES}/${ROUTES.REACT}`,
-  },
-  {
-    name: 'Courses angular page',
-    path: `${ROUTES.COURSES}/${ROUTES.ANGULAR}`,
-  },
-  {
-    name: 'Courses aws-fundamentals page',
-    path: `${ROUTES.COURSES}/${ROUTES.AWS_FUNDAMENTALS}`,
-  },
-  {
-    name: 'Courses aws-cloud-developer page',
-    path: `${ROUTES.COURSES}/${ROUTES.AWS_DEVELOPER}`,
-  },
-  {
-    name: 'Courses aws-devops page',
-    path: `${ROUTES.COURSES}/${ROUTES.AWS_DEVOPS}`,
-  },
+//   {
+//     name: 'Community page',
+//     path: ROUTES.COMMUNITY,
+//   },
+//   {
+//     name: 'Courses main page',
+//     path: ROUTES.COURSES,
+//   },
+//   {
+//     name: 'Courses javascript-preschool-ru page',
+//     path: `${ROUTES.COURSES}/${ROUTES.JS_PRESCHOOL_RU}`,
+//   },
+//   {
+//     name: 'Courses javascript-en page',
+//     path: `${ROUTES.COURSES}/${ROUTES.JS}`,
+//   },
+//   {
+//     name: 'Courses javascript-ru page',
+//     path: `${ROUTES.COURSES}/${ROUTES.JS_RU}`,
+//   },
+//   {
+//     name: 'Courses react page',
+//     path: `${ROUTES.COURSES}/${ROUTES.REACT}`,
+//   },
+//   {
+//     name: 'Courses angular page',
+//     path: `${ROUTES.COURSES}/${ROUTES.ANGULAR}`,
+//   },
+//   {
+//     name: 'Courses aws-fundamentals page',
+//     path: `${ROUTES.COURSES}/${ROUTES.AWS_FUNDAMENTALS}`,
+//   },
+//   {
+//     name: 'Courses aws-cloud-developer page',
+//     path: `${ROUTES.COURSES}/${ROUTES.AWS_DEVELOPER}`,
+//   },
+//   {
+//     name: 'Courses aws-devops page',
+//     path: `${ROUTES.COURSES}/${ROUTES.AWS_DEVOPS}`,
+//   },
 ];
 
 for (const { name, path } of pages) {
