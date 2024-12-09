@@ -48,8 +48,9 @@ export default function Search() {
   return (
     <div>
       <input
+        className={cx('search-input')}
         type="text"
-        placeholder="Search..."
+        placeholder="Search docs..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onInput={handleSearch}
