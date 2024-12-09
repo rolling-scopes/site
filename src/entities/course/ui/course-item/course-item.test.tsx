@@ -8,7 +8,7 @@ import { COURSE_TITLES } from 'data';
 
 const mockedProps: CourseItemData = {
   title: COURSE_TITLES.REACT,
-  language: ['en'],
+  language: 'en',
   startDate: dayJS().toISOString(),
   registrationEndDate: dayJS().add(1, 'd').toISOString(),
   detailsUrl: '/courses/react-intro',
