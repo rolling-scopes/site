@@ -25,6 +25,7 @@ export const mockedCourses: Course[] = [
   {
     id: '1',
     title: COURSE_TITLES.JS_PRESCHOOL_RU,
+    subTitle: 'Pre-school RU',
     alias: COURSE_ALIASES.JS_PRESCHOOL_RU,
     startDate: 'Jun 24, 2024',
     registrationEndDate: 'Jun 24, 2024',
@@ -44,6 +45,7 @@ export const mockedCourses: Course[] = [
   {
     id: '2',
     title: COURSE_TITLES.JS_EN,
+    subTitle: null,
     alias: COURSE_ALIASES.JS_EN,
     startDate: 'Oct, 2024',
     registrationEndDate: 'Jun 24, 2025',
@@ -63,6 +65,7 @@ export const mockedCourses: Course[] = [
   {
     id: '3',
     title: COURSE_TITLES.JS_RU,
+    subTitle: null,
     alias: COURSE_ALIASES.JS_RU,
     startDate: 'Oct, 2024',
     registrationEndDate: 'Jun 24, 2025',
@@ -82,6 +85,7 @@ export const mockedCourses: Course[] = [
   {
     id: '4',
     title: COURSE_TITLES.REACT,
+    subTitle: null,
     alias: COURSE_ALIASES.REACT,
     startDate: 'Jul 1, 2024',
     registrationEndDate: 'Jun 24, 2024',
@@ -101,6 +105,7 @@ export const mockedCourses: Course[] = [
   {
     id: '5',
     title: COURSE_TITLES.ANGULAR,
+    subTitle: null,
     alias: COURSE_ALIASES.ANGULAR,
     startDate: 'Jul 1, 2024',
     registrationEndDate: 'Jun 24, 2025',
@@ -120,6 +125,7 @@ export const mockedCourses: Course[] = [
   {
     id: '6',
     title: COURSE_TITLES.AWS_FUNDAMENTALS,
+    subTitle: null,
     alias: COURSE_ALIASES.AWS_FUNDAMENTALS,
     startDate: 'Jul 1, 2024',
     registrationEndDate: 'Jun 24, 2025',

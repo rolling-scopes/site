@@ -1,0 +1,19 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  min-height: 100vh;
+}
+
+.not-found-image {
+  max-width: 170px;
+  height: auto;
+}
+
+.not-found-paragraph {
+  max-width: 480px;
+
+  @include media-mobile-landscape {
+    text-align: center;
+  }
+}
