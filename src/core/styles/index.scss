@@ -1,7 +1,9 @@
 @use 'normalize';
+@use '~github-markdown-css/github-markdown-light';
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 64px;
 }
 
 body {
@@ -45,11 +47,8 @@ figure {
 
 .container {
   display: flex;
-  align-items: center;
   justify-content: center;
-
   width: 100%;
-
   text-align: left;
 }
 
@@ -144,5 +143,30 @@ figure {
   .dot {
     display: inline-block;
     padding: 7px;
+  }
+}
+
+.markdown-body {
+  li {
+    list-style-position: initial;
+  }
+
+  h2 {
+    a {
+      margin-left: -26px;
+      padding-right: 10px;
+    }
+
+    .icon-link {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  h2:hover {
+    .icon-link::after {
+      content: url('../../shared/assets/svg/link.svg');
+    }
   }
 }
