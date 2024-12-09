@@ -10,6 +10,7 @@ import { Menu } from '../../types';
 import { DocsMenu } from '../docs-menu/docs-menu';
 import { LangSwitcher } from '../lang-switcher/lang-switcher';
 import Search from '../search/search';
+import { isValidUrl } from '@/shared/helpers/isValidUrl';
 import { Language } from '@/shared/types';
 
 import styles from './docs-layout.module.scss';
@@ -43,7 +44,10 @@ export function DocsLayout({
             rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings]}
             components={{
               img({ _, ...props }) {
-                const newSrc = props.src ? `${baseUrl}${props.src.split('/').pop()}` : '';
+                const { src } = props;
+
+                const isExternalImage = isValidUrl(src);
+                const newSrc = !isExternalImage && src ? `${baseUrl}${src.split('/').pop()}` : src;
 
                 return <img {...props} src={newSrc} />;
               },
