@@ -37,6 +37,7 @@ export const TrainingProgram = ({ courseName, lang = 'en', course }: TrainingPro
         </article>
 
         <Image
+          data-testid="image"
           src={image}
           alt={course?.title}
           className={cx('image', { badge: isCourseWithBadge })}

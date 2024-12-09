@@ -3,8 +3,9 @@ import { beforeEach } from 'vitest';
 import { Course } from '@/entities/course';
 import { mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
+import angularImg from '@/shared/assets/rs-slope-angular.webp';
+import awsDevImg from '@/shared/assets/rs-slope-aws-dev.webp';
 import { TrainingProgram } from '@/widgets/training-program';
-import { COURSE_TITLES } from 'data';
 
 const mockedCourseAngular: Course = mockedCourses[4];
 const mockedCourseAws: Course = mockedCourses[5];
@@ -48,9 +49,10 @@ describe('TrainingProgram', () => {
     });
 
     it('renders correct image with alt text', () => {
-      const image = screen.getByRole('img', { name: COURSE_TITLES.ANGULAR });
+      const image = screen.getByTestId('image');
 
       expect(image).toHaveAttribute('alt', expect.stringContaining('Angular'));
+      expect(image).toHaveAttribute('src', angularImg.src);
     });
   });
 
@@ -78,9 +80,10 @@ describe('TrainingProgram', () => {
     });
 
     it('renders correct image with alt text', () => {
-      const image = screen.getByRole('img', { name: 'AWS Fundamentals' });
+      const image = screen.getByTestId('image');
 
       expect(image).toHaveAttribute('alt', expect.stringContaining('AWS Fundamentals'));
+      expect(image).toHaveAttribute('src', awsDevImg.src);
     });
   });
 });
