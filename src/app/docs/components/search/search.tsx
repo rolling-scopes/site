@@ -40,8 +40,6 @@ export default function Search({ lang }: SearchProps) {
       if (!isRunningInDev) {
         window.pagefind = await import(
           // pagefind.js generated after build
-          // @ts-ignore
-          // eslint-disable-next-line import/no-unresolved, import/extensions
           /* webpackIgnore: true */ `/_next/static/pagefind/${lang}/pagefind.js`
         );
 
