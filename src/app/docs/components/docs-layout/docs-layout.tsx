@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
@@ -45,6 +46,13 @@ export function DocsLayout({
                 const newSrc = props.src ? `${baseUrl}${props.src.split('/').pop()}` : '';
 
                 return <img {...props} src={newSrc} />;
+              },
+              a({ children, href, ...props }) {
+                return (
+                  <Link href={href && href.endsWith('.md') ? href.slice(0, -3) : href} {...props}>
+                    {children}
+                  </Link>
+                );
               },
             }}
           >
