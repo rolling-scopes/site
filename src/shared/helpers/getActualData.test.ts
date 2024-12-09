@@ -20,6 +20,7 @@ const coursesMock: Course[] = [
     id: '1',
     title: COURSE_TITLES.REACT,
     alias: COURSE_ALIASES.REACT,
+    subTitle: null,
     altTitle: 'altTitle',
     iconSrc: {
       src: 'icon',
@@ -50,6 +51,7 @@ const coursesMock: Course[] = [
   {
     id: '2',
     title: COURSE_TITLES.REACT,
+    subTitle: null,
     alias: COURSE_ALIASES.REACT,
     altTitle: 'altTitle',
     iconSrc: {
@@ -81,6 +83,7 @@ const coursesMock: Course[] = [
   {
     id: '3',
     title: COURSE_TITLES.REACT,
+    subTitle: null,
     alias: COURSE_ALIASES.REACT,
     altTitle: 'altTitle',
     iconSrc: {
