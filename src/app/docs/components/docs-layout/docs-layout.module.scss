@@ -1,26 +1,28 @@
-.menu {
-  position: sticky;
-  top: 143px;
-
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  align-items: center;
-
-  height: 85vh;
-
-  @include media-laptop {
-    top: 70px;
+.docs-layout {
+  .menu-wrapper {
+    width: initial;
   }
-}
 
-.menu-wrapper {
-  width: initial;
-}
+  .menu {
+    position: sticky;
+    top: 143px;
 
-.docs-content {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+
+    height: 85vh;
+
+    @include media-laptop {
+      top: 70px;
+    }
+  }
+
+  .docs-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
 }
