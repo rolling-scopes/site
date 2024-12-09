@@ -56,7 +56,7 @@ export default function Search() {
         onInput={handleSearch}
       />
       <div id="results">
-        {results.map((result, index) => (
+        {query && results.map((result, index) => (
           <Result key={index} result={result} />
         ))}
       </div>
