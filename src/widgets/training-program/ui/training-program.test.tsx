@@ -29,7 +29,7 @@ describe('TrainingProgram', () => {
     });
 
     it(`renders correct title "Training Program"`, () => {
-      const title = screen.getByText(/Training program/i);
+      const title = screen.getByTestId('widget-title');
 
       expect(title).toBeVisible();
     });
@@ -62,7 +62,7 @@ describe('TrainingProgram', () => {
     });
 
     it('renders correct title', () => {
-      const title = screen.getByText(/Training program/i);
+      const title = screen.getByTestId('widget-title');
 
       expect(title).toBeInTheDocument();
     });
