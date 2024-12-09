@@ -4,6 +4,7 @@ import { ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
 import { Logo } from '@/shared/ui/logo';
 import { SchoolMenu } from '@/widgets/school-menu';
+import { communityMenuStaticLinks, mentorshipCourses, schoolMenuStaticLinks } from 'data';
 
 import styles from './mobile-view.module.scss';
 
@@ -30,35 +31,76 @@ export const MobileView = ({ type, courses }: MobileViewProps) => {
 
       <Divider color={color} />
 
-      <Link href={ROUTES.HOME} className={cx('category-link', color)}>
+      <Link href={`/${ROUTES.HOME}`} className={cx('category-link', color)}>
         RS School
       </Link>
 
-      <SchoolMenu courses={courses} heading="rs school" hasTitle={false} color={color} />
+      <SchoolMenu>
+        {schoolMenuStaticLinks.map((link, i) => (
+          <SchoolMenu.Item
+            key={i}
+            title={link.title}
+            description={link.description}
+            url={link.detailsUrl}
+            color={color}
+          />
+        ))}
+      </SchoolMenu>
 
       <Divider color={color} />
 
-      <Link href={ROUTES.COURSES} className={cx('category-link', color)}>
+      <Link href={`/${ROUTES.COURSES}`} className={cx('category-link', color)}>
         Courses
       </Link>
 
-      <SchoolMenu courses={courses} heading="all courses" hasTitle={false} color={color} />
+      <SchoolMenu>
+        {courses.map((course) => (
+          <SchoolMenu.Item
+            key={course.id}
+            icon={course.iconSmall}
+            title={course.title}
+            description={course.startDate}
+            url={course.detailsUrl}
+            color={color}
+          />
+        ))}
+      </SchoolMenu>
 
       <Divider color={color} />
 
-      <Link href={ROUTES.COMMUNITY} className={cx('category-link', color)}>
+      <Link href={`/${ROUTES.COMMUNITY}`} className={cx('category-link', color)}>
         Community
       </Link>
 
-      <SchoolMenu courses={courses} heading="community" hasTitle={false} color={color} />
+      <SchoolMenu>
+        {communityMenuStaticLinks.map((link, i) => (
+          <SchoolMenu.Item
+            key={i}
+            title={link.title}
+            description={link.description}
+            url={link.detailsUrl}
+            color={color}
+          />
+        ))}
+      </SchoolMenu>
 
       <Divider color={color} />
 
-      <Link href={ROUTES.MENTORSHIP} className={cx('category-link', color)}>
+      <Link href={`/${ROUTES.MENTORSHIP}`} className={cx('category-link', color)}>
         Mentorship
       </Link>
 
-      <SchoolMenu courses={courses} heading="mentorship" hasTitle={false} color={color} />
+      <SchoolMenu>
+        {mentorshipCourses.map((course) => (
+          <SchoolMenu.Item
+            key={course.id}
+            icon={course.iconSmall}
+            title={course.title}
+            url={course.detailsUrl}
+            color={color}
+          />
+        ))}
+      </SchoolMenu>
     </nav>
   );
 };

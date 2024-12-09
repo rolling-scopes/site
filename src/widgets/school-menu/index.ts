@@ -1,1 +1,1 @@
-export { SchoolMenu } from './ui/school-menu';
+export { SchoolMenu } from './ui/school-menu/school-menu';
