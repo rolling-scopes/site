@@ -14,7 +14,6 @@
     "preview": "vite preview",
     "test": "vitest --run",
     "test:playwright": "npx playwright test",
-    "test:visual": "npx percy exec -- npm run test:playwright",
     "coverage": "vitest run --coverage",
     "precommit": "npx lint-staged",
     "prepare": "husky"
@@ -33,9 +32,8 @@
     "react-responsive-carousel": "^3.2.23"
   },
   "devDependencies": {
+    "@argos-ci/playwright": "^3.9.4",
     "@feature-sliced/eslint-config": "^0.1.1",
-    "@percy/cli": "^1.30.3",
-    "@percy/playwright": "^1.0.7",
     "@playwright/test": "^1.49.0",
     "@stylistic/eslint-plugin": "^2.11.0",
     "@testing-library/dom": "^10.4.0",
