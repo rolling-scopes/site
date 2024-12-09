@@ -15,7 +15,7 @@ interface DocsMenuProps {
   lang: Language;
 }
 
-const DocsMenu = ({ menu, lang }: DocsMenuProps) => {
+export const DocsMenu = ({ menu, lang }: DocsMenuProps) => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -73,5 +73,3 @@ const DocsMenu = ({ menu, lang }: DocsMenuProps) => {
     </>
   );
 };
-
-export default DocsMenu;

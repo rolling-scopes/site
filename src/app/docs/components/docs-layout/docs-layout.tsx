@@ -6,7 +6,7 @@ import remarkEmoji from 'remark-emoji';
 import remarkGfm from 'remark-gfm';
 import remarkToc from 'remark-toc';
 import { Menu } from '../../types';
-import DocsMenu from '../docs-menu/docs-menu';
+import { DocsMenu } from '../docs-menu/docs-menu';
 import { LangSwitcher } from '../lang-switcher/lang-switcher';
 import Search from '../search/search';
 import { Language } from '@/shared/types';

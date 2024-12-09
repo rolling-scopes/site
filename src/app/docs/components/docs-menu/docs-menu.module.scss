@@ -9,6 +9,10 @@
     }
   }
 
+  @include media-mobile-landscape {
+    width: 100vw;
+  }
+
   ul {
     display: flex;
     flex-direction: column;
