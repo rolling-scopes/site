@@ -33,7 +33,7 @@ export const Support = () => (
         </LinkCustom>
       </article>
       <Image
-        className={cx('right', 'support-picture')}
+        className={cx('sloth-mascot')}
         src={image}
         alt="A sloth mascot with a piggy bank in his hands"
         data-testid="sloth-mascot"

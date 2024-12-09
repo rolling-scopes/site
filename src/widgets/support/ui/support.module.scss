@@ -4,7 +4,7 @@
   .support-content {
     display: flex;
     gap: 50px;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
 
     .support-info {
@@ -15,10 +15,6 @@
 
       .support-link {
         margin-top: 24px;
-
-        @include media-tablet {
-          margin-bottom: 24px;
-        }
       }
 
       @include media-laptop {
@@ -26,7 +22,7 @@
       }
     }
 
-    .support-picture {
+    .sloth-mascot {
       width: 348px;
       height: 288px;
 
@@ -37,7 +33,6 @@
       @include media-laptop {
         width: 300px;
         height: auto;
-        margin-top: 16px;
         object-fit: contain;
       }
 
@@ -48,8 +43,7 @@
 
     @include media-tablet-large {
       flex-direction: column;
-      gap: 0;
-      align-items: center;
+      gap: 40px;
     }
   }
 }
