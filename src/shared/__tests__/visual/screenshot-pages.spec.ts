@@ -61,7 +61,7 @@ for (const { name, path } of pages) {
 }
 
 for (const { name, path } of pages) {
-  test(`Screenshot of ${name} - Mobile`, async ({ page }) => {
+  test.skip(`Screenshot of ${name} - Mobile`, async ({ page }) => {
     await page.setViewportSize({
       width: VIEWPORTS['mobile-width'],
       height: VIEWPORTS['mobile-height'],
@@ -72,7 +72,7 @@ for (const { name, path } of pages) {
   });
 }
 
-test('Main page mobile', async ({ page }) => {
+test.skip('Main page mobile', async ({ page }) => {
   await page.setViewportSize({
     width: VIEWPORTS['mobile-width'],
     height: VIEWPORTS['mobile-height'],

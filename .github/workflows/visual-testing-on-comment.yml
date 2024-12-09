@@ -9,7 +9,7 @@ env:
   NODE_VERSION: 20.x
 
 jobs:
-  run-visial-testing:
+  run-visual-testing:
     if: ${{ github.event.issue.pull_request && github.event.comment.body == 'run visual now' }}
     runs-on: ubuntu-latest
 
@@ -37,8 +37,8 @@ jobs:
               pull_number: issueNumber,
             });
 
-            core.setOutput('branch_name', pullRequest.head.ref);
-            core.setOutput('commit_sha', pullRequest.head.sha);
+            core.setOutput('base_branch', pullRequest.base.ref); // Get the base branch
+            core.setOutput('base_commit', pullRequest.base.sha); // Get the base commit
 
       - uses: bahmutov/npm-install@v1
 
@@ -50,3 +50,5 @@ jobs:
           ARGOS_TOKEN: ${{ secrets.ARGOS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           API_URL: ${{ secrets.API_URL }}
+          REFERENCE_BRANCH: ${{ steps.get_pr.outputs.base_branch }}
+          REFERENCE_COMMIT: ${{ steps.get_pr.outputs.base_commit }}
