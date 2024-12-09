@@ -47,8 +47,6 @@ jobs:
 
       - run: npm run test:visual
         env:
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-          PERCY_PULL_REQUEST: ${{ github.event.issue.number }}
-          PERCY_COMMIT: ${{ steps.get_pr.outputs.commit_sha }}
-          PERCY_BRANCH: ${{ steps.get_pr.outputs.branch_name }}
+          ARGOS_TOKEN: ${{ secrets.ARGOS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           API_URL: ${{ secrets.API_URL }}

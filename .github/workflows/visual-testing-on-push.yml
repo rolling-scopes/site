@@ -23,7 +23,8 @@ jobs:
       - name: Install Playwright browsers and dependencies
         run: npx playwright install --with-deps
 
-      - run: npm run test:visual
+      - run: npm run test:playwright
         env:
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          ARGOS_TOKEN: ${{ secrets.ARGOS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           API_URL: ${{ secrets.API_URL }}
