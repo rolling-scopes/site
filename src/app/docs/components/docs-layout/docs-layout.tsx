@@ -5,6 +5,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import remarkEmoji from 'remark-emoji';
 import remarkGfm from 'remark-gfm';
+import remarkRemoveComments from 'remark-remove-comments';
 import remarkToc from 'remark-toc';
 import { Menu } from '../../types';
 import { DocsMenu } from '../docs-menu/docs-menu';
@@ -40,7 +41,7 @@ export function DocsLayout({
         <Search />
         <div className={cx('markdown-body')} data-pagefind-body>
           <ReactMarkdown
-            remarkPlugins={[remarkGfm, remarkToc, [remarkEmoji, { accessible: true }]]}
+            remarkPlugins={[remarkGfm, remarkToc, [remarkEmoji, { accessible: true }], remarkRemoveComments]}
             rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings]}
             components={{
               img({ _, ...props }) {
