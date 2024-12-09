@@ -1,45 +1,47 @@
 import { cloneElement } from 'react';
+import classNames from 'classnames/bind';
 import Image from 'next/image';
 import type { Course } from '@/entities/course';
+import { Language } from '@/shared/types';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { TrainingProgramType, contentMap } from 'data';
+import { TrainingProgramType, contentMap, trainingProgramLink } from 'data';
 
-import './training-program.scss';
+import styles from './training-program.module.scss';
+
+const cx = classNames.bind(styles);
 
 type TrainingProgramProps = {
   courseName: TrainingProgramType;
-  lang?: 'ru' | 'en';
+  lang?: Language;
   course: Course;
-};
-
-const localizedContent = {
-  en: { linkLabel: 'Register' },
-  ru: { linkLabel: 'Зарегистрироваться' },
 };
 
 export const TrainingProgram = ({ courseName, lang = 'en', course }: TrainingProgramProps) => {
   const { title, content, image } = contentMap[courseName];
-
-  // TODO remove 'cloneElement' on 37 line due 'Using cloneElement is uncommon and can lead to fragile code' https://react.dev/reference/react/cloneElement
+  const isCourseWithBadge = courseName.includes('badge');
 
   return (
-    <section className="training-program container">
-      <div className="training-program content column-2">
-        <div className="left">
+    <section className={cx('training-program', 'container')}>
+      <div className={cx('training-program', 'content', 'column-2')}>
+        <article className={cx('left')}>
           <WidgetTitle mods="asterisk">{title}</WidgetTitle>
 
           {content.map((component, index) => cloneElement(component, { key: index }))}
 
           {course && (
             <LinkCustom href={course?.enroll} variant="primary" external>
-              {localizedContent[lang].linkLabel}
+              {trainingProgramLink[lang].linkLabel}
             </LinkCustom>
           )}
-        </div>
-        <div className={`right ${courseName.includes('badge') ? 'badge' : ''}`}>
-          <Image src={image} alt={course?.title} />
-        </div>
+        </article>
+
+        <Image
+          data-testid="image"
+          src={image}
+          alt={course?.title}
+          className={cx('image', { badge: isCourseWithBadge })}
+        />
       </div>
     </section>
   );
