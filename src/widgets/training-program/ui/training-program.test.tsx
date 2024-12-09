@@ -8,6 +8,19 @@ import { COURSE_TITLES } from 'data';
 
 const mockedCourseAngular: Course = mockedCourses[4];
 const mockedCourseAws: Course = mockedCourses[5];
+const mockedParagraphsAngular = [
+  'This course is designed for individuals with a solid foundation in JavaScript, TypeScript, and front-end development. Familiarity with RS School processes and RS Stage #2 certification is a plus.',
+  'The course lasts 11 weeks, requiring approximately 20-40 hours of study per week.',
+  'All webinars are recorded and available on our',
+  '. Theoretical materials are provided as recorded lectures from previous courses.',
+];
+const mockedParagraphsAws = [
+  'This course is a step-by-step journey to become an AWS Certified Developer ‒ Associate',
+  'Be well-prepared to pass the "AWS Certified Developer - Associate"',
+  'Course highlights',
+  'using AWS S3 and CloudFront',
+  'Implement backend-for-frontend using API Gateway',
+];
 
 describe('TrainingProgram', () => {
   describe('with "angular" props', () => {
@@ -22,14 +35,7 @@ describe('TrainingProgram', () => {
     });
 
     it('renders correct paragraphs', () => {
-      const paragraphs = [
-        'This course is designed for individuals with a solid foundation in JavaScript, TypeScript, and front-end development. Familiarity with RS School processes and RS Stage #2 certification is a plus.',
-        'The course lasts 11 weeks, requiring approximately 20-40 hours of study per week.',
-        'All webinars are recorded and available on our',
-        '. Theoretical materials are provided as recorded lectures from previous courses.',
-      ];
-
-      paragraphs.forEach((p) => {
+      mockedParagraphsAngular.forEach((p) => {
         expect(screen.getByText(new RegExp(p, 'i'))).toBeInTheDocument();
       });
     });
@@ -61,15 +67,7 @@ describe('TrainingProgram', () => {
     });
 
     it('renders correct paragraphs', () => {
-      const paragraphs = [
-        'This course is a step-by-step journey to become an AWS Certified Developer ‒ Associate',
-        'Be well-prepared to pass the "AWS Certified Developer - Associate"',
-        'Course highlights',
-        'using AWS S3 and CloudFront',
-        'Implement backend-for-frontend using API Gateway',
-      ];
-
-      paragraphs.forEach((p) => {
+      mockedParagraphsAws.forEach((p) => {
         expect(screen.getByText(new RegExp(p, 'i'))).toBeInTheDocument();
       });
     });
