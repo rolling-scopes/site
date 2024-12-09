@@ -1,33 +1,23 @@
 .menu {
   width: 300px;
 
-  @include media-tablet {
-    display: none;
-
-    &.open {
-      display: block;
-    }
-  }
-
-  @include media-mobile-landscape {
-    width: 100vw;
-  }
-
   ul {
     display: flex;
     flex-direction: column;
-    list-style-type: none;
-    text-align: left;
-    font-size: 14px;
-    margin-left: 15px;
     gap: 4px;
+
+    margin-left: 15px;
+
+    font-size: 14px;
+    text-align: left;
+    list-style-type: none;
 
     li {
       a {
         display: block;
-        text-decoration: none;
-        color: $color-gray-500;
         padding: 6px 8px;
+        color: $color-gray-500;
+        text-decoration: none;
 
         &.active {
           font-weight: bold;
@@ -39,9 +29,21 @@
 
     span {
       display: block;
-      padding: 6px 8px;
       margin-top: 6px;
+      padding: 6px 8px;
     }
+  }
+
+  @include media-tablet {
+    display: none;
+
+    &.open {
+      display: block;
+    }
+  }
+
+  @include media-mobile-landscape {
+    width: 100vw;
   }
 }
 
