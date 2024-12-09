@@ -1,85 +1,70 @@
 .training-program {
-  &.column-2 {
+  gap: 100px;
+  justify-content: flex-start;
+
+  .left {
     display: flex;
-    flex-direction: row;
-    gap: 100px;
-    align-items: center;
-    justify-content: flex-start;
+    flex: 1 1 55%;
+    flex-direction: column;
+    gap: 26px;
 
-    .left {
-      display: flex;
-      flex: 1 1 55%;
-      flex-direction: column;
-      gap: 26px;
+    max-width: 55%;
 
-      max-width: 55%;
+    & span {
+      font-weight: $font-weight-bold;
+    }
 
-      & span {
+    div {
+      p {
+        padding-bottom: 0;
         font-weight: $font-weight-bold;
-      }
-
-      div {
-        padding-bottom: 18px;
-
-        p {
-          padding-bottom: 0;
-          font-weight: $font-weight-bold;
-        }
-      }
-
-      & > .button {
-        margin-top: 24px;
-      }
-
-      @include media-laptop-medium {
-        max-width: 100%;
       }
     }
 
-    .image {
-      flex: 1 1 30%;
-      max-width: 30%;
+    & > .button {
+      margin-top: 24px;
+    }
+
+    @include media-laptop-medium {
+      max-width: 100%;
+    }
+  }
+
+  .image {
+    flex: 1 1 30%;
+    max-width: 30%;
+    height: auto;
+
+    &.badge {
+      max-width: 276px;
       height: auto;
 
-      &.badge {
-        max-width: 276px;
-        height: auto;
-
-        @include media-tablet-large {
-          max-width: 220px;
-        }
-
-        @include media-tablet {
-          max-width: 175px;
-        }
-
-        @include media-mobile {
-          max-width: 135px;
-        }
+      @include media-tablet-large {
+        max-width: 220px;
       }
 
-      @include media-tablet-large {
-        align-self: center;
+      @include media-tablet {
+        max-width: 175px;
+      }
 
-        width: 320px;
-        max-width: 60%;
-        height: auto;
-        max-height: 511px;
+      @include media-mobile {
+        max-width: 135px;
       }
     }
 
     @include media-tablet-large {
-      flex-direction: column;
-      gap: 40px;
-      align-items: flex-start;
+      align-self: center;
+
+      width: 320px;
+      max-width: 60%;
+      height: auto;
+      max-height: 511px;
     }
   }
 
-  @include media-laptop {
-    padding: 75px 40px 40px;
-  }
-
-  @include media-tablet {
-    padding: 16px;
+  @include media-tablet-large {
+    flex-direction: column;
+    gap: 40px;
+    align-items: flex-start;
   }
 }
