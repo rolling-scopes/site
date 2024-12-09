@@ -13,14 +13,14 @@ const mockedParagraphsAngular = [
   'The course lasts 11 weeks, requiring approximately 20-40 hours of study per week.',
   'All webinars are recorded and available on our',
   '. Theoretical materials are provided as recorded lectures from previous courses.',
-];
+] as const;
 const mockedParagraphsAws = [
   'This course is a step-by-step journey to become an AWS Certified Developer ‒ Associate',
   'Be well-prepared to pass the "AWS Certified Developer - Associate"',
   'Course highlights',
   'using AWS S3 and CloudFront',
   'Implement backend-for-frontend using API Gateway',
-];
+] as const;
 
 describe('TrainingProgram', () => {
   describe('with "angular" props', () => {
@@ -34,11 +34,12 @@ describe('TrainingProgram', () => {
       expect(title).toBeVisible();
     });
 
-    it('renders correct paragraphs', () => {
-      mockedParagraphsAngular.forEach((p) => {
+    it.each(mockedParagraphsAngular)(
+      'should render Angular course "%s" paragraph correctly',
+      (p) => {
         expect(screen.getByText(new RegExp(p, 'i'))).toBeInTheDocument();
-      });
-    });
+      },
+    );
 
     it('renders Button with correct url', () => {
       const button = screen.getByRole('link', { name: /register/i });
@@ -66,10 +67,8 @@ describe('TrainingProgram', () => {
       expect(title).toBeInTheDocument();
     });
 
-    it('renders correct paragraphs', () => {
-      mockedParagraphsAws.forEach((p) => {
-        expect(screen.getByText(new RegExp(p, 'i'))).toBeInTheDocument();
-      });
+    it.each(mockedParagraphsAws)('should render AWS course "%s" paragraph correctly', (p) => {
+      expect(screen.getByText(new RegExp(p, 'i'))).toBeInTheDocument();
     });
 
     it('renders Button with correct url', () => {
