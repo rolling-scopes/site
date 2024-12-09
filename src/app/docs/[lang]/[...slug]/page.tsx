@@ -104,6 +104,7 @@ export default async function DocPage({
 
   let fileUrl;
 
+  // handling cases with nested folders
   if (slug.length > 1) {
     fileUrl = `https://raw.githubusercontent.com/spanb4/docs/master/docs/${lang}/${slug[0]}/${slug[1]}.md`;
   } else {
