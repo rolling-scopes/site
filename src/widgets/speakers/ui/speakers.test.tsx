@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
-import { Speakers } from './ui/speakers';
+import { Speakers } from '@/widgets/speakers';
 
 describe('Speakers', () => {
   beforeEach(() => {
@@ -20,7 +20,7 @@ describe('Speakers', () => {
   });
 
   it('renders the name correctly', () => {
-    const nameElement = screen.getByTestId('contact-name');
+    const nameElement = screen.getByTestId('subtitle');
 
     expect(nameElement).toBeInTheDocument();
     expect(nameElement).toBeVisible();
@@ -33,7 +33,9 @@ describe('Speakers', () => {
   });
 
   it('renders the image correctly', () => {
-    const imageElement = screen.getByAltText('speakers-wanted');
+    const imageElement = screen.getByAltText(
+      'Cartoon sloth wearing a yellow shirt, gesturing with a speech bubble',
+    );
 
     expect(imageElement).toBeInTheDocument();
   });
