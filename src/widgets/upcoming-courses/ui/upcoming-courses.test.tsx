@@ -49,10 +49,28 @@ describe('UpcomingCourses', () => {
       render(upcomingCourses);
     });
 
-    it('does not render the component if courses array is empty', () => {
-      const titleElement = screen.queryByText('Upcoming courses');
+    it('renders the title correctly', () => {
+      const titleElement = screen.getByText('Upcoming courses');
 
-      expect(titleElement).not.toBeInTheDocument();
+      expect(titleElement).toBeInTheDocument();
+    });
+
+    it('renders the paragraph correctly', () => {
+      const paragraph = screen.getByTestId('paragraph');
+
+      expect(paragraph).toBeVisible();
+    });
+
+    it('renders the Join to our Telegram button', () => {
+      const goButton = screen.getByText('Join to our Telegram');
+
+      expect(goButton).toBeInTheDocument();
+    });
+
+    it('should render RsBanner', () => {
+      const rsBanner = screen.getByTestId('rs-banner');
+
+      expect(rsBanner).toBeInTheDocument();
     });
   });
 });
