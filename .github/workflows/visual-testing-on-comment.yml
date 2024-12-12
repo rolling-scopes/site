@@ -16,15 +16,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Checkout Pull Request
-        run: gh pr checkout ${{ github.event.issue.number }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
       - name: Get the pull request information
         id: get_pr
         uses: actions/github-script@v7
@@ -39,6 +30,8 @@ jobs:
 
             core.setOutput('base_branch', pullRequest.base.ref); // Get the base branch
             core.setOutput('base_commit', pullRequest.base.sha); // Get the base commit
+            core.setOutput('head_ref', pullRequest.head.ref) // Get the head branch name
+            core.setOutput('head_sha', pullRequest.head.sha) // Get the head commit SHA
 
       - uses: bahmutov/npm-install@v1
 
@@ -46,14 +39,27 @@ jobs:
         run: |
           echo "Base branch: ${{ steps.get_pr.outputs.base_branch }}"
           echo "Base commit: ${{ steps.get_pr.outputs.base_commit }}"
+          echo "Head branch: ${{ steps.get_pr.outputs.head_ref }}"
+          echo "Head commit: ${{ steps.get_pr.outputs.head_sha }}"
+
 
       - name: Install Playwright browsers and dependencies
         run: npx playwright install --with-deps
 
-      - run: npm run test:playwright
+      - name: Get the base commit
+        run: |
+          git fetch origin ${{ steps.get_pr.outputs.base_branch }}
+          git checkout ${{ steps.get_pr.outputs.base_commit }}
+
+      - name: Run Playwright tests
+        run: npm run test:playwright
         env:
           ARGOS_TOKEN: ${{ secrets.ARGOS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           API_URL: ${{ secrets.API_URL }}
           REFERENCE_BRANCH: ${{ steps.get_pr.outputs.base_branch }}
           REFERENCE_COMMIT: ${{ steps.get_pr.outputs.base_commit }}
+
+      - name: Switch back to the original branch
+        if: always()
+        run: git switch ${{ steps.get_pr.outputs.head_ref }}
