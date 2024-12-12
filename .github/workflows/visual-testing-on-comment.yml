@@ -57,8 +57,8 @@ jobs:
           ARGOS_TOKEN: ${{ secrets.ARGOS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           API_URL: ${{ secrets.API_URL }}
-          REFERENCE_BRANCH: ${{ steps.get_pr.outputs.base_branch }}
-          REFERENCE_COMMIT: ${{ steps.get_pr.outputs.base_commit }}
+          REFERENCE_BRANCH: ${{ steps.get_pr.outputs.head_ref }}
+          REFERENCE_COMMIT: ${{ steps.get_pr.outputs.head_sha }}
 
       - name: Switch back to the original branch
         if: always()
