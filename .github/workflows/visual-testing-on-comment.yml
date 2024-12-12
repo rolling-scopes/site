@@ -42,6 +42,11 @@ jobs:
 
       - uses: bahmutov/npm-install@v1
 
+      - name: Check pull request values
+        run: |
+          echo "Base branch: ${{ steps.get_pr.outputs.base_branch }}"
+          echo "Base commit: ${{ steps.get_pr.outputs.base_commit }}"
+
       - name: Install Playwright browsers and dependencies
         run: npx playwright install --with-deps
 
