@@ -23,8 +23,6 @@ type HeaderProps = {
 export const Header = ({ courses }: HeaderProps) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [color, setColor] = useState('gray');
-  const [hash, setHash] = useState('');
-  const [key, setKey] = useState('');
   const pathname = usePathname();
 
   // const headerAccentColor = pathname.includes(ROUTES.MENTORSHIP) ? 'blue' : 'gray';
@@ -36,6 +34,10 @@ export const Header = ({ courses }: HeaderProps) => {
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
+  };
+
+  const handleMenuClose = () => {
+    setMenuOpen(false);
   };
 
   useEffect(() => {
@@ -59,18 +61,8 @@ export const Header = ({ courses }: HeaderProps) => {
   }, [headerAccentColor]);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setHash(window.location.hash);
-      setKey(window.location.href);
-    }
-  }, [pathname]);
-
-  useEffect(() => {
-    if (location.pathname) {
-      setMenuOpen(false);
-      setColor(headerAccentColor);
-    }
-  }, [key, hash, pathname, headerAccentColor]);
+    setColor(headerAccentColor);
+  }, [pathname, headerAccentColor]);
 
   return (
     <nav className={cx('navbar', color)} data-testid="navigation">
@@ -78,7 +70,7 @@ export const Header = ({ courses }: HeaderProps) => {
         <Logo />
 
         <menu className={cx('mobile-menu', { open: isMenuOpen })} data-testid="mobile-menu">
-          <MobileView courses={courses} type="header" />
+          <MobileView onClose={handleMenuClose} courses={courses} type="header" />
         </menu>
         <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 

@@ -19,9 +19,10 @@ const Divider = ({ color }: DividerProps) => <hr className={cx('divider', color)
 type MobileViewProps = {
   type: 'header' | 'footer';
   courses: Course[];
+  onClose?: () => void;
 };
 
-export const MobileView = ({ type, courses }: MobileViewProps) => {
+export const MobileView = ({ type, courses, onClose }: MobileViewProps) => {
   const color = type === 'header' ? 'dark' : 'light';
   const logoView = type === 'header' ? null : 'with-border';
 
@@ -31,7 +32,7 @@ export const MobileView = ({ type, courses }: MobileViewProps) => {
 
       <Divider color={color} />
 
-      <Link href={`/${ROUTES.HOME}`} className={cx('category-link', color)}>
+      <Link onClick={onClose} href={`/${ROUTES.HOME}`} className={cx('category-link', color)}>
         RS School
       </Link>
 
@@ -43,13 +44,14 @@ export const MobileView = ({ type, courses }: MobileViewProps) => {
             description={link.description}
             url={link.detailsUrl}
             color={color}
+            onClick={onClose}
           />
         ))}
       </SchoolMenu>
 
       <Divider color={color} />
 
-      <Link href={`/${ROUTES.COURSES}`} className={cx('category-link', color)}>
+      <Link onClick={onClose} href={`/${ROUTES.COURSES}`} className={cx('category-link', color)}>
         Courses
       </Link>
 
@@ -62,13 +64,14 @@ export const MobileView = ({ type, courses }: MobileViewProps) => {
             description={course.startDate}
             url={course.detailsUrl}
             color={color}
+            onClick={onClose}
           />
         ))}
       </SchoolMenu>
 
       <Divider color={color} />
 
-      <Link href={`/${ROUTES.COMMUNITY}`} className={cx('category-link', color)}>
+      <Link onClick={onClose} href={`/${ROUTES.COMMUNITY}`} className={cx('category-link', color)}>
         Community
       </Link>
 
@@ -80,13 +83,14 @@ export const MobileView = ({ type, courses }: MobileViewProps) => {
             description={link.description}
             url={link.detailsUrl}
             color={color}
+            onClick={onClose}
           />
         ))}
       </SchoolMenu>
 
       <Divider color={color} />
 
-      <Link href={`/${ROUTES.MENTORSHIP}`} className={cx('category-link', color)}>
+      <Link onClick={onClose} href={`/${ROUTES.MENTORSHIP}`} className={cx('category-link', color)}>
         Mentorship
       </Link>
 
@@ -98,6 +102,7 @@ export const MobileView = ({ type, courses }: MobileViewProps) => {
             title={course.title}
             url={course.detailsUrl}
             color={color}
+            onClick={onClose}
           />
         ))}
       </SchoolMenu>

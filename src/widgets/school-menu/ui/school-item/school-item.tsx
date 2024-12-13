@@ -1,3 +1,4 @@
+import { HTMLProps } from 'react';
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
@@ -7,7 +8,7 @@ import styles from './school-item.module.scss';
 
 const cx = classNames.bind(styles);
 
-type SchoolItemProps = {
+type SchoolItemProps = HTMLProps<HTMLLIElement> & {
   title: string;
   url: string;
   description?: string;
@@ -15,9 +16,16 @@ type SchoolItemProps = {
   color?: Color;
 };
 
-export const SchoolItem = ({ icon, description, title, color = 'dark', url }: SchoolItemProps) => {
+export const SchoolItem = ({
+  icon,
+  description,
+  title,
+  color = 'dark',
+  url,
+  ...props
+}: SchoolItemProps) => {
   return (
-    <li key={title}>
+    <li key={title} {...props}>
       <Link href={url} className={cx('school-item')}>
         {icon && (
           <Image
