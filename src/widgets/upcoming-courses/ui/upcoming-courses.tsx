@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
-import { ANNOUNCEMENT_TELEGRAM_LINK } from '../../../../dev-data/communication.data';
+
 import { ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
 import { getCourses } from '@/entities/course/api/course-api';
@@ -11,10 +11,16 @@ import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { maxUpcomingCoursesQuantity } from '@/widgets/upcoming-courses/constants';
+import { ANNOUNCEMENT_TELEGRAM_LINK } from 'data';
 
 import styles from './upcoming-courses.module.scss';
 
 const cx = classNames.bind(styles);
+
+const emptyText = {
+  part1: `Looks like the course board is empty right now. But don't worry — we're cooking up something exciting! Subscribe to our `,
+  part2: ` Announcement channel to be the first to know when fresh courses are served.`,
+};
 
 export const UpcomingCourses = async () => {
   const courses = await getCourses();
@@ -50,13 +56,12 @@ export const UpcomingCourses = async () => {
   const emptyBlock = (
     <>
       <Paragraph>
-        Looks like the course board is empty right now. But don’t worry—we’re cooking up something
-        exciting! Subscribe to our Telegram Announcement channel to be the first to know when fresh
-        courses are served.
+        {emptyText.part1}
+        <LinkCustom href={ANNOUNCEMENT_TELEGRAM_LINK} external>
+          Telegram
+        </LinkCustom>
+        {emptyText.part2}
       </Paragraph>
-      <LinkCustom href={ANNOUNCEMENT_TELEGRAM_LINK} variant="primary">
-        Join to our Telegram
-      </LinkCustom>
     </>
   );
 
@@ -64,7 +69,7 @@ export const UpcomingCourses = async () => {
     <article id="upcoming-courses" className={cx('container')}>
       <section className={cx('content')}>
         <WidgetTitle size="small">Upcoming courses</WidgetTitle>
-        <div className={cx('column-2')}>
+        <div className={cx('column-2', 'course-wrap')}>
           <div className={cx('course-list')} data-testid="courses-list">
             {coursesContent.length > 0 ? courseListBlock : emptyBlock}
           </div>
