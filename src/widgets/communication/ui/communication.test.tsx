@@ -4,11 +4,7 @@ import { mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { COURSE_TITLES, DISCORD_LINKS, communicationText } from 'data';
 
-type LangVariant = {
-  course: (typeof mockedCourses)[number];
-  texts: typeof communicationText.en;
-};
-const mockLangVariants: LangVariant[] = [
+const mockLangVariants = [
   {
     course: mockedCourses.find((course) => course.title === COURSE_TITLES.ANGULAR)!,
     texts: communicationText.en,
