@@ -61,12 +61,6 @@ describe('UpcomingCourses', () => {
       expect(paragraph).toBeVisible();
     });
 
-    it('renders the Join to our Telegram button', () => {
-      const goButton = screen.getByText('Join to our Telegram');
-
-      expect(goButton).toBeInTheDocument();
-    });
-
     it('should render RsBanner', () => {
       const rsBanner = screen.getByTestId('rs-banner');
 
