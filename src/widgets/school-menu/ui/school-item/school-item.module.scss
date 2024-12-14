@@ -46,10 +46,6 @@
     }
   }
 
-  .icon-wrapper {
-    grid-row: span 2;
-  }
-
   .description-wrapper {
     display: flex;
     flex-direction: column;
@@ -57,10 +53,6 @@
     align-items: flex-start;
 
     .description {
-      grid-column: 2 / 3;
-      grid-row: 2 / 3;
-      justify-self: flex-start;
-
       font-size: 12px;
       color: $color-gray-500;
     }
