@@ -41,6 +41,7 @@ export const Speakers = () => (
         className={cx('right', 'picture')}
         src={speakersWanted}
         alt="Cartoon sloth wearing a yellow shirt, gesturing with a speech bubble"
+        data-testid="sloth-image"
       />
     </div>
   </div>
