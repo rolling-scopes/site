@@ -86,6 +86,7 @@ describe('SchoolMenu', () => {
     const images = screen.getAllByTestId('school-item-icon');
 
     expect(images).toHaveLength(6);
+    images.forEach((img) => expect(img).toHaveAttribute('aria-hidden', 'true'));
   });
 
   it('renders correct link description when date is passed', () => {

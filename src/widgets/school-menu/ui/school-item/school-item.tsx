@@ -33,6 +33,7 @@ export const SchoolItem = ({
           alt=""
           width={32}
           height={32}
+          aria-hidden="true"
           data-testid="school-item-icon"
         />}
         <div className={cx('description-wrapper')}>
