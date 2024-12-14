@@ -27,7 +27,7 @@ export const Support = () => (
           href={LINKS.DONATE}
           variant="primary"
           external
-          data-testid="link-custom"
+          data-testid="link-support"
         >
           Donate now
         </LinkCustom>

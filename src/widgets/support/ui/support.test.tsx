@@ -22,7 +22,7 @@ describe('Support Component', () => {
     const supportSection = screen.getByTestId('support-section');
     const title = screen.getByTestId('widget-title');
     const paragraphs = screen.getAllByTestId('paragraph');
-    const link = screen.getByTestId('link-custom');
+    const link = screen.getByTestId('link-support');
     const slothImage = screen.getByTestId('sloth-mascot');
 
     expect(supportSection).toBeVisible();
