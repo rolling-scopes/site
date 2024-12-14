@@ -16,11 +16,7 @@ type GetActualDataParams<T extends DataType> = {
 type GetActualDataType = <T extends DataType>(params: GetActualDataParams<T>) => T;
 
 export const getActualData: GetActualDataType = ({ data, staleAfter, filterStale = true }) => {
-  let dataWithTBD = data;
-
-  if (staleAfter) {
-    dataWithTBD = mapStaleAsTBD(data, staleAfter);
-  }
+  let dataWithTBD = mapStaleAsTBD(data, staleAfter);
 
   if (filterStale) {
     dataWithTBD = filterStaleData(dataWithTBD);
@@ -29,14 +25,23 @@ export const getActualData: GetActualDataType = ({ data, staleAfter, filterStale
   return sortData(dataWithTBD);
 };
 
-const mapStaleAsTBD = <T extends DataType>(data: T, staleAfter: number): T =>
+const mapStaleAsTBD = <T extends DataType>(data: T, staleAfter?: number): T =>
   data.map((item) => {
     const datePath = isCourse(item) ? 'startDate' : 'date';
     const date = isCourse(item) ? item.startDate : item.date;
+    let courseDate;
+
+    if (staleAfter) {
+      courseDate = getCourseDate(date, staleAfter);
+    } else if (isCourse(item)) {
+      const daysBeforeStale = dayJS(item.registrationEndDate).diff(item.startDate, 'd');
+
+      courseDate = getCourseDate(date, daysBeforeStale);
+    }
 
     return {
       ...item,
-      [datePath]: getCourseDate(date, staleAfter),
+      [datePath]: courseDate,
     };
   }) as T;
 

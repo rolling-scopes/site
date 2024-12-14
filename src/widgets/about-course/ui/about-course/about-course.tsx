@@ -12,23 +12,22 @@ export const cx = classNames.bind(styles);
 
 type AboutCourseProps = {
   courseName: CourseNamesKeys;
-  type?: 'ru' | 'en' | 'pre-school-ru';
   course: Course;
 };
 
-export const AboutCourse = ({ course, courseName, type = 'en' }: AboutCourseProps) => {
+export const AboutCourse = ({ course, courseName }: AboutCourseProps) => {
   const courseInfoList = contentMapAbout[courseName];
 
   return (
     <section className={cx('container')}>
       <div className={cx('about-course', 'content')}>
-        <WidgetTitle>{introLocalizedContent[type].title}</WidgetTitle>
-        {introLocalizedContent[type]?.paragraph && (
-          <Paragraph>{introLocalizedContent[type].paragraph}</Paragraph>
+        <WidgetTitle>{introLocalizedContent[courseName].title}</WidgetTitle>
+        {introLocalizedContent[courseName]?.paragraph && (
+          <Paragraph>{introLocalizedContent[courseName].paragraph}</Paragraph>
         )}
         <AboutCourseGrid items={courseInfoList} />
         <LinkCustom href={course.enroll} variant="primary" external>
-          {introLocalizedContent[type]?.linkLabel}
+          {introLocalizedContent[courseName]?.linkLabel}
         </LinkCustom>
       </div>
     </section>

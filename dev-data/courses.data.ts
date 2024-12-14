@@ -24,6 +24,7 @@ export const courses: Course[] = [
   {
     id: '1',
     title: COURSE_TITLES.JS_PRESCHOOL_RU,
+    subTitle: 'Pre-school RU',
     alias: COURSE_ALIASES.JS_PRESCHOOL_RU,
     altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
@@ -43,6 +44,7 @@ export const courses: Course[] = [
   {
     id: '2',
     title: COURSE_TITLES.JS_EN,
+    subTitle: null,
     alias: COURSE_ALIASES.JS_EN,
     altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
@@ -62,6 +64,7 @@ export const courses: Course[] = [
   {
     id: '3',
     title: COURSE_TITLES.JS_RU,
+    subTitle: null,
     alias: COURSE_ALIASES.JS_RU,
     altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
@@ -81,6 +84,7 @@ export const courses: Course[] = [
   {
     id: '4',
     title: COURSE_TITLES.REACT,
+    subTitle: null,
     alias: COURSE_ALIASES.REACT,
     iconSrc: react,
     iconSmall: reactSmall,
@@ -99,6 +103,7 @@ export const courses: Course[] = [
   {
     id: '5',
     title: COURSE_TITLES.ANGULAR,
+    subTitle: null,
     alias: COURSE_ALIASES.ANGULAR,
     iconSrc: angular,
     iconSmall: angularSmall,
@@ -117,6 +122,7 @@ export const courses: Course[] = [
   {
     id: '6',
     title: COURSE_TITLES.NODE,
+    subTitle: null,
     alias: COURSE_ALIASES.NODE,
     iconSrc: nodejs,
     iconSmall: nodejsSmall,
@@ -135,6 +141,7 @@ export const courses: Course[] = [
   {
     id: '7',
     title: COURSE_TITLES.AWS_FUNDAMENTALS,
+    subTitle: null,
     alias: COURSE_ALIASES.AWS_FUNDAMENTALS,
     iconSrc: aws,
     iconSmall: awsFundSmall,
@@ -144,7 +151,7 @@ export const courses: Course[] = [
     language: ['en'],
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.AWS_FUNDAMENTALS}`,
-    enroll: 'https://wearecommunity.io/events/rs-aws-2024q2',
+    enroll: 'https://wearecommunity.io/events/aws-fundamentals-course-2024q4',
     backgroundStyle: {
       backgroundColor: '#F4F1FA',
       accentColor: '#7356BF',
@@ -154,6 +161,7 @@ export const courses: Course[] = [
   {
     id: '8',
     title: COURSE_TITLES.AWS_CLOUD_DEVELOPER,
+    subTitle: null,
     alias: COURSE_ALIASES.AWS_CLOUD_DEVELOPER,
     iconSrc: aws,
     iconSmall: awsDevSmall,
@@ -172,6 +180,7 @@ export const courses: Course[] = [
   {
     id: '9',
     title: COURSE_TITLES.AWS_DEVOPS,
+    subTitle: null,
     alias: COURSE_ALIASES.AWS_DEVOPS,
     iconSrc: aws,
     iconSmall: awsDevSmall,

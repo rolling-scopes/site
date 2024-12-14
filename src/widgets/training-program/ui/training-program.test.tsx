@@ -11,6 +11,7 @@ import { COURSE_TITLES } from 'data';
 const mockedCourseAngular: Course = {
   id: '1',
   title: COURSE_TITLES.ANGULAR,
+  subTitle: null,
   alias: COURSE_ALIASES.ANGULAR,
   startDate: '16 Oct, 2023',
   registrationEndDate: '16 Oct, 2024',
@@ -37,6 +38,7 @@ const mockedCourseAws: Course = {
   startDate: '',
   registrationEndDate: TO_BE_DETERMINED,
   title: COURSE_TITLES.AWS_CLOUD_DEVELOPER,
+  subTitle: null,
   alias: COURSE_ALIASES.AWS_CLOUD_DEVELOPER,
   detailsUrl: `/${ROUTES.COURSES}/${ROUTES.AWS_DEVELOPER}`,
   enroll: 'https://wearecommunity.io/events/aws-cloud-dev-rs2023q4',
