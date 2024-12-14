@@ -1,14 +1,11 @@
 .training-program {
   gap: 100px;
-  justify-content: flex-start;
 
   .left {
     display: flex;
     flex: 1 1 55%;
     flex-direction: column;
     gap: 26px;
-
-    max-width: 55%;
 
     & span {
       font-weight: $font-weight-bold;
