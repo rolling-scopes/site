@@ -32,9 +32,7 @@ export const Speakers = () => (
         </Subtitle>
         <address className={cx('email-wrapper')}>
           <Image src={email} alt="" aria-hidden="true" />
-          <LinkCustom href={`mailto:${RS_EMAIL}`} className={cx('email')}>
-            {RS_EMAIL}
-          </LinkCustom>
+          <LinkCustom href={`mailto:${RS_EMAIL}`}>{RS_EMAIL}</LinkCustom>
         </address>
       </article>
       <Image
