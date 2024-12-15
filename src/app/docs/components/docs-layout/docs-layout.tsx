@@ -7,6 +7,7 @@ import remarkEmoji from 'remark-emoji';
 import remarkGfm from 'remark-gfm';
 import remarkRemoveComments from 'remark-remove-comments';
 import remarkToc from 'remark-toc';
+import { GITHUB_RAW_ROOT } from '../../constants';
 import { Menu } from '../../types';
 import { DocsMenu } from '../docs-menu/docs-menu';
 import { LangSwitcher } from '../lang-switcher/lang-switcher';
@@ -18,7 +19,7 @@ import styles from './docs-layout.module.scss';
 
 const cx = classNames.bind(styles);
 
-const baseUrl = 'https://raw.githubusercontent.com/SpaNb4/docs/refs/heads/master/docs/images/';
+const GITHUB_IMAGE_BASE = `${GITHUB_RAW_ROOT}/images`;
 
 type DocsLayoutProps = {
   menu: Menu;
@@ -32,13 +33,13 @@ export function DocsLayout({
   lang,
 }: DocsLayoutProps) {
   return (
-    <div className={cx('container', 'docs-layout')}>
-      <div className={cx('content', 'menu-wrapper')}>
+    <main className={cx('container', 'docs-layout')}>
+      <nav className={cx('content', 'menu-wrapper')}>
         <div className={cx('menu')}>
           <DocsMenu menu={menu} lang={lang} />
           <LangSwitcher />
         </div>
-      </div>
+      </nav>
       <div className={cx('content', 'docs-content')}>
         <Search lang={lang} />
         <div className={cx('markdown-body')} data-pagefind-body>
@@ -50,7 +51,7 @@ export function DocsLayout({
                 const { src } = props;
 
                 const isExternalImage = isValidUrl(src);
-                const newSrc = !isExternalImage && src ? `${baseUrl}${src.split('/').pop()}` : src;
+                const newSrc = !isExternalImage && src ? `${GITHUB_IMAGE_BASE}/${src.split('/').pop()}` : src;
 
                 return <img {...props} src={newSrc} />;
               },
@@ -67,6 +68,6 @@ export function DocsLayout({
           </ReactMarkdown>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

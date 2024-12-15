@@ -2,14 +2,17 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { DocsLayout } from '../../components/docs-layout/docs-layout';
 import { Menu } from '../../types';
+import { fetchMarkdownContent } from '../../utils/fetchMarkdownContent';
 import { fetchMenu } from '../../utils/fetchMenu';
 import { Language } from '@/shared/types';
+
+type RouteParams = { lang: Language;
+  slug: string[]; };
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ lang: Language;
-    slug: string[]; }>;
+  params: Promise<RouteParams>;
 }): Promise<Metadata> {
   const { lang, slug } = await params;
   const docsMenu = await fetchMenu(lang);
@@ -19,11 +22,7 @@ export async function generateMetadata({
     return items.flatMap((section) => {
       const titles = [
         {
-          slug: section.link
-            ? section.link.includes('/')
-              ? section.link.split('/')
-              : [section.link]
-            : [],
+          slug: section.link?.split('/') ?? [],
           title: section.title,
         },
       ];
@@ -47,8 +46,7 @@ export async function generateMetadata({
   return { title };
 }
 
-export async function generateStaticParams(): Promise<{ lang: Language;
-  slug: string[]; }[]> {
+export async function generateStaticParams(): Promise<RouteParams[]> {
   const supportedLanguages: Language[] = ['en', 'ru'];
   const allSlugs = [];
 
@@ -56,17 +54,13 @@ export async function generateStaticParams(): Promise<{ lang: Language;
     return items.flatMap((section) => {
       const results = [];
 
-      if (section.link) {
-        if (!section.link.startsWith('http')) {
-          const slugSegments = section.link.includes('/')
-            ? section.link.split('/')
-            : [section.link];
+      if (section.link && !section.link.startsWith('http')) {
+        const slugSegments = section.link.split('/');
 
-          results.push({
-            lang,
-            slug: slugSegments,
-          });
-        }
+        results.push({
+          lang,
+          slug: slugSegments,
+        });
       }
 
       if (section.items) {
@@ -97,33 +91,16 @@ export async function generateStaticParams(): Promise<{ lang: Language;
 export default async function DocPage({
   params,
 }: {
-  params: Promise<{ lang: Language;
-    slug: string; }>;
+  params: Promise<RouteParams>;
 }) {
   const { lang, slug } = await params;
 
-  let fileUrl;
-
-  // handling cases with nested folders
-  if (slug.length > 1) {
-    fileUrl = `https://raw.githubusercontent.com/spanb4/docs/master/docs/${lang}/${slug[0]}/${slug[1]}.md`;
-  } else {
-    fileUrl = `https://raw.githubusercontent.com/spanb4/docs/master/docs/${lang}/${slug[0]}.md`;
-  }
-
   try {
-    const res = await fetch(fileUrl);
-
-    if (!res.ok) {
-      throw new Error('Failed to fetch markdown file');
-    }
-
-    const markdownContent = await res.text();
-
+    const markdownContent = await fetchMarkdownContent(lang, slug);
     const docsMenu = await fetchMenu(lang);
 
     return <DocsLayout menu={docsMenu} markdownContent={markdownContent} lang={lang} />;
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     notFound();
   }
