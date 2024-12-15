@@ -20,7 +20,7 @@ const mockedReactCourse: Course = {
   title: COURSE_TITLES.REACT,
   subTitle: null,
   alias: COURSE_ALIASES.REACT,
-  language: ['en'],
+  language: 'en',
   mode: 'online',
   enroll: 'http://course-url.com',
   secondaryIcon: MOCKED_IMAGE_PATH,

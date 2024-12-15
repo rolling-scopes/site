@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import { Trainer, TrainerCard } from '@/entities/trainer';
+import { Language } from '@/shared/types';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { trainersTitle } from '@/widgets/trainers/constants';
 
@@ -9,7 +10,7 @@ const cx = classNames.bind(styles);
 
 type TrainersProps = {
   trainers: Trainer[];
-  lang?: 'en' | 'ru';
+  lang?: Language;
 };
 
 export const Trainers = ({ trainers, lang = 'en' }: TrainersProps) => {
@@ -18,9 +19,7 @@ export const Trainers = ({ trainers, lang = 'en' }: TrainersProps) => {
   return (
     <section className={cx('container')} data-testid="trainers">
       <div className={cx('trainers-content', 'content')}>
-        <WidgetTitle mods="lines">
-          {title}
-        </WidgetTitle>
+        <WidgetTitle mods="lines">{title}</WidgetTitle>
         <div className={cx('trainers-list')} data-testid="trainers-list">
           {trainers.map(({ name, bio, photo, role }, index) => (
             <TrainerCard

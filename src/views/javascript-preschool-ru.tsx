@@ -12,22 +12,21 @@ import { CourseNames, preSchoolRu } from 'data';
 
 type JavaScriptPreSchoolRuProps = {
   course: Course;
-  lang: 'ru' | 'en';
   courseName: CourseNames['JS_PRESCHOOL_RU'];
 };
 
-export const JavaScriptPreSchoolRu = ({ lang, course, courseName }: JavaScriptPreSchoolRuProps) => {
+export const JavaScriptPreSchoolRu = ({ course, courseName }: JavaScriptPreSchoolRuProps) => {
   return (
     <>
-      <HeroCourse lang={lang} course={course} />
+      <HeroCourse course={course} />
       <Breadcrumbs />
       <AboutCourse courseName={courseName} course={course} />
-      <TrainingProgram courseName={courseName} lang={lang} course={course} />
+      <TrainingProgram courseName={courseName} course={course} />
       <Required courseName={courseName} />
       <Certification courseName={courseName} />
-      <Communication courseName={courseName} lang={lang} />
+      <Communication course={course} />
       <Faq />
-      <Trainers trainers={preSchoolRu} lang={lang} />
+      <Trainers trainers={preSchoolRu} lang={course.language} />
     </>
   );
 };

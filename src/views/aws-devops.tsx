@@ -22,7 +22,7 @@ export const AwsDevOps = ({ course, courseName }: AwsDevOpsProps) => {
       <TrainingProgram course={course} courseName={courseName} />
       <AboutCourse course={course} courseName={courseName} />
       <Certification courseName={courseName} />
-      <Communication courseName={courseName} />
+      <Communication course={course} />
       <Required courseName={courseName} marked1 />
       <Trainers trainers={awsDevops} />
     </>

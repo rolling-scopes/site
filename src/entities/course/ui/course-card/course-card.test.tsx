@@ -13,7 +13,7 @@ describe('CourseCard', () => {
     startDate: dayJS().toISOString(),
     registrationEndDate: dayJS().add(1, 'd').toISOString(),
     mode: 'online',
-    language: ['en'],
+    language: 'en',
     detailsUrl: 'http://example.com/course',
     backgroundStyle: {
       backgroundColor: '#ffffff',
@@ -35,7 +35,7 @@ describe('CourseCard', () => {
   it('renders the course card content correctly', () => {
     expect(screen.getByText(mockProps.title)).toBeVisible();
     expect(screen.getByText(`${mockProps.startDate}`)).toBeVisible();
-    expect(screen.getByText(mockProps.language.join(' / '))).toBeVisible();
+    expect(screen.getByText(mockProps.language)).toBeVisible();
     expect(screen.getByText(`${mockProps.mode}`)).toBeVisible();
     expect(screen.getByRole('link')).toHaveAttribute('href', mockProps.detailsUrl);
   });

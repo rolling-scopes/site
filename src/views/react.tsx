@@ -21,7 +21,7 @@ export const React = ({ course, courseName }: ReactProps) => {
       <TrainingProgram course={course} courseName={courseName} />
       <AboutCourse course={course} courseName={courseName} />
       <Certification courseName={courseName} />
-      <Communication courseName={courseName} />
+      <Communication course={course} />
       <Trainers trainers={reactEn} />
     </>
   );

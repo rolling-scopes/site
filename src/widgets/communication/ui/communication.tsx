@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+import { Course } from '@/entities/course';
 import discordLogo from '@/shared/assets/svg/discord-logo.svg';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -7,7 +8,6 @@ import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import {
   COURSE_TITLES,
-  CourseNamesKeys,
   DISCORD_LINKS,
   JS_EN_TELEGRAM_CHAT_LINK,
   RS_DOCS_COMMUNICATION_LINK,
@@ -21,11 +21,12 @@ import styles from './communication.module.scss';
 const cx = classNames.bind(styles);
 
 type CommunicationProps = {
-  courseName: CourseNamesKeys;
-  lang?: 'ru' | 'en';
+  course: Course;
 };
 
-export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) => {
+export const Communication = ({ course }: CommunicationProps) => {
+  const { language } = course;
+  const courseName = course.title;
   const {
     title,
     subTitle,
@@ -43,7 +44,7 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
     rsDocsLink,
     thirdParagraphSecondHalf,
     discordNote,
-  } = communicationText[lang];
+  } = communicationText[language];
 
   const isJsEnCourse = courseName === COURSE_TITLES.JS_EN;
   const courseSubTitle = isJsEnCourse ? subTitleJs : subTitle;
