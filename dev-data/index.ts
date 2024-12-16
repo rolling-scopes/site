@@ -43,6 +43,7 @@ export { courses } from './courses.data';
 export { coursesPath } from './courses-path.data';
 export { events } from './events.data';
 export { faqData } from './faq.data';
+export { generalMaterials } from './general.data';
 export { heroPageData } from './hero-page.data';
 export { javaScriptEn } from './javascript-en.data';
 export { javaScriptRu } from './javascript-ru.data';
