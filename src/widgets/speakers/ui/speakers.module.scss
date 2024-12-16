@@ -39,6 +39,7 @@
     @include media-laptop {
       width: 235px;
       height: 240px;
+      margin-left: unset;
       padding: 16px 0 0 0;
     }
   }
