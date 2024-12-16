@@ -1,7 +1,6 @@
 .speakers {
   display: flex;
   gap: 50px;
-  justify-content: space-between;
   background-color: $color-gray-100;
 
   .info {
@@ -35,10 +34,12 @@
   .picture {
     width: 294px;
     height: 300px;
+    margin-left: auto;
 
     @include media-laptop {
       width: 235px;
       height: 240px;
+      margin-left: unset;
       padding: 16px 0 0 0;
     }
   }
