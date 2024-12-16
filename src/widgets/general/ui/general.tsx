@@ -1,5 +1,7 @@
 import classNames from 'classnames/bind';
 import { List } from '@/shared/ui/list';
+import { Paragraph } from '@/shared/ui/paragraph';
+import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './general.module.scss';
@@ -21,28 +23,28 @@ const materials = [
 
 export const General = () => {
   return (
-    <section className={cx('general', 'container')}>
+    <section className={cx('container')}>
       <div className={cx('general', 'content')}>
-        <WidgetTitle size="small">General</WidgetTitle>
-        <div className={cx('general-info')}>
-          <div className={cx('materials')}>
-            <h2 className={cx('title')}>Materials</h2>
-            <List data={materials} />
-          </div>
-          <div className={cx('certificate')}>
-            <h2 className={cx('title')}>Certificate</h2>
-            <p className={cx('description')}>
-              A certificate of successful completion of the course is issued to all who have passed
-              the two stages of training.
-            </p>
-          </div>
-          <div className={cx('chat')}>
-            <h2 className={cx('title')}>Chat</h2>
-            <p className={cx('description')}>
-              Open chat for applicants and students on Discord, Telegram and more.
-            </p>
-          </div>
-        </div>
+        <WidgetTitle className={cx('title')} size="small">
+          General
+        </WidgetTitle>
+        <article className={cx('info-block')}>
+          <Subtitle>Materials</Subtitle>
+          <List data={materials} />
+        </article>
+        <article className={cx('info-block')}>
+          <Subtitle>Certificate</Subtitle>
+          <Paragraph>
+            A certificate of successful completion of the course is issued to all who have passed
+            the two stages of training.
+          </Paragraph>
+        </article>
+        <article className={cx('info-block')}>
+          <Subtitle>Chat</Subtitle>
+          <Paragraph>
+            Open chat for applicants and students on Discord, Telegram and more.
+          </Paragraph>
+        </article>
       </div>
     </section>
   );

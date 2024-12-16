@@ -1,67 +1,29 @@
 .general {
-  .content {
-    padding: 40px 120px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, max-content);
+  column-gap: 24px;
 
-    .title {
-      margin-bottom: 10px;
-      font-size: 36px;
-      line-height: 44px;
-    }
+  .title {
+    grid-column: 1 / -1;
+  }
 
-    .general-info {
-      display: flex;
-      gap: 24px;
-      align-items: flex-start;
-      justify-content: space-between;
+  .info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 
-      color: $color-gray-600;
+    max-width: 380px;
 
-      & > div {
-        max-width: 380px;
+    color: $color-gray-600;
+  }
 
-        .title {
-          margin-top: 0;
-          font-size: 28px;
-          color: $color-gray-600;
+  @include media-tablet {
+    grid-template-columns: 1fr;
+    column-gap: 0;
 
-          @include media-laptop {
-            font-size: 22px;
-            line-height: 36px;
-          }
-
-          @include media-tablet {
-            font-size: 28px;
-            line-height: 36px;
-          }
-        }
-
-        .description {
-          margin: 0;
-          padding: 0;
-          font-size: 18px;
-          line-height: 28px;
-        }
-      }
-
-      .materials {
-        ul {
-          font-size: 18px;
-          line-height: 28px;
-        }
-      }
-
-      @include media-laptop {
-        flex-direction: column;
-      }
-    }
-
-    @include media-laptop {
-      width: 100%;
-      padding: 40px 40px 0;
-    }
-
-    @include media-tablet {
-      padding: 40px 16px;
+    .info-block {
+      margin-top: 24px;
     }
   }
 }
