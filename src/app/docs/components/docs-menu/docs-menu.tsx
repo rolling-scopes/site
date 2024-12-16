@@ -2,10 +2,12 @@
 
 import { useState } from 'react';
 import classNames from 'classnames/bind';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu } from '../../types';
-import { BurgerMenu } from '@/core/base-layout/components/header/burger/burger';
+import chevronDown from '@/shared/assets/svg/chevron-down.svg';
+import chevronRight from '@/shared/assets/svg/chevron-right.svg';
 import { isValidUrl } from '@/shared/helpers/isValidUrl';
 import { Language } from '@/shared/types';
 
@@ -63,7 +65,10 @@ export const DocsMenu = ({ menu, lang }: DocsMenuProps) => {
 
   return (
     <>
-      <BurgerMenu isMenuOpen={isOpen} toggleMenu={handleMenuToggle} />
+      <button className={cx('menu-toggle')} onClick={handleMenuToggle}>
+        <Image src={isOpen ? chevronDown : chevronRight} alt="" aria-hidden="true" />
+        Menu
+      </button>
       <nav className={cx('menu', { open: isOpen })}>
         <ul>{renderMenuItems(menu)}</ul>
       </nav>
