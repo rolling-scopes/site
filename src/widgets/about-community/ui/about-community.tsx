@@ -38,7 +38,7 @@ export const AboutCommunity = () => {
           </Paragraph>
         </article>
         <Image
-          className="sloth-mascot"
+          className={cx('sloth-mascot')}
           src={imageAbout}
           alt="Sloth mascot dressed in a red superhero cape"
         />
