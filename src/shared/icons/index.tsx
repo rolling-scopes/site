@@ -2,7 +2,6 @@ export { AngularIcon } from './angular-icon';
 export { ArrowIcon } from './arrow-icon';
 export { AwsLogo } from './aws';
 export { DiscordIcon } from './discord-icon';
-export { EmailIcon } from './email';
 export { EpamLogo } from './epam';
 export { FacebookIcon } from './facebook';
 export { GithubLogo } from './github';

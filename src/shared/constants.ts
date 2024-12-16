@@ -1,5 +1,6 @@
 export const RS_INTRO_URL = 'https://www.youtube.com/embed/n4unZLVpnaU';
 export const RS_FOUNDATION_YEAR = '2013';
+export const RS_EMAIL = 'rolling.scopes@gmail.com';
 export const TO_BE_DETERMINED = 'TBD';
 
 export const PAGE_NAMES = {
