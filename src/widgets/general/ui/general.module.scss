@@ -1,14 +1,14 @@
 .general {
-  & .content {
+  .content {
     padding: 40px 120px;
 
-    & .title {
+    .title {
       margin-bottom: 10px;
       font-size: 36px;
       line-height: 44px;
     }
 
-    & .general-info {
+    .general-info {
       display: flex;
       gap: 24px;
       align-items: flex-start;
@@ -19,7 +19,7 @@
       & > div {
         max-width: 380px;
 
-        & .title {
+        .title {
           margin-top: 0;
           font-size: 28px;
           color: $color-gray-600;
@@ -35,7 +35,7 @@
           }
         }
 
-        & .description {
+        .description {
           margin: 0;
           padding: 0;
           font-size: 18px;
