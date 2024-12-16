@@ -29,7 +29,6 @@
     "next": "15.0.3",
     "react": "19.0.0-rc.1",
     "react-dom": "19.0.0-rc.1",
-    "react-double-marquee": "^1.1.0",
     "react-responsive-carousel": "^3.2.23"
   },
   "devDependencies": {
