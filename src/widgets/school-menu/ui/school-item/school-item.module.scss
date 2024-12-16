@@ -1,0 +1,60 @@
+.school-item {
+  display: flex;
+  gap: 5px;
+  column-gap: 15px;
+  align-items: center;
+
+  .title {
+    font-weight: $font-weight-medium;
+    line-height: 20px;
+    text-align: start;
+
+    &.dark {
+      color: $color-gray-600;
+    }
+
+    &.light {
+      color: $color-gray-200;
+    }
+  }
+
+  &:hover {
+    .title {
+      &.dark {
+        color: $color-black;
+      }
+
+      &.light {
+        color: $color-gray-400;
+      }
+    }
+  }
+
+  &.with-icon {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    justify-content: flex-start;
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  }
+
+  .description-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+
+    .description {
+      font-size: 12px;
+      color: $color-gray-500;
+    }
+  }
+}
