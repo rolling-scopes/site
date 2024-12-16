@@ -27,3 +27,15 @@ test('Main page mobile', async ({ page }) => {
   await page.getByTestId('burger').click();
   await expect(mobileMenu).not.toBeInViewport();
 });
+
+test('Main page desktop menu', async ({ page }) => {
+  await page.goto(ROUTES.HOME);
+
+  const elements = page.getByTestId('menu-item');
+  const elementsCount = await elements.count();
+
+  for (let i = 0; i < elementsCount; i++) {
+    await elements.nth(i).hover();
+    await takeScreenshot(page, `Main page desktop - menu open ${i + 1}`);
+  }
+});
