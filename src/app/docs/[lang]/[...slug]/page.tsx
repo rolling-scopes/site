@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { DocsLayout } from '../../components/docs-layout/docs-layout';
+import { TITLE_POSTFIX } from '../../constants';
 import { Menu } from '../../types';
 import { fetchMarkdownContent } from '../../utils/fetchMarkdownContent';
 import { fetchMenu } from '../../utils/fetchMenu';
@@ -43,7 +44,7 @@ export async function generateMetadata({
 
   const title = titles.find((el) => el.slug.join('/') === slugPath)?.title;
 
-  return { title };
+  return { title: `${title} ${TITLE_POSTFIX}` };
 }
 
 export async function generateStaticParams(): Promise<RouteParams[]> {

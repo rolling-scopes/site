@@ -1,4 +1,5 @@
 import { DocsLayout } from '../components/docs-layout/docs-layout';
+import { TITLE_POSTFIX } from '../constants';
 import { fetchMarkdownContent } from '../utils/fetchMarkdownContent';
 import { fetchMenu } from '../utils/fetchMenu';
 import { Language } from '@/shared/types';
@@ -6,7 +7,7 @@ import { Language } from '@/shared/types';
 type RouteParams = { lang: Language };
 
 export async function generateMetadata() {
-  return { title: 'RS School Overview' };
+  return { title: `RS School Overview ${TITLE_POSTFIX}` };
 }
 
 export async function generateStaticParams(): Promise<RouteParams[]> {
