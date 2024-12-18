@@ -1,15 +1,42 @@
 import classNames from 'classnames/bind';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { Language } from '@/shared/types';
 
 import styles from './lang-switcher.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const LangSwitcher = () => {
+type LangSwitcherProps = {
+  lang: Language;
+};
+
+export const LangSwitcher = ({ lang }: LangSwitcherProps) => {
+  const router = useRouter();
+
+  const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const newLocale = event.target.value;
+
+    let newPath;
+
+    if (newLocale === 'ru') {
+      newPath = '/docs/ru';
+    } else {
+      newPath = '/docs/en';
+    }
+
+    router.push(newPath);
+  };
+
   return (
     <div className={cx('lang-switcher')}>
-      <Link href="/docs/ru">Русский</Link>
-      <Link href="/docs/en">English</Link>
+      <select
+        className={cx('lang-select')}
+        value={lang}
+        onChange={handleLanguageChange}
+      >
+        <option value="ru">Русский</option>
+        <option value="en">English</option>
+      </select>
     </div>
   );
 };

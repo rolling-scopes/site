@@ -2,22 +2,46 @@
   align-items: initial;
 
   .menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
     width: initial;
     padding-top: 40px;
+
+    @include media-tablet {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 16px 0 16px;
+    }
   }
 
   .menu {
     display: flex;
     flex-direction: column;
-    gap: 50px;
-    align-items: center;
+    gap: 20px;
   }
 
   .docs-content {
     display: flex;
     flex-direction: column;
     gap: 40px;
+
     padding-top: 40px;
     padding-left: 0;
+
+    @include media-tablet {
+      padding-top: 20px;
+      padding-left: 16px;
+    }
   }
+
+  @include media-tablet {
+    flex-direction: column;
+  }
+}
+
+.menu-open {
+  display: block;
 }

@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import classNames from 'classnames/bind';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
@@ -27,47 +30,57 @@ type DocsLayoutProps = {
   lang: Language;
 };
 
-export function DocsLayout({
-  menu,
-  markdownContent,
-  lang,
-}: DocsLayoutProps) {
+export function DocsLayout({ menu, markdownContent, lang }: DocsLayoutProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleMenuToggle = (isOpen: boolean) => {
+    setIsMenuOpen(isOpen);
+  };
+
   return (
-    <main className={cx('container', 'docs-layout')}>
+    <main className={cx('container', 'docs-layout', { 'menu-open': isMenuOpen })}>
       <nav className={cx('content', 'menu-wrapper')}>
         <div className={cx('menu')}>
-          <DocsMenu menu={menu} lang={lang} />
-          <LangSwitcher />
+          <DocsMenu menu={menu} lang={lang} isOpen={isMenuOpen} onMenuToggle={handleMenuToggle} />
         </div>
+        {!isMenuOpen && <LangSwitcher lang={lang} />}
       </nav>
-      <div className={cx('content', 'docs-content')}>
-        <Search lang={lang} />
-        <div className={cx('markdown-body')} data-pagefind-body>
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm, remarkToc, [remarkEmoji, { accessible: true }], remarkRemoveComments]}
-            rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings]}
-            components={{
-              img({ _, ...props }) {
-                const { src } = props;
+      {!isMenuOpen && (
+        <div className={cx('content', 'docs-content')}>
+          <Search lang={lang} />
+          <div className={cx('markdown-body')} data-pagefind-body>
+            <ReactMarkdown
+              remarkPlugins={[
+                remarkGfm,
+                remarkToc,
+                [remarkEmoji, { accessible: true }],
+                remarkRemoveComments,
+              ]}
+              rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings]}
+              components={{
+                img({ _, ...props }) {
+                  const { src } = props;
 
-                const isExternalImage = isValidUrl(src);
-                const newSrc = !isExternalImage && src ? `${GITHUB_IMAGE_BASE}/${src.split('/').pop()}` : src;
+                  const isExternalImage = isValidUrl(src);
+                  const newSrc =
+                    !isExternalImage && src ? `${GITHUB_IMAGE_BASE}/${src.split('/').pop()}` : src;
 
-                return <img {...props} src={newSrc} />;
-              },
-              a({ children, href, ...props }) {
-                return (
-                  <Link href={href && href.endsWith('.md') ? href.slice(0, -3) : href} {...props}>
-                    {children}
-                  </Link>
-                );
-              },
-            }}
-          >
-            {markdownContent}
-          </ReactMarkdown>
+                  return <img {...props} src={newSrc} />;
+                },
+                a({ children, href, ...props }) {
+                  return (
+                    <Link href={href && href.endsWith('.md') ? href.slice(0, -3) : href} {...props}>
+                      {children}
+                    </Link>
+                  );
+                },
+              }}
+            >
+              {markdownContent}
+            </ReactMarkdown>
+          </div>
         </div>
-      </div>
+      )}
     </main>
   );
 }

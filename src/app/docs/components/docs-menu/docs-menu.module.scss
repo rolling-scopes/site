@@ -52,10 +52,12 @@
 
   @include media-tablet {
     display: flex;
-    align-items: center;
     gap: 4px;
-    border: 0;
+    align-items: center;
+
     padding: 0;
+
     background: none;
+    border: 0;
   }
 }

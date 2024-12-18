@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -18,14 +17,15 @@ const cx = classNames.bind(styles);
 type DocsMenuProps = {
   menu: Menu;
   lang: Language;
+  isOpen: boolean;
+  onMenuToggle: (isOpen: boolean) => void;
 };
 
-export const DocsMenu = ({ menu, lang }: DocsMenuProps) => {
+export const DocsMenu = ({ menu, lang, isOpen, onMenuToggle }: DocsMenuProps) => {
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
 
   const handleMenuToggle = () => {
-    setIsOpen(!isOpen);
+    onMenuToggle(!isOpen);
   };
 
   const isActive = (link: string) => {
@@ -42,7 +42,10 @@ export const DocsMenu = ({ menu, lang }: DocsMenuProps) => {
         return (
           <li key={index}>
             {doc.link && (
-              <Link href={resolveHref(doc.link)} className={cx({ active: isActive(doc.link) })}>
+              <Link
+                href={resolveHref(doc.link)}
+                className={cx({ active: isActive(doc.link) })}
+              >
                 {doc.title}
               </Link>
             )}
