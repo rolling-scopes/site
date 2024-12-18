@@ -1,9 +1,15 @@
 .rs-banner {
   width: 300px;
   height: 200px;
+}
 
-  @include media-laptop {
-    margin-top: 24px;
+.course-wrap {
+  display: flex;
+  flex-direction: row;
+
+  @include media-tablet-large {
+    flex-direction: column;
+    gap: 24px;
   }
 }
 
@@ -16,7 +22,7 @@
 
   width: 800px;
 
-  @include media-laptop {
+  @include media-tablet-large {
     width: 100%;
   }
 }
