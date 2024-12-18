@@ -154,7 +154,7 @@ figure {
     list-style-position: initial;
   }
 
-  h2 {
+  h1, h2, h3 {
     a {
       margin-left: -26px;
       padding-right: 10px;
@@ -167,7 +167,7 @@ figure {
     }
   }
 
-  h2:hover {
+  h1, h2, h3:hover {
     .icon-link::after {
       content: url('../../shared/assets/svg/link.svg');
     }

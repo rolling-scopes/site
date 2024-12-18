@@ -68,8 +68,24 @@ export function DocsLayout({ menu, markdownContent, lang }: DocsLayoutProps) {
                   return <img {...props} src={newSrc} />;
                 },
                 a({ children, href, ...props }) {
+                  let newHref = href;
+
+                  if (href.endsWith('.md')) {
+                    newHref = href.slice(0, -3);
+                  }
+
+                  if (
+                    href.startsWith('https://docs.rs.school')
+                    && !(href.endsWith('.png') || href.endsWith('.jpg'))
+                  ) {
+                    const transformedHref = href.replace('?id=', '#');
+                    const lastPathSegment = transformedHref.split('/').pop();
+
+                    newHref = `/docs/${lang}/${lastPathSegment}`;
+                  }
+
                   return (
-                    <Link href={href && href.endsWith('.md') ? href.slice(0, -3) : href} {...props}>
+                    <Link href={newHref} {...props}>
                       {children}
                     </Link>
                   );
