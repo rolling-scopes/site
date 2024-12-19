@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import classNames from 'classnames/bind';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
@@ -32,6 +32,7 @@ type DocsLayoutProps = {
 
 export function DocsLayout({ menu, markdownContent, lang }: DocsLayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const resultsRef = useRef(null);
 
   const handleMenuToggle = (isOpen: boolean) => {
     setIsMenuOpen(isOpen);
@@ -46,9 +47,12 @@ export function DocsLayout({ menu, markdownContent, lang }: DocsLayoutProps) {
       </nav>
       {!isMenuOpen && (
         <div className={cx('content', 'docs-content')}>
-          <div className={cx('docs-top')}>
-            <Search lang={lang} />
-            <LangSwitcher />
+          <div>
+            <div className={cx('docs-top')}>
+              <Search lang={lang} resultsRef={resultsRef} />
+              <LangSwitcher />
+            </div>
+            <div ref={resultsRef}></div>
           </div>
           <div className={cx('markdown-body')} data-pagefind-body>
             <ReactMarkdown

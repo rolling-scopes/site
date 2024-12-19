@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { RefObject, useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import Link from 'next/link.js';
+import { createPortal } from 'react-dom';
 import MOCKED_SEARCH from '../../mocked_search';
 import { Language } from '@/shared/types';
 
@@ -29,9 +30,10 @@ const translations = {
 
 type SearchProps = {
   lang: Language;
+  resultsRef: RefObject<null> | RefObject<HTMLDivElement>;
 };
 
-export default function Search({ lang }: SearchProps) {
+export default function Search({ lang, resultsRef }: SearchProps) {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<PagefindSearchResult[]>([]);
 
@@ -71,13 +73,21 @@ export default function Search({ lang }: SearchProps) {
         onInput={handleSearch}
       />
       <div className={cx('results')}>
-        {query && results.length > 0
-          ? results.map((result, index) => <Result key={index} result={result} />)
-          : query && (
-            <div className={cx('no-results')}>
-              {translations[lang].search.noResults.replace('{{query}}', query)}
-            </div>
-          )}
+        {query
+        && createPortal(
+          <div className={cx('results')}>
+            {results.length > 0
+              ? (
+                  results.map((result, index) => <Result key={index} result={result} />)
+                )
+              : (
+                  <div className={cx('no-results')}>
+                    {translations[lang].search.noResults.replace('{{query}}', query)}
+                  </div>
+                )}
+          </div>,
+          resultsRef.current!,
+        )}
       </div>
     </div>
   );
