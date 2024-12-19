@@ -37,18 +37,18 @@
     }
   }
 
-  @include media-tablet {
-    flex-direction: column;
-  }
-
   .docs-top {
     display: flex;
-    align-items: baseline;
     gap: 100px;
+    align-items: baseline;
 
     @include media-mobile-landscape {
       gap: 20px;
     }
+  }
+
+  @include media-tablet {
+    flex-direction: column;
   }
 }
 
