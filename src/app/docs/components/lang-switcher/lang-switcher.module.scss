@@ -1,0 +1,12 @@
+.lang-switcher {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: end;
+
+  .active {
+    font-weight: bold;
+    color: $color-blue-600;
+    text-decoration: underline;
+  }
+}
