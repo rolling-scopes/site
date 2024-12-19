@@ -28,7 +28,7 @@ export const DocsMenu = ({ menu, lang, isOpen, onMenuToggle }: DocsMenuProps) =>
   };
 
   const isActive = (link: string) => {
-    return pathname.startsWith(`/docs/${lang}/${link}`);
+    return pathname === `/docs/${lang}/${link}`;
   };
 
   const resolveHref = (link: string) => {
