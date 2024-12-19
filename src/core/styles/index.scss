@@ -154,7 +154,15 @@ figure {
     list-style-position: initial;
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
+    &:hover {
+      .icon-link::after {
+        content: url('../../shared/assets/svg/link.svg');
+      }
+    }
+
     a {
       margin-left: -26px;
       padding-right: 10px;
@@ -164,12 +172,6 @@ figure {
       display: inline-block;
       width: 16px;
       height: 16px;
-    }
-  }
-
-  h1, h2, h3:hover {
-    .icon-link::after {
-      content: url('../../shared/assets/svg/link.svg');
     }
   }
 }
