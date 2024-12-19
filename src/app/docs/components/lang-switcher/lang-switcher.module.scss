@@ -1,6 +1,12 @@
 .lang-switcher {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
   align-items: center;
+  gap: 10px;
+  justify-content: end;
+
+  .active {
+    font-weight: bold;
+    text-decoration: underline;
+    color: $color-blue-600;
+  }
 }

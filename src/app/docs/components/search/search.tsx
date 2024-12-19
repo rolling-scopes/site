@@ -61,7 +61,7 @@ export default function Search({ lang }: SearchProps) {
   }
 
   return (
-    <div>
+    <div className={cx('search')}>
       <input
         className={cx('search-input')}
         type="text"

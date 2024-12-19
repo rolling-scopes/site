@@ -43,11 +43,13 @@ export function DocsLayout({ menu, markdownContent, lang }: DocsLayoutProps) {
         <div className={cx('menu')}>
           <DocsMenu menu={menu} lang={lang} isOpen={isMenuOpen} onMenuToggle={handleMenuToggle} />
         </div>
-        {!isMenuOpen && <LangSwitcher lang={lang} />}
       </nav>
       {!isMenuOpen && (
         <div className={cx('content', 'docs-content')}>
-          <Search lang={lang} />
+          <div className={cx('docs-top')}>
+            <Search lang={lang} />
+            <LangSwitcher />
+          </div>
           <div className={cx('markdown-body')} data-pagefind-body>
             <ReactMarkdown
               remarkPlugins={[
@@ -75,8 +77,8 @@ export function DocsLayout({ menu, markdownContent, lang }: DocsLayoutProps) {
                   }
 
                   if (
-                    href.startsWith('https://docs.rs.school')
-                    && !(href.endsWith('.png') || href.endsWith('.jpg'))
+                    href.startsWith('https://docs.rs.school') &&
+                    !(href.endsWith('.png') || href.endsWith('.jpg'))
                   ) {
                     const transformedHref = href.replace('?id=', '#');
                     const lastPathSegment = transformedHref.split('/').pop();

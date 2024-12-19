@@ -1,42 +1,31 @@
 import classNames from 'classnames/bind';
-import { useRouter } from 'next/navigation';
-import { Language } from '@/shared/types';
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import translate from '@/shared/assets/svg/translate.svg';
 
 import styles from './lang-switcher.module.scss';
 
 const cx = classNames.bind(styles);
 
-type LangSwitcherProps = {
-  lang: Language;
-};
+export const LangSwitcher = () => {
+  const pathname = usePathname();
 
-export const LangSwitcher = ({ lang }: LangSwitcherProps) => {
-  const router = useRouter();
-
-  const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const newLocale = event.target.value;
-
-    let newPath;
-
-    if (newLocale === 'ru') {
-      newPath = '/docs/ru';
-    } else {
-      newPath = '/docs/en';
-    }
-
-    router.push(newPath);
-  };
+  const isRuActive = pathname.startsWith('/docs/ru');
+  const isEnActive = pathname.startsWith('/docs/en');
 
   return (
     <div className={cx('lang-switcher')}>
-      <select
-        className={cx('lang-select')}
-        value={lang}
-        onChange={handleLanguageChange}
-      >
-        <option value="ru">Русский</option>
-        <option value="en">English</option>
-      </select>
+      <Image src={translate} alt="Language switcher icon" width={24} height={24} />
+      <span>
+        <Link href="/docs/ru" className={cx({ active: isRuActive })}>
+          RU
+        </Link>
+        &nbsp;/&nbsp;
+        <Link href="/docs/en" className={cx({ active: isEnActive })}>
+          EN
+        </Link>
+      </span>
     </div>
   );
 };
