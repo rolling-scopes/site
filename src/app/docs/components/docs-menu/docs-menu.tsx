@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu } from '../../types';
-import chevronDown from '@/shared/assets/svg/chevron-down.svg';
 import chevronRight from '@/shared/assets/svg/chevron-right.svg';
 import { isValidUrl } from '@/shared/helpers/isValidUrl';
 import { Language } from '@/shared/types';
@@ -69,7 +68,12 @@ export const DocsMenu = ({ menu, lang, isOpen, onMenuToggle }: DocsMenuProps) =>
   return (
     <>
       <button className={cx('menu-toggle')} onClick={handleMenuToggle}>
-        <Image src={isOpen ? chevronDown : chevronRight} alt="" aria-hidden="true" />
+        <Image
+          src={chevronRight}
+          alt=""
+          aria-hidden="true"
+          className={cx('chevron', { open: isOpen })}
+        />
         Menu
       </button>
       <nav className={cx('menu', { open: isOpen })}>

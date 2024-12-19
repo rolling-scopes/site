@@ -50,6 +50,10 @@
 .menu-toggle {
   display: none;
 
+  .chevron.open {
+    transform: rotate(90deg);
+  }
+
   @include media-tablet {
     display: flex;
     gap: 4px;
