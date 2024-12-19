@@ -103,7 +103,12 @@ export default [
         },
       ],
 
-      'import/extensions': 'error',
+      'import/extensions': [
+        'error',
+        {
+          json: 'always',
+        },
+      ],
       'import/prefer-default-export': 'off',
       'import/no-default-export': 'off',
       'import/no-unresolved': ['error', { commonjs: true, amd: true }],
