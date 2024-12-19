@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import { AboutCourseGrid } from '../about-course-grid/about-course-grid';
-import { Course } from '@/entities/course';
+import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -12,10 +12,10 @@ export const cx = classNames.bind(styles);
 
 type AboutCourseProps = {
   courseName: CourseNamesKeys;
-  course: Course;
 };
 
-export const AboutCourse = ({ course, courseName }: AboutCourseProps) => {
+export const AboutCourse = async ({ courseName }: AboutCourseProps) => {
+  const course = await selectCourse(courseName);
   const courseInfoList = contentMapAbout[courseName];
 
   return (

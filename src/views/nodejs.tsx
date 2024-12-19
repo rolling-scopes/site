@@ -1,4 +1,3 @@
-import { Course } from '@/entities/course';
 import { AboutCourse } from '@/widgets/about-course';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
@@ -10,21 +9,20 @@ import { TrainingProgram } from '@/widgets/training-program';
 import { CourseNames, nodejs } from 'data';
 
 type NodejsProps = {
-  course: Course;
   courseName: CourseNames['NODE'];
 };
 
-export const Nodejs = ({ course, courseName }: NodejsProps) => {
+export const Nodejs = ({ courseName }: NodejsProps) => {
   return (
     <>
-      <HeroCourse course={course} />
+      <HeroCourse courseName={courseName} />
       <Breadcrumbs />
-      <TrainingProgram course={course} courseName={courseName} />
-      <AboutCourse course={course} courseName={courseName} />
+      <TrainingProgram courseName={courseName} />
+      <AboutCourse courseName={courseName} />
       <Certification courseName={courseName} />
-      <Communication course={course} />
+      <Communication courseName={courseName} />
       <Required courseName={courseName} />
-      <Trainers trainers={nodejs} />
+      <Trainers trainers={nodejs} courseName={courseName} />
     </>
   );
 };

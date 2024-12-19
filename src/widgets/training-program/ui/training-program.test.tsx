@@ -1,57 +1,15 @@
 import { screen } from '@testing-library/react';
 import { beforeEach } from 'vitest';
-import { ROUTES } from '@/core/const';
-import { Course } from '@/entities/course';
-import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { COURSE_ALIASES, TO_BE_DETERMINED } from '@/shared/constants';
 import { TrainingProgram } from '@/widgets/training-program';
 import { COURSE_TITLES } from 'data';
 
-const mockedCourseAngular: Course = {
-  id: '1',
-  title: COURSE_TITLES.ANGULAR,
-  subTitle: null,
-  alias: COURSE_ALIASES.ANGULAR,
-  startDate: '16 Oct, 2023',
-  registrationEndDate: '16 Oct, 2024',
-  iconSmall: MOCKED_IMAGE_PATH,
-  iconSrc: MOCKED_IMAGE_PATH,
-  secondaryIcon: MOCKED_IMAGE_PATH,
-  language: 'en',
-  mode: 'online',
-  detailsUrl: `/${ROUTES.COURSES}/${ROUTES.ANGULAR}`,
-  enroll: 'https://wearecommunity.io/events/rs-angular-2023q4',
-  backgroundStyle: {
-    backgroundColor: '#F4F1FA',
-    accentColor: '#F4AFA7',
-  },
-};
-
-const mockedCourseAws: Course = {
-  id: '8',
-  language: 'en',
-  iconSmall: MOCKED_IMAGE_PATH,
-  iconSrc: MOCKED_IMAGE_PATH,
-  secondaryIcon: MOCKED_IMAGE_PATH,
-  mode: 'online',
-  startDate: '',
-  registrationEndDate: TO_BE_DETERMINED,
-  title: COURSE_TITLES.AWS_CLOUD_DEVELOPER,
-  subTitle: null,
-  alias: COURSE_ALIASES.AWS_CLOUD_DEVELOPER,
-  detailsUrl: `/${ROUTES.COURSES}/${ROUTES.AWS_DEVELOPER}`,
-  enroll: 'https://wearecommunity.io/events/aws-cloud-dev-rs2023q4',
-  backgroundStyle: {
-    backgroundColor: '#F4F1FA',
-    accentColor: '#F4AFA7',
-  },
-};
-
 describe('TrainingProgram', () => {
   describe('with "angular" props', () => {
-    beforeEach(() => {
-      renderWithRouter(<TrainingProgram course={mockedCourseAngular} courseName="Angular" />);
+    beforeEach(async () => {
+      const widget = await TrainingProgram({ courseName: COURSE_TITLES.ANGULAR });
+
+      renderWithRouter(widget);
     });
 
     it(`renders correct title "Training Program"`, () => {
@@ -76,7 +34,7 @@ describe('TrainingProgram', () => {
     it('renders Button with correct url', () => {
       const button = screen.getByRole('link', { name: /register/i });
 
-      expect(button).toHaveAttribute('href', 'https://wearecommunity.io/events/rs-angular-2023q4');
+      expect(button).toHaveAttribute('href', '/enroll');
     });
 
     it('renders correct image with alt text', () => {
@@ -87,10 +45,10 @@ describe('TrainingProgram', () => {
   });
 
   describe('with "awsDev" props', () => {
-    beforeEach(() => {
-      renderWithRouter(
-        <TrainingProgram course={mockedCourseAws} courseName="AWS Cloud Developer" />,
-      );
+    beforeEach(async () => {
+      const widget = await TrainingProgram({ courseName: COURSE_TITLES.AWS_CLOUD_DEVELOPER });
+
+      renderWithRouter(widget);
     });
 
     it('renders correct title', () => {
@@ -116,10 +74,7 @@ describe('TrainingProgram', () => {
     it('renders Button with correct url', () => {
       const button = screen.getByRole('link', { name: /register/i });
 
-      expect(button).toHaveAttribute(
-        'href',
-        'https://wearecommunity.io/events/aws-cloud-dev-rs2023q4',
-      );
+      expect(button).toHaveAttribute('href', '/enroll');
     });
 
     it('renders correct image with alt text', () => {

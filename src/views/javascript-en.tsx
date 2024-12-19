@@ -1,5 +1,5 @@
 import { ROUTES } from '@/core/const';
-import { Course } from '@/entities/course';
+import { getCourseLanguage } from '@/shared/helpers/get-course-language';
 import { AboutCourse } from '@/widgets/about-course';
 import { AboutVideo } from '@/widgets/about-video';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
@@ -15,22 +15,23 @@ import { CourseNames, javaScriptEn } from 'data';
 
 type JavaScriptEnProps = {
   courseName: CourseNames['JS_EN'];
-  course: Course;
 };
-export const JavaScriptEn = ({ course, courseName }: JavaScriptEnProps) => {
+export const JavaScriptEn = async ({ courseName }: JavaScriptEnProps) => {
+  const language = await getCourseLanguage(courseName);
+
   return (
     <>
-      <HeroCourse course={course} />
+      <HeroCourse courseName={courseName} />
       <Breadcrumbs />
-      <TrainingProgram course={course} courseName={courseName} />
-      <AboutCourse course={course} courseName={courseName} />
+      <TrainingProgram courseName={courseName} />
+      <AboutCourse courseName={courseName} />
       <Certification courseName={courseName} />
-      <Communication course={course} />
-      <AboutVideo />
-      <MemberActivity path="javascript" type="marked" />
+      <Communication courseName={courseName} />
+      <AboutVideo lang={language} />
+      <MemberActivity path="javascript" type="marked" lang={language} />
       <Required courseName={courseName} />
-      <MentorsWanted route={`/${ROUTES.MENTORSHIP}/${ROUTES.JS}`} />
-      <Trainers trainers={javaScriptEn} />
+      <MentorsWanted route={`/${ROUTES.MENTORSHIP}/${ROUTES.JS}`} courseName={courseName} />
+      <Trainers trainers={javaScriptEn} courseName={courseName} />
     </>
   );
 };

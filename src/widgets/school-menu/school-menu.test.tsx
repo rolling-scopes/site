@@ -65,7 +65,7 @@ describe('SchoolMenu', () => {
 
     const descriptions = container.getElementsByClassName('description');
 
-    expect(descriptions).toHaveLength(6);
+    expect(descriptions).toHaveLength(mockedCourses.length);
     expect(descriptions[0]).toHaveTextContent(/tbd/i);
     expect(descriptions[3]).toHaveTextContent(/tbd/i);
   });
@@ -75,7 +75,7 @@ describe('SchoolMenu', () => {
 
     const links = screen.getAllByRole('link');
     const linkReact = links.at(3);
-    const linkAWS = links.at(-1);
+    const linkAWS = links.at(-3);
 
     expect(linkAWS).toHaveAttribute('href', aws.detailsUrl);
     expect(linkReact).toHaveAttribute('href', react.detailsUrl);

@@ -6,11 +6,11 @@ import { COURSE_TITLES, DISCORD_LINKS, communicationText } from 'data';
 
 const mockLangVariants = [
   {
-    course: mockedCourses.find((course) => course.title === COURSE_TITLES.ANGULAR)!,
+    course: COURSE_TITLES.ANGULAR,
     texts: communicationText.en,
   },
   {
-    course: mockedCourses.find((course) => course.title === COURSE_TITLES.JS_PRESCHOOL_RU)!,
+    course: COURSE_TITLES.JS_PRESCHOOL_RU,
     texts: communicationText.ru,
   },
 ];
@@ -25,10 +25,11 @@ const mockCourseVariants = mockedCourses.map((course) => {
 describe('Communication section', () => {
   it.each(mockLangVariants)(
     'should render component correctly with $course.title language prop',
-    ({ course, texts }) => {
+    async ({ course, texts }) => {
       const { title, subTitle, firstParagraphFirstHalf, discordLink } = texts;
+      const widget = await Communication({ courseName: course });
 
-      renderWithRouter(<Communication course={course} />);
+      renderWithRouter(widget);
       const titleElement = screen.getByText(title);
       const subtitleElement = screen.getByText(subTitle);
       const firstParagraphElement = screen.getByText(`${firstParagraphFirstHalf}`, { exact: false });
@@ -38,13 +39,15 @@ describe('Communication section', () => {
       expect(subtitleElement).toBeVisible();
       expect(firstParagraphElement).toBeVisible();
       expect(linkElement).toBeVisible();
-      expect(linkElement.getAttribute('href')).toMatch(DISCORD_LINKS[course.title]);
+      expect(linkElement.getAttribute('href')).toMatch(DISCORD_LINKS[course]);
       cleanup();
     },
   );
 
-  it.each(mockCourseVariants)('should render correct link of $course.title', (variant) => {
-    renderWithRouter(<Communication course={variant.course} />);
+  it.each(mockCourseVariants)('should render correct link of $course.title', async (variant) => {
+    const widget = await Communication({ courseName: variant.course.title });
+
+    renderWithRouter(widget);
     const linkElement = screen.getByTestId('discord-link');
 
     expect(linkElement).toBeVisible();

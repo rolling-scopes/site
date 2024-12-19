@@ -1,13 +1,14 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
-import { Course } from '@/entities/course';
 import discordLogo from '@/shared/assets/svg/discord-logo.svg';
+import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import {
   COURSE_TITLES,
+  CourseNamesKeys,
   DISCORD_LINKS,
   JS_EN_TELEGRAM_CHAT_LINK,
   RS_DOCS_COMMUNICATION_LINK,
@@ -21,12 +22,12 @@ import styles from './communication.module.scss';
 const cx = classNames.bind(styles);
 
 type CommunicationProps = {
-  course: Course;
+  courseName: CourseNamesKeys;
 };
 
-export const Communication = ({ course }: CommunicationProps) => {
+export const Communication = async ({ courseName }: CommunicationProps) => {
+  const course = await selectCourse(courseName);
   const { language } = course;
-  const courseName = course.title;
   const {
     title,
     subTitle,

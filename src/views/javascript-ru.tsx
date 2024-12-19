@@ -1,5 +1,5 @@
 import { ROUTES } from '@/core/const';
-import { Course } from '@/entities/course';
+import { getCourseLanguage } from '@/shared/helpers/get-course-language';
 import { AboutCourse } from '@/widgets/about-course';
 import { AboutVideo } from '@/widgets/about-video';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
@@ -14,26 +14,25 @@ import { TrainingProgram } from '@/widgets/training-program';
 import { CourseNames, javaScriptRu } from 'data';
 
 type JavaScriptRuProps = {
-  course: Course;
   courseName: CourseNames['JS_RU'];
 };
 
-export const JavaScriptRu = ({ course, courseName }: JavaScriptRuProps) => {
-  const { language } = course;
+export const JavaScriptRu = async ({ courseName }: JavaScriptRuProps) => {
+  const language = await getCourseLanguage(courseName);
 
   return (
     <>
-      <HeroCourse course={course} />
+      <HeroCourse courseName={courseName} />
       <Breadcrumbs />
-      <TrainingProgram course={course} courseName={courseName} />
-      <AboutCourse course={course} courseName={courseName} />
+      <TrainingProgram courseName={courseName} />
+      <AboutCourse courseName={courseName} />
       <Certification courseName={courseName} />
-      <Communication course={course} />
-      <AboutVideo />
+      <Communication courseName={courseName} />
+      <AboutVideo lang={language} />
       <MemberActivity path="javascriptRu" lang={language} />
       <Required courseName={courseName} />
-      <MentorsWanted route={`/${ROUTES.MENTORSHIP}/${ROUTES.JS_RU}`} lang={language} />
-      <Trainers trainers={javaScriptRu} lang={language} />
+      <MentorsWanted route={`/${ROUTES.MENTORSHIP}/${ROUTES.JS_RU}`} courseName={courseName} />
+      <Trainers trainers={javaScriptRu} courseName={courseName} />
     </>
   );
 };

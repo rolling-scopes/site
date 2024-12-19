@@ -1,4 +1,3 @@
-import { Course } from '@/entities/course';
 import { AboutCourse } from '@/widgets/about-course';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
@@ -10,19 +9,18 @@ import { CourseNames, reactEn } from 'data';
 
 type ReactProps = {
   courseName: CourseNames['REACT'];
-  course: Course;
 };
 
-export const React = ({ course, courseName }: ReactProps) => {
+export const React = ({ courseName }: ReactProps) => {
   return (
     <>
-      <HeroCourse course={course} />
+      <HeroCourse courseName={courseName} />
       <Breadcrumbs />
-      <TrainingProgram course={course} courseName={courseName} />
-      <AboutCourse course={course} courseName={courseName} />
+      <TrainingProgram courseName={courseName} />
+      <AboutCourse courseName={courseName} />
       <Certification courseName={courseName} />
-      <Communication course={course} />
-      <Trainers trainers={reactEn} />
+      <Communication courseName={courseName} />
+      <Trainers trainers={reactEn} courseName={courseName} />
     </>
   );
 };

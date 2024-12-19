@@ -1,15 +1,16 @@
 import { cloneElement } from 'react';
 import Image from 'next/image';
-import type { Course } from '@/entities/course';
+import { isTrainingProgramType } from '@/shared/helpers/is-training-program';
+import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { TrainingProgramType, contentMap } from 'data';
+import { CourseNamesKeys, contentMap } from 'data';
 
 import './training-program.scss';
 
 type TrainingProgramProps = {
-  courseName: TrainingProgramType;
-  course: Course;
+  courseName: CourseNamesKeys;
+  specify?: string;
 };
 
 const localizedContent = {
@@ -17,9 +18,13 @@ const localizedContent = {
   ru: { linkLabel: 'Зарегистрироваться' },
 };
 
-export const TrainingProgram = ({ courseName, course }: TrainingProgramProps) => {
-  const { title, content, image } = contentMap[courseName];
+export const TrainingProgram = async ({ courseName, specify = '' }: TrainingProgramProps) => {
+  const course = await selectCourse(courseName);
   const { language } = course;
+  const programName = `${courseName} ${specify}`;
+  let contentName = isTrainingProgramType(programName) ? programName : courseName;
+
+  const { title, content, image } = contentMap[contentName];
 
   // TODO remove 'cloneElement' on 37 line due 'Using cloneElement is uncommon and can lead to fragile code' https://react.dev/reference/react/cloneElement
 
