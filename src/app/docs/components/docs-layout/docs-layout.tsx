@@ -77,8 +77,8 @@ export function DocsLayout({ menu, markdownContent, lang }: DocsLayoutProps) {
                   }
 
                   if (
-                    href.startsWith('https://docs.rs.school') &&
-                    !(href.endsWith('.png') || href.endsWith('.jpg'))
+                    href.startsWith('https://docs.rs.school')
+                    && !(href.endsWith('.png') || href.endsWith('.jpg'))
                   ) {
                     const transformedHref = href.replace('?id=', '#');
                     const lastPathSegment = transformedHref.split('/').pop();
