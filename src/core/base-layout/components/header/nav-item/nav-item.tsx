@@ -30,7 +30,7 @@ export const NavItem = ({ label, href, children }: NavItemProps) => {
   const onOpen = () => setDropdownOpen(true);
 
   const pathname = usePathname();
-  const isActive = href === '/' ? pathname === '/' : pathname.startsWith(`/${href}`);
+  const isActive = href === '/' ? pathname === '/' : pathname?.startsWith(`/${href}`);
 
   const handleConfirmKeyPress = (e: KeyboardEvent<HTMLButtonElement>) => {
     if (e.code === 'Enter' || e.code === 'Space') {
