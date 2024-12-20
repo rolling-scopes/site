@@ -53,6 +53,7 @@ export { mentorsActivityData } from './mentors-activity.data';
 export { mentorsRegisterData } from './mentors-register.data';
 export { mentorsWantedData } from './mentors-wanted.data';
 export { mentorshipCourses, mentorshipCoursesDefault } from './mentorship.data';
+export { merchData } from './merch.data';
 export { nodejs } from './nodejs.data';
 export { picturesSocialMediaLinks } from './pictures.data';
 export { preSchoolEn, preSchoolRu } from './preSchool.data';
