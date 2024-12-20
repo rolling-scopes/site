@@ -1,22 +1,25 @@
 'use client';
 
-import Script from 'next/script';
+import { useEffect } from 'react';
+import { GoogleAnalytics } from '@next/third-parties/google';
+import { usePathname } from 'next/navigation';
 
 export const Analytics = () => {
-  return (
-    <>
-      <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js? id=G-THXM004SPR" />
-      <Script strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag() {
-            dataLayer.push(arguments);
-          }
-          gtag('js', new Date());
+  const pathname = usePathname();
 
-          gtag('config', 'G-THXM004SPR');
-        `}
-      </Script>
-    </>
+  useEffect(() => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'page_view',
+      page: pathname,
+    });
+
+    // if (typeof window.gtag === 'function') {
+    //   window.gtag('config', 'G-THXM004SPR', { page_view: pathname });
+    // }
+  }, [pathname]);
+
+  return (
+    <GoogleAnalytics gaId="G-THXM004SPR" />
   );
 };
