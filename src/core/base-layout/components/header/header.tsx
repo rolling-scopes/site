@@ -132,7 +132,7 @@ export const Header = ({ courses }: HeaderProps) => {
               ))}
             </SchoolMenu>
           </NavItem>
-          <NavItem label="Docs" href={ROUTES.DOCS} />
+          <NavItem label="Docs" href={ROUTES.DOCS_EN} />
         </menu>
       </section>
     </nav>

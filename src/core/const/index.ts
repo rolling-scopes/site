@@ -34,6 +34,7 @@ export const ROUTES = {
   AWS_DEVOPS: 'aws-devops',
   REACT: 'reactjs',
   MENTORSHIP: 'mentorship',
-  DOCS: 'docs/en',
+  DOCS_EN: 'docs/en',
+  DOCS_RU: 'docs/ru',
   NOT_FOUND: '*',
 } as const;

@@ -109,7 +109,7 @@ export const MobileView = ({ type, courses, onClose }: MobileViewProps) => {
 
       <Divider color={color} />
 
-      <Link onClick={onClose} href={`/${ROUTES.DOCS}`} className={cx('category-link', color)}>
+      <Link onClick={onClose} href={`/${ROUTES.DOCS_EN}`} className={cx('category-link', color)}>
         Docs
       </Link>
     </nav>

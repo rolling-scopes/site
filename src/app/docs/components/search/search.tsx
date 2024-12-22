@@ -38,6 +38,7 @@ export default function Search({ lang, resultsRef }: SearchProps) {
   const [results, setResults] = useState<PagefindSearchResult[]>([]);
 
   useEffect(() => {
+    // see: https://www.petemillspaugh.com/nextjs-search-with-pagefind#dynamically-import-search-bundle
     async function loadPagefind() {
       if (!isRunningInDev) {
         window.pagefind = await import(
