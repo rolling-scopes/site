@@ -2,17 +2,10 @@
   align-items: initial;
 
   .menu-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-
     width: initial;
     padding-top: 40px;
 
     @include media-tablet {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
       padding: 20px 16px 0 16px;
     }
   }
@@ -50,8 +43,4 @@
   @include media-tablet {
     flex-direction: column;
   }
-}
-
-.menu-open {
-  display: block;
 }

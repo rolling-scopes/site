@@ -39,7 +39,7 @@ export function DocsLayout({ menu, markdownContent, lang }: DocsLayoutProps) {
   };
 
   return (
-    <main className={cx('container', 'docs-layout', { 'menu-open': isMenuOpen })}>
+    <main className={cx('container', 'docs-layout')}>
       <nav className={cx('content', 'menu-wrapper')}>
         <div className={cx('menu')}>
           <DocsMenu menu={menu} lang={lang} isOpen={isMenuOpen} onMenuToggle={handleMenuToggle} />
