@@ -11,9 +11,25 @@
   }
 
   .menu {
+    position: sticky;
+    top: 104px;
+
+    overflow-y: auto;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+
+    height: calc(100vh - 104px);
+
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+
+    @include media-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: initial;
+      height: initial;
+      overflow-y: initial;
+    }
   }
 
   .docs-content {
