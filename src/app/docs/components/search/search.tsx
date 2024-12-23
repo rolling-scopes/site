@@ -55,13 +55,17 @@ export default function Search({ lang, resultsRef }: SearchProps) {
     loadPagefind();
   }, [lang]);
 
-  async function handleSearch() {
-    if (window.pagefind) {
-      const search = await window.pagefind.search(query);
+  useEffect(() => {
+    async function handleSearch() {
+      if (window.pagefind) {
+        const search = await window.pagefind.search(query);
 
-      setResults(search.results);
+        setResults(search.results);
+      }
     }
-  }
+
+    handleSearch();
+  }, [query]);
 
   return (
     <div className={cx('search')}>
@@ -71,7 +75,6 @@ export default function Search({ lang, resultsRef }: SearchProps) {
         placeholder={translations[lang].search.placeholder}
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        onInput={handleSearch}
       />
       <div className={cx('results')}>
         {query
