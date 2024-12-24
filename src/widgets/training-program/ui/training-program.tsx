@@ -1,21 +1,19 @@
 import { cloneElement } from 'react';
+import classNames from 'classnames/bind';
 import Image from 'next/image';
 import { isTrainingProgramType } from '@/shared/helpers/is-training-program';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { CourseNamesKeys, contentMap } from 'data';
+import { CourseNamesKeys, contentMap, trainingProgramLink } from 'data';
 
-import './training-program.scss';
+import styles from './training-program.module.scss';
+
+const cx = classNames.bind(styles);
 
 type TrainingProgramProps = {
   courseName: CourseNamesKeys;
   specify?: string;
-};
-
-const localizedContent = {
-  en: { linkLabel: 'Register' },
-  ru: { linkLabel: 'Зарегистрироваться' },
 };
 
 export const TrainingProgram = async ({ courseName, specify = '' }: TrainingProgramProps) => {
@@ -23,28 +21,31 @@ export const TrainingProgram = async ({ courseName, specify = '' }: TrainingProg
   const { language } = course;
   const programName = `${courseName} ${specify}`;
   let contentName = isTrainingProgramType(programName) ? programName : courseName;
+  const isCourseWithBadge = courseName.includes('badge');
 
   const { title, content, image } = contentMap[contentName];
 
-  // TODO remove 'cloneElement' on 37 line due 'Using cloneElement is uncommon and can lead to fragile code' https://react.dev/reference/react/cloneElement
-
   return (
-    <section className="training-program container">
-      <div className="training-program content column-2">
-        <div className="left">
+    <section className={cx('training-program', 'container')}>
+      <div className={cx('training-program', 'content', 'column-2')}>
+        <article className={cx('left')}>
           <WidgetTitle mods="asterisk">{title}</WidgetTitle>
 
           {content.map((component, index) => cloneElement(component, { key: index }))}
 
           {course && (
             <LinkCustom href={course?.enroll} variant="primary" external>
-              {localizedContent[language].linkLabel}
+              {trainingProgramLink[language].linkLabel}
             </LinkCustom>
           )}
-        </div>
-        <div className={`right ${courseName.includes('badge') ? 'badge' : ''}`}>
-          <Image src={image} alt={course?.title} />
-        </div>
+        </article>
+
+        <Image
+          data-testid="image"
+          src={image}
+          alt={course?.title}
+          className={cx('image', { badge: isCourseWithBadge })}
+        />
       </div>
     </section>
   );

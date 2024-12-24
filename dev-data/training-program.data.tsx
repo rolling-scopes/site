@@ -299,3 +299,8 @@ export const contentMap: ContentMap = {
     image: awsDevImg,
   },
 };
+
+export const trainingProgramLink = {
+  en: { linkLabel: 'Register' },
+  ru: { linkLabel: 'Зарегистрироваться' },
+};

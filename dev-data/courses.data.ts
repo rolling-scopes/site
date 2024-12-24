@@ -132,7 +132,7 @@ export const courses: Course[] = [
     language: 'en',
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.NODE_JS}`,
-    enroll: 'https://wearecommunity.io/events/nodejs-2024q3',
+    enroll: 'https://wearecommunity.io/events/nodejs-2025q2',
     backgroundStyle: {
       backgroundColor: '#F0F9F4',
       accentColor: '#AEDF36',

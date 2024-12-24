@@ -78,9 +78,6 @@
 
       .event-additional-info {
         overflow: hidden;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
 
         max-height: 40px;
         margin-top: 0;
@@ -88,6 +85,7 @@
 
         font-size: 16px;
         text-overflow: ellipsis;
+        white-space: nowrap;
       }
     }
   }

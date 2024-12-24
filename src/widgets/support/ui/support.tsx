@@ -1,3 +1,4 @@
+import classNames from 'classnames/bind';
 import Image from 'next/image';
 import { LINKS } from '@/core/const';
 import image from '@/shared/assets/support.webp';
@@ -5,12 +6,14 @@ import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
-import './support.scss';
+import styles from './support.module.scss';
+
+const cx = classNames.bind(styles);
 
 export const Support = () => (
-  <div className="support container">
-    <div className="support content">
-      <div className="info">
+  <section className={cx('support-container', 'container')} data-testid="support-section">
+    <div className={cx('support-content', 'content')}>
+      <article className={cx('support-info')}>
         <WidgetTitle size="large" mods="lines">
           Support Us
         </WidgetTitle>
@@ -19,11 +22,22 @@ export const Support = () => (
           events. Every donation, big or small, helps!
         </Paragraph>
         <Paragraph fontSize="large">Thank you for your support!</Paragraph>
-        <LinkCustom href={LINKS.DONATE} variant="primary" external>
+        <LinkCustom
+          className={cx('support-link')}
+          href={LINKS.DONATE}
+          variant="primary"
+          external
+          data-testid="link-support"
+        >
           Donate now
         </LinkCustom>
-      </div>
-      <Image className="right picture" src={image} alt="support-us" />
+      </article>
+      <Image
+        className={cx('sloth-mascot')}
+        src={image}
+        alt="A sloth mascot with a piggy bank in his hands"
+        data-testid="sloth-mascot"
+      />
     </div>
-  </div>
+  </section>
 );
