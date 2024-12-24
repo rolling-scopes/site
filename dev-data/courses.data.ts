@@ -17,7 +17,7 @@ import nodejs from '@/shared/assets/icons/node.svg';
 import nodejsSecondary from '@/shared/assets/icons/nodejs-secondary.webp';
 import reactSecondary from '@/shared/assets/icons/react-secondary.webp';
 import react from '@/shared/assets/icons/react.svg';
-import { COURSE_ALIASES, TO_BE_DETERMINED } from '@/shared/constants';
+import { COURSE_LINKS, TO_BE_DETERMINED } from '@/shared/constants';
 import { COURSE_TITLES } from 'data';
 
 export const courses: Course[] = [
@@ -25,7 +25,7 @@ export const courses: Course[] = [
     id: '1',
     title: COURSE_TITLES.JS_PRESCHOOL_RU,
     subTitle: 'Pre-school RU',
-    alias: COURSE_ALIASES.JS_PRESCHOOL_RU,
+    descriptionUrl: COURSE_LINKS.JS_PRESCHOOL_RU,
     altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
     iconSmall: htmlSmall,
@@ -45,7 +45,7 @@ export const courses: Course[] = [
     id: '2',
     title: COURSE_TITLES.JS_EN,
     subTitle: null,
-    alias: COURSE_ALIASES.JS_EN,
+    descriptionUrl: COURSE_LINKS.JS_EN,
     altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
     iconSmall: jsSmall,
@@ -65,7 +65,7 @@ export const courses: Course[] = [
     id: '3',
     title: COURSE_TITLES.JS_RU,
     subTitle: null,
-    alias: COURSE_ALIASES.JS_RU,
+    descriptionUrl: COURSE_LINKS.JS_RU,
     altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
     iconSmall: jsSmall,
@@ -85,7 +85,7 @@ export const courses: Course[] = [
     id: '4',
     title: COURSE_TITLES.REACT,
     subTitle: null,
-    alias: COURSE_ALIASES.REACT,
+    descriptionUrl: COURSE_LINKS.REACT,
     iconSrc: react,
     iconSmall: reactSmall,
     secondaryIcon: reactSecondary,
@@ -104,7 +104,7 @@ export const courses: Course[] = [
     id: '5',
     title: COURSE_TITLES.ANGULAR,
     subTitle: null,
-    alias: COURSE_ALIASES.ANGULAR,
+    descriptionUrl: COURSE_LINKS.ANGULAR,
     iconSrc: angular,
     iconSmall: angularSmall,
     secondaryIcon: angularSecondary,
@@ -123,7 +123,7 @@ export const courses: Course[] = [
     id: '6',
     title: COURSE_TITLES.NODE,
     subTitle: null,
-    alias: COURSE_ALIASES.NODE,
+    descriptionUrl: COURSE_LINKS.NODE,
     iconSrc: nodejs,
     iconSmall: nodejsSmall,
     secondaryIcon: nodejsSecondary,
@@ -142,7 +142,7 @@ export const courses: Course[] = [
     id: '7',
     title: COURSE_TITLES.AWS_FUNDAMENTALS,
     subTitle: null,
-    alias: COURSE_ALIASES.AWS_FUNDAMENTALS,
+    descriptionUrl: COURSE_LINKS.AWS_FUNDAMENTALS,
     iconSrc: aws,
     iconSmall: awsFundSmall,
     secondaryIcon: awsSecondary,
@@ -162,7 +162,7 @@ export const courses: Course[] = [
     id: '8',
     title: COURSE_TITLES.AWS_CLOUD_DEVELOPER,
     subTitle: null,
-    alias: COURSE_ALIASES.AWS_CLOUD_DEVELOPER,
+    descriptionUrl: COURSE_LINKS.AWS_CLOUD_DEVELOPER,
     iconSrc: aws,
     iconSmall: awsDevSmall,
     secondaryIcon: awsSecondary,
@@ -181,7 +181,7 @@ export const courses: Course[] = [
     id: '9',
     title: COURSE_TITLES.AWS_DEVOPS,
     subTitle: null,
-    alias: COURSE_ALIASES.AWS_DEVOPS,
+    descriptionUrl: COURSE_LINKS.AWS_DEVOPS,
     iconSrc: aws,
     iconSmall: awsDevSmall,
     secondaryIcon: awsSecondary,
