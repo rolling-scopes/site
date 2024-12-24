@@ -4,7 +4,7 @@ import { AboutCourse } from './about-course';
 import { Course } from '@/entities/course';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { COURSE_ALIASES, TO_BE_DETERMINED } from '@/shared/constants';
+import { COURSE_LINKS, TO_BE_DETERMINED } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/dayJS';
 import { COURSE_TITLES } from 'data';
 
@@ -19,7 +19,7 @@ const mockedReactCourse: Course = {
   iconSrc: MOCKED_IMAGE_PATH,
   title: COURSE_TITLES.REACT,
   subTitle: null,
-  alias: COURSE_ALIASES.REACT,
+  descriptionUrl: COURSE_LINKS.REACT,
   language: ['en'],
   mode: 'online',
   enroll: 'http://course-url.com',
