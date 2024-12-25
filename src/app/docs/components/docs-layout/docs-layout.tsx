@@ -39,14 +39,14 @@ export function DocsLayout({ menu, markdownContent, lang }: DocsLayoutProps) {
   };
 
   return (
-    <main className={cx('container', 'docs-layout')}>
-      <nav className={cx('content', 'menu-wrapper')}>
+    <main className={cx('container', 'content', 'docs-layout')}>
+      <nav className={cx('menu-wrapper')}>
         <div className={cx('menu')}>
           <DocsMenu menu={menu} lang={lang} isOpen={isMenuOpen} onMenuToggle={handleMenuToggle} />
         </div>
       </nav>
       {!isMenuOpen && (
-        <div className={cx('content', 'docs-content')}>
+        <div className={cx('docs-content')}>
           <div>
             <div className={cx('docs-top')}>
               <Search lang={lang} resultsRef={resultsRef} />
@@ -54,7 +54,7 @@ export function DocsLayout({ menu, markdownContent, lang }: DocsLayoutProps) {
             </div>
             <div ref={resultsRef}></div>
           </div>
-          <div className={cx('markdown-body')} data-pagefind-body>
+          <article className={cx('markdown-body')} data-pagefind-body>
             <ReactMarkdown
               remarkPlugins={[
                 remarkGfm,
@@ -100,7 +100,7 @@ export function DocsLayout({ menu, markdownContent, lang }: DocsLayoutProps) {
             >
               {markdownContent}
             </ReactMarkdown>
-          </div>
+          </article>
         </div>
       )}
     </main>
