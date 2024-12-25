@@ -1,20 +1,8 @@
 .docs-layout {
-  align-items: initial;
-  padding-top: 0;
-  margin: 0 auto;
   gap: 120px;
-
-  @include media-laptop {
-    gap: 100px;
-  }
-
-  @include media-laptop-medium {
-    gap: 80px;
-  }
-
-  @include media-tablet {
-   gap: initial;
-  }
+  align-items: initial;
+  margin: 0 auto;
+  padding-top: 0;
 
   .menu-wrapper {
     width: initial;
@@ -26,6 +14,9 @@
   }
 
   .menu {
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+
     position: sticky;
     top: 104px;
 
@@ -34,16 +25,15 @@
 
     height: calc(100vh - 104px);
 
-    scrollbar-width: thin;
-    scrollbar-gutter: stable;
-
     @include media-tablet {
+      position: initial;
+
+      overflow-y: initial;
       display: flex;
       flex-direction: column;
       gap: 20px;
-      position: initial;
+
       height: initial;
-      overflow-y: initial;
     }
   }
 
@@ -51,6 +41,7 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+
     min-width: 0;
     padding-top: 40px;
     padding-left: 0;
@@ -69,6 +60,18 @@
     @include media-mobile-landscape {
       gap: 20px;
     }
+  }
+
+  @include media-laptop {
+    gap: 100px;
+  }
+
+  @include media-laptop-medium {
+    gap: 80px;
+  }
+
+  @include media-tablet {
+    gap: initial;
   }
 
   @include media-tablet {
