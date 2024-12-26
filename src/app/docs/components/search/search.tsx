@@ -46,7 +46,7 @@ export default function Search({ lang, resultsRef }: SearchProps) {
           /* webpackIgnore: true */ `/_next/static/pagefind/${lang}/pagefind.js`
         );
 
-        await window.pagefind.options!({ baseUrl: `/_next/static/pagefind/${lang}` });
+        await window.pagefind.options!({ baseUrl: `/docs/${lang}` });
       } else {
         window.pagefind = { search: async () => ({ results: MOCKED_SEARCH }) as unknown as PagefindSearchResults };
       }
