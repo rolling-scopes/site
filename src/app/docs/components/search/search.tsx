@@ -110,13 +110,22 @@ function Result({ result }: { result: PagefindSearchResult }) {
     fetchData();
   }, [result]);
 
+  const removeHtmlExtension = (url: string): string => {
+    const urlObj = new URL(url, window.location.origin);
+    const hash = urlObj.hash;
+    const pathname = urlObj.pathname;
+    const cleanedPathname = pathname.endsWith('.html') ? pathname.slice(0, -5) : pathname;
+
+    return `${cleanedPathname}${hash}`;
+  };
+
   if (!data) {
     return null;
   }
 
   return (
     <div>
-      <Link href={data.url}>
+      <Link href={removeHtmlExtension(data.url)}>
         <h3>{data.meta.title}</h3>
         <p dangerouslySetInnerHTML={{ __html: data.excerpt }} />
       </Link>
@@ -125,7 +134,7 @@ function Result({ result }: { result: PagefindSearchResult }) {
         <div className={cx('subresults')}>
           {data.sub_results.map((subresult, index) => (
             <div key={index} className={cx('subresult')}>
-              <Link href={subresult.url}>
+              <Link href={removeHtmlExtension(subresult.url)}>
                 <h4>{subresult.title}</h4>
                 <p dangerouslySetInnerHTML={{ __html: subresult.excerpt }} />
               </Link>
