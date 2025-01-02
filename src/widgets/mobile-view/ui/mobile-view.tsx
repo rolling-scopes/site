@@ -32,7 +32,7 @@ export const MobileView = ({ type, courses, onClose }: MobileViewProps) => {
 
       <Divider color={color} />
 
-      <Link onClick={onClose} href={`/${ROUTES.HOME}`} className={cx('category-link', color)}>
+      <Link onClick={onClose} href={ROUTES.HOME} className={cx('category-link', color)}>
         RS School
       </Link>
 
@@ -51,7 +51,7 @@ export const MobileView = ({ type, courses, onClose }: MobileViewProps) => {
 
       <Divider color={color} />
 
-      <Link onClick={onClose} href={`/${ROUTES.COURSES}`} className={cx('category-link', color)}>
+      <Link onClick={onClose} href={ROUTES.COURSES} className={cx('category-link', color)}>
         Courses
       </Link>
 
@@ -71,7 +71,7 @@ export const MobileView = ({ type, courses, onClose }: MobileViewProps) => {
 
       <Divider color={color} />
 
-      <Link onClick={onClose} href={`/${ROUTES.COMMUNITY}`} className={cx('category-link', color)}>
+      <Link onClick={onClose} href={ROUTES.COMMUNITY} className={cx('category-link', color)}>
         Community
       </Link>
 
@@ -90,7 +90,7 @@ export const MobileView = ({ type, courses, onClose }: MobileViewProps) => {
 
       <Divider color={color} />
 
-      <Link onClick={onClose} href={`/${ROUTES.MENTORSHIP}`} className={cx('category-link', color)}>
+      <Link onClick={onClose} href={ROUTES.MENTORSHIP} className={cx('category-link', color)}>
         Mentorship
       </Link>
 
