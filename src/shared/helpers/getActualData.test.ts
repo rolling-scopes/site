@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { getActualData } from './getActualData';
 import { Course } from '@/entities/course';
 import { Event } from '@/entities/event';
-import { COURSE_ALIASES, TO_BE_DETERMINED } from '@/shared/constants';
+import { COURSE_LINKS, TO_BE_DETERMINED } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/dayJS';
 import { isCourse } from '@/shared/helpers/is-course';
 import { COURSE_TITLES } from 'data';
@@ -19,7 +19,7 @@ const coursesMock: Course[] = [
   {
     id: '1',
     title: COURSE_TITLES.REACT,
-    alias: COURSE_ALIASES.REACT,
+    descriptionUrl: COURSE_LINKS.REACT,
     subTitle: null,
     altTitle: 'altTitle',
     iconSrc: {
@@ -52,7 +52,7 @@ const coursesMock: Course[] = [
     id: '2',
     title: COURSE_TITLES.REACT,
     subTitle: null,
-    alias: COURSE_ALIASES.REACT,
+    descriptionUrl: COURSE_LINKS.REACT,
     altTitle: 'altTitle',
     iconSrc: {
       src: 'icon',
@@ -84,7 +84,7 @@ const coursesMock: Course[] = [
     id: '3',
     title: COURSE_TITLES.REACT,
     subTitle: null,
-    alias: COURSE_ALIASES.REACT,
+    descriptionUrl: COURSE_LINKS.REACT,
     altTitle: 'altTitle',
     iconSrc: {
       src: 'icon',

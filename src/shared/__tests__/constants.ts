@@ -3,7 +3,7 @@ import { ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
 import type { Trainer } from '@/entities/trainer';
 import nodejsImg1 from '@/shared/assets/mentors/m-shylau.webp';
-import { COURSE_ALIASES } from '@/shared/constants';
+import { COURSE_LINKS } from '@/shared/constants';
 import { COURSE_TITLES } from 'data';
 
 export const MOCKED_IMAGE_PATH: StaticImageData = {
@@ -26,7 +26,7 @@ export const mockedCourses: Course[] = [
     id: '1',
     title: COURSE_TITLES.JS_PRESCHOOL_RU,
     subTitle: 'Pre-school RU',
-    alias: COURSE_ALIASES.JS_PRESCHOOL_RU,
+    descriptionUrl: COURSE_LINKS.JS_PRESCHOOL_RU,
     startDate: 'Jun 24, 2024',
     registrationEndDate: 'Jun 24, 2024',
     language: 'ru',
@@ -46,7 +46,7 @@ export const mockedCourses: Course[] = [
     id: '2',
     title: COURSE_TITLES.JS_EN,
     subTitle: null,
-    alias: COURSE_ALIASES.JS_EN,
+    descriptionUrl: COURSE_LINKS.JS_EN,
     startDate: 'Oct, 2024',
     registrationEndDate: 'Jun 24, 2025',
     language: 'en',
@@ -66,7 +66,7 @@ export const mockedCourses: Course[] = [
     id: '3',
     title: COURSE_TITLES.JS_RU,
     subTitle: null,
-    alias: COURSE_ALIASES.JS_RU,
+    descriptionUrl: COURSE_LINKS.JS_RU,
     startDate: 'Oct, 2024',
     registrationEndDate: 'Jun 24, 2025',
     language: 'ru',
@@ -86,7 +86,7 @@ export const mockedCourses: Course[] = [
     id: '4',
     title: COURSE_TITLES.REACT,
     subTitle: null,
-    alias: COURSE_ALIASES.REACT,
+    descriptionUrl: COURSE_LINKS.REACT,
     startDate: 'Jul 1, 2024',
     registrationEndDate: 'Jun 24, 2024',
     language: 'en',
@@ -105,7 +105,7 @@ export const mockedCourses: Course[] = [
     id: '5',
     title: COURSE_TITLES.ANGULAR,
     subTitle: null,
-    alias: COURSE_ALIASES.ANGULAR,
+    descriptionUrl: COURSE_LINKS.ANGULAR,
     startDate: 'Jul 1, 2024',
     registrationEndDate: 'Jun 24, 2025',
     language: 'en',
@@ -124,7 +124,7 @@ export const mockedCourses: Course[] = [
     id: '6',
     title: COURSE_TITLES.AWS_FUNDAMENTALS,
     subTitle: null,
-    alias: COURSE_ALIASES.AWS_FUNDAMENTALS,
+    descriptionUrl: COURSE_LINKS.AWS_FUNDAMENTALS,
     startDate: 'Jul 1, 2024',
     registrationEndDate: 'Jun 24, 2025',
     language: 'en',
@@ -143,7 +143,7 @@ export const mockedCourses: Course[] = [
     id: '8',
     title: COURSE_TITLES.AWS_CLOUD_DEVELOPER,
     subTitle: null,
-    alias: COURSE_ALIASES.AWS_CLOUD_DEVELOPER,
+    descriptionUrl: COURSE_LINKS.AWS_CLOUD_DEVELOPER,
     iconSrc: MOCKED_IMAGE_PATH,
     iconSmall: MOCKED_IMAGE_PATH,
     secondaryIcon: MOCKED_IMAGE_PATH,
@@ -162,7 +162,7 @@ export const mockedCourses: Course[] = [
     id: '9',
     title: COURSE_TITLES.AWS_DEVOPS,
     subTitle: null,
-    alias: COURSE_ALIASES.AWS_DEVOPS,
+    descriptionUrl: COURSE_LINKS.AWS_DEVOPS,
     iconSrc: MOCKED_IMAGE_PATH,
     iconSmall: MOCKED_IMAGE_PATH,
     secondaryIcon: MOCKED_IMAGE_PATH,
@@ -178,3 +178,13 @@ export const mockedCourses: Course[] = [
     },
   },
 ];
+
+export const MOCKED_MERCH_DATA = {
+  title: 'RS merch',
+  subtitle: 'Are you an RS sloth fan and looking for RS merch?',
+  paragraph: 'The wait is almost over',
+  buttonText: 'Discover merch assets',
+  buttonLink: 'https://sloths.rs.school/',
+  imageAltText:
+    'A collage of photos with branded T-shirts, cups, and stickers featuring the RSSchool logo',
+};
