@@ -1,16 +1,10 @@
 import { screen } from '@testing-library/react';
 import { SchoolMenu } from '../school-menu/school-menu';
-import { Course } from '@/entities/course';
 import { mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { COURSE_TITLES, schoolMenuStaticLinks } from 'data';
+import { schoolMenuStaticLinks } from 'data';
 
 describe('SchoolMenu', () => {
-  const aws = mockedCourses.find(
-    (course) => course.title === COURSE_TITLES.AWS_FUNDAMENTALS,
-  ) as Course;
-  const react = mockedCourses.find((course) => course.title === COURSE_TITLES.REACT) as Course;
-
   it('renders without crashing and displays "rs school" heading', () => {
     renderWithRouter(
       <SchoolMenu heading="rs school">
@@ -110,7 +104,7 @@ describe('SchoolMenu', () => {
     expect(descriptions[3]).toHaveTextContent(/Jul 1, 2024/i);
   });
 
-  it('renders correct link for "AWS Fundamentals" and "React JS [mentorshipId]"', () => {
+  it('renders correct link for all courses', () => {
     renderWithRouter(
       <SchoolMenu>
         {mockedCourses.map((course) => (
@@ -125,10 +119,13 @@ describe('SchoolMenu', () => {
     );
 
     const links = screen.getAllByRole('link');
-    const linkReact = links.at(3);
-    const linkAWS = links.at(-3);
 
-    expect(linkAWS).toHaveAttribute('href', aws.detailsUrl);
-    expect(linkReact).toHaveAttribute('href', react.detailsUrl);
+    mockedCourses.forEach((course) => {
+      const link = links.find((el) => {
+        return el.textContent?.includes(course.title);
+      });
+
+      expect(link).toHaveAttribute('href', course.detailsUrl);
+    });
   });
 });
