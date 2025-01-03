@@ -15,6 +15,8 @@ type AwsDeveloperProps = {
 };
 
 export const AwsDeveloper = async ({ courseName }: AwsDeveloperProps) => {
+  const language = await getCourseLanguage(courseName);
+
   return (
     <>
       <HeroCourse courseName={courseName} />
@@ -24,7 +26,7 @@ export const AwsDeveloper = async ({ courseName }: AwsDeveloperProps) => {
       <Certification courseName={courseName} />
       <Communication courseName={courseName} />
       <Required courseName={courseName} marked1 />
-      <MemberActivity path="awsDev" lang={await getCourseLanguage(courseName)} />
+      <MemberActivity path="awsDev" lang={language} />
       <Trainers trainers={awsDev} courseName={courseName} />
     </>
   );

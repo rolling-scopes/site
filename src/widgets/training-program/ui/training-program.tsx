@@ -19,7 +19,7 @@ type TrainingProgramProps = {
 export const TrainingProgram = async ({ courseName, specify = '' }: TrainingProgramProps) => {
   const course = await selectCourse(courseName);
   const { language } = course;
-  const programName = `${courseName} ${specify}`;
+  const programName = specify ? `${courseName} ${specify}` : courseName;
   let contentName = isTrainingProgramType(programName) ? programName : courseName;
   const isCourseWithBadge = courseName.includes('badge');
 
