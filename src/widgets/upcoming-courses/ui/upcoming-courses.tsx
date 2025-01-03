@@ -1,6 +1,5 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
-
 import { ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
 import { getCourses } from '@/entities/course/api/course-api';
@@ -54,33 +53,31 @@ export const UpcomingCourses = async () => {
     </>
   );
   const emptyBlock = (
-    <>
-      <Paragraph>
-        {emptyText.part1}
-        <LinkCustom href={ANNOUNCEMENT_TELEGRAM_LINK} external>
-          Telegram
-        </LinkCustom>
-        {emptyText.part2}
-      </Paragraph>
-    </>
+    <Paragraph>
+      {emptyText.part1}
+      <LinkCustom href={ANNOUNCEMENT_TELEGRAM_LINK} external>
+        Telegram
+      </LinkCustom>
+      {emptyText.part2}
+    </Paragraph>
   );
 
   return (
-    <article id="upcoming-courses" className={cx('container')}>
-      <section className={cx('content')}>
-        <WidgetTitle size="small">Upcoming courses</WidgetTitle>
-        <div className={cx('column-2', 'course-wrap')}>
+    <section id="upcoming-courses" className={cx('container')}>
+      <div className={cx('content', 'column-2')}>
+        <div className={cx('course-wrap')}>
+          <WidgetTitle size="small">Upcoming courses</WidgetTitle>
           <div className={cx('course-list')} data-testid="courses-list">
             {coursesContent.length > 0 ? courseListBlock : emptyBlock}
           </div>
-          <Image
-            className={cx('rs-banner')}
-            data-testid="rs-banner"
-            src={RSBanner}
-            alt="The Rolling Scopes organization logo"
-          />
         </div>
-      </section>
-    </article>
+        <Image
+          className={cx('rs-banner')}
+          data-testid="rs-banner"
+          src={RSBanner}
+          alt="The Rolling Scopes organization logo"
+        />
+      </div>
+    </section>
   );
 };

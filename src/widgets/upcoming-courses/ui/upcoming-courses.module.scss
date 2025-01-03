@@ -5,11 +5,11 @@
 
 .course-wrap {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  width: 100%;
 
   @include media-tablet-large {
     flex-direction: column;
-    gap: 24px;
   }
 }
 
@@ -19,8 +19,6 @@
   gap: 24px;
   align-items: flex-start;
   justify-content: space-between;
-
-  width: 800px;
 
   @include media-tablet-large {
     width: 100%;
