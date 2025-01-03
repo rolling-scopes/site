@@ -15,6 +15,16 @@ export type {
   MentorshipRoute,
 } from './mentorship-data.types';
 export {
+  ANNOUNCEMENT_TELEGRAM_LINK,
+  type CourseNamesChannels,
+  JS_EN_TELEGRAM_CHAT_LINK,
+  MENTOR_ONBOARD_TELEGRAM_EN,
+  MENTOR_ONBOARD_TELEGRAM_RU,
+  RS_DOCS_COMMUNICATION_LINK,
+  RS_DOCS_EN_LINK,
+  RS_DOCS_TELEGRAM_CHATS_LINK,
+} from './communication.data';
+export {
   AWS_FUNDAMENTALS_BADGE,
   COURSE_TITLES,
   type CourseNames,
@@ -24,15 +34,6 @@ export {
   type TrainingProgramType,
 } from './courseTitles.data';
 export { type Benefit } from './benefit-mentorship.data';
-export {
-  type CourseNamesChannels,
-  JS_EN_TELEGRAM_CHAT_LINK,
-  MENTOR_ONBOARD_TELEGRAM_EN,
-  MENTOR_ONBOARD_TELEGRAM_RU,
-  RS_DOCS_COMMUNICATION_LINK,
-  RS_DOCS_EN_LINK,
-  RS_DOCS_TELEGRAM_CHATS_LINK,
-} from './communication.data';
 export { aboutMentorsData } from './about-mentors.data';
 export { angular } from './angular.data';
 export { angularPath } from './angular-path.data';
