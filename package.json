@@ -75,8 +75,8 @@
     "vitest": "^2.0.5"
   },
   "overrides": {
-    "@types/react": "19.0.2",
-    "@types/react-dom": "19.0.2",
+    "@types/react": "$@types/react",
+    "@types/react-dom": "$@types/react-dom",
     "react": "$react",
     "react-dom": "$react-dom"
   }
