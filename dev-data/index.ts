@@ -5,15 +5,25 @@ export type {
   DataMap,
   JSPath,
 } from './courses-data.types';
-export type { CourseTitle,
+export type {
+  CourseTitle,
   ImageLink,
   MentorActivities,
   MentorshipCourse,
   MentorshipCourseRouteKeys,
   MentorshipDefaultRouteKeys,
-  MentorshipRoute } from './mentorship-data.types';
+  MentorshipRoute,
+} from './mentorship-data.types';
+export {
+  AWS_FUNDAMENTALS_BADGE,
+  COURSE_TITLES,
+  type CourseNames,
+  type CourseNamesKeys,
+  type CoursesWithRequirementsNames,
+  DISCORD_LINKS,
+  type TrainingProgramType,
+} from './courseTitles.data';
 export { type Benefit } from './benefit-mentorship.data';
-export { COURSE_TITLES, type CourseNames, type CourseNamesKeys, type CoursesWithRequirementsNames, DISCORD_LINKS, type TrainingProgramType } from './courseTitles.data';
 export {
   type CourseNamesChannels,
   JS_EN_TELEGRAM_CHAT_LINK,

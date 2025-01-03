@@ -8,8 +8,10 @@ import mentorImg from '@/shared/assets/mentors-wanted.webp';
 const readMoreLink = `/${ROUTES.MENTORSHIP}`;
 
 describe('Mentors', () => {
-  beforeEach(() => {
-    renderWithRouter(<MentorsWanted />);
+  beforeEach(async () => {
+    const widget = await MentorsWanted({});
+
+    renderWithRouter(widget);
   });
 
   it('renders the widget', () => {

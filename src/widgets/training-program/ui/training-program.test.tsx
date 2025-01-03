@@ -1,14 +1,11 @@
 import { screen } from '@testing-library/react';
 import { beforeEach } from 'vitest';
-import { Course } from '@/entities/course';
-import { mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import angularImg from '@/shared/assets/rs-slope-angular.webp';
 import awsDevImg from '@/shared/assets/rs-slope-aws-dev.webp';
 import { TrainingProgram } from '@/widgets/training-program';
+import { COURSE_TITLES } from 'data';
 
-const mockedCourseAngular: Course = mockedCourses[4];
-const mockedCourseAws: Course = mockedCourses[5];
 const mockedParagraphsAngular = [
   'This course is designed for individuals with a solid foundation in JavaScript, TypeScript, and front-end development. Familiarity with RS School processes and RS Stage #2 certification is a plus.',
   'The course lasts 11 weeks, requiring approximately 20-40 hours of study per week.',
@@ -25,8 +22,10 @@ const mockedParagraphsAws = [
 
 describe('TrainingProgram', () => {
   describe('with "angular" props', () => {
-    beforeEach(() => {
-      renderWithRouter(<TrainingProgram course={mockedCourseAngular} courseName="Angular" />);
+    beforeEach(async () => {
+      const widget = await TrainingProgram({ courseName: COURSE_TITLES.ANGULAR });
+
+      renderWithRouter(widget);
     });
 
     it(`renders correct title "Training Program"`, () => {
@@ -57,10 +56,10 @@ describe('TrainingProgram', () => {
   });
 
   describe('with "awsDev" props', () => {
-    beforeEach(() => {
-      renderWithRouter(
-        <TrainingProgram course={mockedCourseAws} courseName="AWS Cloud Developer" />,
-      );
+    beforeEach(async () => {
+      const widget = await TrainingProgram({ courseName: COURSE_TITLES.AWS_CLOUD_DEVELOPER });
+
+      renderWithRouter(widget);
     });
 
     it('renders correct title', () => {
@@ -82,7 +81,7 @@ describe('TrainingProgram', () => {
     it('renders correct image with alt text', () => {
       const image = screen.getByTestId('image');
 
-      expect(image).toHaveAttribute('alt', expect.stringContaining('AWS Fundamentals'));
+      expect(image).toHaveAttribute('alt', expect.stringContaining('AWS Cloud Developer'));
       expect(image).toHaveAttribute('src', awsDevImg.src);
     });
   });

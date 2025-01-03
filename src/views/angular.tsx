@@ -1,5 +1,5 @@
 import { ROUTES } from '@/core/const';
-import { Course } from '@/entities/course';
+import { getCourseLanguage } from '@/shared/helpers/get-course-language';
 import { AboutCourse } from '@/widgets/about-course';
 import { AngularTopics } from '@/widgets/angular-topics';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
@@ -14,24 +14,23 @@ import { TrainingProgram } from '@/widgets/training-program';
 import { CourseNames, angular } from 'data';
 
 type AngularProps = {
-  course: Course;
   courseName: CourseNames['ANGULAR'];
 };
 
-export const Angular = ({ course, courseName }: AngularProps) => {
+export const Angular = async ({ courseName }: AngularProps) => {
   return (
     <>
-      <HeroCourse course={course} />
+      <HeroCourse courseName={courseName} />
       <Breadcrumbs />
-      <TrainingProgram course={course} courseName={courseName} />
+      <TrainingProgram courseName={courseName} />
       <AngularTopics />
-      <AboutCourse course={course} courseName={courseName} />
+      <AboutCourse courseName={courseName} />
       <Certification courseName={courseName} />
       <Communication courseName={courseName} />
-      <MemberActivity path="angular" />
+      <MemberActivity path="angular" lang={await getCourseLanguage(courseName)} />
       <Required courseName={courseName} marked1 />
       <MentorsWantedCourse link={`/${ROUTES.MENTORSHIP}/${ROUTES.ANGULAR}`} />
-      <Trainers trainers={angular} />
+      <Trainers trainers={angular} courseName={courseName} />
     </>
   );
 };
