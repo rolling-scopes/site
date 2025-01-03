@@ -75,7 +75,7 @@ figure {
   align-items: center;
   justify-content: space-between;
 
-  @include media-laptop {
+  @include media-tablet-large {
     flex-direction: column;
   }
 }

@@ -4,7 +4,6 @@
   .mentors-wanted-content {
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
 
     .content-left {
       display: flex;
@@ -27,7 +26,6 @@
     }
 
     @include media-tablet {
-      flex-direction: column;
       gap: 40px;
     }
   }
