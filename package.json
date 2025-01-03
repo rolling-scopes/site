@@ -23,6 +23,7 @@
     "node": ">=20.x"
   },
   "dependencies": {
+    "@next/third-parties": "^15.0.2",
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.13",

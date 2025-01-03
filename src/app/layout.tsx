@@ -1,4 +1,5 @@
 import { PropsWithChildren } from 'react';
+import { Analytics } from './analytics';
 import { BaseLayout } from '@/core/base-layout';
 import type { Metadata } from 'next';
 
@@ -42,6 +43,7 @@ function RootLayout({ children }: PropsWithChildren) {
             <BaseLayout>{children}</BaseLayout>
           </div>
         </div>
+        <Analytics />
       </body>
     </html>
   );
