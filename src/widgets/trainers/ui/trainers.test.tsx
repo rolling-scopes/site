@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { Trainers } from './trainers';
 import { MOCKED_ONE_TRAINER, MOCKED_SEVERAL_TRAINERS } from '@/shared/__tests__/constants';
+import { COURSE_TITLES } from 'data';
 
 describe('Trainers component', () => {
   const { name, role, bio, photo } = MOCKED_ONE_TRAINER[0];
@@ -9,15 +10,25 @@ describe('Trainers component', () => {
     en: 'Course Team',
   };
 
-  it('renders without crashing', () => {
-    render(<Trainers trainers={MOCKED_ONE_TRAINER} />);
+  it('renders without crashing', async () => {
+    const widget = await Trainers({
+      trainers: MOCKED_ONE_TRAINER,
+      courseName: COURSE_TITLES.ANGULAR,
+    });
+
+    render(widget);
     const trainers = screen.getByTestId('trainers');
 
     expect(trainers).toBeVisible();
   });
 
-  it('renders the content correctly with mocked props', () => {
-    render(<Trainers trainers={MOCKED_ONE_TRAINER} />);
+  it('renders the content correctly with mocked props', async () => {
+    const widget = await Trainers({
+      trainers: MOCKED_ONE_TRAINER,
+      courseName: COURSE_TITLES.ANGULAR,
+    });
+
+    render(widget);
     const titleElement = screen.getByTestId('widget-title');
     const trainerNameElement = screen.getByText(name);
     const trainerTitleElement = screen.getByText(role);
@@ -34,15 +45,25 @@ describe('Trainers component', () => {
     expect(trainerImageElement).toHaveAttribute('src', photo.src);
   });
 
-  it('renders the title content correctly with lang ru prop', () => {
-    render(<Trainers trainers={MOCKED_ONE_TRAINER} lang="ru" />);
+  it('renders the title content correctly with lang ru prop', async () => {
+    const widget = await Trainers({
+      trainers: MOCKED_ONE_TRAINER,
+      courseName: COURSE_TITLES.JS_PRESCHOOL_RU,
+    });
+
+    render(widget);
     const titleElement = screen.getByTestId('widget-title');
 
     expect(titleElement).toHaveTextContent(mockedTitle.ru);
   });
 
-  it('renders all the trainers if passed several (8 in items)', () => {
-    render(<Trainers trainers={MOCKED_SEVERAL_TRAINERS} />);
+  it('renders all the trainers if passed several (8 in items)', async () => {
+    const widget = await Trainers({
+      trainers: MOCKED_SEVERAL_TRAINERS,
+      courseName: COURSE_TITLES.JS_PRESCHOOL_RU,
+    });
+
+    render(widget);
     const trainers = screen.getByTestId('trainers-list');
 
     expect(trainers.childNodes).toHaveLength(8);

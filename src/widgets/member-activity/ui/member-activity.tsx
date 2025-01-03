@@ -17,7 +17,7 @@ interface StudyPathProps {
   path: PathNames;
   activities?: MentorActivities[];
   type?: ListType;
-  lang?: 'ru' | 'en';
+  lang?: Language;
 }
 
 const localizedContent = {
