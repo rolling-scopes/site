@@ -1,63 +1,49 @@
-import Image from 'next/image';
+/* eslint-disable @stylistic/jsx-closing-bracket-location */
+import { HTMLProps } from 'react';
+import classNames from 'classnames/bind';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
-import { GenericItemProps } from '../school-list/school-list';
-import type { Course } from '@/entities/course';
-import { DateStart } from '@/shared/ui/date-start';
-import { MentorshipCourse } from 'data';
+import { Color } from '@/widgets/school-menu/types';
 
-interface SchoolItemProps {
-  item: MentorshipCourse | Course | GenericItemProps;
-  color: 'dark' | 'light';
-}
+import styles from './school-item.module.scss';
 
-export const SchoolItem = ({ item, color }: SchoolItemProps) => {
-  const courseDate = 'startDate' in item && item.startDate;
-  const registrationEndDate = 'registrationEndDate' in item && item.registrationEndDate;
-  const descriptionText = 'description' in item ? item.description : courseDate;
+const cx = classNames.bind(styles);
 
-  const descriptionContent = (
-    <>
-      <span className={color}>{item.title}</span>
-      {courseDate && registrationEndDate
-        ? (
-            <DateStart
-              className="description"
-              courseStartDate={courseDate}
-              registrationEndDate={registrationEndDate}
-            >
-            </DateStart>
-          )
-        : (
-            <small className="description">{descriptionText}</small>
-          )}
-    </>
-  );
+type SchoolItemProps = HTMLProps<HTMLLIElement> & {
+  title: string;
+  url: string;
+  description?: string;
+  icon?: StaticImageData;
+  color?: Color;
+};
 
-  const descriptionBlock =
-    'description' in item
-      ? (
-          descriptionContent
-        )
-      : (
-          <div className="details">{descriptionContent}</div>
-        );
-
+export const SchoolItem = ({
+  icon,
+  description,
+  title,
+  color = 'dark',
+  url,
+  ...props
+}: SchoolItemProps) => {
   return (
-    <li key={'id' in item ? item.id : item.title}>
-      <Link
-        href={item.detailsUrl}
-        className={'id' in item ? 'school-item with-icon' : 'school-item'}
-      >
-        {'iconSmall' in item && (
-          <Image
-            className="icon-wrapper"
-            src={item.iconSmall}
-            alt={item.title}
-            width={32}
-            height={32}
-          />
-        )}
-        {descriptionBlock}
+    <li {...props}>
+      <Link href={url} className={cx('school-item')}>
+        {icon && <Image
+          src={icon}
+          alt=""
+          width={32}
+          height={32}
+          aria-hidden="true"
+          data-testid="school-item-icon"
+        />}
+        <div className={cx('description-wrapper')}>
+          <span className={cx('title', color)}>{title}</span>
+          {description && (
+            <small className={cx('description')} data-testid="school-item-description">
+              {description}
+            </small>
+          )}
+        </div>
       </Link>
     </li>
   );

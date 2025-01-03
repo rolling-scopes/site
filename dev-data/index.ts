@@ -24,8 +24,8 @@ export {
   RS_DOCS_EN_LINK,
   RS_DOCS_TELEGRAM_CHATS_LINK,
 } from './communication.data';
-export { type Benefit } from './benefit-mentorship.data';
 export {
+  AWS_FUNDAMENTALS_BADGE,
   COURSE_TITLES,
   type CourseNames,
   type CourseNamesKeys,
@@ -33,6 +33,7 @@ export {
   DISCORD_LINKS,
   type TrainingProgramType,
 } from './courseTitles.data';
+export { type Benefit } from './benefit-mentorship.data';
 export { aboutMentorsData } from './about-mentors.data';
 export { angular } from './angular.data';
 export { angularPath } from './angular-path.data';
@@ -43,7 +44,8 @@ export { awsFundamentals } from './awsFundamentals.data';
 export { benefitMentorshipHome, benefitMentorshipMentors } from './benefit-mentorship.data';
 export { communicationText } from './widget-communication.data';
 export { communityGroups } from './community-media.data';
-export { contentMap } from './training-program.data';
+export { communityMenuStaticLinks, schoolMenuStaticLinks } from './school-menu-links';
+export { contentMap, trainingProgramLink } from './training-program.data';
 export { contentMapAbout, introLocalizedContent } from './about-course.data';
 export { contributeOptions } from './contribute-options.data';
 export { courseDataMap } from './required.data';
@@ -52,6 +54,7 @@ export { courses } from './courses.data';
 export { coursesPath } from './courses-path.data';
 export { events } from './events.data';
 export { faqData } from './faq.data';
+export { generalMaterials } from './general.data';
 export { heroPageData } from './hero-page.data';
 export { javaScriptEn } from './javascript-en.data';
 export { javaScriptRu } from './javascript-ru.data';
@@ -62,6 +65,7 @@ export { mentorsActivityData } from './mentors-activity.data';
 export { mentorsRegisterData } from './mentors-register.data';
 export { mentorsWantedData } from './mentors-wanted.data';
 export { mentorshipCourses, mentorshipCoursesDefault } from './mentorship.data';
+export { merchData } from './merch.data';
 export { nodejs } from './nodejs.data';
 export { picturesSocialMediaLinks } from './pictures.data';
 export { preSchoolEn, preSchoolRu } from './preSchool.data';

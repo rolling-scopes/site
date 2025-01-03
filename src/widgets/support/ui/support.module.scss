@@ -1,0 +1,49 @@
+.support-container {
+  background-color: $color-gray-100;
+
+  .support-content {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-between;
+
+    .support-info {
+      width: 640px;
+      font-weight: 500;
+      color: $color-black;
+      text-align: left;
+
+      .support-link {
+        margin-top: 24px;
+      }
+
+      @include media-laptop {
+        width: 100%;
+      }
+    }
+
+    .sloth-mascot {
+      width: 348px;
+      height: 288px;
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      @include media-laptop {
+        width: 300px;
+        height: auto;
+        object-fit: contain;
+      }
+
+      @include media-tablet {
+        width: 280px;
+      }
+    }
+
+    @include media-tablet-large {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+}

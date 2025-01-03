@@ -1,10 +1,11 @@
 import { StaticImageData } from 'next/image';
-import { COURSE_ALIASES } from '@/shared/constants';
+import { COURSE_LINKS } from '@/shared/constants';
+import { Language } from '@/shared/types';
 import { CourseNamesKeys } from 'data';
 
-type CourseAliases = typeof COURSE_ALIASES;
+type CourseLinks = typeof COURSE_LINKS;
 
-export type CourseAliasValues = CourseAliases[keyof CourseAliases];
+export type CourseLinksValues = CourseLinks[keyof CourseLinks];
 
 export type ApiCoursesResponse = Readonly<{
   alias: string;
@@ -25,14 +26,15 @@ export type ApiCoursesResponse = Readonly<{
 export type Course = {
   id: string;
   title: CourseNamesKeys;
-  alias: CourseAliasValues;
+  subTitle: string | null;
+  descriptionUrl: CourseLinksValues;
   altTitle?: string;
   iconSrc: StaticImageData;
   secondaryIcon: StaticImageData;
   iconSmall: StaticImageData;
   startDate: string;
   registrationEndDate: string;
-  language: ('en' | 'ru')[];
+  language: Language;
   mode: 'online' | 'offline';
   detailsUrl: string;
   enroll: string;

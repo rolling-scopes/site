@@ -2,6 +2,10 @@ export const ANCHORS = {
   ABOUT_COMMUNITY: 'about-community',
   ABOUT_SCHOOL: 'about-school',
   MENTORS_WANTED: 'mentors-wanted',
+  UPCOMING_COURSES: 'upcoming-courses',
+  EVENTS: 'events',
+  MERCH: 'merch',
+  CONTRIBUTE: 'contribute',
 };
 
 export const COURSE_STALE_AFTER_DAYS = 14;
@@ -30,5 +34,7 @@ export const ROUTES = {
   AWS_DEVOPS: 'aws-devops',
   REACT: 'reactjs',
   MENTORSHIP: 'mentorship',
+  DOCS_EN: 'docs/en',
+  DOCS_RU: 'docs/ru',
   NOT_FOUND: '*',
 } as const;

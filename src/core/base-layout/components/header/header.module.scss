@@ -1,5 +1,5 @@
 .navbar {
-  position: fixed;
+  position: sticky;
   z-index: 100;
   top: 0;
   left: 0;
@@ -92,8 +92,8 @@
 
   width: 100%;
   height: min-content;
-  min-height: 100vh;
-  max-height: 100vh;
+  min-height: 100dvh;
+  max-height: 100dvh;
   margin-top: 0;
   padding: 4px 24px 28px 16px;
 

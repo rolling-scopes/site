@@ -1,0 +1,52 @@
+.speakers {
+  display: flex;
+  gap: 50px;
+  background-color: $color-gray-100;
+
+  .info {
+    width: 640px;
+
+    .name {
+      margin-top: 16px;
+    }
+
+    .email-wrapper {
+      display: flex;
+      gap: 8px;
+
+      margin-top: 8px;
+
+      font-size: 18px;
+      font-style: normal;
+      line-height: 24px;
+
+      @include media-tablet {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+
+    @include media-laptop {
+      width: 100%;
+    }
+  }
+
+  .picture {
+    width: 294px;
+    height: 300px;
+    margin-left: auto;
+
+    @include media-laptop {
+      width: 235px;
+      height: 240px;
+      margin-left: unset;
+      padding: 16px 0 0 0;
+    }
+  }
+
+  @include media-tablet {
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+  }
+}

@@ -10,6 +10,7 @@ import { Course } from '@/entities/course';
 import { Logo } from '@/shared/ui/logo';
 import { MobileView } from '@/widgets/mobile-view';
 import { SchoolMenu } from '@/widgets/school-menu';
+import { communityMenuStaticLinks, mentorshipCourses, schoolMenuStaticLinks } from 'data';
 
 import styles from './header.module.scss';
 
@@ -19,37 +20,11 @@ type HeaderProps = {
   courses: Course[];
 };
 
-const navLinks = [
-  {
-    label: 'RS School',
-    href: ROUTES.HOME,
-    heading: 'rs school',
-  },
-  {
-    label: 'Courses',
-    href: `/${ROUTES.COURSES}`,
-    heading: 'all courses',
-  },
-  {
-    label: 'Community',
-    href: `/${ROUTES.COMMUNITY}`,
-    heading: 'community',
-  },
-  {
-    label: 'Mentorship',
-    href: `/${ROUTES.MENTORSHIP}`,
-    heading: 'mentorship',
-  },
-] as const;
-
 export const Header = ({ courses }: HeaderProps) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [color, setColor] = useState('gray');
-  const [hash, setHash] = useState('');
-  const [key, setKey] = useState('');
   const pathname = usePathname();
 
-  // const headerAccentColor = pathname.includes(ROUTES.MENTORSHIP) ? 'blue' : 'gray';
   let headerAccentColor = 'gray';
 
   if (pathname) {
@@ -60,7 +35,20 @@ export const Header = ({ courses }: HeaderProps) => {
     setMenuOpen((prev) => !prev);
   };
 
+  const handleMenuClose = () => {
+    setMenuOpen(false);
+  };
+
   useEffect(() => {
+    /** ***********  ✨ Codeium Command ⭐  *************/
+  /**
+   * Function to be called when the window is scrolled.
+   * It changes the class of the header, depending on the scrolled height.
+   * If the scrolled height is less than 500px, it sets the color to the accent color,
+   * otherwise to white.
+   * @function
+   */
+    /** ****  123b884a-15f3-4509-9a7e-9939603a0a4f  *******/
     const listenScrollEvent = () => {
       const scrollY = window.scrollY;
 
@@ -81,18 +69,8 @@ export const Header = ({ courses }: HeaderProps) => {
   }, [headerAccentColor]);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setHash(window.location.hash);
-      setKey(window.location.href);
-    }
-  }, [pathname]);
-
-  useEffect(() => {
-    if (location.pathname) {
-      setMenuOpen(false);
-      setColor(headerAccentColor);
-    }
-  }, [key, hash, pathname, headerAccentColor]);
+    setColor(headerAccentColor);
+  }, [pathname, headerAccentColor]);
 
   return (
     <nav className={cx('navbar', color)} data-testid="navigation">
@@ -100,28 +78,61 @@ export const Header = ({ courses }: HeaderProps) => {
         <Logo />
 
         <menu className={cx('mobile-menu', { open: isMenuOpen })} data-testid="mobile-menu">
-          <MobileView courses={courses} type="header" />
+          <MobileView onClose={handleMenuClose} courses={courses} type="header" />
         </menu>
         <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 
         <menu className={cx('menu')}>
-          {navLinks.map((link) => {
-            return (
-              <NavItem
-                key={link.label}
-                label={link.label}
-                href={link.href}
-                dropdownInner={(
-                  <SchoolMenu
-                    courses={courses}
-                    heading={link.heading}
-                    color="dark"
-                    hasTitle={false}
-                  />
-                )}
-              />
-            );
-          })}
+          <NavItem label="RS School" href={ROUTES.HOME}>
+            <SchoolMenu>
+              {schoolMenuStaticLinks.map((link, i) => (
+                <SchoolMenu.Item
+                  key={i}
+                  title={link.title}
+                  description={link.description}
+                  url={link.detailsUrl}
+                />
+              ))}
+            </SchoolMenu>
+          </NavItem>
+          <NavItem label="Courses" href={ROUTES.COURSES}>
+            <SchoolMenu>
+              {courses.map((course) => (
+                <SchoolMenu.Item
+                  key={course.id}
+                  icon={course.iconSmall}
+                  title={course.title}
+                  description={course.startDate}
+                  url={course.detailsUrl}
+                />
+              ))}
+            </SchoolMenu>
+          </NavItem>
+          <NavItem label="Community" href={ROUTES.COMMUNITY}>
+            <SchoolMenu>
+              {communityMenuStaticLinks.map((link, i) => (
+                <SchoolMenu.Item
+                  key={i}
+                  title={link.title}
+                  description={link.description}
+                  url={link.detailsUrl}
+                />
+              ))}
+            </SchoolMenu>
+          </NavItem>
+          <NavItem label="Mentorship" href={ROUTES.MENTORSHIP}>
+            <SchoolMenu>
+              {mentorshipCourses.map((course) => (
+                <SchoolMenu.Item
+                  key={course.id}
+                  icon={course.iconSmall}
+                  title={course.title}
+                  url={course.detailsUrl}
+                />
+              ))}
+            </SchoolMenu>
+          </NavItem>
+          <NavItem label="Docs" href={ROUTES.DOCS_EN} />
         </menu>
       </section>
     </nav>

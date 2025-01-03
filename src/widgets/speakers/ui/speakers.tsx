@@ -1,15 +1,21 @@
+import classNames from 'classnames/bind';
 import Image from 'next/image';
-import image from '@/shared/assets/speakers-wanted.webp';
-import { EmailIcon } from '@/shared/icons';
+import speakersWanted from '@/shared/assets/speakers-wanted.webp';
+import email from '@/shared/assets/svg/email.svg';
+import { RS_EMAIL } from '@/shared/constants';
+import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
+import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
-import './speakers.scss';
+import styles from './speakers.module.scss';
+
+const cx = classNames.bind(styles);
 
 export const Speakers = () => (
-  <div className="speakers container">
-    <div className="speakers content">
-      <div className="info">
+  <div className={cx('speakers', 'container')}>
+    <div className={cx('speakers', 'content')}>
+      <article className={cx('info')}>
         <WidgetTitle size="large" mods="lines">
           Speakers wanted
         </WidgetTitle>
@@ -21,15 +27,20 @@ export const Speakers = () => (
           So don&apos;t hesitate to drop a short synopsis to RS Head
         </Paragraph>
 
-        <div className="name" data-testid="contact-name">
+        <Subtitle color="black" className={cx('name')}>
           Dzmitry Varabei
-        </div>
-        <div className="email">
-          <EmailIcon />
-          <span>rolling.scopes@gmail.com</span>
-        </div>
-      </div>
-      <Image className="right picture" src={image} alt="speakers-wanted" />
+        </Subtitle>
+        <address className={cx('email-wrapper')}>
+          <Image src={email} alt="" aria-hidden="true" />
+          <LinkCustom href={`mailto:${RS_EMAIL}`}>{RS_EMAIL}</LinkCustom>
+        </address>
+      </article>
+      <Image
+        className={cx('right', 'picture')}
+        src={speakersWanted}
+        alt="Cartoon sloth wearing a yellow shirt, gesturing with a speech bubble"
+        data-testid="sloth-image"
+      />
     </div>
   </div>
 );
