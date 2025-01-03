@@ -1,4 +1,4 @@
-import { Course } from '@/entities/course';
+import { getCourseLanguage } from '@/shared/helpers/get-course-language';
 import { AboutCourse } from '@/widgets/about-course';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
@@ -12,21 +12,22 @@ import { CourseNames, awsDev } from 'data';
 
 type AwsDeveloperProps = {
   courseName: CourseNames['AWS_CLOUD_DEVELOPER'];
-  course: Course;
 };
 
-export const AwsDeveloper = ({ course, courseName }: AwsDeveloperProps) => {
+export const AwsDeveloper = async ({ courseName }: AwsDeveloperProps) => {
+  const language = await getCourseLanguage(courseName);
+
   return (
     <>
-      <HeroCourse course={course} />
+      <HeroCourse courseName={courseName} />
       <Breadcrumbs />
-      <TrainingProgram course={course} courseName={courseName} />
-      <AboutCourse course={course} courseName={courseName} />
+      <TrainingProgram courseName={courseName} />
+      <AboutCourse courseName={courseName} />
       <Certification courseName={courseName} />
       <Communication courseName={courseName} />
       <Required courseName={courseName} marked1 />
-      <MemberActivity path="awsDev" />
-      <Trainers trainers={awsDev} />
+      <MemberActivity path="awsDev" lang={language} />
+      <Trainers trainers={awsDev} courseName={courseName} />
     </>
   );
 };
