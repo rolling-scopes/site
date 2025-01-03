@@ -1,5 +1,6 @@
 import { StaticImageData } from 'next/image';
 import { COURSE_LINKS } from '@/shared/constants';
+import { Language } from '@/shared/types';
 import { CourseNamesKeys } from 'data';
 
 type CourseLinks = typeof COURSE_LINKS;
@@ -33,7 +34,7 @@ export type Course = {
   iconSmall: StaticImageData;
   startDate: string;
   registrationEndDate: string;
-  language: ('en' | 'ru')[];
+  language: Language;
   mode: 'online' | 'offline';
   detailsUrl: string;
   enroll: string;
