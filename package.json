@@ -17,7 +17,8 @@
     "test:visual": "npx percy exec -- npm run test:playwright",
     "coverage": "vitest run --coverage",
     "precommit": "npx lint-staged",
-    "prepare": "husky"
+    "prepare": "husky",
+    "postbuild": "pagefind --force-language ru --site .next/server/app/docs/ru --output-path build/_next/static/pagefind/ru && pagefind --force-language en --site .next/server/app/docs/en --output-path build/_next/static/pagefind/en"
   },
   "engines": {
     "node": ">=20.x"
@@ -26,10 +27,21 @@
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.13",
-    "next": "15.1.3",
-    "react": "19.0.0",
+    "github-markdown-css": "^5.7.0",
+    "next": "15.0.3",
+    "pagefind": "^1.2.0",
+    "react": "^19.0.0",
     "react-dom": "19.0.0",
-    "react-responsive-carousel": "^3.2.23"
+    "react-double-marquee": "^1.1.0",
+    "react-markdown": "^9.0.1",
+    "react-responsive-carousel": "^3.2.23",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-slug": "^6.0.0",
+    "remark-emoji": "^5.0.1",
+    "remark-gfm": "^4.0.0",
+    "remark-rehype": "^11.1.1",
+    "remark-remove-comments": "^1.1.1",
+    "remark-toc": "^9.0.0"
   },
   "devDependencies": {
     "@feature-sliced/eslint-config": "^0.1.1",
