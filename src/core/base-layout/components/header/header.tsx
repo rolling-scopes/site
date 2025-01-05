@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
+
 import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
 import { ROUTES } from '@/core/const';

@@ -1,4 +1,5 @@
 import { cleanup, screen } from '@testing-library/react';
+
 import { Communication } from './communication';
 import { mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';

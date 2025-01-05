@@ -1,11 +1,11 @@
 import { PropsWithChildren } from 'react';
+
 import { BaseLayout } from '@/core/base-layout';
+import '@/shared/helpers/dayJS';
 import type { Metadata } from 'next';
 
-import '@/shared/helpers/dayJS';
-
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '@/core/styles/index.scss';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 export const metadata: Metadata = {
   title: 'RS Site',

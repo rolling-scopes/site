@@ -1,5 +1,6 @@
-import { ReactNode } from 'react';
 import classNames from 'classnames/bind';
+import { ReactNode } from 'react';
+
 import { LinkCustom } from '../link-custom';
 
 import styles from './social-media-item.module.scss';

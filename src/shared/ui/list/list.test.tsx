@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+
 import { List, cx } from './list';
 
 const data = ['listItem 1', 'listItem 2', 'listItem 3'];

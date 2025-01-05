@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+
 import { AboutCourseGrid } from '../about-course-grid/about-course-grid';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { LinkCustom } from '@/shared/ui/link-custom';

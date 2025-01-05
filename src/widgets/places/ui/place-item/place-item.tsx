@@ -1,5 +1,5 @@
-import React, { PropsWithChildren } from 'react';
 import classNames from 'classnames/bind';
+import React, { PropsWithChildren } from 'react';
 
 import styles from './place-item.module.scss';
 

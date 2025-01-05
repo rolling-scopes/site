@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
+
 import { BreadcrumbItem } from './breadcrumb-item';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 

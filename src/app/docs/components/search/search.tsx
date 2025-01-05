@@ -1,9 +1,10 @@
 'use client';
 
-import React, { RefObject, useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import Link from 'next/link.js';
+import React, { RefObject, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
+
 import MOCKED_SEARCH from '../../mocked_search';
 import { Language } from '@/shared/types';
 
@@ -43,7 +44,7 @@ export default function Search({ lang, resultsRef }: SearchProps) {
       if (!isRunningInDev) {
         window.pagefind = await import(
           // pagefind.js generated after build
-          /* webpackIgnore: true */ `/_next/static/pagefind/${lang}/pagefind.js`
+          /* webpackIgnore: true */ `/_next/static/pagefind/${lang}/pagefind.js`,
         );
 
         await window.pagefind.options!({ baseUrl: `/docs/${lang}` });

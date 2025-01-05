@@ -1,8 +1,8 @@
 'use client';
 
-import { useRef, useState } from 'react';
 import classNames from 'classnames/bind';
 import Link from 'next/link';
+import { useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
@@ -10,6 +10,7 @@ import remarkEmoji from 'remark-emoji';
 import remarkGfm from 'remark-gfm';
 import remarkRemoveComments from 'remark-remove-comments';
 import remarkToc from 'remark-toc';
+
 import { GITHUB_RAW_ROOT } from '../../constants';
 import { Menu } from '../../types';
 import { DocsMenu } from '../docs-menu/docs-menu';

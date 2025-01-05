@@ -1,5 +1,6 @@
-import React from 'react';
 import classNames from 'classnames/bind';
+import React from 'react';
+
 import { MarqueeGroup } from '@/widgets/places/ui/marquee-group/marquee-group';
 
 import styles from './places.module.scss';

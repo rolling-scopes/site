@@ -3,7 +3,6 @@ import { FlatCompat } from '@eslint/eslintrc';
 import stylistic from '@stylistic/eslint-plugin';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
-import cssImportOrder from 'eslint-plugin-css-import-order';
 import importPlugin from 'eslint-plugin-import';
 import importNewlines from 'eslint-plugin-import-newlines';
 import reactPlugin from 'eslint-plugin-react';
@@ -62,7 +61,6 @@ export default [
       'react-refresh': reactRefresh,
       'import': importPlugin,
       'vitest': vitestPlugin,
-      'css-import-order': cssImportOrder,
       'sort-exports': sortExports,
       'import-newlines': importNewlines,
       '@stylistic': stylistic,
@@ -84,7 +82,6 @@ export default [
       ...reactHooksPlugin.configs['recommended'].rules,
       ...importPlugin.configs['recommended'].rules,
       ...vitestPlugin.configs['recommended'].rules,
-      ...cssImportOrder.configs['recommended'].rules,
 
       'boundaries/element-types': 'warn',
       'no-undef': 'off',
@@ -124,23 +121,16 @@ export default [
             ['internal', 'parent', 'sibling', 'index', 'type'],
             ['object'],
           ],
+          'newlines-between': 'always',
           pathGroups: [
             {
-              pattern: '{react,react-dom/**,redux}',
-              group: 'external',
-              position: 'before',
-            },
-            {
-              pattern: '{.,..}/**/*.(svg|webp)',
+              pattern: '*.{scss,css}',
               group: 'object',
-              position: 'after',
-            },
-            {
-              pattern: '{.,..}/**/*module.scss',
-              group: 'object',
+              patternOptions: { matchBase: true },
               position: 'after',
             },
           ],
+          warnOnUnassignedImports: true,
           pathGroupsExcludedImportTypes: ['react', 'react-dom/**'],
           distinctGroup: false,
           alphabetize: {

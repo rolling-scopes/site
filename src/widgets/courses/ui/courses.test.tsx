@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
+
 import { Courses } from './courses';
 import { mockedCourses } from '@/shared/__tests__/constants';
 

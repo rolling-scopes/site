@@ -1,7 +1,8 @@
-import { act } from 'react';
 import { fireEvent, screen } from '@testing-library/react';
 import classNames from 'classnames/bind';
+import { act } from 'react';
 import { beforeEach } from 'vitest';
+
 import { DropdownWrapper } from './dropdown/dropdown-wrapper';
 import { Header } from './header';
 import { mockedCourses } from '@/shared/__tests__/constants';
