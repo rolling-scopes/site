@@ -35,7 +35,7 @@ export const CourseCard = ({
   const { backgroundColor, accentColor } = backgroundStyle;
 
   const cardStyle = {
-    backgroundColor: backgroundColor,
+    'backgroundColor': backgroundColor,
     '--accent-bg-color': accentColor,
   };
 

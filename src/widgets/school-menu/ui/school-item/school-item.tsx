@@ -1,8 +1,8 @@
 /* eslint-disable @stylistic/jsx-closing-bracket-location */
+import { HTMLProps } from 'react';
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
-import { HTMLProps } from 'react';
 
 import { Color } from '@/widgets/school-menu/types';
 

@@ -1,6 +1,6 @@
+import { cloneElement } from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
-import { cloneElement } from 'react';
 
 import { isTrainingProgramType } from '@/shared/helpers/is-training-program';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
@@ -21,7 +21,7 @@ export const TrainingProgram = async ({ courseName, specify = '' }: TrainingProg
   const course = await selectCourse(courseName);
   const { language } = course;
   const programName = specify ? `${courseName} ${specify}` : courseName;
-  let contentName = isTrainingProgramType(programName) ? programName : courseName;
+  const contentName = isTrainingProgramType(programName) ? programName : courseName;
   const isCourseWithBadge = courseName.includes('badge');
 
   const { title, content, image } = contentMap[contentName];

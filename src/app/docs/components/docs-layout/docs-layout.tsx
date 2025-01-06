@@ -1,8 +1,8 @@
 'use client';
 
+import { useRef, useState } from 'react';
 import classNames from 'classnames/bind';
 import Link from 'next/link';
-import { useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';

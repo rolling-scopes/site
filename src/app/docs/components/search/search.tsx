@@ -1,8 +1,8 @@
 'use client';
 
+import React, { RefObject, useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import Link from 'next/link.js';
-import React, { RefObject, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import MOCKED_SEARCH from '../../mocked_search';

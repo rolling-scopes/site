@@ -1,5 +1,5 @@
-import classNames from 'classnames/bind';
 import React from 'react';
+import classNames from 'classnames/bind';
 
 import { MarqueeGroup } from '@/widgets/places/ui/marquee-group/marquee-group';
 

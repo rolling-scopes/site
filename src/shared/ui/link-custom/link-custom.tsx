@@ -1,7 +1,7 @@
+import { AnchorHTMLAttributes, ReactNode } from 'react';
 import { type VariantProps, cva } from 'class-variance-authority';
 import classNames from 'classnames/bind';
 import Link from 'next/link';
-import { AnchorHTMLAttributes, ReactNode } from 'react';
 
 import { ArrowIcon, TextLinkIcon } from '@/shared/icons';
 

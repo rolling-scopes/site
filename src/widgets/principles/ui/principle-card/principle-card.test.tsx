@@ -1,5 +1,5 @@
-import { render, screen } from '@testing-library/react';
 import { ReactNode } from 'react';
+import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
 import { PrincipleCard } from './principle-card';
