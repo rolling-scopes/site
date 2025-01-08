@@ -36,7 +36,7 @@ describe('Header', () => {
     it('renders all the header links', () => {
       const headerElement = screen.getAllByText(/.*/, { selector: `span.${cxNavItem('label')}` });
 
-      expect(headerElement).toHaveLength(4);
+      expect(headerElement).toHaveLength(5);
     });
 
     it('renders 4 svg arrows', () => {

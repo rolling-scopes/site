@@ -20,10 +20,8 @@ afterEach(() => {
 vi.mock('@/entities/course/api/course-api', () => ({ getCourses: vi.fn().mockImplementation(() => mockedCourses) }));
 
 vi.mock('next/image', () => ({
-  default: (props: {
-    src: StaticImageData;
-    alt: string;
-  }) => (
+  default: (props: { src: StaticImageData;
+    alt: string; }) => (
     <img
       {...props}
       src={props.src.src}

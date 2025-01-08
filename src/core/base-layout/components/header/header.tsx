@@ -25,7 +25,6 @@ export const Header = ({ courses }: HeaderProps) => {
   const [color, setColor] = useState('gray');
   const pathname = usePathname();
 
-  // const headerAccentColor = pathname.includes(ROUTES.MENTORSHIP) ? 'blue' : 'gray';
   let headerAccentColor = 'gray';
 
   if (pathname) {
@@ -41,6 +40,15 @@ export const Header = ({ courses }: HeaderProps) => {
   };
 
   useEffect(() => {
+    /** ***********  ✨ Codeium Command ⭐  *************/
+  /**
+   * Function to be called when the window is scrolled.
+   * It changes the class of the header, depending on the scrolled height.
+   * If the scrolled height is less than 500px, it sets the color to the accent color,
+   * otherwise to white.
+   * @function
+   */
+    /** ****  123b884a-15f3-4509-9a7e-9939603a0a4f  *******/
     const listenScrollEvent = () => {
       const scrollY = window.scrollY;
 
@@ -124,6 +132,7 @@ export const Header = ({ courses }: HeaderProps) => {
               ))}
             </SchoolMenu>
           </NavItem>
+          <NavItem label="Docs" href={ROUTES.DOCS_EN} />
         </menu>
       </section>
     </nav>

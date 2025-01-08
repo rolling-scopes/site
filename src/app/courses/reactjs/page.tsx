@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { getCourseTitle } from '@/shared/helpers/get-course-title';
-import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { React } from '@/views/react';
 import { COURSE_TITLES } from 'data';
 
@@ -11,7 +10,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function ReactRoute() {
-  const course = await selectCourse(courseName);
-
-  return <React course={course} courseName={courseName} />;
+  return <React courseName={courseName} />;
 }

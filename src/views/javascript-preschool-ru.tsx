@@ -1,4 +1,3 @@
-import { Course } from '@/entities/course';
 import { AboutCourse } from '@/widgets/about-course';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
@@ -11,23 +10,21 @@ import { TrainingProgram } from '@/widgets/training-program';
 import { CourseNames, preSchoolRu } from 'data';
 
 type JavaScriptPreSchoolRuProps = {
-  course: Course;
-  lang: 'ru' | 'en';
   courseName: CourseNames['JS_PRESCHOOL_RU'];
 };
 
-export const JavaScriptPreSchoolRu = ({ lang, course, courseName }: JavaScriptPreSchoolRuProps) => {
+export const JavaScriptPreSchoolRu = ({ courseName }: JavaScriptPreSchoolRuProps) => {
   return (
     <>
-      <HeroCourse lang={lang} course={course} />
+      <HeroCourse courseName={courseName} />
       <Breadcrumbs />
-      <AboutCourse courseName={courseName} course={course} />
-      <TrainingProgram courseName={courseName} lang={lang} course={course} />
+      <AboutCourse courseName={courseName} />
+      <TrainingProgram courseName={courseName} />
       <Required courseName={courseName} />
       <Certification courseName={courseName} />
-      <Communication courseName={courseName} lang={lang} />
+      <Communication courseName={courseName} />
       <Faq />
-      <Trainers trainers={preSchoolRu} lang={lang} />
+      <Trainers trainers={preSchoolRu} courseName={courseName} />
     </>
   );
 };

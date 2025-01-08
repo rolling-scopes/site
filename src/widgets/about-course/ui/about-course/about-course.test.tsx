@@ -1,47 +1,18 @@
 import { screen } from '@testing-library/react';
 import { beforeEach } from 'vitest';
 import { AboutCourse } from './about-course';
-import { Course } from '@/entities/course';
-import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
+import { mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { COURSE_LINKS, TO_BE_DETERMINED } from '@/shared/constants';
-import { dayJS } from '@/shared/helpers/dayJS';
 import { COURSE_TITLES } from 'data';
 
-const mockedReactCourse: Course = {
-  id: '1',
-  backgroundStyle: {
-    accentColor: '',
-    backgroundColor: '',
-  },
-  detailsUrl: '',
-  iconSmall: MOCKED_IMAGE_PATH,
-  iconSrc: MOCKED_IMAGE_PATH,
-  title: COURSE_TITLES.REACT,
-  subTitle: null,
-  descriptionUrl: COURSE_LINKS.REACT,
-  language: ['en'],
-  mode: 'online',
-  enroll: 'http://course-url.com',
-  secondaryIcon: MOCKED_IMAGE_PATH,
-  startDate: dayJS().subtract(2, 'month').format('D MMM, YYYY'),
-  registrationEndDate: TO_BE_DETERMINED,
-};
-
-const mockedAwsDevopsCourse = {
-  ...mockedReactCourse,
-  title: COURSE_TITLES.AWS_DEVOPS,
-};
-
-const mockedPreSchoolCourse = {
-  ...mockedReactCourse,
-  title: COURSE_TITLES.JS_PRESCHOOL_RU,
-};
+const mockReactCourse = mockedCourses.find((course) => course.title === COURSE_TITLES.REACT);
 
 describe('AboutCourse component', () => {
   describe('render with "react" props', () => {
-    beforeEach(() => {
-      renderWithRouter(<AboutCourse course={mockedReactCourse} courseName="React" />);
+    beforeEach(async () => {
+      const widget = await AboutCourse({ courseName: COURSE_TITLES.REACT });
+
+      renderWithRouter(widget);
     });
 
     it('renders correct content for component', async () => {
@@ -56,17 +27,17 @@ describe('AboutCourse component', () => {
     });
 
     it('renders "Become a student" button with correct href when courseName is "react"', async () => {
-      expect(await screen.findByRole('link', { name: /Become a student/i })).toHaveAttribute(
-        'href',
-        'http://course-url.com',
-      );
+      const button = await screen.findByRole('link', { name: /Become a student/i });
+
+      expect(button).toHaveAttribute('href', `/${mockReactCourse?.enroll}`);
     });
   });
 
   describe('render 5 grid-items with "aws-devops" props', () => {
     it('render 5 grid-items with "aws-devops" props', async () => {
-      renderWithRouter(<AboutCourse course={mockedAwsDevopsCourse} courseName="AWS DevOps" />);
+      const widget = await AboutCourse({ courseName: COURSE_TITLES.AWS_DEVOPS });
 
+      renderWithRouter(widget);
       const aboutCourseGrid = await screen.findByTestId('about-course-grid');
 
       expect(aboutCourseGrid).toBeVisible();
@@ -76,9 +47,9 @@ describe('AboutCourse component', () => {
 
   describe('render "Paragraph" with "js / front-end pre-school ru" props', () => {
     it("renders 'Paragraph' and its' content", async () => {
-      renderWithRouter(
-        <AboutCourse course={mockedPreSchoolCourse} courseName="JS / Front-end Pre-school RU" />,
-      );
+      const widget = await AboutCourse({ courseName: COURSE_TITLES.JS_PRESCHOOL_RU });
+
+      renderWithRouter(widget);
 
       const paragraph = await screen.findByText(/Подготовительный этап поможет тем/i);
 

@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { getCourseTitle } from '@/shared/helpers/get-course-title';
-import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { AwsDeveloper } from '@/views/aws-developer';
 import { COURSE_TITLES } from 'data';
 
@@ -11,7 +10,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function AwsDeveloperRoute() {
-  const course = await selectCourse(courseName);
-
-  return <AwsDeveloper course={course} courseName={courseName} />;
+  return <AwsDeveloper courseName={courseName} />;
 }

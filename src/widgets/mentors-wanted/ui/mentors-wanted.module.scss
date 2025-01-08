@@ -8,7 +8,7 @@
       max-width: 640px;
 
       @include media-tablet-large {
-        width: 100%;
+        max-width: 100%;
       }
     }
 
