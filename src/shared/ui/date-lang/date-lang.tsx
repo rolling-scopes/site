@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 import micIcon from '@/shared/assets/icons/mic.svg';
 import noteIcon from '@/shared/assets/icons/note-icon.svg';
+import { Language } from '@/shared/types';
 import { DateStart } from '@/shared/ui/date-start';
 
 import styles from './date-lang.module.scss';
@@ -12,7 +13,7 @@ interface DateLangProps {
   startDate: string;
   registrationEndDate: string;
   mode: string;
-  language: string[];
+  language: Language;
   withMargin?: boolean;
 }
 

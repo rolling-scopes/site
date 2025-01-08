@@ -1,7 +1,9 @@
 @use 'normalize';
+@use '~github-markdown-css/github-markdown-light';
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -144,5 +146,32 @@ figure {
   .dot {
     display: inline-block;
     padding: 7px;
+  }
+}
+
+.markdown-body {
+  li {
+    list-style-position: initial;
+  }
+
+  h1,
+  h2,
+  h3 {
+    &:hover {
+      .icon-link::after {
+        content: url('../../shared/assets/svg/link.svg');
+      }
+    }
+
+    a {
+      margin-left: -26px;
+      padding-right: 10px;
+    }
+
+    .icon-link {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+    }
   }
 }

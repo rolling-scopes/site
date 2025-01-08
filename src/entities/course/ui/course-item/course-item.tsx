@@ -38,7 +38,7 @@ export const CourseItem = ({
             registrationEndDate={registrationEndDate}
             data-testid="course-date"
           />
-          <span data-testid="course-language">{` • ${language[0].toUpperCase()}`}</span>
+          <span data-testid="course-language">{` • ${language.toUpperCase()}`}</span>
         </p>
       </article>
       <LinkCustom
