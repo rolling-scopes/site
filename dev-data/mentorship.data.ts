@@ -1,11 +1,11 @@
 import { COURSE_TITLES } from './courseTitles.data';
 import { ROUTES } from '@/core/const';
-import angular from '@/shared/assets/icons/angular.svg';
-import angularSmall from '@/shared/assets/icons/footer/angular.webp';
-import jsSmall from '@/shared/assets/icons/footer/javascript.webp';
-import reactSmall from '@/shared/assets/icons/footer/react.webp';
-import javascript from '@/shared/assets/icons/javascript.webp';
-import react from '@/shared/assets/icons/react.svg';
+import angular from '@/shared/assets/icons/angular-256.svg';
+import angularSmall from '@/shared/assets/icons/footer/angular-256.svg';
+import jsSmall from '@/shared/assets/icons/footer/javascript-256.svg';
+import reactSmall from '@/shared/assets/icons/footer/react-256.svg';
+import javascript from '@/shared/assets/icons/javascript-256.svg';
+import react from '@/shared/assets/icons/react-256.svg';
 import { TelegramIcon } from '@/shared/icons';
 import { MENTOR_ONBOARD_TELEGRAM_EN, MENTOR_ONBOARD_TELEGRAM_RU, MentorshipCourse } from 'data';
 

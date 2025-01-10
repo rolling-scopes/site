@@ -1,0 +1,17 @@
+<svg width="256" height="256" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" version="1.1">
+ <title>Angular</title>
+ <defs>
+  <linearGradient id="linearGradient-1" y2="55.1837089%" x2="96.1321855%" y1="90.9292007%" x1="25.0714876%">
+   <stop offset="0%" stop-color="#E40035"/>
+   <stop offset="24%" stop-color="#F60A48"/>
+   <stop offset="35.2%" stop-color="#F20755"/>
+   <stop offset="49.4%" stop-color="#DC087D"/>
+   <stop offset="74.5%" stop-color="#9717E7"/>
+   <stop offset="100%" stop-color="#6C00F5"/>
+  </linearGradient>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <path stroke="null" id="svg_2" fill="url(#linearGradient-1)" d="m250,43.02056l-8.81062,136.58734l-84.23981,-179.09848l93.05043,42.51115zm-58.34741,176.61455l-63.65203,35.85549l-63.65313,-35.85549l12.94619,-30.9744l101.41277,0l12.9462,30.9744zm-63.65203,-151.1428l33.35378,80.05334l-66.70867,0l33.35489,-80.05334zm-113.28003,111.11558l-8.72052,-136.58734l93.05043,-42.51115l-84.32991,179.09848z"/>
+ </g>
+</svg>
