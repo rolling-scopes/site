@@ -2,6 +2,7 @@ import { screen } from '@testing-library/react';
 import { HeroCourse } from './hero-course';
 import { MOCKED_IMAGE_PATH, mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
+import { REGISTRATION_WILL_OPEN_SOON, REGISTRATION_WILL_OPEN_SOON_RU } from '@/shared/constants';
 import { COURSE_TITLES } from 'data';
 
 const mockedCourseWithSubtitle = mockedCourses.find(
@@ -55,6 +56,32 @@ describe('HeroCourse component', () => {
       const subtitleElement = await screen.queryByTestId('course-subtitle');
 
       expect(subtitleElement).toBeNull();
+    });
+  });
+
+  describe('Render widget with empty link', () => {
+    it('renders registration will open soon with correct label and href', async () => {
+      const widget = await HeroCourse({ courseName: COURSE_TITLES.AWS_DEVOPS });
+
+      renderWithRouter(widget);
+
+      const buttonElement = screen.getByText(REGISTRATION_WILL_OPEN_SOON);
+
+      expect(buttonElement).toBeVisible();
+      expect(buttonElement).toHaveAttribute('href', '/');
+      expect(buttonElement).toHaveTextContent(REGISTRATION_WILL_OPEN_SOON);
+    });
+
+    it('renders registration will open soon in russian with correct label and href', async () => {
+      const widget = await HeroCourse({ courseName: COURSE_TITLES.JS_RU });
+
+      renderWithRouter(widget);
+
+      const buttonElement = screen.getByText(REGISTRATION_WILL_OPEN_SOON_RU);
+
+      expect(buttonElement).toBeVisible();
+      expect(buttonElement).toHaveAttribute('href', '/');
+      expect(buttonElement).toHaveTextContent(REGISTRATION_WILL_OPEN_SOON_RU);
     });
   });
 });

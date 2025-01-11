@@ -3,9 +3,13 @@ import { beforeEach } from 'vitest';
 import { AboutCourse } from './about-course';
 import { mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
+import { REGISTRATION_WILL_OPEN_SOON, REGISTRATION_WILL_OPEN_SOON_RU } from '@/shared/constants';
 import { COURSE_TITLES } from 'data';
 
 const mockReactCourse = mockedCourses.find((course) => course.title === COURSE_TITLES.REACT);
+const mockCourseWithoutLink = mockedCourses.find(
+  (course) => course.title === COURSE_TITLES.AWS_DEVOPS,
+)!;
 
 describe('AboutCourse component', () => {
   describe('render with "react" props', () => {
@@ -54,6 +58,32 @@ describe('AboutCourse component', () => {
       const paragraph = await screen.findByText(/Подготовительный этап поможет тем/i);
 
       expect(paragraph).toBeVisible();
+    });
+  });
+
+  describe('Render widget with empty link', () => {
+    it('renders registration will open soon with correct label and href', async () => {
+      const widget = await AboutCourse({ courseName: mockCourseWithoutLink.title });
+
+      renderWithRouter(widget);
+
+      const buttonElement = screen.getByText(REGISTRATION_WILL_OPEN_SOON);
+
+      expect(buttonElement).toBeVisible();
+      expect(buttonElement).toHaveAttribute('href', '/');
+      expect(buttonElement).toHaveTextContent(REGISTRATION_WILL_OPEN_SOON);
+    });
+
+    it('renders registration will open soon in russian with correct label and href', async () => {
+      const widget = await AboutCourse({ courseName: COURSE_TITLES.JS_RU });
+
+      renderWithRouter(widget);
+
+      const buttonElement = screen.getByText(REGISTRATION_WILL_OPEN_SOON_RU);
+
+      expect(buttonElement).toBeVisible();
+      expect(buttonElement).toHaveAttribute('href', '/');
+      expect(buttonElement).toHaveTextContent(REGISTRATION_WILL_OPEN_SOON_RU);
     });
   });
 });
