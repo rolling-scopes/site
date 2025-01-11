@@ -41,7 +41,8 @@
     "remark-gfm": "^4.0.0",
     "remark-rehype": "^11.1.1",
     "remark-remove-comments": "^1.1.1",
-    "remark-toc": "^9.0.0"
+    "remark-toc": "^9.0.0",
+    "swiper": "^11.2.1"
   },
   "devDependencies": {
     "@feature-sliced/eslint-config": "^0.1.1",

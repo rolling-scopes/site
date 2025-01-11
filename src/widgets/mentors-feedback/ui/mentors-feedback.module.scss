@@ -1,14 +1,5 @@
-.mentors-feedback-content {
-  display: flex;
-  flex-direction: column;
-
-  .mentors-feedback-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-    gap: 32px;
-
-    @include media-tablet-large {
-      grid-template-columns: 1fr;
-    }
-  }
+.mentors-feedback-slider {
+  margin-top: -5px;
+  // hack to fix box shadow
+  padding: 5px 5px 52px 5px;
 }

@@ -18,8 +18,7 @@ export const MentorFeedbackCard = ({ name, course, review, photo }: MentorFeedba
         <header className={cx('card-header')}>
           <h3 className={cx('card-title')}>{name}</h3>
           <h4 className={cx('card-subtitle')}>
-            <b>Course:</b>
-            {' '}
+            <b>Course: </b>
             {course}
           </h4>
         </header>
