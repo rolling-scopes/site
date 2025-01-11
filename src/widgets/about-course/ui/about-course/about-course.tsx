@@ -17,6 +17,10 @@ type AboutCourseProps = {
 export const AboutCourse = async ({ courseName }: AboutCourseProps) => {
   const course = await selectCourse(courseName);
   const courseInfoList = contentMapAbout[courseName];
+  const registrationLinkText = course.enroll
+    ? introLocalizedContent[courseName]?.linkLabel
+    : introLocalizedContent[courseName]?.noLinkLabel;
+  const enrollHref = course.enroll ?? '';
 
   return (
     <section className={cx('container')}>
@@ -26,8 +30,8 @@ export const AboutCourse = async ({ courseName }: AboutCourseProps) => {
           <Paragraph>{introLocalizedContent[courseName].paragraph}</Paragraph>
         )}
         <AboutCourseGrid items={courseInfoList} />
-        <LinkCustom href={course.enroll} variant="primary" external>
-          {introLocalizedContent[courseName]?.linkLabel}
+        <LinkCustom href={enrollHref} variant="primary" external disabled={!course.enroll}>
+          {registrationLinkText}
         </LinkCustom>
       </div>
     </section>

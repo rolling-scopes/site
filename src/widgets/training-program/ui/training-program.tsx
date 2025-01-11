@@ -24,6 +24,10 @@ export const TrainingProgram = async ({ courseName, specify = '' }: TrainingProg
   const isCourseWithBadge = courseName.includes('badge');
 
   const { title, content, image } = contentMap[contentName];
+  const registrationLinkText = course.enroll
+    ? trainingProgramLink[language].linkLabel
+    : trainingProgramLink[language].noLinkLabel;
+  const enrollHref = course.enroll ?? '';
 
   return (
     <section className={cx('training-program', 'container')}>
@@ -34,8 +38,8 @@ export const TrainingProgram = async ({ courseName, specify = '' }: TrainingProg
           {content.map((component, index) => cloneElement(component, { key: index }))}
 
           {course && (
-            <LinkCustom href={course?.enroll} variant="primary" external>
-              {trainingProgramLink[language].linkLabel}
+            <LinkCustom href={enrollHref} variant="primary" external disabled={!course.enroll}>
+              {registrationLinkText}
             </LinkCustom>
           )}
         </article>
