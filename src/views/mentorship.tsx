@@ -5,8 +5,9 @@ import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { HeroPage } from '@/widgets/hero-page';
 import { MemberActivity } from '@/widgets/member-activity';
 import { MentorsDocs } from '@/widgets/mentors-docs';
+import { MentorsFeedback } from '@/widgets/mentors-feedback';
 import { MentorsRegister } from '@/widgets/mentors-register';
-import { MentorshipCourse, benefitMentorshipMentors } from 'data';
+import { MentorshipCourse, benefitMentorshipMentors, mentorsFeedbackData } from 'data';
 
 const studyPathName = 'mentorship';
 
@@ -38,6 +39,7 @@ export const Mentorship = ({ mentorshipData }: MentorshipProps) => {
         onboardLinks={mentorshipData.links.onboard}
         lang={mentorshipData.lang}
       />
+      <MentorsFeedback mentorsFeedback={mentorsFeedbackData} />
     </>
   );
 };

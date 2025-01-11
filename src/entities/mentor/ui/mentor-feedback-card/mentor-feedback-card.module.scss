@@ -1,0 +1,57 @@
+.mentor-feedback-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  max-width: 624px;
+  padding: 40px 32px 40px 32px;
+
+  border-radius: 12px;
+  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 10%);
+
+  .card-picture {
+    min-width: 120px;
+    min-height: 120px;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+    }
+  }
+
+  .card-info {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    .card-title {
+      margin: 0;
+      font-size: 24px;
+      font-weight: $font-weight-bold;
+      line-height: 32px;
+    }
+
+    .card-subtitle {
+      margin: 0;
+      font-size: 18px;
+      font-weight: $font-weight-medium;
+    }
+  }
+
+  .card-content {
+    margin: 0;
+    line-height: 24px;
+    white-space: pre-line;
+  }
+
+  @include media-tablet-large {
+    max-width: 100%;
+  }
+}
