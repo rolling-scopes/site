@@ -32,6 +32,7 @@ export type Course = {
   iconSrc: StaticImageData;
   secondaryIcon: StaticImageData;
   iconSmall: StaticImageData;
+  iconFooter: StaticImageData;
   startDate: string;
   registrationEndDate: string;
   language: Language;

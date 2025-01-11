@@ -1,7 +1,6 @@
 import { type CoursesPath } from './courses-data.types';
 import { ROUTES } from '@/core/const';
-import AWSDeveloperIcon from '@/shared/assets/icons/aws-developer.webp';
-import AWSFundamentalsIcon from '@/shared/assets/icons/aws-fundamentals.webp';
+import AWSDeveloperIcon from '@/shared/assets/icons/amazon-web-services-logo-wine-256.svg';
 import HTMLIcon from '@/shared/assets/icons/html5-256.svg';
 import JSIcon from '@/shared/assets/icons/javascript-256.svg';
 import NodeJSIcon from '@/shared/assets/icons/node-js-256.svg';
@@ -74,7 +73,7 @@ export const coursesPath: CoursesPath[] = [
     title: 'AWS Fundamentals',
     description:
       'Delve into the cloud with Amazon Web Services. Understand the essentials and ensure your apps are hosted seamlessly.',
-    logoIcon: AWSFundamentalsIcon,
+    logoIcon: AWSDeveloperIcon,
     links: [
       {
         linkTitle: 'AWS Fundamentals',
