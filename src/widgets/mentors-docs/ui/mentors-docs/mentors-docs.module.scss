@@ -1,7 +1,7 @@
 .docs-wrapper {
   display: flex;
-  flex-direction: row;
-  gap: 20px;
+  flex-direction: column;
+  gap: 30px;
   justify-content: space-between;
 
   @include media-tablet {
@@ -18,15 +18,4 @@
   @include media-tablet {
     max-width: unset;
   }
-}
-
-.picture-wrapper {
-  align-self: center;
-  max-width: 290px;
-}
-
-.picture {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
