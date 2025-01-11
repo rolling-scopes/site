@@ -1,9 +1,9 @@
 import { ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
 import aws from '@/shared/assets/icons/amazon-web-services-logo-wine-256.svg';
-import footerIcon from '@/shared/assets/icons/footer/amazon-web-services-logo-footer-256.svg';
 import angular from '@/shared/assets/icons/angular-256.svg';
 import angularSecondary from '@/shared/assets/icons/angular-black-256.svg';
+import footerIcon from '@/shared/assets/icons/footer/amazon-web-services-logo-footer-256.svg';
 import angularSmall from '@/shared/assets/icons/footer/angular-256.svg';
 import htmlSmall from '@/shared/assets/icons/footer/html5-256.svg';
 import jsSmall from '@/shared/assets/icons/footer/javascript-256.svg';

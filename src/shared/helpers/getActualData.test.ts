@@ -47,6 +47,11 @@ const coursesMock: Course[] = [
       backgroundColor: 'color',
       accentColor: 'color',
     },
+    iconFooter: {
+      src: 'iconSmall',
+      height: 100,
+      width: 100,
+    },
   },
   {
     id: '2',
@@ -79,6 +84,11 @@ const coursesMock: Course[] = [
       backgroundColor: 'color',
       accentColor: 'color',
     },
+    iconFooter: {
+      src: 'iconSmall',
+      height: 100,
+      width: 100,
+    },
   },
   {
     id: '3',
@@ -110,6 +120,11 @@ const coursesMock: Course[] = [
     backgroundStyle: {
       backgroundColor: 'color',
       accentColor: 'color',
+    },
+    iconFooter: {
+      src: 'iconSmall',
+      height: 100,
+      width: 100,
     },
   },
 ];
