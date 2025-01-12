@@ -64,19 +64,22 @@ export const Modal = ({
   return (
     isOpen
     && createPortal(
-      <div className={cx('modal-overlay')}>
+      <div className={cx('modal-overlay')} data-testid="modal-overlay">
         <div
           className={cx('modal-content', className)}
           tabIndex={0}
           ref={modalRef}
+          data-testid="modal-content"
         >
-          <div className={cx('modal-header')}>
-            <button className={cx('modal-close-button')} onClick={onClose}>
-              <Image src={closeIcon} alt="Close" />
-            </button>
-            {customHeader ? customHeader : title && <h2 className={cx('modal-title')}>{title}</h2>}
+          <div className={cx('modal-header')} data-testid="modal-header">
+            <div className={cx('modal-close-wrapper')}>
+              <button className={cx('modal-close-button')} onClick={onClose} data-testid="modal-close-button">
+                <Image src={closeIcon} alt="Close" />
+              </button>
+            </div>
+            {customHeader ? customHeader : title && <h2 className={cx('modal-title')} data-testid="modal-title">{title}</h2>}
           </div>
-          <div className={cx('modal-body')}>{children}</div>
+          <div className={cx('modal-body')} data-testid="modal-body">{children}</div>
         </div>
       </div>,
       document.body,

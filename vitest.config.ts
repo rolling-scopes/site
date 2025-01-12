@@ -43,6 +43,11 @@ export default defineConfig({
         statements: 80,
       },
     },
+    css: {
+      modules: {
+          classNameStrategy: 'non-scoped'
+      }
+  }
   },
   css: {
     preprocessorOptions: {
@@ -53,13 +58,12 @@ export default defineConfig({
   },
 });
 
-
 /**
  * We need this custom plugin, because of the difference between Vite and Next.js
  * in terms of static asset import is as follows
  *
  * import vercelLogo from "../public/vercel.svg";
- * 
+ *
  * In Vite: vercelLogo is a string
  * In Next.js: vercelLogo is an object { src: string; width: number; height: number}
  */
