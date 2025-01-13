@@ -1,0 +1,27 @@
+.video-player-container {
+  display: flex;
+  gap: 24px;
+
+  @include media-tablet {
+    flex-direction: column;
+  }
+}
+
+.main-video-area {
+  position: relative;
+
+  overflow: hidden;
+  flex: 4;
+
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.video-player iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+}
