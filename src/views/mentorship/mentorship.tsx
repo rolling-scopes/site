@@ -13,9 +13,10 @@ const studyPathName = 'mentorship';
 
 type MentorshipProps = {
   mentorshipData: MentorshipCourse;
+  courses?: boolean;
 };
 
-export const Mentorship = ({ mentorshipData }: MentorshipProps) => {
+export const Mentorship = ({ mentorshipData, courses = false }: MentorshipProps) => {
   return (
     <>
       <HeroPage pageName={PAGE_NAMES.MENTORSHIP} />
@@ -31,7 +32,7 @@ export const Mentorship = ({ mentorshipData }: MentorshipProps) => {
         activities={mentorshipData.activities}
         lang={mentorshipData.lang}
       />
-      <MentorshipCourses />
+      {courses && <MentorshipCourses />}
       <MentorsRegister lang={mentorshipData.lang} />
       <MentorsDocs
         mentorDocsLink={mentorshipData.links.mentorDocs}

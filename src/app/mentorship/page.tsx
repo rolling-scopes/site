@@ -9,5 +9,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function MentorshipRoute() {
-  return <Mentorship mentorshipData={mentorshipCoursesDefault} />;
+  return <Mentorship courses mentorshipData={mentorshipCoursesDefault} />;
 }
