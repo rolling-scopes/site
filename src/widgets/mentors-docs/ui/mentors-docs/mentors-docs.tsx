@@ -43,9 +43,6 @@ export const MentorsDocs = ({
           {onboardLinks && (
             <OnboardLinks text={mentorDocsData[lang].additional} links={onboardLinks} />
           )}
-          {onboardLinks && (
-            <OnboardLinks links={onboardLinks} />
-          )}
         </div>
       </article>
     </section>
