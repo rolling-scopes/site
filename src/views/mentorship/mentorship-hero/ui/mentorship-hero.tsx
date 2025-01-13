@@ -1,16 +1,16 @@
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
-import { PageName } from '../types';
+import { PAGE_NAMES } from '@/shared/constants';
+import { LinkCustom } from '@/shared/ui/link-custom';
 import { MainTitle } from '@/shared/ui/main-title';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { WidgetTitle } from '@/shared/ui/widget-title';
-import { heroPageData } from 'data';
+import { heroPageData, mentorsRegisterData } from 'data';
 
-import styles from './hero-page.module.scss';
+import styles from './mentorship-hero.module.scss';
 
 export const cx = classNames.bind(styles);
 
-export type HeroPageProps = {
+export type MentorshipHeroProps = {
   mainTitle: string;
   widgetTitle: string;
   subTitle: string[] | [];
@@ -18,7 +18,7 @@ export type HeroPageProps = {
   imageAltText: string;
 };
 
-type SubTitleProps = Pick<HeroPageProps, 'subTitle'>;
+type SubTitleProps = Pick<MentorshipHeroProps, 'subTitle'>;
 
 const HeroSubTitle = ({ subTitle }: SubTitleProps) => {
   if (!subTitle?.length) {
@@ -29,7 +29,7 @@ const HeroSubTitle = ({ subTitle }: SubTitleProps) => {
     <div className={cx('subtitle-container')}>
       {subTitle.map((item: string, index: number) => {
         return (
-          <Subtitle key={index} fontSize="extra-small" color="black">
+          <Subtitle key={index} fontSize="extra-small" weight="bold" color="black">
             {item}
           </Subtitle>
         );
@@ -38,24 +38,31 @@ const HeroSubTitle = ({ subTitle }: SubTitleProps) => {
   );
 };
 
-export const HeroPage = ({ pageName }: PageName) => {
+export const MentorshipHero = () => {
   const {
     mainTitle,
-    widgetTitle,
     subTitle = [],
     heroImageSrc,
     imageAltText = '',
-  }: HeroPageProps = heroPageData[pageName];
+  }: MentorshipHeroProps = heroPageData[PAGE_NAMES.MENTORSHIP];
 
   return (
-    <section id="hero-page" className={cx('hero-page', 'container')} data-testid="hero-page">
+    <section
+      id="hero-page"
+      className={cx('hero-page', 'container', 'hero-page-mentorship')}
+      data-testid="hero-page"
+    >
       <div className={cx('hero-page-content', 'content')}>
-        <article className={cx('title-container')}>
+        <article className={cx('title-container', 'hero-page-mentorship-container')}>
           <HeroSubTitle subTitle={subTitle} />
           <MainTitle className={cx('title-main')}>{mainTitle}</MainTitle>
-          <WidgetTitle size="small" className={cx('description-title')}>
-            {widgetTitle}
-          </WidgetTitle>
+          <LinkCustom
+            href={mentorsRegisterData['en'].button.link}
+            variant="primary"
+            external={mentorsRegisterData['en'].button.external}
+          >
+            {mentorsRegisterData['en'].button.text}
+          </LinkCustom>
         </article>
         {heroImageSrc?.src && (
           <Image

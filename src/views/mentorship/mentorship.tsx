@@ -1,8 +1,7 @@
-import { PAGE_NAMES } from '@/shared/constants';
+import { MentorshipHero } from './mentorship-hero/ui/mentorship-hero';
 import { AboutMentors } from '@/widgets/about-mentors';
 import { Benefits } from '@/widgets/benefits';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
-import { HeroPage } from '@/widgets/hero-page';
 import { MemberActivity } from '@/widgets/member-activity';
 import { MentorsDocs } from '@/widgets/mentors-docs';
 import { MentorsRegister } from '@/widgets/mentors-register';
@@ -17,7 +16,7 @@ type MentorshipProps = {
 export const Mentorship = ({ mentorshipData }: MentorshipProps) => {
   return (
     <>
-      <HeroPage pageName={PAGE_NAMES.MENTORSHIP} />
+      <MentorshipHero />
       <Breadcrumbs />
       <AboutMentors
         description={mentorshipData.details}
