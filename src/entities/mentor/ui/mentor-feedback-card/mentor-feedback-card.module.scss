@@ -1,8 +1,10 @@
-.mentor-feedback-card {
+.card {
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
 
+.card-wrapper {
   max-width: 624px;
   min-height: 510px;
   padding: 40px 32px 40px 32px;
@@ -16,6 +18,7 @@
 
   @include media-tablet-large {
     max-width: 100%;
+    min-height: initial;
   }
 }
 

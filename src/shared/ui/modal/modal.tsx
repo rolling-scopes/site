@@ -14,17 +14,9 @@ type ModalProps = {
   children: ReactNode;
   title?: string;
   className?: string;
-  customHeader?: ReactNode;
 };
 
-export const Modal = ({
-  isOpen,
-  onClose,
-  children,
-  title,
-  className,
-  customHeader,
-}: ModalProps) => {
+export const Modal = ({ isOpen, onClose, children, title, className }: ModalProps) => {
   const dialogRef = useRef<HTMLDialogElement | null>(null);
   const prevFocusRef = useRef<HTMLElement | null>(null);
 
@@ -64,9 +56,14 @@ export const Modal = ({
       className={cx('modal', className)}
       ref={dialogRef}
       onClose={handleClose}
-      data-testid="modal-overlay"
+      data-testid="modal"
     >
-      <div className={cx('modal-close-wrapper')}>
+      <div className={cx('modal-header', { 'no-title': !title })} data-testid="modal-header">
+        {title && (
+          <h2 className={cx('modal-title')} data-testid="modal-title">
+            {title}
+          </h2>
+        )}
         <button
           className={cx('modal-close-button')}
           onClick={handleClose}
@@ -76,15 +73,6 @@ export const Modal = ({
         </button>
       </div>
       <div className={cx('modal-content')} data-testid="modal-content">
-        <div className={cx('modal-header')} data-testid="modal-header">
-          {customHeader
-            ? customHeader
-            : title && (
-              <h2 className={cx('modal-title')} data-testid="modal-title">
-                {title}
-              </h2>
-            )}
-        </div>
         <div className={cx('modal-body')} data-testid="modal-body">
           {children}
         </div>

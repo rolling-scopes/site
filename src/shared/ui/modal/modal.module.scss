@@ -27,9 +27,24 @@
 }
 
 .modal-header {
+  position: sticky;
+  top: 0;
+
   display: flex;
-  flex-direction: column;
-  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 26px 0 24px 0;
+
+  background-color: $color-white;
+
+  &.no-title {
+    justify-content: flex-end;
+  }
+
+  @include media-tablet {
+    padding: 12px 0 12px 0;
+  }
 }
 
 .modal-title {
@@ -41,22 +56,6 @@
 .modal-body {
   p {
     margin: 0;
-  }
-}
-
-.modal-close-wrapper {
-  position: sticky;
-  top: 0;
-
-  display: flex;
-  justify-content: flex-end;
-
-  padding: 24px 0 24px 0;
-
-  background-color: $color-white;
-
-  @include media-tablet {
-    padding: 12px 0 12px 0;
   }
 }
 
