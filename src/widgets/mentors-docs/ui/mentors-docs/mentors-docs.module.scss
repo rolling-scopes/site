@@ -1,8 +1,6 @@
 .docs-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  justify-content: space-between;
 
   @include media-tablet {
     flex-direction: column;

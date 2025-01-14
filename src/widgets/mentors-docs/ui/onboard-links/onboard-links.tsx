@@ -6,7 +6,7 @@ import styles from './onboard-links.module.scss';
 const cx = classNames.bind(styles);
 
 type AdditionalProps = {
-  text?: string;
+  text: string;
   links: SocialMediaProps[];
 };
 
