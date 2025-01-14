@@ -23,10 +23,21 @@
 .mentors-register-wrapper {
   display: flex;
   flex-direction: row;
+  gap: 20px;
   justify-content: space-between;
+
+  @include media-tablet {
+    flex-direction: column;
+  }
 }
 
 .picture-wrapper {
   align-self: center;
   max-width: 427px;
+}
+
+.picture {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
