@@ -5,6 +5,14 @@ import { MOCKED_MENTORS_FEEDBACK } from '@/shared/__tests__/constants';
 
 describe('MentorFeedbackCard', () => {
   const mockProps = MOCKED_MENTORS_FEEDBACK;
+  const longReviewProps = {
+    ...mockProps,
+    review: 'a'.repeat(600),
+  };
+  const shortReviewProps = {
+    ...mockProps,
+    review: 'a'.repeat(300),
+  };
 
   it('should render the card with correct data', () => {
     render(<MentorFeedbackCard {...mockProps} />);
@@ -21,33 +29,18 @@ describe('MentorFeedbackCard', () => {
   });
 
   it('should render the "See more" button when the review is long', () => {
-    const longReviewProps = {
-      ...mockProps,
-      review: 'a'.repeat(600),
-    };
-
     render(<MentorFeedbackCard {...longReviewProps} />);
 
     expect(screen.getByTestId('see-more-button')).toBeInTheDocument();
   });
 
   it('should not render the "See more" button when the review is short', () => {
-    const shortReviewProps = {
-      ...mockProps,
-      review: 'a'.repeat(300),
-    };
-
     render(<MentorFeedbackCard {...shortReviewProps} />);
 
     expect(screen.queryByTestId('see-more-button')).toBeNull();
   });
 
   it('should open the modal when "See more" button is clicked', async () => {
-    const longReviewProps = {
-      ...mockProps,
-      review: 'a'.repeat(600),
-    };
-
     render(<MentorFeedbackCard {...longReviewProps} />);
 
     const seeMoreButton = screen.getByTestId('see-more-button');
@@ -60,11 +53,6 @@ describe('MentorFeedbackCard', () => {
   });
 
   it('should close the modal when the close button is clicked', async () => {
-    const longReviewProps = {
-      ...mockProps,
-      review: 'a'.repeat(600),
-    };
-
     render(<MentorFeedbackCard {...longReviewProps} />);
     const seeMoreButton = screen.getByTestId('see-more-button');
 
