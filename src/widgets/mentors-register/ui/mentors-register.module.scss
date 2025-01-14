@@ -19,3 +19,14 @@
 .note {
   margin-bottom: 18px;
 }
+
+.mentors-register-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.picture-wrapper {
+  align-self: center;
+  max-width: 427px;
+}
