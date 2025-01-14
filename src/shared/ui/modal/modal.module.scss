@@ -1,16 +1,22 @@
 .modal {
+  max-width: 889px;
+  padding: 0 32px 32px 32px;
+
+  line-height: 24px;
+
   border: none;
   border-radius: 12px;
-  padding: 32px;
-  max-width: 889px;
-  line-height: 24px;
+
+  &::backdrop {
+    background-color: hsl(0deg 0% 0% / 50%);
+  }
+
+  @include media-tablet {
+    padding: 0 16px 16px 16px;
+  }
 
   @include media-tablet-large {
     max-width: revert;
-  }
-
-  &::backdrop {
-    background-color: hsla(0, 0%, 0%, 0.5);
   }
 }
 
@@ -39,13 +45,25 @@
 }
 
 .modal-close-wrapper {
+  position: sticky;
+  top: 0;
+
   display: flex;
   justify-content: flex-end;
+
+  padding: 24px 0 24px 0;
+
+  background-color: $color-white;
+
+  @include media-tablet {
+    padding: 12px 0 12px 0;
+  }
 }
 
 .modal-close-button {
-  display: flex;
   cursor: pointer;
+
+  display: flex;
 
   padding: 8px;
 

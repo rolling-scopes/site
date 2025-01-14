@@ -29,7 +29,6 @@ export const Modal = ({
   const prevFocusRef = useRef<HTMLElement | null>(null);
 
   const handleClose = useCallback(() => {
-    dialogRef.current?.close();
     onClose();
   }, [onClose]);
 
@@ -48,13 +47,17 @@ export const Modal = ({
     const body = document.body;
 
     if (isOpen) {
-      // body.style.overflow = 'hidden';
+      body.style.overflow = 'hidden';
     }
 
     return () => {
       body.style.overflow = 'unset';
     };
   }, [isOpen]);
+
+  if (!isOpen) {
+    return null;
+  }
 
   return createPortal(
     <dialog
@@ -63,17 +66,17 @@ export const Modal = ({
       onClose={handleClose}
       data-testid="modal-overlay"
     >
+      <div className={cx('modal-close-wrapper')}>
+        <button
+          className={cx('modal-close-button')}
+          onClick={handleClose}
+          data-testid="modal-close-button"
+        >
+          <Image src={closeIcon} alt="Close" />
+        </button>
+      </div>
       <div className={cx('modal-content')} data-testid="modal-content">
         <div className={cx('modal-header')} data-testid="modal-header">
-          <div className={cx('modal-close-wrapper')}>
-            <button
-              className={cx('modal-close-button')}
-              onClick={handleClose}
-              data-testid="modal-close-button"
-            >
-              <Image src={closeIcon} alt="Close" />
-            </button>
-          </div>
           {customHeader
             ? customHeader
             : title && (

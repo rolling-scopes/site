@@ -10,20 +10,24 @@
   border-radius: 12px;
   box-shadow: 0 4px 12px 0 rgb(0 0 0 / 10%);
 
+  @include media-tablet {
+    padding: 16px 16px 20px 16px;
+  }
+
   @include media-tablet-large {
     max-width: 100%;
   }
 }
 
 .card-picture {
+  display: block;
   width: 120px;
   height: 120px;
+  border-radius: 50%;
 
-  img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 50%;
+  @include media-tablet {
+    width: 80px;
+    height: 80px;
   }
 }
 
