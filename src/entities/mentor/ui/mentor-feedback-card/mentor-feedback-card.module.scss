@@ -16,10 +16,11 @@
 }
 
 .card-picture {
-  min-width: 120px;
-  min-height: 120px;
+  width: 120px;
+  height: 120px;
 
   img {
+    display: block;
     width: 100%;
     height: auto;
     border-radius: 50%;

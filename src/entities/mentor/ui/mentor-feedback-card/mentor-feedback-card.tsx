@@ -45,27 +45,29 @@ export const MentorFeedbackCard = ({ name, course, review, photo }: MentorFeedba
   );
 
   return (
-    <article className={cx('mentor-feedback-card')} data-testid="mentor-feedback-card">
-      {cardHeader}
-      <div className={cx('card-content-wrapper')} data-testid="card-content-wrapper">
-        <p className={cx('card-content')} data-testid="card-content">
-          {review}
-        </p>
-        {isLongReview && (
-          <button
-            className={cx('see-more-button')}
-            data-testid="see-more-button"
-            onClick={handleOpenModal}
-          >
-            See more
-          </button>
-        )}
-      </div>
+    <>
+      <article className={cx('mentor-feedback-card')} data-testid="mentor-feedback-card">
+        {cardHeader}
+        <div className={cx('card-content-wrapper')} data-testid="card-content-wrapper">
+          <p className={cx('card-content')} data-testid="card-content">
+            {review}
+          </p>
+          {isLongReview && (
+            <button
+              className={cx('see-more-button')}
+              data-testid="see-more-button"
+              onClick={handleOpenModal}
+            >
+              See more
+            </button>
+          )}
+        </div>
+      </article>
       <Modal isOpen={isModalOpen} onClose={handleCloseModal} customHeader={cardHeader}>
         <p style={{ whiteSpace: 'pre-line' }} data-testid="modal-review-content">
           {review}
         </p>
       </Modal>
-    </article>
+    </>
   );
 };
