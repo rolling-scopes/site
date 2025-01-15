@@ -33,7 +33,7 @@ export const MobileView = ({ type, courses, onClose }: MobileViewProps) => {
 
       <Divider color={color} />
 
-      <Link onClick={onClose} href={`/${ROUTES.HOME}`} className={cx('category-link', color)}>
+      <Link onClick={onClose} href={ROUTES.HOME} className={cx('category-link', color)}>
         RS School
       </Link>
 
