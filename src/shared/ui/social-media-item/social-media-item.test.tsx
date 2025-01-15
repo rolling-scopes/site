@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import { screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
+
 import { SocialMediaItem } from './social-media-item';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 

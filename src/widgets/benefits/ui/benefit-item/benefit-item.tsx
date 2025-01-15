@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+
 import { ImageLink } from 'data';
 
 import styles from './benefit-item.module.scss';

@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+
 import { Mentorship } from '@/views/mentorship';
 import { mentorshipCoursesDefault } from 'data';
 

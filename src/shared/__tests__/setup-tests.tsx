@@ -5,6 +5,7 @@ import * as matchers from '@testing-library/jest-dom/matchers';
 import { cleanup } from '@testing-library/react';
 import { StaticImageData } from 'next/image';
 import { afterEach, expect, vi } from 'vitest';
+
 import { mockedCourses } from '@/shared/__tests__/constants';
 
 expect.extend(matchers);

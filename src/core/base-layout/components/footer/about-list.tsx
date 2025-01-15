@@ -1,4 +1,5 @@
 import Link from 'next/link';
+
 import { ANCHORS, ROUTES } from '@/core/const';
 import { Logo } from '@/shared/ui/logo';
 

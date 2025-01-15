@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import Link from 'next/link';
+
 import { ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
 import { Logo } from '@/shared/ui/logo';

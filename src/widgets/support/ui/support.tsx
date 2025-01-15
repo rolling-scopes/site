@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+
 import { LINKS } from '@/core/const';
 import image from '@/shared/assets/support.webp';
 import { LinkCustom } from '@/shared/ui/link-custom';

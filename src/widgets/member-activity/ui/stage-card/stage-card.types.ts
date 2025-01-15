@@ -1,4 +1,5 @@
 import { StaticImageData } from 'next/image';
+
 import type { ListData, ListType } from '@/shared/types';
 
 export interface Stage {
