@@ -96,3 +96,13 @@
   background: none;
   border: none;
 }
+
+.modal {
+  .card-content {
+    -webkit-line-clamp: revert;
+  }
+
+  .see-more-button {
+    display: none;
+  }
+}

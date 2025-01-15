@@ -68,7 +68,7 @@ export const MentorFeedbackCard = ({ name, course, review, photo }: MentorFeedba
       <article className={cx('card-wrapper')} data-testid="mentor-feedback-card">
         {card}
       </article>
-      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal} className={cx('modal')}>
         {card}
       </Modal>
     </>
