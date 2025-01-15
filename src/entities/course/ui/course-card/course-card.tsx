@@ -40,7 +40,7 @@ export const CourseCard = ({
 
   return (
     <article className={cx('course-card')} data-testid="course-card">
-      <div className={cx('card-header')} style={cardStyle}>
+      <div className={cx('card-header')} style={cardStyle} data-testid="card-header">
         <Image src={iconSrc} alt={title} />
         <Subtitle fontSize="small">{title}</Subtitle>
       </div>

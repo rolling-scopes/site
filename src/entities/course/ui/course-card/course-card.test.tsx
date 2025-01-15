@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
-import { CourseCard, type CourseCardProps, cx } from './course-card';
+import { CourseCard, type CourseCardProps } from './course-card';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { dayJS } from '@/shared/helpers/dayJS';
@@ -41,14 +41,12 @@ describe('CourseCard', () => {
   });
 
   it('renders the course card colors correctly', () => {
-    const cardHeader = card.querySelector('.card-header');
+    const cardHeader = screen.getByTestId('card-header');
 
-    if (cardHeader) {
-      const accentBlock = getComputedStyle(cardHeader, '::after');
-
-      expect(cardHeader).toHaveClass(cx('card-header'));
-      expect(cardHeader).toHaveStyle({ backgroundColor: mockProps.backgroundStyle.backgroundColor });
-      expect(accentBlock).toHaveStyle({ backgroundColor: mockProps.backgroundStyle.accentColor });
-    }
+    expect(cardHeader).toHaveClass('card-header');
+    expect(cardHeader).toHaveStyle({
+      backgroundColor: mockProps.backgroundStyle.backgroundColor,
+      '--accent-bg-color': mockProps.backgroundStyle.accentColor,
+    });
   });
 });

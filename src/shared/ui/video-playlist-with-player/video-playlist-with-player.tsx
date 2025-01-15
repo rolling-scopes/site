@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames/bind';
 import { Playlist } from './playlist';
-import { Video } from '@/shared/types';
+import type { Video } from '@/shared/types';
 import { VideoPlayer } from '@/shared/ui/video-player';
 
 import styles from './video-playlist-with-player.module.scss';
@@ -82,21 +82,21 @@ export const VideoPlaylistWithPlayer = ({ playlistId, apiKey }: VideoPlaylistWit
   };
 
   if (isLoading) {
-    return <p>Loading videos...</p>;
+    return <p data-testid="loading-message">Loading videos...</p>;
   }
 
   if (error) {
-    return <p>{`Error: ${error}`}</p>;
+    return <p data-testid="error-message">{`Error: ${error}`}</p>;
   }
 
   if (!selectedVideo) {
-    return <p>No videos available.</p>;
+    return <p data-testid="no-videos-message">No videos available.</p>;
   }
 
   return (
-    <div className={cx('video-player-container')}>
-      <div className={cx('main-video-area')} ref={videoPlayerRef}>
-        <VideoPlayer videoId={selectedVideo.id} className={cx('video-player')} />
+    <div className={cx('video-player-container')} data-testid="video-playlist-container">
+      <div className={cx('main-video-area')} ref={videoPlayerRef} data-testid="main-video-area">
+        <VideoPlayer videoId={selectedVideo.id} className={cx('video-player')} data-testid="video-player" />
       </div>
       <Playlist
         title="Video Feedbacks"
@@ -104,6 +104,7 @@ export const VideoPlaylistWithPlayer = ({ playlistId, apiKey }: VideoPlaylistWit
         onSelectVideo={handleSelectVideo}
         selectedVideoId={selectedVideo.id}
         style={{ maxHeight: playlistHeight }}
+        data-testid="playlist"
       />
     </div>
   );
