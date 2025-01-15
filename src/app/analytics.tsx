@@ -6,14 +6,21 @@ import { usePathname } from 'next/navigation';
 
 export const Analytics = () => {
   const pathname = usePathname();
+  const isRunningInProd = process.env.NODE_ENV === 'production';
 
   useEffect(() => {
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: 'page_view',
-      page: pathname,
-    });
-  }, [pathname]);
+    if (!isRunningInProd) {
+      window.dataLayer.push({
+        event: 'page_view',
+        page: pathname,
+      });
+    }
+  }, [isRunningInProd, pathname]);
+
+  if (!isRunningInProd) {
+    return null;
+  }
 
   return (
     <GoogleAnalytics gaId="G-THXM004SPR" />
