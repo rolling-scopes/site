@@ -18,9 +18,9 @@ type ModalProps = {
 
 export const Modal = ({ isOpen, onClose, children, title, className }: ModalProps) => {
   const dialogRef = useRef<HTMLDialogElement | null>(null);
-  const prevFocusRef = useRef<HTMLElement | null>(null);
 
   const handleClose = useCallback(() => {
+    dialogRef.current?.close();
     onClose();
   }, [onClose]);
 
@@ -28,8 +28,6 @@ export const Modal = ({ isOpen, onClose, children, title, className }: ModalProp
     const dialog = dialogRef.current;
 
     if (isOpen && dialog) {
-      prevFocusRef.current = document.activeElement as HTMLElement;
-
       dialog.showModal();
       dialog.focus();
     }

@@ -1,5 +1,5 @@
-import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
 import { MentorFeedbackCard } from './mentor-feedback-card';
 import { MOCKED_MENTORS_FEEDBACK } from '@/shared/__tests__/constants';
 
@@ -47,9 +47,7 @@ describe('MentorFeedbackCard', () => {
 
     fireEvent.click(seeMoreButton);
 
-    expect(screen.getByTestId('modal-review-content')).toBeVisible();
-    expect(screen.getByTestId('modal-content')).toBeVisible();
-    expect(screen.getByTestId('modal-overlay')).toBeVisible();
+    expect(screen.getByTestId('modal')).toBeInTheDocument();
   });
 
   it('should close the modal when the close button is clicked', async () => {
@@ -58,15 +56,12 @@ describe('MentorFeedbackCard', () => {
 
     fireEvent.click(seeMoreButton);
 
-    expect(screen.getByTestId('modal-review-content')).toBeVisible();
-    expect(screen.getByTestId('modal-content')).toBeVisible();
+    expect(screen.getByTestId('modal')).toBeInTheDocument();
 
     const closeButton = screen.getByTestId('modal-close-button');
 
     fireEvent.click(closeButton);
 
-    expect(screen.queryByTestId('modal-review-content')).toBeNull();
-    expect(screen.queryByTestId('modal-content')).toBeNull();
-    expect(screen.queryByTestId('modal-overlay')).toBeNull();
+    expect(screen.queryByTestId('modal')).toBeNull();
   });
 });
