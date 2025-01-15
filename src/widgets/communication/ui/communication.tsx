@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 import discordLogo from '@/shared/assets/svg/discord-logo.svg';
+import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
@@ -22,10 +23,11 @@ const cx = classNames.bind(styles);
 
 type CommunicationProps = {
   courseName: CourseNamesKeys;
-  lang?: 'ru' | 'en';
 };
 
-export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) => {
+export const Communication = async ({ courseName }: CommunicationProps) => {
+  const course = await selectCourse(courseName);
+  const { language } = course;
   const {
     title,
     subTitle,
@@ -43,7 +45,7 @@ export const Communication = ({ courseName, lang = 'en' }: CommunicationProps) =
     rsDocsLink,
     thirdParagraphSecondHalf,
     discordNote,
-  } = communicationText[lang];
+  } = communicationText[language];
 
   const isJsEnCourse = courseName === COURSE_TITLES.JS_EN;
   const courseSubTitle = isJsEnCourse ? subTitleJs : subTitle;

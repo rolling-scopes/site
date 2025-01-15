@@ -1,25 +1,29 @@
 import { cloneElement } from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
-import type { Course } from '@/entities/course';
-import { Language } from '@/shared/types';
+import { isTrainingProgramType } from '@/shared/helpers/is-training-program';
+import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { TrainingProgramType, contentMap, trainingProgramLink } from 'data';
+import { CourseNamesKeys, contentMap, trainingProgramLink } from 'data';
 
 import styles from './training-program.module.scss';
 
 const cx = classNames.bind(styles);
 
 type TrainingProgramProps = {
-  courseName: TrainingProgramType;
-  lang?: Language;
-  course: Course;
+  courseName: CourseNamesKeys;
+  specify?: string;
 };
 
-export const TrainingProgram = ({ courseName, lang = 'en', course }: TrainingProgramProps) => {
-  const { title, content, image } = contentMap[courseName];
+export const TrainingProgram = async ({ courseName, specify = '' }: TrainingProgramProps) => {
+  const course = await selectCourse(courseName);
+  const { language } = course;
+  const programName = specify ? `${courseName} ${specify}` : courseName;
+  let contentName = isTrainingProgramType(programName) ? programName : courseName;
   const isCourseWithBadge = courseName.includes('badge');
+
+  const { title, content, image } = contentMap[contentName];
 
   return (
     <section className={cx('training-program', 'container')}>
@@ -31,7 +35,7 @@ export const TrainingProgram = ({ courseName, lang = 'en', course }: TrainingPro
 
           {course && (
             <LinkCustom href={course?.enroll} variant="primary" external>
-              {trainingProgramLink[lang].linkLabel}
+              {trainingProgramLink[language].linkLabel}
             </LinkCustom>
           )}
         </article>

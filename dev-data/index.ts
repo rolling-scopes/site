@@ -5,16 +5,17 @@ export type {
   DataMap,
   JSPath,
 } from './courses-data.types';
-export type { CourseTitle,
+export type {
+  CourseTitle,
   ImageLink,
   MentorActivities,
   MentorshipCourse,
   MentorshipCourseRouteKeys,
   MentorshipDefaultRouteKeys,
-  MentorshipRoute } from './mentorship-data.types';
-export { type Benefit } from './benefit-mentorship.data';
-export { COURSE_TITLES, type CourseNames, type CourseNamesKeys, type CoursesWithRequirementsNames, DISCORD_LINKS, type TrainingProgramType } from './courseTitles.data';
+  MentorshipRoute,
+} from './mentorship-data.types';
 export {
+  ANNOUNCEMENT_TELEGRAM_LINK,
   type CourseNamesChannels,
   JS_EN_TELEGRAM_CHAT_LINK,
   MENTOR_ONBOARD_TELEGRAM_EN,
@@ -23,6 +24,16 @@ export {
   RS_DOCS_EN_LINK,
   RS_DOCS_TELEGRAM_CHATS_LINK,
 } from './communication.data';
+export {
+  AWS_FUNDAMENTALS_BADGE,
+  COURSE_TITLES,
+  type CourseNames,
+  type CourseNamesKeys,
+  type CoursesWithRequirementsNames,
+  DISCORD_LINKS,
+  type TrainingProgramType,
+} from './courseTitles.data';
+export { type Benefit } from './benefit-mentorship.data';
 export { aboutMentorsData } from './about-mentors.data';
 export { angular } from './angular.data';
 export { angularPath } from './angular-path.data';
@@ -43,6 +54,7 @@ export { courses } from './courses.data';
 export { coursesPath } from './courses-path.data';
 export { events } from './events.data';
 export { faqData } from './faq.data';
+export { generalMaterials } from './general.data';
 export { heroPageData } from './hero-page.data';
 export { javaScriptEn } from './javascript-en.data';
 export { javaScriptRu } from './javascript-ru.data';

@@ -1,30 +1,35 @@
 import { cleanup, screen } from '@testing-library/react';
 import { Communication } from './communication';
+import { mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { DISCORD_LINKS, communicationText } from 'data';
+import { COURSE_TITLES, DISCORD_LINKS, communicationText } from 'data';
+
+const mockLangVariants = [
+  {
+    course: COURSE_TITLES.ANGULAR,
+    texts: communicationText.en,
+  },
+  {
+    course: COURSE_TITLES.JS_PRESCHOOL_RU,
+    texts: communicationText.ru,
+  },
+];
+
+const mockCourseVariants = mockedCourses.map((course) => {
+  return {
+    course,
+    link: DISCORD_LINKS[course.title],
+  };
+});
 
 describe('Communication section', () => {
-  it.each([
-    {
-      languageProp: undefined,
-      texts: communicationText.en,
-    },
-    {
-      languageProp: 'en',
-      texts: communicationText.en,
-    },
-    {
-      languageProp: 'ru',
-      texts: communicationText.ru,
-    },
-  ])(
-    'should render component correctly with $languageProp language prop',
-    ({ languageProp, texts }) => {
-      const firstCourse = Object.keys(DISCORD_LINKS)[0] as keyof typeof DISCORD_LINKS;
-
+  it.each(mockLangVariants)(
+    'should render component correctly with $course.title language prop',
+    async ({ course, texts }) => {
       const { title, subTitle, firstParagraphFirstHalf, discordLink } = texts;
+      const widget = await Communication({ courseName: course });
 
-      renderWithRouter(<Communication courseName={firstCourse} lang={languageProp as 'en' | 'ru' | undefined} />);
+      renderWithRouter(widget);
       const titleElement = screen.getByText(title);
       const subtitleElement = screen.getByText(subTitle);
       const firstParagraphElement = screen.getByText(`${firstParagraphFirstHalf}`, { exact: false });
@@ -34,20 +39,19 @@ describe('Communication section', () => {
       expect(subtitleElement).toBeVisible();
       expect(firstParagraphElement).toBeVisible();
       expect(linkElement).toBeVisible();
-      expect(linkElement.getAttribute('href')).toMatch(DISCORD_LINKS[firstCourse]);
+      expect(linkElement.getAttribute('href')).toMatch(DISCORD_LINKS[course]);
       cleanup();
     },
   );
 
-  it.each(Object.entries(DISCORD_LINKS))(
-    'should render correct link of %s course',
-    (courseName, link) => {
-      renderWithRouter(<Communication courseName={courseName as keyof typeof DISCORD_LINKS} />);
-      const linkElement = screen.getByTestId('discord-link');
+  it.each(mockCourseVariants)('should render correct link of $course.title', async (variant) => {
+    const widget = await Communication({ courseName: variant.course.title });
 
-      expect(linkElement).toBeVisible();
-      expect(linkElement.getAttribute('href')).toMatch(link);
-      cleanup();
-    },
-  );
+    renderWithRouter(widget);
+    const linkElement = screen.getByTestId('discord-link');
+
+    expect(linkElement).toBeVisible();
+    expect(linkElement.getAttribute('href')).toBe(variant.link);
+    cleanup();
+  });
 });

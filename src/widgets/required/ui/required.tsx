@@ -45,13 +45,13 @@ export const Required = ({ courseName }: RequiredProps) => {
           <div className="will-learn">
             {isWillLearnExist
               ? willLearn.map((willLearn, index) => {
-                return (
-                  <article key={index}>
-                    <Subtitle fontSize="extra-small">{willLearn.title}</Subtitle>
-                    <List data={willLearn.description} />
-                  </article>
-                );
-              })
+                  return (
+                    <article key={index}>
+                      <Subtitle fontSize="extra-small">{willLearn.title}</Subtitle>
+                      <List data={willLearn.description} />
+                    </article>
+                  );
+                })
               : ''}
           </div>
         </div>
