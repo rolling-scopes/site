@@ -23,7 +23,7 @@ export const MentorsRegister = ({ lang = 'en' }: MentorsRegisterProps) => {
   const isCommonMentorship = true;
 
   return (
-    <section className={cx('container')}>
+    <section className={cx('container', 'mentoring-register-section')}>
       <article className={cx('content', 'mentors-register-wrapper')}>
         <div className={cx('mentoring-register')}>
           <WidgetTitle>{mentorsRegisterData[lang].header}</WidgetTitle>

@@ -1,6 +1,11 @@
+.mentoring-register-section {
+  background: linear-gradient(87.93deg, #9be1ff 0.89%, #46c4fa 99.11%);
+}
+
 .mentoring-register {
   display: flex;
   flex-direction: column;
+  max-width: 680px;
 
   @include media-laptop-medium {
     flex-direction: column;
