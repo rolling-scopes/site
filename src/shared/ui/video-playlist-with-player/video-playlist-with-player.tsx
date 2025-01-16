@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames/bind';
+
 import { Playlist } from './playlist';
 import type { Video } from '@/shared/types';
 import { VideoPlayer } from '@/shared/ui/video-player';

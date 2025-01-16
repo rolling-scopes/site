@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
+
 import { Playlist } from './playlist';
 import { MOCKED_VIDEOS } from '@/shared/__tests__/constants';
 

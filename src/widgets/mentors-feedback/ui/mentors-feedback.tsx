@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+
 import { VideoPlaylistWithPlayer } from '@/shared/ui/video-playlist-with-player';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 

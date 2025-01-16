@@ -1,5 +1,6 @@
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
+
 import { VideoPlaylistWithPlayer } from './video-playlist-with-player';
 import { MOCKED_VIDEOS } from '@/shared/__tests__/constants';
 import { VideoPlayer } from '@/shared/ui/video-player';
@@ -83,8 +84,8 @@ describe('VideoPlaylistWithPlayer Component', () => {
       expect(VideoPlayer).toHaveBeenNthCalledWith(
         1,
         {
-          videoId: '1',
-          className: 'video-player',
+          'videoId': '1',
+          'className': 'video-player',
           'data-testid': 'video-player',
         },
         undefined,
@@ -92,8 +93,8 @@ describe('VideoPlaylistWithPlayer Component', () => {
       expect(VideoPlayer).toHaveBeenNthCalledWith(
         2,
         {
-          videoId: '2',
-          className: 'video-player',
+          'videoId': '2',
+          'className': 'video-player',
           'data-testid': 'video-player',
         },
         undefined,

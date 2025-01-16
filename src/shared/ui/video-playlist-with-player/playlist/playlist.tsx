@@ -1,5 +1,6 @@
 import React, { CSSProperties } from 'react';
 import classNames from 'classnames/bind';
+
 import type { Video } from '@/shared/types';
 
 import styles from './playlist.module.scss';
