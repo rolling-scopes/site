@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
+
 import { Places } from '@/widgets/places';
 import { places } from '@/widgets/places/constants';
 

@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
+
 import { Support } from './support';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import supportImg from '@/shared/assets/support.webp';

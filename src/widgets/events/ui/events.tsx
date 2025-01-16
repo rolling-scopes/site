@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import dayjs from 'dayjs';
 import Image from 'next/image';
+
 import { EventCard } from '@/entities/event';
 import photo3 from '@/shared/assets/photo-3.webp';
 import { Paragraph } from '@/shared/ui/paragraph';

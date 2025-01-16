@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+
 import { DocDetail } from '../doc-detail';
 import mentorImg from '@/shared/assets/mentor-with-his-students.webp';
 import { Language } from '@/shared/types';

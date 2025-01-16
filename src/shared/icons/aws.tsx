@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import aws from '@/shared/assets/svg/aws.svg';
 
 export const AwsLogo = () => {

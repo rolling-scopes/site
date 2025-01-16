@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+
 import { List } from '@/shared/ui/list';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';

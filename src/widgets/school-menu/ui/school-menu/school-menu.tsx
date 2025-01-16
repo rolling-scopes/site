@@ -1,5 +1,6 @@
 import { HTMLProps, PropsWithChildren } from 'react';
 import classNames from 'classnames/bind';
+
 import { Color } from '@/widgets/school-menu/types';
 import { SchoolItem } from '@/widgets/school-menu/ui/school-item/school-item';
 

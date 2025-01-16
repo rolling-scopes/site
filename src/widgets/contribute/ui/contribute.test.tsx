@@ -1,5 +1,6 @@
 import { screen, within } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
+
 import { Contribute } from './contribute';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import contributeImage from '@/shared/assets/contribute.webp';

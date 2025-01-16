@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+
 import { Trainer } from '../../types';
 
 import styles from './trainer-card.module.scss';

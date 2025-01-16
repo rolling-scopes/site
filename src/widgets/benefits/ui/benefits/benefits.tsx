@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { shortBenefitMaxChars } from '@/widgets/benefits/constants';
 import { BenefitsProps } from '@/widgets/benefits/types';

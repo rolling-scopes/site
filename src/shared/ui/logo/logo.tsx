@@ -3,6 +3,7 @@ import { type VariantProps, cva } from 'class-variance-authority';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 import Link from 'next/link';
+
 import { ROUTES } from '@/core/const';
 import logo from '@/shared/assets/svg/rss-logo.svg';
 

@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/react';
+
 import { HeroCourse } from './hero-course';
 import { MOCKED_IMAGE_PATH, mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';

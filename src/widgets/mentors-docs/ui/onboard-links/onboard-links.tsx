@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+
 import { SocialMediaItem, SocialMediaProps } from '@/shared/ui/social-media-item';
 
 import styles from './onboard-links.module.scss';

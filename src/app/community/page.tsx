@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+
 import Community from '@/views/community';
 
 export async function generateMetadata(): Promise<Metadata> {

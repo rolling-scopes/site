@@ -1,4 +1,5 @@
 import { StaticImageData } from 'next/image';
+
 import { COURSE_TITLES } from './courseTitles.data';
 import { ROUTES } from '@/core/const';
 import { Language } from '@/shared/types';
