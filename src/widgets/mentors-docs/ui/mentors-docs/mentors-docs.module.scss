@@ -10,7 +10,6 @@
 .docs {
   display: flex;
   flex-direction: column;
-  max-width: 60%;
   text-align: left;
 
   @include media-tablet {
