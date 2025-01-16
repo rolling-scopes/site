@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+
 import { getCourseTitle } from '@/shared/helpers/get-course-title';
 import { Angular } from '@/views/angular';
 import { COURSE_TITLES } from 'data';

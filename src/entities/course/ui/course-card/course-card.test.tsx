@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
+
 import { CourseCard, type CourseCardProps } from './course-card';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
@@ -45,7 +46,7 @@ describe('CourseCard', () => {
 
     expect(cardHeader).toHaveClass('card-header');
     expect(cardHeader).toHaveStyle({
-      backgroundColor: mockProps.backgroundStyle.backgroundColor,
+      'backgroundColor': mockProps.backgroundStyle.backgroundColor,
       '--accent-bg-color': mockProps.backgroundStyle.accentColor,
     });
   });

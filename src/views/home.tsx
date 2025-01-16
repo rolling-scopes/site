@@ -1,4 +1,5 @@
 import { FC } from 'react';
+
 import { PAGE_NAMES } from '@/shared/constants';
 import { AboutSchool } from '@/widgets/about-school';
 import { Alumni } from '@/widgets/alumni';

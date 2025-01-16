@@ -1,4 +1,5 @@
 import classnames from 'classnames/bind';
+
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import type { PrincipleCard as TPrincipleCard } from '@/widgets/principles';

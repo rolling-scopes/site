@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+
 import { RS_INTRO_URL } from '@/shared/constants';
 import { Language } from '@/shared/types';
 import { WidgetTitle } from '@/shared/ui/widget-title';
