@@ -21,7 +21,7 @@ export const heroPageData = {
     imageAltText: '',
   },
   mentorship: {
-    mainTitle: 'RS Mentorship',
+    mainTitle: 'Mentorship',
     widgetTitle: '"Teach It Forward"',
     subTitle: ['By teaching others, you learn yourself'],
     imageAltText: '',
