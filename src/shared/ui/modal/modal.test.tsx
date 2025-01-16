@@ -77,6 +77,21 @@ describe('Modal Component', () => {
     expect(screen.queryByTestId('modal')).toBeNull();
   });
 
+  it('should close the modal when the overlay is clicked', async () => {
+    renderModal();
+
+    const modal = screen.getByTestId('modal');
+
+    fireEvent.mouseDown(modal, {
+      clientX: 0,
+      clientY: 100,
+    });
+
+    expect(HTMLDialogElement.prototype.close).toHaveBeenCalledTimes(1);
+    expect(onCloseMock).toHaveBeenCalledTimes(1);
+    expect(screen.queryByTestId('modal-content')).toBeNull();
+  });
+
   it('should apply custom className to the modal', () => {
     const className = 'custom-class';
 

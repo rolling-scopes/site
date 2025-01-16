@@ -24,6 +24,35 @@ export const Modal = ({ isOpen, onClose, children, title, className }: ModalProp
     onClose();
   }, [onClose]);
 
+  const handleMouseDown = useCallback(
+    (event: MouseEvent) => {
+      if (event.target !== dialogRef.current) {
+        return;
+      }
+
+      const rect = (event.target as HTMLElement).getBoundingClientRect();
+
+      const clickedInDialog =
+        rect.top <= event.clientY
+        && event.clientY <= rect.top + rect.height
+        && rect.left <= event.clientX
+        && event.clientX <= rect.left + rect.width;
+
+      if (!clickedInDialog) {
+        handleClose();
+      }
+    },
+    [handleClose],
+  );
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleMouseDown);
+
+    return () => {
+      document.removeEventListener('mousedown', handleMouseDown);
+    };
+  }, []);
+
   useEffect(() => {
     const dialog = dialogRef.current;
 
