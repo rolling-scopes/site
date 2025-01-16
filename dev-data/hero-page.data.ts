@@ -22,7 +22,7 @@ export const heroPageData = {
   },
   mentorship: {
     mainTitle: 'Mentorship',
-    widgetTitle: '"Teach It Forward"',
+    widgetTitle: '',
     subTitle: ['By teaching others, you learn yourself'],
     imageAltText: '',
   },
