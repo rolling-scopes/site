@@ -29,7 +29,7 @@ const subtitleVariants = cva(cx('subtitle'), {
   },
 });
 
-export const Subtitle = ({ children, fontSize, color, className }: SubtitleProps) => {
+export const Subtitle = ({ children, fontSize, color, className, ...props }: SubtitleProps) => {
   return (
     <h3
       className={subtitleVariants({
@@ -38,6 +38,7 @@ export const Subtitle = ({ children, fontSize, color, className }: SubtitleProps
         className,
       })}
       data-testid="subtitle"
+      {...props}
     >
       {children}
     </h3>
