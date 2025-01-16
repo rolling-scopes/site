@@ -15,6 +15,16 @@
       width: fit-content;
       text-align: left;
 
+      .title-main {
+        @include media-tablet {
+          font-size: 80px;
+        }
+
+        @include media-mobile-landscape {
+          font-size: 40px;
+        }
+      }
+
       .subtitle-container {
         display: flex;
         flex-direction: row;
