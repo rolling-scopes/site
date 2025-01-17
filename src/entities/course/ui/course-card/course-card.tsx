@@ -20,7 +20,7 @@ export type CourseCardProps = Pick<
   | 'language'
   | 'backgroundStyle'
   | 'registrationEndDate'
-> & HTMLProps<HTMLDivElement>;
+> & Pick<HTMLProps<HTMLDivElement>, 'className'>;
 
 export const CourseCard = ({
   title,
