@@ -4,8 +4,8 @@ import { AboutSchool } from '@/widgets/about-school';
 import { Alumni } from '@/widgets/alumni';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { HeroPage } from '@/widgets/hero-page';
+import { MentorsWanted } from '@/widgets/mentors-wanted';
 import { Principles } from '@/widgets/principles';
-import { Requirements } from '@/widgets/requirements';
 import { StudyWithUs } from '@/widgets/study-with-us';
 import { UpcomingCourses } from '@/widgets/upcoming-courses';
 
@@ -19,7 +19,7 @@ export const Home: FC = () => {
       <StudyWithUs />
       <UpcomingCourses />
       <Alumni />
-      <Requirements />
+      <MentorsWanted />
     </>
   );
 };
