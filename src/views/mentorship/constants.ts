@@ -1,6 +1,5 @@
-import { MentorshipCourseTitles, MentorshipLinks } from '../../../dev-data/mentorship-data.types';
 import { ROUTES } from '@/core/const';
-import { COURSE_TITLES } from 'data';
+import { COURSE_TITLES, MentorshipCourseTitles, MentorshipLinks } from 'data';
 
 export const mentorshipCourseTitles: MentorshipCourseTitles[] = [
   COURSE_TITLES.JS_RU,
