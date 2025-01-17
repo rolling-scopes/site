@@ -10,7 +10,7 @@ import styles from './mentorship-courses.module.scss';
 
 const cx = classNames.bind(styles);
 
-const MentorshipCourses = async () => {
+export const MentorshipCourses = async () => {
   const coursesWithMentorship = transformCoursesToMentorship(await getCourses());
 
   return (
@@ -26,5 +26,3 @@ const MentorshipCourses = async () => {
     </section>
   );
 };
-
-export default MentorshipCourses;

@@ -1,4 +1,4 @@
-import MentorshipCourses from './ui/mentorship-courses/mentorship-courses';
+import { MentorshipCourses } from './ui/mentorship-courses/mentorship-courses';
 import { PAGE_NAMES } from '@/shared/constants';
 import { AboutMentors } from '@/widgets/about-mentors';
 import { Benefits } from '@/widgets/benefits';
