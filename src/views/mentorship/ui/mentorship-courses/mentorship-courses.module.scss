@@ -10,5 +10,9 @@
     .course-card {
       width: 100%;
     }
+
+    @include media-tablet {
+      grid-template-columns: 1fr;
+    }
   }
 }
