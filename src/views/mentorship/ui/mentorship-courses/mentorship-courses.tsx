@@ -14,7 +14,7 @@ export const MentorshipCourses = async () => {
   const coursesWithMentorship = transformCoursesToMentorship(await getCourses());
 
   return (
-    <section className={cx('container', 'mentorship-courses')}>
+    <section className={cx('mentorship-courses', 'container')}>
       <div className={cx('content')}>
         <WidgetTitle>Courses That Need Mentors</WidgetTitle>
         <div className={cx('courses-list')}>
