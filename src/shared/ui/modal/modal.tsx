@@ -51,7 +51,7 @@ export const Modal = ({ isOpen, onClose, children, title, className }: ModalProp
     return () => {
       document.removeEventListener('mousedown', handleMouseDown);
     };
-  }, []);
+  }, [handleMouseDown]);
 
   useEffect(() => {
     const dialog = dialogRef.current;
