@@ -95,7 +95,7 @@ export const VideoPlaylistWithPlayer = ({ playlistId, apiKey }: VideoPlaylistWit
   }
 
   return (
-    <div className={cx('video-player-container')} data-testid="video-playlist-container">
+    <div className={cx('video-player-container', 'hide-in-percy')} data-testid="video-playlist-container">
       <div className={cx('main-video-area')} ref={videoPlayerRef} data-testid="main-video-area">
         <VideoPlayer videoId={selectedVideo.id} className={cx('video-player')} data-testid="video-player" />
       </div>
