@@ -21,7 +21,7 @@ export const VideoPlaylistWithPlayer = ({ playlistId, apiKey }: VideoPlaylistWit
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [playlistHeight, setPlaylistHeight] = useState(675);
+  const [playlistHeight, setPlaylistHeight] = useState(513);
   const videoPlayerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

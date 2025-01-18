@@ -9,6 +9,10 @@ type VideoPlayerProps = YouTubeProps;
 
 export const cx = classNames.bind(styles);
 
-export const VideoPlayer = (props: VideoPlayerProps) => {
-  return <YouTube {...props} />;
+export const VideoPlayer = ({ className, ...props }: VideoPlayerProps) => {
+  return (
+    <div className={cx('video-player-container')}>
+      <YouTube className={cx('video-player', className)} {...props} />
+    </div>
+  );
 };

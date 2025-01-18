@@ -131,7 +131,7 @@ describe('VideoPlaylistWithPlayer Component', () => {
 
     const playlistContainer = screen.getByTestId('playlist');
 
-    expect(playlistContainer).toHaveStyle({ maxHeight: '675px' });
+    expect(playlistContainer).toHaveStyle({ maxHeight: '513px' });
 
     act(() => {
       window.dispatchEvent(new Event('resize'));

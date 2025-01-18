@@ -1,6 +1,5 @@
 .playlist {
   display: flex;
-  flex: 1;
   flex-direction: column;
   gap: 8px;
 }
@@ -24,6 +23,7 @@
   margin: 0;
   font-size: 24px;
   line-height: 32px;
+  text-align: center;
 }
 
 .playlist-item {
@@ -87,6 +87,7 @@
   width: 100%;
   height: 100%;
 
+  font-size: 14px;
   font-weight: $font-weight-bold;
   color: $color-white;
 

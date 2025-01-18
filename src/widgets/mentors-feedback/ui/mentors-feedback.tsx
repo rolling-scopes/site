@@ -12,9 +12,10 @@ export const MentorsFeedback = () => {
     <section className={cx('container')} data-testid="mentors-feedback">
       <div className={cx('content')}>
         <WidgetTitle mods="asterisk">Mentors’ Feedback</WidgetTitle>
-        <div className={cx('video-wrapper')}>
-          <VideoPlaylistWithPlayer apiKey={process.env.YOUTUBE_API_KEY} playlistId="PLzLiprpVuH8f7Jg8pgZUCeTN-Q6uVZNhg" />
-        </div>
+        <VideoPlaylistWithPlayer
+          apiKey={process.env.YOUTUBE_API_KEY}
+          playlistId="PLzLiprpVuH8f7Jg8pgZUCeTN-Q6uVZNhg"
+        />
       </div>
     </section>
   );
