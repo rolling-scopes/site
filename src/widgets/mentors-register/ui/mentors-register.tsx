@@ -1,7 +1,6 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 import mentorImg from '@/shared/assets/mentor-register.svg';
-// import { ROUTES } from '@/core/const';
 import { Language } from '@/shared/types';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -18,13 +17,11 @@ type MentorsRegisterProps = {
 };
 
 export const MentorsRegister = ({ lang = 'en' }: MentorsRegisterProps) => {
-  // const { pathname } = useLocation();
-  // const isCommonMentorship = pathname === `/${ROUTES.MENTORSHIP}`;
   const isCommonMentorship = true;
 
   return (
     <section className={cx('container', 'mentoring-register-section')}>
-      <article className={cx('content', 'mentors-register-wrapper')}>
+      <article className={cx('content', 'column-2')}>
         <div className={cx('mentoring-register')}>
           <WidgetTitle>{mentorsRegisterData[lang].header}</WidgetTitle>
           <Paragraph>{mentorsRegisterData[lang].noteBefore}</Paragraph>

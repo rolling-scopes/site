@@ -1,11 +1,15 @@
-.mentoring-register-section {
-  background: linear-gradient(87.93deg, #9be1ff 0.89%, #46c4fa 99.11%);
-}
-
 .mentoring-register {
   display: flex;
   flex-direction: column;
   max-width: 680px;
+
+  &-section {
+    background: $color-mentorship-register-background;
+  }
+
+  @include media-tablet {
+    flex-direction: column;
+  }
 
   @include media-laptop-medium {
     flex-direction: column;
@@ -21,24 +25,9 @@
   margin-top: 40px;
 }
 
-.note {
-  margin-bottom: 18px;
-}
-
-.mentors-register-wrapper {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  justify-content: space-between;
-
-  @include media-tablet {
-    flex-direction: column;
-  }
-}
-
 .picture-wrapper {
   align-self: center;
-  max-width: 427px;
+  max-width: 424px;
 }
 
 .picture {
