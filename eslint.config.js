@@ -1,13 +1,13 @@
 import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
+import vitest from '@vitest/eslint-plugin';
 import importPlugin from 'eslint-plugin-import';
 import importNewlines from 'eslint-plugin-import-newlines';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import sortExports from 'eslint-plugin-sort-exports';
-import vitest from 'eslint-plugin-vitest';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
