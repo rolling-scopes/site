@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { Mentorship } from '@/views/mentorship';
+import { Mentorship } from '@/views/mentorship/mentorship';
 import { mentorshipCoursesDefault } from 'data';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -9,5 +9,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function MentorshipRoute() {
-  return <Mentorship mentorshipData={mentorshipCoursesDefault} />;
+  return <Mentorship courses mentorshipData={mentorshipCoursesDefault} />;
 }

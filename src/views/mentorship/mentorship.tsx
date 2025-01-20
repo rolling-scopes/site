@@ -1,3 +1,4 @@
+import { MentorshipCourses } from './ui/mentorship-courses/mentorship-courses';
 import { PAGE_NAMES } from '@/shared/constants';
 import { AboutMentors } from '@/widgets/about-mentors';
 import { Benefits } from '@/widgets/benefits';
@@ -12,9 +13,10 @@ const studyPathName = 'mentorship';
 
 type MentorshipProps = {
   mentorshipData: MentorshipCourse;
+  courses?: boolean;
 };
 
-export const Mentorship = ({ mentorshipData }: MentorshipProps) => {
+export const Mentorship = ({ mentorshipData, courses = false }: MentorshipProps) => {
   return (
     <>
       <HeroPage pageName={PAGE_NAMES.MENTORSHIP} />
@@ -30,6 +32,7 @@ export const Mentorship = ({ mentorshipData }: MentorshipProps) => {
         activities={mentorshipData.activities}
         lang={mentorshipData.lang}
       />
+      {courses && <MentorshipCourses />}
       <MentorsRegister lang={mentorshipData.lang} />
       <MentorsDocs
         mentorDocsLink={mentorshipData.links.mentorDocs}
