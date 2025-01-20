@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
+
 import speakersWanted from '@/shared/assets/speakers-wanted.webp';
 import { Speakers } from '@/widgets/speakers';
 

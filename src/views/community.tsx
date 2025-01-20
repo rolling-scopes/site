@@ -1,4 +1,5 @@
 import { FC } from 'react';
+
 import { PAGE_NAMES } from '@/shared/constants';
 import { AboutCommunity } from '@/widgets/about-community';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';

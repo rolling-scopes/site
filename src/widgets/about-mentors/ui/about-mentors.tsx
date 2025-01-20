@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+
 import { Language } from '@/shared/types';
 import { List } from '@/shared/ui/list';
 import { WidgetTitle } from '@/shared/ui/widget-title';

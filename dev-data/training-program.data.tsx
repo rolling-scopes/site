@@ -1,6 +1,7 @@
 // TODO separate data and markup
 import { JSX } from 'react';
 import { StaticImageData } from 'next/image';
+
 import {
   AWS_FUNDAMENTALS_BADGE,
   AwsFundamentalsBadge,

@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+
 import image from '@/shared/assets/welcome.webp';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SocialMediaItem } from '@/shared/ui/social-media-item';

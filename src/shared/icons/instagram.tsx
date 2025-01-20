@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import instagram from '@/shared/assets/svg/instagram.svg';
 
 export const InstagramIcon = () => {

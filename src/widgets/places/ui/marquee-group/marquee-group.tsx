@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+
 import { places } from '@/widgets/places/constants';
 import PlaceItem from '@/widgets/places/ui/place-item/place-item';
 

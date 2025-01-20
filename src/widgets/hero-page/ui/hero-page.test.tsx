@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
+
 import { HeroPage, type HeroPageProps } from './hero-page';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { PAGE_NAMES } from '@/shared/constants';
