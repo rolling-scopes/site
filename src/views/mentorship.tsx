@@ -4,6 +4,7 @@ import { Benefits } from '@/widgets/benefits';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { HeroPage } from '@/widgets/hero-page';
 import { MemberActivity } from '@/widgets/member-activity';
+import { MentorsAfterRegister } from '@/widgets/mentors-after-register';
 import { MentorsDocs } from '@/widgets/mentors-docs';
 import { MentorsRegister } from '@/widgets/mentors-register';
 import { MentorshipCourse, benefitMentorshipMentors } from 'data';
@@ -31,6 +32,7 @@ export const Mentorship = ({ mentorshipData }: MentorshipProps) => {
         lang={mentorshipData.lang}
       />
       <MentorsRegister lang={mentorshipData.lang} />
+      <MentorsAfterRegister lang={mentorshipData.lang} />
       <MentorsDocs
         mentorDocsLink={mentorshipData.links.mentorDocs}
         courseDocsLink={mentorshipData.links.courseDocs}
