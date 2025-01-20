@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
+
 import { MainTitle, cx } from './main-title';
 
 describe('MainTitle component', () => {

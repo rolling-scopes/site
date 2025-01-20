@@ -15,6 +15,7 @@ export type {
   MentorshipDetails,
   MentorshipRoute,
 } from './mentorship-data.types';
+export type { MentorshipCourseTitles, MentorshipLinks } from './mentorship-data.types';
 export {
   ANNOUNCEMENT_TELEGRAM_LINK,
   type CourseNamesChannels,

@@ -1,5 +1,6 @@
 /* eslint-disable @stylistic/jsx-one-expression-per-line */
 import classNames from 'classnames/bind';
+
 import { TextWithLink } from '@/shared/ui/text-with-link';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { faqData } from 'data';

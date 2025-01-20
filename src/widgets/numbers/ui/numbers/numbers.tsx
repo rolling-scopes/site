@@ -1,5 +1,6 @@
 import classnames from 'classnames/bind';
 import Image from 'next/image';
+
 import { InfoCell } from '../info-cell/info-cell';
 import map from '@/shared/assets/map.webp';
 import { Paragraph } from '@/shared/ui/paragraph';

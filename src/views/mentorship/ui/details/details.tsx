@@ -1,4 +1,5 @@
 import classnames from 'classnames/bind';
+
 import { Language } from '@/shared/types';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { InfoCell } from '@/widgets/numbers/ui/info-cell/info-cell';

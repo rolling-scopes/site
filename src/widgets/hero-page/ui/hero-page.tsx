@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
+
 import { PageName } from '../types';
 import { PAGE_NAMES } from '@/shared/constants';
 import { MainTitle } from '@/shared/ui/main-title';

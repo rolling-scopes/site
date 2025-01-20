@@ -150,7 +150,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
       icon: [images.js],
       courseDocs: linkDocs.js.courseDocs,
       mentorDocs: linkDocs.en.mentorOverview,
-      onboard: [onboardLinks.telegramEn],
+      onboard: [onboardLinks.telegramEn, onboardLinks.telegramRu],
     },
     details: [
       {
@@ -224,7 +224,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
     links: {
       icon: [images.js],
       mentorDocs: linkDocs.ru.mentorOverview,
-      onboard: [onboardLinks.telegramRu],
+      onboard: [onboardLinks.telegramEn, onboardLinks.telegramRu],
     },
     details: [
       {
@@ -303,7 +303,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
     links: {
       icon: [images.react],
       mentorDocs: linkDocs.en.mentorOverview,
-      onboard: [onboardLinks.telegramEn],
+      onboard: [onboardLinks.telegramEn, onboardLinks.telegramRu],
     },
     details: [
       {
@@ -366,7 +366,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
     links: {
       icon: [images.angular],
       mentorDocs: linkDocs.en.mentorOverview,
-      onboard: [onboardLinks.telegramEn],
+      onboard: [onboardLinks.telegramEn, onboardLinks.telegramRu],
     },
     details: [
       {

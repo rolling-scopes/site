@@ -9,7 +9,9 @@ import {
 import classNames from 'classnames/bind';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
 import { DropdownWrapper } from '../dropdown/dropdown-wrapper';
+import { ROUTES } from '@/core/const';
 import { DropdownArrow } from '@/shared/icons/dropdown-arrow';
 
 import styles from './nav-item.module.scss';
@@ -30,7 +32,11 @@ export const NavItem = ({ label, href, children }: NavItemProps) => {
   const onOpen = () => setDropdownOpen(true);
 
   const pathname = usePathname();
-  const isActive = href === '/' ? pathname === '/' : pathname?.startsWith(`/${href}`);
+  const isHrefHome = href === ROUTES.HOME;
+  const isActive = isHrefHome
+    ? pathname === ROUTES.HOME
+    : pathname?.includes(href.replaceAll(ROUTES.HOME, ''));
+  const linkHref = isHrefHome ? href : `/${href}`;
 
   const handleConfirmKeyPress = (e: KeyboardEvent<HTMLButtonElement>) => {
     if (e.code === 'Enter' || e.code === 'Space') {
@@ -64,7 +70,7 @@ export const NavItem = ({ label, href, children }: NavItemProps) => {
       data-testid="menu-item"
     >
       <Link
-        href={`/${href}`}
+        href={linkHref}
         className={cx(
           'menu-item',
           { active: isActive },

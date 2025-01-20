@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+
 import { getCourseTitle } from '@/shared/helpers/get-course-title';
 import { AwsDeveloper } from '@/views/aws-developer';
 import { COURSE_TITLES } from 'data';

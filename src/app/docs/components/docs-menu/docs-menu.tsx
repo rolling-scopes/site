@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
 import { Menu } from '../../types';
 import chevronRight from '@/shared/assets/svg/chevron-right.svg';
 import { isValidUrl } from '@/shared/helpers/isValidUrl';
