@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/react';
+
 import { Links } from './links';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 

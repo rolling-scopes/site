@@ -1,5 +1,6 @@
 import { render, screen, within } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
+
 import { StudyWithUs } from './study-with-us';
 import { studyOptions } from '../constants';
 import rsSchool from '@/shared/assets/rs-school.webp';

@@ -1,5 +1,7 @@
+import { HTMLProps } from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+
 import type { Course } from '../../types';
 import { DateLang } from '@/shared/ui/date-lang';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -19,7 +21,7 @@ export type CourseCardProps = Pick<
   | 'language'
   | 'backgroundStyle'
   | 'registrationEndDate'
->;
+> & Pick<HTMLProps<HTMLDivElement>, 'className'>;
 
 export const CourseCard = ({
   title,
@@ -30,16 +32,17 @@ export const CourseCard = ({
   mode,
   language,
   backgroundStyle,
+  className,
 }: CourseCardProps) => {
   const { backgroundColor, accentColor } = backgroundStyle;
 
   const cardStyle = {
-    backgroundColor: backgroundColor,
+    'backgroundColor': backgroundColor,
     '--accent-bg-color': accentColor,
   };
 
   return (
-    <article className={cx('course-card')} data-testid="course-card">
+    <article className={cx('course-card', className)} data-testid="course-card">
       <div className={cx('card-header')} style={cardStyle} data-testid="card-header">
         <Image src={iconSrc} alt={title} />
         <Subtitle fontSize="small">{title}</Subtitle>

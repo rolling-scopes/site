@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import react from '@/shared/assets/svg/react.svg';
 
 export const ReactIcon = () => {

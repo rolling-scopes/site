@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+
 import { ANCHORS, ROUTES } from '@/core/const';
 import mentorImg from '@/shared/assets/mentors-wanted.webp';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';

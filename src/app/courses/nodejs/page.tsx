@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+
 import { getCourseTitle } from '@/shared/helpers/get-course-title';
 import { Nodejs } from '@/views/nodejs';
 import { COURSE_TITLES } from 'data';

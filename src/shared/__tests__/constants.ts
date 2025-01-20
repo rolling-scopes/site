@@ -1,4 +1,5 @@
 import { StaticImageData } from 'next/image';
+
 import { ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
 import { MentorFeedback } from '@/entities/mentor';
