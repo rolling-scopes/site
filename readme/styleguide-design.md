@@ -69,6 +69,7 @@ Please follow the rules and tokens provided in the guide.
 | ----------- | ----------- |
 | `$opacity-100` | 1 |
 | `$opacity-80` | 0.8 |
+| `$opacity-70` | 0.7 |
 | `$opacity-50` | 0.5 |
 | `$opacity-20` | 0.2 |
 | `$opacity-8` | 0.08 |

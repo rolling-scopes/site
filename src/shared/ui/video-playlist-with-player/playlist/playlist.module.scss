@@ -12,7 +12,7 @@
   flex-direction: column;
   gap: 8px;
 
-  @include media-tablet {
+  @include media-tablet-large {
     overflow: scroll auto;
     flex-direction: row;
     gap: 24px;
@@ -24,6 +24,10 @@
   font-size: 24px;
   line-height: 32px;
   text-align: center;
+
+  @include media-tablet-large {
+    text-align: left;
+  }
 }
 
 .playlist-item {
@@ -66,13 +70,13 @@
     max-width: 100%;
     border-radius: 8px;
 
-    @include media-tablet {
+    @include media-tablet-large {
       max-width: 200px;
     }
   }
 
-  @include media-tablet {
-    margin-bottom: 10px;
+  @include media-tablet-large {
+    margin: 0 0 10px 0;
     padding: 0;
   }
 }
@@ -91,6 +95,6 @@
   font-weight: $font-weight-bold;
   color: $color-white;
 
-  background-color: hsl(0deg 0% 0% / 70%);
+  background-color: hsla(from $color-black h s l / $opacity-70);
   border-radius: 8px;
 }
