@@ -17,7 +17,7 @@
   }
 
   &.blue {
-    background-color: $color-mentorship-header;
+    background: linear-gradient(90deg, $color-mentorship-100, $color-mentorship-200);
   }
 
   &.none {

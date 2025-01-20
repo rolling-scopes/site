@@ -9,6 +9,22 @@
   height: 180px;
   padding: 8px 40px;
 
+  &-mentorship {
+    gap: 16px;
+    width: 100%;
+    max-width: 240px;
+    height: 100%;
+
+    &::after {
+      display: none;
+    }
+
+    @include media-laptop {
+      width: 100%;
+      max-width: 240px;
+    }
+  }
+
   &::after {
     content: '';
 
@@ -34,9 +50,20 @@
     color: $color-black;
     letter-spacing: 0.04em;
 
+    &-mentorship {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 46px;
+    }
+
     @include media-laptop {
       font-size: 44px;
       line-height: 52px;
+
+      &-mentorship {
+        font-size: 28px;
+        line-height: 34px;
+      }
     }
   }
 
@@ -45,6 +72,12 @@
     font-weight: 400;
     color: $color-gray-600;
 
+    &-mentorship {
+      height: auto;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
     @include media-tablet {
       height: auto;
     }
@@ -52,11 +85,20 @@
 
   @include media-laptop {
     width: 200px;
+
+    &-mentorship {
+      width: 100%;
+      max-width: 220px;
+    }
   }
 
   @include media-tablet {
     width: 150px;
     height: 140px;
     padding: 0 8px;
+
+    &-mentorship {
+      height: 100%;
+    }
   }
 }

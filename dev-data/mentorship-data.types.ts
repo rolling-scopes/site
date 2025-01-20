@@ -8,13 +8,16 @@ import { Stage } from '@/widgets/member-activity/ui/stage-card';
 export type MentorActivities = Pick<Stage, 'id' | 'title' | 'description' | 'links'>;
 
 type CourseTitleKey = keyof typeof COURSE_TITLES;
-export type CourseTitle = typeof COURSE_TITLES[CourseTitleKey];
+export type CourseTitle = (typeof COURSE_TITLES)[CourseTitleKey];
 
 export type MentorshipDefaultRouteKeys = typeof ROUTES.MENTORSHIP;
 type MentorshipDefaultRoute = `/${typeof ROUTES.MENTORSHIP}`;
 
 export type MentorshipCourseRouteKeys =
-  typeof ROUTES.JS | typeof ROUTES.JS_RU | typeof ROUTES.REACT | typeof ROUTES.ANGULAR;
+  | typeof ROUTES.JS
+  | typeof ROUTES.JS_RU
+  | typeof ROUTES.REACT
+  | typeof ROUTES.ANGULAR;
 type MentorshipCourseRoute = `${MentorshipDefaultRoute}/${MentorshipCourseRouteKeys}`;
 
 export type MentorshipRoute = MentorshipDefaultRoute | MentorshipCourseRoute;
@@ -22,6 +25,12 @@ export type MentorshipRoute = MentorshipDefaultRoute | MentorshipCourseRoute;
 export type ImageLink = {
   href: StaticImageData;
   alt: string;
+};
+
+export type MentorshipDetails = {
+  id: number;
+  title: string;
+  info: string;
 };
 
 export type MentorshipCourse = {
@@ -37,6 +46,6 @@ export type MentorshipCourse = {
     courseDocs?: string;
     onboard?: SocialMediaProps[];
   };
-  details: string[];
+  details: MentorshipDetails[];
   activities: MentorActivities[];
 };

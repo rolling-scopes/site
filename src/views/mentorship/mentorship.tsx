@@ -1,5 +1,5 @@
+import { DetailsMentorship } from './ui/details/details';
 import { PAGE_NAMES } from '@/shared/constants';
-import { AboutMentors } from '@/widgets/about-mentors';
 import { Benefits } from '@/widgets/benefits';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { HeroPage } from '@/widgets/hero-page';
@@ -19,11 +19,7 @@ export const Mentorship = ({ mentorshipData }: MentorshipProps) => {
     <>
       <HeroPage pageName={PAGE_NAMES.MENTORSHIP} />
       <Breadcrumbs />
-      <AboutMentors
-        description={mentorshipData.details}
-        icons={mentorshipData.links.icon}
-        lang={mentorshipData.lang}
-      />
+      <DetailsMentorship description={mentorshipData.details} lang={mentorshipData.lang} />
       {!mentorshipData.title && <Benefits {...benefitMentorshipMentors} />}
       <MemberActivity
         path={studyPathName}
