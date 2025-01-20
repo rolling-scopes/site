@@ -4,6 +4,10 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+
+  &:has(dialog[open]) {
+    overflow: hidden;
+  }
 }
 
 body {

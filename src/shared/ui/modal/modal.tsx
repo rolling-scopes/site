@@ -63,18 +63,6 @@ export const Modal = ({ isOpen, onClose, children, title, className }: ModalProp
     }
   }, [isOpen]);
 
-  useEffect(() => {
-    const body = document.body;
-
-    if (isOpen) {
-      body.style.overflow = 'hidden';
-    }
-
-    return () => {
-      body.style.overflow = 'unset';
-    };
-  }, [isOpen]);
-
   if (!isOpen) {
     return null;
   }

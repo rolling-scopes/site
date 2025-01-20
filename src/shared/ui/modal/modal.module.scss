@@ -1,6 +1,4 @@
 .modal {
-  overflow: hidden;
-
   max-width: 889px;
   padding: 0 32px 32px 32px;
 
@@ -48,9 +46,6 @@
 }
 
 .modal-body {
-  overflow: auto;
-  max-height: calc(100vh - 114px);
-
   p {
     margin: 0;
   }
