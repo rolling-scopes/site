@@ -1,5 +1,6 @@
 import { StaticImageData } from 'next/image';
 
+import { Video } from '../types';
 import { ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
 import type { Trainer } from '@/entities/trainer';
@@ -189,3 +190,21 @@ export const MOCKED_MERCH_DATA = {
   imageAltText:
     'A collage of photos with branded T-shirts, cups, and stickers featuring the RSSchool logo',
 };
+
+export const MOCKED_VIDEOS: Video[] = [
+  {
+    id: '1',
+    title: 'Video 1',
+    thumbnail: 'thumb1.jpg',
+  },
+  {
+    id: '2',
+    title: 'Video 2',
+    thumbnail: 'thumb2.jpg',
+  },
+  {
+    id: '3',
+    title: 'Video 3',
+    thumbnail: 'thumb3.jpg',
+  },
+];

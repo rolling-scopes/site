@@ -6,6 +6,7 @@ import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { HeroPage } from '@/widgets/hero-page';
 import { MemberActivity } from '@/widgets/member-activity';
 import { MentorsDocs } from '@/widgets/mentors-docs';
+import { MentorsFeedback } from '@/widgets/mentors-feedback';
 import { MentorsRegister } from '@/widgets/mentors-register';
 import { MentorshipCourse, benefitMentorshipMentors } from 'data';
 
@@ -41,6 +42,7 @@ export const Mentorship = ({ mentorshipData, courses = false }: MentorshipProps)
         onboardLinks={mentorshipData.links.onboard}
         lang={mentorshipData.lang}
       />
+      <MentorsFeedback />
     </>
   );
 };
