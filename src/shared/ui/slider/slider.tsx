@@ -1,10 +1,10 @@
 'use client';
 
 import React, { ReactNode } from 'react';
-import { A11y, Pagination } from 'swiper/modules';
-import { Swiper, SwiperProps, SwiperSlide, SwiperSlideProps } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { A11y, Pagination } from 'swiper/modules';
+import { Swiper, SwiperProps, SwiperSlide, SwiperSlideProps } from 'swiper/react';
 
 type SliderProps = {
   slides: ReactNode[];

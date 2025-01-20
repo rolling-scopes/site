@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+
 import { MentorFeedback, MentorFeedbackCard } from '@/entities/mentor';
 import { Slider } from '@/shared/ui/slider';
 import { WidgetTitle } from '@/shared/ui/widget-title';

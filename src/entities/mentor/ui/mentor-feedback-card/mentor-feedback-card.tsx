@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+
 import { MentorFeedback } from '../../types';
 import { Modal } from '@/shared/ui/modal';
 import { Subtitle } from '@/shared/ui/subtitle';

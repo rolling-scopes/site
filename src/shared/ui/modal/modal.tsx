@@ -2,6 +2,7 @@ import React, { ReactNode, useCallback, useEffect, useRef } from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 import { createPortal } from 'react-dom';
+
 import closeIcon from '@/shared/assets/svg/close.svg';
 
 import styles from './modal.module.scss';
@@ -99,10 +100,8 @@ export const Modal = ({ isOpen, onClose, children, title, className }: ModalProp
           <Image src={closeIcon} alt="Close" />
         </button>
       </div>
-      <div className={cx('modal-content')} data-testid="modal-content">
-        <div className={cx('modal-body')} data-testid="modal-body">
-          {children}
-        </div>
+      <div className={cx('modal-body')} data-testid="modal-body">
+        {children}
       </div>
     </dialog>,
     document.body,
