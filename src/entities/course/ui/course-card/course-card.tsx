@@ -1,6 +1,7 @@
 import { HTMLProps } from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+
 import type { Course } from '../../types';
 import { DateLang } from '@/shared/ui/date-lang';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -36,7 +37,7 @@ export const CourseCard = ({
   const { backgroundColor, accentColor } = backgroundStyle;
 
   const cardStyle = {
-    backgroundColor: backgroundColor,
+    'backgroundColor': backgroundColor,
     '--accent-bg-color': accentColor,
   };
 

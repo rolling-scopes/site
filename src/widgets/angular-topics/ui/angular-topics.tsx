@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+
 import { topicsList } from '../constants';
 import { List } from '@/shared/ui/list';
 import { WidgetTitle } from '@/shared/ui/widget-title';

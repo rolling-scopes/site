@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
+
 import { AboutCommunity } from './about-community';
 
 describe('AboutCommunity component', () => {

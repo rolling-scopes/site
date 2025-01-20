@@ -1,4 +1,5 @@
 import { StaticImageData } from 'next/image';
+
 import { COURSE_LINKS } from '@/shared/constants';
 import { Language } from '@/shared/types';
 import { CourseNamesKeys } from 'data';
