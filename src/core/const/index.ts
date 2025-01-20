@@ -6,6 +6,7 @@ export const ANCHORS = {
   EVENTS: 'events',
   MERCH: 'merch',
   CONTRIBUTE: 'contribute',
+  DONATE: 'donate',
 };
 
 export const COURSE_STALE_AFTER_DAYS = 14;
