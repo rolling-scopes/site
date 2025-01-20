@@ -16,7 +16,7 @@ type MentorshipProps = {
 export const Mentorship = ({ mentorshipData }: MentorshipProps) => {
   return (
     <>
-      <MentorshipHero />
+      <MentorshipHero lang={mentorshipData.lang} />
       <Breadcrumbs />
       <AboutMentors
         description={mentorshipData.details}

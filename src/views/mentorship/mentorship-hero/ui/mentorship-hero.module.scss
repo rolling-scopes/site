@@ -1,76 +1,27 @@
-.hero-page {
-  gap: 16px;
+.hero {
   min-height: 440px;
-  background: $color-yellow;
-
-  &-content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-
-    .title-container {
-      display: flex;
-      flex-direction: column;
-      width: fit-content;
-      text-align: left;
-
-      .title-main {
-        @include media-tablet {
-          font-size: 80px;
-        }
-
-        @include media-mobile-landscape {
-          font-size: 40px;
-        }
-      }
-
-      .subtitle-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-
-        @include media-tablet {
-          flex-direction: column;
-        }
-      }
-
-      .description-title {
-        @include media-tablet {
-          font-size: 24px;
-          line-height: 32px;
-        }
-      }
-    }
-
-    .sloth-mascot {
-      max-width: 300px; // TODO change if sloth pic will be changed
-      height: auto;
-      max-height: 235px;
-      object-fit: contain;
-
-      @include media-tablet-large {
-        height: 260px;
-      }
-
-      @include media-tablet {
-        display: none;
-      }
-    }
-  }
-
-  @include media-tablet-large {
-    flex-direction: column;
-    gap: 0;
-  }
-}
-
-.hero-page-mentorship {
   background: url('../../../../shared/assets/mentorship-hero.webp') center / cover no-repeat;
-}
 
-.hero-page-mentorship-container {
-  padding: 32px;
-  background-color: $color-white-800;
-  border-radius: 12px;
+  &-info {
+    display: flex;
+    flex-direction: column;
+
+    width: fit-content;
+    padding: 32px;
+
+    text-align: left;
+
+    background-color: rgba($color-white, $opacity-80);
+    border-radius: 12px;
+
+    .title-main {
+      @include media-tablet {
+        font-size: 80px;
+      }
+
+      @include media-mobile-landscape {
+        font-size: 40px;
+      }
+    }
+  }
 }
