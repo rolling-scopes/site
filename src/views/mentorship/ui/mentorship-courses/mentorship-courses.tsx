@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+
 import { CourseCard } from '@/entities/course';
 import { getCourses } from '@/entities/course/api/course-api';
 import { WidgetTitle } from '@/shared/ui/widget-title';
