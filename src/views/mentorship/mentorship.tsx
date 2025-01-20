@@ -1,9 +1,11 @@
 import { MentorshipHero } from './mentorship-hero/ui/mentorship-hero';
+import { MentorshipCourses } from './ui/mentorship-courses/mentorship-courses';
 import { AboutMentors } from '@/widgets/about-mentors';
 import { Benefits } from '@/widgets/benefits';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { MemberActivity } from '@/widgets/member-activity';
 import { MentorsDocs } from '@/widgets/mentors-docs';
+import { MentorsFeedback } from '@/widgets/mentors-feedback';
 import { MentorsRegister } from '@/widgets/mentors-register';
 import { MentorshipCourse, benefitMentorshipMentors } from 'data';
 
@@ -11,9 +13,10 @@ const studyPathName = 'mentorship';
 
 type MentorshipProps = {
   mentorshipData: MentorshipCourse;
+  courses?: boolean;
 };
 
-export const Mentorship = ({ mentorshipData }: MentorshipProps) => {
+export const Mentorship = ({ mentorshipData, courses = false }: MentorshipProps) => {
   return (
     <>
       <MentorshipHero lang={mentorshipData.lang} />
@@ -29,6 +32,7 @@ export const Mentorship = ({ mentorshipData }: MentorshipProps) => {
         activities={mentorshipData.activities}
         lang={mentorshipData.lang}
       />
+      {courses && <MentorshipCourses />}
       <MentorsRegister lang={mentorshipData.lang} />
       <MentorsDocs
         mentorDocsLink={mentorshipData.links.mentorDocs}
@@ -37,6 +41,7 @@ export const Mentorship = ({ mentorshipData }: MentorshipProps) => {
         onboardLinks={mentorshipData.links.onboard}
         lang={mentorshipData.lang}
       />
+      <MentorsFeedback />
     </>
   );
 };

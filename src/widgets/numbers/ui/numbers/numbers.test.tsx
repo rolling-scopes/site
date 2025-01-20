@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
+
 import { Numbers } from '@/widgets/numbers';
 
 describe('Numbers', () => {
