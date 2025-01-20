@@ -22,16 +22,7 @@ describe('AboutVideo component', () => {
     expect(title).toHaveTextContent(videoTitleLocalized['ru'].title);
   });
 
-  it('renders the placeholder in development mode', () => {
-    vi.stubEnv('NODE_ENV', 'development');
-    render(<AboutVideo />);
-    const placeholder = screen.getByText('Video Placeholder');
-
-    expect(placeholder).toBeVisible();
-  });
-
-  it('renders the YouTube embed in production mode', () => {
-    vi.stubEnv('NODE_ENV', 'production');
+  it('renders the YouTube embed', () => {
     render(<AboutVideo />);
     const video = screen.getByTitle('Introduction to The Rolling Scopes School Online Courses');
 

@@ -1,5 +1,6 @@
 import { StaticImageData } from 'next/image';
 
+import { Video } from '../types';
 import { ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
 import { MentorFeedback } from '@/entities/mentor';
@@ -204,3 +205,21 @@ export const MOCKED_SEVERAL_MENTORS_FEEDBACK: MentorFeedback[] = Array.from(
   { length: 8 },
   () => MOCKED_MENTORS_FEEDBACK,
 );
+
+export const MOCKED_VIDEOS: Video[] = [
+  {
+    id: '1',
+    title: 'Video 1',
+    thumbnail: 'thumb1.jpg',
+  },
+  {
+    id: '2',
+    title: 'Video 2',
+    thumbnail: 'thumb2.jpg',
+  },
+  {
+    id: '3',
+    title: 'Video 3',
+    thumbnail: 'thumb3.jpg',
+  },
+];
