@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import Link from 'next/link';
+
 import { ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
 import { Logo } from '@/shared/ui/logo';
@@ -32,7 +33,7 @@ export const MobileView = ({ type, courses, onClose }: MobileViewProps) => {
 
       <Divider color={color} />
 
-      <Link onClick={onClose} href={`/${ROUTES.HOME}`} className={cx('category-link', color)}>
+      <Link onClick={onClose} href={ROUTES.HOME} className={cx('category-link', color)}>
         RS School
       </Link>
 

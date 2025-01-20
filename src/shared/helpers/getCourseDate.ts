@@ -1,4 +1,5 @@
 import dayjs from 'dayjs';
+
 import { TO_BE_DETERMINED } from '@/shared/constants';
 
 export const getCourseDate = (startDate: string, staleAfterDays: number) => {

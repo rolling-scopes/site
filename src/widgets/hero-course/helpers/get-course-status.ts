@@ -24,7 +24,7 @@ export function getCourseStatus(
     !isAvailable && startDate.isBetween(now, now.add(COURSE_UPCOMING_PERIOD_MONTHS, 'month'));
 
   // Other dates
-  let label: CourseStatus = courseStatus.planned;
+  const label: CourseStatus = courseStatus.planned;
 
   if (isAvailable) {
     return courseStatus.available;

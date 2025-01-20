@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import classNames from 'classnames/bind';
+
 import { DocDetail } from '../doc-detail';
 import { Language } from '@/shared/types';
 import { SocialMediaProps } from '@/shared/ui/social-media-item';

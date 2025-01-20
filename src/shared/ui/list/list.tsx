@@ -1,6 +1,7 @@
 import { HTMLAttributes } from 'react';
 import { type VariantProps, cva } from 'class-variance-authority';
 import classNames from 'classnames/bind';
+
 import { TextWithLink } from '../text-with-link';
 import { ListData } from '@/shared/types';
 

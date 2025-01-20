@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
+
 import { General } from './general';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { RS_DOCS_EN_LINK } from 'data';

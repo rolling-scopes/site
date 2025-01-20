@@ -1,4 +1,5 @@
 import { StaticImageData } from 'next/image';
+
 import { COURSE_TITLES } from './courseTitles.data';
 import { ROUTES } from '@/core/const';
 import { Language } from '@/shared/types';
@@ -10,12 +11,18 @@ export type MentorActivities = Pick<Stage, 'id' | 'title' | 'description' | 'lin
 type CourseTitleKey = keyof typeof COURSE_TITLES;
 export type CourseTitle = typeof COURSE_TITLES[CourseTitleKey];
 
+export type MentorshipCourseTitles = Extract<CourseTitle, 'JS / Front-end RU' | 'JS / Front-end EN' | 'Angular' | 'React'>;
+
+export type MentorshipLinks = {
+  [Key in MentorshipCourseTitles]: MentorshipCourseRoute;
+};
+
 export type MentorshipDefaultRouteKeys = typeof ROUTES.MENTORSHIP;
 type MentorshipDefaultRoute = `/${typeof ROUTES.MENTORSHIP}`;
 
 export type MentorshipCourseRouteKeys =
   typeof ROUTES.JS | typeof ROUTES.JS_RU | typeof ROUTES.REACT | typeof ROUTES.ANGULAR;
-type MentorshipCourseRoute = `${MentorshipDefaultRoute}/${MentorshipCourseRouteKeys}`;
+export type MentorshipCourseRoute = `${MentorshipDefaultRoute}/${MentorshipCourseRouteKeys}`;
 
 export type MentorshipRoute = MentorshipDefaultRoute | MentorshipCourseRoute;
 
