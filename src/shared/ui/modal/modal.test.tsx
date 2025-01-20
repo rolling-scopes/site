@@ -47,7 +47,7 @@ describe('Modal Component', () => {
 
     expect(HTMLDialogElement.prototype.showModal).toHaveBeenCalledTimes(1);
     expect(screen.getByTestId('modal-inner-content')).toBeInTheDocument();
-    expect(screen.getByTestId('modal-content')).toBeInTheDocument();
+    expect(screen.getByTestId('modal-body')).toBeInTheDocument();
   });
 
   it('should not render the modal when isOpen is false', () => {
@@ -55,7 +55,7 @@ describe('Modal Component', () => {
 
     expect(HTMLDialogElement.prototype.showModal).toHaveBeenCalledTimes(0);
     expect(screen.queryByTestId('modal-inner-content')).toBeNull();
-    expect(screen.queryByTestId('modal-content')).toBeNull();
+    expect(screen.queryByTestId('modal-body')).toBeNull();
   });
 
   it('should render the title when provided', () => {
@@ -74,7 +74,7 @@ describe('Modal Component', () => {
 
     expect(HTMLDialogElement.prototype.close).toHaveBeenCalledTimes(1);
     expect(onCloseMock).toHaveBeenCalledTimes(1);
-    expect(screen.queryByTestId('modal-content')).toBeNull();
+    expect(screen.queryByTestId('modal-body')).toBeNull();
     expect(screen.queryByTestId('modal')).toBeNull();
   });
 
@@ -90,7 +90,7 @@ describe('Modal Component', () => {
 
     expect(HTMLDialogElement.prototype.close).toHaveBeenCalledTimes(1);
     expect(onCloseMock).toHaveBeenCalledTimes(1);
-    expect(screen.queryByTestId('modal-content')).toBeNull();
+    expect(screen.queryByTestId('modal-body')).toBeNull();
   });
 
   it('should apply custom className to the modal', () => {
