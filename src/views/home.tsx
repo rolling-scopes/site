@@ -9,6 +9,7 @@ import { MentorsWanted } from '@/widgets/mentors-wanted';
 import { Principles } from '@/widgets/principles';
 import { Requirements } from '@/widgets/requirements';
 import { StudyWithUs } from '@/widgets/study-with-us';
+import { Support } from '@/widgets/support';
 import { UpcomingCourses } from '@/widgets/upcoming-courses';
 
 export const Home: FC = () => {
@@ -20,6 +21,7 @@ export const Home: FC = () => {
       <Principles />
       <StudyWithUs />
       <UpcomingCourses />
+      <Support />
       <Alumni />
       <MentorsWanted />
       <Benefits />
