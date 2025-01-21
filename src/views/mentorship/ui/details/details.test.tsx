@@ -1,0 +1,46 @@
+import { render, screen } from '@testing-library/react';
+import { beforeEach, describe, expect, it } from 'vitest';
+
+import { DetailsMentorship } from './details';
+import { MentorshipDetails } from 'data';
+
+const mockDetails: MentorshipDetails[] = [
+  {
+    id: 1,
+    title: 'duration of mentoring',
+    info: '8-19 weeks',
+  },
+  {
+    id: 2,
+    title: 'amount of students desired to mentor',
+    info: '2-6 students',
+  },
+];
+
+describe('DetailsMentorship component', () => {
+  let widget: HTMLElement;
+  let title: HTMLElement;
+
+  beforeEach(() => {
+    render(<DetailsMentorship description={mockDetails} />);
+    widget = screen.getByTestId('details-mentorship');
+    title = screen.getByTestId('widget-title');
+  });
+
+  it('renders widget without crashing', () => {
+    expect(widget).toBeVisible();
+  });
+
+  it('displays correct title', () => {
+    expect(title).toBeVisible();
+    expect(title).toHaveTextContent('Mentorship Details');
+  });
+
+  it.each(mockDetails)('renders detail for "%s"', ({ title, info }) => {
+    const infoElement = screen.getByText(info);
+    const titleElement = screen.getByText(title);
+
+    expect(infoElement).toBeVisible();
+    expect(titleElement).toBeVisible();
+  });
+});
