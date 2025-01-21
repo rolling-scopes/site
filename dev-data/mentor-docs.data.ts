@@ -13,7 +13,7 @@ export const mentorDocsData = {
       textAfterLink: 'for the',
       textAfterCourseName: 'Course.',
     },
-    pictureAlt: 'Mentor and its students',
+    pictureAlt: 'Sloth mascot dressed in a red superhero cape',    
     additional: 'You can also ask questions ',
   },
   ru: {
