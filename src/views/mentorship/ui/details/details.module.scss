@@ -13,6 +13,26 @@
       align-items: center;
       justify-content: stretch;
 
+      article {
+        padding: 8px 0;
+
+        @include media-laptop {
+          padding: 8px 40px;
+        }
+
+        @include media-tablet {
+          padding: 8px 0;
+        }
+      }
+
+      & > :last-child article {
+        max-width: fit-content;
+
+        @include media-laptop {
+          max-width: 220px;
+        }
+      }
+
       & > *:not(:last-child) {
         border-right: 1px solid $color-black;
       }
@@ -22,6 +42,22 @@
         align-items: center;
         justify-content: center;
         width: 100%;
+
+        &:first-child {
+          justify-content: flex-start;
+
+          @include media-laptop {
+            justify-content: center;
+          }
+        }
+
+        &:last-child {
+          justify-content: flex-end;
+
+          @include media-laptop {
+            justify-content: center;
+          }
+        }
       }
 
       @include media-tablet-large {

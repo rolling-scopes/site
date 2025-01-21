@@ -240,7 +240,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
       {
         id: 3,
         title: 'необходимо уделять времени',
-        info: '3-5 ч/неделю',
+        info: '3-5 ч/нед.',
       },
       {
         id: 4,

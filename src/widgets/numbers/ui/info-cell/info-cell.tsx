@@ -10,13 +10,19 @@ type InfoCellProps = {
   isMentorship?: boolean;
 };
 
-export const InfoCell = ({ title, description, isMentorship }: InfoCellProps) => (
-  <article className={cx('info-cell', { 'info-cell-mentorship': isMentorship })}>
-    <div className={cx('info-cell-number', { 'info-cell-number-mentorship': isMentorship })}>
-      {title}
-    </div>
-    <div className={cx('info-cell-text', { 'info-cell-text-mentorship': isMentorship })}>
-      {description}
-    </div>
-  </article>
-);
+export const InfoCell = ({ title, description, isMentorship }: InfoCellProps) => {
+  const [firstPart, secondPart] = title.split(' ');
+
+  return (
+    <article className={cx('info-cell', { 'info-cell-mentorship': isMentorship })}>
+      <div className={cx('info-cell-number', { 'info-cell-number-mentorship': isMentorship })}>
+        {firstPart}
+        <br />
+        {secondPart}
+      </div>
+      <div className={cx('info-cell-text', { 'info-cell-text-mentorship': isMentorship })}>
+        {description}
+      </div>
+    </article>
+  );
+};
