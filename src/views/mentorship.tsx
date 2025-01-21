@@ -1,10 +1,10 @@
 import { PAGE_NAMES } from '@/shared/constants';
+import { MentorsAfterRegister } from '@/views/mentorship/ui/mentors-after-register';
 import { AboutMentors } from '@/widgets/about-mentors';
 import { Benefits } from '@/widgets/benefits';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { HeroPage } from '@/widgets/hero-page';
 import { MemberActivity } from '@/widgets/member-activity';
-import { MentorsAfterRegister } from '@/widgets/mentors-after-register';
 import { MentorsDocs } from '@/widgets/mentors-docs';
 import { MentorsRegister } from '@/widgets/mentors-register';
 import { MentorshipCourse, benefitMentorshipMentors } from 'data';
