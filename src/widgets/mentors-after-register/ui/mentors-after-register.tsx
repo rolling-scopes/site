@@ -23,7 +23,7 @@ export const MentorsAfterRegister = ({ lang = 'en' }: MentorsAfterRegisterProps)
   const data = mentorsAfterRegisterData;
 
   return (
-    <section className={cx('container')}>
+    <section className={cx('container')} data-testid="mentors-after-register">
       <div className={cx('content', 'mentors-after-register')}>
         <WidgetTitle mods="asterisk">{data[lang].title}</WidgetTitle>
 
@@ -32,7 +32,7 @@ export const MentorsAfterRegister = ({ lang = 'en' }: MentorsAfterRegisterProps)
             const { id, subtitle, content } = step;
 
             return (
-              <article className={cx('step')} key={step.id}>
+              <article className={cx('step')} key={step.id} data-testid="after-register-step">
                 <Subtitle className={cx('step-subtitle')} fontSize="small" color="black">
                   {`${id}. ${subtitle}`}
                 </Subtitle>
