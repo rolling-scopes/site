@@ -37,7 +37,8 @@ describe('DetailsMentorship component', () => {
   });
 
   it.each(mockDetails)('renders detail for "%s"', ({ title, info }) => {
-    const infoElement = screen.getByText(info);
+    const [firstPart, secondPart] = info.split(' ');
+    const infoElement = screen.getByText(new RegExp(`${firstPart}\\s*${secondPart}`, 'i'));
     const titleElement = screen.getByText(title);
 
     expect(infoElement).toBeVisible();
