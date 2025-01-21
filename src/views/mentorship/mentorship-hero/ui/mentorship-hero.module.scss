@@ -11,7 +11,7 @@
 
     text-align: left;
 
-    background-color: rgba($color-white, $opacity-80);
+    background-color: hsla(from $color-white h s l/ $opacity-80);
     border-radius: 12px;
 
     .title-main {
