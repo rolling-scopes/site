@@ -48,6 +48,7 @@ export { communityMenuStaticLinks, schoolMenuStaticLinks } from './school-menu-l
 export { contentMap, trainingProgramLink } from './training-program.data';
 export { contentMapAbout, introLocalizedContent } from './about-course.data';
 export { contributeOptions } from './contribute-options.data';
+export { donateOptions } from './donate-options.data';
 export { courseDataMap } from './required.data';
 export { courseStatus, heroCourseLocalized } from './hero-course.data';
 export { courses } from './courses.data';

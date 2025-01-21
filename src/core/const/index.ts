@@ -17,7 +17,8 @@ export const LINKS = {
   BECOME_CONTRIBUTOR:
     'https://docs.google.com/forms/d/e/1FAIpQLSdGKdEHK1CnZjgll9PpMU0xD1m0hm6xGoXc98H7woCDulyQkg/viewform',
   MERCH: 'https://sloths.rs.school/',
-  DONATE: 'https://opencollective.com/rsschool',
+  DONATE_OPEN_COLLECTIVE: 'https://opencollective.com/rsschool',
+  DONATE_BOOSTY: 'https://boosty.to/rsschool',
   ANGULAR_MENTORING: 'https://github.com/rolling-scopes-school/tasks/tree/master/angular/mentoring',
 };
 

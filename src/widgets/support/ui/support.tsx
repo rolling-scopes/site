@@ -1,18 +1,23 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 
-import { LINKS } from '@/core/const';
 import image from '@/shared/assets/support.webp';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
+import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { donateOptions } from 'data';
 
 import styles from './support.module.scss';
 
 const cx = classNames.bind(styles);
 
 export const Support = () => (
-  <section className={cx('support-container', 'container')} data-testid="support-section">
+  <section
+    className={cx('support-container', 'container')}
+    data-testid="support-section"
+    id="donate"
+  >
     <div className={cx('support-content', 'content')}>
       <article className={cx('support-info')}>
         <WidgetTitle size="large" mods="lines">
@@ -23,15 +28,21 @@ export const Support = () => (
           events. Every donation, big or small, helps!
         </Paragraph>
         <Paragraph fontSize="large">Thank you for your support!</Paragraph>
-        <LinkCustom
-          className={cx('support-link')}
-          href={LINKS.DONATE}
-          variant="primary"
-          external
-          data-testid="link-support"
-        >
-          Donate now
-        </LinkCustom>
+        <div className={cx('donate-options')}>
+          {donateOptions.map(({ id, title, href, linkLabel }) => (
+            <div key={id} className={cx('donate-item')}>
+              <Subtitle>{title}</Subtitle>
+              <LinkCustom
+                href={href}
+                variant="primary"
+                external
+                data-testid="link-donate"
+              >
+                {linkLabel}
+              </LinkCustom>
+            </div>
+          ))}
+        </div>
       </article>
       <Image
         className={cx('sloth-mascot')}
