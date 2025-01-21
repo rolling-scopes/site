@@ -15,6 +15,8 @@ env:
   AWS_ACCESS_KEY_ID: ${{ secrets.DEPLOY_AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_AWS_SECRET_ACCESS_KEY }}
   AWS_REGION: 'eu-central-1'
+  API_URL: ${{ secrets.API_URL }}
+  YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
 
 jobs:
   build-rs-school:
@@ -34,8 +36,6 @@ jobs:
         run: |
           npm ci
           npm run build
-        env:
-          API_URL: ${{ secrets.API_URL }}
 
       - uses: jakejarvis/s3-sync-action@master
         name: Sync to S3
