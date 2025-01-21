@@ -20,15 +20,16 @@ export const MentorsRegister = ({ lang = 'en' }: MentorsRegisterProps) => {
   const isCommonMentorship = true;
 
   return (
-    <section className={cx('container', 'mentoring-register-section')}>
-      <article className={cx('content', 'column-2')}>
-        <div className={cx('mentoring-register')}>
+    <section className={cx('mentoring-register', 'container')}>
+      <div className={cx('content', 'column-2', 'wrapper')}>
+        <article className={cx('mentoring-register-content')}>
           <WidgetTitle>{mentorsRegisterData[lang].header}</WidgetTitle>
           <Paragraph>{mentorsRegisterData[lang].noteBefore}</Paragraph>
           {isCommonMentorship && (
             <DocDetail
               textBeforeLink={mentorDocsData[lang].mentor.textBeforeLink}
               textLink={mentorDocsData[lang].mentor.textLink}
+              className={cx('black-link')}
               textAfterLink={`${mentorDocsData[lang].mentor.textAfterLink} ${mentorDocsData[lang].mentor.textAfterCourseName}`}
               linkDocs={mentorshipCoursesDefault.links.mentorDocs}
             />
@@ -40,16 +41,14 @@ export const MentorsRegister = ({ lang = 'en' }: MentorsRegisterProps) => {
           >
             {mentorsRegisterData[lang].button.text}
           </LinkCustom>
-        </div>
-        <div className={cx('picture-wrapper')}>
-          <Image
-            src={mentorImg}
-            alt={mentorDocsData[lang].pictureAlt}
-            className={cx('picture')}
-            loading="lazy"
-          />
-        </div>
-      </article>
+        </article>
+        <Image
+          src={mentorImg}
+          alt={mentorDocsData[lang].pictureAlt}
+          className={cx('picture')}
+          loading="lazy"
+        />
+      </div>
     </section>
   );
 };
