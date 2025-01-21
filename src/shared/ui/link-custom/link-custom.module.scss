@@ -81,7 +81,8 @@
 .text-link {
   @extend %transition-all;
 
-  color: $color-blue;
+  display: inline-flex;
+  color: $color-blue-500;
   text-decoration: underline;
 
   &:hover {
