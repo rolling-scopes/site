@@ -37,7 +37,7 @@ export const MentorsAfterRegister = ({ lang = 'en' }: MentorsAfterRegisterProps)
                   {`${id}. ${subtitle}`}
                 </Subtitle>
 
-                <p className={cx('step-content')}>{content}</p>
+                <p className={cx('step-content')} data-testid="step-content">{content}</p>
               </article>
             );
           })}

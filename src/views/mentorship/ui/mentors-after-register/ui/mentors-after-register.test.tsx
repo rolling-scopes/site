@@ -38,7 +38,7 @@ describe('MentorsAfterRegister component without props', () => {
       expect(step.innerHTML).not.toBeNull();
 
       const stepHeader = step.querySelector('[data-testid="subtitle"]');
-      const stepContent = step.querySelector('.step-content');
+      const stepContent = step.querySelector('[data-testid="step-content"]');
 
       expect(stepHeader).not.toBeNull();
       expect(stepHeader).toBeVisible();
@@ -67,7 +67,7 @@ describe('MentorsAfterRegister component with "ru" lang prop', () => {
   it('displays correct steps with cyrillic chars', () => {
     steps.forEach((step) => {
       const stepHeader = step.querySelector('[data-testid="subtitle"]');
-      const stepContent = step.querySelector('.step-content');
+      const stepContent = step.querySelector('[data-testid="step-content"]');
 
       expect(stepHeader?.textContent).toMatch(cyrillicSymbolsRegExp);
       expect(stepContent?.innerHTML).toMatch(cyrillicSymbolsRegExp);
