@@ -7,7 +7,7 @@ import { MemberActivity } from '@/widgets/member-activity';
 import { MentorsDocs } from '@/widgets/mentors-docs';
 import { MentorsFeedback } from '@/widgets/mentors-feedback';
 import { MentorsRegister } from '@/widgets/mentors-register';
-import { MentorshipCourse, benefitMentorshipMentors } from 'data';
+import { MentorshipCourse, benefitMentorshipMentors, mentorsFeedbackData } from 'data';
 
 const studyPathName = 'mentorship';
 
@@ -41,7 +41,7 @@ export const Mentorship = ({ mentorshipData, courses = false }: MentorshipProps)
         onboardLinks={mentorshipData.links.onboard}
         lang={mentorshipData.lang}
       />
-      <MentorsFeedback />
+      <MentorsFeedback mentorsFeedback={mentorsFeedbackData} />
     </>
   );
 };
