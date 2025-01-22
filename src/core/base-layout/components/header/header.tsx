@@ -84,6 +84,7 @@ export const Header = ({ courses }: HeaderProps) => {
         <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 
         <menu className={cx('menu')}>
+          <NavItem label="Donate" href={`#${ANCHORS.DONATE}`} />
           <NavItem label="RS School" href={ROUTES.HOME}>
             <SchoolMenu>
               {schoolMenuStaticLinks.map((link, i) => (
@@ -133,7 +134,6 @@ export const Header = ({ courses }: HeaderProps) => {
               ))}
             </SchoolMenu>
           </NavItem>
-          <NavItem label="Donate" href={`#${ANCHORS.DONATE}`} />
           <NavItem label="Docs" href={ROUTES.DOCS_EN} />
         </menu>
       </section>

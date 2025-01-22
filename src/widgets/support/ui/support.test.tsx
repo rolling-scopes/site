@@ -4,6 +4,8 @@ import { describe, expect, it } from 'vitest';
 import { Support } from './support';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import supportImg from '@/shared/assets/support.webp';
+import boostyImg from '@/shared/assets/svg/boosty-icon.svg';
+import openCollectiveImg from '@/shared/assets/svg/opencollective-icon.svg';
 
 describe('Support Component', () => {
   const mockedData = {
@@ -36,6 +38,8 @@ describe('Support Component', () => {
     const paragraphs = screen.getAllByTestId('paragraph');
     const links = screen.getAllByTestId('link-donate');
     const slothImage = screen.getByTestId('sloth-mascot');
+    const openCollectiveIcon = screen.getByTestId('opencollective-icon');
+    const boostyIcon = screen.getByTestId('boosty-icon');
 
     expect(supportSection).toBeVisible();
     expect(title).toBeVisible();
@@ -57,5 +61,7 @@ describe('Support Component', () => {
     expect(links[1]).toHaveAttribute('href', boostyLink);
     expect(slothImage).toHaveAttribute('src', image.src);
     expect(slothImage).toHaveAttribute('alt', alt);
+    expect(openCollectiveIcon).toHaveAttribute('src', openCollectiveImg.src);
+    expect(boostyIcon).toHaveAttribute('src', boostyImg.src);
   });
 });
