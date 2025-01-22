@@ -14,7 +14,7 @@ type MentorsAfterRegisterProps = {
 };
 
 type StepAfterRegisterProps = {
-  id: string;
+  id: number;
   subtitle: string;
   content: string;
 };
@@ -37,7 +37,7 @@ export const MentorsAfterRegister = ({ lang = 'en' }: MentorsAfterRegisterProps)
                   {`${id}. ${subtitle}`}
                 </Subtitle>
 
-                <p className="step-content">{content}</p>
+                <p className={cx('step-content')}>{content}</p>
               </article>
             );
           })}
