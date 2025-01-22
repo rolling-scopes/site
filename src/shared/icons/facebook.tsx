@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import facebook from '@/shared/assets/svg/facebook.svg';
 
 export const FacebookIcon = () => {

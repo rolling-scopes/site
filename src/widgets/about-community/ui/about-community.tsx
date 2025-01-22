@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+
 import { ANCHORS } from '@/core/const';
 import imageAbout from '@/shared/assets/about.webp';
 import { Paragraph } from '@/shared/ui/paragraph';

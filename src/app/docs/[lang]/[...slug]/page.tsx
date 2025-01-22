@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+
 import { DocsLayout } from '../../components/docs-layout/docs-layout';
 import { TITLE_POSTFIX } from '../../constants';
 import { Menu } from '../../types';

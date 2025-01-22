@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext } from 'react';
+
 import { Stages } from './stages';
 import { ROUTES } from '@/core/const';
 import { dataProviders } from '@/core/services/api';
