@@ -1,35 +1,30 @@
 .mentoring-register {
-  background: $color-blue-background;
+  background: $gradient-blue-background;
 
   &-content {
     max-width: 680px;
   }
 
-  .wrapper {
+  &-wrapper {
     flex-direction: row;
+    gap: 20px;
 
     @include media-tablet {
       flex-direction: column;
-      gap: 20px;
     }
-  }
-
-  @include media-tablet {
-    flex-direction: column;
-  }
-
-  @include media-laptop-medium {
-    flex-direction: column;
-    align-items: flex-start;
   }
 }
 
-.picture {
+.sloth-mascot {
   max-width: 424px;
   max-height: 272px;
   object-fit: contain;
+
+  @include media-tablet {
+    max-width: 290px;
+  }
 }
 
-.black-link {
+.gray-link {
   color: $color-gray-600;
 }

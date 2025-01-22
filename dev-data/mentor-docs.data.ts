@@ -30,7 +30,7 @@ export const mentorDocsData = {
       textAfterLink: 'для курса',
       textAfterCourseName: '.',
     },
-    pictureAlt: 'Ментор и его студенты',
+    pictureAlt: 'Талисман ленивца, одетый в красный плащ супергероя',
     additional: 'Вы так же можете задать вопросы ',
   },
 };

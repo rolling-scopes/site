@@ -21,7 +21,7 @@ export const MentorsRegister = ({ lang = 'en' }: MentorsRegisterProps) => {
 
   return (
     <section className={cx('mentoring-register', 'container')}>
-      <div className={cx('content', 'column-2', 'wrapper')}>
+      <div className={cx('content', 'column-2', 'mentoring-register-wrapper')}>
         <article className={cx('mentoring-register-content')}>
           <WidgetTitle>{mentorsRegisterData[lang].header}</WidgetTitle>
           <Paragraph>{mentorsRegisterData[lang].noteBefore}</Paragraph>
@@ -29,7 +29,7 @@ export const MentorsRegister = ({ lang = 'en' }: MentorsRegisterProps) => {
             <DocDetail
               textBeforeLink={mentorDocsData[lang].mentor.textBeforeLink}
               textLink={mentorDocsData[lang].mentor.textLink}
-              className={cx('black-link')}
+              className={cx('gray-link')}
               textAfterLink={`${mentorDocsData[lang].mentor.textAfterLink} ${mentorDocsData[lang].mentor.textAfterCourseName}`}
               linkDocs={mentorshipCoursesDefault.links.mentorDocs}
             />
@@ -45,7 +45,7 @@ export const MentorsRegister = ({ lang = 'en' }: MentorsRegisterProps) => {
         <Image
           src={mentorImg}
           alt={mentorDocsData[lang].pictureAlt}
-          className={cx('picture')}
+          className={cx('sloth-mascot')}
           loading="lazy"
         />
       </div>
