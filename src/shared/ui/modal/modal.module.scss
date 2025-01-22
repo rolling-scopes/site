@@ -1,4 +1,8 @@
 .modal {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
   max-width: 889px;
   padding: 0 32px 32px 32px;
 
@@ -46,6 +50,8 @@
 }
 
 .modal-body {
+  overflow-y: auto;
+
   p {
     margin: 0;
   }
