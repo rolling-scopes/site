@@ -2,26 +2,35 @@
   min-height: 440px;
   background: url('../../../../shared/assets/mentorship-hero.webp') center / cover no-repeat;
 
-  &-info {
+  &-content {
     display: flex;
-    flex-direction: column;
 
-    width: fit-content;
-    padding: 32px;
+    .hero-info {
+      display: flex;
+      flex-direction: column;
 
-    text-align: left;
+      width: fit-content;
+      padding: 32px;
 
-    background-color: hsla(from $color-white h s l/ $opacity-80);
-    border-radius: 12px;
+      text-align: left;
 
-    .title-main {
-      @include media-tablet {
-        font-size: 80px;
+      background-color: hsla(from $color-white h s l/ $opacity-80);
+      border-radius: 12px;
+
+      .title-main {
+        @include media-tablet {
+          font-size: 80px;
+        }
+
+        @include media-mobile-landscape {
+          font-size: 40px;
+        }
       }
+    }
 
-      @include media-mobile-landscape {
-        font-size: 40px;
-      }
+    @include media-tablet {
+      align-items: center;
+      justify-content: center;
     }
   }
 }
