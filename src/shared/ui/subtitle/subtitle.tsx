@@ -22,19 +22,25 @@ const subtitleVariants = cva(cx('subtitle'), {
       gray: cx('gray-600'),
       black: cx('black'),
     },
+    weight: {
+      normal: cx('normal'),
+      bold: cx('bold'),
+    },
   },
   defaultVariants: {
     fontSize: 'medium',
     color: 'gray',
+    weight: 'normal',
   },
 });
 
-export const Subtitle = ({ children, fontSize, color, className, ...props }: SubtitleProps) => {
+export const Subtitle = ({ children, fontSize, color, weight, className, ...props }: SubtitleProps) => {
   return (
     <h3
       className={subtitleVariants({
         fontSize,
         color,
+        weight,
         className,
       })}
       data-testid="subtitle"
