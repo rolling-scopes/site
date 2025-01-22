@@ -1,5 +1,7 @@
 import classNames from 'classnames/bind';
 
+import { MentorFeedback, MentorFeedbackCard } from '@/entities/mentor';
+import { Slider } from '@/shared/ui/slider';
 import { VideoPlaylistWithPlayer } from '@/shared/ui/video-playlist-with-player';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
@@ -7,15 +9,50 @@ import styles from './mentors-feedback.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const MentorsFeedback = () => {
+type MentorsFeedbackProps = {
+  mentorsFeedback: MentorFeedback[];
+};
+
+export const MentorsFeedback = ({ mentorsFeedback }: MentorsFeedbackProps) => {
+  const slides = mentorsFeedback.map(({ name, course, review, photo }, index) => (
+    <MentorFeedbackCard
+      key={index}
+      name={name}
+      course={course}
+      review={review}
+      photo={photo}
+    />
+  ));
+
   return (
     <section className={cx('container')} data-testid="mentors-feedback">
       <div className={cx('content')}>
         <WidgetTitle mods="asterisk">Mentors’ Feedback</WidgetTitle>
-        <VideoPlaylistWithPlayer
-          apiKey={process.env.YOUTUBE_API_KEY}
-          playlistId="PLzLiprpVuH8f7Jg8pgZUCeTN-Q6uVZNhg"
-        />
+        <div className={cx('mentors-feedback-wrapper')}>
+          <div className={cx('slider-wrapper')} data-testid="mentors-feedback-list">
+            <Slider
+              className={cx('mentors-feedback-slider')}
+              slides={slides}
+              sliderProps={{
+                spaceBetween: 32,
+                breakpoints: {
+                  320: {
+                    slidesPerView: 1,
+                    slidesPerGroup: 1,
+                  },
+                  1024: {
+                    slidesPerView: 2,
+                    slidesPerGroup: 2,
+                  },
+                },
+              }}
+            />
+          </div>
+          <VideoPlaylistWithPlayer
+            apiKey={process.env.YOUTUBE_API_KEY}
+            playlistId="PLzLiprpVuH8f7Jg8pgZUCeTN-Q6uVZNhg"
+          />
+        </div>
       </div>
     </section>
   );

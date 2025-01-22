@@ -11,6 +11,8 @@ env:
   AWS_ACCESS_KEY_ID: ${{ secrets.DEPLOY_AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_AWS_SECRET_ACCESS_KEY }}
   AWS_REGION: 'eu-central-1'
+  API_URL: ${{ secrets.API_URL }}
+  YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY_PRODUCTION }}
 
 jobs:
   rs-school:
@@ -26,11 +28,9 @@ jobs:
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
-      
+
       - name: Build
         run: npm run build
-        env:
-          API_URL: ${{ secrets.API_URL }}
 
       # Copy the static files to the S3 bucket from _next folder (js, css, images)
       # Set the cache-control header to 30 days

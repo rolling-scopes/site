@@ -4,6 +4,10 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+
+  &:has(dialog[open]) {
+    overflow: hidden;
+  }
 }
 
 body {
@@ -174,6 +178,10 @@ figure {
       height: 16px;
     }
   }
+}
+
+:root {
+  --swiper-pagination-bullet-size: 10px;
 }
 
 @media only percy {

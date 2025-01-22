@@ -45,11 +45,11 @@ describe('VideoPlaylistWithPlayer Component', () => {
       }),
     } as Response);
 
-    await waitFor(() => {
-      render(<VideoPlaylistWithPlayer playlistId="testPlaylist" apiKey="testApiKey" />);
-    });
+    render(<VideoPlaylistWithPlayer playlistId="testPlaylist" apiKey="testApiKey" />);
 
-    expect(screen.getByTestId('playlist')).toBeVisible();
+    await waitFor(() => {
+      expect(screen.getByTestId('playlist')).toBeVisible();
+    });
     expect(screen.getByTestId('mocked-video-player')).toBeVisible();
     expect(screen.getByTestId('playlist-title')).toHaveTextContent(`3 Video Feedbacks`);
     expect(screen.getAllByTestId(/thumbnail-\d+/)).toHaveLength(MOCKED_VIDEOS.length);

@@ -3,6 +3,7 @@ import { StaticImageData } from 'next/image';
 import { Video } from '../types';
 import { ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
+import { MentorFeedback } from '@/entities/mentor';
 import type { Trainer } from '@/entities/trainer';
 import nodejsImg1 from '@/shared/assets/mentors/m-shylau.webp';
 import { COURSE_LINKS } from '@/shared/constants';
@@ -190,6 +191,20 @@ export const MOCKED_MERCH_DATA = {
   imageAltText:
     'A collage of photos with branded T-shirts, cups, and stickers featuring the RSSchool logo',
 };
+
+export const MOCKED_MENTORS_FEEDBACK = {
+  name: 'John Doe',
+  course: 'React',
+  review: 'One of the best courses!',
+  photo: nodejsImg1,
+};
+
+export const MOCKED_ONE_MENTORS_FEEDBACK: MentorFeedback[] = [MOCKED_MENTORS_FEEDBACK];
+
+export const MOCKED_SEVERAL_MENTORS_FEEDBACK: MentorFeedback[] = Array.from(
+  { length: 8 },
+  () => MOCKED_MENTORS_FEEDBACK,
+);
 
 export const MOCKED_VIDEOS: Video[] = [
   {
