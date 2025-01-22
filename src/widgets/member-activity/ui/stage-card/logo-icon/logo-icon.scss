@@ -1,32 +1,18 @@
 .stage-logo {
-  overflow: hidden;
+  position: relative;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+}
 
-  max-width: 143px;
-  max-height: 102px;
-  padding: 0 0 0 60px;
+.shadows-blurs {
+  position: absolute;
+  z-index: 10;
+  top: 6px;
+  left: 12px;
 
-  img {
-    width: auto;
-    max-width: 143px;
-    height: auto;
-    max-height: 102px;
+  width: 20px;
+  height: 19px;
 
-    object-fit: contain;
-    object-position: bottom right;
-
-    @include media-laptop {
-      max-width: 118px;
-    }
-  }
-
-  @include media-laptop {
-    padding: 0 0 0 71px;
-  }
-
-  @include media-tablet {
-    display: none;
-  }
+  background: $color-shadows-blurs;
+  filter: blur(8);
+  border-radius: 19.5px;
 }

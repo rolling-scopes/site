@@ -5,6 +5,10 @@ import angularSmall from '@/shared/assets/icons/footer/angular.webp';
 import jsSmall from '@/shared/assets/icons/footer/javascript.webp';
 import reactSmall from '@/shared/assets/icons/footer/react.webp';
 import javascript from '@/shared/assets/icons/javascript.webp';
+import bestPractIcon from '@/shared/assets/icons/mentor-activities/best-pract.svg';
+import codeRevIcon from '@/shared/assets/icons/mentor-activities/code-rev.svg';
+import condTechIntIcon from '@/shared/assets/icons/mentor-activities/cond-tech-int.svg';
+import suprTeamAssignIcon from '@/shared/assets/icons/mentor-activities/supr-team-assign.svg';
 import react from '@/shared/assets/icons/react.svg';
 import { TelegramIcon } from '@/shared/icons';
 import { MENTOR_ONBOARD_TELEGRAM_EN, MENTOR_ONBOARD_TELEGRAM_RU, MentorshipCourse } from 'data';
@@ -141,6 +145,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
         id: 1,
         title: texts.title.interview,
         description: texts.description.interview,
+        logoIcon: condTechIntIcon,
         links: [
           {
             href: linkDocs.en.interview,
@@ -152,11 +157,13 @@ export const mentorshipCourses: MentorshipCourse[] = [
         id: 2,
         title: texts.title.bestPracticesJS,
         description: texts.description.bestPracticesJS,
+        logoIcon: bestPractIcon,
       },
       {
         id: 3,
         title: texts.title.codeReview,
         description: texts.description.codeReview,
+        logoIcon: codeRevIcon,
         links: [
           {
             href: linkDocs.en.codeReview,
@@ -166,13 +173,9 @@ export const mentorshipCourses: MentorshipCourse[] = [
       },
       {
         id: 4,
-        title: 'Conducting two CoreJS interviews',
-        description: texts.description.interviewCore,
-      },
-      {
-        id: 5,
         title: texts.title.finalProject,
         description: texts.description.finalProject,
+        logoIcon: suprTeamAssignIcon,
       },
     ],
   },
@@ -224,11 +227,6 @@ export const mentorshipCourses: MentorshipCourse[] = [
       },
       {
         id: 4,
-        title: 'Проведение двух CoreJS интервью',
-        description: 'Ментор проводит два интервью со студентами других менторов по основным темам курса. Участие в интервью позволяет студентам не только увидеть свои пробелы в знаниях, но и почувствовать атмосферу подобных встреч',
-      },
-      {
-        id: 5,
         title: 'Курирование командного задания',
         description: 'Опыт и практические знания ментора помогут организовать студентов для работы над командным проектом',
       },

@@ -10,6 +10,7 @@ interface LogoIconProps {
 export const LogoIcon = ({ icon, title }: LogoIconProps) => {
   return (
     <div className="stage-logo">
+      <div className="shadows-blurs"></div>
       <Image src={icon} alt={title} />
     </div>
   );

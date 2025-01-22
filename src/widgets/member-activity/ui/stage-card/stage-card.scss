@@ -1,8 +1,11 @@
 .stage {
   display: flex;
-  gap: 40px;
+  flex-direction: column;
+  gap: 16px;
   align-items: flex-start;
   justify-content: flex-start;
+
+  padding: 32px;
 
   color: $color-gray-600;
 
@@ -10,7 +13,7 @@
     display: flex;
     flex: 1 1 40%;
     flex-direction: column;
-    gap: 8px;
+    gap: 16px;
     align-items: flex-start;
     justify-content: flex-start;
 
@@ -52,6 +55,6 @@
   }
 
   @include media-tablet {
-    gap: 16px;
+    gap: 10px;
   }
 }

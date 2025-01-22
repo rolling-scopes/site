@@ -5,7 +5,6 @@ import { Stages } from './stages';
 import { ROUTES } from '@/core/const';
 import { dataProviders } from '@/core/services/api';
 import type { Language, ListType } from '@/shared/types';
-import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { type DataMap, MentorActivities, MentorshipDefaultRouteKeys } from 'data';
 
@@ -53,13 +52,8 @@ export const MemberActivity = ({ path, type, activities, lang = 'en' }: StudyPat
 
   let title = isAngularOrAwsDev ? 'Course Curriculum' : localizedContent[lang].title;
 
-  let paragraph = isAngularOrAwsDev
-    ? 'This program will have theory and practice on the following topic:'
-    : localizedContent[lang].paragraph;
-
   if (path === ROUTES.MENTORSHIP && activities) {
     title = mentorsActivityData[lang].header;
-    paragraph = mentorsActivityData[lang].info;
     coursesPath = activities;
   }
 
@@ -70,7 +64,6 @@ export const MemberActivity = ({ path, type, activities, lang = 'en' }: StudyPat
           <WidgetTitle size="small" mods="asterisk">
             {title}
           </WidgetTitle>
-          <Paragraph>{paragraph}</Paragraph>
           <Stages stages={coursesPath} type={type} />
         </div>
       </section>

@@ -5,7 +5,7 @@ import { Language } from '@/shared/types';
 import { SocialMediaProps } from '@/shared/ui/social-media-item';
 import { Stage } from '@/widgets/member-activity/ui/stage-card';
 
-export type MentorActivities = Pick<Stage, 'id' | 'title' | 'description' | 'links'>;
+export type MentorActivities = Pick<Stage, 'id' | 'title' | 'description' | 'links' | 'logoIcon'>;
 
 type CourseTitleKey = keyof typeof COURSE_TITLES;
 export type CourseTitle = typeof COURSE_TITLES[CourseTitleKey];
@@ -28,6 +28,7 @@ export type MentorshipCourse = {
   id: number;
   title: CourseTitle;
   iconSmall: StaticImageData;
+  logoIcon?: StaticImageData;
   description?: string;
   lang: Language;
   detailsUrl: MentorshipRoute;

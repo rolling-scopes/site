@@ -1,9 +1,7 @@
 .stages {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(560px, 1fr));
   gap: 32px;
   align-items: flex-start;
   justify-content: flex-start;
-
-  margin-top: 64px;
 }
