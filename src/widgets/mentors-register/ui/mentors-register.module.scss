@@ -21,13 +21,13 @@
 }
 
 .sloth-mascot {
-  max-width: 424px;
-  max-height: 272px;
+  width: 427px;
+  height: 272px;
   object-fit: contain;
 
   @include media-tablet {
-    max-width: 290px;
-    max-height: 272px;
+    width: 358px;
+    height: 228px;
   }
 }
 
