@@ -40,21 +40,15 @@ $color-purple-100: hsl(263deg 55% 83%); // #cebceb
 $color-purple-50: hsl(260deg 47% 96%); // #f4f1fa
 
 // Blue colors
-$color-mentorship-header: hsl(198deg 86% 55%); // #2bb4ef
-$color-mentorship-blue: hsl(198deg 100% 80%); // #9be1ff
-$color-mentorship-blue-light: hsl(198deg 95% 62%); // #46c4fa
-
+$color-blue-100: hsl(198deg 100% 80%); // #9BE1FF
+$color-blue-200: hsl(198deg 95% 62%); // #41C3FA
 $color-blue-500: hsl(211deg 100% 50%); // #007bff
 $color-blue-600: hsl(211deg 100% 40%); // #0969da
 $color-blue-700: hsl(211deg 100% 30%); // #004CA3
 $color-blue-background-100: hsl(211deg 100% 94% / 100%); // #e0efff
 
 // Gradient colors
-$gradient-blue-background: linear-gradient(
-  90deg,
-  $color-mentorship-blue,
-  $color-mentorship-blue-light
-);
+$gradient-blue-background: linear-gradient(90deg, $color-blue-100, $color-blue-200);
 
 // Technologies theme colors
 $color-js-bg: hsl(52deg 100% 96%); // #FFFCE9

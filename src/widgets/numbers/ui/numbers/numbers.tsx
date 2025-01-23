@@ -2,6 +2,7 @@ import classnames from 'classnames/bind';
 import Image from 'next/image';
 
 import { InfoCell } from '../info-cell/info-cell';
+import { InfoGrid } from '../info-grid/info-grid';
 import map from '@/shared/assets/map.webp';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -28,11 +29,11 @@ export const Numbers = () => {
             knowledge, enrich your network and just have fun.
           </Paragraph>
         </article>
-        <div className={cx('numbers-info')}>
+        <InfoGrid className={cx('numbers-grid')}>
           {rsInNumbers.map(({ id, title, description }) => (
-            <InfoCell key={id} title={title} description={description} />
+            <InfoCell key={id} title={title} description={description} titleFontSize="large" />
           ))}
-        </div>
+        </InfoGrid>
         <Image
           className={cx('numbers-map')}
           src={map}
