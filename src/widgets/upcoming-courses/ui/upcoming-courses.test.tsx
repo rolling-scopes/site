@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
+
 import { mockedCourses } from '@/shared/__tests__/constants';
 import { getActualData } from '@/shared/helpers/getActualData';
 import { UpcomingCourses } from '@/widgets/upcoming-courses';

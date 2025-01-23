@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+
 import notFoundImg from '@/shared/assets/404.webp';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';

@@ -24,7 +24,8 @@
     "types": [
       "node",
       "@testing-library/jest-dom",
-      "vitest/globals"
+      "vitest/globals",
+      "gapi.youtube"
     ],
     "baseUrl": "./src",
     "paths": {

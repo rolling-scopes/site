@@ -128,7 +128,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
       icon: [images.js],
       courseDocs: linkDocs.js.courseDocs,
       mentorDocs: linkDocs.en.mentorOverview,
-      onboard: [onboardLinks.telegramEn],
+      onboard: [onboardLinks.telegramEn, onboardLinks.telegramRu],
     },
     details: [
       'The duration of mentoring is 18-19 weeks',
@@ -186,7 +186,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
     links: {
       icon: [images.js],
       mentorDocs: linkDocs.ru.mentorOverview,
-      onboard: [onboardLinks.telegramRu],
+      onboard: [onboardLinks.telegramEn, onboardLinks.telegramRu],
     },
     details: [
       'Длительность менторства 18-19 недель',
@@ -244,7 +244,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
     links: {
       icon: [images.react],
       mentorDocs: linkDocs.en.mentorOverview,
-      onboard: [onboardLinks.telegramEn],
+      onboard: [onboardLinks.telegramEn, onboardLinks.telegramRu],
     },
     details: [
       'The duration of mentoring is 12 weeks',
@@ -291,7 +291,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
     links: {
       icon: [images.angular],
       mentorDocs: linkDocs.en.mentorOverview,
-      onboard: [onboardLinks.telegramEn],
+      onboard: [onboardLinks.telegramEn, onboardLinks.telegramRu],
     },
     details: [
       'The duration of mentoring is 8-10 weeks',

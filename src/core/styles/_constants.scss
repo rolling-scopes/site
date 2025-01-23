@@ -20,6 +20,8 @@ $font-weight-bold: 700;
 
 // Primary colors
 $color-black: hsl(0deg 0% 0%); // #000
+
+// White colors
 $color-white: hsl(0deg 0% 100%); // #fff
 
 // Yellow colors
@@ -76,10 +78,12 @@ $color-gray-100: hsl(0deg 0% 95%); // #f2f2f2
 // Link color
 $color-blue: hsl(202deg 89% 65%);
 
-// OPACITY  /* Use color-variables with opacity: hsla(from $[color-variable] h s l/ $[opacity-variable]); */
+// OPACITY  /* Use color-variables with opacity: hsla(from $[color-variable] h s l / $[opacity-variable]); */
 $opacity-100: 1;
 $opacity-80: 0.8;
+$opacity-70: 0.7;
 $opacity-50: 0.5;
 $opacity-20: 0.2;
+$opacity-10: 0.1;
 $opacity-8: 0.08;
 $opacity-0: 0;

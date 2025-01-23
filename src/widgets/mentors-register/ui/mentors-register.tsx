@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+
 import mentorImg from '@/shared/assets/mentor-register.svg';
 import { Language } from '@/shared/types';
 import { LinkCustom } from '@/shared/ui/link-custom';

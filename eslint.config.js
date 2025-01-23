@@ -1,17 +1,15 @@
-import js from '@eslint/js';
 import { FlatCompat } from '@eslint/eslintrc';
+import js from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
-import tsPlugin from '@typescript-eslint/eslint-plugin';
-import tsParser from '@typescript-eslint/parser';
-import cssImportOrder from 'eslint-plugin-css-import-order';
+import vitest from '@vitest/eslint-plugin';
 import importPlugin from 'eslint-plugin-import';
 import importNewlines from 'eslint-plugin-import-newlines';
-import reactPlugin from 'eslint-plugin-react';
-import reactHooksPlugin from 'eslint-plugin-react-hooks';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import sortExports from 'eslint-plugin-sort-exports';
-import vitestPlugin from 'eslint-plugin-vitest';
 import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 const DIRNAME = import.meta.dirname;
 const compat = new FlatCompat({ baseDirectory: DIRNAME });
@@ -20,31 +18,18 @@ const fsdConfig = compat.extends('@feature-sliced/eslint-config');
 // Pop is needed to remove 'ecmaVersion: 2015' to fix the error 💫
 fsdConfig.pop();
 
-export default [
+export default tseslint.config(
+  { ignores: ['.next', 'build'] },
   {
-    ignores: [
-      'node_modules/',
-      'dist/',
-      'build/',
-      'coverage/',
-      'optimizeImages/',
-      'vite.config.ts',
-      'vitest.config.ts',
-      'eslint.config.js',
-    ],
-  },
-  stylistic.configs['recommended-flat'],
-  ...fsdConfig,
-  {
-    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
+    extends: [js.configs.recommended, tseslint.configs.recommended, fsdConfig],
+    files: ['**/*.{ts,tsx,js,jsx}'],
     languageOptions: {
       globals: {
         ...globals.browser,
         ...globals.es2020,
         ...globals.node,
-        ...vitestPlugin.environments.env.globals,
+        ...vitest.environments.env.globals,
       },
-      parser: tsParser,
       ecmaVersion: 'latest',
       sourceType: 'module',
       parserOptions: {
@@ -55,38 +40,27 @@ export default [
       },
     },
     plugins: {
-      '@eslint': js,
-      '@typescript-eslint': tsPlugin,
-      'react': reactPlugin,
-      'react-hooks': reactHooksPlugin,
+      'react': react,
+      'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
       'import': importPlugin,
-      'vitest': vitestPlugin,
-      'css-import-order': cssImportOrder,
+      'vitest': vitest,
       'sort-exports': sortExports,
       'import-newlines': importNewlines,
       '@stylistic': stylistic,
     },
     settings: {
-      'react': {
-        version: 'detect',
-      },
-      'import/resolver': {
-        typescript: {
-          alwaysTryTypes: true,
-        },
-      },
+      'react': { version: 'detect' },
+      'import/resolver': { typescript: { alwaysTryTypes: true } },
     },
     rules: {
-      ...js.configs['recommended'].rules,
-      ...tsPlugin.configs['recommended'].rules,
-      ...reactPlugin.configs['recommended'].rules,
-      ...reactHooksPlugin.configs['recommended'].rules,
-      ...importPlugin.configs['recommended'].rules,
-      ...vitestPlugin.configs['recommended'].rules,
-      ...cssImportOrder.configs['recommended'].rules,
+      ...react.configs.recommended.rules,
+      ...reactHooks.configs.recommended.rules,
+      ...importPlugin.configs.recommended.rules,
+      ...vitest.configs.recommended.rules,
+      ...stylistic.configs['recommended-flat'].rules,
 
-      'boundaries/element-types': 'warn',
+      'boundaries/element-types': 'off',
       'no-undef': 'off',
       'curly': 'error',
       'no-restricted-exports': 'off',
@@ -103,47 +77,46 @@ export default [
         },
       ],
 
-      'import/extensions': [
-        'error',
-        {
-          json: 'always',
-        },
-      ],
+      'import/extensions': ['error', { json: 'always' }],
       'import/prefer-default-export': 'off',
       'import/no-default-export': 'off',
-      'import/no-unresolved': ['error', { commonjs: true, amd: true }],
+      'import/no-unresolved': [
+        'error',
+        {
+          commonjs: true,
+          amd: true,
+        },
+      ],
       'import/no-namespace': ['error', { ignore: ['*.ext'] }],
       'import/newline-after-import': 'error',
       'import/no-duplicates': 'error',
-      'import/no-internal-modules': 'warn',
+      'import/no-internal-modules': 'off',
       'import/order': [
         'error',
         {
-          groups: [
+          'groups': [
             ['builtin', 'external'],
             ['internal', 'parent', 'sibling', 'index', 'type'],
             ['object'],
           ],
-          pathGroups: [
+          'newlines-between': 'always',
+          'pathGroups': [
             {
               pattern: '{react,react-dom/**,redux}',
               group: 'external',
               position: 'before',
             },
             {
-              pattern: '{.,..}/**/*.(svg|webp)',
+              pattern: '*.{scss,css}',
               group: 'object',
-              position: 'after',
-            },
-            {
-              pattern: '{.,..}/**/*module.scss',
-              group: 'object',
+              patternOptions: { matchBase: true },
               position: 'after',
             },
           ],
-          pathGroupsExcludedImportTypes: ['react', 'react-dom/**'],
-          distinctGroup: false,
-          alphabetize: {
+          'warnOnUnassignedImports': true,
+          'pathGroupsExcludedImportTypes': ['react', 'react-dom/**'],
+          'distinctGroup': false,
+          'alphabetize': {
             order: 'asc',
             orderImportKind: 'asc',
             caseInsensitive: true,
@@ -192,12 +165,27 @@ export default [
         },
       ],
       '@stylistic/jsx-one-expression-per-line': ['error', { allow: 'single-child' }],
-      '@stylistic/jsx-max-props-per-line': ['error', { maximum: { single: 4, multi: 1 } }],
+      '@stylistic/jsx-max-props-per-line': [
+        'error',
+        {
+          maximum: {
+            single: 4,
+            multi: 1,
+          },
+        },
+      ],
       '@stylistic/jsx-child-element-spacing': 'warn',
 
       '@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: false }],
       '@stylistic/array-bracket-newline': ['error', 'consistent'],
-      '@stylistic/quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
+      '@stylistic/quotes': [
+        'error',
+        'single',
+        {
+          avoidEscape: true,
+          allowTemplateLiterals: true,
+        },
+      ],
       '@stylistic/operator-linebreak': ['error', 'before', { overrides: { '=': 'after' } }],
       '@stylistic/newline-per-chained-call': ['error', { ignoreChainWithDepth: 4 }],
       '@stylistic/multiline-ternary': ['error', 'always-multiline'],
@@ -208,7 +196,11 @@ export default [
           prev: ['const', 'let', 'var'],
           next: '*',
         },
-        { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
+        {
+          blankLine: 'any',
+          prev: ['const', 'let', 'var'],
+          next: ['const', 'let', 'var'],
+        },
       ],
       '@stylistic/array-element-newline': [
         'error',
@@ -221,7 +213,10 @@ export default [
       '@stylistic/object-curly-newline': [
         'error',
         {
-          ObjectExpression: { multiline: true, minProperties: 2 },
+          ObjectExpression: {
+            multiline: true,
+            minProperties: 2,
+          },
         },
       ],
       '@stylistic/object-property-newline': ['error', { allowAllPropertiesOnSameLine: false }],
@@ -264,6 +259,7 @@ export default [
           ignoreRegExpLiterals: true,
         },
       ],
+      '@stylistic/quote-props': ['error', 'consistent'],
     },
   },
-];
+);

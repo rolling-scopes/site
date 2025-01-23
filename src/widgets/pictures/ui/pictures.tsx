@@ -3,6 +3,7 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 import { Carousel } from 'react-responsive-carousel';
+
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SocialMediaItem } from '@/shared/ui/social-media-item';
 import { WidgetTitle } from '@/shared/ui/widget-title';

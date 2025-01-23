@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
+
 import { Merch } from './merch';
 import { MOCKED_MERCH_DATA } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';

@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+
 import { Courses } from '@/views/courses';
 
 export async function generateMetadata(): Promise<Metadata> {

@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+
 import { VIEWPORTS, takeScreenshot } from './utils';
 import { ROUTES } from '@/core/const';
 

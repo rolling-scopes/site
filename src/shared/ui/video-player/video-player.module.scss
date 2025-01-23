@@ -1,0 +1,14 @@
+.video-player {
+  aspect-ratio: 16 / 9;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.video-player-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
