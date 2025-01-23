@@ -9,6 +9,7 @@ import {
   CourseNamesKeys,
 } from './courseTitles.data';
 import awsPractitionerBadge from '@/shared/assets/aws-cloud-pract-badge.webp';
+import mentorWithStudents from '@/shared/assets/mentor-with-his-students.webp';
 import angularImg from '@/shared/assets/rs-slope-angular.webp';
 import awsDevImg from '@/shared/assets/rs-slope-aws-dev.webp';
 import awsFundamentalsImg from '@/shared/assets/rs-slope-aws-fundamentals.webp';
@@ -298,6 +299,31 @@ export const contentMap: ContentMap = {
       />,
     ],
     image: awsDevImg,
+  },
+  [COURSE_TITLES.SHORT_TRACK]: {
+    title: 'About the Opportunities',
+    content: [
+      <Paragraph key="short track 01">
+        This a program designed for students who already possess strong foundational knowledge of
+        JavaScript/TypeScript and want to quickly level up to meet the requirements for employment
+        at EPAM.
+      </Paragraph>,
+      <Paragraph key="short track 02">
+        We are launching the Short Track now because new project positions are becoming available,
+        and we want to help you update your skills and prepare for interviews at a fast pace to be
+        ready by April.
+      </Paragraph>,
+      <List
+        key="short track 03"
+        data={[
+          'In 2024, EPAM hired more than 50 RS School graduates. We hope to double that number this year despite the unstable demand. Project positions are highly irregular, and it’s difficult to predict the exact number of vacancies.',
+          'Historically, this course was called “Short Track” (before 2022), but since then, the market has changed significantly, and there is no longer a 100% guarantee that vacancies will be available right after completing the Short Track.',
+          'However, we aim to provide the highest level of training to prepare you for any interviews. Most of our organizers have completed this program themselves and successfully joined EPAM.',
+          'It is likely that in a month or two, we will announce another round of applications for the Short Track program.',
+        ]}
+      />,
+    ],
+    image: mentorWithStudents,
   },
 };
 

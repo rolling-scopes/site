@@ -33,6 +33,7 @@ export const ROUTES = {
   AWS_FUNDAMENTALS: 'aws-fundamentals',
   AWS_DEVOPS: 'aws-devops',
   REACT: 'reactjs',
+  SHORT_TRACK: 'short-track',
   MENTORSHIP: 'mentorship',
   DOCS_EN: 'docs/en',
   DOCS_RU: 'docs/ru',

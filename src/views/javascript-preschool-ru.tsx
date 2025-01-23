@@ -7,7 +7,7 @@ import { HeroCourse } from '@/widgets/hero-course';
 import { Required } from '@/widgets/required';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
-import { CourseNames, preSchoolRu } from 'data';
+import { CourseNames, faqData, preSchoolRu } from 'data';
 
 type JavaScriptPreSchoolRuProps = {
   courseName: CourseNames['JS_PRESCHOOL_RU'];
@@ -23,7 +23,7 @@ export const JavaScriptPreSchoolRu = ({ courseName }: JavaScriptPreSchoolRuProps
       <Required courseName={courseName} />
       <Certification courseName={courseName} />
       <Communication courseName={courseName} />
-      <Faq />
+      <Faq questions={faqData} />
       <Trainers trainers={preSchoolRu} courseName={courseName} />
     </>
   );

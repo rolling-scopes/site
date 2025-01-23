@@ -3,13 +3,17 @@ export const communicationText = {
     title: 'Communication',
     subTitle: 'Discord is the main communication channel in RS School',
     subTitleJs: 'RS School uses two main communication channels:',
+    // subTitleST: 'RS School uses two main communication channels:',
     firstParagraphFirstHalf: 'Here is link for the ',
-    discordParagraphTextJs: ': Join the Discord server to see the latest news and chat with students.',
+    discordParagraphTextJs:
+      ': Join the Discord server to see the latest news and chat with students.',
     discordLink: 'course Discord server',
     discordLinkJs: 'Discord',
     firstParagraphSecondHalf: ', where you can see latest news and chat with students.',
-    telegramParagraphTextJs: ': You can also join the official Telegram channel for updates and discussions.',
-    discordNote: 'Attention! In some countries, access to Discord requires the use of a VPN. If you are having trouble connecting, please try using a reliable VPN service.',
+    telegramParagraphTextJs:
+      ': You can also join the official Telegram channel for updates and discussions.',
+    discordNote:
+      'Attention! In some countries, access to Discord requires the use of a VPN. If you are having trouble connecting, please try using a reliable VPN service.',
     secondParagraphFirstHalf: 'There are channels in ',
     telegramLink: 'Telegram',
     secondParagraphSecondHalf:
@@ -29,7 +33,8 @@ export const communicationText = {
     firstParagraphSecondHalf:
       ', где вы можете посмотреть последние новости, задать вопросы и общаться со студентами.',
     telegramParagraphTextJs: '',
-    discordNote: 'Внимание! В некоторых странах для доступа к Discord требуется использование VPN. Если у вас возникают трудности с подключением, попробуйте использовать надёжный VPN-сервис.',
+    discordNote:
+      'Внимание! В некоторых странах для доступа к Discord требуется использование VPN. Если у вас возникают трудности с подключением, попробуйте использовать надёжный VPN-сервис.',
     secondParagraphFirstHalf: 'Также есть каналы в ',
     telegramLink: 'Телеграм',
     secondParagraphSecondHalf:

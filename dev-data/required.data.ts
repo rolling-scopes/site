@@ -336,4 +336,46 @@ export const courseDataMap: CourseMap = {
       },
     ],
   },
+  [COURSE_TITLES.SHORT_TRACK]: {
+    title: 'What is required for course?',
+    knowBefore: {
+      title: 'Required before the start',
+      description: [
+        'You are a current Stage#1 student or a graduate/participant of any previous RS School batches.',
+        'You have solid front-end development skills and an English proficiency level of at least B1 (Intermediate).',
+        'You are ready to dedicate at least 20-40 hours per week to studying.',
+        'You reside in one of the countries below: Georgia, Uzbekistan, Kazakhstan, Kyrgyzstan, Armenia, Poland, Lithuania, Turkey, Croatia, Bulgaria, Hungary, Romania, Serbia',
+      ],
+    },
+    willLearn: [
+      {
+        title: 'Poland document requirements:',
+        description: [
+          'EU Long-Term Residence Permit (Karta rezydenta długoterminowego UE)',
+          'Permanent Residence Card (Karta stałego pobytu)',
+          'Polish Citizenship (Obywatelstwo polskie)',
+          'Temporary Residence Card (Karta czasowego pobytu) with a work market access note (dostęp do rynku pracy)',
+        ],
+      },
+      {
+        title: 'Lithuania document requirements:',
+        description: [
+          'Citizenship of Lithuania or Latvia (Lietuvos Respublikos pilietybė)',
+          'Permanent Residence Permit (Nuolatinis leidimas gyventi)',
+          'Lithuanian EU Blue Card (ES mėlynoji kortelė)',
+          'Temporary Residence Permit with work rights (Laikinas leidimas gyventi su teise dirbti)',
+        ],
+      },
+      {
+        title: 'Turkish document requirements::',
+        description: ['Turkish citizens'],
+      },
+      {
+        title: 'Croatia, Bulgaria, Hungary, Romania, Serbia:',
+        description: [
+          'employment is theoretically possible depending on your documents and experience',
+        ],
+      },
+    ],
+  },
 };

@@ -21,4 +21,5 @@ export const COURSE_LINKS = {
   AWS_FUNDAMENTALS: 'https://rs.school/courses/aws-fundamentals',
   AWS_CLOUD_DEVELOPER: 'https://rs.school/courses/aws-cloud-developer',
   AWS_DEVOPS: 'https://rs.school/courses/aws-devops',
+  SHORT_TRACK: 'https://rs.school/courses/short-track',
 };

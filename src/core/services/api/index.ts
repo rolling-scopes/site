@@ -6,6 +6,7 @@ import {
   coursesPath,
   jsPath,
   jsPathRu,
+  shortTrackPath,
 } from 'data';
 
 export const dataProviders: DataMap = {
@@ -16,4 +17,5 @@ export const dataProviders: DataMap = {
   javascriptRu: jsPathRu,
   angular: angularPath,
   awsDev: awsDevPath,
+  shortTrack: shortTrackPath,
 };

@@ -1,4 +1,11 @@
-export const faqData = [
+export type FaqDataType = {
+  question: string;
+  answer: string | { id: number;
+    text: string;
+    title: string;
+    link: string; }[];
+};
+export const faqData: FaqDataType[] = [
   {
     question: 'Где можно задать вопрос?',
     answer: [
@@ -56,5 +63,45 @@ export const faqData = [
     question: 'Кто проверяет задания?',
     answer:
       'Проекты "CV", "Portfolio", "CodeJam", "JS 30" проверяются в ходе кросс-чек. Алгоритмические задания, задачи из Codewars, а также задания "CV#1. Markdown & Git", "CV#2. HTML, CSS & Git Basics" проверяются автоматически. Ваши решения необходимо сабмитнуть в RS APP до дедлайна.',
+  },
+];
+
+export const faqDataShortTrack: FaqDataType[] = [
+  {
+    question: 'Where can I ask a question?',
+    answer: [
+      {
+        id: 0,
+        text: 'Questions can be asked in ',
+        title: 'Telegram chanel',
+        link: 'https://t.me/epamJsShortTrack',
+      },
+    ],
+  },
+  {
+    question: 'Is it possible to take the course completely online?',
+    answer: 'All stages of training can be completed online.',
+  },
+  {
+    question: 'Is there a list of interview questions? What should I prepare for?',
+    answer: [
+      {
+        id: 0,
+        text: 'You can prepare for the interview with this list of topics and questions',
+        title: 'topics and questions',
+        link: 'https://github.com/rolling-scopes-school/epam-short-track/tree/main/screening',
+      },
+    ],
+  },
+  {
+    question: 'If I’m selected for JS Short Track, can I combine it with the classic Stage#2?',
+    answer:
+      'No. If you are selected for JS Short Track, combining it with the classic Stage#2 is not possible. You will need to choose one direction.',
+  },
+  {
+    question:
+      'If I’m not accepted for the JS Short Track course after the interview, can I continue with the JS Stage#2 course?',
+    answer:
+      'Yes, if you don’t pass the selection for JS Short Track, you can continue your studies in JS Stage#2 ',
   },
 ];

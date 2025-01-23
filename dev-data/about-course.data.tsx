@@ -41,6 +41,7 @@ export const introLocalizedContent = {
   [COURSE_TITLES.AWS_FUNDAMENTALS]: enIntro,
   [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: enIntro,
   [COURSE_TITLES.AWS_DEVOPS]: enIntro,
+  [COURSE_TITLES.SHORT_TRACK]: enIntro,
 };
 
 const listData = {
@@ -250,6 +251,39 @@ const awsDevops: AboutCourseInfo[] = [
   },
 ];
 
+const shortTrack: AboutCourseInfo[] = [
+  {
+    id: 5,
+    title: 'Format',
+    info: 'Group training (up to 20 participants per group), self-study with provided materials, regular Q&A sessions, mock interviews, intensive practice, and a final project.',
+    icon: paperIcon,
+  },
+  {
+    id: 1,
+    title: 'Focus',
+    info: 'React or Angular. The specific direction for each student will be determined closer to the end of the first month of training',
+    icon: planetIcon,
+  },
+  {
+    id: 2,
+    title: 'EPAM Mentors and Experts',
+    info: 'Mentors and experts from EPAM will assist in the learning process and task reviews.',
+    icon: personIcon,
+  },
+  {
+    id: 3,
+    title: 'Duration',
+    info: 'The course runs for 3 months, with interviews at EPAM planned by April.',
+    icon: noteIcon,
+  },
+  {
+    id: 4,
+    title: 'Certificate',
+    info: 'After successful completion of the course, students will receive an electronic certificate.',
+    icon: awardIcon,
+  },
+];
+
 export const contentMapAbout: ContentMap = {
   [COURSE_TITLES.JS_RU]: javaScriptRU(),
   [COURSE_TITLES.JS_EN]: javaScriptEN(),
@@ -260,4 +294,5 @@ export const contentMapAbout: ContentMap = {
   [COURSE_TITLES.AWS_FUNDAMENTALS]: angularNodejsAwsFundamentals('aws fundamentals'),
   [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: awsCloudDeveloper,
   [COURSE_TITLES.AWS_DEVOPS]: awsDevops,
+  [COURSE_TITLES.SHORT_TRACK]: shortTrack,
 };
