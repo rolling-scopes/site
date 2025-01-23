@@ -3,6 +3,7 @@ import classnames from 'classnames/bind';
 import { Language } from '@/shared/types';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { InfoCell } from '@/widgets/numbers/ui/info-cell/info-cell';
+import { InfoGrid } from '@/widgets/numbers/ui/info-grid/info-grid';
 import { type MentorshipDetails, aboutMentorsData } from 'data';
 
 import styles from './details.module.scss';
@@ -19,13 +20,17 @@ export const DetailsMentorship = ({ description, lang = 'en' }: MentorshipDetail
     <section className={cx('details-container', 'container')} data-testid="details-mentorship">
       <div className={cx('details-content', 'content')}>
         <WidgetTitle mods="asterisk">{aboutMentorsData[lang].header}</WidgetTitle>
-        <div className={cx('details-info')}>
+        <InfoGrid borderColor="black">
           {description.map(({ id, title, info }) => (
-            <div key={id} className={cx('details-cell')}>
-              <InfoCell title={info} description={title} isMentorship={true} />
-            </div>
+            <InfoCell
+              key={id}
+              title={info}
+              description={title}
+              gap="withGap"
+              size="large"
+            />
           ))}
-        </div>
+        </InfoGrid>
       </div>
     </section>
   );
