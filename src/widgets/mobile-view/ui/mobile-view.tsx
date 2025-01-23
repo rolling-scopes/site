@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import Link from 'next/link';
 
-import { ROUTES } from '@/core/const';
+import { ANCHORS, ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
 import { Logo } from '@/shared/ui/logo';
 import { SchoolMenu } from '@/widgets/school-menu';
@@ -107,6 +107,12 @@ export const MobileView = ({ type, courses, onClose }: MobileViewProps) => {
           />
         ))}
       </SchoolMenu>
+
+      <Divider color={color} />
+
+      <Link onClick={onClose} href={`/#${ANCHORS.DONATE}`} className={cx('category-link', color)}>
+        Donate
+      </Link>
 
       <Divider color={color} />
 

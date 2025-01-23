@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 
 import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
-import { ROUTES } from '@/core/const';
+import { ANCHORS, ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
 import { Logo } from '@/shared/ui/logo';
 import { MobileView } from '@/widgets/mobile-view';
@@ -84,6 +84,7 @@ export const Header = ({ courses }: HeaderProps) => {
         <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 
         <menu className={cx('menu')}>
+          <NavItem label="Donate" href={`#${ANCHORS.DONATE}`} />
           <NavItem label="RS School" href={ROUTES.HOME}>
             <SchoolMenu>
               {schoolMenuStaticLinks.map((link, i) => (

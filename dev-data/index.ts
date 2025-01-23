@@ -52,6 +52,7 @@ export { courseDataMap } from './required.data';
 export { courseStatus, heroCourseLocalized } from './hero-course.data';
 export { courses } from './courses.data';
 export { coursesPath } from './courses-path.data';
+export { donateOptions } from './donate-options.data';
 export { events } from './events.data';
 export { faqData } from './faq.data';
 export { generalMaterials } from './general.data';
