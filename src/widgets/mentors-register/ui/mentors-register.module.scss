@@ -7,10 +7,15 @@
 
   &-wrapper {
     flex-direction: row;
-    gap: 20px;
+    gap: 176px;
 
-    @include media-tablet {
+    @include media-laptop {
+      gap: 50px;
+    }
+
+    @include media-tablet-large {
       flex-direction: column;
+      gap: 32px;
     }
   }
 }
@@ -22,6 +27,7 @@
 
   @include media-tablet {
     max-width: 290px;
+    max-height: 272px;
   }
 }
 
