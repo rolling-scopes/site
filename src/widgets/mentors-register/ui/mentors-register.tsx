@@ -21,7 +21,7 @@ export const MentorsRegister = ({ lang = 'en' }: MentorsRegisterProps) => {
   const isCommonMentorship = true;
 
   return (
-    <section className={cx('mentoring-register', 'container')}>
+    <section className={cx('mentoring-register', 'container')} data-testid="mentoring-register">
       <div className={cx('content', 'column-2', 'mentoring-register-wrapper')}>
         <article className={cx('mentoring-register-content')}>
           <WidgetTitle>{mentorsRegisterData[lang].header}</WidgetTitle>
@@ -48,6 +48,7 @@ export const MentorsRegister = ({ lang = 'en' }: MentorsRegisterProps) => {
           alt={mentorDocsData[lang].pictureAlt}
           className={cx('sloth-mascot')}
           loading="lazy"
+          data-testid="mentoring-register-image"
         />
       </div>
     </section>
