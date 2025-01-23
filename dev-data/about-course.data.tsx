@@ -228,8 +228,7 @@ const reactEn: AboutCourseInfo[] = javaScriptEN().map((item) => {
       ...item,
       info: (
         <p>
-          Throughout the course, we mostly use
-          {' '}
+          Throughout the course, we mostly use{' '}
           <LinkCustom href={DISCORD_LINKS[COURSE_TITLES.REACT]} external>
             Discord chat
           </LinkCustom>
@@ -255,7 +254,7 @@ const shortTrack: AboutCourseInfo[] = [
   {
     id: 5,
     title: 'Format',
-    info: 'Group training (up to 20 participants per group), self-study with provided materials, regular Q&A sessions, mock interviews, intensive practice, and a final project.',
+    info: 'Group training (up to 20 participants per group), self-study with provided materials, regular Q&A sessions, mock interviews, intensive practice, and a final project. Activities can be conducted both online and offline',
     icon: paperIcon,
   },
   {
