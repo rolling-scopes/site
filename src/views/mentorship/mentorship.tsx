@@ -1,8 +1,7 @@
 import { MentorshipHero } from './mentorship-hero/ui/mentorship-hero';
+import { DetailsMentorship } from './ui/details/details';
 import { MentorshipCourses } from './ui/mentorship-courses/mentorship-courses';
-import { AboutMentors } from '@/widgets/about-mentors';
 import { Benefits } from '@/widgets/benefits';
-import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { MemberActivity } from '@/widgets/member-activity';
 import { MentorsDocs } from '@/widgets/mentors-docs';
 import { MentorsFeedback } from '@/widgets/mentors-feedback';
@@ -20,12 +19,7 @@ export const Mentorship = ({ mentorshipData, courses = false }: MentorshipProps)
   return (
     <>
       <MentorshipHero lang={mentorshipData.lang} />
-      <Breadcrumbs />
-      <AboutMentors
-        description={mentorshipData.details}
-        icons={mentorshipData.links.icon}
-        lang={mentorshipData.lang}
-      />
+      <DetailsMentorship description={mentorshipData.details} lang={mentorshipData.lang} />
       {!mentorshipData.title && <Benefits {...benefitMentorshipMentors} />}
       <MemberActivity
         path={studyPathName}

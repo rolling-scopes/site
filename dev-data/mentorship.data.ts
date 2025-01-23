@@ -33,12 +33,18 @@ const texts = {
     finalProject: 'Supervising a team assignment',
   },
   description: {
-    interview: 'The mentor makes a decision about working with the student. Interviews are conducted with 2+ students - the total size of their team is determined by the mentor based on their workload',
-    interviewCore: 'The mentor conducts interviews with students of other mentors on major topics of the course. Participation in interviews allows students not only to see their knowledge gaps, but also to feel the atmosphere of such meetings',
-    codeReview: 'The mentor reviews the code, points out inaccuracies, suggests how to improve them. The code review helps the student to develop the necessary skills to work in a team',
-    bestPracticesFrame: 'The mentor shows what code structures are best to use based on their experience. Helps to understand possible future problems in the student\'s solution and ways to solve them',
-    bestPracticesJS: 'The mentor shows what code structures are best to use based on their experience. Suggests how to better organize the structure of the application',
-    finalProject: 'The mentor\'s experience and practical knowledge will help organize students to work on a team project',
+    interview:
+      'The mentor makes a decision about working with the student. Interviews are conducted with 2+ students - the total size of their team is determined by the mentor based on their workload',
+    interviewCore:
+      'The mentor conducts interviews with students of other mentors on major topics of the course. Participation in interviews allows students not only to see their knowledge gaps, but also to feel the atmosphere of such meetings',
+    codeReview:
+      'The mentor reviews the code, points out inaccuracies, suggests how to improve them. The code review helps the student to develop the necessary skills to work in a team',
+    bestPracticesFrame:
+      "The mentor shows what code structures are best to use based on their experience. Helps to understand possible future problems in the student's solution and ways to solve them",
+    bestPracticesJS:
+      'The mentor shows what code structures are best to use based on their experience. Suggests how to better organize the structure of the application',
+    finalProject:
+      "The mentor's experience and practical knowledge will help organize students to work on a team project",
   },
 };
 
@@ -81,10 +87,26 @@ export const mentorshipCoursesDefault: MentorshipCourse = {
     onboard: [onboardLinks.telegramEn, onboardLinks.telegramRu],
   },
   details: [
-    'The duration of mentoring is 8-19 weeks',
-    'Format: online',
-    'A desire to mentor from 2 to 6 students',
-    'An ability to dedicate 3 to 5 hours per week',
+    {
+      id: 1,
+      title: 'duration of mentoring',
+      info: '8-19 weeks',
+    },
+    {
+      id: 2,
+      title: 'amount of students desired to mentor',
+      info: '2-6 students',
+    },
+    {
+      id: 3,
+      title: 'amount of hours possible to dedicate',
+      info: '3-5 hrs/week',
+    },
+    {
+      id: 4,
+      title: 'format',
+      info: 'online',
+    },
   ],
   activities: [
     {
@@ -131,10 +153,26 @@ export const mentorshipCourses: MentorshipCourse[] = [
       onboard: [onboardLinks.telegramEn, onboardLinks.telegramRu],
     },
     details: [
-      'The duration of mentoring is 18-19 weeks',
-      'Format: online',
-      'A desire to mentor from 2 to 6 students',
-      'An ability to dedicate 3 to 5 hours per week',
+      {
+        id: 1,
+        title: 'duration of mentoring',
+        info: '18-19 weeks',
+      },
+      {
+        id: 2,
+        title: 'amount of students desired to mentor',
+        info: '2-6 students',
+      },
+      {
+        id: 3,
+        title: 'amount of hours possible to dedicate',
+        info: '3-5 hrs/week',
+      },
+      {
+        id: 4,
+        title: 'format',
+        info: 'online',
+      },
     ],
     activities: [
       {
@@ -189,16 +227,33 @@ export const mentorshipCourses: MentorshipCourse[] = [
       onboard: [onboardLinks.telegramEn, onboardLinks.telegramRu],
     },
     details: [
-      'Длительность менторства 18-19 недель',
-      'Формат: онлайн',
-      'Ментор курирует от 2 до 6 студентов',
-      'Необходимо уделять от 3 до 5 часов в неделю',
+      {
+        id: 1,
+        title: 'длительность наставничества',
+        info: '8-19 недель',
+      },
+      {
+        id: 2,
+        title: 'на сопровождении',
+        info: '2-6 студентов',
+      },
+      {
+        id: 3,
+        title: 'необходимо уделять времени',
+        info: '3-5 ч/нед.',
+      },
+      {
+        id: 4,
+        title: 'формат',
+        info: 'онлайн',
+      },
     ],
     activities: [
       {
         id: 1,
         title: 'Проведение технического интервью',
-        description: 'По результату которого ментор принимает решение о работе со студентом. Интервью проводятся с 2+ студентами - общий размер команды определяется ментором в зависимости от его загруженности',
+        description:
+          'По результату которого ментор принимает решение о работе со студентом. Интервью проводятся с 2+ студентами - общий размер команды определяется ментором в зависимости от его загруженности',
         links: [
           {
             href: linkDocs.ru.interview,
@@ -209,12 +264,14 @@ export const mentorshipCourses: MentorshipCourse[] = [
       {
         id: 2,
         title: 'Лучшие практики',
-        description: 'Ментор показывает, какие конструкции кода лучше всего использовать, основываясь на своем опыте. Подсказывает как лучше организовать структуру приложения',
+        description:
+          'Ментор показывает, какие конструкции кода лучше всего использовать, основываясь на своем опыте. Подсказывает как лучше организовать структуру приложения',
       },
       {
         id: 3,
         title: 'Ревью кода',
-        description: 'Ментор просматривает код, указывает на неточности, предлагает, как их улучшить. Ревью кода помогает студенту развить необходимые навыки для работы в команде',
+        description:
+          'Ментор просматривает код, указывает на неточности, предлагает, как их улучшить. Ревью кода помогает студенту развить необходимые навыки для работы в команде',
         links: [
           {
             href: linkDocs.ru.codeReview,
@@ -225,12 +282,14 @@ export const mentorshipCourses: MentorshipCourse[] = [
       {
         id: 4,
         title: 'Проведение двух CoreJS интервью',
-        description: 'Ментор проводит два интервью со студентами других менторов по основным темам курса. Участие в интервью позволяет студентам не только увидеть свои пробелы в знаниях, но и почувствовать атмосферу подобных встреч',
+        description:
+          'Ментор проводит два интервью со студентами других менторов по основным темам курса. Участие в интервью позволяет студентам не только увидеть свои пробелы в знаниях, но и почувствовать атмосферу подобных встреч',
       },
       {
         id: 5,
         title: 'Курирование командного задания',
-        description: 'Опыт и практические знания ментора помогут организовать студентов для работы над командным проектом',
+        description:
+          'Опыт и практические знания ментора помогут организовать студентов для работы над командным проектом',
       },
     ],
   },
@@ -247,10 +306,26 @@ export const mentorshipCourses: MentorshipCourse[] = [
       onboard: [onboardLinks.telegramEn, onboardLinks.telegramRu],
     },
     details: [
-      'The duration of mentoring is 12 weeks',
-      'Format: online',
-      'A desire to mentor from 2 to 6 students',
-      'An ability to dedicate 3 to 5 hours per week',
+      {
+        id: 1,
+        title: 'duration of mentoring',
+        info: '12 weeks',
+      },
+      {
+        id: 2,
+        title: 'amount of students desired to mentor',
+        info: '2-6 students',
+      },
+      {
+        id: 3,
+        title: 'amount of hours possible to dedicate',
+        info: '3-5 hrs/week',
+      },
+      {
+        id: 4,
+        title: 'format',
+        info: 'online',
+      },
     ],
     activities: [
       {
@@ -294,10 +369,26 @@ export const mentorshipCourses: MentorshipCourse[] = [
       onboard: [onboardLinks.telegramEn, onboardLinks.telegramRu],
     },
     details: [
-      'The duration of mentoring is 8-10 weeks',
-      'Format: online',
-      'A desire to mentor from 2 to 6 students',
-      'An ability to dedicate 3 to 5 hours per week',
+      {
+        id: 1,
+        title: 'duration of mentoring',
+        info: '8-10 weeks',
+      },
+      {
+        id: 2,
+        title: 'amount of students desired to mentor',
+        info: '2-6 students',
+      },
+      {
+        id: 3,
+        title: 'amount of hours possible to dedicate',
+        info: '3-5 hrs/week',
+      },
+      {
+        id: 4,
+        title: 'format',
+        info: 'online',
+      },
     ],
     activities: [
       {
