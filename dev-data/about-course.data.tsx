@@ -228,7 +228,8 @@ const reactEn: AboutCourseInfo[] = javaScriptEN().map((item) => {
       ...item,
       info: (
         <p>
-          Throughout the course, we mostly use{' '}
+          Throughout the course, we mostly use
+          {' '}
           <LinkCustom href={DISCORD_LINKS[COURSE_TITLES.REACT]} external>
             Discord chat
           </LinkCustom>
