@@ -16,7 +16,7 @@ export const ActivityCard = ({ title, description, icon, links }: ActivityCardPr
   <article className={cx('activity-card')} data-testid="activity-card">
     <div className={cx('icon')}>
       <div className={cx('icon-accent')}></div>
-      <Image src={icon} alt="" />
+      <Image src={icon} alt="" data-testid="activity-card-icon" />
     </div>
     <Subtitle
       className={cx('card-title')}
@@ -28,7 +28,7 @@ export const ActivityCard = ({ title, description, icon, links }: ActivityCardPr
     </Subtitle>
     <Paragraph className={cx('card-description')}>{description}</Paragraph>
     {links?.length && links.map(({ href, linkTitle }) => (
-      <LinkCustom className={cx('gray-link')} href={href} key={linkTitle}>
+      <LinkCustom className={cx('gray-link')} href={href} key={linkTitle} data-testid="activity-card-link">
         {linkTitle}
       </LinkCustom>
     ))}

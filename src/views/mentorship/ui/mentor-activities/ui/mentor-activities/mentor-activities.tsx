@@ -20,7 +20,7 @@ export const MentorActivities = ({ activitiesTitle, activities }: MentorActiviti
         <WidgetTitle mods="asterisk">
           {activitiesTitle}
         </WidgetTitle>
-        <div className={cx('activity-cards')}>
+        <div className={cx('activity-cards')} data-testid="activity-cards-container">
           {activities.map(({ id, title, description, icon, links }) => (
             <ActivityCard
               key={id}
