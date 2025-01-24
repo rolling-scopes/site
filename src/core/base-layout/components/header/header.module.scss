@@ -17,7 +17,7 @@
   }
 
   &.blue {
-    background: linear-gradient(90deg, $color-blue-100, $color-blue-200);
+    background: $gradient-blue-background;
   }
 
   &.none {
