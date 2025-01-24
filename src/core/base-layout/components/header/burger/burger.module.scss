@@ -54,10 +54,6 @@
     .bottom {
       transform: rotate(45deg) translate(-5px, -6px);
     }
-
-    @include media-tablet-large {
-      display: block;
-    }
   }
 
   @include media-hover {
