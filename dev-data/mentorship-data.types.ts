@@ -4,9 +4,19 @@ import { COURSE_TITLES } from './courseTitles.data';
 import { ROUTES } from '@/core/const';
 import { Language } from '@/shared/types';
 import { SocialMediaProps } from '@/shared/ui/social-media-item';
-import { Stage } from '@/widgets/member-activity/ui/stage-card';
 
-export type MentorActivities = Pick<Stage, 'id' | 'title' | 'description' | 'links'>;
+export type MentorActivity = {
+  id: number;
+  title: string;
+  description: string;
+  icon: StaticImageData;
+  links?: ActivityLink[];
+};
+
+type ActivityLink = {
+  href: string;
+  linkTitle: string;
+};
 
 type CourseTitleKey = keyof typeof COURSE_TITLES;
 export type CourseTitle = (typeof COURSE_TITLES)[CourseTitleKey];
@@ -58,5 +68,6 @@ export type MentorshipCourse = {
     onboard?: SocialMediaProps[];
   };
   details: MentorshipDetails[];
-  activities: MentorActivities[];
+  activitiesTitle: string;
+  activities: MentorActivity[];
 };
