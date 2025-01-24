@@ -1,36 +1,31 @@
-import { PAGE_NAMES } from '@/shared/constants';
+import { MentorshipHero } from './mentorship-hero/ui/mentorship-hero';
+import { DetailsMentorship } from './ui/details/details';
+import { MentorActivities } from './ui/mentor-activities';
+import { MentorshipCourses } from './ui/mentorship-courses/mentorship-courses';
 import { MentorsAfterRegister } from '@/views/mentorship/ui/mentors-after-register';
-import { AboutMentors } from '@/widgets/about-mentors';
 import { Benefits } from '@/widgets/benefits';
-import { Breadcrumbs } from '@/widgets/breadcrumbs';
-import { HeroPage } from '@/widgets/hero-page';
-import { MemberActivity } from '@/widgets/member-activity';
 import { MentorsDocs } from '@/widgets/mentors-docs';
+import { MentorsFeedback } from '@/widgets/mentors-feedback';
 import { MentorsRegister } from '@/widgets/mentors-register';
-import { MentorshipCourse, benefitMentorshipMentors } from 'data';
-
-const studyPathName = 'mentorship';
+import { MentorshipCourse, benefitMentorshipMentors, mentorsFeedbackData } from 'data';
 
 type MentorshipProps = {
   mentorshipData: MentorshipCourse;
+  courses?: boolean;
 };
 
-export const Mentorship = ({ mentorshipData }: MentorshipProps) => {
+export const Mentorship = ({ mentorshipData, courses = false }: MentorshipProps) => {
   return (
     <>
-      <HeroPage pageName={PAGE_NAMES.MENTORSHIP} />
-      <Breadcrumbs />
-      <AboutMentors
-        description={mentorshipData.details}
-        icons={mentorshipData.links.icon}
-        lang={mentorshipData.lang}
-      />
+      <MentorshipHero lang={mentorshipData.lang} />
+      <DetailsMentorship description={mentorshipData.details} lang={mentorshipData.lang} />
       {!mentorshipData.title && <Benefits {...benefitMentorshipMentors} />}
-      <MemberActivity
-        path={studyPathName}
+      <MentorActivities
+        activitiesTitle={mentorshipData.activitiesTitle}
         activities={mentorshipData.activities}
-        lang={mentorshipData.lang}
       />
+      {courses && <MentorshipCourses />}
+      <MentorsFeedback mentorsFeedback={mentorsFeedbackData} />
       <MentorsRegister lang={mentorshipData.lang} />
       <MentorsAfterRegister lang={mentorshipData.lang} />
       <MentorsDocs

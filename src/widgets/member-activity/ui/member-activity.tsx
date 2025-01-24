@@ -8,7 +8,7 @@ import { dataProviders } from '@/core/services/api';
 import type { Language, ListType } from '@/shared/types';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { type DataMap, MentorActivities, MentorshipDefaultRouteKeys } from 'data';
+import type { DataMap, MentorActivity, MentorshipDefaultRouteKeys } from 'data';
 
 import './member-activity.scss';
 
@@ -16,7 +16,7 @@ type PathNames = Exclude<keyof DataMap, 'courses'> | MentorshipDefaultRouteKeys;
 
 interface StudyPathProps {
   path: PathNames;
-  activities?: MentorActivities[];
+  activities?: MentorActivity[];
   type?: ListType;
   lang?: Language;
 }

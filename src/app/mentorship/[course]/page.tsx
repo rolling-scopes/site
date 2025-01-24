@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-import { Mentorship } from '@/views/mentorship';
+import { Mentorship } from '@/views/mentorship/mentorship';
 import { MentorshipCourseRouteKeys, mentorshipCourses, mentorshipCoursesDefault } from 'data';
 
 export async function generateMetadata(): Promise<Metadata> {

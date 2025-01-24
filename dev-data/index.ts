@@ -8,12 +8,14 @@ export type {
 export type {
   CourseTitle,
   ImageLink,
-  MentorActivities,
+  MentorActivity,
   MentorshipCourse,
   MentorshipCourseRouteKeys,
   MentorshipDefaultRouteKeys,
+  MentorshipDetails,
   MentorshipRoute,
 } from './mentorship-data.types';
+export type { MentorshipCourseTitles, MentorshipLinks } from './mentorship-data.types';
 export {
   ANNOUNCEMENT_TELEGRAM_LINK,
   type CourseNamesChannels,
@@ -64,6 +66,7 @@ export { jsPathRu } from './js-ru-path.data';
 export { mentorDocsData } from './mentor-docs.data';
 export { mentorsActivityData } from './mentors-activity.data';
 export { mentorsAfterRegisterData } from './mentors-after-register.data';
+export { mentorsFeedbackData } from './mentors-feedback.data';
 export { mentorsRegisterData } from './mentors-register.data';
 export { mentorsWantedData } from './mentors-wanted.data';
 export { mentorshipCourses, mentorshipCoursesDefault } from './mentorship.data';

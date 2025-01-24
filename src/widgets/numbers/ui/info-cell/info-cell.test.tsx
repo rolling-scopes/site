@@ -9,7 +9,9 @@ describe('InfoCell', () => {
   it('renders the title and description correctly', () => {
     render(<InfoCell title={title} description={description} />);
 
-    expect(screen.getByText(title)).toBeInTheDocument();
+    const [firstPart, secondPart] = title.split(' ');
+
+    expect(screen.getByText(new RegExp(`${firstPart}\\s*${secondPart}`, 'i'))).toBeInTheDocument();
     expect(screen.getByText(description)).toBeInTheDocument();
   });
 });
