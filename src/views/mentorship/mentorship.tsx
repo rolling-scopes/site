@@ -1,6 +1,7 @@
 import { MentorshipHero } from './mentorship-hero/ui/mentorship-hero';
 import { DetailsMentorship } from './ui/details/details';
 import { MentorshipCourses } from './ui/mentorship-courses/mentorship-courses';
+import { MentorsAfterRegister } from '@/views/mentorship/ui/mentors-after-register';
 import { Benefits } from '@/widgets/benefits';
 import { MemberActivity } from '@/widgets/member-activity';
 import { MentorsDocs } from '@/widgets/mentors-docs';
@@ -28,6 +29,7 @@ export const Mentorship = ({ mentorshipData, courses = false }: MentorshipProps)
       />
       {courses && <MentorshipCourses />}
       <MentorsRegister lang={mentorshipData.lang} />
+      <MentorsAfterRegister lang={mentorshipData.lang} />
       <MentorsDocs
         mentorDocsLink={mentorshipData.links.mentorDocs}
         courseDocsLink={mentorshipData.links.courseDocs}
