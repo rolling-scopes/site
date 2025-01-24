@@ -1,6 +1,9 @@
 export type FaqDataType = {
   question: string;
-  answer: string | { id: number; text: string; title: string; link: string }[];
+  answer: string | { id: number;
+    text: string;
+    title: string;
+    link: string; }[];
 };
 export const faqData: FaqDataType[] = [
   {
