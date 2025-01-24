@@ -8,7 +8,7 @@ export type {
 export type {
   CourseTitle,
   ImageLink,
-  MentorActivities,
+  MentorActivity,
   MentorshipCourse,
   MentorshipCourseRouteKeys,
   MentorshipDefaultRouteKeys,

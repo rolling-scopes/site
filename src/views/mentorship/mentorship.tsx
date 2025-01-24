@@ -1,15 +1,13 @@
 import { MentorshipHero } from './mentorship-hero/ui/mentorship-hero';
 import { DetailsMentorship } from './ui/details/details';
+import { MentorActivities } from './ui/mentor-activities';
 import { MentorshipCourses } from './ui/mentorship-courses/mentorship-courses';
 import { MentorsAfterRegister } from '@/views/mentorship/ui/mentors-after-register';
 import { Benefits } from '@/widgets/benefits';
-import { MemberActivity } from '@/widgets/member-activity';
 import { MentorsDocs } from '@/widgets/mentors-docs';
 import { MentorsFeedback } from '@/widgets/mentors-feedback';
 import { MentorsRegister } from '@/widgets/mentors-register';
 import { MentorshipCourse, benefitMentorshipMentors, mentorsFeedbackData } from 'data';
-
-const studyPathName = 'mentorship';
 
 type MentorshipProps = {
   mentorshipData: MentorshipCourse;
@@ -22,10 +20,9 @@ export const Mentorship = ({ mentorshipData, courses = false }: MentorshipProps)
       <MentorshipHero lang={mentorshipData.lang} />
       <DetailsMentorship description={mentorshipData.details} lang={mentorshipData.lang} />
       {!mentorshipData.title && <Benefits {...benefitMentorshipMentors} />}
-      <MemberActivity
-        path={studyPathName}
+      <MentorActivities
+        activitiesTitle={mentorshipData.activitiesTitle}
         activities={mentorshipData.activities}
-        lang={mentorshipData.lang}
       />
       {courses && <MentorshipCourses />}
       <MentorsRegister lang={mentorshipData.lang} />
