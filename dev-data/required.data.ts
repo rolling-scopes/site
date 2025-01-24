@@ -363,18 +363,16 @@ export const courseDataMap: CourseMap = {
           'Citizenship of Lithuania or Latvia (Lietuvos Respublikos pilietybė)',
           'Permanent Residence Permit (Nuolatinis leidimas gyventi)',
           'Lithuanian EU Blue Card (ES mėlynoji kortelė)',
-          'Temporary Residence Permit with work rights (Laikinas leidimas gyventi su teise dirbti)',
+          'Temporary Residence Permit with the right to work (Laikinas leidimas gyventi su teise dirbti)',
         ],
       },
       {
-        title: 'Turkish document requirements::',
+        title: 'Turkish document requirements:',
         description: ['Turkish citizens'],
       },
       {
         title: 'Croatia, Bulgaria, Hungary, Romania, Serbia:',
-        description: [
-          'employment is theoretically possible depending on your documents and experience',
-        ],
+        description: ['employment might be possible depending on your documents and experience'],
       },
     ],
   },

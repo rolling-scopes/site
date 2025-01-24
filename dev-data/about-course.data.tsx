@@ -228,8 +228,7 @@ const reactEn: AboutCourseInfo[] = javaScriptEN().map((item) => {
       ...item,
       info: (
         <p>
-          Throughout the course, we mostly use
-          {' '}
+          Throughout the course, we mostly use{' '}
           <LinkCustom href={DISCORD_LINKS[COURSE_TITLES.REACT]} external>
             Discord chat
           </LinkCustom>
@@ -279,7 +278,7 @@ const shortTrack: AboutCourseInfo[] = [
   {
     id: 4,
     title: 'Certificate',
-    info: 'After successful completion of the course, students will receive an electronic certificate.',
+    info: 'After successful completion of the course, students will receive an digital certificate.',
     icon: awardIcon,
   },
 ];

@@ -23,14 +23,14 @@ export const shortTrackPath: JSPath[] = [
     id: 3,
     title: 'Step 3',
     description:
-      'Join a team of 12-20 people under the guidance of a mentor. self-study with provided materials, regular Q&A sessions, mock interviews, intensive practice, and a final project.',
+      'Join a team of 12-20 people under the guidance of a mentor. Self-study with provided materials, regular Q&A sessions, mock interviews, intensive practice, and a final project.',
     imageSrc: stage2,
   },
   {
     id: 4,
     title: 'Step 4',
     description:
-      'At the end of the first month of course, you will decide on a framework with your mentor. Approximate ratio: 60% React / 40% Angular',
+      'At the end of the first month of the course, you will decide on a framework with your mentor. Approximate ratio: 60% React / 40% Angular',
     imageSrc: reactAngular,
   },
   {

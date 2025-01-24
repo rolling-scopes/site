@@ -310,7 +310,7 @@ export const contentMap: ContentMap = {
       </Paragraph>,
       <Paragraph key="short track 02">
         We are launching the Short Track now because new project positions are becoming available,
-        and we want to help you update your skills and prepare for interviews at a fast pace to be
+        and we want to help you improve your skills and prepare for interviews at a fast pace to be
         ready by April.
       </Paragraph>,
       <List
