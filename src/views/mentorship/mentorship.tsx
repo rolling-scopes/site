@@ -25,6 +25,7 @@ export const Mentorship = ({ mentorshipData, courses = false }: MentorshipProps)
         activities={mentorshipData.activities}
       />
       {courses && <MentorshipCourses />}
+      <MentorsFeedback mentorsFeedback={mentorsFeedbackData} />
       <MentorsRegister lang={mentorshipData.lang} />
       <MentorsAfterRegister lang={mentorshipData.lang} />
       <MentorsDocs
@@ -34,7 +35,6 @@ export const Mentorship = ({ mentorshipData, courses = false }: MentorshipProps)
         onboardLinks={mentorshipData.links.onboard}
         lang={mentorshipData.lang}
       />
-      <MentorsFeedback mentorsFeedback={mentorsFeedbackData} />
     </>
   );
 };
