@@ -41,6 +41,7 @@ describe('VideoPlaylistWithPlayer Component', () => {
             title: video.title,
             thumbnails: { medium: { url: video.thumbnail } },
           },
+          status: { privacyStatus: 'public' },
         })),
       }),
     } as Response);
@@ -65,6 +66,7 @@ describe('VideoPlaylistWithPlayer Component', () => {
             title: video.title,
             thumbnails: { medium: { url: video.thumbnail } },
           },
+          status: { privacyStatus: 'public' },
         })),
       }),
     } as Response);
@@ -112,6 +114,7 @@ describe('VideoPlaylistWithPlayer Component', () => {
             title: video.title,
             thumbnails: { medium: { url: video.thumbnail } },
           },
+          status: { privacyStatus: 'public' },
         })),
       }),
     } as Response);
@@ -140,5 +143,39 @@ describe('VideoPlaylistWithPlayer Component', () => {
     await waitFor(() => {
       expect(playlistContainer).toHaveStyle({ maxHeight: '300px' });
     });
+  });
+
+  it('should filter out private videos', async () => {
+    const publicVideos = MOCKED_VIDEOS.map((video) => ({
+      snippet: {
+        resourceId: { videoId: video.id },
+        title: video.title,
+        thumbnails: { medium: { url: video.thumbnail } },
+      },
+      status: { privacyStatus: 'public' },
+    }));
+    const privateVideos = MOCKED_VIDEOS.map((video) => ({
+      snippet: {
+        resourceId: { videoId: video.id },
+        title: video.title,
+        thumbnails: { medium: { url: video.thumbnail } },
+      },
+      status: { privacyStatus: 'private' },
+    }));
+
+    fetchMock.mockResolvedValue({
+      ok: true,
+      json: async () => ({ items: [...publicVideos, ...privateVideos] }),
+    } as Response);
+
+    render(<VideoPlaylistWithPlayer playlistId="testPlaylist" apiKey="testApiKey" />);
+
+    await waitFor(() => {
+      expect(screen.getByTestId('videos-container')).toBeVisible();
+    });
+
+    const videosContainer = screen.getByTestId('videos-container');
+
+    expect(videosContainer.children).toHaveLength(3);
   });
 });

@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames/bind';
 
+import { videoPrivacyStatus } from './constants';
 import { Playlist } from './playlist';
 import type { Video } from '@/shared/types';
 import { VideoPlayer } from '@/shared/ui/video-player';
@@ -29,7 +30,7 @@ export const VideoPlaylistWithPlayer = ({ playlistId, apiKey }: VideoPlaylistWit
       setIsLoading(true);
 
       try {
-        const apiUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=${apiKey}`;
+        const apiUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,status&maxResults=50&playlistId=${playlistId}&key=${apiKey}`;
         const response = await fetch(apiUrl);
 
         if (!response.ok) {
@@ -39,7 +40,12 @@ export const VideoPlaylistWithPlayer = ({ playlistId, apiKey }: VideoPlaylistWit
         }
 
         const data = await response.json();
-        const videoItems: Video[] = data.items.map(
+        const publicVideos = data.items.filter(
+          (item: GoogleApiYouTubePlaylistItemResource) =>
+            item.status.privacyStatus === videoPrivacyStatus.public,
+        );
+
+        const videoItems: Video[] = publicVideos.map(
           (item: GoogleApiYouTubePlaylistItemResource) => ({
             id: item.snippet.resourceId.videoId,
             title: item.snippet.title,
