@@ -22,6 +22,7 @@ export type ApiCoursesResponse = Readonly<{
   name: string;
   registrationEndDate: string;
   startDate: string;
+  wearecommunityUrl: string | null;
 }>;
 
 export type Course = {
@@ -38,7 +39,7 @@ export type Course = {
   language: Language;
   mode: 'online' | 'offline';
   detailsUrl: string;
-  enroll: string;
+  enroll: string | null;
   backgroundStyle: {
     backgroundColor: string;
     accentColor: string;

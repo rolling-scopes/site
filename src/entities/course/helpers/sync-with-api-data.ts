@@ -19,6 +19,7 @@ export const syncWithApiData = (apiCourses: ApiCoursesResponse[]) => {
     clonedCourse.registrationEndDate = dayJS(currApiCourse.registrationEndDate).format(
       COURSE_DATE_FORMAT,
     );
+    clonedCourse.enroll = currApiCourse.wearecommunityUrl;
 
     return clonedCourse;
   });
