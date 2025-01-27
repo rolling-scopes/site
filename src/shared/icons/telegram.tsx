@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import telegram from '@/shared/assets/svg/telegram.svg';
 
 export const TelegramIcon = () => {

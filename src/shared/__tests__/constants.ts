@@ -1,4 +1,5 @@
 import { StaticImageData } from 'next/image';
+
 import { ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
 import type { Trainer } from '@/entities/trainer';

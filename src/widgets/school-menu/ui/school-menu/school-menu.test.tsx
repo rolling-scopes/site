@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/react';
+
 import { SchoolMenu } from '../school-menu/school-menu';
 import { mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import youtube from '@/shared/assets/svg/youtube.svg';
 
 export const YouTubeIcon = () => {

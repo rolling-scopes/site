@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import openSourcePhilosophyIcon from '@/shared/assets/svg/openSourcePhilosophyIcon.svg';
 import openToEveryoneIcon from '@/shared/assets/svg/openToEveryoneIcon.svg';
 import teachItForwardIcon from '@/shared/assets/svg/teachItForwardIcon.svg';

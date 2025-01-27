@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+
 import { LogoIcon } from './logo-icon';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 

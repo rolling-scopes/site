@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+
 import { AboutVideo } from './about-video';
 import { RS_INTRO_URL } from '@/shared/constants';
 import { videoTitleLocalized } from 'data';

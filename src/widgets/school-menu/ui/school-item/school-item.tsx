@@ -3,6 +3,7 @@ import { HTMLProps } from 'react';
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
+
 import { Color } from '@/widgets/school-menu/types';
 
 import styles from './school-item.module.scss';

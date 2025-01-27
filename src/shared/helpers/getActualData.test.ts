@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+
 import { getActualData } from './getActualData';
 import { MOCKED_IMAGE_PATH } from '../__tests__/constants';
 import { Course } from '@/entities/course';

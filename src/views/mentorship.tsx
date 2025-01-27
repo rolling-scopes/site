@@ -1,4 +1,5 @@
 import { PAGE_NAMES } from '@/shared/constants';
+import { MentorsAfterRegister } from '@/views/mentorship/ui/mentors-after-register';
 import { AboutMentors } from '@/widgets/about-mentors';
 import { Benefits } from '@/widgets/benefits';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
@@ -31,6 +32,7 @@ export const Mentorship = ({ mentorshipData }: MentorshipProps) => {
         lang={mentorshipData.lang}
       />
       <MentorsRegister lang={mentorshipData.lang} />
+      <MentorsAfterRegister lang={mentorshipData.lang} />
       <MentorsDocs
         mentorDocsLink={mentorshipData.links.mentorDocs}
         courseDocsLink={mentorshipData.links.courseDocs}

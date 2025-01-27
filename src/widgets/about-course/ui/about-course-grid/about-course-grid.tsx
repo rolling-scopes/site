@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
 import type { AboutCourseInfo } from 'data';

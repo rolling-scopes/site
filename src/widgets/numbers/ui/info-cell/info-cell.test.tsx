@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+
 import { InfoCell } from './info-cell';
 
 const title = 'Test Title';

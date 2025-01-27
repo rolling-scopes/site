@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+
 import { getCourseStatus } from '../helpers/get-course-status';
 import { dayJS } from '@/shared/helpers/dayJS';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';

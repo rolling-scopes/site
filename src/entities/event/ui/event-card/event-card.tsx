@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+
 import { Event } from '@/entities/event';
 import { LinkCustom } from '@/shared/ui/link-custom';
 

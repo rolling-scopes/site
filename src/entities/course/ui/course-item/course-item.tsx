@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+
 import { CourseItemData } from '@/entities/course';
 import { DateStart } from '@/shared/ui/date-start';
 import { LinkCustom } from '@/shared/ui/link-custom';

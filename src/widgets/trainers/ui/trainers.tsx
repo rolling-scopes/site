@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+
 import { Trainer, TrainerCard } from '@/entities/trainer';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { WidgetTitle } from '@/shared/ui/widget-title';
