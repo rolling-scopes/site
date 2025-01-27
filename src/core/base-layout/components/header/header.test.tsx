@@ -2,6 +2,7 @@ import { act } from 'react';
 import { fireEvent, screen } from '@testing-library/react';
 import classNames from 'classnames/bind';
 import { beforeEach } from 'vitest';
+
 import { DropdownWrapper } from './dropdown/dropdown-wrapper';
 import { Header } from './header';
 import { mockedCourses } from '@/shared/__tests__/constants';
@@ -36,7 +37,7 @@ describe('Header', () => {
     it('renders all the header links', () => {
       const headerElement = screen.getAllByText(/.*/, { selector: `span.${cxNavItem('label')}` });
 
-      expect(headerElement).toHaveLength(5);
+      expect(headerElement).toHaveLength(6);
     });
 
     it('renders 4 svg arrows', () => {

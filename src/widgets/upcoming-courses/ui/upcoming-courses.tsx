@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+
 import { ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
 import { getCourses } from '@/entities/course/api/course-api';

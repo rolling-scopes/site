@@ -8,12 +8,14 @@ export type {
 export type {
   CourseTitle,
   ImageLink,
-  MentorActivities,
+  MentorActivity,
   MentorshipCourse,
   MentorshipCourseRouteKeys,
   MentorshipDefaultRouteKeys,
+  MentorshipDetails,
   MentorshipRoute,
 } from './mentorship-data.types';
+export type { MentorshipCourseTitles, MentorshipLinks } from './mentorship-data.types';
 export {
   ANNOUNCEMENT_TELEGRAM_LINK,
   type CourseNamesChannels,
@@ -52,6 +54,7 @@ export { courseDataMap } from './required.data';
 export { courseStatus, heroCourseLocalized } from './hero-course.data';
 export { courses } from './courses.data';
 export { coursesPath } from './courses-path.data';
+export { donateOptions } from './donate-options.data';
 export { events } from './events.data';
 export { faqData } from './faq.data';
 export { generalMaterials } from './general.data';
@@ -62,6 +65,8 @@ export { jsPath } from './js-path.data';
 export { jsPathRu } from './js-ru-path.data';
 export { mentorDocsData } from './mentor-docs.data';
 export { mentorsActivityData } from './mentors-activity.data';
+export { mentorsAfterRegisterData } from './mentors-after-register.data';
+export { mentorsFeedbackData } from './mentors-feedback.data';
 export { mentorsRegisterData } from './mentors-register.data';
 export { mentorsWantedData } from './mentors-wanted.data';
 export { mentorshipCourses, mentorshipCoursesDefault } from './mentorship.data';

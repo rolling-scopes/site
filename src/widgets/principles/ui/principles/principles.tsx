@@ -1,4 +1,5 @@
 import classnames from 'classnames/bind';
+
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { PrincipleCard } from '@/widgets/principles/ui/principle-card/principle-card';
 import { principleCards } from 'data';

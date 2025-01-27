@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/react';
 import { beforeEach } from 'vitest';
+
 import { AboutCourse } from './about-course';
 import { mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';

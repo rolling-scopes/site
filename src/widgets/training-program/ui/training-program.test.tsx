@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/react';
 import { beforeEach } from 'vitest';
+
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import angularImg from '@/shared/assets/rs-slope-angular.webp';
 import awsDevImg from '@/shared/assets/rs-slope-aws-dev.webp';
