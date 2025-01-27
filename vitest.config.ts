@@ -43,6 +43,7 @@ export default defineConfig({
         statements: 80,
       },
     },
+    css: { modules: { classNameStrategy: 'non-scoped' } },
   },
   css: { preprocessorOptions: { scss: { api: 'modern-compiler' } } },
 });

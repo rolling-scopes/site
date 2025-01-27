@@ -17,7 +17,7 @@
   }
 
   &.blue {
-    background-color: $color-mentorship-header;
+    background: $gradient-blue-background;
   }
 
   &.none {
@@ -32,7 +32,7 @@
     box-shadow: rgb(0 0 0 / 8.2%) 0 1.026px 8.0694px 0;
   }
 
-  @include media-tablet {
+  @include media-tablet-large {
     height: 48px;
     padding: 0 16px;
   }
@@ -57,7 +57,7 @@
 
   height: 100%;
 
-  @include media-tablet {
+  @include media-tablet-large {
     display: none;
   }
 }
@@ -108,7 +108,7 @@
   transform: translateY(0);
   display: none;
 
-  @include media-tablet {
+  @include media-tablet-large {
     display: block;
   }
 }
