@@ -1,7 +1,6 @@
 import Image from 'next/image';
 
-// import javascript from '@/shared/assets/icons/js-secondary.webp';
-import javascript from '@/shared/assets/icons/javascript-256-black.svg';
+import javascript from '@/shared/assets/icons/javascript.svg';
 
 export const JavascriptIcon = () => {
   return <Image src={javascript} alt="JavaScript icon" />;

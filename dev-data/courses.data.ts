@@ -1,20 +1,15 @@
 import { ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
-import aws from '@/shared/assets/icons/amazon-web-services-logo-wine-256.svg';
-import angular from '@/shared/assets/icons/angular-256.svg';
-import angularSecondary from '@/shared/assets/icons/angular-black-256.svg';
-import footerIcon from '@/shared/assets/icons/footer/amazon-web-services-logo-footer-256.svg';
-import angularSmall from '@/shared/assets/icons/footer/angular-256.svg';
-import htmlSmall from '@/shared/assets/icons/footer/html5-256.svg';
-import jsSmall from '@/shared/assets/icons/footer/javascript-256.svg';
-import nodejsSmall from '@/shared/assets/icons/footer/node-js-256-small.svg';
-import reactSmall from '@/shared/assets/icons/footer/react-256.svg';
-import jsSecondary from '@/shared/assets/icons/javascript-256-black.svg';
-import javascript from '@/shared/assets/icons/javascript-256.svg';
-import nodejs from '@/shared/assets/icons/node-js-256.svg';
-import nodejsSecondary from '@/shared/assets/icons/node-js-black-256.svg';
-import react from '@/shared/assets/icons/react-256.svg';
-import reactSecondary from '@/shared/assets/icons/react-black-256.svg';
+import aws from '@/shared/assets/icons/aws-black.svg';
+import angular from '@/shared/assets/icons/angular.svg';
+import angularBlack from '@/shared/assets/icons/angular-black.svg';
+import awsWhiteIcon from '@/shared/assets/icons/aws-white.svg';
+import html5 from '@/shared/assets/icons/html5.svg';
+import javascript from '@/shared/assets/icons/javascript.svg';
+import nodejs from '@/shared/assets/icons/node-js.svg';
+import nodejsBlack from '@/shared/assets/icons/node-js-black.svg';
+import react from '@/shared/assets/icons/react.svg';
+import reactBlack from '@/shared/assets/icons/react-black.svg';
 import { COURSE_LINKS, TO_BE_DETERMINED } from '@/shared/constants';
 import { COURSE_TITLES } from 'data';
 
@@ -26,9 +21,9 @@ export const courses: Course[] = [
     descriptionUrl: COURSE_LINKS.JS_PRESCHOOL_RU,
     altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
-    iconSmall: htmlSmall,
-    iconFooter: htmlSmall,
-    secondaryIcon: jsSecondary,
+    iconSmall: html5,
+    iconFooter: html5,
+    secondaryIcon: javascript,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'ru',
@@ -47,9 +42,9 @@ export const courses: Course[] = [
     descriptionUrl: COURSE_LINKS.JS_EN,
     altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
-    iconSmall: jsSmall,
-    iconFooter: jsSmall,
-    secondaryIcon: jsSecondary,
+    iconSmall: javascript,
+    iconFooter: javascript,
+    secondaryIcon: javascript,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
@@ -68,9 +63,9 @@ export const courses: Course[] = [
     descriptionUrl: COURSE_LINKS.JS_RU,
     altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
-    iconSmall: jsSmall,
-    iconFooter: jsSmall,
-    secondaryIcon: jsSecondary,
+    iconSmall: javascript,
+    iconFooter: javascript,
+    secondaryIcon: javascript,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'ru',
@@ -88,9 +83,9 @@ export const courses: Course[] = [
     subTitle: null,
     descriptionUrl: COURSE_LINKS.REACT,
     iconSrc: react,
-    iconSmall: reactSmall,
-    iconFooter: reactSmall,
-    secondaryIcon: reactSecondary,
+    iconSmall: react,
+    iconFooter: react,
+    secondaryIcon: reactBlack,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
@@ -108,9 +103,9 @@ export const courses: Course[] = [
     subTitle: null,
     descriptionUrl: COURSE_LINKS.ANGULAR,
     iconSrc: angular,
-    iconSmall: angularSmall,
-    iconFooter: angularSmall,
-    secondaryIcon: angularSecondary,
+    iconSmall: angular,
+    iconFooter: angular,
+    secondaryIcon: angularBlack,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
@@ -128,9 +123,9 @@ export const courses: Course[] = [
     subTitle: null,
     descriptionUrl: COURSE_LINKS.NODE,
     iconSrc: nodejs,
-    iconSmall: nodejsSmall,
-    iconFooter: nodejsSmall,
-    secondaryIcon: nodejsSecondary,
+    iconSmall: nodejs,
+    iconFooter: nodejs,
+    secondaryIcon: nodejsBlack,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
@@ -149,7 +144,7 @@ export const courses: Course[] = [
     descriptionUrl: COURSE_LINKS.AWS_FUNDAMENTALS,
     iconSrc: aws,
     iconSmall: aws,
-    iconFooter: footerIcon,
+    iconFooter: awsWhiteIcon,
     secondaryIcon: aws,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
@@ -171,7 +166,7 @@ export const courses: Course[] = [
     iconSrc: aws,
     iconSmall: aws,
     secondaryIcon: aws,
-    iconFooter: footerIcon,
+    iconFooter: awsWhiteIcon,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
@@ -191,7 +186,7 @@ export const courses: Course[] = [
     iconSrc: aws,
     iconSmall: aws,
     secondaryIcon: aws,
-    iconFooter: footerIcon,
+    iconFooter: awsWhiteIcon,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
