@@ -76,7 +76,7 @@ export const LinkCustom = ({
       {...(external && externalLinkAttributes)}
     >
       {children}
-      {resolveIcon()}
+      {!disabled && resolveIcon()}
     </Link>
   );
 };
