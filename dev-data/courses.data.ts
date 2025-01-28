@@ -1,13 +1,15 @@
 import { ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
 import aws from '@/shared/assets/icons/aws-black.svg';
+import awsGray from '@/shared/assets/icons/aws-gray.svg';
 import angular from '@/shared/assets/icons/angular.svg';
 import angularBlack from '@/shared/assets/icons/angular-black.svg';
 import awsWhiteIcon from '@/shared/assets/icons/aws-white.svg';
 import html5 from '@/shared/assets/icons/html5.svg';
 import javascript from '@/shared/assets/icons/javascript.svg';
+import javascriptBlack from '@/shared/assets/icons/javascript-black.svg';
 import nodejs from '@/shared/assets/icons/node-js.svg';
-import nodejsBlack from '@/shared/assets/icons/node-js-black.svg';
+import nodejsGray from '@/shared/assets/icons/node-js-gray.svg';
 import react from '@/shared/assets/icons/react.svg';
 import reactBlack from '@/shared/assets/icons/react-black.svg';
 import { COURSE_LINKS, TO_BE_DETERMINED } from '@/shared/constants';
@@ -23,7 +25,7 @@ export const courses: Course[] = [
     iconSrc: javascript,
     iconSmall: html5,
     iconFooter: html5,
-    secondaryIcon: javascript,
+    secondaryIcon: javascriptBlack,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'ru',
@@ -44,7 +46,7 @@ export const courses: Course[] = [
     iconSrc: javascript,
     iconSmall: javascript,
     iconFooter: javascript,
-    secondaryIcon: javascript,
+    secondaryIcon: javascriptBlack,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
@@ -65,7 +67,7 @@ export const courses: Course[] = [
     iconSrc: javascript,
     iconSmall: javascript,
     iconFooter: javascript,
-    secondaryIcon: javascript,
+    secondaryIcon: javascriptBlack,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'ru',
@@ -125,7 +127,7 @@ export const courses: Course[] = [
     iconSrc: nodejs,
     iconSmall: nodejs,
     iconFooter: nodejs,
-    secondaryIcon: nodejsBlack,
+    secondaryIcon: nodejsGray,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
@@ -145,7 +147,7 @@ export const courses: Course[] = [
     iconSrc: aws,
     iconSmall: aws,
     iconFooter: awsWhiteIcon,
-    secondaryIcon: aws,
+    secondaryIcon: awsGray,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
@@ -165,7 +167,7 @@ export const courses: Course[] = [
     descriptionUrl: COURSE_LINKS.AWS_CLOUD_DEVELOPER,
     iconSrc: aws,
     iconSmall: aws,
-    secondaryIcon: aws,
+    secondaryIcon: awsGray,
     iconFooter: awsWhiteIcon,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
@@ -185,7 +187,7 @@ export const courses: Course[] = [
     descriptionUrl: COURSE_LINKS.AWS_DEVOPS,
     iconSrc: aws,
     iconSmall: aws,
-    secondaryIcon: aws,
+    secondaryIcon: awsGray,
     iconFooter: awsWhiteIcon,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
