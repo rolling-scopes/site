@@ -36,6 +36,7 @@ export {
   type TrainingProgramType,
 } from './courseTitles.data';
 export { type Benefit } from './benefit-mentorship.data';
+export { type FaqDataType, faqData } from './faq.data';
 export { aboutMentorsData } from './about-mentors.data';
 export { angular } from './angular.data';
 export { angularPath } from './angular-path.data';
@@ -56,7 +57,6 @@ export { courses } from './courses.data';
 export { coursesPath } from './courses-path.data';
 export { donateOptions } from './donate-options.data';
 export { events } from './events.data';
-export { faqData } from './faq.data';
 export { generalMaterials } from './general.data';
 export { heroPageData } from './hero-page.data';
 export { javaScriptEn } from './javascript-en.data';
@@ -79,5 +79,6 @@ export { reactEn } from './react-en.data';
 export { reactRu } from './react-ru.data';
 export { requirementsData } from './requirements.data';
 export { rsInNumbers } from './rs-in-numbers.data';
+export { shortTrackPath } from './short-track-path.data';
 export { sliderPhotos } from './slider-photos.data';
 export { videoTitleLocalized } from './about-video.data';

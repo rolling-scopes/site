@@ -10,6 +10,7 @@ export const COURSE_TITLES = {
   AWS_FUNDAMENTALS: 'AWS Fundamentals',
   AWS_CLOUD_DEVELOPER: 'AWS Cloud Developer',
   AWS_DEVOPS: 'AWS DevOps',
+  SHORT_TRACK: 'RS EPAM Short Track',
 } as const;
 
 export const AWS_FUNDAMENTALS_BADGE = `${COURSE_TITLES.AWS_FUNDAMENTALS} badge` as const;
@@ -32,4 +33,5 @@ export const DISCORD_LINKS = {
   [COURSE_TITLES.AWS_FUNDAMENTALS]: 'https://discord.com/invite/WEZxwRa4J6',
   [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: 'https://discord.com/invite/WEZxwRa4J6',
   [COURSE_TITLES.AWS_DEVOPS]: 'https://discord.com/invite/WEZxwRa4J6',
+  [COURSE_TITLES.SHORT_TRACK]: 'https://discord.com/invite/QvEYg7EaQ4',
 } as const;

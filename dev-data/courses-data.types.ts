@@ -13,13 +13,14 @@ export type DataMap = {
   javascriptRu: JSPath[];
   angular: AngularAwsPath[];
   awsDev: AngularAwsPath[];
+  shortTrack: JSPath[];
 };
 
 export interface JSPath {
   id: number;
   title: string;
   description: string;
-  imageSrc: StaticImageData;
+  imageSrc?: StaticImageData;
   topics?: string[];
   list?: ListData;
   marked?: boolean;

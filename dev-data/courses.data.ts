@@ -15,6 +15,7 @@ import javascript from '@/shared/assets/icons/javascript.webp';
 import jsSecondary from '@/shared/assets/icons/js-secondary.webp';
 import nodejs from '@/shared/assets/icons/node.svg';
 import nodejsSecondary from '@/shared/assets/icons/nodejs-secondary.webp';
+import reactAngular from '@/shared/assets/icons/react-angular.svg';
 import reactSecondary from '@/shared/assets/icons/react-secondary.webp';
 import react from '@/shared/assets/icons/react.svg';
 import { COURSE_LINKS, TO_BE_DETERMINED } from '@/shared/constants';
@@ -194,6 +195,27 @@ export const courses: Course[] = [
     backgroundStyle: {
       backgroundColor: '#F4F1FA',
       accentColor: '#7356BF',
+    },
+  },
+  {
+    id: '10',
+    title: COURSE_TITLES.SHORT_TRACK,
+    subTitle: null,
+    descriptionUrl: COURSE_LINKS.SHORT_TRACK,
+    altTitle: COURSE_TITLES.SHORT_TRACK,
+    iconSrc: reactAngular,
+    iconSmall: reactAngular,
+    secondaryIcon: reactAngular,
+    startDate: 'Feb 11, 2025',
+    registrationEndDate: 'Jan 31, 2025',
+    language: 'en',
+    mode: 'online',
+    detailsUrl: `/${ROUTES.COURSES}/${ROUTES.SHORT_TRACK}`,
+    enroll:
+      'https://docs.google.com/forms/d/1SKjS03vVS6uxJvlNynGAZZs8spGnoWy1q3rnZUc9pyY/viewform?edit_requested=true',
+    backgroundStyle: {
+      backgroundColor: '#FFFCE9',
+      accentColor: '#FFDB20',
     },
   },
 ];
