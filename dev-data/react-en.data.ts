@@ -9,8 +9,8 @@ import valeryDluski from '@/shared/assets/mentors/v-dluski.webp';
 export const reactEn: Trainer[] = [
   {
     name: 'Ihar Krasiuk',
-    bio: 'More than 5 years of experience working with React and the ecosystem (Redux, Redux-Saga, NextJS, etc.). TypeScript fan.',
-    role: 'JavaScript developer',
+    bio: '10+ years of experience in web-development, 7+ years of experience in the React and its ecosystem. TypeScript fan.',
+    role: 'EPAM, Full Stack developer',
     photo: iharKrasiuk,
   },
   {
