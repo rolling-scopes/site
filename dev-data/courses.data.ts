@@ -1,17 +1,17 @@
 import { ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
+import angularGray from '@/shared/assets/icons/angular-gray.svg';
+import angular from '@/shared/assets/icons/angular.svg';
 import aws from '@/shared/assets/icons/aws-black.svg';
 import awsGray from '@/shared/assets/icons/aws-gray.svg';
-import angular from '@/shared/assets/icons/angular.svg';
-import angularBlack from '@/shared/assets/icons/angular-black.svg';
 import awsWhiteIcon from '@/shared/assets/icons/aws-white.svg';
 import html5 from '@/shared/assets/icons/html5.svg';
+import javascriptGray from '@/shared/assets/icons/javascript-gray.svg';
 import javascript from '@/shared/assets/icons/javascript.svg';
-import javascriptBlack from '@/shared/assets/icons/javascript-black.svg';
-import nodejs from '@/shared/assets/icons/node-js.svg';
 import nodejsGray from '@/shared/assets/icons/node-js-gray.svg';
+import nodejs from '@/shared/assets/icons/node-js.svg';
+import reactGray from '@/shared/assets/icons/react-gray.svg';
 import react from '@/shared/assets/icons/react.svg';
-import reactBlack from '@/shared/assets/icons/react-black.svg';
 import { COURSE_LINKS, TO_BE_DETERMINED } from '@/shared/constants';
 import { COURSE_TITLES } from 'data';
 
@@ -25,7 +25,7 @@ export const courses: Course[] = [
     iconSrc: javascript,
     iconSmall: html5,
     iconFooter: html5,
-    secondaryIcon: javascriptBlack,
+    secondaryIcon: javascriptGray,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'ru',
@@ -46,7 +46,7 @@ export const courses: Course[] = [
     iconSrc: javascript,
     iconSmall: javascript,
     iconFooter: javascript,
-    secondaryIcon: javascriptBlack,
+    secondaryIcon: javascriptGray,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
@@ -67,7 +67,7 @@ export const courses: Course[] = [
     iconSrc: javascript,
     iconSmall: javascript,
     iconFooter: javascript,
-    secondaryIcon: javascriptBlack,
+    secondaryIcon: javascriptGray,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'ru',
@@ -87,7 +87,7 @@ export const courses: Course[] = [
     iconSrc: react,
     iconSmall: react,
     iconFooter: react,
-    secondaryIcon: reactBlack,
+    secondaryIcon: reactGray,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
@@ -107,7 +107,7 @@ export const courses: Course[] = [
     iconSrc: angular,
     iconSmall: angular,
     iconFooter: angular,
-    secondaryIcon: angularBlack,
+    secondaryIcon: angularGray,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
