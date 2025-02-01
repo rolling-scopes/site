@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import { Image } from './image.tsx';
-import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants.ts';
+
+import { Image } from './image';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 
 describe('Actions Component', () => {
   it('renders image correctly', () => {

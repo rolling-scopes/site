@@ -2,6 +2,7 @@ import { AnchorHTMLAttributes, ReactNode } from 'react';
 import { type VariantProps, cva } from 'class-variance-authority';
 import classNames from 'classnames/bind';
 import Link from 'next/link';
+
 import { ArrowIcon, TextLinkIcon } from '@/shared/icons';
 
 import styles from './link-custom.module.scss';
@@ -16,6 +17,7 @@ type LinkCustomAdditionalProps = {
   href: string;
   icon?: ReactNode;
   external?: boolean;
+  disabled?: boolean;
 };
 
 const linkCustomVariants = cva('', {
@@ -42,6 +44,7 @@ export const LinkCustom = ({
   className = '',
   variant = 'textLink',
   external = false,
+  disabled = false,
   ...props
 }: LinkCustomProps) => {
   const resolveIcon = () => {
@@ -62,16 +65,19 @@ export const LinkCustom = ({
 
   return (
     <Link
-      className={linkCustomVariants({
-        variant,
-        className,
-      })}
+      className={cx(
+        { disabled },
+        linkCustomVariants({
+          variant,
+          className,
+        }),
+      )}
       href={href}
       {...props}
       {...(external && externalLinkAttributes)}
     >
       {children}
-      {resolveIcon()}
+      {!disabled && resolveIcon()}
     </Link>
   );
 };

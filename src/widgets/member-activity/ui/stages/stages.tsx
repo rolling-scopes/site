@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+
 import { StageCard } from '../stage-card/stage-card';
 import type { ListType } from '@/shared/types';
 import { Stage } from '@/widgets/member-activity/types';

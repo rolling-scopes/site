@@ -1,21 +1,36 @@
 .mentoring-register {
-  display: flex;
-  flex-direction: column;
+  background: $gradient-blue-background;
 
-  @include media-laptop-medium {
-    flex-direction: column;
-    align-items: flex-start;
+  &-content {
+    max-width: 680px;
+  }
+
+  &-wrapper {
+    flex-direction: row;
+    gap: 176px;
+
+    @include media-laptop {
+      gap: 50px;
+    }
+
+    @include media-tablet-large {
+      flex-direction: column;
+      gap: 32px;
+    }
   }
 }
 
-.step-before-wrapper {
-  margin-bottom: 40px;
+.sloth-mascot {
+  width: 427px;
+  height: 272px;
+  object-fit: contain;
+
+  @include media-tablet {
+    width: 358px;
+    height: 228px;
+  }
 }
 
-.header-after {
-  margin-top: 40px;
-}
-
-.note {
-  margin-bottom: 18px;
+.gray-link {
+  color: $color-gray-600;
 }

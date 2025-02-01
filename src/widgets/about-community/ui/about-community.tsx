@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+
 import { ANCHORS } from '@/core/const';
 import imageAbout from '@/shared/assets/about.webp';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -38,7 +39,7 @@ export const AboutCommunity = () => {
           </Paragraph>
         </article>
         <Image
-          className="sloth-mascot"
+          className={cx('sloth-mascot')}
           src={imageAbout}
           alt="Sloth mascot dressed in a red superhero cape"
         />

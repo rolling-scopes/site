@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import classNames from 'classnames/bind';
-import { LangContext } from '../member-activity/member-activity.tsx';
+
+import { LangContext } from '../member-activity/member-activity';
 
 import styles from './topics.module.scss';
 

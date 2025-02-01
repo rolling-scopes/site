@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
+
 import { BaseLayout } from './base-layout';
 import { ROUTES } from '@/core/const';
 
@@ -18,9 +19,11 @@ vi.mock('next/navigation', () => ({
 }));
 
 describe('BaseLayout', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     mockUsePathname.mockImplementation(() => ROUTES.HOME);
-    render(<BaseLayout>{null}</BaseLayout>);
+    const baseLayout = await BaseLayout({ children: null });
+
+    render(baseLayout);
   });
 
   it('renders Header component', () => {

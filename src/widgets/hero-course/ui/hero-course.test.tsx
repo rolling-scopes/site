@@ -1,53 +1,88 @@
 import { screen } from '@testing-library/react';
+
 import { HeroCourse } from './hero-course';
-import { ROUTES } from '@/core/const';
-import type { Course } from '@/entities/course';
-import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
+import { MOCKED_IMAGE_PATH, mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { dayJS } from '@/shared/helpers/dayJS';
+import { REGISTRATION_WILL_OPEN_SOON, REGISTRATION_WILL_OPEN_SOON_RU } from '@/shared/constants';
 import { COURSE_TITLES } from 'data';
 
-const mockedCourse: Course = {
-  id: '6',
-  title: COURSE_TITLES.NODE,
-  iconSrc: MOCKED_IMAGE_PATH,
-  iconSmall: MOCKED_IMAGE_PATH,
-  secondaryIcon: MOCKED_IMAGE_PATH,
-  startDate: dayJS().subtract(2, 'month').format('D MMM, YYYY'),
-  language: ['en'],
-  mode: 'online',
-  detailsUrl: `/${ROUTES.COURSES}/${ROUTES.NODE_JS}`,
-  enroll: 'https://test.com',
-  backgroundStyle: {
-    backgroundColor: '#F0F9F4',
-    accentColor: '#AEDF36',
-  },
-};
+const mockedCourseWithSubtitle = mockedCourses.find(
+  (course) => course.title === COURSE_TITLES.JS_PRESCHOOL_RU,
+)!;
+const mockedCourseNoSubtitle = mockedCourses.find(
+  (course) => course.title === COURSE_TITLES.JS_EN,
+)!;
 
 describe('HeroCourse component', () => {
-  beforeEach(() => {
-    renderWithRouter(<HeroCourse course={mockedCourse} />);
+  describe('Render general content', () => {
+    beforeEach(async () => {
+      const widget = await HeroCourse({ courseName: mockedCourseWithSubtitle.title });
+
+      renderWithRouter(widget);
+    });
+
+    it('renders the title, label and subtitle correctly', async () => {
+      const titleElement = await screen.findByTestId('main-title');
+      const labelElement = await screen.findByTestId('course-label');
+      const subtitleElement = await screen.findByTestId('course-subtitle');
+
+      expect(titleElement).toBeVisible();
+      expect(titleElement.textContent).toBe('JavaScript / Front-end Course');
+      expect(labelElement).toBeVisible();
+      expect(subtitleElement).toBeVisible();
+      expect(subtitleElement.textContent).toBe('Pre-school RU');
+    });
+
+    it('renders enroll button with correct label and href', () => {
+      const buttonElement = screen.getByRole('link', { name: /присоединиться/i });
+
+      expect(buttonElement).toBeVisible();
+      expect(buttonElement).toHaveAttribute('href', `/${mockedCourseWithSubtitle.enroll}`);
+    });
+
+    it('renders the image with correct source', () => {
+      const imageElement = screen.getByTestId('hero-image');
+
+      expect(imageElement).toBeInTheDocument();
+      expect(imageElement).toHaveAttribute('src', MOCKED_IMAGE_PATH.src);
+      expect(imageElement).toHaveAttribute('alt', 'JS / Front-end Pre-school RU-logo');
+    });
   });
 
-  it('renders the title and label correctly', async () => {
-    const titleElement = await screen.findByText('Node.js Course');
-    const labelElement = screen.getByText('planned');
+  describe('Render widget with empty subtitle', () => {
+    it('does not display subtitles if they are not provided', async () => {
+      const widget = await HeroCourse({ courseName: mockedCourseNoSubtitle.title });
 
-    expect(titleElement).toBeVisible();
-    expect(labelElement).toBeVisible();
+      renderWithRouter(widget);
+      const subtitleElement = await screen.queryByTestId('course-subtitle');
+
+      expect(subtitleElement).toBeNull();
+    });
   });
 
-  it('renders enroll button with correct label and href', () => {
-    const buttonElement = screen.getByRole('link', { name: /enroll/i });
+  describe('Render widget with empty link', () => {
+    it('renders registration will open soon with correct label and href', async () => {
+      const widget = await HeroCourse({ courseName: COURSE_TITLES.AWS_DEVOPS });
 
-    expect(buttonElement).toBeVisible();
-    expect(buttonElement).toHaveAttribute('href', 'https://test.com');
-  });
+      renderWithRouter(widget);
 
-  it('renders the image with correct source', () => {
-    const imageElement = screen.getByRole('img', { name: /Node.js/i });
+      const buttonElement = screen.getByText(REGISTRATION_WILL_OPEN_SOON);
 
-    expect(imageElement).toBeInTheDocument();
-    expect(imageElement).toHaveAttribute('src', MOCKED_IMAGE_PATH.src);
+      expect(buttonElement).toBeVisible();
+      expect(buttonElement).toHaveAttribute('href', '/');
+      expect(buttonElement).toHaveTextContent(REGISTRATION_WILL_OPEN_SOON);
+    });
+
+    it('renders registration will open soon in russian with correct label and href', async () => {
+      const widget = await HeroCourse({ courseName: COURSE_TITLES.JS_RU });
+
+      renderWithRouter(widget);
+
+      const buttonElement = screen.getByText(REGISTRATION_WILL_OPEN_SOON_RU);
+
+      expect(buttonElement).toBeVisible();
+      expect(buttonElement).toHaveAttribute('href', '/');
+      expect(buttonElement).toHaveTextContent(REGISTRATION_WILL_OPEN_SOON_RU);
+    });
   });
 });

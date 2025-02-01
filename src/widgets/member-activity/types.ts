@@ -1,5 +1,6 @@
 import { StaticImageData } from 'next/image';
-import type { ListData, ListType } from '@/shared/types.ts';
+
+import type { ListData, ListType } from '@/shared/types';
 
 export type Stage = {
   id: number | string;

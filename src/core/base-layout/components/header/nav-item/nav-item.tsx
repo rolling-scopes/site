@@ -1,7 +1,7 @@
 import {
   FocusEvent,
   KeyboardEvent,
-  ReactNode,
+  PropsWithChildren,
   useEffect,
   useRef,
   useState,
@@ -9,20 +9,21 @@ import {
 import classNames from 'classnames/bind';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
 import { DropdownWrapper } from '../dropdown/dropdown-wrapper';
+import { ROUTES } from '@/core/const';
 import { DropdownArrow } from '@/shared/icons/dropdown-arrow';
 
 import styles from './nav-item.module.scss';
 
 const cx = classNames.bind(styles);
 
-type NavItemProps = {
+type NavItemProps = PropsWithChildren & {
   label: string;
   href: string;
-  dropdownInner?: ReactNode;
 };
 
-export const NavItem = ({ label, href, dropdownInner }: NavItemProps) => {
+export const NavItem = ({ label, href, children }: NavItemProps) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const dropdownToggleRef = useRef<HTMLButtonElement>(null);
@@ -31,7 +32,11 @@ export const NavItem = ({ label, href, dropdownInner }: NavItemProps) => {
   const onOpen = () => setDropdownOpen(true);
 
   const pathname = usePathname();
-  const isActive = href === '/' ? pathname === '/' : pathname?.includes(href.replaceAll('/', ''));
+  const isHrefHome = href === ROUTES.HOME;
+  const isActive = isHrefHome
+    ? pathname === ROUTES.HOME
+    : pathname?.includes(href.replaceAll(ROUTES.HOME, ''));
+  const linkHref = isHrefHome ? href : `/${href}`;
 
   const handleConfirmKeyPress = (e: KeyboardEvent<HTMLButtonElement>) => {
     if (e.code === 'Enter' || e.code === 'Space') {
@@ -58,20 +63,25 @@ export const NavItem = ({ label, href, dropdownInner }: NavItemProps) => {
   }, [pathname]);
 
   return (
-    <div className={cx('menu-item-wrapper')} onBlur={handleBlur} onKeyDown={handleEscKeyPress}>
+    <div
+      className={cx('menu-item-wrapper')}
+      onBlur={handleBlur}
+      onKeyDown={handleEscKeyPress}
+      data-testid="menu-item"
+    >
       <Link
-        href={href}
+        href={linkHref}
         className={cx(
           'menu-item',
           { active: isActive },
-          { 'dropdown-toggle': !!dropdownInner },
+          { 'dropdown-toggle': Boolean(children) },
           { rotate: isDropdownOpen },
         )}
         onMouseLeave={onClose}
         onMouseEnter={onOpen}
       >
         <span className={cx('label')}>{label}</span>
-        {dropdownInner && (
+        {children && (
           <button
             onKeyDown={handleConfirmKeyPress}
             ref={dropdownToggleRef}
@@ -82,9 +92,9 @@ export const NavItem = ({ label, href, dropdownInner }: NavItemProps) => {
           </button>
         )}
       </Link>
-      {dropdownInner && (
+      {children && (
         <DropdownWrapper onMouseLeave={onClose} onMouseEnter={onOpen} isOpen={isDropdownOpen}>
-          {dropdownInner}
+          {children}
         </DropdownWrapper>
       )}
     </div>

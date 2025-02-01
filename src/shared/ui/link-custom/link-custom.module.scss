@@ -81,10 +81,16 @@
 .text-link {
   @extend %transition-all;
 
-  color: $color-blue;
+  display: inline-flex;
+  color: $color-blue-600;
   text-decoration: underline;
 
   &:hover {
     text-decoration: none;
   }
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: $opacity-30;
 }

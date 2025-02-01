@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { Topics } from './topics.tsx';
+
+import { Topics } from './topics';
 
 describe('Topics Component', () => {
   it('renders topics correctly', () => {

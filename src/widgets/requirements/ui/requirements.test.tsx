@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
+
 import { Requirements } from './requirements';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 

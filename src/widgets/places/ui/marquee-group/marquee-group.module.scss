@@ -1,0 +1,9 @@
+.marquee-group {
+  animation: marquee 30s linear infinite;
+
+  @keyframes marquee {
+    100% {
+      translate: -100% 0;
+    }
+  }
+}

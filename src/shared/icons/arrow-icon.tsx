@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import arrow from '@/shared/assets/svg/arrow.svg';
 
 export const ArrowIcon = ({ size = 24 }: { size?: number }) => {

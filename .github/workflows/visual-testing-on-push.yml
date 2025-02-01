@@ -6,6 +6,8 @@ on:
 
 env:
   NODE_VERSION: 20.x
+  API_URL: ${{ secrets.API_URL }}
+  YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY_DEVELOPMENT }}
 
 jobs:
   visial-testing:

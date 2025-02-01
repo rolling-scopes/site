@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
+
 import { MentorsWanted } from './mentors-wanted';
 import { ROUTES } from '@/core/const';
 import { renderWithRouter } from '@/shared/__tests__/utils';
@@ -8,8 +9,10 @@ import mentorImg from '@/shared/assets/mentors-wanted.webp';
 const readMoreLink = `/${ROUTES.MENTORSHIP}`;
 
 describe('Mentors', () => {
-  beforeEach(() => {
-    renderWithRouter(<MentorsWanted />);
+  beforeEach(async () => {
+    const widget = await MentorsWanted({});
+
+    renderWithRouter(widget);
   });
 
   it('renders the widget', () => {

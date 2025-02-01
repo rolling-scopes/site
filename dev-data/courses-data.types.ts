@@ -1,11 +1,12 @@
 import { ReactNode } from 'react';
 import { StaticImageData } from 'next/image';
-import { MentorActivities } from './mentorship-data.types.ts';
+
+import type { MentorActivity } from './mentorship-data.types';
 import type { Course } from '@/entities/course';
 import type { ListData } from '@/shared/types';
 
 export type DataMap = {
-  mentorship: MentorActivities[];
+  mentorship: MentorActivity[];
   courses: Course[];
   coursesPath: CoursesPath[];
   javascript: JSPath[];

@@ -5,6 +5,7 @@ import noteIcon from '@/shared/assets/icons/note-icon.webp';
 import paperIcon from '@/shared/assets/icons/paper-icon.webp';
 import personIcon from '@/shared/assets/icons/person-icon.webp';
 import planetIcon from '@/shared/assets/icons/planet.webp';
+import { REGISTRATION_WILL_OPEN_SOON, REGISTRATION_WILL_OPEN_SOON_RU } from '@/shared/constants';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 import type { AboutCourseInfo } from 'data';
@@ -14,23 +15,36 @@ type ContentMap = {
   [key in CourseNamesChannels]: AboutCourseInfo[];
 };
 
+const enIntro = {
+  title: 'About the course',
+  linkLabel: 'Become a student',
+  noLinkLabel: REGISTRATION_WILL_OPEN_SOON,
+  paragraph: null,
+};
+const ruIntro = {
+  title: 'О курсе',
+  linkLabel: 'Cтать студентом',
+  noLinkLabel: REGISTRATION_WILL_OPEN_SOON_RU,
+  paragraph: null,
+};
+const preSchoolIntro = {
+  title: 'JS/Frontend-разработка. Подготовительный этап',
+  linkLabel: 'Стать студентом',
+  noLinkLabel: REGISTRATION_WILL_OPEN_SOON_RU,
+  paragraph:
+    'Подготовительный этап поможет тем, кто мало знаком или совсем не знаком с программированием и хотел бы впоследствии учиться на основном курсе «JavaScript/Front-end».',
+};
+
 export const introLocalizedContent = {
-  en: {
-    title: 'About the course',
-    linkLabel: 'Become a student',
-    paragraph: '',
-  },
-  ru: {
-    title: 'О курсе',
-    linkLabel: 'Cтать студентом',
-    paragraph: '',
-  },
-  'pre-school-ru': {
-    title: 'JS/Frontend-разработка. Подготовительный этап',
-    linkLabel: 'Стать студентом',
-    paragraph:
-      'Подготовительный этап поможет тем, кто мало знаком или совсем не знаком с программированием и хотел бы впоследствии учиться на основном курсе «JavaScript/Front-end».',
-  },
+  [COURSE_TITLES.JS_PRESCHOOL_RU]: preSchoolIntro,
+  [COURSE_TITLES.JS_EN]: enIntro,
+  [COURSE_TITLES.JS_RU]: ruIntro,
+  [COURSE_TITLES.REACT]: enIntro,
+  [COURSE_TITLES.ANGULAR]: enIntro,
+  [COURSE_TITLES.NODE]: enIntro,
+  [COURSE_TITLES.AWS_FUNDAMENTALS]: enIntro,
+  [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: enIntro,
+  [COURSE_TITLES.AWS_DEVOPS]: enIntro,
 };
 
 const listData = {

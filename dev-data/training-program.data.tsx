@@ -1,6 +1,7 @@
 // TODO separate data and markup
 import { JSX } from 'react';
 import { StaticImageData } from 'next/image';
+
 import {
   AWS_FUNDAMENTALS_BADGE,
   AwsFundamentalsBadge,
@@ -14,6 +15,7 @@ import awsFundamentalsImg from '@/shared/assets/rs-slope-aws-fundamentals.webp';
 import jsImg from '@/shared/assets/rs-slope-js.webp';
 import nodejsImg from '@/shared/assets/rs-slope-nodejs.webp';
 import reactEnImg from '@/shared/assets/rs-slope-react-en.webp';
+import { REGISTRATION_WILL_OPEN_SOON, REGISTRATION_WILL_OPEN_SOON_RU } from '@/shared/constants';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -234,25 +236,20 @@ export const contentMap: ContentMap = {
     title: 'Target audience',
     content: [
       <Paragraph key="react 01">
-        RS School students who have completed RS School Stage #2 and new students with strong
-        CoreJS/TS/Frontend skills:
+        We are looking for students with strong CoreJS/TS/Frontend skills.
       </Paragraph>,
+      <Subtitle key="react 02">Requirements:</Subtitle>,
       <List
-        key="react 02"
+        key="react 03"
         data={[
-          'JavaScript',
-          'TypeScript',
-          'Git, GitHub (clone, add, commit, push, pull, merge, rebase, working with Pull Request)',
-          'NPM, Webpack',
-          'CSS3 / HTML5',
-          'Chrome DevTools, Figma',
-          'Understanding of the REST',
+          'Proficiency in JavaScript / TypeScript',
+          'Familiarity with Git and GitHub operations (clone, add, commit, push, pull, merge, rebase, working with Pull Requests)',
+          'Experience with NPM and bundling tools such as Webpack or Rollup',
+          'Strong skills in CSS3 and HTML5',
+          'Proficient use of Chrome DevTools',
+          'Understanding of RESTful services',
         ]}
       />,
-      <Subtitle key="react 03">
-        Attention! Mentors on this course will be first assigned to the graduates of the RS School
-        Stage #2.
-      </Subtitle>,
     ],
     image: reactEnImg,
   },
@@ -302,5 +299,16 @@ export const contentMap: ContentMap = {
       />,
     ],
     image: awsDevImg,
+  },
+};
+
+export const trainingProgramLink = {
+  en: {
+    linkLabel: 'Register',
+    noLinkLabel: REGISTRATION_WILL_OPEN_SOON,
+  },
+  ru: {
+    linkLabel: 'Зарегистрироваться',
+    noLinkLabel: REGISTRATION_WILL_OPEN_SOON_RU,
   },
 };

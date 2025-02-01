@@ -1,0 +1,81 @@
+.docs-layout {
+  gap: 120px;
+  align-items: initial;
+  margin: 0 auto;
+  padding-top: 0;
+
+  .menu-wrapper {
+    width: initial;
+    padding-top: 40px;
+
+    @include media-tablet {
+      padding: 20px 16px 0 16px;
+    }
+  }
+
+  .menu {
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+
+    position: sticky;
+    top: 104px;
+
+    overflow-y: auto;
+    display: flex;
+
+    height: calc(100vh - 104px);
+
+    @include media-tablet {
+      position: initial;
+
+      overflow-y: initial;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      height: initial;
+    }
+  }
+
+  .docs-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    width: 100%;
+    min-width: 0;
+    padding-top: 40px;
+    padding-left: 0;
+
+    @include media-tablet {
+      padding-top: 20px;
+      padding-left: 16px;
+    }
+  }
+
+  .docs-top {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+
+    @include media-mobile-landscape {
+      gap: 20px;
+    }
+  }
+
+  @include media-laptop {
+    gap: 100px;
+  }
+
+  @include media-laptop-medium {
+    gap: 80px;
+  }
+
+  @include media-tablet {
+    gap: initial;
+  }
+
+  @include media-tablet {
+    flex-direction: column;
+  }
+}
