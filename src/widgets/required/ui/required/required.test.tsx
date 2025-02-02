@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import { Required } from './ui/required';
+import { Required } from './required';
 
 describe('Required', () => {
   it('renders the title and subtitle correctly', () => {
@@ -57,7 +57,6 @@ describe('Required', () => {
       'No AWS Cloud experience is necessary.',
       'We will use the AWS Free Tier',
       'No IT prerequisites required',
-      // willLearn part
       'Networking Fundamentals',
       'Cloud Technical Fundamentals',
       'AWS Cloud Essentials',
