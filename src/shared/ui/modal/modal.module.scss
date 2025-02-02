@@ -4,7 +4,7 @@
   flex-direction: column;
 
   max-width: 889px;
-  padding: 0 32px 32px 32px;
+  padding: 0 32px;
   border: none;
   border-radius: 12px;
 
@@ -99,6 +99,7 @@
 
 .modal-body {
   overflow-y: auto;
+  padding-bottom: 32px;
 
   p {
     margin: 0;
