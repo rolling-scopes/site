@@ -22,7 +22,7 @@
         &.active {
           font-weight: bold;
           color: $color-blue-700;
-          background-color: $color-blue-background-100;
+          background-color: hsla(from $color-blue-background-100 h s l / $opacity-30);
         }
       }
     }
