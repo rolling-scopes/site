@@ -62,14 +62,14 @@ figure {
 .content {
   width: 100%;
   max-width: 1440px;
-  padding: 80px 120px 40px;
+  padding: 60px 80px;
 
   @include media-laptop {
-    padding: 80px 40px 40px;
+    padding: 60px 40px;
   }
 
   @include media-tablet {
-    padding: 56px 16px;
+    padding: 56px 22px;
   }
 }
 
@@ -126,10 +126,10 @@ figure {
 
       height: var(--slider-arrow-btn-height);
       margin: 2px;
+      border-radius: 8px;
 
       opacity: $opacity-100;
       backdrop-filter: blur(20px);
-      border-radius: 8px;
 
       @include media-mobile-landscape {
         display: none;
