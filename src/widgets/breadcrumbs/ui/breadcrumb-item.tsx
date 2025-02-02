@@ -1,5 +1,4 @@
 import classNames from 'classnames/bind';
-
 import Link from 'next/link';
 
 import styles from './breadcrumbs.module.scss';

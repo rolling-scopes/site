@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 
@@ -11,6 +12,7 @@ type DocDetailProps = {
   textLink: string;
   textAfterLink: string;
   linkDocs?: string;
+  className?: string;
 };
 
 export const DocDetail = (props: DocDetailProps) => {
@@ -22,6 +24,7 @@ export const DocDetail = (props: DocDetailProps) => {
     <Paragraph className={cx('doc-detail-wrapper')}>
       {`${props.textBeforeLink} `}
       <LinkCustom
+        className={props.className}
         href={props.linkDocs}
         external
       >

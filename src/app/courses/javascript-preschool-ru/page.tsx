@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
+
 import { getCourseTitle } from '@/shared/helpers/get-course-title';
-import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { JavaScriptPreSchoolRu } from '@/views/javascript-preschool-ru';
 import { COURSE_TITLES } from 'data';
 
@@ -11,7 +11,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function JsPreRoute() {
-  const course = await selectCourse(courseName);
-
-  return <JavaScriptPreSchoolRu lang="ru" course={course} courseName={courseName} />;
+  return <JavaScriptPreSchoolRu courseName={courseName} />;
 }

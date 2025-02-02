@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+
 import { CourseModuleElement } from '../course-module/course-module';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { CoursesWithRequirementsNames, courseDataMap } from 'data';

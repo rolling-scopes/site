@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
+
 import { getCourseTitle } from '@/shared/helpers/get-course-title';
-import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { JavaScriptRu } from '@/views/javascript-ru';
 import { COURSE_TITLES } from 'data';
 
@@ -11,7 +11,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function JsRuRoute() {
-  const course = await selectCourse(courseName);
-
-  return <JavaScriptRu lang="ru" course={course} courseName={courseName} />;
+  return <JavaScriptRu courseName={courseName} />;
 }

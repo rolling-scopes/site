@@ -1,4 +1,3 @@
-import { Course } from '@/entities/course';
 import { AboutCourse } from '@/widgets/about-course';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
@@ -10,21 +9,20 @@ import { TrainingProgram } from '@/widgets/training-program';
 import { CourseNames, awsFundamentals } from 'data';
 
 type AwsFundamentalsProps = {
-  course: Course;
   courseName: CourseNames['AWS_FUNDAMENTALS'];
 };
-export const AwsFundamentals = ({ course, courseName }: AwsFundamentalsProps) => {
+export const AwsFundamentals = ({ courseName }: AwsFundamentalsProps) => {
   return (
     <>
-      <HeroCourse course={course} />
+      <HeroCourse courseName={courseName} />
       <Breadcrumbs />
-      <TrainingProgram course={course} courseName={courseName} />
-      <AboutCourse course={course} courseName={courseName} />
+      <TrainingProgram courseName={courseName} />
+      <AboutCourse courseName={courseName} />
       <Certification courseName={courseName} />
       <Communication courseName={courseName} />
       <Required courseName={courseName} />
-      <TrainingProgram course={course} courseName={`${courseName} badge`} />
-      <Trainers trainers={awsFundamentals} />
+      <TrainingProgram courseName={courseName} specify="badge" />
+      <Trainers trainers={awsFundamentals} courseName={courseName} />
     </>
   );
 };

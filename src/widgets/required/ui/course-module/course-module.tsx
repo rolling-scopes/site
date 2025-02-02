@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+
 import { CourseModule } from '../../types';
 import { List } from '@/shared/ui/list';
 import { Subtitle } from '@/shared/ui/subtitle';

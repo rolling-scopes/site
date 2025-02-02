@@ -1,4 +1,3 @@
-import { Course } from '@/entities/course';
 import { AboutCourse } from '@/widgets/about-course';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
@@ -11,20 +10,19 @@ import { CourseNames, awsDevops } from 'data';
 
 type AwsDevOpsProps = {
   courseName: CourseNames['AWS_DEVOPS'];
-  course: Course;
 };
 
-export const AwsDevOps = ({ course, courseName }: AwsDevOpsProps) => {
+export const AwsDevOps = ({ courseName }: AwsDevOpsProps) => {
   return (
     <>
-      <HeroCourse course={course} />
+      <HeroCourse courseName={courseName} />
       <Breadcrumbs />
-      <TrainingProgram course={course} courseName={courseName} />
-      <AboutCourse course={course} courseName={courseName} />
+      <TrainingProgram courseName={courseName} />
+      <AboutCourse courseName={courseName} />
       <Certification courseName={courseName} />
       <Communication courseName={courseName} />
       <Required courseName={courseName} />
-      <Trainers trainers={awsDevops} />
+      <Trainers trainers={awsDevops} courseName={courseName} />
     </>
   );
 };

@@ -1,6 +1,5 @@
 .subtitle {
   margin: 0;
-  font-weight: $font-weight-medium;
 
   &.extra-small-font-size {
     font-size: 20px;
@@ -58,5 +57,13 @@
 
   &.black {
     color: $color-black;
+  }
+
+  &.normal {
+    font-weight: $font-weight-medium;
+  }
+
+  &.bold {
+    font-weight: $font-weight-bold;
   }
 }

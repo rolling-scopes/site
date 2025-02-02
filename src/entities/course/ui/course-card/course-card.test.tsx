@@ -1,6 +1,7 @@
 import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
-import { CourseCard, type CourseCardProps, cx } from './course-card';
+
+import { CourseCard, type CourseCardProps } from './course-card';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { dayJS } from '@/shared/helpers/dayJS';
@@ -13,7 +14,7 @@ describe('CourseCard', () => {
     startDate: dayJS().toISOString(),
     registrationEndDate: dayJS().add(1, 'd').toISOString(),
     mode: 'online',
-    language: ['en'],
+    language: 'en',
     detailsUrl: 'http://example.com/course',
     backgroundStyle: {
       backgroundColor: '#ffffff',
@@ -35,20 +36,18 @@ describe('CourseCard', () => {
   it('renders the course card content correctly', () => {
     expect(screen.getByText(mockProps.title)).toBeVisible();
     expect(screen.getByText(`${mockProps.startDate}`)).toBeVisible();
-    expect(screen.getByText(mockProps.language.join(' / '))).toBeVisible();
+    expect(screen.getByText(mockProps.language)).toBeVisible();
     expect(screen.getByText(`${mockProps.mode}`)).toBeVisible();
     expect(screen.getByRole('link')).toHaveAttribute('href', mockProps.detailsUrl);
   });
 
   it('renders the course card colors correctly', () => {
-    const cardHeader = card.querySelector('.card-header');
+    const cardHeader = screen.getByTestId('card-header');
 
-    if (cardHeader) {
-      const accentBlock = getComputedStyle(cardHeader, '::after');
-
-      expect(cardHeader).toHaveClass(cx('card-header'));
-      expect(cardHeader).toHaveStyle({ backgroundColor: mockProps.backgroundStyle.backgroundColor });
-      expect(accentBlock).toHaveStyle({ backgroundColor: mockProps.backgroundStyle.accentColor });
-    }
+    expect(cardHeader).toHaveClass('card-header');
+    expect(cardHeader).toHaveStyle({
+      'backgroundColor': mockProps.backgroundStyle.backgroundColor,
+      '--accent-bg-color': mockProps.backgroundStyle.accentColor,
+    });
   });
 });

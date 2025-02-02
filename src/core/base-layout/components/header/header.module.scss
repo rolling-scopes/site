@@ -1,5 +1,5 @@
 .navbar {
-  position: fixed;
+  position: sticky;
   z-index: 100;
   top: 0;
   left: 0;
@@ -7,7 +7,6 @@
   width: 100%;
   height: 64px;
   padding: 0 40px;
-
   border-radius: 0;
 
   transition: background-color 0.2s;
@@ -17,7 +16,7 @@
   }
 
   &.blue {
-    background-color: $color-mentorship-header;
+    background: $gradient-blue-background;
   }
 
   &.none {
@@ -25,14 +24,15 @@
   }
 
   &.white {
-    opacity: 1;
-    background-color: rgb(255 255 255);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+
+    opacity: 1;
+    background-color: rgb(255 255 255);
     box-shadow: rgb(0 0 0 / 8.2%) 0 1.026px 8.0694px 0;
   }
 
-  @include media-tablet {
+  @include media-tablet-large {
     height: 48px;
     padding: 0 16px;
   }
@@ -57,7 +57,7 @@
 
   height: 100%;
 
-  @include media-tablet {
+  @include media-tablet-large {
     display: none;
   }
 }
@@ -92,8 +92,8 @@
 
   width: 100%;
   height: min-content;
-  min-height: 100vh;
-  max-height: 100vh;
+  min-height: 100dvh;
+  max-height: 100dvh;
   margin-top: 0;
   padding: 4px 24px 28px 16px;
 
@@ -108,7 +108,7 @@
   transform: translateY(0);
   display: none;
 
-  @include media-tablet {
+  @include media-tablet-large {
     display: block;
   }
 }

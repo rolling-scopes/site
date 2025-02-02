@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import discordIcon from '@/shared/assets/svg/discord-icon.svg';
 
 export const DiscordIcon = () => {

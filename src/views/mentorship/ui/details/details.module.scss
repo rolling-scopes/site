@@ -1,0 +1,10 @@
+.details-container {
+  background: $gradient-blue-background;
+
+  .details-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+  }
+}

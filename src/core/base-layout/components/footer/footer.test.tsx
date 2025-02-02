@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+
 import { Copyright } from '@/core/base-layout/components/footer/copyright';
 import { DesktopView } from '@/core/base-layout/components/footer/desktop-view';
 import { mockedCourses } from '@/shared/__tests__/constants';

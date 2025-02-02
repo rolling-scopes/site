@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+
 import { CourseItemData } from '@/entities/course';
 import { DateStart } from '@/shared/ui/date-start';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -38,7 +39,7 @@ export const CourseItem = ({
             registrationEndDate={registrationEndDate}
             data-testid="course-date"
           />
-          <span data-testid="course-language">{` • ${language[0].toUpperCase()}`}</span>
+          <span data-testid="course-language">{` • ${language.toUpperCase()}`}</span>
         </p>
       </article>
       <LinkCustom

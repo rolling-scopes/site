@@ -1,15 +1,13 @@
-import { ALIAS_QUARTER_REGEXP, COURSE_DATE_FORMAT } from '@/entities/course/constants';
+import { COURSE_DATE_FORMAT } from '@/entities/course/constants';
 import { ApiCoursesResponse } from '@/entities/course/types';
 import { dayJS } from '@/shared/helpers/dayJS';
 import { courses as baseCourseData } from 'data';
 
 export const syncWithApiData = (apiCourses: ApiCoursesResponse[]) => {
   return baseCourseData.map((course) => {
-    const currApiCourse = apiCourses.find((apiCourse) => {
-      const aliasWithoutQuarter = apiCourse.alias.replace(ALIAS_QUARTER_REGEXP, '');
-
-      return course.alias === aliasWithoutQuarter;
-    });
+    const currApiCourse = apiCourses.find(
+      (apiCourse) => course.descriptionUrl === apiCourse.descriptionUrl,
+    );
 
     if (!currApiCourse) {
       return course;
@@ -21,6 +19,7 @@ export const syncWithApiData = (apiCourses: ApiCoursesResponse[]) => {
     clonedCourse.registrationEndDate = dayJS(currApiCourse.registrationEndDate).format(
       COURSE_DATE_FORMAT,
     );
+    clonedCourse.enroll = currApiCourse.wearecommunityUrl;
 
     return clonedCourse;
   });
