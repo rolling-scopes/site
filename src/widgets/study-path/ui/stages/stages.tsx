@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 
 import { StageCard } from '../stage-card/stage-card';
 import type { ListType } from '@/shared/types';
-import { Stage } from '@/widgets/member-activity/types';
+import { Stage } from '@/widgets/study-path/types';
 
 import styles from './stages.module.scss';
 

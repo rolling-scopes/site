@@ -7,7 +7,7 @@ import { Step } from '../step/step';
 import { Topics } from '../topics/topics';
 import { List } from '@/shared/ui/list';
 import { Paragraph } from '@/shared/ui/paragraph';
-import { StageCardProps } from '@/widgets/member-activity/types';
+import { StageCardProps } from '@/widgets/study-path/types';
 
 import styles from './stage-card.module.scss';
 

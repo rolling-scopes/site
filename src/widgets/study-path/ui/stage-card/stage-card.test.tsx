@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest';
 import { StageCard } from './stage-card';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { StageCardProps } from '@/widgets/member-activity/types';
+import { StageCardProps } from '@/widgets/study-path/types';
 
 describe('StageCard component', () => {
   const props: StageCardProps = {

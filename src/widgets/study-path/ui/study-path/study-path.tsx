@@ -11,7 +11,7 @@ import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import type { DataMap, MentorActivity, MentorshipDefaultRouteKeys } from 'data';
 
-import styles from './member-activity.module.scss';
+import styles from './study-path.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -50,7 +50,7 @@ const mentorsActivityData = {
 
 export const LangContext = createContext<Language>('en');
 
-export const MemberActivity = ({ path, type, activities, lang = 'en' }: StudyPathProps) => {
+export const StudyPath = ({ path, type, activities, lang = 'en' }: StudyPathProps) => {
   let coursesPath = dataProviders[path];
 
   const isAngularOrAwsDev = path === 'angular' || path === 'awsDev';
