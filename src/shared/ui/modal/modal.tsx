@@ -21,8 +21,12 @@ export const Modal = ({ isOpen, onClose, children, title, className }: ModalProp
   const dialogRef = useRef<HTMLDialogElement | null>(null);
 
   const handleClose = useCallback(() => {
-    dialogRef.current?.close();
-    onClose();
+    dialogRef.current?.classList.add(cx('fade-out'));
+    dialogRef.current?.addEventListener('animationend', () => {
+      dialogRef.current?.classList.remove(cx('fade-out'));
+      dialogRef.current?.close();
+      onClose();
+    }, { once: true });
   }, [onClose]);
 
   const handleMouseDown = useCallback(
