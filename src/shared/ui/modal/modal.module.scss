@@ -26,7 +26,12 @@
   }
 
   @include media-tablet {
+    width: 100dvw;
+    max-width: unset !important;
+    height: 100dvh;
+    max-height: unset;
     padding: 0 16px 16px 16px;
+    border-radius: 0;
   }
 
   @include media-tablet-large {
