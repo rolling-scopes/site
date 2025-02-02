@@ -16,8 +16,8 @@ export const Required = ({ courseName }: RequiredProps) => {
   const requiredKnowledge = courseDataMap[courseName];
   const { knowBefore, willLearn, title } = requiredKnowledge;
 
-  const isKnowBeforeExist = knowBefore && knowBefore.description.length;
-  const isWillLearnExist = willLearn && willLearn.length;
+  const isKnowBeforeExist = knowBefore && Boolean(knowBefore.description.length);
+  const isWillLearnExist = willLearn && Boolean(willLearn.length);
 
   return (
     <section className={cx('container')}>
@@ -31,15 +31,18 @@ export const Required = ({ courseName }: RequiredProps) => {
         </WidgetTitle>
 
         <div className={cx('course-module-columns-layout')}>
-          <div className={cx('course-module-elements-column')}>
-            {isKnowBeforeExist && <CourseModuleElement courseModule={knowBefore} />}
-          </div>
-          <div className={cx('course-module-elements-column')}>
-            {isWillLearnExist
-            && willLearn.map((willLearn, index) => (
-              <CourseModuleElement key={index} courseModule={willLearn} />
-            ))}
-          </div>
+          {isKnowBeforeExist && (
+            <div className={cx('course-module-elements-column')}>
+              <CourseModuleElement courseModule={knowBefore} />
+            </div>
+          )}
+          {isWillLearnExist && (
+            <div className={cx('course-module-elements-column')}>
+              {willLearn.map((willLearn, index) => (
+                <CourseModuleElement key={index} courseModule={willLearn} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>
