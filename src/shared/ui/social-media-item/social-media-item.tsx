@@ -19,6 +19,7 @@ export const SocialMediaItem = ({ title, href, icon }: SocialMediaProps) => (
     href={href}
     variant="withCustomClassName"
     external
+    black
     data-testid="social-media"
   >
     {icon}
