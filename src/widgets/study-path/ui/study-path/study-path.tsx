@@ -1,8 +1,9 @@
 'use client';
 
 import { createContext } from 'react';
+import classNames from 'classnames/bind';
 
-import { Stages } from './stages';
+import { Stages } from '../stages/stages';
 import { ROUTES } from '@/core/const';
 import { dataProviders } from '@/core/services/api';
 import type { Language, ListType } from '@/shared/types';
@@ -10,16 +11,18 @@ import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import type { DataMap, MentorActivity, MentorshipDefaultRouteKeys } from 'data';
 
-import './member-activity.scss';
+import styles from './study-path.module.scss';
+
+const cx = classNames.bind(styles);
 
 type PathNames = Exclude<keyof DataMap, 'courses'> | MentorshipDefaultRouteKeys;
 
-interface StudyPathProps {
+type StudyPathProps = {
   path: PathNames;
   activities?: MentorActivity[];
   type?: ListType;
   lang?: Language;
-}
+};
 
 const localizedContent = {
   en: {
@@ -47,7 +50,7 @@ const mentorsActivityData = {
 
 export const LangContext = createContext<Language>('en');
 
-export const MemberActivity = ({ path, type, activities, lang = 'en' }: StudyPathProps) => {
+export const StudyPath = ({ path, type, activities, lang = 'en' }: StudyPathProps) => {
   let coursesPath = dataProviders[path];
 
   const isAngularOrAwsDev = path === 'angular' || path === 'awsDev';
@@ -66,14 +69,14 @@ export const MemberActivity = ({ path, type, activities, lang = 'en' }: StudyPat
 
   return (
     <LangContext.Provider value={lang}>
-      <section className="study-path container" id="learning-path">
-        <div className="study-path content upd">
+      <section className={cx('member-activity', 'container')} id="learning-path">
+        <article className={cx('member-activity', 'content')}>
           <WidgetTitle size="small" mods="asterisk">
             {title}
           </WidgetTitle>
           <Paragraph>{paragraph}</Paragraph>
           <Stages stages={coursesPath} type={type} />
-        </div>
+        </article>
       </section>
     </LangContext.Provider>
   );

@@ -6,9 +6,9 @@ import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
 import { HeroCourse } from '@/widgets/hero-course';
-import { MemberActivity } from '@/widgets/member-activity';
 import { MentorsWanted } from '@/widgets/mentors-wanted';
 import { Required } from '@/widgets/required';
+import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
 import { CourseNames, javaScriptEn } from 'data';
@@ -28,7 +28,7 @@ export const JavaScriptEn = async ({ courseName }: JavaScriptEnProps) => {
       <Certification courseName={courseName} />
       <Communication courseName={courseName} />
       <AboutVideo lang={language} />
-      <MemberActivity path="javascript" type="marked" lang={language} />
+      <StudyPath path="javascript" type="marked" lang={language} />
       <Required courseName={courseName} />
       <MentorsWanted route={`/${ROUTES.MENTORSHIP}/${ROUTES.JS}`} courseName={courseName} />
       <Trainers trainers={javaScriptEn} courseName={courseName} />

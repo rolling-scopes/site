@@ -3,7 +3,7 @@ import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { RSCourses } from '@/widgets/courses';
 import { General } from '@/widgets/general';
 import { HeroPage } from '@/widgets/hero-page';
-import { MemberActivity } from '@/widgets/member-activity';
+import { StudyPath } from '@/widgets/study-path';
 
 export const Courses = () => {
   return (
@@ -11,7 +11,7 @@ export const Courses = () => {
       <HeroPage pageName={PAGE_NAMES.COURSES} />
       <Breadcrumbs />
       <RSCourses />
-      <MemberActivity path="coursesPath" />
+      <StudyPath path="coursesPath" />
       <General />
     </>
   );

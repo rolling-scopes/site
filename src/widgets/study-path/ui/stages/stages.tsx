@@ -1,12 +1,17 @@
+import classNames from 'classnames/bind';
+
+import { StageCard } from '../stage-card/stage-card';
 import type { ListType } from '@/shared/types';
-import { Stage, StageCard } from '@/widgets/member-activity/ui/stage-card';
+import { Stage } from '@/widgets/study-path/types';
 
-import './stages.scss';
+import styles from './stages.module.scss';
 
-export interface StagesProps {
+const cx = classNames.bind(styles);
+
+export type StagesProps = {
   stages: Stage[] | null;
   type?: ListType;
-}
+};
 
 export const Stages = ({ stages, type }: StagesProps) => {
   if (stages === null || stages.length === 0) {
@@ -14,7 +19,7 @@ export const Stages = ({ stages, type }: StagesProps) => {
   }
 
   return (
-    <div className="stages">
+    <ul className={cx('stages')}>
       {stages.map(({ id, title, description, logoIcon, links, topics, imageSrc, list }) => (
         <StageCard
           key={id}
@@ -29,6 +34,6 @@ export const Stages = ({ stages, type }: StagesProps) => {
           type={type}
         />
       ))}
-    </div>
+    </ul>
   );
 };

@@ -2,7 +2,7 @@ import { StaticImageData } from 'next/image';
 
 import type { ListData, ListType } from '@/shared/types';
 
-export interface Stage {
+export type Stage = {
   id: number | string;
   title: string;
   description?: string;
@@ -15,8 +15,8 @@ export interface Stage {
   topics?: string[];
   imageSrc?: StaticImageData;
   list?: ListData;
-}
+};
 
-export interface StageCardProps extends Stage {
+export type StageCardProps = Stage & {
   type?: ListType;
-}
+};

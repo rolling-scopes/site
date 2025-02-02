@@ -1,23 +1,28 @@
+import classNames from 'classnames/bind';
+
 import { LinkCustom } from '@/shared/ui/link-custom';
+import { Paragraph } from '@/shared/ui/paragraph';
 
-import './links.scss';
+import styles from './links.module.scss';
 
-interface LinksProps {
+const cx = classNames.bind(styles);
+
+type LinksProps = {
   links: {
     href: string;
     linkTitle: string;
     isActive?: boolean;
   }[];
-}
+};
 
 export const Links = ({ links }: LinksProps) => {
   return (
-    <p className="stage-links">
+    <Paragraph className={cx('stage-links')}>
       {links.map(({ href, linkTitle }) => (
         <LinkCustom href={href} key={linkTitle}>
           {linkTitle}
         </LinkCustom>
       ))}
-    </p>
+    </Paragraph>
   );
 };
