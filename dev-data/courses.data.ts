@@ -2,7 +2,6 @@ import { ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
 import angular from '@/shared/assets/icons/angular.svg';
 import aws from '@/shared/assets/icons/aws-black.svg';
-import awsGray from '@/shared/assets/icons/aws-gray.svg';
 import awsWhiteIcon from '@/shared/assets/icons/aws-white.svg';
 import html5 from '@/shared/assets/icons/html5.svg';
 import javascriptBlack from '@/shared/assets/icons/javascript-black.svg';
