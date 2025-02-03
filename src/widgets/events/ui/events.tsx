@@ -15,8 +15,8 @@ const cx = classNames.bind(styles);
 
 export const Events = () => {
   return (
-    <article id="events" className={cx('container')}>
-      <div className={cx('events-content', 'content')}>
+    <article id="events" className={cx('container', 'events')}>
+      <div className={cx('events-content', 'content', 'column-2')}>
         <section className={cx('info')}>
           <SectionLabel>events & meetups</SectionLabel>
           <WidgetTitle mods="asterisk">Meet us at events</WidgetTitle>

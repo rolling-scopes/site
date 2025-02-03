@@ -15,7 +15,7 @@ const cx = classNames.bind(styles);
 
 export const Speakers = () => (
   <div className={cx('speakers', 'container')}>
-    <div className={cx('speakers', 'content')}>
+    <div className={cx('speakers', 'content', 'column-2')}>
       <article className={cx('info')}>
         <WidgetTitle size="large" mods="lines">
           Speakers wanted

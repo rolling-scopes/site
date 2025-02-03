@@ -1,5 +1,4 @@
 .training-program {
-  flex-direction: row;
   gap: 100px;
 
   .left {
@@ -61,7 +60,6 @@
   }
 
   @include media-tablet-large {
-    flex-direction: column;
     gap: 40px;
     align-items: flex-start;
   }
