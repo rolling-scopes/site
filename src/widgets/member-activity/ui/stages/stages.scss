@@ -7,3 +7,19 @@
 
   margin-top: 64px;
 }
+
+.stages .stage:nth-child(3) {
+  min-width: 193px;
+  min-height: 152px;
+
+  .stage-logo:nth-child(3) {
+    align-items: center;
+    min-width: 152px;
+    min-height: 152px;
+
+    img {
+      min-width: 152px;
+      min-height: 152px;
+    }
+  }
+}
