@@ -17,7 +17,7 @@ export const Events = () => {
   return (
     <article id="events" className={cx('container', 'events')}>
       <div className={cx('events-content', 'content', 'column-2')}>
-        <section className={cx('info')}>
+        <section>
           <SectionLabel>events & meetups</SectionLabel>
           <WidgetTitle mods="asterisk">Meet us at events</WidgetTitle>
           <Paragraph fontSize="large">
