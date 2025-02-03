@@ -37,10 +37,4 @@
       }
     }
   }
-
-  .column-with-events {
-    @include media-laptop-medium {
-      flex-direction: column;
-    }
-  }
 }
