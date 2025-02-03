@@ -3,10 +3,10 @@ import { ROUTES } from '@/core/const';
 import angular from '@/shared/assets/icons/angular.svg';
 import javascript from '@/shared/assets/icons/javascript.svg';
 import react from '@/shared/assets/icons/react.svg';
+import assignment from '@/shared/assets/svg/assignment.svg';
 import bestPractices from '@/shared/assets/svg/best-practices-icon.svg';
 import codeReview from '@/shared/assets/svg/code-review-icon.svg';
 import interview from '@/shared/assets/svg/interview.svg';
-import assignment from '@/shared/assets/svg/assignment.svg';
 import { TelegramIcon } from '@/shared/icons';
 import { MENTOR_ONBOARD_TELEGRAM_EN, MENTOR_ONBOARD_TELEGRAM_RU, MentorshipCourse } from 'data';
 
