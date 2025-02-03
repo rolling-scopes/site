@@ -1,10 +1,9 @@
 import { type CoursesPath } from './courses-data.types';
 import { ROUTES } from '@/core/const';
-import AWSDeveloperIcon from '@/shared/assets/icons/aws-developer.webp';
-import AWSFundamentalsIcon from '@/shared/assets/icons/aws-fundamentals.webp';
-import HTMLIcon from '@/shared/assets/icons/html.webp';
-import JSIcon from '@/shared/assets/icons/javascript.webp';
-import NodeJSIcon from '@/shared/assets/icons/nodejs.webp';
+import awsBlack from '@/shared/assets/icons/aws-black.svg';
+import html from '@/shared/assets/icons/html5.svg';
+import javascript from '@/shared/assets/icons/javascript.svg';
+import nodeJs from '@/shared/assets/icons/node-js.svg';
 import ReactAngIcon from '@/shared/assets/icons/react-angular.svg';
 
 export const coursesPath: CoursesPath[] = [
@@ -13,7 +12,7 @@ export const coursesPath: CoursesPath[] = [
     title: 'Pre-school (RU)',
     description:
       'For those brand new to coding, this is your starting point. Get acquainted with the basics and build a strong foundation.',
-    logoIcon: HTMLIcon,
+    logoIcon: html,
     links: [
       {
         linkTitle: 'Pre-school (RU)',
@@ -27,7 +26,7 @@ export const coursesPath: CoursesPath[] = [
     title: 'JS/TS/FE Fundamentals',
     description:
       'Dive deep into the world of JavaScript, TypeScript, and Frontend development. Understand the core concepts and set yourself up for success.',
-    logoIcon: JSIcon,
+    logoIcon: javascript,
     links: [
       {
         linkTitle: 'JS/TS/FE Fundamentals (RU)',
@@ -61,7 +60,7 @@ export const coursesPath: CoursesPath[] = [
     title: 'NodeJS',
     description:
       "Grasp the power of backend development. With Nodejs, you'll learn to build robust and scalable applications",
-    logoIcon: NodeJSIcon,
+    logoIcon: nodeJs,
     links: [
       {
         linkTitle: 'Node',
@@ -74,7 +73,7 @@ export const coursesPath: CoursesPath[] = [
     title: 'AWS Fundamentals',
     description:
       'Delve into the cloud with Amazon Web Services. Understand the essentials and ensure your apps are hosted seamlessly.',
-    logoIcon: AWSFundamentalsIcon,
+    logoIcon: awsBlack,
     links: [
       {
         linkTitle: 'AWS Fundamentals',
@@ -87,7 +86,7 @@ export const coursesPath: CoursesPath[] = [
     title: 'AWS Developer',
     description:
       'Go beyond the basics. Become an AWS pro and unlock the potential of cloud development.',
-    logoIcon: AWSDeveloperIcon,
+    logoIcon: awsBlack,
     links: [
       {
         linkTitle: 'AWS Developer',
@@ -100,7 +99,7 @@ export const coursesPath: CoursesPath[] = [
     title: 'AWS DevOps',
     description:
       'If you are looking for an entry point to kickstart your IT career as a DevOps engineer, then this AWS course challenge is what you need.',
-    logoIcon: AWSDeveloperIcon,
+    logoIcon: awsBlack,
     links: [
       {
         linkTitle: 'AWS DevOps',
