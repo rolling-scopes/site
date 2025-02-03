@@ -8,7 +8,7 @@
 
   width: 100%;
 
-  @include media-tablet {
+  @include media-tablet-large {
     display: flex;
   }
 }

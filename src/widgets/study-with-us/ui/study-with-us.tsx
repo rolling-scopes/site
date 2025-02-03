@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+
 import { studyOptions } from '../constants';
 import rsSchool from '@/shared/assets/rs-school.webp';
 import { Paragraph } from '@/shared/ui/paragraph';

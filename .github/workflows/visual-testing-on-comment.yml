@@ -7,6 +7,8 @@ on:
 
 env:
   NODE_VERSION: 20.x
+  API_URL: ${{ secrets.API_URL }}
+  YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY_DEVELOPMENT }}
 
 jobs:
   run-visial-testing:
@@ -51,4 +53,3 @@ jobs:
           PERCY_PULL_REQUEST: ${{ github.event.issue.number }}
           PERCY_COMMIT: ${{ steps.get_pr.outputs.commit_sha }}
           PERCY_BRANCH: ${{ steps.get_pr.outputs.branch_name }}
-          API_URL: ${{ secrets.API_URL }}

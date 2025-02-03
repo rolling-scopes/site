@@ -3,9 +3,10 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { usePathname } from 'next/navigation';
+
 import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
-import { ROUTES } from '@/core/const';
+import { ANCHORS, ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
 import { Logo } from '@/shared/ui/logo';
 import { MobileView } from '@/widgets/mobile-view';
@@ -20,16 +21,13 @@ type HeaderProps = {
   courses: Course[];
 };
 
+type HeaderAccentColor = 'gray' | 'blue' | 'white';
+
 export const Header = ({ courses }: HeaderProps) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const [color, setColor] = useState('gray');
   const pathname = usePathname();
-
-  let headerAccentColor = 'gray';
-
-  if (pathname) {
-    headerAccentColor = pathname.includes(ROUTES.MENTORSHIP) ? 'blue' : 'gray';
-  }
+  const headerAccentColor = pathname?.includes(ROUTES.MENTORSHIP) ? 'blue' : 'gray';
+  const [color, setColor] = useState<HeaderAccentColor>(headerAccentColor);
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -40,15 +38,6 @@ export const Header = ({ courses }: HeaderProps) => {
   };
 
   useEffect(() => {
-    /** ***********  ✨ Codeium Command ⭐  *************/
-  /**
-   * Function to be called when the window is scrolled.
-   * It changes the class of the header, depending on the scrolled height.
-   * If the scrolled height is less than 500px, it sets the color to the accent color,
-   * otherwise to white.
-   * @function
-   */
-    /** ****  123b884a-15f3-4509-9a7e-9939603a0a4f  *******/
     const listenScrollEvent = () => {
       const scrollY = window.scrollY;
 
@@ -83,6 +72,7 @@ export const Header = ({ courses }: HeaderProps) => {
         <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 
         <menu className={cx('menu')}>
+          <NavItem label="Donate" href={`#${ANCHORS.DONATE}`} />
           <NavItem label="RS School" href={ROUTES.HOME}>
             <SchoolMenu>
               {schoolMenuStaticLinks.map((link, i) => (

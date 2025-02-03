@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
+
 import { AboutCourseGrid } from './about-course-grid';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 

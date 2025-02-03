@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+
 import { getCourseTitle } from '@/shared/helpers/get-course-title';
 import { JavaScriptPreSchoolRu } from '@/views/javascript-preschool-ru';
 import { COURSE_TITLES } from 'data';

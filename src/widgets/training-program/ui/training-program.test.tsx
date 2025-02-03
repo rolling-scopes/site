@@ -1,8 +1,10 @@
 import { screen } from '@testing-library/react';
 import { beforeEach } from 'vitest';
+
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import angularImg from '@/shared/assets/rs-slope-angular.webp';
 import awsDevImg from '@/shared/assets/rs-slope-aws-dev.webp';
+import { REGISTRATION_WILL_OPEN_SOON, REGISTRATION_WILL_OPEN_SOON_RU } from '@/shared/constants';
 import { TrainingProgram } from '@/widgets/training-program';
 import { COURSE_TITLES } from 'data';
 
@@ -83,6 +85,32 @@ describe('TrainingProgram', () => {
 
       expect(image).toHaveAttribute('alt', expect.stringContaining('AWS Cloud Developer'));
       expect(image).toHaveAttribute('src', awsDevImg.src);
+    });
+  });
+
+  describe('Render widget with empty link', () => {
+    it('renders registration will open soon with correct label and href', async () => {
+      const widget = await TrainingProgram({ courseName: COURSE_TITLES.AWS_DEVOPS });
+
+      renderWithRouter(widget);
+
+      const buttonElement = screen.getByText(REGISTRATION_WILL_OPEN_SOON);
+
+      expect(buttonElement).toBeVisible();
+      expect(buttonElement).toHaveAttribute('href', '/');
+      expect(buttonElement).toHaveTextContent(REGISTRATION_WILL_OPEN_SOON);
+    });
+
+    it('renders registration will open soon in russian with correct label and href', async () => {
+      const widget = await TrainingProgram({ courseName: COURSE_TITLES.JS_RU });
+
+      renderWithRouter(widget);
+
+      const buttonElement = screen.getByText(REGISTRATION_WILL_OPEN_SOON_RU);
+
+      expect(buttonElement).toBeVisible();
+      expect(buttonElement).toHaveAttribute('href', '/');
+      expect(buttonElement).toHaveTextContent(REGISTRATION_WILL_OPEN_SOON_RU);
     });
   });
 });

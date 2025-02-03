@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+
 import speakersWanted from '@/shared/assets/speakers-wanted.webp';
 import email from '@/shared/assets/svg/email.svg';
 import { RS_EMAIL } from '@/shared/constants';

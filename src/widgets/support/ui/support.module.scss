@@ -13,10 +13,6 @@
       color: $color-black;
       text-align: left;
 
-      .support-link {
-        margin-top: 24px;
-      }
-
       @include media-laptop {
         width: 100%;
       }
@@ -38,6 +34,29 @@
 
       @include media-tablet {
         width: 280px;
+      }
+    }
+
+    .donate-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+
+      margin-top: 24px;
+
+      .donate-item {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        @include media-tablet {
+          gap: 16px;
+        }
+      }
+
+      @include media-tablet {
+        flex-direction: column;
       }
     }
 

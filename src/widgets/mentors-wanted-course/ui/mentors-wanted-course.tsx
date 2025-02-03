@@ -1,5 +1,6 @@
 import classNamesBind from 'classnames/bind';
 import Image from 'next/image';
+
 import mentorImg from '@/shared/assets/mentors-wanted-poster.webp';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';

@@ -1,6 +1,7 @@
 // TODO separate data and markup
 import { JSX } from 'react';
 import { StaticImageData } from 'next/image';
+
 import {
   AWS_FUNDAMENTALS_BADGE,
   AwsFundamentalsBadge,
@@ -14,6 +15,7 @@ import awsFundamentalsImg from '@/shared/assets/rs-slope-aws-fundamentals.webp';
 import jsImg from '@/shared/assets/rs-slope-js.webp';
 import nodejsImg from '@/shared/assets/rs-slope-nodejs.webp';
 import reactEnImg from '@/shared/assets/rs-slope-react-en.webp';
+import { REGISTRATION_WILL_OPEN_SOON, REGISTRATION_WILL_OPEN_SOON_RU } from '@/shared/constants';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -301,6 +303,12 @@ export const contentMap: ContentMap = {
 };
 
 export const trainingProgramLink = {
-  en: { linkLabel: 'Register' },
-  ru: { linkLabel: 'Зарегистрироваться' },
+  en: {
+    linkLabel: 'Register',
+    noLinkLabel: REGISTRATION_WILL_OPEN_SOON,
+  },
+  ru: {
+    linkLabel: 'Зарегистрироваться',
+    noLinkLabel: REGISTRATION_WILL_OPEN_SOON_RU,
+  },
 };

@@ -2,6 +2,8 @@ export const RS_INTRO_URL = 'https://www.youtube.com/embed/n4unZLVpnaU';
 export const RS_FOUNDATION_YEAR = '2013';
 export const RS_EMAIL = 'rolling.scopes@gmail.com';
 export const TO_BE_DETERMINED = 'TBD';
+export const REGISTRATION_WILL_OPEN_SOON = 'Registration will open soon!';
+export const REGISTRATION_WILL_OPEN_SOON_RU = 'Регистрация откроется скоро!';
 
 export const PAGE_NAMES = {
   SCHOOL: 'school',

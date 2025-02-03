@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+
 import { getActualData } from './getActualData';
 import { Course } from '@/entities/course';
 import { Event } from '@/entities/event';

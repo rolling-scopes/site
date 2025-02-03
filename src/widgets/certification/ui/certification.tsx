@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { COURSE_TITLES, CourseNamesKeys } from 'data';

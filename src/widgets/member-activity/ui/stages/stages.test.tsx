@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/react';
+
 import { Stages } from './stages';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';

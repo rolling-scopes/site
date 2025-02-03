@@ -10,6 +10,7 @@ import remarkEmoji from 'remark-emoji';
 import remarkGfm from 'remark-gfm';
 import remarkRemoveComments from 'remark-remove-comments';
 import remarkToc from 'remark-toc';
+
 import { GITHUB_RAW_ROOT } from '../../constants';
 import { Menu } from '../../types';
 import { DocsMenu } from '../docs-menu/docs-menu';
@@ -64,16 +65,14 @@ export function DocsLayout({ menu, markdownContent, lang }: DocsLayoutProps) {
               ]}
               rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings]}
               components={{
-                img({ _, ...props }) {
-                  const { src } = props;
-
+                img({ src = '', ...props }) {
                   const isExternalImage = isValidUrl(src);
                   const newSrc =
                     !isExternalImage && src ? `${GITHUB_IMAGE_BASE}/${src.split('/').pop()}` : src;
 
                   return <img {...props} src={newSrc} />;
                 },
-                a({ children, href, ...props }) {
+                a({ children, href = '', ...props }) {
                   let newHref = href;
 
                   if (href.endsWith('.md')) {
