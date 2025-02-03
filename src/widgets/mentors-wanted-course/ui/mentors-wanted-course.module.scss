@@ -1,10 +1,7 @@
 .mentors-wanted {
   background-color: $color-yellow-50;
 
-  .mentors-wanted-content {
-    display: flex;
-    align-items: flex-start;
-
+  &-content {
     .content-left {
       display: flex;
       flex-direction: column;
