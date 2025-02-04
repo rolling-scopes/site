@@ -80,7 +80,7 @@ export const mockedCourses: Course[] = [
     iconSmall: MOCKED_IMAGE_PATH,
     iconFooter: MOCKED_IMAGE_PATH,
     secondaryIcon: MOCKED_IMAGE_PATH,
-    enroll: 'enroll',
+    enroll: null,
     mode: 'online',
     altTitle: 'JavaScript / Front-end',
     backgroundStyle: {
@@ -182,7 +182,7 @@ export const mockedCourses: Course[] = [
     language: 'en',
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.AWS_DEVOPS}`,
-    enroll: 'enroll',
+    enroll: null,
     backgroundStyle: {
       backgroundColor: '#F4F1FA',
       accentColor: '#7356BF',

@@ -32,6 +32,10 @@ export const HeroCourse = async ({ courseName }: HeroCourseProps) => {
     registrationEndDate,
   } = course;
   const status = getCourseStatus(startDate, dayJS(registrationEndDate).diff(startDate, 'd'));
+  const registrationLinkText = enroll
+    ? heroCourseLocalized[language].linkLabel
+    : heroCourseLocalized[language].noLinkLabel;
+  const enrollHref = enroll ?? '';
 
   return (
     <section className={cx('hero-course', 'container')} data-testid="hero-course">
@@ -57,8 +61,8 @@ export const HeroCourse = async ({ courseName }: HeroCourseProps) => {
             mode={mode}
             withMargin
           />
-          <LinkCustom href={enroll} variant="secondary" external>
-            {heroCourseLocalized[language].linkLabel}
+          <LinkCustom href={enrollHref} variant="secondary" external disabled={!enroll}>
+            {registrationLinkText}
           </LinkCustom>
         </article>
       </div>
