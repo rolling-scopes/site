@@ -9,9 +9,6 @@ export const Partnered = () => (
       <WidgetTitle size="small">Partnered with</WidgetTitle>
       <div className="partners">
         <div className="partner-logo-container">
-          <EpamLogo />
-        </div>
-        <div className="partner-logo-container">
           <JetBrainsLogo />
         </div>
         <div className="partner-logo-container">
