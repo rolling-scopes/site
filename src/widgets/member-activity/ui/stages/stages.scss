@@ -10,10 +10,13 @@
 
 .stages .stage:nth-child(3) {
   .stage-logo:nth-child(3) {
-    min-height: 194px;
+    overflow: visible;
+    min-height: 100px;
+    padding: 0;
 
     img {
-      min-height: 194px;
+      min-width: 194px;
+      min-height: 100px;
     }
   }
 }
