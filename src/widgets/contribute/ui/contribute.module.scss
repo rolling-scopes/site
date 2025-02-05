@@ -33,15 +33,11 @@
 }
 
 .general {
-  display: flex;
   gap: 50px;
-  justify-content: space-between;
   width: 100%;
 
   @include media-tablet-large {
-    flex-direction: column;
     gap: 0;
-    align-items: center;
   }
 }
 

@@ -44,9 +44,7 @@
     }
   }
 
-  @include media-tablet {
-    flex-direction: column;
+  @include media-tablet-large {
     gap: 0;
-    align-items: center;
   }
 }

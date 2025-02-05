@@ -2,10 +2,7 @@
   background-color: $color-gray-100;
 
   .support-content {
-    display: flex;
     gap: 50px;
-    align-items: center;
-    justify-content: space-between;
 
     .support-info {
       width: 640px;
@@ -61,7 +58,6 @@
     }
 
     @include media-tablet-large {
-      flex-direction: column;
       gap: 40px;
     }
   }
