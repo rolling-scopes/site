@@ -2,6 +2,8 @@
   background-color: $color-yellow-50;
 
   &-content {
+    align-items: flex-start;
+
     .content-left {
       display: flex;
       flex-direction: column;
