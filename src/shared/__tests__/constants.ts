@@ -44,6 +44,8 @@ export const mockedCourses: Course[] = [
       backgroundColor: '#fff',
       accentColor: '#fff',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '2',
@@ -64,6 +66,8 @@ export const mockedCourses: Course[] = [
       backgroundColor: '#fff',
       accentColor: '#fff',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '3',
@@ -84,6 +88,8 @@ export const mockedCourses: Course[] = [
       backgroundColor: '#fff',
       accentColor: '#fff',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '4',
@@ -103,6 +109,8 @@ export const mockedCourses: Course[] = [
       backgroundColor: '#fff',
       accentColor: '#fff',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '5',
@@ -122,6 +130,8 @@ export const mockedCourses: Course[] = [
       backgroundColor: '#fff',
       accentColor: '#fff',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '6',
@@ -141,6 +151,8 @@ export const mockedCourses: Course[] = [
       backgroundColor: '#fff',
       accentColor: '#fff',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '8',
@@ -160,6 +172,8 @@ export const mockedCourses: Course[] = [
       backgroundColor: '#F4F1FA',
       accentColor: '#7356BF',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '9',
@@ -179,6 +193,8 @@ export const mockedCourses: Course[] = [
       backgroundColor: '#F4F1FA',
       accentColor: '#7356BF',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
 ];
 

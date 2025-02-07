@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 import type { Course } from '../../types';
 import { DateLang } from '@/shared/ui/date-lang';
+import { DateSimple } from '@/shared/ui/date-simple';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Subtitle } from '@/shared/ui/subtitle';
 
@@ -21,7 +22,11 @@ export type CourseCardProps = Pick<
   | 'language'
   | 'backgroundStyle'
   | 'registrationEndDate'
-> & Pick<HTMLProps<HTMLDivElement>, 'className'>;
+  | 'personalMentoringStartDate'
+  | 'personalMentoringEndDate'
+> & {
+  showMentoringStartDate?: boolean;
+} & Pick<HTMLProps<HTMLDivElement>, 'className'>;
 
 export const CourseCard = ({
   title,
@@ -33,6 +38,9 @@ export const CourseCard = ({
   language,
   backgroundStyle,
   className,
+  personalMentoringStartDate,
+  personalMentoringEndDate,
+  showMentoringStartDate = false,
 }: CourseCardProps) => {
   const { backgroundColor, accentColor } = backgroundStyle;
 
@@ -48,12 +56,21 @@ export const CourseCard = ({
         <Subtitle fontSize="small">{title}</Subtitle>
       </div>
       <div className={cx('course-info')}>
-        <DateLang
-          startDate={startDate}
-          registrationEndDate={registrationEndDate}
-          language={language}
-          mode={mode}
-        />
+        {!showMentoringStartDate && (
+          <DateLang
+            startDate={startDate}
+            registrationEndDate={registrationEndDate}
+            language={language}
+            mode={mode}
+          />
+        )}
+        {showMentoringStartDate && (
+          <DateSimple
+            label="Mentorship:"
+            labelSeparator={personalMentoringStartDate ? '-' : 'TBD'}
+            startDate={personalMentoringStartDate}
+            endDate={personalMentoringEndDate}
+          />)}
         <LinkCustom
           href={detailsUrl}
           variant="rounded"

@@ -20,7 +20,12 @@ export const syncWithApiData = (apiCourses: ApiCoursesResponse[]) => {
       COURSE_DATE_FORMAT,
     );
     clonedCourse.enroll = currApiCourse.wearecommunityUrl;
-
+    clonedCourse.personalMentoringStartDate = dayJS(
+      currApiCourse.personalMentoringStartDate,
+    ).format(COURSE_DATE_FORMAT);
+    clonedCourse.personalMentoringEndDate = dayJS(currApiCourse.personalMentoringEndDate).format(
+      COURSE_DATE_FORMAT,
+    );
     return clonedCourse;
   });
 };
