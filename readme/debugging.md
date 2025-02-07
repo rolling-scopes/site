@@ -6,21 +6,21 @@ This guide provides a brief overview of how to set up and debug a Next.js applic
 
 ### Steps to Debug Next.js in VS Code
 
-__1. Configure VS Code debugger for Next.js with Chrome__
+**1. Configure VS Code debugger for Next.js with Chrome**
 
 At the root of your project in the `.vscode` folder need to set up a launch configuration in VS Code to debug your Next.js application.
 
-To do this you need to rename the file `./vscode/launch-mac.md` or `./vscode/launch-win.md` depending on your OS to `./vscode/launch.md`. These configuration files are created for debugging in `Chrome`, for other browsers, please use the settings described in the [Next.js documentation](https://nextjs.org/docs/app/building-your-application/configuring/debugging#debugging-with-vs-code).
+To do this you need to rename the file `./vscode/launch-mac.json` or `./vscode/launch-win.json` depending on your OS to `./vscode/launch.json`. These configuration files are created for debugging in `Chrome`, for other browsers, please use the settings described in the [Next.js documentation](https://nextjs.org/docs/app/building-your-application/configuring/debugging#debugging-with-vs-code).
 
-__2. Start Debugging__
+**2. Start Debugging**
 
 Now you can start debugging your Next.js application. Go to the `Debug view` by clicking on the Debug icon in the Activity Bar or press `⇧+⌘+D` (macOS) / `Ctrl+Shift+D` (Windows/Linux), select a launch configuration `Next.js: debug full stack`, then press `F5` or click the green `Start Debugging` or select `Debug: Start Debugging` from the Command Palette to start your debugging session.
 
-__3. Set Breakpoints__
+**3. Set Breakpoints**
 
 You can set breakpoints in your code by clicking in the gutter next to the line numbers in the editor. When the code execution reaches a breakpoint, it will pause, allowing you to inspect variables, step through code, and evaluate expressions.
 
-__4. Inspect and Debug__
+**4. Inspect and Debug**
 
 Use the Debug toolbar to control the execution of your code (MacOs/Windows):
 
