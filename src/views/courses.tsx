@@ -11,7 +11,7 @@ export const Courses = () => {
       <HeroPage pageName={PAGE_NAMES.COURSES} />
       <Breadcrumbs />
       <RSCourses />
-      <StudyPath path="coursesPath" />
+      <StudyPath page="courses" />
       <General />
     </>
   );

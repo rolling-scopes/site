@@ -1,4 +1,3 @@
-import { getCourseLanguage } from '@/shared/helpers/get-course-language';
 import { AboutCourse } from '@/widgets/about-course';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
@@ -15,8 +14,6 @@ type AwsDeveloperProps = {
 };
 
 export const AwsDeveloper = async ({ courseName }: AwsDeveloperProps) => {
-  const language = await getCourseLanguage(courseName);
-
   return (
     <>
       <HeroCourse courseName={courseName} />
@@ -26,7 +23,7 @@ export const AwsDeveloper = async ({ courseName }: AwsDeveloperProps) => {
       <Certification courseName={courseName} />
       <Communication courseName={courseName} />
       <Required courseName={courseName} marked1 />
-      <StudyPath path="awsDev" lang={language} />
+      <StudyPath page="awsDev" />
       <Trainers trainers={awsDev} courseName={courseName} />
     </>
   );

@@ -28,7 +28,7 @@ export const JavaScriptEn = async ({ courseName }: JavaScriptEnProps) => {
       <Certification courseName={courseName} />
       <Communication courseName={courseName} />
       <AboutVideo lang={language} />
-      <StudyPath path="javascript" type="marked" lang={language} />
+      <StudyPath page="jsEn" />
       <Required courseName={courseName} />
       <MentorsWanted route={`/${ROUTES.MENTORSHIP}/${ROUTES.JS}`} courseName={courseName} />
       <Trainers trainers={javaScriptEn} courseName={courseName} />

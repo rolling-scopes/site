@@ -1,5 +1,4 @@
 import { ROUTES } from '@/core/const';
-import { getCourseLanguage } from '@/shared/helpers/get-course-language';
 import { AboutCourse } from '@/widgets/about-course';
 import { AngularTopics } from '@/widgets/angular-topics';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
@@ -27,7 +26,7 @@ export const Angular = async ({ courseName }: AngularProps) => {
       <AboutCourse courseName={courseName} />
       <Certification courseName={courseName} />
       <Communication courseName={courseName} />
-      <StudyPath path="angular" lang={await getCourseLanguage(courseName)} />
+      <StudyPath page="angular" />
       <Required courseName={courseName} marked1 />
       <MentorsWantedCourse link={`/${ROUTES.MENTORSHIP}/${ROUTES.ANGULAR}`} />
       <Trainers trainers={angular} courseName={courseName} />
