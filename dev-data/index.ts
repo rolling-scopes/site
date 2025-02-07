@@ -80,4 +80,5 @@ export { reactRu } from './react-ru.data';
 export { requirementsData } from './requirements.data';
 export { rsInNumbers } from './rs-in-numbers.data';
 export { sliderPhotos } from './slider-photos.data';
+export { studyPath } from './study-path.data';
 export { videoTitleLocalized } from './about-video.data';
