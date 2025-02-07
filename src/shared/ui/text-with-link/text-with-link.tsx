@@ -8,10 +8,10 @@ interface TextWithLinkProps {
 }
 
 export const TextWithLink = ({ data }: TextWithLinkProps) => {
-  return data.map(({ id, text, link, title }) => (
+  return data.map(({ id, text, link, title, external = true }) => (
     <Fragment key={id}>
       {text && <span>{text}</span>}
-      {link && <LinkCustom href={link} external>{title}</LinkCustom>}
+      {link && <LinkCustom href={link} external={external}>{title}</LinkCustom>}
     </Fragment>
   ));
 };
