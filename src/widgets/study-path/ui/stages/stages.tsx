@@ -1,39 +1,33 @@
 import classNames from 'classnames/bind';
 
 import { StageCard } from '../stage-card/stage-card';
-import type { ListType } from '@/shared/types';
-import { Stage } from '@/widgets/study-path/types';
+import type { StageCardProps } from '@/widgets/study-path/types';
 
 import styles from './stages.module.scss';
 
 const cx = classNames.bind(styles);
 
-export type StagesProps = {
-  stages: Stage[] | null;
-  type?: ListType;
+type Stages = {
+  stages: StageCardProps[] | null;
 };
 
-export const Stages = ({ stages, type }: StagesProps) => {
+export const Stages = ({ stages }: Stages) => {
   if (stages === null || stages.length === 0) {
     return null;
   }
 
   return (
-    <ul className={cx('stages')}>
-      {stages.map(({ id, title, description, logoIcon, links, topics, imageSrc, list }) => (
+    <div className={cx('stages')}>
+      {stages.map(({ id, title, intro, modules, image }) => (
         <StageCard
           key={id}
           id={id}
           title={title}
-          description={description}
-          logoIcon={logoIcon}
-          links={links}
-          topics={topics}
-          imageSrc={imageSrc}
-          list={list}
-          type={type}
+          intro={intro}
+          modules={modules}
+          image={image}
         />
       ))}
-    </ul>
+    </div>
   );
 };
