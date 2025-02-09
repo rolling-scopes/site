@@ -1,61 +1,108 @@
-.stage {
+.stage-card {
   display: flex;
   gap: 40px;
-  align-items: flex-start;
-  justify-content: flex-start;
 
-  color: $color-gray-600;
+  .stage-number {
+    $number-size: 80px;
+    $number-size-tablet: 40px;
+    $number-gap: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: $number-gap;
+    align-items: center;
+
+    .step {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: $number-size;
+      height: $number-size;
+
+      font-size: 24px;
+      color: $color-gray-600;
+
+      background-color: $color-yellow-50;
+      border: 1px solid $color-yellow-100;
+      border-radius: 50%;
+
+      @include media-tablet {
+        width: $number-size-tablet;
+        height: $number-size-tablet;
+        font-size: 16px;
+      }
+    }
+
+    .decor-line {
+      width: 2px;
+      height: calc(100% - $number-size - $number-gap);
+      background-color: $color-gray-400;
+
+      @include media-tablet {
+        height: calc(100% - $number-size-tablet - $number-gap);
+      }
+    }
+  }
 
   .stage-info {
     display: flex;
     flex: 1 1 40%;
     flex-direction: column;
     gap: 8px;
-    align-items: flex-start;
-    justify-content: flex-start;
 
     max-width: 600px;
 
-    .stage-title {
-      margin: 0;
-      padding: 0;
-
-      font-size: 28px;
-      font-weight: $font-weight-medium;
-      line-height: 32px;
-
-      @include media-laptop {
-        font-size: 22px;
-      }
+    .stage-intro:last-of-type {
+      padding-bottom: 0;
     }
 
-    .stage-description {
-      margin: 0;
-      font-size: 18px;
-      line-height: 28px;
-      letter-spacing: 0.5px;
+    .stage-list {
+      a {
+        padding-right: 24px;
+
+        &:last-of-type {
+          padding: 0;
+        }
+
+        @include media-tablet-large {
+          display: block;
+          padding-right: 0;
+          padding-bottom: 8px;
+        }
+      }
     }
 
     @include media-tablet-large {
       max-width: 100%;
     }
+  }
+
+  .stage-picture {
+    overflow: hidden;
+    padding-right: 60px;
+    object-fit: contain;
+
+    &.stage-logo {
+      max-width: 143px;
+      max-height: 102px;
+    }
+
+    &.stage-image {
+      width: 290px;
+      height: 192px;
+    }
 
     @include media-tablet {
-      .stage-title {
-        font-size: 24px;
-      }
-
-      .stage-description {
-        font-size: 16px;
-      }
+      display: none;
     }
+  }
+
+  &:last-child > .stage-number .decor-line {
+    display: none;
   }
 
   @include media-tablet {
     gap: 16px;
   }
-}
-
-.stage:last-child > :first-child > :last-child {
-  display: none;
 }
