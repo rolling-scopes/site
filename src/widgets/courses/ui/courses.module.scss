@@ -18,7 +18,7 @@
     grid-template: 1fr / repeat(2, 1fr);
   }
 
-  @include media-tablet {
+  @include media-tablet-large {
     grid-template: 1fr / 1fr;
   }
 }

@@ -53,6 +53,7 @@ export const CourseCard = ({
           language={language}
         />
         <LinkCustom
+          className={cx('course-link')}
           href={detailsUrl}
           variant="secondary"
           aria-label="View course details"
