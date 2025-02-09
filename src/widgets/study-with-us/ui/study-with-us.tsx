@@ -15,7 +15,7 @@ const cx = classNames.bind(styles);
 export const StudyWithUs = () => (
   <section className="container" data-testid="study-with-us">
     <div className={cx('content', 'study-with-us')}>
-      <div className={cx('study-wrap')}>
+      <div className={cx('study-wrap', 'column-2')}>
         <article className={cx('study-description')}>
           <SectionLabel>education</SectionLabel>
           <WidgetTitle mods="asterisk">Study with RS School</WidgetTitle>
