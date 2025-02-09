@@ -9,10 +9,6 @@
     .course-module-elements-column {
       flex: 1;
 
-      @include media-laptop-medium {
-        max-width: 80%;
-      }
-
       @include media-tablet {
         max-width: 100%;
       }
