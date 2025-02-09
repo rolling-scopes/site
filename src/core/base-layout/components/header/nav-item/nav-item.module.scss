@@ -38,7 +38,7 @@
     font-size: 16px;
     font-weight: $font-weight-regular;
     line-height: 20px;
-    color: $color-gray-600;
+    color: $color-black-900;
     text-align: center;
     letter-spacing: 0;
   }
@@ -51,8 +51,8 @@
 
       margin-left: 10px;
       padding: 0;
-      background-color: transparent;
       border: none;
+      background-color: transparent;
 
       &:focus {
         outline-offset: 3px;

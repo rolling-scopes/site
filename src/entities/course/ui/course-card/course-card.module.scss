@@ -9,7 +9,6 @@
   width: 380px;
   min-width: 100px;
   height: 100%;
-
   border-radius: 12px;
 
   .card-header {
@@ -23,11 +22,11 @@
     height: 100%;
     min-height: 112px;
     padding: 0 24px;
-
-    background-color: $color-purple-50;
     border: solid $color-gray-200;
     border-width: 1px 1px 0 1px;
     border-radius: 12px 12px 0 0;
+
+    background-color: $color-purple-50;
 
     &::after {
       @extend %transition-all;
@@ -49,11 +48,11 @@
     justify-content: space-between;
 
     padding: 24px;
-
-    background-color: hsla(from $color-gray-100 h s l/ $opacity-20);
     border: solid $color-gray-200;
     border-width: 0 1px 1px 1px;
     border-radius: 0 0 12px 12px;
+
+    background-color: hsla(from $color-gray-100 h s l/ $opacity-20);
   }
 
   @include media-hover {
