@@ -1,10 +1,8 @@
 .mentors-wanted {
   background-color: $color-yellow-50;
 
-  .mentors-wanted-content {
-    display: flex;
+  &-content {
     align-items: flex-start;
-    justify-content: space-between;
 
     .content-left {
       display: flex;
@@ -27,7 +25,6 @@
     }
 
     @include media-tablet {
-      flex-direction: column;
       gap: 40px;
     }
   }

@@ -29,7 +29,7 @@ export const Support = () => (
     data-testid="support-section"
     id="donate"
   >
-    <div className={cx('support-content', 'content')}>
+    <div className={cx('support-content', 'content', 'column-2')}>
       <article className={cx('support-info')}>
         <WidgetTitle size="large" mods="lines">
           Support Us
@@ -42,12 +42,7 @@ export const Support = () => (
         <div className={cx('donate-options')}>
           {donateOptions.map(({ id, href, linkLabel, icon }) => (
             <div key={id} className={cx('donate-item')}>
-              <LinkCustom
-                href={href}
-                variant="primary"
-                external
-                data-testid="link-donate"
-              >
+              <LinkCustom href={href} variant="primary" external data-testid="link-donate">
                 {renderIcon(icon)}
                 {linkLabel}
               </LinkCustom>

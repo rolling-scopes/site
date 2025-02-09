@@ -1,11 +1,9 @@
 .community-media-content {
   @include media-laptop {
-    flex-direction: row;
     gap: 50px;
   }
 
   @include media-tablet-large {
-    flex-direction: column;
     gap: 16px;
   }
 }
