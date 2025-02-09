@@ -64,6 +64,6 @@
   @if $isHovered {
     translate: -22px -16px;
     scale: 1.25;
-    transition: all 500ms 50ms $ease-emphasize-decelerate;
+    transition: all 500ms 100ms $ease-emphasize-decelerate;
   }
 }

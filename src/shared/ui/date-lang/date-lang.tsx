@@ -13,7 +13,6 @@ const cx = classNames.bind(styles);
 interface DateLangProps {
   startDate: string;
   registrationEndDate: string;
-  mode: string;
   language: Language;
   withMargin?: boolean;
 }
@@ -22,21 +21,20 @@ export const DateLang = ({
   startDate,
   registrationEndDate,
   language,
-  mode,
   withMargin,
 }: DateLangProps) => {
+  const courseLanguage = language === 'ru' ? 'Russian' : 'English';
+
   return (
     <section className={cx('info', { margin: withMargin })}>
       <p className={cx('date')}>
         <Image className={cx('icon')} src={noteIcon} alt="note-icon" />
-        <span>Start:</span>
+        <span className={cx('bold')}>Course starts on:</span>
         <DateStart courseStartDate={startDate} registrationEndDate={registrationEndDate} />
       </p>
       <p className={cx('additional-info')}>
         <Image className={cx('icon')} src={micIcon} alt="microphone-icon" />
-        <span className={cx('language')}>{language}</span>
-        <span>•</span>
-        <span className={cx('mode')}>{mode}</span>
+        <span>{courseLanguage}</span>
       </p>
     </section>
   );

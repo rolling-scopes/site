@@ -10,7 +10,7 @@
 
 .courses-list {
   display: grid;
-  grid-template: 1fr / repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 22px;
   width: 100%;
 
