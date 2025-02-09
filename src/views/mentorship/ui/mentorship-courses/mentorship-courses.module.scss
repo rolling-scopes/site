@@ -11,7 +11,7 @@
       width: 100%;
     }
 
-    @include media-tablet {
+    @include media-tablet-large {
       grid-template-columns: 1fr;
     }
   }

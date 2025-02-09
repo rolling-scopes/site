@@ -54,8 +54,16 @@
       object-fit: contain;
     }
 
+    @include media-laptop-medium {
+      min-height: 215px;
+    }
+
+    @include media-tablet-large {
+      min-height: unset;
+    }
+
     @include media-mobile-landscape {
-      min-height: 190px;
+      min-height: 200px;
       padding: 24px;
     }
   }
