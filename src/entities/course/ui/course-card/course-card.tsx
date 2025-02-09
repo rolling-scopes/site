@@ -44,7 +44,7 @@ export const CourseCard = ({
     <article className={cx('course-card', className)} data-testid="course-card">
       <div className={cx('card-header')} style={cardStyle} data-testid="card-header">
         <Image src={iconSrc} alt={title} />
-        <Subtitle fontSize="large">{title}</Subtitle>
+        <Subtitle className={cx('course-title')} fontSize="large">{title}</Subtitle>
       </div>
       <div className={cx('course-info')}>
         <DateLang

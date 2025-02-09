@@ -69,6 +69,10 @@
     background-color: $color-white;
   }
 
+  .course-title {
+    z-index: 2;
+  }
+
   @include media-hover {
     &:hover .card-header::after {
       @include card-corner-accent($accent-color, $isHovered: true);
