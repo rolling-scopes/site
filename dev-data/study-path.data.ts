@@ -37,6 +37,7 @@ export const studyPath = {
         image: {
           src: HTMLIcon,
           alt: 'pre-school logo',
+          className: 'stage-logo',
         },
       },
       {
@@ -69,6 +70,7 @@ export const studyPath = {
         image: {
           src: JSIcon,
           alt: 'JS logo',
+          className: 'stage-logo',
         },
       },
       {
@@ -101,6 +103,7 @@ export const studyPath = {
         image: {
           src: ReactAngIcon,
           alt: 'react and angular logo',
+          className: 'stage-logo',
         },
       },
       {
@@ -126,6 +129,7 @@ export const studyPath = {
         image: {
           src: NodeJSIcon,
           alt: 'Node JS logo',
+          className: 'stage-logo',
         },
       },
       {
@@ -151,6 +155,7 @@ export const studyPath = {
         image: {
           src: AWSFundamentalsIcon,
           alt: 'aws logo',
+          className: 'stage-logo',
         },
       },
       {
@@ -176,6 +181,7 @@ export const studyPath = {
         image: {
           src: AWSDeveloperIcon,
           alt: 'aws logo',
+          className: 'stage-logo',
         },
       },
       {
@@ -201,6 +207,7 @@ export const studyPath = {
         image: {
           src: AWSDeveloperIcon,
           alt: 'aws logo',
+          className: 'stage-logo',
         },
       },
     ],
@@ -216,7 +223,7 @@ export const studyPath = {
         modules: [
           {
             id: 1,
-            text: 'Git, HTML, CSS, Javascript basics',
+            text: 'Topics covered: Git, HTML, CSS, Javascript basics',
             links: [],
             marked: false,
           },
@@ -224,6 +231,7 @@ export const studyPath = {
         image: {
           src: feJsStage1,
           alt: 'working students',
+          className: 'stage-image',
         },
       },
       {
@@ -233,7 +241,7 @@ export const studyPath = {
         modules: [
           {
             id: 1,
-            text: 'Advanced Javascript, Security, Testing, Agile, Networking, Web development tools',
+            text: 'Topics covered: Advanced Javascript, Security, Testing, Agile, Networking, Web development tools',
             links: [],
             marked: false,
           },
@@ -241,6 +249,7 @@ export const studyPath = {
         image: {
           src: feJsStage2,
           alt: 'working students',
+          className: 'stage-image',
         },
       },
       {
@@ -270,6 +279,7 @@ export const studyPath = {
         image: {
           src: feJsStage3,
           alt: 'student works',
+          className: 'stage-image',
         },
       },
     ],
@@ -285,7 +295,7 @@ export const studyPath = {
         modules: [
           {
             id: 1,
-            text: 'Git, HTML, CSS, Основы Javascript',
+            text: 'Темы: Git, HTML, CSS, Основы Javascript',
             links: [],
             marked: false,
           },
@@ -293,6 +303,7 @@ export const studyPath = {
         image: {
           src: feJsStage1,
           alt: 'студенты за работой',
+          className: 'stage-image',
         },
       },
       {
@@ -302,7 +313,7 @@ export const studyPath = {
         modules: [
           {
             id: 1,
-            text: 'Advanced Javascript, Security, Testing, Agile, Networking, Web development tools',
+            text: 'Темы: Advanced Javascript, Security, Testing, Agile, Networking, Web development tools',
             links: [],
             marked: false,
           },
@@ -310,6 +321,7 @@ export const studyPath = {
         image: {
           src: feJsStage2,
           alt: 'студенты за работой',
+          className: 'stage-image',
         },
       },
       {
@@ -339,6 +351,7 @@ export const studyPath = {
         image: {
           src: feJsStage3,
           alt: 'студент изучает материал',
+          className: 'stage-image',
         },
       },
     ],
@@ -374,6 +387,7 @@ export const studyPath = {
         image: {
           src: null,
           alt: '',
+          className: '',
         },
       },
       {
@@ -415,6 +429,7 @@ export const studyPath = {
         image: {
           src: null,
           alt: '',
+          className: '',
         },
       },
       {
@@ -456,6 +471,7 @@ export const studyPath = {
         image: {
           src: null,
           alt: '',
+          className: '',
         },
       },
       {
@@ -491,6 +507,7 @@ export const studyPath = {
         image: {
           src: null,
           alt: '',
+          className: '',
         },
       },
       {
@@ -526,6 +543,7 @@ export const studyPath = {
         image: {
           src: null,
           alt: '',
+          className: '',
         },
       },
       {
@@ -543,6 +561,7 @@ export const studyPath = {
         image: {
           src: null,
           alt: '',
+          className: '',
         },
       },
     ],
@@ -584,6 +603,7 @@ export const studyPath = {
         image: {
           src: null,
           alt: '',
+          className: '',
         },
       },
       {
@@ -625,6 +645,7 @@ export const studyPath = {
         image: {
           src: null,
           alt: '',
+          className: '',
         },
       },
       {
@@ -654,6 +675,7 @@ export const studyPath = {
         image: {
           src: null,
           alt: '',
+          className: '',
         },
       },
       {
@@ -677,6 +699,7 @@ export const studyPath = {
         image: {
           src: null,
           alt: '',
+          className: '',
         },
       },
       {
@@ -718,6 +741,7 @@ export const studyPath = {
         image: {
           src: null,
           alt: '',
+          className: '',
         },
       },
       {
@@ -753,6 +777,7 @@ export const studyPath = {
         image: {
           src: null,
           alt: '',
+          className: '',
         },
       },
       {
@@ -794,6 +819,7 @@ export const studyPath = {
         image: {
           src: null,
           alt: '',
+          className: '',
         },
       },
       {
@@ -835,6 +861,7 @@ export const studyPath = {
         image: {
           src: null,
           alt: '',
+          className: '',
         },
       },
       {
@@ -882,6 +909,7 @@ export const studyPath = {
         image: {
           src: null,
           alt: '',
+          className: '',
         },
       },
       {
@@ -917,6 +945,7 @@ export const studyPath = {
         image: {
           src: null,
           alt: '',
+          className: '',
         },
       },
     ],

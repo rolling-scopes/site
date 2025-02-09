@@ -14,6 +14,7 @@ export type StageCardProps = {
   image: {
     src: StaticImageData | null;
     alt: string;
+    className: string | '';
   };
 };
 

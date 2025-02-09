@@ -37,14 +37,14 @@ export const StageCard = ({
         <Subtitle className={cx('stage-title')}>{title}</Subtitle>
         <Paragraph className={cx('stage-intro')}>{intro}</Paragraph>
         <List
-          className={cx('stage-links')}
+          className={cx('stage-list')}
           data={listData}
           size="compact"
           type={modules[0].marked ? 'marked' : 'unmarked'}
         />
       </div>
 
-      {image.src && <Image className={cx('stage-logo')} src={image.src} alt={image.alt} />}
+      {image.src && <Image className={cx('stage-picture', image.className)} src={image.src} alt={image.alt} />}
     </article>
   );
 };
