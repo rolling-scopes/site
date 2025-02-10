@@ -2,8 +2,8 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import { CourseItemData } from '@/entities/course';
-import { DateLang } from '@/shared/ui/date-lang';
 import { LinkCustom } from '@/shared/ui/link-custom';
+import { ShortInfoPanel } from '@/shared/ui/short-info-panel';
 import { Subtitle } from '@/shared/ui/subtitle';
 
 import styles from './course-item.module.scss';
@@ -33,7 +33,7 @@ export const CourseItem = ({
         <Subtitle color="black" fontSize="extra-small">
           {title}
         </Subtitle>
-        <DateLang
+        <ShortInfoPanel
           startDate={startDate}
           label={null}
           registrationEndDate={registrationEndDate}

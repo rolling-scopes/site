@@ -3,9 +3,10 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import type { Course } from '../../types';
-import { DateLang } from '@/shared/ui/date-lang';
+import { LABELS, TO_BE_DETERMINED } from '@/shared/constants';
 import { DateSimple } from '@/shared/ui/date-simple';
 import { LinkCustom } from '@/shared/ui/link-custom';
+import { ShortInfoPanel } from '@/shared/ui/short-info-panel';
 import { Subtitle } from '@/shared/ui/subtitle';
 
 import styles from './course-card.module.scss';
@@ -57,7 +58,7 @@ export const CourseCard = ({
       </div>
       <div className={cx('course-info')}>
         {!showMentoringStartDate && (
-          <DateLang
+          <ShortInfoPanel
             startDate={startDate}
             registrationEndDate={registrationEndDate}
             language={language}
@@ -65,12 +66,24 @@ export const CourseCard = ({
           />
         )}
         {showMentoringStartDate && (
-          <DateSimple
-            label="Mentorship:"
-            labelSeparator={personalMentoringStartDate ? '-' : 'TBD'}
-            startDate={personalMentoringStartDate}
-            endDate={personalMentoringEndDate}
-          />)}
+          <div>
+            <DateSimple
+              label={LABELS.MENTOR_ACTIVITIES}
+              labelSeparator={
+                personalMentoringStartDate ? LABELS.MENTORING_DATES_SEPARATOR : TO_BE_DETERMINED
+              }
+              startDate={personalMentoringStartDate}
+              endDate={personalMentoringEndDate}
+            />
+            <ShortInfoPanel
+              label={null}
+              startDate={null}
+              registrationEndDate={null}
+              language={language}
+              mode={mode}
+            />
+          </div>
+        )}
         <LinkCustom
           href={detailsUrl}
           variant="rounded"

@@ -6,7 +6,7 @@ import noteIcon from '@/shared/assets/icons/note-icon.svg';
 import { TO_BE_DETERMINED } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/dayJS';
 
-import styles from '../date-lang/date-lang.module.scss';
+import styles from './date-simple.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -40,9 +40,17 @@ export const DateSimple = ({
     <p className={cx('date')}>
       {label && <Image className={cx('icon')} src={noteIcon} alt="note-icon" />}
       {label && <span>{label}</span>}
-      {startDate && <time dateTime={startDateAttr} data-testid="date-time-start">{startDate}</time>}
+      {startDate && (
+        <time dateTime={startDateAttr} data-testid="date-time-start">
+          {startDate}
+        </time>
+      )}
       {labelSeparator && <span>{labelSeparator}</span>}
-      {endDate && <time dateTime={endDateAttr} data-testid="date-time-end">{endDate}</time>}
+      {endDate && (
+        <time dateTime={endDateAttr} data-testid="date-time-end">
+          {endDate}
+        </time>
+      )}
       {children}
     </p>
   );

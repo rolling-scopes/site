@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { getCourseStatus } from '../helpers/get-course-status';
 import { dayJS } from '@/shared/helpers/dayJS';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
-import { DateLang } from '@/shared/ui/date-lang';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { MainTitle } from '@/shared/ui/main-title';
 import { SectionLabel } from '@/shared/ui/section-label';
+import { ShortInfoPanel } from '@/shared/ui/short-info-panel';
 import { CourseNamesKeys, heroCourseLocalized } from 'data';
 
 import styles from './hero-course.module.scss';
@@ -54,7 +54,7 @@ export const HeroCourse = async ({ courseName }: HeroCourseProps) => {
               {subTitle}
             </p>
           )}
-          <DateLang
+          <ShortInfoPanel
             startDate={startDate}
             registrationEndDate={registrationEndDate}
             language={language}
