@@ -50,13 +50,16 @@ export const LangContext = createContext<Language>('en');
 export const MemberActivity = ({ path, type, activities, lang = 'en' }: StudyPathProps) => {
   let coursesPath = dataProviders[path];
 
-  const isAngularOrAwsDev = path === 'angular' || path === 'awsDev';
+  const isAngularOrAwsDev = path === 'angular' || path === 'awsDev' || path === 'shortTrack';
 
   let title = isAngularOrAwsDev ? 'Course Curriculum' : localizedContent[lang].title;
 
   let paragraph = isAngularOrAwsDev
     ? 'This program will have theory and practice on the following topic:'
     : localizedContent[lang].paragraph;
+
+  paragraph =
+    path === 'shortTrack' ? 'The course program will consist of the following steps' : paragraph;
 
   if (path === ROUTES.MENTORSHIP && activities) {
     title = mentorsActivityData[lang].header;
