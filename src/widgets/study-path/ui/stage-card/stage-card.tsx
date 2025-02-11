@@ -29,7 +29,7 @@ export const StageCard = ({
   return (
     <article className={cx('stage-card')} data-testid="stage-card">
       <div className={cx('stage-number')}>
-        <div className={cx('step')}>{id}</div>
+        <div className={cx('step')} data-testid="stage-step">{id}</div>
         <div className={cx('decor-line')} />
       </div>
 
@@ -44,7 +44,8 @@ export const StageCard = ({
         />
       </div>
 
-      {image.src && <Image className={cx('stage-picture', image.className)} src={image.src} alt={image.alt} />}
+      {image.src
+      && <Image className={cx('stage-picture', image.className)} src={image.src} alt={image.alt} data-testid="stage-picture" />}
     </article>
   );
 };

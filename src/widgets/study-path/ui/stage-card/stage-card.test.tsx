@@ -1,80 +1,113 @@
-import { screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
 import { StageCard } from './stage-card';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
-import { renderWithRouter } from '@/shared/__tests__/utils';
 import { StageCardProps } from '@/widgets/study-path/types';
 
+const mockProps: StageCardProps = {
+  id: 1,
+  title: 'Test title',
+  intro: 'Test description for the card.',
+  modules: [
+    {
+      id: 1,
+      text: 'Test module 1',
+      links: [
+        {
+          id: 1,
+          text: '',
+          title: 'Test link 1',
+          link: 'https://test1.com',
+          external: false,
+        },
+      ],
+      marked: false,
+    },
+    {
+      id: 2,
+      text: 'Test module 2',
+      links: [
+        {
+          id: 1,
+          text: '',
+          title: 'Test link 2',
+          link: 'https://test2.com',
+          external: false,
+        },
+      ],
+      marked: false,
+    },
+  ],
+  image: {
+    src: MOCKED_IMAGE_PATH,
+    alt: 'TestTitle',
+    className: 'stage-image',
+  },
+};
+
 describe('StageCard component', () => {
-  const props: StageCardProps = {
-    id: 1,
-    title: 'TestTitle',
-    description: 'Test description for the card.',
-    logoIcon: MOCKED_IMAGE_PATH,
-    links: [
-      {
-        href: 'https://test1.com',
-        linkTitle: 'Test link 1',
-      },
-      {
-        href: 'https://test2.com',
-        linkTitle: 'Test link 2',
-        isActive: false,
-      },
-    ],
-  };
-
-  it('renders without crashing', () => {
-    renderWithRouter(<StageCard {...props} />);
-    const card = screen.getByText('TestTitle');
-
-    expect(card).toBeInTheDocument();
+  beforeEach(() => {
+    render(<StageCard {...mockProps} />);
   });
 
-  it('displays correct id', () => {
-    renderWithRouter(<StageCard {...props} />);
-    const id = screen.getByText('1');
+  it('displays correct stage number', () => {
+    const stageStep = screen.getByTestId('stage-step');
 
-    expect(id).toBeInTheDocument();
+    expect(stageStep).toBeVisible();
+    expect(stageStep.innerHTML).toBe(mockProps.id.toString());
   });
 
   it('displays correct title', () => {
-    renderWithRouter(<StageCard {...props} />);
-    const title = screen.getByText('TestTitle');
+    const title = screen.getByTestId('subtitle');
 
-    expect(title).toBeInTheDocument();
+    expect(title).toBeVisible();
+    expect(title.innerHTML).toBe(mockProps.title);
   });
 
-  it('displays correct description', () => {
-    renderWithRouter(<StageCard {...props} />);
-    const description = screen.getByText('Test description for the card.');
+  it('displays correct intro', () => {
+    const intro = screen.getByTestId('paragraph');
 
-    expect(description).toBeInTheDocument();
+    expect(intro).toBeVisible();
+    expect(intro.innerHTML).toBe(mockProps.intro);
+  });
+
+  it('displays correct all modules (unmarked)', () => {
+    const list = screen.getByTestId('list');
+    const modules = screen.getAllByTestId('list-item');
+
+    expect(list.className).not.toContain('marked');
+    expect(modules).toHaveLength(mockProps.modules.length);
+
+    modules.forEach((item, i) => {
+      expect(item).toBeVisible();
+      expect(item.innerHTML).toBe(mockProps.modules[i].text);
+    });
   });
 
   it('displays correct links', () => {
-    renderWithRouter(<StageCard {...props} />);
-    const link1 = screen.getByText('Test link 1');
-    const link2 = screen.getByText('Test link 2');
+    const modules = screen.getAllByTestId('list-item');
 
-    expect(link1).toBeInTheDocument();
-    expect(link2).toBeInTheDocument();
+    modules.forEach((item, i) => {
+      const itemLinks = item.getElementsByTagName('a');
+
+      Array.from(itemLinks).forEach((itemLink, j) => {
+        const { title, link } = mockProps.modules[i].links[j];
+
+        expect(itemLink).toBeVisible();
+        expect(itemLink.innerHTML).toBe(title);
+        expect(itemLink).toHaveAttribute('href', link);
+        expect(itemLink.className).not.toContain('external');
+      });
+    });
   });
 
-  it('assigns correct href to links', () => {
-    renderWithRouter(<StageCard {...props} />);
-    const link1 = screen.getByText('Test link 1');
-    const link2 = screen.getByText('Test link 2');
+  it('renders correct picture', () => {
+    const picture = screen.getByTestId('stage-picture');
+    const { src, alt } = mockProps.image;
 
-    expect(link1).toHaveAttribute('href', 'https://test1.com');
-    expect(link2).toHaveAttribute('href', 'https://test2.com');
-  });
-
-  it('renders the logo img with correct src and alt attributes', () => {
-    renderWithRouter(<StageCard {...props} />);
-    const logo = screen.getByAltText('TestTitle');
-
-    expect(logo).toHaveAttribute('src', MOCKED_IMAGE_PATH.src);
+    expect(picture).toBeVisible();
+    expect(picture).toHaveAttribute('src', src?.src);
+    expect(picture).toHaveAttribute('alt', alt);
   });
 });

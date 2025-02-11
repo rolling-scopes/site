@@ -17,7 +17,7 @@ export const Stages = ({ stages }: Stages) => {
   }
 
   return (
-    <div className={cx('stages')}>
+    <div className={cx('stages')} data-testid="stages">
       {stages.map(({ id, title, intro, modules, image }) => (
         <StageCard
           key={id}

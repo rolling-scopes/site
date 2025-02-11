@@ -1,62 +1,83 @@
-import { screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import { Stages } from './stages';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
-import { renderWithRouter } from '@/shared/__tests__/utils';
+
+const mockedStages = [
+  {
+    id: 1,
+    title: 'Test stage title 1',
+    intro: 'Test stage intro 1',
+    modules: [
+      {
+        id: 1,
+        text: '',
+        links: [
+          {
+            id: 1,
+            text: '',
+            title: 'Test link 1 title',
+            link: 'https://test1.com',
+            external: false,
+          },
+        ],
+        marked: false,
+      },
+    ],
+    image: {
+      src: MOCKED_IMAGE_PATH,
+      alt: 'TestTitle 1',
+      className: 'stage-image',
+    },
+  },
+  {
+    id: 2,
+    title: 'Test stage title 2',
+    intro: 'Test stage intro 2',
+    modules: [
+      {
+        id: 1,
+        text: '',
+        links: [
+          {
+            id: 1,
+            text: '',
+            title: 'Test link 2 title',
+            link: 'https://test2.com',
+            external: false,
+          },
+        ],
+        marked: false,
+      },
+    ],
+    image: {
+      src: MOCKED_IMAGE_PATH,
+      alt: 'TestTitle 2',
+      className: 'stage-image',
+    },
+  },
+];
 
 describe('Stages Component', () => {
-  const testStages = [
-    {
-      id: '1',
-      title: 'Stage 1',
-      description: 'Stages Description',
-      logoIcon: MOCKED_IMAGE_PATH,
-      links: [
-        {
-          href: 'test.com',
-          linkTitle: 'test title',
-          isActive: true,
-        },
-      ],
-      topics: ['Advanced Javascript', 'Security'],
-      imageSrc: MOCKED_IMAGE_PATH,
-      list: ['Item 1', 'Item 2'],
-    },
-  ];
+  it('renders Stages component with all cards correctly if stages is not null', () => {
+    render(<Stages stages={mockedStages} />);
 
-  it('renders stages and their details correctly', () => {
-    renderWithRouter(<Stages stages={testStages} />);
+    const cardsContainer = screen.getByTestId('stages');
+    const itemElements = screen.getAllByTestId('stage-card');
 
-    testStages.forEach((stage) => {
-      const { title, description, topics, list } = stage;
+    expect(cardsContainer).toBeVisible();
+    expect(itemElements).toHaveLength(mockedStages.length);
 
-      expect(screen.getByText(title)).toBeInTheDocument();
-
-      if (description) {
-        expect(screen.getByText(description)).toBeInTheDocument();
-      }
-
-      if (topics) {
-        topics.forEach((topic) => {
-          expect(screen.getByText(topic)).toBeInTheDocument();
-        });
-      }
-
-      list?.forEach((listItem) => {
-        expect(screen.getByText(listItem)).toBeInTheDocument();
-      });
+    itemElements.forEach((item) => {
+      expect(item).toBeVisible();
     });
   });
 
-  it('returns null when stages is null', () => {
-    const { container } = renderWithRouter(<Stages stages={null} />);
+  it.each([[null], [[]]])(
+    'should render empty DOM element when stages is null or empty array',
+    (stages) => {
+      const stagesContainer = render(<Stages stages={stages} />);
 
-    expect(container.firstChild).toBeNull();
-  });
-
-  it('returns null when stages is an empty array', () => {
-    const { container } = renderWithRouter(<Stages stages={[]} />);
-
-    expect(container.firstChild).toBeNull();
-  });
+      expect(stagesContainer.container).toBeEmptyDOMElement();
+    });
 });
