@@ -62,7 +62,7 @@ function stubNextAssetImport() {
     name: 'stub-next-asset-import',
     transform(_code: string, id: string) {
       if (/(jpg|jpeg|png|webp|gif|svg)$/.test(id)) {
-        const imgSrc = relative(process.cwd(), id);
+        const imgSrc = relative(process.cwd(), id).split('\\').join('/');
 
         return { code: `export default { src: '/${imgSrc}', height: 1, width: 1 }` };
       }
