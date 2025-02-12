@@ -1,6 +1,6 @@
 /// <reference types="vitest" />
 import react from '@vitejs/plugin-react';
-import { posix, resolve } from 'path';
+import { relative, resolve } from 'path';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
@@ -62,7 +62,7 @@ function stubNextAssetImport() {
     name: 'stub-next-asset-import',
     transform(_code: string, id: string) {
       if (/(jpg|jpeg|png|webp|gif|svg)$/.test(id)) {
-        const imgSrc = posix.relative(process.cwd(), id);
+        const imgSrc = relative(process.cwd(), id).split('\\').join('/');
 
         return { code: `export default { src: '/${imgSrc}', height: 1, width: 1 }` };
       }
