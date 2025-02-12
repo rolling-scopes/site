@@ -1,15 +1,12 @@
 import { COURSE_TITLES } from './courseTitles.data';
 import { ROUTES } from '@/core/const';
 import angular from '@/shared/assets/icons/angular.svg';
-import angularSmall from '@/shared/assets/icons/footer/angular.webp';
-import jsSmall from '@/shared/assets/icons/footer/javascript.webp';
-import reactSmall from '@/shared/assets/icons/footer/react.webp';
-import javascript from '@/shared/assets/icons/javascript.webp';
+import javascript from '@/shared/assets/icons/javascript.svg';
 import react from '@/shared/assets/icons/react.svg';
+import assignment from '@/shared/assets/svg/assignment.svg';
 import bestPractices from '@/shared/assets/svg/best-practices-icon.svg';
 import codeReview from '@/shared/assets/svg/code-review-icon.svg';
-import conductingTechInterview from '@/shared/assets/svg/conducting-tech-interview-icon.svg';
-import supervisingTeamAssignment from '@/shared/assets/svg/supervising-team-assignment-icon.svg';
+import interview from '@/shared/assets/svg/interview.svg';
 import { TelegramIcon } from '@/shared/icons';
 import { MENTOR_ONBOARD_TELEGRAM_EN, MENTOR_ONBOARD_TELEGRAM_RU, MentorshipCourse } from 'data';
 
@@ -52,12 +49,12 @@ const activitiesContent = {
       "The mentor's experience and practical knowledge will help organize students to work on a team project",
   },
   icon: {
-    interview: conductingTechInterview,
-    interviewCore: conductingTechInterview,
+    interview: interview,
+    interviewCore: interview,
     codeReview: codeReview,
     bestPracticesFrame: bestPractices,
     bestPracticesJS: bestPractices,
-    finalProject: supervisingTeamAssignment,
+    finalProject: assignment,
   },
 };
 
@@ -91,7 +88,7 @@ const onboardLinks = {
 export const mentorshipCoursesDefault: MentorshipCourse = {
   id: 0,
   title: COURSE_TITLES.JS_EN,
-  iconSmall: jsSmall,
+  iconSmall: javascript,
   lang: 'en',
   detailsUrl: `/${ROUTES.MENTORSHIP}`,
   links: {
@@ -161,7 +158,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
     id: 1,
     title: COURSE_TITLES.JS_EN,
     description: '',
-    iconSmall: jsSmall,
+    iconSmall: javascript,
     lang: 'en',
     detailsUrl: `/${ROUTES.MENTORSHIP}/${ROUTES.JS}`,
     links: {
@@ -242,7 +239,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
     id: 2,
     title: COURSE_TITLES.JS_RU,
     description: '',
-    iconSmall: jsSmall,
+    iconSmall: javascript,
     lang: 'ru',
     detailsUrl: `/${ROUTES.MENTORSHIP}/${ROUTES.JS_RU}`,
     links: {
@@ -322,7 +319,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
     id: 3,
     title: COURSE_TITLES.REACT,
     description: '',
-    iconSmall: reactSmall,
+    iconSmall: react,
     lang: 'en',
     detailsUrl: `/${ROUTES.MENTORSHIP}/${ROUTES.REACT}`,
     links: {
@@ -390,7 +387,7 @@ export const mentorshipCourses: MentorshipCourse[] = [
     id: 4,
     title: COURSE_TITLES.ANGULAR,
     description: '',
-    iconSmall: angularSmall,
+    iconSmall: angular,
     lang: 'en',
     detailsUrl: `/${ROUTES.MENTORSHIP}/${ROUTES.ANGULAR}`,
     links: {

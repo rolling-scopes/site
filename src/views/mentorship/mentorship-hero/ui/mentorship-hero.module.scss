@@ -11,11 +11,11 @@
 
       width: fit-content;
       padding: 32px;
-      border-radius: 12px;
 
       text-align: left;
 
       background-color: hsla(from $color-white h s l/ $opacity-80);
+      border-radius: 12px;
 
       .title-main {
         @include media-tablet {

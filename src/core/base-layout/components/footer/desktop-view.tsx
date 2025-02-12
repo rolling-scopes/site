@@ -28,7 +28,7 @@ export const DesktopView = async () => {
           {courses.map((course) => (
             <SchoolMenu.Item
               key={course.id}
-              icon={course.iconSmall}
+              icon={course.iconFooter}
               title={course.title}
               description={course.startDate}
               url={course.detailsUrl}
