@@ -20,6 +20,8 @@ describe('CourseCard', () => {
       backgroundColor: '#ffffff',
       accentColor: '#ff0000',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   };
 
   let card: HTMLElement;

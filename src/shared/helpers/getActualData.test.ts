@@ -48,6 +48,8 @@ const coursesMock: Course[] = [
       backgroundColor: 'color',
       accentColor: 'color',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '2',
@@ -80,6 +82,8 @@ const coursesMock: Course[] = [
       backgroundColor: 'color',
       accentColor: 'color',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '3',
@@ -112,6 +116,8 @@ const coursesMock: Course[] = [
       backgroundColor: 'color',
       accentColor: 'color',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
 ];
 

@@ -9,3 +9,10 @@ export const getCourseDate = (startDate: string, staleAfterDays: number) => {
 
   return isStale ? TO_BE_DETERMINED : startDate;
 };
+
+export const calculateFreshDate = (courseStartDate: string, registrationEndDate: string) => {
+  const staleDays = dayjs(registrationEndDate).diff(courseStartDate, 'days');
+  const freshDate = getCourseDate(courseStartDate, staleDays);
+
+  return freshDate;
+};

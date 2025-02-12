@@ -22,6 +22,8 @@ export type ApiCoursesResponse = Readonly<{
   name: string;
   registrationEndDate: string;
   startDate: string;
+  personalMentoringStartDate: string | null;
+  personalMentoringEndDate: string | null;
   wearecommunityUrl: string | null;
 }>;
 
@@ -44,6 +46,8 @@ export type Course = {
     backgroundColor: string;
     accentColor: string;
   };
+  personalMentoringStartDate: string | null;
+  personalMentoringEndDate: string | null;
 };
 
 export type CourseStatus = 'planned' | 'available' | 'upcoming';

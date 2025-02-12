@@ -2,8 +2,8 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import { CourseItemData } from '@/entities/course';
-import { DateStart } from '@/shared/ui/date-start';
 import { LinkCustom } from '@/shared/ui/link-custom';
+import { ShortInfoPanel } from '@/shared/ui/short-info-panel';
 import { Subtitle } from '@/shared/ui/subtitle';
 
 import styles from './course-item.module.scss';
@@ -33,14 +33,13 @@ export const CourseItem = ({
         <Subtitle color="black" fontSize="extra-small">
           {title}
         </Subtitle>
-        <p className={cx('date')}>
-          <DateStart
-            courseStartDate={startDate}
-            registrationEndDate={registrationEndDate}
-            data-testid="course-date"
-          />
-          <span data-testid="course-language">{` • ${language.toUpperCase()}`}</span>
-        </p>
+        <ShortInfoPanel
+          startDate={startDate}
+          label={null}
+          registrationEndDate={registrationEndDate}
+          language={language}
+          onlyLanguage={true}
+        />
       </article>
       <LinkCustom
         className={cx('details-link')}
