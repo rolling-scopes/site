@@ -25,7 +25,7 @@ export const AwsDeveloper = async ({ courseName }: AwsDeveloperProps) => {
       <AboutCourse courseName={courseName} />
       <Certification courseName={courseName} />
       <Communication courseName={courseName} />
-      <Required courseName={courseName} marked1 />
+      <Required courseName={courseName} />
       <MemberActivity path="awsDev" lang={language} />
       <Trainers trainers={awsDev} courseName={courseName} />
     </>
