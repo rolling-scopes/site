@@ -29,7 +29,6 @@ export const CourseCard = ({
   startDate,
   registrationEndDate,
   detailsUrl,
-  mode,
   language,
   backgroundStyle,
   className,
@@ -45,18 +44,18 @@ export const CourseCard = ({
     <article className={cx('course-card', className)} data-testid="course-card">
       <div className={cx('card-header')} style={cardStyle} data-testid="card-header">
         <Image src={iconSrc} alt={title} />
-        <Subtitle fontSize="small">{title}</Subtitle>
+        <Subtitle className={cx('course-title')} fontSize="large">{title}</Subtitle>
       </div>
       <div className={cx('course-info')}>
         <DateLang
           startDate={startDate}
           registrationEndDate={registrationEndDate}
           language={language}
-          mode={mode}
         />
         <LinkCustom
+          className={cx('course-link')}
           href={detailsUrl}
-          variant="rounded"
+          variant="secondary"
           aria-label="View course details"
           data-testid="course-link"
         >

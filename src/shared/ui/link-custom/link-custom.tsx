@@ -57,7 +57,7 @@ export const LinkCustom = ({
       case variant === 'secondary':
         return <ArrowIcon />;
       case variant === 'rounded':
-        return <ArrowIcon size={16} />;
+        return <ArrowIcon />;
       default:
         return <></>;
     }
@@ -77,7 +77,9 @@ export const LinkCustom = ({
       {...(external && externalLinkAttributes)}
     >
       {children}
-      {!disabled && resolveIcon()}
+      <span className={cx('icon-wrapper')}>
+        {!disabled && resolveIcon()}
+      </span>
     </Link>
   );
 };
