@@ -90,11 +90,11 @@
 
   width: 100%;
   height: 100%;
-  border-radius: 8px;
 
   font-size: 14px;
   font-weight: $font-weight-bold;
   color: $color-white;
 
   background-color: hsla(from $color-black h s l / $opacity-70);
+  border-radius: 8px;
 }
