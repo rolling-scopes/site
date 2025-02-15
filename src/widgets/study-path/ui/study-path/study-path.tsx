@@ -15,7 +15,7 @@ export const StudyPath = ({ page = 'courses' }: StagePathPage) => {
         <WidgetTitle size="small" mods="asterisk">
           {sectionTitle}
         </WidgetTitle>
-        <Paragraph>{sectionIntro}</Paragraph>
+        <Paragraph dataTestId="section-intro">{sectionIntro}</Paragraph>
         <Stages stages={stages} />
       </article>
     </section>

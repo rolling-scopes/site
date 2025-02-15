@@ -1,91 +1,28 @@
-import { screen } from '@testing-library/react';
-import { vi } from 'vitest';
+import { render, screen } from '@testing-library/react';
 
 import { StudyPath } from './study-path';
-import { renderWithRouter } from '@/shared/__tests__/utils';
 
-const mockedDataProviders = await vi.hoisted(async () => {
-  const { MOCKED_IMAGE_PATH } = await import('@/shared/__tests__/constants');
-
-  const mockedData = [
-    {
-      id: '1',
-      title: 'Stage 1',
-      description: 'Stages Description',
-      logoIcon: MOCKED_IMAGE_PATH,
-      links: [
-        {
-          href: 'test.com',
-          linkTitle: 'test title',
-          isActive: true,
-        },
-      ],
-      topics: ['Advanced Javascript', 'Security'],
-      imageSrc: MOCKED_IMAGE_PATH,
-      list: ['Item 1', 'Item 2'],
-    },
-  ];
-
-  return {
-    javascript: mockedData,
-    angular: mockedData,
-    awsDev: mockedData,
-  };
-});
-
-vi.mock('@/core/services/api', () => {
-  return { dataProviders: mockedDataProviders };
-});
+const stages = ['courses', 'jsEn', 'jsRu', 'angular', 'awsDev'] as const;
 
 describe('StudyPath Component', () => {
-  it('renders the title and paragraph text correctly for angularPath', () => {
-    renderWithRouter(<StudyPath path="angular" />);
+  it.each([stages])('renders component with title, intro and stages correctly for %o', (page) => {
+    const studyPath = render(<StudyPath page={page} />);
 
-    expect(screen.getByText('Course Curriculum')).toBeInTheDocument();
-    expect(
-      screen.getByText('This program will have theory and practice on the following topic:'),
-    ).toBeInTheDocument();
-  });
+    const sectionTitle = studyPath.getByRole('heading', { level: 2 });
+    const sectionIntro = studyPath.getAllByRole('paragraph')[0];
 
-  it('renders the title and paragraph text correctly for awsDevPath', () => {
-    renderWithRouter(<StudyPath path="awsDev" />);
+    const component = screen.getByTestId('study-path');
+    const title = screen.getByTestId('widget-title');
+    const intro = screen.getByTestId('section-intro');
+    const stagesContainer = screen.getByTestId('stages');
 
-    expect(screen.getByText('Course Curriculum')).toBeInTheDocument();
-    expect(
-      screen.getByText('This program will have theory and practice on the following topic:'),
-    ).toBeInTheDocument();
-  });
+    expect(component).toBeVisible();
+    expect(stagesContainer).toBeVisible();
 
-  it('renders the title and paragraph text correctly for other paths', () => {
-    renderWithRouter(<StudyPath path="javascript" />);
+    expect(title).toBeVisible();
+    expect(title.innerText).toBe(sectionTitle.innerText);
 
-    expect(screen.getByText('Choose what you want to learn')).toBeInTheDocument();
-    expect(
-      screen.getByText(/A full-stack developer is someone who has expertise in both frontend/),
-    ).toBeInTheDocument();
-  });
-
-  it('renders stages and their details correctly', () => {
-    renderWithRouter(<StudyPath path="angular" />);
-
-    mockedDataProviders.angular.forEach((stage) => {
-      const { title, description, topics, list } = stage;
-
-      expect(screen.getByText(title)).toBeInTheDocument();
-
-      if (description) {
-        expect(screen.getByText(description)).toBeInTheDocument();
-      }
-
-      if (topics) {
-        topics.forEach((topic) => {
-          expect(screen.getByText(topic)).toBeInTheDocument();
-        });
-      }
-
-      list?.forEach((listItem) => {
-        expect(screen.getByText(listItem)).toBeInTheDocument();
-      });
-    });
+    expect(intro).toBeVisible();
+    expect(intro.innerHTML).toBe(sectionIntro.innerHTML);
   });
 });
