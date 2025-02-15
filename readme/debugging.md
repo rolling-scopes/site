@@ -8,9 +8,7 @@ This guide provides a brief overview of how to set up and debug a Next.js applic
 
 **1. Configure VS Code debugger for Next.js with Chrome**
 
-At the root of your project in the `.vscode` folder need to set up a launch configuration in VS Code to debug your Next.js application.
-
-To do this, you need to rename the file `./vscode/launch-mac.json` or `./vscode/launch-win.json` depending on your OS to `./vscode/launch.json`. These configuration files are created for debugging in `Chrome`, for other browsers, please use the settings described in the [Next.js documentation](https://nextjs.org/docs/app/building-your-application/configuring/debugging#debugging-with-vs-code).
+At the root of your project in the `.vscode` folder you have a launch configuration in VS Code to debug your Next.js application (`launch.json`). This configuration is created for debugging in `Chrome`, for other browsers, please use the settings described in the [Next.js documentation](https://nextjs.org/docs/app/building-your-application/configuring/debugging#debugging-with-vs-code).
 
 **2. Start Debugging**
 
