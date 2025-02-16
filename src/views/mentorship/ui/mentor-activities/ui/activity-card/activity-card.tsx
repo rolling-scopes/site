@@ -28,7 +28,7 @@ export const ActivityCard = ({ title, description, icon, links }: ActivityCardPr
     </Subtitle>
     <Paragraph className={cx('card-description')}>{description}</Paragraph>
     {links?.length && links.map(({ href, linkTitle }) => (
-      <LinkCustom href={href} key={linkTitle} data-testid="activity-card-link" black>
+      <LinkCustom href={href} key={linkTitle} data-testid="activity-card-link" highContrast>
         {linkTitle}
       </LinkCustom>
     ))}
