@@ -22,13 +22,12 @@ export const ActivityCard = ({ title, description, icon, links }: ActivityCardPr
       className={cx('card-title')}
       fontSize="large"
       weight="bold"
-      color="black"
     >
       {title}
     </Subtitle>
     <Paragraph className={cx('card-description')}>{description}</Paragraph>
     {links?.length && links.map(({ href, linkTitle }) => (
-      <LinkCustom className={cx('gray-link')} href={href} key={linkTitle} data-testid="activity-card-link">
+      <LinkCustom href={href} key={linkTitle} data-testid="activity-card-link" highContrast>
         {linkTitle}
       </LinkCustom>
     ))}

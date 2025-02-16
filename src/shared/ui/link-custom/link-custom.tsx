@@ -18,6 +18,7 @@ type LinkCustomAdditionalProps = {
   icon?: ReactNode;
   external?: boolean;
   disabled?: boolean;
+  highContrast?: boolean;
 };
 
 const linkCustomVariants = cva('', {
@@ -28,6 +29,10 @@ const linkCustomVariants = cva('', {
       secondary: cx('button', 'secondary'),
       withCustomClassName: '',
       textLink: cx('text-link'),
+    },
+    highContrast: {
+      true: cx('high-contrast'),
+      false: null,
     },
   },
 });
@@ -45,6 +50,7 @@ export const LinkCustom = ({
   variant = 'textLink',
   external = false,
   disabled = false,
+  highContrast = false,
   ...props
 }: LinkCustomProps) => {
   const resolveIcon = () => {
@@ -67,6 +73,7 @@ export const LinkCustom = ({
     <Link
       className={cx(
         { disabled },
+        { highContrast },
         linkCustomVariants({
           variant,
           className,

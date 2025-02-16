@@ -7,7 +7,6 @@
   width: 100%;
   height: 64px;
   padding: 0 40px;
-
   border-radius: 0;
 
   transition: background-color 0.2s;
@@ -25,10 +24,11 @@
   }
 
   &.white {
-    opacity: 1;
-    background-color: rgb(255 255 255);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+
+    opacity: 1;
+    background-color: rgb(255 255 255);
     box-shadow: rgb(0 0 0 / 8.2%) 0 1.026px 8.0694px 0;
   }
 
