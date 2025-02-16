@@ -1,5 +1,6 @@
 import aesoft from '@/shared/assets/alumni/aesoft.svg';
 import andersen from '@/shared/assets/alumni/andersen.svg';
+import aws from '@/shared/assets/alumni/aws.svg';
 import coherent from '@/shared/assets/alumni/coherent.svg';
 import dataart from '@/shared/assets/alumni/dataart.svg';
 import dott from '@/shared/assets/alumni/dott.svg';
@@ -13,7 +14,6 @@ import oxagile from '@/shared/assets/alumni/oxagile.svg';
 import pandadoc from '@/shared/assets/alumni/pandadoc.svg';
 import qulix from '@/shared/assets/alumni/qulix.svg';
 import satellite from '@/shared/assets/alumni/satellite.svg';
-import sberbank from '@/shared/assets/alumni/sberbank.svg';
 import toptal from '@/shared/assets/alumni/toptal.svg';
 import visualfabriq from '@/shared/assets/alumni/visualfabriq.svg';
 
@@ -79,8 +79,8 @@ export const alumni = [
     image: visualfabriq,
   },
   {
-    id: 'sberbank',
-    image: sberbank,
+    id: 'aws',
+    image: aws,
   },
   {
     id: 'nanosoft',
