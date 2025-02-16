@@ -28,7 +28,7 @@ export const Speakers = () => (
           So don&apos;t hesitate to drop a short synopsis to RS Head
         </Paragraph>
 
-        <Subtitle color="black" className={cx('name')}>
+        <Subtitle className={cx('name')}>
           Dzmitry Varabei
         </Subtitle>
         <address className={cx('email-wrapper')}>

@@ -30,7 +30,7 @@ export const CourseItem = ({
         />
       </figure>
       <article className={cx('course-info')}>
-        <Subtitle color="black" fontSize="extra-small">
+        <Subtitle fontSize="extra-small">
           {title}
         </Subtitle>
         <p className={cx('date')}>

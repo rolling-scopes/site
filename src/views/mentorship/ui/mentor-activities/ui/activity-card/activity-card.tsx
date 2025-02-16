@@ -22,7 +22,6 @@ export const ActivityCard = ({ title, description, icon, links }: ActivityCardPr
       className={cx('card-title')}
       fontSize="large"
       weight="bold"
-      color="black"
     >
       {title}
     </Subtitle>
