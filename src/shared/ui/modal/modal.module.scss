@@ -13,7 +13,7 @@
   animation: modal-fade-in 400ms $ease-out-quart both;
 
   &::backdrop {
-    background-color: hsl(0deg 0% 0% / 50%);
+    background-color: hsla(from $color-black h s l / $opacity-50);
     animation: backdrop-fade-in 300ms both;
   }
 
