@@ -16,15 +16,19 @@
 
 .secondary {
   width: max-content;
-  padding: 16px 24px;
+  padding: 12px 24px;
+  border: 1px solid $color-black;
 
   font-size: 18px;
   color: $color-black;
 
-  border: 2px solid $color-black;
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  img {
-    filter: invert(100%);
+    min-width: 24px;
+    min-height: 24px;
   }
 
   &:hover {
@@ -35,17 +39,17 @@
 .primary {
   width: max-content;
   padding: 16px 24px;
+  border: 2px solid $color-black;
 
   font-size: 18px;
   line-height: 24px;
   color: $color-white;
 
   background-color: $color-black;
-  border: 2px solid $color-black;
 
   &:hover {
-    background-color: $color-gray-600;
     border-color: $color-gray-600;
+    background-color: $color-gray-600;
   }
 
   @include media-tablet {
@@ -57,16 +61,21 @@
   width: max-content;
   height: 36px;
   padding: 10px 12px;
+  border-radius: 9999px;
 
   font-size: 14px;
   line-height: 16px;
   color: $color-black;
 
   background-color: #eee;
-  border-radius: 9999px;
 
-  img {
-    filter: invert(100%);
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 16px;
+    min-height: 16px;
   }
 
   &:hover {

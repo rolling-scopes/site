@@ -46,24 +46,24 @@
   content: '';
 
   position: absolute;
-  z-index: 1;
   right: -152px;
   bottom: -176px;
 
   display: block;
 
-  width: 256px;
-  height: 248px;
+  width: 310px;
+  height: 300px;
+  border-radius: 100%;
 
   opacity: 0.5;
   background-color: $bg-color;
   filter: blur(32px);
-  border-radius: 100%;
+
+  transition: all 200ms $ease-standard-accelerate;
 
   @if $isHovered {
-    right: -130px;
-    bottom: -160px;
-    width: 279px;
-    height: 270px;
+    translate: -22px -16px;
+    scale: 1.25;
+    transition: all 500ms 100ms $ease-emphasize-decelerate;
   }
 }

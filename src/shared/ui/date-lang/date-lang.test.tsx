@@ -16,21 +16,13 @@ describe('DateLang', () => {
         startDate={startDate}
         registrationEndDate={registrationEndDate}
         language="en"
-        mode=""
       />,
     );
     expect(screen.getByText(`${startDate}`)).toBeInTheDocument();
   });
 
-  it('renders the mode correctly', () => {
-    const mode = 'Online';
-
-    render(<DateLang startDate="" registrationEndDate="" language="en" mode={mode} />);
-    expect(screen.getByText(`${mode}`)).toBeInTheDocument();
-  });
-
   it('displays the correct note and microphone icons', () => {
-    render(<DateLang startDate="" registrationEndDate="" language="en" mode="" />);
+    render(<DateLang startDate="" registrationEndDate="" language="en" />);
     expect(screen.getByAltText('note-icon')).toHaveAttribute('src', noteIcon.src);
     expect(screen.getByRole('img', { name: 'microphone-icon' })).toHaveAttribute(
       'src',
