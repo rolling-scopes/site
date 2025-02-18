@@ -118,7 +118,7 @@ figure {
     .control-prev {
       --slider-arrow-btn-height: 45px;
 
-      top: calc(50% - var(--slider-arrow-btn-height) / 2);
+      top: calc(50% - var(--slider-arrow-btn-height) / 2) !important;
 
       display: flex;
       align-items: center;
@@ -126,10 +126,10 @@ figure {
 
       height: var(--slider-arrow-btn-height);
       margin: 2px;
+      border-radius: 8px;
 
       opacity: $opacity-100;
       backdrop-filter: blur(20px);
-      border-radius: 8px;
 
       @include media-mobile-landscape {
         display: none;
