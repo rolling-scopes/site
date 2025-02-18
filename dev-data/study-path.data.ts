@@ -1,9 +1,8 @@
 import { ROUTES } from '@/core/const';
-import AWSDeveloperIcon from '@/shared/assets/icons/aws-developer.webp';
-import AWSFundamentalsIcon from '@/shared/assets/icons/aws-fundamentals.webp';
-import HTMLIcon from '@/shared/assets/icons/html.webp';
-import JSIcon from '@/shared/assets/icons/javascript.webp';
-import NodeJSIcon from '@/shared/assets/icons/nodejs.webp';
+import AWSIcon from '@/shared/assets/icons/aws-black.svg';
+import HTMLIcon from '@/shared/assets/icons/html5.svg';
+import JSIcon from '@/shared/assets/icons/javascript.svg';
+import NodeJSIcon from '@/shared/assets/icons/node-js.svg';
 import ReactAngIcon from '@/shared/assets/icons/react-angular.svg';
 import feJsStage1 from '@/shared/assets/stages/stage-1.webp';
 import feJsStage2 from '@/shared/assets/stages/stage-2.webp';
@@ -153,7 +152,7 @@ export const studyPath = {
           },
         ],
         image: {
-          src: AWSFundamentalsIcon,
+          src: AWSIcon,
           alt: 'aws logo',
           className: 'stage-logo',
         },
@@ -179,7 +178,7 @@ export const studyPath = {
           },
         ],
         image: {
-          src: AWSDeveloperIcon,
+          src: AWSIcon,
           alt: 'aws logo',
           className: 'stage-logo',
         },
@@ -205,7 +204,7 @@ export const studyPath = {
           },
         ],
         image: {
-          src: AWSDeveloperIcon,
+          src: AWSIcon,
           alt: 'aws logo',
           className: 'stage-logo',
         },
