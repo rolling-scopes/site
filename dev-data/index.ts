@@ -1,9 +1,6 @@
 export type {
   AboutCourseInfo,
-  AngularAwsPath,
-  CoursesPath,
   DataMap,
-  JSPath,
 } from './courses-data.types';
 export type {
   CourseTitle,
@@ -15,7 +12,9 @@ export type {
   MentorshipDetails,
   MentorshipRoute,
 } from './mentorship-data.types';
+
 export type { MentorshipCourseTitles, MentorshipLinks } from './mentorship-data.types';
+
 export {
   ANNOUNCEMENT_TELEGRAM_LINK,
   type CourseNamesChannels,
@@ -26,6 +25,7 @@ export {
   RS_DOCS_EN_LINK,
   RS_DOCS_TELEGRAM_CHATS_LINK,
 } from './communication.data';
+
 export {
   AWS_FUNDAMENTALS_BADGE,
   COURSE_TITLES,
@@ -35,12 +35,11 @@ export {
   DISCORD_LINKS,
   type TrainingProgramType,
 } from './courseTitles.data';
+
 export { type Benefit } from './benefit-mentorship.data';
 export { aboutMentorsData } from './about-mentors.data';
 export { angular } from './angular.data';
-export { angularPath } from './angular-path.data';
 export { awsDev } from './awsDev.data';
-export { awsDevPath } from './aws-dev-path.data';
 export { awsDevops } from './aws-devops.data';
 export { awsFundamentals } from './awsFundamentals.data';
 export { benefitMentorshipHome, benefitMentorshipMentors } from './benefit-mentorship.data';
@@ -53,7 +52,6 @@ export { contributeOptions } from './contribute-options.data';
 export { courseDataMap } from './required.data';
 export { courseStatus, heroCourseLocalized } from './hero-course.data';
 export { courses } from './courses.data';
-export { coursesPath } from './courses-path.data';
 export { donateOptions } from './donate-options.data';
 export { events } from './events.data';
 export { faqData } from './faq.data';
@@ -61,8 +59,6 @@ export { generalMaterials } from './general.data';
 export { heroPageData } from './hero-page.data';
 export { javaScriptEn } from './javascript-en.data';
 export { javaScriptRu } from './javascript-ru.data';
-export { jsPath } from './js-path.data';
-export { jsPathRu } from './js-ru-path.data';
 export { mentorDocsData } from './mentor-docs.data';
 export { mentorsActivityData } from './mentors-activity.data';
 export { mentorsAfterRegisterData } from './mentors-after-register.data';
