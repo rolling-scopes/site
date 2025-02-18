@@ -1,4 +1,4 @@
-import { AwsLogo, EpamLogo, GithubLogo, JetBrainsLogo } from '@/shared/icons';
+import { AwsLogo, GithubLogo, JetBrainsLogo } from '@/shared/icons';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import './partnered.scss';
@@ -8,9 +8,6 @@ export const Partnered = () => (
     <div className="partnered content">
       <WidgetTitle size="small">Partnered with</WidgetTitle>
       <div className="partners">
-        <div className="partner-logo-container">
-          <EpamLogo />
-        </div>
         <div className="partner-logo-container">
           <JetBrainsLogo />
         </div>

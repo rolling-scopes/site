@@ -79,7 +79,7 @@ figure {
   align-items: center;
   justify-content: space-between;
 
-  @include media-laptop {
+  @include media-tablet-large {
     flex-direction: column;
   }
 }
@@ -126,10 +126,10 @@ figure {
 
       height: var(--slider-arrow-btn-height);
       margin: 2px;
+      border-radius: 8px;
 
       opacity: $opacity-100;
       backdrop-filter: blur(20px);
-      border-radius: 8px;
 
       @include media-mobile-landscape {
         display: none;

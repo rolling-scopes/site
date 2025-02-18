@@ -65,16 +65,14 @@ export function DocsLayout({ menu, markdownContent, lang }: DocsLayoutProps) {
               ]}
               rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings]}
               components={{
-                img({ _, ...props }) {
-                  const { src } = props;
-
+                img({ src = '', ...props }) {
                   const isExternalImage = isValidUrl(src);
                   const newSrc =
                     !isExternalImage && src ? `${GITHUB_IMAGE_BASE}/${src.split('/').pop()}` : src;
 
                   return <img {...props} src={newSrc} />;
                 },
-                a({ children, href, ...props }) {
+                a({ children, href = '', ...props }) {
                   let newHref = href;
 
                   if (href.endsWith('.md')) {

@@ -17,7 +17,7 @@ type MentorsWantedCourseProps = {
 export const MentorsWantedCourse = ({ link }: MentorsWantedCourseProps) => {
   return (
     <section className={cx('mentors-wanted', 'container')} data-testid="mentors-wanted">
-      <article className={cx('mentors-wanted-content', 'content')}>
+      <article className={cx('mentors-wanted-content', 'content', 'column-2')}>
         <div className={cx('content-left')}>
           <WidgetTitle id="mentors-wanted" mods="lines">
             Mentors Wanted!

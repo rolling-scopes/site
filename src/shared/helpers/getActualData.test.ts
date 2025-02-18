@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import { getActualData } from './getActualData';
+import { MOCKED_IMAGE_PATH } from '../__tests__/constants';
 import { Course } from '@/entities/course';
 import { Event } from '@/entities/event';
 import { COURSE_LINKS, TO_BE_DETERMINED } from '@/shared/constants';
@@ -48,6 +49,7 @@ const coursesMock: Course[] = [
       backgroundColor: 'color',
       accentColor: 'color',
     },
+    iconFooter: MOCKED_IMAGE_PATH,
   },
   {
     id: '2',
@@ -80,6 +82,7 @@ const coursesMock: Course[] = [
       backgroundColor: 'color',
       accentColor: 'color',
     },
+    iconFooter: MOCKED_IMAGE_PATH,
   },
   {
     id: '3',
@@ -112,6 +115,7 @@ const coursesMock: Course[] = [
       backgroundColor: 'color',
       accentColor: 'color',
     },
+    iconFooter: MOCKED_IMAGE_PATH,
   },
 ];
 
