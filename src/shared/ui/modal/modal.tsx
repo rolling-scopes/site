@@ -1,9 +1,10 @@
-import React, { ReactNode, useCallback, useEffect, useRef } from 'react';
+import React, { KeyboardEvent, ReactNode, useCallback, useEffect, useRef } from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 import { createPortal } from 'react-dom';
 
 import closeIcon from '@/shared/assets/svg/close.svg';
+import { KEY_CODES } from '@/shared/constants';
 
 import styles from './modal.module.scss';
 
@@ -56,6 +57,14 @@ export const Modal = ({ isOpen, onClose, children, title, className }: ModalProp
     [handleClose],
   );
 
+  const handleCloseOnEscPress = (e: KeyboardEvent<HTMLDialogElement>) => {
+    e.preventDefault();
+
+    if (e.key === KEY_CODES.ESCAPE) {
+      handleClose();
+    }
+  };
+
   useEffect(() => {
     document.addEventListener('mousedown', handleMouseDown);
 
@@ -87,6 +96,7 @@ export const Modal = ({ isOpen, onClose, children, title, className }: ModalProp
       className={cx('modal', className)}
       ref={dialogRef}
       onClose={handleClose}
+      onKeyDown={handleCloseOnEscPress}
       data-testid="modal"
     >
       <div className={cx('modal-header', { 'no-title': !title })} data-testid="modal-header">
