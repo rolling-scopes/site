@@ -28,56 +28,6 @@
     transition: ease-in 200ms;
   }
 
-  &.size-sm {
-    .card-header {
-      padding: 26px 24px;
-
-      img {
-        height: 60px;
-      }
-    }
-
-    .course-info {
-      padding: 24px;
-      font-size: 14px;
-
-      @include media-laptop-medium {
-        flex-direction: row;
-      }
-
-      @include media-mobile-landscape {
-        flex-direction: column;
-      }
-    }
-
-    .course-link {
-      gap: 4px;
-      padding: 10px 12px;
-      font-size: 14px;
-    }
-
-    section {
-      gap: 12px;
-    }
-  }
-
-  &.size-md {
-    .card-header {
-      @include media-laptop-medium {
-        min-height: unset;
-      }
-
-      @include media-tablet-large {
-        min-height: unset;
-      }
-
-      @include media-mobile-landscape {
-        min-height: unset;
-        padding: 24px;
-      }
-    }
-  }
-
   .card-header {
     position: relative;
 
@@ -136,14 +86,64 @@
     }
   }
 
-  .course-title {
-    z-index: 2;
-  }
-
   .course-link {
     @include media-mobile-landscape {
       width: 100%;
     }
+  }
+
+  &.size-sm {
+    .card-header {
+      padding: 26px 24px;
+
+      img {
+        height: 60px;
+      }
+    }
+
+    .course-info {
+      padding: 24px;
+      font-size: 14px;
+
+      @include media-laptop-medium {
+        flex-direction: row;
+      }
+
+      @include media-mobile-landscape {
+        flex-direction: column;
+      }
+    }
+
+    .course-link {
+      gap: 4px;
+      padding: 10px 12px;
+      font-size: 14px;
+    }
+
+    section {
+      gap: 12px;
+    }
+  }
+
+  &.size-md {
+    .card-header {
+      @include media-laptop-medium {
+        min-height: unset;
+      }
+
+      @include media-tablet-large {
+        min-height: unset;
+      }
+
+      @include media-mobile-landscape {
+        min-height: unset;
+        padding: 24px;
+      }
+    }
+  }
+
+  .course-title {
+    z-index: 2;
   }
 
   @include media-hover {
