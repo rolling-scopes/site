@@ -1,3 +1,4 @@
+import { PropsWithChildren } from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 
@@ -10,26 +11,30 @@ import styles from './date-lang.module.scss';
 
 const cx = classNames.bind(styles);
 
-interface DateLangProps {
+type DateLangProps = PropsWithChildren & {
   startDate: string;
   registrationEndDate: string;
   language: Language;
   withMargin?: boolean;
-}
+};
 
 export const DateLang = ({
   startDate,
   registrationEndDate,
   language,
   withMargin,
+  children,
 }: DateLangProps) => {
-  const courseLanguage = language === 'ru' ? 'Russian' : 'English';
+  const isEng = language === 'en';
+  const courseLanguage = isEng ? 'English' : 'Russian';
+  const startText = isEng ? 'Course starts on:' : 'Старт курса:';
+  const dateText = children ? children : startText;
 
   return (
     <section className={cx('info', { margin: withMargin })}>
       <p className={cx('date')}>
         <Image className={cx('icon')} src={noteIcon} alt="note-icon" />
-        <span className={cx('bold')}>Course starts on:</span>
+        <span className={cx('bold')}>{dateText}</span>
         <DateStart courseStartDate={startDate} registrationEndDate={registrationEndDate} />
       </p>
       <p className={cx('additional-info')}>
