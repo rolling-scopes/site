@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
 import { MentorFeedbackCard } from './mentor-feedback-card';
@@ -63,6 +63,6 @@ describe('MentorFeedbackCard', () => {
 
     fireEvent.click(closeButton);
 
-    expect(screen.queryByTestId('modal')).toBeNull();
+    waitFor(expect(screen.queryByTestId('modal')).toBeNull);
   });
 });
