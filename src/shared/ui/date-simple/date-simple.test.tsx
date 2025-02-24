@@ -37,7 +37,7 @@ describe('DateSimple', () => {
     expect(screen.getByText(`${labelSeparator}`)).toBeInTheDocument();
   });
 
-  it('displays dates and date attributes correctly including TBD case', () => {
+  it('displays dates and date attributes correctly including endDate TBD case', () => {
     const startDate = '2088-01-01';
     const endDate = TO_BE_DETERMINED;
 
@@ -49,6 +49,45 @@ describe('DateSimple', () => {
     expect(startDateElement).toHaveAttribute('datetime', dayJS(startDate).toISOString());
     expect(endDateElement).toHaveTextContent(endDate);
     expect(endDateElement).not.toHaveAttribute('datetime');
+  });
+
+  it('displays dates and date attributes correctly when start and end dates are TBD', () => {
+    const startDate = TO_BE_DETERMINED;
+    const endDate = TO_BE_DETERMINED;
+
+    render(
+      <DateSimple
+        label={LABELS.START_DATE}
+        startDate={startDate}
+        labelSeparator={LABELS.MENTORING_DATES_SEPARATOR}
+        endDate={endDate}
+      />,
+    );
+    const startDateElement = screen.getByTestId('date-time-start');
+    const endDateElement = screen.getByTestId('date-time-end');
+
+    expect(startDateElement).toHaveTextContent(startDate);
+    expect(startDateElement).not.toHaveAttribute('datetime');
+    expect(startDateElement).toHaveTextContent(TO_BE_DETERMINED);
+    expect(endDateElement).toHaveTextContent(endDate);
+    expect(endDateElement).not.toHaveAttribute('datetime');
+    expect(endDateElement).toHaveTextContent(TO_BE_DETERMINED);
+  });
+
+  it('displays correctly when endDate is undefined but label separator not', () => {
+    const startDate = '2088-01-01';
+    const labelSeparator = 'test-separator';
+
+    render(
+      <DateSimple
+        label={LABELS.START_DATE}
+        startDate={startDate}
+        labelSeparator={labelSeparator}
+      />,
+    );
+    const labelSeparatorElement = screen.queryByText(`${labelSeparator}`);
+
+    expect(labelSeparatorElement).toBeNull();
   });
 
   it('displays start date and additional info passed as children', () => {

@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import { getCourseStatus } from '../helpers/get-course-status';
+import { LABELS } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/dayJS';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -55,6 +56,7 @@ export const HeroCourse = async ({ courseName }: HeroCourseProps) => {
             </p>
           )}
           <ShortInfoPanel
+            label={LABELS.START_DATE}
             startDate={startDate}
             registrationEndDate={registrationEndDate}
             language={language}

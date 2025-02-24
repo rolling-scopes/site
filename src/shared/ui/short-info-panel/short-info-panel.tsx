@@ -18,7 +18,7 @@ interface ShortInfoPanelProps {
   language: Language;
   withMargin?: boolean;
   onlyLanguage?: boolean;
-  label?: string | null;
+  label?: string;
 }
 
 export const ShortInfoPanel = ({
@@ -28,7 +28,7 @@ export const ShortInfoPanel = ({
   mode,
   withMargin,
   onlyLanguage,
-  label = LABELS.START_DATE,
+  label,
 }: ShortInfoPanelProps) => {
   return (
     <section className={cx('info', { margin: withMargin })}>

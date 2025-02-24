@@ -31,7 +31,15 @@ describe('CourseShortInfo', () => {
   });
 
   it('displays the correct note and microphone icons', () => {
-    render(<ShortInfoPanel startDate="" registrationEndDate="" language="en" mode="" />);
+    render(
+      <ShortInfoPanel
+        label={LABELS.START_DATE}
+        startDate=""
+        registrationEndDate=""
+        language="en"
+        mode=""
+      />,
+    );
     expect(screen.getByAltText('note-icon')).toHaveAttribute('src', noteIcon.src);
     expect(screen.getByRole('img', { name: 'microphone-icon' })).toHaveAttribute(
       'src',
@@ -48,7 +56,6 @@ describe('CourseShortInfo', () => {
       <ShortInfoPanel
         startDate={startDate}
         registrationEndDate={registrationEndDate}
-        label={null}
         language={language}
         onlyLanguage={true}
       />,

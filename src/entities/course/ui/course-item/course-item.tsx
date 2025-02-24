@@ -35,7 +35,6 @@ export const CourseItem = ({
         </Subtitle>
         <ShortInfoPanel
           startDate={startDate}
-          label={null}
           registrationEndDate={registrationEndDate}
           language={language}
           onlyLanguage={true}

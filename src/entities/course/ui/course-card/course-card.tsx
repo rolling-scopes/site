@@ -59,6 +59,7 @@ export const CourseCard = ({
       <div className={cx('course-info')}>
         {!showMentoringStartDate && (
           <ShortInfoPanel
+            label={LABELS.START_DATE}
             startDate={startDate}
             registrationEndDate={registrationEndDate}
             language={language}
@@ -69,14 +70,11 @@ export const CourseCard = ({
           <div>
             <DateSimple
               label={LABELS.MENTOR_ACTIVITIES}
-              labelSeparator={
-                personalMentoringStartDate ? LABELS.MENTORING_DATES_SEPARATOR : TO_BE_DETERMINED
-              }
-              startDate={personalMentoringStartDate}
-              endDate={personalMentoringEndDate}
+              labelSeparator={LABELS.MENTORING_DATES_SEPARATOR}
+              startDate={personalMentoringStartDate || TO_BE_DETERMINED}
+              endDate={personalMentoringStartDate ? personalMentoringEndDate : null}
             />
             <ShortInfoPanel
-              label={null}
               startDate={null}
               registrationEndDate={null}
               language={language}

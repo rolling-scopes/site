@@ -13,9 +13,17 @@ const cx = classNames.bind(styles);
 type DateStartProps = {
   startDate: string | null;
   endDate?: string | null;
-  label?: string | null;
-  labelSeparator?: string | null;
+  label?: string;
+  labelSeparator?: string;
   children?: React.ReactNode;
+};
+
+const formatDateAttr = (date: string | null | undefined): string | undefined => {
+  if (!date || date === TO_BE_DETERMINED) {
+    return undefined;
+  }
+
+  return dayJS(date).toISOString();
 };
 
 export const DateSimple = ({
@@ -25,27 +33,23 @@ export const DateSimple = ({
   labelSeparator,
   children,
 }: DateStartProps) => {
-  let startDateAttr = undefined;
-  let endDateAttr = undefined;
-
-  if (startDate && startDate !== TO_BE_DETERMINED) {
-    startDateAttr = dayJS(startDate).toISOString();
-  }
-
-  if (endDate && endDate !== TO_BE_DETERMINED) {
-    endDateAttr = dayJS(endDate).toISOString();
-  }
+  const startDateAttr = formatDateAttr(startDate);
+  const endDateAttr = formatDateAttr(endDate);
 
   return (
     <p className={cx('date')}>
-      {label && <Image className={cx('icon')} src={noteIcon} alt="note-icon" />}
-      {label && <span>{label}</span>}
+      {label && (
+        <>
+          <Image className={cx('icon')} src={noteIcon} alt="note-icon" />
+          <span>{label}</span>
+        </>
+      )}
       {startDate && (
         <time dateTime={startDateAttr} data-testid="date-time-start">
           {startDate}
         </time>
       )}
-      {labelSeparator && <span>{labelSeparator}</span>}
+      {labelSeparator && endDate && <span>{labelSeparator}</span>}
       {endDate && (
         <time dateTime={endDateAttr} data-testid="date-time-end">
           {endDate}
