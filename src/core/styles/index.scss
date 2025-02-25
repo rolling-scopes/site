@@ -114,12 +114,15 @@ figure {
   }
 
   .carousel-slider {
-    .control-next,
-    .control-prev {
+    .control-arrow.control-next,
+    .control-arrow.control-prev {
       --slider-arrow-btn-height: 45px;
 
-      top: calc(50% - var(--slider-arrow-btn-height) / 2) !important;
+      top: calc(50% - var(--slider-arrow-btn-height) / 2);
+    }
 
+    .control-next,
+    .control-prev {
       display: flex;
       align-items: center;
       justify-content: center;
