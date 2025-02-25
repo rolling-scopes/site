@@ -27,6 +27,7 @@ export const DocDetail = (props: DocDetailProps) => {
         className={props.className}
         href={props.linkDocs}
         external
+        highContrast
       >
         {props.textLink}
       </LinkCustom>

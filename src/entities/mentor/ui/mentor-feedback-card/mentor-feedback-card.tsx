@@ -39,7 +39,7 @@ export const MentorFeedbackCard = ({ name, course, review, photo }: MentorFeedba
           data-testid="mentor-photo"
         />
         <header className={cx('card-header')}>
-          <Subtitle color="black" fontSize="small" className={cx('card-title')} data-testid="card-title">
+          <Subtitle fontSize="small" className={cx('card-title')} data-testid="card-title">
             {name}
           </Subtitle>
           <h4 className={cx('card-subtitle')} data-testid="card-subtitle">

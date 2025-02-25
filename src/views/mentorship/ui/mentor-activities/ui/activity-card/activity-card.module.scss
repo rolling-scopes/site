@@ -5,9 +5,9 @@
 
   max-width: 624px;
   padding: 32px;
-
   border: 1px solid hsla(from $color-yellow h s l / $opacity-8);
   border-radius: 12px;
+
   box-shadow: 0 4px 8px 0 hsla(from $color-black h s l / $opacity-10);
 
   .card-description {
@@ -29,15 +29,11 @@
 
       width: 20px;
       height: 20px;
+      border-radius: 100%;
 
       background: $color-blue-background-100;
       filter: blur(8px);
-      border-radius: 100%;
     }
-  }
-
-  .gray-link {
-    color: $color-gray-600;
   }
 
   @include media-tablet {

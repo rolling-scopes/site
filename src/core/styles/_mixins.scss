@@ -54,11 +54,11 @@
 
   width: 256px;
   height: 248px;
+  border-radius: 100%;
 
   opacity: 0.5;
   background-color: $bg-color;
   filter: blur(32px);
-  border-radius: 100%;
 
   @if $isHovered {
     right: -130px;
