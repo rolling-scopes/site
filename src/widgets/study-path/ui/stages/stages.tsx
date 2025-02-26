@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 
+import type { StageCardProps } from '../stage-card/stage-card';
 import { StageCard } from '../stage-card/stage-card';
-import type { StageCardProps } from '@/widgets/study-path/types';
 
 import styles from './stages.module.scss';
 

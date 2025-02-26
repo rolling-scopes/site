@@ -20,9 +20,9 @@ describe('StudyPath Component', () => {
     expect(stagesContainer).toBeVisible();
 
     expect(title).toBeVisible();
-    expect(title.innerText).toBe(sectionTitle.innerText);
+    expect(title).toHaveTextContent(sectionTitle.innerHTML);
 
     expect(intro).toBeVisible();
-    expect(intro.innerHTML).toBe(sectionIntro.innerHTML);
+    expect(intro).toHaveTextContent(sectionIntro.innerHTML);
   });
 });

@@ -1,14 +1,33 @@
 import classNames from 'classnames/bind';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 import { List } from '@/shared/ui/list';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
-import type { StageCardProps } from '@/widgets/study-path/types';
+import { LinkList } from '@/widgets/required';
 
 import styles from './stage-card.module.scss';
 
 const cx = classNames.bind(styles);
+
+export type StageCardProps = {
+  id: number;
+  title: string;
+  intro: string;
+  modules: StageModuleProps[];
+  image: {
+    src: StaticImageData | null;
+    alt: string;
+    className: string | '';
+  };
+};
+
+type StageModuleProps = {
+  id: number;
+  text: string;
+  links: LinkList;
+  marked: boolean;
+};
 
 export const StageCard = ({
   id,

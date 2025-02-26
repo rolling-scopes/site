@@ -1,9 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import { StageCard } from './stage-card';
+import { StageCard, type StageCardProps } from './stage-card';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
-import { StageCardProps } from '@/widgets/study-path/types';
 
 const mockProps: StageCardProps = {
   id: 1,
@@ -55,21 +54,21 @@ describe('StageCard component', () => {
     const stageStep = screen.getByTestId('stage-step');
 
     expect(stageStep).toBeVisible();
-    expect(stageStep.innerHTML).toBe(mockProps.id.toString());
+    expect(stageStep).toHaveTextContent(mockProps.id.toString());
   });
 
   it('displays correct title', () => {
     const title = screen.getByTestId('subtitle');
 
     expect(title).toBeVisible();
-    expect(title.innerHTML).toBe(mockProps.title);
+    expect(title).toHaveTextContent(mockProps.title);
   });
 
   it('displays correct intro', () => {
     const intro = screen.getByTestId('paragraph');
 
     expect(intro).toBeVisible();
-    expect(intro.innerHTML).toBe(mockProps.intro);
+    expect(intro).toHaveTextContent(mockProps.intro);
   });
 
   it('displays correct all modules (unmarked)', () => {
@@ -81,7 +80,7 @@ describe('StageCard component', () => {
 
     modules.forEach((item, i) => {
       expect(item).toBeVisible();
-      expect(item.innerHTML).toBe(mockProps.modules[i].text);
+      expect(item).toHaveTextContent(mockProps.modules[i].text);
     });
   });
 
@@ -95,7 +94,7 @@ describe('StageCard component', () => {
         const { title, link } = mockProps.modules[i].links[j];
 
         expect(itemLink).toBeVisible();
-        expect(itemLink.innerHTML).toBe(title);
+        expect(itemLink).toHaveTextContent(title);
         expect(itemLink).toHaveAttribute('href', link);
         expect(itemLink.className).not.toContain('external');
       });
