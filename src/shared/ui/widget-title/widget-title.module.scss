@@ -1,5 +1,6 @@
 .widget-title {
-  font-weight: $font-weight-medium;
+  font-weight: $font-weight-bold;
+  color: $color-gray-900;
   letter-spacing: -0.04em;
 
   &::before {

@@ -1,5 +1,6 @@
 .subtitle {
   margin: 0;
+  color: $color-gray-900;
 
   &.extra-small-font-size {
     font-size: 20px;
@@ -49,14 +50,6 @@
       font-size: 32px;
       line-height: 36px;
     }
-  }
-
-  &.gray-600 {
-    color: $color-gray-600;
-  }
-
-  &.black {
-    color: $color-black;
   }
 
   &.normal {

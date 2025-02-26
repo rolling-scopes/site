@@ -6,8 +6,8 @@
 
   max-width: 700px;
   padding: 40px 32px 40px 32px;
-
   border-radius: 16px;
+
   box-shadow: 0 4px 16px 0 rgb(0 0 0 / 12%);
 
   .card-picture {
@@ -51,7 +51,6 @@
     font-size: 16px;
     font-weight: $font-weight-regular;
     line-height: 24px;
-    color: $color-gray-600;
   }
 
   @include media-tablet-large {
