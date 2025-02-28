@@ -96,9 +96,7 @@ describe('DateSimple', () => {
 
     render(
       <DateSimple startDate={startDate}>
-        <>
-          <span>{additionalInfoText}</span>
-        </>
+        <span>{additionalInfoText}</span>
       </DateSimple>,
     );
 
