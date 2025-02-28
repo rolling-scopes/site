@@ -30,7 +30,6 @@ export const MentorsRegister = ({ lang = 'en' }: MentorsRegisterProps) => {
             <DocDetail
               textBeforeLink={mentorDocsData[lang].mentor.textBeforeLink}
               textLink={mentorDocsData[lang].mentor.textLink}
-              className={cx('gray-link')}
               textAfterLink={`${mentorDocsData[lang].mentor.textAfterLink} ${mentorDocsData[lang].mentor.textAfterCourseName}`}
               linkDocs={mentorshipCoursesDefault.links.mentorDocs}
             />
