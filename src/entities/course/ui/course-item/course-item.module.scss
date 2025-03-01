@@ -20,14 +20,13 @@
   }
 
   .course-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
     width: 100%;
 
-    .date {
-      margin-top: 8px;
-      margin-bottom: 0;
-      font-size: 14px;
-      line-height: 20px;
-    }
+    line-height: 20px;
   }
 
   .details-link {

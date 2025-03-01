@@ -32,6 +32,8 @@ export const courses: Course[] = [
       backgroundColor: '#FFFCE9',
       accentColor: '#FFDB20',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '2',
@@ -53,6 +55,8 @@ export const courses: Course[] = [
       backgroundColor: '#FFFCE9',
       accentColor: '#FFDB20',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '3',
@@ -74,6 +78,8 @@ export const courses: Course[] = [
       backgroundColor: '#FFFCE9',
       accentColor: '#FFDB20',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '4',
@@ -94,6 +100,8 @@ export const courses: Course[] = [
       backgroundColor: '#EAF8FE',
       accentColor: '#2BB4EF',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '5',
@@ -114,6 +122,8 @@ export const courses: Course[] = [
       backgroundColor: '#FFEFF2',
       accentColor: '#F95879',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '6',
@@ -134,6 +144,8 @@ export const courses: Course[] = [
       backgroundColor: '#F0F9F4',
       accentColor: '#AEDF36',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '7',
@@ -154,6 +166,8 @@ export const courses: Course[] = [
       backgroundColor: '#F4F1FA',
       accentColor: '#7356BF',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
 
   {
@@ -175,6 +189,8 @@ export const courses: Course[] = [
       backgroundColor: '#F4F1FA',
       accentColor: '#7356BF',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '9',
@@ -195,5 +211,7 @@ export const courses: Course[] = [
       backgroundColor: '#F4F1FA',
       accentColor: '#7356BF',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
 ];
