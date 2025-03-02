@@ -85,4 +85,4 @@ $opacity-0: 0;
 
 // Easing functions
 $ease-in-cubic: cubic-bezier(0.32, 0, 0.67, 0);
-$ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+$standard-decelerate: cubic-bezier(0, 0, 0, 1);
