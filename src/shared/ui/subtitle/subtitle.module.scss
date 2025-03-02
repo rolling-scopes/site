@@ -52,6 +52,14 @@
     }
   }
 
+  &.light {
+    font-weight: $font-weight-light;
+  }
+
+  &.regular {
+    font-weight: $font-weight-regular;
+  }
+
   &.normal {
     font-weight: $font-weight-medium;
   }

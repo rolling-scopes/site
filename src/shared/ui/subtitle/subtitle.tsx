@@ -21,6 +21,8 @@ const subtitleVariants = cva(cx('subtitle'), {
       'extra-large': cx('extra-large-font-size'),
     },
     weight: {
+      light: cx('light'),
+      regular: cx('regular'),
       normal: cx('normal'),
       bold: cx('bold'),
     },
