@@ -25,15 +25,6 @@
     }
   }
 
-  @include media-tablet {
-    width: 100dvw;
-    max-width: unset !important;
-    height: 100dvh;
-    max-height: unset;
-    padding: 0 16px;
-    border-radius: 0;
-  }
-
   @include media-tablet-large {
     max-width: revert;
   }
@@ -74,6 +65,17 @@
     100% {
       opacity: 0;
     }
+  }
+}
+
+@include media-tablet {
+  dialog.modal {
+    width: 100dvw;
+    max-width: unset;
+    height: 100dvh;
+    max-height: unset;
+    padding: 0 16px;
+    border-radius: 0;
   }
 }
 
