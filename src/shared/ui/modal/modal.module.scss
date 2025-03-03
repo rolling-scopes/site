@@ -10,6 +10,8 @@
 
   line-height: 24px;
 
+  outline: none;
+
   animation: modal-fade-in 450ms $standard-decelerate both;
 
   &::backdrop {
