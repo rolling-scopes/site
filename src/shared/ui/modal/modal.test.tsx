@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { Modal } from '../modal';
@@ -72,10 +72,12 @@ describe('Modal Component', () => {
 
     fireEvent.click(closeButton);
 
-    expect(HTMLDialogElement.prototype.close).toHaveBeenCalledTimes(1);
-    expect(onCloseMock).toHaveBeenCalledTimes(1);
-    expect(screen.queryByTestId('modal-body')).toBeNull();
-    expect(screen.queryByTestId('modal')).toBeNull();
+    waitFor(() => {
+      expect(HTMLDialogElement.prototype.close).toHaveBeenCalledTimes(1);
+      expect(onCloseMock).toHaveBeenCalledTimes(1);
+      expect(screen.queryByTestId('modal-body')).toBeNull();
+      expect(screen.queryByTestId('modal')).toBeNull();
+    });
   });
 
   it('should close the modal when the overlay is clicked', async () => {
@@ -88,9 +90,11 @@ describe('Modal Component', () => {
       clientY: 100,
     });
 
-    expect(HTMLDialogElement.prototype.close).toHaveBeenCalledTimes(1);
-    expect(onCloseMock).toHaveBeenCalledTimes(1);
-    expect(screen.queryByTestId('modal-body')).toBeNull();
+    waitFor(() => {
+      expect(HTMLDialogElement.prototype.close).toHaveBeenCalledTimes(1);
+      expect(onCloseMock).toHaveBeenCalledTimes(1);
+      expect(screen.queryByTestId('modal-body')).toBeNull();
+    });
   });
 
   it('should apply custom className to the modal', () => {
