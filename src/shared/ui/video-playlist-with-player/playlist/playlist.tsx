@@ -2,6 +2,7 @@ import React, { CSSProperties } from 'react';
 import classNames from 'classnames/bind';
 
 import type { Video } from '@/shared/types';
+import { Subtitle } from '@/shared/ui/subtitle';
 
 import styles from './playlist.module.scss';
 
@@ -20,7 +21,7 @@ export const Playlist = ({ title, videos, onSelectVideo, selectedVideoId, style 
 
   return (
     <div className={cx('playlist')} style={style} data-testid="playlist">
-      <h3 className={cx('playlist-title')} data-testid="playlist-title">{`${videos.length} ${title}`}</h3>
+      <Subtitle className={cx('playlist-title')} data-testid="playlist-title">{`${videos.length} ${title}`}</Subtitle>
       <div className={cx('videos-container')} data-testid="videos-container">
         {videos.map((video) => (
           <div
