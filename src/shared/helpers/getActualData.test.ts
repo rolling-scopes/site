@@ -50,6 +50,8 @@ const coursesMock: Course[] = [
       accentColor: 'color',
     },
     iconFooter: MOCKED_IMAGE_PATH,
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '2',
@@ -83,6 +85,8 @@ const coursesMock: Course[] = [
       accentColor: 'color',
     },
     iconFooter: MOCKED_IMAGE_PATH,
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '3',
@@ -116,6 +120,8 @@ const coursesMock: Course[] = [
       accentColor: 'color',
     },
     iconFooter: MOCKED_IMAGE_PATH,
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
 ];
 

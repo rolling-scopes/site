@@ -9,7 +9,6 @@
   }
 }
 
-.date,
 .additional-info {
   display: flex;
   gap: 8px;
@@ -18,11 +17,8 @@
 
   margin: 0;
 
+  font-size: 14px;
   color: $color-gray-600;
-}
-
-.bold {
-  font-weight: 700;
 }
 
 .icon {

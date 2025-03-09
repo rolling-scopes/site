@@ -20,7 +20,12 @@ export const MentorshipCourses = async () => {
         <WidgetTitle>Courses That Need Mentors</WidgetTitle>
         <div className={cx('courses-list')}>
           {coursesWithMentorship.map((course) => (
-            <CourseCard key={course.id} className={cx('mentorship-course-card')} {...course} />
+            <CourseCard
+              key={course.id}
+              className={cx('mentorship-course-card')}
+              {...course}
+              showMentoringStartDate={true}
+            />
           ))}
         </div>
       </div>
