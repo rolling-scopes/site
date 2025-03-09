@@ -28,7 +28,6 @@
   .card-title {
     margin: 0;
     font-size: 24px;
-    font-weight: $font-weight-medium;
     line-height: 32px;
 
     @include media-tablet {
@@ -39,7 +38,6 @@
   .card-subtitle {
     margin: 0;
     font-size: 18px;
-    font-weight: $font-weight-medium;
     color: $color-gray-500;
 
     @include media-tablet {

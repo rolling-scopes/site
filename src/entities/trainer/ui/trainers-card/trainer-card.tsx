@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import { Trainer } from '../../types';
+import { Subtitle } from '@/shared/ui/subtitle';
 
 import styles from './trainer-card.module.scss';
 
@@ -15,8 +16,8 @@ export const TrainerCard = ({ name, bio, role, photo }: Trainer) => {
       </div>
       <div className={cx('card-text')}>
         <header>
-          <h3 className={cx('card-title')}>{name}</h3>
-          <h4 className={cx('card-subtitle')}>{role}</h4>
+          <Subtitle weight="normal" className={cx('card-title')}>{name}</Subtitle>
+          <Subtitle as="h4" weight="normal" className={cx('card-subtitle')}>{role}</Subtitle>
         </header>
         <p className={cx('card-content')}>{bio}</p>
       </div>
