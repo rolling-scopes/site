@@ -5,6 +5,7 @@ import type { StageCardProps } from './stage-card.types';
 import { Step } from './step';
 import { Topics } from './topics';
 import { List } from '@/shared/ui/list';
+import { Subtitle } from '@/shared/ui/subtitle';
 
 import './stage-card.scss';
 
@@ -23,7 +24,9 @@ export const StageCard = ({
     <div className="stage">
       <Step id={id} />
       <div className="stage-info">
-        <h2 className="stage-title">{title}</h2>
+        <Subtitle as="h2" weight="normal" className="stage-title">
+          {title}
+        </Subtitle>
         {description && <p className="stage-description">{description}</p>}
         {links && <Links links={links} />}
         {topics && <Topics topics={topics} />}

@@ -17,9 +17,7 @@
     .stage-title {
       margin: 0;
       padding: 0;
-
       font-size: 28px;
-      font-weight: $font-weight-medium;
       line-height: 32px;
 
       @include media-laptop {
