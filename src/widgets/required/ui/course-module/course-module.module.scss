@@ -1,11 +1,5 @@
 .course-module-element {
-  margin-top: 20px;
-
-  &:first-child {
-    margin-top: 0;
-  }
-
-  .course-module-title {
-    margin-bottom: 8px;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
