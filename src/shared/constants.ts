@@ -32,3 +32,5 @@ export const COURSE_LINKS = {
   AWS_CLOUD_DEVELOPER: 'https://rs.school/courses/aws-cloud-developer',
   AWS_DEVOPS: 'https://rs.school/courses/aws-devops',
 };
+
+export const KEY_CODES = { ESCAPE: 'Escape' } as const;

@@ -1,9 +1,10 @@
-import React, { ReactNode, useCallback, useEffect, useRef } from 'react';
+import React, { KeyboardEvent, ReactNode, useCallback, useEffect, useRef } from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 import { createPortal } from 'react-dom';
 
 import closeIcon from '@/shared/assets/svg/close.svg';
+import { KEY_CODES } from '@/shared/constants';
 
 import styles from './modal.module.scss';
 
@@ -18,11 +19,21 @@ type ModalProps = {
 };
 
 export const Modal = ({ isOpen, onClose, children, title, className }: ModalProps) => {
+  const scrollbarWidth = useRef(0);
   const dialogRef = useRef<HTMLDialogElement | null>(null);
 
+  const updateScrollbarWidth = (scrollbarWidth: number = 0) => {
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
+  };
+
   const handleClose = useCallback(() => {
-    dialogRef.current?.close();
-    onClose();
+    dialogRef.current?.classList.add(cx('fade-out'));
+    dialogRef.current?.addEventListener('animationend', () => {
+      dialogRef.current?.classList.remove(cx('fade-out'));
+      dialogRef.current?.close();
+      onClose();
+      updateScrollbarWidth();
+    }, { once: true });
   }, [onClose]);
 
   const handleMouseDown = useCallback(
@@ -46,6 +57,14 @@ export const Modal = ({ isOpen, onClose, children, title, className }: ModalProp
     [handleClose],
   );
 
+  const handleCloseOnEscPress = (e: KeyboardEvent<HTMLDialogElement>) => {
+    e.preventDefault();
+
+    if (e.key === KEY_CODES.ESCAPE) {
+      handleClose();
+    }
+  };
+
   useEffect(() => {
     document.addEventListener('mousedown', handleMouseDown);
 
@@ -60,8 +79,13 @@ export const Modal = ({ isOpen, onClose, children, title, className }: ModalProp
     if (isOpen && dialog) {
       dialog.showModal();
       dialog.focus();
+      updateScrollbarWidth(scrollbarWidth.current);
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    scrollbarWidth.current = window.innerWidth - document.documentElement.clientWidth;
+  }, []);
 
   if (!isOpen) {
     return null;
@@ -72,6 +96,7 @@ export const Modal = ({ isOpen, onClose, children, title, className }: ModalProp
       className={cx('modal', className)}
       ref={dialogRef}
       onClose={handleClose}
+      onKeyDown={handleCloseOnEscPress}
       data-testid="modal"
     >
       <div className={cx('modal-header', { 'no-title': !title })} data-testid="modal-header">
