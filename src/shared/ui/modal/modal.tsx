@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { createPortal } from 'react-dom';
 
 import closeIcon from '@/shared/assets/svg/close.svg';
+import { Subtitle } from '@/shared/ui/subtitle';
 
 import styles from './modal.module.scss';
 
@@ -76,9 +77,9 @@ export const Modal = ({ isOpen, onClose, children, title, className }: ModalProp
     >
       <div className={cx('modal-header', { 'no-title': !title })} data-testid="modal-header">
         {title && (
-          <h2 className={cx('modal-title')} data-testid="modal-title">
+          <Subtitle as="h2" className={cx('modal-title')} data-testid="modal-title">
             {title}
-          </h2>
+          </Subtitle>
         )}
         <button
           className={cx('modal-close-button')}
