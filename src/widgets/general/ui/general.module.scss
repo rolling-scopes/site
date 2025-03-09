@@ -12,10 +12,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-
     max-width: 380px;
-
-    color: $color-gray-600;
   }
 
   @include media-tablet {

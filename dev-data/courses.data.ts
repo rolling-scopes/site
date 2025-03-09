@@ -1,21 +1,12 @@
 import { ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
-import angularSecondary from '@/shared/assets/icons/angular-secondary.webp';
 import angular from '@/shared/assets/icons/angular.svg';
-import awsSecondary from '@/shared/assets/icons/aws-secondary.webp';
-import aws from '@/shared/assets/icons/aws.svg';
-import angularSmall from '@/shared/assets/icons/footer/angular.webp';
-import awsDevSmall from '@/shared/assets/icons/footer/aws-dev.webp';
-import awsFundSmall from '@/shared/assets/icons/footer/aws-fundamentals.webp';
-import htmlSmall from '@/shared/assets/icons/footer/html.webp';
-import jsSmall from '@/shared/assets/icons/footer/javascript.webp';
-import nodejsSmall from '@/shared/assets/icons/footer/nodejs.webp';
-import reactSmall from '@/shared/assets/icons/footer/react.webp';
-import javascript from '@/shared/assets/icons/javascript.webp';
-import jsSecondary from '@/shared/assets/icons/js-secondary.webp';
-import nodejs from '@/shared/assets/icons/node.svg';
-import nodejsSecondary from '@/shared/assets/icons/nodejs-secondary.webp';
-import reactSecondary from '@/shared/assets/icons/react-secondary.webp';
+import awsBlack from '@/shared/assets/icons/aws-black.svg';
+import awsWhite from '@/shared/assets/icons/aws-white.svg';
+import html5 from '@/shared/assets/icons/html5.svg';
+import javascriptBlack from '@/shared/assets/icons/javascript-black.svg';
+import javascript from '@/shared/assets/icons/javascript.svg';
+import nodejs from '@/shared/assets/icons/node-js.svg';
 import react from '@/shared/assets/icons/react.svg';
 import { COURSE_LINKS, TO_BE_DETERMINED } from '@/shared/constants';
 import { COURSE_TITLES } from 'data';
@@ -28,8 +19,9 @@ export const courses: Course[] = [
     descriptionUrl: COURSE_LINKS.JS_PRESCHOOL_RU,
     altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
-    iconSmall: htmlSmall,
-    secondaryIcon: jsSecondary,
+    iconSmall: html5,
+    iconFooter: html5,
+    secondaryIcon: javascriptBlack,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'ru',
@@ -40,6 +32,8 @@ export const courses: Course[] = [
       backgroundColor: '#FFFCE9',
       accentColor: '#FFDB20',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '2',
@@ -48,8 +42,9 @@ export const courses: Course[] = [
     descriptionUrl: COURSE_LINKS.JS_EN,
     altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
-    iconSmall: jsSmall,
-    secondaryIcon: jsSecondary,
+    iconSmall: javascript,
+    iconFooter: javascript,
+    secondaryIcon: javascriptBlack,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
@@ -60,6 +55,8 @@ export const courses: Course[] = [
       backgroundColor: '#FFFCE9',
       accentColor: '#FFDB20',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '3',
@@ -68,8 +65,9 @@ export const courses: Course[] = [
     descriptionUrl: COURSE_LINKS.JS_RU,
     altTitle: 'JavaScript / Front-end',
     iconSrc: javascript,
-    iconSmall: jsSmall,
-    secondaryIcon: jsSecondary,
+    iconSmall: javascript,
+    iconFooter: javascript,
+    secondaryIcon: javascriptBlack,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'ru',
@@ -80,6 +78,8 @@ export const courses: Course[] = [
       backgroundColor: '#FFFCE9',
       accentColor: '#FFDB20',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '4',
@@ -87,8 +87,9 @@ export const courses: Course[] = [
     subTitle: null,
     descriptionUrl: COURSE_LINKS.REACT,
     iconSrc: react,
-    iconSmall: reactSmall,
-    secondaryIcon: reactSecondary,
+    iconSmall: react,
+    iconFooter: react,
+    secondaryIcon: react,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
@@ -99,6 +100,8 @@ export const courses: Course[] = [
       backgroundColor: '#EAF8FE',
       accentColor: '#2BB4EF',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '5',
@@ -106,8 +109,9 @@ export const courses: Course[] = [
     subTitle: null,
     descriptionUrl: COURSE_LINKS.ANGULAR,
     iconSrc: angular,
-    iconSmall: angularSmall,
-    secondaryIcon: angularSecondary,
+    iconSmall: angular,
+    iconFooter: angular,
+    secondaryIcon: angular,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
@@ -118,6 +122,8 @@ export const courses: Course[] = [
       backgroundColor: '#FFEFF2',
       accentColor: '#F95879',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '6',
@@ -125,8 +131,9 @@ export const courses: Course[] = [
     subTitle: null,
     descriptionUrl: COURSE_LINKS.NODE,
     iconSrc: nodejs,
-    iconSmall: nodejsSmall,
-    secondaryIcon: nodejsSecondary,
+    iconSmall: nodejs,
+    iconFooter: nodejs,
+    secondaryIcon: nodejs,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
@@ -137,15 +144,18 @@ export const courses: Course[] = [
       backgroundColor: '#F0F9F4',
       accentColor: '#AEDF36',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '7',
     title: COURSE_TITLES.AWS_FUNDAMENTALS,
     subTitle: null,
     descriptionUrl: COURSE_LINKS.AWS_FUNDAMENTALS,
-    iconSrc: aws,
-    iconSmall: awsFundSmall,
-    secondaryIcon: awsSecondary,
+    iconSrc: awsBlack,
+    iconSmall: awsBlack,
+    iconFooter: awsWhite,
+    secondaryIcon: awsBlack,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
@@ -156,6 +166,8 @@ export const courses: Course[] = [
       backgroundColor: '#F4F1FA',
       accentColor: '#7356BF',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
 
   {
@@ -163,9 +175,10 @@ export const courses: Course[] = [
     title: COURSE_TITLES.AWS_CLOUD_DEVELOPER,
     subTitle: null,
     descriptionUrl: COURSE_LINKS.AWS_CLOUD_DEVELOPER,
-    iconSrc: aws,
-    iconSmall: awsDevSmall,
-    secondaryIcon: awsSecondary,
+    iconSrc: awsBlack,
+    iconSmall: awsBlack,
+    secondaryIcon: awsBlack,
+    iconFooter: awsWhite,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
@@ -176,15 +189,18 @@ export const courses: Course[] = [
       backgroundColor: '#F4F1FA',
       accentColor: '#7356BF',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
   {
     id: '9',
     title: COURSE_TITLES.AWS_DEVOPS,
     subTitle: null,
     descriptionUrl: COURSE_LINKS.AWS_DEVOPS,
-    iconSrc: aws,
-    iconSmall: awsDevSmall,
-    secondaryIcon: awsSecondary,
+    iconSrc: awsBlack,
+    iconSmall: awsBlack,
+    secondaryIcon: awsBlack,
+    iconFooter: awsWhite,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
@@ -195,5 +211,7 @@ export const courses: Course[] = [
       backgroundColor: '#F4F1FA',
       accentColor: '#7356BF',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   },
 ];

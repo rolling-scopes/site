@@ -63,6 +63,7 @@ $color-aws-bg: hsl(260deg 47% 96%); // #F4F1FA
 $color-aws-accent: hsl(257deg 45% 54%); // #7356BF
 
 // Secondary font colors
+$color-gray-900: hsl(210deg 7% 11%); // #191b1d
 $color-gray-600: hsl(0deg 0% 33%); // #545454
 $color-gray-500: hsl(0deg 0% 46%); // #757575
 $color-gray-400: hsl(0deg 0% 69%); // #afafaf
@@ -82,3 +83,7 @@ $opacity-20: 0.2;
 $opacity-10: 0.1;
 $opacity-8: 0.08;
 $opacity-0: 0;
+
+// Easing functions
+$ease-in-cubic: cubic-bezier(0.32, 0, 0.67, 0);
+$standard-decelerate: cubic-bezier(0, 0, 0, 1);

@@ -3,8 +3,10 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import type { Course } from '../../types';
-import { DateLang } from '@/shared/ui/date-lang';
+import { LABELS, TO_BE_DETERMINED } from '@/shared/constants';
+import { DateSimple } from '@/shared/ui/date-simple';
 import { LinkCustom } from '@/shared/ui/link-custom';
+import { ShortInfoPanel } from '@/shared/ui/short-info-panel';
 import { Subtitle } from '@/shared/ui/subtitle';
 
 import styles from './course-card.module.scss';
@@ -21,7 +23,11 @@ export type CourseCardProps = Pick<
   | 'language'
   | 'backgroundStyle'
   | 'registrationEndDate'
-> & Pick<HTMLProps<HTMLDivElement>, 'className'>;
+  | 'personalMentoringStartDate'
+  | 'personalMentoringEndDate'
+> & {
+  showMentoringStartDate?: boolean;
+} & Pick<HTMLProps<HTMLDivElement>, 'className'>;
 
 export const CourseCard = ({
   title,
@@ -33,6 +39,9 @@ export const CourseCard = ({
   language,
   backgroundStyle,
   className,
+  personalMentoringStartDate,
+  personalMentoringEndDate,
+  showMentoringStartDate = false,
 }: CourseCardProps) => {
   const { backgroundColor, accentColor } = backgroundStyle;
 
@@ -48,12 +57,31 @@ export const CourseCard = ({
         <Subtitle fontSize="small">{title}</Subtitle>
       </div>
       <div className={cx('course-info')}>
-        <DateLang
-          startDate={startDate}
-          registrationEndDate={registrationEndDate}
-          language={language}
-          mode={mode}
-        />
+        {!showMentoringStartDate && (
+          <ShortInfoPanel
+            label={LABELS.START_DATE}
+            startDate={startDate}
+            registrationEndDate={registrationEndDate}
+            language={language}
+            mode={mode}
+          />
+        )}
+        {showMentoringStartDate && (
+          <div>
+            <DateSimple
+              label={LABELS.MENTOR_ACTIVITIES}
+              labelSeparator={LABELS.MENTORING_DATES_SEPARATOR}
+              startDate={personalMentoringStartDate || TO_BE_DETERMINED}
+              endDate={personalMentoringStartDate ? personalMentoringEndDate : null}
+            />
+            <ShortInfoPanel
+              startDate={null}
+              registrationEndDate={null}
+              language={language}
+              mode={mode}
+            />
+          </div>
+        )}
         <LinkCustom
           href={detailsUrl}
           variant="rounded"

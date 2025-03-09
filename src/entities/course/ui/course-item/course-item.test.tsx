@@ -25,13 +25,13 @@ describe('CourseItem Component', () => {
 
   it('renders the component data as expected', () => {
     const titleElement = screen.getByText(mockedProps.title);
-    const languageInitial = mockedProps.language[0].toUpperCase();
+    const languageInitial = mockedProps.language[0];
     const dateElement = screen.getByTestId('course-language');
-    const courseDate = screen.getByTestId('course-date');
+    const courseDate = screen.getByTestId('date-time-start');
 
     expect(titleElement).toBeInTheDocument();
     expect(dateElement).toBeInTheDocument();
-    expect(dateElement).toHaveTextContent(`• ${languageInitial}`);
+    expect(dateElement).toHaveTextContent(`${languageInitial}`);
     expect(courseDate).toHaveAttribute('datetime', expectedDate);
   });
 
