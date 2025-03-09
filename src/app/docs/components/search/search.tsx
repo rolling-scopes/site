@@ -137,7 +137,7 @@ function Result({ result }: { result: PagefindSearchResult }) {
           {data.sub_results.map((subresult, index) => (
             <div key={index} className={cx('subresult')}>
               <Link href={removeHtmlExtension(subresult.url)}>
-                <h4>{subresult.title}</h4>
+                <Subtitle>{subresult.title}</Subtitle>
                 <p dangerouslySetInnerHTML={{ __html: subresult.excerpt }} />
               </Link>
             </div>

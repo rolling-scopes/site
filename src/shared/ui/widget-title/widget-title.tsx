@@ -2,6 +2,8 @@ import { HTMLAttributes } from 'react';
 import { type VariantProps, cva } from 'class-variance-authority';
 import classNames from 'classnames/bind';
 
+import { Subtitle } from '@/shared/ui/subtitle';
+
 import styles from './widget-title.module.scss';
 
 type WidgetTitleProps = Pick<HTMLAttributes<HTMLHeadingElement>, 'className' | 'children' | 'id'> &
@@ -29,7 +31,8 @@ const widgetTitleVariants = cva(cx('widget-title'), {
 
 export const WidgetTitle = ({ children, size, mods, className }: WidgetTitleProps) => {
   return (
-    <h2
+    <Subtitle
+      as="h2"
       className={widgetTitleVariants({
         size,
         mods,
@@ -38,6 +41,6 @@ export const WidgetTitle = ({ children, size, mods, className }: WidgetTitleProp
       data-testid="widget-title"
     >
       {children}
-    </h2>
+    </Subtitle>
   );
 };
