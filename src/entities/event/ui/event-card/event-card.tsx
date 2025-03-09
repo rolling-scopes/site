@@ -34,7 +34,7 @@ export const EventCard = ({
           <Subtitle as="h4" weight="regular" className={cx('organized-by')}>
             {organizedBy}
           </Subtitle>
-          <Subtitle as="h3" weight="normal" className={cx('event-organization')}>
+          <Subtitle weight="normal" className={cx('event-organization')}>
             {organization}
           </Subtitle>
         </section>
