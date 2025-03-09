@@ -44,20 +44,6 @@ describe('Subtitle component', () => {
     });
   });
 
-  it('applies gray color class by default', () => {
-    render(<Subtitle>Default Color</Subtitle>);
-    const subtitle = screen.getByTestId('subtitle');
-
-    expect(subtitle).toHaveClass(cx('gray-600'));
-  });
-
-  it('applies black color class when specified', () => {
-    render(<Subtitle color="black">Black Color</Subtitle>);
-    const subtitle = screen.getByTestId('subtitle');
-
-    expect(subtitle).toHaveClass(cx('black'));
-  });
-
   it('applies custom className when provided', () => {
     render(<Subtitle className="custom-class">Custom Class</Subtitle>);
     const subtitle = screen.getByTestId('subtitle');
@@ -67,14 +53,13 @@ describe('Subtitle component', () => {
 
   it('applies multiple variant classes correctly', () => {
     render(
-      <Subtitle fontSize="large" color="black" className="custom-class">
+      <Subtitle fontSize="large" className="custom-class">
         Multiple Variants
       </Subtitle>,
     );
     const subtitle = screen.getByTestId('subtitle');
 
     expect(subtitle).toHaveClass(cx('large-font-size'));
-    expect(subtitle).toHaveClass(cx('black'));
     expect(subtitle).toHaveClass('custom-class');
   });
 

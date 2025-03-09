@@ -13,14 +13,14 @@
   font-size: 14px;
   font-weight: $font-weight-medium;
   line-height: 16px;
-  color: $color-gray-600;
+  color: $color-gray-900;
   text-align: center;
   text-decoration: none;
 
   figure {
     display: flex;
-    background-color: $color-gray-200;
     border-radius: 50%;
+    background-color: $color-gray-200;
     transition: $transition-social;
 
     > img {
