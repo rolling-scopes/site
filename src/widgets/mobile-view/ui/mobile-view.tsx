@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
 import { ANCHORS, ROUTES } from '@/core/const';
@@ -23,9 +24,14 @@ type MobileViewProps = {
   onClose?: () => void;
 };
 
+type CourseIconSrc = {
+  [K in keyof Course]: Course[K] extends StaticImageData ? K : never;
+}[keyof Course];
+
 export const MobileView = ({ type, courses, onClose }: MobileViewProps) => {
   const color = type === 'header' ? 'dark' : 'light';
   const logoView = type === 'header' ? null : 'with-border';
+  const courseIcon: CourseIconSrc = type === 'header' ? 'iconSmall' : 'iconFooter';
 
   return (
     <nav className={cx('mobile-view')} data-testid="mobile-view">
@@ -60,7 +66,7 @@ export const MobileView = ({ type, courses, onClose }: MobileViewProps) => {
         {courses.map((course) => (
           <SchoolMenu.Item
             key={course.id}
-            icon={course.iconSmall}
+            icon={course[courseIcon]}
             title={course.title}
             description={course.startDate}
             url={course.detailsUrl}
