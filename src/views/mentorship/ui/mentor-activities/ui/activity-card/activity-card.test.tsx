@@ -48,7 +48,7 @@ describe('ActivityCard component', () => {
     links.forEach((link, i) => {
       expect(link).toBeVisible();
       expect(link).toHaveAttribute('href', mockProps.links[i].href);
-      expect(link.innerHTML).toBe(mockProps.links[i].linkTitle);
+      expect(link).toHaveTextContent(mockProps.links[i].linkTitle);
     });
   });
 });
