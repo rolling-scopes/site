@@ -10,6 +10,8 @@
     "scss/load-no-partial-leading-underscore": null,
     "scss/double-slash-comment-empty-line-before": null,
 
+    "scss/dollar-variable-colon-space-after": null,
+
     "scss/dollar-variable-empty-line-before": [
       "always",
       {
