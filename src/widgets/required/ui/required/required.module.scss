@@ -7,9 +7,7 @@
     gap: 8rem;
 
     .course-module-elements-column {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
+      flex: 1;
 
       @include media-tablet {
         max-width: 100%;
