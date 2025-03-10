@@ -44,31 +44,35 @@ $color-blue-100: hsl(198deg 100% 80%); // #9be1ff
 $color-blue-300: hsl(198deg 95% 62%); // #41c3fa
 $color-blue-500: hsl(211deg 100% 50%); // #007bff
 $color-blue-600: hsl(211deg 100% 40%); // #0969da
-$color-blue-700: hsl(211deg 100% 30%); // #004CA3
+$color-blue-700: hsl(211deg 100% 30%); // #004ca3
 $color-blue-background-100: hsl(198deg 100% 80%); // #9be1ff
+
+// Gray colors
+$color-gray-900: hsl(210deg 7% 11%); // #191b1d;
+$color-gray-800: hsl(216deg 4% 23%); // #393b3e;
+$color-gray-700: hsl(204deg 3% 35%); // #575a5c;
+$color-gray-600: hsl(216deg 2% 43%); // #6b6d70;
+$color-gray-500: hsl(204deg 2% 59%); // #939698;
+$color-gray-400: hsl(204deg 3% 71%); // #b3b6b8;
+$color-gray-300: hsl(216deg 7% 85%); // #d7d9dc;
+$color-gray-200: hsl(210deg 14% 91%); // #e6e9ec;
+$color-gray-100: hsl(216deg 20% 95%); // #f0f2f5;
+$color-gray-50: hsl(210deg 50% 98%); // #f6f9fc;
 
 // Gradient colors
 $gradient-blue-background: linear-gradient(90deg, $color-blue-100, $color-blue-300);
 
 // Technologies theme colors
-$color-js-bg: hsl(52deg 100% 96%); // #FFFCE9
-$color-js-accent: hsl(50deg 100% 56%); // #FFDB20
-$color-react-bg: hsl(198deg 91% 96%); // #EAF8FE
-$color-react-accent: hsl(198deg 86% 55%); // #2BB4EF
-$color-angular-bg: hsl(349deg 100% 97%); // #FFEFF2
-$color-angular-accent: hsl(348deg 93% 66%); // #F95879
-$color-node-bg: hsl(147deg 43% 96%); // #F0F9F4
-$color-node-accent: hsl(77deg 73% 54%); // #AEDF36
-$color-aws-bg: hsl(260deg 47% 96%); // #F4F1FA
-$color-aws-accent: hsl(257deg 45% 54%); // #7356BF
-
-// Secondary font colors
-$color-gray-900: hsl(210deg 7% 11%); // #191b1d
-$color-gray-600: hsl(0deg 0% 33%); // #545454
-$color-gray-500: hsl(0deg 0% 46%); // #757575
-$color-gray-400: hsl(0deg 0% 69%); // #afafaf
-$color-gray-200: hsl(0deg 0% 90%); // #e6e6e6
-$color-gray-100: hsl(0deg 0% 95%); // #f2f2f2
+$color-js-bg: hsl(52deg 100% 96%); // #fffce9
+$color-js-accent: hsl(50deg 100% 56%); // #ffdb20
+$color-react-bg: hsl(198deg 91% 96%); // #eaf8fe
+$color-react-accent: hsl(198deg 86% 55%); // #2bb4ef
+$color-angular-bg: hsl(349deg 100% 97%); // #ffeff2
+$color-angular-accent: hsl(348deg 93% 66%); // #f95879
+$color-node-bg: hsl(147deg 43% 96%); // #f0f9f4
+$color-node-accent: hsl(77deg 73% 54%); // #aedf36
+$color-aws-bg: hsl(260deg 47% 96%); // #f4f1fa
+$color-aws-accent: hsl(257deg 45% 54%); // #7356bf
 
 // Link color
 $color-blue: hsl(202deg 89% 65%);
