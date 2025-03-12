@@ -17,6 +17,13 @@ const localizedContent = {
       "To earn a course certificate, you must complete all assignments, finish the final project, and achieve at least 70% of the top student's score in the course. The certificate is a recognition of your hard work and dedication.",
     secondParagraph: '',
   },
+  [COURSE_TITLES.JS_EN]: {
+    title: 'Сертификат',
+    firstParagraph:
+      "To earn a course certificate, you must complete all assignments and the final project, achieving a score that demonstrates a confident understanding of the material. The threshold is typically around 70% of the top student's score in the course.",
+    secondParagraph:
+      'gA higher percentage reflects a deeper understanding. The certificate recognizes your knowledge and dedication.',
+  },
   [COURSE_TITLES.JS_RU]: {
     title: 'Сертификат',
     firstParagraph:
