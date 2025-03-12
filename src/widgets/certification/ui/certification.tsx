@@ -22,7 +22,7 @@ const localizedContent = {
     firstParagraph:
       "To earn a course certificate, you must complete all assignments and the final project, achieving a score that demonstrates a confident understanding of the material. The threshold is typically around 70% of the top student's score in the course.",
     secondParagraph:
-      'gA higher percentage reflects a deeper understanding. The certificate recognizes your knowledge and dedication.',
+      'A higher percentage reflects a deeper understanding. The certificate recognizes your knowledge and dedication.',
   },
   [COURSE_TITLES.JS_RU]: {
     title: 'Сертификат',
