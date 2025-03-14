@@ -27,6 +27,7 @@ export const NavItem = ({ label, href, children }: NavItemProps) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const dropdownToggleRef = useRef<HTMLButtonElement>(null);
+  const linkRef = useRef<HTMLAnchorElement>(null);
 
   const onClose = () => setDropdownOpen(false);
   const onOpen = () => setDropdownOpen(true);
@@ -38,18 +39,21 @@ export const NavItem = ({ label, href, children }: NavItemProps) => {
     : pathname?.includes(href.replaceAll(ROUTES.HOME, ''));
   const linkHref = isHrefHome ? href : `/${href}`;
 
-  const handleConfirmKeyPress = (e: KeyboardEvent<HTMLButtonElement>) => {
-    if (e.code === 'Enter' || e.code === 'Space') {
-      e.preventDefault();
-      setDropdownOpen((prev) => !prev);
-    }
-  };
-
   const handleEscKeyPress = (e: KeyboardEvent<HTMLElement>) => {
     if (e.code === 'Escape') {
       onClose();
       dropdownToggleRef.current?.focus();
     }
+  };
+
+  const handleConfirmKeyPress = (e: KeyboardEvent<HTMLElement>) => {
+    if (e.code === 'Enter' || e.code === 'Space') {
+      e.preventDefault();
+      setDropdownOpen((prev) => !prev);
+
+      linkRef.current?.click();
+    }
+    handleEscKeyPress(e);
   };
 
   const handleBlur = (e: FocusEvent<HTMLDivElement>) => {
@@ -66,10 +70,11 @@ export const NavItem = ({ label, href, children }: NavItemProps) => {
     <div
       className={cx('menu-item-wrapper')}
       onBlur={handleBlur}
-      onKeyDown={handleEscKeyPress}
+      onKeyDown={handleConfirmKeyPress}
       data-testid="menu-item"
     >
       <Link
+        ref={linkRef}
         href={linkHref}
         className={cx(
           'menu-item',
@@ -83,10 +88,10 @@ export const NavItem = ({ label, href, children }: NavItemProps) => {
         <span className={cx('label')}>{label}</span>
         {children && (
           <button
-            onKeyDown={handleConfirmKeyPress}
             ref={dropdownToggleRef}
             className={cx('dropdown-arrow')}
             aria-expanded={isDropdownOpen}
+            tabIndex={-1}
           >
             <DropdownArrow />
           </button>
