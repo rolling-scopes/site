@@ -26,6 +26,7 @@ type MobileViewProps = {
 export const MobileView = ({ type, courses, onClose }: MobileViewProps) => {
   const color = type === 'header' ? 'dark' : 'light';
   const logoView = type === 'header' ? null : 'with-border';
+  const courseIcon = type === 'header' ? 'iconSmall' : 'iconFooter';
 
   return (
     <nav className={cx('mobile-view')} data-testid="mobile-view">
@@ -60,7 +61,7 @@ export const MobileView = ({ type, courses, onClose }: MobileViewProps) => {
         {courses.map((course) => (
           <SchoolMenu.Item
             key={course.id}
-            icon={course.iconSmall}
+            icon={course[courseIcon]}
             title={course.title}
             description={course.startDate}
             url={course.detailsUrl}
