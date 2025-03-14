@@ -13,7 +13,7 @@
   justify-content: center;
 
   height: 100%;
-  padding: 0 14px;
+  padding: 0 12px 0 14px;
 
   &::after {
     @extend %transition-all;
@@ -51,10 +51,8 @@
 
       cursor: inherit;
 
-      transform-origin: 70% 50%;
-
-      padding: 10px;
-      padding-right: 0;
+      margin-left: 10px;
+      padding: 0;
       border: none;
 
       background-color: transparent;
