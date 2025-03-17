@@ -1,1 +1,1 @@
-export { Required } from './ui/required';
+export { Required } from './ui/required/required';
