@@ -6,23 +6,31 @@
     flex-direction: column;
     gap: 4px;
 
-    margin-left: 15px;
+    padding-left: 12px;
 
     font-size: 14px;
     text-align: left;
     list-style-type: none;
 
+    &.border {
+      margin-left: 16px;
+      border-left: 1px solid $color-gray-200;
+    }
+
     li {
       a {
         display: block;
         padding: 6px 8px;
-        color: $color-gray-500;
+        color: $color-gray-700;
         text-decoration: none;
+
+        &:hover {
+          color: $color-gray-900;
+        }
 
         &.active {
           font-weight: bold;
           color: $color-blue-700;
-          background-color: hsla(from $color-blue-background-100 h s l / $opacity-30);
         }
       }
     }
@@ -31,6 +39,7 @@
       display: block;
       margin-top: 6px;
       padding: 6px 8px;
+      color: $color-gray-900;
     }
   }
 
