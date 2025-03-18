@@ -7,13 +7,13 @@ For more detailed documentation, visit [RS School Website Documentation](./readm
 
 ## Contributors
 
-This project exists thanks to all the wonderful people who contribute. [[Contribute](CONTRIBUTING.md)].
+This project exists thanks to all the wonderful people who contribute. [[Contribute](./readme/contributing.md)].
 
 <a href="https://github.com/rolling-scopes/site/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=rolling-scopes/site" />
+  <img src="https://contrib.rocks/image?repo=rolling-scopes/site" alt="">
 </a>
 
-We invite you to join our development community! Follow the guidelines in the [RS School Website Documentation](readme/__rs_school_website_documentation.md) to learn how you can get involved.
+We invite you to join our development community! Follow the guidelines in the [RS School Website Documentation](./readme/README.md) to learn how you can get involved.
 
 ## Financial Contributors
 
