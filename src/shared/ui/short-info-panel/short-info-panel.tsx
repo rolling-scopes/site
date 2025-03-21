@@ -50,6 +50,18 @@ export const ShortInfoPanel = ({
         )}
       </DateSimple>
       {!onlyLanguage && (
+        <DateSimple label="Register until:" startDate={registrationEndDate}>
+          {onlyLanguage && (
+            <>
+              <span>{LABELS.SHORT_INFO_SEPARATOR}</span>
+              <span className={cx('language')} data-testid="course-language1">
+                {language}
+              </span>
+            </>
+          )}
+        </DateSimple>
+      )}
+      {!onlyLanguage && (
         <p className={cx('additional-info')}>
           <Image className={cx('icon')} src={micIcon} alt="microphone-icon" />
           <span className={cx('language')} data-testid="course-language">
