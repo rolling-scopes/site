@@ -74,7 +74,6 @@ export const CourseCard = ({
               startDate={personalMentoringStartDate || TO_BE_DETERMINED}
               endDate={personalMentoringStartDate ? personalMentoringEndDate : null}
             />
-            <div>ds</div>
             <DateSimple
               label={LABELS.MENTOR_ACTIVITIES}
               labelSeparator={LABELS.MENTORING_DATES_SEPARATOR}

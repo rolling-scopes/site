@@ -40,7 +40,12 @@ describe('CourseShortInfo', () => {
         mode=""
       />,
     );
-    expect(screen.getByAltText('note-icon')).toHaveAttribute('src', noteIcon.src);
+    const images = screen.getAllByAltText('note-icon');
+
+    images.forEach((img) => {
+      expect(img).toHaveAttribute('src', noteIcon.src);
+    });
+
     expect(screen.getByRole('img', { name: 'microphone-icon' })).toHaveAttribute(
       'src',
       micIcon.src,
