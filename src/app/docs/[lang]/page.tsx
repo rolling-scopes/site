@@ -1,7 +1,6 @@
-import { DocsLayout } from '../components/docs-layout/docs-layout';
+import { DocsContent } from '../components/docs-content/docs-content';
 import { TITLE_POSTFIX } from '../constants';
 import { fetchMarkdownContent } from '../utils/fetchMarkdownContent';
-import { fetchMenu } from '../utils/fetchMenu';
 import { Language } from '@/shared/types';
 
 type RouteParams = { lang: Language };
@@ -21,7 +20,6 @@ export default async function DocsIndex({ params }: { params: Promise<RouteParam
   const { lang } = await params;
 
   const indexContent = await fetchMarkdownContent(lang);
-  const docsMenu = await fetchMenu(lang);
 
-  return <DocsLayout menu={docsMenu} markdownContent={indexContent} lang={lang} />;
+  return <DocsContent markdownContent={indexContent} lang={lang} />;
 }
