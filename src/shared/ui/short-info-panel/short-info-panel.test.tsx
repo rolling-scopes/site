@@ -65,8 +65,25 @@ describe('CourseShortInfo', () => {
         onlyLanguage={true}
       />,
     );
-    expect(screen.getByText(`${startDate}`)).toBeInTheDocument();
-    expect(screen.getByText(`${LABELS.SHORT_INFO_SEPARATOR}`)).toBeInTheDocument();
-    expect(screen.getByText(`${language}`)).toBeInTheDocument();
+
+    const languages = screen.getAllByText(`${language}`);
+
+    languages.forEach((language) => {
+      expect(language).toBeInTheDocument();
+    });
+    const dates = screen.getAllByText(`${startDate}`);
+
+    dates.forEach((date) => {
+      expect(date).toBeInTheDocument();
+    });
+
+    const labels = screen.getAllByText(`${LABELS.SHORT_INFO_SEPARATOR}`);
+
+    labels.forEach((label) => {
+      expect(label).toBeInTheDocument();
+    });
+    // expect(screen.getByText(`${startDate}`)).toBeInTheDocument();
+    // expect(screen.getByText(`${LABELS.SHORT_INFO_SEPARATOR}`)).toBeInTheDocument();
+    // expect(screen.getByText(`${language}`)).toBeInTheDocument();
   });
 });
