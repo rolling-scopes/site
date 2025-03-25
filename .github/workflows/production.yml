@@ -6,6 +6,9 @@ on:
       - main
   workflow_dispatch:
 
+  repository_dispatch:
+    types:
+      - 'course.updated'
 
 env:
   NODE_VERSION: '22.x' # set this to the node version to use
