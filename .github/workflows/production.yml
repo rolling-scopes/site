@@ -10,6 +10,10 @@ on:
     types:
       - 'course.updated'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   NODE_VERSION: '22.x' # set this to the node version to use
   AWS_S3_BUCKET: 'sites-frontend'
