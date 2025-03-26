@@ -1,15 +1,13 @@
 import classNames from 'classnames/bind';
 
-import type { StageCardProps } from '../stage-card/stage-card';
 import { StageCard } from '../stage-card/stage-card';
+import type { StudyPathProps } from 'data';
 
 import styles from './stages.module.scss';
 
 const cx = classNames.bind(styles);
 
-type Stages = {
-  stages: StageCardProps[] | null;
-};
+type Stages = Pick<StudyPathProps, 'stages'>;
 
 export const Stages = ({ stages }: Stages) => {
   if (stages === null || stages.length === 0) {

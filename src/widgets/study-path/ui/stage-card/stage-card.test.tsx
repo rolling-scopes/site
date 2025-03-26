@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import { StageCard, type StageCardProps } from './stage-card';
+import { StageCard } from './stage-card';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
+import type { StageCardProps } from 'data';
 
 const mockProps: StageCardProps = {
   id: 1,

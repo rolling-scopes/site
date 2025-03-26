@@ -3,17 +3,18 @@ import cn from 'classnames';
 import { Stages } from '../stages/stages';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { studyPath } from 'data';
+import { type StudyPathPage, type StudyPathProps, studyPath } from 'data';
 
-export type StagePathPage = {
-  page: 'courses' | 'jsEn' | 'jsRu' | 'angular' | 'awsDev';
-};
+export const StudyPath = ({ page }: StudyPathPage) => {
+  const path: StudyPathProps = studyPath[page];
+  const { sectionTitle, sectionIntro, stages } = path;
 
-export const StudyPath = ({ page = 'courses' }: StagePathPage) => {
-  const { sectionTitle, sectionIntro, stages } = studyPath[page];
+  if (!stages || !stages.length) {
+    return null;
+  }
 
   return (
-    <section className={cn('study-path', 'container')} data-testid="study-path">
+    <section className={cn('container')} data-testid="study-path">
       <article className={cn('content')}>
         <WidgetTitle size="small" mods="asterisk">
           {sectionTitle}

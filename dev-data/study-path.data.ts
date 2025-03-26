@@ -1,3 +1,4 @@
+import type { StudyPathPage, StudyPathProps } from './study-path-data.types';
 import { ROUTES } from '@/core/const';
 import AWSIcon from '@/shared/assets/icons/aws-black.svg';
 import HTMLIcon from '@/shared/assets/icons/html5.svg';
@@ -8,7 +9,7 @@ import feJsStage1 from '@/shared/assets/stages/stage-1.webp';
 import feJsStage2 from '@/shared/assets/stages/stage-2.webp';
 import feJsStage3 from '@/shared/assets/stages/stage-3.webp';
 
-export const studyPath = {
+export const studyPath: Record<StudyPathPage['page'], StudyPathProps> = {
   courses: {
     sectionTitle: 'Choose what you want to learn',
     sectionIntro: 'A full-stack developer is someone who has expertise in both frontend (what users see) and backend (server and database) development. This dual skill set enables them to supervise and implement projects from start to finish. Businesses today prioritize hiring full-stack developers because they can efficiently bridge various technological aspects, resulting in faster product development.',
