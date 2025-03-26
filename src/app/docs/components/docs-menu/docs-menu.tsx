@@ -50,10 +50,11 @@ export const DocsMenu = ({ menu, lang, isOpen, onMenuToggle }: DocsMenuProps) =>
               </Link>
             )}
             {!doc.link && <span>{doc.title}</span>}
-            <ul>{renderMenuItems(doc.items)}</ul>
+            <ul className={cx({ border: true })}>{renderMenuItems(doc.items)}</ul>
           </li>
         );
       }
+
       return (
         doc.link && (
           <li key={index}>
