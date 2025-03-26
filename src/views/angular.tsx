@@ -27,7 +27,7 @@ export const Angular = async ({ courseName }: AngularProps) => {
       <Certification courseName={courseName} />
       <Communication courseName={courseName} />
       <StudyPath page="angular" />
-      <Required courseName={courseName} marked1 />
+      <Required courseName={courseName} />
       <MentorsWantedCourse link={`/${ROUTES.MENTORSHIP}/${ROUTES.ANGULAR}`} />
       <Trainers trainers={angular} courseName={courseName} />
     </>

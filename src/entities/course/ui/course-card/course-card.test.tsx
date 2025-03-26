@@ -20,6 +20,8 @@ describe('CourseCard', () => {
       backgroundColor: '#ffffff',
       accentColor: '#ff0000',
     },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
   };
 
   let card: HTMLElement;
@@ -34,10 +36,11 @@ describe('CourseCard', () => {
   });
 
   it('renders the course card content correctly', () => {
+    const language = mockProps.language === 'ru' ? 'Russian' : 'English';
+
     expect(screen.getByText(mockProps.title)).toBeVisible();
     expect(screen.getByText(`${mockProps.startDate}`)).toBeVisible();
-    expect(screen.getByText(mockProps.language)).toBeVisible();
-    expect(screen.getByText(`${mockProps.mode}`)).toBeVisible();
+    expect(screen.getByText(language)).toBeVisible();
     expect(screen.getByRole('link')).toHaveAttribute('href', mockProps.detailsUrl);
   });
 

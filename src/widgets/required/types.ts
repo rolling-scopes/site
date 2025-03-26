@@ -8,7 +8,7 @@ type ItemWithLink = {
 
 export type LinkList = ItemWithLink[];
 
-export type Description = (string | LinkList)[];
+type Description = (string | LinkList)[];
 
 export type CourseModule = {
   title: string;

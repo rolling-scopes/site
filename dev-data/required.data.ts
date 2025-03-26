@@ -220,9 +220,8 @@ export const courseDataMap: CourseMap = {
         ],
       },
       {
-        title: '',
+        title: 'Запомнить правила хорошего тона RS School:',
         description: [
-          'Запомнить правила хорошего тона RS School:',
           [
             {
               id: 8,

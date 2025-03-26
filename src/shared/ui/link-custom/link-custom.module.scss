@@ -16,14 +16,19 @@
 
 .secondary {
   width: max-content;
-  padding: 16px 24px;
-  border: 2px solid $color-black;
+  padding: 12px 24px;
+  border: 1px solid $color-black;
 
   font-size: 18px;
   color: $color-black;
 
-  img {
-    filter: invert(100%);
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 24px;
+    min-height: 24px;
   }
 
   &:hover {
@@ -64,8 +69,13 @@
 
   background-color: #eee;
 
-  img {
-    filter: invert(100%);
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 16px;
+    min-height: 16px;
   }
 
   &:hover {

@@ -9,25 +9,21 @@
   }
 }
 
-.date,
 .additional-info {
   display: flex;
-  gap: 4px;
+  gap: 8px;
   align-items: center;
   justify-content: flex-start;
 
   margin: 0;
 
   font-size: 14px;
+  color: $color-gray-600;
 }
 
 .icon {
-  width: 16px;
-  height: 16px;
-}
-
-.language {
-  text-transform: uppercase;
+  width: 24px;
+  height: 24px;
 }
 
 .mode {

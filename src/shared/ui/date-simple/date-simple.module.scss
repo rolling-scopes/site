@@ -1,0 +1,19 @@
+.date {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin: 0;
+
+  font-size: 14px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.bold {
+  font-weight: $font-weight-bold;
+}

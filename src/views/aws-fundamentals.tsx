@@ -20,7 +20,7 @@ export const AwsFundamentals = ({ courseName }: AwsFundamentalsProps) => {
       <AboutCourse courseName={courseName} />
       <Certification courseName={courseName} />
       <Communication courseName={courseName} />
-      <Required courseName={courseName} marked2 />
+      <Required courseName={courseName} />
       <TrainingProgram courseName={courseName} specify="badge" />
       <Trainers trainers={awsFundamentals} courseName={courseName} />
     </>
