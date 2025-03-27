@@ -3,6 +3,7 @@ type ItemWithLink = {
   text: string;
   title: string;
   link: string;
+  external?: boolean;
 };
 
 export type LinkList = ItemWithLink[];
