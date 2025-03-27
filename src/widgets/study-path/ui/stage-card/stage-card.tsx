@@ -36,12 +36,14 @@ export const StageCard = ({
       <div className={cx('stage-info')}>
         <Subtitle className={cx('stage-title')}>{title}</Subtitle>
         <Paragraph className={cx('stage-intro')}>{intro}</Paragraph>
-        <List
-          className={cx('stage-list')}
-          data={listData}
-          size="compact"
-          type={modules[0].marked ? 'marked' : 'unmarked'}
-        />
+        {listData.length
+          && <List
+            className={cx('stage-list')}
+            data={listData}
+            size="compact"
+            type={modules[0].marked ? 'marked' : 'unmarked'}
+          // eslint-disable-next-line @stylistic/jsx-closing-bracket-location
+          />}
       </div>
 
       {image.src
