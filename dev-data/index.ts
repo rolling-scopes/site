@@ -65,7 +65,6 @@ export { heroPageData } from './hero-page.data';
 export { javaScriptEn } from './javascript-en.data';
 export { javaScriptRu } from './javascript-ru.data';
 export { mentorDocsData } from './mentor-docs.data';
-export { mentorsActivityData } from './mentors-activity.data';
 export { mentorsAfterRegisterData } from './mentors-after-register.data';
 export { mentorsFeedbackData } from './mentors-feedback.data';
 export { mentorsRegisterData } from './mentors-register.data';
