@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+
 import { ApiMerchItem, ApiMerchItemAdapt, ApiMerchResponse, MerchProduct } from '../types';
 
 export const adaptMerchData = (data: ApiMerchResponse): MerchProduct[] => {
@@ -7,6 +9,7 @@ export const adaptMerchData = (data: ApiMerchResponse): MerchProduct[] => {
     for (const [key, value] of Object.entries(category)) {
       if (isApiMerchItem(value)) {
         products.push({
+          id: uuidv4(),
           name: key,
           title: value.name,
           preview: value.preview,

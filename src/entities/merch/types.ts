@@ -18,6 +18,7 @@ export type ApiMerchResponse = {
 };
 
 export type MerchProduct = {
+  id: string;
   name: string;
   title: string;
   preview: string[];
