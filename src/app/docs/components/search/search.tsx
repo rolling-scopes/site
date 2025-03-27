@@ -79,20 +79,20 @@ export default function Search({ lang, resultsRef }: SearchProps) {
       />
       <div className={cx('results')}>
         {query
-          && createPortal(
-            <div className={cx('results')}>
-              {results.length > 0
-                ? (
-                    results.map((result, index) => <Result key={index} result={result} />)
-                  )
-                : (
-                    <div className={cx('no-results')}>
-                      {translations[lang].search.noResults.replace('{{query}}', query)}
-                    </div>
-                  )}
-            </div>,
-            resultsRef.current!,
-          )}
+        && createPortal(
+          <div className={cx('results')}>
+            {results.length > 0
+              ? (
+                  results.map((result, index) => <Result key={index} result={result} />)
+                )
+              : (
+                  <div className={cx('no-results')}>
+                    {translations[lang].search.noResults.replace('{{query}}', query)}
+                  </div>
+                )}
+          </div>,
+          resultsRef.current!,
+        )}
       </div>
     </div>
   );
