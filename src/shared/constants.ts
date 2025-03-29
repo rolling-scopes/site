@@ -6,7 +6,7 @@ export const REGISTRATION_WILL_OPEN_SOON = 'Registration will open soon!';
 export const REGISTRATION_WILL_OPEN_SOON_RU = 'Регистрация откроется скоро!';
 export const LABELS = {
   START_DATE: 'Start:',
-  REGISTER_END: 'Register until:',
+  REGISTERATION_END: 'Register until:',
   MENTOR_ACTIVITIES: 'Mentor activities:',
   MENTORING_DATES_SEPARATOR: '-',
   SHORT_INFO_SEPARATOR: '•',

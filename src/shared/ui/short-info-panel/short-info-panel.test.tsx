@@ -82,8 +82,5 @@ describe('CourseShortInfo', () => {
     labels.forEach((label) => {
       expect(label).toBeInTheDocument();
     });
-    // expect(screen.getByText(`${startDate}`)).toBeInTheDocument();
-    // expect(screen.getByText(`${LABELS.SHORT_INFO_SEPARATOR}`)).toBeInTheDocument();
-    // expect(screen.getByText(`${language}`)).toBeInTheDocument();
   });
 });

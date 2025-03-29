@@ -49,7 +49,7 @@ export const ShortInfoPanel = ({
           </>
         )}
       </DateSimple>
-      <DateSimple label={label && LABELS.REGISTER_END} startDate={registrationEndDate}>
+      <DateSimple label={label && LABELS.REGISTERATION_END} startDate={registrationEndDate}>
         {onlyLanguage && (
           <>
             <span>{LABELS.SHORT_INFO_SEPARATOR}</span>
