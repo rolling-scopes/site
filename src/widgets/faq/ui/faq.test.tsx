@@ -36,7 +36,7 @@ describe('FAQ component', () => {
 
     const faqQuestions = screen.getAllByTestId('faq-question');
     const faqAnswersLinks = [...screen.getAllByRole('link')];
-    const mockedAnswersLinks = MOCKED_FAQ_WITH_LINKS.map(({ answer }) => answer).flat();
+    const mockedAnswersLinks = MOCKED_FAQ_WITH_LINKS.flatMap(({ answer }) => answer);
 
     expect(faqQuestions.length).toBe(MOCKED_FAQ_WITH_LINKS.length);
     expect(faqAnswersLinks.length).toBe(mockedAnswersLinks.length);
