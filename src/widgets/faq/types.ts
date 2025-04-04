@@ -1,14 +1,12 @@
 import { LinkList } from '@/widgets/required/types';
 
-type FaqDataItemQuestion = string;
-
 export type FaqDataItem = {
-  question: FaqDataItemQuestion;
+  question: string;
   answer: string;
 };
 
 export type FaqDataItemWithLink = {
-  question: FaqDataItemQuestion;
+  question: string;
   answer: LinkList;
 };
 
