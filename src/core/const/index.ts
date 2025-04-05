@@ -7,6 +7,7 @@ export const ANCHORS = {
   MERCH: 'merch',
   CONTRIBUTE: 'contribute',
   DONATE: 'donate',
+  AWS_BADGE: 'aws-badge',
 };
 
 export const COURSE_STALE_AFTER_DAYS = 14;
