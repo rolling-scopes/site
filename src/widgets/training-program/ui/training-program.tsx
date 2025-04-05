@@ -14,13 +14,12 @@ const cx = classNames.bind(styles);
 
 type TrainingProgramProps = {
   courseName: CourseNamesKeys;
-  specify?: string;
 };
 
-export const TrainingProgram = async ({ courseName, specify = '' }: TrainingProgramProps) => {
+export const TrainingProgram = async ({ courseName }: TrainingProgramProps) => {
   const course = await selectCourse(courseName);
   const { language } = course;
-  const programName = specify ? `${courseName} ${specify}` : courseName;
+  const programName = courseName;
   const contentName = isTrainingProgramType(programName) ? programName : courseName;
   const isCourseWithBadge = courseName.includes('badge');
 

@@ -12,15 +12,13 @@ export const COURSE_TITLES = {
   AWS_DEVOPS: 'AWS DevOps',
 } as const;
 
-export const AWS_FUNDAMENTALS_BADGE = `${COURSE_TITLES.AWS_FUNDAMENTALS} badge` as const;
-export type AwsFundamentalsBadge = typeof AWS_FUNDAMENTALS_BADGE;
 export type CourseNames = typeof COURSE_TITLES;
 export type CourseNamesKeys = CourseNames[keyof CourseNames];
 export type CoursesWithRequirementsNames = Exclude<CourseNamesKeys, CourseNames['REACT']>;
 export type CourseMap = {
   [courseName in CoursesWithRequirementsNames]: Course;
 };
-export type TrainingProgramType = CourseNamesKeys | AwsFundamentalsBadge;
+export type TrainingProgramType = CourseNamesKeys;
 
 export const DISCORD_LINKS = {
   [COURSE_TITLES.JS_PRESCHOOL_RU]: 'https://discord.com/invite/gFnRh8Sudg',

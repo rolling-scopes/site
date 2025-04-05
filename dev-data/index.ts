@@ -27,7 +27,6 @@ export {
   RS_DOCS_TELEGRAM_CHATS_LINK,
 } from './communication.data';
 export {
-  AWS_FUNDAMENTALS_BADGE,
   COURSE_TITLES,
   type CourseNames,
   type CourseNamesKeys,
