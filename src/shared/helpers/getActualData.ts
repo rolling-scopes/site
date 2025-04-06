@@ -11,21 +11,37 @@ type GetActualDataParams<T extends DataType> = {
   data: T;
   staleAfter?: number;
   filterStale?: boolean;
+  isMentorship?: boolean;
+  sort?: boolean;
 };
 
 type GetActualDataType = <T extends DataType>(params: GetActualDataParams<T>) => T;
 
-export const getActualData: GetActualDataType = ({ data, staleAfter, filterStale = true }) => {
-  let dataWithTBD = mapStaleAsTBD(data, staleAfter);
+export const getActualData: GetActualDataType = ({
+  data,
+  staleAfter,
+  filterStale = true,
+  isMentorship = false,
+  sort = true,
+}) => {
+  let dataWithTBD = mapStaleAsTBD(data, staleAfter, isMentorship);
 
   if (filterStale) {
     dataWithTBD = filterStaleData(dataWithTBD);
   }
 
-  return sortData(dataWithTBD);
+  if (sort) {
+    dataWithTBD = sortData(dataWithTBD);
+  }
+
+  return dataWithTBD;
 };
 
-const mapStaleAsTBD = <T extends DataType>(data: T, staleAfter?: number): T =>
+const mapStaleAsTBD = <T extends DataType>(
+  data: T,
+  staleAfter?: number,
+  isMentorship?: boolean,
+): T =>
   data.map((item) => {
     const datePath = isCourse(item) ? 'startDate' : 'date';
     const date = isCourse(item) ? item.startDate : item.date;
@@ -33,6 +49,13 @@ const mapStaleAsTBD = <T extends DataType>(data: T, staleAfter?: number): T =>
 
     if (staleAfter) {
       courseDate = getCourseDate(date, staleAfter);
+    } else if (isCourse(item) && isMentorship) {
+      const daysBeforeStale = dayJS(item.personalMentoringEndDate).diff(
+        item.personalMentoringStartDate,
+        'd',
+      );
+
+      courseDate = getCourseDate(date, daysBeforeStale);
     } else if (isCourse(item)) {
       const daysBeforeStale = dayJS(item.registrationEndDate).diff(item.startDate, 'd');
 
