@@ -1,4 +1,5 @@
 import { AboutList } from './about-list';
+import AllCourses from '@/core/base-layout/components/footer/all-courses';
 import { getCourses } from '@/entities/course/api/course-api';
 import { SchoolMenu } from '@/widgets/school-menu';
 import { schoolMenuStaticLinks } from 'data';
@@ -24,18 +25,7 @@ export const DesktopView = async () => {
       </div>
 
       <div className="right">
-        <SchoolMenu heading="all courses" color="light">
-          {courses.map((course) => (
-            <SchoolMenu.Item
-              key={course.id}
-              icon={course.iconFooter}
-              title={course.title}
-              description={course.startDate}
-              url={course.detailsUrl}
-              color="light"
-            />
-          ))}
-        </SchoolMenu>
+        <AllCourses courses={courses} />
       </div>
     </div>
   );
