@@ -25,7 +25,7 @@ export const RegistrationLink = ({
   const isCourseStale = freshDate === TO_BE_DETERMINED;
   const isDisabled = !enrollLink || isCourseStale;
 
-  const registrationLinkText = isCourseStale
+  const registrationLinkText = isDisabled
     ? heroCourseLocalized[language].noLinkLabel
     : heroCourseLocalized[language].linkLabel;
 
