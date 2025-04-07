@@ -25,7 +25,9 @@ export const DesktopView = async () => {
       </div>
 
       <div className="right">
-        <AllCourses courses={courses} />
+        <SchoolMenu heading="all courses" color="light">
+          <AllCourses courses={courses} />
+        </SchoolMenu>
       </div>
     </div>
   );
