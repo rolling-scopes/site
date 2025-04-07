@@ -19,7 +19,7 @@ As a large front-end community and a full-stack development school, RS School is
 
 To ensure a smooth onboarding process and understand our procedures, please review these key files:
 
-1. [`volunteering.md`](./volunteering.md): How to contribute to the project, roles for volunteers, and their contributions.
+1. [`volunteering.md`](./volunteering.md)/[`contributing.md`](./contributing.md): How to contribute to the project, roles for volunteers, and their contributions.
 2. [`onboarding.md`](./onboarding.md): Guide for newcomers, integration process, and community introduction.
 3. [`git-pullrequest-workflow.md`](./git-pullrequest-workflow.md): Workflow guide, focusing on Git and Pull Requests.
 4. [`semantic-webaccessibility.md`](./semantic-webaccessibility.md): Standards for semantic web and accessibility.
