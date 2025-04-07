@@ -12,6 +12,7 @@ const AllCourses = ({ courses }: AllCoursesProps) => {
   const actualCourses = getActualData({
     data: courses,
     filterStale: false,
+    sort: false,
   });
 
   return (

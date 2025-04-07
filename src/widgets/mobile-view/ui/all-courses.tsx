@@ -10,13 +10,13 @@ type AllCoursesProps = {
   courseIcon: 'iconSmall' | 'iconFooter';
   color: Color;
   onClose?: () => void;
-
 };
 
 const AllCourses = ({ courses, courseIcon, color, onClose }: AllCoursesProps) => {
   const actualCourses = getActualData({
     data: courses,
     filterStale: false,
+    sort: false,
   });
 
   return (
