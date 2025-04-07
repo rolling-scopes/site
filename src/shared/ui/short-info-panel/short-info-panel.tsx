@@ -48,10 +48,10 @@ export const ShortInfoPanel = ({
           </span>
         )}
       </DateSimple>
-      <DateSimple label={label && LABELS.REGISTERATION_END} startDate={registrationEndDate}>
+      <DateSimple label={label} startDate={registrationEndDate}>
         {onlyLanguage && (
           <>
-            <span>{LABELS.SHORT_INFO_SEPARATOR}</span>
+            <span></span>
             <span className={cx('language')} data-testid="course-language">
               {language}
             </span>
