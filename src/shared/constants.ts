@@ -7,6 +7,7 @@ export const REGISTRATION_WILL_OPEN_SOON_RU = 'Регистрация откро
 export const LABELS = {
   START_DATE: 'Course starts on:',
   START_DATE_SHORT: 'Start:',
+  REGISTERATION_END: 'Enroll till:',
   COURSE_LANGUAGE_EN: 'English',
   COURSE_LANGUAGE_RU: 'Russian',
   MENTOR_ACTIVITIES: 'Mentorship starts on:',

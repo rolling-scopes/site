@@ -17,7 +17,8 @@ interface ShortInfoPanelProps {
   mode?: string;
   language: Language;
   withMargin?: boolean;
-  onlyLanguage?: boolean;
+  isCompactView?: boolean;
+
   label?: string;
   isShortLabel?: boolean;
 }
@@ -27,13 +28,14 @@ export const ShortInfoPanel = ({
   registrationEndDate,
   language,
   withMargin,
-  onlyLanguage,
+  isCompactView,
   label,
 }: ShortInfoPanelProps) => {
   const courseLanguage = language === 'en' ? LABELS.COURSE_LANGUAGE_EN : LABELS.COURSE_LANGUAGE_RU;
 
-  return (
-    <section className={cx('info', { margin: withMargin })}>
+  isCompactView = label ? false : true;
+  const normalView = (
+    <>
       <DateSimple
         label={label}
         startDate={
@@ -42,30 +44,33 @@ export const ShortInfoPanel = ({
             : null
         }
       >
-        {onlyLanguage && (
-          <span className={cx('language')} data-testid="course-language">
-            {courseLanguage}
-          </span>
-        )}
       </DateSimple>
-      <DateSimple label={label} startDate={registrationEndDate}>
-        {onlyLanguage && (
-          <>
-            <span></span>
-            <span className={cx('language')} data-testid="course-language">
-              {language}
-            </span>
-          </>
-        )}
-      </DateSimple>
-      {!onlyLanguage && (
-        <p className={cx('additional-info')}>
-          <Image className={cx('icon')} src={micIcon} alt="microphone-icon" />
-          <span className={cx('language')} data-testid="course-language">
-            {courseLanguage}
-          </span>
-        </p>
-      )}
+
+      <DateSimple label={LABELS.REGISTERATION_END} startDate={registrationEndDate}></DateSimple>
+
+      <p className={cx('additional-info')}>
+        <Image className={cx('icon')} src={micIcon} alt="microphone-icon" />
+        <span className={cx('language')} data-testid="course-language">
+          {courseLanguage}
+        </span>
+      </p>
+    </>
+  );
+  const compactView = (
+    <DateSimple
+      startDate={
+        startDate && registrationEndDate ? calculateFreshDate(startDate, registrationEndDate) : null
+      }
+    >
+      <span className={cx('language')} data-testid="course-language">
+        {courseLanguage}
+      </span>
+    </DateSimple>
+  );
+
+  return (
+    <section className={cx('info', { margin: withMargin })}>
+      {isCompactView ? compactView : normalView}
     </section>
   );
 };

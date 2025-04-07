@@ -25,9 +25,11 @@ export type CourseCardProps = Pick<
   | 'registrationEndDate'
   | 'personalMentoringStartDate'
   | 'personalMentoringEndDate'
-> & Pick<HTMLProps<HTMLDivElement>, 'className'> & {
+> &
+Pick<HTMLProps<HTMLDivElement>, 'className'> & {
   size?: 'sm' | 'md';
   showMentoringStartDate?: boolean;
+  isCompactView?: boolean;
 };
 
 export const CourseCard = ({
@@ -63,7 +65,9 @@ export const CourseCard = ({
     <article className={cx('course-card', classes)} data-testid="course-card">
       <div className={cx('card-header')} style={cardStyle} data-testid="card-header">
         <Image src={iconSrc} alt={title} />
-        <Subtitle className={cx('course-title')} fontSize={fontSize}>{title}</Subtitle>
+        <Subtitle className={cx('course-title')} fontSize={fontSize}>
+          {title}
+        </Subtitle>
       </div>
       <div className={cx('course-info')}>
         {!showMentoringStartDate && (
@@ -83,11 +87,7 @@ export const CourseCard = ({
               endDate={personalMentoringStartDate ? personalMentoringEndDate : null}
               labelSeparator={LABELS.MENTOR_ACTIVITIES_SEPARATOR}
             />
-            <ShortInfoPanel
-              startDate={null}
-              registrationEndDate={null}
-              language={language}
-            />
+            <ShortInfoPanel startDate={null} registrationEndDate={null} language={language} />
           </div>
         )}
         <LinkCustom

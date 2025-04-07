@@ -16,6 +16,7 @@ type DateStartProps = {
   label?: string;
   labelSeparator?: string;
   children?: React.ReactNode;
+  isCompactView?: boolean;
 };
 
 const formatDateAttr = (date: string | null | undefined): string | undefined => {
