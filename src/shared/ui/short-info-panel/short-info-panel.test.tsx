@@ -54,7 +54,6 @@ describe('CourseShortInfo', () => {
         startDate={startDate}
         registrationEndDate={registrationEndDate}
         language={language}
-        onlyLanguage={true}
       />,
     );
     expect(screen.getByText(`${startDate}`)).toBeInTheDocument();
