@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 
 import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
+import AllCourses from '@/core/base-layout/components/header/all-courses';
 import { ANCHORS, ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
 import { Logo } from '@/shared/ui/logo';
@@ -87,15 +88,7 @@ export const Header = ({ courses }: HeaderProps) => {
           </NavItem>
           <NavItem label="Courses" href={ROUTES.COURSES}>
             <SchoolMenu>
-              {courses.map((course) => (
-                <SchoolMenu.Item
-                  key={course.id}
-                  icon={course.iconSmall}
-                  title={course.title}
-                  description={course.startDate}
-                  url={course.detailsUrl}
-                />
-              ))}
+              <AllCourses courses={courses} />
             </SchoolMenu>
           </NavItem>
           <NavItem label="Community" href={ROUTES.COMMUNITY}>
