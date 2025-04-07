@@ -6,9 +6,9 @@ import { usePathname } from 'next/navigation';
 
 import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
+import AllCourses from '@/core/base-layout/components/header/all-courses';
 import { ANCHORS, ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
-import { getActualData } from '@/shared/helpers/getActualData';
 import { Logo } from '@/shared/ui/logo';
 import { MobileView } from '@/widgets/mobile-view';
 import { SchoolMenu } from '@/widgets/school-menu';
@@ -29,11 +29,6 @@ export const Header = ({ courses }: HeaderProps) => {
   const pathname = usePathname();
   const headerAccentColor = pathname?.includes(ROUTES.MENTORSHIP) ? 'blue' : 'gray';
   const [color, setColor] = useState<HeaderAccentColor>(headerAccentColor);
-
-  const actualCourses = getActualData({
-    data: courses,
-    filterStale: false,
-  });
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -73,7 +68,7 @@ export const Header = ({ courses }: HeaderProps) => {
         <Logo />
 
         <menu className={cx('mobile-menu', { open: isMenuOpen })} data-testid="mobile-menu">
-          <MobileView onClose={handleMenuClose} courses={actualCourses} type="header" />
+          <MobileView onClose={handleMenuClose} courses={courses} type="header" />
         </menu>
         <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 
@@ -93,15 +88,7 @@ export const Header = ({ courses }: HeaderProps) => {
           </NavItem>
           <NavItem label="Courses" href={ROUTES.COURSES}>
             <SchoolMenu>
-              {actualCourses.map((course) => (
-                <SchoolMenu.Item
-                  key={course.id}
-                  icon={course.iconSmall}
-                  title={course.title}
-                  description={course.startDate}
-                  url={course.detailsUrl}
-                />
-              ))}
+              <AllCourses courses={courses} />
             </SchoolMenu>
           </NavItem>
           <NavItem label="Community" href={ROUTES.COMMUNITY}>
