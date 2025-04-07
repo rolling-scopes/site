@@ -32,7 +32,6 @@ export {
   type CourseNamesKeys,
   type CoursesWithRequirementsNames,
   DISCORD_LINKS,
-  type TrainingProgramType,
 } from './courseTitles.data';
 export { type Benefit } from './benefit-mentorship.data';
 export { aboutMentorsData } from './about-mentors.data';

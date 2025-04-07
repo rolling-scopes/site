@@ -18,7 +18,6 @@ export type CoursesWithRequirementsNames = Exclude<CourseNamesKeys, CourseNames[
 export type CourseMap = {
   [courseName in CoursesWithRequirementsNames]: Course;
 };
-export type TrainingProgramType = CourseNamesKeys;
 
 export const DISCORD_LINKS = {
   [COURSE_TITLES.JS_PRESCHOOL_RU]: 'https://discord.com/invite/gFnRh8Sudg',

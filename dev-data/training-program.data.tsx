@@ -2,10 +2,7 @@
 import { JSX } from 'react';
 import { StaticImageData } from 'next/image';
 
-import {
-  COURSE_TITLES,
-  CourseNamesKeys,
-} from './courseTitles.data';
+import { COURSE_TITLES, CourseNamesKeys, } from './courseTitles.data';
 import angularImg from '@/shared/assets/rs-slope-angular.webp';
 import awsDevImg from '@/shared/assets/rs-slope-aws-dev.webp';
 import awsFundamentalsImg from '@/shared/assets/rs-slope-aws-fundamentals.webp';
