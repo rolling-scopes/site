@@ -13,7 +13,7 @@
   justify-content: center;
 
   height: 100%;
-  padding: 0 14px;
+  padding: 0 12px 0 14px;
 
   &::after {
     @extend %transition-all;
@@ -49,9 +49,12 @@
     .dropdown-arrow {
       @extend %transition-all;
 
+      cursor: inherit;
+
       margin-left: 10px;
       padding: 0;
       border: none;
+
       background-color: transparent;
 
       &:focus {
@@ -69,13 +72,8 @@
     }
   }
 
-  &.active {
-    & > span {
-      color: $color-black;
-
-      -webkit-text-stroke-color: currentcolor;
-      -webkit-text-stroke-width: 1.25px;
-    }
+  &.active::after {
+    transform: scaleX(1);
   }
 
   @include media-hover {
