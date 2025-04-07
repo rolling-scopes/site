@@ -1,11 +1,10 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 
-import { DateSimple } from '../date-simple';
 import micIcon from '@/shared/assets/icons/mic.svg';
 import { LABELS } from '@/shared/constants';
-import { calculateFreshDate } from '@/shared/helpers/getCourseDate';
 import { Language } from '@/shared/types';
+import { CourseStartLabel } from '@/shared/ui/short-info-panel/course-start-label';
 
 import styles from './short-info-panel.module.scss';
 
@@ -34,20 +33,17 @@ export const ShortInfoPanel = ({
 
   return (
     <section className={cx('info', { margin: withMargin })}>
-      <DateSimple
+      <CourseStartLabel
+        startDate={startDate}
+        registrationEndDate={registrationEndDate}
         label={label}
-        startDate={
-          startDate && registrationEndDate
-            ? calculateFreshDate(startDate, registrationEndDate)
-            : null
-        }
       >
         {onlyLanguage && (
           <span className={cx('language')} data-testid="course-language">
             {courseLanguage}
           </span>
         )}
-      </DateSimple>
+      </CourseStartLabel>
       {!onlyLanguage && (
         <p className={cx('additional-info')}>
           <Image className={cx('icon')} src={micIcon} alt="microphone-icon" />
