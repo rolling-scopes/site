@@ -58,7 +58,9 @@ export const MobileView = ({ type, courses, onClose }: MobileViewProps) => {
         Courses
       </Link>
 
-      <AllCourses courses={courses} courseIcon={courseIcon} onClose={onClose} color={color} />
+      <SchoolMenu>
+        <AllCourses courses={courses} courseIcon={courseIcon} onClose={onClose} color={color} />
+      </SchoolMenu>
 
       <Divider color={color} />
 

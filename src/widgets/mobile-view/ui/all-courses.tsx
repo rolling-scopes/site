@@ -19,21 +19,17 @@ const AllCourses = ({ courses, courseIcon, color, onClose }: AllCoursesProps) =>
     sort: false,
   });
 
-  return (
-    <SchoolMenu>
-      {actualCourses.map((course) => (
-        <SchoolMenu.Item
-          key={course.id}
-          icon={course[courseIcon]}
-          title={course.title}
-          description={course.startDate}
-          url={course.detailsUrl}
-          color={color}
-          onClick={onClose}
-        />
-      ))}
-    </SchoolMenu>
-  );
+  return actualCourses.map((course) => (
+    <SchoolMenu.Item
+      key={course.id}
+      icon={course[courseIcon]}
+      title={course.title}
+      description={course.startDate}
+      url={course.detailsUrl}
+      color={color}
+      onClick={onClose}
+    />
+  ));
 };
 
 export default AllCourses;
