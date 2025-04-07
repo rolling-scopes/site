@@ -25,7 +25,7 @@ export const Courses = async () => {
         <WidgetTitle>All courses</WidgetTitle>
         <div className={cx('courses-list')}>
           {sortedCourses.map((course) => {
-            return <CourseCard key={course.id} {...course} />;
+            return <CourseCard size="sm" key={course.id} {...course} />;
           })}
         </div>
       </div>

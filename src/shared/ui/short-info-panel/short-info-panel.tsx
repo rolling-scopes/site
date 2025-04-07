@@ -19,17 +19,19 @@ interface ShortInfoPanelProps {
   withMargin?: boolean;
   onlyLanguage?: boolean;
   label?: string;
+  isShortLabel?: boolean;
 }
 
 export const ShortInfoPanel = ({
   startDate,
   registrationEndDate,
   language,
-  mode,
   withMargin,
   onlyLanguage,
   label,
 }: ShortInfoPanelProps) => {
+  const courseLanguage = language === 'en' ? LABELS.COURSE_LANGUAGE_EN : LABELS.COURSE_LANGUAGE_RU;
+
   return (
     <section className={cx('info', { margin: withMargin })}>
       <DateSimple
@@ -41,12 +43,9 @@ export const ShortInfoPanel = ({
         }
       >
         {onlyLanguage && (
-          <>
-            <span>{LABELS.SHORT_INFO_SEPARATOR}</span>
-            <span className={cx('language')} data-testid="course-language">
-              {language}
-            </span>
-          </>
+          <span className={cx('language')} data-testid="course-language">
+            {courseLanguage}
+          </span>
         )}
       </DateSimple>
       <DateSimple label={label && LABELS.REGISTERATION_END} startDate={registrationEndDate}>
@@ -63,10 +62,8 @@ export const ShortInfoPanel = ({
         <p className={cx('additional-info')}>
           <Image className={cx('icon')} src={micIcon} alt="microphone-icon" />
           <span className={cx('language')} data-testid="course-language">
-            {language}
+            {courseLanguage}
           </span>
-          <span>•</span>
-          <span className={cx('mode')}>{mode}</span>
         </p>
       )}
     </section>

@@ -5,12 +5,13 @@ export const TO_BE_DETERMINED = 'TBD';
 export const REGISTRATION_WILL_OPEN_SOON = 'Registration will open soon!';
 export const REGISTRATION_WILL_OPEN_SOON_RU = 'Регистрация откроется скоро!';
 export const LABELS = {
-  START_DATE: 'Start:',
-  REGISTERATION_END: 'Register until:',
-  MENTOR_ACTIVITIES: 'Mentor activities:',
-  MENTORING_DATES_SEPARATOR: '-',
-  SHORT_INFO_SEPARATOR: '•',
-};
+  START_DATE: 'Course starts on:',
+  START_DATE_SHORT: 'Start:',
+  COURSE_LANGUAGE_EN: 'English',
+  COURSE_LANGUAGE_RU: 'Russian',
+  MENTOR_ACTIVITIES: 'Mentorship starts on:',
+  MENTOR_ACTIVITIES_SEPARATOR: '-',
+} as const;
 
 export const PAGE_NAMES = {
   SCHOOL: 'school',

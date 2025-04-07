@@ -17,17 +17,9 @@ describe('CourseShortInfo', () => {
         startDate={startDate}
         registrationEndDate={registrationEndDate}
         language="en"
-        mode=""
       />,
     );
     expect(screen.getByText(`${startDate}`)).toBeInTheDocument();
-  });
-
-  it('renders the mode correctly', () => {
-    const mode = 'Online';
-
-    render(<ShortInfoPanel startDate="" registrationEndDate="" language="en" mode={mode} />);
-    expect(screen.getByText(`${mode}`)).toBeInTheDocument();
   });
 
   it('displays the correct note and microphone icons', () => {
@@ -65,22 +57,7 @@ describe('CourseShortInfo', () => {
         onlyLanguage={true}
       />,
     );
-
-    const languages = screen.getAllByText(`${language}`);
-
-    languages.forEach((language) => {
-      expect(language).toBeInTheDocument();
-    });
-    const dates = screen.getAllByText(`${startDate}`);
-
-    dates.forEach((date) => {
-      expect(date).toBeInTheDocument();
-    });
-
-    const labels = screen.getAllByText(`${LABELS.SHORT_INFO_SEPARATOR}`);
-
-    labels.forEach((label) => {
-      expect(label).toBeInTheDocument();
-    });
+    expect(screen.getByText(`${startDate}`)).toBeInTheDocument();
+    expect(screen.getByText('English')).toBeInTheDocument();
   });
 });
