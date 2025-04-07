@@ -41,7 +41,7 @@ export const DateSimple = ({
       {label && (
         <>
           <Image className={cx('icon')} src={noteIcon} alt="note-icon" />
-          <span>{label}</span>
+          <span className={cx('bold')}>{label}</span>
         </>
       )}
       {startDate && (

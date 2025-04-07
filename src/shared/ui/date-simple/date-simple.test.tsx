@@ -59,7 +59,7 @@ describe('DateSimple', () => {
       <DateSimple
         label={LABELS.START_DATE}
         startDate={startDate}
-        labelSeparator={LABELS.MENTORING_DATES_SEPARATOR}
+        labelSeparator={LABELS.MENTOR_ACTIVITIES_SEPARATOR}
         endDate={endDate}
       />,
     );
