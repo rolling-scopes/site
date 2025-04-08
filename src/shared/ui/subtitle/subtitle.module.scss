@@ -52,19 +52,19 @@
     }
   }
 
-  &.light {
+  &.light-font-weight {
     font-weight: $font-weight-light;
   }
 
-  &.regular {
+  &.regular-font-weight {
     font-weight: $font-weight-regular;
   }
 
-  &.normal {
+  &.medium-font-weight {
     font-weight: $font-weight-medium;
   }
 
-  &.bold {
+  &.bold-font-weight {
     font-weight: $font-weight-bold;
   }
 }

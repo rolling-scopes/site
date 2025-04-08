@@ -33,7 +33,7 @@ export const MentorsAfterRegister = ({ lang = 'en' }: MentorsAfterRegisterProps)
 
             return (
               <article className={cx('step')} key={step.id} data-testid="after-register-step">
-                <Subtitle fontSize="small" weight="bold">
+                <Subtitle fontSize="small" fontWeight="bold">
                   {`${id}. ${subtitle}`}
                 </Subtitle>
                 <p className={cx('step-content')} data-testid="step-content">

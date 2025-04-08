@@ -20,16 +20,16 @@ const subtitleVariants = cva(cx('subtitle'), {
       'large': cx('large-font-size'),
       'extra-large': cx('extra-large-font-size'),
     },
-    weight: {
-      light: cx('light'),
-      regular: cx('regular'),
-      normal: cx('normal'),
-      bold: cx('bold'),
+    fontWeight: {
+      light: cx('light-font-weight'),
+      regular: cx('regular-font-weight'),
+      medium: cx('medium-font-weight'),
+      bold: cx('bold-font-weight'),
     },
   },
   defaultVariants: {
     fontSize: 'medium',
-    weight: 'normal',
+    fontWeight: 'medium',
   },
 });
 
@@ -37,7 +37,7 @@ export const Subtitle = ({
   as = 'h3',
   children,
   fontSize,
-  weight,
+  fontWeight,
   className,
   ...props
 }: SubtitleProps) => {
@@ -47,7 +47,7 @@ export const Subtitle = ({
     <HeadingTag
       className={subtitleVariants({
         fontSize,
-        weight,
+        fontWeight,
         className,
       })}
       data-testid="subtitle"
