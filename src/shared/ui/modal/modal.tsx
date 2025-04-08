@@ -102,7 +102,7 @@ export const Modal = ({ isOpen, onClose, children, title, className }: ModalProp
     >
       <div className={cx('modal-header', { 'no-title': !title })} data-testid="modal-header">
         {title && (
-          <Subtitle className={cx('modal-title')} fontSize="small" fontWeight="bold" data-testid="modal-title">
+          <Subtitle fontSize="small" fontWeight="bold" data-testid="modal-title">
             {title}
           </Subtitle>
         )}
