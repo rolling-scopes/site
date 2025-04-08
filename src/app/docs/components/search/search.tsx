@@ -7,6 +7,7 @@ import { createPortal } from 'react-dom';
 
 import MOCKED_SEARCH from '../../mocked_search';
 import { Language } from '@/shared/types';
+import { Subtitle } from '@/shared/ui/subtitle';
 
 import styles from './search.module.scss';
 
@@ -127,7 +128,7 @@ function Result({ result }: { result: PagefindSearchResult }) {
   return (
     <div>
       <Link href={removeHtmlExtension(data.url)}>
-        <h3>{data.meta.title}</h3>
+        <Subtitle fontSize="extra-small" fontWeight="bold">{data.meta.title}</Subtitle>
         <p dangerouslySetInnerHTML={{ __html: data.excerpt }} />
       </Link>
 
