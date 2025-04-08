@@ -29,7 +29,6 @@ export type CourseCardProps = Pick<
 Pick<HTMLProps<HTMLDivElement>, 'className'> & {
   size?: 'sm' | 'md';
   showMentoringStartDate?: boolean;
-  isCompactView?: boolean;
 };
 
 export const CourseCard = ({
@@ -87,7 +86,12 @@ export const CourseCard = ({
               endDate={personalMentoringStartDate ? personalMentoringEndDate : null}
               labelSeparator={LABELS.MENTOR_ACTIVITIES_SEPARATOR}
             />
-            <ShortInfoPanel startDate={null} registrationEndDate={null} language={language} />
+            <ShortInfoPanel
+              startDate={null}
+              registrationEndDate={null}
+              language={language}
+              showMentoringStartDate={showMentoringStartDate}
+            />
           </div>
         )}
         <LinkCustom

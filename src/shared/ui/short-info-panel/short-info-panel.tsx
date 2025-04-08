@@ -18,7 +18,7 @@ interface ShortInfoPanelProps {
   language: Language;
   withMargin?: boolean;
   isCompactView?: boolean;
-
+  showMentoringStartDate?: boolean;
   label?: string;
   isShortLabel?: boolean;
 }
@@ -28,12 +28,13 @@ export const ShortInfoPanel = ({
   registrationEndDate,
   language,
   withMargin,
+  showMentoringStartDate,
   isCompactView,
   label,
 }: ShortInfoPanelProps) => {
   const courseLanguage = language === 'en' ? LABELS.COURSE_LANGUAGE_EN : LABELS.COURSE_LANGUAGE_RU;
 
-  isCompactView = label ? false : true;
+  const viewMode = isCompactView ?? !label;
   const normalView = (
     <>
       <DateSimple
@@ -46,7 +47,7 @@ export const ShortInfoPanel = ({
       >
       </DateSimple>
 
-      <DateSimple label={LABELS.REGISTERATION_END} startDate={registrationEndDate}></DateSimple>
+      <DateSimple label={LABELS.REGISTRATION_END} startDate={registrationEndDate}></DateSimple>
 
       <p className={cx('additional-info')}>
         <Image className={cx('icon')} src={micIcon} alt="microphone-icon" />
@@ -62,6 +63,10 @@ export const ShortInfoPanel = ({
         startDate && registrationEndDate ? calculateFreshDate(startDate, registrationEndDate) : null
       }
     >
+      {showMentoringStartDate && (
+        <Image className={cx('icon')} src={micIcon} alt="microphone-icon" />
+      )}
+
       <span className={cx('language')} data-testid="course-language">
         {courseLanguage}
       </span>
@@ -70,7 +75,7 @@ export const ShortInfoPanel = ({
 
   return (
     <section className={cx('info', { margin: withMargin })}>
-      {isCompactView ? compactView : normalView}
+      {viewMode ? compactView : normalView}
     </section>
   );
 };
