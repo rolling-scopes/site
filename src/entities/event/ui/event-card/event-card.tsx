@@ -34,17 +34,12 @@ export const EventCard = ({
           <Subtitle fontWeight="regular" className={cx('organized-by')}>
             {organizedBy}
           </Subtitle>
-          <Subtitle
-            as="h4"
-            fontWeight="medium"
-            fontSize="extra-small"
-            className={cx('event-organization')}
-          >
+          <Subtitle as="h4" fontSize="extra-small" className={cx('event-organization')}>
             {organization}
           </Subtitle>
         </section>
         <section className={cx('about-event')} data-testid="about-section">
-          <h2 className={cx('event-title')}>{title}</h2>
+          <Subtitle className={cx('event-title')}>{title}</Subtitle>
           <p title={additionalInfo} className={cx('event-additional-info')}>
             {additionalInfo}
           </p>
