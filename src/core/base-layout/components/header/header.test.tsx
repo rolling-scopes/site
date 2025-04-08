@@ -80,11 +80,7 @@ describe('Header', () => {
   describe('Dropdown', () => {
     it('should be open when isDropdownOpen is true', async () => {
       await act(async () =>
-        renderWithRouter(
-          <DropdownWrapper onMouseEnter={() => {}} onMouseLeave={() => {}} isOpen={true}>
-            TEST
-          </DropdownWrapper>,
-        ),
+        renderWithRouter(<DropdownWrapper isOpen={true}>TEST</DropdownWrapper>),
       );
 
       const dropdownElement = screen.getByTestId('header-dropdown');

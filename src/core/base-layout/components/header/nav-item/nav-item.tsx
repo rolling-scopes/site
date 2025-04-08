@@ -1,9 +1,12 @@
 import { KeyboardEvent, PropsWithChildren, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames/bind';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 
 import { DropdownWrapper } from '../dropdown/dropdown-wrapper';
 import { ROUTES } from '@/core/const';
+import iconBlue from '@/shared/assets/svg/heart-blue.svg';
+import iconYellow from '@/shared/assets/svg/heart-yellow.svg';
 import { useOutsideClick } from '@/shared/hooks/use-outside-click/use-outside-click';
 import { DropdownArrow } from '@/shared/icons/dropdown-arrow';
 
@@ -80,6 +83,28 @@ export const NavItem = ({ label, href, children }: NavItemProps) => {
         )}
         onClick={handleClick}
       >
+        {label === 'Support Us'
+          && (pathname.includes(ROUTES.MENTORSHIP)
+            ? (
+                <Image
+                  src={iconBlue}
+                  alt="Donate-icon"
+                  width={18}
+                  height={16}
+                  aria-hidden="true"
+                  data-testid="school-item-icon"
+                />
+              )
+            : (
+                <Image
+                  src={iconYellow}
+                  alt="Donate-icon"
+                  width={18}
+                  height={16}
+                  aria-hidden="true"
+                  data-testid="school-item-icon"
+                />
+              ))}
         <span className={cx('label-bold')}>
           {label}
           <span className={cx('label-content')} aria-hidden="true">

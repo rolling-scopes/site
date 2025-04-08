@@ -41,6 +41,10 @@
     background-color: $color-black;
   }
 
+  > img {
+    margin-right: 5px;
+  }
+
   .label-bold {
     @extend %transition-all;
 
