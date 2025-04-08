@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 
 import { Event } from '@/entities/event';
 import { LinkCustom } from '@/shared/ui/link-custom';
+import { Subtitle } from '@/shared/ui/subtitle';
 
 import styles from './event-card.module.scss';
 
@@ -30,12 +31,23 @@ export const EventCard = ({
       <div className={cx('card-header')} data-testid="card-header">
         <p className={cx('event-tag')}>{eventType}</p>
         <section className={cx('about-organization')} data-testid="organization-section">
-          <h4 className={cx('organized-by')}>{organizedBy}</h4>
-          <h3 className={cx('event-organization')}>{organization}</h3>
+          <Subtitle fontWeight="regular" className={cx('organized-by')}>
+            {organizedBy}
+          </Subtitle>
+          <Subtitle
+            as="h4"
+            fontWeight="medium"
+            fontSize="extra-small"
+            className={cx('event-organization')}
+          >
+            {organization}
+          </Subtitle>
         </section>
         <section className={cx('about-event')} data-testid="about-section">
           <h2 className={cx('event-title')}>{title}</h2>
-          <p title={additionalInfo} className={cx('event-additional-info')}>{additionalInfo}</p>
+          <p title={additionalInfo} className={cx('event-additional-info')}>
+            {additionalInfo}
+          </p>
         </section>
       </div>
 
