@@ -1,4 +1,5 @@
 import { AboutCourse } from '@/widgets/about-course';
+import { AwsBadge } from '@/widgets/aws-badge';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
@@ -21,6 +22,7 @@ export const AwsFundamentals = ({ courseName }: AwsFundamentalsProps) => {
       <Certification courseName={courseName} />
       <Communication courseName={courseName} />
       <Required courseName={courseName} />
+      <AwsBadge />
       <Trainers trainers={awsFundamentals} courseName={courseName} />
     </>
   );

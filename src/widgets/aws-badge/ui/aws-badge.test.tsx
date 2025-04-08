@@ -20,16 +20,10 @@ describe('AwsBadge component', () => {
     paragraphs = screen.getAllByTestId('paragraph');
   });
 
-  it('renders widget without crashing', () => {
+  it('renders widget and title correctly', () => {
     expect(widget).toBeVisible();
     expect(title).toBeVisible();
     expect(title).toHaveTextContent('AWS DIGITAL BADGE');
-
-    test.each(descriptions)('checks that the paragraph contains the text: %s', (description) => {
-      const matches = paragraphs.some((item) => description.test(item.textContent || ''));
-
-      expect(matches).toBe(true);
-    });
   });
 
   it('renders correct image with alt text', () => {
@@ -38,5 +32,11 @@ describe('AwsBadge component', () => {
     expect(image).toBeVisible();
     expect(image).toHaveAttribute('alt', expect.stringContaining('AWS Digital Badge'));
     expect(image).toHaveAttribute('src', imageAws.src);
+  });
+
+  test.each(descriptions)('checks that the paragraph contains the text: %s', (description) => {
+    const matches = paragraphs.some((item) => description.test(item.textContent || ''));
+
+    expect(matches).toBe(true);
   });
 });
