@@ -1,17 +1,10 @@
-import {
-  FocusEvent,
-  KeyboardEvent,
-  PropsWithChildren,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import { KeyboardEvent, PropsWithChildren, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames/bind';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 import { DropdownWrapper } from '../dropdown/dropdown-wrapper';
 import { ROUTES } from '@/core/const';
+import { useOutsideClick } from '@/shared/hooks/use-outside-click/use-outside-click';
 import { DropdownArrow } from '@/shared/icons/dropdown-arrow';
 
 import styles from './nav-item.module.scss';
@@ -26,11 +19,10 @@ type NavItemProps = PropsWithChildren & {
 export const NavItem = ({ label, href, children }: NavItemProps) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
-  const dropdownToggleRef = useRef<HTMLButtonElement>(null);
-  const linkRef = useRef<HTMLAnchorElement>(null);
-
-  const onClose = () => setDropdownOpen(false);
-  const onOpen = () => setDropdownOpen(true);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const isDropdown = Boolean(children);
+  const router = useRouter();
 
   const pathname = usePathname();
   const isHrefHome = href === ROUTES.HOME;
@@ -39,28 +31,33 @@ export const NavItem = ({ label, href, children }: NavItemProps) => {
     : pathname?.includes(href.replaceAll(ROUTES.HOME, ''));
   const linkHref = isHrefHome ? href : `/${href}`;
 
+  const onClose = () => setDropdownOpen(false);
+  const onDropdownToggle = () => setDropdownOpen((prev) => !prev);
+
+  const handleClick = () => {
+    if (isDropdown) {
+      onDropdownToggle();
+    } else {
+      router.push(linkHref);
+    }
+  };
+
   const handleEscKeyPress = (e: KeyboardEvent<HTMLElement>) => {
     if (e.code === 'Escape') {
       onClose();
-      dropdownToggleRef.current?.focus();
+      buttonRef.current?.focus();
     }
   };
 
   const handleConfirmKeyPress = (e: KeyboardEvent<HTMLElement>) => {
     if (e.code === 'Enter' || e.code === 'Space') {
       e.preventDefault();
-      setDropdownOpen((prev) => !prev);
-
-      linkRef.current?.click();
+      handleClick();
     }
     handleEscKeyPress(e);
   };
 
-  const handleBlur = (e: FocusEvent<HTMLDivElement>) => {
-    if (!e.currentTarget.contains(e.relatedTarget)) {
-      onClose();
-    }
-  };
+  useOutsideClick(wrapperRef, onClose, isDropdownOpen);
 
   useEffect(() => {
     onClose();
@@ -69,39 +66,33 @@ export const NavItem = ({ label, href, children }: NavItemProps) => {
   return (
     <div
       className={cx('menu-item-wrapper')}
-      onBlur={handleBlur}
+      ref={wrapperRef}
       onKeyDown={handleConfirmKeyPress}
       data-testid="menu-item"
     >
-      <Link
-        ref={linkRef}
-        href={linkHref}
+      <button
+        ref={buttonRef}
         className={cx(
           'menu-item',
           { active: isActive },
-          { 'dropdown-toggle': Boolean(children) },
+          { 'dropdown-toggle': isDropdown },
           { rotate: isDropdownOpen },
         )}
-        onMouseLeave={onClose}
-        onMouseEnter={onOpen}
+        onClick={handleClick}
       >
-        <span className={cx('label')}>{label}</span>
-        {children && (
-          <button
-            ref={dropdownToggleRef}
-            className={cx('dropdown-arrow')}
-            aria-expanded={isDropdownOpen}
-            tabIndex={-1}
-          >
+        <span className={cx('label-bold')}>
+          {label}
+          <span className={cx('label-content')} aria-hidden="true">
+            {label}
+          </span>
+        </span>
+        {isDropdown && (
+          <span className={cx('dropdown-arrow')} role="button" aria-expanded={isDropdownOpen}>
             <DropdownArrow />
-          </button>
+          </span>
         )}
-      </Link>
-      {children && (
-        <DropdownWrapper onMouseLeave={onClose} onMouseEnter={onOpen} isOpen={isDropdownOpen}>
-          {children}
-        </DropdownWrapper>
-      )}
+      </button>
+      {isDropdown && <DropdownWrapper isOpen={isDropdownOpen}>{children}</DropdownWrapper>}
     </div>
   );
 };

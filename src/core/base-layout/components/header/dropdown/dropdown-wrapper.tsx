@@ -8,15 +8,15 @@ import styles from './dropdown-wrapper.module.scss';
 const cx = classNames.bind(styles);
 
 export interface DropdownWrapperProps {
-  onMouseLeave: () => void;
-  onMouseEnter: () => void;
+  // onMouseLeave: () => void;
+  // onMouseEnter: () => void;
   isOpen: boolean;
   children: ReactNode;
 }
 
 export const DropdownWrapper = ({
-  onMouseLeave,
-  onMouseEnter,
+  // onMouseLeave,
+  // onMouseEnter,
   isOpen,
   children,
 }: DropdownWrapperProps) => {
@@ -25,8 +25,8 @@ export const DropdownWrapper = ({
   return (
     <div
       className={cx('courses-dropdown', { open: isOpen })}
-      onMouseLeave={onMouseLeave}
-      onMouseEnter={onMouseEnter}
+      // onMouseLeave={onMouseLeave}
+      // onMouseEnter={onMouseEnter}
       data-testid="header-dropdown"
       ref={dropdownRef}
     >

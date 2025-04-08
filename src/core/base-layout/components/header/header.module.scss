@@ -6,18 +6,10 @@
 
   width: 100%;
   height: 64px;
-  padding: 0 40px;
+  padding: 0 80px;
   border-radius: 0;
 
   transition: background-color 0.2s;
-
-  &.gray {
-    background-color: $color-yellow-500;
-  }
-
-  &.blue {
-    background: $gradient-blue-background;
-  }
 
   &.none {
     display: none;

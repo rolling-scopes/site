@@ -1,8 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import classNames from 'classnames/bind';
-import { usePathname } from 'next/navigation';
 
 import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
@@ -21,13 +20,8 @@ type HeaderProps = {
   courses: Course[];
 };
 
-type HeaderAccentColor = 'gray' | 'blue' | 'white';
-
 export const Header = ({ courses }: HeaderProps) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const pathname = usePathname();
-  const headerAccentColor = pathname?.includes(ROUTES.MENTORSHIP) ? 'blue' : 'gray';
-  const [color, setColor] = useState<HeaderAccentColor>(headerAccentColor);
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -37,32 +31,8 @@ export const Header = ({ courses }: HeaderProps) => {
     setMenuOpen(false);
   };
 
-  useEffect(() => {
-    const listenScrollEvent = () => {
-      const scrollY = window.scrollY;
-
-      // setting the class depending on the scrolled height
-      // class changes the background color of the header
-      if (scrollY < 500) {
-        setColor(headerAccentColor);
-      } else {
-        setColor('white');
-      }
-    };
-
-    window.addEventListener('scroll', listenScrollEvent);
-
-    return () => {
-      window.removeEventListener('scroll', listenScrollEvent);
-    };
-  }, [headerAccentColor]);
-
-  useEffect(() => {
-    setColor(headerAccentColor);
-  }, [pathname, headerAccentColor]);
-
   return (
-    <nav className={cx('navbar', color)} data-testid="navigation">
+    <nav className={cx('navbar', 'white')} data-testid="navigation">
       <section className={cx('navbar-content')}>
         <Logo />
 
@@ -72,7 +42,6 @@ export const Header = ({ courses }: HeaderProps) => {
         <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 
         <menu className={cx('menu')}>
-          <NavItem label="Donate" href={`#${ANCHORS.DONATE}`} />
           <NavItem label="RS School" href={ROUTES.HOME}>
             <SchoolMenu>
               {schoolMenuStaticLinks.map((link, i) => (
@@ -123,6 +92,7 @@ export const Header = ({ courses }: HeaderProps) => {
             </SchoolMenu>
           </NavItem>
           <NavItem label="Docs" href={ROUTES.DOCS_EN} />
+          <NavItem label="Support Us" href={`#${ANCHORS.DONATE}`} />
         </menu>
       </section>
     </nav>

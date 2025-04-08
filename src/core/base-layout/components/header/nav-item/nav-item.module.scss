@@ -14,6 +14,16 @@
 
   height: 100%;
   padding: 0 12px 0 14px;
+  border: none;
+
+  background: none;
+
+  &:focus-visible {
+    border-radius: 2px;
+    outline-style: solid;
+    outline-width: 2px;
+    outline-offset: 0;
+  }
 
   &::after {
     @extend %transition-all;
@@ -31,16 +41,27 @@
     background-color: $color-black;
   }
 
-  .label {
+  .label-bold {
     @extend %transition-all;
+
+    position: relative;
 
     font-family: $font-primary;
     font-size: 16px;
-    font-weight: $font-weight-regular;
+    font-weight: $font-weight-bold;
     line-height: 20px;
-    color: $color-gray-900;
+    color: transparent;
     text-align: center;
     letter-spacing: 0;
+
+    .label-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      font-weight: $font-weight-regular;
+      color: $color-gray-900;
+    }
   }
 
   &.dropdown-toggle {
@@ -57,10 +78,6 @@
 
       background-color: transparent;
 
-      &:focus {
-        outline-offset: 3px;
-      }
-
       > img {
         width: 16px;
         height: auto;
@@ -72,17 +89,15 @@
     }
   }
 
-  &.active::after {
-    transform: scaleX(1);
+  &.active {
+    & > .label-bold > .label-content {
+      font-weight: $font-weight-bold;
+    }
   }
 
   @include media-hover {
     &:hover::after {
       transform: scaleX(1);
-    }
-
-    &:hover .label {
-      color: $color-black;
     }
   }
 }
