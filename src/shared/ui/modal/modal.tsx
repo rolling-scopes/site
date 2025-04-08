@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 import { createPortal } from 'react-dom';
 
+import { Subtitle } from '../subtitle';
 import closeIcon from '@/shared/assets/svg/close.svg';
 import { KEY_CODES } from '@/shared/constants';
 
@@ -101,9 +102,9 @@ export const Modal = ({ isOpen, onClose, children, title, className }: ModalProp
     >
       <div className={cx('modal-header', { 'no-title': !title })} data-testid="modal-header">
         {title && (
-          <h2 className={cx('modal-title')} data-testid="modal-title">
+          <Subtitle className={cx('modal-title')} fontSize="small" fontWeight="bold" data-testid="modal-title">
             {title}
-          </h2>
+          </Subtitle>
         )}
         <button
           className={cx('modal-close-button')}
