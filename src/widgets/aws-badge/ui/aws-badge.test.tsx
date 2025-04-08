@@ -2,39 +2,41 @@ import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 
 import { AwsBadge } from './aws-badge';
+import imageAws from '@/shared/assets/aws-cloud-pract-badge.webp';
 
 describe('AwsBadge component', () => {
+  const descriptions = [
+    /Upon completing the course/i,
+  ];
+
   let widget: HTMLElement;
   let title: HTMLElement;
-  let text: HTMLElement[];
+  let paragraphs: HTMLElement[];
 
   beforeEach(() => {
     render(<AwsBadge />);
     widget = screen.getByTestId('aws-badge');
     title = screen.getByTestId('widget-title');
-    text = screen.getAllByTestId('paragraph');
+    paragraphs = screen.getAllByTestId('paragraph');
   });
 
   it('renders widget without crashing', () => {
     expect(widget).toBeVisible();
-  });
-
-  it('displays correct title', () => {
     expect(title).toBeVisible();
     expect(title).toHaveTextContent('AWS DIGITAL BADGE');
-  });
 
-  it('displays correct text', () => {
-    text.forEach((paragraph) => {
-      expect(paragraph).toBeVisible();
-      expect(paragraph).not.toBeEmptyDOMElement();
-      expect(paragraph.innerHTML).not.toBeNull();
+    test.each(descriptions)('checks that the paragraph contains the text: %s', (description) => {
+      const matches = paragraphs.some((item) => description.test(item.textContent || ''));
+
+      expect(matches).toBe(true);
     });
   });
 
-  it('renders the image correctly', () => {
-    const imageElement = screen.getByAltText('AWS Digital Badge');
+  it('renders correct image with alt text', () => {
+    const image = screen.getByTestId('aws-badge-img');
 
-    expect(imageElement).toBeVisible();
+    expect(image).toBeVisible();
+    expect(image).toHaveAttribute('alt', expect.stringContaining('AWS Digital Badge'));
+    expect(image).toHaveAttribute('src', imageAws.src);
   });
 });
