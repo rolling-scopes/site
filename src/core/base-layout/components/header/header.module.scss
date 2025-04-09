@@ -6,7 +6,7 @@
 
   width: 100%;
   height: 64px;
-  padding: 0 80px;
+  padding: 0 40px;
   border-radius: 0;
 
   transition: background-color 0.2s;
@@ -44,10 +44,11 @@
   position: relative;
 
   display: flex;
-  gap: 28px;
+  gap: 16px;
   align-items: center;
 
   height: 100%;
+  padding-inline-start: 0;
 
   @include media-tablet-large {
     display: none;

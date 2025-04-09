@@ -1,4 +1,11 @@
-import { KeyboardEvent, PropsWithChildren, useEffect, useRef, useState } from 'react';
+import {
+  KeyboardEvent,
+  PropsWithChildren,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
@@ -34,8 +41,17 @@ export const NavItem = ({ label, href, children }: NavItemProps) => {
     : pathname?.includes(href.replaceAll(ROUTES.HOME, ''));
   const linkHref = isHrefHome ? href : `/${href}`;
 
-  const onClose = () => setDropdownOpen(false);
-  const onDropdownToggle = () => setDropdownOpen((prev) => !prev);
+  const onClose = useCallback(() => {
+    setDropdownOpen(false);
+  }, []);
+
+  const onDropdownToggle = () => {
+    if (!isDropdownOpen) {
+      window.dispatchEvent(new CustomEvent('closeAllDropdowns'));
+    }
+
+    setDropdownOpen((prev) => !prev);
+  };
 
   const handleClick = () => {
     if (isDropdown) {
@@ -63,8 +79,16 @@ export const NavItem = ({ label, href, children }: NavItemProps) => {
   useOutsideClick(wrapperRef, onClose, isDropdownOpen);
 
   useEffect(() => {
+    window.addEventListener('closeAllDropdowns', onClose);
+
+    return () => {
+      window.removeEventListener('closeAllDropdowns', onClose);
+    };
+  }, [onClose]);
+
+  useEffect(() => {
     onClose();
-  }, [pathname]);
+  }, [pathname, onClose]);
 
   return (
     <div

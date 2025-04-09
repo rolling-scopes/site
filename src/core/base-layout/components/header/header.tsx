@@ -48,7 +48,7 @@ export const Header = ({ courses }: HeaderProps) => {
 
         <menu className={cx('menu')}>
           <NavItem label="RS School" href={ROUTES.HOME}>
-            <SchoolMenu>
+            <SchoolMenu layout="columns">
               {schoolMenuStaticLinks.map((link, i) => (
                 <SchoolMenu.Item
                   key={i}
@@ -60,7 +60,7 @@ export const Header = ({ courses }: HeaderProps) => {
             </SchoolMenu>
           </NavItem>
           <NavItem label="Courses" href={ROUTES.COURSES}>
-            <SchoolMenu>
+            <SchoolMenu layout="columns">
               {courses.map((course) => (
                 <SchoolMenu.Item
                   key={course.id}
@@ -73,7 +73,7 @@ export const Header = ({ courses }: HeaderProps) => {
             </SchoolMenu>
           </NavItem>
           <NavItem label="Community" href={ROUTES.COMMUNITY}>
-            <SchoolMenu>
+            <SchoolMenu layout="columns">
               {communityMenuStaticLinks.map((link, i) => (
                 <SchoolMenu.Item
                   key={i}
@@ -85,7 +85,7 @@ export const Header = ({ courses }: HeaderProps) => {
             </SchoolMenu>
           </NavItem>
           <NavItem label="Mentorship" href={ROUTES.MENTORSHIP}>
-            <SchoolMenu>
+            <SchoolMenu layout="columns">
               {mentorshipCourses.map((course) => (
                 <SchoolMenu.Item
                   key={course.id}
@@ -97,7 +97,9 @@ export const Header = ({ courses }: HeaderProps) => {
             </SchoolMenu>
           </NavItem>
           <NavItem label="Docs" href={ROUTES.DOCS_EN} />
-          <NavItem label="Support Us" href={`#${ANCHORS.DONATE}`} />
+          <NavItem label="Support Us" href={`#${ANCHORS.DONATE}`}>
+            <SchoolMenu layout="columns"></SchoolMenu>
+          </NavItem>
         </menu>
       </section>
     </nav>

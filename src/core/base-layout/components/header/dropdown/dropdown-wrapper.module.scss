@@ -1,5 +1,6 @@
 .courses-dropdown {
   --page-padding: 32px;
+  --header-padding: 40px;
 
   @extend %transition-all;
 
@@ -8,20 +9,20 @@
   position: absolute;
   z-index: 1;
   top: 64px;
-  left: 0;
+  right: -40px;
   transform: translateY(-10px);
 
   width: max-content;
-  min-width: 100%;
+  min-width: calc(100% + var(--header-padding));
   max-width: calc(100vw - var(--page-padding));
   height: max-content;
   padding: 32px;
-  border-radius: 20px;
+  border-radius: 0 0 0 20px;
 
   visibility: hidden;
   opacity: 0;
   background-color: $color-white;
-  box-shadow: 0 1px 8px 0 rgb(0 0 0 / 25%);
+  box-shadow: -5px 5px 10px -2px rgb(0 0 0 / 25%);
 
   &.open {
     pointer-events: all;
