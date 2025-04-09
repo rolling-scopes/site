@@ -17,7 +17,6 @@ interface ShortInfoPanelProps {
   mode?: string;
   language: Language;
   withMargin?: boolean;
-  isCompactView?: boolean;
   showMentoringStartDate?: boolean;
   label?: string;
   isShortLabel?: boolean;
@@ -29,12 +28,10 @@ export const ShortInfoPanel = ({
   language,
   withMargin,
   showMentoringStartDate,
-  isCompactView,
   label,
 }: ShortInfoPanelProps) => {
   const courseLanguage = language === 'en' ? LABELS.COURSE_LANGUAGE_EN : LABELS.COURSE_LANGUAGE_RU;
 
-  const viewMode = isCompactView ?? !label;
   const normalView = (
     <>
       <DateSimple
@@ -57,6 +54,7 @@ export const ShortInfoPanel = ({
       </p>
     </>
   );
+
   const compactView = (
     <DateSimple
       startDate={
@@ -75,7 +73,7 @@ export const ShortInfoPanel = ({
 
   return (
     <section className={cx('info', { margin: withMargin })}>
-      {viewMode ? compactView : normalView}
+      {!label ? compactView : normalView}
     </section>
   );
 };
