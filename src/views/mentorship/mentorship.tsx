@@ -1,9 +1,9 @@
-import { MentorshipHero } from './mentorship-hero/ui/mentorship-hero';
-import { DetailsMentorship } from './ui/details/details';
-import { MentorActivities } from './ui/mentor-activities';
-import { MentorshipCourses } from './ui/mentorship-courses/mentorship-courses';
-import { MentorsAfterRegister } from '@/views/mentorship/ui/mentors-after-register';
+import { MentorActivities } from '../../widgets/mentorship-activities';
+import { MentorshipCourses } from '../../widgets/mentorship-courses/mentorship-courses';
+import { DetailsMentorship } from '../../widgets/mentorship-details/details/details';
+import { MentorshipHero } from '../../widgets/mentorship-hero';
 import { Benefits } from '@/widgets/benefits';
+import { MentorsAfterRegister } from '@/widgets/mentors-after-register';
 import { MentorsDocs } from '@/widgets/mentors-docs';
 import { MentorsFeedback } from '@/widgets/mentors-feedback';
 import { MentorsRegister } from '@/widgets/mentors-register';
