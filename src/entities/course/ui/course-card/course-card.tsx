@@ -79,7 +79,7 @@ export const CourseCard = ({
           </ShortInfoPanel>
         )}
         {showMentoringStartDate && (
-          <div>
+          <div className={cx('course-data')}>
             <DateSimple
               label={LABELS.MENTOR_ACTIVITIES}
               startDate={personalMentoringStartDate || TO_BE_DETERMINED}
