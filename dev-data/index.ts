@@ -6,8 +6,8 @@ export type {
   MentorshipCourse,
   MentorshipCourseRouteKeys,
   MentorshipDefaultRouteKeys,
-  MentorshipRoute,
   MentorshipDetailsType,
+  MentorshipRoute,
 } from './mentorship-data.types';
 export type { MentorshipCourseTitles, MentorshipLinks } from './mentorship-data.types';
 

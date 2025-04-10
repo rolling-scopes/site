@@ -5,7 +5,7 @@ import { MentorsRegister } from '@/widgets/mentors-register';
 import { MentorActivities } from '@/widgets/mentorship-activities';
 import { MentorshipAfterRegister } from '@/widgets/mentorship-after-register';
 import { MentorshipCourses } from '@/widgets/mentorship-courses/mentorship-courses';
-import { MentorshipDetails } from '@/widgets/mentorship-details/details/mentorship-details';
+import { MentorshipDetails } from '@/widgets/mentorship-details/mentorship-details';
 import { MentorshipHero } from '@/widgets/mentorship-hero';
 import { MentorshipCourse, benefitMentorshipMentors, mentorsFeedbackData } from 'data';
 

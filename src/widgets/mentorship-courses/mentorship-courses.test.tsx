@@ -1,9 +1,9 @@
 import { screen, within } from '@testing-library/react';
 
-import { MentorshipCourseTitles } from '../../../dev-data/mentorship-data.types';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { mentorshipCourseTitles } from '@/views/mentorship/constants';
 import { MentorshipCourses } from '@/widgets/mentorship-courses/mentorship-courses';
+import { MentorshipCourseTitles } from 'data';
 
 describe('Mentorship courses', () => {
   it('renders the correct content', async () => {
