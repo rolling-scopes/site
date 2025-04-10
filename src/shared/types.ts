@@ -1,4 +1,4 @@
-import { type ROUTES } from '@/core/const';
+import { type ROUTES } from '@/shared/constants';
 import { LinkList } from '@/widgets/required/types';
 
 export type Route = typeof ROUTES;

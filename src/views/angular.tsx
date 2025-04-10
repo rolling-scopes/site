@@ -1,4 +1,4 @@
-import { ROUTES } from '@/core/const';
+import { ROUTES } from '@/shared/constants';
 import { AboutCourse } from '@/widgets/about-course';
 import { AngularTopics } from '@/widgets/angular-topics';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
