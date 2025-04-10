@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 
-import { DetailsMentorship } from './details';
-import { MentorshipDetails } from 'data';
+import { MentorshipDetails } from './mentorship-details';
+import { MentorshipsDetails } from 'data';
 
-const mockDetails: MentorshipDetails[] = [
+const mockDetails: MentorshipsDetails[] = [
   {
     id: 1,
     title: 'duration of mentoring',
@@ -22,7 +22,7 @@ describe('DetailsMentorship component', () => {
   let title: HTMLElement;
 
   beforeEach(() => {
-    render(<DetailsMentorship description={mockDetails} />);
+    render(<MentorshipDetails description={mockDetails} />);
     widget = screen.getByTestId('details-mentorship');
     title = screen.getByTestId('widget-title');
   });

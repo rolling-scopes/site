@@ -1,7 +1,4 @@
-export type {
-  AboutCourseInfo,
-  DataMap,
-} from './courses-data.types';
+export type { AboutCourseInfo, DataMap } from './courses-data.types';
 export type {
   CourseTitle,
   ImageLink,
@@ -9,16 +6,12 @@ export type {
   MentorshipCourse,
   MentorshipCourseRouteKeys,
   MentorshipDefaultRouteKeys,
-  MentorshipDetails,
   MentorshipRoute,
+  MentorshipsDetails,
 } from './mentorship-data.types';
 export type { MentorshipCourseTitles, MentorshipLinks } from './mentorship-data.types';
 
-export type {
-  StageCardProps,
-  StudyPathPage,
-  StudyPathProps,
-} from './study-path-data.types';
+export type { StageCardProps, StudyPathPage, StudyPathProps } from './study-path-data.types';
 
 export {
   ANNOUNCEMENT_TELEGRAM_LINK,

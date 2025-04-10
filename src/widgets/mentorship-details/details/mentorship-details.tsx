@@ -4,18 +4,18 @@ import { Language } from '@/shared/types';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { InfoCell } from '@/widgets/numbers/ui/info-cell/info-cell';
 import { InfoGrid } from '@/widgets/numbers/ui/info-grid/info-grid';
-import { type MentorshipDetails, aboutMentorsData } from 'data';
+import { type MentorshipsDetails, aboutMentorsData } from 'data';
 
-import styles from './details.module.scss';
+import styles from './mentorship-details.module.scss';
 
 const cx = classnames.bind(styles);
 
 type MentorshipDetailsProps = {
-  description: MentorshipDetails[];
+  description: MentorshipsDetails[];
   lang?: Language;
 };
 
-export const DetailsMentorship = ({ description, lang = 'en' }: MentorshipDetailsProps) => {
+export const MentorshipDetails = ({ description, lang = 'en' }: MentorshipDetailsProps) => {
   return (
     <section className={cx('details-container', 'container')} data-testid="details-mentorship">
       <div className={cx('details-content', 'content')}>
