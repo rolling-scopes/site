@@ -13,6 +13,7 @@ type SchoolMenuProps = PropsWithChildren &
     heading?: string;
     color?: Color;
     layout?: 'columns' | 'single';
+    mobileClass?: 'visible' | 'hidden';
   };
 
 export const SchoolMenu = ({
@@ -21,9 +22,10 @@ export const SchoolMenu = ({
   children,
   className,
   layout = 'single',
+  mobileClass,
 }: SchoolMenuProps) => {
   return (
-    <div className={cx('school-menu')}>
+    <div className={cx('school-menu', mobileClass)}>
       {heading && <h3 className={cx('heading', color)}>{heading}</h3>}
       <ul
         className={cx('school-list', `school-list--${layout}`, className)}

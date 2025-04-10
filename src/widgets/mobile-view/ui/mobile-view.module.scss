@@ -13,9 +13,31 @@
   }
 }
 
+.category-container {
+  width: 100%;
+}
+
 .category-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 0;
+  border: none;
+
   font-size: 24px;
   font-weight: $font-weight-bold;
+
+  background: none;
+
+  .dropdown-arrow {
+    @extend %transition-all;
+
+    &.rotate {
+      transform: rotate(180deg);
+    }
+  }
 }
 
 .divider {

@@ -42,11 +42,17 @@ export const Header = ({ courses }: HeaderProps) => {
         <Logo icon={isMentorshipPage ? logoBlue : undefined} />
 
         <menu className={cx('mobile-menu', { open: isMenuOpen })} data-testid="mobile-menu">
-          <MobileView onClose={handleMenuClose} courses={courses} type="header" />
+          <MobileView
+            onClose={handleMenuClose}
+            courses={courses}
+            type="header"
+            logoIcon={isMentorshipPage ? logoBlue : undefined}
+            isMenuOpen={isMenuOpen}
+          />
         </menu>
         <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 
-        <menu className={cx('menu')}>
+        <menu className={cx('menu')} data-testid="desktop-menu">
           <NavItem label="RS School" href={ROUTES.HOME}>
             <SchoolMenu layout="columns">
               {schoolMenuStaticLinks.map((link, i) => (

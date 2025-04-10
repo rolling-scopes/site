@@ -1,7 +1,11 @@
 .school-menu {
+  @extend %transition-all;
+
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 16px;
+
   color: $color-gray-100;
 
   .heading {
@@ -35,11 +39,6 @@
           width: unset;
         }
       }
-
-      @include media-mobile-landscape {
-        column-gap: 10px;
-        max-height: 600px;
-      }
     }
 
     &--single {
@@ -53,11 +52,29 @@
           width: unset;
         }
       }
-
-      @include media-mobile-landscape {
-        column-gap: 10px;
-        max-height: 600px;
-      }
     }
+
+    @include media-mobile-landscape {
+      column-gap: 10px;
+      max-height: 600px;
+    }
+  }
+
+  &.hidden {
+    @extend %transition-all;
+
+    max-height: 0;
+    margin-top: 0;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &.visible {
+    @extend %transition-all;
+
+    max-height: 600px;
+    margin-top: 26px;
+    visibility: visible;
+    opacity: 1;
   }
 }
