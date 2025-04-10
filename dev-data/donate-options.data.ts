@@ -1,4 +1,4 @@
-import { LINKS } from '@/core/const';
+import { LINKS } from '@/shared/constants';
 
 export const donateOptions = [
   {

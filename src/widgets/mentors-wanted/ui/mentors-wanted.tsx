@@ -1,8 +1,8 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 
-import { ANCHORS, ROUTES } from '@/core/const';
 import mentorImg from '@/shared/assets/mentors-wanted.webp';
+import { ANCHORS, ROUTES } from '@/shared/constants';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';

@@ -1,8 +1,8 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 
-import { ANCHORS } from '@/core/const';
 import imageAbout from '@/shared/assets/about.webp';
+import { ANCHORS } from '@/shared/constants';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { WidgetTitle } from '@/shared/ui/widget-title';

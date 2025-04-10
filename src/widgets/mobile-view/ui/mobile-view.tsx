@@ -1,8 +1,8 @@
 import classNames from 'classnames/bind';
 import Link from 'next/link';
 
-import { ANCHORS, ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
+import { ANCHORS, ROUTES } from '@/shared/constants';
 import { Logo } from '@/shared/ui/logo';
 import { SchoolMenu } from '@/widgets/school-menu';
 import { communityMenuStaticLinks, mentorshipCourses, schoolMenuStaticLinks } from 'data';
