@@ -27,7 +27,7 @@ export const MentorshipHero = ({ lang = 'en' }: MentorshipHeroProps) => {
     <section className={cx('hero', 'container')} data-testid="mentorship-hero">
       <div className={cx('hero-content', 'content')}>
         <article className={cx('hero-info')}>
-          <Subtitle fontSize="extra-small" weight="bold">
+          <Subtitle fontSize="extra-small" fontWeight="bold">
             {subTitle[0]}
           </Subtitle>
           <MainTitle className={cx('title-main')}>{mainTitle}</MainTitle>

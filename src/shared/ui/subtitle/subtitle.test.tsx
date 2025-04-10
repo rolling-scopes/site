@@ -63,10 +63,38 @@ describe('Subtitle component', () => {
     expect(subtitle).toHaveClass('custom-class');
   });
 
-  it('renders as h3 element', () => {
+  it('renders as h3 element by default', () => {
     render(<Subtitle>H3 Element</Subtitle>);
     const subtitle = screen.getByTestId('subtitle');
 
     expect(subtitle.tagName).toBe('H3');
+  });
+
+  it('renders as h2 element', () => {
+    render(<Subtitle as="h2">H2 Element</Subtitle>);
+    const subtitle = screen.getByTestId('subtitle');
+
+    expect(subtitle.tagName).toBe('H2');
+  });
+
+  it('renders as h4 element', () => {
+    render(<Subtitle as="h4">H4 Element</Subtitle>);
+    const subtitle = screen.getByTestId('subtitle');
+
+    expect(subtitle.tagName).toBe('H4');
+  });
+
+  it('renders as h5 element', () => {
+    render(<Subtitle as="h5">H5 Element</Subtitle>);
+    const subtitle = screen.getByTestId('subtitle');
+
+    expect(subtitle.tagName).toBe('H5');
+  });
+
+  it('renders as h6 element', () => {
+    render(<Subtitle as="h6">H6 Element</Subtitle>);
+    const subtitle = screen.getByTestId('subtitle');
+
+    expect(subtitle.tagName).toBe('H6');
   });
 });

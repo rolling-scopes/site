@@ -5,7 +5,9 @@ import classNames from 'classnames/bind';
 import styles from './subtitle.module.scss';
 
 type SubtitleProps = Pick<HTMLAttributes<HTMLHeadingElement>, 'className' | 'children'> &
-  VariantProps<typeof subtitleVariants>;
+  VariantProps<typeof subtitleVariants> & {
+    as?: 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  };
 
 export const cx = classNames.bind(styles);
 
@@ -18,29 +20,40 @@ const subtitleVariants = cva(cx('subtitle'), {
       'large': cx('large-font-size'),
       'extra-large': cx('extra-large-font-size'),
     },
-    weight: {
-      normal: cx('normal'),
-      bold: cx('bold'),
+    fontWeight: {
+      light: cx('light-font-weight'),
+      regular: cx('regular-font-weight'),
+      medium: cx('medium-font-weight'),
+      bold: cx('bold-font-weight'),
     },
   },
   defaultVariants: {
     fontSize: 'medium',
-    weight: 'normal',
+    fontWeight: 'medium',
   },
 });
 
-export const Subtitle = ({ children, fontSize, weight, className, ...props }: SubtitleProps) => {
+export const Subtitle = ({
+  as = 'h3',
+  children,
+  fontSize,
+  fontWeight,
+  className,
+  ...props
+}: SubtitleProps) => {
+  const HeadingTag = as;
+
   return (
-    <h3
+    <HeadingTag
       className={subtitleVariants({
         fontSize,
-        weight,
+        fontWeight,
         className,
       })}
       data-testid="subtitle"
       {...props}
     >
       {children}
-    </h3>
+    </HeadingTag>
   );
 };
