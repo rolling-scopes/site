@@ -6,7 +6,7 @@
   max-width: 889px;
   padding: 0 32px;
   border: none;
-  border-radius: 12px;
+  border-radius: $border-radius-12;
 
   line-height: 24px;
 
@@ -121,7 +121,7 @@
 
   padding: 16px;
   border: none;
-  border-radius: 999px;
+  border-radius: $border-radius-999;
 
   font-size: 24px;
 
