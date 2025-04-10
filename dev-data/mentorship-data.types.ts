@@ -48,7 +48,7 @@ export type ImageLink = {
   alt: string;
 };
 
-export type MentorshipDetails = {
+export type MentorshipDetailsType = {
   id: number;
   title: string;
   info: string;
@@ -67,7 +67,7 @@ export type MentorshipCourse = {
     courseDocs?: string;
     onboard?: SocialMediaProps[];
   };
-  details: MentorshipDetails[];
+  details: MentorshipDetailsType[];
   activitiesTitle: string;
   activities: MentorActivity[];
 };
