@@ -1,6 +1,6 @@
 import { LINKS } from '@/core/const';
 
-export const MentorshipAfterRegister = {
+export const mentorsRegisterData = {
   en: {
     header: 'Register as a Mentor',
     button: {

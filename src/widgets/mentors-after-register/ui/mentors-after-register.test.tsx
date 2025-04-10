@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 
-import { MentorsAfterRegister } from './mentors-after-register';
+import { MentorshipAfterRegister } from './mentors-after-register';
 
 const latinSymbolsRegExp = /^[?!,.a-zA-Z0-9\s]+$/;
 const cyrillicSymbolsRegExp = /^[?!,.а-яА-ЯёЁ0-9\s]+$/;
@@ -12,7 +12,7 @@ let steps: HTMLElement[];
 
 describe('MentorsAfterRegister component without props', () => {
   beforeEach(() => {
-    render(<MentorsAfterRegister />);
+    render(<MentorshipAfterRegister />);
     widget = screen.getByTestId('mentors-after-register');
     title = screen.getByTestId('widget-title');
     steps = screen.getAllByTestId('after-register-step');
@@ -54,7 +54,7 @@ describe('MentorsAfterRegister component without props', () => {
 
 describe('MentorsAfterRegister component with "ru" lang prop', () => {
   beforeEach(() => {
-    render(<MentorsAfterRegister lang="ru" />);
+    render(<MentorshipAfterRegister lang="ru" />);
     title = screen.getByTestId('widget-title');
     steps = screen.getAllByTestId('after-register-step');
   });
