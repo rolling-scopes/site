@@ -1,4 +1,9 @@
+import { type ROUTES } from '@/core/const';
 import { LinkList } from '@/widgets/required/types';
+
+export type Route = typeof ROUTES;
+
+export type RouteValues = Exclude<Route[keyof Route], '*' | '/' | 'docs/en' | 'docs/ru'>;
 
 export type ListData = (string | LinkList)[] | [];
 export type ListType = 'marked' | 'unmarked';

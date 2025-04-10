@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { BreadcrumbItem } from './breadcrumb-item';
 import { breadcrumbNameMap } from '../constants';
 import { ROUTES } from '@/core/const';
-import { RouteValues } from '@/core/types/route.types';
+import { RouteValues } from '@/shared/types';
 
 import styles from './breadcrumbs.module.scss';
 
