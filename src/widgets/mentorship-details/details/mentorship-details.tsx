@@ -4,14 +4,14 @@ import { Language } from '@/shared/types';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { InfoCell } from '@/widgets/numbers/ui/info-cell/info-cell';
 import { InfoGrid } from '@/widgets/numbers/ui/info-grid/info-grid';
-import { type MentorshipsDetails, aboutMentorsData } from 'data';
+import { type MentorshipDetailsType, aboutMentorsData } from 'data';
 
 import styles from './mentorship-details.module.scss';
 
 const cx = classnames.bind(styles);
 
 type MentorshipDetailsProps = {
-  description: MentorshipsDetails[];
+  description: MentorshipDetailsType[];
   lang?: Language;
 };
 

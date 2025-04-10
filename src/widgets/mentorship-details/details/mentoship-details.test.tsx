@@ -2,9 +2,9 @@ import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 
 import { MentorshipDetails } from './mentorship-details';
-import { MentorshipsDetails } from 'data';
+import { MentorshipDetailsType } from 'data';
 
-const mockDetails: MentorshipsDetails[] = [
+const mockDetails: MentorshipDetailsType[] = [
   {
     id: 1,
     title: 'duration of mentoring',
