@@ -1,7 +1,4 @@
-export type {
-  AboutCourseInfo,
-  DataMap,
-} from './courses-data.types';
+export type { AboutCourseInfo, DataMap } from './courses-data.types';
 export type {
   CourseTitle,
   ImageLink,
@@ -14,11 +11,7 @@ export type {
 } from './mentorship-data.types';
 export type { MentorshipCourseTitles, MentorshipLinks } from './mentorship-data.types';
 
-export type {
-  StageCardProps,
-  StudyPathPage,
-  StudyPathProps,
-} from './study-path-data.types';
+export type { StageCardProps, StudyPathPage, StudyPathProps } from './study-path-data.types';
 
 export {
   ANNOUNCEMENT_TELEGRAM_LINK,
@@ -66,7 +59,7 @@ export { javaScriptRu } from './javascript-ru.data';
 export { mentorDocsData } from './mentor-docs.data';
 export { mentorsAfterRegisterData } from './mentors-after-register.data';
 export { mentorsFeedbackData } from './mentors-feedback.data';
-export { mentorsRegisterData } from './mentors-register.data';
+export { MentorshipAfterRegister } from './mentors-register.data';
 export { mentorsWantedData } from './mentors-wanted.data';
 export { mentorshipCourses, mentorshipCoursesDefault } from './mentorship.data';
 export { merchData } from './merch.data';

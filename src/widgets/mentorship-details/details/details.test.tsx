@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 
-import { DetailsMentorship } from './details';
+import { DetailsMentorship } from './MentorshipDetails';
 import { MentorshipDetails } from 'data';
 
 const mockDetails: MentorshipDetails[] = [

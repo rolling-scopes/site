@@ -1,6 +1,6 @@
 import { LINKS } from '@/core/const';
 
-export const mentorsRegisterData = {
+export const MentorshipAfterRegister = {
   en: {
     header: 'Register as a Mentor',
     button: {
@@ -8,7 +8,8 @@ export const mentorsRegisterData = {
       link: LINKS.BECOME_MENTOR,
       external: true,
     },
-    noteBefore: 'You need a Github account to complete registration and access the RS-App application',
+    noteBefore:
+      'You need a Github account to complete registration and access the RS-App application',
   },
   ru: {
     header: 'Регистрация ментором',
@@ -17,6 +18,7 @@ export const mentorsRegisterData = {
       link: LINKS.BECOME_MENTOR,
       external: true,
     },
-    noteBefore: 'Для прохождения регистрации и доступа в приложение RS-App вам необходим Github аккаунт',
+    noteBefore:
+      'Для прохождения регистрации и доступа в приложение RS-App вам необходим Github аккаунт',
   },
 };

@@ -1,1 +1,1 @@
-export { MentorsAfterRegister } from './ui/mentors-after-register';
+export { MentorshipAfterRegister } from './ui/mentors-after-register';

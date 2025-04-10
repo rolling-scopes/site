@@ -19,7 +19,7 @@ type StepAfterRegisterProps = {
   content: string;
 };
 
-export const MentorsAfterRegister = ({ lang = 'en' }: MentorsAfterRegisterProps) => {
+export const MentorshipAfterRegister = ({ lang = 'en' }: MentorsAfterRegisterProps) => {
   const data = mentorsAfterRegisterData;
 
   return (
@@ -37,7 +37,9 @@ export const MentorsAfterRegister = ({ lang = 'en' }: MentorsAfterRegisterProps)
                   {`${id}. ${subtitle}`}
                 </Subtitle>
 
-                <p className={cx('step-content')} data-testid="step-content">{content}</p>
+                <p className={cx('step-content')} data-testid="step-content">
+                  {content}
+                </p>
               </article>
             );
           })}
