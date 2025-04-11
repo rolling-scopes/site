@@ -1,9 +1,9 @@
-import { getCourseDate } from './getCourseDate';
+import { getCourseDate } from './get-course-date';
 import { isCourse } from './is-course';
 import type { Course } from '@/entities/course';
 import { Event } from '@/entities/event';
 import { TO_BE_DETERMINED } from '@/shared/constants';
-import { dayJS } from '@/shared/helpers/dayJS';
+import { dayJS } from '@/shared/helpers/day-js';
 
 type DataType = Course[] | Event[];
 

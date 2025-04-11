@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest';
 
-import { getActualData } from './getActualData';
+import { getActualData } from './get-actual-data';
 import { MOCKED_IMAGE_PATH } from '../__tests__/constants';
 import { Course } from '@/entities/course';
 import { Event } from '@/entities/event';
 import { COURSE_LINKS, TO_BE_DETERMINED } from '@/shared/constants';
-import { dayJS } from '@/shared/helpers/dayJS';
+import { dayJS } from '@/shared/helpers/day-js';
 import { isCourse } from '@/shared/helpers/is-course';
 import { COURSE_TITLES } from 'data';
 

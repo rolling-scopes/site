@@ -8,6 +8,7 @@ import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import sortExports from 'eslint-plugin-sort-exports';
+import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
@@ -48,6 +49,7 @@ export default tseslint.config(
       'sort-exports': sortExports,
       'import-newlines': importNewlines,
       '@stylistic': stylistic,
+      'unicorn': eslintPluginUnicorn,
     },
     settings: {
       'react': { version: 'detect' },
@@ -260,6 +262,10 @@ export default tseslint.config(
         },
       ],
       '@stylistic/quote-props': ['error', 'consistent'],
+      'unicorn/filename-case': [
+        'error',
+        { cases: { kebabCase: true } },
+      ],
     },
   },
 );
