@@ -8,15 +8,13 @@ import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import sortExports from 'eslint-plugin-sort-exports';
+import unicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 const DIRNAME = import.meta.dirname;
 const compat = new FlatCompat({ baseDirectory: DIRNAME });
 const fsdConfig = compat.extends('@feature-sliced/eslint-config');
-
-// Pop is needed to remove 'ecmaVersion: 2015' to fix the error 💫
-fsdConfig.pop();
 
 export default tseslint.config(
   { ignores: ['.next', 'build'] },
@@ -48,6 +46,7 @@ export default tseslint.config(
       'sort-exports': sortExports,
       'import-newlines': importNewlines,
       '@stylistic': stylistic,
+      'unicorn': unicorn,
     },
     settings: {
       'react': { version: 'detect' },
@@ -260,6 +259,8 @@ export default tseslint.config(
         },
       ],
       '@stylistic/quote-props': ['error', 'consistent'],
+      'unicorn/filename-case': ['error', { cases: { kebabCase: true } }],
+      'unicorn/prefer-module': 'off',
     },
   },
 );

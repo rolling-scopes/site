@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import { CourseItem, CourseItemData } from '@/entities/course';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { dayJS } from '@/shared/helpers/dayJS';
+import { dayJS } from '@/shared/helpers/day-js';
 import { COURSE_TITLES } from 'data';
 
 const mockedProps: CourseItemData = {
