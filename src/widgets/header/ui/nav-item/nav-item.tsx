@@ -33,9 +33,7 @@ export const NavItem = ({ label, href, children }: NavItemProps) => {
 
   const pathname = usePathname();
   const isHrefHome = href === ROUTES.HOME;
-  const isActive = isHrefHome
-    ? pathname === ROUTES.HOME
-    : pathname?.includes(href);
+  const isActive = isHrefHome ? pathname === ROUTES.HOME : pathname?.includes(href);
   const linkHref = isHrefHome ? href : `/${href}`;
 
   const handleConfirmKeyPress = (e: KeyboardEvent<HTMLButtonElement>) => {

@@ -4,11 +4,12 @@ import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { usePathname } from 'next/navigation';
 
-import { BurgerMenu } from './burger/burger';
-import { NavItem } from './nav-item/nav-item';
+import { BurgerMenu } from './ui/burger/burger';
+// import { NavItem } from './ui/nav-item/nav-item';
 import { ANCHORS, ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
 import { Logo } from '@/shared/ui/logo';
+import { NavItem } from '@/widgets/header/ui/nav-item/nav-item';
 import { MobileView } from '@/widgets/mobile-view';
 import { SchoolMenu } from '@/widgets/school-menu';
 import { communityMenuStaticLinks, mentorshipCourses, schoolMenuStaticLinks } from 'data';
