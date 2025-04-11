@@ -12,6 +12,18 @@ vi.mock('./components/partnered', () => ({ Partnered: vi.fn(() => <div data-test
 
 vi.mock('./components/footer', () => ({ Footer: vi.fn(() => <div data-testid="mockFooter" />) }));
 
+// vi.mock('@/widgets/header', () => ({
+//   Header: vi.fn(() => <div data-testid="mockHeader" />),
+// }));
+
+// vi.mock('@/widgets/partnered', () => ({
+//   Partnered: vi.fn(() => <div data-testid="mockPartnered" />),
+// }));
+
+// vi.mock('@/widgets/footer', () => ({
+//   Footer: vi.fn(() => <div data-testid="mockFooter" />),
+// }));
+
 vi.mock('next/navigation', () => ({
   usePathname() {
     return mockUsePathname();
