@@ -86,6 +86,12 @@
     }
   }
 
+  .course-data {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
   .course-link {
     @include media-mobile-landscape {
       width: 100%;
