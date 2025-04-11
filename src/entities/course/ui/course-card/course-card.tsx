@@ -3,8 +3,7 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import type { Course } from '../../types';
-import { LABELS, TO_BE_DETERMINED } from '@/shared/constants';
-import { DateSimple } from '@/shared/ui/date-simple';
+import { LABELS } from '@/shared/constants';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { ShortInfoPanel } from '@/shared/ui/short-info-panel';
 import { Subtitle } from '@/shared/ui/subtitle';
@@ -41,7 +40,7 @@ export const CourseCard = ({
   backgroundStyle,
   personalMentoringStartDate,
   personalMentoringEndDate,
-  showMentoringStartDate = false,
+  showMentoringStartDate,
   className = '',
   size = 'md',
 }: CourseCardProps) => {
@@ -69,31 +68,17 @@ export const CourseCard = ({
         </Subtitle>
       </div>
       <div className={cx('course-info')}>
-        {!showMentoringStartDate && (
-          <ShortInfoPanel
-            label={dateLabel}
-            startDate={startDate}
-            registrationEndDate={registrationEndDate}
-            language={language}
-          >
-          </ShortInfoPanel>
-        )}
-        {showMentoringStartDate && (
-          <div className={cx('course-data')}>
-            <DateSimple
-              label={LABELS.MENTOR_ACTIVITIES}
-              startDate={personalMentoringStartDate || TO_BE_DETERMINED}
-              endDate={personalMentoringStartDate ? personalMentoringEndDate : null}
-              labelSeparator={LABELS.MENTOR_ACTIVITIES_SEPARATOR}
-            />
-            <ShortInfoPanel
-              startDate={null}
-              registrationEndDate={null}
-              language={language}
-              showMentoringStartDate={showMentoringStartDate}
-            />
-          </div>
-        )}
+        <ShortInfoPanel
+          showMentoringStartDate={showMentoringStartDate}
+          label={dateLabel}
+          startDate={startDate}
+          registrationEndDate={registrationEndDate}
+          language={language}
+          personalMentoringStartDate={personalMentoringStartDate}
+          personalMentoringEndDate={personalMentoringEndDate}
+        >
+        </ShortInfoPanel>
+
         <LinkCustom
           className={cx('course-link')}
           href={detailsUrl}
