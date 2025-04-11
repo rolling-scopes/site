@@ -12,7 +12,13 @@ import logoBlue from '@/shared/assets/svg/rss-logo-blue.svg';
 import { Logo } from '@/shared/ui/logo';
 import { MobileView } from '@/widgets/mobile-view';
 import { SchoolMenu } from '@/widgets/school-menu';
-import { communityMenuStaticLinks, mentorshipCourses, schoolMenuStaticLinks } from 'data';
+import { renderIcon } from '@/widgets/support/ui/support';
+import {
+  communityMenuStaticLinks,
+  donateOptions,
+  mentorshipCourses,
+  schoolMenuStaticLinks,
+} from 'data';
 
 import styles from './header.module.scss';
 
@@ -66,6 +72,14 @@ export const Header = ({ courses }: HeaderProps) => {
             </SchoolMenu>
           </NavItem>
           <NavItem label="Courses" href={ROUTES.COURSES}>
+            <SchoolMenu>
+              <SchoolMenu.Item
+                key="Courses"
+                title="All Courses"
+                description="TBD"
+                url={ROUTES.COURSES}
+              />
+            </SchoolMenu>
             <SchoolMenu layout="columns">
               {courses.map((course) => (
                 <SchoolMenu.Item
@@ -91,6 +105,14 @@ export const Header = ({ courses }: HeaderProps) => {
             </SchoolMenu>
           </NavItem>
           <NavItem label="Mentorship" href={ROUTES.MENTORSHIP}>
+            <SchoolMenu>
+              <SchoolMenu.Item
+                key="Mentorship"
+                title="About Mentorship"
+                description="TBD"
+                url={ROUTES.MENTORSHIP}
+              />
+            </SchoolMenu>
             <SchoolMenu layout="columns">
               {mentorshipCourses.map((course) => (
                 <SchoolMenu.Item
@@ -104,7 +126,24 @@ export const Header = ({ courses }: HeaderProps) => {
           </NavItem>
           <NavItem label="Docs" href={ROUTES.DOCS_EN} />
           <NavItem label="Support Us" href={`#${ANCHORS.DONATE}`}>
-            <SchoolMenu layout="columns"></SchoolMenu>
+            <ul className={cx('support-text')}>
+              <SchoolMenu.Item
+                title="Your donations help us cover hosting, domains, licenses, and advertising for courses
+                and events. Every donation, big or small, helps!"
+                url="#"
+              />
+              <SchoolMenu.Item title="Thank you for your support!" url="#" />
+            </ul>
+            <SchoolMenu>
+              {donateOptions.map((option) => (
+                <SchoolMenu.Item
+                  key={option.id}
+                  icon={renderIcon(option.icon)}
+                  title={option.linkLabel}
+                  url={option.href}
+                />
+              ))}
+            </SchoolMenu>
           </NavItem>
         </menu>
       </section>

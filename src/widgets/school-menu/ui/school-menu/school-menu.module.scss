@@ -24,8 +24,8 @@
   }
 
   .school-list {
-    gap: 19px 40px;
-    max-height: 280px;
+    gap: 24px 32px;
+    max-height: 336px;
     list-style-type: none;
 
     &--columns {
@@ -44,6 +44,7 @@
     &--single {
       display: flex;
       flex-flow: column wrap;
+      min-width: 232px;
 
       &:has(:nth-child(5)) {
         width: 512px;

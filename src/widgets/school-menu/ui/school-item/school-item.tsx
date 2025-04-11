@@ -1,5 +1,4 @@
-/* eslint-disable @stylistic/jsx-closing-bracket-location */
-import { HTMLProps } from 'react';
+import { HTMLProps, ReactNode } from 'react';
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
@@ -14,7 +13,7 @@ type SchoolItemProps = HTMLProps<HTMLLIElement> & {
   title: string;
   url: string;
   description?: string;
-  icon?: StaticImageData;
+  icon?: StaticImageData | ReactNode;
   color?: Color;
 };
 
@@ -26,17 +25,29 @@ export const SchoolItem = ({
   url,
   ...props
 }: SchoolItemProps) => {
+  const isStaticImageData = (icon: StaticImageData | ReactNode): icon is StaticImageData =>
+    typeof icon === 'object' && icon !== null && 'src' in icon;
+
   return (
-    <li {...props}>
+    <li {...props} className={cx(props.className)}>
       <Link href={url} className={cx('school-item')}>
-        {icon && <Image
-          src={icon}
-          alt=""
-          width={32}
-          height={32}
-          aria-hidden="true"
-          data-testid="school-item-icon"
-        />}
+        {icon
+          && (isStaticImageData(icon)
+            ? (
+                <Image
+                  src={icon}
+                  alt=""
+                  width={32}
+                  height={32}
+                  aria-hidden="true"
+                  data-testid="school-item-icon"
+                />
+              )
+            : (
+                <span aria-hidden="true" data-testid="school-item-icon">
+                  {icon}
+                </span>
+              ))}
         <div className={cx('description-wrapper')}>
           <span className={cx('title', color)}>{title}</span>
           {description && (

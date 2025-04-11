@@ -10,7 +10,13 @@ import { Course } from '@/entities/course';
 import { DropdownArrow } from '@/shared/icons/dropdown-arrow';
 import { Logo } from '@/shared/ui/logo';
 import { SchoolMenu } from '@/widgets/school-menu';
-import { communityMenuStaticLinks, mentorshipCourses, schoolMenuStaticLinks } from 'data';
+import { renderIcon } from '@/widgets/support/ui/support';
+import {
+  communityMenuStaticLinks,
+  donateOptions,
+  mentorshipCourses,
+  schoolMenuStaticLinks,
+} from 'data';
 
 import styles from './mobile-view.module.scss';
 
@@ -102,6 +108,12 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
         </button>
 
         <SchoolMenu mobileClass={activeDropdowns.has('Courses') ? 'visible' : 'hidden'}>
+          <SchoolMenu.Item
+            key="Courses"
+            title="All Courses"
+            description="TBD"
+            url={ROUTES.COURSES}
+          />
           {courses.map((course) => (
             <SchoolMenu.Item
               key={course.id}
@@ -162,6 +174,12 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
         </button>
 
         <SchoolMenu mobileClass={activeDropdowns.has('Mentorship') ? 'visible' : 'hidden'}>
+          <SchoolMenu.Item
+            key="Mentorship"
+            title="About Mentorship"
+            description="TBD"
+            url={ROUTES.MENTORSHIP}
+          />
           {mentorshipCourses.map((course) => (
             <SchoolMenu.Item
               key={course.id}
@@ -197,6 +215,24 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
             <DropdownArrow />
           </span>
         </button>
+
+        <SchoolMenu mobileClass={activeDropdowns.has('Support Us') ? 'visible' : 'hidden'}>
+          <SchoolMenu.Item
+            className="support-title"
+            title="Your donations help us cover hosting, domains, licenses, and advertising for courses
+                          and events. Every donation, big or small, helps!"
+            url="#"
+          />
+          <SchoolMenu.Item className="support-title" title="Thank you for your support!" url="#" />
+          {donateOptions.map((option) => (
+            <SchoolMenu.Item
+              key={option.id}
+              icon={renderIcon(option.icon)}
+              title={option.linkLabel}
+              url={option.href}
+            />
+          ))}
+        </SchoolMenu>
       </div>
     </nav>
   );

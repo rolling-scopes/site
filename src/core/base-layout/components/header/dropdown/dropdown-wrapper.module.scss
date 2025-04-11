@@ -12,6 +12,8 @@
   right: -40px;
   transform: translateY(-10px);
 
+  display: flex;
+
   width: max-content;
   min-width: calc(100% + var(--header-padding));
   max-width: calc(100vw - var(--page-padding));
