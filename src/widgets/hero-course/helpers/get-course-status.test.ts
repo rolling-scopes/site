@@ -1,6 +1,6 @@
 import { getCourseStatus } from './get-course-status';
 import type { CourseStatus } from '@/entities/course';
-import { dayJS } from '@/shared/helpers/dayJS';
+import { dayJS } from '@/shared/helpers/day-js';
 
 const now = dayJS();
 

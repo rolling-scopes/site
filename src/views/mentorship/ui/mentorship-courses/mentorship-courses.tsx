@@ -5,7 +5,7 @@ import { getCourses } from '@/entities/course/api/course-api';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import {
   transformCoursesToMentorship,
-} from '@/views/mentorship/helpers/transformCoursesToMentorship';
+} from '@/views/mentorship/helpers/transform-courses-to-mentorship';
 
 import styles from './mentorship-courses.module.scss';
 

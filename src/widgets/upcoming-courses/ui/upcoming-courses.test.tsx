@@ -2,10 +2,10 @@ import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { mockedCourses } from '@/shared/__tests__/constants';
-import { getActualData } from '@/shared/helpers/getActualData';
+import { getActualData } from '@/shared/helpers/get-actual-data';
 import { UpcomingCourses } from '@/widgets/upcoming-courses';
 
-vi.mock('@/shared/helpers/getActualData');
+vi.mock('@/shared/helpers/get-actual-data');
 
 describe('UpcomingCourses', () => {
   describe('with courses', () => {

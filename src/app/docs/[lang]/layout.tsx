@@ -1,5 +1,5 @@
 import { DocsLayout } from '../components/docs-layout/docs-layout';
-import { fetchMenu } from '../utils/fetchMenu';
+import { fetchMenu } from '../utils/fetch-menu';
 import { Language } from '@/shared/types';
 
 type RouteParams = { lang: Language;

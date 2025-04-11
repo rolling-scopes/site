@@ -3,14 +3,14 @@ import { fireEvent, screen } from '@testing-library/react';
 import classNames from 'classnames/bind';
 import { beforeEach } from 'vitest';
 
-import { DropdownWrapper } from './dropdown/dropdown-wrapper';
 import { Header } from './header';
+import { DropdownWrapper } from './ui/dropdown/dropdown-wrapper';
 import { mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
-import stylesDropdown from './dropdown/dropdown-wrapper.module.scss';
 import stylesHeader from './header.module.scss';
-import stylesNavItem from './nav-item/nav-item.module.scss';
+import stylesDropdown from './ui/dropdown/dropdown-wrapper.module.scss';
+import stylesNavItem from './ui/nav-item/nav-item.module.scss';
 
 const cxDropdown = classNames.bind(stylesDropdown);
 const cxHeader = classNames.bind(stylesHeader);

@@ -8,7 +8,7 @@ import remarkRemoveComments from 'remark-remove-comments';
 import remarkToc from 'remark-toc';
 
 import { GITHUB_RAW_ROOT } from '../../constants';
-import { isValidUrl } from '@/shared/helpers/isValidUrl';
+import { isValidUrl } from '@/shared/helpers/is-valid-url';
 import { Language } from '@/shared/types';
 
 const GITHUB_IMAGE_BASE = `${GITHUB_RAW_ROOT}/images`;

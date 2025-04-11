@@ -1,4 +1,4 @@
-import { COURSE_TITLES, CourseMap } from './courseTitles.data';
+import { COURSE_TITLES, CourseMap } from './course-titles.data';
 
 export const courseDataMap: CourseMap = {
   [COURSE_TITLES.JS_EN]: {

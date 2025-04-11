@@ -7,7 +7,7 @@ import {
   AwsFundamentalsBadge,
   COURSE_TITLES,
   CourseNamesKeys,
-} from './courseTitles.data';
+} from './course-titles.data';
 import awsPractitionerBadge from '@/shared/assets/aws-cloud-pract-badge.webp';
 import angularImg from '@/shared/assets/rs-slope-angular.webp';
 import awsDevImg from '@/shared/assets/rs-slope-aws-dev.webp';

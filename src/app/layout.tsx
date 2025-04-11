@@ -2,7 +2,7 @@ import { PropsWithChildren } from 'react';
 
 import { Analytics } from './analytics';
 import { BaseLayout } from '@/core/base-layout';
-import '@/shared/helpers/dayJS';
+import '@/shared/helpers/day-js';
 import type { Metadata } from 'next';
 
 import '@/core/styles/index.scss';

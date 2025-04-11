@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest';
 
-import { Copyright } from '@/core/base-layout/components/footer/copyright';
-import { DesktopView } from '@/core/base-layout/components/footer/desktop-view';
 import { mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
+import { Copyright } from '@/widgets/footer/ui/copyright';
+import { DesktopView } from '@/widgets/footer/ui/desktop-view';
 import { MobileView } from '@/widgets/mobile-view';
 
 describe('Footer', () => {

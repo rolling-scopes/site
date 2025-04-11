@@ -5,7 +5,7 @@ import classNames from 'classnames/bind';
 import Link from 'next/link.js';
 import { createPortal } from 'react-dom';
 
-import MOCKED_SEARCH from '../../mocked_search';
+import MOCKED_SEARCH from '../../mocked-search';
 import { Language } from '@/shared/types';
 
 import styles from './search.module.scss';
