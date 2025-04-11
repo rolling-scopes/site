@@ -1,7 +1,7 @@
 /// <reference types="vitest" />
 import react from '@vitejs/plugin-react';
 import { relative, resolve } from 'path';
-import { defineConfig } from 'vitest/config';
+import { configDefaults, defineConfig } from 'vitest/config';
 
 export default defineConfig({
   plugins: [react(), stubNextAssetImport()],
@@ -24,7 +24,9 @@ export default defineConfig({
     ],
     coverage: {
       provider: 'v8',
+      reporter: ['text', 'html'],
       exclude: [
+        ...(configDefaults.coverage?.exclude || []),
         'node_modules',
         '.eslintrc.cjs',
         '**/*.types.ts',
@@ -35,6 +37,14 @@ export default defineConfig({
         '**/__tests__',
         '**/index.ts',
         'build',
+        '**/dev-data/**',
+        '**/.next/**',
+        '**/types.ts',
+        '**/types.js',
+        '**/constants.ts',
+        '**/constants.js',
+        '**/*.config.{ts,js,mjs}',
+        '**/index.tsx',
       ],
       thresholds: {
         lines: 80,
