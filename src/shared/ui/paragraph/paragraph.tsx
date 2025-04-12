@@ -4,8 +4,9 @@ import classNames from 'classnames/bind';
 
 import styles from './paragraph.module.scss';
 
-type ParagraphProps = Pick<HTMLAttributes<HTMLParagraphElement>, 'className' | 'children'> &
-  VariantProps<typeof paragraphVariants>;
+type ParagraphProps = Pick<HTMLAttributes<HTMLParagraphElement>, 'className' | 'children'>
+  & VariantProps<typeof paragraphVariants>
+  & { dataTestId?: string };
 
 export const cx = classNames.bind(styles);
 
@@ -19,14 +20,14 @@ const paragraphVariants = cva(cx('paragraph'), {
   defaultVariants: { fontSize: 'medium' },
 });
 
-export const Paragraph = ({ children, fontSize, className }: ParagraphProps) => {
+export const Paragraph = ({ children, fontSize, className, dataTestId = 'paragraph' }: ParagraphProps) => {
   return (
     <p
       className={paragraphVariants({
         fontSize,
         className,
       })}
-      data-testid="paragraph"
+      data-testid={dataTestId}
     >
       {children}
     </p>

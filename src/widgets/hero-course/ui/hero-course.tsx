@@ -26,7 +26,6 @@ export const HeroCourse = async ({ courseName }: HeroCourseProps) => {
     subTitle,
     altTitle,
     language,
-    mode,
     enroll,
     secondaryIcon,
     startDate,
@@ -60,7 +59,6 @@ export const HeroCourse = async ({ courseName }: HeroCourseProps) => {
             startDate={startDate}
             registrationEndDate={registrationEndDate}
             language={language}
-            mode={mode}
             withMargin
           />
           <LinkCustom href={enrollHref} variant="secondary" external disabled={!enroll}>

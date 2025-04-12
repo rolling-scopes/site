@@ -1,4 +1,6 @@
-export const faqData = [
+import { FaqData } from '@/widgets/faq';
+
+export const preschoolFaqData: FaqData = [
   {
     question: 'Где можно задать вопрос?',
     answer: [
