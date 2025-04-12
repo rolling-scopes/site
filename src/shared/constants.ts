@@ -33,4 +33,8 @@ export const COURSE_LINKS = {
   AWS_DEVOPS: 'https://rs.school/courses/aws-devops',
 };
 
-export const KEY_CODES = { ESCAPE: 'Escape' } as const;
+export const KEY_CODES = {
+  ESCAPE: 'Escape',
+  ENTER: 'Enter',
+  SPACE: 'Space',
+} as const;

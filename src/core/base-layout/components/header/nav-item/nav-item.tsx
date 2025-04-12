@@ -14,6 +14,7 @@ import { DropdownWrapper } from '../dropdown/dropdown-wrapper';
 import { ROUTES } from '@/core/const';
 import iconBlue from '@/shared/assets/svg/heart-blue.svg';
 import iconYellow from '@/shared/assets/svg/heart-yellow.svg';
+import { KEY_CODES } from '@/shared/constants';
 import { useOutsideClick } from '@/shared/hooks/use-outside-click/use-outside-click';
 import { DropdownArrow } from '@/shared/icons/dropdown-arrow';
 
@@ -36,9 +37,7 @@ export const NavItem = ({ label, href, children }: NavItemProps) => {
 
   const pathname = usePathname();
   const isHrefHome = href === ROUTES.HOME;
-  const isActive = isHrefHome
-    ? pathname === ROUTES.HOME
-    : pathname?.includes(href);
+  const isActive = isHrefHome ? pathname === ROUTES.HOME : pathname?.includes(href);
   const linkHref = isHrefHome ? href : `/${href}`;
 
   const onClose = useCallback(() => {
@@ -62,14 +61,14 @@ export const NavItem = ({ label, href, children }: NavItemProps) => {
   };
 
   const handleEscKeyPress = (e: KeyboardEvent<HTMLElement>) => {
-    if (e.code === 'Escape') {
+    if (e.code === KEY_CODES.ESCAPE) {
       onClose();
       buttonRef.current?.focus();
     }
   };
 
   const handleConfirmKeyPress = (e: KeyboardEvent<HTMLElement>) => {
-    if (e.code === 'Enter' || e.code === 'Space') {
+    if (e.code === KEY_CODES.ENTER || e.code === KEY_CODES.SPACE) {
       e.preventDefault();
       handleClick();
     }
