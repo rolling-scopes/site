@@ -92,6 +92,7 @@
 
   color: #000;
 
+  opacity: 0;
   background-color: #fff;
 
   transition: transform 0.4s ease-out;
@@ -100,6 +101,7 @@
 .mobile-menu.open {
   transform: translateY(0);
   display: none;
+  opacity: 1;
 
   @include media-tablet-large {
     display: block;

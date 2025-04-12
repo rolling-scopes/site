@@ -57,7 +57,7 @@
 
     @include media-mobile-landscape {
       column-gap: 10px;
-      max-height: 600px;
+      max-height: 624px;
     }
   }
 
@@ -73,7 +73,7 @@
   &.visible {
     @extend %transition-all;
 
-    max-height: 600px;
+    max-height: 624px;
     margin-top: 26px;
     visibility: visible;
     opacity: 1;

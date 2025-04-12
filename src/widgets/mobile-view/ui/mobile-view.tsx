@@ -9,6 +9,7 @@ import { ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
 import { DropdownArrow } from '@/shared/icons/dropdown-arrow';
 import { Logo } from '@/shared/ui/logo';
+import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { SchoolMenu } from '@/widgets/school-menu';
 import { renderIcon } from '@/widgets/support/ui/support';
 import {
@@ -65,6 +66,13 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
     <nav className={cx('mobile-view')} data-testid="mobile-view">
       <Logo type={logoView} icon={logoIcon} />
 
+      {type === 'header' && (
+        <>
+          <Divider color={color} />
+          <Breadcrumbs className="mobile-breadcrumbs" />
+        </>
+      )}
+
       <Divider color={color} />
 
       <div className={cx('category-container')}>
@@ -113,6 +121,7 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
             title="All Courses"
             description="TBD"
             url={ROUTES.COURSES}
+            color={color}
           />
           {courses.map((course) => (
             <SchoolMenu.Item
@@ -179,6 +188,7 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
             title="About Mentorship"
             description="TBD"
             url={ROUTES.MENTORSHIP}
+            color={color}
           />
           {mentorshipCourses.map((course) => (
             <SchoolMenu.Item

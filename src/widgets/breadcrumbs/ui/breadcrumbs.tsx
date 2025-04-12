@@ -12,7 +12,11 @@ import styles from './breadcrumbs.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const Breadcrumbs = () => {
+type BreadcrumbsProps = {
+  className?: string;
+};
+
+export const Breadcrumbs = ({ className }: BreadcrumbsProps) => {
   const pathname = usePathname();
   const crumbs = pathname.split('/').filter(Boolean) as RouteValues[];
 
@@ -24,7 +28,7 @@ export const Breadcrumbs = () => {
 
   return (
     <nav className={cx('container')}>
-      <div className={cx('content', 'breadcrumbs-content')}>
+      <div className={cx('content', 'breadcrumbs-content', className)}>
         <ul>
           <BreadcrumbItem linkTo={ROUTES.HOME} text="Home" />
           {transformedCrumbs.map((crumb, i) => (
