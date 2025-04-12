@@ -232,14 +232,21 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
             title="Your donations help us cover hosting, domains, licenses, and advertising for courses
                           and events. Every donation, big or small, helps!"
             url="#"
+            color={color}
           />
-          <SchoolMenu.Item className="support-title" title="Thank you for your support!" url="#" />
+          <SchoolMenu.Item
+            className="support-title"
+            title="Thank you for your support!"
+            url="#"
+            color={color}
+          />
           {donateOptions.map((option) => (
             <SchoolMenu.Item
               key={option.id}
               icon={renderIcon(option.icon)}
               title={option.linkLabel}
               url={option.href}
+              color={color}
             />
           ))}
         </SchoolMenu>
