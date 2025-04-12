@@ -77,7 +77,7 @@ export const Header = ({ courses }: HeaderProps) => {
                 key="Courses"
                 title="All Courses"
                 description="TBD"
-                url={ROUTES.COURSES}
+                url={`/${ROUTES.COURSES}`}
               />
             </SchoolMenu>
             <SchoolMenu layout="columns">
@@ -110,7 +110,7 @@ export const Header = ({ courses }: HeaderProps) => {
                 key="Mentorship"
                 title="About Mentorship"
                 description="TBD"
-                url={ROUTES.MENTORSHIP}
+                url={`/${ROUTES.MENTORSHIP}`}
               />
             </SchoolMenu>
             <SchoolMenu layout="columns">

@@ -121,8 +121,9 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
             key="Courses"
             title="All Courses"
             description="TBD"
-            url={ROUTES.COURSES}
+            url={`/${ROUTES.COURSES}`}
             color={color}
+            onClick={onClose}
           />
           {courses.map((course) => (
             <SchoolMenu.Item
@@ -188,8 +189,9 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
             key="Mentorship"
             title="About Mentorship"
             description="TBD"
-            url={ROUTES.MENTORSHIP}
+            url={`/${ROUTES.MENTORSHIP}`}
             color={color}
+            onClick={onClose}
           />
           {mentorshipCourses.map((course) => (
             <SchoolMenu.Item
@@ -248,6 +250,7 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
               title={option.linkLabel}
               url={option.href}
               color={color}
+              onClick={onClose}
             />
           ))}
         </SchoolMenu>
