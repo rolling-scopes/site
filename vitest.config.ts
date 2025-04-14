@@ -26,7 +26,7 @@ export default defineConfig({
       provider: 'v8',
       reporter: ['text', 'html'],
       exclude: [
-        ...(configDefaults.coverage?.exclude || []),
+        ...configDefaults.exclude,
         'node_modules',
         '.eslintrc.cjs',
         '**/*.types.ts',
