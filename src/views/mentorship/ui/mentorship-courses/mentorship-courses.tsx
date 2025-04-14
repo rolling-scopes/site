@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 
 import { getCourses } from '@/entities/course/api/course-api';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import CourseItems from '@/views/mentorship/ui/mentorship-courses/course-items';
+import CourseItemsFresh from '@/views/mentorship/ui/mentorship-courses/course-items-fresh';
 
 import styles from './mentorship-courses.module.scss';
 
@@ -16,7 +16,7 @@ export const MentorshipCourses = async () => {
       <div className={cx('content')}>
         <WidgetTitle>Courses That Need Mentors</WidgetTitle>
         <div className={cx('courses-list')}>
-          <CourseItems courses={courses} className={cx('mentorship-course-card')} />
+          <CourseItemsFresh courses={courses} className={cx('mentorship-course-card')} />
         </div>
       </div>
     </section>

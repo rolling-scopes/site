@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 
 import { getCourses } from '@/entities/course/api/course-api';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import CourseItems from '@/widgets/courses/ui/course-items';
+import { CourseItemsFresh } from '@/widgets/courses/ui/course-items-fresh';
 
 import styles from './courses.module.scss';
 
@@ -16,7 +16,7 @@ export const Courses = async () => {
       <div className={cx('content', 'courses-content')}>
         <WidgetTitle>All courses</WidgetTitle>
         <div className={cx('courses-list')}>
-          <CourseItems courses={courses} />
+          <CourseItemsFresh courses={courses} />
         </div>
       </div>
     </section>
