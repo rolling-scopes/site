@@ -24,12 +24,10 @@ export const getActualData: GetActualDataType = ({
   isMentorship = false,
   sort = true,
 }) => {
-  let dataWithTBD;
+  let dataWithTBD = mapStaleAsTBD(data, staleAfter);
 
   if (isMentorship) {
     dataWithTBD = mapMentorshipStaleAsTBD(data);
-  } else {
-    dataWithTBD = mapStaleAsTBD(data, staleAfter);
   }
 
   if (filterStale) {
