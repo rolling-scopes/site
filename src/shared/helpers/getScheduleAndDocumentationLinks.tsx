@@ -8,7 +8,7 @@ export const scheduleDocumentationEN = (courseName: keyof typeof COURSE_SCHEDULE
     The course
     {' '}
     <LinkCustom
-      href={ COURSE_SCHEDULE_LINKS[courseName]?.toString() }
+      href={COURSE_SCHEDULE_LINKS[courseName]?.toString()}
       variant="textLink"
       external
     >
@@ -17,7 +17,7 @@ export const scheduleDocumentationEN = (courseName: keyof typeof COURSE_SCHEDULE
     and school
     {' '}
     <LinkCustom
-      href={ DOCUMENTATION_LINKS.EN }
+      href={DOCUMENTATION_LINKS.EN}
       variant="textLink"
       external
     >
