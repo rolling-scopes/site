@@ -66,7 +66,7 @@ const mapMentorshipStaleAsTBD = <T extends DataType>(data: T): T => {
     return data;
   }
 
-  return (data as Course[]).map((item) => {
+  const mentorshipDataWithTBD = (data as Course[]).map((item) => {
     const date: string | null = item.personalMentoringStartDate;
 
     if (!date) {
@@ -90,6 +90,8 @@ const mapMentorshipStaleAsTBD = <T extends DataType>(data: T): T => {
 
     return item;
   }) as T;
+
+  return mentorshipDataWithTBD;
 };
 
 const filterStaleData = <T extends DataType>(data: T): T =>
