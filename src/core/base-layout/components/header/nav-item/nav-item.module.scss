@@ -45,8 +45,6 @@
   }
 
   .label-bold {
-    @extend %transition-all;
-
     position: relative;
 
     font-family: $font-primary;
@@ -58,6 +56,8 @@
     letter-spacing: 0;
 
     .label-content {
+      @extend %transition-all;
+
       position: absolute;
       top: 0;
       left: 0;
@@ -90,6 +90,10 @@
     &.rotate .dropdown-arrow {
       transform: rotate(180deg);
     }
+
+    &.rotate::after {
+      transform: scaleX(1);
+    }
   }
 
   &.active {
@@ -99,8 +103,8 @@
   }
 
   @include media-hover {
-    &:hover::after {
-      transform: scaleX(1);
+    &:hover > .label-bold > .label-content {
+      color: #969fa8;
     }
   }
 }
