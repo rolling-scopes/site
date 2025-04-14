@@ -3,8 +3,8 @@ import Link from 'next/link';
 
 import { ANCHORS, ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
+import { CourseMenuItemsFresh } from '@/shared/ui/course-menu-items-fresh';
 import { Logo } from '@/shared/ui/logo';
-import AllCourses from '@/widgets/mobile-view/ui/all-courses';
 import { SchoolMenu } from '@/widgets/school-menu';
 import { communityMenuStaticLinks, mentorshipCourses, schoolMenuStaticLinks } from 'data';
 
@@ -59,7 +59,7 @@ export const MobileView = ({ type, courses, onClose }: MobileViewProps) => {
       </Link>
 
       <SchoolMenu>
-        <AllCourses courses={courses} courseIcon={courseIcon} onClose={onClose} color={color} />
+        <CourseMenuItemsFresh courses={courses} icon={courseIcon} onClose={onClose} color={color} />
       </SchoolMenu>
 
       <Divider color={color} />

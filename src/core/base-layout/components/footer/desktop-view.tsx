@@ -1,6 +1,6 @@
 import { AboutList } from './about-list';
-import AllCourses from '@/core/base-layout/components/footer/all-courses';
 import { getCourses } from '@/entities/course/api/course-api';
+import { CourseMenuItemsFresh } from '@/shared/ui/course-menu-items-fresh';
 import { SchoolMenu } from '@/widgets/school-menu';
 import { schoolMenuStaticLinks } from 'data';
 
@@ -26,7 +26,7 @@ export const DesktopView = async () => {
 
       <div className="right">
         <SchoolMenu heading="all courses" color="light">
-          <AllCourses courses={courses} />
+          <CourseMenuItemsFresh courses={courses} color="light" icon="iconFooter" />
         </SchoolMenu>
       </div>
     </div>
