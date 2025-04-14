@@ -36,20 +36,20 @@ const preSchoolIntro = {
     'Подготовительный этап поможет тем, кто мало знаком или совсем не знаком с программированием и хотел бы впоследствии учиться на основном курсе «JavaScript/Front-end».',
 };
 
-//const infoMaterialsTextEn = ['All materials are publicly available on the', 'channel and'];
-//const infoMaterialsTextRu = ['Все материалы находятся в открытом доступе на канале', 'и'];
+// const infoMaterialsTextEn = ['All materials are publicly available on the', 'channel and'];
+// const infoMaterialsTextRu = ['Все материалы находятся в открытом доступе на канале', 'и'];
 
 const infoMaterialsEn = (
   <Paragraph>
     All materials are publicly available on the
     {' '}
-    <LinkCustom href='https://www.youtube.com/c/RSschool' external>
+    <LinkCustom href="https://www.youtube.com/c/RSschool" external>
       YouTube
     </LinkCustom>
     {' '}
     channel and
     {' '}
-    <LinkCustom href='https://docs.rs.school' external>
+    <LinkCustom href="https://docs.rs.school" external>
       GitHub
     </LinkCustom>
     .
@@ -221,7 +221,7 @@ const reactEn: AboutCourseInfo[] = javaScriptEN().map((item) => {
     return {
       ...item,
       title: 'Materials',
-      info: infoMaterialsEn
+      info: infoMaterialsEn,
     };
   }
   if (item.id === 5) {
