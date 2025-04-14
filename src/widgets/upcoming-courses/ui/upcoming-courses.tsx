@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { getCourses } from '@/entities/course/api/course-api';
 import RSBanner from '@/shared/assets/svg/RsBanner.svg';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import CourseItems from '@/widgets/upcoming-courses/ui/course-items';
+import { CourseItems } from '@/widgets/upcoming-courses/ui/course-items';
 
 import styles from './upcoming-courses.module.scss';
 

@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 
 import { getCourses } from '@/entities/course/api/course-api';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import CourseItemsFresh from '@/views/mentorship/ui/mentorship-courses/course-items-fresh';
+import { CourseItemsFresh } from '@/views/mentorship/ui/mentorship-courses/course-items-fresh';
 
 import styles from './mentorship-courses.module.scss';
 

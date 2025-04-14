@@ -17,7 +17,7 @@ const emptyText = {
   part2: ` Announcement channel to be the first to know when fresh courses are served.`,
 };
 
-const CourseItems = ({ courses }: CourseItems) => {
+export const CourseItems = ({ courses }: CourseItems) => {
   const coursesData = getActualData({
     data: courses,
     filterStale: true,
@@ -58,5 +58,3 @@ const CourseItems = ({ courses }: CourseItems) => {
     </Paragraph>
   );
 };
-
-export default CourseItems;

@@ -10,7 +10,7 @@ type CourseItems = {
   className: string;
 };
 
-const CourseItemsFresh = ({ courses, className }: CourseItems) => {
+export const CourseItemsFresh = ({ courses, className }: CourseItems) => {
   return (
     <FreshCourses
       mentorship
@@ -26,5 +26,3 @@ const CourseItemsFresh = ({ courses, className }: CourseItems) => {
     />
   );
 };
-
-export default CourseItemsFresh;
