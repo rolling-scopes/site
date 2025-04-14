@@ -67,7 +67,7 @@ const mapMentorshipStaleAsTBD = <T extends DataType>(data: T): T => {
   }
 
   return (data as Course[]).map((item) => {
-    const date = item.personalMentoringStartDate;
+    const date: string | null = item.personalMentoringStartDate;
 
     if (!date) {
       return item;
