@@ -44,7 +44,7 @@ export const COURSE_SCHEDULE_LINKS = {
     'https://github.com/rolling-scopes-school/tasks/tree/master/stage1',
     'https://github.com/rolling-scopes-school/tasks/tree/master/stage2',
   ],
-  [COURSE_TITLES.REACT]: null,
+  [COURSE_TITLES.REACT]: 'https://github.com/rolling-scopes-school/tasks/blob/master/react/README.md',
   [COURSE_TITLES.ANGULAR]: 'https://github.com/rolling-scopes-school/tasks/tree/master/angular',
   [COURSE_TITLES.NODE]: 'https://github.com/rolling-scopes-school/tasks/tree/master/node',
   [COURSE_TITLES.AWS_FUNDAMENTALS]: 'https://github.com/rolling-scopes-school/aws/tree/main/aws-fundamentals',

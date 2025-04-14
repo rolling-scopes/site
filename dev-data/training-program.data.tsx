@@ -20,7 +20,6 @@ import {
   scheduleDocumentationEN,
   scheduleDocumentationJS_PRESCHOOL_RU,
   scheduleDocumentationJS_RU,
-  scheduleDocumentationReact,
 } from '@/shared/helpers/getScheduleAndDocumentationLinks';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
@@ -263,7 +262,7 @@ export const contentMap: ContentMap = {
           'Understanding of RESTful services',
         ]}
       />,
-      scheduleDocumentationReact(),
+      scheduleDocumentationEN(COURSE_TITLES.REACT),
     ],
     image: reactEnImg,
   },
