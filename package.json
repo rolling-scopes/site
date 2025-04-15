@@ -15,7 +15,7 @@
     "test": "vitest --run",
     "test:playwright": "npx playwright test",
     "test:visual": "npx percy exec -- npm run test:playwright",
-    "coverage": "vitest run --coverage",
+    "test:coverage": "vitest run --coverage",
     "precommit": "npx lint-staged",
     "prepare": "husky",
     "postbuild": "pagefind --force-language ru --site .next/server/app/docs/ru --output-path build/_next/static/pagefind/ru && pagefind --force-language en --site .next/server/app/docs/en --output-path build/_next/static/pagefind/en"
