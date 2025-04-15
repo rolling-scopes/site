@@ -34,3 +34,11 @@ export const COURSE_LINKS = {
 };
 
 export const KEY_CODES = { ESCAPE: 'Escape' } as const;
+
+export const HTTP_METHOD = {
+  GET: 'GET',
+  POST: 'POST',
+  PUT: 'PUT',
+  PATCH: 'PATCH',
+  DELETE: 'DELETE',
+} as const;

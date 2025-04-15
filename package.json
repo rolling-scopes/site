@@ -29,6 +29,7 @@
     "classnames": "^2.5.1",
     "dayjs": "^1.11.13",
     "github-markdown-css": "^5.8.1",
+    "http-status": "^2.1.0",
     "next": "15.2.4",
     "pagefind": "^1.3.0",
     "react": "19.1.0",
