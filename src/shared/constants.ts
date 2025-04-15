@@ -1,4 +1,4 @@
-import { COURSE_TITLES } from '../../dev-data/courseTitles.data';
+import { COURSE_TITLES } from 'data';
 
 export const RS_INTRO_URL = 'https://www.youtube.com/embed/n4unZLVpnaU';
 export const RS_FOUNDATION_YEAR = '2013';

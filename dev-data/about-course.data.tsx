@@ -11,6 +11,8 @@ import { List } from '@/shared/ui/list';
 import { Paragraph } from '@/shared/ui/paragraph';
 import type { AboutCourseInfo } from 'data';
 import { COURSE_TITLES, CourseNamesChannels, DISCORD_LINKS } from 'data';
+import { DOCUMENTATION_LINKS } from '@/shared/constants';
+import { communityGroups } from 'data';
 
 type ContentMap = {
   [key in CourseNamesChannels]: AboutCourseInfo[];
@@ -36,20 +38,23 @@ const preSchoolIntro = {
     'Подготовительный этап поможет тем, кто мало знаком или совсем не знаком с программированием и хотел бы впоследствии учиться на основном курсе «JavaScript/Front-end».',
 };
 
-// const infoMaterialsTextEn = ['All materials are publicly available on the', 'channel and'];
-// const infoMaterialsTextRu = ['Все материалы находятся в открытом доступе на канале', 'и'];
-
+const youtubeHref = communityGroups.find((sosial) => sosial.title === 'YouTube EN')?.href;
 const infoMaterialsEn = (
   <Paragraph>
     All materials are publicly available on the
     {' '}
-    <LinkCustom href="https://www.youtube.com/c/RSschool" external>
-      YouTube
-    </LinkCustom>
-    {' '}
-    channel and
-    {' '}
-    <LinkCustom href="https://docs.rs.school" external>
+    {youtubeHref && (
+      <>
+        <LinkCustom
+          href={youtubeHref}
+          external
+        >
+          YouTube
+        </LinkCustom>
+        {' '}channel and{' '}
+      </>
+    )}
+    <LinkCustom href={DOCUMENTATION_LINKS.EN} external>
       GitHub
     </LinkCustom>
     .

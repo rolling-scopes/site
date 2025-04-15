@@ -20,7 +20,7 @@ import {
   scheduleDocumentationEN,
   scheduleDocumentationJS_PRESCHOOL_RU,
   scheduleDocumentationJS_RU,
-} from '@/shared/helpers/getScheduleAndDocumentationLinks';
+} from '@/shared/helpers/get-schedule-and-documentation-links';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 import { Paragraph } from '@/shared/ui/paragraph';
