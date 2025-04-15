@@ -3,5 +3,6 @@ declare namespace NodeJS {
     API_URL: string;
     YOUTUBE_API_KEY: string;
     BASE_URI: string;
+    LOG_QUERY: boolean;
   }
 }

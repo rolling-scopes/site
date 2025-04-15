@@ -32,6 +32,8 @@ export type RequestOptions = {
   nolog?: boolean;
 };
 
+export type HttpStatusCodes = HttpStatus[keyof HttpStatus];
+
 type QueryResultSuccess<TResponse> = {
   isSuccess: true;
   result: TResponse;
@@ -46,7 +48,7 @@ export type QueryResult<TResponse> = (
   | QueryResultSuccess<TResponse>
   | QueryResultError<TResponse>
 ) & {
-  status: HttpStatus[keyof HttpStatus];
+  status: HttpStatusCodes;
   statusText?: string;
   responseHeaders?: Record<string, string>;
 };

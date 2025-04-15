@@ -1,13 +1,16 @@
-import HTTP_STATUS, { HttpStatus } from 'http-status';
-import isError from 'next/dist/lib/is-error';
-
+import { FetchClient } from '@/shared/api/fetch-client';
 import { HTTP_METHOD } from '@/shared/constants';
-import { QueryResult, RequestOptions } from '@/shared/types';
+import { logRequest } from '@/shared/helpers/log-request';
+import { HttpStatusCodes, QueryResult, RequestOptions } from '@/shared/types';
 
 export class ApiBaseClass {
   private readonly baseUrl: string;
 
-  constructor(private readonly baseURI: string) {
+  constructor(
+    private readonly baseURI: string,
+    private readonly staticHeaders: Record<string, string> = {},
+    private readonly logPrefix = 'CLI',
+  ) {
     this.baseUrl = this.baseURI.replace(/\/$/, '');
   }
 
@@ -50,39 +53,58 @@ export class ApiBaseClass {
     url: string,
     options: RequestOptions = {},
   ): Promise<QueryResult<TResponse>> {
+    const { body, method = HTTP_METHOD.GET } = options;
+
+    const fetchClient = new FetchClient(this.baseUrl, this.staticHeaders);
+
     try {
-      const res = await fetch(this.compileUrl(url), options);
-      const data = (await res.json()) as TResponse;
+      await fetchClient.sendRequest(url, method);
+      const result = await fetchClient.json<TResponse>();
+      const resultData = {
+        status: fetchClient?.status as HttpStatusCodes,
+        result,
+      };
 
-      const status = res.status as HttpStatus[keyof HttpStatus];
+      if (!options.nolog) {
+        logRequest({
+          method,
+          url,
+          result,
+          body,
+          status: fetchClient.status as HttpStatusCodes,
+          statusText: fetchClient.statusText as string,
+          logPrefix: this.logPrefix,
+        });
+      }
 
-      if (res.ok) {
+      if (fetchClient.response?.ok) {
         return {
-          status,
+          ...resultData,
           isSuccess: true,
-          result: data,
         };
       }
 
       return {
-        status,
+        ...resultData,
         isSuccess: false,
-        result: data,
       };
     } catch (e) {
-      if (isError(e)) {
-        console.error(`Something went wrong while querying data! (${e}). ${options}`);
-      }
+      logRequest({
+        method,
+        url,
+        result: null,
+        body,
+        status: fetchClient.status as HttpStatusCodes,
+        statusText: fetchClient.statusText as string,
+        logPrefix: this.logPrefix,
+        error: e,
+      });
 
       return {
-        status: HTTP_STATUS.SERVICE_UNAVAILABLE,
+        status: fetchClient.status as HttpStatusCodes,
         isSuccess: false,
         result: null,
       };
     }
-  }
-
-  private compileUrl(url: string) {
-    return `${this.baseUrl}${url}`;
   }
 }
