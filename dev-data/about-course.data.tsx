@@ -5,14 +5,16 @@ import noteIcon from '@/shared/assets/icons/note-icon.webp';
 import paperIcon from '@/shared/assets/icons/paper-icon.webp';
 import personIcon from '@/shared/assets/icons/person-icon.webp';
 import planetIcon from '@/shared/assets/icons/planet.webp';
-import { REGISTRATION_WILL_OPEN_SOON, REGISTRATION_WILL_OPEN_SOON_RU } from '@/shared/constants';
+import {
+  DOCUMENTATION_LINKS,
+  REGISTRATION_WILL_OPEN_SOON,
+  REGISTRATION_WILL_OPEN_SOON_RU,
+} from '@/shared/constants';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 import { Paragraph } from '@/shared/ui/paragraph';
 import type { AboutCourseInfo } from 'data';
-import { COURSE_TITLES, CourseNamesChannels, DISCORD_LINKS } from 'data';
-import { DOCUMENTATION_LINKS } from '@/shared/constants';
-import { communityGroups } from 'data';
+import { COURSE_TITLES, CourseNamesChannels, DISCORD_LINKS, communityGroups } from 'data';
 
 type ContentMap = {
   [key in CourseNamesChannels]: AboutCourseInfo[];
@@ -51,7 +53,9 @@ const infoMaterialsEn = (
         >
           YouTube
         </LinkCustom>
-        {' '}channel and{' '}
+        {' '}
+        channel and
+        {' '}
       </>
     )}
     <LinkCustom href={DOCUMENTATION_LINKS.EN} external>
