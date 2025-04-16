@@ -14,17 +14,17 @@ export const cx = classNames.bind(styles);
 const subtitleVariants = cva(cx('subtitle'), {
   variants: {
     fontSize: {
-      'extra-small': cx('extra-small-font-size'),
-      'small': cx('small-font-size'),
-      'medium': cx('medium-font-size'),
-      'large': cx('large-font-size'),
-      'extra-large': cx('extra-large-font-size'),
+      'extra-small': cx('font-size-extra-small'),
+      'small': cx('font-size-small'),
+      'medium': cx('font-size-medium'),
+      'large': cx('font-size-large'),
+      'extra-large': cx('font-size-extra-large'),
     },
     fontWeight: {
-      light: cx('light-font-weight'),
-      regular: cx('regular-font-weight'),
-      medium: cx('medium-font-weight'),
-      bold: cx('bold-font-weight'),
+      light: cx('font-weight-light'),
+      regular: cx('font-weight-regular'),
+      medium: cx('font-weight-medium'),
+      bold: cx('font-weight-bold'),
     },
   },
   defaultVariants: {
