@@ -1,30 +1,38 @@
 import HTTP_STATUS from 'http-status';
 
+import { isValidUrl } from '@/shared/helpers/isValidUrl';
 import { stringifyJSONSafe } from '@/shared/helpers/stringify-json-safe';
-import { HttpMethod, HttpStatusCodes } from '@/shared/types';
+import {
+  HttpHeaders,
+  HttpMethod,
+  HttpStatusCodes,
+  QueryStringParams,
+  RequestBody,
+} from '@/shared/types';
 
 export class FetchClient {
-  public response?: Response;
-  public url?: string;
-  public method?: HttpMethod;
-  public queryBody?: string;
-  public queryHeaders?: Record<string, string>;
   public responseHeaders: Map<string, string> = new Map();
+  public response?: Response;
+  public method?: HttpMethod;
+  public queryHeaders?: HttpHeaders;
   public status?: HttpStatusCodes;
+  public queryBody?: RequestBody;
+  public url?: string;
   public statusText?: string;
 
   constructor(
     private readonly baseUrl: string,
-    private readonly staticHeaders: Record<string, string> = {},
+    private readonly staticHeaders: HttpHeaders = {},
   ) {}
 
   public async sendRequest(
     url: string,
     method: HttpMethod,
-    headers: Record<string, string> = {},
-    body?: unknown,
+    body?: RequestBody,
+    headers: HttpHeaders = {},
+    params: QueryStringParams = {},
   ) {
-    this.url = this.compileUrl(url);
+    this.url = this.compileUrl(url, params);
     this.method = method;
 
     this.queryHeaders = {
@@ -70,7 +78,39 @@ export class FetchClient {
     });
   }
 
-  private compileUrl(url: string) {
-    return `${this.baseUrl}${url}`;
+  private ObjectToQueryString(params: QueryStringParams) {
+    const searchParams = new URLSearchParams();
+
+    Object.entries(params).forEach(([key, param]) => {
+      if (Array.isArray(param)) {
+        param.forEach((value) => {
+          searchParams.append(key, String(value));
+        });
+      } else {
+        searchParams.append(key, String(param));
+      }
+    });
+
+    return searchParams;
+  }
+
+  private compileUrl(url: string, params: QueryStringParams) {
+    const buffer = [];
+    const hasParams = Boolean(Object.keys(params).length);
+
+    if (isValidUrl(url)) {
+      // if url already contains http(s), direct url will be used
+      buffer.push(url);
+    } else {
+      buffer.push(`${this.baseUrl}${url}`);
+    }
+
+    if (hasParams) {
+      const queryString = this.ObjectToQueryString(params);
+
+      buffer.push(queryString);
+    }
+
+    return buffer.join('?');
   }
 }
