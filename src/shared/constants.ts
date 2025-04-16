@@ -51,3 +51,8 @@ export const API_LOCALE_DICTIONARY: Record<Language, Locale> = {
   ru: 'ru',
   en: 'en-US',
 };
+
+export const API_CONTENT_TYPE_DICTIONARY = {
+  TRAINER: 'contributor',
+  COURSE: 'course',
+} as const;
