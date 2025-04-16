@@ -23,15 +23,15 @@ describe('CourseItem Component', () => {
     renderWithRouter(<CourseItem {...mockedProps} />);
   });
 
-  it('renders the component data as expected', () => {
+  it('renders the component data as expected', async () => {
     const titleElement = screen.getByText(mockedProps.title);
-    const dateElement = screen.getByTestId('course-language');
-    const courseDate = screen.getByTestId('date-time-start');
+    const dateElement = screen.getAllByTestId('course-language');
+    const courseDate = screen.getAllByTestId('date-time-start');
 
     expect(titleElement).toBeInTheDocument();
-    expect(dateElement).toBeInTheDocument();
-    expect(dateElement).toHaveTextContent('English');
-    expect(courseDate).toHaveAttribute('datetime', expectedDate);
+    expect(dateElement[0]).toBeInTheDocument();
+    expect(dateElement[0]).toHaveTextContent('English');
+    expect(courseDate[0]).toHaveAttribute('datetime', expectedDate);
   });
 
   it('renders the LinkCustom component with correct href and text', () => {

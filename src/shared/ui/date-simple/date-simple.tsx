@@ -49,6 +49,7 @@ export const DateSimple = ({
           {startDate}
         </time>
       )}
+
       {labelSeparator && endDate && <span>{labelSeparator}</span>}
       {endDate && (
         <time dateTime={endDateAttr} data-testid="date-time-end">
