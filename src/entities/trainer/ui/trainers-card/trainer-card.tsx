@@ -16,10 +16,10 @@ export const TrainerCard = ({ name, bio, role, photo }: Trainer) => {
       </div>
       <div className={cx('card-text')}>
         <header>
-          <Subtitle fontSize="small" className={cx('card-title')}>
+          <Subtitle className={cx('card-title')} fontSize="small">
             {name}
           </Subtitle>
-          <Subtitle as="h4" fontSize="extra-small" className={cx('card-subtitle')}>
+          <Subtitle as="h4" className={cx('card-subtitle')} fontSize="extra-small">
             {role}
           </Subtitle>
         </header>

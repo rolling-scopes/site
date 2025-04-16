@@ -53,7 +53,7 @@ describe('Subtitle component', () => {
 
   it('applies multiple variant classes correctly', () => {
     render(
-      <Subtitle fontSize="large" className="custom-class">
+      <Subtitle className="custom-class" fontSize="large">
         Multiple Variants
       </Subtitle>,
     );

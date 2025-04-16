@@ -35,10 +35,10 @@ const subtitleVariants = cva(cx('subtitle'), {
 
 export const Subtitle = ({
   as = 'h3',
-  children,
+  className,
   fontSize,
   fontWeight,
-  className,
+  children,
   ...props
 }: SubtitleProps) => {
   const HeadingTag = as;
