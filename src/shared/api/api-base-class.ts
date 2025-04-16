@@ -1,14 +1,14 @@
 import { FetchClient } from '@/shared/api/fetch-client';
 import { HTTP_METHOD } from '@/shared/constants';
 import { logRequest } from '@/shared/helpers/log-request';
-import { HttpStatusCodes, QueryResult, RequestOptions } from '@/shared/types';
+import { HttpHeaders, HttpStatusCodes, QueryResult, RequestOptions } from '@/shared/types';
 
 export class ApiBaseClass {
   private readonly baseUrl: string;
 
   constructor(
     private readonly baseURI: string,
-    private readonly staticHeaders: Record<string, string> = {},
+    private readonly staticHeaders: HttpHeaders = {},
     private readonly logPrefix = 'CLI',
   ) {
     this.baseUrl = this.baseURI.replace(/\/$/, '');
@@ -53,12 +53,12 @@ export class ApiBaseClass {
     url: string,
     options: RequestOptions = {},
   ): Promise<QueryResult<TResponse>> {
-    const { body, method = HTTP_METHOD.GET } = options;
+    const { body, method = HTTP_METHOD.GET, headers, params } = options;
 
     const fetchClient = new FetchClient(this.baseUrl, this.staticHeaders);
 
     try {
-      await fetchClient.sendRequest(url, method);
+      await fetchClient.sendRequest(url, method, body, headers, params);
       const result = await fetchClient.json<TResponse>();
       const resultData = {
         status: fetchClient?.status as HttpStatusCodes,

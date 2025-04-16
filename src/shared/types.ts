@@ -25,11 +25,13 @@ export type QueryStringParams = Record<string, unknown>;
 
 export type HttpHeaders = Record<string, string>;
 
+export type RequestBody = RequestInit['body'];
+
 export type RequestOptions = {
   method?: HttpMethod;
   params?: QueryStringParams;
   headers?: HttpHeaders;
-  body?: RequestInit['body'];
+  body?: RequestBody;
   rethrow?: boolean;
   nolog?: boolean;
 };
