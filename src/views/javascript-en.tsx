@@ -18,10 +18,8 @@ type JavaScriptEnProps = {
   courseName: CourseNames['JS_EN'];
 };
 export const JavaScriptEn = async ({ courseName }: JavaScriptEnProps) => {
-  const [language, trainers] = await Promise.all([
-    getCourseLanguage(courseName),
-    trainerStore.loadTrainers(courseName),
-  ]);
+  const language = await getCourseLanguage(courseName);
+  const trainers = await trainerStore.loadTrainers(courseName, language);
 
   return (
     <>

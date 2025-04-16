@@ -19,10 +19,8 @@ type JavaScriptRuProps = {
 };
 
 export const JavaScriptRu = async ({ courseName }: JavaScriptRuProps) => {
-  const [language, trainers] = await Promise.all([
-    getCourseLanguage(courseName),
-    trainerStore.loadTrainers(courseName),
-  ]);
+  const language = await getCourseLanguage(courseName);
+  const trainers = await trainerStore.loadTrainers(courseName, language);
 
   return (
     <>

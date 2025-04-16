@@ -1,6 +1,6 @@
 import { StaticImageData } from 'next/image';
 
-import { apiCoursesIds } from '@/entities/course/constants';
+import { API_COURSES_IDS_DICTIONARY } from '@/entities/course/constants';
 import { COURSE_LINKS } from '@/shared/constants';
 import { Language } from '@/shared/types';
 import { CourseNamesKeys } from 'data';
@@ -61,4 +61,4 @@ export type CourseItemData = Pick<
   iconSrc: StaticImageData;
 };
 
-export type ApiCoursesIds = (typeof apiCoursesIds)[CourseNamesKeys];
+export type ApiCoursesIds = (typeof API_COURSES_IDS_DICTIONARY)[CourseNamesKeys];

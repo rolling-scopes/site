@@ -1,4 +1,5 @@
 import { trainerStore } from '@/entities/trainer';
+import { getCourseLanguage } from '@/shared/helpers/get-course-language';
 import { AboutCourse } from '@/widgets/about-course';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
@@ -15,7 +16,8 @@ type JavaScriptPreSchoolRuProps = {
 };
 
 export const JavaScriptPreSchoolRu = async ({ courseName }: JavaScriptPreSchoolRuProps) => {
-  const trainers = await trainerStore.loadTrainers(courseName);
+  const language = await getCourseLanguage(courseName);
+  const trainers = await trainerStore.loadTrainers(courseName, language);
 
   return (
     <>
