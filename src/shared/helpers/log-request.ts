@@ -11,14 +11,14 @@ type LogRequestParams = {
   result: unknown;
   body: unknown;
   status: HttpStatusCodes;
-  statusText: string;
+  statusText?: string;
   logPrefix: string;
   error?: unknown | Error;
 };
 
 export function logRequest({
   logPrefix,
-  statusText,
+  statusText = '',
   status,
   result,
   method,
@@ -33,7 +33,7 @@ export function logRequest({
   const loggerPrefix = `{logger:query:${logPrefix}}`;
   const logObject: Record<string, string | number | object> = {
     loggerPrefix,
-    shortText: `${method} => ${url} => ${status} (${statusText})`,
+    shortText: `${method} => ${url} => ${status} (${statusText})`.replace(' ()', ''),
     status,
     statusText,
   };
@@ -53,7 +53,6 @@ export function logRequest({
   }
 
   if (error) {
-    logObject['errorMessage'] = (error as Error).message;
     logObject['stack'] = (error as Error).stack ?? '';
   }
 

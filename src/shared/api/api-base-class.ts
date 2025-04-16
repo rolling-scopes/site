@@ -1,5 +1,6 @@
 import { FetchClient } from '@/shared/api/fetch-client';
-import { HTTP_METHOD } from '@/shared/constants';
+import { HTTP_METHOD, UNKNOWN_API_ERROR } from '@/shared/constants';
+import { isApiError } from '@/shared/helpers/is-api-error';
 import { logRequest } from '@/shared/helpers/log-request';
 import { HttpHeaders, HttpStatusCodes, QueryResult, RequestOptions } from '@/shared/types';
 
@@ -65,37 +66,34 @@ export class ApiBaseClass {
         result,
       };
 
+      if (!fetchClient.response?.ok) {
+        throw new Error(isApiError(result) ? result.message : UNKNOWN_API_ERROR);
+      }
+
       if (!options.nolog) {
         logRequest({
           method,
-          url,
+          url: fetchClient.url ?? url,
           result,
           body,
           status: fetchClient.status as HttpStatusCodes,
-          statusText: fetchClient.statusText as string,
+          statusText: fetchClient.statusText,
           logPrefix: this.logPrefix,
         });
       }
 
-      if (fetchClient.response?.ok) {
-        return {
-          ...resultData,
-          isSuccess: true,
-        };
-      }
-
       return {
         ...resultData,
-        isSuccess: false,
+        isSuccess: true,
       };
     } catch (e) {
       logRequest({
         method,
-        url,
+        url: fetchClient.url ?? url,
         result: null,
         body,
         status: fetchClient.status as HttpStatusCodes,
-        statusText: fetchClient.statusText as string,
+        statusText: (e as Error).message ?? fetchClient.statusText,
         logPrefix: this.logPrefix,
         error: e,
       });

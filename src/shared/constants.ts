@@ -42,3 +42,5 @@ export const HTTP_METHOD = {
   PATCH: 'PATCH',
   DELETE: 'DELETE',
 } as const;
+
+export const UNKNOWN_API_ERROR = 'Unknown error, API request failed.';

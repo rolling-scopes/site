@@ -57,4 +57,28 @@ export type QueryResult<TResponse> = (
   responseHeaders?: Record<string, string>;
 };
 
-export type Locale = 'en-US';
+export type Locale = 'en-US' | 'ru';
+
+/**
+ * https://www.contentful.com/developers/docs/references/errors/
+ */
+export type ApiResponseError = {
+  sys: {
+    type: 'Error';
+    id:
+      | 'BadRequest'
+      | 'InvalidQuery'
+      | 'AccessTokenInvalid'
+      | 'AccessDenied'
+      | 'NotFound'
+      | 'VersionMismatch'
+      | 'ValidationFailed'
+      | 'UnknownField'
+      | 'InvalidEntry'
+      | 'RateLimitExceeded'
+      | 'ServerError'
+      | 'Hibernated';
+  };
+  message: string;
+  requestId: string;
+};

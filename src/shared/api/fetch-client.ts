@@ -1,5 +1,3 @@
-import HTTP_STATUS from 'http-status';
-
 import { isValidUrl } from '@/shared/helpers/isValidUrl';
 import { stringifyJSONSafe } from '@/shared/helpers/stringify-json-safe';
 import {
@@ -58,7 +56,7 @@ export class FetchClient {
 
       return this.response;
     } catch (e) {
-      this.status = HTTP_STATUS.INTERNAL_SERVER_ERROR;
+      this.status = this.response?.status as HttpStatusCodes;
       this.statusText = (e as Error).message;
 
       this.responseHeaders.clear();
