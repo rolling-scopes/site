@@ -1,4 +1,4 @@
-import { Language, Locale } from '@/shared/types';
+import { ApiResourceLocale, Language } from '@/shared/types';
 
 export const RS_INTRO_URL = 'https://www.youtube.com/embed/n4unZLVpnaU';
 export const RS_FOUNDATION_YEAR = '2013';
@@ -47,7 +47,7 @@ export const HTTP_METHOD = {
   DELETE: 'DELETE',
 } as const;
 
-export const API_LOCALE_DICTIONARY: Record<Language, Locale> = {
+export const API_LOCALE_DICTIONARY: Record<Language, ApiResourceLocale> = {
   ru: 'ru',
   en: 'en-US',
 };

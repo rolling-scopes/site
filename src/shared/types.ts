@@ -57,7 +57,7 @@ export type QueryResult<TResponse> = (
   responseHeaders?: Record<string, string>;
 };
 
-export type Locale = 'en-US' | 'ru';
+export type ApiResourceLocale = 'en-US' | 'ru';
 
 /**
  * https://www.contentful.com/developers/docs/references/errors/
@@ -110,12 +110,12 @@ export type ApiResourceLinkAttribute<TLinkType extends ApiLinkType> = {
 export type ApiResourceEntry = ApiCommonRecourseAttribute & {
   type: 'Entry';
   contentType: ApiResourceLinkAttribute<'ContentType'>;
-  locale: Locale;
+  locale: ApiResourceLocale;
 };
 
 export type ApiResourceAsset = ApiCommonRecourseAttribute & {
   type: 'Asset';
-  locale: Locale;
+  locale: ApiResourceLocale;
   firstPublishedAt: string;
   publishedAt: string;
 };
