@@ -8,7 +8,7 @@ import { CourseNamesKeys } from 'data';
 class TrainerStore {
   constructor() {}
 
-  loadTrainers = async (course: CourseNamesKeys, language: Language = 'en') => {
+  public loadTrainers = async (course: CourseNamesKeys, language: Language = 'en') => {
     try {
       const courseId = API_COURSES_IDS_DICTIONARY[course];
       const locale = API_LOCALE_DICTIONARY[language];
@@ -18,8 +18,6 @@ class TrainerStore {
       if (res.isSuccess) {
         return transformTrainers(res.result);
       }
-
-      throw new Error('Failed to fetch trainers!');
     } catch (e) {
       console.error(e);
     }
