@@ -1,5 +1,3 @@
-import isError from 'next/dist/lib/is-error';
-
 import { apiCoursesIds } from '@/entities/course/constants';
 import { transformTrainers } from '@/entities/trainer/helpers/transform-trainers';
 import { api } from '@/shared/api/api';
@@ -19,11 +17,7 @@ class TrainerStore {
 
       throw new Error('Failed to fetch trainers!');
     } catch (e) {
-      if (isError(e)) {
-        console.error(e);
-      }
-
-      return null;
+      console.error(e);
     }
   };
 }
