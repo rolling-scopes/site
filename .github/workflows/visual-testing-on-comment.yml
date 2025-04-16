@@ -8,6 +8,7 @@ on:
 env:
   NODE_VERSION: 20.x
   API_URL: ${{ secrets.API_URL }}
+  BASE_URI: ${{ secrets.BASE_URI }}
   YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY_DEVELOPMENT }}
 
 jobs:
