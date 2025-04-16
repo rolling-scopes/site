@@ -27,24 +27,13 @@
 
   .card-title {
     margin: 0;
-    font-size: 24px;
-    font-weight: $font-weight-medium;
-    line-height: 32px;
-
-    @include media-tablet {
-      font-size: 20px;
-    }
   }
 
   .card-subtitle {
     margin: 0;
     font-size: 18px;
-    font-weight: $font-weight-medium;
+    line-height: 1.15;
     color: $color-gray-500;
-
-    @include media-tablet {
-      font-size: 18px;
-    }
   }
 
   .card-content {
