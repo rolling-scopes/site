@@ -82,3 +82,84 @@ export type ApiResponseError = {
   message: string;
   requestId: string;
 };
+
+/**
+ * https://www.contentful.com/developers/docs/references/content-preview-api/#/introduction/common-resource-attributes
+ */
+type ApiCommonRecourseAttribute = {
+  space: ApiResourceLinkAttribute<'Space'>;
+  environment: ApiResourceLinkAttribute<'Environment'>;
+  type: string;
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedVersion: number;
+  revision: number;
+};
+
+type ApiLinkType = 'Space' | 'Asset' | 'Entry' | 'Environment' | 'ContentType';
+
+export type ApiResourceLinkAttribute<TLinkType extends ApiLinkType> = {
+  sys: {
+    type: 'Link';
+    linkType: TLinkType;
+    id: string;
+  };
+};
+
+export type ApiResourceEntry = ApiCommonRecourseAttribute & {
+  type: 'Entry';
+  contentType: ApiResourceLinkAttribute<'ContentType'>;
+  locale: Locale;
+};
+
+export type ApiResourceAsset = ApiCommonRecourseAttribute & {
+  type: 'Asset';
+  locale: Locale;
+  firstPublishedAt: string;
+  publishedAt: string;
+};
+
+/**
+ * https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/assets
+ */
+export type ApiAsset = {
+  title: string;
+  description: string;
+  file: ApiAssetFile;
+};
+
+export type ApiAssetFile = {
+  url: string;
+  details: {
+    size: number;
+    image: {
+      width: number;
+      height: number;
+    };
+  };
+  fileName: string;
+  contentType: string;
+};
+
+export type ApiMetadata = {
+  tags: string[];
+  concepts: string[];
+};
+
+/**
+ * https://www.contentful.com/developers/docs/references/content-preview-api/#/introduction/collection-resources-and-pagination
+ */
+export type ApiResponse<
+  TItems extends Array<unknown>,
+  UIncludes extends Record<string, unknown>,
+> = {
+  sys: {
+    type: 'Array';
+  };
+  total: number;
+  skip: number;
+  limit: number;
+  items: TItems;
+  includes: UIncludes;
+};
