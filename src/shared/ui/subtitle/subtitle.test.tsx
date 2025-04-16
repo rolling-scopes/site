@@ -24,7 +24,7 @@ describe('Subtitle component', () => {
     render(<Subtitle>Default Font Size</Subtitle>);
     const subtitle = screen.getByTestId('subtitle');
 
-    expect(subtitle).toHaveClass(cx('medium-font-size'));
+    expect(subtitle).toHaveClass(cx('font-size-medium'));
   });
 
   it('applies correct font size classes when specified', () => {
@@ -39,7 +39,7 @@ describe('Subtitle component', () => {
       );
       const subtitle = getByTestId('subtitle');
 
-      expect(subtitle).toHaveClass(cx(`${size}-font-size`));
+      expect(subtitle).toHaveClass(cx(`font-size-${size}`));
       cleanup();
     });
   });
@@ -59,42 +59,21 @@ describe('Subtitle component', () => {
     );
     const subtitle = screen.getByTestId('subtitle');
 
-    expect(subtitle).toHaveClass(cx('large-font-size'));
+    expect(subtitle).toHaveClass(cx('font-size-large'));
     expect(subtitle).toHaveClass('custom-class');
   });
 
   it('renders as h3 element by default', () => {
-    render(<Subtitle>H3 Element</Subtitle>);
+    render(<Subtitle>h3</Subtitle>);
     const subtitle = screen.getByTestId('subtitle');
 
     expect(subtitle.tagName).toBe('H3');
   });
 
-  it('renders as h2 element', () => {
-    render(<Subtitle as="h2">H2 Element</Subtitle>);
+  it.each(['h2', 'h3', 'h4'] as const)('renders as %s element', (tag) => {
+    render(<Subtitle as={tag}>{tag}</Subtitle>);
     const subtitle = screen.getByTestId('subtitle');
 
-    expect(subtitle.tagName).toBe('H2');
-  });
-
-  it('renders as h4 element', () => {
-    render(<Subtitle as="h4">H4 Element</Subtitle>);
-    const subtitle = screen.getByTestId('subtitle');
-
-    expect(subtitle.tagName).toBe('H4');
-  });
-
-  it('renders as h5 element', () => {
-    render(<Subtitle as="h5">H5 Element</Subtitle>);
-    const subtitle = screen.getByTestId('subtitle');
-
-    expect(subtitle.tagName).toBe('H5');
-  });
-
-  it('renders as h6 element', () => {
-    render(<Subtitle as="h6">H6 Element</Subtitle>);
-    const subtitle = screen.getByTestId('subtitle');
-
-    expect(subtitle.tagName).toBe('H6');
+    expect(subtitle.tagName).toBe(tag.toUpperCase());
   });
 });
