@@ -21,13 +21,15 @@ export type ApiServices = {
 
 export type HttpMethod = (typeof HTTP_METHOD)[keyof typeof HTTP_METHOD];
 
+export type QueryStringParams = Record<string, unknown>;
+
+export type HttpHeaders = Record<string, string>;
+
 export type RequestOptions = {
   method?: HttpMethod;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  params?: any;
-  headers?: Record<string, string>;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  body?: any;
+  params?: QueryStringParams;
+  headers?: HttpHeaders;
+  body?: RequestInit['body'];
   rethrow?: boolean;
   nolog?: boolean;
 };
