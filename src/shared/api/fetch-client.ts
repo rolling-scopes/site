@@ -69,7 +69,7 @@ export class FetchClient {
   }
 
   private prepareResponseHeaders() {
-    const headersEntries = this.response?.headers.entries() ?? [];
+    const headersEntries = Array.from(this.response?.headers.entries() ?? []);
 
     headersEntries.forEach(([key, value]) => {
       this.responseHeaders.set(key.toLowerCase(), value);
