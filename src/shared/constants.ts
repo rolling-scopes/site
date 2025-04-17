@@ -8,6 +8,11 @@ export const REGISTRATION_WILL_OPEN_SOON = 'Registration will open soon!';
 export const REGISTRATION_WILL_OPEN_SOON_RU = 'Регистрация откроется скоро!';
 export const UNKNOWN_API_ERROR = 'Unknown error, API request failed.';
 
+/**
+ * https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/links
+ */
+export const API_MAX_INCLUDE_DEPTH = 10;
+
 export const LABELS = {
   START_DATE: 'Course starts on:',
   START_DATE_SHORT: 'Start:',
