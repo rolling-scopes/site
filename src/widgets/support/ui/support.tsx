@@ -12,7 +12,7 @@ import styles from './support.module.scss';
 
 const cx = classNames.bind(styles);
 
-const renderIcon = (icon: string) => {
+export const renderIcon = (icon: string) => {
   switch (icon) {
     case 'openCollective':
       return <OpenCollectiveIcon />;

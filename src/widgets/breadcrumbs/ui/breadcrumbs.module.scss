@@ -1,4 +1,6 @@
 .breadcrumbs-content {
+  width: 100%;
+
   ul {
     display: flex;
     align-items: flex-start;
@@ -31,5 +33,13 @@
 
   @include media-tablet {
     padding: 24px;
+  }
+}
+
+.mobile-breadcrumbs.content.breadcrumbs-content {
+  @include media-tablet {
+    width: 100%;
+    padding: 6px;
+    padding-left: 0;
   }
 }

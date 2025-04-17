@@ -11,14 +11,6 @@
 
   transition: background-color 0.2s;
 
-  &.gray {
-    background-color: $color-yellow-500;
-  }
-
-  &.blue {
-    background: $gradient-blue-background;
-  }
-
   &.none {
     display: none;
   }
@@ -52,10 +44,11 @@
   position: relative;
 
   display: flex;
-  gap: 28px;
+  gap: 16px;
   align-items: center;
 
   height: 100%;
+  padding-inline-start: 0;
 
   @include media-tablet-large {
     display: none;
@@ -99,6 +92,7 @@
 
   color: #000;
 
+  opacity: 0;
   background-color: #fff;
 
   transition: transform 0.4s ease-out;
@@ -107,8 +101,20 @@
 .mobile-menu.open {
   transform: translateY(0);
   display: none;
+  opacity: 1;
 
   @include media-tablet-large {
     display: block;
   }
+}
+
+.support-text {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  max-width: 500px;
+
+  font-size: 14px;
+  list-style-type: none;
 }
