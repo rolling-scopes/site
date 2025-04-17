@@ -15,4 +15,4 @@ class Api {
   }
 }
 
-export const api = new Api(process.env.BASE_URI);
+export const api = new Api(process.env.API_BASE_URL);
