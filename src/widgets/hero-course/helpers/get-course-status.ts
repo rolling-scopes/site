@@ -1,6 +1,6 @@
 import { hasDayInDate } from './has-day';
-import { COURSE_STALE_AFTER_DAYS, COURSE_UPCOMING_PERIOD_MONTHS } from '@/core/const';
 import type { CourseStatus } from '@/entities/course';
+import { COURSE_STALE_AFTER_DAYS, COURSE_UPCOMING_PERIOD_MONTHS } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/dayJS';
 import { courseStatus } from 'data';
 

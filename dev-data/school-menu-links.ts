@@ -1,4 +1,4 @@
-import { ANCHORS, ROUTES } from '@/core/const';
+import { ANCHORS, ROUTES } from '@/shared/constants';
 
 export const schoolMenuStaticLinks = [
   {

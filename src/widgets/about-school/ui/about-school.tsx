@@ -1,6 +1,6 @@
 import cx from 'classnames';
 
-import { ANCHORS } from '@/core/const';
+import { ANCHORS } from '@/shared/constants';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 

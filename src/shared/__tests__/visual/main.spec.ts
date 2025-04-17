@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 import { VIEWPORTS, takeScreenshot } from './utils';
-import { ROUTES } from '@/core/const';
+import { ROUTES } from '@/shared/constants';
 
 test('Main page', async ({ page }) => {
   await page.goto(ROUTES.HOME);

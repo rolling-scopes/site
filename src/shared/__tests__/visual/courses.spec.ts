@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
 
 import { takeScreenshot } from './utils';
-import { ROUTES } from '@/core/const';
+import { ROUTES } from '@/shared/constants';
 
 test('Courses main page', async ({ page }) => {
   await page.goto(ROUTES.COURSES);

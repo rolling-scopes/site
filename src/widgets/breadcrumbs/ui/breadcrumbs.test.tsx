@@ -2,8 +2,8 @@ import { screen } from '@testing-library/react';
 
 import { Breadcrumbs } from './breadcrumbs';
 import { breadcrumbNameMap } from '../constants';
-import { ROUTES } from '@/core/const';
 import { renderWithRouter } from '@/shared/__tests__/utils';
+import { ROUTES } from '@/shared/constants';
 
 const mockUsePathname = vi.fn();
 const unmappedRoute = '/unmapped-route';

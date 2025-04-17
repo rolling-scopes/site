@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { ANCHORS, ROUTES } from '@/core/const';
+import { ANCHORS, ROUTES } from '@/shared/constants';
 import { Logo } from '@/shared/ui/logo';
 
 const aboutList = [
