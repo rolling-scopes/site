@@ -1,7 +1,7 @@
 import util from 'node:util';
 
 import { stringifyJSONSafe } from '@/shared/helpers/stringify-json-safe';
-import { HttpMethod, HttpStatusCodes } from '@/shared/types';
+import { HttpMethod } from '@/shared/types';
 
 const MESSAGE_LENGTH = 100;
 
@@ -10,7 +10,7 @@ type LogRequestParams = {
   url: string;
   result: unknown;
   body: unknown;
-  status: HttpStatusCodes;
+  status: number;
   statusText?: string;
   logPrefix: string;
   error?: unknown | Error;

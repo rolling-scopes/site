@@ -1,8 +1,15 @@
-import { FetchClient } from '@/shared/api/fetch-client';
 import { HTTP_METHOD, UNKNOWN_API_ERROR } from '@/shared/constants';
 import { isApiError } from '@/shared/helpers/is-api-error';
+import { isValidUrl } from '@/shared/helpers/isValidUrl';
 import { logRequest } from '@/shared/helpers/log-request';
-import { HttpHeaders, HttpStatusCodes, QueryResult, RequestOptions } from '@/shared/types';
+import { stringifyJSONSafe } from '@/shared/helpers/stringify-json-safe';
+import {
+  HttpHeaders,
+  HttpStatusCodes,
+  QueryResult,
+  QueryStringParams,
+  RequestOptions,
+} from '@/shared/types';
 
 export class ApiBaseClass {
   private readonly baseUrl: string;
@@ -52,57 +59,96 @@ export class ApiBaseClass {
 
   private async query<TResponse>(
     url: string,
-    options: RequestOptions = {},
+    { method = HTTP_METHOD.GET, body, headers, params, nolog }: RequestOptions = {},
   ): Promise<QueryResult<TResponse>> {
-    const { body, method = HTTP_METHOD.GET, headers, params } = options;
+    const compiledUrl = this.compileUrl(url, params);
+    const queryHeaders = {
+      ...this.staticHeaders,
+      ...headers,
+    };
 
-    const fetchClient = new FetchClient(this.baseUrl, this.staticHeaders);
+    let response = {} as Response;
+    let result = {} as TResponse;
+    let queryBody: string | null = null;
+    let error: unknown | null = null;
+
+    if (body) {
+      queryBody = stringifyJSONSafe(body);
+    }
 
     try {
-      await fetchClient.sendRequest(url, method, body, headers, params);
-      const result = await fetchClient.json<TResponse>();
-      const resultData = {
-        status: fetchClient?.status as HttpStatusCodes,
-        result,
-      };
+      response = await fetch(compiledUrl, {
+        method,
+        headers: queryHeaders,
+        body: queryBody,
+      });
+      result = await response.json();
 
-      if (!fetchClient.response?.ok) {
+      if (!response.ok) {
         throw new Error(isApiError(result) ? result.message : UNKNOWN_API_ERROR);
       }
 
-      if (!options.nolog) {
-        logRequest({
-          method,
-          url: fetchClient.url ?? url,
-          result,
-          body,
-          status: fetchClient.status as HttpStatusCodes,
-          statusText: fetchClient.statusText,
-          logPrefix: this.logPrefix,
-        });
-      }
-
       return {
-        ...resultData,
         isSuccess: true,
+        status: response.status as HttpStatusCodes,
+        result,
       };
     } catch (e) {
-      logRequest({
-        method,
-        url: fetchClient.url ?? url,
-        result: null,
-        body,
-        status: fetchClient.status as HttpStatusCodes,
-        statusText: (e as Error).message ?? fetchClient.statusText,
-        logPrefix: this.logPrefix,
-        error: e,
-      });
+      error = e;
 
       return {
-        status: fetchClient.status as HttpStatusCodes,
         isSuccess: false,
+        status: response.status as HttpStatusCodes,
         result: null,
       };
+    } finally {
+      if (!nolog) {
+        logRequest({
+          method,
+          url: compiledUrl,
+          result,
+          body,
+          status: response.status,
+          statusText: response.statusText,
+          logPrefix: this.logPrefix,
+          error,
+        });
+      }
     }
+  }
+
+  private ObjectToQueryString(params: QueryStringParams) {
+    const searchParams = new URLSearchParams();
+
+    Object.entries(params).forEach(([key, param]) => {
+      if (Array.isArray(param)) {
+        param.forEach((value) => {
+          searchParams.append(key, String(value));
+        });
+      } else {
+        searchParams.append(key, String(param));
+      }
+    });
+
+    return searchParams;
+  }
+
+  private compileUrl(url: string, params: QueryStringParams = {}) {
+    const buffer = [];
+    const hasParams = Boolean(Object.keys(params).length);
+
+    if (isValidUrl(url)) {
+      buffer.push(url);
+    } else {
+      buffer.push(`${this.baseUrl}${url}`);
+    }
+
+    if (hasParams) {
+      const queryString = this.ObjectToQueryString(params);
+
+      buffer.push(queryString);
+    }
+
+    return buffer.join('?');
   }
 }
