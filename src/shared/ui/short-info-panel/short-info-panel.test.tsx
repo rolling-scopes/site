@@ -5,24 +5,27 @@ import { ShortInfoPanel } from './short-info-panel';
 import micIcon from '@/shared/assets/icons/mic.svg';
 import { LABELS } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/dayJS';
+import { Language } from '@/shared/types';
 
 describe('CourseShortInfo', () => {
-  it('renders normal course card view with correct labels, dates, language, and microphone icon', () => {
-    const startDate = '2060-01-01';
-    const registrationEndDate = dayJS(startDate).add(1, 'd').toISOString();
-    const language = 'en';
+  const data = {
+    startDate: '2060-01-01',
+    registrationEndDate: dayJS('2060-01-01').add(1, 'd').toISOString(),
+    language: 'en' as Language,
+  };
 
+  it('renders normal course card view with correct labels, dates, language, and microphone icon', () => {
     render(
       <ShortInfoPanel
-        startDate={startDate}
-        registrationEndDate={registrationEndDate}
-        language={language}
+        startDate={data.startDate}
+        registrationEndDate={data.registrationEndDate}
+        language={data.language}
         label={LABELS.START_DATE}
       />,
     );
 
-    expect(screen.getByText(`${startDate}`)).toBeInTheDocument();
-    expect(screen.getByText(`${registrationEndDate}`)).toBeInTheDocument();
+    expect(screen.getByText(`${data.startDate}`)).toBeInTheDocument();
+    expect(screen.getByText(`${data.registrationEndDate}`)).toBeInTheDocument();
     expect(screen.getByText('English')).toBeInTheDocument();
     expect(screen.getByRole('img', { name: 'microphone-icon' })).toHaveAttribute(
       'src',
@@ -31,19 +34,15 @@ describe('CourseShortInfo', () => {
   });
 
   it('renders upcoming course card view with correct date and language', () => {
-    const startDate = '2060-01-01';
-    const registrationEndDate = dayJS(startDate).add(1, 'd').toISOString();
-    const language = 'en';
-
     render(
       <ShortInfoPanel
-        startDate={startDate}
-        registrationEndDate={registrationEndDate}
-        language={language}
+        startDate={data.startDate}
+        registrationEndDate={data.registrationEndDate}
+        language={data.language}
       />,
     );
 
-    expect(screen.getByText(`${startDate}`)).toBeInTheDocument();
+    expect(screen.getByText(`${data.startDate}`)).toBeInTheDocument();
     expect(screen.getByText('English')).toBeInTheDocument();
   });
 
