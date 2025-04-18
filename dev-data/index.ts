@@ -32,14 +32,14 @@ export {
   type CoursesWithRequirementsNames,
   DISCORD_LINKS,
   type TrainingProgramType,
-} from './courseTitles.data';
+} from './course-titles.data';
 
 export { type Benefit } from './benefit-mentorship.data';
 export { aboutMentorsData } from './about-mentors.data';
 export { angular } from './angular.data';
-export { awsDev } from './awsDev.data';
+export { awsDev } from './aws-dev.data';
 export { awsDevops } from './aws-devops.data';
-export { awsFundamentals } from './awsFundamentals.data';
+export { awsFundamentals } from './aws-fundamentals.data';
 export { benefitMentorshipHome, benefitMentorshipMentors } from './benefit-mentorship.data';
 export { communicationText } from './widget-communication.data';
 export { communityGroups } from './community-media.data';
@@ -65,7 +65,7 @@ export { mentorshipCourses, mentorshipCoursesDefault } from './mentorship.data';
 export { merchData } from './merch.data';
 export { nodejs } from './nodejs.data';
 export { picturesSocialMediaLinks } from './pictures.data';
-export { preSchoolEn, preSchoolRu } from './preSchool.data';
+export { preSchoolEn, preSchoolRu } from './pre-school.data';
 export { preschoolFaqData } from './faq.data';
 export { principleCards } from './principle-cards.data';
 export { reactEn } from './react-en.data';

@@ -1,4 +1,4 @@
-import { COURSE_TITLES } from './courseTitles.data';
+import { COURSE_TITLES } from './course-titles.data';
 import { ROUTES } from '@/core/const';
 import angular from '@/shared/assets/icons/angular.svg';
 import javascript from '@/shared/assets/icons/javascript.svg';
