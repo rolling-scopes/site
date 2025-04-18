@@ -6,8 +6,6 @@ import { Language } from '@/shared/types';
 import { CourseNamesKeys } from 'data';
 
 class TrainerStore {
-  constructor() {}
-
   public loadTrainers = async (course: CourseNamesKeys, language: Language = 'en') => {
     try {
       const courseId = API_COURSES_IDS_DICTIONARY[course];
