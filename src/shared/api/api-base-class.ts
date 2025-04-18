@@ -117,38 +117,11 @@ export class ApiBaseClass {
     }
   }
 
-  private ObjectToQueryString(params: QueryStringParams) {
-    const searchParams = new URLSearchParams();
-
-    Object.entries(params).forEach(([key, param]) => {
-      if (Array.isArray(param)) {
-        param.forEach((value) => {
-          searchParams.append(key, String(value));
-        });
-      } else {
-        searchParams.append(key, String(param));
-      }
-    });
-
-    return searchParams;
-  }
-
   private compileUrl(url: string, params: QueryStringParams = {}) {
-    const buffer = [];
-    const hasParams = Boolean(Object.keys(params).length);
+    const queryString = new URLSearchParams(params as Record<string, string>);
+    const urlWithQueryString = `${url}?${queryString}`;
+    const baseUrl = !isValidUrl(url) ? this.baseUrl : '';
 
-    if (isValidUrl(url)) {
-      buffer.push(url);
-    } else {
-      buffer.push(`${this.baseUrl}${url}`);
-    }
-
-    if (hasParams) {
-      const queryString = this.ObjectToQueryString(params);
-
-      buffer.push(queryString);
-    }
-
-    return buffer.join('?');
+    return new URL(urlWithQueryString, baseUrl).toString();
   }
 }
