@@ -23,18 +23,14 @@ export {
   RS_DOCS_EN_LINK,
   RS_DOCS_TELEGRAM_CHATS_LINK,
 } from './communication.data';
-
+export { type Benefit } from './benefit-mentorship.data';
 export {
-  AWS_FUNDAMENTALS_BADGE,
   COURSE_TITLES,
   type CourseNames,
   type CourseNamesKeys,
   type CoursesWithRequirementsNames,
   DISCORD_LINKS,
-  type TrainingProgramType,
 } from './courseTitles.data';
-
-export { type Benefit } from './benefit-mentorship.data';
 export { aboutMentorsData } from './about-mentors.data';
 export { angular } from './angular.data';
 export { awsDev } from './awsDev.data';
