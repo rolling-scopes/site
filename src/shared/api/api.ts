@@ -5,7 +5,6 @@ import { ApiServices } from '@/shared/types';
 class Api {
   public readonly services: ApiServices;
 
-  // modules
   public readonly trainer: TrainerApi;
 
   constructor(private readonly baseURI: string) {

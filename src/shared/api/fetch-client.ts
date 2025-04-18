@@ -97,7 +97,6 @@ export class FetchClient {
     const hasParams = Boolean(Object.keys(params).length);
 
     if (isValidUrl(url)) {
-      // if url already contains http(s), direct url will be used
       buffer.push(url);
     } else {
       buffer.push(`${this.baseUrl}${url}`);
