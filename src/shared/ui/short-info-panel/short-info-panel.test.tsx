@@ -7,7 +7,7 @@ import { LABELS } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/dayJS';
 
 describe('CourseShortInfo', () => {
-  it('renders NORMAL view with correct labels, dates, language, and microphone icon', () => {
+  it('renders normal course card view with correct labels, dates, language, and microphone icon', () => {
     const startDate = '2060-01-01';
     const registrationEndDate = dayJS(startDate).add(1, 'd').toISOString();
     const language = 'en';
@@ -30,7 +30,7 @@ describe('CourseShortInfo', () => {
     );
   });
 
-  it('renders UPCOMING viiew with correct date and language', () => {
+  it('renders upcoming course card view with correct date and language', () => {
     const startDate = '2060-01-01';
     const registrationEndDate = dayJS(startDate).add(1, 'd').toISOString();
     const language = 'en';
@@ -47,7 +47,7 @@ describe('CourseShortInfo', () => {
     expect(screen.getByText('English')).toBeInTheDocument();
   });
 
-  it('renders MENTORING view with correct labels, dates, language, and microphone icon', () => {
+  it('renders mentoring course card view with correct labels, dates, language, and microphone icon', () => {
     const personalMentoringStartDate = '2060-02-01';
     const personalMentoringEndDate = '2060-02-15';
     const language = 'en';

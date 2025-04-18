@@ -11,11 +11,7 @@ import styles from './short-info-panel.module.scss';
 
 const cx = classNames.bind(styles);
 
-export enum ShortInfoPanelView {
-  NORMAL = 'normal',
-  UPCOMING = 'upcoming',
-  MENTORING = 'mentoring',
-}
+export type ShortInfoPanelView = 'normal' | 'upcoming' | 'mentoring';
 
 interface ShortInfoPanelProps {
   startDate: string | null;
@@ -34,19 +30,19 @@ export const ShortInfoPanel = ({
   registrationEndDate,
   language,
   withMargin,
+  label,
   personalMentoringStartDate,
   personalMentoringEndDate,
-  label,
   showMentoringStartDate,
 }: ShortInfoPanelProps) => {
   const courseLanguage = language === 'en' ? LABELS.COURSE_LANGUAGE_EN : LABELS.COURSE_LANGUAGE_RU;
 
-  let view = ShortInfoPanelView.NORMAL;
+  let view: ShortInfoPanelView = 'normal';
 
   if (showMentoringStartDate) {
-    view = ShortInfoPanelView.MENTORING;
+    view = 'mentoring';
   } else if (!label) {
-    view = ShortInfoPanelView.UPCOMING;
+    view = 'upcoming';
   }
 
   const normalView = (
@@ -76,6 +72,8 @@ export const ShortInfoPanel = ({
       startDate={
         startDate && registrationEndDate ? calculateFreshDate(startDate, registrationEndDate) : null
       }
+      endDate={startDate ? registrationEndDate : null}
+      labelSeparator={LABELS.MENTOR_ACTIVITIES_SEPARATOR}
     >
       <span className={cx('language')} data-testid="course-language">
         {courseLanguage}
@@ -102,9 +100,9 @@ export const ShortInfoPanel = ({
   );
 
   switch (view) {
-    case ShortInfoPanelView.MENTORING:
+    case 'mentoring':
       return mentoringView;
-    case ShortInfoPanelView.UPCOMING:
+    case 'upcoming':
       return upcomingView;
     default:
       return normalView;
