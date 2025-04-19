@@ -4,7 +4,7 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { CourseCard, type CourseCardProps } from './course-card';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { dayJS } from '@/shared/helpers/dayJS';
+import { dayJS } from '@/shared/helpers/day-js';
 import { COURSE_TITLES } from 'data';
 
 describe('CourseCard', () => {

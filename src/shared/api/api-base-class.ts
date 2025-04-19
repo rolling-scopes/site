@@ -1,6 +1,6 @@
 import { HTTP_METHOD, UNKNOWN_API_ERROR } from '@/shared/constants';
 import { isApiError } from '@/shared/helpers/is-api-error';
-import { isValidUrl } from '@/shared/helpers/isValidUrl';
+import { isValidUrl } from '@/shared/helpers/is-valid-url';
 import { logRequest } from '@/shared/helpers/log-request';
 import { stringifyJSONSafe } from '@/shared/helpers/stringify-json-safe';
 import {

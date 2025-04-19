@@ -1,5 +1,5 @@
-import { Copyright } from './copyright';
-import { DesktopView } from './desktop-view';
+import { Copyright } from './ui/copyright';
+import { DesktopView } from './ui/desktop-view';
 import { getCourses } from '@/entities/course/api/course-api';
 import { MobileView } from '@/widgets/mobile-view';
 

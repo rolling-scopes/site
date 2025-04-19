@@ -9,7 +9,7 @@ export type {
   MentorshipCourse,
   MentorshipCourseRouteKeys,
   MentorshipDefaultRouteKeys,
-  MentorshipDetails,
+  MentorshipDetailsType,
   MentorshipRoute,
 } from './mentorship-data.types';
 export type { MentorshipCourseTitles, MentorshipLinks } from './mentorship-data.types';
@@ -39,7 +39,7 @@ export {
   type CoursesWithRequirementsNames,
   DISCORD_LINKS,
   type TrainingProgramType,
-} from './courseTitles.data';
+} from './course-titles.data';
 
 export { type Benefit } from './benefit-mentorship.data';
 export { aboutMentorsData } from './about-mentors.data';

@@ -1,6 +1,6 @@
 import { StaticImageData } from 'next/image';
 
-import { COURSE_TITLES } from './courseTitles.data';
+import { COURSE_TITLES } from './course-titles.data';
 import { ROUTES } from '@/core/const';
 import { Language } from '@/shared/types';
 import { SocialMediaProps } from '@/shared/ui/social-media-item';
@@ -48,7 +48,7 @@ export type ImageLink = {
   alt: string;
 };
 
-export type MentorshipDetails = {
+export type MentorshipDetailsType = {
   id: number;
   title: string;
   info: string;
@@ -67,7 +67,7 @@ export type MentorshipCourse = {
     courseDocs?: string;
     onboard?: SocialMediaProps[];
   };
-  details: MentorshipDetails[];
+  details: MentorshipDetailsType[];
   activitiesTitle: string;
   activities: MentorActivity[];
 };
