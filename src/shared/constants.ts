@@ -1,9 +1,18 @@
+import { ApiResourceLocale, Language } from '@/shared/types';
+
 export const RS_INTRO_URL = 'https://www.youtube.com/embed/n4unZLVpnaU';
 export const RS_FOUNDATION_YEAR = '2013';
 export const RS_EMAIL = 'rolling.scopes@gmail.com';
 export const TO_BE_DETERMINED = 'TBD';
 export const REGISTRATION_WILL_OPEN_SOON = 'Registration will open soon!';
 export const REGISTRATION_WILL_OPEN_SOON_RU = 'Регистрация откроется скоро!';
+export const UNKNOWN_API_ERROR = 'Unknown error, API request failed.';
+
+/**
+ * https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/links
+ */
+export const API_MAX_INCLUDE_DEPTH = 10;
+
 export const LABELS = {
   START_DATE: 'Course starts on:',
   START_DATE_SHORT: 'Start:',
@@ -34,3 +43,21 @@ export const COURSE_LINKS = {
 };
 
 export const KEY_CODES = { ESCAPE: 'Escape' } as const;
+
+export const HTTP_METHOD = {
+  GET: 'GET',
+  POST: 'POST',
+  PUT: 'PUT',
+  PATCH: 'PATCH',
+  DELETE: 'DELETE',
+} as const;
+
+export const API_LOCALE_DICTIONARY: Record<Language, ApiResourceLocale> = {
+  ru: 'ru',
+  en: 'en-US',
+};
+
+export const API_CONTENT_TYPE_DICTIONARY = {
+  TRAINER: 'contributor',
+  COURSE: 'course',
+} as const;
