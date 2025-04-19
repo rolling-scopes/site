@@ -1,4 +1,4 @@
-import { API_COURSES_IDS_DICTIONARY } from '@/entities/course/constants';
+import { API_COURSES_IDS_DICTIONARY } from '@/entities/course/@x/trainer';
 import { transformTrainers } from '@/entities/trainer/helpers/transform-trainers';
 import { api } from '@/shared/api/api';
 import { API_LOCALE_DICTIONARY } from '@/shared/constants';
