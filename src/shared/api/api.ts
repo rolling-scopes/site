@@ -1,4 +1,4 @@
-import { TrainerApi } from '@/entities/trainer/api';
+import { TrainerApi } from '@/entities/trainer/api/trainer-api';
 import { ApiBaseClass } from '@/shared/api/api-base-class';
 import { ApiServices } from '@/shared/types';
 
