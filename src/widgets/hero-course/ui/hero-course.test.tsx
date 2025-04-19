@@ -11,7 +11,7 @@ import {
   REGISTRATION_WILL_OPEN_SOON_RU,
   TO_BE_DETERMINED,
 } from '@/shared/constants';
-import * as getCourseDate from '@/shared/helpers/getCourseDate';
+import * as getCourseDate from '@/shared/helpers/get-course-date';
 import { COURSE_TITLES } from 'data';
 
 const mockedCourseWithSubtitle = mockedCourses.find(

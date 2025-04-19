@@ -2,7 +2,7 @@
 
 import { ROUTES } from '@/core/const';
 import { Course, CourseItem } from '@/entities/course';
-import { getActualData } from '@/shared/helpers/getActualData';
+import { getActualData } from '@/shared/helpers/get-actual-data';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { maxUpcomingCoursesQuantity } from '@/widgets/upcoming-courses/constants';

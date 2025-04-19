@@ -3,10 +3,10 @@
 import { ReactNode } from 'react';
 
 import { Course } from '@/entities/course';
-import { getActualData } from '@/shared/helpers/getActualData';
+import { getActualData } from '@/shared/helpers/get-actual-data';
 import {
   transformCoursesToMentorship,
-} from '@/views/mentorship/helpers/transformCoursesToMentorship';
+} from '@/views/mentorship/helpers/transform-courses-to-mentorship';
 
 type FreshCoursesProps = {
   courses: Course[];

@@ -5,7 +5,7 @@ import { ShortInfoPanel } from './short-info-panel';
 import micIcon from '@/shared/assets/icons/mic.svg';
 import noteIcon from '@/shared/assets/icons/note-icon.svg';
 import { LABELS } from '@/shared/constants';
-import { dayJS } from '@/shared/helpers/dayJS';
+import { dayJS } from '@/shared/helpers/day-js';
 
 describe('CourseShortInfo', () => {
   it('renders the start date correctly', () => {

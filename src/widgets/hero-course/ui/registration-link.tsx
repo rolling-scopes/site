@@ -1,7 +1,7 @@
 'use client';
 
 import { TO_BE_DETERMINED } from '@/shared/constants';
-import { calculateFreshDate } from '@/shared/helpers/getCourseDate';
+import { calculateFreshDate } from '@/shared/helpers/get-course-date';
 import { Language } from '@/shared/types';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { heroCourseLocalized } from 'data';

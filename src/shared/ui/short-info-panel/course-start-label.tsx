@@ -2,7 +2,7 @@
 
 import { PropsWithChildren } from 'react';
 
-import { calculateFreshDate } from '@/shared/helpers/getCourseDate';
+import { calculateFreshDate } from '@/shared/helpers/get-course-date';
 import { DateSimple } from '@/shared/ui/date-simple';
 
 type CourseStartLabelProps = PropsWithChildren & {
