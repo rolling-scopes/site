@@ -1,5 +1,6 @@
 import { AboutList } from './about-list';
 import { getCourses } from '@/entities/course/api/course-api';
+import { CourseMenuItemsFresh } from '@/shared/ui/course-menu-items-fresh';
 import { SchoolMenu } from '@/widgets/school-menu';
 import { schoolMenuStaticLinks } from 'data';
 
@@ -25,16 +26,7 @@ export const DesktopView = async () => {
 
       <div className="right">
         <SchoolMenu heading="all courses" color="light">
-          {courses.map((course) => (
-            <SchoolMenu.Item
-              key={course.id}
-              icon={course.iconFooter}
-              title={course.title}
-              description={course.startDate}
-              url={course.detailsUrl}
-              color="light"
-            />
-          ))}
+          <CourseMenuItemsFresh courses={courses} color="light" icon="iconFooter" />
         </SchoolMenu>
       </div>
     </div>

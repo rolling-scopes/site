@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { ANCHORS, ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
+import { CourseMenuItemsFresh } from '@/shared/ui/course-menu-items-fresh';
 import { Logo } from '@/shared/ui/logo';
 import { SchoolMenu } from '@/widgets/school-menu';
 import { communityMenuStaticLinks, mentorshipCourses, schoolMenuStaticLinks } from 'data';
@@ -58,17 +59,7 @@ export const MobileView = ({ type, courses, onClose }: MobileViewProps) => {
       </Link>
 
       <SchoolMenu>
-        {courses.map((course) => (
-          <SchoolMenu.Item
-            key={course.id}
-            icon={course[courseIcon]}
-            title={course.title}
-            description={course.startDate}
-            url={course.detailsUrl}
-            color={color}
-            onClick={onClose}
-          />
-        ))}
+        <CourseMenuItemsFresh courses={courses} icon={courseIcon} onClose={onClose} color={color} />
       </SchoolMenu>
 
       <Divider color={color} />
