@@ -59,7 +59,7 @@ export class ApiBaseClass {
 
   private async query<TResponse>(
     url: string,
-    { method = HTTP_METHOD.GET, body, headers, params, nolog }: RequestOptions = {},
+    { method = HTTP_METHOD.GET, body, headers, params, shouldLog }: RequestOptions = {},
   ): Promise<QueryResult<TResponse>> {
     const compiledUrl = this.compileUrl(url, params);
     const queryHeaders = {
@@ -102,7 +102,7 @@ export class ApiBaseClass {
         result: null,
       };
     } finally {
-      if (!nolog) {
+      if (shouldLog) {
         logRequest({
           method,
           url: compiledUrl,

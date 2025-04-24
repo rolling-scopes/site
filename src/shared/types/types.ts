@@ -33,7 +33,7 @@ export type RequestOptions = {
   headers?: HttpHeaders;
   body?: RequestBody;
   rethrow?: boolean;
-  nolog?: boolean;
+  shouldLog?: boolean;
 };
 
 export type HttpStatusCodes = HttpStatus[keyof HttpStatus];
