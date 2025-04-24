@@ -26,7 +26,7 @@ export function logRequest({
   body,
   error,
 }: LogRequestParams) {
-  if (!process.env.LOG_QUERY) {
+  if (process.env.LOG_QUERY === 'false') {
     return;
   }
 
