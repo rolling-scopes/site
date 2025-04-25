@@ -112,7 +112,7 @@ export const courses: Course[] = [
     iconSmall: angular,
     iconFooter: angular,
     secondaryIcon: angular,
-    startDate: TO_BE_DETERMINED,
+    startDate: 'Only for JS/FE Stage 2 graduates',
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
     mode: 'online',
