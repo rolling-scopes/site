@@ -311,7 +311,7 @@ export const courseDataMap: CourseMap = {
         'Chrome DevTools',
         'Figma',
         'Understanding the concept of REST API',
-        'Successful completion of JS/FE Stage 2'
+        'Successful completion of JS/FE Stage 2',
       ],
     },
     willLearn: [],
