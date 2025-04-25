@@ -95,14 +95,14 @@ const listData = {
 const angularNodejsAwsFundamentals: (course: string) => AboutCourseInfo[] = () => [
   {
     id: 1,
-    title: 'For everyone',
-    info: 'Everyone can study at RS School, regardless of age, professional employment, or place of residence. However, you should have sufficient base knowledge before the program begins.The RS School is working by the principle of "Pay it forward". Members of our community share their knowledge and check students\' tasks for free. And we hope that our students will continue this work as our mentors in the future.',
+    title: 'For JS/FE graduates',
+    info: 'This course is exclusively available for students who have successfully completed JS/FE Stage 2. The RS School continues working by the principle of "Pay it forward". Members of our community share their knowledge and check students\' tasks for free. And we hope that our students will continue this work as our mentors in the future.',
     icon: personIcon,
   },
   {
     id: 2,
     title: 'Materials',
-    info: 'Everyone can study at RS School, regardless of age, professional employment, or place of residence. However, you should have sufficient base knowledge before the program begins.',
+    info: 'All materials are publicly available on the YouTube channel and GitHub',
     icon: paperIcon,
   },
   {

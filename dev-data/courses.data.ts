@@ -106,7 +106,7 @@ export const courses: Course[] = [
   {
     id: '5',
     title: COURSE_TITLES.ANGULAR,
-    subTitle: null,
+    subTitle: `Only for JS/FE Stage 2 graduates`,
     descriptionUrl: COURSE_LINKS.ANGULAR,
     iconSrc: angular,
     iconSmall: angular,
