@@ -1,6 +1,5 @@
 import { AboutCourse } from '@/widgets/about-course';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
-import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
 import { Faq } from '@/widgets/faq';
 import { HeroCourse } from '@/widgets/hero-course';
@@ -21,7 +20,6 @@ export const JavaScriptPreSchoolRu = ({ courseName }: JavaScriptPreSchoolRuProps
       <AboutCourse courseName={courseName} />
       <TrainingProgram courseName={courseName} />
       <Required courseName={courseName} />
-      <Certification courseName={courseName} />
       <Communication courseName={courseName} />
       <Faq faqData={preschoolFaqData} />
       <Trainers trainers={preSchoolRu} courseName={courseName} />
