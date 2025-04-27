@@ -36,6 +36,8 @@ export const DateSimple = ({
   const startDateAttr = formatDateAttr(startDate);
   const endDateAttr = formatDateAttr(endDate);
 
+  const startDateFormat = startDate && endDate ? dayJS(startDate).format('MMMM D') : startDate;
+
   return (
     <p className={cx('date')}>
       {label && (
@@ -44,9 +46,9 @@ export const DateSimple = ({
           <span className={cx('bold')}>{label}</span>
         </>
       )}
-      {startDate && (
+      {startDateFormat && (
         <time dateTime={startDateAttr} data-testid="date-time-start">
-          {startDate}
+          {startDateFormat}
         </time>
       )}
 
