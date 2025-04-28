@@ -10,6 +10,7 @@ export class CourseApi {
       params: {
         content_type: API_CONTENT_TYPE_DICTIONARY.COURSE,
         include: API_MAX_INCLUDE_DEPTH,
+        order: 'fields.order',
       },
     });
   }
