@@ -1,3 +1,5 @@
+import { trainerStore } from '@/entities/trainer';
+import { getCourseLanguage } from '@/shared/helpers/get-course-language';
 import { AboutCourse } from '@/widgets/about-course';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
@@ -7,13 +9,16 @@ import { HeroCourse } from '@/widgets/hero-course';
 import { Required } from '@/widgets/required';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
-import { CourseNames, preSchoolRu, preschoolFaqData } from 'data';
+import { CourseNames, preschoolFaqData } from 'data';
 
 type JavaScriptPreSchoolRuProps = {
   courseName: CourseNames['JS_PRESCHOOL_RU'];
 };
 
-export const JavaScriptPreSchoolRu = ({ courseName }: JavaScriptPreSchoolRuProps) => {
+export const JavaScriptPreSchoolRu = async ({ courseName }: JavaScriptPreSchoolRuProps) => {
+  const language = await getCourseLanguage(courseName);
+  const trainers = await trainerStore.loadTrainers(courseName, language);
+
   return (
     <>
       <HeroCourse courseName={courseName} />
@@ -24,7 +29,7 @@ export const JavaScriptPreSchoolRu = ({ courseName }: JavaScriptPreSchoolRuProps
       <Certification courseName={courseName} />
       <Communication courseName={courseName} />
       <Faq faqData={preschoolFaqData} />
-      <Trainers trainers={preSchoolRu} courseName={courseName} />
+      {trainers && <Trainers trainers={trainers} courseName={courseName} />}
     </>
   );
 };
