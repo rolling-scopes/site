@@ -1,12 +1,12 @@
 import { Copyright } from './ui/copyright';
 import { DesktopView } from './ui/desktop-view';
-import { getCourses } from '@/entities/course/api/course-api';
+import { courseStore } from '@/entities/course';
 import { MobileView } from '@/widgets/mobile-view';
 
 import './footer.scss';
 
 export const Footer = async () => {
-  const courses = await getCourses();
+  const courses = await courseStore.loadCourses();
 
   return (
     <footer className="footer container" data-testid="footer">

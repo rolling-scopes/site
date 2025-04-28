@@ -1,10 +1,10 @@
 import { AboutList } from './about-list';
-import { getCourses } from '@/entities/course/api/course-api';
+import { courseStore } from '@/entities/course';
 import { SchoolMenu } from '@/widgets/school-menu';
 import { schoolMenuStaticLinks } from 'data';
 
 export const DesktopView = async () => {
-  const courses = await getCourses();
+  const courses = await courseStore.loadCourses();
 
   return (
     <div className="desktop-view" data-testid="desktop-view">
