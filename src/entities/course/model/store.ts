@@ -4,11 +4,13 @@ import { api } from '@/shared/api/api';
 
 class CourseStore {
   public async loadCourses() {
-    const res = await api.course.queryCourses();
+    const [courses, courseSchedule] = await Promise.all([
+      api.course.queryCourses(),
+      this.loadCoursesSchedule(),
+    ]);
 
-    if (res.isSuccess) {
-      const transformedCoursesData = transformCourses(res.result);
-      const courseSchedule = await this.loadCoursesSchedule();
+    if (courses.isSuccess) {
+      const transformedCoursesData = transformCourses(courses.result);
 
       return syncApiCoursesSchedule(courseSchedule, transformedCoursesData);
     }
