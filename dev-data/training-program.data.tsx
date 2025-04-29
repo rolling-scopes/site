@@ -295,25 +295,26 @@ export const contentMap: ContentMap = {
     image: awsDevImg,
   },
   [COURSE_TITLES.SHORT_TRACK]: {
-    title: 'About the Opportunities',
+    title: 'О возможностях',
     content: [
       <Paragraph key="short track 01">
-        This a program designed for students who already possess strong foundational knowledge of
-        JavaScript/TypeScript and want to quickly level up to meet the requirements for employment
-        at EPAM.
+        Эта программа предназначена для студентов, которые уже обладают глубокими базовыми знаниями
+        JavaScript/TypeScript и хотят быстро повысить свой уровень для соответствия требованиям
+        трудоустройства в EPAM.
       </Paragraph>,
       <Paragraph key="short track 02">
-        We are launching the Short Track now because new project positions are becoming available,
-        and we want to help you improve your skills and prepare for interviews at a fast pace to be
-        ready by April.
+        Мы запускаем программу Short Track, когда в EPAM открываются вакансии Junior FE
+        разработчиков в разных локациях. Наша цель - помочь вам улучшить навыки и подготовиться к
+        собеседованиям в ускоренном режиме, чтобы быть готовыми всего за 3 месяца.
       </Paragraph>,
       <List
         key="short track 03"
         data={[
-          'In 2024, EPAM hired more than 50 RS School graduates. We hope to double that number this year despite the unstable demand. Project positions are highly irregular, and it’s difficult to predict the exact number of vacancies.',
-          'Historically, this course was called “Short Track” (before 2022), but since then, the market has changed significantly, and there is no longer a 100% guarantee that vacancies will be available right after completing the Short Track.',
-          'However, we aim to provide the highest level of training to prepare you for any interviews. Most of our organizers have completed this program themselves and successfully joined EPAM.',
-          'It is likely that in a month or two, we will announce another round of applications for the Short Track program.',
+          'В 2024 году EPAM принял на работу более 50 выпускников RS School. Мы надеемся удвоить это число в этом году, несмотря на нестабильный спрос. Проектные позиции появляются нерегулярно, и сложно предсказать точное количество вакансий.',
+          'Исторически этот курс назывался "Short Track" (до 2022 года), но с тех пор рынок значительно изменился, и больше нет 100% гарантии, что вакансии будут доступны сразу после завершения Short Track.',
+          'В апреле 2025 года был успешно завершен первый поток EPAM ST 2025Q1 для региона GUKKA. Уже в мае 2025 года выпускники проходят собеседования в лаборатории EPAM.',
+          'Тем не менее, мы стремимся обеспечить высочайший уровень подготовки, чтобы вы были готовы к любым собеседованиям. Большинство наших организаторов сами прошли эту программу и успешно присоединились к EPAM.',
+          'Вероятно, через месяц или два мы объявим о новом наборе заявок на программу Short Track.',
         ]}
       />,
     ],
