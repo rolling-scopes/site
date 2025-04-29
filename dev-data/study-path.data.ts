@@ -968,88 +968,89 @@ export const studyPath: Record<StudyPathPage['page'], StudyPathProps> = {
   },
   'short-track': {
     sectionTitle: 'Short Track',
-    sectionIntro: 'This program will have theory and practice on the following topic:',
+    sectionIntro:
+      'Интенсивная программа подготовки для опытных разработчиков, нацеленная на быстрое развитие навыков до уровня, необходимого для успешного трудоустройства. Программа включает в себя следующие этапы:',
     stages: [
       {
         id: 1,
-        title: 'Step 1',
+        title: 'Шаг 1',
         intro: '',
         modules: [
           {
             id: 1,
-            text: 'Fill out the application form by January 31. Expect an invitation for an interview.  If there is a large number of applicants, there may be an additional test assignment.',
+            text: 'Подача заявки и предварительный отбор. При большом количестве заявок может быть назначено дополнительное тестовое задание.',
             links: [],
             marked: false,
           },
         ],
         image: {
           src: feJsStage1,
-          alt: 'student works',
+          alt: 'студенты за работой',
           className: 'stage-image',
         },
       },
       {
         id: 2,
-        title: 'Step 2',
+        title: 'Шаг 2',
         intro: '',
         modules: [
           {
             id: 1,
-            text: 'Entry Interviews: Interviews start on January 27 (to ensure all interviews are completed before Stage#2 begins on February 11). Expect an invitation to register for the course',
+            text: 'Вступительные технические собеседования для оценки текущего уровня знаний и определения готовности к интенсивному обучению.',
             links: [],
             marked: false,
           },
         ],
         image: {
           src: feJsStage3,
-          alt: 'student works',
+          alt: 'студенты за работой',
           className: 'stage-image',
         },
       },
       {
         id: 3,
-        title: 'Step 3',
+        title: 'Шаг 3',
         intro: '',
         modules: [
           {
             id: 1,
-            text: 'Join a team of 12-20 people under the guidance of a mentor. Self-study with provided materials, regular Q&A sessions, mock interviews, intensive practice, and a final project.',
+            text: 'Присоединитесь к команде из 12-20 человек под руководством ментора. Самостоятельное обучение с предоставленными материалами, регулярные Q&A сессии, пробные собеседования и интенсивная практика.',
             links: [],
             marked: false,
           },
         ],
         image: {
           src: feJsStage2,
-          alt: 'working students',
+          alt: 'студенты за работой',
           className: 'stage-image',
         },
       },
       {
         id: 4,
-        title: 'Step 4',
+        title: 'Шаг 4',
         intro: '',
         modules: [
           {
             id: 1,
-            text: 'At the end of the first month of the course, you will decide on a framework with your mentor. Approximate ratio: 60% React / 40% Angular',
+            text: 'В конце первого месяца обучения вы вместе с ментором определитесь с фреймворком. Примерное соотношение: 60% React / 40% Angular.',
             links: [],
             marked: false,
           },
         ],
         image: {
           src: ReactAngIcon,
-          alt: 'react and angular logo',
+          alt: 'логотипы react и angular',
           className: 'stage-image',
         },
       },
       {
         id: 5,
-        title: 'Step 5',
+        title: 'Шаг 5',
         intro: '',
         modules: [
           {
             id: 1,
-            text: 'Development of the final project in a team of 3 people under the guidance of a mentor',
+            text: 'Разработка финального проекта индивидуально или в команде из 3 человек (зависит от задания) под руководством ментора.',
             links: [],
             marked: false,
           },
