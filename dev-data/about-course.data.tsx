@@ -45,7 +45,7 @@ export const introLocalizedContent = {
   [COURSE_TITLES.AWS_FUNDAMENTALS]: enIntro,
   [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: enIntro,
   [COURSE_TITLES.AWS_DEVOPS]: enIntro,
-  [COURSE_TITLES.SHORT_TRACK]: enIntro,
+  [COURSE_TITLES.SHORT_TRACK]: ruIntro,
 };
 
 const listData = {
@@ -226,8 +226,7 @@ const reactEn: AboutCourseInfo[] = javaScriptEN().map((item) => {
       ...item,
       info: (
         <p>
-          Throughout the course, we mostly use
-          {' '}
+          Throughout the course, we mostly use{' '}
           <LinkCustom href={DISCORD_LINKS[COURSE_TITLES.REACT]} external>
             Discord chat
           </LinkCustom>
@@ -252,32 +251,32 @@ const awsDevops: AboutCourseInfo[] = [
 const shortTrack: AboutCourseInfo[] = [
   {
     id: 5,
-    title: 'Format',
-    info: 'Group training (up to 20 participants per group), self-study with provided materials, regular Q&A sessions, mock interviews, intensive practice, and a final project. Activities can be conducted both online and offline',
+    title: 'Формат',
+    info: 'Групповое обучение (до 20 участников в группе), самостоятельное изучение предоставленных материалов, регулярные Q&A сессии два раза в неделю, кросс-интервью каждую неделю, пробные собеседования с ментором каждые две недели, интенсивная практика и финальный проект на React или Angular. Время обучения около 40 часов в неделю. Занятия могут проходить как онлайн, так и офлайн.',
     icon: paperIcon,
   },
   {
     id: 1,
-    title: 'Focus',
-    info: 'React or Angular. The specific direction for each student will be determined closer to the end of the first month of training',
+    title: 'Направление',
+    info: 'React или Angular. Конкретное направление для каждого студента будет определено ближе к концу первого месяца обучения',
     icon: planetIcon,
   },
   {
     id: 2,
-    title: 'EPAM Mentors and Experts',
-    info: 'Mentors and experts from EPAM will assist in the learning process and task reviews.',
+    title: 'Менторы и эксперты EPAM',
+    info: 'Менторы и эксперты из EPAM будут помогать в процессе обучения и проверке заданий.',
     icon: personIcon,
   },
   {
     id: 3,
-    title: 'Duration',
-    info: 'The course runs for 3 months, with interviews at EPAM planned by April.',
+    title: 'Длительность',
+    info: 'Курс длится около 3 месяцев, собеседования в EPAM запланированы сразу после окончания курса.',
     icon: noteIcon,
   },
   {
     id: 4,
-    title: 'Certificate',
-    info: 'After successful completion of the course, students will receive an digital certificate.',
+    title: 'Сертификат',
+    info: 'После успешного окончания курса студенты получат электронный сертификат.',
     icon: awardIcon,
   },
 ];
