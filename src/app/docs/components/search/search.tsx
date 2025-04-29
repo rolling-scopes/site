@@ -5,7 +5,7 @@ import classNames from 'classnames/bind';
 import Link from 'next/link.js';
 import { createPortal } from 'react-dom';
 
-import MOCKED_SEARCH from '../../mocked_search';
+import MOCKED_SEARCH from '../../mocked-search';
 import { Language } from '@/shared/types';
 
 import styles from './search.module.scss';
@@ -79,20 +79,20 @@ export default function Search({ lang, resultsRef }: SearchProps) {
       />
       <div className={cx('results')}>
         {query
-        && createPortal(
-          <div className={cx('results')}>
-            {results.length > 0
-              ? (
-                  results.map((result, index) => <Result key={index} result={result} />)
-                )
-              : (
-                  <div className={cx('no-results')}>
-                    {translations[lang].search.noResults.replace('{{query}}', query)}
-                  </div>
-                )}
-          </div>,
-          resultsRef.current!,
-        )}
+          && createPortal(
+            <div className={cx('results')}>
+              {results.length > 0
+                ? (
+                    results.map((result, index) => <Result key={index} result={result} />)
+                  )
+                : (
+                    <div className={cx('no-results')}>
+                      {translations[lang].search.noResults.replace('{{query}}', query)}
+                    </div>
+                  )}
+            </div>,
+            resultsRef.current!,
+          )}
       </div>
     </div>
   );

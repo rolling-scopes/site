@@ -6,6 +6,9 @@ on:
 
 env:
   NODE_VERSION: 20.x
+  API_URL: ${{ secrets.API_URL }}
+  API_BASE_URL: ${{ secrets.API_BASE_URL }}
+  YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY_DEVELOPMENT }}
 
 jobs:
   visial-testing:
@@ -26,4 +29,3 @@ jobs:
       - run: npm run test:visual
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-          API_URL: ${{ secrets.API_URL }}

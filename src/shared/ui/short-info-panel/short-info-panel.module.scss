@@ -1,0 +1,31 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+
+  &.margin {
+    margin: 16px 0 40px;
+  }
+}
+
+.additional-info {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin: 0;
+
+  font-size: 14px;
+  color: $color-gray-600;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.mode {
+  text-transform: capitalize;
+}

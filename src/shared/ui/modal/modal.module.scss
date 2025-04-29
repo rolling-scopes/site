@@ -1,0 +1,135 @@
+.modal {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  max-width: 889px;
+  padding: 0 32px;
+  border: none;
+  border-radius: 12px;
+
+  line-height: 24px;
+
+  outline: none;
+
+  animation: modal-fade-in 450ms $standard-decelerate both;
+
+  &::backdrop {
+    background-color: hsla(from $color-black h s l / $opacity-50);
+    animation: backdrop-fade-in 300ms both;
+  }
+
+  &.fade-out {
+    animation: modal-fade-out 150ms $ease-in-cubic both;
+
+    &::backdrop {
+      animation: backdrop-fade-out 150ms both;
+    }
+  }
+
+  @include media-tablet-large {
+    max-width: revert;
+  }
+
+  @keyframes modal-fade-in {
+    0% {
+      scale: 0.96;
+      opacity: 0;
+    }
+
+    100% {
+      scale: 1;
+    }
+  }
+
+  @keyframes modal-fade-out {
+    100% {
+      scale: 0.96;
+      opacity: 0;
+    }
+  }
+
+  @keyframes backdrop-fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes backdrop-fade-out {
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+@include media-tablet {
+  dialog.modal {
+    width: 100dvw;
+    max-width: unset;
+    height: 100dvh;
+    max-height: unset;
+    padding: 0 16px;
+    border-radius: 0;
+  }
+}
+
+.modal-header {
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 26px 0 24px 0;
+
+  background-color: $color-white;
+
+  &.no-title {
+    justify-content: flex-end;
+  }
+
+  @include media-tablet {
+    padding: 12px 0 12px 0;
+  }
+}
+
+.modal-title {
+  font-size: 20px;
+}
+
+.modal-body {
+  overflow-y: auto;
+  padding-bottom: 32px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.modal-close-button {
+  cursor: pointer;
+
+  position: relative;
+  right: -6px;
+
+  display: flex;
+
+  padding: 16px;
+  border: none;
+  border-radius: 999px;
+
+  font-size: 24px;
+
+  background-color: transparent;
+
+  transition: all 300ms ease;
+
+  &:hover {
+    background-color: $color-gray-100;
+  }
+}

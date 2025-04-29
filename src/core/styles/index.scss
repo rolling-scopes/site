@@ -4,10 +4,17 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+
+  &:has(dialog[open]) {
+    overflow: hidden;
+  }
 }
 
 body {
   font-family: $font-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $color-gray-900;
   text-wrap: pretty;
 }
 
@@ -21,7 +28,6 @@ h1 {
 
 a {
   cursor: pointer;
-  color: $color-gray-600;
   text-decoration: none;
 }
 
@@ -58,14 +64,14 @@ figure {
 .content {
   width: 100%;
   max-width: 1440px;
-  padding: 80px 120px 40px;
+  padding: 60px 80px;
 
   @include media-laptop {
-    padding: 80px 40px 40px;
+    padding: 60px 40px;
   }
 
   @include media-tablet {
-    padding: 56px 16px;
+    padding: 56px 24px;
   }
 }
 
@@ -75,7 +81,7 @@ figure {
   align-items: center;
   justify-content: space-between;
 
-  @include media-laptop {
+  @include media-tablet-large {
     flex-direction: column;
   }
 }
@@ -110,22 +116,25 @@ figure {
   }
 
   .carousel-slider {
-    .control-next,
-    .control-prev {
+    .control-arrow.control-next,
+    .control-arrow.control-prev {
       --slider-arrow-btn-height: 45px;
 
       top: calc(50% - var(--slider-arrow-btn-height) / 2);
+    }
 
+    .control-next,
+    .control-prev {
       display: flex;
       align-items: center;
       justify-content: center;
 
       height: var(--slider-arrow-btn-height);
       margin: 2px;
+      border-radius: 8px;
 
       opacity: $opacity-100;
       backdrop-filter: blur(20px);
-      border-radius: 8px;
 
       @include media-mobile-landscape {
         display: none;
@@ -172,6 +181,34 @@ figure {
       display: inline-block;
       width: 16px;
       height: 16px;
+    }
+  }
+}
+
+:root {
+  --swiper-pagination-bullet-size: 10px;
+}
+
+@media only percy {
+  .hide-in-percy {
+    &::after {
+      content: 'Video Placeholder';
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      height: 100%;
+
+      font-size: 24px;
+      color: $color-white;
+
+      background: $color-gray-400;
     }
   }
 }

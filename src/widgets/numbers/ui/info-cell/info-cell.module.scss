@@ -1,62 +1,78 @@
 .info-cell {
-  position: relative;
-
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  width: 100%;
 
-  width: 240px;
-  height: 180px;
-  padding: 8px 40px;
-
-  &::after {
-    content: '';
-
-    position: absolute;
-    top: 50%;
-    right: 0;
-    translate: 0 -50%;
-
-    width: 3px;
-    height: 100%;
-
-    background-color: $color-gray-200;
-
-    @include media-tablet {
-      right: -12px;
-    }
+  .with-gap {
+    gap: 16px;
   }
 
-  &-number {
-    font-size: 52px;
-    font-weight: 500;
-    line-height: 64px;
-    color: $color-black;
-    letter-spacing: 0.04em;
+  .large-card-size {
+    width: 240px;
 
     @include media-laptop {
-      font-size: 44px;
-      line-height: 52px;
+      max-width: 220px;
     }
-  }
 
-  &-text {
-    height: 56px;
-    font-weight: 400;
-    color: $color-gray-600;
+    @include media-laptop-medium {
+      max-width: 180px;
+    }
+
+    @include media-tablet-large {
+      max-width: 150px;
+    }
 
     @include media-tablet {
-      height: auto;
+      width: 150px;
     }
   }
 
-  @include media-laptop {
-    width: 200px;
+  .medium-card-size {
+    width: 160px;
+
+    @include media-laptop {
+      max-width: 120px;
+    }
   }
 
-  @include media-tablet {
-    width: 150px;
-    height: 140px;
-    padding: 0 8px;
+  &-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .title {
+      margin: 0;
+      padding: 0;
+      letter-spacing: 0.04em;
+
+      &.medium-font-size {
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 46px;
+
+        @include media-laptop {
+          font-size: 28px;
+          line-height: 34px;
+        }
+      }
+
+      &.large-font-size {
+        font-size: 52px;
+        font-weight: 500;
+        line-height: 64px;
+
+        @include media-laptop {
+          font-size: 44px;
+          line-height: 52px;
+        }
+      }
+    }
+
+    .description {
+      height: 56px;
+      margin: 0;
+      font-size: 16px;
+      font-weight: 400;
+    }
   }
 }

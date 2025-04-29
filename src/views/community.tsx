@@ -12,7 +12,6 @@ import { Numbers } from '@/widgets/numbers';
 import { Pictures } from '@/widgets/pictures';
 import { Places } from '@/widgets/places';
 import { Speakers } from '@/widgets/speakers';
-import { Support } from '@/widgets/support';
 
 const Community: FC = () => {
   return (
@@ -28,7 +27,6 @@ const Community: FC = () => {
       <Merch />
       <CommunityMedia />
       <Contribute />
-      <Support />
     </>
   );
 };

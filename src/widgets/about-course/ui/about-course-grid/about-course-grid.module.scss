@@ -15,10 +15,10 @@
 
     width: 100%;
     padding: 24px;
-
-    background-color: $color-yellow-50;
     border: 1px solid hsla(from $color-yellow h s l/ $opacity-8);
     border-radius: 12px;
+
+    background-color: $color-yellow-50;
 
     .item-title {
       display: flex;

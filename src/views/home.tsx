@@ -8,6 +8,7 @@ import { HeroPage } from '@/widgets/hero-page';
 import { MentorsWanted } from '@/widgets/mentors-wanted';
 import { Principles } from '@/widgets/principles';
 import { StudyWithUs } from '@/widgets/study-with-us';
+import { Support } from '@/widgets/support';
 import { UpcomingCourses } from '@/widgets/upcoming-courses';
 
 export const Home: FC = () => {
@@ -19,6 +20,7 @@ export const Home: FC = () => {
       <Principles />
       <StudyWithUs />
       <UpcomingCourses />
+      <Support />
       <Alumni />
       <MentorsWanted />
     </>

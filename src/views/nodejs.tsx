@@ -1,3 +1,4 @@
+import { trainerStore } from '@/entities/trainer';
 import { AboutCourse } from '@/widgets/about-course';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
@@ -6,13 +7,15 @@ import { HeroCourse } from '@/widgets/hero-course';
 import { Required } from '@/widgets/required';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
-import { CourseNames, nodejs } from 'data';
+import { CourseNames } from 'data';
 
 type NodejsProps = {
   courseName: CourseNames['NODE'];
 };
 
-export const Nodejs = ({ courseName }: NodejsProps) => {
+export const Nodejs = async ({ courseName }: NodejsProps) => {
+  const trainers = await trainerStore.loadTrainers(courseName);
+
   return (
     <>
       <HeroCourse courseName={courseName} />
@@ -22,7 +25,7 @@ export const Nodejs = ({ courseName }: NodejsProps) => {
       <Certification courseName={courseName} />
       <Communication courseName={courseName} />
       <Required courseName={courseName} />
-      <Trainers trainers={nodejs} courseName={courseName} />
+      {trainers && <Trainers trainers={trainers} courseName={courseName} />}
     </>
   );
 };

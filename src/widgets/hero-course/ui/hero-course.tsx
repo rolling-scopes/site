@@ -2,12 +2,13 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import { getCourseStatus } from '../helpers/get-course-status';
-import { dayJS } from '@/shared/helpers/dayJS';
+import { LABELS } from '@/shared/constants';
+import { dayJS } from '@/shared/helpers/day-js';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
-import { DateLang } from '@/shared/ui/date-lang';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { MainTitle } from '@/shared/ui/main-title';
 import { SectionLabel } from '@/shared/ui/section-label';
+import { ShortInfoPanel } from '@/shared/ui/short-info-panel';
 import { CourseNamesKeys, heroCourseLocalized } from 'data';
 
 import styles from './hero-course.module.scss';
@@ -25,13 +26,16 @@ export const HeroCourse = async ({ courseName }: HeroCourseProps) => {
     subTitle,
     altTitle,
     language,
-    mode,
     enroll,
     secondaryIcon,
     startDate,
     registrationEndDate,
   } = course;
   const status = getCourseStatus(startDate, dayJS(registrationEndDate).diff(startDate, 'd'));
+  const registrationLinkText = enroll
+    ? heroCourseLocalized[language].linkLabel
+    : heroCourseLocalized[language].noLinkLabel;
+  const enrollHref = enroll ?? '';
 
   return (
     <section className={cx('hero-course', 'container')} data-testid="hero-course">
@@ -50,15 +54,15 @@ export const HeroCourse = async ({ courseName }: HeroCourseProps) => {
               {subTitle}
             </p>
           )}
-          <DateLang
+          <ShortInfoPanel
+            label={LABELS.START_DATE}
             startDate={startDate}
             registrationEndDate={registrationEndDate}
             language={language}
-            mode={mode}
             withMargin
           />
-          <LinkCustom href={enroll} variant="secondary" external>
-            {heroCourseLocalized[language].linkLabel}
+          <LinkCustom href={enrollHref} variant="secondary" external disabled={!enroll}>
+            {registrationLinkText}
           </LinkCustom>
         </article>
       </div>

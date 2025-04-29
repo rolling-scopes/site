@@ -1,5 +1,6 @@
 import { StaticImageData } from 'next/image';
 
+import { API_COURSES_IDS_DICTIONARY } from '@/entities/course/constants';
 import { COURSE_LINKS } from '@/shared/constants';
 import { Language } from '@/shared/types';
 import { CourseNamesKeys } from 'data';
@@ -22,6 +23,9 @@ export type ApiCoursesResponse = Readonly<{
   name: string;
   registrationEndDate: string;
   startDate: string;
+  personalMentoringStartDate: string | null;
+  personalMentoringEndDate: string | null;
+  wearecommunityUrl: string | null;
 }>;
 
 export type Course = {
@@ -33,16 +37,19 @@ export type Course = {
   iconSrc: StaticImageData;
   secondaryIcon: StaticImageData;
   iconSmall: StaticImageData;
+  iconFooter: StaticImageData;
   startDate: string;
   registrationEndDate: string;
   language: Language;
   mode: 'online' | 'offline';
   detailsUrl: string;
-  enroll: string;
+  enroll: string | null;
   backgroundStyle: {
     backgroundColor: string;
     accentColor: string;
   };
+  personalMentoringStartDate: string | null;
+  personalMentoringEndDate: string | null;
 };
 
 export type CourseStatus = 'planned' | 'available' | 'upcoming';
@@ -53,3 +60,5 @@ export type CourseItemData = Pick<
 > & {
   iconSrc: StaticImageData;
 };
+
+export type ApiCoursesIds = (typeof API_COURSES_IDS_DICTIONARY)[CourseNamesKeys];

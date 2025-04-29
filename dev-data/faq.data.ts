@@ -1,11 +1,6 @@
-export type FaqDataType = {
-  question: string;
-  answer: string | { id: number;
-    text: string;
-    title: string;
-    link: string; }[];
-};
-export const faqData: FaqDataType[] = [
+import { FaqData } from '@/widgets/faq';
+
+export const preschoolFaqData: FaqData = [
   {
     question: 'Где можно задать вопрос?',
     answer: [
@@ -62,11 +57,11 @@ export const faqData: FaqDataType[] = [
   {
     question: 'Кто проверяет задания?',
     answer:
-      'Проекты "CV", "Portfolio", "CodeJam", "JS 30" проверяются в ходе кросс-чек. Алгоритмические задания, задачи из Codewars, а также задания "CV#1. Markdown & Git", "CV#2. HTML, CSS & Git Basics" проверяются автоматически. Ваши решения необходимо сабмитнуть в RS APP до дедлайна.',
+      'Практические задания проверяются в ходе кросс-чек. Алгоритмические задания, задачи из Codewars, а также задания "CV#1. Markdown & Git", "CV#2. HTML, CSS & Git Basics" проверяются автоматически. Ваши решения необходимо сабмитнуть в RS APP до дедлайна.',
   },
 ];
 
-export const faqDataShortTrack: FaqDataType[] = [
+export const faqDataShortTrack: FaqData = [
   {
     question: 'Where can I ask a question?',
     answer: [

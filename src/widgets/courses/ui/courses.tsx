@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 
 import { type Course, CourseCard } from '@/entities/course';
 import { getCourses } from '@/entities/course/api/course-api';
-import { getActualData } from '@/shared/helpers/getActualData';
+import { getActualData } from '@/shared/helpers/get-actual-data';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './courses.module.scss';
@@ -25,7 +25,7 @@ export const Courses = async () => {
         <WidgetTitle>All courses</WidgetTitle>
         <div className={cx('courses-list')}>
           {sortedCourses.map((course) => {
-            return <CourseCard key={course.id} {...course} />;
+            return <CourseCard size="sm" key={course.id} {...course} />;
           })}
         </div>
       </div>

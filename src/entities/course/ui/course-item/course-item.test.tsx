@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import { CourseItem, CourseItemData } from '@/entities/course';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { dayJS } from '@/shared/helpers/dayJS';
+import { dayJS } from '@/shared/helpers/day-js';
 import { COURSE_TITLES } from 'data';
 
 const mockedProps: CourseItemData = {
@@ -25,13 +25,12 @@ describe('CourseItem Component', () => {
 
   it('renders the component data as expected', () => {
     const titleElement = screen.getByText(mockedProps.title);
-    const languageInitial = mockedProps.language[0].toUpperCase();
     const dateElement = screen.getByTestId('course-language');
-    const courseDate = screen.getByTestId('course-date');
+    const courseDate = screen.getByTestId('date-time-start');
 
     expect(titleElement).toBeInTheDocument();
     expect(dateElement).toBeInTheDocument();
-    expect(dateElement).toHaveTextContent(`• ${languageInitial}`);
+    expect(dateElement).toHaveTextContent('English');
     expect(courseDate).toHaveAttribute('datetime', expectedDate);
   });
 

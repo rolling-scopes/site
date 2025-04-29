@@ -17,6 +17,8 @@ type LinkCustomAdditionalProps = {
   href: string;
   icon?: ReactNode;
   external?: boolean;
+  disabled?: boolean;
+  highContrast?: boolean;
 };
 
 const linkCustomVariants = cva('', {
@@ -27,6 +29,10 @@ const linkCustomVariants = cva('', {
       secondary: cx('button', 'secondary'),
       withCustomClassName: '',
       textLink: cx('text-link'),
+    },
+    highContrast: {
+      true: cx('high-contrast'),
+      false: null,
     },
   },
 });
@@ -43,6 +49,8 @@ export const LinkCustom = ({
   className = '',
   variant = 'textLink',
   external = false,
+  disabled = false,
+  highContrast = false,
   ...props
 }: LinkCustomProps) => {
   const resolveIcon = () => {
@@ -55,7 +63,7 @@ export const LinkCustom = ({
       case variant === 'secondary':
         return <ArrowIcon />;
       case variant === 'rounded':
-        return <ArrowIcon size={16} />;
+        return <ArrowIcon />;
       default:
         return <></>;
     }
@@ -63,16 +71,22 @@ export const LinkCustom = ({
 
   return (
     <Link
-      className={linkCustomVariants({
-        variant,
-        className,
-      })}
+      className={cx(
+        { disabled },
+        { highContrast },
+        linkCustomVariants({
+          variant,
+          className,
+        }),
+      )}
       href={href}
       {...props}
       {...(external && externalLinkAttributes)}
     >
       {children}
-      {resolveIcon()}
+      <span className={cx('icon-wrapper')}>
+        {!disabled && resolveIcon()}
+      </span>
     </Link>
   );
 };

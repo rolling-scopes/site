@@ -1,4 +1,4 @@
-import { COURSE_TITLES, CourseMap } from './courseTitles.data';
+import { COURSE_TITLES, CourseMap } from './course-titles.data';
 
 export const courseDataMap: CourseMap = {
   [COURSE_TITLES.JS_EN]: {
@@ -220,9 +220,8 @@ export const courseDataMap: CourseMap = {
         ],
       },
       {
-        title: '',
+        title: 'Запомнить правила хорошего тона RS School:',
         description: [
-          'Запомнить правила хорошего тона RS School:',
           [
             {
               id: 8,
