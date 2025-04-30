@@ -1,12 +1,17 @@
 .school-item {
   display: flex;
   gap: 5px;
-  column-gap: 15px;
-  align-items: center;
+  column-gap: 8px;
+  align-items: flex-start;
+
+  &.non-clickable {
+    pointer-events: none;
+    cursor: default;
+  }
 
   .title {
     font-weight: $font-weight-medium;
-    line-height: 20px;
+    line-height: 24px;
     text-align: start;
 
     &.dark {
@@ -44,6 +49,10 @@
       align-items: flex-start;
       justify-content: flex-start;
     }
+  }
+
+  [data-testid='school-item-icon'] {
+    max-height: 32px;
   }
 
   .description-wrapper {

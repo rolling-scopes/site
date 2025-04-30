@@ -25,7 +25,7 @@ export const schoolMenuStaticLinks = [
 
 export const communityMenuStaticLinks = [
   {
-    title: 'About',
+    title: 'About Community',
     detailsUrl: `/${ROUTES.COMMUNITY}/#${ANCHORS.ABOUT_COMMUNITY}`,
     description: 'Who we are',
   },

@@ -39,6 +39,7 @@ export const NavItem = ({ label, href, children }: NavItemProps) => {
   const isHrefHome = href === ROUTES.HOME;
   const isActive = isHrefHome ? pathname === ROUTES.HOME : pathname?.includes(href);
   const linkHref = isHrefHome ? href : `/${href}`;
+  const closeAllDropdowns = 'closeAllDropdowns';
 
   const onClose = useCallback(() => {
     setDropdownOpen(false);
@@ -46,7 +47,7 @@ export const NavItem = ({ label, href, children }: NavItemProps) => {
 
   const onDropdownToggle = () => {
     if (!isDropdownOpen) {
-      window.dispatchEvent(new CustomEvent('closeAllDropdowns'));
+      window.dispatchEvent(new CustomEvent(closeAllDropdowns));
     }
 
     setDropdownOpen((prev) => !prev);
@@ -78,10 +79,10 @@ export const NavItem = ({ label, href, children }: NavItemProps) => {
   useOutsideClick(wrapperRef, onClose, isDropdownOpen);
 
   useEffect(() => {
-    window.addEventListener('closeAllDropdowns', onClose);
+    window.addEventListener(closeAllDropdowns, onClose);
 
     return () => {
-      window.removeEventListener('closeAllDropdowns', onClose);
+      window.removeEventListener(closeAllDropdowns, onClose);
     };
   }, [onClose]);
 

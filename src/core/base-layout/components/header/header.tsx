@@ -6,19 +6,14 @@ import { usePathname } from 'next/navigation';
 
 import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
+import { donateOptionsForNavMenu } from '../../../../../dev-data/donate-options.data';
 import { ANCHORS, ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
 import logoBlue from '@/shared/assets/svg/rss-logo-blue.svg';
 import { Logo } from '@/shared/ui/logo';
 import { MobileView } from '@/widgets/mobile-view';
 import { SchoolMenu } from '@/widgets/school-menu';
-import { renderIcon } from '@/widgets/support/ui/support';
-import {
-  communityMenuStaticLinks,
-  donateOptions,
-  mentorshipCourses,
-  schoolMenuStaticLinks,
-} from 'data';
+import { communityMenuStaticLinks, mentorshipCourses, schoolMenuStaticLinks } from 'data';
 
 import styles from './header.module.scss';
 
@@ -60,7 +55,7 @@ export const Header = ({ courses }: HeaderProps) => {
 
         <menu className={cx('menu')} data-testid="desktop-menu">
           <NavItem label="RS School" href={ROUTES.HOME}>
-            <SchoolMenu layout="columns">
+            <SchoolMenu layout="columns" staticLinks={true}>
               {schoolMenuStaticLinks.map((link, i) => (
                 <SchoolMenu.Item
                   key={i}
@@ -93,7 +88,7 @@ export const Header = ({ courses }: HeaderProps) => {
             </SchoolMenu>
           </NavItem>
           <NavItem label="Community" href={ROUTES.COMMUNITY}>
-            <SchoolMenu layout="columns">
+            <SchoolMenu layout="columns" staticLinks={true}>
               {communityMenuStaticLinks.map((link, i) => (
                 <SchoolMenu.Item
                   key={i}
@@ -135,10 +130,10 @@ export const Header = ({ courses }: HeaderProps) => {
               <SchoolMenu.Item title="Thank you for your support!" url="#" />
             </ul>
             <SchoolMenu>
-              {donateOptions.map((option) => (
+              {donateOptionsForNavMenu.map((option) => (
                 <SchoolMenu.Item
                   key={option.id}
-                  icon={renderIcon(option.icon)}
+                  icon={option.icon}
                   title={option.linkLabel}
                   url={option.href}
                 />

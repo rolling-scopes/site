@@ -11,7 +11,6 @@ import { DropdownArrow } from '@/shared/icons/dropdown-arrow';
 import { Logo } from '@/shared/ui/logo';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { SchoolMenu } from '@/widgets/school-menu';
-import { renderIcon } from '@/widgets/support/ui/support';
 import {
   communityMenuStaticLinks,
   donateOptions,
@@ -246,7 +245,7 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
           {donateOptions.map((option) => (
             <SchoolMenu.Item
               key={option.id}
-              icon={renderIcon(option.icon)}
+              icon={option.icon}
               title={option.linkLabel}
               url={option.href}
               color={color}

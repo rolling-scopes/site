@@ -14,6 +14,7 @@ type SchoolMenuProps = PropsWithChildren &
     color?: Color;
     layout?: 'columns' | 'single';
     mobileClass?: 'visible' | 'hidden';
+    staticLinks?: boolean;
   };
 
 export const SchoolMenu = ({
@@ -23,12 +24,18 @@ export const SchoolMenu = ({
   className,
   layout = 'single',
   mobileClass,
+  staticLinks = false,
 }: SchoolMenuProps) => {
   return (
     <div className={cx('school-menu', mobileClass)}>
       {heading && <h3 className={cx('heading', color)}>{heading}</h3>}
       <ul
-        className={cx('school-list', `school-list--${layout}`, className)}
+        className={cx(
+          'school-list',
+          `school-list--${layout}`,
+          { 'static-links': staticLinks },
+          className,
+        )}
         style={
           layout === 'columns'
             ? { gridTemplateRows: `repeat(${Math.ceil(Children.count(children) / 2)}, auto)` }

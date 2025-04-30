@@ -1,11 +1,9 @@
 .school-menu {
   @extend %transition-all;
 
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 16px;
-
   color: $color-gray-100;
 
   .heading {
@@ -27,6 +25,10 @@
     gap: 24px 32px;
     max-height: 336px;
     list-style-type: none;
+
+    &.static-links {
+      gap: 8px 32px;
+    }
 
     &--columns {
       display: grid;
@@ -56,6 +58,7 @@
     }
 
     @include media-mobile-landscape {
+      overflow: hidden;
       column-gap: 10px;
       max-height: 624px;
     }

@@ -111,9 +111,10 @@
 .support-text {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  justify-content: space-between;
 
-  max-width: 500px;
+  max-width: 470px;
+  margin-right: 32px;
 
   font-size: 14px;
   list-style-type: none;

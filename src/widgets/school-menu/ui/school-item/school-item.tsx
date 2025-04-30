@@ -27,10 +27,11 @@ export const SchoolItem = ({
 }: SchoolItemProps) => {
   const isStaticImageData = (icon: StaticImageData | ReactNode): icon is StaticImageData =>
     typeof icon === 'object' && icon !== null && 'src' in icon;
+  const isNonClickable = Boolean(url === '#');
 
   return (
     <li {...props} className={cx(props.className)}>
-      <Link href={url} className={cx('school-item')}>
+      <Link href={url} className={cx('school-item', { 'non-clickable': isNonClickable })}>
         {icon
           && (isStaticImageData(icon)
             ? (
