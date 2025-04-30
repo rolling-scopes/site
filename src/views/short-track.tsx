@@ -1,5 +1,5 @@
 import { faqDataShortTrack } from '../../dev-data/faq.data';
-import { shortTrackTrainers } from '../../dev-data/short-track.data';
+import { trainerStore } from '@/entities/trainer';
 import { AboutCourse } from '@/widgets/about-course';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
@@ -15,6 +15,8 @@ type JavaScriptEnProps = {
   courseName: CourseNames['SHORT_TRACK'];
 };
 export const ShortTrack = async ({ courseName }: JavaScriptEnProps) => {
+  const trainers = await trainerStore.loadTrainers(courseName);
+
   return (
     <>
       <HeroCourse courseName={courseName} />
@@ -25,7 +27,7 @@ export const ShortTrack = async ({ courseName }: JavaScriptEnProps) => {
       <StudyPath page="short-track" />
       <Required courseName={courseName} />
       <Faq faqData={faqDataShortTrack} />
-      <Trainers trainers={shortTrackTrainers} courseName={courseName} />
+      {trainers && <Trainers trainers={trainers} courseName={courseName} />}
     </>
   );
 };

@@ -14,6 +14,5 @@ export const API_COURSES_IDS_DICTIONARY: Record<CourseTitle, string> = {
   [COURSE_TITLES.JS_RU]: '45GfCeWyEljTfHzUgnQPod',
   [COURSE_TITLES.REACT]: '22u5y3ir02LMShH6AyNOsE',
   [COURSE_TITLES.JS_EN]: 'EiDyAqKQQpcauf4z8htAb',
-  // TODO: add short track id
-  [COURSE_TITLES.SHORT_TRACK]: '',
+  [COURSE_TITLES.SHORT_TRACK]: 'pb5aNV0EvQpF3EMiSTS7w',
 };
