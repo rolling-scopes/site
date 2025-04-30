@@ -31,6 +31,7 @@ export const ROUTES = {
   JS_RU: 'javascript-ru',
   JS_PRESCHOOL_RU: 'javascript-preschool-ru',
   ANGULAR: 'angular',
+  AWS_AI: 'aws-ai',
   AWS_DEVELOPER: 'aws-cloud-developer',
   AWS_FUNDAMENTALS: 'aws-fundamentals',
   AWS_DEVOPS: 'aws-devops',

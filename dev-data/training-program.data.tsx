@@ -293,6 +293,36 @@ export const contentMap: ContentMap = {
     ],
     image: awsDevImg,
   },
+  [COURSE_TITLES.AWS_AI]: {
+    title: 'Программа обучения',
+    content: [
+      <Paragraph key="aws ia 01">
+        AWS AI Practitioner - это бесплатный курс в RS School, направленный на обучение наших
+        студентов основам искусственного интеллекта и машинного обучения (AI/ML), а также подготовку
+        к сертификации AWS Certified AI Practitioner
+      </Paragraph>,
+      <Subtitle key="aws ia 02">Курс состоит из 4 модулей:</Subtitle>,
+      <List
+        key="aws ai 03"
+        data={[
+          'Основы машинного обучения',
+          'Генеративный ИИ и продвинутые инструменты - RAG, тонкая настройка, агенты',
+          'Портфолио сервисов AWS AI/ML',
+          'Подготовка к AWS AI Practitioner',
+        ]}
+      />,
+      <Subtitle key="aws ai 04">Что мы предлагаем?</Subtitle>,
+      <List
+        key="aws ai 05"
+        data={[
+          'Мы подготовили для вас теорию и тесты для самостоятельного изучения',
+          'Практические задания, которые помогут вам закрепить пройденный материал',
+          'Кураторы проведут онлайн-воркшопы, где вы реализуете свои первые проекты с использованием AWS AI/ML сервисов',
+        ]}
+      />,
+    ],
+    image: awsDevImg,
+  },
 };
 
 export const trainingProgramLink = {

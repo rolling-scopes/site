@@ -45,6 +45,7 @@ export const introLocalizedContent = {
   [COURSE_TITLES.AWS_FUNDAMENTALS]: enIntro,
   [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: enIntro,
   [COURSE_TITLES.AWS_DEVOPS]: enIntro,
+  [COURSE_TITLES.AWS_AI]: ruIntro,
 };
 
 const listData = {
@@ -170,13 +171,13 @@ const javaScriptRU: () => AboutCourseInfo[] = () => {
     {
       id: 2,
       title: 'Наставники и тренеры со всего мира',
-      info: <List data={listData.javaScriptRU} type="unmarked" size="compact" />,
+      info: 'Онлайн встречи каждую неделю. Продолжительность курса: 4 недели.',
       icon: planetIcon,
     },
     {
       id: 3,
       title: 'Бесплатное образование',
-      info: 'Почувствуйте желание поделиться своим опытом и знаниями',
+      info: 'Наши курсы абсолютно бесплатны и доступны всем желающим.',
       icon: giftIcon,
     },
     {
@@ -225,8 +226,7 @@ const reactEn: AboutCourseInfo[] = javaScriptEN().map((item) => {
       ...item,
       info: (
         <p>
-          Throughout the course, we mostly use
-          {' '}
+          Throughout the course, we mostly use{' '}
           <LinkCustom href={DISCORD_LINKS[COURSE_TITLES.REACT]} external>
             Discord chat
           </LinkCustom>
@@ -248,6 +248,35 @@ const awsDevops: AboutCourseInfo[] = [
   },
 ];
 
+const awsAi: () => AboutCourseInfo[] = () => {
+  return [
+    {
+      id: 1,
+      title: 'Для всех',
+      info: 'Каждый может учиться в RS School, независимо от возраста, профессиональной занятости или места жительства. Однако вам следует иметь достаточные базовые знания перед началом программы.',
+      icon: personIcon,
+    },
+    {
+      id: 2,
+      title: 'Расписание',
+      info: <List data={listData.javaScriptRU} type="unmarked" size="compact" />,
+      icon: planetIcon,
+    },
+    {
+      id: 3,
+      title: 'Бесплатное образование',
+      info: 'Почувствуйте желание поделиться своим опытом и знаниями',
+      icon: giftIcon,
+    },
+    {
+      id: 4,
+      title: 'Сертификат',
+      info: 'Электронный сертификат об успешном окончании курса выдается всем, кто пройдет два этапа обучения.',
+      icon: awardIcon,
+    },
+  ];
+};
+
 export const contentMapAbout: ContentMap = {
   [COURSE_TITLES.JS_RU]: javaScriptRU(),
   [COURSE_TITLES.JS_EN]: javaScriptEN(),
@@ -258,4 +287,5 @@ export const contentMapAbout: ContentMap = {
   [COURSE_TITLES.AWS_FUNDAMENTALS]: angularNodejsAwsFundamentals('aws fundamentals'),
   [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: awsCloudDeveloper,
   [COURSE_TITLES.AWS_DEVOPS]: awsDevops,
+  [COURSE_TITLES.AWS_AI]: awsAi(),
 };

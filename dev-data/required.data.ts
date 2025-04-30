@@ -335,4 +335,21 @@ export const courseDataMap: CourseMap = {
       },
     ],
   },
+  [COURSE_TITLES.AWS_AI]: {
+    title: 'Что требуется для обучения?',
+    knowBefore: {
+      title: 'Необходимо до начала',
+      description: [
+        'Уровень владения английским языком от B1 (Intermediate) и выше',
+        'Опыт работы с языками: JS или Python',
+        'Свободные 4-8 часа в неделю',
+      ],
+    },
+    willLearn: [
+      {
+        title: 'Желательно иметь:',
+        description: ['Знания и опыт работы с облачной платформой AWS'],
+      },
+    ],
+  },
 };
