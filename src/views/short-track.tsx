@@ -1,4 +1,3 @@
-import { faqDataShortTrack } from '../../dev-data/faq.data';
 import { trainerStore } from '@/entities/trainer';
 import { AboutCourse } from '@/widgets/about-course';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
@@ -9,7 +8,7 @@ import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
-import { CourseNames } from 'data';
+import { CourseNames, faqDataShortTrack } from 'data';
 
 type JavaScriptEnProps = {
   courseName: CourseNames['SHORT_TRACK'];

@@ -1,7 +1,6 @@
 import { ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
 import angular from '@/shared/assets/icons/angular.svg';
-import shortTrack from '@/shared/assets/icons/short-track.svg';
 import awsBlack from '@/shared/assets/icons/aws-black.svg';
 import awsWhite from '@/shared/assets/icons/aws-white.svg';
 import html5 from '@/shared/assets/icons/html5.svg';
@@ -9,6 +8,8 @@ import javascriptBlack from '@/shared/assets/icons/javascript-black.svg';
 import javascript from '@/shared/assets/icons/javascript.svg';
 import nodejs from '@/shared/assets/icons/node-js.svg';
 import react from '@/shared/assets/icons/react.svg';
+import shortTrack from '@/shared/assets/icons/short-track.svg';
+import shortTrackIcon from '@/shared/assets/icons/st-icon.svg';
 import { COURSE_LINKS, TO_BE_DETERMINED } from '@/shared/constants';
 import { COURSE_TITLES } from 'data';
 
@@ -222,8 +223,8 @@ export const courses: Course[] = [
     descriptionUrl: COURSE_LINKS.SHORT_TRACK,
     altTitle: COURSE_TITLES.SHORT_TRACK,
     iconSrc: shortTrack,
-    iconSmall: shortTrack,
-    iconFooter: shortTrack,
+    iconSmall: shortTrackIcon,
+    iconFooter: shortTrackIcon,
     secondaryIcon: shortTrack,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,

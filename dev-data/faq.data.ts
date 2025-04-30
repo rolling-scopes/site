@@ -63,41 +63,45 @@ export const preschoolFaqData: FaqData = [
 
 export const faqDataShortTrack: FaqData = [
   {
-    question: 'Where can I ask a question?',
+    question: 'Где можно задать вопрос?',
     answer: [
       {
         id: 0,
-        text: 'Questions can be asked in ',
-        title: 'Telegram chanel',
+        text: 'Вопросы можно задать в ',
+        title: 'Telegram канале',
         link: 'https://t.me/epamJsShortTrack',
       },
     ],
   },
   {
-    question: 'Is it possible to take the course completely online?',
-    answer: 'All stages of training can be completed online.',
+    question: 'Возможно ли пройти курс полностью онлайн?',
+    answer: 'Все этапы обучения можно пройти онлайн. ',
   },
   {
-    question: 'Is there a list of interview questions? What should I prepare for?',
+    question: 'Есть ли список вопросов для собеседования? К чему готовиться?',
     answer: [
       {
         id: 0,
-        text: 'You can prepare for the interview with this list of topics and questions ',
-        title: 'topics and questions',
+        text: 'Вы можете подготовиться к собеседованию, используя этот список тем и вопросов ',
+        title: 'темы и вопросы',
         link: 'https://github.com/rolling-scopes-school/epam-short-track/tree/main/screening',
       },
     ],
   },
   {
     question:
-      'If I’m selected for the JS Short Track, can I also continue with the classic Stage #2 and take both courses at the same time?',
+      'Если меня выберут на курс Short Track, могу ли я параллельно продолжить обучение на Stage #2 и проходить оба курса одновременно?',
     answer:
-      'No, you cannot take the JS Short Track alongside the classic Stage #2. You will need to choose one path.',
+      'Нет, вы не можете проходить курс Short Track параллельно с другими курсами. Вам нужно выбрать один.',
   },
   {
     question:
-      'If I’m not accepted into the JS Short Track course after the interview, can I continue with the JS Stage #2 course?',
+      'Если меня не примут на курс Short Track после собеседования, смогу ли я продолжить обучение на курсе JS Stage #2?',
+    answer: 'Да, если вас не выберут на Short Track, вы можете продолжить обучение на JS Stage #2.',
+  },
+  {
+    question: 'На каком языке проходит обучение?',
     answer:
-      'Yes, if you are not selected for the JS Short Track, you can continue your studies in JS Stage #2. ',
+      'Все материалы и задания - на английском. Общение с кураторами, менторами и студентами будет в основном на русском. Некоторые интервью и крос-интревью будут на английском.',
   },
 ];
