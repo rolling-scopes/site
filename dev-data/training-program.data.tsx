@@ -1,14 +1,7 @@
 // TODO separate data and markup
 import { JSX } from 'react';
 import { StaticImageData } from 'next/image';
-
-import {
-  AWS_FUNDAMENTALS_BADGE,
-  AwsFundamentalsBadge,
-  COURSE_TITLES,
-  CourseNamesKeys,
-} from './course-titles.data';
-import awsPractitionerBadge from '@/shared/assets/aws-cloud-pract-badge.webp';
+import { COURSE_TITLES, CourseNamesKeys } from './course-titles.data';
 import angularImg from '@/shared/assets/rs-slope-angular.webp';
 import awsDevImg from '@/shared/assets/rs-slope-aws-dev.webp';
 import awsFundamentalsImg from '@/shared/assets/rs-slope-aws-fundamentals.webp';
@@ -28,7 +21,7 @@ interface CourseInfo {
 }
 
 type ContentMap = {
-  [key in CourseNamesKeys | AwsFundamentalsBadge]: CourseInfo;
+  [key in CourseNamesKeys]: CourseInfo;
 };
 
 export const contentMap: ContentMap = {
@@ -245,19 +238,6 @@ export const contentMap: ContentMap = {
       />,
     ],
     image: reactEnImg,
-  },
-  [AWS_FUNDAMENTALS_BADGE]: {
-    title: 'AWS DIGITAL BADGE',
-    content: [
-      <Paragraph key="aws fundamentals badge 01">
-        Upon completing the course and passing the AWS Cloud Quest: Cloud Practitioner, you will
-        obtain an AWS digital badge. This badge will recognize your achievement and demonstrate your
-        knowledge of AWS fundamentals to potential employers or clients. By the end of the course,
-        you will have gained a solid foundation in AWS fundamentals and be prepared to pass the AWS
-        Cloud Practitioner certification.
-      </Paragraph>,
-    ],
-    image: awsPractitionerBadge,
   },
   [COURSE_TITLES.AWS_DEVOPS]: {
     title: 'Details',
