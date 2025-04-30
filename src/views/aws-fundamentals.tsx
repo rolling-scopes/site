@@ -25,7 +25,7 @@ export const AwsFundamentals = async ({ courseName }: AwsFundamentalsProps) => {
       <Certification courseName={courseName} />
       <Communication courseName={courseName} />
       <Required courseName={courseName} />
-      <AwsBadge />
+      <AwsBadge courseName={courseName} />
       {trainers && <Trainers trainers={trainers} courseName={courseName} />}
     </>
   );

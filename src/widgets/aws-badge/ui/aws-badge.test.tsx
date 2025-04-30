@@ -3,18 +3,17 @@ import { beforeEach, describe, expect, it } from 'vitest';
 
 import { AwsBadge } from './aws-badge';
 import imageAws from '@/shared/assets/aws-cloud-pract-badge.webp';
+import { COURSE_TITLES } from 'data';
 
 describe('AwsBadge component', () => {
-  const descriptions = [
-    /Upon completing the course/i,
-  ];
+  const descriptions = [/Upon completing the course/i];
 
   let widget: HTMLElement;
   let title: HTMLElement;
   let paragraphs: HTMLElement[];
 
   beforeEach(() => {
-    render(<AwsBadge />);
+    render(<AwsBadge courseName={COURSE_TITLES.AWS_FUNDAMENTALS} />);
     widget = screen.getByTestId('aws-badge');
     title = screen.getByTestId('widget-title');
     paragraphs = screen.getAllByTestId('paragraph');
@@ -26,9 +25,7 @@ describe('AwsBadge component', () => {
     expect(title).toHaveTextContent('AWS DIGITAL BADGE');
 
     descriptions.forEach((description) => {
-      const matches = paragraphs.some((item) =>
-        description.test(item.textContent || ''),
-      );
+      const matches = paragraphs.some((item) => description.test(item.textContent || ''));
 
       expect(matches).toBe(true);
     });
