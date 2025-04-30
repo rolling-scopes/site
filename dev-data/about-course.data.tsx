@@ -260,7 +260,7 @@ const awsAi: () => AboutCourseInfo[] = () => {
     {
       id: 2,
       title: 'Расписание',
-      info: <List data={listData.javaScriptRU} type="unmarked" size="compact" />,
+      info: 'Оналйн встречи каждую неделю. Продожительность курса 4 недели.',
       icon: planetIcon,
     },
     {
