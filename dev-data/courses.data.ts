@@ -8,8 +8,8 @@ import javascriptBlack from '@/shared/assets/icons/javascript-black.svg';
 import javascript from '@/shared/assets/icons/javascript.svg';
 import nodejs from '@/shared/assets/icons/node-js.svg';
 import react from '@/shared/assets/icons/react.svg';
-import shortTrack from '@/shared/assets/icons/short-track.svg';
 import shortTrackIcon from '@/shared/assets/icons/st-icon.svg';
+import shortTrack from '@/shared/assets/icons/st.svg';
 import { COURSE_LINKS, TO_BE_DETERMINED } from '@/shared/constants';
 import { COURSE_TITLES } from 'data';
 
@@ -222,7 +222,7 @@ export const courses: Course[] = [
     subTitle: null,
     descriptionUrl: COURSE_LINKS.SHORT_TRACK,
     altTitle: COURSE_TITLES.SHORT_TRACK,
-    iconSrc: shortTrack,
+    iconSrc: shortTrackIcon,
     iconSmall: shortTrackIcon,
     iconFooter: shortTrackIcon,
     secondaryIcon: shortTrack,
