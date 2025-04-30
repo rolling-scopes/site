@@ -1,6 +1,6 @@
 import { COURSE_TITLES } from './course-titles.data';
-import cloudBadge from '@/shared/assets/aws-cloud-pract-badge.webp';
 import aiBadge from '@/shared/assets/aws-ai-practitioner-badge.webp';
+import cloudBadge from '@/shared/assets/aws-cloud-pract-badge.webp';
 
 export const awsBadgeMap = {
   [COURSE_TITLES.AWS_AI]: {

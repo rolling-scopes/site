@@ -1,6 +1,7 @@
 // TODO separate data and markup
 import { JSX } from 'react';
 import { StaticImageData } from 'next/image';
+
 import { COURSE_TITLES, CourseNamesKeys } from './course-titles.data';
 import angularImg from '@/shared/assets/rs-slope-angular.webp';
 import awsDevImg from '@/shared/assets/rs-slope-aws-dev.webp';
