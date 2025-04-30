@@ -22,7 +22,7 @@ describe('AwsBadge component', () => {
   it('renders correct content for component', () => {
     expect(widget).toBeVisible();
     expect(title).toBeVisible();
-    expect(title).toHaveTextContent('AWS DIGITAL BADGE');
+    expect(title).toHaveTextContent('AWS Cloud Practitioner');
 
     descriptions.forEach((description) => {
       const matches = paragraphs.some((item) => description.test(item.textContent || ''));
