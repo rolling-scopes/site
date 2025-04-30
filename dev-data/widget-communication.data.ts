@@ -3,7 +3,6 @@ export const communicationText = {
     title: 'Communication',
     subTitle: 'Discord is the main communication channel in RS School',
     subTitleJs: 'RS School uses two main communication channels:',
-    // subTitleST: 'RS School uses two main communication channels:',
     firstParagraphFirstHalf: 'Here is link for the ',
     discordParagraphTextJs:
       ': Join the Discord server to see the latest news and chat with students.',
