@@ -1,4 +1,4 @@
-import { COURSE_TITLES } from './courseTitles.data';
+import { COURSE_TITLES } from './course-titles.data';
 import angular from '@/shared/assets/icons/angular.svg';
 import javascript from '@/shared/assets/icons/javascript.svg';
 import react from '@/shared/assets/icons/react.svg';

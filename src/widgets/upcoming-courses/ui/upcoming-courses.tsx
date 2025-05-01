@@ -6,7 +6,7 @@ import { getCourses } from '@/entities/course/api/course-api';
 import { CourseItem } from '@/entities/course/ui/course-item/course-item';
 import RSBanner from '@/shared/assets/svg/RsBanner.svg';
 import { ROUTES } from '@/shared/constants';
-import { getActualData } from '@/shared/helpers/getActualData';
+import { getActualData } from '@/shared/helpers/get-actual-data';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';

@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest';
 import { DateSimple } from './date-simple';
 import noteIcon from '@/shared/assets/icons/note-icon.svg';
 import { LABELS, TO_BE_DETERMINED } from '@/shared/constants';
-import { dayJS } from '@/shared/helpers/dayJS';
+import { dayJS } from '@/shared/helpers/day-js';
 
 describe('DateSimple', () => {
   it('renders UI correctly having only start date', () => {

@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import noteIcon from '@/shared/assets/icons/note-icon.svg';
 import { TO_BE_DETERMINED } from '@/shared/constants';
-import { dayJS } from '@/shared/helpers/dayJS';
+import { dayJS } from '@/shared/helpers/day-js';
 
 import styles from './date-simple.module.scss';
 

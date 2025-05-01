@@ -1,7 +1,7 @@
 import { hasDayInDate } from './has-day';
 import type { CourseStatus } from '@/entities/course';
 import { COURSE_STALE_AFTER_DAYS, COURSE_UPCOMING_PERIOD_MONTHS } from '@/shared/constants';
-import { dayJS } from '@/shared/helpers/dayJS';
+import { dayJS } from '@/shared/helpers/day-js';
 import { courseStatus } from 'data';
 
 export function getCourseStatus(
