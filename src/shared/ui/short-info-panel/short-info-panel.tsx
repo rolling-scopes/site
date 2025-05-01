@@ -54,8 +54,14 @@ export const ShortInfoPanel = ({
             ? calculateFreshDate(startDate, registrationEndDate)
             : null
         }
+        showMentoringStartDate={false}
       />
-      <DateSimple label={LABELS.REGISTRATION_END} startDate={registrationEndDate}></DateSimple>
+      <DateSimple
+        label={LABELS.REGISTRATION_END}
+        startDate={registrationEndDate}
+        showMentoringStartDate={false}
+      >
+      </DateSimple>
 
       <p className={cx('additional-info')}>
         <Image className={cx('icon')} src={micIcon} alt="microphone-icon" />
@@ -74,6 +80,7 @@ export const ShortInfoPanel = ({
       }
       endDate={startDate ? registrationEndDate : null}
       labelSeparator={LABELS.MENTOR_ACTIVITIES_SEPARATOR}
+      showMentoringStartDate={false}
     >
       <span className={cx('language')} data-testid="course-language">
         {courseLanguage}
@@ -88,6 +95,7 @@ export const ShortInfoPanel = ({
         startDate={personalMentoringStartDate || TO_BE_DETERMINED}
         endDate={personalMentoringStartDate ? personalMentoringEndDate : null}
         labelSeparator={LABELS.MENTOR_ACTIVITIES_SEPARATOR}
+        showMentoringStartDate={true}
       >
       </DateSimple>
       <p className={cx('additional-info')}>

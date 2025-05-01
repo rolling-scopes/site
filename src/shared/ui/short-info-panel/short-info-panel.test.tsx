@@ -42,7 +42,8 @@ describe('CourseShortInfo', () => {
       />,
     );
 
-    expect(screen.getByText(`${data.startDate}`)).toBeInTheDocument();
+    expect(screen.getByText(data.registrationEndDate)).toBeInTheDocument();
+    expect(screen.getByText(data.registrationEndDate)).toBeInTheDocument();
     expect(screen.getByText('English')).toBeInTheDocument();
   });
 

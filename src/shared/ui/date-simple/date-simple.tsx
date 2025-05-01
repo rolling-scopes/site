@@ -16,6 +16,7 @@ type DateStartProps = {
   label?: string;
   labelSeparator?: string;
   children?: React.ReactNode;
+  showMentoringStartDate: boolean;
 };
 
 const formatDateAttr = (date: string | null | undefined): string | undefined => {
@@ -32,11 +33,12 @@ export const DateSimple = ({
   label,
   labelSeparator,
   children,
+  showMentoringStartDate,
 }: DateStartProps) => {
   const startDateAttr = formatDateAttr(startDate);
   const endDateAttr = formatDateAttr(endDate);
 
-  const startDateFormat = startDate && endDate ? dayJS(startDate).format('MMMM D') : startDate;
+  const startDateFormat = startDate && endDate ? dayJS(startDate).format('MMM D') : startDate;
 
   return (
     <p className={cx('date')}>
@@ -46,9 +48,9 @@ export const DateSimple = ({
           <span className={cx('bold')}>{label}</span>
         </>
       )}
-      {startDateFormat && (
+      {startDate && (
         <time dateTime={startDateAttr} data-testid="date-time-start">
-          {startDateFormat}
+          {showMentoringStartDate ? startDate : startDateFormat}
         </time>
       )}
 
