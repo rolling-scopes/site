@@ -1,4 +1,4 @@
-import { ROUTES } from '@/core/const';
+import { ROUTES } from '@/shared/constants';
 
 /**
  * Build course URL path by extracting the course name from a full URL

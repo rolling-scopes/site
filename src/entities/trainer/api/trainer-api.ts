@@ -1,7 +1,7 @@
 import { ApiCoursesIds } from '@/entities/course/@x/trainer';
 import { TrainersResponse } from '@/entities/trainer/types';
 import { API_CONTENT_TYPE_DICTIONARY, API_MAX_INCLUDE_DEPTH } from '@/shared/constants';
-import { ApiResourceLocale, ApiServices } from '@/shared/types';
+import { ApiResourceLocale, ApiServices } from '@/shared/types/';
 
 export class TrainerApi {
   constructor(private readonly services: ApiServices) {}

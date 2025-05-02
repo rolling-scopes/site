@@ -2,7 +2,6 @@ import { trainerStore } from '@/entities/trainer';
 import { getCourseLanguage } from '@/shared/helpers/get-course-language';
 import { AboutCourse } from '@/widgets/about-course';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
-import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
 import { Faq } from '@/widgets/faq';
 import { HeroCourse } from '@/widgets/hero-course';
@@ -26,7 +25,6 @@ export const JavaScriptPreSchoolRu = async ({ courseName }: JavaScriptPreSchoolR
       <AboutCourse courseName={courseName} />
       <TrainingProgram courseName={courseName} />
       <Required courseName={courseName} />
-      <Certification courseName={courseName} />
       <Communication courseName={courseName} />
       <Faq faqData={preschoolFaqData} />
       {trainers && <Trainers trainers={trainers} courseName={courseName} />}
