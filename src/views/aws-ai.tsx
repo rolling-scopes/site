@@ -10,10 +10,11 @@ import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
 import { CourseNames } from 'data';
 
-type AwsFundamentalsProps = {
-  courseName: CourseNames['AWS_FUNDAMENTALS'];
+type AwsAIProps = {
+  courseName: CourseNames['AWS_AI'];
 };
-export const AwsFundamentals = async ({ courseName }: AwsFundamentalsProps) => {
+
+export const AwsAI = async ({ courseName }: AwsAIProps) => {
   const trainers = await trainerStore.loadTrainers(courseName);
 
   return (
@@ -23,9 +24,9 @@ export const AwsFundamentals = async ({ courseName }: AwsFundamentalsProps) => {
       <TrainingProgram courseName={courseName} />
       <AboutCourse courseName={courseName} />
       <Certification courseName={courseName} />
+      <AwsBadge courseName={courseName} />
       <Communication courseName={courseName} />
       <Required courseName={courseName} />
-      <AwsBadge courseName={courseName} />
       {trainers && <Trainers trainers={trainers} courseName={courseName} />}
     </>
   );

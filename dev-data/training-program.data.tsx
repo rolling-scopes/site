@@ -2,13 +2,7 @@
 import { JSX } from 'react';
 import { StaticImageData } from 'next/image';
 
-import {
-  AWS_FUNDAMENTALS_BADGE,
-  AwsFundamentalsBadge,
-  COURSE_TITLES,
-  CourseNamesKeys,
-} from './course-titles.data';
-import awsPractitionerBadge from '@/shared/assets/aws-cloud-pract-badge.webp';
+import { COURSE_TITLES, CourseNamesKeys } from './course-titles.data';
 import angularImg from '@/shared/assets/rs-slope-angular.webp';
 import awsDevImg from '@/shared/assets/rs-slope-aws-dev.webp';
 import awsFundamentalsImg from '@/shared/assets/rs-slope-aws-fundamentals.webp';
@@ -28,7 +22,7 @@ interface CourseInfo {
 }
 
 type ContentMap = {
-  [key in CourseNamesKeys | AwsFundamentalsBadge]: CourseInfo;
+  [key in CourseNamesKeys]: CourseInfo;
 };
 
 export const contentMap: ContentMap = {
@@ -246,19 +240,6 @@ export const contentMap: ContentMap = {
     ],
     image: reactEnImg,
   },
-  [AWS_FUNDAMENTALS_BADGE]: {
-    title: 'AWS DIGITAL BADGE',
-    content: [
-      <Paragraph key="aws fundamentals badge 01">
-        Upon completing the course and passing the AWS Cloud Quest: Cloud Practitioner, you will
-        obtain an AWS digital badge. This badge will recognize your achievement and demonstrate your
-        knowledge of AWS fundamentals to potential employers or clients. By the end of the course,
-        you will have gained a solid foundation in AWS fundamentals and be prepared to pass the AWS
-        Cloud Practitioner certification.
-      </Paragraph>,
-    ],
-    image: awsPractitionerBadge,
-  },
   [COURSE_TITLES.AWS_DEVOPS]: {
     title: 'Details',
     content: [
@@ -288,6 +269,36 @@ export const contentMap: ContentMap = {
           'Support: you will get regular feedback and guidance on practical tasks, helping refine your skills to the next level',
           'Flexibility: depending on your weekly engagement, the recommendation is 3-4 hours daily',
           'Community-based education: the community will help you explore emerging technologies and best practices, ensuring you are equipped with the knowledge that the current market seeks',
+        ]}
+      />,
+    ],
+    image: awsDevImg,
+  },
+  [COURSE_TITLES.AWS_AI]: {
+    title: 'Программа обучения',
+    content: [
+      <Paragraph key="aws ia 01">
+        AWS AI Practitioner - это бесплатный курс в RS School, направленный на обучение наших
+        студентов основам искусственного интеллекта и машинного обучения (AI/ML), а также подготовку
+        к сертификации AWS Certified AI Practitioner
+      </Paragraph>,
+      <Subtitle key="aws ia 02">Курс состоит из 4 модулей:</Subtitle>,
+      <List
+        key="aws ai 03"
+        data={[
+          'Основы машинного обучения',
+          'Генеративный ИИ и продвинутые инструменты - RAG, тонкая настройка, агенты',
+          'Портфолио сервисов AWS AI/ML',
+          'Подготовка к AWS AI Practitioner',
+        ]}
+      />,
+      <Subtitle key="aws ai 04">Что мы предлагаем?</Subtitle>,
+      <List
+        key="aws ai 05"
+        data={[
+          'Мы подготовили для вас теорию и тесты для самостоятельного изучения',
+          'Практические задания, которые помогут вам закрепить пройденный материал',
+          'Кураторы проведут онлайн-воркшопы, где вы реализуете свои первые проекты с использованием AWS AI/ML сервисов',
         ]}
       />,
     ],
