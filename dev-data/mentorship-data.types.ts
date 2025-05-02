@@ -1,7 +1,7 @@
 import { StaticImageData } from 'next/image';
 
 import { COURSE_TITLES } from './course-titles.data';
-import { ROUTES } from '@/core/const';
+import { ROUTES } from '@/shared/constants';
 import { Language } from '@/shared/types';
 import { SocialMediaProps } from '@/shared/ui/social-media-item';
 

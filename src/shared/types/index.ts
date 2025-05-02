@@ -1,3 +1,5 @@
+import { type ROUTES } from '@/shared/constants';
+
 export type {
   ApiResourceLocale,
   ApiResponseError,
@@ -15,6 +17,9 @@ export type {
   Video,
 } from './types';
 
+export type Route = typeof ROUTES;
+
+export type RouteValues = Exclude<Route[keyof Route], '*' | '/' | 'docs/en' | 'docs/ru'>;
 export type {
   TypeContributor,
   TypeContributorFields,

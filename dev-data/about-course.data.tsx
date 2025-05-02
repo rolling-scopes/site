@@ -1,11 +1,14 @@
-import { ROUTES } from '@/core/const';
 import awardIcon from '@/shared/assets/icons/award-icon.webp';
 import giftIcon from '@/shared/assets/icons/gift.webp';
 import noteIcon from '@/shared/assets/icons/note-icon.webp';
 import paperIcon from '@/shared/assets/icons/paper-icon.webp';
 import personIcon from '@/shared/assets/icons/person-icon.webp';
 import planetIcon from '@/shared/assets/icons/planet.webp';
-import { REGISTRATION_WILL_OPEN_SOON, REGISTRATION_WILL_OPEN_SOON_RU } from '@/shared/constants';
+import {
+  REGISTRATION_WILL_OPEN_SOON,
+  REGISTRATION_WILL_OPEN_SOON_RU,
+  ROUTES,
+} from '@/shared/constants';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 import type { AboutCourseInfo } from 'data';

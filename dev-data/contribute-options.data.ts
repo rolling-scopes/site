@@ -1,4 +1,4 @@
-import { LINKS, ROUTES } from '@/core/const';
+import { LINKS, ROUTES } from '@/shared/constants';
 
 export const contributeOptions = [
   {
