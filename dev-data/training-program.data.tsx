@@ -8,6 +8,7 @@ import {
   COURSE_TITLES,
   CourseNamesKeys,
 } from './courseTitles.data';
+import { scheduleDocumentationMap } from './schedule-and-documentation.data';
 import awsPractitionerBadge from '@/shared/assets/aws-cloud-pract-badge.webp';
 import angularImg from '@/shared/assets/rs-slope-angular.webp';
 import awsDevImg from '@/shared/assets/rs-slope-aws-dev.webp';
@@ -16,11 +17,6 @@ import jsImg from '@/shared/assets/rs-slope-js.webp';
 import nodejsImg from '@/shared/assets/rs-slope-nodejs.webp';
 import reactEnImg from '@/shared/assets/rs-slope-react-en.webp';
 import { REGISTRATION_WILL_OPEN_SOON, REGISTRATION_WILL_OPEN_SOON_RU } from '@/shared/constants';
-import {
-  scheduleDocumentationEN,
-  scheduleDocumentationJS_PRESCHOOL_RU,
-  scheduleDocumentationJS_RU,
-} from '@/shared/helpers/get-schedule-and-documentation-links';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -65,7 +61,7 @@ export const contentMap: ContentMap = {
           'Implement backend-for-frontend using API Gateway',
         ]}
       />,
-      scheduleDocumentationEN(COURSE_TITLES.AWS_CLOUD_DEVELOPER),
+      scheduleDocumentationMap[COURSE_TITLES.AWS_CLOUD_DEVELOPER],
     ],
     image: awsDevImg,
   },
@@ -87,7 +83,7 @@ export const contentMap: ContentMap = {
         During the course, you will have access to online sessions led by AWS User Groups and RS
         School Mentors, where you can ask questions, discuss the materials, and get feedback.
       </Paragraph>,
-      scheduleDocumentationEN(COURSE_TITLES.AWS_FUNDAMENTALS),
+      scheduleDocumentationMap[COURSE_TITLES.AWS_FUNDAMENTALS],
     ],
     image: awsFundamentalsImg,
   },
@@ -116,7 +112,7 @@ export const contentMap: ContentMap = {
           'Nest.js',
         ]}
       />,
-      scheduleDocumentationEN(COURSE_TITLES.NODE),
+      scheduleDocumentationMap[COURSE_TITLES.NODE],
     ],
     image: nodejsImg,
   },
@@ -139,7 +135,7 @@ export const contentMap: ContentMap = {
         </LinkCustom>
         . Theoretical materials are provided as recorded lectures from previous courses.
       </Paragraph>,
-      scheduleDocumentationEN(COURSE_TITLES.ANGULAR),
+      scheduleDocumentationMap[COURSE_TITLES.ANGULAR],
     ],
     image: angularImg,
   },
@@ -164,7 +160,7 @@ export const contentMap: ContentMap = {
         {` that practical tasks’ deadlines are not suggestions, and should be
         respected.`}
       </Paragraph>,
-      scheduleDocumentationEN(COURSE_TITLES.JS_EN),
+      scheduleDocumentationMap[COURSE_TITLES.JS_EN],
     ],
     image: jsImg,
   },
@@ -190,7 +186,7 @@ export const contentMap: ContentMap = {
         {`, что сроки выполнения практических заданий не являются
         рекомендацией и должны быть соблюдены.`}
       </Paragraph>,
-      scheduleDocumentationJS_RU(),
+      scheduleDocumentationMap[COURSE_TITLES.JS_RU],
     ],
     image: jsImg,
   },
@@ -240,7 +236,7 @@ export const contentMap: ContentMap = {
           type="unmarked"
         />
       </div>,
-      scheduleDocumentationJS_PRESCHOOL_RU(),
+      scheduleDocumentationMap[COURSE_TITLES.JS_PRESCHOOL_RU],
     ],
     image: jsImg,
   },
@@ -262,7 +258,7 @@ export const contentMap: ContentMap = {
           'Understanding of RESTful services',
         ]}
       />,
-      scheduleDocumentationEN(COURSE_TITLES.REACT),
+      scheduleDocumentationMap[COURSE_TITLES.REACT],
     ],
     image: reactEnImg,
   },
@@ -310,7 +306,7 @@ export const contentMap: ContentMap = {
           'Community-based education: the community will help you explore emerging technologies and best practices, ensuring you are equipped with the knowledge that the current market seeks',
         ]}
       />,
-      scheduleDocumentationEN(COURSE_TITLES.AWS_DEVOPS),
+      scheduleDocumentationMap[COURSE_TITLES.AWS_DEVOPS],
     ],
     image: awsDevImg,
   },

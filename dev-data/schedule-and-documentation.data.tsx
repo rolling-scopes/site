@@ -1,9 +1,18 @@
+import { ReactElement } from 'react';
+
 import { COURSE_TITLES } from '@/../dev-data/courseTitles.data';
 import { COURSE_SCHEDULE_LINKS, DOCUMENTATION_LINKS } from '@/shared/constants';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 
-export const scheduleDocumentationEN = (courseName: keyof typeof COURSE_SCHEDULE_LINKS) => (
+type CourseKeys = keyof typeof COURSE_TITLES;
+type CourseNames = typeof COURSE_TITLES[CourseKeys];
+
+type ScheduleDocumentationMapType = {
+  [key in CourseNames]: ReactElement;
+};
+
+const scheduleDocumentationEN: (courseName: CourseKeys) => ReactElement = (courseName) => (
   <Paragraph>
     The course
     {' '}
@@ -27,10 +36,10 @@ export const scheduleDocumentationEN = (courseName: keyof typeof COURSE_SCHEDULE
   </Paragraph>
 );
 
-export const scheduleDocumentationJS_PRESCHOOL_RU = () => (
+const JS_PRESCHOOL_RU: ReactElement = (
   <Paragraph>
     <LinkCustom
-      href={COURSE_SCHEDULE_LINKS[COURSE_TITLES.JS_PRESCHOOL_RU]}
+      href={COURSE_SCHEDULE_LINKS['JS_PRESCHOOL_RU']}
       variant="textLink"
       external
     >
@@ -51,12 +60,12 @@ export const scheduleDocumentationJS_PRESCHOOL_RU = () => (
   </Paragraph>
 );
 
-export const scheduleDocumentationJS_RU = () => (
+const JS_RU: ReactElement = (
   <Paragraph>
     Рассписания
     {' '}
     <LinkCustom
-      href={COURSE_SCHEDULE_LINKS[COURSE_TITLES.JS_RU][0]}
+      href={COURSE_SCHEDULE_LINKS['JS_RU'][0]}
       variant="textLink"
       external
     >
@@ -66,7 +75,7 @@ export const scheduleDocumentationJS_RU = () => (
     и
     {' '}
     <LinkCustom
-      href={COURSE_SCHEDULE_LINKS[COURSE_TITLES.JS_RU][1]}
+      href={COURSE_SCHEDULE_LINKS['JS_RU'][1]}
       variant="textLink"
       external
     >
@@ -86,3 +95,15 @@ export const scheduleDocumentationJS_RU = () => (
     школы.
   </Paragraph>
 );
+
+export const scheduleDocumentationMap: ScheduleDocumentationMapType = {
+  [COURSE_TITLES.JS_RU]: JS_RU,
+  [COURSE_TITLES.JS_EN]: scheduleDocumentationEN('JS_EN'),
+  [COURSE_TITLES.JS_PRESCHOOL_RU]: JS_PRESCHOOL_RU,
+  [COURSE_TITLES.REACT]: scheduleDocumentationEN('REACT'),
+  [COURSE_TITLES.ANGULAR]: scheduleDocumentationEN('ANGULAR'),
+  [COURSE_TITLES.NODE]: scheduleDocumentationEN('NODE'),
+  [COURSE_TITLES.AWS_FUNDAMENTALS]: scheduleDocumentationEN('AWS_FUNDAMENTALS'),
+  [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: scheduleDocumentationEN('AWS_CLOUD_DEVELOPER'),
+  [COURSE_TITLES.AWS_DEVOPS]: scheduleDocumentationEN('AWS_DEVOPS'),
+};

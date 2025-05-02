@@ -1,5 +1,3 @@
-import { COURSE_TITLES } from 'data';
-
 export const RS_INTRO_URL = 'https://www.youtube.com/embed/n4unZLVpnaU';
 export const RS_FOUNDATION_YEAR = '2013';
 export const RS_EMAIL = 'rolling.scopes@gmail.com';
@@ -38,18 +36,18 @@ export const COURSE_LINKS = {
 export const KEY_CODES = { ESCAPE: 'Escape' } as const;
 
 export const COURSE_SCHEDULE_LINKS = {
-  [COURSE_TITLES.JS_PRESCHOOL_RU]: 'https://github.com/rolling-scopes-school/tasks/tree/master/stage0',
-  [COURSE_TITLES.JS_EN]: 'https://github.com/rolling-scopes-school/js-fe-course-en',
-  [COURSE_TITLES.JS_RU]: [
+  JS_PRESCHOOL_RU: 'https://github.com/rolling-scopes-school/tasks/tree/master/stage0',
+  JS_EN: 'https://github.com/rolling-scopes-school/js-fe-course-en',
+  JS_RU: [
     'https://github.com/rolling-scopes-school/tasks/tree/master/stage1',
     'https://github.com/rolling-scopes-school/tasks/tree/master/stage2',
   ],
-  [COURSE_TITLES.REACT]: 'https://github.com/rolling-scopes-school/tasks/blob/master/react/README.md',
-  [COURSE_TITLES.ANGULAR]: 'https://github.com/rolling-scopes-school/tasks/tree/master/angular',
-  [COURSE_TITLES.NODE]: 'https://github.com/rolling-scopes-school/tasks/tree/master/node',
-  [COURSE_TITLES.AWS_FUNDAMENTALS]: 'https://github.com/rolling-scopes-school/aws/tree/main/aws-fundamentals',
-  [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: 'https://github.com/rolling-scopes-school/aws/tree/main/aws-developer',
-  [COURSE_TITLES.AWS_DEVOPS]: 'https://github.com/rolling-scopes-school/tasks/tree/master/devops',
+  REACT: 'https://github.com/rolling-scopes-school/tasks/blob/master/react/README.md',
+  ANGULAR: 'https://github.com/rolling-scopes-school/tasks/tree/master/angular',
+  NODE: 'https://github.com/rolling-scopes-school/tasks/tree/master/node',
+  AWS_FUNDAMENTALS: 'https://github.com/rolling-scopes-school/aws/tree/main/aws-fundamentals',
+  AWS_CLOUD_DEVELOPER: 'https://github.com/rolling-scopes-school/aws/tree/main/aws-developer',
+  AWS_DEVOPS: 'https://github.com/rolling-scopes-school/tasks/tree/master/devops',
 };
 
 export const DOCUMENTATION_LINKS = {
