@@ -1,5 +1,3 @@
-import { ROUTES } from '@/core/const';
-import { ApiCoursesIds } from '@/entities/course/types';
 import { COURSE_TITLES, CourseTitle } from 'data';
 
 export const COURSE_DATE_FORMAT = 'MMM DD, YYYY';
@@ -15,17 +13,4 @@ export const API_COURSES_IDS_DICTIONARY: Record<CourseTitle, string> = {
   [COURSE_TITLES.JS_RU]: '45GfCeWyEljTfHzUgnQPod',
   [COURSE_TITLES.REACT]: '22u5y3ir02LMShH6AyNOsE',
   [COURSE_TITLES.JS_EN]: 'EiDyAqKQQpcauf4z8htAb',
-};
-
-export const API_COURSES_ROUTES_DICTIONARY: Record<ApiCoursesIds, string> = {
-  [API_COURSES_IDS_DICTIONARY['Node.js']]: `/${ROUTES.COURSES}/${ROUTES.NODE_JS}`,
-  [API_COURSES_IDS_DICTIONARY['AWS Cloud Developer']]: `/${ROUTES.COURSES}/${ROUTES.AWS_DEVELOPER}`,
-  [API_COURSES_IDS_DICTIONARY['AWS DevOps']]: `/${ROUTES.COURSES}/${ROUTES.AWS_DEVOPS}`,
-  [API_COURSES_IDS_DICTIONARY['AWS Fundamentals']]: `/${ROUTES.COURSES}/${ROUTES.AWS_FUNDAMENTALS}`,
-  [API_COURSES_IDS_DICTIONARY['Angular']]: `/${ROUTES.COURSES}/${ROUTES.ANGULAR}`,
-  [API_COURSES_IDS_DICTIONARY['JS / Front-end Pre-school RU']]:
-    `/${ROUTES.COURSES}/${ROUTES.JS_PRESCHOOL_RU}`,
-  [API_COURSES_IDS_DICTIONARY['JS / Front-end RU']]: `/${ROUTES.COURSES}/${ROUTES.JS_RU}`,
-  [API_COURSES_IDS_DICTIONARY['React']]: `/${ROUTES.COURSES}/${ROUTES.REACT}`,
-  [API_COURSES_IDS_DICTIONARY['JS / Front-end EN']]: `/${ROUTES.COURSES}/${ROUTES.JS}`,
 };

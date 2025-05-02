@@ -1,4 +1,4 @@
-import { API_COURSES_ROUTES_DICTIONARY } from '@/entities/course/constants';
+import { buildCourseUrl } from '@/entities/course/helpers/build-course-url';
 import { Course, CoursesResponse } from '@/entities/course/types';
 import { TO_BE_DETERMINED } from '@/shared/constants';
 import { findAssetImageById } from '@/shared/helpers/find-asset-image-by-id';
@@ -16,7 +16,7 @@ export function transformCourses(coursesResponse: CoursesResponse): Course[] {
     const registrationEndDate = TO_BE_DETERMINED;
     const language = course.fields.language;
     const mode = course.fields.mode;
-    const detailsUrl = API_COURSES_ROUTES_DICTIONARY[id];
+    const detailsUrl = buildCourseUrl(course.fields.url);
     const enroll = null;
     const backgroundStyle = {
       backgroundColor: course.fields.backgroundColor,
