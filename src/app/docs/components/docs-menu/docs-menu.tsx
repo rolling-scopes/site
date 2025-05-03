@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 
 import { Menu } from '../../types';
 import chevronRight from '@/shared/assets/svg/chevron-right.svg';
-import { isValidUrl } from '@/shared/helpers/isValidUrl';
+import { isValidUrl } from '@/shared/helpers/is-valid-url';
 import { Language } from '@/shared/types';
 
 import styles from './docs-menu.module.scss';
@@ -42,10 +42,7 @@ export const DocsMenu = ({ menu, lang, isOpen, onMenuToggle }: DocsMenuProps) =>
         return (
           <li key={index}>
             {doc.link && (
-              <Link
-                href={resolveHref(doc.link)}
-                className={cx({ active: isActive(doc.link) })}
-              >
+              <Link href={resolveHref(doc.link)} className={cx({ active: isActive(doc.link) })}>
                 {doc.title}
               </Link>
             )}

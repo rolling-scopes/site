@@ -1,6 +1,6 @@
 import { DocsContent } from '../components/docs-content/docs-content';
 import { TITLE_POSTFIX } from '../constants';
-import { fetchMarkdownContent } from '../utils/fetchMarkdownContent';
+import { fetchMarkdownContent } from '../utils/fetch-markdown-content';
 import { Language } from '@/shared/types';
 
 type RouteParams = { lang: Language };
@@ -10,10 +10,7 @@ export async function generateMetadata() {
 }
 
 export async function generateStaticParams(): Promise<RouteParams[]> {
-  return [
-    { lang: 'en' },
-    { lang: 'ru' },
-  ];
+  return [{ lang: 'en' }, { lang: 'ru' }];
 }
 
 export default async function DocsIndex({ params }: { params: Promise<RouteParams> }) {

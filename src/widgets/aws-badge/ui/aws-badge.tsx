@@ -1,5 +1,5 @@
-import { Badge } from '../../../../dev-data/badge.data';
 import imageAws from '@/shared/assets/aws-cloud-pract-badge.webp';
+import { Badge } from 'data';
 
 import styles from './aws-badge.module.scss';
 

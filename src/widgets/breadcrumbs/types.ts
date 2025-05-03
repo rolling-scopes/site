@@ -1,3 +1,3 @@
-import { RouteValues } from '@/core/types/route.types';
+import { RouteValues } from '@/shared/types';
 
 export type BreadcrumbNameMap = Record<RouteValues, string>;
