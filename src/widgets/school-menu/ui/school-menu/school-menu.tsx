@@ -1,4 +1,4 @@
-import { Children, HTMLProps, PropsWithChildren } from 'react';
+import { HTMLProps, PropsWithChildren } from 'react';
 import classNames from 'classnames/bind';
 
 import { Color } from '@/widgets/school-menu/types';
@@ -13,8 +13,8 @@ type SchoolMenuProps = PropsWithChildren &
     heading?: string;
     color?: Color;
     layout?: 'columns' | 'single';
-    mobileClass?: 'visible' | 'hidden';
-    staticLinks?: boolean;
+    isVisible?: boolean;
+    anchorLinks?: boolean;
   };
 
 export const SchoolMenu = ({
@@ -23,24 +23,24 @@ export const SchoolMenu = ({
   children,
   className,
   layout = 'single',
-  mobileClass,
-  staticLinks = false,
+  isVisible,
+  anchorLinks = false,
 }: SchoolMenuProps) => {
   return (
-    <div className={cx('school-menu', mobileClass)}>
+    <div
+      className={cx('school-menu', {
+        visible: isVisible === true,
+        hidden: isVisible === false,
+      })}
+    >
       {heading && <h3 className={cx('heading', color)}>{heading}</h3>}
       <ul
         className={cx(
           'school-list',
           `school-list--${layout}`,
-          { 'static-links': staticLinks },
+          { 'anchor-links': anchorLinks },
           className,
         )}
-        style={
-          layout === 'columns'
-            ? { gridTemplateRows: `repeat(${Math.ceil(Children.count(children) / 2)}, auto)` }
-            : undefined
-        }
       >
         {children}
       </ul>

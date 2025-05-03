@@ -2,16 +2,11 @@ import Image from 'next/image';
 
 import openCollective from '@/shared/assets/svg/opencollective-icon.svg';
 
-type OpenCollectiveIconProps = {
-  width?: number;
-  height?: number;
-};
-
-export const OpenCollectiveIcon = ({ width = 24, height = 24 }: OpenCollectiveIconProps) => {
+export const OpenCollectiveIcon = () => {
   return (
     <Image
-      width={width}
-      height={height}
+      width={24}
+      height={24}
       src={openCollective}
       alt="open collective icon"
       data-testid="opencollective-icon"

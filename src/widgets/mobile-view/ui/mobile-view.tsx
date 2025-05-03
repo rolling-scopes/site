@@ -4,19 +4,21 @@ import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { StaticImageData } from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-import { ROUTES } from '@/core/const';
+import { MobileNavItem } from './mobile-nav-item/mobile-nav-item';
+import { donateOptionsForNavMenu } from '../../../../dev-data/donate-options.data';
+import { NAV_MENU_LABELS, ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
-import { DropdownArrow } from '@/shared/icons/dropdown-arrow';
+import iconBlue from '@/shared/assets/svg/heart-blue.svg';
+import iconYellow from '@/shared/assets/svg/heart-yellow.svg';
 import { Logo } from '@/shared/ui/logo';
+import {
+  transformCoursesToMentorship,
+} from '@/views/mentorship/helpers/transformCoursesToMentorship';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { SchoolMenu } from '@/widgets/school-menu';
-import {
-  communityMenuStaticLinks,
-  donateOptions,
-  mentorshipCourses,
-  schoolMenuStaticLinks,
-} from 'data';
+import { communityMenuStaticLinks, schoolMenuStaticLinks } from 'data';
 
 import styles from './mobile-view.module.scss';
 
@@ -40,6 +42,9 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
   const color = type === 'header' ? 'dark' : 'light';
   const logoView = type === 'header' ? null : 'with-border';
   const courseIcon = type === 'header' ? 'iconSmall' : 'iconFooter';
+  const pathname = usePathname();
+  const iconSrc = pathname.includes(ROUTES.MENTORSHIP) ? iconBlue : iconYellow;
+  const coursesWithMentorship = transformCoursesToMentorship(courses);
 
   const [activeDropdowns, setActiveDropdowns] = useState<Set<string>>(new Set());
 
@@ -76,18 +81,14 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
       <Divider color={color} />
 
       <div className={cx('category-container')}>
-        <button onClick={() => onMenuItemClick('RS School')} className={cx('category-link', color)}>
-          <span>RS School</span>
-          <span
-            className={cx('dropdown-arrow', { rotate: Boolean(activeDropdowns.has('RS School')) })}
-            role="button"
-            aria-expanded={activeDropdowns.has('RS School')}
-          >
-            <DropdownArrow />
-          </span>
-        </button>
+        <MobileNavItem
+          title={NAV_MENU_LABELS.RS_SCHOOL}
+          color={color}
+          isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.RS_SCHOOL)}
+          onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.RS_SCHOOL)}
+        />
 
-        <SchoolMenu mobileClass={activeDropdowns.has('RS School') ? 'visible' : 'hidden'}>
+        <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.RS_SCHOOL)}>
           {schoolMenuStaticLinks.map((link, i) => (
             <SchoolMenu.Item
               key={i}
@@ -104,20 +105,16 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
       <Divider color={color} />
 
       <div className={cx('category-container')}>
-        <button onClick={() => onMenuItemClick('Courses')} className={cx('category-link', color)}>
-          <span>Courses</span>
-          <span
-            className={cx('dropdown-arrow', { rotate: Boolean(activeDropdowns.has('Courses')) })}
-            role="button"
-            aria-expanded={activeDropdowns.has('Courses')}
-          >
-            <DropdownArrow />
-          </span>
-        </button>
+        <MobileNavItem
+          title={NAV_MENU_LABELS.COURSES}
+          color={color}
+          isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.COURSES)}
+          onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.COURSES)}
+        />
 
-        <SchoolMenu mobileClass={activeDropdowns.has('Courses') ? 'visible' : 'hidden'}>
+        <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.COURSES)}>
           <SchoolMenu.Item
-            key="Courses"
+            key={NAV_MENU_LABELS.COURSES}
             title="All Courses"
             description="TBD"
             url={`/${ROUTES.COURSES}`}
@@ -141,18 +138,14 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
       <Divider color={color} />
 
       <div className={cx('category-container')}>
-        <button onClick={() => onMenuItemClick('Community')} className={cx('category-link', color)}>
-          <span>Community</span>
-          <span
-            className={cx('dropdown-arrow', { rotate: Boolean(activeDropdowns.has('Community')) })}
-            role="button"
-            aria-expanded={activeDropdowns.has('Community')}
-          >
-            <DropdownArrow />
-          </span>
-        </button>
+        <MobileNavItem
+          title={NAV_MENU_LABELS.COMMUNITY}
+          color={color}
+          isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.COMMUNITY)}
+          onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.COMMUNITY)}
+        />
 
-        <SchoolMenu mobileClass={activeDropdowns.has('Community') ? 'visible' : 'hidden'}>
+        <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.COMMUNITY)}>
           {communityMenuStaticLinks.map((link, i) => (
             <SchoolMenu.Item
               key={i}
@@ -169,34 +162,28 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
       <Divider color={color} />
 
       <div className={cx('category-container')}>
-        <button
-          onClick={() => onMenuItemClick('Mentorship')}
-          className={cx('category-link', color)}
-        >
-          <span>Mentorship</span>
-          <span
-            className={cx('dropdown-arrow', { rotate: Boolean(activeDropdowns.has('Mentorship')) })}
-            role="button"
-            aria-expanded={activeDropdowns.has('Mentorship')}
-          >
-            <DropdownArrow />
-          </span>
-        </button>
+        <MobileNavItem
+          title={NAV_MENU_LABELS.MENTORSHIP}
+          color={color}
+          isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.MENTORSHIP)}
+          onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.MENTORSHIP)}
+        />
 
-        <SchoolMenu mobileClass={activeDropdowns.has('Mentorship') ? 'visible' : 'hidden'}>
+        <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.MENTORSHIP)}>
           <SchoolMenu.Item
-            key="Mentorship"
+            key={NAV_MENU_LABELS.MENTORSHIP}
             title="About Mentorship"
-            description="TBD"
+            description="Some text"
             url={`/${ROUTES.MENTORSHIP}`}
             color={color}
             onClick={onClose}
           />
-          {mentorshipCourses.map((course) => (
+          {coursesWithMentorship.map((course) => (
             <SchoolMenu.Item
               key={course.id}
               icon={course.iconSmall}
               title={course.title}
+              description={course.startDate}
               url={course.detailsUrl}
               color={color}
               onClick={onClose}
@@ -208,27 +195,21 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
       <Divider color={color} />
 
       <Link onClick={onClose} href={`/${ROUTES.DOCS_EN}`} className={cx('category-link', color)}>
-        Docs
+        {NAV_MENU_LABELS.DOCS}
       </Link>
 
       <Divider color={color} />
 
       <div className={cx('category-container')}>
-        <button
-          onClick={() => onMenuItemClick('Support Us')}
-          className={cx('category-link', color)}
-        >
-          <span>Support Us</span>
-          <span
-            className={cx('dropdown-arrow', { rotate: Boolean(activeDropdowns.has('Support Us')) })}
-            role="button"
-            aria-expanded={activeDropdowns.has('Support Us')}
-          >
-            <DropdownArrow />
-          </span>
-        </button>
+        <MobileNavItem
+          title={NAV_MENU_LABELS.SUPPORT_US}
+          icon={iconSrc}
+          color={color}
+          isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.SUPPORT_US)}
+          onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.SUPPORT_US)}
+        />
 
-        <SchoolMenu mobileClass={activeDropdowns.has('Support Us') ? 'visible' : 'hidden'}>
+        <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.SUPPORT_US)}>
           <SchoolMenu.Item
             className="support-title"
             title="Your donations help us cover hosting, domains, licenses, and advertising for courses
@@ -242,7 +223,7 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
             url="#"
             color={color}
           />
-          {donateOptions.map((option) => (
+          {donateOptionsForNavMenu.map((option) => (
             <SchoolMenu.Item
               key={option.id}
               icon={option.icon}

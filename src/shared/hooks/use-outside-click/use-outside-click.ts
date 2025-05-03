@@ -3,10 +3,10 @@ import { useEffect } from 'react';
 export function useOutsideClick<T extends HTMLElement>(
   ref: React.RefObject<T | null>,
   callback: () => void,
-  when: boolean,
+  isDropdownOpen: boolean,
 ) {
   useEffect(() => {
-    if (!when) {
+    if (!isDropdownOpen) {
       return;
     }
 
@@ -21,5 +21,5 @@ export function useOutsideClick<T extends HTMLElement>(
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [ref, callback, when]);
+  }, [ref, callback, isDropdownOpen]);
 }

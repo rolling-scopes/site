@@ -76,14 +76,17 @@
 
       cursor: inherit;
 
-      margin-left: 10px;
+      display: flex;
+      align-items: center;
+
+      margin-left: 6px;
       padding: 0;
       border: none;
 
       background-color: transparent;
 
       > img {
-        width: 16px;
+        width: 20px;
         height: auto;
       }
     }

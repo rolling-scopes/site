@@ -22,6 +22,15 @@ export const LINKS = {
   ANGULAR_MENTORING: 'https://github.com/rolling-scopes-school/tasks/tree/master/angular/mentoring',
 };
 
+export const NAV_MENU_LABELS = {
+  RS_SCHOOL: 'RS School',
+  COURSES: 'Courses',
+  COMMUNITY: 'Community',
+  MENTORSHIP: 'Mentorship',
+  DOCS: 'Docs',
+  SUPPORT_US: 'Support Us',
+};
+
 export const ROUTES = {
   HOME: '/',
   COMMUNITY: 'community',

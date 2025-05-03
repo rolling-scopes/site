@@ -6,6 +6,8 @@ import { mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { MobileView } from '@/widgets/mobile-view';
 
+vi.mock('next/navigation', () => ({ usePathname: () => '/' }));
+
 describe('Footer', () => {
   it('displays copyright in the footer', () => {
     const { getByText } = renderWithRouter(<Copyright />);

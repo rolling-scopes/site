@@ -7,13 +7,18 @@ import { usePathname } from 'next/navigation';
 import { BurgerMenu } from './burger/burger';
 import { NavItem } from './nav-item/nav-item';
 import { donateOptionsForNavMenu } from '../../../../../dev-data/donate-options.data';
-import { ANCHORS, ROUTES } from '@/core/const';
+import { ANCHORS, NAV_MENU_LABELS, ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
+import iconBlue from '@/shared/assets/svg/heart-blue.svg';
+import iconYellow from '@/shared/assets/svg/heart-yellow.svg';
 import logoBlue from '@/shared/assets/svg/rss-logo-blue.svg';
 import { Logo } from '@/shared/ui/logo';
+import {
+  transformCoursesToMentorship,
+} from '@/views/mentorship/helpers/transformCoursesToMentorship';
 import { MobileView } from '@/widgets/mobile-view';
 import { SchoolMenu } from '@/widgets/school-menu';
-import { communityMenuStaticLinks, mentorshipCourses, schoolMenuStaticLinks } from 'data';
+import { communityMenuStaticLinks, schoolMenuStaticLinks } from 'data';
 
 import styles from './header.module.scss';
 
@@ -28,6 +33,8 @@ export const Header = ({ courses }: HeaderProps) => {
 
   const pathname = usePathname();
   const isMentorshipPage = pathname.includes(ROUTES.MENTORSHIP);
+  const iconSrc = isMentorshipPage ? iconBlue : iconYellow;
+  const coursesWithMentorship = transformCoursesToMentorship(courses);
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -54,8 +61,8 @@ export const Header = ({ courses }: HeaderProps) => {
         <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 
         <menu className={cx('menu')} data-testid="desktop-menu">
-          <NavItem label="RS School" href={ROUTES.HOME}>
-            <SchoolMenu layout="columns" staticLinks={true}>
+          <NavItem label={NAV_MENU_LABELS.RS_SCHOOL} href={ROUTES.HOME}>
+            <SchoolMenu layout="columns" anchorLinks={true}>
               {schoolMenuStaticLinks.map((link, i) => (
                 <SchoolMenu.Item
                   key={i}
@@ -66,10 +73,10 @@ export const Header = ({ courses }: HeaderProps) => {
               ))}
             </SchoolMenu>
           </NavItem>
-          <NavItem label="Courses" href={ROUTES.COURSES}>
+          <NavItem label={NAV_MENU_LABELS.COURSES} href={ROUTES.COURSES}>
             <SchoolMenu>
               <SchoolMenu.Item
-                key="Courses"
+                key={NAV_MENU_LABELS.COURSES}
                 title="All Courses"
                 description="TBD"
                 url={`/${ROUTES.COURSES}`}
@@ -87,8 +94,8 @@ export const Header = ({ courses }: HeaderProps) => {
               ))}
             </SchoolMenu>
           </NavItem>
-          <NavItem label="Community" href={ROUTES.COMMUNITY}>
-            <SchoolMenu layout="columns" staticLinks={true}>
+          <NavItem label={NAV_MENU_LABELS.COMMUNITY} href={ROUTES.COMMUNITY}>
+            <SchoolMenu layout="columns" anchorLinks={true}>
               {communityMenuStaticLinks.map((link, i) => (
                 <SchoolMenu.Item
                   key={i}
@@ -99,28 +106,29 @@ export const Header = ({ courses }: HeaderProps) => {
               ))}
             </SchoolMenu>
           </NavItem>
-          <NavItem label="Mentorship" href={ROUTES.MENTORSHIP}>
+          <NavItem label={NAV_MENU_LABELS.MENTORSHIP} href={ROUTES.MENTORSHIP}>
             <SchoolMenu>
               <SchoolMenu.Item
-                key="Mentorship"
+                key={NAV_MENU_LABELS.MENTORSHIP}
                 title="About Mentorship"
-                description="TBD"
+                description="Some text"
                 url={`/${ROUTES.MENTORSHIP}`}
               />
             </SchoolMenu>
             <SchoolMenu layout="columns">
-              {mentorshipCourses.map((course) => (
+              {coursesWithMentorship.map((course) => (
                 <SchoolMenu.Item
                   key={course.id}
                   icon={course.iconSmall}
                   title={course.title}
+                  description={course.startDate}
                   url={course.detailsUrl}
                 />
               ))}
             </SchoolMenu>
           </NavItem>
-          <NavItem label="Docs" href={ROUTES.DOCS_EN} />
-          <NavItem label="Support Us" href={`#${ANCHORS.DONATE}`}>
+          <NavItem label={NAV_MENU_LABELS.DOCS} href={ROUTES.DOCS_EN} />
+          <NavItem label={NAV_MENU_LABELS.SUPPORT_US} href={`#${ANCHORS.DONATE}`} icon={iconSrc}>
             <ul className={cx('support-text')}>
               <SchoolMenu.Item
                 title="Your donations help us cover hosting, domains, licenses, and advertising for courses

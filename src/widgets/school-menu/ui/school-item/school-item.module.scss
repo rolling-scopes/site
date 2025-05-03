@@ -1,8 +1,11 @@
 .school-item {
   display: flex;
-  gap: 5px;
   column-gap: 8px;
   align-items: flex-start;
+
+  &.centered {
+    align-items: center;
+  }
 
   &.non-clickable {
     pointer-events: none;
@@ -58,11 +61,11 @@
   .description-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 5px;
     align-items: flex-start;
 
     .description {
       font-size: 12px;
+      line-height: 24px;
       color: $color-gray-500;
     }
   }

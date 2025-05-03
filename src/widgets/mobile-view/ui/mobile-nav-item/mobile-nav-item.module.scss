@@ -1,0 +1,36 @@
+.category-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 0;
+  border: none;
+
+  font-size: 20px;
+  font-weight: $font-weight-bold;
+
+  background: none;
+
+  .dropdown-arrow {
+    @extend %transition-all;
+
+    &.rotate {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.category-title {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.dark {
+  color: $color-gray-900;
+}
+
+.light {
+  color: $color-gray-100;
+}
