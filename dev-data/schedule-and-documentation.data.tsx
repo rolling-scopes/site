@@ -23,6 +23,7 @@ const scheduleDocumentationEN: (courseName: CourseKeys) => ReactElement = (cours
     >
       shcedule
     </LinkCustom>
+    {' '}
     and school
     {' '}
     <LinkCustom
