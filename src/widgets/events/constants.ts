@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 
 import { RS_FOUNDATION_YEAR } from '@/shared/constants';
-import { getActualData } from '@/shared/helpers/getActualData';
+import { getActualData } from '@/shared/helpers/get-actual-data';
 import { events } from 'data';
 
 export const maxUpcomingEventsQuantity = 2;

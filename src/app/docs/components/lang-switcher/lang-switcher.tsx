@@ -3,8 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { ROUTES } from '@/core/const';
 import translate from '@/shared/assets/svg/translate.svg';
+import { ROUTES } from '@/shared/constants';
 
 import styles from './lang-switcher.module.scss';
 

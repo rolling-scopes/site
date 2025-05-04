@@ -1,12 +1,11 @@
 import { StaticImageData } from 'next/image';
 
 import { Video } from '../types';
-import { ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
 import { MentorFeedback } from '@/entities/mentor';
 import type { Trainer } from '@/entities/trainer';
 import nodejsImg1 from '@/shared/assets/mentors/m-shylau.webp';
-import { COURSE_LINKS, COURSE_SCHEDULE_LINKS } from '@/shared/constants';
+import { COURSE_LINKS, COURSE_SCHEDULE_LINKS, ROUTES } from '@/shared/constants';
 import { FaqDataItem, FaqDataItemWithLink } from '@/widgets/faq/types';
 import { COURSE_TITLES } from 'data';
 

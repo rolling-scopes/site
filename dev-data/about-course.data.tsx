@@ -1,11 +1,14 @@
-import { ROUTES } from '@/core/const';
 import awardIcon from '@/shared/assets/icons/award-icon.webp';
 import giftIcon from '@/shared/assets/icons/gift.webp';
 import noteIcon from '@/shared/assets/icons/note-icon.webp';
 import paperIcon from '@/shared/assets/icons/paper-icon.webp';
 import personIcon from '@/shared/assets/icons/person-icon.webp';
 import planetIcon from '@/shared/assets/icons/planet.webp';
-import { REGISTRATION_WILL_OPEN_SOON, REGISTRATION_WILL_OPEN_SOON_RU } from '@/shared/constants';
+import {
+  REGISTRATION_WILL_OPEN_SOON,
+  REGISTRATION_WILL_OPEN_SOON_RU,
+  ROUTES,
+} from '@/shared/constants';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -203,7 +206,7 @@ const javaScriptPreSchoolRU: () => AboutCourseInfo[] = () => {
     {
       id: 2,
       title: 'Время обучения',
-      info: 'Длительность обучения: 18 недель. Формат обучения: самообучение, групповое обучение, общение в Discord, задания проверяют в процессе кросс-чек и автоматически.',
+      info: 'Длительность обучения: 10 недель. Формат обучения: самообучение, групповое обучение, общение в Discord, задания проверяют в процессе кросс-чек и автоматически.',
       icon: noteIcon,
     },
     {
@@ -211,12 +214,6 @@ const javaScriptPreSchoolRU: () => AboutCourseInfo[] = () => {
       title: 'Бесплатное образование',
       info: 'В RS School работает принцип "Pay it forward". Мы бесплатно делимся с учащимися своими знаниями сейчас, надеясь, что в будущем они вернутся к нам в качестве менторов и точно так же передадут свои знания следующему поколению студентов.',
       icon: giftIcon,
-    },
-    {
-      id: 4,
-      title: 'Сертификат',
-      info: 'При успешном прохождении курса выдается электронный сертификат.',
-      icon: awardIcon,
     },
   ];
 };

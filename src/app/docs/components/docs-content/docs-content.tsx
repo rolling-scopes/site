@@ -8,7 +8,7 @@ import remarkRemoveComments from 'remark-remove-comments';
 import remarkToc from 'remark-toc';
 
 import { GITHUB_RAW_ROOT } from '../../constants';
-import { isValidUrl } from '@/shared/helpers/isValidUrl';
+import { isValidUrl } from '@/shared/helpers/is-valid-url';
 import { Language } from '@/shared/types';
 
 const GITHUB_IMAGE_BASE = `${GITHUB_RAW_ROOT}/images`;
@@ -30,6 +30,10 @@ export function DocsContent({ markdownContent, lang }: DocsContentProps) {
       rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings]}
       components={{
         img({ src = '', ...props }) {
+          if (typeof src !== 'string') {
+            throw new Error("The 'src' prop must be a string URL.");
+          }
+
           const isExternalImage = isValidUrl(src);
           const newSrc =
             !isExternalImage && src ? `${GITHUB_IMAGE_BASE}/${src.split('/').pop()}` : src;

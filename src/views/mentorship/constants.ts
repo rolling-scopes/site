@@ -1,4 +1,4 @@
-import { ROUTES } from '@/core/const';
+import { ROUTES } from '@/shared/constants';
 import { COURSE_TITLES, MentorshipCourseTitles, MentorshipLinks } from 'data';
 
 export const mentorshipCourseTitles: MentorshipCourseTitles[] = [

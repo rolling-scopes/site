@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-import { COURSE_TITLES } from '@/../dev-data/courseTitles.data';
+import { COURSE_TITLES } from '@/../dev-data/course-titles.data';
 import { COURSE_SCHEDULE_LINKS, DOCUMENTATION_LINKS } from '@/shared/constants';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
