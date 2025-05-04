@@ -5,7 +5,7 @@ import { Course } from '@/entities/course';
 import { MentorFeedback } from '@/entities/mentor';
 import type { Trainer } from '@/entities/trainer';
 import nodejsImg1 from '@/shared/assets/mentors/m-shylau.webp';
-import { COURSE_LINKS, ROUTES } from '@/shared/constants';
+import { COURSE_LINKS, COURSE_SCHEDULE_LINKS, ROUTES } from '@/shared/constants';
 import { FaqDataItem, FaqDataItemWithLink } from '@/widgets/faq/types';
 import { COURSE_TITLES } from 'data';
 
@@ -31,6 +31,7 @@ export const mockedCourses: Course[] = [
     subTitle: 'Pre-school RU',
     descriptionUrl: COURSE_LINKS.JS_PRESCHOOL_RU,
     startDate: 'Jun 24, 2024',
+    scheduleUrl: COURSE_SCHEDULE_LINKS.JS_PRESCHOOL_RU,
     registrationEndDate: 'Jun 24, 2024',
     language: 'ru',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.JS_PRESCHOOL_RU}`,
@@ -54,6 +55,7 @@ export const mockedCourses: Course[] = [
     subTitle: null,
     descriptionUrl: COURSE_LINKS.JS_EN,
     startDate: 'Oct, 2024',
+    scheduleUrl: COURSE_SCHEDULE_LINKS.JS_EN,
     registrationEndDate: 'Jun 24, 2025',
     language: 'en',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.JS}`,
@@ -77,6 +79,7 @@ export const mockedCourses: Course[] = [
     subTitle: null,
     descriptionUrl: COURSE_LINKS.JS_RU,
     startDate: 'Oct, 2024',
+    scheduleUrl: COURSE_SCHEDULE_LINKS.JS_RU,
     registrationEndDate: 'Jun 24, 2025',
     language: 'ru',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.JS_RU}`,
@@ -100,6 +103,7 @@ export const mockedCourses: Course[] = [
     subTitle: null,
     descriptionUrl: COURSE_LINKS.REACT,
     startDate: 'Jul 1, 2024',
+    scheduleUrl: COURSE_SCHEDULE_LINKS.REACT,
     registrationEndDate: 'Jun 24, 2024',
     language: 'en',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.REACT}`,
@@ -122,6 +126,7 @@ export const mockedCourses: Course[] = [
     subTitle: null,
     descriptionUrl: COURSE_LINKS.ANGULAR,
     startDate: 'Jul 1, 2024',
+    scheduleUrl: COURSE_SCHEDULE_LINKS.ANGULAR,
     registrationEndDate: 'Jun 24, 2025',
     language: 'en',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.ANGULAR}`,
@@ -144,6 +149,7 @@ export const mockedCourses: Course[] = [
     subTitle: null,
     descriptionUrl: COURSE_LINKS.AWS_FUNDAMENTALS,
     startDate: 'Jul 1, 2024',
+    scheduleUrl: COURSE_SCHEDULE_LINKS.AWS_FUNDAMENTALS,
     registrationEndDate: 'Jun 24, 2025',
     language: 'en',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.AWS_FUNDAMENTALS}`,
@@ -170,6 +176,7 @@ export const mockedCourses: Course[] = [
     iconFooter: MOCKED_IMAGE_PATH,
     secondaryIcon: MOCKED_IMAGE_PATH,
     startDate: 'Jul 1, 2024',
+    scheduleUrl: COURSE_SCHEDULE_LINKS.AWS_CLOUD_DEVELOPER,
     registrationEndDate: 'Jun 24, 2025',
     language: 'en',
     mode: 'online',
@@ -192,6 +199,7 @@ export const mockedCourses: Course[] = [
     iconFooter: MOCKED_IMAGE_PATH,
     secondaryIcon: MOCKED_IMAGE_PATH,
     startDate: 'Jul 1, 2024',
+    scheduleUrl: COURSE_SCHEDULE_LINKS.AWS_DEVOPS,
     registrationEndDate: 'Jun 24, 2025',
     language: 'en',
     mode: 'online',

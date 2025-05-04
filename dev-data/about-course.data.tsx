@@ -11,8 +11,9 @@ import {
 } from '@/shared/constants';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
+import { Paragraph } from '@/shared/ui/paragraph';
 import type { AboutCourseInfo } from 'data';
-import { COURSE_TITLES, CourseNamesChannels, DISCORD_LINKS } from 'data';
+import { COURSE_TITLES, CourseNamesChannels, DISCORD_LINKS, communityGroups } from 'data';
 
 type ContentMap = {
   [key in CourseNamesChannels]: AboutCourseInfo[];
@@ -37,6 +38,31 @@ const preSchoolIntro = {
   paragraph:
     'Подготовительный этап поможет тем, кто мало знаком или совсем не знаком с программированием и хотел бы впоследствии учиться на основном курсе «JavaScript/Front-end».',
 };
+
+const youtubeHref = communityGroups.find((sosial) => sosial.title === 'YouTube EN')?.href;
+const infoMaterialsEn = (
+  <Paragraph>
+    All materials are publicly available on the
+    {' '}
+    {youtubeHref && (
+      <>
+        <LinkCustom
+          href={youtubeHref}
+          external
+        >
+          YouTube
+        </LinkCustom>
+        {' '}
+        channel and
+        {' '}
+      </>
+    )}
+    <LinkCustom href="https://github.com/rolling-scopes-school/" external>
+      GitHub
+    </LinkCustom>
+    .
+  </Paragraph>
+);
 
 export const introLocalizedContent = {
   [COURSE_TITLES.JS_PRESCHOOL_RU]: preSchoolIntro,
@@ -71,28 +97,6 @@ const listData = {
       },
     ],
   ],
-  reactEn: [
-    [
-      {
-        id: 1,
-        text: 'School ',
-        title: 'documentation',
-        link: 'https://docs.rs.school',
-      },
-    ],
-    'All materials are publicly available on the YouTube channel and GitHub',
-  ],
-  reactRu: [
-    [
-      {
-        id: 1,
-        text: '',
-        title: 'Документация школы',
-        link: 'https://docs.rs.school',
-      },
-    ],
-    'Все материалы находятся в открытом доступе на YouTube и GitHub.Также предлагаем ознакомиться с конспектом первого этапа обучения.',
-  ],
 };
 
 const angularNodejsAwsFundamentals: (course: string) => AboutCourseInfo[] = () => [
@@ -105,7 +109,7 @@ const angularNodejsAwsFundamentals: (course: string) => AboutCourseInfo[] = () =
   {
     id: 2,
     title: 'Materials',
-    info: 'Everyone can study at RS School, regardless of age, professional employment, or place of residence. However, you should have sufficient base knowledge before the program begins.',
+    info: infoMaterialsEn,
     icon: paperIcon,
   },
   {
@@ -219,8 +223,7 @@ const reactEn: AboutCourseInfo[] = javaScriptEN().map((item) => {
     return {
       ...item,
       title: 'Materials',
-      info: <List data={listData.reactEn} size="compact" />,
-      icon: paperIcon,
+      info: infoMaterialsEn,
     };
   }
   if (item.id === 5) {

@@ -7,7 +7,7 @@ import javascriptBlack from '@/shared/assets/icons/javascript-black.svg';
 import javascript from '@/shared/assets/icons/javascript.svg';
 import nodejs from '@/shared/assets/icons/node-js.svg';
 import react from '@/shared/assets/icons/react.svg';
-import { COURSE_LINKS, ROUTES, TO_BE_DETERMINED } from '@/shared/constants';
+import { COURSE_LINKS, COURSE_SCHEDULE_LINKS, ROUTES, TO_BE_DETERMINED } from '@/shared/constants';
 import { COURSE_TITLES } from 'data';
 
 export const courses: Course[] = [
@@ -22,6 +22,7 @@ export const courses: Course[] = [
     iconFooter: html5,
     secondaryIcon: javascriptBlack,
     startDate: TO_BE_DETERMINED,
+    scheduleUrl: COURSE_SCHEDULE_LINKS.JS_PRESCHOOL_RU,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'ru',
     mode: 'online',
@@ -45,6 +46,7 @@ export const courses: Course[] = [
     iconFooter: javascript,
     secondaryIcon: javascriptBlack,
     startDate: TO_BE_DETERMINED,
+    scheduleUrl: COURSE_SCHEDULE_LINKS.JS_EN,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
     mode: 'online',
@@ -68,6 +70,7 @@ export const courses: Course[] = [
     iconFooter: javascript,
     secondaryIcon: javascriptBlack,
     startDate: TO_BE_DETERMINED,
+    scheduleUrl: COURSE_SCHEDULE_LINKS.JS_RU,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'ru',
     mode: 'online',
@@ -90,6 +93,7 @@ export const courses: Course[] = [
     iconFooter: react,
     secondaryIcon: react,
     startDate: TO_BE_DETERMINED,
+    scheduleUrl: COURSE_SCHEDULE_LINKS.REACT,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
     mode: 'online',
@@ -112,6 +116,7 @@ export const courses: Course[] = [
     iconFooter: angular,
     secondaryIcon: angular,
     startDate: TO_BE_DETERMINED,
+    scheduleUrl: COURSE_SCHEDULE_LINKS.ANGULAR,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
     mode: 'online',
@@ -134,6 +139,7 @@ export const courses: Course[] = [
     iconFooter: nodejs,
     secondaryIcon: nodejs,
     startDate: TO_BE_DETERMINED,
+    scheduleUrl: COURSE_SCHEDULE_LINKS.NODE,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
     mode: 'online',
@@ -156,6 +162,7 @@ export const courses: Course[] = [
     iconFooter: awsWhite,
     secondaryIcon: awsBlack,
     startDate: TO_BE_DETERMINED,
+    scheduleUrl: COURSE_SCHEDULE_LINKS.AWS_FUNDAMENTALS,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
     mode: 'online',
@@ -179,6 +186,7 @@ export const courses: Course[] = [
     secondaryIcon: awsBlack,
     iconFooter: awsWhite,
     startDate: TO_BE_DETERMINED,
+    scheduleUrl: COURSE_SCHEDULE_LINKS.AWS_CLOUD_DEVELOPER,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
     mode: 'online',
@@ -201,6 +209,7 @@ export const courses: Course[] = [
     secondaryIcon: awsBlack,
     iconFooter: awsWhite,
     startDate: TO_BE_DETERMINED,
+    scheduleUrl: COURSE_SCHEDULE_LINKS.AWS_DEVOPS,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
     mode: 'online',
