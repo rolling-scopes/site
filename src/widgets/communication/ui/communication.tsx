@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 
+import { Course } from '@/entities/course';
 import discordLogo from '@/shared/assets/svg/discord-logo.svg';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -23,7 +24,7 @@ import styles from './communication.module.scss';
 const cx = classNames.bind(styles);
 
 type CommunicationProps = {
-  courseName: CourseNamesKeys;
+  courseName: Course['title'];
 };
 
 export const Communication = async ({ courseName }: CommunicationProps) => {
@@ -68,7 +69,11 @@ export const Communication = async ({ courseName }: CommunicationProps) => {
             <Subtitle className={cx('communication-subtitle')}>{courseSubTitle}</Subtitle>
             <Paragraph className={paragraphClassName}>
               {discordFirstHalfText}
-              <LinkCustom href={DISCORD_LINKS[courseName]} external data-testid="discord-link">
+              <LinkCustom
+                href={DISCORD_LINKS[courseName as CourseNamesKeys]}
+                external
+                data-testid="discord-link"
+              >
                 {courseDiscordLink}
               </LinkCustom>
               {discordSecondHalfText}

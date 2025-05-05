@@ -1,9 +1,8 @@
 import type { Course } from '@/entities/course';
-import { getCourses } from '@/entities/course/api/course-api';
-import { CourseNamesKeys } from 'data';
+import { courseStore } from '@/entities/course';
 
-export const selectCourse = async (courseName: CourseNamesKeys) => {
-  const courses = await getCourses();
+export const selectCourse = async (courseName: Course['title']) => {
+  const courses = await courseStore.loadCourses();
 
   return courses.find((course) => course.title === courseName) as Course;
 };

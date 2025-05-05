@@ -1,5 +1,5 @@
 import { Trainer, TrainersResponse } from '@/entities/trainer/types';
-import { prepareHttpsUrl } from '@/shared/helpers/prepare-https-url';
+import { findAssetImageById } from '@/shared/helpers/find-asset-image-by-id';
 
 export function transformTrainers(trainersResponse: TrainersResponse): Trainer[] {
   const trainersItems = trainersResponse.items;
@@ -9,22 +9,16 @@ export function transformTrainers(trainersResponse: TrainersResponse): Trainer[]
     const role = trainer.fields.jobTitle ?? '';
     const bio = trainer.fields.description ?? '';
 
-    const photoId = trainer.fields.avatar?.sys.id;
-    const photoData = trainersResponse.includes?.Asset?.find((asset) => asset.sys.id === photoId);
+    const trainerAssets = trainersResponse.includes?.Asset;
 
-    const photoUrl = prepareHttpsUrl(photoData?.fields.file?.url ?? '');
-    const photoWidth = photoData?.fields.file?.details.image?.width ?? 0;
-    const photoHeight = photoData?.fields.file?.details.image?.height ?? 0;
+    const photoId = trainer.fields.avatar?.sys.id;
+    const photo = findAssetImageById(trainerAssets, photoId);
 
     return {
       name,
       role,
       bio,
-      photo: {
-        src: photoUrl,
-        width: photoWidth,
-        height: photoHeight,
-      },
+      photo,
     };
   });
 }

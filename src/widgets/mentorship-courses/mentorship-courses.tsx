@@ -1,7 +1,6 @@
 import classNames from 'classnames/bind';
 
-import { CourseCard } from '@/entities/course';
-import { getCourses } from '@/entities/course/api/course-api';
+import { CourseCard, courseStore } from '@/entities/course';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import {
   transformCoursesToMentorship,
@@ -12,7 +11,7 @@ import styles from './mentorship-courses.module.scss';
 const cx = classNames.bind(styles);
 
 export const MentorshipCourses = async () => {
-  const coursesWithMentorship = transformCoursesToMentorship(await getCourses());
+  const coursesWithMentorship = transformCoursesToMentorship(await courseStore.loadCourses());
 
   return (
     <section className={cx('mentorship-courses', 'container')}>

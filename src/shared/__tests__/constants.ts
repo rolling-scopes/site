@@ -51,7 +51,7 @@ export const mockedCourses: Course[] = [
   {
     id: '2',
     title: COURSE_TITLES.JS_EN,
-    subTitle: null,
+    subTitle: undefined,
     descriptionUrl: COURSE_LINKS.JS_EN,
     startDate: 'Oct, 2024',
     registrationEndDate: 'Jun 24, 2025',
@@ -74,7 +74,7 @@ export const mockedCourses: Course[] = [
   {
     id: '3',
     title: COURSE_TITLES.JS_RU,
-    subTitle: null,
+    subTitle: undefined,
     descriptionUrl: COURSE_LINKS.JS_RU,
     startDate: 'Oct, 2024',
     registrationEndDate: 'Jun 24, 2025',
@@ -97,7 +97,7 @@ export const mockedCourses: Course[] = [
   {
     id: '4',
     title: COURSE_TITLES.REACT,
-    subTitle: null,
+    subTitle: undefined,
     descriptionUrl: COURSE_LINKS.REACT,
     startDate: 'Jul 1, 2024',
     registrationEndDate: 'Jun 24, 2024',
@@ -119,7 +119,7 @@ export const mockedCourses: Course[] = [
   {
     id: '5',
     title: COURSE_TITLES.ANGULAR,
-    subTitle: null,
+    subTitle: undefined,
     descriptionUrl: COURSE_LINKS.ANGULAR,
     startDate: 'Jul 1, 2024',
     registrationEndDate: 'Jun 24, 2025',
@@ -141,7 +141,7 @@ export const mockedCourses: Course[] = [
   {
     id: '6',
     title: COURSE_TITLES.AWS_FUNDAMENTALS,
-    subTitle: null,
+    subTitle: undefined,
     descriptionUrl: COURSE_LINKS.AWS_FUNDAMENTALS,
     startDate: 'Jul 1, 2024',
     registrationEndDate: 'Jun 24, 2025',
@@ -163,7 +163,7 @@ export const mockedCourses: Course[] = [
   {
     id: '8',
     title: COURSE_TITLES.AWS_CLOUD_DEVELOPER,
-    subTitle: null,
+    subTitle: undefined,
     descriptionUrl: COURSE_LINKS.AWS_CLOUD_DEVELOPER,
     iconSrc: MOCKED_IMAGE_PATH,
     iconSmall: MOCKED_IMAGE_PATH,
@@ -185,7 +185,7 @@ export const mockedCourses: Course[] = [
   {
     id: '9',
     title: COURSE_TITLES.AWS_DEVOPS,
-    subTitle: null,
+    subTitle: undefined,
     descriptionUrl: COURSE_LINKS.AWS_DEVOPS,
     iconSrc: MOCKED_IMAGE_PATH,
     iconSmall: MOCKED_IMAGE_PATH,
