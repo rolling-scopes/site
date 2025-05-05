@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import noteIcon from '@/shared/assets/icons/note-icon.svg';
-import { TO_BE_DETERMINED } from '@/shared/constants';
+import { RS_GRADUATED_ONLY, TO_BE_DETERMINED } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/day-js';
 
 import styles from './date-simple.module.scss';
@@ -19,7 +19,7 @@ type DateStartProps = {
 };
 
 const formatDateAttr = (date: string | null | undefined): string | undefined => {
-  if (!date || date === TO_BE_DETERMINED) {
+  if (!date || date === TO_BE_DETERMINED || date === RS_GRADUATED_ONLY) {
     return undefined;
   }
 

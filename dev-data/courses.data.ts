@@ -7,7 +7,7 @@ import javascriptBlack from '@/shared/assets/icons/javascript-black.svg';
 import javascript from '@/shared/assets/icons/javascript.svg';
 import nodejs from '@/shared/assets/icons/node-js.svg';
 import react from '@/shared/assets/icons/react.svg';
-import { COURSE_LINKS, ROUTES, TO_BE_DETERMINED } from '@/shared/constants';
+import { COURSE_LINKS, ROUTES, RS_GRADUATED_ONLY, TO_BE_DETERMINED } from '@/shared/constants';
 import { COURSE_TITLES } from 'data';
 
 export const courses: Course[] = [
@@ -105,13 +105,13 @@ export const courses: Course[] = [
   {
     id: '5',
     title: COURSE_TITLES.ANGULAR,
-    subTitle: `Only for JS/FE Stage 2 graduates`,
+    subTitle: RS_GRADUATED_ONLY,
     descriptionUrl: COURSE_LINKS.ANGULAR,
     iconSrc: angular,
     iconSmall: angular,
     iconFooter: angular,
     secondaryIcon: angular,
-    startDate: 'Only for JS/FE Stage 2 graduates',
+    startDate: RS_GRADUATED_ONLY,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
     mode: 'online',
