@@ -8,6 +8,7 @@ import { DateSimple } from '@/shared/ui/date-simple';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { ShortInfoPanel } from '@/shared/ui/short-info-panel';
 import { Subtitle } from '@/shared/ui/subtitle';
+import { COURSE_TITLES } from 'data';
 
 import styles from './course-card.module.scss';
 
@@ -16,6 +17,7 @@ export const cx = classNames.bind(styles);
 export type CourseCardProps = Pick<
   Course,
   | 'title'
+  | 'subTitle'
   | 'iconSrc'
   | 'startDate'
   | 'detailsUrl'
@@ -25,13 +27,15 @@ export type CourseCardProps = Pick<
   | 'registrationEndDate'
   | 'personalMentoringStartDate'
   | 'personalMentoringEndDate'
-> & Pick<HTMLProps<HTMLDivElement>, 'className'> & {
+> &
+Pick<HTMLProps<HTMLDivElement>, 'className'> & {
   size?: 'sm' | 'md';
   showMentoringStartDate?: boolean;
 };
 
 export const CourseCard = ({
   title,
+  subTitle,
   iconSrc,
   startDate,
   registrationEndDate,
@@ -49,6 +53,7 @@ export const CourseCard = ({
   const dateLabel = size === 'sm' ? LABELS.START_DATE_SHORT : LABELS.START_DATE;
   const fontSize = size === 'md' ? 'large' : 'small';
 
+  const mark = title === COURSE_TITLES.ANGULAR ? `(${subTitle})` : '';
   const classes = {
     [`size-${size}`]: true,
     [className]: true,
@@ -63,7 +68,9 @@ export const CourseCard = ({
     <article className={cx('course-card', classes)} data-testid="course-card">
       <div className={cx('card-header')} style={cardStyle} data-testid="card-header">
         <Image src={iconSrc} alt={title} />
-        <Subtitle className={cx('course-title')} fontSize={fontSize}>{title}</Subtitle>
+        <Subtitle className={cx('course-title')} fontSize={fontSize}>
+          {`${title} ${mark}`}
+        </Subtitle>
       </div>
       <div className={cx('course-info')}>
         {!showMentoringStartDate && (
@@ -83,11 +90,7 @@ export const CourseCard = ({
               endDate={personalMentoringStartDate ? personalMentoringEndDate : null}
               labelSeparator={LABELS.MENTOR_ACTIVITIES_SEPARATOR}
             />
-            <ShortInfoPanel
-              startDate={null}
-              registrationEndDate={null}
-              language={language}
-            />
+            <ShortInfoPanel startDate={null} registrationEndDate={null} language={language} />
           </div>
         )}
         <LinkCustom

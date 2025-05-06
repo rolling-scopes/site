@@ -99,7 +99,7 @@ const angularNodejsAwsFundamentals: (course: string) => AboutCourseInfo[] = () =
   {
     id: 1,
     title: 'For JS/FE graduates',
-    info: 'This course is exclusively available for students who have successfully completed JS/FE Stage 2. The RS School continues working by the principle of "Pay it forward". Members of our community share their knowledge and check students\' tasks for free. And we hope that our students will continue this work as our mentors in the future.',
+    info: 'This course is exclusively available for students who have successfully completed any RS School course. The RS School continues working by the principle of "Pay it forward". Members of our community share their knowledge and check students\' tasks for free. And we hope that our students will continue this work as our mentors in the future.',
     icon: personIcon,
   },
   {

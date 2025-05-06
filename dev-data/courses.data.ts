@@ -111,7 +111,7 @@ export const courses: Course[] = [
     iconSmall: angular,
     iconFooter: angular,
     secondaryIcon: angular,
-    startDate: RS_GRADUATED_ONLY,
+    startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'en',
     mode: 'online',

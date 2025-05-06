@@ -10,6 +10,7 @@ import { COURSE_TITLES } from 'data';
 describe('CourseCard', () => {
   const mockProps: CourseCardProps = {
     title: COURSE_TITLES.REACT,
+    subTitle: null,
     iconSrc: MOCKED_IMAGE_PATH,
     startDate: dayJS().toISOString(),
     registrationEndDate: dayJS().add(1, 'd').toISOString(),
