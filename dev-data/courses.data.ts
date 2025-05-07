@@ -9,7 +9,6 @@ import javascript from '@/shared/assets/icons/javascript.svg';
 import nodejs from '@/shared/assets/icons/node-js.svg';
 import react from '@/shared/assets/icons/react.svg';
 import shortTrackIcon from '@/shared/assets/icons/st-icon.svg';
-import shortTrack from '@/shared/assets/icons/st.svg';
 import { COURSE_LINKS, TO_BE_DETERMINED } from '@/shared/constants';
 import { COURSE_TITLES } from 'data';
 
@@ -225,7 +224,7 @@ export const courses: Course[] = [
     iconSrc: shortTrackIcon,
     iconSmall: shortTrackIcon,
     iconFooter: shortTrackIcon,
-    secondaryIcon: shortTrack,
+    secondaryIcon: shortTrackIcon,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'ru',

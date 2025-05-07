@@ -10,7 +10,7 @@ export const COURSE_TITLES = {
   AWS_FUNDAMENTALS: 'AWS Fundamentals',
   AWS_CLOUD_DEVELOPER: 'AWS Cloud Developer',
   AWS_DEVOPS: 'AWS DevOps',
-  SHORT_TRACK: 'RS EPAM Short Track',
+  SHORT_TRACK: 'Short Track',
 } as const;
 
 export const AWS_FUNDAMENTALS_BADGE = `${COURSE_TITLES.AWS_FUNDAMENTALS} badge` as const;

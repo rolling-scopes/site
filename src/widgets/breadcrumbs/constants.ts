@@ -13,5 +13,5 @@ export const breadcrumbNameMap: BreadcrumbNameMap = {
   'community': 'Community',
   'aws-devops': 'AWS DevOps',
   'mentorship': 'Mentorship',
-  'short-track': 'RS EPAM Short Track',
+  'short-track': 'Short Track',
 } as const;
