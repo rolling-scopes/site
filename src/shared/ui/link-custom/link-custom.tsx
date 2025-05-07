@@ -59,7 +59,6 @@ export const LinkCustom = ({
         return <TextLinkIcon />;
       case icon !== undefined:
         return icon;
-      case variant === 'primary':
       case variant === 'secondary':
         return <ArrowIcon />;
       case variant === 'rounded':
