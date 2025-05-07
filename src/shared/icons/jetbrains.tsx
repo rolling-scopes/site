@@ -6,7 +6,6 @@ export const JetBrainsLogo = () => {
   return (
     <a href="https://www.jetbrains.com" target="_blank" rel="noopener noreferrer">
       <Image src={jetbrains} width={200} alt="jetbrains icon" />
-      ;
     </a>
   );
 };
