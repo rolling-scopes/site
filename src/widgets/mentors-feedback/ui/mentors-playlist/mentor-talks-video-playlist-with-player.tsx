@@ -2,20 +2,16 @@
 
 import useSWR from 'swr';
 
-import { mentorStore, transformMentorsVideos } from '@/entities/mentor';
+import { mentorStore } from '@/entities/mentor';
 import { SWR_CACHE_KEY } from '@/shared/constants';
-import { filterYoutubePrivateVideos } from '@/shared/helpers/filter-youtube-private-videos';
 import { VideoPlaylistWithPlayer } from '@/shared/ui/video-playlist-with-player';
 
 export const MentorTalksVideoPlaylistWithPlayer = () => {
   const {
-    data: { items: videosData } = { items: [] },
+    data: videoItems,
     isLoading,
     error,
-  } = useSWR(SWR_CACHE_KEY.MENTORS_PLAYLIST, mentorStore.loadYoutubePlaylist);
-
-  const publicVideos = filterYoutubePrivateVideos(videosData);
-  const videoItems = transformMentorsVideos(publicVideos);
+  } = useSWR(SWR_CACHE_KEY.MENTORS_PLAYLIST, mentorStore.loadYoutubePlaylist, { fallbackData: [] });
 
   if (isLoading) {
     return <p data-testid="loading-message">Loading videos...</p>;
