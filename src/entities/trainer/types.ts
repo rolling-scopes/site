@@ -1,6 +1,6 @@
 import { StaticImageData } from 'next/image';
 
-import { ApiResourceLocale, TypeContributorSkeleton } from '@/shared/types';
+import { ApiResourceLocale, TypeContributorSkeleton } from '@/shared/types/';
 import type { EntryCollection } from 'contentful';
 
 export interface Trainer {
