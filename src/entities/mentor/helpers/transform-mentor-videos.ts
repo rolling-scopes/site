@@ -1,6 +1,6 @@
 import type { Video } from '@/shared/types';
 
-export function transformMentorsVideos(videos: GoogleApiYouTubePlaylistItemResource[]): Video[] {
+export function transformMentorVideos(videos: GoogleApiYouTubePlaylistItemResource[]): Video[] {
   return videos.map((item) => ({
     id: item.snippet.resourceId.videoId,
     title: item.snippet.title,

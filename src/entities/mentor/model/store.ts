@@ -1,4 +1,4 @@
-import { transformMentorsVideos } from '@/entities/mentor';
+import { transformMentorVideos } from '@/entities/mentor/helpers/transform-mentor-videos';
 import { api } from '@/shared/api/api';
 import { filterYoutubePrivateVideos } from '@/shared/helpers/filter-youtube-private-videos';
 
@@ -8,7 +8,7 @@ export class MentorStore {
 
     if (res.isSuccess) {
       const publicVideos = filterYoutubePrivateVideos(res.result);
-      const videoItems = transformMentorsVideos(publicVideos);
+      const videoItems = transformMentorVideos(publicVideos);
 
       return videoItems;
     }
