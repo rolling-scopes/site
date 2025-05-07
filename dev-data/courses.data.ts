@@ -1,6 +1,7 @@
 import { ROUTES } from '@/core/const';
 import type { Course } from '@/entities/course';
 import angular from '@/shared/assets/icons/angular.svg';
+import awsAi from '@/shared/assets/icons/aws-ai.svg';
 import awsBlack from '@/shared/assets/icons/aws-black.svg';
 import awsWhite from '@/shared/assets/icons/aws-white.svg';
 import html5 from '@/shared/assets/icons/html5.svg';
@@ -219,10 +220,10 @@ export const courses: Course[] = [
     title: COURSE_TITLES.AWS_AI,
     subTitle: null,
     descriptionUrl: COURSE_LINKS.AWS_AI,
-    iconSrc: awsBlack,
-    iconSmall: awsBlack,
-    secondaryIcon: awsBlack,
-    iconFooter: awsWhite,
+    iconSrc: awsAi,
+    iconSmall: awsAi,
+    secondaryIcon: awsAi,
+    iconFooter: awsAi,
     startDate: TO_BE_DETERMINED,
     registrationEndDate: TO_BE_DETERMINED,
     language: 'ru',

@@ -32,7 +32,6 @@ export {
   DISCORD_LINKS,
 } from './course-titles.data';
 export { aboutMentorsData } from './about-mentors.data';
-export { awsBadgeMap } from './aws-badge.data';
 export { benefitMentorshipHome, benefitMentorshipMentors } from './benefit-mentorship.data';
 export { communicationText } from './widget-communication.data';
 export { communityGroups } from './community-media.data';

@@ -3,7 +3,6 @@ import { beforeEach, describe, expect, it } from 'vitest';
 
 import { AwsBadge } from './aws-badge';
 import imageAws from '@/shared/assets/aws-cloud-pract-badge.webp';
-import { COURSE_TITLES } from 'data';
 
 describe('AwsBadge component', () => {
   const descriptions = [/Upon completing the course/i];
@@ -13,7 +12,7 @@ describe('AwsBadge component', () => {
   let paragraphs: HTMLElement[];
 
   beforeEach(() => {
-    render(<AwsBadge courseName={COURSE_TITLES.AWS_FUNDAMENTALS} />);
+    render(<AwsBadge />);
     widget = screen.getByTestId('aws-badge');
     title = screen.getByTestId('widget-title');
     paragraphs = screen.getAllByTestId('paragraph');

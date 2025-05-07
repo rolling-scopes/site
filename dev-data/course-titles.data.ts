@@ -10,7 +10,7 @@ export const COURSE_TITLES = {
   AWS_FUNDAMENTALS: 'AWS Fundamentals',
   AWS_CLOUD_DEVELOPER: 'AWS Cloud Developer',
   AWS_DEVOPS: 'AWS DevOps',
-  AWS_AI: 'AWS AI Practitioner',
+  AWS_AI: 'AWS AI',
 } as const;
 
 export type CourseNames = typeof COURSE_TITLES;
