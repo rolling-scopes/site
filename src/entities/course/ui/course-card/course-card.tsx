@@ -53,7 +53,7 @@ export const CourseCard = ({
   const dateLabel = size === 'sm' ? LABELS.START_DATE_SHORT : LABELS.START_DATE;
   const fontSize = size === 'md' ? 'large' : 'small';
 
-  const mark = title === COURSE_TITLES.ANGULAR ? `(${subTitle})` : '';
+  const mark = title === COURSE_TITLES.ANGULAR && !showMentoringStartDate ? ` (${subTitle})` : '';
   const classes = {
     [`size-${size}`]: true,
     [className]: true,
@@ -69,7 +69,7 @@ export const CourseCard = ({
       <div className={cx('card-header')} style={cardStyle} data-testid="card-header">
         <Image src={iconSrc} alt={title} />
         <Subtitle className={cx('course-title')} fontSize={fontSize}>
-          {`${title} ${mark}`}
+          {`${title}${mark}`}
         </Subtitle>
       </div>
       <div className={cx('course-info')}>
