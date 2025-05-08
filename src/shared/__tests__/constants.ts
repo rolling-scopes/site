@@ -211,7 +211,7 @@ export const MOCKED_MERCH_DATA = {
   subtitle: 'Are you an RS sloth fan and looking for RS merch?',
   paragraph: 'The wait is almost over',
   buttonText: 'Discover merch assets',
-  buttonLink: 'https://sloths.rs.school/',
+  buttonLink: '/merch',
   imageAltText:
     'A collage of photos with branded T-shirts, cups, and stickers featuring the RSSchool logo',
 };
