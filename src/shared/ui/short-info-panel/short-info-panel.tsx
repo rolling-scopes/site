@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { DateSimple } from '../date-simple';
 import micIcon from '@/shared/assets/icons/mic.svg';
 import { LABELS } from '@/shared/constants';
-import { calculateFreshDate } from '@/shared/helpers/getCourseDate';
+import { calculateFreshDate } from '@/shared/helpers/get-course-date';
 import { Language } from '@/shared/types';
 
 import styles from './short-info-panel.module.scss';
@@ -19,17 +19,19 @@ interface ShortInfoPanelProps {
   withMargin?: boolean;
   onlyLanguage?: boolean;
   label?: string;
+  isShortLabel?: boolean;
 }
 
 export const ShortInfoPanel = ({
   startDate,
   registrationEndDate,
   language,
-  mode,
   withMargin,
   onlyLanguage,
   label,
 }: ShortInfoPanelProps) => {
+  const courseLanguage = language === 'en' ? LABELS.COURSE_LANGUAGE_EN : LABELS.COURSE_LANGUAGE_RU;
+
   return (
     <section className={cx('info', { margin: withMargin })}>
       <DateSimple
@@ -41,22 +43,17 @@ export const ShortInfoPanel = ({
         }
       >
         {onlyLanguage && (
-          <>
-            <span>{LABELS.SHORT_INFO_SEPARATOR}</span>
-            <span className={cx('language')} data-testid="course-language">
-              {language}
-            </span>
-          </>
+          <span className={cx('language')} data-testid="course-language">
+            {courseLanguage}
+          </span>
         )}
       </DateSimple>
       {!onlyLanguage && (
         <p className={cx('additional-info')}>
           <Image className={cx('icon')} src={micIcon} alt="microphone-icon" />
           <span className={cx('language')} data-testid="course-language">
-            {language}
+            {courseLanguage}
           </span>
-          <span>•</span>
-          <span className={cx('mode')}>{mode}</span>
         </p>
       )}
     </section>

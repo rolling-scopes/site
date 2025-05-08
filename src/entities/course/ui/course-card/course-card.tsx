@@ -25,9 +25,10 @@ export type CourseCardProps = Pick<
   | 'registrationEndDate'
   | 'personalMentoringStartDate'
   | 'personalMentoringEndDate'
-> & {
+> & Pick<HTMLProps<HTMLDivElement>, 'className'> & {
+  size?: 'sm' | 'md';
   showMentoringStartDate?: boolean;
-} & Pick<HTMLProps<HTMLDivElement>, 'className'>;
+};
 
 export const CourseCard = ({
   title,
@@ -35,15 +36,23 @@ export const CourseCard = ({
   startDate,
   registrationEndDate,
   detailsUrl,
-  mode,
   language,
   backgroundStyle,
-  className,
   personalMentoringStartDate,
   personalMentoringEndDate,
   showMentoringStartDate = false,
+  className = '',
+  size = 'md',
 }: CourseCardProps) => {
   const { backgroundColor, accentColor } = backgroundStyle;
+
+  const dateLabel = size === 'sm' ? LABELS.START_DATE_SHORT : LABELS.START_DATE;
+  const fontSize = size === 'md' ? 'large' : 'small';
+
+  const classes = {
+    [`size-${size}`]: true,
+    [className]: true,
+  };
 
   const cardStyle = {
     'backgroundColor': backgroundColor,
@@ -51,40 +60,40 @@ export const CourseCard = ({
   };
 
   return (
-    <article className={cx('course-card', className)} data-testid="course-card">
+    <article className={cx('course-card', classes)} data-testid="course-card">
       <div className={cx('card-header')} style={cardStyle} data-testid="card-header">
         <Image src={iconSrc} alt={title} />
-        <Subtitle fontSize="small">{title}</Subtitle>
+        <Subtitle className={cx('course-title')} fontSize={fontSize}>{title}</Subtitle>
       </div>
       <div className={cx('course-info')}>
         {!showMentoringStartDate && (
           <ShortInfoPanel
-            label={LABELS.START_DATE}
+            label={dateLabel}
             startDate={startDate}
             registrationEndDate={registrationEndDate}
             language={language}
-            mode={mode}
-          />
+          >
+          </ShortInfoPanel>
         )}
         {showMentoringStartDate && (
           <div>
             <DateSimple
               label={LABELS.MENTOR_ACTIVITIES}
-              labelSeparator={LABELS.MENTORING_DATES_SEPARATOR}
               startDate={personalMentoringStartDate || TO_BE_DETERMINED}
               endDate={personalMentoringStartDate ? personalMentoringEndDate : null}
+              labelSeparator={LABELS.MENTOR_ACTIVITIES_SEPARATOR}
             />
             <ShortInfoPanel
               startDate={null}
               registrationEndDate={null}
               language={language}
-              mode={mode}
             />
           </div>
         )}
         <LinkCustom
+          className={cx('course-link')}
           href={detailsUrl}
-          variant="rounded"
+          variant="secondary"
           aria-label="View course details"
           data-testid="course-link"
         >

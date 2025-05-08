@@ -1,8 +1,8 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 
-import { ROUTES } from '@/core/const';
 import rsSchoolMerchImage from '@/shared/assets/merch.webp';
+import { ROUTES } from '@/shared/constants';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';

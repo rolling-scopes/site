@@ -1,4 +1,6 @@
-export const faqData = [
+import { FaqData } from '@/widgets/faq';
+
+export const preschoolFaqData: FaqData = [
   {
     question: 'Где можно задать вопрос?',
     answer: [
@@ -55,6 +57,6 @@ export const faqData = [
   {
     question: 'Кто проверяет задания?',
     answer:
-      'Проекты "CV", "Portfolio", "CodeJam", "JS 30" проверяются в ходе кросс-чек. Алгоритмические задания, задачи из Codewars, а также задания "CV#1. Markdown & Git", "CV#2. HTML, CSS & Git Basics" проверяются автоматически. Ваши решения необходимо сабмитнуть в RS APP до дедлайна.',
+      'Практические задания проверяются в ходе кросс-чек. Алгоритмические задания, задачи из Codewars, а также задания "CV#1. Markdown & Git", "CV#2. HTML, CSS & Git Basics" проверяются автоматически. Ваши решения необходимо сабмитнуть в RS APP до дедлайна.',
   },
 ];

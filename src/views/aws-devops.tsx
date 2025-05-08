@@ -1,3 +1,4 @@
+import { trainerStore } from '@/entities/trainer';
 import { AboutCourse } from '@/widgets/about-course';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
@@ -6,13 +7,15 @@ import { HeroCourse } from '@/widgets/hero-course';
 import { Required } from '@/widgets/required';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
-import { CourseNames, awsDevops } from 'data';
+import { CourseNames } from 'data';
 
 type AwsDevOpsProps = {
   courseName: CourseNames['AWS_DEVOPS'];
 };
 
-export const AwsDevOps = ({ courseName }: AwsDevOpsProps) => {
+export const AwsDevOps = async ({ courseName }: AwsDevOpsProps) => {
+  const trainers = await trainerStore.loadTrainers(courseName);
+
   return (
     <>
       <HeroCourse courseName={courseName} />
@@ -21,8 +24,8 @@ export const AwsDevOps = ({ courseName }: AwsDevOpsProps) => {
       <AboutCourse courseName={courseName} />
       <Certification courseName={courseName} />
       <Communication courseName={courseName} />
-      <Required courseName={courseName} marked1 />
-      <Trainers trainers={awsDevops} courseName={courseName} />
+      <Required courseName={courseName} />
+      {trainers && <Trainers trainers={trainers} courseName={courseName} />}
     </>
   );
 };

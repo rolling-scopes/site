@@ -4,7 +4,7 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { CourseCard, type CourseCardProps } from './course-card';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { dayJS } from '@/shared/helpers/dayJS';
+import { dayJS } from '@/shared/helpers/day-js';
 import { COURSE_TITLES } from 'data';
 
 describe('CourseCard', () => {
@@ -36,10 +36,11 @@ describe('CourseCard', () => {
   });
 
   it('renders the course card content correctly', () => {
+    const language = mockProps.language === 'ru' ? 'Russian' : 'English';
+
     expect(screen.getByText(mockProps.title)).toBeVisible();
     expect(screen.getByText(`${mockProps.startDate}`)).toBeVisible();
-    expect(screen.getByText(mockProps.language)).toBeVisible();
-    expect(screen.getByText(`${mockProps.mode}`)).toBeVisible();
+    expect(screen.getByText(language)).toBeVisible();
     expect(screen.getByRole('link')).toHaveAttribute('href', mockProps.detailsUrl);
   });
 

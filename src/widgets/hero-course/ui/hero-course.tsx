@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { getCourseStatus } from '../helpers/get-course-status';
 import { LABELS } from '@/shared/constants';
-import { dayJS } from '@/shared/helpers/dayJS';
+import { dayJS } from '@/shared/helpers/day-js';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { MainTitle } from '@/shared/ui/main-title';
@@ -26,7 +26,6 @@ export const HeroCourse = async ({ courseName }: HeroCourseProps) => {
     subTitle,
     altTitle,
     language,
-    mode,
     enroll,
     secondaryIcon,
     startDate,
@@ -60,7 +59,6 @@ export const HeroCourse = async ({ courseName }: HeroCourseProps) => {
             startDate={startDate}
             registrationEndDate={registrationEndDate}
             language={language}
-            mode={mode}
             withMargin
           />
           <LinkCustom href={enrollHref} variant="secondary" external disabled={!enroll}>
