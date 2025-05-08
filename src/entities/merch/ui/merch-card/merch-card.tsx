@@ -14,12 +14,8 @@ export const MerchCard = ({ title, preview, download }: MerchProduct) => {
   return (
     <article className={cx('merch-card')} data-testid="merch">
       <div className={cx('preview-wrap')}>
-        <img className={cx('preview')} src={`https://cdn.rs.school/${preview[0]}`} alt={title} />
-        <LinkCustom
-          href={`https://cdn.rs.school/${download[0]}`}
-          className={cx('download')}
-          download
-        >
+        <img className={cx('preview')} src={preview[0]} alt={title} />
+        <LinkCustom href={download[0]} className={cx('download')} download>
           <Image src={downloadImg} alt="download link" className={cx('download-img')} />
         </LinkCustom>
       </div>

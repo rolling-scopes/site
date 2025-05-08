@@ -4,7 +4,7 @@ import { ApiMerchItem, ApiMerchItemAdapt, MerchProduct, MerchResponse } from '..
 
 export const transformMerchCatalog = (data: MerchResponse): MerchProduct[] => {
   const products: MerchProduct[] = [];
-
+  const baseUrl = process.env.API_BASE_URL;
   const processCategory = (category: ApiMerchItemAdapt, parentTags: string[]) => {
     for (const [key, value] of Object.entries(category)) {
       if (isApiMerchItem(value)) {
@@ -12,8 +12,8 @@ export const transformMerchCatalog = (data: MerchResponse): MerchProduct[] => {
           id: uuidv4(),
           name: key,
           title: value.name,
-          preview: value.preview,
-          download: value.download,
+          preview: value.preview.map((path) => `${baseUrl}/${path}`),
+          download: value.download.map((path) => `${baseUrl}/${path}`),
           tags: parentTags,
         });
       } else {
