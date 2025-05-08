@@ -6,12 +6,12 @@ import styles from './onboard-links.module.scss';
 
 const cx = classNames.bind(styles);
 
-type AdditionalProps = {
+export type OnboardLinksProps = {
   text: string;
   links: SocialMediaProps[];
 };
 
-export const OnboardLinks = ({ text, links }: AdditionalProps) => {
+export const OnboardLinks = ({ text, links }: OnboardLinksProps) => {
   return (
     <div className={cx('onboard-links-wrapper')}>
       {text}
