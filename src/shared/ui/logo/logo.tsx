@@ -4,8 +4,8 @@ import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
-import { ROUTES } from '@/core/const';
 import logo from '@/shared/assets/svg/rss-logo.svg';
+import { ROUTES } from '@/shared/constants';
 
 import styles from './logo.module.scss';
 

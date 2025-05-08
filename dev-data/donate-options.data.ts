@@ -1,4 +1,4 @@
-import { LINKS } from '@/core/const';
+import { LINKS } from '@/shared/constants';
 import boostyIconMenu from '@/shared/assets/svg/boosty-icon-menu.svg';
 import openCollective from '@/shared/assets/svg/opencollective-icon.svg';
 import { BoostyIcon, OpenCollectiveIcon } from '@/shared/icons';

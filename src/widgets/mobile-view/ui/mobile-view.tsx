@@ -8,14 +8,14 @@ import { usePathname } from 'next/navigation';
 
 import { MobileNavItem } from './mobile-nav-item/mobile-nav-item';
 import { donateOptionsForNavMenu } from '../../../../dev-data/donate-options.data';
-import { NAV_MENU_LABELS, ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
 import iconBlue from '@/shared/assets/svg/heart-blue.svg';
 import iconYellow from '@/shared/assets/svg/heart-yellow.svg';
+import { NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
 import { Logo } from '@/shared/ui/logo';
 import {
   transformCoursesToMentorship,
-} from '@/views/mentorship/helpers/transformCoursesToMentorship';
+} from '@/views/mentorship/helpers/transform-courses-to-mentorship';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { SchoolMenu } from '@/widgets/school-menu';
 import { communityMenuStaticLinks, schoolMenuStaticLinks } from 'data';

@@ -11,7 +11,7 @@ export const BaseLayout = async ({ children }: PropsWithChildren) => {
       <Header courses={courses} />
       {children}
       <Partnered />
-      <Footer />
+      <Footer courses={courses} />
     </>
   );
 };
