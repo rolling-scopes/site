@@ -1,6 +1,6 @@
-import { LINKS } from '@/shared/constants';
 import boostyIconMenu from '@/shared/assets/svg/boosty-icon-menu.svg';
 import openCollective from '@/shared/assets/svg/opencollective-icon.svg';
+import { LINKS } from '@/shared/constants';
 import { BoostyIcon, OpenCollectiveIcon } from '@/shared/icons';
 
 export const donateOptions = [
