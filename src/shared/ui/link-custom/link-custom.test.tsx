@@ -78,7 +78,7 @@ describe('LinkCustom', () => {
     const CustomIcon = () => <div data-testid="custom-icon">custom</div>;
 
     renderWithRouter(
-      <LinkCustom href="/" variant="primary" icon={<CustomIcon />}>
+      <LinkCustom href="/" variant="secondary" icon={<CustomIcon />}>
         {label}
       </LinkCustom>,
     );

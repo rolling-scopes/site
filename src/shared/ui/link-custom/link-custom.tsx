@@ -83,9 +83,10 @@ export const LinkCustom = ({
       {...(external && externalLinkAttributes)}
     >
       {children}
-      <span className={cx('icon-wrapper')}>
-        {!disabled && resolveIcon()}
-      </span>
+      {variant !== 'primary' && (
+        <span className={cx('icon-wrapper')}>
+          {!disabled && resolveIcon()}
+        </span>)}
     </Link>
   );
 };
