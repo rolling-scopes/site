@@ -7,6 +7,7 @@ import javascriptBlack from '@/shared/assets/icons/javascript-black.svg';
 import javascript from '@/shared/assets/icons/javascript.svg';
 import nodejs from '@/shared/assets/icons/node-js.svg';
 import react from '@/shared/assets/icons/react.svg';
+import shortTrackIcon from '@/shared/assets/icons/st-icon.svg';
 import { COURSE_LINKS, ROUTES, TO_BE_DETERMINED } from '@/shared/constants';
 import { COURSE_TITLES } from 'data';
 
@@ -209,6 +210,30 @@ export const courses: Course[] = [
     backgroundStyle: {
       backgroundColor: '#F4F1FA',
       accentColor: '#7356BF',
+    },
+    personalMentoringStartDate: null,
+    personalMentoringEndDate: null,
+  },
+  {
+    id: '10',
+    title: COURSE_TITLES.SHORT_TRACK,
+    subTitle: null,
+    descriptionUrl: COURSE_LINKS.SHORT_TRACK,
+    altTitle: COURSE_TITLES.SHORT_TRACK,
+    iconSrc: shortTrackIcon,
+    iconSmall: shortTrackIcon,
+    iconFooter: shortTrackIcon,
+    secondaryIcon: shortTrackIcon,
+    startDate: TO_BE_DETERMINED,
+    registrationEndDate: TO_BE_DETERMINED,
+    language: 'ru',
+    mode: 'online',
+    detailsUrl: `/${ROUTES.COURSES}/${ROUTES.SHORT_TRACK}`,
+    enroll:
+      'https://docs.google.com/forms/d/1SKjS03vVS6uxJvlNynGAZZs8spGnoWy1q3rnZUc9pyY/viewform?edit_requested=true',
+    backgroundStyle: {
+      backgroundColor: '#FFFCE9',
+      accentColor: '#FFDB20',
     },
     personalMentoringStartDate: null,
     personalMentoringEndDate: null,

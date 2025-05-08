@@ -48,6 +48,7 @@ export const introLocalizedContent = {
   [COURSE_TITLES.AWS_FUNDAMENTALS]: enIntro,
   [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: enIntro,
   [COURSE_TITLES.AWS_DEVOPS]: enIntro,
+  [COURSE_TITLES.SHORT_TRACK]: ruIntro,
 };
 
 const listData = {
@@ -251,6 +252,39 @@ const awsDevops: AboutCourseInfo[] = [
   },
 ];
 
+const shortTrack: AboutCourseInfo[] = [
+  {
+    id: 5,
+    title: 'Формат',
+    info: 'Групповое обучение (около 20 участников в группе), самостоятельное изучение предоставленных материалов, регулярные Q&A сессии, кросс-интервью каждую неделю, пробные собеседования с ментором, интенсивная практика и финальный проект на React или Angular. На обучение вам потребуется ориентировочно 20-40 часов в неделю. Занятия могут проходить как онлайн, так и офлайн.',
+    icon: paperIcon,
+  },
+  {
+    id: 1,
+    title: 'Направление',
+    info: 'React и Angular. В процессе обучения вы будете изучать оба фреймворка, выполнять задания и проходить интервью по каждому из них.',
+    icon: planetIcon,
+  },
+  {
+    id: 2,
+    title: 'Менторы и эксперты',
+    info: 'Менторы и эксперты будут помогать в процессе обучения и проверять задания.',
+    icon: personIcon,
+  },
+  {
+    id: 3,
+    title: 'Длительность',
+    info: 'Курс длится около 3 месяцев, собеседования в EPAM запланированы сразу после окончания курса.',
+    icon: noteIcon,
+  },
+  {
+    id: 4,
+    title: 'Сертификат',
+    info: 'После успешного окончания курса студенты получат электронный сертификат.',
+    icon: awardIcon,
+  },
+];
+
 export const contentMapAbout: ContentMap = {
   [COURSE_TITLES.JS_RU]: javaScriptRU(),
   [COURSE_TITLES.JS_EN]: javaScriptEN(),
@@ -261,4 +295,5 @@ export const contentMapAbout: ContentMap = {
   [COURSE_TITLES.AWS_FUNDAMENTALS]: angularNodejsAwsFundamentals('aws fundamentals'),
   [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: awsCloudDeveloper,
   [COURSE_TITLES.AWS_DEVOPS]: awsDevops,
+  [COURSE_TITLES.SHORT_TRACK]: shortTrack,
 };

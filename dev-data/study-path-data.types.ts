@@ -3,7 +3,7 @@ import { StaticImageData } from 'next/image';
 import type { LinkList } from '@/widgets/required/types';
 
 export type StudyPathPage = {
-  page: 'courses' | 'jsEn' | 'jsRu' | 'angular' | 'awsDev';
+  page: 'courses' | 'jsEn' | 'jsRu' | 'angular' | 'awsDev' | 'short-track';
 };
 
 export type StudyPathProps = {

@@ -9,6 +9,7 @@ import {
   CourseNamesKeys,
 } from './course-titles.data';
 import awsPractitionerBadge from '@/shared/assets/aws-cloud-pract-badge.webp';
+import mentorWithStudents from '@/shared/assets/mentor-with-his-students.webp';
 import angularImg from '@/shared/assets/rs-slope-angular.webp';
 import awsDevImg from '@/shared/assets/rs-slope-aws-dev.webp';
 import awsFundamentalsImg from '@/shared/assets/rs-slope-aws-fundamentals.webp';
@@ -292,6 +293,31 @@ export const contentMap: ContentMap = {
       />,
     ],
     image: awsDevImg,
+  },
+  [COURSE_TITLES.SHORT_TRACK]: {
+    title: 'О возможностях',
+    content: [
+      <Paragraph key="short track 01">
+        Эта программа предназначена для студентов, которые уже обладают базовыми знаниями
+        JavaScript/TypeScript и хотят быстро повысить свой уровень для соответствия требованиям
+        трудоустройства в EPAM.
+      </Paragraph>,
+      <Paragraph key="short track 02">
+        Мы запускаем программу Short Track, когда в EPAM открываются вакансии Junior FE
+        разработчиков в разных локациях. Наша цель - помочь вам улучшить навыки и подготовиться к
+        собеседованиям в ускоренном режиме, чтобы быть готовыми всего за 3 месяца.
+      </Paragraph>,
+      <List
+        key="short track 03"
+        data={[
+          'В 2024 году EPAM принял на работу более 50 выпускников RS School. Мы надеемся удвоить это число в этом году, несмотря на нестабильный спрос. Проектные позиции появляются нерегулярно, и сложно предсказать точное количество вакансий.',
+          'В апреле 2025 года был успешно завершен поток EPAM ST 2025Q1 для региона GUKKA и Europe. Уже в мае 2025 года выпускники проходят собеседования в лаборатории EPAM.',
+          'Тем не менее, мы стремимся обеспечить высочайший уровень подготовки, чтобы вы были готовы к любым собеседованиям.',
+          'Вероятно, через месяц или два мы объявим о новом наборе заявок на программу Short Track.',
+        ]}
+      />,
+    ],
+    image: mentorWithStudents,
   },
 };
 

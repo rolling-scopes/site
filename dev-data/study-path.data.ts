@@ -10,14 +10,16 @@ import feJsStage3 from '@/shared/assets/stages/stage-3.webp';
 import { ROUTES } from '@/shared/constants';
 
 export const studyPath: Record<StudyPathPage['page'], StudyPathProps> = {
-  courses: {
+  'courses': {
     sectionTitle: 'Choose what you want to learn',
-    sectionIntro: 'A full-stack developer is someone who has expertise in both frontend (what users see) and backend (server and database) development. This dual skill set enables them to supervise and implement projects from start to finish. Businesses today prioritize hiring full-stack developers because they can efficiently bridge various technological aspects, resulting in faster product development.',
+    sectionIntro:
+      'A full-stack developer is someone who has expertise in both frontend (what users see) and backend (server and database) development. This dual skill set enables them to supervise and implement projects from start to finish. Businesses today prioritize hiring full-stack developers because they can efficiently bridge various technological aspects, resulting in faster product development.',
     stages: [
       {
         id: 1,
         title: 'Pre-school (RU)',
-        intro: 'For those brand new to coding, this is your starting point. Get acquainted with the basics and build a strong foundation.',
+        intro:
+          'For those brand new to coding, this is your starting point. Get acquainted with the basics and build a strong foundation.',
         modules: [
           {
             id: 1,
@@ -43,7 +45,8 @@ export const studyPath: Record<StudyPathPage['page'], StudyPathProps> = {
       {
         id: 2,
         title: 'JS/TS/FE Fundamentals',
-        intro: 'Dive deep into the world of JavaScript, TypeScript, and Frontend development. Understand the core concepts and set yourself up for success.',
+        intro:
+          'Dive deep into the world of JavaScript, TypeScript, and Frontend development. Understand the core concepts and set yourself up for success.',
         modules: [
           {
             id: 1,
@@ -76,7 +79,8 @@ export const studyPath: Record<StudyPathPage['page'], StudyPathProps> = {
       {
         id: 3,
         title: 'React or Angular',
-        intro: "Choose your framework and become proficient. Whether you're Team React or Team Angular, we ensure you become an expert",
+        intro:
+          "Choose your framework and become proficient. Whether you're Team React or Team Angular, we ensure you become an expert",
         modules: [
           {
             id: 1,
@@ -109,7 +113,8 @@ export const studyPath: Record<StudyPathPage['page'], StudyPathProps> = {
       {
         id: 4,
         title: 'NodeJS',
-        intro: "Grasp the power of backend development. With Nodejs, you'll learn to build robust and scalable applications",
+        intro:
+          "Grasp the power of backend development. With Nodejs, you'll learn to build robust and scalable applications",
         modules: [
           {
             id: 1,
@@ -135,7 +140,8 @@ export const studyPath: Record<StudyPathPage['page'], StudyPathProps> = {
       {
         id: 5,
         title: 'AWS Fundamentals',
-        intro: 'Delve into the cloud with Amazon Web Services. Understand the essentials and ensure your apps are hosted seamlessly.',
+        intro:
+          'Delve into the cloud with Amazon Web Services. Understand the essentials and ensure your apps are hosted seamlessly.',
         modules: [
           {
             id: 1,
@@ -161,7 +167,8 @@ export const studyPath: Record<StudyPathPage['page'], StudyPathProps> = {
       {
         id: 6,
         title: 'AWS Developer',
-        intro: 'Go beyond the basics. Become an AWS pro and unlock the potential of cloud development.',
+        intro:
+          'Go beyond the basics. Become an AWS pro and unlock the potential of cloud development.',
         modules: [
           {
             id: 1,
@@ -187,7 +194,8 @@ export const studyPath: Record<StudyPathPage['page'], StudyPathProps> = {
       {
         id: 7,
         title: 'AWS DevOps',
-        intro: 'If you are looking for an entry point to kickstart your IT career as a DevOps engineer, then this AWS course challenge is what you need.',
+        intro:
+          'If you are looking for an entry point to kickstart your IT career as a DevOps engineer, then this AWS course challenge is what you need.',
         modules: [
           {
             id: 1,
@@ -212,14 +220,16 @@ export const studyPath: Record<StudyPathPage['page'], StudyPathProps> = {
       },
     ],
   },
-  jsEn: {
+  'jsEn': {
     sectionTitle: 'Choose what you want to learn',
-    sectionIntro: 'A full-stack developer is someone who has expertise in both frontend (what users see) and backend (server and database) development. This dual skill set enables them to supervise and implement projects from start to finish. Businesses today prioritize hiring full-stack developers because they can efficiently bridge various technological aspects, resulting in faster product development.',
+    sectionIntro:
+      'A full-stack developer is someone who has expertise in both frontend (what users see) and backend (server and database) development. This dual skill set enables them to supervise and implement projects from start to finish. Businesses today prioritize hiring full-stack developers because they can efficiently bridge various technological aspects, resulting in faster product development.',
     stages: [
       {
         id: 1,
         title: 'Stage 1',
-        intro: 'Everyone registered is automatically eligible for this stage. The first stage lasts 15 weeks. This stage includes practical assignments and tests. Evaluation is either automatic or in the form of cross-checking between students.',
+        intro:
+          'Everyone registered is automatically eligible for this stage. The first stage lasts 15 weeks. This stage includes practical assignments and tests. Evaluation is either automatic or in the form of cross-checking between students.',
         modules: [
           {
             id: 1,
@@ -237,7 +247,8 @@ export const studyPath: Record<StudyPathPage['page'], StudyPathProps> = {
       {
         id: 2,
         title: 'Stage 2',
-        intro: 'To pass to the second stage, you must successfully complete the tasks and tests from the first stage without missing the deadlines, and pass a mock technical interview with one of our mentors.The second stage lasts 20 weeks. You will be assigned a personal mentor who will answer your questions from now on. This stage includes practical exercises and tests which will be reviewed and evaluated by your mentor.',
+        intro:
+          'To pass to the second stage, you must successfully complete the tasks and tests from the first stage without missing the deadlines, and pass a mock technical interview with one of our mentors.The second stage lasts 20 weeks. You will be assigned a personal mentor who will answer your questions from now on. This stage includes practical exercises and tests which will be reviewed and evaluated by your mentor.',
         modules: [
           {
             id: 1,
@@ -255,7 +266,8 @@ export const studyPath: Record<StudyPathPage['page'], StudyPathProps> = {
       {
         id: 3,
         title: 'Stage 3',
-        intro: 'Learning either React or Angular Framework (the choice belongs to the student). To enroll, you need to successfully complete two stages of training. Format: mentoring, self-study, webinars, and communication on Discord. Practical sessions are reviewed and evaluated by mentors, as well as through cross-checking methods. Throughout the training, mock interviews are conducted with different mentors.',
+        intro:
+          'Learning either React or Angular Framework (the choice belongs to the student). To enroll, you need to successfully complete two stages of training. Format: mentoring, self-study, webinars, and communication on Discord. Practical sessions are reviewed and evaluated by mentors, as well as through cross-checking methods. Throughout the training, mock interviews are conducted with different mentors.',
         modules: [
           {
             id: 1,
@@ -284,14 +296,16 @@ export const studyPath: Record<StudyPathPage['page'], StudyPathProps> = {
       },
     ],
   },
-  jsRu: {
+  'jsRu': {
     sectionTitle: 'Выберите, чему вы хотите научиться',
-    sectionIntro: 'Full-stack разработчик — это человек, обладающий опытом как в области внешнего интерфейса (то, что видят пользователи), так и в области внутреннего интерфейса (сервера и базы данных). Этот двойной набор навыков позволяет им контролировать и реализовывать проекты от начала до конца. Сегодня компании отдают приоритет найму разработчиков полного стека, потому что они могут эффективно объединить различные технологические аспекты, что приводит к более быстрой разработке продукта.',
+    sectionIntro:
+      'Full-stack разработчик — это человек, обладающий опытом как в области внешнего интерфейса (то, что видят пользователи), так и в области внутреннего интерфейса (сервера и базы данных). Этот двойной набор навыков позволяет им контролировать и реализовывать проекты от начала до конца. Сегодня компании отдают приоритет найму разработчиков полного стека, потому что они могут эффективно объединить различные технологические аспекты, что приводит к более быстрой разработке продукта.',
     stages: [
       {
         id: 1,
         title: 'Этап 1',
-        intro: 'Все зарегистрированные автоматически имеют право на прохождение этого этапа. Первый этап продолжается 15 недель. На этом этапе включаются практические задания и тесты. Оценка может быть как автоматической, так и в форме перекрестной проверки между учащимися.',
+        intro:
+          'Все зарегистрированные автоматически имеют право на прохождение этого этапа. Первый этап продолжается 15 недель. На этом этапе включаются практические задания и тесты. Оценка может быть как автоматической, так и в форме перекрестной проверки между учащимися.',
         modules: [
           {
             id: 1,
@@ -309,7 +323,8 @@ export const studyPath: Record<StudyPathPage['page'], StudyPathProps> = {
       {
         id: 2,
         title: 'Этап 2',
-        intro: 'Чтобы перейти на второй этап, вам необходимо успешно выполнить задания и тесты первого этапа без пропуска сроков и пройти пробное техническое интервью с одним из наших менторов. Второй этап длится 20 недель. Вам будет назначен личный ментор, который будет отвечать на ваши вопросы. Этот этап включает в себя практические задания и тесты, которые будут проверяться и оцениваться вашим ментором, а также перекрестной проверкой других студентов. Помимо этого, проводятся пробные интервью с другими менторами.',
+        intro:
+          'Чтобы перейти на второй этап, вам необходимо успешно выполнить задания и тесты первого этапа без пропуска сроков и пройти пробное техническое интервью с одним из наших менторов. Второй этап длится 20 недель. Вам будет назначен личный ментор, который будет отвечать на ваши вопросы. Этот этап включает в себя практические задания и тесты, которые будут проверяться и оцениваться вашим ментором, а также перекрестной проверкой других студентов. Помимо этого, проводятся пробные интервью с другими менторами.',
         modules: [
           {
             id: 1,
@@ -327,7 +342,8 @@ export const studyPath: Record<StudyPathPage['page'], StudyPathProps> = {
       {
         id: 3,
         title: 'Этап 3',
-        intro: 'Обучение применению React или Angular (выбор за студентом). Чтобы записаться на курс, необходимо успешно пройти первые два этапа обучения. Формат: менторство, самостоятельные занятия, вебинары и общение в Discord. Практические занятия разбираются и оцениваются наставниками, а также перекрестной проверкой другими студентами. На протяжении всего обучения проводятся пробные интервью с другими менторами.',
+        intro:
+          'Обучение применению React или Angular (выбор за студентом). Чтобы записаться на курс, необходимо успешно пройти первые два этапа обучения. Формат: менторство, самостоятельные занятия, вебинары и общение в Discord. Практические занятия разбираются и оцениваются наставниками, а также перекрестной проверкой другими студентами. На протяжении всего обучения проводятся пробные интервью с другими менторами.',
         modules: [
           {
             id: 1,
@@ -356,7 +372,7 @@ export const studyPath: Record<StudyPathPage['page'], StudyPathProps> = {
       },
     ],
   },
-  angular: {
+  'angular': {
     sectionTitle: 'Course Curriculum',
     sectionIntro: 'This program will have theory and practice on the following topic:',
     stages: [
@@ -566,7 +582,7 @@ export const studyPath: Record<StudyPathPage['page'], StudyPathProps> = {
       },
     ],
   },
-  awsDev: {
+  'awsDev': {
     sectionTitle: 'Course Curriculum',
     sectionIntro: 'This program will have theory and practice on the following topic:',
     stages: [
@@ -940,6 +956,103 @@ export const studyPath: Record<StudyPathPage['page'], StudyPathProps> = {
             text: 'AWS Elastic Beanstalk configuration',
             links: [],
             marked: true,
+          },
+        ],
+        image: {
+          src: null,
+          alt: '',
+          className: '',
+        },
+      },
+    ],
+  },
+  'short-track': {
+    sectionTitle: 'Short Track',
+    sectionIntro:
+      'Интенсивная программа подготовки для опытных разработчиков, нацеленная на быстрое развитие навыков до уровня, необходимого для успешного трудоустройства. Программа включает в себя следующие этапы:',
+    stages: [
+      {
+        id: 1,
+        title: 'Шаг 1',
+        intro: '',
+        modules: [
+          {
+            id: 1,
+            text: 'Заполните форму заявки. Ожидайте приглашение на вступительное собеседование. При большом количестве заявок может быть назначено дополнительное тестовое задание.',
+            links: [],
+            marked: false,
+          },
+        ],
+        image: {
+          src: feJsStage1,
+          alt: 'студенты за работой',
+          className: 'stage-image',
+        },
+      },
+      {
+        id: 2,
+        title: 'Шаг 2',
+        intro: '',
+        modules: [
+          {
+            id: 1,
+            text: 'Пройдите вступительное собеседование. После завершения всех собеседований будут объявлены результаты. В случае зачисления в группу, вы получите приглашение для регистрации на курс.',
+            links: [],
+            marked: false,
+          },
+        ],
+        image: {
+          src: feJsStage3,
+          alt: 'студенты за работой',
+          className: 'stage-image',
+        },
+      },
+      {
+        id: 3,
+        title: 'Шаг 3',
+        intro: '',
+        modules: [
+          {
+            id: 1,
+            text: 'Присоединитесь к команде из 12-20 человек под руководством ментора. Активно участвуйте во всех мероприятиях: самостоятельное изучение предоставленных материалов, регулярные Q&A сессии, кросс-интервью, пробные собеседования с ментором и интенсивная практика.',
+            links: [],
+            marked: false,
+          },
+        ],
+        image: {
+          src: feJsStage2,
+          alt: 'студенты за работой',
+          className: 'stage-image',
+        },
+      },
+      {
+        id: 4,
+        title: 'Шаг 4',
+        intro: '',
+        modules: [
+          {
+            id: 1,
+            text: 'В конце первого месяца обучения вы вместе с ментором определитесь с фреймворком. Примерное соотношение: 60% React / 40% Angular.',
+            links: [],
+            marked: false,
+          },
+        ],
+        image: {
+          src: ReactAngIcon,
+          alt: 'логотипы react и angular',
+          className: 'stage-image',
+        },
+      },
+      {
+        id: 5,
+        title: 'Шаг 5',
+        intro: '',
+        modules: [
+          {
+            id: 1,
+            text: 'Разработка финального проекта индивидуально или в команде из 3 человек (зависит от задания) под руководством ментора.',
+            links: [],
+            marked: false,
           },
         ],
         image: {
