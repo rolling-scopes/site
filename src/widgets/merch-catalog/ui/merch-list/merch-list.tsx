@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 
-import { MerchItem } from '../merch-item/merch-item';
+import { MerchCard } from '@/entities/merch';
 import { MerchProduct } from '@/entities/merch/types';
 
 import styles from './merch-list.module.scss';
@@ -14,7 +14,7 @@ export const MerchList = ({ products }: MerchListProps) => (
   <div className={cx('wrapper')}>
     <div className={cx('list')}>
       {products.map((product) => (
-        <MerchItem key={product.id} {...product} />
+        <MerchCard key={product.id} {...product} />
       ))}
     </div>
   </div>

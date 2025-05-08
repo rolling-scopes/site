@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
 
-import { ApiMerchItem, ApiMerchItemAdapt, ApiMerchResponse, MerchProduct } from '../types';
+import { ApiMerchItem, ApiMerchItemAdapt, MerchProduct, MerchResponse } from '../types';
 
-export const adaptMerchData = (data: ApiMerchResponse): MerchProduct[] => {
+export const transformMerchCatalog = (data: MerchResponse): MerchProduct[] => {
   const products: MerchProduct[] = [];
 
   const processCategory = (category: ApiMerchItemAdapt, parentTags: string[]) => {

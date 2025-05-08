@@ -13,7 +13,7 @@ type ApiMerchData = {
 };
 
 export type ApiMerchItemAdapt = ApiMerchItem | ApiMerchCategory | ApiMerchData;
-export type ApiMerchResponse = {
+export type MerchResponse = {
   [category: string]: ApiMerchData;
 };
 
