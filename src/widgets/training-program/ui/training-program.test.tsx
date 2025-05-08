@@ -9,7 +9,7 @@ import { TrainingProgram } from '@/widgets/training-program';
 import { COURSE_TITLES } from 'data';
 
 const mockedParagraphsAngular = [
-  'This course is designed for individuals with a solid foundation in JavaScript, TypeScript, and front-end development. The course is exclusively available for graduates who have successfully completed JS/FE Stage 2.',
+  'This course is designed for individuals with a solid foundation in JavaScript, TypeScript, and front-end development. The course is available for students who have successfully completed any RS School course.',
   'The course lasts 11 weeks, requiring approximately 20-40 hours of study per week.',
   'All webinars are recorded and available on our',
   '. Theoretical materials are provided as recorded lectures from previous courses.',
