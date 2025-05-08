@@ -61,6 +61,18 @@ describe('LinkCustom', () => {
     expect(icon).toBeInTheDocument();
   });
 
+  it('does not render ArrowIcon when variant is primary', () => {
+    renderWithRouter(
+      <LinkCustom href="/" variant="primary">
+        {label}
+      </LinkCustom>,
+    );
+
+    const icon = screen.queryByTestId('arrow-icon');
+
+    expect(icon).toBeNull();
+  });
+
   it('renders ArrowIcon with small size when variant is rounded', () => {
     renderWithRouter(
       <LinkCustom href="/" variant="rounded">
@@ -78,7 +90,7 @@ describe('LinkCustom', () => {
     const CustomIcon = () => <div data-testid="custom-icon">custom</div>;
 
     renderWithRouter(
-      <LinkCustom href="/" variant="secondary" icon={<CustomIcon />}>
+      <LinkCustom href="/" variant="primary" icon={<CustomIcon />}>
         {label}
       </LinkCustom>,
     );

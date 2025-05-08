@@ -53,7 +53,7 @@ export const LinkCustom = ({
   highContrast = false,
   ...props
 }: LinkCustomProps) => {
-  const resolveIcon = () => {
+  const resolveIcon = (): ReactNode => {
     switch (true) {
       case external && variant === 'textLink':
         return <TextLinkIcon />;
@@ -64,9 +64,11 @@ export const LinkCustom = ({
       case variant === 'rounded':
         return <ArrowIcon />;
       default:
-        return <></>;
+        return null;
     }
   };
+
+  const IconComponent = resolveIcon();
 
   return (
     <Link
@@ -83,10 +85,7 @@ export const LinkCustom = ({
       {...(external && externalLinkAttributes)}
     >
       {children}
-      {variant !== 'primary' && (
-        <span className={cx('icon-wrapper')}>
-          {!disabled && resolveIcon()}
-        </span>)}
+      {IconComponent && <span className={cx('icon-wrapper')}>{!disabled && IconComponent}</span>}
     </Link>
   );
 };
