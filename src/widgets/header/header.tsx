@@ -5,8 +5,8 @@ import classNames from 'classnames/bind';
 import { usePathname } from 'next/navigation';
 
 import { BurgerMenu } from './ui/burger/burger';
-import { ANCHORS, ROUTES } from '@/core/const';
 import { Course } from '@/entities/course';
+import { ANCHORS, ROUTES } from '@/shared/constants';
 import { CourseMenuItemsFresh } from '@/shared/ui/course-menu-items-fresh';
 import { Logo } from '@/shared/ui/logo';
 import { NavItem } from '@/widgets/header/ui/nav-item/nav-item';
