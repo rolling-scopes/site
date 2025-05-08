@@ -69,171 +69,175 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
 
   return (
     <nav className={cx('mobile-view')} data-testid="mobile-view">
-      <Logo type={logoView} icon={logoIcon} />
-
-      {type === 'header' && (
-        <>
-          <Divider color={color} />
-          <Breadcrumbs className="mobile-breadcrumbs" />
-        </>
-      )}
-
-      <Divider color={color} />
-
-      <div className={cx('category-container')}>
-        <MobileNavItem
-          title={NAV_MENU_LABELS.RS_SCHOOL}
-          color={color}
-          isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.RS_SCHOOL)}
-          onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.RS_SCHOOL)}
-        />
-
-        <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.RS_SCHOOL)}>
-          {schoolMenuStaticLinks.map((link, i) => (
-            <SchoolMenu.Item
-              key={i}
-              title={link.title}
-              description={link.description}
-              url={link.detailsUrl}
-              color={color}
-              onClick={onClose}
-            />
-          ))}
-        </SchoolMenu>
+      <div className={cx('menu-logo')}>
+        <Logo type={logoView} icon={logoIcon} />
       </div>
 
-      <Divider color={color} />
+      <div className={cx('menu-content')}>
+        {type === 'header' && (
+          <>
+            <Divider color={color} />
+            <Breadcrumbs className="mobile-breadcrumbs" />
+          </>
+        )}
 
-      <div className={cx('category-container')}>
-        <MobileNavItem
-          title={NAV_MENU_LABELS.COURSES}
-          color={color}
-          isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.COURSES)}
-          onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.COURSES)}
-        />
+        <Divider color={color} />
 
-        <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.COURSES)}>
-          <SchoolMenu.Item
-            key={NAV_MENU_LABELS.COURSES}
-            title="All Courses"
-            description="TBD"
-            url={`/${ROUTES.COURSES}`}
+        <div className={cx('category-container')}>
+          <MobileNavItem
+            title={NAV_MENU_LABELS.RS_SCHOOL}
             color={color}
-            onClick={onClose}
+            isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.RS_SCHOOL)}
+            onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.RS_SCHOOL)}
           />
-          {courses.map((course) => (
-            <SchoolMenu.Item
-              key={course.id}
-              icon={course[courseIcon]}
-              title={course.title}
-              description={course.startDate}
-              url={course.detailsUrl}
-              color={color}
-              onClick={onClose}
-            />
-          ))}
-        </SchoolMenu>
-      </div>
 
-      <Divider color={color} />
+          <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.RS_SCHOOL)}>
+            {schoolMenuStaticLinks.map((link, i) => (
+              <SchoolMenu.Item
+                key={i}
+                title={link.title}
+                description={link.description}
+                url={link.detailsUrl}
+                color={color}
+                onClick={onClose}
+              />
+            ))}
+          </SchoolMenu>
+        </div>
 
-      <div className={cx('category-container')}>
-        <MobileNavItem
-          title={NAV_MENU_LABELS.COMMUNITY}
-          color={color}
-          isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.COMMUNITY)}
-          onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.COMMUNITY)}
-        />
+        <Divider color={color} />
 
-        <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.COMMUNITY)}>
-          {communityMenuStaticLinks.map((link, i) => (
-            <SchoolMenu.Item
-              key={i}
-              title={link.title}
-              description={link.description}
-              url={link.detailsUrl}
-              color={color}
-              onClick={onClose}
-            />
-          ))}
-        </SchoolMenu>
-      </div>
-
-      <Divider color={color} />
-
-      <div className={cx('category-container')}>
-        <MobileNavItem
-          title={NAV_MENU_LABELS.MENTORSHIP}
-          color={color}
-          isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.MENTORSHIP)}
-          onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.MENTORSHIP)}
-        />
-
-        <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.MENTORSHIP)}>
-          <SchoolMenu.Item
-            key={NAV_MENU_LABELS.MENTORSHIP}
-            title="About Mentorship"
-            description="Some text"
-            url={`/${ROUTES.MENTORSHIP}`}
+        <div className={cx('category-container')}>
+          <MobileNavItem
+            title={NAV_MENU_LABELS.COURSES}
             color={color}
-            onClick={onClose}
+            isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.COURSES)}
+            onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.COURSES)}
           />
-          {coursesWithMentorship.map((course) => (
+
+          <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.COURSES)}>
             <SchoolMenu.Item
-              key={course.id}
-              icon={course.iconSmall}
-              title={course.title}
-              description={course.startDate}
-              url={course.detailsUrl}
+              key={NAV_MENU_LABELS.COURSES}
+              title="All Courses"
+              description="Journey to full stack mastery"
+              url={`/${ROUTES.COURSES}`}
               color={color}
               onClick={onClose}
             />
-          ))}
-        </SchoolMenu>
-      </div>
+            {courses.map((course) => (
+              <SchoolMenu.Item
+                key={course.id}
+                icon={course[courseIcon]}
+                title={course.title}
+                description={course.startDate}
+                url={course.detailsUrl}
+                color={color}
+                onClick={onClose}
+              />
+            ))}
+          </SchoolMenu>
+        </div>
 
-      <Divider color={color} />
+        <Divider color={color} />
 
-      <Link onClick={onClose} href={`/${ROUTES.DOCS_EN}`} className={cx('category-link', color)}>
-        {NAV_MENU_LABELS.DOCS}
-      </Link>
+        <div className={cx('category-container')}>
+          <MobileNavItem
+            title={NAV_MENU_LABELS.COMMUNITY}
+            color={color}
+            isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.COMMUNITY)}
+            onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.COMMUNITY)}
+          />
 
-      <Divider color={color} />
+          <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.COMMUNITY)}>
+            {communityMenuStaticLinks.map((link, i) => (
+              <SchoolMenu.Item
+                key={i}
+                title={link.title}
+                description={link.description}
+                url={link.detailsUrl}
+                color={color}
+                onClick={onClose}
+              />
+            ))}
+          </SchoolMenu>
+        </div>
 
-      <div className={cx('category-container')}>
-        <MobileNavItem
-          title={NAV_MENU_LABELS.SUPPORT_US}
-          icon={iconSrc}
-          color={color}
-          isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.SUPPORT_US)}
-          onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.SUPPORT_US)}
-        />
+        <Divider color={color} />
 
-        <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.SUPPORT_US)}>
-          <SchoolMenu.Item
-            className="support-title"
-            title="Your donations help us cover hosting, domains, licenses, and advertising for courses
+        <div className={cx('category-container')}>
+          <MobileNavItem
+            title={NAV_MENU_LABELS.MENTORSHIP}
+            color={color}
+            isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.MENTORSHIP)}
+            onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.MENTORSHIP)}
+          />
+
+          <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.MENTORSHIP)}>
+            <SchoolMenu.Item
+              key={NAV_MENU_LABELS.MENTORSHIP}
+              title="About Mentorship"
+              description="By teaching others, you learn yourself"
+              url={`/${ROUTES.MENTORSHIP}`}
+              color={color}
+              onClick={onClose}
+            />
+            {coursesWithMentorship.map((course) => (
+              <SchoolMenu.Item
+                key={course.id}
+                icon={course.iconSmall}
+                title={course.title}
+                description={course.startDate}
+                url={course.detailsUrl}
+                color={color}
+                onClick={onClose}
+              />
+            ))}
+          </SchoolMenu>
+        </div>
+
+        <Divider color={color} />
+
+        <Link onClick={onClose} href={`/${ROUTES.DOCS_EN}`} className={cx('category-link', color)}>
+          {NAV_MENU_LABELS.DOCS}
+        </Link>
+
+        <Divider color={color} />
+
+        <div className={cx('category-container')}>
+          <MobileNavItem
+            title={NAV_MENU_LABELS.SUPPORT_US}
+            icon={iconSrc}
+            color={color}
+            isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.SUPPORT_US)}
+            onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.SUPPORT_US)}
+          />
+
+          <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.SUPPORT_US)}>
+            <SchoolMenu.Item
+              className="support-title"
+              title="Your donations help us cover hosting, domains, licenses, and advertising for courses
                           and events. Every donation, big or small, helps!"
-            url="#"
-            color={color}
-          />
-          <SchoolMenu.Item
-            className="support-title"
-            title="Thank you for your support!"
-            url="#"
-            color={color}
-          />
-          {donateOptionsForNavMenu.map((option) => (
-            <SchoolMenu.Item
-              key={option.id}
-              icon={option.icon}
-              title={option.linkLabel}
-              url={option.href}
+              url="#"
               color={color}
-              onClick={onClose}
             />
-          ))}
-        </SchoolMenu>
+            <SchoolMenu.Item
+              className="support-title"
+              title="Thank you for your support!"
+              url="#"
+              color={color}
+            />
+            {donateOptionsForNavMenu.map((option) => (
+              <SchoolMenu.Item
+                key={option.id}
+                icon={option.icon}
+                title={option.linkLabel}
+                url={option.href}
+                color={color}
+                onClick={onClose}
+              />
+            ))}
+          </SchoolMenu>
+        </div>
       </div>
     </nav>
   );

@@ -1,4 +1,3 @@
-/* eslint-disable @stylistic/jsx-closing-bracket-location */
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
 
@@ -26,12 +25,15 @@ export const MobileNavItem = ({
   return (
     <button onClick={() => onMenuItemClick(title)} className={cx('category-link', color)}>
       <div className={cx('category-title')}>
-        {!!icon && <Image
-          src={icon}
-          alt="Donate-icon"
-          width={20}
-          height={18}
-          aria-hidden="true" />}
+        {icon && (
+          <Image
+            src={icon}
+            alt="Donate-icon"
+            width={20}
+            height={18}
+            aria-hidden="true"
+          />
+        )}
         <span>{title}</span>
       </div>
       <span

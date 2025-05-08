@@ -36,6 +36,7 @@ export const SchoolItem = ({
           { 'non-clickable': isNonClickable },
           { centered: !description },
         )}
+        tabIndex={isNonClickable ? -1 : 0}
       >
         {icon && (
           <Image

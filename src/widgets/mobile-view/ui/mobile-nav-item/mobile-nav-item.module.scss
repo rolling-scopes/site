@@ -18,6 +18,11 @@
     &.rotate {
       transform: rotate(180deg);
     }
+
+    > img {
+      width: 20px;
+      height: auto;
+    }
   }
 }
 

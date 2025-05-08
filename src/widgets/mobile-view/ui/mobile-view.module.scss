@@ -1,20 +1,36 @@
 .mobile-view {
   display: none;
   flex-direction: column;
-  flex-grow: 1;
-  gap: 16px;
-  align-items: baseline;
-  justify-content: flex-start;
 
-  width: 100%;
+  .menu-logo {
+    display: flex;
+    align-items: flex-end;
+    min-height: 58px;
 
-  .content.breadcrumbs-content {
-    @include media-tablet {
-      padding: 0;
+    a {
+      margin-bottom: 3px;
+    }
+  }
+
+  .menu-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 16px;
+    align-items: baseline;
+    justify-content: flex-start;
+
+    width: 100%;
+
+    .content.breadcrumbs-content {
+      @include media-tablet {
+        padding: 0;
+      }
     }
   }
 
   @include media-tablet-large {
+    overflow-y: hidden;
     display: flex;
   }
 }

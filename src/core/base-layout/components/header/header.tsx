@@ -78,7 +78,7 @@ export const Header = ({ courses }: HeaderProps) => {
               <SchoolMenu.Item
                 key={NAV_MENU_LABELS.COURSES}
                 title="All Courses"
-                description="TBD"
+                description="Journey to full stack mastery"
                 url={`/${ROUTES.COURSES}`}
               />
             </SchoolMenu>
@@ -111,7 +111,7 @@ export const Header = ({ courses }: HeaderProps) => {
               <SchoolMenu.Item
                 key={NAV_MENU_LABELS.MENTORSHIP}
                 title="About Mentorship"
-                description="Some text"
+                description="By teaching others, you learn yourself"
                 url={`/${ROUTES.MENTORSHIP}`}
               />
             </SchoolMenu>
