@@ -11,11 +11,21 @@ export const schoolMenuStaticLinks = [
     detailsUrl: `/#${ANCHORS.UPCOMING_COURSES}`,
     description: 'Schedule your study',
   },
+  {
+    title: 'Support Us',
+    detailsUrl: `/#${ANCHORS.DONATE}`,
+    description: 'Every donation, big or small, helps!',
+  },
+  {
+    title: 'Mentors Wanted',
+    detailsUrl: `/#${ANCHORS.MENTORS_WANTED}`,
+    description: 'Help others to become professionals',
+  },
 ];
 
 export const communityMenuStaticLinks = [
   {
-    title: 'About',
+    title: 'About Community',
     detailsUrl: `/${ROUTES.COMMUNITY}/#${ANCHORS.ABOUT_COMMUNITY}`,
     description: 'Who we are',
   },
