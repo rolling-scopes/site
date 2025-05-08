@@ -18,7 +18,7 @@ type AboutMentorsProps = {
 
 export const AboutMentors = ({ icons, description, lang = 'en' }: AboutMentorsProps) => {
   return (
-    <section className={cx('container')}>
+    <section className={cx('container')} data-testid="about-mentors">
       <div className={cx('content')}>
         <WidgetTitle mods="lines">{aboutMentorsData[lang].header}</WidgetTitle>
         <div className={cx('mentors-register-wrapper')}>
