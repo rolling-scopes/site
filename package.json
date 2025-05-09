@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@next/third-parties": "^15.2.0",
+    "antd": "^5.25.0",
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.13",
