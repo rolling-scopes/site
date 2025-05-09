@@ -1,6 +1,10 @@
 .menu {
   width: 300px;
 
+  > ul {
+    padding-bottom: 15px;
+  }
+
   ul {
     display: flex;
     flex-direction: column;
