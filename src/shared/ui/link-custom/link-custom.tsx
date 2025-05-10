@@ -55,10 +55,10 @@ export const LinkCustom = ({
 }: LinkCustomProps) => {
   const resolveIcon = () => {
     switch (true) {
-      case external && variant === 'textLink':
-        return <TextLinkIcon />;
       case icon !== undefined:
         return icon;
+      case external && variant === 'textLink':
+        return <TextLinkIcon />;
       case variant === 'primary':
       case variant === 'secondary':
         return <ArrowIcon />;
