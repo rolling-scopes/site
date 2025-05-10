@@ -23,7 +23,7 @@ describe('CourseItem Component', () => {
     renderWithRouter(<CourseItem {...mockedProps} />);
   });
 
-  it('renders the component data as expected', async () => {
+  it('renders the component data as expected', () => {
     const titleElement = screen.getByText(mockedProps.title);
     const dateElement = screen.getByTestId('course-language');
     const courseDate = screen.getByTestId('date-time-start');
