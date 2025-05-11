@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "tsc && next build",
+    "generate-og": "tsx scripts/generate-og-images.ts",
+    "dev": "npm run generate-og && next dev --turbopack",
+    "build": "npm run generate-og && tsc && next build",
     "stylelint": "npx stylelint \"**/*.scss\"",
     "stylelint:fix": "npx stylelint \"**/*.scss\" --fix",
     "lint": "npx eslint . --report-unused-disable-directives",
@@ -91,6 +92,7 @@
     "stylelint-config-standard-scss": "^14.0.0",
     "stylelint-order": "^7.0.0",
     "stylelint-prettier": "^5.0.3",
+    "tsx": "^4.19.4",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.31.1",
     "vitest": "^3.0.5"

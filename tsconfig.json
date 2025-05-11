@@ -53,8 +53,9 @@
     "dev-data/**/*.tsx",
     "./build/types/**/*.ts",
     ".next/types/**/*.ts",
-    "env.d.ts"
-  ],
+    "env.d.ts",
+    "scripts/generate-og-images.ts",
+ ],
   "exclude": [
     "node_modules"
   ],
