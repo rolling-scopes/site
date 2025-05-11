@@ -59,6 +59,7 @@ export const COURSE_SCHEDULE_LINKS = {
   AWS_DEVOPS: 'https://github.com/rolling-scopes-school/tasks/tree/master/devops',
 };
 
+export const GITHUB_LINK = 'https://github.com/rolling-scopes-school/';
 export const DOCUMENTATION_LINKS = {
   'RU': 'https://rs.school/docs/ru',
   'EN': 'https://docs.rs.school',

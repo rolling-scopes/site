@@ -5,6 +5,7 @@ import paperIcon from '@/shared/assets/icons/paper-icon.webp';
 import personIcon from '@/shared/assets/icons/person-icon.webp';
 import planetIcon from '@/shared/assets/icons/planet.webp';
 import {
+  GITHUB_LINK,
   REGISTRATION_WILL_OPEN_SOON,
   REGISTRATION_WILL_OPEN_SOON_RU,
   ROUTES,
@@ -57,7 +58,7 @@ const infoMaterialsEn = (
         {' '}
       </>
     )}
-    <LinkCustom href="https://github.com/rolling-scopes-school/" external>
+    <LinkCustom href={GITHUB_LINK} external>
       GitHub
     </LinkCustom>
     .
