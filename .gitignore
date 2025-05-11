@@ -32,6 +32,8 @@ src/shared/__tests__/test-results
 src/shared/__tests__/report
 /blob-report/
 /playwright/.cache/
+/public/og-images
+/public/og-images-pages
 
 # env
 .env
