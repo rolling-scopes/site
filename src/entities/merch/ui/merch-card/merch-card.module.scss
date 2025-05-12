@@ -1,4 +1,6 @@
 .merch-card {
+  position: relative;
+
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -83,4 +85,77 @@
   height: 20px;
   border-radius: 5px;
   background-color: $color-yellow;
+}
+
+.swipe-btn {
+  cursor: pointer;
+
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+
+  font-size: 20px;
+  color: $color-white;
+
+  background-color: rgb(0 0 0 / 30%);
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+
+  .arrow-img {
+    filter: brightness(0) invert(1);
+  }
+
+  &.is-prev {
+    left: 8px;
+  }
+
+  &.is-next {
+    right: 8px;
+  }
+
+  &:hover {
+    background-color: rgb(0 0 0 / 60%);
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.3;
+  }
+}
+
+.swipe-dots {
+  position: absolute;
+  z-index: 2;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 6px;
+
+  .swipe-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+
+    background-color: rgb(0 0 0 / 20%);
+
+    transition: background-color all 0.3s ease;
+
+    &.active {
+      background-color: $color-yellow;
+    }
+  }
 }
