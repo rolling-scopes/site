@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import rsSchoolMerchImage from '@/shared/assets/merch.webp';
-import { LINKS } from '@/shared/constants';
+import { ROUTES } from '@/shared/constants';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { SectionLabel } from '@/shared/ui/section-label';
@@ -21,7 +21,9 @@ export const Merch = () => (
         <WidgetTitle mods="asterisk">{merchData.title}</WidgetTitle>
         <Paragraph fontSize="large">{merchData.mainParagraph}</Paragraph>
         <Paragraph>{merchData.description}</Paragraph>
-        <LinkCustom href={LINKS.MERCH} variant="primary" external>{merchData.linkTitle}</LinkCustom>
+        <LinkCustom href={`/${ROUTES.MERCH}`} variant="primary">
+          {merchData.linkTitle}
+        </LinkCustom>
       </article>
       <Image
         className={cx('image')}
