@@ -1,17 +1,19 @@
 import { Copyright } from './ui/copyright';
 import { DesktopView } from './ui/desktop-view';
-import { courseStore } from '@/entities/course';
+import { Course } from '@/entities/course';
 import { MobileView } from '@/widgets/mobile-view';
 
 import './footer.scss';
 
-export const Footer = async () => {
-  const courses = await courseStore.loadCourses();
+type FooterProps = {
+  courses: Course[];
+};
 
+export const Footer = ({ courses }: FooterProps) => {
   return (
     <footer className="footer container" data-testid="footer">
       <div className="footer content">
-        <DesktopView />
+        <DesktopView courses={courses} />
         <MobileView courses={courses} type="footer" />
         <Copyright />
       </div>
