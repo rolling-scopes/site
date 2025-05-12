@@ -159,3 +159,20 @@
     }
   }
 }
+
+.swipeable-area {
+  touch-action: pan-y;
+
+  position: relative;
+
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: $mobile-landscape-width) {
+  .swipe-btn {
+    display: none;
+  }
+}

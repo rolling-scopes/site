@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+import { useSwipeable } from 'react-swipeable';
 
 import { MerchProduct } from '@/entities/merch/types';
 import chevronLeft from '@/shared/assets/svg/chevron-left-solid.svg';
@@ -30,10 +31,18 @@ export const MerchCard = ({ title, preview, download }: MerchProduct) => {
     }
   };
 
+  const handlers = useSwipeable({
+    onSwipedLeft: goToNext,
+    onSwipedRight: goToPrev,
+    trackMouse: true,
+  });
+
   return (
     <article className={cx('merch-card')} data-testid="merch">
       <div className={cx('preview-wrap')}>
-        <img className={cx('preview')} src={preview[currentIndex]} alt={title} />
+        <div {...handlers} className={cx('swipeable-area')}>
+          <img className={cx('preview')} src={preview[currentIndex]} alt={title} />
+        </div>
 
         {preview.length > 1 && (
           <>
