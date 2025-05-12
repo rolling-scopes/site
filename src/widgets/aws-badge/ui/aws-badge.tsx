@@ -1,7 +1,5 @@
 import imageAws from '@/shared/assets/aws-cloud-pract-badge.webp';
-import { Badge } from 'data';
-
-import styles from './aws-badge.module.scss';
+import { Badge } from '@/shared/ui/badge';
 
 export const AwsBadge = () => {
   return (
@@ -16,8 +14,6 @@ export const AwsBadge = () => {
       ]}
       image={imageAws}
       alt="AWS Digital Badge"
-      className="aws-badge"
-      styles={styles}
     />
   );
 };

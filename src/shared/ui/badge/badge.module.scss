@@ -1,7 +1,7 @@
-.aws-badge {
+.badge {
   gap: 176px;
 
-  .aws-info {
+  .badge-info {
     min-width: 640px;
 
     @include media-laptop {
@@ -14,7 +14,7 @@
     }
   }
 
-  .aws-badge-img {
+  .badge-img {
     width: 370px;
     height: 340px;
 

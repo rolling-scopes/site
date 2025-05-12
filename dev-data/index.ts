@@ -24,7 +24,6 @@ export {
   RS_DOCS_EN_LINK,
   RS_DOCS_TELEGRAM_CHATS_LINK,
 } from './communication.data';
-export { Badge } from './badge.data';
 export {
   COURSE_TITLES,
   type CourseNames,

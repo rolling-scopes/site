@@ -15,7 +15,7 @@ describe('AwsBadge component', () => {
 
   beforeEach(() => {
     render(<AwsBadge />);
-    widget = screen.getByTestId('aws-badge');
+    widget = screen.getByTestId('badge');
     title = screen.getByTestId('widget-title');
     paragraphs = screen.getAllByTestId('paragraph');
   });
@@ -35,7 +35,7 @@ describe('AwsBadge component', () => {
   });
 
   it('renders correct image with alt text', () => {
-    const image = screen.getByTestId('aws-badge-img');
+    const image = screen.getByTestId('badge-img');
 
     expect(image).toBeVisible();
     expect(image).toHaveAttribute('alt', expect.stringContaining('AWS Digital Badge'));

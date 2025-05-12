@@ -4,25 +4,25 @@ import Image, { StaticImageData } from 'next/image';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
-type BadgeData = {
+import styles from './badge.module.scss';
+
+type BadgeProps = {
   title: string;
   paragraphs: string[];
   image: StaticImageData;
   alt: string;
-  className: string;
-  styles: { [key: string]: string };
 };
 
-export const Badge = (data: BadgeData) => {
-  const cx = classNames.bind(data.styles);
+export const Badge = (data: BadgeProps) => {
+  const cx = classNames.bind(styles);
 
   return (
     <section
-      className={cx(data.className, 'container')}
-      data-testid={data.className}
+      className={cx('badge', 'container')}
+      data-testid="badge"
     >
-      <div className={cx(data.className, 'content', 'column-2')}>
-        <article className={cx(data.className + '-info')}>
+      <div className={cx('badge', 'content', 'column-2')}>
+        <article className={cx('badge-info')}>
           <WidgetTitle mods="asterisk">{data.title}</WidgetTitle>
           {data.paragraphs.map((paragraph, index) => (
             <Paragraph key={index}>
@@ -32,10 +32,10 @@ export const Badge = (data: BadgeData) => {
           )}
         </article>
         <Image
-          className={cx(data.className + '-img')}
+          className={cx('badge-img')}
           src={data.image}
           alt={data.alt}
-          data-testid={data.className + '-img'}
+          data-testid="badge-img"
         />
       </div>
     </section>
