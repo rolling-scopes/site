@@ -444,7 +444,7 @@ async function generateOgImagePage() {
 
     const buffer = Buffer.from(await imageRes.arrayBuffer());
 
-    await fs.writeFile(path.join(ogDir, `${title}.png`), buffer);
+    await fs.writeFile(path.join(ogDir, `${title.toLowerCase()}.png`), buffer);
   }
 }
 
