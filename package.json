@@ -46,7 +46,8 @@
     "remark-rehype": "^11.1.2",
     "remark-remove-comments": "^1.1.1",
     "remark-toc": "^9.0.0",
-    "swiper": "^11.2.6"
+    "swiper": "^11.2.6",
+    "swr": "^2.3.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.1",
