@@ -22,7 +22,7 @@ const coursesMock: Course[] = [
     id: '1',
     title: COURSE_TITLES.REACT,
     descriptionUrl: COURSE_LINKS.REACT,
-    subTitle: null,
+    subTitle: undefined,
     altTitle: 'altTitle',
     iconSrc: {
       src: 'icon',
@@ -56,7 +56,7 @@ const coursesMock: Course[] = [
   {
     id: '2',
     title: COURSE_TITLES.REACT,
-    subTitle: null,
+    subTitle: undefined,
     descriptionUrl: COURSE_LINKS.REACT,
     altTitle: 'altTitle',
     iconSrc: {
@@ -91,7 +91,7 @@ const coursesMock: Course[] = [
   {
     id: '3',
     title: COURSE_TITLES.REACT,
-    subTitle: null,
+    subTitle: undefined,
     descriptionUrl: COURSE_LINKS.REACT,
     altTitle: 'altTitle',
     iconSrc: {
