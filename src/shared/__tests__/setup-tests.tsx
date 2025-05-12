@@ -32,7 +32,7 @@ afterEach(() => {
   cleanup();
 });
 
-vi.mock('@/entities/course/api/course-api', () => ({ getCourses: vi.fn().mockImplementation(() => mockedCourses) }));
+vi.mock('@/entities/course/model/store.ts', () => ({ courseStore: { loadCourses: vi.fn().mockImplementation(() => mockedCourses) } }));
 
 vi.mock('next/image', () => ({
   default: (props: { src: StaticImageData;

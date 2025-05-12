@@ -30,6 +30,10 @@ export function DocsContent({ markdownContent, lang }: DocsContentProps) {
       rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings]}
       components={{
         img({ src = '', ...props }) {
+          if (typeof src !== 'string') {
+            throw new Error("The 'src' prop must be a string URL.");
+          }
+
           const isExternalImage = isValidUrl(src);
           const newSrc =
             !isExternalImage && src ? `${GITHUB_IMAGE_BASE}/${src.split('/').pop()}` : src;

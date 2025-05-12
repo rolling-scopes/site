@@ -42,7 +42,6 @@ export { contentMapAbout, introLocalizedContent } from './about-course.data';
 export { contributeOptions } from './contribute-options.data';
 export { courseDataMap } from './required.data';
 export { courseStatus, heroCourseLocalized } from './hero-course.data';
-export { courses } from './courses.data';
 export { donateOptions } from './donate-options.data';
 export { events } from './events.data';
 export { generalMaterials } from './general.data';
