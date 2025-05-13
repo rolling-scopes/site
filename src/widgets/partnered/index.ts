@@ -1,1 +1,1 @@
-export { Partnered } from './ui/partnered';
+export { Partnered } from './partnered';
