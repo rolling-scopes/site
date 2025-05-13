@@ -9,7 +9,7 @@
     flex-direction: column;
     gap: 26px;
 
-    font-size: 20px;
+    font-size: $font-size-l;
     line-height: 28px;
     letter-spacing: 0;
 
@@ -25,7 +25,7 @@
       }
 
       @include media-tablet {
-        font-size: 18px;
+        font-size: $font-size-m;
         font-weight: $font-weight-regular;
         line-height: 28px;
       }
@@ -33,6 +33,6 @@
   }
 
   @include media-tablet-large {
-    font-size: 16px;
+    font-size: $font-size-s;
   }
 }

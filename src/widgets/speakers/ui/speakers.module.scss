@@ -16,12 +16,12 @@
 
       margin-top: 8px;
 
-      font-size: 18px;
+      font-size: $font-size-m;
       font-style: normal;
       line-height: 24px;
 
       @include media-tablet {
-        font-size: 16px;
+        font-size: $font-size-s;
         line-height: 20px;
       }
     }

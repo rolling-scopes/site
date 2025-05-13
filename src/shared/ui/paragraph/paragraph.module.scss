@@ -5,24 +5,24 @@
 
   &.medium-font-size {
     padding-bottom: 18px;
-    font-size: 18px;
+    font-size: $font-size-m;
     font-weight: $font-weight-regular;
   }
 
   &.large-font-size {
     padding-bottom: 16px;
-    font-size: 20px;
+    font-size: $font-size-l;
     font-weight: $font-weight-medium;
   }
 
   @include media-laptop {
     &.medium-font-size {
-      font-size: 16px;
+      font-size: $font-size-s;
       line-height: 24px;
     }
 
     &.large-font-size {
-      font-size: 18px;
+      font-size: $font-size-m;
       font-weight: $font-weight-regular;
     }
   }

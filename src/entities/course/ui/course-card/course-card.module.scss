@@ -103,7 +103,7 @@
 
     .course-info {
       padding: 24px;
-      font-size: 14px;
+      font-size: $font-size-xs;
 
       @include media-laptop-medium {
         flex-direction: row;
@@ -117,7 +117,7 @@
     .course-link {
       gap: 4px;
       padding: 10px 12px;
-      font-size: 14px;
+      font-size: $font-size-xs;
     }
 
     section {

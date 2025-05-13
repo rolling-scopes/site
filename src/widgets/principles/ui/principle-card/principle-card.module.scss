@@ -48,7 +48,7 @@
 
     grid-column: span 2;
 
-    font-size: 18px;
+    font-size: $font-size-m;
     font-weight: $font-weight-regular;
     line-height: 1.4;
     text-align: left;
@@ -107,7 +107,7 @@
     padding: 32px 24px;
 
     .card-description {
-      font-size: 16px;
+      font-size: $font-size-s;
       line-height: 24px;
     }
   }
