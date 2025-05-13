@@ -3,8 +3,7 @@ import classNames from 'classnames/bind';
 import { AwsLogo, GithubLogo, JetBrainsLogo } from '@/shared/icons';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
-// import styles from './partnered.module.scss';
-const styles = {};
+import styles from './partnered.module.scss';
 
 const cx = classNames.bind(styles);
 
