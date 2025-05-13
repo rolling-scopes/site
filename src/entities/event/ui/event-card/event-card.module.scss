@@ -5,7 +5,7 @@
 
   width: 320px;
   padding: 0;
-  border-radius: 12px;
+  border-radius: $border-radius-s;
 
   .card-header {
     position: relative;
@@ -16,7 +16,7 @@
     padding: 32px 24px 24px 24px;
     border: solid $color-gray-200;
     border-width: 1px 1px 0 1px;
-    border-radius: 12px 12px 0 0;
+    border-radius: $border-radius-s $border-radius-s 0 0;
 
     background-color: $color-purple-50;
 
@@ -100,7 +100,7 @@
     padding: 24px;
     border: solid $color-gray-200;
     border-width: 0 1px 1px 1px;
-    border-radius: 0 0 12px 12px;
+    border-radius: 0 0 $border-radius-s $border-radius-s;
 
     background-color: hsla(from $color-gray-100 h s l/ $opacity-20);
 

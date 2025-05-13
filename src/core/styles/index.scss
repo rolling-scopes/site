@@ -131,7 +131,7 @@ figure {
 
       height: var(--slider-arrow-btn-height);
       margin: 2px;
-      border-radius: 8px;
+      border-radius: $border-radius-xs;
 
       opacity: $opacity-100;
       backdrop-filter: blur(20px);
