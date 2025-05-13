@@ -20,7 +20,7 @@
 
     @include media-laptop-medium {
       flex-direction: column;
-      gap: 32px;
+      gap: $gap-xl;
     }
   }
 }

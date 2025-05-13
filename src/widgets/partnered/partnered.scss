@@ -34,7 +34,7 @@
       }
 
       @include media-tablet {
-        row-gap: 16px;
+        row-gap: $gap-s;
         padding: 16px 0;
       }
     }

@@ -1,17 +1,17 @@
 .mentors-after-register {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: $gap-m;
 
   .steps {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: $gap-xxl;
 
     .step {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: $gap-s;
 
       p {
         margin: 0;
@@ -22,12 +22,12 @@
       }
 
       @include media-tablet {
-        gap: 8px;
+        gap: $gap-xs;
       }
     }
 
     @include media-tablet {
-      gap: 24px;
+      gap: $gap-l;
     }
   }
 }

@@ -5,7 +5,7 @@
 
   display: flex;
   flex-flow: row nowrap;
-  gap: 8px;
+  gap: $gap-xs;
   place-content: center center;
   align-items: center;
 

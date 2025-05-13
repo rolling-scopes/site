@@ -19,7 +19,7 @@
       .about-list {
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: $gap-l;
         align-items: baseline;
         justify-content: flex-start;
 
@@ -53,10 +53,10 @@
       }
 
       @include media-laptop-medium {
-        gap: 50px;
+        gap: $gap-xxxl;
 
         & .left {
-          gap: 50px;
+          gap: $gap-xxxl;
         }
       }
 

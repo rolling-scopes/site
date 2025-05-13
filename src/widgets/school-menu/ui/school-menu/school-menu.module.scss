@@ -1,7 +1,7 @@
 .school-menu {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: $gap-s;
   color: $color-gray-100;
 
   .heading {

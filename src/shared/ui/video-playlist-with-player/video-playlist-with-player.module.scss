@@ -1,7 +1,7 @@
 .video-player-container {
   position: relative;
   display: flex;
-  gap: 24px;
+  gap: $gap-l;
 
   @include media-tablet-large {
     flex-direction: column;

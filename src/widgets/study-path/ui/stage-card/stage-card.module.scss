@@ -1,6 +1,6 @@
 .stage-card {
   display: flex;
-  gap: 40px;
+  gap: $gap-xxl;
 
   .stage-number {
     $number-size: 80px;
@@ -49,7 +49,7 @@
     display: flex;
     flex: 1 1 40%;
     flex-direction: column;
-    gap: 8px;
+    gap: $gap-xs;
 
     max-width: 600px;
 
@@ -103,6 +103,6 @@
   }
 
   @include media-tablet {
-    gap: 16px;
+    gap: $gap-s;
   }
 }

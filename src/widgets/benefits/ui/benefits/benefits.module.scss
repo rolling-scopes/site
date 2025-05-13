@@ -38,11 +38,11 @@
   @include media-laptop {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: $gap-l;
   }
 
   @include media-tablet {
-    gap: 16px;
+    gap: $gap-s;
   }
 }
 
@@ -58,7 +58,7 @@
 
   .flex-item {
     display: flex;
-    gap: 16px;
+    gap: $gap-s;
     align-items: center;
 
     width: 100%;
@@ -91,11 +91,11 @@
 
   @include media-laptop {
     display: flex;
-    gap: 24px;
+    gap: $gap-l;
   }
 
   @include media-tablet {
     flex-direction: column;
-    gap: 16px;
+    gap: $gap-s;
   }
 }

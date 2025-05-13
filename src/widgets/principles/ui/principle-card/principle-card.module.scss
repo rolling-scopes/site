@@ -6,7 +6,7 @@
   overflow: hidden;
   display: grid;
   grid-template-columns: max-content 1fr;
-  column-gap: 16px;
+  column-gap: $gap-s;
 
   width: 100%;
   padding: 24px;
@@ -32,7 +32,7 @@
 
   .card-header {
     display: flex;
-    gap: 16px;
+    gap: $gap-s;
     align-items: center;
 
     min-height: 80px;

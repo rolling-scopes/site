@@ -1,7 +1,7 @@
 .playlist {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: $gap-xs;
 }
 
 .videos-container {
@@ -10,12 +10,12 @@
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: $gap-xs;
 
   @include media-tablet-large {
     overflow: scroll auto;
     flex-direction: row;
-    gap: 24px;
+    gap: $gap-l;
   }
 }
 
@@ -35,7 +35,7 @@
 
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: $gap-xs;
 
   margin-right: 5px;
   padding: 16px;

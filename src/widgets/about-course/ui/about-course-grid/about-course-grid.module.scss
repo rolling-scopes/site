@@ -4,7 +4,7 @@
     'a a b'
     'c d e';
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px 30px;
+  gap: $gap-xl 30px;
 
   margin-bottom: 16px;
 
@@ -22,7 +22,7 @@
 
     .item-title {
       display: flex;
-      gap: 16px;
+      gap: $gap-s;
       align-items: center;
 
       .grid-icon {
@@ -57,10 +57,10 @@
   @include media-laptop {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: $gap-l;
   }
 
   @include media-tablet {
-    gap: 16px;
+    gap: $gap-s;
   }
 }

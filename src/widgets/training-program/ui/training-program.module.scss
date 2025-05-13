@@ -60,7 +60,7 @@
   }
 
   @include media-tablet-large {
-    gap: 40px;
+    gap: $gap-xxl;
     align-items: flex-start;
   }
 }

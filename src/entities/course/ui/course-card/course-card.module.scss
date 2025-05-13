@@ -33,7 +33,7 @@
 
     overflow: hidden;
     display: flex;
-    gap: 16px;
+    gap: $gap-s;
     align-items: center;
 
     height: 100%;
@@ -57,7 +57,7 @@
 
   .course-info {
     display: flex;
-    gap: 16px;
+    gap: $gap-s;
     align-items: center;
     justify-content: space-between;
 
