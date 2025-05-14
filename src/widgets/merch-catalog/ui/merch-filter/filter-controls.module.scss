@@ -1,0 +1,57 @@
+.merch-filter {
+  display: block;
+  width: 222px;
+  margin-right: 30px;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.filter-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5px;
+}
+
+.filter-clear-button {
+  cursor: pointer;
+
+  padding: 4px 10px;
+  border: 1px solid $color-gray-300;
+  border-radius: 5px;
+
+  font-size: 12px;
+  color: $color-gray-600;
+
+  background: none;
+  outline: none;
+
+  transition: color 0.2s ease;
+
+  &:hover {
+    border: 1.5px solid $color-black;
+    color: $color-black;
+  }
+}
+
+.filter-title {
+  margin: 0;
+}
+
+.filter-search-wrapper {
+  display: flex;
+  gap: 5px;
+
+  padding: 5px;
+  border: 1px solid $color-gray-300;
+  border-radius: 5px;
+}
+
+.filter-search-input {
+  border: none;
+  outline: none;
+}
