@@ -6,6 +6,7 @@ import { TITLE_POSTFIX } from '../../constants';
 import { Menu } from '../../types';
 import { fetchMarkdownContent } from '../../utils/fetch-markdown-content';
 import { fetchMenu } from '../../utils/fetch-menu';
+import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 import { Language } from '@/shared/types';
 
 type RouteParams = { lang: Language;
@@ -44,8 +45,15 @@ export async function generateMetadata({
   const slugPath = slug.join('/');
 
   const title = titles.find((el) => el.slug.join('/') === slugPath)?.title;
+  const description = 'School docs hub: rules, guides, and FAQs';
 
-  return { title: `${title} ${TITLE_POSTFIX}` };
+  const metadata = generatePageMetadata({
+    title: `${title} ${TITLE_POSTFIX}`,
+    description,
+    imagePath: '/og-images-pages/docs.png',
+  });
+
+  return metadata;
 }
 
 export async function generateStaticParams(): Promise<RouteParams[]> {
