@@ -22,9 +22,16 @@ const fontBoldPromise: Promise<Font> = loadFont(700);
 
 type CourseKey = keyof typeof COURSE_SLUGS;
 
-const COURSES_JSON_URL = process.env.API_URL;
+const COURSES_JSON_URL: string | undefined = process.env.API_URL;
+
+if (!COURSES_JSON_URL) {
+  console.warn('Skipping course OG generation – API_URL env var is not set.');
+}
 
 async function generateOGCourses(): Promise<void> {
+  if (!COURSES_JSON_URL) {
+    return;
+  }
   const coursesList: ApiCourse[] = await fetchCoursesList(COURSES_JSON_URL);
   const ogDir: string = path.join(process.cwd(), 'public', 'og-images');
 
