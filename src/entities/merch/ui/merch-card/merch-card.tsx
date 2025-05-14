@@ -32,12 +32,20 @@ export const MerchCard = ({ title, preview, download }: MerchProduct) => {
 
   return (
     <article className={cx('merch-card')} data-testid="merch">
-      <div className={cx('preview-wrap')}>
-        <img className={cx('preview')} src={preview[0]} alt={title} />
+      <figure className={cx('preview-wrap')}>
+        <div className={cx('image-container')}>
+          <Image
+            className={cx('preview')}
+            src={preview[0]}
+            alt={title}
+            fill
+            sizes="(max-width: 320px) 100vw, 320px"
+          />
+        </div>
         <button onClick={handleDownload} className={cx('download')} disabled={isLoading}>
           <Image src={downloadImg} alt="download link" className={cx('download-img')} />
         </button>
-      </div>
+      </figure>
       <div className={cx('info-wrap')}>
         <Paragraph fontSize="medium">{title}</Paragraph>
       </div>
