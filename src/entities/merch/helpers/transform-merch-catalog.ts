@@ -1,15 +1,15 @@
-import { v4 as uuidv4 } from 'uuid';
-
 import { ApiMerchItem, ApiMerchItemAdapt, MerchProduct, MerchResponse } from '../types';
 
 export const transformMerchCatalog = (data: MerchResponse): MerchProduct[] => {
   const products: MerchProduct[] = [];
   const baseUrl = process.env.API_BASE_URL;
+  let index = 0;
   const processCategory = (category: ApiMerchItemAdapt, parentTags: string[]) => {
     for (const [key, value] of Object.entries(category)) {
       if (isApiMerchItem(value)) {
+        index += 1;
         products.push({
-          id: uuidv4(),
+          id: index,
           name: key,
           title: value.name,
           preview: value.preview.map((path) => `${baseUrl}/${path}`),

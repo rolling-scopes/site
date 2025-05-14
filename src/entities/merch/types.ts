@@ -18,7 +18,7 @@ export type MerchResponse = {
 };
 
 export type MerchProduct = {
-  id: string;
+  id: number;
   name: string;
   title: string;
   preview: string[];
