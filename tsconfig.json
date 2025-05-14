@@ -54,7 +54,7 @@
     "./build/types/**/*.ts",
     ".next/types/**/*.ts",
     "env.d.ts",
-    "scripts/generate-og-images.ts",
+    "scripts/generate-og-script.ts",
  ],
   "exclude": [
     "node_modules"
