@@ -1,6 +1,5 @@
 import { trainerStore } from '@/entities/trainer';
 import { AboutCourse } from '@/widgets/about-course';
-import { AwsBadge } from '@/widgets/aws-badge';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
@@ -25,7 +24,7 @@ export const AwsFundamentals = async ({ courseName }: AwsFundamentalsProps) => {
       <Certification courseName={courseName} />
       <Communication courseName={courseName} />
       <Required courseName={courseName} />
-      <AwsBadge />
+      <TrainingProgram courseName={courseName} specify="badge" />
       {trainers && <Trainers trainers={trainers} courseName={courseName} />}
     </>
   );
