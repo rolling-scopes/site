@@ -16,6 +16,7 @@ export const API_MAX_INCLUDE_DEPTH = 10;
 export const LABELS = {
   START_DATE: 'Course starts on:',
   START_DATE_SHORT: 'Start:',
+  REGISTRATION_END: 'Enroll untill:',
   COURSE_LANGUAGE_EN: 'English',
   COURSE_LANGUAGE_RU: 'Russian',
   MENTOR_ACTIVITIES: 'Mentorship starts on:',
