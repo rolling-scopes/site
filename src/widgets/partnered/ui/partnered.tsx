@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 
 export const Partnered = () => (
   <section className={cx('partnered-container', 'container')} data-testid="partnered">
-    <article className={cx('partnered-content', 'content')}>
+    <div className={cx('partnered-content', 'content')}>
       <WidgetTitle size="small">Partnered with</WidgetTitle>
       <ul className={cx('partners')}>
         <li className={cx('partner-logo-container')}>
@@ -22,6 +22,6 @@ export const Partnered = () => (
           <GithubLogo />
         </li>
       </ul>
-    </article>
+    </div>
   </section>
 );
