@@ -1,4 +1,4 @@
-import { COURSE_TITLES, CourseMap } from './courseTitles.data';
+import { COURSE_TITLES, CourseMap } from './course-titles.data';
 
 export const courseDataMap: CourseMap = {
   [COURSE_TITLES.JS_EN]: {
@@ -311,6 +311,7 @@ export const courseDataMap: CourseMap = {
         'Chrome DevTools',
         'Figma',
         'Understanding the concept of REST API',
+        'Successful completion of JS/FE Stage 2',
       ],
     },
     willLearn: [],

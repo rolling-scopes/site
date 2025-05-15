@@ -2,9 +2,9 @@ import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it } from 'vitest';
 
 import { MentorsWanted } from './mentors-wanted';
-import { ROUTES } from '@/core/const';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import mentorImg from '@/shared/assets/mentors-wanted.webp';
+import { ROUTES } from '@/shared/constants';
 
 const readMoreLink = `/${ROUTES.MENTORSHIP}`;
 

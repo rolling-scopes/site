@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { DateSimple } from '../date-simple';
 import micIcon from '@/shared/assets/icons/mic.svg';
 import { LABELS, TO_BE_DETERMINED } from '@/shared/constants';
-import { calculateFreshDate } from '@/shared/helpers/getCourseDate';
+import { calculateFreshDate } from '@/shared/helpers/get-course-date';
 import { Language } from '@/shared/types';
 
 import styles from './short-info-panel.module.scss';

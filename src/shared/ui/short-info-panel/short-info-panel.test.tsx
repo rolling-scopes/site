@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest';
 import { ShortInfoPanel } from './short-info-panel';
 import micIcon from '@/shared/assets/icons/mic.svg';
 import { LABELS } from '@/shared/constants';
-import { dayJS } from '@/shared/helpers/dayJS';
+import { dayJS } from '@/shared/helpers/day-js';
 import { Language } from '@/shared/types';
 
 describe('CourseShortInfo', () => {

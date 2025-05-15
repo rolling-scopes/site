@@ -1,8 +1,7 @@
 import classNames from 'classnames/bind';
 
-import { type Course, CourseCard } from '@/entities/course';
-import { getCourses } from '@/entities/course/api/course-api';
-import { getActualData } from '@/shared/helpers/getActualData';
+import { type Course, CourseCard, courseStore } from '@/entities/course';
+import { getActualData } from '@/shared/helpers/get-actual-data';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './courses.module.scss';
@@ -10,7 +9,7 @@ import styles from './courses.module.scss';
 const cx = classNames.bind(styles);
 
 export const Courses = async () => {
-  const courses = await getCourses();
+  const courses = await courseStore.loadCourses();
 
   const sortParams = {
     data: courses,

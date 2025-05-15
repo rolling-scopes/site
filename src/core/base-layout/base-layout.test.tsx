@@ -2,15 +2,15 @@ import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { BaseLayout } from './base-layout';
-import { ROUTES } from '@/core/const';
+import { ROUTES } from '@/shared/constants';
 
 const mockUsePathname = vi.fn();
 
-vi.mock('./components/header', () => ({ Header: vi.fn(() => <div data-testid="mockHeader" />) }));
+vi.mock('@/widgets/header', () => ({ Header: vi.fn(() => <div data-testid="mockHeader" />) }));
 
-vi.mock('./components/partnered', () => ({ Partnered: vi.fn(() => <div data-testid="mockPartnered" />) }));
+vi.mock('@/widgets/partnered', () => ({ Partnered: vi.fn(() => <div data-testid="mockPartnered" />) }));
 
-vi.mock('./components/footer', () => ({ Footer: vi.fn(() => <div data-testid="mockFooter" />) }));
+vi.mock('@/widgets/footer', () => ({ Footer: vi.fn(() => <div data-testid="mockFooter" />) }));
 
 vi.mock('next/navigation', () => ({
   usePathname() {

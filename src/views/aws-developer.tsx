@@ -1,3 +1,4 @@
+import { trainerStore } from '@/entities/trainer';
 import { AboutCourse } from '@/widgets/about-course';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Certification } from '@/widgets/certification';
@@ -7,13 +8,15 @@ import { Required } from '@/widgets/required';
 import { StudyPath } from '@/widgets/study-path';
 import { Trainers } from '@/widgets/trainers';
 import { TrainingProgram } from '@/widgets/training-program';
-import { CourseNames, awsDev } from 'data';
+import { CourseNames } from 'data';
 
 type AwsDeveloperProps = {
   courseName: CourseNames['AWS_CLOUD_DEVELOPER'];
 };
 
 export const AwsDeveloper = async ({ courseName }: AwsDeveloperProps) => {
+  const trainers = await trainerStore.loadTrainers(courseName);
+
   return (
     <>
       <HeroCourse courseName={courseName} />
@@ -24,7 +27,7 @@ export const AwsDeveloper = async ({ courseName }: AwsDeveloperProps) => {
       <Communication courseName={courseName} />
       <Required courseName={courseName} />
       <StudyPath page="awsDev" />
-      <Trainers trainers={awsDev} courseName={courseName} />
+      {trainers && <Trainers trainers={trainers} courseName={courseName} />}
     </>
   );
 };
