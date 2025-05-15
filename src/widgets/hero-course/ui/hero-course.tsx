@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import { getCourseStatus } from '../helpers/get-course-status';
+import { Course } from '@/entities/course';
 import { LABELS } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/day-js';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
@@ -9,14 +10,14 @@ import { LinkCustom } from '@/shared/ui/link-custom';
 import { MainTitle } from '@/shared/ui/main-title';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { ShortInfoPanel } from '@/shared/ui/short-info-panel';
-import { CourseNamesKeys, heroCourseLocalized } from 'data';
+import { heroCourseLocalized } from 'data';
 
 import styles from './hero-course.module.scss';
 
 const cx = classNames.bind(styles);
 
 type HeroCourseProps = {
-  courseName: CourseNamesKeys;
+  courseName: Course['title'];
 };
 
 export const HeroCourse = async ({ courseName }: HeroCourseProps) => {
