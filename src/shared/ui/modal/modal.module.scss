@@ -6,7 +6,7 @@
   max-width: 889px;
   padding: 0 32px;
   border: none;
-  border-radius: 12px;
+  border-radius: $border-radius-s;
 
   line-height: 24px;
 
@@ -99,7 +99,7 @@
 }
 
 .modal-title {
-  font-size: 20px;
+  font-size: $font-size-l;
 }
 
 .modal-body {
@@ -121,9 +121,9 @@
 
   padding: 16px;
   border: none;
-  border-radius: 999px;
+  border-radius: $border-radius-xxxl;
 
-  font-size: 24px;
+  font-size: $font-size-xl;
 
   background-color: transparent;
 
