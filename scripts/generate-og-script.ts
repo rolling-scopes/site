@@ -5,13 +5,12 @@ import 'dotenv/config';
 import fs from 'fs/promises';
 import path from 'path';
 
-import { ApiCourse } from './types';
 import { getCourseInfo } from './utils/course-info';
 import { ensureDirExists } from './utils/ensure-dir-exists';
-import { fetchCoursesList } from './utils/fetch-courses-list';
 import { createCourseTree } from './utils/generate-courses-tree';
 import { generateImage } from './utils/generate-image';
 import { createPageTree } from './utils/generate-page-tree';
+import { getCoursesSchedule } from './utils/get-courses-schedule';
 import { type Font, loadFont } from './utils/load-fonts';
 import { loadImageAsDataUri } from './utils/load-image-as-data-uri';
 import { COURSE_TITLES } from '../dev-data/course-titles.data';
@@ -22,29 +21,27 @@ const fontBoldPromise: Promise<Font> = loadFont(700);
 
 type CourseKey = keyof typeof COURSE_SLUGS;
 
-const COURSES_JSON_URL: string | undefined = process.env.API_URL;
-
-if (!COURSES_JSON_URL) {
-  console.warn('Skipping course OG generation – API_URL env var is not set.');
-}
-
 async function generateOGCourses(): Promise<void> {
-  if (!COURSES_JSON_URL) {
+  const coursesSchedule = await getCoursesSchedule();
+
+  if (!coursesSchedule) {
     return;
   }
-  const coursesList: ApiCourse[] = await fetchCoursesList(COURSES_JSON_URL);
+
   const ogDir: string = path.join(process.cwd(), 'public', 'og-images');
 
   await ensureDirExists(ogDir);
 
-  const rsLogoDataUriPromise: Promise<string> = loadImageAsDataUri('src/shared/assets/og-logos/rs-school.png', 'image/png');
+  const rsLogoDataUriPromise: Promise<string> = loadImageAsDataUri(
+    'src/shared/assets/og-logos/rs-school.png',
+    'image/png',
+  );
 
-  const [fontRegular, fontBold, rsLogoDataUri] =
-    await Promise.all([
-      fontRegularPromise,
-      fontBoldPromise,
-      rsLogoDataUriPromise,
-    ]);
+  const [fontRegular, fontBold, rsLogoDataUri] = await Promise.all([
+    fontRegularPromise,
+    fontBoldPromise,
+    rsLogoDataUriPromise,
+  ]);
 
   const fonts: Font[] = [fontRegular, fontBold];
 
@@ -55,9 +52,12 @@ async function generateOGCourses(): Promise<void> {
     const slug: string = COURSE_SLUGS[key];
     const title: string = COURSE_TITLES[key];
 
-    const formattedDate: string = await getCourseInfo(coursesList, slug);
+    const formattedDate: string = getCourseInfo(coursesSchedule, slug);
 
-    const logoDataUri: string = await loadImageAsDataUri(`src/shared/assets/og-logos/${slug}.svg`, 'image/svg+xml');
+    const logoDataUri: string = await loadImageAsDataUri(
+      `src/shared/assets/og-logos/${slug}.svg`,
+      'image/svg+xml',
+    );
 
     const tree: JSX.Element = createCourseTree(
       title,
@@ -80,22 +80,30 @@ async function generateOGCourses(): Promise<void> {
 }
 
 async function generateOgImagePages(): Promise<void> {
-  const rsBannerPromise: Promise<string> = loadImageAsDataUri('src/shared/assets/og-logos/rs-banner.png', 'image/png');
-  const rsMascotsPromise: Promise<string> = loadImageAsDataUri('src/shared/assets/og-logos/mentor-with-his-students.png', 'image/png');
-  const mapBgPromise: Promise<string> = loadImageAsDataUri('src/shared/assets/og-logos/map.png', 'image/png');
+  const rsBannerPromise: Promise<string> = loadImageAsDataUri(
+    'src/shared/assets/og-logos/rs-banner.png',
+    'image/png',
+  );
+  const rsMascotsPromise: Promise<string> = loadImageAsDataUri(
+    'src/shared/assets/og-logos/mentor-with-his-students.png',
+    'image/png',
+  );
+  const mapBgPromise: Promise<string> = loadImageAsDataUri(
+    'src/shared/assets/og-logos/map.png',
+    'image/png',
+  );
 
   const ogDir: string = path.join(process.cwd(), 'public', 'og-images-pages');
 
   await ensureDirExists(ogDir);
 
-  const [fontRegular, fontBold, rsBannerUri, rsMascotsUri, mapBgUri] =
-    await Promise.all([
-      fontRegularPromise,
-      fontBoldPromise,
-      rsBannerPromise,
-      rsMascotsPromise,
-      mapBgPromise,
-    ]);
+  const [fontRegular, fontBold, rsBannerUri, rsMascotsUri, mapBgUri] = await Promise.all([
+    fontRegularPromise,
+    fontBoldPromise,
+    rsBannerPromise,
+    rsMascotsPromise,
+    mapBgPromise,
+  ]);
 
   const fonts: Font[] = [fontRegular, fontBold];
 
@@ -103,7 +111,13 @@ async function generateOgImagePages(): Promise<void> {
     const title: string = RS_PAGES[key];
     const description: string = Descriptions[key];
 
-    const tree: JSX.Element = createPageTree(title, description, rsBannerUri, rsMascotsUri, mapBgUri);
+    const tree: JSX.Element = createPageTree(
+      title,
+      description,
+      rsBannerUri,
+      rsMascotsUri,
+      mapBgUri,
+    );
     const buffer: Buffer<ArrayBufferLike> | null = await generateImage(tree, fonts);
     const fileName: string = `${title.toLowerCase()}.png`.replace(/\s+/g, '-');
 
