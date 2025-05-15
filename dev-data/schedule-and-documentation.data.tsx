@@ -107,4 +107,5 @@ export const scheduleDocumentationMap: ScheduleDocumentationMapType = {
   [COURSE_TITLES.AWS_FUNDAMENTALS]: scheduleDocumentationEN('AWS_FUNDAMENTALS'),
   [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: scheduleDocumentationEN('AWS_CLOUD_DEVELOPER'),
   [COURSE_TITLES.AWS_DEVOPS]: scheduleDocumentationEN('AWS_DEVOPS'),
+  [COURSE_TITLES.AWS_AI]: scheduleDocumentationEN('AWS_AI'),
 };

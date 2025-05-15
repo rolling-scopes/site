@@ -40,6 +40,7 @@ export const COURSE_LINKS = {
   AWS_FUNDAMENTALS: 'https://rs.school/courses/aws-fundamentals',
   AWS_CLOUD_DEVELOPER: 'https://rs.school/courses/aws-cloud-developer',
   AWS_DEVOPS: 'https://rs.school/courses/aws-devops',
+  AWS_AI: 'https://rs.school/courses/aws-ai',
 };
 
 export const KEY_CODES = { ESCAPE: 'Escape' } as const;
@@ -57,6 +58,7 @@ export const COURSE_SCHEDULE_LINKS = {
   AWS_FUNDAMENTALS: 'https://github.com/rolling-scopes-school/aws/tree/main/aws-fundamentals',
   AWS_CLOUD_DEVELOPER: 'https://github.com/rolling-scopes-school/aws/tree/main/aws-developer',
   AWS_DEVOPS: 'https://github.com/rolling-scopes-school/tasks/tree/master/devops',
+  AWS_AI: 'https://github.com/rolling-scopes-school/tasks/tree/master/devops',
 };
 
 export const GITHUB_LINK = 'https://github.com/rolling-scopes-school/';
@@ -118,6 +120,7 @@ export const ROUTES = {
   AWS_DEVELOPER: 'aws-cloud-developer',
   AWS_FUNDAMENTALS: 'aws-fundamentals',
   AWS_DEVOPS: 'aws-devops',
+  AWS_AI: 'aws-ai',
   REACT: 'reactjs',
   MENTORSHIP: 'mentorship',
   DOCS_EN: 'docs/en',

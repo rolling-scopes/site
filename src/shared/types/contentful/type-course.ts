@@ -24,7 +24,66 @@ export interface TypeCourseFields {
    * @name url
    * @localized false
    */
-  url?: EntryFieldTypes.Symbol;
+  url: EntryFieldTypes.Symbol;
+  /**
+   * Field type definition for field 'subTitle' (subTitle)
+   * @name subTitle
+   * @localized false
+   */
+  subTitle?: EntryFieldTypes.Symbol;
+  /**
+   * Field type definition for field 'icon' (icon)
+   * @name icon
+   * @localized false
+   */
+  icon: EntryFieldTypes.AssetLink;
+  /**
+   * Field type definition for field 'iconSmall' (iconSmall)
+   * @name iconSmall
+   * @localized false
+   */
+  iconSmall: EntryFieldTypes.AssetLink;
+  /**
+   * Field type definition for field 'iconFooter' (iconFooter)
+   * @name iconFooter
+   * @localized false
+   */
+  iconFooter: EntryFieldTypes.AssetLink;
+  /**
+   * Field type definition for field 'secondaryIcon' (secondaryIcon)
+   * @name secondaryIcon
+   * @localized false
+   */
+  secondaryIcon: EntryFieldTypes.AssetLink;
+  /**
+   * Field type definition for field 'language' (language)
+   * @name language
+   * @localized false
+   * @summary Should contain course language (en, ru)
+   */
+  language: EntryFieldTypes.Symbol<'en' | 'ru'>;
+  /**
+   * Field type definition for field 'mode' (mode)
+   * @name mode
+   * @localized false
+   * @summary Should contain either "offline" or "online" mode
+   */
+  mode: EntryFieldTypes.Symbol<'offline' | 'online'>;
+  /**
+   * Field type definition for field 'backgroundColor' (backgroundColor)
+   * @name backgroundColor
+   * @localized false
+   * @summary Should contain valid Hex color value
+   */
+  backgroundColor: EntryFieldTypes.Symbol;
+  /**
+   * Field type definition for field 'accentColor' (accentColor)
+   * @name accentColor
+   * @localized false
+   * @summary Should contain valid Hex color value.
+   */
+  accentColor: EntryFieldTypes.Symbol;
+  scheduleUrl: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
 }
 
 /**
@@ -33,7 +92,7 @@ export interface TypeCourseFields {
  * @type {TypeCourseSkeleton}
  * @author 5yCs5AqlcAan6ySHEWFdJn
  * @since 2022-02-09T19:40:33.011Z
- * @version 3
+ * @version 7
  */
 export type TypeCourseSkeleton = EntrySkeletonType<TypeCourseFields, 'course'>;
 /**
@@ -42,7 +101,7 @@ export type TypeCourseSkeleton = EntrySkeletonType<TypeCourseFields, 'course'>;
  * @type {TypeCourse}
  * @author 5yCs5AqlcAan6ySHEWFdJn
  * @since 2022-02-09T19:40:33.011Z
- * @version 3
+ * @version 7
  */
 export type TypeCourse<
   Modifiers extends ChainModifiers,

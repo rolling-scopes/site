@@ -6,6 +6,7 @@ import { schoolMenuStaticLinks } from 'data';
 type DesktopViewProps = {
   courses: Course[];
 };
+
 export const DesktopView = ({ courses }: DesktopViewProps) => {
   return (
     <div className="desktop-view" data-testid="desktop-view">

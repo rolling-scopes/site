@@ -2,36 +2,45 @@ import { StaticImageData } from 'next/image';
 
 import { API_COURSES_IDS_DICTIONARY } from '@/entities/course/constants';
 import { COURSE_LINKS } from '@/shared/constants';
-import { Language } from '@/shared/types';
+import { ApiResourceLocale, Language, TypeCourseSkeleton } from '@/shared/types';
+import type { EntryCollection } from 'contentful';
 import { CourseNamesKeys } from 'data';
 
 type CourseLinks = typeof COURSE_LINKS;
 
 export type CourseLinksValues = CourseLinks[keyof CourseLinks];
 
-export type ApiCoursesResponse = Readonly<{
-  alias: string;
-  description: string;
-  descriptionUrl: string | null;
-  discipline: {
+export type CoursesScheduleResponse = Readonly<
+  {
+    alias: string;
+    description: string;
+    descriptionUrl: string | null;
+    discipline: {
+      id: number;
+      name: string;
+    };
+    endDate: string;
+    fullName: string;
     id: number;
     name: string;
-  };
-  endDate: string;
-  fullName: string;
-  id: number;
-  name: string;
-  registrationEndDate: string;
-  startDate: string;
-  personalMentoringStartDate: string | null;
-  personalMentoringEndDate: string | null;
-  wearecommunityUrl: string | null;
-}>;
+    registrationEndDate: string;
+    startDate: string;
+    personalMentoringStartDate: string | null;
+    personalMentoringEndDate: string | null;
+    wearecommunityUrl: string | null;
+  }[]
+>;
+
+export type CoursesResponse = EntryCollection<
+  TypeCourseSkeleton,
+  'WITHOUT_UNRESOLVABLE_LINKS',
+  ApiResourceLocale
+>;
 
 export type Course = {
   id: string;
-  title: CourseNamesKeys;
-  subTitle: string | null;
+  title: string;
+  subTitle: string | undefined;
   descriptionUrl: CourseLinksValues;
   altTitle?: string;
   iconSrc: StaticImageData;
@@ -39,7 +48,7 @@ export type Course = {
   iconSmall: StaticImageData;
   iconFooter: StaticImageData;
   startDate: string;
-  scheduleUrl: string | string[] | null;
+  scheduleUrl: string[] | null;
   registrationEndDate: string;
   language: Language;
   mode: 'online' | 'offline';
