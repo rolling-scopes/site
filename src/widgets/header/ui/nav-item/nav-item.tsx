@@ -11,7 +11,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { DropdownWrapper } from '../dropdown/dropdown-wrapper';
-import { ROUTES } from '@/core/const';
+import { ROUTES } from '@/shared/constants';
 import { DropdownArrow } from '@/shared/icons/dropdown-arrow';
 
 import styles from './nav-item.module.scss';

@@ -1,5 +1,5 @@
-import { ROUTES } from '@/core/const';
 import { trainerStore } from '@/entities/trainer';
+import { ROUTES } from '@/shared/constants';
 import { getCourseLanguage } from '@/shared/helpers/get-course-language';
 import { AboutCourse } from '@/widgets/about-course';
 import { AboutVideo } from '@/widgets/about-video';

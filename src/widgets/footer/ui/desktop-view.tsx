@@ -1,11 +1,13 @@
 import { AboutList } from './about-list';
-import { getCourses } from '@/entities/course/api/course-api';
+import { Course } from '@/entities/course';
 import { SchoolMenu } from '@/widgets/school-menu';
 import { schoolMenuStaticLinks } from 'data';
 
-export const DesktopView = async () => {
-  const courses = await getCourses();
+type DesktopViewProps = {
+  courses: Course[];
+};
 
+export const DesktopView = ({ courses }: DesktopViewProps) => {
   return (
     <div className="desktop-view" data-testid="desktop-view">
       <div className="left">

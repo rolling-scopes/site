@@ -1,11 +1,14 @@
-import { ROUTES } from '@/core/const';
 import awardIcon from '@/shared/assets/icons/award-icon.webp';
 import giftIcon from '@/shared/assets/icons/gift.webp';
 import noteIcon from '@/shared/assets/icons/note-icon.webp';
 import paperIcon from '@/shared/assets/icons/paper-icon.webp';
 import personIcon from '@/shared/assets/icons/person-icon.webp';
 import planetIcon from '@/shared/assets/icons/planet.webp';
-import { REGISTRATION_WILL_OPEN_SOON, REGISTRATION_WILL_OPEN_SOON_RU } from '@/shared/constants';
+import {
+  REGISTRATION_WILL_OPEN_SOON,
+  REGISTRATION_WILL_OPEN_SOON_RU,
+  ROUTES,
+} from '@/shared/constants';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List } from '@/shared/ui/list';
 import type { AboutCourseInfo } from 'data';
@@ -96,14 +99,14 @@ const listData = {
 const angularNodejsAwsFundamentals: (course: string) => AboutCourseInfo[] = () => [
   {
     id: 1,
-    title: 'For everyone',
-    info: 'Everyone can study at RS School, regardless of age, professional employment, or place of residence. However, you should have sufficient base knowledge before the program begins.The RS School is working by the principle of "Pay it forward". Members of our community share their knowledge and check students\' tasks for free. And we hope that our students will continue this work as our mentors in the future.',
+    title: 'For JS/FE graduates',
+    info: 'This course is exclusively available for students who have successfully completed JS/FE Stage 2. The RS School continues working by the principle of "Pay it forward". Members of our community share their knowledge and check students\' tasks for free. And we hope that our students will continue this work as our mentors in the future.',
     icon: personIcon,
   },
   {
     id: 2,
     title: 'Materials',
-    info: 'Everyone can study at RS School, regardless of age, professional employment, or place of residence. However, you should have sufficient base knowledge before the program begins.',
+    info: 'All materials are publicly available on the YouTube channel and GitHub',
     icon: paperIcon,
   },
   {

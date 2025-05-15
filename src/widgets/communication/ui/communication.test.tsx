@@ -3,7 +3,7 @@ import { cleanup, screen } from '@testing-library/react';
 import { Communication } from './communication';
 import { mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { COURSE_TITLES, DISCORD_LINKS, communicationText } from 'data';
+import { COURSE_TITLES, CourseNamesKeys, DISCORD_LINKS, communicationText } from 'data';
 
 const mockLangVariants = [
   {
@@ -19,7 +19,7 @@ const mockLangVariants = [
 const mockCourseVariants = mockedCourses.map((course) => {
   return {
     course,
-    link: DISCORD_LINKS[course.title],
+    link: DISCORD_LINKS[course.title as CourseNamesKeys],
   };
 });
 
