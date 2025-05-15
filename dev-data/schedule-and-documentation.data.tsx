@@ -1,111 +1,57 @@
 import { ReactElement } from 'react';
 
-import { COURSE_TITLES } from '@/../dev-data/course-titles.data';
-import { COURSE_SCHEDULE_LINKS, DOCUMENTATION_LINKS } from '@/shared/constants';
+import { DOCUMENTATION_LINKS } from '@/shared/constants';
+import { Language } from '@/shared/types';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 
-type CourseKeys = keyof typeof COURSE_TITLES;
-type CourseNames = typeof COURSE_TITLES[CourseKeys];
-
-type ScheduleDocumentationMapType = {
-  [key in CourseNames]: ReactElement;
+interface ScheduleText {
+  schedule: string;
+  documentation: string;
+  and: string;
+  link: string;
+}
+const TEXT: Record<Language, ScheduleText> = {
+  ru: {
+    schedule: 'Расписание курса доступно - ',
+    documentation: ', а документацию школы можно найти - ',
+    link: 'здесь',
+    and: 'и',
+  },
+  en: {
+    schedule: 'The course schedule is available - ',
+    documentation: ', and the school documentation can be found - ',
+    link: 'here',
+    and: 'and',
+  },
 };
 
-const scheduleDocumentationEN: (courseName: CourseKeys) => ReactElement = (courseName) => (
-  <Paragraph>
-    The course
-    {' '}
-    <LinkCustom
-      href={COURSE_SCHEDULE_LINKS[courseName]?.toString()}
-      variant="textLink"
-      external
-    >
-      shcedule
-    </LinkCustom>
-    {' '}
-    and school
-    {' '}
-    <LinkCustom
-      href={DOCUMENTATION_LINKS.EN}
-      variant="textLink"
-      external
-    >
-      documentation
-    </LinkCustom>
-    .
-  </Paragraph>
-);
+export const scheduleDocumentationLinks = (
+  language: Language, scheduleUrl: string[] | null,
+): ReactElement => {
+  const text = TEXT[language];
+  const docLink = DOCUMENTATION_LINKS[language];
 
-const JS_PRESCHOOL_RU: ReactElement = (
-  <Paragraph>
-    <LinkCustom
-      href={COURSE_SCHEDULE_LINKS['JS_PRESCHOOL_RU']}
-      variant="textLink"
-      external
-    >
-      Рассписание
-    </LinkCustom>
-    {' '}
-    курса и
-    {' '}
-    <LinkCustom
-      href={DOCUMENTATION_LINKS.RU}
-      variant="textLink"
-      external
-    >
-      документация
-    </LinkCustom>
-    {' '}
-    школы.
-  </Paragraph>
-);
+  const renderScheduleLinks = () => {
+    return scheduleUrl?.map((link, index) => (
+      <>
+        <LinkCustom key={link} href={link} variant="textLink" external>
+          {`${text.link}`}
+        </LinkCustom>
+        {index < scheduleUrl.length - 1 && ` ${text.and} `}
+      </>
+    ));
+  };
 
-const JS_RU: ReactElement = (
-  <Paragraph>
-    Рассписания
-    {' '}
-    <LinkCustom
-      href={COURSE_SCHEDULE_LINKS['JS_RU'][0]}
-      variant="textLink"
-      external
-    >
-      первого
-    </LinkCustom>
-    {' '}
-    и
-    {' '}
-    <LinkCustom
-      href={COURSE_SCHEDULE_LINKS['JS_RU'][1]}
-      variant="textLink"
-      external
-    >
-      второго
-    </LinkCustom>
-    {' '}
-    этапа курса и
-    {' '}
-    <LinkCustom
-      href={DOCUMENTATION_LINKS.RU}
-      variant="textLink"
-      external
-    >
-      документация
-    </LinkCustom>
-    {' '}
-    школы.
-  </Paragraph>
-);
-
-export const scheduleDocumentationMap: ScheduleDocumentationMapType = {
-  [COURSE_TITLES.JS_RU]: JS_RU,
-  [COURSE_TITLES.JS_EN]: scheduleDocumentationEN('JS_EN'),
-  [COURSE_TITLES.JS_PRESCHOOL_RU]: JS_PRESCHOOL_RU,
-  [COURSE_TITLES.REACT]: scheduleDocumentationEN('REACT'),
-  [COURSE_TITLES.ANGULAR]: scheduleDocumentationEN('ANGULAR'),
-  [COURSE_TITLES.NODE]: scheduleDocumentationEN('NODE'),
-  [COURSE_TITLES.AWS_FUNDAMENTALS]: scheduleDocumentationEN('AWS_FUNDAMENTALS'),
-  [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: scheduleDocumentationEN('AWS_CLOUD_DEVELOPER'),
-  [COURSE_TITLES.AWS_DEVOPS]: scheduleDocumentationEN('AWS_DEVOPS'),
-  [COURSE_TITLES.AWS_AI]: scheduleDocumentationEN('AWS_AI'),
+  return (
+    <Paragraph>
+      {text.schedule}
+      {' '}
+      {renderScheduleLinks()}
+      {text.documentation}
+      <LinkCustom href={docLink} variant="textLink" external>
+        {text.link}
+      </LinkCustom>
+    </Paragraph>
+  );
 };

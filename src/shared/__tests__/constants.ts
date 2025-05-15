@@ -5,7 +5,7 @@ import { Course } from '@/entities/course';
 import { MentorFeedback } from '@/entities/mentor';
 import type { Trainer } from '@/entities/trainer';
 import nodejsImg1 from '@/shared/assets/mentors/m-shylau.webp';
-import { COURSE_LINKS, COURSE_SCHEDULE_LINKS, ROUTES } from '@/shared/constants';
+import { COURSE_LINKS, ROUTES } from '@/shared/constants';
 import { FaqDataItem, FaqDataItemWithLink } from '@/widgets/faq/types';
 import { COURSE_TITLES } from 'data';
 
@@ -79,7 +79,7 @@ export const mockedCourses: Course[] = [
     subTitle: undefined,
     descriptionUrl: COURSE_LINKS.JS_RU,
     startDate: 'Oct, 2024',
-    scheduleUrl: COURSE_SCHEDULE_LINKS.JS_RU,
+    scheduleUrl: ['link'],
     registrationEndDate: 'Jun 24, 2025',
     language: 'ru',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.JS_RU}`,

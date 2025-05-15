@@ -45,26 +45,10 @@ export const COURSE_LINKS = {
 
 export const KEY_CODES = { ESCAPE: 'Escape' } as const;
 
-export const COURSE_SCHEDULE_LINKS = {
-  JS_PRESCHOOL_RU: 'https://github.com/rolling-scopes-school/tasks/tree/master/stage0',
-  JS_EN: 'https://github.com/rolling-scopes-school/js-fe-course-en',
-  JS_RU: [
-    'https://github.com/rolling-scopes-school/tasks/tree/master/stage1',
-    'https://github.com/rolling-scopes-school/tasks/tree/master/stage2',
-  ],
-  REACT: 'https://github.com/rolling-scopes-school/tasks/blob/master/react/README.md',
-  ANGULAR: 'https://github.com/rolling-scopes-school/tasks/tree/master/angular',
-  NODE: 'https://github.com/rolling-scopes-school/tasks/tree/master/node',
-  AWS_FUNDAMENTALS: 'https://github.com/rolling-scopes-school/aws/tree/main/aws-fundamentals',
-  AWS_CLOUD_DEVELOPER: 'https://github.com/rolling-scopes-school/aws/tree/main/aws-developer',
-  AWS_DEVOPS: 'https://github.com/rolling-scopes-school/tasks/tree/master/devops',
-  AWS_AI: 'https://github.com/rolling-scopes-school/tasks/tree/master/devops',
-};
-
 export const GITHUB_LINK = 'https://github.com/rolling-scopes-school/';
 export const DOCUMENTATION_LINKS = {
-  'RU': 'https://rs.school/docs/ru',
-  'EN': 'https://docs.rs.school',
+  ru: 'https://rs.school/docs/ru',
+  en: 'https://docs.rs.school',
 };
 
 export const HTTP_METHOD = {

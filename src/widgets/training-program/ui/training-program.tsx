@@ -6,7 +6,7 @@ import { isTrainingProgramType } from '@/shared/helpers/is-training-program';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { CourseNamesKeys, contentMap, trainingProgramLink } from 'data';
+import { CourseNamesKeys, contentMap, scheduleDocumentationLinks, trainingProgramLink } from 'data';
 
 import styles from './training-program.module.scss';
 
@@ -19,7 +19,7 @@ type TrainingProgramProps = {
 
 export const TrainingProgram = async ({ courseName, specify = '' }: TrainingProgramProps) => {
   const course = await selectCourse(courseName);
-  const { language } = course;
+  const { language, scheduleUrl } = course;
   const programName = specify ? `${courseName} ${specify}` : courseName;
   const contentName = isTrainingProgramType(programName) ? programName : courseName;
   const isCourseWithBadge = courseName.includes('badge');
@@ -37,6 +37,8 @@ export const TrainingProgram = async ({ courseName, specify = '' }: TrainingProg
           <WidgetTitle mods="asterisk">{title}</WidgetTitle>
 
           {content.map((component, index) => cloneElement(component, { key: index }))}
+
+          {scheduleDocumentationLinks(language, scheduleUrl)}
 
           {course && (
             <LinkCustom href={enrollHref} variant="primary" external disabled={!course.enroll}>
