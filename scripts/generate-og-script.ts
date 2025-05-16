@@ -9,12 +9,12 @@ import { getCourseInfo } from './utils/course-info';
 import { createCourseTree } from './utils/courses-tree/generate-courses-tree';
 import { ensureDirExists } from './utils/ensure-dir-exists';
 import { generateImage } from './utils/generate-image';
-import { createPageTree } from './utils/generate-page-tree';
 import { getCoursesSchedule } from './utils/get-courses-schedule';
 import { type Font, loadFont } from './utils/load-fonts';
 import { loadImageAsDataUri } from './utils/load-image-as-data-uri';
 import { COURSE_TITLES } from '../dev-data/course-titles.data';
 import { COURSE_SLUGS, Descriptions, RS_PAGES } from '../dev-data/open-graph.data';
+import { createPageTree } from './utils/pages-tree/generate-pages-tree';
 
 const fontRegularPromise: Promise<Font> = loadFont(400);
 const fontBoldPromise: Promise<Font> = loadFont(700);
