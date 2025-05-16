@@ -11,21 +11,21 @@ const cx = classNames.bind(styles);
 
 export const Alumni = () => {
   return (
-    <article className={cx('container')}>
-      <section className={cx('content', 'alumni')}>
+    <section className={cx('container')}>
+      <div className={cx('content', 'alumni')}>
         <WidgetTitle mods="asterisk">Our alumni</WidgetTitle>
         <Paragraph>
           We are immensely proud of RS School alumni who build their successful careers in ambitious
           IT companies
         </Paragraph>
-        <section className={cx('alumni-list')}>
+        <ul className={cx('alumni-list')}>
           {alumni.map(({ id, image }) => (
-            <figure key={id} className={cx('logo-container')}>
+            <li key={id} className={cx('logo-container')}>
               <Image className={cx('logo')} src={image} alt={id} />
-            </figure>
+            </li>
           ))}
-        </section>
-      </section>
-    </article>
+        </ul>
+      </div>
+    </section>
   );
 };

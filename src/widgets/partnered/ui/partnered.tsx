@@ -8,7 +8,7 @@ import styles from './partnered.module.scss';
 const cx = classNames.bind(styles);
 
 export const Partnered = () => (
-  <section className={cx('partnered-container', 'container')} data-testid="partnered">
+  <section className={cx('container')} data-testid="partnered">
     <div className={cx('partnered-content', 'content')}>
       <WidgetTitle size="small">Partnered with</WidgetTitle>
       <ul className={cx('partners')} data-testid="partners-list">
