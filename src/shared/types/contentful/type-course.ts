@@ -83,6 +83,7 @@ export interface TypeCourseFields {
    * @summary Should contain valid Hex color value.
    */
   accentColor: EntryFieldTypes.Symbol;
+  scheduleUrl: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
 }
 
 /**
