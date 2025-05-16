@@ -7,10 +7,29 @@ import aws from '@/shared/assets/icons/aws-gray.svg';
 import github from '@/shared/assets/svg/github.svg';
 import jetbrains from '@/shared/assets/svg/jetbrains.svg';
 
-describe('Partnered component', () => {
-  it('renders correct content for component', async () => {
-    render(<Partnered />);
+const partnersLogoData = [
+  {
+    testId: 'jetbrains icon',
+    alt: 'jetbrains icon',
+    src: jetbrains.src,
+  },
+  {
+    testId: 'AWS icon',
+    alt: 'AWS icon',
+    src: aws.src,
+  },
+  {
+    testId: 'github icon',
+    alt: 'github icon',
+    src: github.src,
+  },
+];
 
+describe('Partnered component', () => {
+  beforeEach(() => {
+    render(<Partnered />);
+  });
+  it('renders correct content for component', async () => {
     const title = await screen.findByTestId('widget-title');
     const partnersList = await screen.findByTestId('partners-list');
 
@@ -21,15 +40,13 @@ describe('Partnered component', () => {
     expect(partnersList.children).toHaveLength(partners.length);
   });
 
-  it('renders the title and logos correctly', () => {
-    render(<Partnered />);
+  it.each(partnersLogoData)(
+    'renders $testId logo with correct attributes',
+    ({ testId, alt, src }) => {
+      const logo = screen.getByTestId(testId);
 
-    const logos = screen.getAllByRole('img');
-
-    expect(logos).toHaveLength(3);
-
-    expect(screen.getByAltText('jetbrains icon')).toHaveAttribute('src', jetbrains.src);
-    expect(screen.getByAltText('AWS icon')).toHaveAttribute('src', aws.src);
-    expect(screen.getByAltText('github icon')).toHaveAttribute('src', github.src);
-  });
+      expect(logo).toHaveAttribute('alt', alt);
+      expect(logo).toHaveAttribute('src', src);
+    },
+  );
 });
