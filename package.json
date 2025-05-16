@@ -19,12 +19,13 @@
     "precommit": "npx lint-staged",
     "prepare": "husky",
     "postbuild": "pagefind --force-language ru --site .next/server/app/docs/ru --output-path build/_next/static/pagefind/ru && pagefind --force-language en --site .next/server/app/docs/en --output-path build/_next/static/pagefind/en",
-    "contentful:prepare": "dotenv -e .env -- bash -c 'cf-content-types-generator -X -r -d -s $CONTENTFUL_SPACE_ID -t $CONTENTFUL_MANAGEMENT_TOKEN -o src/shared/types/contentful' && npx eslint src/shared/types/contentful/*.ts --fix"
+    "contentful:prepare": "dotenv -e .env -- bash -c 'cf-content-types-generator -X -r -d -s $CONTENTFUL_SPACE_ID -t $CONTENTFUL_MANAGEMENT_TOKEN -o src/shared/types/contentful' && npx eslint src/shared/types/contentful/*.ts --fix && prettier --write src/shared/types/contentful/**/*.ts"
   },
   "engines": {
     "node": ">=20.x"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^16.0.1",
     "@next/third-parties": "^15.2.4",
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",

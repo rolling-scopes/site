@@ -1,4 +1,11 @@
+import { ReactNode } from 'react';
+import { BLOCKS } from '@contentful/rich-text-types';
+
 import { ApiResourceLocale, Language } from '@/shared/types/';
+import { ContentList } from '@/shared/ui/list/content-list';
+import { ListItem } from '@/shared/ui/list/list-item';
+import { Paragraph } from '@/shared/ui/paragraph';
+import { Subtitle } from '@/shared/ui/subtitle';
 
 export const RS_INTRO_URL = 'https://www.youtube.com/embed/n4unZLVpnaU';
 export const RS_FOUNDATION_YEAR = '2013';
@@ -60,6 +67,7 @@ export const API_LOCALE_DICTIONARY: Record<Language, ApiResourceLocale> = {
 export const API_CONTENT_TYPE_DICTIONARY = {
   TRAINER: 'contributor',
   COURSE: 'course',
+  COURSE_PAGE: 'homePage',
 } as const;
 export const ANCHORS = {
   ABOUT_COMMUNITY: 'about-community',
@@ -103,3 +111,23 @@ export const ROUTES = {
   DOCS_RU: 'docs/ru',
   NOT_FOUND: '*',
 } as const;
+
+export const RICH_TEXT_OPTIONS = {
+  renderNode: {
+    [BLOCKS.PARAGRAPH]: (_node: unknown, children: ReactNode) => {
+      if (!children) {
+        return null;
+      }
+
+      // hack to prevent rendering an empty trailing paragraph
+      const isEmptyNode = children.toString().trim() === '';
+
+      return isEmptyNode ? '' : <Paragraph>{children}</Paragraph>;
+    },
+    [BLOCKS.HEADING_3]: (_node: unknown, children: ReactNode) => <Subtitle>{children}</Subtitle>,
+    [BLOCKS.UL_LIST]: (_node: unknown, children: ReactNode) => (
+      <ContentList>{children}</ContentList>
+    ),
+    [BLOCKS.LIST_ITEM]: (_node: unknown, children: ReactNode) => <ListItem>{children}</ListItem>,
+  },
+};

@@ -1,4 +1,5 @@
 import { syncApiCoursesSchedule } from '@/entities/course/helpers/sync-api-courses-schedule';
+import { transformCourseSections } from '@/entities/course/helpers/transform-course-sections';
 import { transformCourses } from '@/entities/course/helpers/transform-courses';
 import { api } from '@/shared/api/api';
 
@@ -26,6 +27,16 @@ class CourseStore {
     }
 
     throw new Error('Something went wrong fetching courses schedule!');
+  };
+
+  public loadCoursePage = async () => {
+    const res = await api.course.queryCoursePage();
+
+    if (res.isSuccess) {
+      return transformCourseSections(res.result);
+    }
+
+    throw new Error('Something went wrong fetching course page!');
   };
 }
 
