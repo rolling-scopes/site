@@ -55,3 +55,82 @@
   border: none;
   outline: none;
 }
+
+.filter-tag-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-tag-label {
+  cursor: pointer;
+
+  display: flex;
+
+  width: 100%;
+  padding: 8px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+
+  background-color: $color-gray-50;
+
+  &:hover {
+    background-color: $color-gray-200;
+  }
+}
+
+.filter-checkbox-original {
+  position: absolute;
+
+  overflow: hidden;
+
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+
+  opacity: 0;
+}
+
+.filter-checkbox-custom {
+  position: relative;
+
+  display: inline-block;
+
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+
+  background-color: #fff;
+
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 4px;
+    transform: rotate(45deg);
+
+    display: none;
+
+    width: 5px;
+    height: 10px;
+    border: solid $color-gray-800;
+    border-width: 0 1px 1px 0;
+  }
+}
+
+.filter-checkbox-original:checked + .filter-checkbox-custom {
+  border-color: $color-yellow;
+  background-color: $color-yellow;
+
+  &::after {
+    display: block;
+  }
+}

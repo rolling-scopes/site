@@ -23,6 +23,18 @@ export const FilterControls = () => {
             placeholder="Search..."
           />
         </div>
+        <div className={cx('filter-tag-wrapper')}>
+          <label className={cx('filter-tag-label')}>
+            <input
+              type="checkbox"
+              className={cx('filter-checkbox-original')}
+              // checked={selectedTags.includes(tag)}
+              // onChange={() => onTagChange(tag)}
+            />
+            <span className={cx('filter-checkbox-custom')}></span>
+            <span>stickers</span>
+          </label>
+        </div>
       </div>
     </div>
   );
