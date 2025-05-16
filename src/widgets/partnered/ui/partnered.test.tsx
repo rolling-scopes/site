@@ -2,17 +2,23 @@ import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
 import { Partnered } from './partnered';
+import { partners } from '../constants';
 import aws from '@/shared/assets/icons/aws-gray.svg';
 import github from '@/shared/assets/svg/github.svg';
 import jetbrains from '@/shared/assets/svg/jetbrains.svg';
 
 describe('Partnered component', () => {
-  it('should render the component with correct title', () => {
+  it('renders correct content for component', async () => {
     render(<Partnered />);
 
-    expect(screen.getByText('Partnered with')).toBeInTheDocument();
+    const title = await screen.findByTestId('widget-title');
+    const partnersList = await screen.findByTestId('partners-list');
 
-    expect(screen.getByTestId('widget-title')).toBeInTheDocument();
+    expect(title).toBeVisible();
+    expect(title.textContent).toBe('Partnered with');
+
+    expect(partnersList).toBeVisible();
+    expect(partnersList.children).toHaveLength(partners.length);
   });
 
   it('renders the title and logos correctly', () => {

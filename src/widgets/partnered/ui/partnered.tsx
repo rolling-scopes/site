@@ -11,7 +11,7 @@ export const Partnered = () => (
   <section className={cx('partnered-container', 'container')} data-testid="partnered">
     <div className={cx('partnered-content', 'content')}>
       <WidgetTitle size="small">Partnered with</WidgetTitle>
-      <ul className={cx('partners')}>
+      <ul className={cx('partners')} data-testid="partners-list">
         {partners.map(({ id, Component }) => (
           <li key={id} className={cx('partner-logo-container')}>
             <Component />
