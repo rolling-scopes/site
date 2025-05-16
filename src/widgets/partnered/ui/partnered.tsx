@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 
-import { AwsLogo, GithubLogo, JetBrainsLogo } from '@/shared/icons';
+import { partners } from '../constants';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './partnered.module.scss';
@@ -12,15 +12,11 @@ export const Partnered = () => (
     <div className={cx('partnered-content', 'content')}>
       <WidgetTitle size="small">Partnered with</WidgetTitle>
       <ul className={cx('partners')}>
-        <li className={cx('partner-logo-container')}>
-          <JetBrainsLogo />
-        </li>
-        <li className={cx('partner-logo-container')}>
-          <AwsLogo />
-        </li>
-        <li className={cx('partner-logo-container')}>
-          <GithubLogo />
-        </li>
+        {partners.map(({ id, Component }) => (
+          <li key={id} className={cx('partner-logo-container')}>
+            <Component />
+          </li>
+        ))}
       </ul>
     </div>
   </section>
