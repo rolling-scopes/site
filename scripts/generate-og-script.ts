@@ -11,7 +11,7 @@ import { generateImage } from './utils/generate-image';
 import { getCombinedDataCourses } from './utils/get-combain-data-courses';
 import { type Font, loadFont } from './utils/load-fonts';
 import { loadImageAsDataUri } from './utils/load-image-as-data-uri';
-import { Descriptions, RS_PAGES } from '../dev-data/open-graph.data';
+import { Descriptions, RS_PAGES } from './utils/open-graph.data';
 import { createPageTree } from './view/pages-tree/generate-pages-tree';
 
 const fontRegularPromise: Promise<Font> = loadFont(400);
