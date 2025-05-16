@@ -1,4 +1,3 @@
-/* eslint-disable @stylistic/jsx-closing-bracket-location */
 import { HTMLProps } from 'react';
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
@@ -26,17 +25,29 @@ export const SchoolItem = ({
   url,
   ...props
 }: SchoolItemProps) => {
+  const isNonClickable = Boolean(url === '#');
+
   return (
-    <li {...props}>
-      <Link href={url} className={cx('school-item')}>
-        {icon && <Image
-          src={icon}
-          alt=""
-          width={32}
-          height={32}
-          aria-hidden="true"
-          data-testid="school-item-icon"
-        />}
+    <li {...props} className={cx(props.className)}>
+      <Link
+        href={url}
+        className={cx(
+          'school-item',
+          { 'non-clickable': isNonClickable },
+          { centered: !description },
+        )}
+        tabIndex={isNonClickable ? -1 : 0}
+      >
+        {icon && (
+          <Image
+            src={icon}
+            alt=""
+            width={32}
+            height={32}
+            aria-hidden="true"
+            data-testid="school-item-icon"
+          />
+        )}
         <div className={cx('description-wrapper')}>
           <span className={cx('title', color)}>{title}</span>
           {description && (

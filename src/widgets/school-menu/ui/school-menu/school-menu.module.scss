@@ -1,4 +1,6 @@
 .school-menu {
+  @extend %transition-all;
+
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -20,25 +22,69 @@
   }
 
   .school-list {
-    display: flex;
-    flex-flow: column wrap;
-    gap: 19px 40px;
-
-    max-height: 280px;
-
+    gap: 24px 32px;
+    max-height: 336px;
     list-style-type: none;
 
-    &:has(:nth-child(5)) {
-      width: 512px;
+    &.anchor-links {
+      grid-template-columns: 200px auto;
+      gap: 8px 32px;
+    }
 
-      @include media-tablet {
-        width: unset;
+    &--columns {
+      display: grid;
+      grid-auto-flow: column;
+      grid-template-rows: repeat(2, 48px);
+
+      &:has(:nth-child(3)) {
+        width: 500px;
+
+        @include media-tablet {
+          width: unset;
+        }
+      }
+
+      &:has(:nth-child(5)) {
+        grid-template-columns: 262px auto;
+        grid-template-rows: repeat(auto-fit, 48px);
+      }
+    }
+
+    &--single {
+      display: flex;
+      flex-flow: column wrap;
+      min-width: 232px;
+
+      &:has(:nth-child(5)) {
+        width: 500px;
+
+        @include media-tablet {
+          width: unset;
+        }
       }
     }
 
     @include media-mobile-landscape {
-      column-gap: 10px;
-      max-height: 600px;
+      row-gap: 16px;
+      max-height: 624px;
     }
+  }
+
+  &.hidden {
+    @extend %transition-all;
+
+    max-height: 0;
+    margin-top: 0;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &.visible {
+    @extend %transition-all;
+
+    max-height: 624px;
+    margin-top: 26px;
+    visibility: visible;
+    opacity: 1;
   }
 }

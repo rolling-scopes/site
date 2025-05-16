@@ -1,17 +1,18 @@
 import {
-  FocusEvent,
   KeyboardEvent,
   PropsWithChildren,
+  useCallback,
   useEffect,
   useRef,
   useState,
 } from 'react';
 import classNames from 'classnames/bind';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import Image, { StaticImageData } from 'next/image';
+import { usePathname, useRouter } from 'next/navigation';
 
 import { DropdownWrapper } from '../dropdown/dropdown-wrapper';
-import { ROUTES } from '@/shared/constants';
+import { KEY_CODES, ROUTES } from '@/shared/constants';
+import { useOutsideClick } from '@/shared/hooks/use-outside-click/use-outside-click';
 import { DropdownArrow } from '@/shared/icons/dropdown-arrow';
 
 import styles from './nav-item.module.scss';
@@ -21,80 +22,112 @@ const cx = classNames.bind(styles);
 type NavItemProps = PropsWithChildren & {
   label: string;
   href: string;
+  icon?: StaticImageData;
 };
 
-export const NavItem = ({ label, href, children }: NavItemProps) => {
+export const NavItem = ({ label, href, icon, children }: NavItemProps) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
-  const dropdownToggleRef = useRef<HTMLButtonElement>(null);
-
-  const onClose = () => setDropdownOpen(false);
-  const onOpen = () => setDropdownOpen(true);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const isDropdown = Boolean(children);
+  const router = useRouter();
 
   const pathname = usePathname();
   const isHrefHome = href === ROUTES.HOME;
   const isActive = isHrefHome ? pathname === ROUTES.HOME : pathname?.includes(href);
   const linkHref = isHrefHome ? href : `/${href}`;
+  const closeAllDropdowns = 'closeAllDropdowns';
 
-  const handleConfirmKeyPress = (e: KeyboardEvent<HTMLButtonElement>) => {
-    if (e.code === 'Enter' || e.code === 'Space') {
-      e.preventDefault();
-      setDropdownOpen((prev) => !prev);
+  const onClose = useCallback(() => {
+    setDropdownOpen(false);
+  }, []);
+
+  const onDropdownToggle = () => {
+    if (!isDropdownOpen) {
+      window.dispatchEvent(new CustomEvent(closeAllDropdowns));
+    }
+
+    setDropdownOpen((prev) => !prev);
+  };
+
+  const handleClick = () => {
+    if (isDropdown) {
+      onDropdownToggle();
+    } else {
+      router.push(linkHref);
     }
   };
 
   const handleEscKeyPress = (e: KeyboardEvent<HTMLElement>) => {
-    if (e.code === 'Escape') {
+    if (e.code === KEY_CODES.ESCAPE) {
       onClose();
-      dropdownToggleRef.current?.focus();
+      buttonRef.current?.focus();
     }
   };
 
-  const handleBlur = (e: FocusEvent<HTMLDivElement>) => {
-    if (!e.currentTarget.contains(e.relatedTarget)) {
-      onClose();
+  const handleConfirmKeyPress = (e: KeyboardEvent<HTMLElement>) => {
+    if (e.code === KEY_CODES.ENTER || e.code === KEY_CODES.SPACE) {
+      e.preventDefault();
+      handleClick();
     }
+    handleEscKeyPress(e);
   };
+
+  useOutsideClick(wrapperRef, onClose, isDropdownOpen);
+
+  useEffect(() => {
+    window.addEventListener(closeAllDropdowns, onClose);
+
+    return () => {
+      window.removeEventListener(closeAllDropdowns, onClose);
+    };
+  }, [onClose]);
 
   useEffect(() => {
     onClose();
-  }, [pathname]);
+  }, [pathname, onClose]);
 
   return (
     <div
       className={cx('menu-item-wrapper')}
-      onBlur={handleBlur}
-      onKeyDown={handleEscKeyPress}
+      ref={wrapperRef}
+      onKeyDown={handleConfirmKeyPress}
       data-testid="menu-item"
     >
-      <Link
-        href={linkHref}
+      <button
+        ref={buttonRef}
         className={cx(
           'menu-item',
           { active: isActive },
-          { 'dropdown-toggle': Boolean(children) },
+          { 'dropdown-toggle': isDropdown },
           { rotate: isDropdownOpen },
         )}
-        onMouseLeave={onClose}
-        onMouseEnter={onOpen}
+        onClick={handleClick}
       >
-        <span className={cx('label')}>{label}</span>
-        {children && (
-          <button
-            onKeyDown={handleConfirmKeyPress}
-            ref={dropdownToggleRef}
-            className={cx('dropdown-arrow')}
-            aria-expanded={isDropdownOpen}
-          >
-            <DropdownArrow />
-          </button>
+        {icon && (
+          <Image
+            src={icon}
+            alt="Donate-icon"
+            width={18}
+            height={16}
+            aria-hidden="true"
+            data-testid="school-item-icon"
+          />
         )}
-      </Link>
-      {children && (
-        <DropdownWrapper onMouseLeave={onClose} onMouseEnter={onOpen} isOpen={isDropdownOpen}>
-          {children}
-        </DropdownWrapper>
-      )}
+        <span className={cx('label-bold')}>
+          {label}
+          <span className={cx('label-content')} aria-hidden="true">
+            {label}
+          </span>
+        </span>
+        {isDropdown && (
+          <span className={cx('dropdown-arrow')} role="button" aria-expanded={isDropdownOpen}>
+            <DropdownArrow />
+          </span>
+        )}
+      </button>
+      {isDropdown && <DropdownWrapper isOpen={isDropdownOpen}>{children}</DropdownWrapper>}
     </div>
   );
 };
