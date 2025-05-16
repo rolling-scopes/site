@@ -6,8 +6,8 @@ import fs from 'fs/promises';
 import path from 'path';
 
 import { getCourseInfo } from './utils/course-info';
+import { createCourseTree } from './utils/courses-tree/generate-courses-tree';
 import { ensureDirExists } from './utils/ensure-dir-exists';
-import { createCourseTree } from './utils/generate-courses-tree';
 import { generateImage } from './utils/generate-image';
 import { createPageTree } from './utils/generate-page-tree';
 import { getCoursesSchedule } from './utils/get-courses-schedule';
