@@ -5,13 +5,13 @@ import 'dotenv/config';
 import fs from 'fs/promises';
 import path from 'path';
 
-import { createCourseTree } from './view/courses-tree/generate-courses-tree';
 import { ensureDirExists } from './utils/ensure-dir-exists';
 import { generateImage } from './utils/generate-image';
 import { getCombinedDataCourses } from './utils/get-combain-data-courses';
 import { type Font, loadFont } from './utils/load-fonts';
 import { loadImageAsDataUri } from './utils/load-image-as-data-uri';
 import { Descriptions, RS_PAGES } from './utils/open-graph.data';
+import { createCourseTree } from './view/courses-tree/generate-courses-tree';
 import { createPageTree } from './view/pages-tree/generate-pages-tree';
 
 const fontRegularPromise: Promise<Font> = loadFont(400);
