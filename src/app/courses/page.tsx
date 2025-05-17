@@ -7,11 +7,17 @@ export async function generateMetadata(): Promise<Metadata> {
   const title = 'Courses · The Rolling Scopes School';
   const description =
     'Explore free, community-driven RS School courses: JavaScript, React, Node.js, AWS, Angular, and more. Start your journey to full stack mastery!';
+  const keywords = 'RS School courses, free programming courses, JavaScript, React, Node.js, AWS, Angular, web development, IT education';
+  const canonical = 'https://rs.school/courses';
+  const robots = 'index, follow';
 
   const metadata = generatePageMetadata({
     title,
     description,
     imagePath: '/og-images-pages/courses.png',
+    keywords,
+    alternates: { canonical },
+    robots,
   });
 
   return metadata;

@@ -10,11 +10,17 @@ export async function generateMetadata() {
   const title = `RS School Overview ${TITLE_POSTFIX}`;
   const description =
     'RS School Docs: find rules, guides, FAQs, onboarding, and resources for students and mentors. Your hub for all Rolling Scopes School documentation.';
+  const keywords = 'RS School docs, documentation, rules, guides, onboarding, FAQ, student resources, mentor resources';
+  const canonical = 'https://rs.school/docs';
+  const robots = 'index, follow';
 
   const metadata = generatePageMetadata({
     title,
     description,
     imagePath: '/og-images-pages/docs.png',
+    keywords,
+    alternates: { canonical },
+    robots,
   });
 
   return metadata;

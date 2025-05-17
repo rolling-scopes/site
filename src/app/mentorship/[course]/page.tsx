@@ -8,11 +8,17 @@ export async function generateMetadata(): Promise<Metadata> {
   const title = `Mentorship · The Rolling Scopes School`;
   const description =
     'RS School Mentorship: mentor React, Angular, or JavaScript students, share expertise, develop leadership, and grow with our global tech community.';
+  const keywords = 'RS School mentorship, mentor React, mentor Angular, mentor JavaScript, teaching, tech mentorship, developer mentor';
+  const canonical = 'https://rs.school/mentorship';
+  const robots = 'index, follow';
 
   const metadata = generatePageMetadata({
     title,
     description,
     imagePath: '/og-images-pages/mentorship.png',
+    keywords,
+    alternates: { canonical },
+    robots,
   });
 
   return metadata;
