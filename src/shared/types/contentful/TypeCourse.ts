@@ -83,6 +83,19 @@ export interface TypeCourseFields {
    * @summary Should contain valid Hex color value.
    */
   accentColor: EntryFieldTypes.Symbol;
+  /**
+   * Field type definition for field 'order' (order)
+   * @name order
+   * @localized false
+   * @summary The order in which courses are shown by default. Course with order "1" appears at the top.
+   */
+  order: EntryFieldTypes.Integer;
+  /**
+   * Field type definition for field 'scheduleUrl' (scheduleUrl)
+   * @name scheduleUrl
+   * @localized false
+   */
+  scheduleUrl?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
 }
 
 /**
@@ -91,7 +104,7 @@ export interface TypeCourseFields {
  * @type {TypeCourseSkeleton}
  * @author 5yCs5AqlcAan6ySHEWFdJn
  * @since 2022-02-09T19:40:33.011Z
- * @version 7
+ * @version 25
  */
 export type TypeCourseSkeleton = EntrySkeletonType<TypeCourseFields, 'course'>;
 /**
@@ -100,7 +113,7 @@ export type TypeCourseSkeleton = EntrySkeletonType<TypeCourseFields, 'course'>;
  * @type {TypeCourse}
  * @author 5yCs5AqlcAan6ySHEWFdJn
  * @since 2022-02-09T19:40:33.011Z
- * @version 7
+ * @version 25
  */
 export type TypeCourse<
   Modifiers extends ChainModifiers,

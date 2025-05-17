@@ -1,4 +1,44 @@
 export type {
+  TypeAboutCourse,
+  TypeAboutCourseFields,
+  TypeAboutCourseSkeleton,
+  TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeAboutCourseWithAllLocalesAndWithoutUnresolvableLinksResponse,
+  TypeAboutCourseWithAllLocalesResponse,
+  TypeAboutCourseWithoutLinkResolutionResponse,
+  TypeAboutCourseWithoutUnresolvableLinksResponse,
+} from './TypeAboutCourse';
+export type {
+  TypeAboutCourseItem,
+  TypeAboutCourseItemFields,
+  TypeAboutCourseItemSkeleton,
+  TypeAboutCourseItemWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeAboutCourseItemWithAllLocalesAndWithoutUnresolvableLinksResponse,
+  TypeAboutCourseItemWithAllLocalesResponse,
+  TypeAboutCourseItemWithoutLinkResolutionResponse,
+  TypeAboutCourseItemWithoutUnresolvableLinksResponse,
+} from './TypeAboutCourseItem';
+export type {
+  TypeCertification,
+  TypeCertificationFields,
+  TypeCertificationSkeleton,
+  TypeCertificationWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeCertificationWithAllLocalesAndWithoutUnresolvableLinksResponse,
+  TypeCertificationWithAllLocalesResponse,
+  TypeCertificationWithoutLinkResolutionResponse,
+  TypeCertificationWithoutUnresolvableLinksResponse,
+} from './TypeCertification';
+export type {
+  TypeCommunication,
+  TypeCommunicationFields,
+  TypeCommunicationSkeleton,
+  TypeCommunicationWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeCommunicationWithAllLocalesAndWithoutUnresolvableLinksResponse,
+  TypeCommunicationWithAllLocalesResponse,
+  TypeCommunicationWithoutLinkResolutionResponse,
+  TypeCommunicationWithoutUnresolvableLinksResponse,
+} from './TypeCommunication';
+export type {
   TypeContributor,
   TypeContributorFields,
   TypeContributorSkeleton,
@@ -7,8 +47,7 @@ export type {
   TypeContributorWithAllLocalesResponse,
   TypeContributorWithoutLinkResolutionResponse,
   TypeContributorWithoutUnresolvableLinksResponse,
-} from './type-contributor';
-
+} from './TypeContributor';
 export type {
   TypeCourse,
   TypeCourseFields,
@@ -18,8 +57,17 @@ export type {
   TypeCourseWithAllLocalesResponse,
   TypeCourseWithoutLinkResolutionResponse,
   TypeCourseWithoutUnresolvableLinksResponse,
-} from './type-course';
-
+} from './TypeCourse';
+export type {
+  TypeHeroSection,
+  TypeHeroSectionFields,
+  TypeHeroSectionSkeleton,
+  TypeHeroSectionWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeHeroSectionWithAllLocalesAndWithoutUnresolvableLinksResponse,
+  TypeHeroSectionWithAllLocalesResponse,
+  TypeHeroSectionWithoutLinkResolutionResponse,
+  TypeHeroSectionWithoutUnresolvableLinksResponse,
+} from './TypeHeroSection';
 export type {
   TypeHomePage,
   TypeHomePageFields,
@@ -29,4 +77,14 @@ export type {
   TypeHomePageWithAllLocalesResponse,
   TypeHomePageWithoutLinkResolutionResponse,
   TypeHomePageWithoutUnresolvableLinksResponse,
-} from './type-home-page';
+} from './TypeHomePage';
+export type {
+  TypeTrainingProgram,
+  TypeTrainingProgramFields,
+  TypeTrainingProgramSkeleton,
+  TypeTrainingProgramWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeTrainingProgramWithAllLocalesAndWithoutUnresolvableLinksResponse,
+  TypeTrainingProgramWithAllLocalesResponse,
+  TypeTrainingProgramWithoutLinkResolutionResponse,
+  TypeTrainingProgramWithoutUnresolvableLinksResponse,
+} from './TypeTrainingProgram';

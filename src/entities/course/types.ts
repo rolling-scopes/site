@@ -11,6 +11,8 @@ import {
 } from '@/shared/types';
 import {
   TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeCertificationWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeCommunicationWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeTrainingProgramWithAllLocalesAndWithoutLinkResolutionResponse,
 } from '@/shared/types/contentful';
 import { ExtractSectionId } from '@/shared/types/types';
@@ -91,7 +93,9 @@ export type ApiCoursesIds = (typeof API_COURSES_IDS_DICTIONARY)[CourseNamesKeys]
 
 export type SectionId =
   | ExtractSectionId<TypeTrainingProgramWithAllLocalesAndWithoutLinkResolutionResponse>
-  | ExtractSectionId<TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse>;
+  | ExtractSectionId<TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionId<TypeCertificationWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionId<TypeCommunicationWithAllLocalesAndWithoutLinkResolutionResponse>;
 
 export type TrainingProgramSectionData = {
   title: string;
@@ -116,6 +120,17 @@ export type AboutCourseSectionData = {
   registrationClosedLinkText?: string;
 };
 
+export type CertificationSectionData = {
+  title: string;
+  content: ReactNode;
+};
+
+export type CommunicationSectionData = {
+  title: string;
+  content: ReactNode;
+  image: StaticImageData;
+};
+
 export type Section =
   | {
     id: Extract<SectionId, 'trainingProgram'>;
@@ -124,4 +139,12 @@ export type Section =
   | {
     id: Extract<SectionId, 'aboutCourse'>;
     data: AboutCourseSectionData;
+  }
+  | {
+    id: Extract<SectionId, 'certification'>;
+    data: CertificationSectionData;
+  }
+  | {
+    id: Extract<SectionId, 'communication'>;
+    data: CommunicationSectionData;
   };

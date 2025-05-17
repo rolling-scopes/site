@@ -1,4 +1,4 @@
-import type { TypeCourseSkeleton } from './type-course';
+import type { TypeCourseSkeleton } from './TypeCourse';
 import type {
   ChainModifiers,
   Entry,

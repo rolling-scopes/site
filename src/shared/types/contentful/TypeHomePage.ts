@@ -1,3 +1,8 @@
+import type { TypeAboutCourseSkeleton } from './TypeAboutCourse';
+import type { TypeCertificationSkeleton } from './TypeCertification';
+import type { TypeCommunicationSkeleton } from './TypeCommunication';
+import type { TypeHeroSectionSkeleton } from './TypeHeroSection';
+import type { TypeTrainingProgramSkeleton } from './TypeTrainingProgram';
 import type {
   ChainModifiers,
   Entry,
@@ -14,29 +19,26 @@ import type {
  */
 export interface TypeHomePageFields {
   /**
-   * Field type definition for field 'subtitle' (Subtitle)
-   * @name Subtitle
+   * Field type definition for field 'title' (title)
+   * @name title
    * @localized false
+   * @summary The title will be used in metadata title (shown in a browser's title bar)
    */
-  subtitle?: EntryFieldTypes.Symbol;
+  title: EntryFieldTypes.Symbol;
   /**
-   * Field type definition for field 'mainTitle' (MainTitle)
-   * @name MainTitle
+   * Field type definition for field 'sections' (sections)
+   * @name sections
    * @localized false
    */
-  mainTitle?: EntryFieldTypes.Symbol;
-  /**
-   * Field type definition for field 'widgetTitle' (WidgetTitle)
-   * @name WidgetTitle
-   * @localized false
-   */
-  widgetTitle?: EntryFieldTypes.Symbol;
-  /**
-   * Field type definition for field 'image' (Image)
-   * @name Image
-   * @localized false
-   */
-  image?: EntryFieldTypes.AssetLink;
+  sections?: EntryFieldTypes.Array<
+    EntryFieldTypes.EntryLink<
+      | TypeAboutCourseSkeleton
+      | TypeCertificationSkeleton
+      | TypeCommunicationSkeleton
+      | TypeHeroSectionSkeleton
+      | TypeTrainingProgramSkeleton
+    >
+  >;
 }
 
 /**
@@ -45,7 +47,7 @@ export interface TypeHomePageFields {
  * @type {TypeHomePageSkeleton}
  * @author 7eBAEG99Zg1EDoAM5bOSWX
  * @since 2025-03-27T06:29:32.332Z
- * @version 1
+ * @version 39
  */
 export type TypeHomePageSkeleton = EntrySkeletonType<TypeHomePageFields, 'homePage'>;
 /**
@@ -54,7 +56,7 @@ export type TypeHomePageSkeleton = EntrySkeletonType<TypeHomePageFields, 'homePa
  * @type {TypeHomePage}
  * @author 7eBAEG99Zg1EDoAM5bOSWX
  * @since 2025-03-27T06:29:32.332Z
- * @version 1
+ * @version 39
  */
 export type TypeHomePage<
   Modifiers extends ChainModifiers,
