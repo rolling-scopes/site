@@ -60,7 +60,7 @@ export const stylesPageTree = {
     position: 'absolute',
     bottom: 0,
     left: 0,
-    width: '100vw',
+    width: '1200px',
     height: '36px',
     backgroundColor: '#ffda1f',
   },
