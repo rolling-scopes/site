@@ -17,7 +17,7 @@ import { createPageTree } from './view/pages-tree/generate-pages-tree';
 const fontRegularPromise: Promise<Font> = loadFont(400);
 const fontBoldPromise: Promise<Font> = loadFont(700);
 
-async function generateOGCourses(): Promise<void> {
+async function generateOgCourses(): Promise<void> {
   const courseLogos = await getCombinedDataCourses();
 
   const ogDir: string = path.join(process.cwd(), 'public', 'og-images');
@@ -107,7 +107,7 @@ async function generateOgImagePages(): Promise<void> {
 async function main() {
   try {
     await generateOgImagePages();
-    await generateOGCourses();
+    await generateOgCourses();
     console.log('All Open Graph images generated successfully');
   } catch (err) {
     console.error('Error generating Open Graph images:', err);
