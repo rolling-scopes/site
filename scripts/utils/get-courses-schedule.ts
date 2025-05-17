@@ -16,7 +16,7 @@ export async function getCoursesSchedule(): Promise<
 
     return courses.map((course) => ({
       name: course.name || '',
-      startDate: dayjs(course.startDate).format('MMM DD, YYYY') || '',
+      startDate: course.startDate ? dayjs(course.startDate).format('MMM DD, YYYY') : '',
       descriptionUrl: course.descriptionUrl || '',
     }));
   } catch (error) {
