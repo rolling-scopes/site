@@ -1,7 +1,6 @@
-import { StaticImageData } from 'next/image';
-
 import { getCoursesLogo } from './get-courses-logo';
 import { getCoursesSchedule } from './get-courses-schedule';
+import type { CourseData } from '../types/types';
 
 function normalizeUrl(url: string | null): string {
   if (!url) {
@@ -13,15 +12,7 @@ function normalizeUrl(url: string | null): string {
     .replace(/\/$/, '');
 }
 
-export async function getCombinedDataCourses(): Promise<
-  Array<{
-    normalizeName: string;
-    name: string;
-    logo: StaticImageData;
-    startDate: string;
-    url: string;
-  }>
-> {
+export async function getCombinedDataCourses(): Promise<CourseData[]> {
   try {
     const [coursesWithLogos, coursesWithDates] = await Promise.all([
       getCoursesLogo(),

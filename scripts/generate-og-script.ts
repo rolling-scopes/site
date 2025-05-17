@@ -24,30 +24,15 @@ async function generateOgCourses(): Promise<void> {
 
   await ensureDirExists(ogDir);
 
-  const rsLogoDataUriPromise: Promise<string> = loadImageAsDataUri(
-    'src/shared/assets/rs-school.webp',
-  );
-
-  const [fontRegular, fontBold, rsLogoDataUri] = await Promise.all([
+  const [fontRegular, fontBold] = await Promise.all([
     fontRegularPromise,
     fontBoldPromise,
-    rsLogoDataUriPromise,
   ]);
 
   const fonts: Font[] = [fontRegular, fontBold];
 
-  const leftTitle: string = 'RS School';
-  const leftSubtitle: string = 'Free courses. High motivation';
-
   for (const course of courseLogos) {
-    const tree: JSX.Element = createCourseTree(
-      course.name,
-      leftTitle,
-      leftSubtitle,
-      course.startDate,
-      rsLogoDataUri,
-      course.logo.src,
-    );
+    const tree = await createCourseTree(course);
 
     const buffer: Buffer | null = await generateImage(tree, fonts);
 

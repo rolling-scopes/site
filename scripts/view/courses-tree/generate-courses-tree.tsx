@@ -1,34 +1,36 @@
 import React from 'react';
 
 import { stylesCourseTree } from './generate-courses-tree.styles';
+import { CourseData } from '../../types/types';
+import { loadImageAsDataUri } from '../../utils/load-image-as-data-uri';
 
-export function createCourseTree(
-  title: string,
-  leftTitle: string,
-  leftSubtitle: string,
-  formattedDate: string,
-  rsLogoDataUriPromise: string,
-  logoCourseUriPromise: string,
-): React.JSX.Element {
+const rsStudentPromise = loadImageAsDataUri('src/shared/assets/rs-school.webp');
+
+export async function createCourseTree(
+  course: CourseData,
+): Promise<React.JSX.Element> {
+  const { name, logo, startDate } = course;
+  const rsStudentImg = await rsStudentPromise;
+
   return (
     <div style={stylesCourseTree.container}>
       <div style={stylesCourseTree.leftSection}>
         <img
-          src={rsLogoDataUriPromise}
+          src={rsStudentImg}
           style={stylesCourseTree.logo}
-          alt="RS School Logo"
+          alt="Sloth mascot works on the laptop"
         />
-        <h1 style={stylesCourseTree.title}>{leftTitle}</h1>
-        <p style={stylesCourseTree.subtitle}>{leftSubtitle}</p>
+        <h1 style={stylesCourseTree.title}>RS School</h1>
+        <p style={stylesCourseTree.subtitle}>Free courses. High motivation</p>
       </div>
       <div style={stylesCourseTree.rightSection}>
         <img
-          src={logoCourseUriPromise}
+          src={logo.src}
           style={stylesCourseTree.courseLogo}
-          alt={`${title} logo`}
+          alt={`${name} logo`}
         />
-        <h2 style={stylesCourseTree.courseTitle}>{`${title} Course`}</h2>
-        <p style={stylesCourseTree.startDate}>{`Start: ${formattedDate}`}</p>
+        <h2 style={stylesCourseTree.courseTitle}>{`${name} Course`}</h2>
+        <p style={stylesCourseTree.startDate}>{`Start: ${startDate}`}</p>
       </div>
     </div>
   );
