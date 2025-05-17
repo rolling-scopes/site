@@ -1,5 +1,6 @@
 import { Section } from '@/entities/course/types';
 import { AboutCourseSection } from '@/widgets/about-course/ui/about-course/about-course-section';
+import { CertificationSection } from '@/widgets/certification/ui/certification-section';
 import { TrainingProgramSection } from '@/widgets/training-program/ui/training-program-section';
 import { CourseNamesKeys } from 'data';
 
@@ -34,6 +35,9 @@ export const SectionResolver = ({ courseName, section }: SectionResolverProps) =
           registrationClosedLinkText={section.data.registrationClosedLinkText}
         />
       );
+
+    case 'certification':
+      return <CertificationSection title={section.data.title} content={section.data.content} />;
 
     default:
       throw new Error(`No component found for section type: ${sectionId}`);

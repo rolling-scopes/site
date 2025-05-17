@@ -1,7 +1,6 @@
 import { SectionResolver, courseStore } from '@/entities/course';
 import { trainerStore } from '@/entities/trainer';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
-import { Certification } from '@/widgets/certification';
 import { Communication } from '@/widgets/communication';
 import { HeroCourse } from '@/widgets/hero-course';
 import { Trainers } from '@/widgets/trainers';
@@ -22,7 +21,6 @@ export const React = async ({ courseName }: ReactProps) => {
       {coursePageData.map((section) => (
         <SectionResolver key={section.id} courseName={courseName} section={section} />
       ))}
-      <Certification courseName={courseName} />
       <Communication courseName={courseName} />
       {trainers && <Trainers trainers={trainers} courseName={courseName} />}
     </>
