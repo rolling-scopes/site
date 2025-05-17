@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 
+import { OG_FOLDER } from '@/shared/constants';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 import { Mentorship } from '@/views/mentorship/mentorship';
 import { MentorshipCourseRouteKeys, mentorshipCourses, mentorshipCoursesDefault } from 'data';
@@ -15,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const metadata = generatePageMetadata({
     title,
     description,
-    imagePath: '/og-images-pages/mentorship.png',
+    imagePath: `/${OG_FOLDER}/mentorship.png`,
     keywords,
     alternates: { canonical },
     robots,

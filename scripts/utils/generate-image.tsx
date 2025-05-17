@@ -1,7 +1,7 @@
 import { JSX } from 'react';
 import { ImageResponse } from 'next/og';
 
-import { Font } from './load-fonts';
+import { Font } from '../types/types';
 
 export async function generateImage(
   tree: JSX.Element,

@@ -1,6 +1,7 @@
 import { getCoursesLogo } from './get-courses-logo';
 import { getCoursesSchedule } from './get-courses-schedule';
 import type { CourseData } from '../types/types';
+import { TO_BE_DETERMINED } from '@/shared/constants';
 
 function normalizeUrl(url: string | null): string {
   if (!url) {
@@ -32,7 +33,7 @@ export async function getCombinedDataCourses(): Promise<CourseData[]> {
           normalizeName: courseLogo.normalizeName,
           name: courseLogo.name,
           logo: courseLogo.logo,
-          startDate: matchedCourse?.startDate || 'TBD',
+          startDate: matchedCourse?.startDate || TO_BE_DETERMINED,
           url: courseLogo.url,
         };
       })
