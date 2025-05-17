@@ -9,7 +9,8 @@ const courseName = COURSE_TITLES.JS_EN;
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = await getCourseTitle(courseName);
-  const description = 'Everyone can study at RS School, regardless of age, professional employment, or place of residence".';
+  const description =
+    'Everyone can study at RS School, regardless of age, professional employment, or place of residence.';
 
   const metadata = generatePageMetadata({
     title,
