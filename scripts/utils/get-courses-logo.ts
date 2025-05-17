@@ -51,7 +51,7 @@ export async function getCoursesLogo(): Promise<
       })
       .filter((course) => course.logo.src !== '');
   } catch (error) {
-    console.error('Error fetching courses schedule:', error);
+    console.error('Error fetching courses logos:', error);
     return [];
   }
 }
