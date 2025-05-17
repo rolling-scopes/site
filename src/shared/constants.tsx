@@ -1,7 +1,9 @@
 import { ReactNode } from 'react';
-import { BLOCKS } from '@contentful/rich-text-types';
+import { BLOCKS, Block, INLINES, Inline } from '@contentful/rich-text-types';
 
+import { isExternalUri } from '@/shared/helpers/is-external-uri';
 import { ApiResourceLocale, Language } from '@/shared/types/';
+import { LinkCustom } from '@/shared/ui/link-custom';
 import { ContentList } from '@/shared/ui/list/content-list';
 import { ListItem } from '@/shared/ui/list/list-item';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -114,7 +116,7 @@ export const ROUTES = {
 
 export const RICH_TEXT_OPTIONS = {
   renderNode: {
-    [BLOCKS.PARAGRAPH]: (_node: unknown, children: ReactNode) => {
+    [BLOCKS.PARAGRAPH]: (_node: Block | Inline, children: ReactNode) => {
       if (!children) {
         return null;
       }
@@ -124,10 +126,19 @@ export const RICH_TEXT_OPTIONS = {
 
       return isEmptyNode ? '' : <Paragraph>{children}</Paragraph>;
     },
-    [BLOCKS.HEADING_3]: (_node: unknown, children: ReactNode) => <Subtitle>{children}</Subtitle>,
-    [BLOCKS.UL_LIST]: (_node: unknown, children: ReactNode) => (
+    [BLOCKS.HEADING_3]: (_node: Block | Inline, children: ReactNode) => (
+      <Subtitle>{children}</Subtitle>
+    ),
+    [BLOCKS.UL_LIST]: (_node: Block | Inline, children: ReactNode) => (
       <ContentList>{children}</ContentList>
     ),
-    [BLOCKS.LIST_ITEM]: (_node: unknown, children: ReactNode) => <ListItem>{children}</ListItem>,
+    [BLOCKS.LIST_ITEM]: (_node: Block | Inline, children: ReactNode) => (
+      <ListItem>{children}</ListItem>
+    ),
+    [INLINES.HYPERLINK]: (node: Inline | Block, children: ReactNode) => (
+      <LinkCustom external={isExternalUri(node.data.uri)} href={node.data.uri}>
+        {children}
+      </LinkCustom>
+    ),
   },
 };
