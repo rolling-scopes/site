@@ -1,12 +1,11 @@
 import { Section } from '@/entities/course/types';
 import { findAssetImageById } from '@/shared/helpers/find-asset-image-by-id';
 import { richTextRenderer } from '@/shared/helpers/rich-text-renderer';
-import { ApiResourceLocale } from '@/shared/types';
 import { TypeTrainingProgramWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
-import type { Asset } from 'contentful';
+import { ApiAssets } from '@/shared/types/types';
 
 export function transformTrainingProgramSection(
-  assets: Asset<'WITHOUT_UNRESOLVABLE_LINKS', ApiResourceLocale>[] | undefined,
+  assets: ApiAssets,
   section: TypeTrainingProgramWithoutUnresolvableLinksResponse,
 ): Section {
   const id = section.sys.contentType.sys.id;

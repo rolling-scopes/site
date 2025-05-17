@@ -3,6 +3,7 @@ import { HttpStatus } from 'http-status';
 import { ApiBaseClass } from '@/shared/api/api-base-class';
 import { HTTP_METHOD } from '@/shared/constants';
 import { LinkList } from '@/widgets/required/types';
+import type { Asset, BaseEntry } from 'contentful';
 
 export type ListData = (string | LinkList)[] | [];
 export type ListType = 'marked' | 'unmarked';
@@ -82,3 +83,8 @@ export type ApiResponseError = {
   message: string;
   requestId: string;
 };
+
+export type ExtractSectionId<TContentType extends BaseEntry> =
+  TContentType['sys']['contentType']['sys']['id'];
+
+export type ApiAssets = Asset<'WITHOUT_UNRESOLVABLE_LINKS', ApiResourceLocale>[] | undefined;

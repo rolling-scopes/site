@@ -1,5 +1,6 @@
-import { COURSE_PAGE_CONTENT_MAP } from '@/entities/course/constants';
 import { Section } from '@/entities/course/types';
+import { AboutCourseSection } from '@/widgets/about-course/ui/about-course/about-course-section';
+import { TrainingProgramSection } from '@/widgets/training-program/ui/training-program-section';
 import { CourseNamesKeys } from 'data';
 
 type SectionResolverProps = {
@@ -9,11 +10,32 @@ type SectionResolverProps = {
 
 export const SectionResolver = ({ courseName, section }: SectionResolverProps) => {
   const sectionId = section.id;
-  const SectionComponent = COURSE_PAGE_CONTENT_MAP.get(sectionId);
 
-  if (!SectionComponent) {
-    throw new Error(`No component found for section type: ${sectionId}`);
+  switch (sectionId) {
+    case 'trainingProgram':
+      return (
+        <TrainingProgramSection
+          courseName={courseName}
+          title={section.data.title}
+          content={section.data.content}
+          image={section.data.image}
+          registrationLinkText={section.data.registrationLinkText}
+          registrationClosedLinkText={section.data.registrationClosedLinkText}
+        />
+      );
+
+    case 'aboutCourse':
+      return (
+        <AboutCourseSection
+          courseName={courseName}
+          heading={section.data.heading}
+          gridItems={section.data.gridItems}
+          registrationLinkText={section.data.registrationLinkText}
+          registrationClosedLinkText={section.data.registrationClosedLinkText}
+        />
+      );
+
+    default:
+      throw new Error(`No component found for section type: ${sectionId}`);
   }
-
-  return <SectionComponent courseName={courseName} sectionData={section.data} />;
 };

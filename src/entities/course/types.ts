@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { StaticImageData } from 'next/image';
 
 import { API_COURSES_IDS_DICTIONARY } from '@/entities/course/constants';
@@ -9,11 +10,11 @@ import {
   TypeHomePageSkeleton,
 } from '@/shared/types';
 import {
+  TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeTrainingProgramWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeTrainingProgramWithoutUnresolvableLinksResponse,
 } from '@/shared/types/contentful';
-import { TrainingProgramData } from '@/widgets/training-program/ui/training-program-section';
-import type { Asset, EntryCollection } from 'contentful';
+import { ExtractSectionId } from '@/shared/types/types';
+import type { EntryCollection } from 'contentful';
 import { CourseNamesKeys } from 'data';
 
 type CourseLinks = typeof COURSE_LINKS;
@@ -88,22 +89,37 @@ export type CourseItemData = Pick<
 
 export type ApiCoursesIds = (typeof API_COURSES_IDS_DICTIONARY)[CourseNamesKeys];
 
-export type CoursePageTransformFunction = (
-  assets: Asset<'WITHOUT_UNRESOLVABLE_LINKS', ApiResourceLocale>[] | undefined,
-  section: TypeTrainingProgramWithoutUnresolvableLinksResponse,
-) => Section;
-
 export type SectionId =
-  TypeTrainingProgramWithAllLocalesAndWithoutLinkResolutionResponse['sys']['contentType']['sys']['id'];
+  | ExtractSectionId<TypeTrainingProgramWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionId<TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse>;
 
-export type SectionData = TrainingProgramData;
-
-export type Section = {
-  id: SectionId;
-  data: SectionData;
+export type TrainingProgramSectionData = {
+  title: string;
+  content: ReactNode;
+  registrationLinkText?: string;
+  registrationClosedLinkText?: string;
+  image: StaticImageData;
 };
 
-export type CoursePageSectionProps = {
-  courseName: CourseNamesKeys;
-  sectionData: TrainingProgramData;
+export type GridItem = {
+  heading: string;
+  content: ReactNode;
+  icon: StaticImageData;
 };
+
+export type AboutCourseSectionData = {
+  heading: string;
+  gridItems: GridItem[];
+  registrationLinkText?: string;
+  registrationClosedLinkText?: string;
+};
+
+export type Section =
+  | {
+    id: Extract<SectionId, 'trainingProgram'>;
+    data: TrainingProgramSectionData;
+  }
+  | {
+    id: Extract<SectionId, 'aboutCourse'>;
+    data: AboutCourseSectionData;
+  };
