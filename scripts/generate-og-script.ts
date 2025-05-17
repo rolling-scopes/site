@@ -40,9 +40,9 @@ async function generateOGCourses(): Promise<void> {
   const leftSubtitle: string = 'Free courses. High motivation';
 
   for (const course of courseLogos) {
-    if (course.logo.src.includes('1.svg')) {
+    if (course.logo.src.includes('aws_ai.svg')) {
       course.logo.src =
-        'https://images.ctfassets.net/12phxmr4hjo6/1SHmGR2BsVKHfrmjqPoemz/92f432ffa534755b9c35d14cabcc96fe/aws-black.svg';
+        'https://gist.githubusercontent.com/LaraNU/295ae9e20b099607bd82ec72ce237f5d/raw/b922f98fa6f03c0abce16d1a9f0d5ca139b99d01/test.svg';
     }
 
     const tree: JSX.Element = createCourseTree(
