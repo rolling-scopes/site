@@ -6,7 +6,12 @@ export const loadImageAsDataUri = async (relativePath: string): Promise<string> 
   try {
     const buf: Buffer = await fs.readFile(path.join(process.cwd(), relativePath));
 
-    const pngBuffer = await sharp(buf).toFormat('png').toBuffer();
+    const pngBuffer = await sharp(buf)
+      .toFormat('png', {
+        compressionLevel: 9,
+        quality: 90,
+      })
+      .toBuffer();
 
     return `data:image/png;base64,${pngBuffer.toString('base64')}`;
   } catch (error) {
