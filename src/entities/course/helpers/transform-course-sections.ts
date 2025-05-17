@@ -30,6 +30,6 @@ export function transformCourseSections(coursesResponse: CoursePageResponse): Se
       return transformAboutCourseSection(assets, section);
     }
 
-    throw new Error(`Unable to determine section type`);
+    throw new Error('Unable to determine section type.');
   });
 }
