@@ -104,12 +104,15 @@ async function generateOgImagePages(): Promise<void> {
   }
 }
 
-generateOgImagePages().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+async function main() {
+  try {
+    await generateOgImagePages();
+    await generateOGCourses();
+    console.log('All Open Graph images generated successfully');
+  } catch (err) {
+    console.error('Error generating Open Graph images:', err);
+    process.exit(1);
+  }
+}
 
-generateOGCourses().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+main();
