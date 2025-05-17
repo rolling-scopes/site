@@ -11,14 +11,15 @@ export async function generateMetadata(): Promise<Metadata> {
   const title = await getCourseTitle(courseName);
   const description =
     'RS School JavaScript course: learn modern JavaScript, ES6+, async programming, and web development. Build real projects and boost your career!';
-  const keywords = 'JavaScript course, JS training, learn JavaScript, ES6, web development, RS School, frontend, coding bootcamp';
+  const keywords =
+    'JavaScript course, JS training, learn JavaScript, ES6, web development, RS School, frontend, coding bootcamp';
   const canonical = 'https://rs.school/courses/javascript';
   const robots = 'index, follow';
 
   const metadata = generatePageMetadata({
     title,
     description,
-    imagePath: '/og-images/javascript.png',
+    imagePath: '/og-images/js-front-end-en.png',
     keywords,
     alternates: { canonical },
     robots,
