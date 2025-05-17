@@ -92,7 +92,7 @@ async function generateOgImagePages(): Promise<void> {
       rsMascotsUri,
       mapBgUri,
     );
-    const buffer: Buffer<ArrayBufferLike> | null = await generateImage(tree, fonts);
+    const buffer: Buffer | null = await generateImage(tree, fonts);
     const fileName: string = `${title.toLowerCase()}.png`.replace(/\s+/g, '-');
 
     if (!buffer) {
