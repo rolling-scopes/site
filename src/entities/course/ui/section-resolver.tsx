@@ -1,6 +1,7 @@
 import { Section } from '@/entities/course/types';
 import { AboutCourseSection } from '@/widgets/about-course/ui/about-course/about-course-section';
 import { CertificationSection } from '@/widgets/certification/ui/certification-section';
+import { CommunicationSection } from '@/widgets/communication/ui/communication-section';
 import { TrainingProgramSection } from '@/widgets/training-program/ui/training-program-section';
 import { CourseNamesKeys } from 'data';
 
@@ -38,6 +39,15 @@ export const SectionResolver = ({ courseName, section }: SectionResolverProps) =
 
     case 'certification':
       return <CertificationSection title={section.data.title} content={section.data.content} />;
+
+    case 'communication':
+      return (
+        <CommunicationSection
+          title={section.data.title}
+          content={section.data.content}
+          image={section.data.image}
+        />
+      );
 
     default:
       throw new Error(`No component found for section type: ${sectionId}`);
