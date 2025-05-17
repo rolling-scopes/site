@@ -9,7 +9,8 @@ const courseName = COURSE_TITLES.REACT;
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = await getCourseTitle(courseName);
-  const description = 'Everyone can study at RS School, regardless of age, professional employment, or place of residence';
+  const description =
+    'RS School React course: hands-on React.js, hooks, state management, and component architecture. Build scalable apps and master React best practices.';
 
   const metadata = generatePageMetadata({
     title,

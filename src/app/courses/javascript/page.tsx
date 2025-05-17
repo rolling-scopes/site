@@ -10,7 +10,7 @@ const courseName = COURSE_TITLES.JS_EN;
 export async function generateMetadata(): Promise<Metadata> {
   const title = await getCourseTitle(courseName);
   const description =
-    'Everyone can study at RS School, regardless of age, professional employment, or place of residence.';
+    'RS School JavaScript course: learn modern JavaScript, ES6+, async programming, and web development. Build real projects and boost your career!';
 
   const metadata = generatePageMetadata({
     title,

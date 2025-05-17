@@ -6,7 +6,8 @@ import { MentorshipCourseRouteKeys, mentorshipCourses, mentorshipCoursesDefault 
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = `Mentorship · The Rolling Scopes School`;
-  const description = 'By teaching others, you learn yourself';
+  const description =
+    'RS School Mentorship: mentor React, Angular, or JavaScript students, share expertise, develop leadership, and grow with our global tech community.';
 
   const metadata = generatePageMetadata({
     title,

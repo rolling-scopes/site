@@ -9,7 +9,8 @@ const courseName = COURSE_TITLES.JS_PRESCHOOL_RU;
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = await getCourseTitle(courseName);
-  const description = 'The preparatory stage will help those who are little or not familiar with programming and would like to subsequently study the main course "JavaScript/Front-end".';
+  const description =
+    'RS School JavaScript Preschool (RU): learn programming basics, problem-solving, and prepare for the main JavaScript/Front-end course. For beginners.';
 
   const metadata = generatePageMetadata({
     title,

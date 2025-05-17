@@ -5,7 +5,8 @@ import Community from '@/views/community';
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = 'Community · The Rolling Scopes School';
-  const description = 'An international community of developers since 2013';
+  const description =
+    'Join the RS School international developer community: collaborate, learn, share experiences, attend events, and grow your tech career together!';
 
   const metadata = generatePageMetadata({
     title,

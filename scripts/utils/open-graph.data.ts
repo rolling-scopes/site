@@ -7,9 +7,9 @@ export const RS_PAGES = {
 } as const;
 
 export const Descriptions = {
-  MAIN: 'Connecting people, growing together, having fun',
-  MENTORSHIP: 'By teaching others, you learn yourself',
-  COMMUNITY: 'An international community of developers since 2013',
-  DOCS: 'School docs hub: rules, guides, and FAQs',
-  COURSES: 'Community driven. 100% free of charge. Journey to full stack mastery',
+  MAIN: 'Free, community-driven IT education for future developers.',
+  MENTORSHIP: 'Mentor at RS School and help others grow.',
+  COMMUNITY: 'Join the RS School developer community.',
+  DOCS: 'RS School Docs: rules, guides, FAQs.',
+  COURSES: 'Free RS School courses: JavaScript, React, Node.js, AWS, and more.',
 } as const;

@@ -9,7 +9,7 @@ const courseName = COURSE_TITLES.AWS_FUNDAMENTALS;
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = await getCourseTitle(courseName);
-  const description = 'The AWS Certified Cloud Practitioner certification is a great entry-level certification for AWS.';
+  const description = 'RS School AWS Fundamentals: prepare for AWS Certified Cloud Practitioner, learn AWS basics, cloud concepts, security, billing, and core AWS services.';
 
   const metadata = generatePageMetadata({
     title,

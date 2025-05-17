@@ -45,7 +45,8 @@ export async function generateMetadata({
   const slugPath = slug.join('/');
 
   const title = titles.find((el) => el.slug.join('/') === slugPath)?.title;
-  const description = 'School docs hub: rules, guides, and FAQs';
+  const description =
+    'RS School Docs: access rules, guides, FAQs, onboarding, and resources for students and mentors. Your hub for all Rolling Scopes School documentation.';
 
   const metadata = generatePageMetadata({
     title: `${title} ${TITLE_POSTFIX}`,

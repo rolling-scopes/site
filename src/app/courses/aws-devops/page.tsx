@@ -9,7 +9,7 @@ const courseName = COURSE_TITLES.AWS_DEVOPS;
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = await getCourseTitle(courseName);
-  const description = 'If you are looking for an entry point to kickstart your IT career as a DevOps engineer, then this AWS course challenge is what you need.';
+  const description = 'RS School AWS DevOps: learn AWS DevOps tools, CI/CD, automation, cloud infrastructure, and prepare for a DevOps career with hands-on projects.';
 
   const metadata = generatePageMetadata({
     title,

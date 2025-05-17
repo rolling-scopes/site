@@ -9,7 +9,7 @@ const courseName = COURSE_TITLES.AWS_CLOUD_DEVELOPER;
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = await getCourseTitle(courseName);
-  const description = 'This course is a step-by-step journey to become an AWS Certified Developer ‒ Associate through this course.';
+  const description = 'RS School AWS Cloud Developer: step-by-step training for AWS Certified Developer Associate. Learn AWS services, cloud apps, and hands-on development.';
 
   const metadata = generatePageMetadata({
     title,

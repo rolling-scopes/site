@@ -5,7 +5,8 @@ import { Courses } from '@/views/courses';
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = 'Courses · The Rolling Scopes School';
-  const description = 'Community driven. 100% free of charge. Journey to full stack mastery';
+  const description =
+    'Explore free, community-driven RS School courses: JavaScript, React, Node.js, AWS, Angular, and more. Start your journey to full stack mastery!';
 
   const metadata = generatePageMetadata({
     title,

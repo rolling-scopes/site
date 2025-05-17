@@ -9,7 +9,8 @@ const courseName = COURSE_TITLES.NODE;
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = await getCourseTitle(courseName);
-  const description = 'This course is designed for JavaScript / Front-End developers who want to get acquainted with Node.js and the server side of web application development';
+  const description =
+    'RS School Node.js course: for JavaScript/Front-End devs to master Node.js, backend, APIs, databases, and server-side web app development.';
 
   const metadata = generatePageMetadata({
     title,

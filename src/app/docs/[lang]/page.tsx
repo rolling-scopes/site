@@ -8,7 +8,8 @@ type RouteParams = { lang: Language };
 
 export async function generateMetadata() {
   const title = `RS School Overview ${TITLE_POSTFIX}`;
-  const description = 'School docs hub: rules, guides, and FAQs';
+  const description =
+    'RS School Docs: find rules, guides, FAQs, onboarding, and resources for students and mentors. Your hub for all Rolling Scopes School documentation.';
 
   const metadata = generatePageMetadata({
     title,
