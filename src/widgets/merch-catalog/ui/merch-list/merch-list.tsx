@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 
-import { MerchCard } from '@/entities/merch';
 import { MerchProduct } from '@/entities/merch/types';
+import { MerchCard } from '@/entities/merch/ui/merch-card/merch-card';
 
 import styles from './merch-list.module.scss';
 

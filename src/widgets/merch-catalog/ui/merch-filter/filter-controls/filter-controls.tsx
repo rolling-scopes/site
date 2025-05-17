@@ -1,4 +1,3 @@
-'use effect';
 import classNames from 'classnames/bind';
 
 import { FilterControlsProps } from '../types';

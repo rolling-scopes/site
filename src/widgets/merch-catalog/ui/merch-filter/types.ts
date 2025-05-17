@@ -1,3 +1,5 @@
+import { MerchProduct } from '@/entities/merch';
+
 export type FilterControlsProps = {
   allAvailableTags: string[];
   searchTerm: string;
@@ -6,4 +8,8 @@ export type FilterControlsProps = {
   onSearchChange: (newSearchTerm: string) => void;
   onTagChange: (tag: string) => void;
   onClearFilters: () => void;
+};
+
+export type FilteredMerchViewProps = {
+  initialProducts: MerchProduct[];
 };
