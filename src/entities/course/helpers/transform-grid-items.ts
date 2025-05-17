@@ -1,12 +1,10 @@
 import { GridItem } from '@/entities/course/types';
-import { findAssetImageById } from '@/shared/helpers/find-asset-image-by-id';
+import { prepareAssetImage } from '@/shared/helpers/prepare-asset-image';
 import { richTextRenderer } from '@/shared/helpers/rich-text-renderer';
 import { TypeAboutCourseItemWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
-import { ApiAssets } from '@/shared/types/types';
 
 export function transformGridItems(
   items: (TypeAboutCourseItemWithoutUnresolvableLinksResponse | undefined)[],
-  assets: ApiAssets,
 ): GridItem[] {
   return items.map((item): GridItem => {
     if (!item) {
@@ -15,10 +13,10 @@ export function transformGridItems(
 
     const heading = item.fields.heading;
     const content = richTextRenderer(item.fields.content);
-    const iconId = item.fields.icon?.sys.id;
-    const icon = findAssetImageById(assets, iconId);
+    const icon = prepareAssetImage(item.fields.icon?.fields.file);
 
     return {
+      id: heading,
       heading,
       content,
       icon,

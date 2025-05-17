@@ -102,13 +102,15 @@ export type TrainingProgramSectionData = {
 };
 
 export type GridItem = {
+  id: string;
   heading: string;
   content: ReactNode;
   icon: StaticImageData;
 };
 
 export type AboutCourseSectionData = {
-  heading: string;
+  title: string;
+  subTitle?: ReactNode;
   gridItems: GridItem[];
   registrationLinkText?: string;
   registrationClosedLinkText?: string;

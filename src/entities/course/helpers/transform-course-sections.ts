@@ -7,27 +7,26 @@ import {
   transformTrainingProgramSection,
 } from '@/entities/course/helpers/transform-training-program-section';
 import { CoursePageResponse, Section } from '@/entities/course/types';
-import {
-  TypeAboutCourseWithoutUnresolvableLinksResponse,
-  TypeTrainingProgramWithoutUnresolvableLinksResponse,
-} from '@/shared/types/contentful';
 
-type Entries = (
-  | TypeTrainingProgramWithoutUnresolvableLinksResponse
-  | TypeAboutCourseWithoutUnresolvableLinksResponse
-)[];
+export function transformCourseSections(coursesResponse: CoursePageResponse['items']): Section[] {
+  // TODO: handle multiple course pages
+  const sections = coursesResponse.at(0)?.fields.sections;
 
-export function transformCourseSections(coursesResponse: CoursePageResponse): Section[] {
-  const coursePageSections = (coursesResponse.includes?.Entry as Entries) ?? [];
-  const assets = coursesResponse.includes?.Asset;
+  if (!sections) {
+    throw new Error('Unable to determine list of sections.');
+  }
 
-  return coursePageSections.map((section): Section => {
+  return sections.map((section) => {
+    if (!section) {
+      throw new Error('Unable to determine section.');
+    }
+
     if (isTrainingProgramSection(section)) {
-      return transformTrainingProgramSection(assets, section);
+      return transformTrainingProgramSection(section);
     }
 
     if (isAboutCourseSection(section)) {
-      return transformAboutCourseSection(assets, section);
+      return transformAboutCourseSection(section);
     }
 
     throw new Error('Unable to determine section type.');

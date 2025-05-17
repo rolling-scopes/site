@@ -28,7 +28,7 @@ export const SectionResolver = ({ courseName, section }: SectionResolverProps) =
       return (
         <AboutCourseSection
           courseName={courseName}
-          heading={section.data.heading}
+          title={section.data.title}
           gridItems={section.data.gridItems}
           registrationLinkText={section.data.registrationLinkText}
           registrationClosedLinkText={section.data.registrationClosedLinkText}
