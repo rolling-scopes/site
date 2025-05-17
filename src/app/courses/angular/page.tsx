@@ -10,11 +10,17 @@ const courseName = COURSE_TITLES.ANGULAR;
 export async function generateMetadata(): Promise<Metadata> {
   const title = await getCourseTitle(courseName);
   const description = 'RS School Angular course: for those with JavaScript/TypeScript skills. Learn Angular, build scalable apps, master components, services, and best practices.';
+  const keywords = 'Angular course, Angular training, learn Angular, frontend, web development, RS School, TypeScript, компоненты';
+  const canonical = 'https://rs.school/courses/angular';
+  const robots = 'index, follow';
 
   const metadata = generatePageMetadata({
     title,
     description,
     imagePath: '/og-images/angular.png',
+    keywords,
+    alternates: { canonical },
+    robots,
   });
 
   return metadata;

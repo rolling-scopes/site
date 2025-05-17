@@ -10,11 +10,17 @@ const courseName = COURSE_TITLES.AWS_FUNDAMENTALS;
 export async function generateMetadata(): Promise<Metadata> {
   const title = await getCourseTitle(courseName);
   const description = 'RS School AWS Fundamentals: prepare for AWS Certified Cloud Practitioner, learn AWS basics, cloud concepts, security, billing, and core AWS services.';
+  const keywords = 'AWS course, AWS fundamentals, cloud practitioner, learn AWS, RS School, cloud basics, cloud certification';
+  const canonical = 'https://rs.school/courses/aws-fundamentals';
+  const robots = 'index, follow';
 
   const metadata = generatePageMetadata({
     title,
     description,
     imagePath: '/og-images/aws-fundamentals.png',
+    keywords,
+    alternates: { canonical },
+    robots,
   });
 
   return metadata;

@@ -11,11 +11,17 @@ export async function generateMetadata(): Promise<Metadata> {
   const title = await getCourseTitle(courseName);
   const description =
     'RS School AWS AI course: learn AWS AI/ML services, machine learning fundamentals, cloud-based AI solutions, and hands-on projects for real skills.';
+  const keywords = 'AWS AI course, machine learning, AWS ML, cloud AI, RS School, artificial intelligence, cloud computing';
+  const canonical = 'https://rs.school/courses/aws-ai';
+  const robots = 'index, follow';
 
   const metadata = generatePageMetadata({
     title,
     description,
     imagePath: '/og-images/aws-ai.png',
+    keywords,
+    alternates: { canonical },
+    robots,
   });
 
   return metadata;
