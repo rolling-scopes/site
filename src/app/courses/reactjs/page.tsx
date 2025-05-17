@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 
+import { OG_COURSES_FOLDER, OG_FOLDER } from '@/shared/constants';
+import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 import { getCourseTitle } from '@/shared/helpers/get-course-title';
 import { React } from '@/views/react';
 import { COURSE_TITLES } from 'data';
@@ -7,7 +9,24 @@ import { COURSE_TITLES } from 'data';
 const courseName = COURSE_TITLES.REACT;
 
 export async function generateMetadata(): Promise<Metadata> {
-  return { title: await getCourseTitle(courseName) };
+  const title = await getCourseTitle(courseName);
+  const description =
+    'RS School React course: hands-on React.js, hooks, state management, and component architecture. Build scalable apps and master React best practices.';
+  const keywords =
+    'React course, React training, learn React, React.js, web development, RS School, frontend, hooks, state management';
+  const canonical = 'https://rs.school/courses/reactjs';
+  const robots = 'index, follow';
+
+  const metadata = generatePageMetadata({
+    title,
+    description,
+    imagePath: `/${OG_FOLDER}/${OG_COURSES_FOLDER}/react.png`,
+    keywords,
+    alternates: { canonical },
+    robots,
+  });
+
+  return metadata;
 }
 
 export default async function ReactRoute() {
