@@ -5,9 +5,9 @@ import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-co
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { CourseNamesKeys, introLocalizedContent } from 'data';
+import { GridItem } from '@/widgets/about-course/ui/about-course-grid/grid-item';
 
-import styles from './about-course.module.scss';
+import styles from './about-course-section.module.scss';
 
 export const cx = classNames.bind(styles);
 
@@ -17,8 +17,9 @@ type AboutCourseSectionProps = AboutCourseSectionData & {
 
 export const AboutCourseSection = async ({
   courseName,
-  // gridItems,
-  heading,
+  title,
+  subTitle,
+  gridItems,
   registrationClosedLinkText,
   registrationLinkText,
 }: AboutCourseSectionProps) => {
@@ -30,11 +31,19 @@ export const AboutCourseSection = async ({
   return (
     <section className={cx('container')}>
       <div className={cx('about-course', 'content')}>
-        <WidgetTitle>{heading}</WidgetTitle>
-        {introLocalizedContent[courseName as CourseNamesKeys]?.paragraph && (
-          <Paragraph>{introLocalizedContent[courseName as CourseNamesKeys].paragraph}</Paragraph>
-        )}
-        {/* <AboutCourseGrid items={courseInfoList} /> */}
+        <WidgetTitle>{title}</WidgetTitle>
+        {subTitle && <Paragraph>{subTitle}</Paragraph>}
+        <div className={cx('about-course-grid')} data-testid="about-course-grid">
+          {gridItems.map(({ id, heading, content, icon }) => (
+            <GridItem
+              key={id}
+              id={id}
+              heading={heading}
+              content={content}
+              icon={icon}
+            />
+          ))}
+        </div>
         <LinkCustom href={enrollHref} variant="primary" external disabled={!course.enroll}>
           {linkText}
         </LinkCustom>
