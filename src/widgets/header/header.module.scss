@@ -114,4 +114,8 @@
 
   font-size: 14px;
   list-style-type: none;
+
+  @include media-laptop-large {
+    margin-right: 30px;
+  }
 }
