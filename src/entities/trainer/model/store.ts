@@ -6,9 +6,10 @@ import { Language } from '@/shared/types';
 import { CourseNamesKeys } from 'data';
 
 class TrainerStore {
-  public loadTrainers = async (course: CourseNamesKeys, language: Language = 'en') => {
+  public loadTrainers = async (course: string, language: Language = 'en') => {
     try {
-      const courseId = API_COURSES_IDS_DICTIONARY[course];
+      // TODO: move trainers to course page section?
+      const courseId = API_COURSES_IDS_DICTIONARY[course as CourseNamesKeys];
       const locale = API_LOCALE_DICTIONARY[language];
 
       const res = await api.trainer.queryTrainers(courseId, locale);

@@ -16,13 +16,13 @@ export interface TypeCommunicationFields {
   /**
    * Field type definition for field 'title' (title)
    * @name title
-   * @localized false
+   * @localized true
    */
   title: EntryFieldTypes.Symbol;
   /**
    * Field type definition for field 'content' (content)
    * @name content
-   * @localized false
+   * @localized true
    */
   content: EntryFieldTypes.RichText;
   /**
@@ -39,7 +39,7 @@ export interface TypeCommunicationFields {
  * @type {TypeCommunicationSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-17T19:44:22.128Z
- * @version 1
+ * @version 3
  */
 export type TypeCommunicationSkeleton = EntrySkeletonType<TypeCommunicationFields, 'communication'>;
 /**
@@ -48,7 +48,7 @@ export type TypeCommunicationSkeleton = EntrySkeletonType<TypeCommunicationField
  * @type {TypeCommunication}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-17T19:44:22.128Z
- * @version 1
+ * @version 3
  */
 export type TypeCommunication<
   Modifiers extends ChainModifiers,

@@ -3,11 +3,10 @@ import { AboutCourseSection } from '@/widgets/about-course/ui/about-course/about
 import { CertificationSection } from '@/widgets/certification/ui/certification-section';
 import { CommunicationSection } from '@/widgets/communication/ui/communication-section';
 import { TrainingProgramSection } from '@/widgets/training-program/ui/training-program-section';
-import { CourseNamesKeys } from 'data';
 
 type SectionResolverProps = {
   section: Section;
-  courseName: CourseNamesKeys;
+  courseName: string;
 };
 
 export const SectionResolver = ({ courseName, section }: SectionResolverProps) => {

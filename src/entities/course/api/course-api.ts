@@ -3,7 +3,11 @@ import {
   CoursesResponse,
   CoursesScheduleResponse,
 } from '@/entities/course/types';
-import { API_CONTENT_TYPE_DICTIONARY, API_MAX_INCLUDE_DEPTH } from '@/shared/constants';
+import {
+  API_CONTENT_TYPE_DICTIONARY,
+  API_MAX_INCLUDE_DEPTH,
+  API_OMIT_LINKED_ITEMS_INCLUDE_DEPTH,
+} from '@/shared/constants';
 import { ApiServices } from '@/shared/types';
 
 export class CourseApi {
@@ -23,11 +27,21 @@ export class CourseApi {
     return this.services.rest.get<CoursesScheduleResponse>('/app/courses.json');
   }
 
-  public queryCoursePage() {
+  public queryCoursePage(courseName: string) {
+    return this.services.rest.get<CoursePageResponse>('/entries', {
+      params: {
+        'content_type': API_CONTENT_TYPE_DICTIONARY.COURSE_PAGE,
+        'include': API_MAX_INCLUDE_DEPTH,
+        'fields.title': courseName,
+      },
+    });
+  }
+
+  public queryCoursePages() {
     return this.services.rest.get<CoursePageResponse>('/entries', {
       params: {
         content_type: API_CONTENT_TYPE_DICTIONARY.COURSE_PAGE,
-        include: API_MAX_INCLUDE_DEPTH,
+        include: API_OMIT_LINKED_ITEMS_INCLUDE_DEPTH,
       },
     });
   }

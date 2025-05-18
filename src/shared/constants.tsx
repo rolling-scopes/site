@@ -21,6 +21,7 @@ export const UNKNOWN_API_ERROR = 'Unknown error, API request failed.';
  * https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/links
  */
 export const API_MAX_INCLUDE_DEPTH = 10;
+export const API_OMIT_LINKED_ITEMS_INCLUDE_DEPTH = 0;
 
 export const LABELS = {
   START_DATE: 'Course starts on:',
@@ -131,6 +132,9 @@ export const RICH_TEXT_OPTIONS = {
     ),
     [BLOCKS.UL_LIST]: (_node: Block | Inline, children: ReactNode) => (
       <ContentList>{children}</ContentList>
+    ),
+    [BLOCKS.OL_LIST]: (_node: Block | Inline, children: ReactNode) => (
+      <ContentList ordered>{children}</ContentList>
     ),
     [BLOCKS.LIST_ITEM]: (_node: Block | Inline, children: ReactNode) => (
       <ListItem>{children}</ListItem>

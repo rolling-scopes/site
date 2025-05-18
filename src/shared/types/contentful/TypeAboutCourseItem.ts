@@ -16,13 +16,13 @@ export interface TypeAboutCourseItemFields {
   /**
    * Field type definition for field 'heading' (heading)
    * @name heading
-   * @localized false
+   * @localized true
    */
   heading: EntryFieldTypes.Symbol;
   /**
    * Field type definition for field 'content' (content)
    * @name content
-   * @localized false
+   * @localized true
    */
   content: EntryFieldTypes.RichText;
   /**
@@ -39,7 +39,7 @@ export interface TypeAboutCourseItemFields {
  * @type {TypeAboutCourseItemSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-16T19:52:39.219Z
- * @version 9
+ * @version 11
  */
 export type TypeAboutCourseItemSkeleton = EntrySkeletonType<
   TypeAboutCourseItemFields,
@@ -51,7 +51,7 @@ export type TypeAboutCourseItemSkeleton = EntrySkeletonType<
  * @type {TypeAboutCourseItem}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-16T19:52:39.219Z
- * @version 9
+ * @version 11
  */
 export type TypeAboutCourseItem<
   Modifiers extends ChainModifiers,

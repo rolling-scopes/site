@@ -6,7 +6,9 @@ import styles from './list.module.scss';
 
 type ListProps = Pick<HTMLAttributes<HTMLElement>, 'className'> &
   VariantProps<typeof listVariants> &
-  PropsWithChildren;
+  PropsWithChildren & {
+    ordered?: boolean;
+  };
 
 export const cx = classNames.bind(styles);
 
@@ -27,16 +29,23 @@ const listVariants = cva(cx('list'), {
   },
 });
 
-export const ContentList = ({ className = '', size, type, children }: ListProps) => {
+export const ContentList = ({ className = '', size, type, children, ordered }: ListProps) => {
+  const classNameList = listVariants({
+    size,
+    type,
+    className,
+  });
+
+  if (ordered) {
+    return (
+      <ol className={classNameList} data-testid="ordered-list">
+        {children}
+      </ol>
+    );
+  }
+
   return (
-    <ul
-      className={listVariants({
-        size,
-        type,
-        className,
-      })}
-      data-testid="list"
-    >
+    <ul className={classNameList} data-testid="unordered-list">
       {children}
     </ul>
   );

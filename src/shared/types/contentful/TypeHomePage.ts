@@ -42,21 +42,21 @@ export interface TypeHomePageFields {
 }
 
 /**
- * Entry skeleton type definition for content type 'homePage' (Home Page)
+ * Entry skeleton type definition for content type 'homePage' (Course Page)
  * @name TypeHomePageSkeleton
  * @type {TypeHomePageSkeleton}
  * @author 7eBAEG99Zg1EDoAM5bOSWX
  * @since 2025-03-27T06:29:32.332Z
- * @version 39
+ * @version 41
  */
 export type TypeHomePageSkeleton = EntrySkeletonType<TypeHomePageFields, 'homePage'>;
 /**
- * Entry type definition for content type 'homePage' (Home Page)
+ * Entry type definition for content type 'homePage' (Course Page)
  * @name TypeHomePage
  * @type {TypeHomePage}
  * @author 7eBAEG99Zg1EDoAM5bOSWX
  * @since 2025-03-27T06:29:32.332Z
- * @version 39
+ * @version 41
  */
 export type TypeHomePage<
   Modifiers extends ChainModifiers,

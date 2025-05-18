@@ -17,7 +17,6 @@ import {
 import { CoursePageResponse, Section } from '@/entities/course/types';
 
 export function transformCourseSections(coursesResponse: CoursePageResponse['items']): Section[] {
-  // TODO: handle multiple course pages
   const sections = coursesResponse.at(0)?.fields.sections;
 
   if (!sections) {

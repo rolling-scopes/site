@@ -1,4 +1,5 @@
 import { syncApiCoursesSchedule } from '@/entities/course/helpers/sync-api-courses-schedule';
+import { transformCoursePages } from '@/entities/course/helpers/transform-course-pages';
 import { transformCourseSections } from '@/entities/course/helpers/transform-course-sections';
 import { transformCourses } from '@/entities/course/helpers/transform-courses';
 import { CoursePageResponse } from '@/entities/course/types';
@@ -31,8 +32,8 @@ class CourseStore {
     throw new Error('Something went wrong fetching courses schedule!');
   };
 
-  public loadCoursePage = async () => {
-    const res = await api.course.queryCoursePage();
+  public loadCoursePage = async (courseName: string) => {
+    const res = await api.course.queryCoursePage(courseName);
 
     if (res.isSuccess) {
       const preparedData = prepareContentfulResponse<CoursePageResponse['items']>(res.result);
@@ -41,6 +42,16 @@ class CourseStore {
     }
 
     throw new Error('Something went wrong fetching course page!');
+  };
+
+  public loadCoursePages = async () => {
+    const res = await api.course.queryCoursePages();
+
+    if (res.isSuccess) {
+      return transformCoursePages(res.result);
+    }
+
+    throw new Error('Something went wrong fetching all course pages!');
   };
 }
 
