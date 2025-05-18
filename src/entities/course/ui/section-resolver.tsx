@@ -1,34 +1,24 @@
-import { Section } from '@/entities/course/types';
+import { courseStore } from '@/entities/course';
+import { ApiCoursesIds, Section } from '@/entities/course/types';
 import { AboutCourseSection } from '@/widgets/about-course/ui/about-course/about-course-section';
-import { CertificationSection } from '@/widgets/certification/ui/certification-section';
-import { CommunicationSection } from '@/widgets/communication/ui/communication-section';
-import { TrainingProgramSection } from '@/widgets/training-program/ui/training-program-section';
+import { MediaTextBlock } from '@/widgets/media-text-block';
 
 type SectionResolverProps = {
   section: Section;
-  courseName: string;
+  courseId: ApiCoursesIds;
 };
 
-export const SectionResolver = ({ courseName, section }: SectionResolverProps) => {
-  const sectionId = section.id;
+export const SectionResolver = async ({ courseId, section }: SectionResolverProps) => {
+  const course = await courseStore.loadCourse(courseId);
 
-  switch (sectionId) {
-    case 'trainingProgram':
-      return (
-        <TrainingProgramSection
-          courseName={courseName}
-          title={section.data.title}
-          content={section.data.content}
-          image={section.data.image}
-          registrationLinkText={section.data.registrationLinkText}
-          registrationClosedLinkText={section.data.registrationClosedLinkText}
-        />
-      );
+  const sectionName = section.name;
+  const courseEnrollUrl = course.enroll;
 
+  switch (sectionName) {
     case 'aboutCourse':
       return (
         <AboutCourseSection
-          courseName={courseName}
+          enrollUrl={courseEnrollUrl}
           title={section.data.title}
           gridItems={section.data.gridItems}
           registrationLinkText={section.data.registrationLinkText}
@@ -36,19 +26,20 @@ export const SectionResolver = ({ courseName, section }: SectionResolverProps) =
         />
       );
 
-    case 'certification':
-      return <CertificationSection title={section.data.title} content={section.data.content} />;
-
-    case 'communication':
+    case 'mediaTextBlock':
       return (
-        <CommunicationSection
+        <MediaTextBlock
+          enrollUrl={courseEnrollUrl}
           title={section.data.title}
           content={section.data.content}
           image={section.data.image}
+          isImageOnLeft={section.data.isImageOnLeft}
+          registrationLinkText={section.data.registrationLinkText}
+          registrationClosedLinkText={section.data.registrationClosedLinkText}
         />
       );
 
     default:
-      throw new Error(`No component found for section type: ${sectionId}`);
+      throw new Error(`No component found for section type: ${sectionName}`);
   }
 };

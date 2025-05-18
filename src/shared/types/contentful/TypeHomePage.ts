@@ -1,7 +1,9 @@
 import type { TypeAboutCourseSkeleton } from './TypeAboutCourse';
 import type { TypeCertificationSkeleton } from './TypeCertification';
 import type { TypeCommunicationSkeleton } from './TypeCommunication';
+import type { TypeCourseSkeleton } from './TypeCourse';
 import type { TypeHeroSectionSkeleton } from './TypeHeroSection';
+import type { TypeMediaTextBlockSkeleton } from './TypeMediaTextBlock';
 import type { TypeTrainingProgramSkeleton } from './TypeTrainingProgram';
 import type {
   ChainModifiers,
@@ -43,9 +45,16 @@ export interface TypeHomePageFields {
       | TypeCertificationSkeleton
       | TypeCommunicationSkeleton
       | TypeHeroSectionSkeleton
+      | TypeMediaTextBlockSkeleton
       | TypeTrainingProgramSkeleton
     >
   >;
+  /**
+   * Field type definition for field 'course' (course)
+   * @name course
+   * @localized false
+   */
+  course: EntryFieldTypes.EntryLink<TypeCourseSkeleton>;
 }
 
 /**
@@ -54,7 +63,7 @@ export interface TypeHomePageFields {
  * @type {TypeHomePageSkeleton}
  * @author 7eBAEG99Zg1EDoAM5bOSWX
  * @since 2025-03-27T06:29:32.332Z
- * @version 45
+ * @version 53
  */
 export type TypeHomePageSkeleton = EntrySkeletonType<TypeHomePageFields, 'homePage'>;
 /**
@@ -63,7 +72,7 @@ export type TypeHomePageSkeleton = EntrySkeletonType<TypeHomePageFields, 'homePa
  * @type {TypeHomePage}
  * @author 7eBAEG99Zg1EDoAM5bOSWX
  * @since 2025-03-27T06:29:32.332Z
- * @version 45
+ * @version 53
  */
 export type TypeHomePage<
   Modifiers extends ChainModifiers,

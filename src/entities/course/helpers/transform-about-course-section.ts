@@ -6,7 +6,8 @@ import { TypeAboutCourseWithoutUnresolvableLinksResponse } from '@/shared/types/
 export function transformAboutCourseSection(
   section: TypeAboutCourseWithoutUnresolvableLinksResponse,
 ): Section {
-  const id = section.sys.contentType.sys.id;
+  const id = section.sys.id;
+  const name = section.sys.contentType.sys.id;
   const title = section.fields.title;
   const subTitle = section.fields.subTitle ? richTextRenderer(section.fields.subTitle) : undefined;
   const gridItems = transformGridItems(section.fields.gridItems);
@@ -15,6 +16,7 @@ export function transformAboutCourseSection(
 
   return {
     id,
+    name,
     data: {
       title,
       subTitle,

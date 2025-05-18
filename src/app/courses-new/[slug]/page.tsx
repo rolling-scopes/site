@@ -27,15 +27,11 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const coursePages = await courseStore.loadCoursePages();
-
-  const staticParams = coursePages.map(({ slug }) => ({ slug }));
-
-  return staticParams;
+  return await courseStore.loadCoursePages();
 }
 export default async function CourseRoute({ params }: CourseRouteParams) {
   const { slug } = await params;
-  const { courseName, sections } = await courseStore.loadCoursePage(slug);
+  const { courseName, sections, courseId } = await courseStore.loadCoursePage(slug);
 
-  return <Course name={courseName} sections={sections} />;
+  return <Course id={courseId} name={courseName} sections={sections} />;
 }

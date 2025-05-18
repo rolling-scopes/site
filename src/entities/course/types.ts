@@ -11,11 +11,9 @@ import {
 } from '@/shared/types';
 import {
   TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeCertificationWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeCommunicationWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeTrainingProgramWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeMediaTextBlockWithAllLocalesAndWithoutLinkResolutionResponse,
 } from '@/shared/types/contentful';
-import { ExtractSectionId } from '@/shared/types/types';
+import { ExtractSectionName } from '@/shared/types/types';
 import type { EntryCollection } from 'contentful';
 import { CourseNamesKeys } from 'data';
 
@@ -91,19 +89,9 @@ export type CourseItemData = Pick<
 
 export type ApiCoursesIds = (typeof API_COURSES_IDS_DICTIONARY)[CourseNamesKeys];
 
-export type SectionId =
-  | ExtractSectionId<TypeTrainingProgramWithAllLocalesAndWithoutLinkResolutionResponse>
-  | ExtractSectionId<TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse>
-  | ExtractSectionId<TypeCertificationWithAllLocalesAndWithoutLinkResolutionResponse>
-  | ExtractSectionId<TypeCommunicationWithAllLocalesAndWithoutLinkResolutionResponse>;
-
-export type TrainingProgramSectionData = {
-  title: string;
-  content: ReactNode;
-  registrationLinkText?: string;
-  registrationClosedLinkText?: string;
-  image: StaticImageData;
-};
+export type SectionName =
+  | ExtractSectionName<TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeMediaTextBlockWithAllLocalesAndWithoutLinkResolutionResponse>;
 
 export type GridItem = {
   id: string;
@@ -120,33 +108,25 @@ export type AboutCourseSectionData = {
   registrationClosedLinkText?: string;
 };
 
-export type CertificationSectionData = {
+export type MediaTextBlockSectionData = {
   title: string;
   content: ReactNode;
-};
-
-export type CommunicationSectionData = {
-  title: string;
-  content: ReactNode;
-  image: StaticImageData;
+  image?: StaticImageData;
+  isImageOnLeft: boolean;
+  registrationLinkText?: string;
+  registrationClosedLinkText?: string;
 };
 
 export type Section =
   | {
-    id: Extract<SectionId, 'trainingProgram'>;
-    data: TrainingProgramSectionData;
-  }
-  | {
-    id: Extract<SectionId, 'aboutCourse'>;
+    id: string;
+    name: Extract<SectionName, 'aboutCourse'>;
     data: AboutCourseSectionData;
   }
   | {
-    id: Extract<SectionId, 'certification'>;
-    data: CertificationSectionData;
-  }
-  | {
-    id: Extract<SectionId, 'communication'>;
-    data: CommunicationSectionData;
+    id: string;
+    name: Extract<SectionName, 'mediaTextBlock'>;
+    data: MediaTextBlockSectionData;
   };
 
 export type ApiCoursePageResponseSections = CoursePageResponse['items'][0]['fields']['sections'];

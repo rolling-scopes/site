@@ -79,6 +79,16 @@ export type {
   TypeHomePageWithoutUnresolvableLinksResponse,
 } from './TypeHomePage';
 export type {
+  TypeMediaTextBlock,
+  TypeMediaTextBlockFields,
+  TypeMediaTextBlockSkeleton,
+  TypeMediaTextBlockWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeMediaTextBlockWithAllLocalesAndWithoutUnresolvableLinksResponse,
+  TypeMediaTextBlockWithAllLocalesResponse,
+  TypeMediaTextBlockWithoutLinkResolutionResponse,
+  TypeMediaTextBlockWithoutUnresolvableLinksResponse,
+} from './TypeMediaTextBlock';
+export type {
   TypeTrainingProgram,
   TypeTrainingProgramFields,
   TypeTrainingProgramSkeleton,

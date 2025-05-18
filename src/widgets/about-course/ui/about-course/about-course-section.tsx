@@ -1,7 +1,6 @@
 import classNames from 'classnames/bind';
 
-import { AboutCourseSectionData, Course } from '@/entities/course/types';
-import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
+import { AboutCourseSectionData } from '@/entities/course/types';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -12,21 +11,19 @@ import styles from './about-course-section.module.scss';
 export const cx = classNames.bind(styles);
 
 type AboutCourseSectionProps = AboutCourseSectionData & {
-  courseName: Course['title'];
+  enrollUrl: string | null;
 };
 
 export const AboutCourseSection = async ({
-  courseName,
+  enrollUrl,
   title,
   subTitle,
   gridItems,
   registrationClosedLinkText,
   registrationLinkText,
 }: AboutCourseSectionProps) => {
-  const course = await selectCourse(courseName);
-
-  const linkText = course.enroll ? registrationLinkText : registrationClosedLinkText;
-  const enrollHref = course.enroll ?? '';
+  const linkText = enrollUrl ? registrationLinkText : registrationClosedLinkText;
+  const enrollHref = enrollUrl ?? '';
 
   return (
     <section className={cx('container')}>
@@ -44,7 +41,7 @@ export const AboutCourseSection = async ({
             />
           ))}
         </div>
-        <LinkCustom href={enrollHref} variant="primary" external disabled={!course.enroll}>
+        <LinkCustom href={enrollHref} variant="primary" external disabled={!enrollUrl}>
           {linkText}
         </LinkCustom>
       </div>
