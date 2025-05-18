@@ -32,13 +32,19 @@ class CourseStore {
     throw new Error('Something went wrong fetching courses schedule!');
   };
 
-  public loadCoursePage = async (courseName: string) => {
-    const res = await api.course.queryCoursePage(courseName);
+  public loadCoursePage = async (slug: string) => {
+    const res = await api.course.queryCoursePage(slug);
 
     if (res.isSuccess) {
       const preparedData = prepareContentfulResponse<CoursePageResponse['items']>(res.result);
 
-      return transformCourseSections(preparedData);
+      const { title = '', sections: coursePageSections } = preparedData.at(0)?.fields ?? {};
+      const sections = transformCourseSections(coursePageSections);
+
+      return {
+        courseName: title,
+        sections,
+      };
     }
 
     throw new Error('Something went wrong fetching course page!');

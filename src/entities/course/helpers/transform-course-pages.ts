@@ -1,9 +1,9 @@
 import { CoursePageResponse } from '@/entities/course/types';
 
 type CoursePage = {
-  title: string;
+  slug: string;
 };
 
 export function transformCoursePages(coursesResponse: CoursePageResponse): CoursePage[] {
-  return coursesResponse.items.map((coursePage) => ({ title: coursePage.fields.title }));
+  return coursesResponse.items.map(({ fields: { slug } }) => ({ slug }));
 }

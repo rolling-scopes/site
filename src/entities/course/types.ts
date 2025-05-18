@@ -148,3 +148,5 @@ export type Section =
     id: Extract<SectionId, 'communication'>;
     data: CommunicationSectionData;
   };
+
+export type ApiCoursePageResponseSections = CoursePageResponse['items'][0]['fields']['sections'];

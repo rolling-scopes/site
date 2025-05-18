@@ -4,7 +4,7 @@ import { courseStore } from '@/entities/course';
 import { Course } from '@/entities/course/ui/course-page';
 
 type Params = {
-  courseName: string;
+  slug: string;
 };
 
 type CourseRouteParams = {
@@ -16,24 +16,26 @@ type GenerateMetadataParams = {
 };
 
 export async function generateMetadata({
-  params: { courseName },
+  params: { slug },
 }: GenerateMetadataParams): Promise<Metadata> {
+  // TODO: not efficient to fetch the whole course page only to load the course name
+  const { courseName } = await courseStore.loadCoursePage(slug);
+
   const title = `${courseName} · The Rolling Scopes School`;
 
   return { title };
 }
 
 export async function generateStaticParams() {
-  // TODO: change to slug?
   const coursePages = await courseStore.loadCoursePages();
 
-  const staticParams = coursePages.map(({ title }) => ({ courseName: title }));
+  const staticParams = coursePages.map(({ slug }) => ({ slug }));
 
   return staticParams;
 }
 export default async function CourseRoute({ params }: CourseRouteParams) {
-  const { courseName } = await params;
-  const sections = await courseStore.loadCoursePage(courseName);
+  const { slug } = await params;
+  const { courseName, sections } = await courseStore.loadCoursePage(slug);
 
   return <Course name={courseName} sections={sections} />;
 }

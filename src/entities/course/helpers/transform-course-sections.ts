@@ -14,11 +14,9 @@ import {
 import {
   transformTrainingProgramSection,
 } from '@/entities/course/helpers/transform-training-program-section';
-import { CoursePageResponse, Section } from '@/entities/course/types';
+import { ApiCoursePageResponseSections, Section } from '@/entities/course/types';
 
-export function transformCourseSections(coursesResponse: CoursePageResponse['items']): Section[] {
-  const sections = coursesResponse.at(0)?.fields.sections;
-
+export function transformCourseSections(sections: ApiCoursePageResponseSections): Section[] {
   if (!sections) {
     throw new Error('Unable to determine list of sections.');
   }

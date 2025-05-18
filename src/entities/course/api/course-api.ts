@@ -27,12 +27,12 @@ export class CourseApi {
     return this.services.rest.get<CoursesScheduleResponse>('/app/courses.json');
   }
 
-  public queryCoursePage(courseName: string) {
+  public queryCoursePage(slug: string) {
     return this.services.rest.get<CoursePageResponse>('/entries', {
       params: {
         'content_type': API_CONTENT_TYPE_DICTIONARY.COURSE_PAGE,
         'include': API_MAX_INCLUDE_DEPTH,
-        'fields.title': courseName,
+        'fields.slug': slug,
       },
     });
   }

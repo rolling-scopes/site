@@ -26,9 +26,16 @@ export interface TypeHomePageFields {
    */
   title: EntryFieldTypes.Symbol;
   /**
+   * Field type definition for field 'slug' (slug)
+   * @name slug
+   * @localized false
+   * @summary The slug that will be used in the url bar
+   */
+  slug: EntryFieldTypes.Symbol;
+  /**
    * Field type definition for field 'sections' (sections)
    * @name sections
-   * @localized false
+   * @localized true
    */
   sections?: EntryFieldTypes.Array<
     EntryFieldTypes.EntryLink<
@@ -47,7 +54,7 @@ export interface TypeHomePageFields {
  * @type {TypeHomePageSkeleton}
  * @author 7eBAEG99Zg1EDoAM5bOSWX
  * @since 2025-03-27T06:29:32.332Z
- * @version 41
+ * @version 45
  */
 export type TypeHomePageSkeleton = EntrySkeletonType<TypeHomePageFields, 'homePage'>;
 /**
@@ -56,7 +63,7 @@ export type TypeHomePageSkeleton = EntrySkeletonType<TypeHomePageFields, 'homePa
  * @type {TypeHomePage}
  * @author 7eBAEG99Zg1EDoAM5bOSWX
  * @since 2025-03-27T06:29:32.332Z
- * @version 41
+ * @version 45
  */
 export type TypeHomePage<
   Modifiers extends ChainModifiers,
