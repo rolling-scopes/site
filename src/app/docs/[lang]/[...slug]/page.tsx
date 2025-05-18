@@ -6,6 +6,7 @@ import { TITLE_POSTFIX } from '../../constants';
 import { Menu } from '../../types';
 import { fetchMarkdownContent } from '../../utils/fetch-markdown-content';
 import { fetchMenu } from '../../utils/fetch-menu';
+import { OG_FOLDER } from '@/shared/constants';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 import { Language } from '@/shared/types';
 
@@ -56,7 +57,7 @@ export async function generateMetadata({
   const metadata = generatePageMetadata({
     title: `${title} ${TITLE_POSTFIX}`,
     description,
-    imagePath: '/og-images-pages/docs.png',
+    imagePath: `/${OG_FOLDER}/docs.png`,
     keywords,
     alternates: { canonical },
     robots,

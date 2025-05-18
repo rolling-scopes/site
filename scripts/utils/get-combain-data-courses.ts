@@ -1,7 +1,7 @@
-import { StaticImageData } from 'next/image';
-
 import { getCoursesLogo } from './get-courses-logo';
 import { getCoursesSchedule } from './get-courses-schedule';
+import type { CourseData } from '../types/types';
+import { TO_BE_DETERMINED } from '@/shared/constants';
 
 function normalizeUrl(url: string | null): string {
   if (!url) {
@@ -13,15 +13,7 @@ function normalizeUrl(url: string | null): string {
     .replace(/\/$/, '');
 }
 
-export async function getCombinedDataCourses(): Promise<
-  Array<{
-    normalizeName: string;
-    name: string;
-    logo: StaticImageData;
-    startDate: string;
-    url: string;
-  }>
-> {
+export async function getCombinedDataCourses(): Promise<CourseData[]> {
   try {
     const [coursesWithLogos, coursesWithDates] = await Promise.all([
       getCoursesLogo(),
@@ -41,7 +33,7 @@ export async function getCombinedDataCourses(): Promise<
           normalizeName: courseLogo.normalizeName,
           name: courseLogo.name,
           logo: courseLogo.logo,
-          startDate: matchedCourse?.startDate || 'TBD',
+          startDate: matchedCourse?.startDate || TO_BE_DETERMINED,
           url: courseLogo.url,
         };
       })
