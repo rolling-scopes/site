@@ -4,10 +4,10 @@ import 'dotenv/config';
 import fs from 'fs/promises';
 import path from 'path';
 
+import { getCombinedDataCourses } from './api/get-combain-data-courses';
 import { RS_PAGES } from './shared/constants';
 import { ensureDirExists } from './utils/ensure-dir-exists';
 import { generateImage } from './utils/generate-image';
-import { getCombinedDataCourses } from './utils/get-combain-data-courses';
 import { fonts } from './utils/load-fonts';
 import { createCourseTree } from './view/courses-tree/generate-courses-tree';
 import { createPageTree } from './view/pages-tree/generate-pages-tree';
