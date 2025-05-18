@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const metadata = generatePageMetadata({
     title,
     description,
-    imagePath: '/og-images/js-front-end-pre-school.png',
+    imagePath: '/og-images/js-front-end-pre-school-ru.png',
     keywords,
     alternates: { canonical },
     robots,
