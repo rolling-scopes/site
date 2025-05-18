@@ -8,6 +8,13 @@ export type CourseData = {
   url: string;
 };
 
+export type PageData = {
+  page: {
+    title: string;
+    description: string;
+  };
+};
+
 export type Font = {
   name: string;
   data: ArrayBuffer;
