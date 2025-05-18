@@ -6,29 +6,18 @@ import { BoostyIcon, OpenCollectiveIcon } from '@/shared/icons';
 export const donateOptions = [
   {
     id: 1,
-    linkLabel: 'Donate now',
-    icon: OpenCollectiveIcon,
+    buttonLinkLabel: 'Donate now',
+    menuLinkLabel: 'Donate on Opencollective',
+    buttonIcon: OpenCollectiveIcon,
+    menuIcon: openCollective,
     href: LINKS.DONATE_OPEN_COLLECTIVE,
   },
   {
     id: 2,
-    linkLabel: 'Subscribe now',
-    icon: BoostyIcon,
+    buttonLinkLabel: 'Subscribe now',
+    menuLinkLabel: 'Subscribe on Boosty',
+    buttonIcon: BoostyIcon,
+    menuIcon: boostyIconMenu,
     href: LINKS.DONATE_BOOSTY,
-  },
-];
-
-export const donateOptionsForNavMenu = [
-  {
-    id: 1,
-    linkLabel: 'Subscribe on Boosty',
-    icon: boostyIconMenu,
-    href: LINKS.DONATE_BOOSTY,
-  },
-  {
-    id: 2,
-    linkLabel: 'Donate on Opencollective',
-    icon: openCollective,
-    href: LINKS.DONATE_OPEN_COLLECTIVE,
   },
 ];

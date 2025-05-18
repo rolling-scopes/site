@@ -76,7 +76,7 @@
     max-height: 0;
     margin-top: 0;
     visibility: hidden;
-    opacity: 0;
+    opacity: $opacity-0;
   }
 
   &.visible {
@@ -85,6 +85,6 @@
     max-height: 624px;
     margin-top: 26px;
     visibility: visible;
-    opacity: 1;
+    opacity: $opacity-100;
   }
 }

@@ -1,6 +1,5 @@
 .mobile-view {
   display: none;
-  flex-direction: column;
 
   .menu-logo {
     display: flex;
@@ -18,7 +17,6 @@
     flex-grow: 1;
     gap: 16px;
     align-items: baseline;
-    justify-content: flex-start;
 
     width: 100%;
 
@@ -32,6 +30,7 @@
   @include media-tablet-large {
     overflow-y: hidden;
     display: flex;
+    flex-direction: column;
   }
 }
 
@@ -48,7 +47,7 @@
 .dark.divider {
   width: 100%;
   border: none;
-  border-bottom: 1px solid #d6dce3;
+  border-bottom: 1px solid $color-gray-250;
 }
 
 .light.divider {

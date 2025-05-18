@@ -5,7 +5,7 @@ import classNames from 'classnames/bind';
 import { usePathname } from 'next/navigation';
 
 import { BurgerMenu } from './ui/burger/burger';
-import { donateOptionsForNavMenu } from '../../../dev-data/donate-options.data';
+import { donateOptions } from '../../../dev-data/donate-options.data';
 import { Course } from '@/entities/course';
 import iconBlue from '@/shared/assets/svg/heart-blue.svg';
 import iconYellow from '@/shared/assets/svg/heart-yellow.svg';
@@ -138,11 +138,11 @@ export const Header = ({ courses }: HeaderProps) => {
               <SchoolMenu.Item title="Thank you for your support!" url="#" />
             </ul>
             <SchoolMenu>
-              {donateOptionsForNavMenu.map((option) => (
+              {donateOptions.toReversed().map((option) => (
                 <SchoolMenu.Item
                   key={option.id}
-                  icon={option.icon}
-                  title={option.linkLabel}
+                  icon={option.menuIcon}
+                  title={option.menuLinkLabel}
                   url={option.href}
                 />
               ))}

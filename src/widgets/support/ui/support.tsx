@@ -28,11 +28,11 @@ export const Support = () => (
         </Paragraph>
         <Paragraph fontSize="large">Thank you for your support!</Paragraph>
         <div className={cx('donate-options')}>
-          {donateOptions.map(({ id, href, linkLabel, icon }) => (
+          {donateOptions.map(({ id, href, buttonLinkLabel, buttonIcon }) => (
             <div key={id} className={cx('donate-item')}>
               <LinkCustom href={href} variant="primary" external data-testid="link-donate">
-                {icon()}
-                {linkLabel}
+                {buttonIcon()}
+                {buttonLinkLabel}
               </LinkCustom>
             </div>
           ))}

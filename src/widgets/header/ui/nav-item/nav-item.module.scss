@@ -8,6 +8,7 @@
   position: relative;
 
   display: flex;
+  gap: 9px;
   align-items: center;
   justify-content: center;
 
@@ -19,7 +20,10 @@
   background: none;
 
   &:focus-visible {
+    z-index: 3;
+
     border-radius: 2px;
+
     outline-style: solid;
     outline-width: 2px;
     outline-offset: 0;
@@ -80,7 +84,6 @@
       display: flex;
       align-items: center;
 
-      margin-left: 9px;
       padding: 0;
       border: none;
 
@@ -109,7 +112,7 @@
 
   @include media-hover {
     &:hover > .label-bold > .label-content {
-      color: #969fa8;
+      color: $color-gray-450;
     }
   }
 }

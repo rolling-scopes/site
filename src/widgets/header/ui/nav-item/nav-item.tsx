@@ -92,8 +92,8 @@ export const NavItem = ({ label, href, icon, children }: NavItemProps) => {
     <div
       className={cx('menu-item-wrapper')}
       ref={wrapperRef}
-      onKeyDown={handleConfirmKeyPress}
       data-testid="menu-item"
+      onKeyDown={handleEscKeyPress}
     >
       <button
         ref={buttonRef}
@@ -104,6 +104,7 @@ export const NavItem = ({ label, href, icon, children }: NavItemProps) => {
           { rotate: isDropdownOpen },
         )}
         onClick={handleClick}
+        onKeyDown={handleConfirmKeyPress}
       >
         {icon && (
           <Image
