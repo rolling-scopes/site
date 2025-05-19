@@ -1,4 +1,4 @@
-import { TypeTrainingProgramWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
+import { TypeMediaTextBlockWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
 import type { BaseEntry } from 'contentful';
 
 /**
@@ -9,6 +9,6 @@ import type { BaseEntry } from 'contentful';
  */
 export function isMediaTextBlockSection<TSection extends BaseEntry>(
   section: TSection,
-): section is Extract<TSection, TypeTrainingProgramWithoutUnresolvableLinksResponse> {
+): section is Extract<TSection, TypeMediaTextBlockWithoutUnresolvableLinksResponse> {
   return section?.sys?.contentType?.sys?.id === 'mediaTextBlock';
 }
