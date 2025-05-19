@@ -31,7 +31,9 @@ export async function generateStaticParams() {
 }
 export default async function CourseRoute({ params }: CourseRouteParams) {
   const { slug } = await params;
-  const { courseName, sections, courseId } = await courseStore.loadCoursePage(slug);
+  const isRuLocale = slug.endsWith('ru');
+  const locale = isRuLocale ? 'ru' : 'en-US';
+  const { courseName, sections, courseId } = await courseStore.loadCoursePage(slug, locale);
 
   return <Course id={courseId} name={courseName} sections={sections} />;
 }

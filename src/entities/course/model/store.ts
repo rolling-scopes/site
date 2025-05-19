@@ -5,6 +5,7 @@ import { transformCourses } from '@/entities/course/helpers/transform-courses';
 import { ApiCoursesIds, CoursePageResponse } from '@/entities/course/types';
 import { api } from '@/shared/api/api';
 import { prepareContentfulResponse } from '@/shared/helpers/prepare-contentful-response';
+import { ApiResourceLocale } from '@/shared/types';
 
 class CourseStore {
   public async loadCourses() {
@@ -54,8 +55,8 @@ class CourseStore {
     throw new Error('Something went wrong fetching courses schedule!');
   };
 
-  public loadCoursePage = async (slug: string) => {
-    const res = await api.course.queryCoursePage(slug);
+  public loadCoursePage = async (slug: string, locale: ApiResourceLocale = 'en-US') => {
+    const res = await api.course.queryCoursePage(slug, locale);
 
     if (res.isSuccess) {
       const preparedData = prepareContentfulResponse<CoursePageResponse['items']>(res.result);
