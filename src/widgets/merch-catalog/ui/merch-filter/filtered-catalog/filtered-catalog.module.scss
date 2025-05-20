@@ -1,3 +1,20 @@
 .catalog {
   display: flex;
+  gap: 30px;
+
+  @media (width <= 960px) {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+  }
+}
+
+.sidebar {
+  display: block;
+  width: 222px;
+
+  @media (width <= 960px) {
+    display: none;
+  }
 }

@@ -17,7 +17,7 @@ export const FilterControls = ({
   onClearFilters,
 }: FilterControlsProps) => {
   return (
-    <div className={cx('merch-filter')}>
+    <div>
       <div className={cx('filter-container')}>
         <div className={cx('filter-title-wrapper')}>
           <h4 className={cx('filter-title')}>Filter merch</h4>

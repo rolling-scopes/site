@@ -27,6 +27,7 @@ export const FilteredMerchView = ({ initialProducts }: FilteredMerchViewProps) =
       setAllAvailableTags([]);
     }
   }, [initialProducts]);
+
   const filteredProducts = useMemo(() => {
     let productsToFilter = initialProducts || [];
 
@@ -64,7 +65,7 @@ export const FilteredMerchView = ({ initialProducts }: FilteredMerchViewProps) =
   return (
     <div className={cx('catalog')}>
       {' '}
-      <aside>
+      <aside className={cx('sidebar')}>
         <FilterControls
           allAvailableTags={allAvailableTags}
           searchTerm={searchTerm}
