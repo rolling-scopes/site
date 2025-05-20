@@ -102,7 +102,7 @@ export const FilteredMerchView = ({ initialProducts }: FilteredMerchViewProps) =
             )}
 
         {(!initialProducts || initialProducts.length === 0) && !hasActiveFilters && (
-          <p>No merch found.</p>
+          <p>No merch found</p>
         )}
       </main>
     </div>
