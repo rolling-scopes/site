@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 
 import { FilterControlsProps } from '../types';
+import { DropdownArrow } from '@/shared/icons/dropdown-arrow';
 import { SearchIcon } from '@/shared/icons/search-icon';
 
 import styles from './filter-controls.module.scss';
@@ -15,18 +16,25 @@ export const FilterControls = ({
   onSearchChange,
   onTagChange,
   onClearFilters,
+  isMobileLayout = false,
+  areTagsExpandedMobile = false,
+  onToggleTagsExpansionMobile,
 }: FilterControlsProps) => {
+  const showTagsSection = !isMobileLayout || areTagsExpandedMobile;
+
   return (
     <div>
-      <div className={cx('filter-container')}>
-        <div className={cx('filter-title-wrapper')}>
-          <h4 className={cx('filter-title')}>Filter merch</h4>
-          {hasActiveFilters && (
-            <button className={cx('filter-clear-button')} onClick={onClearFilters}>
-              Clear
-            </button>
-          )}
-        </div>
+      <div className={cx('filter-container', { mobile: isMobileLayout })}>
+        {!isMobileLayout && (
+          <div className={cx('filter-title-wrapper')}>
+            <h4 className={cx('filter-title')}>Filter merch</h4>
+            {hasActiveFilters && (
+              <button className={cx('filter-clear-button')} onClick={onClearFilters}>
+                Clear
+              </button>
+            )}
+          </div>
+        )}
         <div className={cx('filter-search-wrapper')}>
           <SearchIcon />
           <input
@@ -38,25 +46,46 @@ export const FilterControls = ({
             onChange={(e) => onSearchChange(e.target.value)}
           />
         </div>
-        {allAvailableTags && allAvailableTags.length > 0 && (
-          <div className={cx('filter-tags-wrapper')}>
-            {allAvailableTags.map((tag) => (
-              <label
-                key={tag}
-                htmlFor={`tag-checkbox-${tag}`}
-                className={cx('filter-tag-label', { selected: selectedTags.includes(tag) })}
-              >
-                <input
-                  type="checkbox"
-                  id={`tag-checkbox-${tag}`}
-                  className={cx('filter-checkbox-original')}
-                  checked={selectedTags.includes(tag)}
-                  onChange={() => onTagChange(tag)}
-                />
-                <span className={cx('filter-checkbox-custom')}></span>
-                <span className={cx('tag-text')}>{tag}</span>
-              </label>
-            ))}
+
+        {isMobileLayout && (
+          <button
+            className={cx('mobile-toggle-button', { expanded: areTagsExpandedMobile })}
+            onClick={onToggleTagsExpansionMobile}
+          >
+            Filter By:
+            {hasActiveFilters && !areTagsExpandedMobile && <span></span>}
+            <span className={cx('filter-toggle-arrow', { expanded: areTagsExpandedMobile })}>
+              <DropdownArrow />
+            </span>
+          </button>
+        )}
+        {showTagsSection && allAvailableTags && allAvailableTags.length > 0 && (
+          <div>
+            {isMobileLayout && hasActiveFilters && (
+              <button className={cx('mobile-clear-button')} onClick={onClearFilters}>
+                Clear
+              </button>
+            )}
+            <div className={cx('filter-tags-wrapper')}>
+              {' '}
+              {allAvailableTags.map((tag) => (
+                <label
+                  key={tag}
+                  htmlFor={`tag-checkbox-${tag}`}
+                  className={cx('filter-tag-label', { selected: selectedTags.includes(tag) })}
+                >
+                  <input
+                    type="checkbox"
+                    id={`tag-checkbox-${tag}`}
+                    className={cx('filter-checkbox-original')}
+                    checked={selectedTags.includes(tag)}
+                    onChange={() => onTagChange(tag)}
+                  />
+                  <span className={cx('filter-checkbox-custom')}></span>
+                  <span>{tag}</span>
+                </label>
+              ))}
+            </div>
           </div>
         )}
       </div>

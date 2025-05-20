@@ -1,4 +1,4 @@
-.catalog {
+.filter-catalog {
   display: flex;
   gap: 30px;
 
@@ -7,14 +7,16 @@
     flex-direction: column;
     gap: 50px;
     align-items: center;
+
+    width: 100%;
   }
 }
 
-.sidebar {
+.filter-sidebar {
   display: block;
   width: 222px;
 
   @media (width <= 960px) {
-    display: none;
+    width: 100%;
   }
 }

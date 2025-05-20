@@ -6,6 +6,7 @@ import classNames from 'classnames/bind';
 import { MerchList } from '../../merch-list/merch-list';
 import { FilterControls } from '../filter-controls/filter-controls';
 import { FilteredMerchViewProps } from '../types';
+import { useMediaQuery } from '@/shared/hooks/use-media-query/use-media-query';
 
 import styles from './filtered-catalog.module.scss';
 
@@ -15,6 +16,9 @@ export const FilteredMerchView = ({ initialProducts }: FilteredMerchViewProps) =
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [allAvailableTags, setAllAvailableTags] = useState<string[]>([]);
+
+  const isMobileLayout = useMediaQuery('(max-width: 960px)');
+  const [areMobileFiltersExpanded, setAreMobileFiltersExpanded] = useState(false);
 
   useEffect(() => {
     if (initialProducts && initialProducts.length > 0) {
@@ -60,12 +64,22 @@ export const FilteredMerchView = ({ initialProducts }: FilteredMerchViewProps) =
     setSelectedTags([]);
   };
 
+  const toggleMobileFiltersExpansion = () => {
+    setAreMobileFiltersExpanded(!areMobileFiltersExpanded);
+  };
+
+  useEffect(() => {
+    if (!isMobileLayout && areMobileFiltersExpanded) {
+      setAreMobileFiltersExpanded(false);
+    }
+  }, [isMobileLayout, areMobileFiltersExpanded]);
+
   const hasActiveFilters = searchTerm.trim() !== '' || selectedTags.length > 0;
 
   return (
-    <div className={cx('catalog')}>
+    <div className={cx('filter-catalog')}>
       {' '}
-      <aside className={cx('sidebar')}>
+      <div className={cx('filter-sidebar')}>
         <FilterControls
           allAvailableTags={allAvailableTags}
           searchTerm={searchTerm}
@@ -74,8 +88,11 @@ export const FilteredMerchView = ({ initialProducts }: FilteredMerchViewProps) =
           onSearchChange={handleSearchChange}
           onTagChange={handleTagChange}
           onClearFilters={handleClearFilters}
+          isMobileLayout={isMobileLayout}
+          areTagsExpandedMobile={areMobileFiltersExpanded}
+          onToggleTagsExpansionMobile={toggleMobileFiltersExpansion}
         />
-      </aside>
+      </div>
       <main>
         {filteredProducts.length > 0
           ? (
