@@ -45,7 +45,6 @@ export const FilteredMerchView = ({ initialProducts }: FilteredMerchViewProps) =
         selectedTags.some((tag) => (product.tags || []).includes(tag)),
       );
     }
-
     return productsToFilter;
   }, [initialProducts, searchTerm, selectedTags]);
 

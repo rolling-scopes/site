@@ -1,3 +1,4 @@
+import React from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 
@@ -10,7 +11,7 @@ import styles from './merch-card.module.scss';
 
 export const cx = classNames.bind(styles);
 
-export const MerchCard = ({ title, preview, download }: MerchProduct) => {
+const MerchCardComponent = ({ title, preview, download }: MerchProduct) => {
   return (
     <article className={cx('merch-card')} data-testid="merch">
       <div className={cx('preview-wrap')}>
@@ -25,3 +26,5 @@ export const MerchCard = ({ title, preview, download }: MerchProduct) => {
     </article>
   );
 };
+
+export const MerchCard = React.memo(MerchCardComponent);
