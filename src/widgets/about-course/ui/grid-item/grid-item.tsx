@@ -1,8 +1,8 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 
-import { GridItem as TGridItem } from '@/entities/course/types';
 import { Subtitle } from '@/shared/ui/subtitle';
+import { GridItem as TGridItem } from '@/widgets/about-course/types';
 
 import styles from './grid-item.module.scss';
 

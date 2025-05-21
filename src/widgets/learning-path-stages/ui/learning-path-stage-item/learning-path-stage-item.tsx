@@ -1,8 +1,10 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 
-import type { LearningPathStageItem as TLearningPathStageItem } from '@/entities/course/types';
 import { Subtitle } from '@/shared/ui/subtitle';
+import {
+  LearningPathStageItem as TLearningPathStageItem,
+} from '@/widgets/learning-path-stages/types';
 
 import styles from './learning-path-stage-item.module.scss';
 

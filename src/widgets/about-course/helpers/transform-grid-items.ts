@@ -1,7 +1,7 @@
-import { GridItem } from '@/entities/course/types';
 import { prepareAssetImage } from '@/shared/helpers/prepare-asset-image';
 import { richTextRenderer } from '@/shared/helpers/rich-text-renderer';
 import { TypeAboutCourseItemWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
+import { GridItem } from '@/widgets/about-course/types';
 
 export function transformGridItems(
   items: (TypeAboutCourseItemWithoutUnresolvableLinksResponse | undefined)[],

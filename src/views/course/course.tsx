@@ -1,7 +1,8 @@
-import { ApiCoursesIds, Section } from '@/entities/course/types';
+import { ApiCoursesIds } from '@/entities/course/types';
 import { trainerStore } from '@/entities/trainer';
 import { ApiResourceLocale } from '@/shared/types';
 import { SectionResolver } from '@/views/course/section-resolver';
+import { Section } from '@/views/course/types.ts';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { HeroCourse } from '@/widgets/hero-course';
 import { Trainers } from '@/widgets/trainers';

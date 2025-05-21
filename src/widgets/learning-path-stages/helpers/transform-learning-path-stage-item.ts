@@ -1,9 +1,9 @@
-import { LearningPathStageItem } from '@/entities/course/types';
 import { prepareAssetImage } from '@/shared/helpers/prepare-asset-image';
 import { richTextRenderer } from '@/shared/helpers/rich-text-renderer';
 import {
   TypeLearningPathStageItemWithoutUnresolvableLinksResponse,
 } from '@/shared/types/contentful';
+import { LearningPathStageItem } from '@/widgets/learning-path-stages/types';
 
 export function transformLearningPathStageItem(
   item: TypeLearningPathStageItemWithoutUnresolvableLinksResponse | undefined,

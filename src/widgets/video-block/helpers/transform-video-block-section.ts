@@ -1,5 +1,5 @@
-import { Section } from '@/entities/course/types';
 import { TypeVideoBlockWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
+import { Section } from '@/views/course/types';
 
 export function transformVideoBlockSection(
   section: TypeVideoBlockWithoutUnresolvableLinksResponse,

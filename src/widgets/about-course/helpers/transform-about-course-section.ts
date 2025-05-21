@@ -1,6 +1,6 @@
-import { Section } from '@/entities/course/types';
 import { richTextRenderer } from '@/shared/helpers/rich-text-renderer';
 import { TypeAboutCourseWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
+import { Section } from '@/views/course/types';
 import { transformGridItems } from '@/widgets/about-course/helpers/transform-grid-items';
 
 export function transformAboutCourseSection(

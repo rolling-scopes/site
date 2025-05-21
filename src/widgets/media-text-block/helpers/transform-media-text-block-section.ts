@@ -1,6 +1,6 @@
-import { Section } from '@/entities/course/types';
 import { richTextRenderer } from '@/shared/helpers/rich-text-renderer';
 import { TypeMediaTextBlockWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
+import { Section } from '@/views/course/types';
 
 export function transformMediaTextBlockSection(
   section: TypeMediaTextBlockWithoutUnresolvableLinksResponse,
