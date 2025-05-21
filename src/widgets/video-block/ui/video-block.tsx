@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 
-import { VideoBlockSectionData } from '@/entities/course/types';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { VideoBlockSectionData } from '@/widgets/video-block/types';
 
 import styles from './video-block.module.scss';
 

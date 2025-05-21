@@ -1,4 +1,4 @@
-import { ApiCoursePageResponseSections, Section } from '@/entities/course/types';
+import { ApiCoursePageResponseSections, Section } from '@/views/course/types';
 import { isAboutCourseSection, transformAboutCourseSection } from '@/widgets/about-course';
 import {
   isLearningPathStagesSection,

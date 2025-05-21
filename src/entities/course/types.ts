@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import { StaticImageData } from 'next/image';
 
 import { API_COURSES_IDS_DICTIONARY } from '@/entities/course/constants';
@@ -9,13 +8,6 @@ import {
   TypeCourseSkeleton,
   TypeHomePageSkeleton,
 } from '@/shared/types';
-import {
-  TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeLearningPathStagesWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeMediaTextBlockWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeVideoBlockWithAllLocalesAndWithoutLinkResolutionResponse,
-} from '@/shared/types/contentful';
-import { ExtractSectionName } from '@/shared/types/types';
 import type { EntryCollection } from 'contentful';
 import { CourseNamesKeys } from 'data';
 
@@ -90,77 +82,3 @@ export type CourseItemData = Pick<
 };
 
 export type ApiCoursesIds = (typeof API_COURSES_IDS_DICTIONARY)[CourseNamesKeys];
-
-export type SectionName =
-  | ExtractSectionName<TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse>
-  | ExtractSectionName<TypeMediaTextBlockWithAllLocalesAndWithoutLinkResolutionResponse>
-  | ExtractSectionName<TypeLearningPathStagesWithAllLocalesAndWithoutLinkResolutionResponse>
-  | ExtractSectionName<TypeVideoBlockWithAllLocalesAndWithoutLinkResolutionResponse>;
-
-export type GridItem = {
-  id: string;
-  heading: string;
-  content: ReactNode;
-  icon: StaticImageData;
-};
-
-export type AboutCourseSectionData = {
-  title: string;
-  subTitle?: ReactNode;
-  gridItems: GridItem[];
-  registrationLinkText?: string;
-  registrationClosedLinkText?: string;
-};
-
-export type MediaTextBlockSectionData = {
-  title: string;
-  contentLeft?: ReactNode;
-  contentRight?: ReactNode;
-  linkUrl?: string | null;
-  linkLabel?: string;
-  disabledLinkLabel?: string;
-  backgroundColor?: string;
-};
-
-export type LearningPathStageItem = {
-  id: string;
-  title: string;
-  content: ReactNode;
-  image?: StaticImageData;
-};
-
-export type LearningPathStagesSectionData = {
-  title: string;
-  description?: ReactNode;
-  stages: LearningPathStageItem[];
-};
-
-export type VideoBlockSectionData = {
-  title: string;
-  url: string;
-  videoTitle: string;
-};
-
-export type Section =
-  | {
-    id: string;
-    name: Extract<SectionName, 'aboutCourse'>;
-    data: AboutCourseSectionData;
-  }
-  | {
-    id: string;
-    name: Extract<SectionName, 'mediaTextBlock'>;
-    data: MediaTextBlockSectionData;
-  }
-  | {
-    id: string;
-    name: Extract<SectionName, 'learningPathStages'>;
-    data: LearningPathStagesSectionData;
-  }
-  | {
-    id: string;
-    name: Extract<SectionName, 'videoBlock'>;
-    data: VideoBlockSectionData;
-  };
-
-export type ApiCoursePageResponseSections = CoursePageResponse['items'][0]['fields']['sections'];

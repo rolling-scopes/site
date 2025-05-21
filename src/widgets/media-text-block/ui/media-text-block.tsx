@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 
-import { MediaTextBlockSectionData } from '@/entities/course/types';
+import { MediaTextBlockSectionData } from '../types';
 import { isExternalUri } from '@/shared/helpers/is-external-uri';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';

@@ -1,8 +1,8 @@
 import { PropsWithChildren } from 'react';
 import classNames from 'classnames/bind';
 
-import { LearningPathStagesSectionData } from '@/entities/course/types';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { LearningPathStagesSectionData } from '@/widgets/learning-path-stages/types';
 
 import styles from './learning-path-stages.module.scss';
 

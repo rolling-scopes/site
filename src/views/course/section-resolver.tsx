@@ -1,4 +1,5 @@
-import { ApiCoursesIds, Section, courseStore } from '@/entities/course';
+import { ApiCoursesIds, courseStore } from '@/entities/course';
+import { Section } from '@/views/course/types';
 import { AboutCourseSection } from '@/widgets/about-course';
 import { LearningPathStageItem, LearningPathStages } from '@/widgets/learning-path-stages';
 import { MediaTextBlock } from '@/widgets/media-text-block';
