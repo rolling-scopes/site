@@ -1,34 +1,25 @@
 import { ReactNode } from 'react';
 import classNames from 'classnames/bind';
 
-import { usePositionDropdown } from '@/shared/hooks/use-position-dropdown';
-
 import styles from './dropdown-wrapper.module.scss';
 
 const cx = classNames.bind(styles);
 
 export interface DropdownWrapperProps {
-  onMouseLeave: () => void;
-  onMouseEnter: () => void;
   isOpen: boolean;
+  reverseLayout: boolean;
   children: ReactNode;
 }
 
-export const DropdownWrapper = ({
-  onMouseLeave,
-  onMouseEnter,
+export const DropdownWrapper = function DropdownWrapper({
   isOpen,
+  reverseLayout,
   children,
-}: DropdownWrapperProps) => {
-  const dropdownRef = usePositionDropdown();
-
+}: DropdownWrapperProps) {
   return (
     <div
-      className={cx('courses-dropdown', { open: isOpen })}
-      onMouseLeave={onMouseLeave}
-      onMouseEnter={onMouseEnter}
+      className={cx('courses-dropdown', { open: isOpen }, { 'reverse-layout': reverseLayout })}
       data-testid="header-dropdown"
-      ref={dropdownRef}
     >
       {children}
     </div>
