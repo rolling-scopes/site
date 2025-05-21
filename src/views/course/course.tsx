@@ -2,7 +2,7 @@ import { ApiCoursesIds } from '@/entities/course/types';
 import { trainerStore } from '@/entities/trainer';
 import { ApiResourceLocale } from '@/shared/types';
 import { SectionResolver } from '@/views/course/section-resolver';
-import { Section } from '@/views/course/types.ts';
+import { Section } from '@/views/course/types';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { HeroCourse } from '@/widgets/hero-course';
 import { Trainers } from '@/widgets/trainers';
