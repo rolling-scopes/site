@@ -12,6 +12,7 @@ import iconYellow from '@/shared/assets/svg/heart-yellow.svg';
 import logoBlue from '@/shared/assets/svg/rss-logo-blue.svg';
 import { ANCHORS, NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
 import { Logo } from '@/shared/ui/logo';
+import { Paragraph } from '@/shared/ui/paragraph';
 import {
   transformCoursesToMentorship,
 } from '@/views/mentorship/helpers/transform-courses-to-mentorship';
@@ -128,15 +129,19 @@ export const Header = ({ courses }: HeaderProps) => {
             </SchoolMenu>
           </NavItem>
           <NavItem label={NAV_MENU_LABELS.DOCS} href={ROUTES.DOCS_EN} />
-          <NavItem reverseLayout={true} label={NAV_MENU_LABELS.SUPPORT_US} href={`#${ANCHORS.DONATE}`} icon={iconSrc}>
-            <ul className={cx('support-text')}>
-              <SchoolMenu.Item
-                title="Your donations help us cover hosting, domains, licenses, and advertising for courses
-                and events. Every donation, big or small, helps!"
-                url="#"
-              />
-              <SchoolMenu.Item title="Thank you for your support!" url="#" />
-            </ul>
+          <NavItem
+            reverseLayout={true}
+            label={NAV_MENU_LABELS.SUPPORT_US}
+            href={`#${ANCHORS.DONATE}`}
+            icon={iconSrc}
+          >
+            <div className={cx('support-text')}>
+              <Paragraph fontSize="small">
+                Your donations help us cover hosting, domains, licenses, and advertising for courses
+                and events. Every donation, big or small, helps!
+              </Paragraph>
+              <Paragraph fontSize="small">Thank you for your support!</Paragraph>
+            </div>
             <SchoolMenu>
               {donateOptions.toReversed().map((option) => (
                 <SchoolMenu.Item
