@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { DateSimple } from '../date-simple';
 import micIcon from '@/shared/assets/icons/mic.svg';
 import { LABELS, TO_BE_DETERMINED } from '@/shared/constants';
-import { calculateFreshDate } from '@/shared/helpers/get-course-date';
 import { Language } from '@/shared/types';
 import { CourseStartLabel } from '@/shared/ui/short-info-panel/course-start-label';
 
@@ -53,6 +52,7 @@ export const ShortInfoPanel = ({
         startDate={startDate}
         registrationEndDate={registrationEndDate}
       />
+
       <DateSimple
         label={LABELS.REGISTRATION_END}
         startDate={registrationEndDate}
@@ -70,19 +70,15 @@ export const ShortInfoPanel = ({
   );
 
   const upcomingView = (
-    <DateSimple
+    <CourseStartLabel
       label={label}
-      startDate={
-        startDate && registrationEndDate ? calculateFreshDate(startDate, registrationEndDate) : null
-      }
-      endDate={startDate ? registrationEndDate : null}
-      labelSeparator={LABELS.MENTOR_ACTIVITIES_SEPARATOR}
-      showMentoringStartDate={false}
+      startDate={startDate}
+      registrationEndDate={startDate ? registrationEndDate : null}
     >
       <span className={cx('language')} data-testid="course-language">
         {courseLanguage}
       </span>
-    </DateSimple>
+    </CourseStartLabel>
   );
 
   const mentoringView = (

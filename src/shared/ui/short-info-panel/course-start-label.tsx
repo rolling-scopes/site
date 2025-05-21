@@ -9,6 +9,7 @@ type CourseStartLabelProps = PropsWithChildren & {
   startDate: string | null;
   registrationEndDate: string | null;
   label: string | undefined;
+  labelSeparator?: string;
 };
 
 export const CourseStartLabel = ({
