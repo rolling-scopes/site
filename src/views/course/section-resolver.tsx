@@ -1,4 +1,3 @@
-import { ApiCoursesIds, courseStore } from '@/entities/course';
 import { Section } from '@/views/course/types';
 import { AboutCourseSection } from '@/widgets/about-course';
 import { LearningPathStageItem, LearningPathStages } from '@/widgets/learning-path-stages';
@@ -7,14 +6,11 @@ import { VideoBlock } from '@/widgets/video-block';
 
 type SectionResolverProps = {
   section: Section;
-  courseId: ApiCoursesIds;
+  courseEnrollUrl: string | null;
 };
 
-export const SectionResolver = async ({ courseId, section }: SectionResolverProps) => {
-  const course = await courseStore.loadCourse(courseId);
-
+export const SectionResolver = async ({ courseEnrollUrl, section }: SectionResolverProps) => {
   const sectionName = section.name;
-  const courseEnrollUrl = course.enroll;
 
   switch (sectionName) {
     case 'aboutCourse':

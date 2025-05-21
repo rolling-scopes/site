@@ -1,3 +1,4 @@
+import { courseStore } from '@/entities/course';
 import { ApiCoursesIds } from '@/entities/course/types';
 import { trainerStore } from '@/entities/trainer';
 import { ApiResourceLocale } from '@/shared/types';
@@ -15,14 +16,17 @@ type CourseProps = {
 };
 
 export const Course = async ({ id, name, sections, locale }: CourseProps) => {
-  const trainers = await trainerStore.loadTrainers(id, locale);
+  const [trainers, course] = await Promise.all([
+    trainerStore.loadTrainers(id, locale),
+    courseStore.loadCourse(id),
+  ]);
 
   return (
     <>
       <HeroCourse courseName={name} />
       <Breadcrumbs />
       {sections.map((section) => (
-        <SectionResolver key={section.id} courseId={id} section={section} />
+        <SectionResolver key={section.id} courseEnrollUrl={course.enroll} section={section} />
       ))}
       {trainers && <Trainers trainers={trainers} courseName={name} />}
     </>
