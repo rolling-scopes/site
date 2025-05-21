@@ -41,7 +41,7 @@ vi.mock('@/shared/hooks/use-media-query/use-media-query');
 
 const mockInitialProducts: MerchProduct[] = [
   {
-    id: '1',
+    id: 1,
     name: 'Tee Alpha',
     title: 'Alpha T-Shirt',
     preview: [],
@@ -49,7 +49,7 @@ const mockInitialProducts: MerchProduct[] = [
     tags: ['clothing', 'tee'],
   },
   {
-    id: '2',
+    id: 2,
     name: 'Mug Beta',
     title: 'Beta Coffee Mug',
     preview: [],
@@ -57,7 +57,7 @@ const mockInitialProducts: MerchProduct[] = [
     tags: ['accessories', 'mug'],
   },
   {
-    id: '3',
+    id: 3,
     name: 'Sticker Gamma',
     title: 'Gamma Sticker Pack',
     preview: [],
@@ -65,7 +65,7 @@ const mockInitialProducts: MerchProduct[] = [
     tags: ['accessories', 'stickers'],
   },
   {
-    id: '4',
+    id: 4,
     name: 'Tee Delta',
     title: 'Delta Graphic Tee',
     preview: [],
