@@ -26,7 +26,7 @@ export function logRequest({
   body,
   error,
 }: LogRequestParams) {
-  if (process.env.LOG_QUERY === 'false') {
+  if (process.env.NODE_ENV === 'production' || process.env.LOG_QUERY === 'false') {
     return;
   }
 
@@ -59,7 +59,7 @@ export function logRequest({
   console.log(
     inspect(logObject, {
       depth: null,
-      colors: process.env.NODE_ENV !== 'production',
+      colors: true,
     }),
   );
 }

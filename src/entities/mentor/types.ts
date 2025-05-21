@@ -6,3 +6,7 @@ export type MentorFeedback = {
   review: string;
   photo: StaticImageData;
 };
+
+export type MentorPlaylistResponse = {
+  items: GoogleApiYouTubePlaylistItemResource[];
+};
