@@ -12,13 +12,10 @@ type CourseRouteParams = {
   params: Promise<Params>;
 };
 
-type GenerateMetadataParams = {
-  params: Params;
-};
-
-export async function generateMetadata({ params }: GenerateMetadataParams): Promise<Metadata> {
+export async function generateMetadata({ params }: CourseRouteParams): Promise<Metadata> {
   const { slug } = await params;
   const locale = resolveCoursePageLocale(slug);
+
   // TODO: not efficient to fetch the whole course page only to load the course name
   const { courseName } = await coursePageStore.loadCoursePage(slug, locale);
 
@@ -30,6 +27,7 @@ export async function generateMetadata({ params }: GenerateMetadataParams): Prom
 export async function generateStaticParams() {
   return await coursePageStore.loadCoursePages();
 }
+
 export default async function CourseRoute({ params }: CourseRouteParams) {
   const { slug } = await params;
   const locale = resolveCoursePageLocale(slug);
