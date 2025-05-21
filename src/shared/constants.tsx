@@ -1,7 +1,9 @@
 import { ReactNode } from 'react';
 import { BLOCKS, Block, INLINES, Inline } from '@contentful/rich-text-types';
+import Image from 'next/image';
 
 import { isExternalUri } from '@/shared/helpers/is-external-uri';
+import { prepareAssetImage } from '@/shared/helpers/prepare-asset-image';
 import { ApiResourceLocale, Language } from '@/shared/types/';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { ContentList } from '@/shared/ui/list/content-list';
@@ -144,5 +146,11 @@ export const RICH_TEXT_OPTIONS = {
         {children}
       </LinkCustom>
     ),
+    [BLOCKS.EMBEDDED_ASSET]: (node: Inline | Block) => {
+      const src = prepareAssetImage(node.data.target.fields.file);
+      const alt = node.data.target.fields.title;
+
+      return <Image data-id="asset-image" src={src} alt={alt} />;
+    },
   },
 };

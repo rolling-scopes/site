@@ -32,13 +32,13 @@ export const SectionResolver = async ({ courseId, section }: SectionResolverProp
     case 'mediaTextBlock':
       return (
         <MediaTextBlock
-          enrollUrl={courseEnrollUrl}
           title={section.data.title}
-          content={section.data.content}
-          image={section.data.image}
-          isImageOnLeft={section.data.isImageOnLeft}
-          registrationLinkText={section.data.registrationLinkText}
-          registrationClosedLinkText={section.data.registrationClosedLinkText}
+          contentLeft={section.data.contentLeft}
+          contentRight={section.data.contentRight}
+          linkUrl={section.data.linkUrl ?? courseEnrollUrl}
+          linkLabel={section.data.linkLabel}
+          disabledLinkLabel={section.data.disabledLinkLabel}
+          backgroundColor={section.data.backgroundColor}
         />
       );
 

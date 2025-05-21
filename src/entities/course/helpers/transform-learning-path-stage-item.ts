@@ -14,7 +14,9 @@ export function transformLearningPathStageItem(
 
   const id = item.sys.id;
   const title = item.fields.title;
-  const image = prepareAssetImage(item.fields.image?.fields?.file);
+  const image = item.fields.image?.fields?.file
+    ? prepareAssetImage(item.fields.image?.fields?.file)
+    : undefined;
   const content = richTextRenderer(item.fields.content);
 
   return {

@@ -15,11 +15,12 @@ type GenerateMetadataParams = {
   params: Params;
 };
 
-export async function generateMetadata({
-  params: { slug },
-}: GenerateMetadataParams): Promise<Metadata> {
+export async function generateMetadata({ params }: GenerateMetadataParams): Promise<Metadata> {
+  const { slug } = await params;
+  const isRuLocale = slug.endsWith('ru');
+  const locale = isRuLocale ? 'ru' : 'en-US';
   // TODO: not efficient to fetch the whole course page only to load the course name
-  const { courseName } = await courseStore.loadCoursePage(slug);
+  const { courseName } = await courseStore.loadCoursePage(slug, locale);
 
   const title = `${courseName} · The Rolling Scopes School`;
 

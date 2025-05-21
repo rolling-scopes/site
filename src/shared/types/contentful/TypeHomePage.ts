@@ -1,10 +1,9 @@
 import type { TypeAboutCourseSkeleton } from './TypeAboutCourse';
-import type { TypeCertificationSkeleton } from './TypeCertification';
-import type { TypeCommunicationSkeleton } from './TypeCommunication';
 import type { TypeCourseSkeleton } from './TypeCourse';
-import type { TypeHeroSectionSkeleton } from './TypeHeroSection';
+import type { TypeLearningPathStagesSkeleton } from './TypeLearningPathStages';
 import type { TypeMediaTextBlockSkeleton } from './TypeMediaTextBlock';
-import type { TypeTrainingProgramSkeleton } from './TypeTrainingProgram';
+import type { TypeMediaTextBlockTestSkeleton } from './TypeMediaTextBlockTest';
+import type { TypeVideoBlockSkeleton } from './TypeVideoBlock';
 import type {
   ChainModifiers,
   Entry,
@@ -21,39 +20,30 @@ import type {
  */
 export interface TypeHomePageFields {
   /**
-   * Field type definition for field 'title' (title)
-   * @name title
-   * @localized false
-   * @summary The title will be used in metadata title (shown in a browser's title bar)
-   */
+     * Field type definition for field 'title' (title)
+     * @name title
+     * @localized false
+     * @summary The title will be used in metadata title (shown in a browser's title bar)
+     */
   title: EntryFieldTypes.Symbol;
   /**
-   * Field type definition for field 'slug' (slug)
-   * @name slug
-   * @localized false
-   * @summary The slug that will be used in the url bar
-   */
+     * Field type definition for field 'slug' (slug)
+     * @name slug
+     * @localized false
+     * @summary The slug that will be used in the url bar
+     */
   slug: EntryFieldTypes.Symbol;
   /**
-   * Field type definition for field 'sections' (sections)
-   * @name sections
-   * @localized true
-   */
-  sections?: EntryFieldTypes.Array<
-    EntryFieldTypes.EntryLink<
-      | TypeAboutCourseSkeleton
-      | TypeCertificationSkeleton
-      | TypeCommunicationSkeleton
-      | TypeHeroSectionSkeleton
-      | TypeMediaTextBlockSkeleton
-      | TypeTrainingProgramSkeleton
-    >
-  >;
+     * Field type definition for field 'sections' (sections)
+     * @name sections
+     * @localized true
+     */
+  sections?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeAboutCourseSkeleton | TypeLearningPathStagesSkeleton | TypeMediaTextBlockSkeleton | TypeMediaTextBlockTestSkeleton | TypeVideoBlockSkeleton>>;
   /**
-   * Field type definition for field 'course' (course)
-   * @name course
-   * @localized false
-   */
+     * Field type definition for field 'course' (course)
+     * @name course
+     * @localized true
+     */
   course: EntryFieldTypes.EntryLink<TypeCourseSkeleton>;
 }
 
@@ -63,7 +53,7 @@ export interface TypeHomePageFields {
  * @type {TypeHomePageSkeleton}
  * @author 7eBAEG99Zg1EDoAM5bOSWX
  * @since 2025-03-27T06:29:32.332Z
- * @version 53
+ * @version 63
  */
 export type TypeHomePageSkeleton = EntrySkeletonType<TypeHomePageFields, 'homePage'>;
 /**
@@ -72,20 +62,11 @@ export type TypeHomePageSkeleton = EntrySkeletonType<TypeHomePageFields, 'homePa
  * @type {TypeHomePage}
  * @author 7eBAEG99Zg1EDoAM5bOSWX
  * @since 2025-03-27T06:29:32.332Z
- * @version 53
+ * @version 63
  */
-export type TypeHomePage<
-  Modifiers extends ChainModifiers,
-  Locales extends LocaleCode = LocaleCode,
-> = Entry<TypeHomePageSkeleton, Modifiers, Locales>;
+export type TypeHomePage<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeHomePageSkeleton, Modifiers, Locales>;
 export type TypeHomePageWithoutLinkResolutionResponse = TypeHomePage<'WITHOUT_LINK_RESOLUTION'>;
-export type TypeHomePageWithoutUnresolvableLinksResponse =
-  TypeHomePage<'WITHOUT_UNRESOLVABLE_LINKS'>;
-export type TypeHomePageWithAllLocalesResponse<Locales extends LocaleCode = LocaleCode> =
-  TypeHomePage<'WITH_ALL_LOCALES', Locales>;
-export type TypeHomePageWithAllLocalesAndWithoutLinkResolutionResponse<
-  Locales extends LocaleCode = LocaleCode,
-> = TypeHomePage<'WITHOUT_LINK_RESOLUTION' | 'WITH_ALL_LOCALES', Locales>;
-export type TypeHomePageWithAllLocalesAndWithoutUnresolvableLinksResponse<
-  Locales extends LocaleCode = LocaleCode,
-> = TypeHomePage<'WITHOUT_UNRESOLVABLE_LINKS' | 'WITH_ALL_LOCALES', Locales>;
+export type TypeHomePageWithoutUnresolvableLinksResponse = TypeHomePage<'WITHOUT_UNRESOLVABLE_LINKS'>;
+export type TypeHomePageWithAllLocalesResponse<Locales extends LocaleCode = LocaleCode> = TypeHomePage<'WITH_ALL_LOCALES', Locales>;
+export type TypeHomePageWithAllLocalesAndWithoutLinkResolutionResponse<Locales extends LocaleCode = LocaleCode> = TypeHomePage<'WITHOUT_LINK_RESOLUTION' | 'WITH_ALL_LOCALES', Locales>;
+export type TypeHomePageWithAllLocalesAndWithoutUnresolvableLinksResponse<Locales extends LocaleCode = LocaleCode> = TypeHomePage<'WITHOUT_UNRESOLVABLE_LINKS' | 'WITH_ALL_LOCALES', Locales>;

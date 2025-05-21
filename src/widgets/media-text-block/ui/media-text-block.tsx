@@ -1,45 +1,54 @@
 import classNames from 'classnames/bind';
-import Image from 'next/image';
 
 import { MediaTextBlockSectionData } from '@/entities/course/types';
+import { isExternalUri } from '@/shared/helpers/is-external-uri';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
 import styles from './media-text-block.module.scss';
 
-type MediaTextBlockProps = MediaTextBlockSectionData & {
-  enrollUrl: string | null;
-};
+type MediaTextBlockProps = MediaTextBlockSectionData;
 
 const cx = classNames.bind(styles);
 
 export const MediaTextBlock = async ({
-  enrollUrl,
   title,
-  content,
-  image,
-  isImageOnLeft,
-  registrationLinkText,
-  registrationClosedLinkText,
+  contentLeft,
+  contentRight,
+  linkUrl,
+  linkLabel,
+  disabledLinkLabel,
+  backgroundColor,
 }: MediaTextBlockProps) => {
-  const linkText = enrollUrl ? registrationLinkText : registrationClosedLinkText;
-  const enrollHref = enrollUrl ?? '';
-  const isLinkDisabled = !enrollUrl;
+  const linkText = linkUrl ? linkLabel : disabledLinkLabel;
+  const href = linkUrl ?? '';
+  const isLinkDisabled = !linkUrl;
+  const isLinkShown = (href && Boolean(linkLabel)) || (!href && Boolean(disabledLinkLabel));
 
   return (
-    <section className={cx('media-text-block', 'container')}>
-      <div className={cx('media-text-block', 'content')}>
-        <WidgetTitle mods="asterisk">{title}</WidgetTitle>
+    <section className={cx('media-text-block', 'container')} style={{ backgroundColor }}>
+      <div className={cx('inner', 'content')}>
+        <WidgetTitle className={cx('title')} mods="asterisk">
+          {title}
+        </WidgetTitle>
 
-        <div className={cx('content-wrapper', { 'image-on-right': !isImageOnLeft })}>
-          {image && <Image className={cx('image')} src={image} alt="" />}
-          <div className={cx('text-content')}>{content}</div>
+        <div className={cx('content-wrapper-left')}>
+          {contentLeft && <div className={cx('content-wrapper')}>{contentLeft}</div>}
+
+          {isLinkShown && (
+            <LinkCustom
+              href={href}
+              variant="primary"
+              external={isExternalUri(href)}
+              disabled={isLinkDisabled}
+            >
+              {linkText}
+            </LinkCustom>
+          )}
         </div>
 
-        {linkText && (
-          <LinkCustom href={enrollHref} variant="primary" external disabled={isLinkDisabled}>
-            {linkText}
-          </LinkCustom>
+        {contentRight && (
+          <div className={cx('content-wrapper', 'content-wrapper-right')}>{contentRight}</div>
         )}
       </div>
     </section>

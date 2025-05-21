@@ -14,16 +14,16 @@ import type {
  */
 export interface TypeHeroSectionFields {
   /**
-   * Field type definition for field 'heading' (heading)
-   * @name heading
-   * @localized false
-   */
+     * Field type definition for field 'heading' (heading)
+     * @name heading
+     * @localized false
+     */
   heading: EntryFieldTypes.Symbol;
   /**
-   * Field type definition for field 'image' (image)
-   * @name image
-   * @localized false
-   */
+     * Field type definition for field 'image' (image)
+     * @name image
+     * @localized false
+     */
   image: EntryFieldTypes.AssetLink;
 }
 
@@ -44,19 +44,9 @@ export type TypeHeroSectionSkeleton = EntrySkeletonType<TypeHeroSectionFields, '
  * @since 2025-05-12T19:41:11.842Z
  * @version 1
  */
-export type TypeHeroSection<
-  Modifiers extends ChainModifiers,
-  Locales extends LocaleCode = LocaleCode,
-> = Entry<TypeHeroSectionSkeleton, Modifiers, Locales>;
-export type TypeHeroSectionWithoutLinkResolutionResponse =
-  TypeHeroSection<'WITHOUT_LINK_RESOLUTION'>;
-export type TypeHeroSectionWithoutUnresolvableLinksResponse =
-  TypeHeroSection<'WITHOUT_UNRESOLVABLE_LINKS'>;
-export type TypeHeroSectionWithAllLocalesResponse<Locales extends LocaleCode = LocaleCode> =
-  TypeHeroSection<'WITH_ALL_LOCALES', Locales>;
-export type TypeHeroSectionWithAllLocalesAndWithoutLinkResolutionResponse<
-  Locales extends LocaleCode = LocaleCode,
-> = TypeHeroSection<'WITHOUT_LINK_RESOLUTION' | 'WITH_ALL_LOCALES', Locales>;
-export type TypeHeroSectionWithAllLocalesAndWithoutUnresolvableLinksResponse<
-  Locales extends LocaleCode = LocaleCode,
-> = TypeHeroSection<'WITHOUT_UNRESOLVABLE_LINKS' | 'WITH_ALL_LOCALES', Locales>;
+export type TypeHeroSection<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeHeroSectionSkeleton, Modifiers, Locales>;
+export type TypeHeroSectionWithoutLinkResolutionResponse = TypeHeroSection<'WITHOUT_LINK_RESOLUTION'>;
+export type TypeHeroSectionWithoutUnresolvableLinksResponse = TypeHeroSection<'WITHOUT_UNRESOLVABLE_LINKS'>;
+export type TypeHeroSectionWithAllLocalesResponse<Locales extends LocaleCode = LocaleCode> = TypeHeroSection<'WITH_ALL_LOCALES', Locales>;
+export type TypeHeroSectionWithAllLocalesAndWithoutLinkResolutionResponse<Locales extends LocaleCode = LocaleCode> = TypeHeroSection<'WITHOUT_LINK_RESOLUTION' | 'WITH_ALL_LOCALES', Locales>;
+export type TypeHeroSectionWithAllLocalesAndWithoutUnresolvableLinksResponse<Locales extends LocaleCode = LocaleCode> = TypeHeroSection<'WITHOUT_UNRESOLVABLE_LINKS' | 'WITH_ALL_LOCALES', Locales>;

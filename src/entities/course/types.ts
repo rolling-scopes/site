@@ -114,11 +114,12 @@ export type AboutCourseSectionData = {
 
 export type MediaTextBlockSectionData = {
   title: string;
-  content: ReactNode;
-  image?: StaticImageData;
-  isImageOnLeft: boolean;
-  registrationLinkText?: string;
-  registrationClosedLinkText?: string;
+  contentLeft?: ReactNode;
+  contentRight?: ReactNode;
+  linkUrl?: string | null;
+  linkLabel?: string;
+  disabledLinkLabel?: string;
+  backgroundColor?: string;
 };
 
 export type LearningPathStageItem = {
