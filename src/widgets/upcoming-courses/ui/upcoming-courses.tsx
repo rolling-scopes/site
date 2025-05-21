@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 
-import { getCourses } from '@/entities/course/api/course-api';
+import { courseStore } from '@/entities/course';
 import RSBanner from '@/shared/assets/svg/RsBanner.svg';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { CourseItems } from '@/widgets/upcoming-courses/ui/course-items';
@@ -11,7 +11,7 @@ import styles from './upcoming-courses.module.scss';
 const cx = classNames.bind(styles);
 
 export const UpcomingCourses = async () => {
-  const courses = await getCourses();
+  const courses = await courseStore.loadCourses();
 
   return (
     <section id="upcoming-courses" className={cx('container')}>

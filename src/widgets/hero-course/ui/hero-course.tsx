@@ -1,20 +1,20 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 
+import { Course } from '@/entities/course';
 import { LABELS } from '@/shared/constants';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { MainTitle } from '@/shared/ui/main-title';
 import { ShortInfoPanel } from '@/shared/ui/short-info-panel';
 import { AvailabilityStatus } from '@/widgets/hero-course/ui/availability-status';
 import { RegistrationLink } from '@/widgets/hero-course/ui/registration-link';
-import { CourseNamesKeys } from 'data';
 
 import styles from './hero-course.module.scss';
 
 const cx = classNames.bind(styles);
 
 type HeroCourseProps = {
-  courseName: CourseNamesKeys;
+  courseName: Course['title'];
 };
 
 export const HeroCourse = async ({ courseName }: HeroCourseProps) => {
