@@ -8,6 +8,7 @@ export const COURSE_TITLES = {
   AWS_FUNDAMENTALS: 'AWS Fundamentals',
   AWS_CLOUD_DEVELOPER: 'AWS Cloud Developer',
   AWS_DEVOPS: 'AWS DevOps',
+  AWS_AI: 'AWS AI',
 } as const;
 
 export type CourseNames = typeof COURSE_TITLES;
@@ -23,4 +24,5 @@ export const DISCORD_LINKS = {
   [COURSE_TITLES.AWS_FUNDAMENTALS]: 'https://discord.com/invite/WEZxwRa4J6',
   [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: 'https://discord.com/invite/WEZxwRa4J6',
   [COURSE_TITLES.AWS_DEVOPS]: 'https://discord.com/invite/WEZxwRa4J6',
+  [COURSE_TITLES.AWS_AI]: 'https://discord.com/invite/WEZxwRa4J6',
 } as const;

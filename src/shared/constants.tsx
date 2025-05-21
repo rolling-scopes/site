@@ -28,6 +28,7 @@ export const API_OMIT_LINKED_ITEMS_INCLUDE_DEPTH = 0;
 export const LABELS = {
   START_DATE: 'Course starts on:',
   START_DATE_SHORT: 'Start:',
+  REGISTRATION_END: 'Enroll untill:',
   COURSE_LANGUAGE_EN: 'English',
   COURSE_LANGUAGE_RU: 'Russian',
   MENTOR_ACTIVITIES: 'Mentorship starts on:',
@@ -52,6 +53,7 @@ export const COURSE_LINKS = {
   AWS_FUNDAMENTALS: 'https://rs.school/courses/aws-fundamentals',
   AWS_CLOUD_DEVELOPER: 'https://rs.school/courses/aws-cloud-developer',
   AWS_DEVOPS: 'https://rs.school/courses/aws-devops',
+  AWS_AI: 'https://rs.school/courses/aws-ai',
 };
 
 export const KEY_CODES = { ESCAPE: 'Escape' } as const;
@@ -110,6 +112,7 @@ export const ROUTES = {
   AWS_DEVELOPER: 'aws-cloud-developer',
   AWS_FUNDAMENTALS: 'aws-fundamentals',
   AWS_DEVOPS: 'aws-devops',
+  AWS_AI: 'aws-ai',
   REACT: 'reactjs',
   MENTORSHIP: 'mentorship',
   DOCS_EN: 'docs/en',
