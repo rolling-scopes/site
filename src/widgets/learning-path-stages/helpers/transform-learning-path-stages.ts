@@ -1,9 +1,7 @@
-import {
-  transformLearningPathStageItem,
-} from '@/entities/course/helpers/transform-learning-path-stage-item';
 import { Section } from '@/entities/course/types';
 import { richTextRenderer } from '@/shared/helpers/rich-text-renderer';
 import { TypeLearningPathStagesWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
+import { transformLearningPathStageItem } from '@/widgets/learning-path-stages';
 
 export function transformLearningPathStages(
   section: TypeLearningPathStagesWithoutUnresolvableLinksResponse,

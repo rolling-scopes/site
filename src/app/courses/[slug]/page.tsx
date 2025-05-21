@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
-import { courseStore } from '@/entities/course';
 import { resolveCoursePageLocale } from '@/entities/course/helpers/resolve-course-page-locale';
-import { Course } from '@/entities/course/ui/course-page';
+import { Course } from '@/views/course/course';
+import { coursePageStore } from '@/views/course/model/store';
 
 type Params = {
   slug: string;
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: GenerateMetadataParams): Prom
   const { slug } = await params;
   const locale = resolveCoursePageLocale(slug);
   // TODO: not efficient to fetch the whole course page only to load the course name
-  const { courseName } = await courseStore.loadCoursePage(slug, locale);
+  const { courseName } = await coursePageStore.loadCoursePage(slug, locale);
 
   const title = `${courseName} · The Rolling Scopes School`;
 
@@ -28,12 +28,12 @@ export async function generateMetadata({ params }: GenerateMetadataParams): Prom
 }
 
 export async function generateStaticParams() {
-  return await courseStore.loadCoursePages();
+  return await coursePageStore.loadCoursePages();
 }
 export default async function CourseRoute({ params }: CourseRouteParams) {
   const { slug } = await params;
   const locale = resolveCoursePageLocale(slug);
-  const { courseName, sections, courseId } = await courseStore.loadCoursePage(slug, locale);
+  const { courseName, sections, courseId } = await coursePageStore.loadCoursePage(slug, locale);
 
   return <Course id={courseId} name={courseName} sections={sections} locale={locale} />;
 }

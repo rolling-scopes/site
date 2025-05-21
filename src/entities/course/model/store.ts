@@ -1,11 +1,7 @@
 import { syncApiCoursesSchedule } from '@/entities/course/helpers/sync-api-courses-schedule';
-import { transformCoursePages } from '@/entities/course/helpers/transform-course-pages';
-import { transformCourseSections } from '@/entities/course/helpers/transform-course-sections';
 import { transformCourses } from '@/entities/course/helpers/transform-courses';
-import { ApiCoursesIds, CoursePageResponse } from '@/entities/course/types';
+import { ApiCoursesIds } from '@/entities/course/types';
 import { api } from '@/shared/api/api';
-import { prepareContentfulResponse } from '@/shared/helpers/prepare-contentful-response';
-import { ApiResourceLocale } from '@/shared/types';
 
 class CourseStore {
   public async loadCourses() {
@@ -53,40 +49,6 @@ class CourseStore {
     }
 
     throw new Error('Something went wrong fetching courses schedule!');
-  };
-
-  public loadCoursePage = async (slug: string, locale: ApiResourceLocale = 'en-US') => {
-    const res = await api.course.queryCoursePage(slug, locale);
-
-    if (res.isSuccess) {
-      const preparedData = prepareContentfulResponse<CoursePageResponse['items']>(res.result);
-
-      const { title = '', sections: coursePageSections, course } = preparedData.at(0)?.fields ?? {};
-      const courseId = course?.sys?.id;
-      const sections = transformCourseSections(coursePageSections);
-
-      if (!courseId) {
-        throw new Error('Course id is not defined.');
-      }
-
-      return {
-        courseId,
-        courseName: title,
-        sections,
-      };
-    }
-
-    throw new Error('Something went wrong fetching course page!');
-  };
-
-  public loadCoursePages = async () => {
-    const res = await api.course.queryCoursePages();
-
-    if (res.isSuccess) {
-      return transformCoursePages(res.result);
-    }
-
-    throw new Error('Something went wrong fetching all course pages!');
   };
 }
 

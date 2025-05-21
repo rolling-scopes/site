@@ -1,7 +1,7 @@
-import { transformGridItems } from '@/entities/course/helpers/transform-grid-items';
 import { Section } from '@/entities/course/types';
 import { richTextRenderer } from '@/shared/helpers/rich-text-renderer';
 import { TypeAboutCourseWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
+import { transformGridItems } from '@/widgets/about-course/helpers/transform-grid-items';
 
 export function transformAboutCourseSection(
   section: TypeAboutCourseWithoutUnresolvableLinksResponse,

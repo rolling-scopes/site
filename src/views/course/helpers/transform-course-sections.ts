@@ -1,22 +1,14 @@
-import { isAboutCourseSection } from '@/entities/course/helpers/is-about-course-section';
+import { ApiCoursePageResponseSections, Section } from '@/entities/course/types';
+import { isAboutCourseSection, transformAboutCourseSection } from '@/widgets/about-course';
 import {
   isLearningPathStagesSection,
-} from '@/entities/course/helpers/is-learning-path-stages-section';
-import { isMediaTextBlockSection } from '@/entities/course/helpers/is-media-text-block-section';
-import { isVideoBlockSection } from '@/entities/course/helpers/is-video-block-section';
-import {
-  transformAboutCourseSection,
-} from '@/entities/course/helpers/transform-about-course-section';
-import {
   transformLearningPathStages,
-} from '@/entities/course/helpers/transform-learning-path-stages';
+} from '@/widgets/learning-path-stages';
 import {
+  isMediaTextBlockSection,
   transformMediaTextBlockSection,
-} from '@/entities/course/helpers/transform-media-text-block-section';
-import {
-  transformVideoBlockSection,
-} from '@/entities/course/helpers/transform-video-block-section';
-import { ApiCoursePageResponseSections, Section } from '@/entities/course/types';
+} from '@/widgets/media-text-block';
+import { isVideoBlockSection, transformVideoBlockSection } from '@/widgets/video-block';
 
 export function transformCourseSections(sections: ApiCoursePageResponseSections): Section[] {
   if (!sections) {
