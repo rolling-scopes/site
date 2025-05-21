@@ -14,7 +14,6 @@ type SchoolMenuProps = PropsWithChildren &
     color?: Color;
     layout?: 'columns' | 'single';
     isVisible?: boolean;
-    anchorLinks?: boolean;
   };
 
 export const SchoolMenu = ({
@@ -24,7 +23,6 @@ export const SchoolMenu = ({
   className,
   layout = 'single',
   isVisible,
-  anchorLinks = false,
 }: SchoolMenuProps) => {
   return (
     <div
@@ -34,16 +32,7 @@ export const SchoolMenu = ({
       })}
     >
       {heading && <h3 className={cx('heading', color)}>{heading}</h3>}
-      <ul
-        className={cx(
-          'school-list',
-          `school-list--${layout}`,
-          { 'anchor-links': anchorLinks },
-          className,
-        )}
-      >
-        {children}
-      </ul>
+      <ul className={cx('school-list', `school-list--${layout}`, className)}>{children}</ul>
     </div>
   );
 };

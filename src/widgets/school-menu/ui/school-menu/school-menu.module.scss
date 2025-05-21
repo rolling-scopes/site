@@ -26,10 +26,6 @@
     max-height: 336px;
     list-style-type: none;
 
-    &.anchor-links {
-      row-gap: 8px;
-    }
-
     &--columns {
       display: grid;
       grid-auto-flow: column;

@@ -62,7 +62,7 @@ export const Header = ({ courses }: HeaderProps) => {
 
         <menu className={cx('menu')} data-testid="desktop-menu">
           <NavItem label={NAV_MENU_LABELS.RS_SCHOOL} href={ROUTES.HOME}>
-            <SchoolMenu layout="columns" anchorLinks={true}>
+            <SchoolMenu layout="columns">
               {schoolMenuStaticLinks.map((link, i) => (
                 <SchoolMenu.Item
                   key={i}
@@ -95,7 +95,7 @@ export const Header = ({ courses }: HeaderProps) => {
             </SchoolMenu>
           </NavItem>
           <NavItem label={NAV_MENU_LABELS.COMMUNITY} href={ROUTES.COMMUNITY}>
-            <SchoolMenu layout="columns" anchorLinks={true}>
+            <SchoolMenu layout="columns">
               {communityMenuStaticLinks.map((link, i) => (
                 <SchoolMenu.Item
                   key={i}
