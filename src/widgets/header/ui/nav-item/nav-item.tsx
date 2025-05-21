@@ -110,11 +110,11 @@ export const NavItem = ({ label, href, icon, reverseLayout = false, children }: 
         {icon && (
           <Image
             src={icon}
-            alt="Donate-icon"
+            alt={`${label} icon`}
             width={18}
             height={16}
             aria-hidden="true"
-            data-testid="school-item-icon"
+            data-testid="nav-item-icon"
           />
         )}
         <span className={cx('label-bold')}>
