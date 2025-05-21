@@ -1,10 +1,8 @@
-import { courseStore } from '@/entities/course';
-import { ApiCoursesIds, Section } from '@/entities/course/types';
-import { AboutCourseSection } from '@/widgets/about-course/ui/about-course/about-course-section';
-import { LearningPathStageItem } from '@/widgets/learning-path-stages/ui/learning-path-stage-item';
-import { LearningPathStages } from '@/widgets/learning-path-stages/ui/learning-path-stages';
+import { ApiCoursesIds, Section, courseStore } from '@/entities/course';
+import { AboutCourseSection } from '@/widgets/about-course';
+import { LearningPathStageItem, LearningPathStages } from '@/widgets/learning-path-stages';
 import { MediaTextBlock } from '@/widgets/media-text-block';
-import { VideoBlock } from '@/widgets/video-block/ui/video-block';
+import { VideoBlock } from '@/widgets/video-block';
 
 type SectionResolverProps = {
   section: Section;

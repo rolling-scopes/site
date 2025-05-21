@@ -4,7 +4,7 @@ import { AboutCourseSectionData } from '@/entities/course/types';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { GridItem } from '@/widgets/about-course/ui/about-course-grid/grid-item';
+import { GridItem } from '@/widgets/about-course/ui/grid-item/grid-item';
 
 import styles from './about-course-section.module.scss';
 

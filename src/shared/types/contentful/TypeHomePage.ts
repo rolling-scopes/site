@@ -2,7 +2,6 @@ import type { TypeAboutCourseSkeleton } from './TypeAboutCourse';
 import type { TypeCourseSkeleton } from './TypeCourse';
 import type { TypeLearningPathStagesSkeleton } from './TypeLearningPathStages';
 import type { TypeMediaTextBlockSkeleton } from './TypeMediaTextBlock';
-import type { TypeMediaTextBlockTestSkeleton } from './TypeMediaTextBlockTest';
 import type { TypeVideoBlockSkeleton } from './TypeVideoBlock';
 import type {
   ChainModifiers,
@@ -38,7 +37,7 @@ export interface TypeHomePageFields {
      * @name sections
      * @localized true
      */
-  sections?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeAboutCourseSkeleton | TypeLearningPathStagesSkeleton | TypeMediaTextBlockSkeleton | TypeMediaTextBlockTestSkeleton | TypeVideoBlockSkeleton>>;
+  sections?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeAboutCourseSkeleton | TypeLearningPathStagesSkeleton | TypeMediaTextBlockSkeleton | TypeVideoBlockSkeleton>>;
   /**
      * Field type definition for field 'course' (course)
      * @name course
@@ -53,7 +52,7 @@ export interface TypeHomePageFields {
  * @type {TypeHomePageSkeleton}
  * @author 7eBAEG99Zg1EDoAM5bOSWX
  * @since 2025-03-27T06:29:32.332Z
- * @version 63
+ * @version 65
  */
 export type TypeHomePageSkeleton = EntrySkeletonType<TypeHomePageFields, 'homePage'>;
 /**
@@ -62,7 +61,7 @@ export type TypeHomePageSkeleton = EntrySkeletonType<TypeHomePageFields, 'homePa
  * @type {TypeHomePage}
  * @author 7eBAEG99Zg1EDoAM5bOSWX
  * @since 2025-03-27T06:29:32.332Z
- * @version 63
+ * @version 65
  */
 export type TypeHomePage<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeHomePageSkeleton, Modifiers, Locales>;
 export type TypeHomePageWithoutLinkResolutionResponse = TypeHomePage<'WITHOUT_LINK_RESOLUTION'>;
