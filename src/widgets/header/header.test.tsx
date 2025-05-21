@@ -87,7 +87,7 @@ describe('Header', () => {
   describe('Dropdown', () => {
     it('should be open when isDropdownOpen is true', async () => {
       await act(async () =>
-        renderWithRouter(<DropdownWrapper isOpen={true}>TEST</DropdownWrapper>),
+        renderWithRouter(<DropdownWrapper isOpen={true} reverseLayout={false}>TEST</DropdownWrapper>),
       );
 
       const dropdownElement = screen.getByTestId('header-dropdown');

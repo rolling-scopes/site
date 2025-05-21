@@ -27,25 +27,17 @@
     list-style-type: none;
 
     &.anchor-links {
-      grid-template-columns: 200px auto;
-      gap: 8px 32px;
+      row-gap: 8px;
     }
 
     &--columns {
       display: grid;
       grid-auto-flow: column;
+      grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 48px);
 
-      &:has(:nth-child(3)) {
-        width: 500px;
-
-        @include media-tablet {
-          width: unset;
-        }
-      }
-
       &:has(:nth-child(5)) {
-        grid-template-columns: 262px auto;
+        grid-template-columns: auto;
         grid-template-rows: repeat(auto-fit, 48px);
       }
     }
@@ -53,15 +45,6 @@
     &--single {
       display: flex;
       flex-flow: column wrap;
-      min-width: 232px;
-
-      &:has(:nth-child(5)) {
-        width: 500px;
-
-        @include media-tablet {
-          width: unset;
-        }
-      }
     }
 
     @include media-mobile-landscape {

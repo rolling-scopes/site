@@ -23,9 +23,10 @@ type NavItemProps = PropsWithChildren & {
   label: string;
   href: string;
   icon?: StaticImageData;
+  reverseLayout?: boolean;
 };
 
-export const NavItem = ({ label, href, icon, children }: NavItemProps) => {
+export const NavItem = ({ label, href, icon, reverseLayout = false, children }: NavItemProps) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -128,7 +129,11 @@ export const NavItem = ({ label, href, icon, children }: NavItemProps) => {
           </span>
         )}
       </button>
-      {isDropdown && <DropdownWrapper isOpen={isDropdownOpen}>{children}</DropdownWrapper>}
+      {isDropdown && (
+        <DropdownWrapper isOpen={isDropdownOpen} reverseLayout={reverseLayout}>
+          {children}
+        </DropdownWrapper>
+      )}
     </div>
   );
 };

@@ -128,7 +128,7 @@ export const Header = ({ courses }: HeaderProps) => {
             </SchoolMenu>
           </NavItem>
           <NavItem label={NAV_MENU_LABELS.DOCS} href={ROUTES.DOCS_EN} />
-          <NavItem label={NAV_MENU_LABELS.SUPPORT_US} href={`#${ANCHORS.DONATE}`} icon={iconSrc}>
+          <NavItem reverseLayout={true} label={NAV_MENU_LABELS.SUPPORT_US} href={`#${ANCHORS.DONATE}`} icon={iconSrc}>
             <ul className={cx('support-text')}>
               <SchoolMenu.Item
                 title="Your donations help us cover hosting, domains, licenses, and advertising for courses

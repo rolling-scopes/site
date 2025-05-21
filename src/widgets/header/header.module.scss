@@ -109,13 +109,8 @@
   flex-direction: column;
   justify-content: space-between;
 
-  max-width: 470px;
-  margin-right: 62px;
+  max-width: 500px;
 
   font-size: 14px;
   list-style-type: none;
-
-  @include media-laptop-large {
-    margin-right: 30px;
-  }
 }
