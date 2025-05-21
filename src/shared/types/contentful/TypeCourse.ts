@@ -14,87 +14,87 @@ import type {
  */
 export interface TypeCourseFields {
   /**
-     * Field type definition for field 'name' (name)
-     * @name name
-     * @localized false
-     */
+   * Field type definition for field 'name' (name)
+   * @name name
+   * @localized false
+   */
   name: EntryFieldTypes.Symbol;
   /**
-     * Field type definition for field 'url' (url)
-     * @name url
-     * @localized false
-     */
+   * Field type definition for field 'url' (url)
+   * @name url
+   * @localized false
+   */
   url: EntryFieldTypes.Symbol;
   /**
-     * Field type definition for field 'subTitle' (subTitle)
-     * @name subTitle
-     * @localized false
-     */
+   * Field type definition for field 'subTitle' (subTitle)
+   * @name subTitle
+   * @localized false
+   */
   subTitle?: EntryFieldTypes.Symbol;
   /**
-     * Field type definition for field 'icon' (icon)
-     * @name icon
-     * @localized false
-     */
+   * Field type definition for field 'icon' (icon)
+   * @name icon
+   * @localized false
+   */
   icon: EntryFieldTypes.AssetLink;
   /**
-     * Field type definition for field 'iconSmall' (iconSmall)
-     * @name iconSmall
-     * @localized false
-     */
+   * Field type definition for field 'iconSmall' (iconSmall)
+   * @name iconSmall
+   * @localized false
+   */
   iconSmall: EntryFieldTypes.AssetLink;
   /**
-     * Field type definition for field 'iconFooter' (iconFooter)
-     * @name iconFooter
-     * @localized false
-     */
+   * Field type definition for field 'iconFooter' (iconFooter)
+   * @name iconFooter
+   * @localized false
+   */
   iconFooter: EntryFieldTypes.AssetLink;
   /**
-     * Field type definition for field 'secondaryIcon' (secondaryIcon)
-     * @name secondaryIcon
-     * @localized false
-     */
+   * Field type definition for field 'secondaryIcon' (secondaryIcon)
+   * @name secondaryIcon
+   * @localized false
+   */
   secondaryIcon: EntryFieldTypes.AssetLink;
   /**
-     * Field type definition for field 'language' (language)
-     * @name language
-     * @localized false
-     * @summary Should contain course language (en, ru)
-     */
+   * Field type definition for field 'language' (language)
+   * @name language
+   * @localized false
+   * @summary Should contain course language (en, ru)
+   */
   language: EntryFieldTypes.Symbol<'en' | 'ru'>;
   /**
-     * Field type definition for field 'mode' (mode)
-     * @name mode
-     * @localized false
-     * @summary Should contain either "offline" or "online" mode
-     */
+   * Field type definition for field 'mode' (mode)
+   * @name mode
+   * @localized false
+   * @summary Should contain either "offline" or "online" mode
+   */
   mode: EntryFieldTypes.Symbol<'offline' | 'online'>;
   /**
-     * Field type definition for field 'backgroundColor' (backgroundColor)
-     * @name backgroundColor
-     * @localized false
-     * @summary Should contain valid Hex color value
-     */
+   * Field type definition for field 'backgroundColor' (backgroundColor)
+   * @name backgroundColor
+   * @localized false
+   * @summary Should contain valid Hex color value
+   */
   backgroundColor: EntryFieldTypes.Symbol;
   /**
-     * Field type definition for field 'accentColor' (accentColor)
-     * @name accentColor
-     * @localized false
-     * @summary Should contain valid Hex color value.
-     */
+   * Field type definition for field 'accentColor' (accentColor)
+   * @name accentColor
+   * @localized false
+   * @summary Should contain valid Hex color value.
+   */
   accentColor: EntryFieldTypes.Symbol;
   /**
-     * Field type definition for field 'order' (order)
-     * @name order
-     * @localized false
-     * @summary The order in which courses are shown by default. Course with order "1" appears at the top.
-     */
+   * Field type definition for field 'order' (order)
+   * @name order
+   * @localized false
+   * @summary The order in which courses are shown by default. Course with order "1" appears at the top.
+   */
   order: EntryFieldTypes.Integer;
   /**
-     * Field type definition for field 'scheduleUrl' (scheduleUrl)
-     * @name scheduleUrl
-     * @localized false
-     */
+   * Field type definition for field 'scheduleUrl' (scheduleUrl)
+   * @name scheduleUrl
+   * @localized false
+   */
   scheduleUrl?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
 }
 
@@ -115,9 +115,19 @@ export type TypeCourseSkeleton = EntrySkeletonType<TypeCourseFields, 'course'>;
  * @since 2022-02-09T19:40:33.011Z
  * @version 25
  */
-export type TypeCourse<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeCourseSkeleton, Modifiers, Locales>;
+export type TypeCourse<
+  Modifiers extends ChainModifiers,
+  Locales extends LocaleCode = LocaleCode,
+> = Entry<TypeCourseSkeleton, Modifiers, Locales>;
 export type TypeCourseWithoutLinkResolutionResponse = TypeCourse<'WITHOUT_LINK_RESOLUTION'>;
 export type TypeCourseWithoutUnresolvableLinksResponse = TypeCourse<'WITHOUT_UNRESOLVABLE_LINKS'>;
-export type TypeCourseWithAllLocalesResponse<Locales extends LocaleCode = LocaleCode> = TypeCourse<'WITH_ALL_LOCALES', Locales>;
-export type TypeCourseWithAllLocalesAndWithoutLinkResolutionResponse<Locales extends LocaleCode = LocaleCode> = TypeCourse<'WITHOUT_LINK_RESOLUTION' | 'WITH_ALL_LOCALES', Locales>;
-export type TypeCourseWithAllLocalesAndWithoutUnresolvableLinksResponse<Locales extends LocaleCode = LocaleCode> = TypeCourse<'WITHOUT_UNRESOLVABLE_LINKS' | 'WITH_ALL_LOCALES', Locales>;
+export type TypeCourseWithAllLocalesResponse<Locales extends LocaleCode = LocaleCode> = TypeCourse<
+  'WITH_ALL_LOCALES',
+  Locales
+>;
+export type TypeCourseWithAllLocalesAndWithoutLinkResolutionResponse<
+  Locales extends LocaleCode = LocaleCode,
+> = TypeCourse<'WITHOUT_LINK_RESOLUTION' | 'WITH_ALL_LOCALES', Locales>;
+export type TypeCourseWithAllLocalesAndWithoutUnresolvableLinksResponse<
+  Locales extends LocaleCode = LocaleCode,
+> = TypeCourse<'WITHOUT_UNRESOLVABLE_LINKS' | 'WITH_ALL_LOCALES', Locales>;

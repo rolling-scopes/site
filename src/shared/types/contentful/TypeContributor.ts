@@ -15,40 +15,40 @@ import type {
  */
 export interface TypeContributorFields {
   /**
-     * Field type definition for field 'name' (name)
-     * @name name
-     * @localized true
-     */
+   * Field type definition for field 'name' (name)
+   * @name name
+   * @localized true
+   */
   name?: EntryFieldTypes.Symbol;
   /**
-     * Field type definition for field 'githubId' (githubId)
-     * @name githubId
-     * @localized false
-     */
+   * Field type definition for field 'githubId' (githubId)
+   * @name githubId
+   * @localized false
+   */
   githubId: EntryFieldTypes.Symbol;
   /**
-     * Field type definition for field 'avatar' (avatar)
-     * @name avatar
-     * @localized false
-     */
+   * Field type definition for field 'avatar' (avatar)
+   * @name avatar
+   * @localized false
+   */
   avatar: EntryFieldTypes.AssetLink;
   /**
-     * Field type definition for field 'jobTitle' (jobTitle)
-     * @name jobTitle
-     * @localized true
-     */
+   * Field type definition for field 'jobTitle' (jobTitle)
+   * @name jobTitle
+   * @localized true
+   */
   jobTitle?: EntryFieldTypes.Symbol;
   /**
-     * Field type definition for field 'description' (about)
-     * @name about
-     * @localized true
-     */
+   * Field type definition for field 'description' (about)
+   * @name about
+   * @localized true
+   */
   description?: EntryFieldTypes.Text;
   /**
-     * Field type definition for field 'courses' (Courses)
-     * @name Courses
-     * @localized false
-     */
+   * Field type definition for field 'courses' (Courses)
+   * @name Courses
+   * @localized false
+   */
   courses?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeCourseSkeleton>>;
 }
 
@@ -69,9 +69,19 @@ export type TypeContributorSkeleton = EntrySkeletonType<TypeContributorFields, '
  * @since 2025-01-12T21:52:11.873Z
  * @version 19
  */
-export type TypeContributor<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeContributorSkeleton, Modifiers, Locales>;
-export type TypeContributorWithoutLinkResolutionResponse = TypeContributor<'WITHOUT_LINK_RESOLUTION'>;
-export type TypeContributorWithoutUnresolvableLinksResponse = TypeContributor<'WITHOUT_UNRESOLVABLE_LINKS'>;
-export type TypeContributorWithAllLocalesResponse<Locales extends LocaleCode = LocaleCode> = TypeContributor<'WITH_ALL_LOCALES', Locales>;
-export type TypeContributorWithAllLocalesAndWithoutLinkResolutionResponse<Locales extends LocaleCode = LocaleCode> = TypeContributor<'WITHOUT_LINK_RESOLUTION' | 'WITH_ALL_LOCALES', Locales>;
-export type TypeContributorWithAllLocalesAndWithoutUnresolvableLinksResponse<Locales extends LocaleCode = LocaleCode> = TypeContributor<'WITHOUT_UNRESOLVABLE_LINKS' | 'WITH_ALL_LOCALES', Locales>;
+export type TypeContributor<
+  Modifiers extends ChainModifiers,
+  Locales extends LocaleCode = LocaleCode,
+> = Entry<TypeContributorSkeleton, Modifiers, Locales>;
+export type TypeContributorWithoutLinkResolutionResponse =
+  TypeContributor<'WITHOUT_LINK_RESOLUTION'>;
+export type TypeContributorWithoutUnresolvableLinksResponse =
+  TypeContributor<'WITHOUT_UNRESOLVABLE_LINKS'>;
+export type TypeContributorWithAllLocalesResponse<Locales extends LocaleCode = LocaleCode> =
+  TypeContributor<'WITH_ALL_LOCALES', Locales>;
+export type TypeContributorWithAllLocalesAndWithoutLinkResolutionResponse<
+  Locales extends LocaleCode = LocaleCode,
+> = TypeContributor<'WITHOUT_LINK_RESOLUTION' | 'WITH_ALL_LOCALES', Locales>;
+export type TypeContributorWithAllLocalesAndWithoutUnresolvableLinksResponse<
+  Locales extends LocaleCode = LocaleCode,
+> = TypeContributor<'WITHOUT_UNRESOLVABLE_LINKS' | 'WITH_ALL_LOCALES', Locales>;
