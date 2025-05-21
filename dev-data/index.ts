@@ -1,7 +1,4 @@
-export type {
-  AboutCourseInfo,
-  DataMap,
-} from './courses-data.types';
+export type { AboutCourseInfo, DataMap } from './courses-data.types';
 export type {
   CourseTitle,
   ImageLink,
@@ -14,11 +11,7 @@ export type {
 } from './mentorship-data.types';
 export type { MentorshipCourseTitles, MentorshipLinks } from './mentorship-data.types';
 
-export type {
-  StageCardProps,
-  StudyPathPage,
-  StudyPathProps,
-} from './study-path-data.types';
+export type { StageCardProps, StudyPathPage, StudyPathProps } from './study-path-data.types';
 
 export {
   ANNOUNCEMENT_TELEGRAM_LINK,
@@ -30,7 +23,6 @@ export {
   RS_DOCS_EN_LINK,
   RS_DOCS_TELEGRAM_CHATS_LINK,
 } from './communication.data';
-
 export {
   AWS_FUNDAMENTALS_BADGE,
   COURSE_TITLES,
@@ -40,7 +32,6 @@ export {
   DISCORD_LINKS,
   type TrainingProgramType,
 } from './course-titles.data';
-
 export { type Benefit } from './benefit-mentorship.data';
 export { aboutMentorsData } from './about-mentors.data';
 export { benefitMentorshipHome, benefitMentorshipMentors } from './benefit-mentorship.data';
@@ -52,7 +43,6 @@ export { contentMapAbout, introLocalizedContent } from './about-course.data';
 export { contributeOptions } from './contribute-options.data';
 export { courseDataMap } from './required.data';
 export { courseStatus, heroCourseLocalized } from './hero-course.data';
-export { courses } from './courses.data';
 export { donateOptions } from './donate-options.data';
 export { events } from './events.data';
 export { generalMaterials } from './general.data';
