@@ -13,15 +13,15 @@ type BadgeProps = {
   alt: string;
 };
 
-export const Badge = (data: BadgeProps) => {
-  const cx = classNames.bind(styles);
+const cx = classNames.bind(styles);
 
+export const Badge = (data: BadgeProps) => {
   return (
     <section
-      className={cx('badge', 'container')}
+      className={cx('container')}
       data-testid="badge"
     >
-      <div className={cx('badge', 'content', 'column-2')}>
+      <div className={cx('content', 'column-2')}>
         <article className={cx('badge-info')}>
           <WidgetTitle mods="asterisk">{data.title}</WidgetTitle>
           {data.paragraphs.map((paragraph, index) => (
