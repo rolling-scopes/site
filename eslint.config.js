@@ -264,7 +264,10 @@ export default tseslint.config(
       '@stylistic/quote-props': ['error', 'consistent'],
       'unicorn/filename-case': [
         'error',
-        { cases: { kebabCase: true } },
+        {
+          cases: { kebabCase: true },
+          ignore: [/^Type[A-Z][a-zA-Z0-9]*\.ts$/],
+        },
       ],
     },
   },

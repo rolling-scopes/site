@@ -2,7 +2,8 @@ import { HttpStatus } from 'http-status';
 
 import { ApiBaseClass } from '@/shared/api/api-base-class';
 import { HTTP_METHOD } from '@/shared/constants';
-import { LinkList } from '@/widgets/required/types';
+import type { BaseEntry } from 'contentful';
+import { LinkList } from 'data';
 
 export type ListData = (string | LinkList)[] | [];
 export type ListType = 'marked' | 'unmarked';
@@ -83,3 +84,6 @@ export type ApiResponseError = {
   message: string;
   requestId: string;
 };
+
+export type ExtractSectionName<TContentType extends BaseEntry> =
+  TContentType['sys']['contentType']['sys']['id'];
