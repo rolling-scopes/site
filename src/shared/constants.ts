@@ -47,6 +47,12 @@ export const COURSE_LINKS = {
 
 export const KEY_CODES = { ESCAPE: 'Escape' } as const;
 
+export const GITHUB_LINK = 'https://github.com/rolling-scopes-school/';
+export const DOCUMENTATION_LINKS = {
+  ru: 'https://rs.school/docs/ru',
+  en: 'https://docs.rs.school',
+};
+
 export const HTTP_METHOD = {
   GET: 'GET',
   POST: 'POST',

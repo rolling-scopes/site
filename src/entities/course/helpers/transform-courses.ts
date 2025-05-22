@@ -13,6 +13,7 @@ export function transformCourses(coursesResponse: CoursesResponse): Course[] {
     const descriptionUrl = course.fields.url;
     const courseAssets = coursesResponse.includes?.Asset;
     const startDate = TO_BE_DETERMINED;
+    const scheduleUrl = course.fields.scheduleUrl;
     const registrationEndDate = TO_BE_DETERMINED;
     const language = course.fields.language;
     const mode = course.fields.mode;
@@ -48,6 +49,7 @@ export function transformCourses(coursesResponse: CoursesResponse): Course[] {
       secondaryIcon,
       startDate,
       registrationEndDate,
+      scheduleUrl,
       language,
       mode,
       detailsUrl,

@@ -59,6 +59,7 @@ export { preschoolFaqData } from './faq.data';
 export { principleCards } from './principle-cards.data';
 export { requirementsData } from './requirements.data';
 export { rsInNumbers } from './rs-in-numbers.data';
+export { scheduleDocumentationLinks } from './schedule-and-documentation.data';
 export { sliderPhotos } from './slider-photos.data';
 export { studyPath } from './study-path.data';
 export { videoTitleLocalized } from './about-video.data';
