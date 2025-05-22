@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import classNames from 'classnames/bind';
 
 import { FilteredMerchView } from './merch-filter/filtered-catalog/filtered-catalog';
@@ -13,8 +14,14 @@ export const MerchCatalog = async () => {
   return (
     <section className={cx('container')}>
       <div className={cx('content', 'merch-catalog')}>
-        {products && <FilteredMerchView initialProducts={products} />}
+        <Suspense fallback={<LoadingFilters />}>
+          {products && <FilteredMerchView initialProducts={products} />}
+        </Suspense>
       </div>
     </section>
   );
+};
+
+const LoadingFilters = () => {
+  return <div>Loading filters and products...</div>;
 };

@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import classNames from 'classnames/bind';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { MerchList } from '../../merch-list/merch-list';
 import { FilterControls } from '../filter-controls/filter-controls';
@@ -13,12 +14,38 @@ import styles from './filtered-catalog.module.scss';
 const cx = classNames.bind(styles);
 
 export const FilteredMerchView = ({ initialProducts }: FilteredMerchViewProps) => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [allAvailableTags, setAllAvailableTags] = useState<string[]>([]);
-
   const isMobileLayout = useMediaQuery('(max-width: 960px)');
   const [areMobileFiltersExpanded, setAreMobileFiltersExpanded] = useState(false);
+
+  const [searchTerm, setSearchTerm] = useState(() => {
+    return searchParams.get('search') || '';
+  });
+
+  const [selectedTypes, setSelectedTypes] = useState<string[]>(() => {
+    return searchParams.getAll('type');
+  });
+
+  const updateUrl = useCallback(
+    (currentSearchTerm: string, currentSelectedTypes: string[]) => {
+      const params = new URLSearchParams();
+
+      if (currentSearchTerm) {
+        params.set('search', currentSearchTerm);
+      }
+      currentSelectedTypes.forEach((type) => {
+        params.append('type', type);
+      });
+
+      const queryString = params.toString();
+
+      router.replace(queryString ? `${pathname}?${queryString}` : pathname, { scroll: false });
+    },
+    [pathname, router],
+  );
 
   useEffect(() => {
     if (initialProducts && initialProducts.length > 0) {
@@ -35,32 +62,42 @@ export const FilteredMerchView = ({ initialProducts }: FilteredMerchViewProps) =
   const filteredProducts = useMemo(() => {
     let productsToFilter = initialProducts || [];
 
+    if (!Array.isArray(productsToFilter)) {
+      productsToFilter = [];
+    }
+
     if (searchTerm.trim() !== '') {
       productsToFilter = productsToFilter.filter((product) =>
         product.title.toLowerCase().includes(searchTerm.toLowerCase()),
       );
     }
-    if (selectedTags.length > 0) {
+
+    if (selectedTypes.length > 0) {
       productsToFilter = productsToFilter.filter((product) =>
-        selectedTags.some((tag) => (product.tags || []).includes(tag)),
+        selectedTypes.some((typeValue) => (product.tags || []).includes(typeValue)),
       );
     }
     return productsToFilter;
-  }, [initialProducts, searchTerm, selectedTags]);
+  }, [initialProducts, searchTerm, selectedTypes]);
 
   const handleSearchChange = (newSearchTerm: string) => {
     setSearchTerm(newSearchTerm);
+    updateUrl(newSearchTerm, selectedTypes);
   };
 
-  const handleTagChange = (tag: string) => {
-    setSelectedTags((prevTags) =>
-      prevTags.includes(tag) ? prevTags.filter((t) => t !== tag) : [...prevTags, tag],
-    );
+  const handleTypeChange = (typeValue: string) => {
+    const newSelectedTypes = selectedTypes.includes(typeValue)
+      ? selectedTypes.filter((t) => t !== typeValue)
+      : [...selectedTypes, typeValue];
+
+    setSelectedTypes(newSelectedTypes);
+    updateUrl(searchTerm, newSelectedTypes);
   };
 
   const handleClearFilters = () => {
     setSearchTerm('');
-    setSelectedTags([]);
+    setSelectedTypes([]);
+    updateUrl('', []);
   };
 
   const toggleMobileFiltersExpansion = () => {
@@ -73,7 +110,7 @@ export const FilteredMerchView = ({ initialProducts }: FilteredMerchViewProps) =
     }
   }, [isMobileLayout, areMobileFiltersExpanded]);
 
-  const hasActiveFilters = searchTerm.trim() !== '' || selectedTags.length > 0;
+  const hasActiveFilters = searchTerm.trim() !== '' || selectedTypes.length > 0;
 
   return (
     <div className={cx('filter-catalog')}>
@@ -82,10 +119,10 @@ export const FilteredMerchView = ({ initialProducts }: FilteredMerchViewProps) =
         <FilterControls
           allAvailableTags={allAvailableTags}
           searchTerm={searchTerm}
-          selectedTags={selectedTags}
+          selectedTags={selectedTypes}
           hasActiveFilters={hasActiveFilters}
           onSearchChange={handleSearchChange}
-          onTagChange={handleTagChange}
+          onTagChange={handleTypeChange}
           onClearFilters={handleClearFilters}
           isMobileLayout={isMobileLayout}
           areTagsExpandedMobile={areMobileFiltersExpanded}
