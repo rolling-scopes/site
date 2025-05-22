@@ -122,6 +122,6 @@ export class ApiBaseClass {
     const urlWithQueryString = `${url}?${queryString}`;
     const baseUrl = !isValidUrl(url) ? this.baseUrl : '';
 
-    return new URL(urlWithQueryString, baseUrl).toString();
+    return `${baseUrl}${urlWithQueryString}`;
   }
 }

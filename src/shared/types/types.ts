@@ -18,6 +18,7 @@ export type Video = {
 
 export type ApiServices = {
   rest: ApiBaseClass;
+  youtube: ApiBaseClass;
 };
 
 export type HttpMethod = (typeof HTTP_METHOD)[keyof typeof HTTP_METHOD];

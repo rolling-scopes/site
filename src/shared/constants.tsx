@@ -18,6 +18,7 @@ export const TO_BE_DETERMINED = 'TBD';
 export const REGISTRATION_WILL_OPEN_SOON = 'Registration will open soon!';
 export const REGISTRATION_WILL_OPEN_SOON_RU = 'Регистрация откроется скоро!';
 export const UNKNOWN_API_ERROR = 'Unknown error, API request failed.';
+export const YOUTUBE_API_MAX_RESULTS_PER_PAGE = 50;
 
 /**
  * https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/links
@@ -119,6 +120,8 @@ export const ROUTES = {
   DOCS_RU: 'docs/ru',
   NOT_FOUND: '*',
 } as const;
+
+export const SWR_CACHE_KEY = { MENTORS_PLAYLIST: 'MENTORS_PLAYLIST' };
 
 export const RICH_TEXT_OPTIONS = {
   renderNode: {
