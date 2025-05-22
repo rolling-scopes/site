@@ -51,6 +51,7 @@ export const ShortInfoPanel = ({
         label={label}
         startDate={startDate}
         registrationEndDate={registrationEndDate}
+        showRegistrationEnd={false}
       />
 
       <DateSimple

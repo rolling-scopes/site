@@ -10,6 +10,7 @@ type CourseStartLabelProps = PropsWithChildren & {
   registrationEndDate: string | null;
   label: string | undefined;
   labelSeparator?: string;
+  showRegistrationEnd?: boolean;
 };
 
 export const CourseStartLabel = ({
@@ -18,15 +19,17 @@ export const CourseStartLabel = ({
   label,
   children,
   labelSeparator,
+  showRegistrationEnd = true,
 }: CourseStartLabelProps) => {
   const freshDate =
     startDate && registrationEndDate ? calculateFreshDate(startDate, registrationEndDate) : null;
+  const endDate = showRegistrationEnd ? registrationEndDate : null;
 
   return (
     <DateSimple
       label={label}
       startDate={freshDate}
-      endDate={registrationEndDate}
+      endDate={endDate}
       showMentoringStartDate={false}
       labelSeparator={labelSeparator}
     >
