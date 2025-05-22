@@ -74,6 +74,7 @@ export const ShortInfoPanel = ({
       label={label}
       startDate={startDate}
       registrationEndDate={startDate ? registrationEndDate : null}
+      labelSeparator={LABELS.MENTOR_ACTIVITIES_SEPARATOR}
     >
       <span className={cx('language')} data-testid="course-language">
         {courseLanguage}

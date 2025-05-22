@@ -17,12 +17,19 @@ export const CourseStartLabel = ({
   registrationEndDate,
   label,
   children,
+  labelSeparator,
 }: CourseStartLabelProps) => {
   const freshDate =
     startDate && registrationEndDate ? calculateFreshDate(startDate, registrationEndDate) : null;
 
   return (
-    <DateSimple label={label} startDate={freshDate} showMentoringStartDate={false}>
+    <DateSimple
+      label={label}
+      startDate={freshDate}
+      endDate={registrationEndDate}
+      showMentoringStartDate={false}
+      labelSeparator={labelSeparator}
+    >
       {children}
     </DateSimple>
   );
