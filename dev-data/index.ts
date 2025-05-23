@@ -1,5 +1,4 @@
 export type { AboutCourseInfo, DataMap } from './courses-data.types';
-export type { Benefit } from './benefit-mentorship.data';
 export type {
   CourseTitle,
   ImageLink,
@@ -14,6 +13,7 @@ export type {
 export type { MentorshipCourseTitles, MentorshipLinks } from './mentorship-data.types';
 
 export type { StageCardProps, StudyPathPage, StudyPathProps } from './study-path-data.types';
+
 export {
   ANNOUNCEMENT_TELEGRAM_LINK,
   type CourseNamesChannels,
@@ -24,6 +24,7 @@ export {
   RS_DOCS_EN_LINK,
   RS_DOCS_TELEGRAM_CHATS_LINK,
 } from './communication.data';
+export { type Benefit } from './benefit-mentorship.data';
 export {
   COURSE_TITLES,
   type CourseNames,
