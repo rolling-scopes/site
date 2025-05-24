@@ -17,12 +17,7 @@ export const Pictures = () => {
   const slides = sliderPhotos.map(({ id, src, alt }) => (
     <div
       key={id}
-      style={{
-        display: 'block',
-        width: '100%',
-        aspectRatio: '8/5',
-        position: 'relative',
-      }}
+      className={cx('slide-wrapper')}
     >
       <Image
         src={src}
@@ -38,6 +33,7 @@ export const Pictures = () => {
       <div className={cx('content')}>
         <WidgetTitle mods="asterisk">The Rolling Scopes in pictures</WidgetTitle>
         <Slider
+          className={cx('pictures-slider')}
           slides={slides}
           sliderProps={{
             navigation: true,
@@ -48,7 +44,7 @@ export const Pictures = () => {
             slidesPerView: 1.25,
             spaceBetween: 10,
             autoplay: {
-              delay: 3000,
+              delay: 2000,
               pauseOnMouseEnter: true,
             },
           }}
