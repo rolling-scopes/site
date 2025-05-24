@@ -37,7 +37,6 @@
     "react-dom": "19.1.0",
     "react-double-marquee": "^1.1.0",
     "react-markdown": "^10.1.0",
-    "react-responsive-carousel": "^3.2.23",
     "react-youtube": "^10.1.0",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
