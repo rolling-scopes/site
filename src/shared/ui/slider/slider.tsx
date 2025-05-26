@@ -2,6 +2,7 @@
 
 import React, { ReactNode } from 'react';
 import 'swiper/css';
+import 'swiper/css/a11y';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { A11y, Autoplay, Keyboard, Navigation, Pagination } from 'swiper/modules';
@@ -19,6 +20,7 @@ export const Slider = ({ slides, sliderProps, slidesProps, className }: SliderPr
     <Swiper
       modules={[Pagination, A11y, Autoplay, Keyboard, Navigation]}
       pagination={{ clickable: true }}
+      a11y={{ enabled: true }}
       {...sliderProps}
       className={className}
     >
