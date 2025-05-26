@@ -106,7 +106,7 @@ figure {
 }
 
 .pictures-slider {
-  cursor: pointer;
+  cursor: grab;
 
   .slide-wrapper {
     position: relative;
@@ -115,10 +115,10 @@ figure {
     width: 100%;
   }
 
-  .swiper-pagination-bullet {
+  .swiper-pagination .swiper-pagination-bullet {
     width: 14px;
     height: 14px;
-    margin: 0 8px !important;
+    margin: 0 8px;
     background-color: $color-gray-300;
   }
 
