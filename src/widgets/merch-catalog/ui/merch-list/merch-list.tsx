@@ -1,6 +1,7 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 import { MerchItem } from '../merch-item/merch-item';
 import { MerchProduct } from '@/entities/merch/types';
@@ -16,14 +17,40 @@ export type MerchListProps = {
 const ITEMS_PER_PAGE = 10;
 
 export const MerchList = ({ products }: MerchListProps) => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const pageParam = searchParams.get('page');
+  const [currentPage, setCurrentPage] = useState(parseInt(pageParam || '1', 10));
   const totalPages = Math.ceil(products.length / ITEMS_PER_PAGE);
+
+  // Set initial URL if no page parameter
+  useEffect(() => {
+    if (!pageParam) {
+      const params = new URLSearchParams(searchParams.toString());
+
+      params.set('page', '1');
+      router.push(`?${params.toString()}`);
+    }
+  }, []);
+
+  // Sync URL with current page
+  useEffect(() => {
+    const newPage = parseInt(pageParam || '1', 10);
+
+    if (newPage !== currentPage) {
+      setCurrentPage(newPage);
+    }
+  }, [pageParam]);
 
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const endIndex = startIndex + ITEMS_PER_PAGE;
   const currentProducts = products.slice(startIndex, endIndex);
 
   const handlePageChange = (page: number) => {
+    const params = new URLSearchParams(searchParams.toString());
+
+    params.set('page', page.toString());
+    router.push(`?${params.toString()}`);
     setCurrentPage(page);
   };
 

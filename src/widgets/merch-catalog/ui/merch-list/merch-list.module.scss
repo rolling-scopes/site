@@ -9,6 +9,18 @@
   margin-bottom: 24px;
 }
 
+.url-info {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border-radius: 4px;
+
+  font-family: monospace;
+  color: #666;
+  text-align: center;
+
+  background-color: #f5f5f5;
+}
+
 .pagination {
   display: flex;
   gap: 8px;
