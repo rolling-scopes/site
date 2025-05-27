@@ -8,3 +8,39 @@
     justify-content: center;
   }
 }
+
+.pictures-slider {
+  cursor: grab;
+
+  .slide-wrapper {
+    position: relative;
+    display: block;
+    aspect-ratio: 8 / 5;
+    width: 100%;
+  }
+
+  :global(.swiper-pagination .swiper-pagination-bullet) {
+    width: 14px;
+    height: 14px;
+    margin: 0 8px;
+    background-color: $color-gray-300;
+  }
+
+  :global(.swiper-button-next),
+  :global(.swiper-button-prev) {
+    color: $color-gray-300;
+    opacity: $opacity-30;
+    transition: all 0.3s ease;
+
+    @include media-mobile-landscape {
+      display: none;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: $color-white;
+        opacity: $opacity-80;
+      }
+    }
+  }
+}
