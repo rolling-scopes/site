@@ -19,7 +19,7 @@
   padding: 12px 24px;
   border: 1px solid $color-black;
 
-  font-size: 18px;
+  font-size: $font-size-lg;
   color: $color-black;
 
   .icon-wrapper {
@@ -41,7 +41,7 @@
   padding: 16px 24px;
   border: 2px solid $color-black;
 
-  font-size: 18px;
+  font-size: $font-size-lg;
   line-height: 24px;
   color: $color-white;
 
@@ -63,7 +63,7 @@
   padding: 10px 12px;
   border-radius: $border-radius-full;
 
-  font-size: 14px;
+  font-size: $font-size-sm;
   line-height: 16px;
   color: $color-black;
 

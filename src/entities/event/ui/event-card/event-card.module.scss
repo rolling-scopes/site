@@ -38,7 +38,7 @@
       border: 4px solid $color-purple-100;
       border-radius: $border-radius-xl;
 
-      font-size: 16px;
+      font-size: $font-size-md;
       line-height: 1.2;
     }
 
@@ -52,7 +52,7 @@
 
       .event-organization {
         margin-top: 10px;
-        font-size: 20px;
+        font-size: $font-size-xl;
         font-weight: $font-weight-medium;
       }
     }
@@ -81,7 +81,7 @@
         margin-top: 0;
         margin-bottom: 8px;
 
-        font-size: 16px;
+        font-size: $font-size-md;
         text-overflow: ellipsis;
         white-space: nowrap;
       }
@@ -112,7 +112,7 @@
 
       margin-bottom: 16px;
 
-      font-size: 14px;
+      font-size: $font-size-sm;
       font-weight: $font-weight-medium;
       color: $color-gray-500;
     }

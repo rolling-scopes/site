@@ -11,31 +11,31 @@
 
 .small {
   padding-bottom: 24px;
-  font-size: 36px;
+  font-size: $font-size-h1;
   line-height: 44px;
   letter-spacing: 0;
 }
 
 .medium {
   padding-bottom: 20px;
-  font-size: 44px;
+  font-size: $font-size-hero-lg;
   line-height: 52px;
 
   @include media-tablet {
     padding-bottom: 16px;
-    font-size: 36px;
+    font-size: $font-size-h1;
     line-height: 44px;
   }
 }
 
 .large {
   padding-bottom: 24px;
-  font-size: 52px;
+  font-size: $font-size-hero-xl;
   line-height: 64px;
 
   @include media-tablet {
     padding-bottom: 16px;
-    font-size: 36px;
+    font-size: $font-size-h1;
     line-height: 44px;
   }
 }

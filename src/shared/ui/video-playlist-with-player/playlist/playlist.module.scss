@@ -21,7 +21,7 @@
 
 .playlist-title {
   margin: 0;
-  font-size: 24px;
+  font-size: $font-size-h4;
   line-height: 32px;
   text-align: center;
 
@@ -92,7 +92,7 @@
   height: 100%;
   border-radius: $border-radius-md;
 
-  font-size: 14px;
+  font-size: $font-size-sm;
   font-weight: $font-weight-bold;
   color: $color-white;
 

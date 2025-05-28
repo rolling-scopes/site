@@ -55,7 +55,15 @@
       }
     ],
     "scale-unlimited/declaration-strict-value": [
-      ["border-radius", "color", "background-color", "opacity", "z-index", "font-weight"],
+      [
+        "border-radius",
+        "color",
+        "background-color",
+        "opacity",
+        "z-index",
+        "font-weight",
+        "font-size"
+      ],
       {
         "ignoreValues": [
           "inherit",
