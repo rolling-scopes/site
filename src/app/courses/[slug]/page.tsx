@@ -16,10 +16,8 @@ export async function generateMetadata({ params }: CourseRouteParams): Promise<M
   const { slug } = await params;
   const locale = resolveCoursePageLocale(slug);
 
-  // TODO: not efficient to fetch the whole course page only to load the course name
-  const { courseName } = await coursePageStore.loadCoursePage(slug, locale);
-
-  const title = `${courseName} · The Rolling Scopes School`;
+  const pageTitle = await coursePageStore.loadCoursePageTitle(slug, locale);
+  const title = `${pageTitle} · The Rolling Scopes School`;
 
   return { title };
 }
