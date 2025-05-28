@@ -78,7 +78,7 @@
   width: 100%;
   padding: 8px 24px 8px 16px;
 
-  background-color: #ffdb20;
+  background-color: $color-yellow;
   box-shadow: 0 4px 16px 0 rgb(0 0 0 / 14%);
 }
 
@@ -103,7 +103,7 @@
 
   color: $color-black;
 
-  background-color: #fff;
+  background-color: $color-white;
 
   transition: transform 0.4s ease-out;
 }

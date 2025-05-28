@@ -22,7 +22,7 @@
     height: 2px;
     border-radius: 0;
 
-    background-color: #888;
+    background-color: $color-gray-500;
 
     transition: transform 0.4s ease-in-out;
   }
@@ -40,7 +40,7 @@
   }
 
   &.open {
-    background-color: white;
+    background-color: $color-white;
 
     .top {
       transform: rotate(-45deg) translate(-5px, 6px);
