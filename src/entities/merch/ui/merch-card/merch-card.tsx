@@ -30,17 +30,35 @@ export const MerchCard = ({ title, preview, download }: MerchProduct) => {
     }
   };
 
+  const previewSrc =
+    preview
+    && preview.length > 0
+    && preview[0]
+    && typeof preview[0] === 'string'
+    && preview[0].trim() !== ''
+      ? preview[0]
+      : null;
+
   return (
     <article className={cx('merch-card')} data-testid="merch">
       <figure className={cx('preview-wrap')}>
         <div className={cx('image-container')}>
-          <Image
-            className={cx('preview')}
-            src={preview[0]}
-            alt={title}
-            fill
-            sizes="(max-width: 320px) 100vw, 320px"
-          />
+          {previewSrc
+            ? (
+                <Image
+                  className={cx('preview')}
+                  src={previewSrc}
+                  alt={title || 'Merch preview'}
+                  fill
+                  sizes="(max-width: 320px) 100vw, 320px"
+                  priority={false}
+                />
+              )
+            : (
+                <div className={cx('preview-placeholder')}>
+                  <span>No Image</span>
+                </div>
+              )}
         </div>
         <button onClick={handleDownload} className={cx('download')} disabled={isLoading}>
           <Image src={downloadImg} alt="download link" className={cx('download-img')} />
