@@ -4,9 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "generate-og": "tsx scripts/generate-og-script.ts",
-    "dev": "npm run generate-og && next dev --turbopack",
-    "build": "npm run generate-og && tsc && next build",
+    "dev": "next dev --turbopack",
+    "build": "tsc && next build",
     "stylelint": "npx stylelint \"**/*.scss\"",
     "stylelint:fix": "npx stylelint \"**/*.scss\" --fix",
     "lint": "npx eslint . --report-unused-disable-directives",

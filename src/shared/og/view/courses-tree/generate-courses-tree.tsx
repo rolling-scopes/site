@@ -1,22 +1,42 @@
 import React from 'react';
+// import { StaticImageData } from 'next/image';
+import { ImageResponse } from 'next/og';
 
 import { stylesCourseTree } from './generate-courses-tree.styles';
-import { CourseData } from '../../types/types';
+import { fonts } from '../../utils/load-fonts';
 import { loadImageAsDataUri } from '../../utils/load-image-as-data-uri';
 
 const rsStudentPromise = loadImageAsDataUri('src/shared/assets/rs-school.webp');
 
-export async function createCourseTree(
-  course: CourseData,
-): Promise<React.JSX.Element> {
+// type CourseData = {
+//   name: string;
+//   logo: StaticImageData;
+//   startDate: string;
+// };
+
+type CourseLogo = {
+  src: string; // Data URI или URL
+  width: number;
+  height: number;
+};
+
+type CourseData = {
+  name: string;
+  logo: CourseLogo;
+  startDate: string;
+};
+
+export async function createCourseTree(course: CourseData): Promise<ImageResponse> {
   const { name, logo, startDate } = course;
   const rsStudentImg = await rsStudentPromise;
 
-  return (
+  return new ImageResponse((
     <div style={stylesCourseTree.container}>
       <div style={stylesCourseTree.leftSection}>
         <img
           src={rsStudentImg}
+          width={logo.width}
+          height={logo.height}
           style={stylesCourseTree.logo}
           alt="Sloth mascot works on the laptop"
         />
@@ -26,6 +46,8 @@ export async function createCourseTree(
       <div style={stylesCourseTree.rightSection}>
         <img
           src={logo.src}
+          width={logo.width}
+          height={logo.height}
           style={stylesCourseTree.courseLogo}
           alt={`${name} logo`}
         />
@@ -33,5 +55,10 @@ export async function createCourseTree(
         <p style={stylesCourseTree.startDate}>{`Start: ${startDate}`}</p>
       </div>
     </div>
-  );
+  ),
+  {
+    width: 1200,
+    height: 630,
+    fonts: fonts,
+  });
 }
