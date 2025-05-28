@@ -6,7 +6,7 @@
 
   max-width: 700px;
   padding: 40px 32px 40px 32px;
-  border-radius: 16px;
+  border-radius: $border-radius-lg;
 
   box-shadow: 0 4px 16px 0 rgb(0 0 0 / 12%);
 
@@ -17,7 +17,7 @@
     img {
       width: 100%;
       height: auto;
-      border-radius: 12px;
+      border-radius: $border-radius-lg;
     }
   }
 

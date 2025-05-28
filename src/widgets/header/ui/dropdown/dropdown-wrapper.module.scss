@@ -16,7 +16,7 @@
   max-width: calc(100vw - var(--page-padding));
   height: max-content;
   padding: 32px;
-  border-radius: 20px;
+  border-radius: $border-radius-lg;
 
   visibility: hidden;
   opacity: 0;

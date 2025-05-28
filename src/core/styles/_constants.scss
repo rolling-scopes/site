@@ -94,3 +94,12 @@ $ease-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
 $ease-emphasize-decelerate: cubic-bezier(0, 0, 0, 1);
 $ease-in-cubic: cubic-bezier(0.32, 0, 0.67, 0);
 $standard-decelerate: cubic-bezier(0, 0, 0, 1);
+
+// Border-radius
+$border-radius-sm: 5px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 36px;
+$border-radius-half: 50%;
+$border-radius-circle: 100%;
+$border-radius-full: 999px;
