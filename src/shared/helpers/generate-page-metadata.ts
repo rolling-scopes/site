@@ -1,3 +1,14 @@
+import { Metadata } from 'next';
+
+type GeneratePageMetadataProps = {
+  title: string;
+  description: string;
+  imagePath: string;
+  keywords?: string;
+  alternates?: { canonical: string };
+  robots?: string;
+};
+
 export function generatePageMetadata({
   title,
   description,
@@ -5,20 +16,14 @@ export function generatePageMetadata({
   keywords,
   alternates,
   robots,
-}: {
-  title: string;
-  description: string;
-  imagePath: string;
-  keywords?: string;
-  alternates?: { canonical: string };
-  robots?: string;
-}) {
+}: GeneratePageMetadataProps): Metadata {
   return {
     title,
     description,
-    ...(keywords && { keywords }),
+    ...(keywords ? { keywords } : {}),
     ...(alternates && { alternates }),
-    ...(robots && { robots }),
+    ...(robots ? { robots } : {}),
+
     openGraph: {
       title,
       description,
@@ -30,6 +35,14 @@ export function generatePageMetadata({
           alt: title,
         },
       ],
+      siteName: 'The Rolling Scopes School',
+    },
+
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [imagePath],
     },
   };
 }

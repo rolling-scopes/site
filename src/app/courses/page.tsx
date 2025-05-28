@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 
-import { OG_FOLDER } from '@/shared/constants';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 import { Courses } from '@/views/courses';
 
@@ -15,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const metadata = generatePageMetadata({
     title,
     description,
-    imagePath: `/${OG_FOLDER}/courses.png`,
+    imagePath: `/courses/og.png`,
     keywords,
     alternates: { canonical },
     robots,
