@@ -1,5 +1,4 @@
 import React from 'react';
-// import { StaticImageData } from 'next/image';
 import { ImageResponse } from 'next/og';
 
 import { stylesCourseTree } from './generate-courses-tree.styles';
@@ -8,14 +7,8 @@ import { loadImageAsDataUri } from '../../utils/load-image-as-data-uri';
 
 const rsStudentPromise = loadImageAsDataUri('src/shared/assets/rs-school.webp');
 
-// type CourseData = {
-//   name: string;
-//   logo: StaticImageData;
-//   startDate: string;
-// };
-
 type CourseLogo = {
-  src: string; // Data URI или URL
+  src: string;
   width: number;
   height: number;
 };
