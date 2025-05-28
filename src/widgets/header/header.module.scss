@@ -1,6 +1,6 @@
 .navbar {
   position: sticky;
-  z-index: 100;
+  z-index: $z-index-overlay;
   top: 0;
   left: 0;
 

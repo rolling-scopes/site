@@ -55,7 +55,7 @@
       }
     ],
     "scale-unlimited/declaration-strict-value": [
-      ["border-radius", "color"],
+      ["border-radius", "color", "z-index"],
       {
         "ignoreValues": ["inherit", "transparent", "initial", "unset", "0", "none", "currentcolor"]
       }
