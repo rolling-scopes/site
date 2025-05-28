@@ -10,12 +10,17 @@ const cx = classNames.bind(styles);
 
 export const MerchCatalog = async () => {
   const products = (await merchStore.loadMerchCatalog()) || [];
+  const uniqueTags = Array.from(
+    new Set(products.flatMap((product) => product.tags || []).filter((tag) => tag)),
+  ).sort();
 
   return (
     <section className={cx('container')}>
       <div className={cx('content', 'merch-catalog')}>
         <Suspense fallback={<LoadingFilters />}>
-          {products && <FilteredMerchView initialProducts={products} />}
+          {products && (
+            <FilteredMerchView initialProducts={products} initialAvailableTags={uniqueTags} />
+          )}
         </Suspense>
       </div>
     </section>

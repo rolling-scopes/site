@@ -14,11 +14,14 @@ import styles from './filtered-catalog.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const FilteredMerchView = ({ initialProducts }: FilteredMerchViewProps) => {
+export const FilteredMerchView = ({
+  initialProducts,
+  initialAvailableTags,
+}: FilteredMerchViewProps) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const [allAvailableTags, setAllAvailableTags] = useState<string[]>([]);
+  const [allAvailableTags, setAllAvailableTags] = useState<string[]>(initialAvailableTags || []);
   const isMobileLayout = useMediaQuery('(max-width: 960px)');
   const [areMobileFiltersExpanded, setAreMobileFiltersExpanded] = useState(false);
 
@@ -49,16 +52,8 @@ export const FilteredMerchView = ({ initialProducts }: FilteredMerchViewProps) =
   );
 
   useEffect(() => {
-    if (initialProducts && initialProducts.length > 0) {
-      const uniqueTags = Array.from(
-        new Set(initialProducts.flatMap((product) => product.tags || []).filter((tag) => tag)),
-      ).sort();
-
-      setAllAvailableTags(uniqueTags);
-    } else {
-      setAllAvailableTags([]);
-    }
-  }, [initialProducts]);
+    setAllAvailableTags(initialAvailableTags || []);
+  }, [initialAvailableTags]);
 
   const filteredProducts = useMemo(() => {
     let productsToFilter = initialProducts || [];

@@ -115,6 +115,10 @@ const mockInitialProducts: MerchProduct[] = [
   },
 ];
 
+const expectedUniqueTags = Array.from(
+  new Set(mockInitialProducts.flatMap((product) => product.tags || []).filter((tag) => tag)),
+).sort();
+
 describe('FilteredMerchView', () => {
   const mockedUseMediaQueryHook = useMediaQuery as MockedFunction<typeof useMediaQuery>;
   let capturedFilterControlsProps: ActualFilterControlsProps;
@@ -142,18 +146,26 @@ describe('FilteredMerchView', () => {
     });
   });
 
-  it('renders initial products and filter controls', () => {
-    render(<FilteredMerchView initialProducts={mockInitialProducts} />);
+  it('renders initial products and filter controls, and computes allAvailableTags from prop', () => {
+    render(
+      <FilteredMerchView
+        initialProducts={mockInitialProducts}
+        initialAvailableTags={expectedUniqueTags}
+      />,
+    );
     expect(screen.getByTestId('filter-controls')).toBeInTheDocument();
     expect(screen.getByTestId('merch-list')).toBeInTheDocument();
     expect(screen.getByTestId('rendered-products-count')).toHaveTextContent('Rendered products: 4');
-    expect(capturedFilterControlsProps.allAvailableTags.sort()).toEqual(
-      ['accessories', 'clothing', 'mug', 'new', 'stickers', 'tee'].sort(),
-    );
+    expect(capturedFilterControlsProps.allAvailableTags.sort()).toEqual(expectedUniqueTags.sort());
   });
 
   it('filters products when searchTerm changes', () => {
-    render(<FilteredMerchView initialProducts={mockInitialProducts} />);
+    render(
+      <FilteredMerchView
+        initialProducts={mockInitialProducts}
+        initialAvailableTags={expectedUniqueTags}
+      />,
+    );
     act(() => {
       capturedFilterControlsProps.onSearchChange('Alpha');
     });
@@ -164,7 +176,12 @@ describe('FilteredMerchView', () => {
   });
 
   it('filters products by selected types (OR logic)', () => {
-    render(<FilteredMerchView initialProducts={mockInitialProducts} />);
+    render(
+      <FilteredMerchView
+        initialProducts={mockInitialProducts}
+        initialAvailableTags={expectedUniqueTags}
+      />,
+    );
     act(() => {
       capturedFilterControlsProps.onTagChange('mug');
     });
@@ -188,7 +205,12 @@ describe('FilteredMerchView', () => {
   });
 
   it('clears filters when onClearFilters is called', () => {
-    render(<FilteredMerchView initialProducts={mockInitialProducts} />);
+    render(
+      <FilteredMerchView
+        initialProducts={mockInitialProducts}
+        initialAvailableTags={expectedUniqueTags}
+      />,
+    );
     act(() => {
       capturedFilterControlsProps.onSearchChange('Alpha');
       capturedFilterControlsProps.onTagChange('tee');
@@ -213,17 +235,32 @@ describe('FilteredMerchView', () => {
 
     it('passes isMobileLayout based on useMediaQuery hook', () => {
       mockedUseMediaQueryHook.mockReturnValue(true);
-      render(<FilteredMerchView initialProducts={mockInitialProducts} />);
+      render(
+        <FilteredMerchView
+          initialProducts={mockInitialProducts}
+          initialAvailableTags={expectedUniqueTags}
+        />,
+      );
       expect(capturedFilterControlsProps.isMobileLayout).toBe(true);
 
       mockedUseMediaQueryHook.mockReturnValue(false);
-      render(<FilteredMerchView initialProducts={mockInitialProducts} />);
+      render(
+        <FilteredMerchView
+          initialProducts={mockInitialProducts}
+          initialAvailableTags={expectedUniqueTags}
+        />,
+      );
       expect(capturedFilterControlsProps.isMobileLayout).toBe(false);
     });
 
     it('toggles areTagsExpandedMobile for FilterControls via onToggleTagsExpansionMobile', () => {
       mockedUseMediaQueryHook.mockReturnValue(true);
-      render(<FilteredMerchView initialProducts={mockInitialProducts} />);
+      render(
+        <FilteredMerchView
+          initialProducts={mockInitialProducts}
+          initialAvailableTags={expectedUniqueTags}
+        />,
+      );
       expect(capturedFilterControlsProps.isMobileLayout).toBe(true);
       expect(capturedFilterControlsProps.areTagsExpandedMobile).toBe(false);
       act(() => {
@@ -238,7 +275,12 @@ describe('FilteredMerchView', () => {
 
     it('resets areMobileFiltersExpanded when switching to desktop layout', () => {
       mockedUseMediaQueryHook.mockReturnValue(true);
-      const { rerender } = render(<FilteredMerchView initialProducts={mockInitialProducts} />);
+      const { rerender } = render(
+        <FilteredMerchView
+          initialProducts={mockInitialProducts}
+          initialAvailableTags={expectedUniqueTags}
+        />,
+      );
 
       act(() => {
         capturedFilterControlsProps.onToggleTagsExpansionMobile!();
@@ -247,14 +289,24 @@ describe('FilteredMerchView', () => {
       expect(capturedFilterControlsProps.isMobileLayout).toBe(true);
 
       mockedUseMediaQueryHook.mockReturnValue(false);
-      rerender(<FilteredMerchView initialProducts={mockInitialProducts} />);
+      rerender(
+        <FilteredMerchView
+          initialProducts={mockInitialProducts}
+          initialAvailableTags={expectedUniqueTags}
+        />,
+      );
       expect(capturedFilterControlsProps.isMobileLayout).toBe(false);
       expect(capturedFilterControlsProps.areTagsExpandedMobile).toBe(false);
     });
   });
 
   it('shows "no results" message when filters match no products', () => {
-    render(<FilteredMerchView initialProducts={mockInitialProducts} />);
+    render(
+      <FilteredMerchView
+        initialProducts={mockInitialProducts}
+        initialAvailableTags={expectedUniqueTags}
+      />,
+    );
     act(() => {
       capturedFilterControlsProps.onSearchChange('nonExistentSearchTerm123');
     });
@@ -264,7 +316,7 @@ describe('FilteredMerchView', () => {
   });
 
   it('shows "no products" message when initialProducts is empty and no filters active', () => {
-    render(<FilteredMerchView initialProducts={[]} />);
+    render(<FilteredMerchView initialProducts={[]} initialAvailableTags={[]} />);
     expect(screen.getByText('No merch found')).toBeInTheDocument();
     expect(capturedFilterControlsProps.hasActiveFilters).toBe(false);
   });
