@@ -8,6 +8,7 @@ import { MerchList } from '../../merch-list/merch-list';
 import { FilterControls } from '../filter-controls/filter-controls';
 import { FilteredMerchViewProps } from '../types';
 import { useMediaQuery } from '@/shared/hooks/use-media-query/use-media-query';
+import { Paragraph } from '@/shared/ui/paragraph';
 
 import styles from './filtered-catalog.module.scss';
 
@@ -129,7 +130,7 @@ export const FilteredMerchView = ({ initialProducts }: FilteredMerchViewProps) =
           onToggleTagsExpansionMobile={toggleMobileFiltersExpansion}
         />
       </div>
-      <main>
+      <>
         {filteredProducts.length > 0
           ? (
               <MerchList products={filteredProducts} />
@@ -139,9 +140,9 @@ export const FilteredMerchView = ({ initialProducts }: FilteredMerchViewProps) =
             )}
 
         {(!initialProducts || initialProducts.length === 0) && !hasActiveFilters && (
-          <p>No merch found</p>
+          <Paragraph>No merch found</Paragraph>
         )}
-      </main>
+      </>
     </div>
   );
 };

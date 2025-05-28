@@ -40,15 +40,6 @@ describe('FilterControls', () => {
     expect(mockProps.onTagChange).toHaveBeenCalledWith('tag1');
   });
 
-  it('shows Clear button only if hasActiveFilters is true', () => {
-    const { rerender } = render(<FilterControls {...mockProps} hasActiveFilters={false} />);
-
-    expect(screen.queryByRole('button', { name: /clear/i })).not.toBeInTheDocument();
-
-    rerender(<FilterControls {...mockProps} hasActiveFilters={true} />);
-    expect(screen.getByRole('button', { name: /clear/i })).toBeInTheDocument();
-  });
-
   it('renders mobile toggle button and hides tags by default in mobile layout', () => {
     render(<FilterControls {...mockProps} isMobileLayout={true} areTagsExpandedMobile={false} />);
     expect(screen.getByRole('button', { name: /Filter By:/i })).toBeInTheDocument();

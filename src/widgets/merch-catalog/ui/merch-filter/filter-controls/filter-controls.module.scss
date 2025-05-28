@@ -1,14 +1,13 @@
 .filter-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .filter-title-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 5px;
 }
 
 .filter-title {
@@ -72,14 +71,22 @@
   font-size: 12px;
   color: $color-gray-600;
 
+  visibility: hidden;
+  opacity: 0;
   background: none;
   outline: none;
 
   transition: color 0.2s ease;
 
   &:hover {
-    border: 1.5px solid $color-black;
+    border: 1px solid $color-black;
     color: $color-black;
+  }
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
   }
 }
 
@@ -116,6 +123,7 @@
   cursor: pointer;
 
   display: flex;
+  gap: 10px;
 
   width: 100%;
   padding: 8px;
@@ -129,19 +137,6 @@
   }
 }
 
-.filter-checkbox-original {
-  position: absolute;
-
-  overflow: hidden;
-
-  width: 0;
-  height: 0;
-  margin: 0;
-  padding: 0;
-
-  opacity: 0;
-}
-
 .filter-checkbox-custom {
   position: relative;
 
@@ -149,7 +144,6 @@
 
   width: 18px;
   height: 18px;
-  margin-right: 10px;
   border: 2px solid #ccc;
   border-radius: 3px;
 
@@ -176,11 +170,24 @@
   }
 }
 
-.filter-checkbox-original:checked + .filter-checkbox-custom {
-  border-color: $color-yellow;
-  background-color: $color-yellow;
+.filter-checkbox-original {
+  position: absolute;
 
-  &::after {
-    display: block;
+  overflow: hidden;
+
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+
+  opacity: 0;
+
+  &:checked + .filter-checkbox-custom {
+    border-color: $color-yellow;
+    background-color: $color-yellow;
+
+    &::after {
+      display: block;
+    }
   }
 }
