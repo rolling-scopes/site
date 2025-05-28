@@ -29,7 +29,7 @@ export const MerchList = ({ products }: MerchListProps) => {
       const params = new URLSearchParams(searchParams.toString());
 
       params.set('page', '1');
-      router.push(`?${params.toString()}`);
+      router.push(`?${params.toString()}`, { scroll: false });
     }
   }, []);
 
@@ -50,7 +50,7 @@ export const MerchList = ({ products }: MerchListProps) => {
     const params = new URLSearchParams(searchParams.toString());
 
     params.set('page', page.toString());
-    router.push(`?${params.toString()}`);
+    router.push(`?${params.toString()}`, { scroll: false });
     setCurrentPage(page);
   };
 
