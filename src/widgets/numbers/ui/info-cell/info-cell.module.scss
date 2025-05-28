@@ -47,7 +47,7 @@
 
       &.medium-font-size {
         font-size: 36px;
-        font-weight: 700;
+        font-weight: $font-weight-bold;
         line-height: 46px;
 
         @include media-laptop {
@@ -58,7 +58,7 @@
 
       &.large-font-size {
         font-size: 52px;
-        font-weight: 500;
+        font-weight: $font-weight-medium;
         line-height: 64px;
 
         @include media-laptop {
@@ -72,7 +72,7 @@
       height: 56px;
       margin: 0;
       font-size: 16px;
-      font-weight: 400;
+      font-weight: $font-weight-regular;
     }
   }
 }
