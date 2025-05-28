@@ -61,7 +61,7 @@
   height: 300px;
   border-radius: $border-radius-full;
 
-  opacity: 0.5;
+  opacity: $opacity-50;
   background-color: $bg-color;
   filter: blur(32px);
 

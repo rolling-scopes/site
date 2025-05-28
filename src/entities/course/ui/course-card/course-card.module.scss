@@ -21,7 +21,7 @@
 
     border-radius: inherit;
 
-    opacity: 0;
+    opacity: $opacity-0;
     background-color: hsla(from $color-black h s l/ $opacity-15);
     backdrop-filter: blur(6px);
 
@@ -161,7 +161,7 @@
   .course-card {
     &:hover {
       &::before {
-        opacity: 1;
+        opacity: $opacity-100;
         filter: blur(10px);
         transition: ease-out 200ms;
       }
