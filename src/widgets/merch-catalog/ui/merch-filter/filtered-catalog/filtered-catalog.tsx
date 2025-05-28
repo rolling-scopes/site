@@ -131,7 +131,7 @@ export const FilteredMerchView = ({
               <MerchList products={filteredProducts} />
             )
           : (
-              <p>No merch found. Please try another filter or search term</p>
+              <Paragraph>No merch found. Please try another filter or search term</Paragraph>
             )}
 
         {(!initialProducts || initialProducts.length === 0) && !hasActiveFilters && (
