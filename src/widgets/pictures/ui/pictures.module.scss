@@ -23,13 +23,27 @@
     width: 14px;
     height: 14px;
     margin: 0 8px;
-    background-color: $color-gray-300;
+
+    background-color: $color-white;
+    box-shadow: 1px 1px 2px $color-black;
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: $opacity-100;
+      }
+    }
   }
 
   :global(.swiper-button-next),
   :global(.swiper-button-prev) {
-    color: $color-gray-300;
+    height: 50px;
+    border-radius: 8px;
+
+    color: $color-white;
+
     opacity: $opacity-30;
+    background-color: $color-gray-600;
+
     transition: all 0.3s ease;
 
     @include media-mobile-landscape {
@@ -38,8 +52,8 @@
 
     @media (hover: hover) {
       &:hover {
-        color: $color-white;
-        opacity: $opacity-80;
+        opacity: $opacity-100;
+        background-color: transparent;
       }
     }
   }
