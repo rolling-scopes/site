@@ -7,7 +7,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { MobileNavItem } from './mobile-nav-item/mobile-nav-item';
-import { donateOptions } from '../../../../dev-data/donate-options.data';
 import { Course } from '@/entities/course';
 import iconBlue from '@/shared/assets/svg/heart-blue.svg';
 import iconYellow from '@/shared/assets/svg/heart-yellow.svg';
@@ -18,7 +17,7 @@ import {
 } from '@/views/mentorship/helpers/transform-courses-to-mentorship';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { SchoolMenu } from '@/widgets/school-menu';
-import { communityMenuStaticLinks, schoolMenuStaticLinks } from 'data';
+import { communityMenuStaticLinks, donateOptions, schoolMenuStaticLinks } from 'data';
 
 import styles from './mobile-view.module.scss';
 
@@ -70,7 +69,7 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
   return (
     <nav className={cx('mobile-view')} data-testid="mobile-view">
       <div className={cx('menu-logo')}>
-        <Logo type={logoView} icon={logoIcon} />
+        <Logo type={logoView} icon={logoIcon} onClick={onClose} />
       </div>
 
       <div className={cx('menu-content')}>

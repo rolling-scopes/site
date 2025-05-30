@@ -96,7 +96,7 @@ export const NAV_MENU_LABELS = {
   MENTORSHIP: 'Mentorship',
   DOCS: 'Docs',
   SUPPORT_US: 'Support Us',
-};
+} as const;
 
 export const ROUTES = {
   HOME: '/',

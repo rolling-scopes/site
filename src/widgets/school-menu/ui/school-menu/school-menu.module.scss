@@ -23,7 +23,7 @@
 
   .school-list {
     gap: 24px 32px;
-    max-height: 336px;
+    max-height: 408px;
     list-style-type: none;
 
     &--columns {
@@ -45,7 +45,7 @@
 
     @include media-mobile-landscape {
       row-gap: 16px;
-      max-height: 624px;
+      max-height: 816px;
     }
   }
 
@@ -61,7 +61,7 @@
   &.visible {
     @extend %transition-all;
 
-    max-height: 624px;
+    max-height: 816px;
     margin-top: 26px;
     visibility: visible;
     opacity: $opacity-100;

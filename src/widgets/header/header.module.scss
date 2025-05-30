@@ -11,7 +11,7 @@
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 
-  opacity: 1;
+  opacity: $opacity-100;
   background-color: rgb(255 255 255);
   box-shadow: rgb(0 0 0 / 8.2%) 0 1.026px 8.0694px 0;
 
@@ -88,7 +88,7 @@
 
   color: #000;
 
-  opacity: 0;
+  opacity: $opacity-0;
   background-color: #fff;
 
   transition: transform 0.4s ease-out;
@@ -97,7 +97,7 @@
 .mobile-menu.open {
   transform: translateY(0);
   display: none;
-  opacity: 1;
+  opacity: $opacity-100;
 
   @include media-tablet-large {
     display: block;

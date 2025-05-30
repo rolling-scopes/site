@@ -1,11 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { usePathname } from 'next/navigation';
 
 import { BurgerMenu } from './ui/burger/burger';
-import { donateOptions } from '../../../dev-data/donate-options.data';
 import { Course } from '@/entities/course';
 import iconBlue from '@/shared/assets/svg/heart-blue.svg';
 import iconYellow from '@/shared/assets/svg/heart-yellow.svg';
@@ -19,7 +18,7 @@ import {
 import { NavItem } from '@/widgets/header/ui/nav-item/nav-item';
 import { MobileView } from '@/widgets/mobile-view';
 import { SchoolMenu } from '@/widgets/school-menu';
-import { communityMenuStaticLinks, schoolMenuStaticLinks } from 'data';
+import { communityMenuStaticLinks, donateOptions, schoolMenuStaticLinks } from 'data';
 
 import styles from './header.module.scss';
 
@@ -44,6 +43,18 @@ export const Header = ({ courses }: HeaderProps) => {
   const handleMenuClose = () => {
     setMenuOpen(false);
   };
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
 
   return (
     <nav className={cx('navbar')} data-testid="navigation">
