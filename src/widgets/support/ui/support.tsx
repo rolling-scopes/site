@@ -2,7 +2,6 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import image from '@/shared/assets/support.webp';
-import { BoostyIcon, OpenCollectiveIcon } from '@/shared/icons';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -11,17 +10,6 @@ import { donateOptions } from 'data';
 import styles from './support.module.scss';
 
 const cx = classNames.bind(styles);
-
-const renderIcon = (icon: string) => {
-  switch (icon) {
-    case 'openCollective':
-      return <OpenCollectiveIcon />;
-    case 'boosty':
-      return <BoostyIcon />;
-    default:
-      return null;
-  }
-};
 
 export const Support = () => (
   <section
@@ -40,11 +28,11 @@ export const Support = () => (
         </Paragraph>
         <Paragraph fontSize="large">Thank you for your support!</Paragraph>
         <div className={cx('donate-options')}>
-          {donateOptions.map(({ id, href, linkLabel, icon }) => (
+          {donateOptions.map(({ id, href, buttonLinkLabel, buttonIcon }) => (
             <div key={id} className={cx('donate-item')}>
               <LinkCustom href={href} variant="primary" external data-testid="link-donate">
-                {renderIcon(icon)}
-                {linkLabel}
+                {buttonIcon()}
+                {buttonLinkLabel}
               </LinkCustom>
             </div>
           ))}
