@@ -12,27 +12,27 @@
   border: 1px solid #e2e8f0;
   border-radius: 4px;
 
-  background: white;
+  background: $color-white;
 
   transition: all 0.2s ease;
 
   &:disabled {
     cursor: not-allowed;
-    opacity: 0.5;
+    opacity: $opacity-50;
   }
 
   &:hover:not(:disabled) {
-    color: #000;
+    color: $color-black;
     background: #f7fafc;
   }
 
   &.active {
     border-color: #3182ce;
-    color: white;
+    color: $color-white;
     background: #3182ce;
   }
 
   &.arrow {
-    font-weight: bold;
+    font-weight: $font-weight-bold;
   }
 }
