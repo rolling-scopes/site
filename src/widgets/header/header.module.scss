@@ -5,21 +5,11 @@
   left: 0;
 
   width: 100%;
-  height: 70px;
+  height: 64px;
   padding: 0 40px;
-  border-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
 
-  opacity: $opacity-100;
   background-color: rgb(255 255 255);
-  box-shadow: rgb(0 0 0 / 8.2%) 0 1.026px 8.0694px 0;
-
-  transition: background-color 0.2s;
-
-  &.none {
-    display: none;
-  }
+  box-shadow: 0 4px 10px 0 hsla(from $color-black h s l/ $opacity-10);
 
   @include media-tablet-large {
     padding: 0 16px;
@@ -40,7 +30,7 @@
   position: relative;
 
   display: flex;
-  gap: 33.8px;
+  gap: 32px;
   align-items: center;
 
   height: 100%;
@@ -84,7 +74,7 @@
   min-height: 100dvh;
   max-height: 100dvh;
   margin-top: 0;
-  padding: 4px 24px 28px 16px;
+  padding: 8px 24px 28px 16px;
 
   color: #000;
 
@@ -111,7 +101,5 @@
 
   max-width: 500px;
 
-  font-size: 14px;
   text-align: start;
-  list-style-type: none;
 }

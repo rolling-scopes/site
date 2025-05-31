@@ -119,7 +119,7 @@ export const NavItem = ({ label, href, icon, reverseLayout = false, children }: 
         )}
         <span className={cx('label-bold')}>
           {label}
-          <span className={cx('label-content')} aria-hidden="true">
+          <span className={cx('label-content')} aria-hidden="true" data-testid="label-content">
             {label}
           </span>
         </span>

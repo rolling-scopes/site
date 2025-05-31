@@ -3,12 +3,8 @@
 
   .menu-logo {
     display: flex;
-    align-items: flex-end;
-    min-height: 58px;
-
-    a {
-      margin-bottom: 3px;
-    }
+    align-items: center;
+    min-height: 48px;
   }
 
   .menu-content {
@@ -47,7 +43,7 @@
 .dark.divider {
   width: 100%;
   border: none;
-  border-bottom: 1px solid $color-gray-250;
+  border-bottom: 1px solid $color-gray-300;
 }
 
 .light.divider {

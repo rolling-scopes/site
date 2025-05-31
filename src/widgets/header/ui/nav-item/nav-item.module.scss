@@ -8,19 +8,18 @@
   position: relative;
 
   display: flex;
-  gap: 9px;
+  gap: 8px;
   align-items: center;
   justify-content: center;
 
   height: 100%;
-  padding: 0;
-  padding-left: 3px;
+  padding: 0 0 0 3px;
   border: none;
 
   background: none;
 
   &:focus-visible {
-    z-index: 3;
+    z-index: 100;
 
     border-radius: 2px;
 
@@ -35,7 +34,7 @@
     content: '';
 
     position: absolute;
-    z-index: 3;
+    z-index: 100;
     bottom: 1px;
     left: 0;
     transform: scaleX(0);
@@ -44,10 +43,6 @@
     height: 2px;
 
     background-color: $color-black;
-  }
-
-  > img {
-    margin-right: 5px;
   }
 
   .label-bold {
@@ -112,7 +107,7 @@
 
   @include media-hover {
     &:hover > .label-bold > .label-content {
-      color: $color-gray-450;
+      color: $color-gray-500;
     }
   }
 }

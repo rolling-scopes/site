@@ -1,7 +1,7 @@
 @use 'constants' as *;
 
 @mixin media-laptop-large {
-  @media (min-width: ($content-width + 1px)) {
+  @media (min-width: ($large-laptop-width)) {
     @content;
   }
 }

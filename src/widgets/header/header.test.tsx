@@ -10,7 +10,6 @@ import { renderWithRouter } from '@/shared/__tests__/utils';
 
 import stylesHeader from './header.module.scss';
 import stylesDropdown from './ui/dropdown/dropdown-wrapper.module.scss';
-import stylesNavItem from './ui/nav-item/nav-item.module.scss';
 
 vi.mock('next/navigation', () => ({
   useRouter: () => ({ push: vi.fn() }),
@@ -19,7 +18,6 @@ vi.mock('next/navigation', () => ({
 
 const cxDropdown = classNames.bind(stylesDropdown);
 const cxHeader = classNames.bind(stylesHeader);
-const cxNavItem = classNames.bind(stylesNavItem);
 
 describe('Header', () => {
   describe('Desktop view', () => {
@@ -34,7 +32,7 @@ describe('Header', () => {
     });
 
     it('renders all the header links', () => {
-      const headerElement = screen.getAllByText(/.*/, { selector: `span.${cxNavItem('label-content')}` });
+      const headerElement = screen.getAllByTestId('label-content');
 
       expect(headerElement).toHaveLength(6);
     });
