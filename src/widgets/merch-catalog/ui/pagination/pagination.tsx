@@ -1,4 +1,6 @@
 'use client';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 
 import styles from './pagination.module.scss';
@@ -32,7 +34,7 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
         onClick={() => onPageChange(Math.max(1, currentPage - 1))}
         disabled={currentPage === 1}
       >
-        &lt;
+        <FontAwesomeIcon icon={faChevronLeft} />
       </button>
       {getVisiblePages().map((page) => (
         <button
@@ -48,7 +50,7 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
         onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
         disabled={currentPage === totalPages}
       >
-        &gt;
+        <FontAwesomeIcon icon={faChevronRight} />
       </button>
     </div>
   );
