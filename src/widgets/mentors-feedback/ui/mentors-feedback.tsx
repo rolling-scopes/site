@@ -2,8 +2,10 @@ import classNames from 'classnames/bind';
 
 import { MentorFeedback, MentorFeedbackCard } from '@/entities/mentor';
 import { Slider } from '@/shared/ui/slider';
-import { VideoPlaylistWithPlayer } from '@/shared/ui/video-playlist-with-player';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import {
+  MentorTalksVideoPlaylistWithPlayer,
+} from '@/widgets/mentors-feedback/ui/mentors-playlist/mentor-talks-video-playlist-with-player';
 
 import styles from './mentors-feedback.module.scss';
 
@@ -48,10 +50,7 @@ export const MentorsFeedback = ({ mentorsFeedback }: MentorsFeedbackProps) => {
               }}
             />
           </div>
-          <VideoPlaylistWithPlayer
-            apiKey={process.env.YOUTUBE_API_KEY}
-            playlistId="PLzLiprpVuH8f7Jg8pgZUCeTN-Q6uVZNhg"
-          />
+          <MentorTalksVideoPlaylistWithPlayer />
         </div>
       </div>
     </section>
