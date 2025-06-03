@@ -33,6 +33,7 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
         className={cx('pagination-button', 'arrow')}
         onClick={() => onPageChange(Math.max(1, currentPage - 1))}
         disabled={currentPage === 1}
+        aria-label="Go to previous page"
       >
         <FontAwesomeIcon icon={faChevronLeft} />
       </button>
@@ -49,6 +50,7 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
         className={cx('pagination-button', 'arrow')}
         onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
         disabled={currentPage === totalPages}
+        aria-label="Go to next page"
       >
         <FontAwesomeIcon icon={faChevronRight} />
       </button>
