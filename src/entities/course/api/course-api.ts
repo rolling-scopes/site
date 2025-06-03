@@ -15,6 +15,17 @@ export class CourseApi {
     });
   }
 
+  public queryCourse(id: string) {
+    return this.services.rest.get<CoursesResponse>('/entries', {
+      params: {
+        'content_type': API_CONTENT_TYPE_DICTIONARY.COURSE,
+        'include': API_MAX_INCLUDE_DEPTH,
+        'order': 'fields.order',
+        'sys.id': id,
+      },
+    });
+  }
+
   public queryCoursesSchedule() {
     return this.services.rest.get<CoursesScheduleResponse>('/app/courses.json');
   }
