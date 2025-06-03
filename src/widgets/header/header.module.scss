@@ -29,7 +29,7 @@
 
     opacity: $opacity-100;
     background-color: rgb(255 255 255);
-    box-shadow: rgb(0 0 0 / 8.2%) 0 1.026px 8.0694px 0;
+    box-shadow: $shadow-xs;
   }
 
   @include media-tablet-large {
@@ -79,7 +79,7 @@
   padding: 8px 24px 8px 16px;
 
   background-color: $color-yellow;
-  box-shadow: 0 4px 16px 0 rgb(0 0 0 / 14%);
+  box-shadow: $shadow-xl;
 }
 
 .mobile-menu {

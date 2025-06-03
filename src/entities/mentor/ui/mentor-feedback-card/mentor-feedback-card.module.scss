@@ -10,7 +10,7 @@
   padding: 40px 32px 40px 32px;
   border-radius: $border-radius-lg;
 
-  box-shadow: 0 4px 12px 0 hsla(from $color-black h s l / $opacity-10);
+  box-shadow: $shadow-lg;
 
   @include media-tablet {
     padding: 16px 16px 20px 16px;
