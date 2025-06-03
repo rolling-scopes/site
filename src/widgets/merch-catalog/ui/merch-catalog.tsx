@@ -1,6 +1,7 @@
+import { Suspense } from 'react';
 import classNames from 'classnames/bind';
 
-import { MerchList } from './merch-list/merch-list';
+import { FilteredMerchView } from './merch-filter/filtered-catalog/filtered-catalog';
 import { merchStore } from '@/entities/merch';
 
 import styles from './merch-catalog.module.scss';
@@ -8,13 +9,24 @@ import styles from './merch-catalog.module.scss';
 const cx = classNames.bind(styles);
 
 export const MerchCatalog = async () => {
-  const products = await merchStore.loadMerchCatalog();
+  const products = (await merchStore.loadMerchCatalog()) || [];
+  const uniqueTags = Array.from(
+    new Set(products.flatMap((product) => product.tags || []).filter((tag) => tag)),
+  ).sort();
 
   return (
     <section className={cx('container')}>
       <div className={cx('content', 'merch-catalog')}>
-        {products && <MerchList products={products} />}
+        <Suspense fallback={<LoadingFilters />}>
+          {products && (
+            <FilteredMerchView initialProducts={products} initialAvailableTags={uniqueTags} />
+          )}
+        </Suspense>
       </div>
     </section>
   );
+};
+
+const LoadingFilters = () => {
+  return <div>Loading filters and products...</div>;
 };
