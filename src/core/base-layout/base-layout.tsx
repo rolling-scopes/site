@@ -1,10 +1,10 @@
 import { PropsWithChildren } from 'react';
 
 import { Footer, Header, Partnered } from './components';
-import { getCourses } from '@/entities/course/api/course-api';
+import { courseStore } from '@/entities/course';
 
 export const BaseLayout = async ({ children }: PropsWithChildren) => {
-  const courses = await getCourses();
+  const courses = await courseStore.loadCourses();
 
   return (
     <>
