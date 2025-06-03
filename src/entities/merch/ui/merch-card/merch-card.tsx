@@ -20,14 +20,10 @@ export const MerchCard = ({ title, preview, download }: MerchProduct) => {
       return;
     }
 
-    try {
-      setIsLoading(true);
-      await downloadArchive(download, `${title}.zip`);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setIsLoading(false);
-    }
+    setIsLoading(true);
+    await downloadArchive(download, `${title}.zip`);
+
+    setIsLoading(false);
   };
 
   return (

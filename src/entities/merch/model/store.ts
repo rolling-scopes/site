@@ -3,15 +3,13 @@ import { api } from '@/shared/api/api';
 
 class MerchStore {
   public loadMerchCatalog = async () => {
-    try {
-      const res = await api.merch.queryMerchCatalog();
+    const res = await api.merch.queryMerchCatalog();
 
-      if (res.isSuccess) {
-        return transformMerchCatalog(res.result);
-      }
-    } catch (e) {
-      console.error(e);
+    if (res.isSuccess) {
+      return transformMerchCatalog(res.result);
     }
+
+    throw new Error('Error while loading merch catalog.');
   };
 }
 
