@@ -19,15 +19,17 @@
     "precommit": "npx lint-staged",
     "prepare": "husky",
     "postbuild": "pagefind --force-language ru --site .next/server/app/docs/ru --output-path build/_next/static/pagefind/ru && pagefind --force-language en --site .next/server/app/docs/en --output-path build/_next/static/pagefind/en",
-    "contentful:prepare": "dotenv -e .env -- bash -c 'cf-content-types-generator -X -r -d -s $CONTENTFUL_SPACE_ID -t $CONTENTFUL_MANAGEMENT_TOKEN -o src/shared/types/contentful' && npx eslint src/shared/types/contentful/*.ts --fix"
+    "contentful:prepare": "dotenv -e .env -- bash -c 'cf-content-types-generator -X -r -d -s $CONTENTFUL_SPACE_ID -t $CONTENTFUL_MANAGEMENT_TOKEN -o src/shared/types/contentful' && npx eslint src/shared/types/contentful/*.ts --fix && prettier --write src/shared/types/contentful/**/*.ts"
   },
   "engines": {
     "node": ">=20.x"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^16.0.1",
     "@next/third-parties": "^15.2.4",
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
+    "contentful-resolve-response": "^1.9.3",
     "dayjs": "^1.11.13",
     "github-markdown-css": "^5.8.1",
     "http-status": "^2.1.0",
@@ -60,6 +62,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
+    "@types/contentful-resolve-response": "^0.1.33",
     "@types/gapi.youtube": "^3.0.40",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.15.3",

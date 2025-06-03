@@ -3,10 +3,10 @@ import cn from 'classnames';
 import { Stages } from '../stages/stages';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { type StudyPathPage, type StudyPathProps, studyPath } from 'data';
+import { studyPath } from 'data';
 
-export const StudyPath = ({ page }: StudyPathPage) => {
-  const path: StudyPathProps = studyPath[page];
+export const StudyPath = () => {
+  const path = studyPath;
   const { sectionTitle, sectionIntro, stages } = path;
 
   if (!stages || !stages.length) {

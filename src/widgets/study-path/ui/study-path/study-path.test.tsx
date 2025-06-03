@@ -2,11 +2,9 @@ import { render, screen } from '@testing-library/react';
 
 import { StudyPath } from './study-path';
 
-const stages = ['courses', 'jsEn', 'jsRu', 'angular', 'awsDev'] as const;
-
 describe('StudyPath Component', () => {
-  it.each([stages])('renders component with title, intro and stages correctly for %o', (page) => {
-    const studyPath = render(<StudyPath page={page} />);
+  it('renders component with title, intro and stages correctly', () => {
+    const studyPath = render(<StudyPath />);
 
     const sectionTitle = studyPath.getByRole('heading', { level: 2 });
     const sectionIntro = studyPath.getAllByRole('paragraph')[0];
