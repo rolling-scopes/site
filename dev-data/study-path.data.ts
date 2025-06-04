@@ -1,5 +1,4 @@
 import type { StudyPathPage, StudyPathProps } from './study-path-data.types';
-import { ROUTES } from '@/core/const';
 import AWSIcon from '@/shared/assets/icons/aws-black.svg';
 import HTMLIcon from '@/shared/assets/icons/html5.svg';
 import JSIcon from '@/shared/assets/icons/javascript.svg';
@@ -8,6 +7,7 @@ import ReactAngIcon from '@/shared/assets/icons/react-angular.svg';
 import feJsStage1 from '@/shared/assets/stages/stage-1.webp';
 import feJsStage2 from '@/shared/assets/stages/stage-2.webp';
 import feJsStage3 from '@/shared/assets/stages/stage-3.webp';
+import { ROUTES } from '@/shared/constants';
 
 export const studyPath: Record<StudyPathPage['page'], StudyPathProps> = {
   courses: {

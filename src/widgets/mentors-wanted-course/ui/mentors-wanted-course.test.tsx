@@ -2,9 +2,9 @@ import { screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
 import { MentorsWantedCourse } from './mentors-wanted-course';
-import { LINKS } from '@/core/const';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import mentorImg from '@/shared/assets/mentors-wanted-poster.webp';
+import { LINKS } from '@/shared/constants';
 
 const mockedData = {
   titleText: 'Mentors Wanted!',

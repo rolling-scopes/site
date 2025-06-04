@@ -4,8 +4,8 @@ import { notFound } from 'next/navigation';
 import { DocsContent } from '../../components/docs-content/docs-content';
 import { TITLE_POSTFIX } from '../../constants';
 import { Menu } from '../../types';
-import { fetchMarkdownContent } from '../../utils/fetchMarkdownContent';
-import { fetchMenu } from '../../utils/fetchMenu';
+import { fetchMarkdownContent } from '../../utils/fetch-markdown-content';
+import { fetchMenu } from '../../utils/fetch-menu';
 import { Language } from '@/shared/types';
 
 type RouteParams = { lang: Language;

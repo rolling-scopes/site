@@ -4,13 +4,14 @@ import { describe, expect, it } from 'vitest';
 import { DateSimple } from './date-simple';
 import noteIcon from '@/shared/assets/icons/note-icon.svg';
 import { LABELS, TO_BE_DETERMINED } from '@/shared/constants';
-import { dayJS } from '@/shared/helpers/dayJS';
+import { dayJS } from '@/shared/helpers/day-js';
 
 describe('DateSimple', () => {
   it('renders UI correctly having only start date', () => {
     const startDate = '2088-01-01';
+    const showMentoringStartDate = false;
 
-    render(<DateSimple startDate={startDate} />);
+    render(<DateSimple startDate={startDate} showMentoringStartDate={showMentoringStartDate} />);
     expect(screen.queryByText(LABELS.START_DATE)).toBeNull();
     expect(screen.getByText(`${startDate}`)).toBeInTheDocument();
     expect(screen.queryByAltText('note-icon')).toBeNull();
@@ -21,6 +22,7 @@ describe('DateSimple', () => {
     const startDate = '2088-01-01';
     const endDate = '2088-06-30';
     const labelSeparator = 'test-separator';
+    const showMentoringStartDate = true;
 
     render(
       <DateSimple
@@ -28,6 +30,7 @@ describe('DateSimple', () => {
         startDate={startDate}
         endDate={endDate}
         labelSeparator={labelSeparator}
+        showMentoringStartDate={showMentoringStartDate}
       />,
     );
     expect(screen.getByAltText('note-icon')).toHaveAttribute('src', noteIcon.src);
@@ -40,8 +43,15 @@ describe('DateSimple', () => {
   it('displays dates and date attributes correctly including endDate TBD case', () => {
     const startDate = '2088-01-01';
     const endDate = TO_BE_DETERMINED;
+    const showMentoringStartDate = true;
 
-    render(<DateSimple startDate={startDate} endDate={endDate} />);
+    render(
+      <DateSimple
+        startDate={startDate}
+        endDate={endDate}
+        showMentoringStartDate={showMentoringStartDate}
+      />,
+    );
     const startDateElement = screen.getByTestId('date-time-start');
     const endDateElement = screen.getByTestId('date-time-end');
 
@@ -54,6 +64,7 @@ describe('DateSimple', () => {
   it('displays dates and date attributes correctly when start and end dates are TBD', () => {
     const startDate = TO_BE_DETERMINED;
     const endDate = TO_BE_DETERMINED;
+    const showMentoringStartDate = true;
 
     render(
       <DateSimple
@@ -61,6 +72,7 @@ describe('DateSimple', () => {
         startDate={startDate}
         labelSeparator={LABELS.MENTOR_ACTIVITIES_SEPARATOR}
         endDate={endDate}
+        showMentoringStartDate={showMentoringStartDate}
       />,
     );
     const startDateElement = screen.getByTestId('date-time-start');
@@ -77,12 +89,14 @@ describe('DateSimple', () => {
   it('displays correctly when endDate is undefined but label separator not', () => {
     const startDate = '2088-01-01';
     const labelSeparator = 'test-separator';
+    const showMentoringStartDate = true;
 
     render(
       <DateSimple
         label={LABELS.START_DATE}
         startDate={startDate}
         labelSeparator={labelSeparator}
+        showMentoringStartDate={showMentoringStartDate}
       />,
     );
     const labelSeparatorElement = screen.queryByText(`${labelSeparator}`);
@@ -93,9 +107,10 @@ describe('DateSimple', () => {
   it('displays start date and additional info passed as children', () => {
     const startDate = '2088-01-01';
     const additionalInfoText = 'Test additional info element';
+    const showMentoringStartDate = true;
 
     render(
-      <DateSimple startDate={startDate}>
+      <DateSimple startDate={startDate} showMentoringStartDate={showMentoringStartDate}>
         <span>{additionalInfoText}</span>
       </DateSimple>,
     );

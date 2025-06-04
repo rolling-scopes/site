@@ -1,4 +1,4 @@
-import { COURSE_TITLES, CourseMap } from './courseTitles.data';
+import { COURSE_TITLES, CourseMap } from './course-titles.data';
 
 export const courseDataMap: CourseMap = {
   [COURSE_TITLES.JS_EN]: {
@@ -311,6 +311,7 @@ export const courseDataMap: CourseMap = {
         'Chrome DevTools',
         'Figma',
         'Understanding the concept of REST API',
+        'Successful completion of JS/FE Stage 2',
       ],
     },
     willLearn: [],
@@ -334,5 +335,18 @@ export const courseDataMap: CourseMap = {
         description: ['Knowledge and experience with any cloud platforms (AWS, GCP, Azure)'],
       },
     ],
+  },
+  [COURSE_TITLES.AWS_AI]: {
+    title: 'Что требуется для обучения?',
+    knowBefore: {
+      title: 'Необходимо до начала',
+      description: [
+        'Уровень владения английским языком от B1 (Intermediate) и выше',
+        'Опыт работы с языками: JS или Python',
+        'Свободные 4-8 часа в неделю',
+        'Базовые знания и опыт работы с облачной платформой AWS будут полезны для обучения',
+      ],
+    },
+    willLearn: [],
   },
 };

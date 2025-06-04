@@ -7,7 +7,7 @@ import {
   AwsFundamentalsBadge,
   COURSE_TITLES,
   CourseNamesKeys,
-} from './courseTitles.data';
+} from './course-titles.data';
 import awsPractitionerBadge from '@/shared/assets/aws-cloud-pract-badge.webp';
 import angularImg from '@/shared/assets/rs-slope-angular.webp';
 import awsDevImg from '@/shared/assets/rs-slope-aws-dev.webp';
@@ -117,8 +117,8 @@ export const contentMap: ContentMap = {
     content: [
       <Paragraph key="angular 01">
         This course is designed for individuals with a solid foundation in JavaScript, TypeScript,
-        and front-end development. Familiarity with RS School processes and RS Stage #2
-        certification is a plus.
+        and front-end development. The course is exclusively available for graduates who have
+        successfully completed JS/FE Stage 2.
       </Paragraph>,
       <Paragraph key="angular 02">
         The course lasts 11 weeks, requiring approximately 20-40 hours of study per week.
@@ -187,45 +187,38 @@ export const contentMap: ContentMap = {
     title: 'Программа обучения',
     content: [
       <div key="js / front-end pre-school ru 01">
-        <Paragraph>Введение в RS School:</Paragraph>
+        <Paragraph>Цели курса:</Paragraph>
         <List
           data={[
-            'Знакомство со школой, профессией JS/Front-end разработчика и системой контроля версий Git.',
+            'Помочь участникам освоить базовые инструменты и процессы, применяемые в JavaScript/Front-end разработке.',
+            'Развить привычку к регулярной практике и самообучению.',
+            'Подготовить к полноценному курсу по JavaScript/Front-end (Stage#1).',
           ]}
           type="unmarked"
         />
       </div>,
       <div key="js / front-end pre-school ru 02">
-        <Paragraph>Основы веб-разработки:</Paragraph>
+        <Paragraph>Что вы изучите:</Paragraph>
         <List
           data={[
-            'HTML и CSS: Основы, позиционирование с Flexbox и адаптивные макеты.',
-            'JavaScript: Основы, функции, объекты, массивы и работа с DOM.',
-            'Инструменты: Chrome Dev Tools, VS Code, Терминал и Figma.',
+            'Структуру и основы HTML, CSS и JavaScript.',
+            'Основы работы с системой контроля версий Git и GitHub.',
+            'Приёмы эффективного поиска информации.',
+            'Основы коммуникации и обратной связи в среде разработчиков.',
+            'Навыки тайм-менеджмента и ведения задач.',
+            'Практику анализа чужого кода и примеров.',
           ]}
           type="unmarked"
         />
       </div>,
       <div key="js / front-end pre-school ru 03">
-        <Paragraph>Проектное обучение:</Paragraph>
+        <Paragraph>Формат обучения:</Paragraph>
         <List
           data={[
-            'Проект CV: Markdown, HTML, CSS и Git.',
-            'Проект Library: Фиксированная и адаптивная вёрстка, добавление функционала.',
-            'CSS Mem Slider: Продвинутый проект по CSS.',
-            'Проекты JS-30: Аудиоплеер, галерея изображений и случайная игра.',
+            'Самостоятельное изучение материалов с поддержкой сообщества.',
+            'Еженедельные задания и мини-проекты для закрепления тем.',
+            'Код-ревью от однокурсников.',
           ]}
-          type="unmarked"
-        />
-      </div>,
-      <div key="js / front-end pre-school ru 04">
-        <Paragraph>Задачи Codewars:</Paragraph>
-        <List data={['Еженедельные задачи по алгоритмам и структурам данных.']} type="unmarked" />
-      </div>,
-      <div key="js / front-end pre-school ru 05">
-        <Paragraph>Итоговая аттестация:</Paragraph>
-        <List
-          data={['Кросс-чек проектов, тесты и ревью кода. Выдача сертификата.']}
           type="unmarked"
         />
       </div>,
@@ -295,6 +288,28 @@ export const contentMap: ContentMap = {
           'Support: you will get regular feedback and guidance on practical tasks, helping refine your skills to the next level',
           'Flexibility: depending on your weekly engagement, the recommendation is 3-4 hours daily',
           'Community-based education: the community will help you explore emerging technologies and best practices, ensuring you are equipped with the knowledge that the current market seeks',
+        ]}
+      />,
+    ],
+    image: awsDevImg,
+  },
+  [COURSE_TITLES.AWS_AI]: {
+    title: 'О курсе',
+    content: [
+      <Paragraph key="aws ia 01">
+        AWS AI Practitioner - это бесплатный курс в RS School, направленный на обучение наших
+        студентов основам искусственного интеллекта и машинного обучения (AI/ML), а также подготовку
+        к сертификации AWS Certified AI Practitioner
+      </Paragraph>,
+      <Subtitle key="aws ai 04">Программа включает:</Subtitle>,
+      <List
+        key="aws ai 05"
+        data={[
+          'Базовые знания в области AI/ML — понимание ключевых концепций, алгоритмов и приложений искусственного интеллекта и машинного обучения.',
+          'Практические навыки работы с генеративным AI — работа с RAG, fine-tuning, prompt engineering и создание AI-приложений с помощью Amazon Bedrock, PartyRock и Amazon Q.',
+          'Знакомство с портфолио AI/ML-сервисов AWS — понимание возможностей и сценариев использования таких сервисов, как SageMaker, Rekognition, Comprehend и др.',
+          'Подготовка к сертификации AWS Certified AI Practitioner — прохождение обучающих курсов, тестов и участие в воркшопах, направленных на успешную сдачу экзамена.',
+          'Опыт реализации AI-проектов на практике — выполнение домашних заданий, участие в воркшопах и взаимодействие с AI-сервисами через собственные приложения (например, на Node.js).',
         ]}
       />,
     ],
