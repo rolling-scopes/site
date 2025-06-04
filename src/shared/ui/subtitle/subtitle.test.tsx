@@ -32,7 +32,7 @@ describe('Subtitle component', () => {
 
     sizes.forEach((size) => {
       const { getByTestId } = render(
-        <Subtitle fontSize={size}>
+        <Subtitle size={size}>
           {size}
           Font Size
         </Subtitle>,
@@ -53,7 +53,7 @@ describe('Subtitle component', () => {
 
   it('applies multiple variant classes correctly', () => {
     render(
-      <Subtitle className="custom-class" fontSize="large">
+      <Subtitle className="custom-class" size="large">
         Multiple Variants
       </Subtitle>,
     );

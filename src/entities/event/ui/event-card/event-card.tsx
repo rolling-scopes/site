@@ -31,10 +31,10 @@ export const EventCard = ({
       <div className={cx('card-header')} data-testid="card-header">
         <p className={cx('event-tag')}>{eventType}</p>
         <section className={cx('about-organization')} data-testid="organization-section">
-          <Subtitle className={cx('organized-by')} fontWeight="regular">
+          <Subtitle className={cx('organized-by')} weight="regular">
             {organizedBy}
           </Subtitle>
-          <Subtitle as="h4" className={cx('event-organization')} fontSize="extra-small">
+          <Subtitle as="h4" className={cx('event-organization')} size="extra-small">
             {organization}
           </Subtitle>
         </section>

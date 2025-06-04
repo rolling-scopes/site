@@ -42,8 +42,8 @@ export const MentorFeedbackCard = ({ name, course, review, photo }: MentorFeedba
           <Subtitle
             as="h3"
             className={cx('card-title')}
-            fontSize="small"
-            fontWeight="bold"
+            size="small"
+            weight="bold"
             data-testid="card-title"
           >
             {name}
@@ -51,8 +51,8 @@ export const MentorFeedbackCard = ({ name, course, review, photo }: MentorFeedba
           <Subtitle
             as="h4"
             className={cx('card-subtitle')}
-            fontWeight="medium"
-            fontSize="extra-small"
+            size="extra-small"
+            weight="medium"
             data-testid="card-subtitle"
           >
             <b>Course: </b>

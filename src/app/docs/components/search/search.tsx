@@ -128,7 +128,7 @@ function Result({ result }: { result: PagefindSearchResult }) {
   return (
     <div>
       <Link href={removeHtmlExtension(data.url)}>
-        <Subtitle fontSize="extra-small" fontWeight="bold">{data.meta.title}</Subtitle>
+        <Subtitle size="extra-small" weight="bold">{data.meta.title}</Subtitle>
         <p dangerouslySetInnerHTML={{ __html: data.excerpt }} />
       </Link>
 

@@ -18,7 +18,7 @@ export const ActivityCard = ({ title, description, icon, links }: ActivityCardPr
       <div className={cx('icon-accent')}></div>
       <Image src={icon} alt="" data-testid="activity-card-icon" />
     </div>
-    <Subtitle className={cx('card-title')} fontSize="large" fontWeight="bold">
+    <Subtitle className={cx('card-title')} size="large" weight="bold">
       {title}
     </Subtitle>
     <Paragraph className={cx('card-description')}>{description}</Paragraph>

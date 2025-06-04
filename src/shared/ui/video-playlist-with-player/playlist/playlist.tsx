@@ -28,9 +28,9 @@ export const Playlist = ({
   return (
     <div className={cx('playlist')} style={style} data-testid="playlist">
       <Subtitle
-        fontSize="small"
-        fontWeight="bold"
         className={cx('playlist-title')}
+        size="small"
+        weight="bold"
         data-testid="playlist-title"
       >
         {`${videos.length} ${title}`}

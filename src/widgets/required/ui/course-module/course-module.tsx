@@ -17,7 +17,7 @@ export function CourseModuleElement({ courseModule }: CourseModuleElementProps) 
 
   return (
     <article className={cx('course-module-element')}>
-      <Subtitle className={cx('course-module-title')} fontSize="extra-small">
+      <Subtitle className={cx('course-module-title')} size="extra-small">
         {title}
       </Subtitle>
       <List data={description} />

@@ -27,7 +27,7 @@ export const AboutCourseGrid = ({ items }: AboutCourseGridProps) => {
               data-testid="grid-icon"
             />
 
-            <Subtitle fontSize="extra-small">{title}</Subtitle>
+            <Subtitle size="extra-small">{title}</Subtitle>
           </header>
           {typeof info === 'string' ? <Paragraph>{info}</Paragraph> : info}
         </article>
