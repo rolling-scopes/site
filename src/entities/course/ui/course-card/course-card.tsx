@@ -7,6 +7,7 @@ import { LABELS } from '@/shared/constants';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { ShortInfoPanel } from '@/shared/ui/short-info-panel';
 import { Subtitle } from '@/shared/ui/subtitle';
+import { COURSE_TITLES } from 'data';
 
 import styles from './course-card.module.scss';
 
@@ -15,6 +16,7 @@ export const cx = classNames.bind(styles);
 export type CourseCardProps = Pick<
   Course,
   | 'title'
+  | 'subTitle'
   | 'iconSrc'
   | 'startDate'
   | 'detailsUrl'
@@ -32,6 +34,7 @@ Pick<HTMLProps<HTMLDivElement>, 'className'> & {
 
 export const CourseCard = ({
   title,
+  subTitle,
   iconSrc,
   startDate,
   registrationEndDate,
@@ -49,6 +52,7 @@ export const CourseCard = ({
   const dateLabel = size === 'sm' ? LABELS.START_DATE_SHORT : LABELS.START_DATE;
   const fontSize = size === 'md' ? 'large' : 'small';
 
+  const mark = title === COURSE_TITLES.ANGULAR && !showMentoringStartDate ? ` (${subTitle})` : '';
   const classes = {
     [`size-${size}`]: true,
     [className]: true,
@@ -64,7 +68,7 @@ export const CourseCard = ({
       <div className={cx('card-header')} style={cardStyle} data-testid="card-header">
         <Image src={iconSrc} alt={title} />
         <Subtitle className={cx('course-title')} fontSize={fontSize}>
-          {title}
+          {`${title}${mark}`}
         </Subtitle>
       </div>
       <div className={cx('course-info')}>
@@ -78,7 +82,6 @@ export const CourseCard = ({
           personalMentoringEndDate={personalMentoringEndDate}
         >
         </ShortInfoPanel>
-
         <LinkCustom
           className={cx('course-link')}
           href={detailsUrl}
