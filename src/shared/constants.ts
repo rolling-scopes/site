@@ -8,6 +8,7 @@ export const RS_GRADUATED_ONLY = 'Alumni only';
 export const REGISTRATION_WILL_OPEN_SOON = 'Registration will open soon!';
 export const REGISTRATION_WILL_OPEN_SOON_RU = 'Регистрация откроется скоро!';
 export const UNKNOWN_API_ERROR = 'Unknown error, API request failed.';
+export const YOUTUBE_API_MAX_RESULTS_PER_PAGE = 50;
 
 /**
  * https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/links
@@ -17,6 +18,7 @@ export const API_MAX_INCLUDE_DEPTH = 10;
 export const LABELS = {
   START_DATE: 'Course starts on:',
   START_DATE_SHORT: 'Start:',
+  REGISTRATION_END: 'Enroll untill:',
   COURSE_LANGUAGE_EN: 'English',
   COURSE_LANGUAGE_RU: 'Russian',
   MENTOR_ACTIVITIES: 'Mentorship starts on:',
@@ -41,6 +43,7 @@ export const COURSE_LINKS = {
   AWS_FUNDAMENTALS: 'https://rs.school/courses/aws-fundamentals',
   AWS_CLOUD_DEVELOPER: 'https://rs.school/courses/aws-cloud-developer',
   AWS_DEVOPS: 'https://rs.school/courses/aws-devops',
+  AWS_AI: 'https://rs.school/courses/aws-ai',
 };
 
 export const KEY_CODES = { ESCAPE: 'Escape' } as const;
@@ -98,9 +101,12 @@ export const ROUTES = {
   AWS_DEVELOPER: 'aws-cloud-developer',
   AWS_FUNDAMENTALS: 'aws-fundamentals',
   AWS_DEVOPS: 'aws-devops',
+  AWS_AI: 'aws-ai',
   REACT: 'reactjs',
   MENTORSHIP: 'mentorship',
   DOCS_EN: 'docs/en',
   DOCS_RU: 'docs/ru',
   NOT_FOUND: '*',
 } as const;
+
+export const SWR_CACHE_KEY = { MENTORS_PLAYLIST: 'MENTORS_PLAYLIST' };
