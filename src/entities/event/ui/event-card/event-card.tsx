@@ -31,7 +31,7 @@ export const EventCard = ({
       <div className={cx('card-header')} data-testid="card-header">
         <p className={cx('event-tag')}>{eventType}</p>
         <section className={cx('about-organization')} data-testid="organization-section">
-          <Subtitle className={cx('organized-by')} weight="regular">
+          <Subtitle size="extra-small" weight="regular">
             {organizedBy}
           </Subtitle>
           <Subtitle as="h4" className={cx('event-organization')} size="extra-small">
@@ -39,7 +39,7 @@ export const EventCard = ({
           </Subtitle>
         </section>
         <section className={cx('about-event')} data-testid="about-section">
-          <Subtitle className={cx('event-title')}>{title}</Subtitle>
+          <Subtitle className={cx('event-title')} size="small">{title}</Subtitle>
           <p title={additionalInfo} className={cx('event-additional-info')}>
             {additionalInfo}
           </p>
