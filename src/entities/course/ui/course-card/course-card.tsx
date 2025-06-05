@@ -67,7 +67,7 @@ export const CourseCard = ({
     <article className={cx('course-card', classes)} data-testid="course-card">
       <div className={cx('card-header')} style={cardStyle} data-testid="card-header">
         <Image src={iconSrc} alt={title} />
-        <Subtitle className={cx('course-title')} fontSize={fontSize}>
+        <Subtitle className={cx('course-title')} size={fontSize}>
           {`${title}${mark}`}
         </Subtitle>
       </div>

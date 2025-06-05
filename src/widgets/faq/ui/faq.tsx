@@ -23,7 +23,7 @@ export const Faq = ({ faqData }: FaqProps) => {
             <li className={cx('list-item')} key={question}>
               <Subtitle
                 className={cx('question', 'marked')}
-                fontSize="extra-small"
+                size="extra-small"
                 data-testid="faq-question"
               >
                 {`${index + 1}. ${question}`}
