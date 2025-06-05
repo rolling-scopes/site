@@ -42,6 +42,12 @@
   }
 }
 
+@mixin media-desktop-wide {
+  @media (min-width: #{$content-width + 1px}) {
+    @content;
+  }
+}
+
 @mixin media-hover {
   @media (hover: hover) {
     @content;

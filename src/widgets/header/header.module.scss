@@ -24,6 +24,10 @@
   max-width: 1440px;
   height: 100%;
   margin: 0 auto;
+
+  @include media-desktop-wide {
+    max-width: 1280px;
+  }
 }
 
 .navbar-content > .menu {

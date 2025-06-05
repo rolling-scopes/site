@@ -48,6 +48,7 @@ export const introLocalizedContent = {
   [COURSE_TITLES.AWS_FUNDAMENTALS]: enIntro,
   [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: enIntro,
   [COURSE_TITLES.AWS_DEVOPS]: enIntro,
+  [COURSE_TITLES.AWS_AI]: ruIntro,
 };
 
 const listData = {
@@ -98,8 +99,8 @@ const listData = {
 const angularNodejsAwsFundamentals: (course: string) => AboutCourseInfo[] = () => [
   {
     id: 1,
-    title: 'For JS/FE graduates',
-    info: 'This course is exclusively available for students who have successfully completed JS/FE Stage 2. The RS School continues working by the principle of "Pay it forward". Members of our community share their knowledge and check students\' tasks for free. And we hope that our students will continue this work as our mentors in the future.',
+    title: 'For RS School alumni',
+    info: 'This course is exclusively available for students who have successfully completed any RS School course. The RS School continues working by the principle of "Pay it forward". Members of our community share their knowledge and check students\' tasks for free. And we hope that our students will continue this work as our mentors in the future.',
     icon: personIcon,
   },
   {
@@ -173,13 +174,13 @@ const javaScriptRU: () => AboutCourseInfo[] = () => {
     {
       id: 2,
       title: 'Наставники и тренеры со всего мира',
-      info: <List data={listData.javaScriptRU} type="unmarked" size="compact" />,
+      info: 'Онлайн встречи каждую неделю. Продолжительность курса: 4 недели.',
       icon: planetIcon,
     },
     {
       id: 3,
       title: 'Бесплатное образование',
-      info: 'Почувствуйте желание поделиться своим опытом и знаниями',
+      info: 'Наши курсы абсолютно бесплатны и доступны всем желающим.',
       icon: giftIcon,
     },
     {
@@ -251,6 +252,35 @@ const awsDevops: AboutCourseInfo[] = [
   },
 ];
 
+const awsAi: () => AboutCourseInfo[] = () => {
+  return [
+    {
+      id: 1,
+      title: 'Для всех',
+      info: 'Каждый может учиться в RS School, независимо от возраста, профессиональной занятости или места жительства. Однако вам следует иметь достаточные базовые знания перед началом программы.',
+      icon: personIcon,
+    },
+    {
+      id: 2,
+      title: 'Расписание',
+      info: 'Онлайн встречи каждую неделю. Продолжительность курса 4 недели.',
+      icon: planetIcon,
+    },
+    {
+      id: 3,
+      title: 'Бесплатное образование',
+      info: 'Почувствуйте желание поделиться своим опытом и знаниями',
+      icon: giftIcon,
+    },
+    {
+      id: 4,
+      title: 'Сертификат',
+      info: 'Электронный сертификат об успешном окончании курса выдается всем, кто пройдет два этапа обучения.',
+      icon: awardIcon,
+    },
+  ];
+};
+
 export const contentMapAbout: ContentMap = {
   [COURSE_TITLES.JS_RU]: javaScriptRU(),
   [COURSE_TITLES.JS_EN]: javaScriptEN(),
@@ -261,4 +291,5 @@ export const contentMapAbout: ContentMap = {
   [COURSE_TITLES.AWS_FUNDAMENTALS]: angularNodejsAwsFundamentals('aws fundamentals'),
   [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: awsCloudDeveloper,
   [COURSE_TITLES.AWS_DEVOPS]: awsDevops,
+  [COURSE_TITLES.AWS_AI]: awsAi(),
 };
