@@ -21,7 +21,9 @@ export const Merch = () => (
         <WidgetTitle mods="asterisk">{merchData.title}</WidgetTitle>
         <Paragraph fontSize="large">{merchData.mainParagraph}</Paragraph>
         <Paragraph>{merchData.description}</Paragraph>
-        <LinkCustom href={LINKS.MERCH} variant="primary" external>{merchData.linkTitle}</LinkCustom>
+        <LinkCustom href={LINKS.MERCH} variant="primary">
+          {merchData.linkTitle}
+        </LinkCustom>
       </article>
       <Image
         className={cx('image')}

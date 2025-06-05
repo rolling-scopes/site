@@ -1,5 +1,6 @@
 import { CourseApi } from '@/entities/course/api/course-api';
 import { MentorApi } from '@/entities/mentor/api/mentor-api';
+import { MerchApi } from '@/entities/merch/api/merch-api';
 import { TrainerApi } from '@/entities/trainer/api/trainer-api';
 import { ApiBaseClass } from '@/shared/api/api-base-class';
 import { ApiServices } from '@/shared/types';
@@ -10,6 +11,7 @@ export class Api {
   public readonly trainer: TrainerApi;
   public readonly course: CourseApi;
   public readonly mentor: MentorApi;
+  public readonly merch: MerchApi;
 
   constructor(
     private readonly baseURI: string,
@@ -23,5 +25,6 @@ export class Api {
     this.trainer = new TrainerApi(this.services);
     this.course = new CourseApi(this.services);
     this.mentor = new MentorApi(this.services);
+    this.merch = new MerchApi(this.services);
   }
 }

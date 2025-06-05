@@ -14,4 +14,5 @@ export const breadcrumbNameMap: BreadcrumbNameMap = {
   'aws-devops': 'AWS DevOps',
   'aws-ai': 'AWS AI Practitioner',
   'mentorship': 'Mentorship',
+  'merch': 'Merch',
 } as const;
