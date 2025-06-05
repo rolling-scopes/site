@@ -1,7 +1,7 @@
 .requirements {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: $gap-xl;
 }
 
 .title {
@@ -10,7 +10,7 @@
 
 .requirements-info {
   display: flex;
-  gap: 32px;
+  gap: $gap-xl;
 
   @include media-tablet-large {
     flex-direction: column;

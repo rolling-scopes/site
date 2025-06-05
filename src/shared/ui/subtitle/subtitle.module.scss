@@ -3,21 +3,21 @@
   color: $color-gray-900;
 
   &.extra-small-font-size {
-    font-size: 20px;
+    font-size: $font-size-l;
     line-height: 28px;
 
     @include media-tablet {
-      font-size: 18px;
+      font-size: $font-size-m;
       line-height: 24px;
     }
   }
 
   &.small-font-size {
-    font-size: 24px;
+    font-size: $font-size-xl;
     line-height: 32px;
 
     @include media-tablet {
-      font-size: 20px;
+      font-size: $font-size-l;
       line-height: 28px;
     }
   }
@@ -27,7 +27,7 @@
     line-height: 36px;
 
     @include media-tablet {
-      font-size: 24px;
+      font-size: $font-size-xl;
       line-height: 32px;
     }
   }
@@ -43,7 +43,7 @@
   }
 
   &.extra-large-font-size {
-    font-size: 36px;
+    font-size: $font-size-xxl;
     line-height: 44px;
 
     @include media-tablet {
