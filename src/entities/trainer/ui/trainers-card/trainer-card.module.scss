@@ -6,9 +6,9 @@
 
   max-width: 700px;
   padding: 40px 32px 40px 32px;
-  border-radius: 16px;
+  border-radius: $border-radius-lg;
 
-  box-shadow: 0 4px 16px 0 rgb(0 0 0 / 12%);
+  box-shadow: $shadow-xl;
 
   .card-picture {
     max-width: 120px;
@@ -17,7 +17,7 @@
     img {
       width: 100%;
       height: auto;
-      border-radius: 12px;
+      border-radius: $border-radius-lg;
     }
   }
 
@@ -27,28 +27,24 @@
 
   .card-title {
     margin: 0;
-    font-size: 24px;
+    font-size: $font-size-h4;
     font-weight: $font-weight-medium;
     line-height: 32px;
 
     @include media-tablet {
-      font-size: 20px;
+      font-size: $font-size-xl;
     }
   }
 
   .card-subtitle {
     margin: 0;
-    font-size: 18px;
+    font-size: $font-size-lg;
     font-weight: $font-weight-medium;
     color: $color-gray-500;
-
-    @include media-tablet {
-      font-size: 18px;
-    }
   }
 
   .card-content {
-    font-size: 16px;
+    font-size: $font-size-md;
     font-weight: $font-weight-regular;
     line-height: 24px;
   }

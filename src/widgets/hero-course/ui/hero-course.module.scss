@@ -21,12 +21,12 @@
 
     .hero-subtitle {
       margin: 0;
-      font-size: 24px;
+      font-size: $font-size-h4;
       font-weight: $font-weight-medium;
       line-height: 32px;
 
       @include media-tablet {
-        font-size: 20px;
+        font-size: $font-size-xl;
         line-height: 28px;
       }
     }

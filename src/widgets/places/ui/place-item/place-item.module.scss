@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: space-between;
 
-  font-size: 20px;
+  font-size: $font-size-xl;
   font-weight: $font-weight-medium;
   line-height: 28px;
   color: $color-black;
@@ -19,12 +19,12 @@
   .divider {
     display: inline-block;
     height: 12px;
-    font-size: 36px;
+    font-size: $font-size-h1;
     color: $color-red;
   }
 
   @include media-tablet {
-    font-size: 16px;
+    font-size: $font-size-md;
     font-weight: $font-weight-regular;
     line-height: 24px;
   }

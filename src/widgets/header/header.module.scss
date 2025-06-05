@@ -1,6 +1,6 @@
 .navbar {
   position: sticky;
-  z-index: 100;
+  z-index: $z-index-overlay;
   top: 0;
   left: 0;
 
@@ -27,9 +27,9 @@
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 
-    opacity: 1;
-    background-color: rgb(255 255 255);
-    box-shadow: rgb(0 0 0 / 8.2%) 0 1.026px 8.0694px 0;
+    opacity: $opacity-100;
+    background-color: $color-white;
+    box-shadow: $shadow-xs;
   }
 
   @include media-tablet-large {
@@ -78,8 +78,8 @@
   width: 100%;
   padding: 8px 24px 8px 16px;
 
-  background-color: #ffdb20;
-  box-shadow: 0 4px 16px 0 rgb(0 0 0 / 14%);
+  background-color: $color-yellow;
+  box-shadow: $shadow-xl;
 }
 
 .mobile-menu {
@@ -101,9 +101,9 @@
   margin-top: 0;
   padding: 4px 24px 28px 16px;
 
-  color: #000;
+  color: $color-black;
 
-  background-color: #fff;
+  background-color: $color-white;
 
   transition: transform 0.4s ease-out;
 }

@@ -3,51 +3,51 @@
   color: $color-gray-900;
 
   &.extra-small-font-size {
-    font-size: 20px;
+    font-size: $font-size-xl;
     line-height: 28px;
 
     @include media-tablet {
-      font-size: 18px;
+      font-size: $font-size-lg;
       line-height: 24px;
     }
   }
 
   &.small-font-size {
-    font-size: 24px;
+    font-size: $font-size-h4;
     line-height: 32px;
 
     @include media-tablet {
-      font-size: 20px;
+      font-size: $font-size-xl;
       line-height: 28px;
     }
   }
 
   &.medium-font-size {
-    font-size: 28px;
+    font-size: $font-size-h3;
     line-height: 36px;
 
     @include media-tablet {
-      font-size: 24px;
+      font-size: $font-size-h4;
       line-height: 32px;
     }
   }
 
   &.large-font-size {
-    font-size: 32px;
+    font-size: $font-size-h2;
     line-height: 40px;
 
     @include media-tablet {
-      font-size: 28px;
+      font-size: $font-size-h3;
       line-height: 36px;
     }
   }
 
   &.extra-large-font-size {
-    font-size: 36px;
+    font-size: $font-size-h1;
     line-height: 44px;
 
     @include media-tablet {
-      font-size: 32px;
+      font-size: $font-size-h2;
       line-height: 36px;
     }
   }

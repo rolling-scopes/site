@@ -6,7 +6,7 @@
   max-width: 889px;
   padding: 0 32px;
   border: none;
-  border-radius: 12px;
+  border-radius: $border-radius-lg;
 
   line-height: 24px;
 
@@ -34,7 +34,7 @@
   @keyframes modal-fade-in {
     0% {
       scale: 0.96;
-      opacity: 0;
+      opacity: $opacity-0;
     }
 
     100% {
@@ -45,23 +45,23 @@
   @keyframes modal-fade-out {
     100% {
       scale: 0.96;
-      opacity: 0;
+      opacity: $opacity-0;
     }
   }
 
   @keyframes backdrop-fade-in {
     0% {
-      opacity: 0;
+      opacity: $opacity-0;
     }
 
     100% {
-      opacity: 1;
+      opacity: $opacity-100;
     }
   }
 
   @keyframes backdrop-fade-out {
     100% {
-      opacity: 0;
+      opacity: $opacity-0;
     }
   }
 }
@@ -99,7 +99,7 @@
 }
 
 .modal-title {
-  font-size: 20px;
+  font-size: $font-size-xl;
 }
 
 .modal-body {
@@ -121,9 +121,9 @@
 
   padding: 16px;
   border: none;
-  border-radius: 999px;
+  border-radius: $border-radius-full;
 
-  font-size: 24px;
+  font-size: $font-size-h4;
 
   background-color: transparent;
 

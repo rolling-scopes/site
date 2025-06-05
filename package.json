@@ -90,6 +90,7 @@
     "stylelint": "^16.19.1",
     "stylelint-config-clean-order": "^7.0.0",
     "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-declaration-strict-value": "^1.10.11",
     "stylelint-order": "^7.0.0",
     "stylelint-prettier": "^5.0.3",
     "typescript": "^5.8.2",
