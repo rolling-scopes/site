@@ -69,7 +69,7 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
   return (
     <nav className={cx('mobile-view')} data-testid="mobile-view">
       <div className={cx('menu-logo')}>
-        <Logo type={logoView} icon={logoIcon} onClick={onClose} />
+        <Logo type={logoView} logoSrc={logoIcon} onClick={onClose} />
       </div>
 
       <div className={cx('menu-content')}>

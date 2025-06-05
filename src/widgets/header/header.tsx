@@ -60,7 +60,7 @@ export const Header = ({ courses }: HeaderProps) => {
     <header>
       <nav className={cx('navbar')} data-testid="navigation">
         <section className={cx('navbar-content')}>
-          <Logo icon={isMentorshipPage ? logoBlue : undefined} />
+          <Logo logoSrc={isMentorshipPage ? logoBlue : undefined} />
 
           <menu className={cx('mobile-menu', { open: isMenuOpen })} data-testid="mobile-menu">
             <MobileView

@@ -11,7 +11,7 @@ import styles from './logo.module.scss';
 
 type LogoProps = Pick<HTMLAttributes<HTMLElement>, 'className'> &
   VariantProps<typeof logoVariants> & {
-    icon?: StaticImageData;
+    logoSrc?: StaticImageData;
     onClick?: () => void;
   };
 
@@ -19,7 +19,7 @@ export const cx = classNames.bind(styles);
 
 const logoVariants = cva(cx('logo'), { variants: { type: { 'with-border': cx('with-border') } } });
 
-export const Logo = ({ type, className, icon = logo, onClick }: LogoProps) => {
+export const Logo = ({ type, className, logoSrc = logo, onClick }: LogoProps) => {
   return (
     <Link
       href={ROUTES.HOME}
@@ -30,7 +30,7 @@ export const Logo = ({ type, className, icon = logo, onClick }: LogoProps) => {
       data-testid="logo"
       onClick={onClick}
     >
-      <Image src={icon} alt="RSS-logo" />
+      <Image src={logoSrc} alt="RSS-logo" />
     </Link>
   );
 };

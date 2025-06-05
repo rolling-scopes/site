@@ -8,7 +8,7 @@
   height: 64px;
   padding: 0 40px;
 
-  background-color: rgb(255 255 255);
+  background-color: $color-white;
   box-shadow: 0 4px 10px 0 hsla(from $color-black h s l/ $opacity-10);
 
   @include media-tablet-large {
@@ -41,22 +41,6 @@
   }
 }
 
-.menu.open {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  width: 100%;
-  padding: 8px 24px 8px 16px;
-
-  background-color: #ffdb20;
-  box-shadow: 0 4px 16px 0 rgb(0 0 0 / 14%);
-}
-
 .mobile-menu {
   position: absolute;
   top: 0;
@@ -76,10 +60,10 @@
   margin-top: 0;
   padding: 8px 24px 28px 16px;
 
-  color: #000;
+  color: $color-black;
 
   opacity: $opacity-0;
-  background-color: #fff;
+  background-color: $color-white;
 
   transition: transform 0.4s ease-out;
 }
