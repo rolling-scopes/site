@@ -54,6 +54,10 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
       >
         <FontAwesomeIcon icon={faChevronRight} />
       </button>
+      <span className={cx('total-pages')}>
+        total number of pages:
+        <b className={cx('total-pages-text')}>{totalPages}</b>
+      </span>
     </div>
   );
 };

@@ -1,7 +1,9 @@
 .pagination {
   display: flex;
-  gap: 8px;
+  gap: 0.5rem;
+  align-items: center;
   justify-content: center;
+
   margin-top: 24px;
 }
 
@@ -35,4 +37,14 @@
   &.arrow {
     font-weight: $font-weight-bold;
   }
+}
+
+.total-pages {
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.total-pages-text {
+  margin-left: 10px;
 }
