@@ -1,6 +1,7 @@
 import { HTMLProps, PropsWithChildren } from 'react';
 import classNames from 'classnames/bind';
 
+import { Subtitle } from '@/shared/ui/subtitle';
 import { Color } from '@/widgets/school-menu/types';
 import { SchoolItem } from '@/widgets/school-menu/ui/school-item/school-item';
 
@@ -31,7 +32,7 @@ export const SchoolMenu = ({
         hidden: isVisible === false,
       })}
     >
-      {heading && <h3 className={cx('heading', color)}>{heading}</h3>}
+      {heading && <Subtitle className={cx('heading', color)}>{heading}</Subtitle>}
       <ul className={cx('school-list', `school-list--${layout}`, className)}>{children}</ul>
     </div>
   );

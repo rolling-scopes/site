@@ -30,7 +30,7 @@ const HeroSubTitle = ({ subTitle }: SubTitleProps) => {
     <div className={cx('subtitle-container')}>
       {subTitle.map((item: string, index: number) => {
         return (
-          <Subtitle key={index} fontSize="extra-small">
+          <Subtitle key={index} size="extra-small">
             {item}
           </Subtitle>
         );
