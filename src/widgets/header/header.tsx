@@ -57,115 +57,117 @@ export const Header = ({ courses }: HeaderProps) => {
   }, [isMenuOpen]);
 
   return (
-    <nav className={cx('navbar')} data-testid="navigation">
-      <section className={cx('navbar-content')}>
-        <Logo icon={isMentorshipPage ? logoBlue : undefined} />
+    <header>
+      <nav className={cx('navbar')} data-testid="navigation">
+        <section className={cx('navbar-content')}>
+          <Logo icon={isMentorshipPage ? logoBlue : undefined} />
 
-        <menu className={cx('mobile-menu', { open: isMenuOpen })} data-testid="mobile-menu">
-          <MobileView
-            onClose={handleMenuClose}
-            courses={courses}
-            type="header"
-            logoIcon={isMentorshipPage ? logoBlue : undefined}
-            isMenuOpen={isMenuOpen}
-          />
-        </menu>
-        <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+          <menu className={cx('mobile-menu', { open: isMenuOpen })} data-testid="mobile-menu">
+            <MobileView
+              onClose={handleMenuClose}
+              courses={courses}
+              type="header"
+              logoIcon={isMentorshipPage ? logoBlue : undefined}
+              isMenuOpen={isMenuOpen}
+            />
+          </menu>
+          <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 
-        <menu className={cx('menu')} data-testid="desktop-menu">
-          <NavItem label={NAV_MENU_LABELS.RS_SCHOOL} href={ROUTES.HOME}>
-            <SchoolMenu layout="columns">
-              {schoolMenuStaticLinks.map((link, i) => (
+          <menu className={cx('menu')} data-testid="desktop-menu">
+            <NavItem label={NAV_MENU_LABELS.RS_SCHOOL} href={ROUTES.HOME}>
+              <SchoolMenu layout="columns">
+                {schoolMenuStaticLinks.map((link, i) => (
+                  <SchoolMenu.Item
+                    key={i}
+                    title={link.title}
+                    description={link.description}
+                    url={link.detailsUrl}
+                  />
+                ))}
+              </SchoolMenu>
+            </NavItem>
+            <NavItem label={NAV_MENU_LABELS.COURSES} href={ROUTES.COURSES}>
+              <SchoolMenu>
                 <SchoolMenu.Item
-                  key={i}
-                  title={link.title}
-                  description={link.description}
-                  url={link.detailsUrl}
+                  key={NAV_MENU_LABELS.COURSES}
+                  title="All Courses"
+                  description="Journey to full stack mastery"
+                  url={`/${ROUTES.COURSES}`}
                 />
-              ))}
-            </SchoolMenu>
-          </NavItem>
-          <NavItem label={NAV_MENU_LABELS.COURSES} href={ROUTES.COURSES}>
-            <SchoolMenu>
-              <SchoolMenu.Item
-                key={NAV_MENU_LABELS.COURSES}
-                title="All Courses"
-                description="Journey to full stack mastery"
-                url={`/${ROUTES.COURSES}`}
-              />
-            </SchoolMenu>
-            <SchoolMenu layout="columns">
-              {courses.map((course) => (
+              </SchoolMenu>
+              <SchoolMenu layout="columns">
+                {courses.map((course) => (
+                  <SchoolMenu.Item
+                    key={course.id}
+                    icon={course.iconSmall}
+                    title={course.title}
+                    description={course.startDate}
+                    url={course.detailsUrl}
+                  />
+                ))}
+              </SchoolMenu>
+            </NavItem>
+            <NavItem label={NAV_MENU_LABELS.COMMUNITY} href={ROUTES.COMMUNITY}>
+              <SchoolMenu layout="columns">
+                {communityMenuStaticLinks.map((link, i) => (
+                  <SchoolMenu.Item
+                    key={i}
+                    title={link.title}
+                    description={link.description}
+                    url={link.detailsUrl}
+                  />
+                ))}
+              </SchoolMenu>
+            </NavItem>
+            <NavItem label={NAV_MENU_LABELS.MENTORSHIP} href={ROUTES.MENTORSHIP}>
+              <SchoolMenu>
                 <SchoolMenu.Item
-                  key={course.id}
-                  icon={course.iconSmall}
-                  title={course.title}
-                  description={course.startDate}
-                  url={course.detailsUrl}
+                  key={NAV_MENU_LABELS.MENTORSHIP}
+                  title="About Mentorship"
+                  description="By teaching others, you learn yourself"
+                  url={`/${ROUTES.MENTORSHIP}`}
                 />
-              ))}
-            </SchoolMenu>
-          </NavItem>
-          <NavItem label={NAV_MENU_LABELS.COMMUNITY} href={ROUTES.COMMUNITY}>
-            <SchoolMenu layout="columns">
-              {communityMenuStaticLinks.map((link, i) => (
-                <SchoolMenu.Item
-                  key={i}
-                  title={link.title}
-                  description={link.description}
-                  url={link.detailsUrl}
-                />
-              ))}
-            </SchoolMenu>
-          </NavItem>
-          <NavItem label={NAV_MENU_LABELS.MENTORSHIP} href={ROUTES.MENTORSHIP}>
-            <SchoolMenu>
-              <SchoolMenu.Item
-                key={NAV_MENU_LABELS.MENTORSHIP}
-                title="About Mentorship"
-                description="By teaching others, you learn yourself"
-                url={`/${ROUTES.MENTORSHIP}`}
-              />
-            </SchoolMenu>
-            <SchoolMenu layout="columns">
-              {coursesWithMentorship.map((course) => (
-                <SchoolMenu.Item
-                  key={course.id}
-                  icon={course.iconSmall}
-                  title={course.title}
-                  description={course.startDate}
-                  url={course.detailsUrl}
-                />
-              ))}
-            </SchoolMenu>
-          </NavItem>
-          <NavItem label={NAV_MENU_LABELS.DOCS} href={ROUTES.DOCS_EN} />
-          <NavItem
-            reverseLayout={true}
-            label={NAV_MENU_LABELS.SUPPORT_US}
-            href={`#${ANCHORS.DONATE}`}
-            icon={iconSrc}
-          >
-            <div className={cx('support-text')}>
-              <Paragraph fontSize="small">
-                Your donations help us cover hosting, domains, licenses, and advertising for courses
-                and events. Every donation, big or small, helps!
-              </Paragraph>
-              <Paragraph fontSize="small">Thank you for your support!</Paragraph>
-            </div>
-            <SchoolMenu>
-              {donateOptions.toReversed().map((option) => (
-                <SchoolMenu.Item
-                  key={option.id}
-                  icon={option.menuIcon}
-                  title={option.menuLinkLabel}
-                  url={option.href}
-                />
-              ))}
-            </SchoolMenu>
-          </NavItem>
-        </menu>
-      </section>
-    </nav>
+              </SchoolMenu>
+              <SchoolMenu layout="columns">
+                {coursesWithMentorship.map((course) => (
+                  <SchoolMenu.Item
+                    key={course.id}
+                    icon={course.iconSmall}
+                    title={course.title}
+                    description={course.startDate}
+                    url={course.detailsUrl}
+                  />
+                ))}
+              </SchoolMenu>
+            </NavItem>
+            <NavItem label={NAV_MENU_LABELS.DOCS} href={ROUTES.DOCS_EN} />
+            <NavItem
+              reverseLayout={true}
+              label={NAV_MENU_LABELS.SUPPORT_US}
+              href={`#${ANCHORS.DONATE}`}
+              icon={iconSrc}
+            >
+              <div className={cx('support-text')}>
+                <Paragraph fontSize="small">
+                  Your donations help us cover hosting, domains, licenses, and advertising for courses
+                  and events. Every donation, big or small, helps!
+                </Paragraph>
+                <Paragraph fontSize="small">Thank you for your support!</Paragraph>
+              </div>
+              <SchoolMenu>
+                {donateOptions.toReversed().map((option) => (
+                  <SchoolMenu.Item
+                    key={option.id}
+                    icon={option.menuIcon}
+                    title={option.menuLinkLabel}
+                    url={option.href}
+                  />
+                ))}
+              </SchoolMenu>
+            </NavItem>
+          </menu>
+        </section>
+      </nav>
+    </header>
   );
 };
