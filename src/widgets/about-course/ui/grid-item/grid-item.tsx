@@ -20,7 +20,7 @@ export const GridItem = ({ heading, content, icon }: TGridItem) => {
           data-testid="grid-icon"
         />
 
-        <Subtitle fontSize="extra-small">{heading}</Subtitle>
+        <Subtitle size="extra-small">{heading}</Subtitle>
       </header>
       {content}
     </article>

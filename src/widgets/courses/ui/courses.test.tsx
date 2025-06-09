@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 
 import { Courses } from './courses';
 import { mockedCourses } from '@/shared/__tests__/constants';
+import { COURSE_TITLES } from 'data';
 
 const widgetTitle = 'All courses';
 
@@ -24,7 +25,11 @@ describe('Courses (other courses) component', () => {
     courseCards.forEach((card) => expect(card).toBeVisible());
 
     courseTitles.forEach((title) => {
-      const course = mockedCourses.find((c) => c.title === title.textContent);
+      const course = mockedCourses.find((c) => {
+        const mark = c.title === COURSE_TITLES.ANGULAR ? ` (${c.subTitle})` : '';
+
+        return `${c.title}${mark}` === title.textContent;
+      });
 
       expect(course).toBeDefined();
     });

@@ -14,6 +14,7 @@ import { Subtitle } from '@/shared/ui/subtitle';
 export const RS_FOUNDATION_YEAR = '2013';
 export const RS_EMAIL = 'rolling.scopes@gmail.com';
 export const TO_BE_DETERMINED = 'TBD';
+export const RS_GRADUATED_ONLY = 'Alumni only';
 export const REGISTRATION_WILL_OPEN_SOON = 'Registration will open soon!';
 export const REGISTRATION_WILL_OPEN_SOON_RU = 'Регистрация откроется скоро!';
 export const UNKNOWN_API_ERROR = 'Unknown error, API request failed.';
@@ -56,7 +57,11 @@ export const COURSE_LINKS = {
   AWS_AI: 'https://rs.school/courses/aws-ai',
 };
 
-export const KEY_CODES = { ESCAPE: 'Escape' } as const;
+export const KEY_CODES = {
+  ESCAPE: 'Escape',
+  ENTER: 'Enter',
+  SPACE: 'Space',
+} as const;
 
 export const HTTP_METHOD = {
   GET: 'GET',
@@ -99,6 +104,15 @@ export const LINKS = {
   DONATE_BOOSTY: 'https://boosty.to/rsschool',
   ANGULAR_MENTORING: 'https://github.com/rolling-scopes-school/tasks/tree/master/angular/mentoring',
 };
+
+export const NAV_MENU_LABELS = {
+  RS_SCHOOL: 'RS School',
+  COURSES: 'Courses',
+  COMMUNITY: 'Community',
+  MENTORSHIP: 'Mentorship',
+  DOCS: 'Docs',
+  SUPPORT_US: 'Support Us',
+} as const;
 
 export const ROUTES = {
   HOME: '/',
