@@ -1,0 +1,12 @@
+.learning-path-stages {
+  .stages {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-top: 40px;
+
+    @include media-tablet-large {
+      padding-top: 24px;
+    }
+  }
+}
