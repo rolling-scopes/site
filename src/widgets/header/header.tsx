@@ -57,7 +57,7 @@ export const Header = ({ courses }: HeaderProps) => {
   }, [isMenuOpen]);
 
   return (
-    <header>
+    <header className={cx('header')}>
       <nav className={cx('navbar')} data-testid="navigation">
         <section className={cx('navbar-content')}>
           <Logo logoSrc={isMentorshipPage ? logoBlue : undefined} />
