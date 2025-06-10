@@ -1,10 +1,8 @@
 .pagination {
   display: flex;
-  gap: 0.5rem;
+  gap: 8px;
   align-items: center;
   justify-content: center;
-
-  margin-top: 24px;
 }
 
 .pagination-button {
@@ -40,8 +38,8 @@
 }
 
 .total-pages {
-  margin-left: 0.5rem;
-  font-size: 0.875rem;
+  margin-left: 8px;
+  font-size: 14px;
   color: var(--text-secondary);
 }
 
