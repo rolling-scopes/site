@@ -7,6 +7,8 @@ import { Copyright } from '@/widgets/footer/ui/copyright';
 import { DesktopView } from '@/widgets/footer/ui/desktop-view';
 import { MobileView } from '@/widgets/mobile-view';
 
+vi.mock('next/navigation', () => ({ usePathname: () => '/' }));
+
 describe('Footer', () => {
   it('renders footer container', async () => {
     const { getByTestId } = renderWithRouter(<Footer courses={mockedCourses} />);
@@ -36,7 +38,9 @@ describe('Footer', () => {
 
   describe('MobileView', () => {
     it('should render mobile view', () => {
-      const { getByTestId } = renderWithRouter(<MobileView courses={mockedCourses} type="footer" />);
+      const { getByTestId } = renderWithRouter(
+        <MobileView courses={mockedCourses} type="footer" />,
+      );
       const mobileView = getByTestId('mobile-view');
 
       expect(mobileView).toBeInTheDocument();

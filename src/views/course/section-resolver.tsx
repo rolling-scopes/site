@@ -1,3 +1,4 @@
+import { SECTION_TYPE } from '@/views/course/constants';
 import { Section } from '@/views/course/types';
 import { AboutCourseSection } from '@/widgets/about-course';
 import { LearningPathStageItem, LearningPathStages } from '@/widgets/learning-path-stages';
@@ -13,7 +14,7 @@ export const SectionResolver = async ({ courseEnrollUrl, section }: SectionResol
   const sectionName = section.name;
 
   switch (sectionName) {
-    case 'aboutCourse':
+    case SECTION_TYPE.ABOUT_COURSE:
       return (
         <AboutCourseSection
           enrollUrl={courseEnrollUrl}
@@ -24,7 +25,7 @@ export const SectionResolver = async ({ courseEnrollUrl, section }: SectionResol
         />
       );
 
-    case 'mediaTextBlock':
+    case SECTION_TYPE.MEDIA_TEXT_BLOCK:
       return (
         <MediaTextBlock
           title={section.data.title}
@@ -37,7 +38,7 @@ export const SectionResolver = async ({ courseEnrollUrl, section }: SectionResol
         />
       );
 
-    case 'learningPathStages':
+    case SECTION_TYPE.LEARNING_PATH_STAGES:
       return (
         <LearningPathStages title={section.data.title} description={section.data.description}>
           {section.data.stages.map((stage, index) => (
@@ -52,7 +53,7 @@ export const SectionResolver = async ({ courseEnrollUrl, section }: SectionResol
         </LearningPathStages>
       );
 
-    case 'videoBlock':
+    case SECTION_TYPE.VIDEO_BLOCK:
       return (
         <VideoBlock
           title={section.data.title}

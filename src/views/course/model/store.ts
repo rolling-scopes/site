@@ -13,7 +13,13 @@ class CoursePageStore {
     if (res.isSuccess) {
       const preparedData = prepareContentfulResponse<CoursePageResponse['items']>(res.result);
 
-      const { title = '', seoDescription = '', seoKeywords = '', sections: coursePageSections, course } = preparedData.at(0)?.fields ?? {};
+      const {
+        title = '',
+        seoDescription = '',
+        seoKeywords = '',
+        sections: coursePageSections,
+        course,
+      } = preparedData.at(0)?.fields ?? {};
       const courseId = course?.sys?.id;
       const courseUrl = course?.fields.url || '';
 
@@ -48,6 +54,23 @@ class CoursePageStore {
     }
 
     throw new Error('Something went wrong fetching all course pages!');
+  };
+
+  public loadCoursePageTitle = async (slug: string, locale: ApiResourceLocale = 'en-US') => {
+    const res = await api.coursePage.queryCoursePageTitle(slug, locale);
+
+    if (res.isSuccess) {
+      const preparedData = prepareContentfulResponse<CoursePageResponse['items']>(res.result);
+      const title = preparedData.at(0)?.fields?.title;
+
+      if (!title) {
+        throw new Error('Course page title is not defined.');
+      }
+
+      return title;
+    }
+
+    throw new Error('Something went wrong fetching course page title!');
   };
 }
 

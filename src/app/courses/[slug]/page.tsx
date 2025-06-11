@@ -17,12 +17,15 @@ export async function generateMetadata({ params }: CourseRouteParams): Promise<M
   const { slug } = await params;
   const locale = resolveCoursePageLocale(slug);
 
-  // TODO: not efficient to fetch the whole course page only to load the course name
-  const { courseName, description, keywords, courseUrl } = await coursePageStore.loadCoursePage(slug, locale);
+  const { courseName, description, keywords, courseUrl } = await coursePageStore.loadCoursePage(
+    slug,
+    locale,
+  );
+  const title = `${courseName} · The Rolling Scopes School`;
   const robots = 'index, follow';
 
   return generatePageMetadata({
-    title: `${courseName} · The Rolling Scopes School`,
+    title,
     description,
     imagePath: `/courses/${slug}/og.png`,
     keywords,

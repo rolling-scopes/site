@@ -20,6 +20,18 @@ export class CoursePageApi {
     });
   }
 
+  public queryCoursePageTitle(slug: string, locale: ApiResourceLocale = 'en-US') {
+    return this.services.rest.get<CoursePageResponse>('/entries', {
+      params: {
+        'content_type': API_CONTENT_TYPE_DICTIONARY.COURSE_PAGE,
+        'include': API_OMIT_LINKED_ITEMS_INCLUDE_DEPTH,
+        'select': 'fields.title',
+        'fields.slug': slug,
+        locale,
+      },
+    });
+  }
+
   public queryCoursePages() {
     return this.services.rest.get<CoursePageResponse>('/entries', {
       params: {
