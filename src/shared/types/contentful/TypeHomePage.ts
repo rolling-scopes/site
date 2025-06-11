@@ -33,9 +33,15 @@ export interface TypeHomePageFields {
    */
   slug: EntryFieldTypes.Symbol;
 
-  seoDescription: EntryFieldTypes.Symbol;
+  /**
+   * Short description shown in search snippets and social previews
+   */
+  seoDescription?: EntryFieldTypes.Symbol;
+  /**
+   * Comma-separated keywords for SEO
+   */
+  seoKeywords?: EntryFieldTypes.Symbol;
 
-  seoKeywords: EntryFieldTypes.Symbol;
   /**
    * Field type definition for field 'sections' (sections)
    * @name sections
