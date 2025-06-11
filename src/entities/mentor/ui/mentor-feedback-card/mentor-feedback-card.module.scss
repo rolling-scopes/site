@@ -1,14 +1,14 @@
 .card {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: $gap-l;
 }
 
 .card-wrapper {
   max-width: 624px;
   min-height: 510px;
   padding: 40px 32px 40px 32px;
-  border-radius: 12px;
+  border-radius: $border-radius-s;
 
   box-shadow: 0 4px 12px 0 hsla(from $color-black h s l / $opacity-10);
 
@@ -36,7 +36,7 @@
 
 .card-info {
   display: flex;
-  gap: 24px;
+  gap: $gap-l;
   align-items: center;
 }
 
@@ -54,7 +54,7 @@
 .card-content-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: $gap-l;
   align-items: flex-start;
 }
 
