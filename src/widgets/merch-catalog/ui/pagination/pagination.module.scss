@@ -9,7 +9,7 @@
   cursor: pointer;
 
   padding: 8px 12px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid $color-gray-200;
   border-radius: 4px;
 
   background: $color-white;
@@ -23,13 +23,13 @@
 
   &:hover:not(:disabled) {
     color: $color-black;
-    background: #f7fafc;
+    background: $color-gray-100;
   }
 
   &.active {
-    border-color: #3182ce;
+    border-color: $color-blue-600;
     color: $color-white;
-    background: #3182ce;
+    background: $color-blue-600;
   }
 
   &.arrow {
