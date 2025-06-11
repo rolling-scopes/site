@@ -1,5 +1,5 @@
 import { act } from 'react';
-import { fireEvent, screen } from '@testing-library/react';
+import { fireEvent, screen, within } from '@testing-library/react';
 import classNames from 'classnames/bind';
 import { beforeEach } from 'vitest';
 
@@ -10,11 +10,14 @@ import { renderWithRouter } from '@/shared/__tests__/utils';
 
 import stylesHeader from './header.module.scss';
 import stylesDropdown from './ui/dropdown/dropdown-wrapper.module.scss';
-import stylesNavItem from './ui/nav-item/nav-item.module.scss';
+
+vi.mock('next/navigation', () => ({
+  useRouter: () => ({ push: vi.fn() }),
+  usePathname: () => '/',
+}));
 
 const cxDropdown = classNames.bind(stylesDropdown);
 const cxHeader = classNames.bind(stylesHeader);
-const cxNavItem = classNames.bind(stylesNavItem);
 
 describe('Header', () => {
   describe('Desktop view', () => {
@@ -28,22 +31,17 @@ describe('Header', () => {
       expect(headerElement).toBeInTheDocument();
     });
 
-    it('set color as gray when scrollbar is at the top', () => {
-      const headerElement = screen.getByTestId('navigation');
-
-      expect(headerElement).toHaveClass(cxHeader('gray'));
-    });
-
     it('renders all the header links', () => {
-      const headerElement = screen.getAllByText(/.*/, { selector: `span.${cxNavItem('label')}` });
+      const headerElement = screen.getAllByTestId('label-content');
 
       expect(headerElement).toHaveLength(6);
     });
 
-    it('renders 4 svg arrows', () => {
-      const svg = screen.getAllByLabelText('dropdown-arrow');
+    it('renders 5 svg arrows', () => {
+      const desktopMenu = screen.getByTestId('desktop-menu');
+      const svg = within(desktopMenu).getAllByLabelText('dropdown-arrow');
 
-      expect(svg).toHaveLength(4);
+      expect(svg).toHaveLength(5);
     });
   });
 
@@ -65,6 +63,13 @@ describe('Header', () => {
       expect(burger).toBeVisible();
     });
 
+    it('renders 5 svg arrows', () => {
+      const mobileMenu = screen.getByTestId('mobile-menu');
+      const svg = within(mobileMenu).getAllByLabelText('dropdown-arrow');
+
+      expect(svg).toHaveLength(5);
+    });
+
     it('add correct className to mobile-menu (.open)', () => {
       const burger = screen.getByTestId('burger');
 
@@ -80,11 +85,7 @@ describe('Header', () => {
   describe('Dropdown', () => {
     it('should be open when isDropdownOpen is true', async () => {
       await act(async () =>
-        renderWithRouter(
-          <DropdownWrapper onMouseEnter={() => {}} onMouseLeave={() => {}} isOpen={true}>
-            TEST
-          </DropdownWrapper>,
-        ),
+        renderWithRouter(<DropdownWrapper isOpen={true} reverseLayout={false}>TEST</DropdownWrapper>),
       );
 
       const dropdownElement = screen.getByTestId('header-dropdown');

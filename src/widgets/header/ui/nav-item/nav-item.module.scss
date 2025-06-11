@@ -1,5 +1,4 @@
 .menu-item-wrapper {
-  position: relative;
   height: 100%;
 }
 
@@ -9,11 +8,25 @@
   position: relative;
 
   display: flex;
+  gap: 8px;
   align-items: center;
   justify-content: center;
 
   height: 100%;
-  padding: 0 14px;
+  padding: 0 0 0 3px;
+  border: none;
+
+  background: none;
+
+  &:focus-visible {
+    z-index: 100;
+
+    border-radius: 2px;
+
+    outline-style: solid;
+    outline-width: 2px;
+    outline-offset: 0;
+  }
 
   &::after {
     @extend %transition-all;
@@ -21,6 +34,7 @@
     content: '';
 
     position: absolute;
+    z-index: 100;
     bottom: 1px;
     left: 0;
     transform: scaleX(0);
@@ -31,16 +45,27 @@
     background-color: $color-black;
   }
 
-  .label {
-    @extend %transition-all;
+  .label-bold {
+    position: relative;
 
     font-family: $font-primary;
     font-size: $font-size-s;
-    font-weight: $font-weight-regular;
+    font-weight: $font-weight-bold;
     line-height: 20px;
-    color: $color-gray-900;
+    color: transparent;
     text-align: center;
     letter-spacing: 0;
+
+    .label-content {
+      @extend %transition-all;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      font-weight: $font-weight-regular;
+      color: $color-gray-900;
+    }
   }
 
   &.dropdown-toggle {
@@ -49,17 +74,18 @@
     .dropdown-arrow {
       @extend %transition-all;
 
-      margin-left: 10px;
+      cursor: inherit;
+
+      display: flex;
+      align-items: center;
+
       padding: 0;
       border: none;
+
       background-color: transparent;
 
-      &:focus {
-        outline-offset: 3px;
-      }
-
       > img {
-        width: 16px;
+        width: 20px;
         height: auto;
       }
     }
@@ -67,24 +93,21 @@
     &.rotate .dropdown-arrow {
       transform: rotate(180deg);
     }
+
+    &.rotate::after {
+      transform: scaleX(1);
+    }
   }
 
   &.active {
-    & > span {
-      color: $color-black;
-
-      -webkit-text-stroke-color: currentcolor;
-      -webkit-text-stroke-width: 1.25px;
+    & > .label-bold > .label-content {
+      font-weight: $font-weight-bold;
     }
   }
 
   @include media-hover {
-    &:hover::after {
-      transform: scaleX(1);
-    }
-
-    &:hover .label {
-      color: $color-black;
+    &:hover > .label-bold > .label-content {
+      color: $color-gray-500;
     }
   }
 }

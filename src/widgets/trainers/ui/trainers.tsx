@@ -4,14 +4,13 @@ import { Trainer, TrainerCard } from '@/entities/trainer';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { trainersTitle } from '@/widgets/trainers/constants';
-import { CourseNamesKeys } from 'data';
 
 import styles from './trainers.module.scss';
 
 const cx = classNames.bind(styles);
 
 type TrainersProps = {
-  courseName: CourseNamesKeys;
+  courseName: string;
   trainers: Trainer[];
 };
 

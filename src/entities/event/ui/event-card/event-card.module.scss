@@ -43,17 +43,10 @@
     }
 
     .about-organization {
-      margin-top: 32px;
-
-      .organized-by {
-        margin-bottom: 0;
-        font-weight: $font-weight-regular;
-      }
+      margin-top: 24px;
 
       .event-organization {
-        margin-top: 10px;
-        font-size: $font-size-l;
-        font-weight: $font-weight-medium;
+        margin-bottom: 20px;
       }
     }
 
@@ -66,7 +59,6 @@
       .event-title {
         margin-top: 16px;
         margin-bottom: 0;
-        font-weight: $font-weight-medium;
         line-height: 32px;
 
         @include media-mobile {

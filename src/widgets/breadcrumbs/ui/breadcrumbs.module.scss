@@ -33,3 +33,10 @@
     padding: 24px;
   }
 }
+
+.mobile-breadcrumbs.breadcrumbs-content {
+  @include media-tablet-large {
+    width: 100%;
+    padding: 6px 6px 6px 0;
+  }
+}
