@@ -14,10 +14,7 @@ export async function generateStaticParams() {
   return pages.map(({ slug }) => ({ slug }));
 }
 
-export async function GET(
-  _: never,
-  { params }: { params: Promise<{ slug: string }> },
-) {
+export async function GET(_request: Request, { params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const locale = resolveCoursePageLocale(slug);
 
