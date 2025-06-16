@@ -19,7 +19,7 @@
   background: none;
 
   &:focus-visible {
-    z-index: 100;
+    z-index: $z-index-max;
 
     border-radius: 2px;
 
@@ -34,7 +34,7 @@
     content: '';
 
     position: absolute;
-    z-index: 100;
+    z-index: $z-index-max;
     bottom: 1px;
     left: 0;
     transform: scaleX(0);

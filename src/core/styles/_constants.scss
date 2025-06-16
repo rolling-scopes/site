@@ -97,11 +97,12 @@ $ease-in-cubic: cubic-bezier(0.32, 0, 0.67, 0);
 $standard-decelerate: cubic-bezier(0, 0, 0, 1);
 
 // Border radius
+$border-radius-xxs: 4px;
 $border-radius-xs: 8px;
 $border-radius-s: 12px;
 $border-radius-m: 16px;
 $border-radius-l: 20px;
-$border-radius-xxxl: 999px;
+$border-radius-max: 999px;
 
 // Font sizes
 $font-size-xxs: 12px;
@@ -112,7 +113,7 @@ $font-size-l: 20px;
 $font-size-xl: 24px;
 $font-size-xxl: 36px;
 
-// Gap
+// Standard gap
 $gap-xs: 8px;
 $gap-s: 16px;
 $gap-m: 20px;
@@ -120,3 +121,10 @@ $gap-l: 24px;
 $gap-xl: 32px;
 $gap-xxl: 40px;
 $gap-xxxl: 50px;
+
+// Z-indexes
+$z-index-negative: -1;
+$z-index-s: 1;
+$z-index-m: 2;
+$z-index-l: 10;
+$z-index-max: 100;
