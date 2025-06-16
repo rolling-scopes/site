@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import classNames from 'classnames/bind';
 
+import { Loading } from './loading/loading';
 import { MerchList } from './merch-list/merch-list';
 import { getMerchData } from '@/entities/merch/api/merch-api';
 
@@ -14,7 +15,7 @@ export const MerchCatalog = async () => {
   return (
     <section className={cx('container')}>
       <div className={cx('content', 'merch-catalog')}>
-        <Suspense fallback="">
+        <Suspense fallback={<Loading />}>
           <MerchList products={products} />
         </Suspense>
       </div>
