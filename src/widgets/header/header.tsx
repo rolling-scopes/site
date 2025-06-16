@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import classNames from 'classnames/bind';
 import { usePathname } from 'next/navigation';
 
+import { generateNavMenuData } from './helpers/generate-nav-menu-data';
 import { BurgerMenu } from './ui/burger/burger';
 import { Course } from '@/entities/course';
 import iconBlue from '@/shared/assets/svg/heart-blue.svg';
@@ -18,7 +19,6 @@ import {
 import { NavItem } from '@/widgets/header/ui/nav-item/nav-item';
 import { MobileView } from '@/widgets/mobile-view';
 import { SchoolMenu } from '@/widgets/school-menu';
-import { communityMenuStaticLinks, donateOptions, schoolMenuStaticLinks } from 'data';
 
 import styles from './header.module.scss';
 
@@ -35,6 +35,11 @@ export const Header = ({ courses }: HeaderProps) => {
   const isMentorshipPage = pathname.includes(ROUTES.MENTORSHIP);
   const iconSrc = isMentorshipPage ? iconBlue : iconYellow;
   const coursesWithMentorship = transformCoursesToMentorship(courses);
+
+  const menuData = useMemo(
+    () => generateNavMenuData(courses, coursesWithMentorship),
+    [courses, coursesWithMentorship],
+  );
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -76,66 +81,51 @@ export const Header = ({ courses }: HeaderProps) => {
           <menu className={cx('menu')} data-testid="desktop-menu">
             <NavItem label={NAV_MENU_LABELS.RS_SCHOOL} href={ROUTES.HOME}>
               <SchoolMenu layout="columns">
-                {schoolMenuStaticLinks.map((link, i) => (
+                {menuData.rsSchoolOptions.map((option) => (
                   <SchoolMenu.Item
-                    key={i}
-                    title={link.title}
-                    description={link.description}
-                    url={link.detailsUrl}
+                    key={option.id}
+                    title={option.title}
+                    description={option.description}
+                    url={option.url}
                   />
                 ))}
               </SchoolMenu>
             </NavItem>
             <NavItem label={NAV_MENU_LABELS.COURSES} href={ROUTES.COURSES}>
-              <SchoolMenu>
-                <SchoolMenu.Item
-                  key={NAV_MENU_LABELS.COURSES}
-                  title="All Courses"
-                  description="Journey to full stack mastery"
-                  url={`/${ROUTES.COURSES}`}
-                />
-              </SchoolMenu>
               <SchoolMenu layout="columns">
-                {courses.map((course) => (
+                {menuData.coursesOptions.map((option) => (
                   <SchoolMenu.Item
-                    key={course.id}
-                    icon={course.iconSmall}
-                    title={course.title}
-                    description={course.startDate}
-                    url={course.detailsUrl}
+                    key={option.id}
+                    icon={option.icon}
+                    title={option.title}
+                    description={option.description}
+                    url={option.url}
                   />
                 ))}
               </SchoolMenu>
             </NavItem>
             <NavItem label={NAV_MENU_LABELS.COMMUNITY} href={ROUTES.COMMUNITY}>
               <SchoolMenu layout="columns">
-                {communityMenuStaticLinks.map((link, i) => (
+                {menuData.communityOptions.map((option) => (
                   <SchoolMenu.Item
-                    key={i}
-                    title={link.title}
-                    description={link.description}
-                    url={link.detailsUrl}
+                    key={option.id}
+                    icon={option.icon}
+                    title={option.title}
+                    description={option.description}
+                    url={option.url}
                   />
                 ))}
               </SchoolMenu>
             </NavItem>
             <NavItem label={NAV_MENU_LABELS.MENTORSHIP} href={ROUTES.MENTORSHIP}>
-              <SchoolMenu>
-                <SchoolMenu.Item
-                  key={NAV_MENU_LABELS.MENTORSHIP}
-                  title="About Mentorship"
-                  description="By teaching others, you learn yourself"
-                  url={`/${ROUTES.MENTORSHIP}`}
-                />
-              </SchoolMenu>
               <SchoolMenu layout="columns">
-                {coursesWithMentorship.map((course) => (
+                {menuData.mentorshipOptions.map((option) => (
                   <SchoolMenu.Item
-                    key={course.id}
-                    icon={course.iconSmall}
-                    title={course.title}
-                    description={course.startDate}
-                    url={course.detailsUrl}
+                    key={option.id}
+                    icon={option.icon}
+                    title={option.title}
+                    description={option.description}
+                    url={option.url}
                   />
                 ))}
               </SchoolMenu>
@@ -149,18 +139,19 @@ export const Header = ({ courses }: HeaderProps) => {
             >
               <div className={cx('support-text')}>
                 <Paragraph fontSize="small">
-                  Your donations help us cover hosting, domains, licenses, and advertising for courses
-                  and events. Every donation, big or small, helps!
+                  Your donations help us cover hosting, domains, licenses, and advertising for
+                  courses and events. Every donation, big or small, helps!
                 </Paragraph>
                 <Paragraph fontSize="small">Thank you for your support!</Paragraph>
               </div>
               <SchoolMenu>
-                {donateOptions.toReversed().map((option) => (
+                {menuData.donateOptions.map((option) => (
                   <SchoolMenu.Item
                     key={option.id}
-                    icon={option.menuIcon}
-                    title={option.menuLinkLabel}
-                    url={option.href}
+                    icon={option.icon}
+                    title={option.title}
+                    description={option.description}
+                    url={option.url}
                   />
                 ))}
               </SchoolMenu>
