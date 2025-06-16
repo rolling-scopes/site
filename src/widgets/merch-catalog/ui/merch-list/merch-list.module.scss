@@ -1,6 +1,9 @@
 .wrapper {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 24px;
+  align-items: center;
+
   width: 100%;
 }
 
@@ -8,4 +11,5 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 24px;
+  width: 100%;
 }
