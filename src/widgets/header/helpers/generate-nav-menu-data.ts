@@ -20,7 +20,7 @@ type DonateOptionType = {
   href: string;
 };
 
-type MenuItem = {
+export type MenuItem = {
   id: string;
   title: string;
   url: string;

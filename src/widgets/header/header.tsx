@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 
 import { generateNavItemsConfig, generateNavMenuData } from './helpers/generate-nav-menu-data';
 import { BurgerMenu } from './ui/burger/burger';
+import { DropdownContent } from './ui/dropdown/dropdown-content/dropdown-content';
 import { DropdownWrapper } from './ui/dropdown/dropdown-wrapper';
 import { Course } from '@/entities/course';
 import iconBlue from '@/shared/assets/svg/heart-blue.svg';
@@ -14,13 +15,11 @@ import logoBlue from '@/shared/assets/svg/rss-logo-blue.svg';
 import { NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
 import { useOutsideClick } from '@/shared/hooks/use-outside-click/use-outside-click';
 import { Logo } from '@/shared/ui/logo';
-import { Paragraph } from '@/shared/ui/paragraph';
 import {
   transformCoursesToMentorship,
 } from '@/views/mentorship/helpers/transform-courses-to-mentorship';
 import { NavItem } from '@/widgets/header/ui/nav-item/nav-item';
 import { MobileView } from '@/widgets/mobile-view';
-import { SchoolMenu } from '@/widgets/school-menu';
 
 import styles from './header.module.scss';
 
@@ -128,27 +127,12 @@ export const Header = ({ courses }: HeaderProps) => {
               />
             ))}
             <DropdownWrapper isOpen={isDropdownOpen}>
-              {activeMenuItem === NAV_MENU_LABELS.SUPPORT_US && (
-                <div className={cx('support-text')}>
-                  <Paragraph fontSize="small">
-                    Your donations help us cover hosting, domains, licenses, and advertising for
-                    courses and events. Every donation, big or small, helps!
-                  </Paragraph>
-                  <Paragraph fontSize="small">Thank you for your support!</Paragraph>
-                </div>
+              {activeMenuItem && (
+                <DropdownContent
+                  menuData={menuData[activeMenuItem]}
+                  activeMenuItem={activeMenuItem}
+                />
               )}
-              <SchoolMenu>
-                {activeMenuItem
-                  && menuData[activeMenuItem].map((option) => (
-                    <SchoolMenu.Item
-                      key={option.id}
-                      icon={option.icon}
-                      title={option.title}
-                      description={option.description}
-                      url={option.url}
-                    />
-                  ))}
-              </SchoolMenu>
             </DropdownWrapper>
           </menu>
         </section>
