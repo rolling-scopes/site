@@ -2,7 +2,7 @@ import { JSX } from 'react';
 import { StaticImageData } from 'next/image';
 
 import { Course } from '@/entities/course';
-import { NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
+import { ANCHORS, NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
 import { communityMenuStaticLinks, donateOptions, schoolMenuStaticLinks } from 'data';
 
 type StaticLinksType = {
@@ -82,10 +82,40 @@ export const generateNavMenuData = (
   mentorshipCourses: Course[],
 ): Record<string, MenuItem[]> => {
   return {
-    rsSchoolOptions: mapStaticLinksToMenuItem(schoolMenuStaticLinks),
-    coursesOptions: mapCoursesToMenuItems(courses, 'courses'),
-    communityOptions: mapStaticLinksToMenuItem(communityMenuStaticLinks),
-    mentorshipOptions: mapCoursesToMenuItems(mentorshipCourses, 'mentorship'),
-    donateOptions: mapDonateOptions(donateOptions),
+    [NAV_MENU_LABELS.RS_SCHOOL]: mapStaticLinksToMenuItem(schoolMenuStaticLinks),
+    [NAV_MENU_LABELS.COURSES]: mapCoursesToMenuItems(courses, 'courses'),
+    [NAV_MENU_LABELS.COMMUNITY]: mapStaticLinksToMenuItem(communityMenuStaticLinks),
+    [NAV_MENU_LABELS.MENTORSHIP]: mapCoursesToMenuItems(mentorshipCourses, 'mentorship'),
+    [NAV_MENU_LABELS.SUPPORT_US]: mapDonateOptions(donateOptions),
   };
+};
+
+export const generateNavItemsConfig = (iconSrc: StaticImageData) => {
+  return [
+    {
+      label: NAV_MENU_LABELS.RS_SCHOOL,
+      url: ROUTES.HOME,
+    },
+    {
+      label: NAV_MENU_LABELS.COURSES,
+      url: ROUTES.COURSES,
+    },
+    {
+      label: NAV_MENU_LABELS.COMMUNITY,
+      url: ROUTES.COMMUNITY,
+    },
+    {
+      label: NAV_MENU_LABELS.MENTORSHIP,
+      url: ROUTES.MENTORSHIP,
+    },
+    {
+      label: NAV_MENU_LABELS.DOCS,
+      url: ROUTES.DOCS_EN,
+    },
+    {
+      label: NAV_MENU_LABELS.SUPPORT_US,
+      url: `#${ANCHORS.DONATE}`,
+      icon: iconSrc,
+    },
+  ];
 };

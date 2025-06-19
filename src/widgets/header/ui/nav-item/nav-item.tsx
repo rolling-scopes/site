@@ -1,18 +1,9 @@
-import {
-  KeyboardEvent,
-  PropsWithChildren,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import { KeyboardEvent, PropsWithChildren, useRef } from 'react';
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 
-import { DropdownWrapper } from '../dropdown/dropdown-wrapper';
-import { KEY_CODES, ROUTES } from '@/shared/constants';
-import { useOutsideClick } from '@/shared/hooks/use-outside-click/use-outside-click';
+import { KEY_CODES, NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
 import { DropdownArrow } from '@/shared/icons/dropdown-arrow';
 
 import styles from './nav-item.module.scss';
@@ -20,49 +11,43 @@ import styles from './nav-item.module.scss';
 const cx = classNames.bind(styles);
 
 type NavItemProps = PropsWithChildren & {
-  label: string;
+  label: NAV_MENU_LABELS;
   href: string;
   icon?: StaticImageData;
-  reverseLayout?: boolean;
+  isActiveNavItem: boolean;
+  isDropdownOpen: boolean;
+  onNavItemClick: () => void;
+  onDropdownClose: () => void;
 };
 
-export const NavItem = ({ label, href, icon, reverseLayout = false, children }: NavItemProps) => {
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
-
-  const wrapperRef = useRef<HTMLDivElement>(null);
+export const NavItem = ({
+  label,
+  href,
+  icon,
+  isActiveNavItem,
+  isDropdownOpen,
+  onNavItemClick,
+  onDropdownClose,
+}: NavItemProps) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const isDropdown = Boolean(children);
+  const isDropdown = Boolean(label !== NAV_MENU_LABELS.DOCS);
   const router = useRouter();
 
   const pathname = usePathname();
   const isHrefHome = href === ROUTES.HOME;
   const isActive = isHrefHome ? pathname === ROUTES.HOME : pathname?.includes(href);
   const linkHref = isHrefHome ? href : `/${href}`;
-  const closeAllDropdowns = 'closeAllDropdowns';
-
-  const onClose = useCallback(() => {
-    setDropdownOpen(false);
-  }, []);
-
-  const onDropdownToggle = () => {
-    if (!isDropdownOpen) {
-      window.dispatchEvent(new CustomEvent(closeAllDropdowns));
-    }
-
-    setDropdownOpen((prev) => !prev);
-  };
 
   const handleClick = () => {
-    if (isDropdown) {
-      onDropdownToggle();
-    } else {
+    onNavItemClick();
+    if (!isDropdown) {
       router.push(linkHref);
     }
   };
 
   const handleEscKeyPress = (e: KeyboardEvent<HTMLElement>) => {
     if (e.code === KEY_CODES.ESCAPE) {
-      onClose();
+      onDropdownClose();
       buttonRef.current?.focus();
     }
   };
@@ -75,34 +60,15 @@ export const NavItem = ({ label, href, icon, reverseLayout = false, children }: 
     handleEscKeyPress(e);
   };
 
-  useOutsideClick(wrapperRef, onClose, isDropdownOpen);
-
-  useEffect(() => {
-    window.addEventListener(closeAllDropdowns, onClose);
-
-    return () => {
-      window.removeEventListener(closeAllDropdowns, onClose);
-    };
-  }, [onClose]);
-
-  useEffect(() => {
-    onClose();
-  }, [pathname, onClose]);
-
   return (
-    <div
-      className={cx('menu-item-wrapper')}
-      ref={wrapperRef}
-      data-testid="menu-item"
-      onKeyDown={handleEscKeyPress}
-    >
+    <div className={cx('menu-item-wrapper')} data-testid="menu-item" onKeyDown={handleEscKeyPress}>
       <button
         ref={buttonRef}
         className={cx(
           'menu-item',
           { active: isActive },
           { 'dropdown-toggle': isDropdown },
-          { rotate: isDropdownOpen },
+          { rotate: isActiveNavItem },
         )}
         onClick={handleClick}
         onKeyDown={handleConfirmKeyPress}
@@ -129,11 +95,6 @@ export const NavItem = ({ label, href, icon, reverseLayout = false, children }: 
           </span>
         )}
       </button>
-      {isDropdown && (
-        <DropdownWrapper isOpen={isDropdownOpen} reverseLayout={reverseLayout}>
-          {children}
-        </DropdownWrapper>
-      )}
     </div>
   );
 };
