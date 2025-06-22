@@ -22,7 +22,7 @@
   }
 
   .school-list {
-    gap: 24px 32px;
+    gap: $gap-l $gap-xl;
     max-height: 408px;
     list-style-type: none;
 

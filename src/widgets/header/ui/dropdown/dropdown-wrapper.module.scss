@@ -21,7 +21,7 @@
   max-width: calc(100vw - var(--page-padding));
   height: max-content;
   padding: 32px;
-  border-radius: 0 0 0 4px;
+  border-radius: 0 0 0 $border-radius-xxs;
 
   visibility: hidden;
   opacity: $opacity-0;
@@ -76,6 +76,6 @@
   @include media-laptop-large {
     right: 0;
     min-width: 100%;
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 0 $border-radius-xxs $border-radius-xxs;
   }
 }
