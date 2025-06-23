@@ -15,6 +15,7 @@ const paragraphVariants = cva(cx('paragraph'), {
     fontSize: {
       medium: cx('medium-font-size'),
       large: cx('large-font-size'),
+      small: cx('small-font-size'),
     },
   },
   defaultVariants: { fontSize: 'medium' },

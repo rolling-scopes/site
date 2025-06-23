@@ -39,9 +39,9 @@ describe('SchoolMenu', () => {
       </SchoolMenu>,
     );
 
-    expect(screen.getAllByRole('link')).toHaveLength(2);
+    expect(screen.getAllByRole('link')).toHaveLength(4);
 
-    expect(container.getElementsByTagName('small')).toHaveLength(2);
+    expect(container.getElementsByTagName('small')).toHaveLength(4);
   });
 
   it('renders without crashing and displays "all courses" heading', () => {

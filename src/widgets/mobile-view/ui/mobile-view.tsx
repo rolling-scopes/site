@@ -1,12 +1,24 @@
-import classNames from 'classnames/bind';
-import Link from 'next/link';
+'use client';
 
+import { useEffect, useState } from 'react';
+import classNames from 'classnames/bind';
+import { StaticImageData } from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+import { MobileNavItem } from './mobile-nav-item/mobile-nav-item';
 import { Course } from '@/entities/course';
-import { ANCHORS, ROUTES } from '@/shared/constants';
+import iconBlue from '@/shared/assets/svg/heart-blue.svg';
+import iconYellow from '@/shared/assets/svg/heart-yellow.svg';
+import { NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
 import { CourseMenuItemsFresh } from '@/shared/ui/course-menu-items-fresh';
 import { Logo } from '@/shared/ui/logo';
+import {
+  transformCoursesToMentorship,
+} from '@/views/mentorship/helpers/transform-courses-to-mentorship';
+import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { SchoolMenu } from '@/widgets/school-menu';
-import { communityMenuStaticLinks, mentorshipCourses, schoolMenuStaticLinks } from 'data';
+import { communityMenuStaticLinks, donateOptions, schoolMenuStaticLinks } from 'data';
 
 import styles from './mobile-view.module.scss';
 
@@ -21,96 +33,207 @@ const Divider = ({ color }: DividerProps) => <hr className={cx('divider', color)
 type MobileViewProps = {
   type: 'header' | 'footer';
   courses: Course[];
+  logoIcon?: StaticImageData;
+  isMenuOpen?: boolean;
   onClose?: () => void;
 };
 
-export const MobileView = ({ type, courses, onClose }: MobileViewProps) => {
+export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: MobileViewProps) => {
   const color = type === 'header' ? 'dark' : 'light';
   const logoView = type === 'header' ? null : 'with-border';
   const courseIcon = type === 'header' ? 'iconSmall' : 'iconFooter';
+  const pathname = usePathname();
+  const iconSrc = pathname.includes(ROUTES.MENTORSHIP) ? iconBlue : iconYellow;
+  const coursesWithMentorship = transformCoursesToMentorship(courses);
+
+  const [activeDropdowns, setActiveDropdowns] = useState<Set<string>>(new Set());
+
+  const onMenuItemClick = (menuItem: string) => {
+    setActiveDropdowns((prev) => {
+      const newSet = new Set(prev);
+
+      if (newSet.has(menuItem)) {
+        newSet.delete(menuItem);
+      } else {
+        newSet.add(menuItem);
+      }
+      return newSet;
+    });
+  };
+
+  useEffect(() => {
+    if (!isMenuOpen) {
+      setActiveDropdowns(new Set());
+    }
+  }, [isMenuOpen]);
 
   return (
     <nav className={cx('mobile-view')} data-testid="mobile-view">
-      <Logo type={logoView} />
+      <div className={cx('menu-logo')}>
+        <Logo type={logoView} logoSrc={logoIcon} onClick={onClose} />
+      </div>
 
-      <Divider color={color} />
+      <div className={cx('menu-content')}>
+        {type === 'header' && (
+          <>
+            <Divider color={color} />
+            <Breadcrumbs className="mobile-breadcrumbs" />
+          </>
+        )}
 
-      <Link onClick={onClose} href={ROUTES.HOME} className={cx('category-link', color)}>
-        RS School
-      </Link>
+        <Divider color={color} />
 
-      <SchoolMenu>
-        {schoolMenuStaticLinks.map((link, i) => (
-          <SchoolMenu.Item
-            key={i}
-            title={link.title}
-            description={link.description}
-            url={link.detailsUrl}
+        <div className={cx('category-container')}>
+          <MobileNavItem
+            title={NAV_MENU_LABELS.RS_SCHOOL}
             color={color}
-            onClick={onClose}
+            isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.RS_SCHOOL)}
+            onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.RS_SCHOOL)}
           />
-        ))}
-      </SchoolMenu>
 
-      <Divider color={color} />
+          <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.RS_SCHOOL)}>
+            {schoolMenuStaticLinks.map((link, i) => (
+              <SchoolMenu.Item
+                key={i}
+                title={link.title}
+                description={link.description}
+                url={link.detailsUrl}
+                color={color}
+                onClick={onClose}
+              />
+            ))}
+          </SchoolMenu>
+        </div>
 
-      <Link onClick={onClose} href={`/${ROUTES.COURSES}`} className={cx('category-link', color)}>
-        Courses
-      </Link>
+        <Divider color={color} />
 
-      <SchoolMenu>
-        <CourseMenuItemsFresh courses={courses} icon={courseIcon} onClose={onClose} color={color} />
-      </SchoolMenu>
-
-      <Divider color={color} />
-
-      <Link onClick={onClose} href={`/${ROUTES.COMMUNITY}`} className={cx('category-link', color)}>
-        Community
-      </Link>
-
-      <SchoolMenu>
-        {communityMenuStaticLinks.map((link, i) => (
-          <SchoolMenu.Item
-            key={i}
-            title={link.title}
-            description={link.description}
-            url={link.detailsUrl}
+        <div className={cx('category-container')}>
+          <MobileNavItem
+            title={NAV_MENU_LABELS.COURSES}
             color={color}
-            onClick={onClose}
+            isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.COURSES)}
+            onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.COURSES)}
           />
-        ))}
-      </SchoolMenu>
 
-      <Divider color={color} />
+          <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.COURSES)}>
+            <SchoolMenu.Item
+              key={NAV_MENU_LABELS.COURSES}
+              title="All Courses"
+              description="Journey to full stack mastery"
+              url={`/${ROUTES.COURSES}`}
+              color={color}
+              onClick={onClose}
+            />
+            <CourseMenuItemsFresh
+              courses={courses}
+              icon={courseIcon}
+              onClose={onClose}
+              color={color}
+            />
+          </SchoolMenu>
+        </div>
 
-      <Link onClick={onClose} href={`/${ROUTES.MENTORSHIP}`} className={cx('category-link', color)}>
-        Mentorship
-      </Link>
+        <Divider color={color} />
 
-      <SchoolMenu>
-        {mentorshipCourses.map((course) => (
-          <SchoolMenu.Item
-            key={course.id}
-            icon={course.iconSmall}
-            title={course.title}
-            url={course.detailsUrl}
+        <div className={cx('category-container')}>
+          <MobileNavItem
+            title={NAV_MENU_LABELS.COMMUNITY}
             color={color}
-            onClick={onClose}
+            isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.COMMUNITY)}
+            onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.COMMUNITY)}
           />
-        ))}
-      </SchoolMenu>
 
-      <Divider color={color} />
+          <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.COMMUNITY)}>
+            {communityMenuStaticLinks.map((link, i) => (
+              <SchoolMenu.Item
+                key={i}
+                title={link.title}
+                description={link.description}
+                url={link.detailsUrl}
+                color={color}
+                onClick={onClose}
+              />
+            ))}
+          </SchoolMenu>
+        </div>
 
-      <Link onClick={onClose} href={`/#${ANCHORS.DONATE}`} className={cx('category-link', color)}>
-        Donate
-      </Link>
+        <Divider color={color} />
 
-      <Divider color={color} />
+        <div className={cx('category-container')}>
+          <MobileNavItem
+            title={NAV_MENU_LABELS.MENTORSHIP}
+            color={color}
+            isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.MENTORSHIP)}
+            onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.MENTORSHIP)}
+          />
 
-      <Link onClick={onClose} href={`/${ROUTES.DOCS_EN}`} className={cx('category-link', color)}>
-        Docs
-      </Link>
+          <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.MENTORSHIP)}>
+            <SchoolMenu.Item
+              key={NAV_MENU_LABELS.MENTORSHIP}
+              title="About Mentorship"
+              description="By teaching others, you learn yourself"
+              url={`/${ROUTES.MENTORSHIP}`}
+              color={color}
+              onClick={onClose}
+            />
+            {coursesWithMentorship.map((course) => (
+              <SchoolMenu.Item
+                key={course.id}
+                icon={course.iconSmall}
+                title={course.title}
+                description={course.startDate}
+                url={course.detailsUrl}
+                color={color}
+                onClick={onClose}
+              />
+            ))}
+          </SchoolMenu>
+        </div>
+
+        <Divider color={color} />
+
+        <Link onClick={onClose} href={`/${ROUTES.DOCS_EN}`} className={cx('category-link', color)}>
+          {NAV_MENU_LABELS.DOCS}
+        </Link>
+
+        <Divider color={color} />
+
+        <div className={cx('category-container')}>
+          <MobileNavItem
+            title={NAV_MENU_LABELS.SUPPORT_US}
+            icon={iconSrc}
+            color={color}
+            isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.SUPPORT_US)}
+            onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.SUPPORT_US)}
+          />
+
+          <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.SUPPORT_US)}>
+            <SchoolMenu.Item
+              className="support-title"
+              title="Your donations help us cover hosting, domains, licenses, and advertising for courses
+                          and events. Every donation, big or small, helps!"
+              url="#"
+              color={color}
+            />
+            <SchoolMenu.Item
+              className="support-title"
+              title="Thank you for your support!"
+              url="#"
+              color={color}
+            />
+            {donateOptions.toReversed().map((option) => (
+              <SchoolMenu.Item
+                key={option.id}
+                icon={option.menuIcon}
+                title={option.menuLinkLabel}
+                url={option.href}
+                color={color}
+                onClick={onClose}
+              />
+            ))}
+          </SchoolMenu>
+        </div>
+      </div>
     </nav>
   );
 };
