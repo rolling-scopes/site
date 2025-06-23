@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { BLOCKS, Block, INLINES, Inline } from '@contentful/rich-text-types';
-import Image from 'next/image';
+import Image from 'next/image.js';
 
 import { isExternalUri } from '@/shared/helpers/is-external-uri';
 import { prepareAssetImage } from '@/shared/helpers/prepare-asset-image';
