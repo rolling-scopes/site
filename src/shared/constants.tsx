@@ -149,7 +149,12 @@ export const RICH_TEXT_OPTIONS = {
       return isEmptyNode ? '' : <Paragraph>{children}</Paragraph>;
     },
     [BLOCKS.HEADING_3]: (_node: Block | Inline, children: ReactNode) => (
-      <Subtitle>{children}</Subtitle>
+      <Subtitle size="small">{children}</Subtitle>
+    ),
+    [BLOCKS.HEADING_4]: (_node: Block | Inline, children: ReactNode) => (
+      <Subtitle as="h4" size="extra-small">
+        {children}
+      </Subtitle>
     ),
     [BLOCKS.UL_LIST]: (_node: Block | Inline, children: ReactNode) => (
       <ContentList>{children}</ContentList>
