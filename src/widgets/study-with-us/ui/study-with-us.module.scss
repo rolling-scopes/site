@@ -1,7 +1,7 @@
 .study-with-us {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: $gap-l;
 
   @include media-laptop {
     gap: 48px;
@@ -9,10 +9,10 @@
 }
 
 .study-wrap {
-  gap: 50px;
+  gap: $gap-xxxl;
 
   @include media-tablet-large {
-    gap: 40px;
+    gap: $gap-xxl;
   }
 }
 
@@ -42,13 +42,13 @@
 .study-options {
   display: flex;
   flex-direction: row;
-  gap: 24px;
+  gap: $gap-l;
   align-items: flex-start;
   justify-content: space-between;
 
   @include media-tablet-large {
     flex-direction: column;
-    gap: 32px;
+    gap: $gap-xl;
   }
 
   @include media-tablet {
@@ -59,7 +59,7 @@
 .option-item {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: $gap-s;
   max-width: 380px;
 
   @include media-laptop {

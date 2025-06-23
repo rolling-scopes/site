@@ -1,9 +1,9 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: $gap-xs;
 
-  font-size: 18px;
+  font-size: $font-size-m;
   line-height: 28px;
   letter-spacing: 0.5px;
   list-style-type: none;
@@ -13,7 +13,7 @@
     letter-spacing: 0;
 
     @include media-laptop {
-      font-size: 16px;
+      font-size: $font-size-s;
       line-height: 24px;
     }
   }
@@ -23,6 +23,6 @@
   }
 
   @include media-tablet-large {
-    font-size: 16px;
+    font-size: $font-size-s;
   }
 }
