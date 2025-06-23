@@ -14,7 +14,7 @@
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 32px;
+  column-gap: $gap-xl;
 
   width: max-content;
   min-width: calc(100% + var(--header-padding));

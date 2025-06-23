@@ -44,7 +44,7 @@
     }
 
     @include media-mobile-landscape {
-      row-gap: 16px;
+      row-gap: $gap-s;
       max-height: 816px;
     }
   }
