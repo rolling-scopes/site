@@ -15,8 +15,13 @@ type DropdownContentProps = {
 };
 
 export const DropdownContent = ({ activeMenuItem, menuData }: DropdownContentProps) => {
+  const contentClassName = activeMenuItem?.replace(/\s+/g, '').toLowerCase() + '-content';
+
   return (
-    <div className={cx('dropdown-content')} data-testid="dropdown-content">
+    <div
+      className={cx('dropdown-content', { 'support-container': activeMenuItem === NAV_MENU_LABELS.SUPPORT_US })}
+      data-testid="dropdown-content"
+    >
       {activeMenuItem === NAV_MENU_LABELS.SUPPORT_US && (
         <div className={cx('support-text')}>
           <Paragraph fontSize="small">
@@ -26,7 +31,7 @@ export const DropdownContent = ({ activeMenuItem, menuData }: DropdownContentPro
           <Paragraph fontSize="small">Thank you for your support!</Paragraph>
         </div>
       )}
-      <SchoolMenu>
+      <SchoolMenu className={contentClassName}>
         {menuData.map((option) => (
           <SchoolMenu.Item
             key={option.id}

@@ -1,3 +1,26 @@
 .dropdown-content {
   width: 100%;
 }
+
+.support-container {
+  display: grid;
+  gap: 16px;
+
+  > :first-child {
+    grid-column: span 2;
+  }
+
+  > :nth-child(2) {
+    grid-column: 3;
+  }
+
+  .support-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    max-width: 500px;
+
+    text-align: start;
+  }
+}
