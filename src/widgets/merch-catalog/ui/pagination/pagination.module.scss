@@ -27,22 +27,12 @@
   }
 
   &.active {
-    border-color: $color-blue-600;
+    border-color: $color-black;
     color: $color-white;
-    background: $color-blue-600;
+    background: $color-black;
   }
 
   &.arrow {
     font-weight: $font-weight-bold;
   }
-}
-
-.total-pages {
-  margin-left: 8px;
-  font-size: 14px;
-  color: var(--text-secondary);
-}
-
-.total-pages-text {
-  margin-left: 10px;
 }

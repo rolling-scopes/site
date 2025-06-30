@@ -14,17 +14,33 @@ export type PaginationProps = {
 };
 
 export const Pagination = ({ currentPage, totalPages, onPageChange }: PaginationProps) => {
-  const getVisiblePages = () => {
-    const visiblePages = 5;
-    let startPage = Math.max(1, currentPage - Math.floor(visiblePages / 2));
-    let endPage = startPage + visiblePages - 1;
+  const getPaginationItems = () => {
+    const leftCount = 3;
+    const rightCount = 2;
+    const pages: (number | 'dots')[] = [];
 
-    if (endPage > totalPages) {
-      endPage = totalPages;
-      startPage = Math.max(1, endPage - visiblePages + 1);
+    // Calculate left group (sliding window of 3 pages)
+    let leftEnd = Math.min(leftCount, totalPages);
+    let leftStart = Math.max(1, Math.min(currentPage - 1, totalPages - rightCount - leftCount + 1));
+
+    leftEnd = Math.min(leftStart + leftCount - 1, totalPages - rightCount);
+    leftStart = Math.max(1, leftEnd - leftCount + 1);
+
+    for (let i = leftStart; i <= leftEnd; i++) {
+      pages.push(i);
     }
 
-    return Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
+    // Add dots if there's a gap between left and right group
+    if (leftEnd < totalPages - rightCount) {
+      pages.push('dots');
+    }
+
+    // Add right group (last 2 pages)
+    for (let i = Math.max(totalPages - rightCount + 1, leftEnd + 1); i <= totalPages; i++) {
+      pages.push(i);
+    }
+
+    return pages;
   };
 
   return (
@@ -37,15 +53,21 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
       >
         <FontAwesomeIcon icon={faChevronLeft} />
       </button>
-      {getVisiblePages().map((page) => (
-        <button
-          key={page}
-          className={cx('pagination-button', { active: currentPage === page })}
-          onClick={() => onPageChange(page)}
-        >
-          {page}
-        </button>
-      ))}
+      {getPaginationItems().map((item, idx) =>
+        item === 'dots'
+          ? (
+              <span key={`dots-${idx}`} className={cx('pagination-dots')}>...</span>
+            )
+          : (
+              <button
+                key={item}
+                className={cx('pagination-button', { active: currentPage === item })}
+                onClick={() => onPageChange(item as number)}
+              >
+                {item}
+              </button>
+            ),
+      )}
       <button
         className={cx('pagination-button', 'arrow')}
         onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
@@ -54,10 +76,6 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
       >
         <FontAwesomeIcon icon={faChevronRight} />
       </button>
-      <span className={cx('total-pages')}>
-        total number of pages:
-        <b className={cx('total-pages-text')}>{totalPages}</b>
-      </span>
     </div>
   );
 };
