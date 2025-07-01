@@ -6,6 +6,7 @@ import { TITLE_POSTFIX } from '../../constants';
 import { Menu } from '../../types';
 import { fetchMarkdownContent } from '../../utils/fetch-markdown-content';
 import { fetchMenu } from '../../utils/fetch-menu';
+import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 import { Language } from '@/shared/types';
 
 type RouteParams = { lang: Language;
@@ -44,8 +45,24 @@ export async function generateMetadata({
   const slugPath = slug.join('/');
 
   const title = titles.find((el) => el.slug.join('/') === slugPath)?.title;
+  const description =
+    'RS School Docs: access rules, guides, FAQs, onboarding, and resources for students and mentors. Your hub for all Rolling Scopes School documentation.';
 
-  return { title: `${title} ${TITLE_POSTFIX}` };
+  const keywords =
+    'RS School docs, documentation, rules, guides, onboarding, FAQ, student resources, mentor resources';
+  const canonical = `https://rs.school/docs/${lang}/${slugPath}`;
+  const robots = 'index, follow';
+
+  const metadata = generatePageMetadata({
+    title: `${title} ${TITLE_POSTFIX}`,
+    description,
+    imagePath: `/docs/${lang}/og.png`,
+    keywords,
+    alternates: { canonical },
+    robots,
+  });
+
+  return metadata;
 }
 
 export async function generateStaticParams(): Promise<RouteParams[]> {

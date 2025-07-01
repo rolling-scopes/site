@@ -32,6 +32,16 @@ export interface TypeHomePageFields {
    * @summary The slug that will be used in the url bar
    */
   slug: EntryFieldTypes.Symbol;
+
+  /**
+   * Short description shown in search snippets and social previews
+   */
+  seoDescription?: EntryFieldTypes.Symbol;
+  /**
+   * Comma-separated keywords for SEO
+   */
+  seoKeywords?: EntryFieldTypes.Symbol;
+
   /**
    * Field type definition for field 'sections' (sections)
    * @name sections
