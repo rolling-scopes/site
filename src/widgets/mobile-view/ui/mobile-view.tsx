@@ -11,6 +11,7 @@ import { Course } from '@/entities/course';
 import iconBlue from '@/shared/assets/svg/heart-blue.svg';
 import iconYellow from '@/shared/assets/svg/heart-yellow.svg';
 import { NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
+import { CourseMenuItemsFresh } from '@/shared/ui/course-menu-items-fresh';
 import { Logo } from '@/shared/ui/logo';
 import {
   transformCoursesToMentorship,
@@ -123,17 +124,12 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
               color={color}
               onClick={onClose}
             />
-            {courses.map((course) => (
-              <SchoolMenu.Item
-                key={course.id}
-                icon={course[courseIcon]}
-                title={course.title}
-                description={course.startDate}
-                url={course.detailsUrl}
-                color={color}
-                onClick={onClose}
-              />
-            ))}
+            <CourseMenuItemsFresh
+              courses={courses}
+              icon={courseIcon}
+              onClose={onClose}
+              color={color}
+            />
           </SchoolMenu>
         </div>
 
