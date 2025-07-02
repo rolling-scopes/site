@@ -8,8 +8,8 @@ const cx = classnames.bind(styles);
 type InfoCellProps = {
   title: string;
   description: string;
-} & VariantProps<typeof titleVariants> &
-VariantProps<typeof cardVariants>;
+} & VariantProps<typeof titleVariants>
+& VariantProps<typeof cardVariants>;
 
 const titleVariants = cva(cx('title'), {
   variants: {
