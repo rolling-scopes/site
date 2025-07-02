@@ -4,9 +4,9 @@ import classNames from 'classnames/bind';
 
 import styles from './list.module.scss';
 
-type ListProps = Pick<HTMLAttributes<HTMLElement>, 'className'> &
-  VariantProps<typeof listVariants> &
-  PropsWithChildren & {
+type ListProps = Pick<HTMLAttributes<HTMLElement>, 'className'>
+  & VariantProps<typeof listVariants>
+  & PropsWithChildren & {
     ordered?: boolean;
   };
 
