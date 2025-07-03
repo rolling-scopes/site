@@ -1,4 +1,4 @@
-import { KeyboardEvent, PropsWithChildren, useRef } from 'react';
+import { KeyboardEvent, PropsWithChildren, RefObject } from 'react';
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
@@ -14,22 +14,23 @@ type NavItemProps = PropsWithChildren & {
   label: NAV_MENU_LABELS;
   href: string;
   icon?: StaticImageData;
+  activeNavItemRef?: RefObject<HTMLButtonElement | null>;
   isActiveNavItem: boolean;
   isDropdownOpen: boolean;
   onNavItemClick: () => void;
-  onDropdownClose: () => void;
+  onFocusDropdownItem: () => void;
 };
 
 export const NavItem = ({
   label,
   href,
   icon,
+  activeNavItemRef,
   isActiveNavItem,
   isDropdownOpen,
   onNavItemClick,
-  onDropdownClose,
+  onFocusDropdownItem,
 }: NavItemProps) => {
-  const buttonRef = useRef<HTMLButtonElement>(null);
   const isDropdown = Boolean(label !== NAV_MENU_LABELS.DOCS);
   const router = useRouter();
 
@@ -45,32 +46,27 @@ export const NavItem = ({
     }
   };
 
-  const handleEscKeyPress = (e: KeyboardEvent<HTMLElement>) => {
-    if (e.code === KEY_CODES.ESCAPE) {
-      onDropdownClose();
-      buttonRef.current?.focus();
-    }
-  };
-
   const handleConfirmKeyPress = (e: KeyboardEvent<HTMLElement>) => {
     if (e.code === KEY_CODES.ENTER || e.code === KEY_CODES.SPACE) {
       e.preventDefault();
       handleClick();
     }
-    handleEscKeyPress(e);
+
+    if (isDropdown) {
+      onFocusDropdownItem();
+    }
   };
 
   return (
-    <div className={cx('menu-item-wrapper')} data-testid="menu-item" onKeyDown={handleEscKeyPress}>
+    <div className={cx('menu-item-wrapper')} data-testid="menu-item" onClick={handleClick}>
       <button
-        ref={buttonRef}
+        ref={activeNavItemRef}
         className={cx(
           'menu-item',
           { active: isActive },
           { 'dropdown-toggle': isDropdown },
           { rotate: isActiveNavItem },
         )}
-        onClick={handleClick}
         onKeyDown={handleConfirmKeyPress}
       >
         {icon && (

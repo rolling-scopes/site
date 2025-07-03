@@ -12,7 +12,7 @@ import { Course } from '@/entities/course';
 import iconBlue from '@/shared/assets/svg/heart-blue.svg';
 import iconYellow from '@/shared/assets/svg/heart-yellow.svg';
 import logoBlue from '@/shared/assets/svg/rss-logo-blue.svg';
-import { NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
+import { KEY_CODES, NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
 import { useOutsideClick } from '@/shared/hooks/use-outside-click/use-outside-click';
 import { Logo } from '@/shared/ui/logo';
 import {
@@ -34,6 +34,8 @@ export const Header = ({ courses }: HeaderProps) => {
   const [activeMenuItem, setActiveMenuItem] = useState<NAV_MENU_LABELS | null>(null);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const wrapperRef = useRef<HTMLMenuElement>(null);
+  const activeDropdownItemRef = useRef<HTMLAnchorElement>(null);
+  const activeNavItemRef = useRef<HTMLButtonElement>(null);
 
   const pathname = usePathname();
   const isMentorshipPage = pathname.includes(ROUTES.MENTORSHIP);
@@ -96,6 +98,20 @@ export const Header = ({ courses }: HeaderProps) => {
     setActiveMenuItem(null);
   }, [pathname]);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.code === KEY_CODES.ESCAPE && isDropdownOpen) {
+        e.preventDefault();
+        setDropdownOpen(false);
+        setActiveMenuItem(null);
+        activeNavItemRef.current?.focus();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isDropdownOpen]);
+
   return (
     <header className={cx('header')}>
       <nav className={cx('navbar')} data-testid="navigation">
@@ -120,10 +136,15 @@ export const Header = ({ courses }: HeaderProps) => {
                 label={item.label}
                 icon={item.icon}
                 href={item.url}
+                activeNavItemRef={activeMenuItem === item.label ? activeNavItemRef : undefined}
                 isActiveNavItem={activeMenuItem === item.label}
                 isDropdownOpen={isDropdownOpen}
                 onNavItemClick={() => handleNavItemClick(item.label)}
-                onDropdownClose={() => setDropdownOpen(false)}
+                onFocusDropdownItem={() => {
+                  setTimeout(() => {
+                    activeDropdownItemRef.current?.focus();
+                  }, 0);
+                }}
               />
             ))}
             <DropdownWrapper isOpen={isDropdownOpen}>
@@ -131,6 +152,7 @@ export const Header = ({ courses }: HeaderProps) => {
                 <DropdownContent
                   menuData={menuData[activeMenuItem]}
                   activeMenuItem={activeMenuItem}
+                  activeItemRef={activeDropdownItemRef}
                 />
               )}
             </DropdownWrapper>
