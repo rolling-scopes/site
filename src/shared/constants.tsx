@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { BLOCKS, Block, INLINES, Inline } from '@contentful/rich-text-types';
-import Image from 'next/image';
+import Image from 'next/image.js';
 
 import { isExternalUri } from '@/shared/helpers/is-external-uri';
 import { prepareAssetImage } from '@/shared/helpers/prepare-asset-image';
@@ -149,7 +149,12 @@ export const RICH_TEXT_OPTIONS = {
       return isEmptyNode ? '' : <Paragraph>{children}</Paragraph>;
     },
     [BLOCKS.HEADING_3]: (_node: Block | Inline, children: ReactNode) => (
-      <Subtitle>{children}</Subtitle>
+      <Subtitle size="small">{children}</Subtitle>
+    ),
+    [BLOCKS.HEADING_4]: (_node: Block | Inline, children: ReactNode) => (
+      <Subtitle as="h4" size="extra-small">
+        {children}
+      </Subtitle>
     ),
     [BLOCKS.UL_LIST]: (_node: Block | Inline, children: ReactNode) => (
       <ContentList>{children}</ContentList>
