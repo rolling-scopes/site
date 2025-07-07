@@ -1,16 +1,16 @@
 .principles {
   .cards {
-    gap: 32px;
+    gap: $gap-xl;
     align-items: stretch;
     margin-top: 24px;
 
     @include media-laptop {
-      gap: 16px;
+      gap: $gap-s;
       width: 100%;
     }
 
     @include media-tablet {
-      gap: 8px;
+      gap: $gap-xs;
     }
   }
 }

@@ -5,7 +5,7 @@
   .courses-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+    gap: $gap-xl;
 
     .mentorship-course-card {
       width: 100%;

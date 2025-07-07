@@ -1,10 +1,10 @@
 .community-media-content {
   @include media-laptop {
-    gap: 50px;
+    gap: $gap-xxxl;
   }
 
   @include media-tablet-large {
-    gap: 16px;
+    gap: $gap-s;
   }
 }
 
