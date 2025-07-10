@@ -1,7 +1,9 @@
 'use client';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
+import Image from 'next/image';
+
+import chevronLeft from '../../../../shared/assets/svg/chevron-left.svg';
+import chevronRight from '../../../../shared/assets/svg/chevron-right.svg';
 
 import styles from './pagination.module.scss';
 
@@ -51,7 +53,12 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
         disabled={currentPage === 1}
         aria-label="Go to previous page"
       >
-        <FontAwesomeIcon icon={faChevronLeft} />
+        <Image
+          src={chevronLeft}
+          width={15}
+          height={15}
+          alt="chevron"
+        />
       </button>
       {getPaginationItems().map((item, idx) =>
         item === 'dots'
@@ -74,7 +81,12 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
         disabled={currentPage === totalPages}
         aria-label="Go to next page"
       >
-        <FontAwesomeIcon icon={faChevronRight} />
+        <Image
+          src={chevronRight}
+          width={15}
+          height={15}
+          alt="chevron"
+        />
       </button>
     </div>
   );
