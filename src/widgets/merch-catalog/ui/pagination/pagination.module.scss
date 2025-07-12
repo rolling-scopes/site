@@ -36,3 +36,16 @@
     font-weight: $font-weight-bold;
   }
 }
+
+.pagination-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  .dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $color-gray-400;
+  }
+}

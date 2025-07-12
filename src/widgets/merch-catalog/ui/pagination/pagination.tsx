@@ -63,7 +63,11 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
       {getPaginationItems().map((item, idx) =>
         item === 'dots'
           ? (
-              <span key={`dots-${idx}`} className={cx('pagination-dots')}>...</span>
+              <div key={`dots-${idx}`} className={cx('pagination-dots')}>
+                <span className={cx('dot')}></span>
+                <span className={cx('dot')}></span>
+                <span className={cx('dot')}></span>
+              </div>
             )
           : (
               <button
