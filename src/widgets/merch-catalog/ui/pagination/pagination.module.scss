@@ -22,19 +22,20 @@
   transition: all 0.2s ease;
 
   &:disabled {
-    cursor: not-allowed;
-    opacity: $opacity-50;
+    pointer-events: none;
+    opacity: $opacity-30;
   }
 
   &:hover:not(:disabled) {
-    color: $color-black;
-    background: $color-gray-100;
+    border-color: $color-gray-600;
+    color: $color-white;
+    background-color: $color-gray-600;
   }
 
   &.active {
-    border-color: $color-black;
+    border: 2px solid $color-black;
     color: $color-white;
-    background: $color-black;
+    background-color: $color-black;
   }
 
   &.arrow {
