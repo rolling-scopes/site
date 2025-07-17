@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+
+<style>.cls-1,.cls-2{fill:none;stroke:#000000;stroke-linecap:round;stroke-width:1.5px;}.cls-1{stroke-linejoin:round;}.cls-2{stroke-linejoin:bevel;}</style>
+
+</defs>
+
+<g id="ic-actions-download">
+
+<path class="cls-1" d="M22,11.66v8a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2v-8"/>
+
+<line class="cls-2" x1="12" y1="2.34" x2="12" y2="18.48"/>
+
+<path class="cls-2" d="M7.22,14.09l4.11,4.1a1,1,0,0,0,1.41,0l4-4"/>
+
+</g>
+
+</svg>
