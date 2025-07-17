@@ -1,10 +1,14 @@
 import { StaticImageData } from 'next/image';
 
-import type { LinkList } from '@/widgets/required/types';
-
-export type StudyPathPage = {
-  page: 'courses' | 'jsEn' | 'jsRu' | 'angular' | 'awsDev';
+type ItemWithLink = {
+  id: number;
+  text: string;
+  title: string;
+  link: string;
+  external?: boolean;
 };
+
+export type LinkList = ItemWithLink[];
 
 export type StudyPathProps = {
   sectionTitle: string;

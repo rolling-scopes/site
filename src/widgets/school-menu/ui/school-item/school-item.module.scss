@@ -1,12 +1,20 @@
 .school-item {
   display: flex;
-  gap: 5px;
-  column-gap: 15px;
-  align-items: center;
+  column-gap: 8px;
+  align-items: flex-start;
+
+  &.centered {
+    align-items: center;
+  }
+
+  &.non-clickable {
+    pointer-events: none;
+    cursor: default;
+  }
 
   .title {
     font-weight: $font-weight-medium;
-    line-height: 20px;
+    line-height: 24px;
     text-align: start;
 
     &.dark {
@@ -21,7 +29,7 @@
   &:hover {
     .title {
       &.dark {
-        color: $color-black;
+        color: $color-gray-500;
       }
 
       &.light {
@@ -46,15 +54,23 @@
     }
   }
 
+  [data-testid='school-item-icon'] {
+    max-height: 32px;
+  }
+
   .description-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 5px;
     align-items: flex-start;
 
     .description {
       font-size: 12px;
+      line-height: 24px;
       color: $color-gray-500;
     }
   }
+}
+
+.support-title {
+  font-size: 14px;
 }

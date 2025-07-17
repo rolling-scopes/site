@@ -9,9 +9,9 @@ import styles from './link-custom.module.scss';
 
 export const cx = classNames.bind(styles);
 
-type LinkCustomProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'rel' | 'target'> &
-  VariantProps<typeof linkCustomVariants> &
-  LinkCustomAdditionalProps;
+type LinkCustomProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'rel' | 'target'>
+  & VariantProps<typeof linkCustomVariants>
+  & LinkCustomAdditionalProps;
 
 type LinkCustomAdditionalProps = {
   href: string;
@@ -55,10 +55,10 @@ export const LinkCustom = ({
 }: LinkCustomProps) => {
   const resolveIcon = (): ReactNode => {
     switch (true) {
-      case external && variant === 'textLink':
-        return <TextLinkIcon />;
       case icon !== undefined:
         return icon;
+      case external && variant === 'textLink':
+        return <TextLinkIcon />;
       case variant === 'secondary':
         return <ArrowIcon />;
       case variant === 'rounded':
