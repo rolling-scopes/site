@@ -1,28 +1,13 @@
-import { FC } from 'react';
+import { ROUTES } from '@/shared/constants';
+import { Section } from '@/shared/types/types';
+import { SectionResolver } from '@/views/course/section-resolver';
 
-import { PAGE_NAMES } from '@/shared/constants';
-import { AboutSchool } from '@/widgets/about-school';
-import { Alumni } from '@/widgets/alumni';
-import { Breadcrumbs } from '@/widgets/breadcrumbs';
-import { HeroPage } from '@/widgets/hero-page';
-import { MentorsWanted } from '@/widgets/mentors-wanted';
-import { Principles } from '@/widgets/principles';
-import { StudyWithUs } from '@/widgets/study-with-us';
-import { Support } from '@/widgets/support';
-import { UpcomingCourses } from '@/widgets/upcoming-courses';
+type HomeProps = {
+  sections: Section[];
+};
 
-export const Home: FC = () => {
-  return (
-    <>
-      <HeroPage pageName={PAGE_NAMES.SCHOOL} />
-      <Breadcrumbs />
-      <AboutSchool />
-      <Principles />
-      <StudyWithUs />
-      <UpcomingCourses />
-      <Support />
-      <Alumni />
-      <MentorsWanted />
-    </>
-  );
+export const Home = ({ sections }: HomeProps) => {
+  return sections.map((section) => (
+    <SectionResolver key={section.id} courseEnrollUrl={ROUTES.COURSES} section={section} />
+  ));
 };

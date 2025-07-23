@@ -1,4 +1,4 @@
-.alumni {
+.media-grid {
   p {
     width: 640px;
     margin-top: 0;
@@ -9,7 +9,7 @@
   }
 }
 
-.alumni-list {
+.media-grid-list {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   row-gap: 48px;

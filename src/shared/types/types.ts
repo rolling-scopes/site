@@ -2,6 +2,26 @@ import { HttpStatus } from 'http-status';
 
 import { ApiBaseClass } from '@/shared/api/api-base-class';
 import { HTTP_METHOD } from '@/shared/constants';
+import {
+  TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeDonationWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeHeroSectionWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeHighlightCardWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeLearningPathStagesWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeMediaGridWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeMediaTextBlockWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeUpcomingCoursesWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeVideoBlockWithAllLocalesAndWithoutLinkResolutionResponse,
+} from '@/shared/types/contentful';
+import { AboutCourseSectionData } from '@/widgets/about-course';
+import { HeroSectionData } from '@/widgets/hero-course/types';
+import { LearningPathStagesSectionData } from '@/widgets/learning-path-stages';
+import { MediaGridSectionData } from '@/widgets/media-grid/types';
+import { MediaTextBlockSectionData } from '@/widgets/media-text-block';
+import { HighlightCardData } from '@/widgets/principles/types';
+import { SupportUsSectionData } from '@/widgets/support/types';
+import { UpcomingCoursesSectionData } from '@/widgets/upcoming-courses/types';
+import { VideoBlockSectionData } from '@/widgets/video-block';
 import type { BaseEntry } from 'contentful';
 import { LinkList } from 'data';
 
@@ -87,3 +107,31 @@ export type ApiResponseError = {
 
 export type ExtractSectionName<TContentType extends BaseEntry> =
   TContentType['sys']['contentType']['sys']['id'];
+
+export type SectionName =
+  | ExtractSectionName<TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeMediaTextBlockWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeLearningPathStagesWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeVideoBlockWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeHeroSectionWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeUpcomingCoursesWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeDonationWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeMediaGridWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeHighlightCardWithAllLocalesAndWithoutLinkResolutionResponse>;
+
+type SectionBase<TName extends SectionName, TData, TId extends string = string> = {
+  id: TId;
+  name: TName;
+  data: TData;
+};
+
+export type Section =
+  | SectionBase<Extract<SectionName, 'aboutCourse'>, AboutCourseSectionData>
+  | SectionBase<Extract<SectionName, 'mediaTextBlock'>, MediaTextBlockSectionData>
+  | SectionBase<Extract<SectionName, 'learningPathStages'>, LearningPathStagesSectionData>
+  | SectionBase<Extract<SectionName, 'videoBlock'>, VideoBlockSectionData>
+  | SectionBase<Extract<SectionName, 'heroSection'>, HeroSectionData>
+  | SectionBase<Extract<SectionName, 'upcomingCourses'>, UpcomingCoursesSectionData>
+  | SectionBase<Extract<SectionName, 'donation'>, SupportUsSectionData>
+  | SectionBase<Extract<SectionName, 'mediaGrid'>, MediaGridSectionData>
+  | SectionBase<Extract<SectionName, 'highlightCard'>, HighlightCardData>;

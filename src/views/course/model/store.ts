@@ -1,9 +1,9 @@
 import { CoursePageResponse } from '@/entities/course/types';
 import { api } from '@/shared/api/api';
 import { prepareContentfulResponse } from '@/shared/helpers/prepare-contentful-response';
+import { transformPageSections } from '@/shared/helpers/transform-page-sections';
 import { ApiResourceLocale } from '@/shared/types';
 import { transformCoursePages } from '@/views/course/helpers/transform-course-pages';
-import { transformCourseSections } from '@/views/course/helpers/transform-course-sections';
 
 class CoursePageStore {
   public loadCoursePage = async (slug: string, locale: ApiResourceLocale = 'en-US') => {
@@ -14,7 +14,7 @@ class CoursePageStore {
 
       const { title = '', sections: coursePageSections, course } = preparedData.at(0)?.fields ?? {};
       const courseId = course?.sys?.id;
-      const sections = transformCourseSections(coursePageSections);
+      const sections = transformPageSections(coursePageSections);
 
       if (!courseId) {
         throw new Error('Course id is not defined.');

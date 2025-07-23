@@ -1,11 +1,15 @@
 import { ReactNode } from 'react';
 
+import { WidgetTitleVariants } from '@/shared/ui/widget-title/widget-title';
+
 export type MediaTextBlockSectionData = {
-  title: string;
-  contentLeft?: ReactNode;
-  contentRight?: ReactNode;
+  title?: string;
+  titleSize?: WidgetTitleVariants['size'];
+  contentLeft?: ReactNode | ReactNode[];
+  contentRight?: ReactNode | ReactNode[];
   linkUrl?: string | null;
   linkLabel?: string;
   disabledLinkLabel?: string;
   backgroundColor?: string;
+  embedded?: boolean;
 };

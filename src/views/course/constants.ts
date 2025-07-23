@@ -3,4 +3,9 @@ export const SECTION_TYPE = {
   MEDIA_TEXT_BLOCK: 'mediaTextBlock',
   LEARNING_PATH_STAGES: 'learningPathStages',
   VIDEO_BLOCK: 'videoBlock',
+  HERO: 'heroSection',
+  UPCOMING_COURSES: 'upcomingCourses',
+  DONATION: 'donation',
+  MEDIA_GRID: 'mediaGrid',
+  HIGHLIGHT_CARD: 'highlightCard',
 } as const;

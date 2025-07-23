@@ -2,32 +2,42 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import { courseStore } from '@/entities/course';
-import RSBanner from '@/shared/assets/svg/RsBanner.svg';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { UpcomingCoursesSectionData } from '@/widgets/upcoming-courses/types';
 import { CourseItems } from '@/widgets/upcoming-courses/ui/course-items';
 
 import styles from './upcoming-courses.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const UpcomingCourses = async () => {
+export const UpcomingCourses = async ({
+  title,
+  imageSrc,
+  linkUrl,
+  linkLabel,
+}: UpcomingCoursesSectionData) => {
   const courses = await courseStore.loadCourses();
 
   return (
     <section id="upcoming-courses" className={cx('container')}>
       <div className={cx('content', 'column-2')}>
         <div className={cx('course-wrap')}>
-          <WidgetTitle size="small">Upcoming courses</WidgetTitle>
+          <WidgetTitle size="small">{title}</WidgetTitle>
+
           <div className={cx('course-list')} data-testid="courses-list">
-            <CourseItems courses={courses} />
+            <CourseItems linkUrl={linkUrl} linkLabel={linkLabel} courses={courses} />
           </div>
         </div>
-        <Image
-          className={cx('rs-banner')}
-          data-testid="rs-banner"
-          src={RSBanner}
-          alt="The Rolling Scopes organization logo"
-        />
+
+        {imageSrc && (
+          <Image
+            className={cx('rs-banner')}
+            data-testid="rs-banner"
+            src={imageSrc}
+            alt=""
+            aria-hidden="true"
+          />
+        )}
       </div>
     </section>
   );

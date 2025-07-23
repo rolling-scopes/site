@@ -6,9 +6,10 @@ import { getActualData } from '@/shared/helpers/get-actual-data';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { maxUpcomingCoursesQuantity } from '@/widgets/upcoming-courses/constants';
+import { UpcomingCoursesSectionData } from '@/widgets/upcoming-courses/types';
 import { ANNOUNCEMENT_TELEGRAM_LINK } from 'data';
 
-type CourseItems = {
+type CourseItems = Pick<UpcomingCoursesSectionData, 'linkLabel' | 'linkUrl'> & {
   courses: Course[];
 };
 
@@ -17,7 +18,8 @@ const emptyText = {
   part2: ` Announcement channel to be the first to know when fresh courses are served.`,
 };
 
-export const CourseItems = ({ courses }: CourseItems) => {
+export const CourseItems = ({ courses, linkLabel, linkUrl }: CourseItems) => {
+  const href = linkUrl || ROUTES.COURSES;
   const coursesData = getActualData({
     data: courses,
     filterStale: true,
@@ -41,8 +43,8 @@ export const CourseItems = ({ courses }: CourseItems) => {
     return (
       <>
         {coursesContent}
-        <LinkCustom href={ROUTES.COURSES} variant="primary">
-          Go to courses
+        <LinkCustom href={href} variant="primary">
+          {linkLabel}
         </LinkCustom>
       </>
     );

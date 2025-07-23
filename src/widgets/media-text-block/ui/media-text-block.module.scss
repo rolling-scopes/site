@@ -20,6 +20,10 @@
     }
   }
 
+  .inner.small {
+    row-gap: 16px;
+  }
+
   .content-wrapper-left {
     display: flex;
     grid-column: 1 / 2;
@@ -71,5 +75,21 @@
       justify-content: center;
       justify-self: center;
     }
+  }
+
+  .component-list {
+    .content-wrapper-left {
+      grid-column: span 2;
+    }
+
+    .content-wrapper {
+      display: flex;
+      gap: 32px;
+      justify-content: space-between;
+    }
+  }
+
+  .embedded {
+    padding: 0;
   }
 }
