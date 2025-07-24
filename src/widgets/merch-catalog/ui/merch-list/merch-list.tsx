@@ -38,6 +38,10 @@ export const MerchList = ({ products }: MerchListProps) => {
   useEffect(() => {
     const newPage = parseInt(pageParam || '1', 10);
 
+    if (newPage > totalPages || newPage < 1) {
+      setCurrentPage(1);
+      router.push(`?page=1`);
+    }
     if (newPage !== currentPage) {
       setCurrentPage(newPage);
     }
