@@ -16,6 +16,8 @@ export type PaginationProps = {
 };
 
 export const Pagination = ({ currentPage, totalPages, onPageChange }: PaginationProps) => {
+  const lastPage = totalPages;
+
   const getPaginationItems = () => {
     const visiblePagesInLeftSection = 3;
     const visiblePagesInRightSection = 2;
@@ -46,11 +48,23 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
     return pages;
   };
 
+  const handlePageChangeBack = () => {
+    if (currentPage > 1) {
+      onPageChange(currentPage - 1);
+    }
+  };
+
+  const handlePageChangeNext = () => {
+    if (currentPage < lastPage) {
+      onPageChange(currentPage + 1);
+    }
+  };
+
   return (
     <div className={cx('pagination')}>
       <button
         className={cx('pagination-button', 'arrow')}
-        onClick={() => onPageChange(Math.max(1, currentPage - 1))}
+        onClick={() => handlePageChangeBack()}
         disabled={currentPage === 1}
         aria-label="Go to previous page"
       >
@@ -82,7 +96,7 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
       )}
       <button
         className={cx('pagination-button', 'arrow')}
-        onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
+        onClick={() => handlePageChangeNext()}
         disabled={currentPage === totalPages}
         aria-label="Go to next page"
       >
