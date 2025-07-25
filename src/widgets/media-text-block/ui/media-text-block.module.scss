@@ -78,9 +78,7 @@
   }
 
   .component-list {
-    .content-wrapper-left {
-      grid-column: span 2;
-    }
+    grid-column: span 2;
 
     .content-wrapper {
       display: flex;
