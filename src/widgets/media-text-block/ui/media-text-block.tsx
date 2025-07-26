@@ -19,6 +19,7 @@ export const MediaTextBlock = async ({
   titleSize,
   contentLeft,
   contentRight,
+  contentBottom,
   linkUrl,
   linkLabel,
   disabledLinkLabel,
@@ -65,6 +66,8 @@ export const MediaTextBlock = async ({
           <div className={cx('content-wrapper', 'content-wrapper-right')}>{contentRight}</div>
         )}
       </div>
+
+      {contentBottom && <div className={cx('content-bottom', 'content')}>{contentBottom}</div>}
     </section>
   );
 };

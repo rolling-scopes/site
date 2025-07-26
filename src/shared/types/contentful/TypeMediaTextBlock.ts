@@ -46,6 +46,12 @@ export interface TypeMediaTextBlockFields {
    */
   contentRight?: EntryFieldTypes.RichText;
   /**
+   * Field type definition for field 'contentBottom' (contentBottom)
+   * @name contentBottom
+   * @localized true
+   */
+  contentBottom?: EntryFieldTypes.RichText;
+  /**
    * Field type definition for field 'linkUrl' (linkUrl)
    * @name linkUrl
    * @localized true
@@ -78,7 +84,7 @@ export interface TypeMediaTextBlockFields {
  * @type {TypeMediaTextBlockSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T14:21:33.812Z
- * @version 61
+ * @version 63
  */
 export type TypeMediaTextBlockSkeleton = EntrySkeletonType<
   TypeMediaTextBlockFields,
@@ -90,7 +96,7 @@ export type TypeMediaTextBlockSkeleton = EntrySkeletonType<
  * @type {TypeMediaTextBlock}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T14:21:33.812Z
- * @version 61
+ * @version 63
  */
 export type TypeMediaTextBlock<
   Modifiers extends ChainModifiers,

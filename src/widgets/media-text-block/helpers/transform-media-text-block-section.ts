@@ -16,6 +16,9 @@ export function transformMediaTextBlockSection(
   const contentRight = section.fields.contentRight
     ? richTextRenderer(section.fields.contentRight)
     : undefined;
+  const contentBottom = section.fields.contentBottom
+    ? richTextRenderer(section.fields.contentBottom)
+    : undefined;
   const linkUrl = section.fields.linkUrl;
   const linkLabel = section.fields.linkLabel;
   const disabledLinkLabel = section.fields.disabledLinkLabel;
@@ -29,6 +32,7 @@ export function transformMediaTextBlockSection(
       titleSize,
       contentLeft,
       contentRight,
+      contentBottom,
       linkUrl,
       linkLabel,
       disabledLinkLabel,

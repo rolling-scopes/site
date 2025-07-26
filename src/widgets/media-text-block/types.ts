@@ -7,6 +7,7 @@ export type MediaTextBlockSectionData = {
   titleSize?: WidgetTitleVariants['size'];
   contentLeft?: ReactNode | ReactNode[];
   contentRight?: ReactNode | ReactNode[];
+  contentBottom?: ReactNode | ReactNode[];
   linkUrl?: string | null;
   linkLabel?: string;
   disabledLinkLabel?: string;

@@ -39,6 +39,7 @@ export const SectionResolver = ({ courseEnrollUrl, section, embedded }: SectionR
           titleSize={section.data.titleSize}
           contentLeft={section.data.contentLeft}
           contentRight={section.data.contentRight}
+          contentBottom={section.data.contentBottom}
           linkUrl={section.data.linkUrl ?? courseEnrollUrl}
           linkLabel={section.data.linkLabel}
           disabledLinkLabel={section.data.disabledLinkLabel}
