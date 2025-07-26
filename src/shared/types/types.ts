@@ -15,10 +15,10 @@ import {
 } from '@/shared/types/contentful';
 import { AboutCourseSectionData } from '@/widgets/about-course';
 import { HeroSectionData } from '@/widgets/hero-course/types';
+import { HighlightCardData } from '@/widgets/highlight-card/types';
 import { LearningPathStagesSectionData } from '@/widgets/learning-path-stages';
 import { MediaGridSectionData } from '@/widgets/media-grid/types';
 import { MediaTextBlockSectionData } from '@/widgets/media-text-block';
-import { HighlightCardData } from '@/widgets/principles/types';
 import { SupportUsSectionData } from '@/widgets/support/types';
 import { UpcomingCoursesSectionData } from '@/widgets/upcoming-courses/types';
 import { VideoBlockSectionData } from '@/widgets/video-block';

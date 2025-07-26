@@ -16,6 +16,7 @@ type MediaTextBlockProps = MediaTextBlockSectionData;
 const cx = classNames.bind(styles);
 
 export const MediaTextBlock = async ({
+  anchorId,
   title,
   titleSize,
   titleMod = 'asterisk',
@@ -37,7 +38,11 @@ export const MediaTextBlock = async ({
   const isComponentList = isSectionComponentsList(contentLeft);
 
   return (
-    <section className={cx('media-text-block', 'container')} style={{ backgroundColor }}>
+    <section
+      id={anchorId}
+      className={cx('media-text-block', 'container')}
+      style={{ backgroundColor }}
+    >
       <div
         className={cx('inner', 'content', {
           embedded,

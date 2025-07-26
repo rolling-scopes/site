@@ -1,11 +1,12 @@
+import { Course } from '@/entities/course';
 import { Section } from '@/shared/types/types';
 import { SECTION_TYPE } from '@/views/course/constants';
 import { AboutCourseSection } from '@/widgets/about-course';
-import { Hero } from '@/widgets/hero-page';
+import { Hero } from '@/widgets/hero';
+import { HighlightCard } from '@/widgets/highlight-card';
 import { LearningPathStageItem, LearningPathStages } from '@/widgets/learning-path-stages';
 import { MediaGrid } from '@/widgets/media-grid';
 import { MediaTextBlock } from '@/widgets/media-text-block';
-import { HighlightCard } from '@/widgets/principles/ui/principle-card/highlight-card';
 import { Support } from '@/widgets/support';
 import { UpcomingCourses } from '@/widgets/upcoming-courses';
 import { VideoBlock } from '@/widgets/video-block';
@@ -13,10 +14,18 @@ import { VideoBlock } from '@/widgets/video-block';
 type SectionResolverProps = {
   section: Section;
   courseEnrollUrl: string | null;
+  anchorId?: string;
   embedded?: boolean;
+  courses?: Course[];
 };
 
-export const SectionResolver = ({ courseEnrollUrl, section, embedded }: SectionResolverProps) => {
+export const SectionResolver = ({
+  courseEnrollUrl,
+  section,
+  anchorId,
+  embedded,
+  courses,
+}: SectionResolverProps) => {
   const sectionName = section.name;
 
   switch (sectionName) {
@@ -34,6 +43,7 @@ export const SectionResolver = ({ courseEnrollUrl, section, embedded }: SectionR
     case SECTION_TYPE.MEDIA_TEXT_BLOCK:
       return (
         <MediaTextBlock
+          anchorId={anchorId}
           embedded={embedded}
           title={section.data.title}
           titleSize={section.data.titleSize}
@@ -84,8 +94,13 @@ export const SectionResolver = ({ courseEnrollUrl, section, embedded }: SectionR
       );
 
     case SECTION_TYPE.UPCOMING_COURSES:
+      if (!courses) {
+        throw new Error('No courses provided');
+      }
+
       return (
         <UpcomingCourses
+          courses={courses}
           title={section.data.title}
           linkLabel={section.data.linkLabel}
           linkUrl={section.data.linkUrl}

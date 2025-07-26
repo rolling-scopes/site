@@ -11,7 +11,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function HomeRoute() {
-  const { sections } = await landingPageStore.loadLandingPage('home');
-
-  return <Home sections={sections} />;
+  return <Home />;
 }

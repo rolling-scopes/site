@@ -7,20 +7,20 @@ import { UpcomingCourses } from '@/widgets/upcoming-courses';
 
 vi.mock('@/shared/helpers/get-actual-data');
 
-const mockedProps = {
-  title: 'Upcoming courses',
-  imageSrc: MOCKED_IMAGE_PATH,
-  linkUrl: 'url',
-  linkLabel: 'Go to courses',
-};
-
 describe('UpcomingCourses', () => {
   describe('with courses', () => {
-    beforeEach(async () => {
+    beforeEach(() => {
       vi.mocked(getActualData).mockReturnValue(mockedCourses);
-      const upcomingCourses = await UpcomingCourses(mockedProps);
 
-      render(upcomingCourses);
+      render(
+        <UpcomingCourses
+          courses={mockedCourses}
+          title="Upcoming courses"
+          imageSrc={MOCKED_IMAGE_PATH}
+          linkUrl="url"
+          linkLabel="Go to courses"
+        />,
+      );
     });
 
     it('renders the title correctly', () => {
@@ -50,11 +50,18 @@ describe('UpcomingCourses', () => {
   });
 
   describe('without courses', () => {
-    beforeEach(async () => {
+    beforeEach(() => {
       vi.mocked(getActualData).mockReturnValue([]);
-      const upcomingCourses = await UpcomingCourses(mockedProps);
 
-      render(upcomingCourses);
+      render(
+        <UpcomingCourses
+          courses={mockedCourses}
+          title="Upcoming courses"
+          imageSrc={MOCKED_IMAGE_PATH}
+          linkUrl="url"
+          linkLabel="Go to courses"
+        />,
+      );
     });
 
     it('renders the title correctly', () => {

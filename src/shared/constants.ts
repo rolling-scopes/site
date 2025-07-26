@@ -27,7 +27,6 @@ export const LABELS = {
 } as const;
 
 export const PAGE_NAMES = {
-  SCHOOL: 'school',
   COURSES: 'courses',
   COMMUNITY: 'community',
   MENTORSHIP: 'mentorship',
@@ -75,8 +74,8 @@ export const API_CONTENT_TYPE_DICTIONARY = {
 
 export const ANCHORS = {
   ABOUT_COMMUNITY: 'about-community',
-  ABOUT_SCHOOL: 'about-school',
-  MENTORS_WANTED: 'mentors-wanted',
+  ABOUT_SCHOOL: '1',
+  MENTORS_WANTED: '7',
   UPCOMING_COURSES: 'upcoming-courses',
   EVENTS: 'events',
   MERCH: 'merch',

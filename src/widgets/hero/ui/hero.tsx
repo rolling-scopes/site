@@ -6,7 +6,7 @@ import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { HeroSectionData } from '@/widgets/hero-course/types';
 
-import styles from './hero-page.module.scss';
+import styles from './hero.module.scss';
 
 export const cx = classNames.bind(styles);
 

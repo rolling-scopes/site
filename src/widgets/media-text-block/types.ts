@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 import { WidgetTitleVariants } from '@/shared/ui/widget-title/widget-title';
 
 export type MediaTextBlockSectionData = {
+  anchorId?: string;
   title?: string;
   titleSize?: WidgetTitleVariants['size'];
   titleMod?: WidgetTitleVariants['mods'];

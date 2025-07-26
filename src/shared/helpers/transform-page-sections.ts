@@ -1,8 +1,10 @@
 import { Section } from '@/shared/types/types';
 import { ApiCoursePageResponseSections } from '@/views/course/types';
 import { isAboutCourseSection, transformAboutCourseSection } from '@/widgets/about-course';
-import { isHeroSection } from '@/widgets/hero-page/helpers/is-hero-section';
-import { transformHeroSection } from '@/widgets/hero-page/helpers/transform-hero-section';
+import { isHeroSection } from '@/widgets/hero/helpers/is-hero-section';
+import { transformHeroSection } from '@/widgets/hero/helpers/transform-hero-section';
+import { isHighlightCard } from '@/widgets/highlight-card/helpers/is-highlight-card';
+import { transformHighlightCard } from '@/widgets/highlight-card/helpers/transform-highlight-card';
 import {
   isLearningPathStagesSection,
   transformLearningPathStages,
@@ -15,8 +17,6 @@ import {
   isMediaTextBlockSection,
   transformMediaTextBlockSection,
 } from '@/widgets/media-text-block';
-import { isHighlightCard } from '@/widgets/principles/helpers/is-highlight-card';
-import { transformHighlightCard } from '@/widgets/principles/helpers/transform-highlight-card';
 import { isDonationSection } from '@/widgets/support/helpers/is-donation-section';
 import { transformDonationSection } from '@/widgets/support/helpers/transform-donation-section';
 import {

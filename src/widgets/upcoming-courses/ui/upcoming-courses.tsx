@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 
-import { courseStore } from '@/entities/course';
+import { Course } from '@/entities/course';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { UpcomingCoursesSectionData } from '@/widgets/upcoming-courses/types';
 import { CourseItems } from '@/widgets/upcoming-courses/ui/course-items';
@@ -10,14 +10,17 @@ import styles from './upcoming-courses.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const UpcomingCourses = async ({
+type UpcomingCoursesProps = UpcomingCoursesSectionData & {
+  courses: Course[];
+};
+
+export const UpcomingCourses = ({
   title,
   imageSrc,
   linkUrl,
   linkLabel,
-}: UpcomingCoursesSectionData) => {
-  const courses = await courseStore.loadCourses();
-
+  courses,
+}: UpcomingCoursesProps) => {
   return (
     <section id="upcoming-courses" className={cx('container')}>
       <div className={cx('content', 'column-2')}>

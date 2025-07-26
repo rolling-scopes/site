@@ -6,11 +6,7 @@ import { renderWithRouter } from '@/shared/__tests__/utils';
 import { PAGE_NAMES } from '@/shared/constants';
 import { heroPageData } from 'data';
 
-const pages = [
-  { name: PAGE_NAMES.SCHOOL },
-  { name: PAGE_NAMES.COURSES },
-  { name: PAGE_NAMES.COMMUNITY },
-];
+const pages = [{ name: PAGE_NAMES.COURSES }, { name: PAGE_NAMES.COMMUNITY }];
 
 let heroPage: HTMLElement;
 let mainTitle: HTMLElement;
