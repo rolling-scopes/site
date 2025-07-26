@@ -21,6 +21,12 @@ export interface TypeMediaTextBlockFields {
    */
   tag?: EntryFieldTypes.Symbol;
   /**
+   * Field type definition for field 'sectionLabel' (sectionLabel)
+   * @name sectionLabel
+   * @localized true
+   */
+  sectionLabel?: EntryFieldTypes.Symbol;
+  /**
    * Field type definition for field 'title' (title)
    * @name title
    * @localized true
@@ -33,6 +39,13 @@ export interface TypeMediaTextBlockFields {
    * @summary 0 – 'Smallest'. 1 – 'Small'. 2 – 'Medium'. 3 – 'Large'. By default is set to 2 (Medium)
    */
   titleSize?: EntryFieldTypes.Integer<0 | 1 | 2 | 3>;
+  /**
+   * Field type definition for field 'titleMod' (titleMod)
+   * @name titleMod
+   * @localized false
+   * @summary The title modification such as || or *. 0 - *, 1 - ||. By default is set to *
+   */
+  titleMod?: EntryFieldTypes.Integer<0 | 1>;
   /**
    * Field type definition for field 'contentLeft' (contentLeft)
    * @name contentLeft
@@ -84,7 +97,7 @@ export interface TypeMediaTextBlockFields {
  * @type {TypeMediaTextBlockSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T14:21:33.812Z
- * @version 63
+ * @version 73
  */
 export type TypeMediaTextBlockSkeleton = EntrySkeletonType<
   TypeMediaTextBlockFields,
@@ -96,7 +109,7 @@ export type TypeMediaTextBlockSkeleton = EntrySkeletonType<
  * @type {TypeMediaTextBlock}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T14:21:33.812Z
- * @version 63
+ * @version 73
  */
 export type TypeMediaTextBlock<
   Modifiers extends ChainModifiers,

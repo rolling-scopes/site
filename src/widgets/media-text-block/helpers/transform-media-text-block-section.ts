@@ -1,4 +1,4 @@
-import { WIDGET_TITLE_SIZE_MAP } from '@/shared/constants';
+import { WIDGET_TITLE_MOD_MAP, WIDGET_TITLE_SIZE_MAP } from '@/shared/constants';
 import { richTextRenderer } from '@/shared/helpers/rich-text-renderer';
 import { TypeMediaTextBlockWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
 import { Section } from '@/shared/types/types';
@@ -10,6 +10,8 @@ export function transformMediaTextBlockSection(
   const name = section.sys.contentType.sys.id;
   const title = section.fields.title;
   const titleSize = WIDGET_TITLE_SIZE_MAP.get(section.fields.titleSize);
+  const titleMod = WIDGET_TITLE_MOD_MAP.get(section.fields.titleMod);
+  const sectionLabel = section.fields.sectionLabel;
   const contentLeft = section.fields.contentLeft
     ? richTextRenderer(section.fields.contentLeft)
     : undefined;
@@ -30,6 +32,8 @@ export function transformMediaTextBlockSection(
     data: {
       title,
       titleSize,
+      titleMod,
+      sectionLabel,
       contentLeft,
       contentRight,
       contentBottom,

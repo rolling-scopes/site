@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import { MediaTextBlockSectionData } from '../types';
 import { isExternalUri } from '@/shared/helpers/is-external-uri';
 import { LinkCustom } from '@/shared/ui/link-custom';
+import { SectionLabel } from '@/shared/ui/section-label';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import {
   isSectionComponentsList,
@@ -17,6 +18,8 @@ const cx = classNames.bind(styles);
 export const MediaTextBlock = async ({
   title,
   titleSize,
+  titleMod = 'asterisk',
+  sectionLabel,
   contentLeft,
   contentRight,
   contentBottom,
@@ -41,11 +44,15 @@ export const MediaTextBlock = async ({
           small,
         })}
       >
-        {title && (
-          <WidgetTitle size={titleSize} className={cx('title')} mods="asterisk">
-            {title}
-          </WidgetTitle>
-        )}
+        <div className={cx('title')}>
+          {sectionLabel && <SectionLabel>{sectionLabel}</SectionLabel>}
+
+          {title && (
+            <WidgetTitle size={titleSize} mods={titleMod}>
+              {title}
+            </WidgetTitle>
+          )}
+        </div>
 
         <div className={cx('content-wrapper-left', { 'component-list': isComponentList })}>
           {contentLeft && <div className={cx('content-wrapper')}>{contentLeft}</div>}

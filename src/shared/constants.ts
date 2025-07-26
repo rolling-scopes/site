@@ -134,3 +134,8 @@ export const WIDGET_TITLE_SIZE_MAP = new Map<number | undefined, WidgetTitleVari
   [2, 'medium'],
   [3, 'large'],
 ]);
+
+export const WIDGET_TITLE_MOD_MAP = new Map<number | undefined, WidgetTitleVariants['mods']>([
+  [0, 'asterisk'],
+  [1, 'lines'],
+]);
