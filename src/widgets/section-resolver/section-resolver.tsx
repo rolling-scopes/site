@@ -1,4 +1,5 @@
 import { Course } from '@/entities/course';
+import { ROUTES } from '@/shared/constants';
 import { Section } from '@/shared/types/types';
 import { SECTION_TYPE } from '@/views/course/constants';
 import { AboutCourseSection } from '@/widgets/about-course';
@@ -13,7 +14,7 @@ import { VideoBlock } from '@/widgets/video-block';
 
 type SectionResolverProps = {
   section: Section;
-  courseEnrollUrl: string | null;
+  courseEnrollUrl?: string;
   anchorId?: string;
   embedded?: boolean;
   courses?: Course[];
@@ -103,7 +104,7 @@ export const SectionResolver = ({
           courses={courses}
           title={section.data.title}
           linkLabel={section.data.linkLabel}
-          linkUrl={section.data.linkUrl}
+          linkUrl={section.data.linkUrl ?? ROUTES.COURSES}
           imageSrc={section.data.imageSrc}
         />
       );

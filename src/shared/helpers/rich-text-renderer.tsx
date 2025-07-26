@@ -54,7 +54,7 @@ const RICH_TEXT_OPTIONS = {
     [BLOCKS.EMBEDDED_ENTRY]: (node: Inline | Block) => {
       const [section] = transformPageSections([node.data.target]);
 
-      return <SectionResolver embedded section={section} courseEnrollUrl="" />;
+      return <SectionResolver embedded section={section} />;
     },
   },
 };

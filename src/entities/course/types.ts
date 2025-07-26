@@ -32,7 +32,7 @@ export type CoursesScheduleResponse = Readonly<
     startDate: string;
     personalMentoringStartDate: string | null;
     personalMentoringEndDate: string | null;
-    wearecommunityUrl: string | null;
+    wearecommunityUrl?: string;
   }[]
 >;
 
@@ -63,7 +63,7 @@ export type Course = {
   language: Language;
   mode: 'online' | 'offline';
   detailsUrl: string;
-  enroll: string | null;
+  enroll?: string;
   backgroundStyle: {
     backgroundColor: string;
     accentColor: string;

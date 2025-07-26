@@ -1,6 +1,5 @@
 import { courseStore } from '@/entities/course';
 import { landingPageStore } from '@/entities/landing-page/model/store';
-import { ROUTES } from '@/shared/constants';
 import { SectionResolver } from '@/widgets/section-resolver';
 
 export const Home = async () => {
@@ -14,7 +13,6 @@ export const Home = async () => {
       courses={courses}
       anchorId={index.toString()}
       key={section.id}
-      courseEnrollUrl={ROUTES.COURSES}
       section={section}
     />
   ));

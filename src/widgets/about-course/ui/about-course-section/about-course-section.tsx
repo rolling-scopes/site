@@ -11,7 +11,7 @@ import styles from './about-course-section.module.scss';
 export const cx = classNames.bind(styles);
 
 type AboutCourseSectionProps = AboutCourseSectionData & {
-  enrollUrl: string | null;
+  enrollUrl?: string;
 };
 
 export const AboutCourseSection = async ({

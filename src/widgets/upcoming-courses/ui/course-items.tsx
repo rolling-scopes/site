@@ -1,7 +1,6 @@
 'use client';
 
 import { Course, CourseItem } from '@/entities/course';
-import { ROUTES } from '@/shared/constants';
 import { getActualData } from '@/shared/helpers/get-actual-data';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -9,7 +8,7 @@ import { maxUpcomingCoursesQuantity } from '@/widgets/upcoming-courses/constants
 import { UpcomingCoursesSectionData } from '@/widgets/upcoming-courses/types';
 import { ANNOUNCEMENT_TELEGRAM_LINK } from 'data';
 
-type CourseItems = Pick<UpcomingCoursesSectionData, 'linkLabel' | 'linkUrl'> & {
+type CourseItems = Required<Pick<UpcomingCoursesSectionData, 'linkLabel' | 'linkUrl'>> & {
   courses: Course[];
 };
 
@@ -19,7 +18,6 @@ const emptyText = {
 };
 
 export const CourseItems = ({ courses, linkLabel, linkUrl }: CourseItems) => {
-  const href = linkUrl || ROUTES.COURSES;
   const coursesData = getActualData({
     data: courses,
     filterStale: true,
@@ -43,7 +41,7 @@ export const CourseItems = ({ courses, linkLabel, linkUrl }: CourseItems) => {
     return (
       <>
         {coursesContent}
-        <LinkCustom href={href} variant="primary">
+        <LinkCustom href={linkUrl} variant="primary">
           {linkLabel}
         </LinkCustom>
       </>

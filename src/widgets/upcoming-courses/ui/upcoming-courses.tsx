@@ -12,6 +12,7 @@ const cx = classNames.bind(styles);
 
 type UpcomingCoursesProps = UpcomingCoursesSectionData & {
   courses: Course[];
+  linkUrl: string;
 };
 
 export const UpcomingCourses = ({
