@@ -1,9 +1,9 @@
-import { CoursePageResponse } from '@/entities/course/types';
+import { transformCoursePages } from '@/entities/course-page/helpers/transform-course-pages';
+import { CoursePageResponse } from '@/entities/course-page/types';
 import { api } from '@/shared/api/api';
 import { prepareContentfulResponse } from '@/shared/helpers/prepare-contentful-response';
 import { transformPageSections } from '@/shared/helpers/transform-page-sections';
 import { ApiResourceLocale } from '@/shared/types';
-import { transformCoursePages } from '@/views/course/helpers/transform-course-pages';
 
 class CoursePageStore {
   public loadCoursePage = async (slug: string, locale: ApiResourceLocale = 'en-US') => {

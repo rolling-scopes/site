@@ -1,5 +1,6 @@
 import { HttpStatus } from 'http-status';
 
+import { CoursePageResponse } from '@/entities/course-page/types';
 import { ApiBaseClass } from '@/shared/api/api-base-class';
 import { HTTP_METHOD } from '@/shared/constants';
 import {
@@ -135,3 +136,5 @@ export type Section =
   | SectionBase<Extract<SectionName, 'donation'>, SupportUsSectionData>
   | SectionBase<Extract<SectionName, 'mediaGrid'>, MediaGridSectionData>
   | SectionBase<Extract<SectionName, 'highlightCard'>, HighlightCardData>;
+
+export type PageResponseSections = CoursePageResponse['items'][0]['fields']['sections'];

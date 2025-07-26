@@ -1,13 +1,13 @@
 import { Course } from '@/entities/course';
 import { ROUTES } from '@/shared/constants';
 import { Section } from '@/shared/types/types';
-import { SECTION_TYPE } from '@/views/course/constants';
 import { AboutCourseSection } from '@/widgets/about-course';
 import { Hero } from '@/widgets/hero';
 import { HighlightCard } from '@/widgets/highlight-card';
 import { LearningPathStageItem, LearningPathStages } from '@/widgets/learning-path-stages';
 import { MediaGrid } from '@/widgets/media-grid';
 import { MediaTextBlock } from '@/widgets/media-text-block';
+import { SECTION_TYPE } from '@/widgets/section-resolver/constants';
 import { Support } from '@/widgets/support';
 import { UpcomingCourses } from '@/widgets/upcoming-courses';
 import { VideoBlock } from '@/widgets/video-block';

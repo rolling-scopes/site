@@ -2,12 +2,7 @@ import { StaticImageData } from 'next/image';
 
 import { API_COURSES_IDS_DICTIONARY } from '@/entities/course/constants';
 import { COURSE_LINKS } from '@/shared/constants';
-import {
-  ApiResourceLocale,
-  Language,
-  TypeCourseSkeleton,
-  TypeHomePageSkeleton,
-} from '@/shared/types';
+import { ApiResourceLocale, Language, TypeCourseSkeleton } from '@/shared/types';
 import type { EntryCollection } from 'contentful';
 import { CourseNamesKeys } from 'data';
 
@@ -38,12 +33,6 @@ export type CoursesScheduleResponse = Readonly<
 
 export type CoursesResponse = EntryCollection<
   TypeCourseSkeleton,
-  'WITHOUT_UNRESOLVABLE_LINKS',
-  ApiResourceLocale
->;
-
-export type CoursePageResponse = EntryCollection<
-  TypeHomePageSkeleton,
   'WITHOUT_UNRESOLVABLE_LINKS',
   ApiResourceLocale
 >;

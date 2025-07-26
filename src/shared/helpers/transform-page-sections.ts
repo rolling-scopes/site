@@ -1,5 +1,4 @@
-import { Section } from '@/shared/types/types';
-import { ApiCoursePageResponseSections } from '@/views/course/types';
+import { PageResponseSections, Section } from '@/shared/types/types';
 import { isAboutCourseSection, transformAboutCourseSection } from '@/widgets/about-course';
 import { isHeroSection } from '@/widgets/hero/helpers/is-hero-section';
 import { transformHeroSection } from '@/widgets/hero/helpers/transform-hero-section';
@@ -27,7 +26,7 @@ import {
 } from '@/widgets/upcoming-courses/helpers/transform-upcoming-courses-section';
 import { isVideoBlockSection, transformVideoBlockSection } from '@/widgets/video-block';
 
-export function transformPageSections(sections: ApiCoursePageResponseSections): Section[] {
+export function transformPageSections(sections: PageResponseSections): Section[] {
   if (!sections) {
     throw new Error('Unable to determine list of sections.');
   }

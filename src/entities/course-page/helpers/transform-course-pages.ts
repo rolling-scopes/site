@@ -1,4 +1,5 @@
-import { ApiCoursesIds, CoursePageResponse } from '@/entities/course/types';
+import { ApiCoursesIds } from '@/entities/course/types';
+import { CoursePageResponse } from '@/entities/course-page/types';
 
 type CoursePage = {
   slug: string;

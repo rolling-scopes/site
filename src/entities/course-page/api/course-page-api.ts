@@ -1,4 +1,4 @@
-import { CoursePageResponse } from '@/entities/course/types';
+import { CoursePageResponse } from '@/entities/course-page/types';
 import {
   API_CONTENT_TYPE_DICTIONARY,
   API_MAX_INCLUDE_DEPTH,
