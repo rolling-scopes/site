@@ -2,8 +2,13 @@ import { ApiMerchItem, ApiMerchItemAdapt, MerchProduct, MerchResponse } from '..
 
 export const transformMerchCatalog = (data: MerchResponse): MerchProduct[] => {
   const products: MerchProduct[] = [];
-  const baseUrl = process.env.API_BASE_URL;
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || '';
+
+  if (!baseUrl) {
+    console.warn('NEXT_PUBLIC_API_BASE_URL is not defined. URLs will be relative.');
+  }
   let index = 0;
+
   const processCategory = (category: ApiMerchItemAdapt, parentTags: string[]) => {
     for (const [key, value] of Object.entries(category)) {
       if (isApiMerchItem(value)) {
