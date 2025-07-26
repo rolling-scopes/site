@@ -1,7 +1,7 @@
 import { courseStore } from '@/entities/course';
 import { landingPageStore } from '@/entities/landing-page/model/store';
 import { ROUTES } from '@/shared/constants';
-import { SectionResolver } from '@/views/course/section-resolver';
+import { SectionResolver } from '@/widgets/section-resolver';
 
 export const Home = async () => {
   const [{ sections }, courses] = await Promise.all([

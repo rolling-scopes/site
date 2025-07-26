@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import { SectionResolver } from '@/views/course/section-resolver';
+import { SectionResolver } from '@/widgets/section-resolver';
 
 /**
  * Checks whenever nodes are the list of SectionResolver components

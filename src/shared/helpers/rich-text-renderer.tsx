@@ -11,7 +11,7 @@ import { ContentList } from '@/shared/ui/list/content-list';
 import { ListItem } from '@/shared/ui/list/list-item';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { SectionResolver } from '@/views/course/section-resolver';
+import { SectionResolver } from '@/widgets/section-resolver';
 
 type RichTextDocument = Parameters<typeof documentToReactComponents>['0'];
 type RichTextOptions = Parameters<typeof documentToReactComponents>['1'];
