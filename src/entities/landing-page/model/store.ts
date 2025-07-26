@@ -1,11 +1,11 @@
-import { LandingPageResponse } from '@/entities/landing-page/types';
+import { LandingPageResponse, LandingPageSlug } from '@/entities/landing-page/types';
 import { api } from '@/shared/api/api';
 import { prepareContentfulResponse } from '@/shared/helpers/prepare-contentful-response';
 import { transformPageSections } from '@/shared/helpers/transform-page-sections';
 import { ApiResourceLocale } from '@/shared/types';
 
 class LandingPageStore {
-  public loadLandingPage = async (slug: string, locale: ApiResourceLocale = 'en-US') => {
+  public loadLandingPage = async (slug: LandingPageSlug, locale: ApiResourceLocale = 'en-US') => {
     const res = await api.landingPage.queryPage(slug, locale);
 
     if (res.isSuccess) {
