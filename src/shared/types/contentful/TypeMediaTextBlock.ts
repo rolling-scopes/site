@@ -16,7 +16,7 @@ export interface TypeMediaTextBlockFields {
   /**
    * Field type definition for field 'tag' (tag)
    * @name tag
-   * @localized true
+   * @localized false
    * @summary This tag field is used internally only in contenful to unique identify identical content. THIS FIELD WILL NOT BE SHOWN ON THE WEBSITE
    */
   tag?: EntryFieldTypes.Symbol;
@@ -67,7 +67,7 @@ export interface TypeMediaTextBlockFields {
   /**
    * Field type definition for field 'linkUrl' (linkUrl)
    * @name linkUrl
-   * @localized true
+   * @localized false
    * @summary If no link is provided the course related link to the registration page will be used as a default value
    */
   linkUrl?: EntryFieldTypes.Symbol;
@@ -86,7 +86,7 @@ export interface TypeMediaTextBlockFields {
   /**
    * Field type definition for field 'backgroundColor' (backgroundColor)
    * @name backgroundColor
-   * @localized true
+   * @localized false
    */
   backgroundColor?: EntryFieldTypes.Symbol;
 }
@@ -97,7 +97,7 @@ export interface TypeMediaTextBlockFields {
  * @type {TypeMediaTextBlockSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T14:21:33.812Z
- * @version 73
+ * @version 79
  */
 export type TypeMediaTextBlockSkeleton = EntrySkeletonType<
   TypeMediaTextBlockFields,
@@ -109,7 +109,7 @@ export type TypeMediaTextBlockSkeleton = EntrySkeletonType<
  * @type {TypeMediaTextBlock}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T14:21:33.812Z
- * @version 73
+ * @version 79
  */
 export type TypeMediaTextBlock<
   Modifiers extends ChainModifiers,

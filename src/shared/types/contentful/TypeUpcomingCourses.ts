@@ -46,7 +46,7 @@ export interface TypeUpcomingCoursesFields {
  * @type {TypeUpcomingCoursesSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-07-16T12:12:38.743Z
- * @version 5
+ * @version 9
  */
 export type TypeUpcomingCoursesSkeleton = EntrySkeletonType<
   TypeUpcomingCoursesFields,
@@ -58,7 +58,7 @@ export type TypeUpcomingCoursesSkeleton = EntrySkeletonType<
  * @type {TypeUpcomingCourses}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-07-16T12:12:38.743Z
- * @version 5
+ * @version 9
  */
 export type TypeUpcomingCourses<
   Modifiers extends ChainModifiers,
