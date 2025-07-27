@@ -13,12 +13,6 @@
   box-shadow: 0 4px 12px 0 hsla(from $color-black h s l / $opacity-10);
 
   transition: box-shadow 0.3s ease;
-
-  &:hover {
-    box-shadow:
-      0 1px 5px hsla(from $color-black h s l / $opacity-40),
-      0 2px 8px -8px hsla(from $color-black h s l / $opacity-40);
-  }
 }
 
 .preview-wrap {
@@ -76,17 +70,17 @@
   border: none;
   border-radius: 100%;
 
-  opacity: 0.8;
+  opacity: $opacity-80;
   background-color: $color-yellow;
   box-shadow: 0 4px 12px 0 hsla(from $color-black h s l / $opacity-10);
 
   &:hover {
-    opacity: 1;
+    opacity: $opacity-100;
   }
 
   &:disabled {
     cursor: not-allowed;
-    opacity: 0.5;
+    opacity: $opacity-50;
   }
 }
 
