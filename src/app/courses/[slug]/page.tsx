@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 
 import { resolveCoursePageLocale } from '@/entities/course/helpers/resolve-course-page-locale';
+import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 import { Course } from '@/views/course/course';
 import { coursePageStore } from '@/views/course/model/store';
 
@@ -16,10 +17,21 @@ export async function generateMetadata({ params }: CourseRouteParams): Promise<M
   const { slug } = await params;
   const locale = resolveCoursePageLocale(slug);
 
-  const pageTitle = await coursePageStore.loadCoursePageTitle(slug, locale);
-  const title = `${pageTitle} · The Rolling Scopes School`;
+  const { courseName, description, keywords, courseUrl } = await coursePageStore.loadCoursePage(
+    slug,
+    locale,
+  );
+  const title = `${courseName} · The Rolling Scopes School`;
+  const robots = 'index, follow';
 
-  return { title };
+  return generatePageMetadata({
+    title,
+    description,
+    imagePath: `/courses/${slug}/og.png`,
+    keywords,
+    alternates: { canonical: courseUrl },
+    robots,
+  });
 }
 
 export async function generateStaticParams() {
