@@ -1,10 +1,12 @@
 'use client';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import { downloadArchive } from '../../helpers/download';
 import { MerchProduct } from '@/entities/merch/types';
+import loadingImg from '@/shared/assets/loading.svg';
+import loadingZip from '@/shared/assets/spin.svg';
 import downloadImg from '@/shared/assets/svg/download.svg';
 import { Paragraph } from '@/shared/ui/paragraph';
 
@@ -13,17 +15,29 @@ import styles from './merch-card.module.scss';
 export const cx = classNames.bind(styles);
 
 export const MerchCard = ({ title, preview, download }: MerchProduct) => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isDownloading, setIsDownloading] = useState(false);
+  const [isImageLoading, setIsImageLoading] = useState(true);
 
-  const handleDownload = async () => {
-    if (isLoading) {
+  const handleDownload = useCallback(async () => {
+    if (isDownloading) {
       return;
     }
 
-    setIsLoading(true);
-    await downloadArchive(download, `${title}.zip`);
+    setIsDownloading(true);
 
-    setIsLoading(false);
+    try {
+      const minDelay = new Promise((resolve) => setTimeout(resolve, 500));
+
+      await Promise.all([downloadArchive(download, `${title}.zip`), minDelay]);
+    } catch (error) {
+      console.error('Download failed:', error);
+    } finally {
+      setIsDownloading(false);
+    }
+  }, [isDownloading, download, title]);
+
+  const handleImageLoad = () => {
+    setIsImageLoading(false);
   };
 
   return (
@@ -32,14 +46,24 @@ export const MerchCard = ({ title, preview, download }: MerchProduct) => {
         <div className={cx('image-container')}>
           <Image
             className={cx('preview')}
-            src={preview[0]}
-            alt={title}
+            src={isImageLoading ? loadingImg : preview[0]}
+            alt={isImageLoading ? 'Loading...' : title}
             fill
             sizes="(max-width: 320px) 100vw, 320px"
+            onLoad={handleImageLoad}
           />
         </div>
-        <button onClick={handleDownload} className={cx('download')} disabled={isLoading}>
-          <Image src={downloadImg} alt="download link" className={cx('download-img')} />
+        <button
+          onClick={handleDownload}
+          className={cx('download')}
+          disabled={isImageLoading || isDownloading}
+          aria-label="Download merch files"
+        >
+          <Image
+            src={isImageLoading || isDownloading ? loadingZip : downloadImg}
+            alt="download link"
+            className={cx('download-img')}
+          />
         </button>
       </figure>
       <div className={cx('info-wrap')}>
