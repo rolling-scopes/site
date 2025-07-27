@@ -74,8 +74,8 @@ export const API_CONTENT_TYPE_DICTIONARY = {
 
 export const ANCHORS = {
   ABOUT_COMMUNITY: 'about-community',
-  ABOUT_SCHOOL: '1',
-  MENTORS_WANTED: '7',
+  ABOUT_SCHOOL: 'about-rs-school',
+  MENTORS_WANTED: 'mentors-wanted',
   UPCOMING_COURSES: 'upcoming-courses',
   EVENTS: 'events',
   MERCH: 'merch',
