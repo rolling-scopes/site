@@ -1,0 +1,21 @@
+.merch-catalog {
+  display: flex;
+  width: 100%;
+}
+
+.empty-image {
+  max-width: 170px;
+  height: auto;
+}
+
+.empty-paragraph {
+  max-width: 480px;
+  text-align: center;
+}
+
+.empty-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
