@@ -1,4 +1,5 @@
 import { WIDGET_TITLE_MOD_MAP, WIDGET_TITLE_SIZE_MAP } from '@/shared/constants';
+import { getSectionId } from '@/shared/helpers/get-section-id';
 import { richTextRenderer } from '@/shared/helpers/rich-text-renderer';
 import { TypeMediaTextBlockWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
 import { Section } from '@/shared/types/types';
@@ -25,11 +26,13 @@ export function transformMediaTextBlockSection(
   const linkLabel = section.fields.linkLabel;
   const disabledLinkLabel = section.fields.disabledLinkLabel;
   const backgroundColor = section.fields.backgroundColor;
+  const anchorId = getSectionId(section.fields.title);
 
   return {
     id,
     name,
     data: {
+      anchorId,
       title,
       titleSize,
       titleMod,

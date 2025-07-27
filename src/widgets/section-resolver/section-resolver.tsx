@@ -15,7 +15,6 @@ import { VideoBlock } from '@/widgets/video-block';
 type SectionResolverProps = {
   section: Section;
   courseEnrollUrl?: string;
-  anchorId?: string;
   embedded?: boolean;
   courses?: Course[];
 };
@@ -23,7 +22,6 @@ type SectionResolverProps = {
 export const SectionResolver = ({
   courseEnrollUrl,
   section,
-  anchorId,
   embedded,
   courses,
 }: SectionResolverProps) => {
@@ -44,8 +42,8 @@ export const SectionResolver = ({
     case SECTION_TYPE.MEDIA_TEXT_BLOCK:
       return (
         <MediaTextBlock
-          anchorId={anchorId}
           embedded={embedded}
+          anchorId={section.data.anchorId}
           title={section.data.title}
           titleSize={section.data.titleSize}
           titleMod={section.data.titleMod}
