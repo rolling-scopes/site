@@ -51,6 +51,10 @@
   // span across all the width if right side content is not present
   &:not(:has(.content-wrapper-right)) .content-wrapper-left {
     grid-column: span 2;
+
+    @include media-laptop {
+      grid-column: unset;
+    }
   }
 
   // if the content is NOT an image, place it under the title -> |title       |            |
@@ -98,11 +102,16 @@
       display: flex;
       gap: 32px;
       justify-content: space-between;
+
+      @include media-laptop {
+        flex-wrap: wrap;
+      }
     }
   }
 
   .content-bottom {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 32px;
     align-items: center;
     justify-content: space-between;
