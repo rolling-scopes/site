@@ -48,6 +48,11 @@
     }
   }
 
+  // span across all the width if right side content is not present
+  &:not(:has(.content-wrapper-right)) .content-wrapper-left {
+    grid-column: span 2;
+  }
+
   // if the content is NOT an image, place it under the title -> |title       |            |
   //                                                          -> |text content|text content|
   .content-wrapper-right:not(:has([data-id='asset-image'])) {
@@ -98,6 +103,7 @@
 
   .content-bottom {
     display: flex;
+    gap: 32px;
     align-items: center;
     justify-content: space-between;
 
