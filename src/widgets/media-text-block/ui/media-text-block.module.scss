@@ -6,8 +6,8 @@
     grid-column: 1 / 3;
     grid-row: 1 / 2;
 
-    @include media-tablet-large {
-      grid-column: 1 / 2;
+    @include media-laptop {
+      grid-column: unset;
     }
   }
 
