@@ -2,44 +2,46 @@ import { screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
 import { Support } from './support';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import supportImg from '@/shared/assets/support.webp';
-import boostyImg from '@/shared/assets/svg/boosty-icon.svg';
-import openCollectiveImg from '@/shared/assets/svg/opencollective-icon.svg';
+import { Paragraph } from '@/shared/ui/paragraph';
 
 describe('Support Component', () => {
   const mockedData = {
     titleText: 'Support Us',
-    firstParagraphText:
-      /Your donations help us cover hosting, domains, licenses, and advertising for courses and events./i,
-    secondParagraphText: 'Thank you for your support!',
+    paragraphText:
+      /Your donations help us cover hosting, domains, licenses, and advertising for courses and events. Thank you for your support!/i,
     openCollectiveLink: 'https://opencollective.com/rsschool',
     boostyLink: 'https://boosty.to/rsschool',
-    image: supportImg,
-    alt: 'A sloth mascot with a piggy bank in his hands',
     sectionId: 'donate',
   };
 
-  const {
-    titleText,
-    firstParagraphText,
-    secondParagraphText,
-    openCollectiveLink,
-    boostyLink,
-    image,
-    alt,
-    sectionId,
-  } = mockedData;
+  const { titleText, paragraphText, openCollectiveLink, boostyLink, sectionId } = mockedData;
 
   it('renders the component content correctly', () => {
-    renderWithRouter(<Support />);
+    renderWithRouter(
+      <Support
+        title="Support Us"
+        content={(
+          <Paragraph>
+            Your donations help us cover hosting, domains, licenses, and advertising for courses and
+            events. Thank you for your support!
+          </Paragraph>
+        )}
+        linkUrlLeft="https://opencollective.com/rsschool"
+        linkUrlRight="https://boosty.to/rsschool"
+        imageSrc={MOCKED_IMAGE_PATH}
+        linkLabelLeft="Support us"
+        linkLabelRight="Support us"
+        linkIconLeft={MOCKED_IMAGE_PATH}
+        linkIconRight={MOCKED_IMAGE_PATH}
+      />,
+    );
     const supportSection = screen.getByTestId('support-section');
     const title = screen.getByTestId('widget-title');
     const paragraphs = screen.getAllByTestId('paragraph');
     const links = screen.getAllByTestId('link-donate');
     const slothImage = screen.getByTestId('sloth-mascot');
-    const openCollectiveIcon = screen.getByTestId('opencollective-icon');
-    const boostyIcon = screen.getByTestId('boosty-icon');
 
     expect(supportSection).toBeVisible();
     expect(title).toBeVisible();
@@ -53,15 +55,11 @@ describe('Support Component', () => {
     expect(links).toHaveLength(2);
 
     expect(title).toHaveTextContent(titleText);
-    expect(paragraphs[0]).toHaveTextContent(firstParagraphText);
-    expect(paragraphs[1]).toHaveTextContent(secondParagraphText);
+    expect(paragraphs[0]).toHaveTextContent(paragraphText);
 
     expect(supportSection).toHaveAttribute('id', sectionId);
     expect(links[0]).toHaveAttribute('href', openCollectiveLink);
     expect(links[1]).toHaveAttribute('href', boostyLink);
-    expect(slothImage).toHaveAttribute('src', image.src);
-    expect(slothImage).toHaveAttribute('alt', alt);
-    expect(openCollectiveIcon).toHaveAttribute('src', openCollectiveImg.src);
-    expect(boostyIcon).toHaveAttribute('src', boostyImg.src);
+    expect(slothImage).toHaveAttribute('src', MOCKED_IMAGE_PATH.src);
   });
 });

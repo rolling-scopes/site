@@ -48,7 +48,6 @@ export { mentorsWantedData } from './mentors-wanted.data';
 export { mentorshipCourses, mentorshipCoursesDefault } from './mentorship.data';
 export { merchData } from './merch.data';
 export { picturesSocialMediaLinks } from './pictures.data';
-export { principleCards } from './principle-cards.data';
 export { rsInNumbers } from './rs-in-numbers.data';
 export { sliderPhotos } from './slider-photos.data';
 export { studyPath } from './study-path.data';

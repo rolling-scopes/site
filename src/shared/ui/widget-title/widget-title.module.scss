@@ -40,10 +40,17 @@
   }
 }
 
-.lines::before {
+.smallest {
+  padding-bottom: 0;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+.lines:not(.smallest)::before {
   content: '‖';
 }
 
-.asterisk::before {
+.asterisk:not(.smallest)::before {
   content: '*';
 }

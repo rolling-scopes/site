@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { mockedCourses } from '@/shared/__tests__/constants';
+import { MOCKED_IMAGE_PATH, mockedCourses } from '@/shared/__tests__/constants';
 import { getActualData } from '@/shared/helpers/get-actual-data';
 import { UpcomingCourses } from '@/widgets/upcoming-courses';
 
@@ -9,11 +9,18 @@ vi.mock('@/shared/helpers/get-actual-data');
 
 describe('UpcomingCourses', () => {
   describe('with courses', () => {
-    beforeEach(async () => {
+    beforeEach(() => {
       vi.mocked(getActualData).mockReturnValue(mockedCourses);
-      const upcomingCourses = await UpcomingCourses();
 
-      render(upcomingCourses);
+      render(
+        <UpcomingCourses
+          courses={mockedCourses}
+          title="Upcoming courses"
+          imageSrc={MOCKED_IMAGE_PATH}
+          linkUrl="url"
+          linkLabel="Go to courses"
+        />,
+      );
     });
 
     it('renders the title correctly', () => {
@@ -43,11 +50,18 @@ describe('UpcomingCourses', () => {
   });
 
   describe('without courses', () => {
-    beforeEach(async () => {
+    beforeEach(() => {
       vi.mocked(getActualData).mockReturnValue([]);
-      const upcomingCourses = await UpcomingCourses();
 
-      render(upcomingCourses);
+      render(
+        <UpcomingCourses
+          courses={mockedCourses}
+          title="Upcoming courses"
+          imageSrc={MOCKED_IMAGE_PATH}
+          linkUrl="url"
+          linkLabel="Go to courses"
+        />,
+      );
     });
 
     it('renders the title correctly', () => {
