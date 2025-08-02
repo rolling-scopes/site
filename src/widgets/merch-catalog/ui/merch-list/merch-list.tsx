@@ -24,16 +24,6 @@ export const MerchList = ({ products }: MerchListProps) => {
   const [currentPage, setCurrentPage] = useState(parseInt(pageParam || '1', 10));
   const totalPages = Math.ceil(products.length / ITEMS_PER_PAGE);
 
-  // Set initial URL if no page parameter
-  useEffect(() => {
-    if (!pageParam) {
-      const params = new URLSearchParams(searchParams.toString());
-
-      params.set('page', '1');
-      router.push(`?${params.toString()}`, { scroll: false });
-    }
-  }, []);
-
   // Sync URL with current page
   useEffect(() => {
     const newPage = parseInt(pageParam || '1', 10);
