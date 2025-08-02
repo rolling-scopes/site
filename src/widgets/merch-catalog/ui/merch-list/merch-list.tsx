@@ -24,7 +24,6 @@ export const MerchList = ({ products }: MerchListProps) => {
   const [currentPage, setCurrentPage] = useState(parseInt(pageParam || '1', 10));
   const totalPages = Math.ceil(products.length / ITEMS_PER_PAGE);
 
-  // Sync URL with current page
   useEffect(() => {
     const newPage = parseInt(pageParam || '1', 10);
 
