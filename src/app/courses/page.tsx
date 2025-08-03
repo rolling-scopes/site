@@ -1,15 +1,11 @@
 import { Metadata } from 'next';
 
+import { coursesMetadata } from '@/metadata/courses';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 import { Courses } from '@/views/courses';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = 'Courses · The Rolling Scopes School';
-  const description =
-    'Explore free, community-driven RS School courses: JavaScript, React, Node.js, AWS, Angular, and more. Start your journey to full stack mastery!';
-  const keywords = 'RS School courses, free programming courses, JavaScript, React, Node.js, AWS, Angular, web development, IT education';
-  const canonical = 'https://rs.school/courses';
-  const robots = 'index, follow';
+  const { title, description, keywords, canonical, robots } = coursesMetadata;
 
   const metadata = generatePageMetadata({
     title,

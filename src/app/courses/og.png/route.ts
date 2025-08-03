@@ -1,7 +1,6 @@
 import { createPageTree } from '@/shared/og/view/pages-tree/generate-pages-tree';
 
-export const preferredRegion = 'auto';
-export const dynamic = 'force-static';
+export { PREFERRED_REGION as preferredRegion, DYNAMIC as dynamic } from '@/shared/constants';
 
 export async function GET() {
   const title = 'Courses';

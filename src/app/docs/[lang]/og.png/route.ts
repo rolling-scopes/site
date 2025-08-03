@@ -1,25 +1,23 @@
 import { createPageTree } from '@/shared/og/view/pages-tree/generate-pages-tree';
+import { Language } from '@/shared/types';
 
-export const dynamic = 'force-static';
-export const preferredRegion = 'auto';
+export { PREFERRED_REGION as preferredRegion, DYNAMIC as dynamic } from '@/shared/constants';
 
 export function generateStaticParams() {
   return [{ lang: 'en' }, { lang: 'ru' }];
 }
 
-type Lang = 'en' | 'ru';
-
-const titleMap: Record<Lang, string> = {
+const titleMap: Record<Language, string> = {
   en: 'RS School Docs',
-  ru: 'RS School Docs',
+  ru: 'RS Документация',
 };
 
-const descriptionMap: Record<Lang, string> = {
+const descriptionMap: Record<Language, string> = {
   en: 'RS School Docs: rules, guides, FAQs.',
   ru: 'Документация RS: правила, гайды, часто задаваемые вопросы.',
 };
 
-export async function GET(_request: Request, { params }: { params: Promise<{ lang: Lang }> }) {
+export async function GET(_request: Request, { params }: { params: Promise<{ lang: Language }> }) {
   const lang = (await params).lang;
 
   return createPageTree({

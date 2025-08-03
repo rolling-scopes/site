@@ -173,3 +173,10 @@ export const RICH_TEXT_OPTIONS = {
     },
   },
 };
+
+export const OG_IMAGE_WIDTH = 1200;
+export const OG_IMAGE_HEIGHT = 630;
+
+export const OG_SITE_NAME = 'The Rolling Scopes School';
+export const PREFERRED_REGION = 'auto';
+export const DYNAMIC = 'force-static';

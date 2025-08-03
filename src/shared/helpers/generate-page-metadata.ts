@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 
+import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH, OG_SITE_NAME } from '../constants';
+
 type GeneratePageMetadataProps = {
   title: string;
   description: string;
@@ -30,12 +32,12 @@ export function generatePageMetadata({
       images: [
         {
           url: imagePath,
-          width: 1200,
-          height: 630,
+          width: OG_IMAGE_WIDTH,
+          height: OG_IMAGE_HEIGHT,
           alt: title,
         },
       ],
-      siteName: 'The Rolling Scopes School',
+      siteName: OG_SITE_NAME,
     },
 
     twitter: {

@@ -1,23 +1,15 @@
 import { DocsContent } from '../components/docs-content/docs-content';
-import { TITLE_POSTFIX } from '../constants';
 import { fetchMarkdownContent } from '../utils/fetch-markdown-content';
+import { docsLangMetadata } from '@/metadata/docs';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 import { Language } from '@/shared/types';
 
 type RouteParams = { lang: Language };
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<RouteParams>;
-}) {
+export async function generateMetadata({ params }: { params: Promise<RouteParams> }) {
   const { lang } = await params;
-  const title = `RS School Overview ${TITLE_POSTFIX}`;
-  const description =
-    'RS School Docs: find rules, guides, FAQs, onboarding, and resources for students and mentors. Your hub for all Rolling Scopes School documentation.';
-  const keywords = 'RS School docs, documentation, rules, guides, onboarding, FAQ, student resources, mentor resources';
-  const canonical = 'https://rs.school/docs';
-  const robots = 'index, follow';
+
+  const { title, description, keywords, canonical, robots } = docsLangMetadata;
 
   const metadata = generatePageMetadata({
     title,

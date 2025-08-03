@@ -6,7 +6,8 @@ import { createCourseTree } from '@/shared/og/view/courses-tree/generate-courses
 import { coursePageStore } from '@/views/course/model/store';
 
 export const preferredRegion = 'auto';
-const FALLBACK_PATH = 'src/shared/assets/svg/rss-logo.svg';
+const fallbackPath = 'src/shared/assets/svg/rss-logo.svg';
+const logoFallbackSize = 250;
 
 export async function generateStaticParams() {
   const pages = await coursePageStore.loadCoursePages();
@@ -28,10 +29,8 @@ export async function GET(_request: Request, { params }: { params: Promise<{ slu
     throw new Error(`Course metadata not found for id="${courseId}"`);
   }
 
-  const LOGO_FALLBACK_SIZE = 250;
-
-  const logoWidth = meta.iconSrc.width || LOGO_FALLBACK_SIZE;
-  const logoHeight = meta.iconSrc.height || LOGO_FALLBACK_SIZE;
+  const logoWidth = meta.iconSrc.width || logoFallbackSize;
+  const logoHeight = meta.iconSrc.height || logoFallbackSize;
 
   let logoDataUri: string;
 
@@ -39,7 +38,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ slu
     logoDataUri = await fetchAndConvertToDataUri(meta.iconSrc.src);
   } catch (err) {
     console.warn('Failed to load remote logo, using fallback', err);
-    logoDataUri = await loadImageAsDataUri(FALLBACK_PATH);
+    logoDataUri = await loadImageAsDataUri(fallbackPath);
   }
 
   return createCourseTree({
