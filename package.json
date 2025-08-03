@@ -33,6 +33,7 @@
     "dayjs": "^1.11.13",
     "github-markdown-css": "^5.8.1",
     "http-status": "^2.1.0",
+    "jszip": "^3.10.1",
     "next": "15.4.5",
     "pagefind": "^1.3.0",
     "react": "19.1.1",

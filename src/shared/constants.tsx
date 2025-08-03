@@ -41,6 +41,7 @@ export const PAGE_NAMES = {
   COURSES: 'courses',
   COMMUNITY: 'community',
   MENTORSHIP: 'mentorship',
+  MERCH: 'merch',
 } as const;
 
 // ⚠️ These links are used to identify courses from the API
@@ -131,6 +132,7 @@ export const ROUTES = {
   MENTORSHIP: 'mentorship',
   DOCS_EN: 'docs/en',
   DOCS_RU: 'docs/ru',
+  MERCH: 'merch',
   NOT_FOUND: '*',
 } as const;
 

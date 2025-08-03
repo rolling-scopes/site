@@ -1,4 +1,5 @@
 import coursesPageHeroImg from '@/shared/assets/mentor-with-his-students.webp';
+import welcome from '@/shared/assets/welcome.webp';
 
 export const heroPageData = {
   school: {
@@ -25,5 +26,12 @@ export const heroPageData = {
     widgetTitle: '',
     subTitle: ['By teaching others, you learn yourself'],
     imageAltText: '',
+  },
+  merch: {
+    mainTitle: 'Merch',
+    widgetTitle: 'Free assets for your design',
+    subTitle: [''],
+    heroImageSrc: welcome,
+    imageAltText: 'A sloth mascot with arms raised under a welcome sign',
   },
 };

@@ -1,0 +1,9 @@
+.wrapper {
+  flex: 1 1;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
