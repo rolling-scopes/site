@@ -1,0 +1,60 @@
+import React from 'react';
+import { ImageResponse } from 'next/og';
+
+import { stylesCourseTree } from './generate-courses-tree.styles';
+import { fonts } from '../../utils/load-fonts';
+import { loadImageAsDataUri } from '../../utils/load-image-as-data-uri';
+import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from '@/shared/constants';
+
+const rsStudentPromise = loadImageAsDataUri('src/shared/assets/rs-school.webp');
+
+type CourseLogo = {
+  src: string;
+  width: number;
+  height: number;
+};
+
+type CourseData = {
+  name: string;
+  logo: CourseLogo;
+  startDate: string;
+};
+
+export async function createCourseTree(course: CourseData): Promise<ImageResponse> {
+  const { name, logo, startDate } = course;
+  const rsStudentImg = await rsStudentPromise;
+
+  return new ImageResponse(
+    (
+      <div style={stylesCourseTree.container}>
+        <div style={stylesCourseTree.leftSection}>
+          <img
+            src={rsStudentImg}
+            width={logo.width}
+            height={logo.height}
+            style={stylesCourseTree.logo}
+            alt="Sloth mascot works on the laptop"
+          />
+          <h1 style={stylesCourseTree.title}>RS School</h1>
+          <p style={stylesCourseTree.subtitle}>Free courses. High motivation</p>
+        </div>
+        <div style={stylesCourseTree.rightSection}>
+          <img
+            src={logo.src}
+            width={logo.width}
+            height={logo.height}
+            style={stylesCourseTree.courseLogo}
+            alt={`${name} logo`}
+          />
+          <h2 style={stylesCourseTree.courseTitle}>{`${name} Course`}</h2>
+          <p style={stylesCourseTree.startDate}>{`Start: ${startDate}`}</p>
+        </div>
+      </div>
+    ),
+    {
+      width: OG_IMAGE_WIDTH,
+      height: OG_IMAGE_HEIGHT,
+      fonts: fonts,
+    },
+  );
+}

@@ -19,7 +19,6 @@ export const REGISTRATION_WILL_OPEN_SOON = 'Registration will open soon!';
 export const REGISTRATION_WILL_OPEN_SOON_RU = 'Регистрация откроется скоро!';
 export const UNKNOWN_API_ERROR = 'Unknown error, API request failed.';
 export const YOUTUBE_API_MAX_RESULTS_PER_PAGE = 50;
-
 /**
  * https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/links
  */
@@ -137,7 +136,6 @@ export const ROUTES = {
 } as const;
 
 export const SWR_CACHE_KEY = { MENTORS_PLAYLIST: 'MENTORS_PLAYLIST' };
-
 export const RICH_TEXT_OPTIONS = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (_node: Block | Inline, children: ReactNode) => {
@@ -175,3 +173,10 @@ export const RICH_TEXT_OPTIONS = {
     },
   },
 };
+
+export const OG_IMAGE_WIDTH = 1200;
+export const OG_IMAGE_HEIGHT = 630;
+
+export const OG_SITE_NAME = 'The Rolling Scopes School';
+export const PREFERRED_REGION = 'auto';
+export const DYNAMIC = 'force-static';

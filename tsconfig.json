@@ -2,11 +2,7 @@
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": [
-      "ESNext",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
     /* Bundler mode */
@@ -21,20 +17,11 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "types": [
-      "node",
-      "@testing-library/jest-dom",
-      "vitest/globals",
-      "gapi.youtube"
-    ],
+    "types": ["node", "@testing-library/jest-dom", "vitest/globals", "gapi.youtube"],
     "baseUrl": "./src",
     "paths": {
-      "@/*": [
-        "*"
-      ],
-      "data": [
-        "../dev-data"
-      ]
+      "@/*": ["*"],
+      "data": ["../dev-data"]
     },
     "allowJs": true,
     "incremental": true,
@@ -55,7 +42,5 @@
     ".next/types/**/*.ts",
     "env.d.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ],
+  "exclude": ["node_modules"]
 }
