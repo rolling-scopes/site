@@ -26,8 +26,8 @@ export type CourseCardProps = Pick<
   | 'registrationEndDate'
   | 'personalMentoringStartDate'
   | 'personalMentoringEndDate'
-> &
-Pick<HTMLProps<HTMLDivElement>, 'className'> & {
+>
+& Pick<HTMLProps<HTMLDivElement>, 'className'> & {
   size?: 'sm' | 'md';
   showMentoringStartDate?: boolean;
 };
