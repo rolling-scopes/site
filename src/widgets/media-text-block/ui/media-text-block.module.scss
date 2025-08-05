@@ -111,13 +111,17 @@
 
   .content-bottom {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 32px;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
 
     width: 100%;
     padding-top: 0;
+
+    @include media-tablet-large {
+      grid-template-columns: 1fr;
+    }
   }
 
   .embedded {
