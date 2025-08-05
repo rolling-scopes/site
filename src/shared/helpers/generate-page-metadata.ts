@@ -8,7 +8,8 @@ type GeneratePageMetadataProps = {
   imagePath: string;
   keywords?: string;
   alternates?: { canonical: string };
-  robots?: string;
+  robots?: { index: boolean;
+    follow: boolean; };
 };
 
 export function generatePageMetadata({

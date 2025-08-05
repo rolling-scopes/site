@@ -1,6 +1,12 @@
 import sharp from 'sharp';
 
+const cache = new Map<string, string>();
+
 export const fetchAndConvertToDataUri = async (url: string): Promise<string> => {
+  if (cache.has(url)) {
+    return cache.get(url)!;
+  }
+
   try {
     const res = await fetch(url);
 
@@ -11,6 +17,10 @@ export const fetchAndConvertToDataUri = async (url: string): Promise<string> => 
     const arrayBuffer = await res.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
 
+    if (buffer.byteLength > 2 * 1024 * 1024) {
+      throw new Error(`Image ${url} is too large (${buffer.byteLength} bytes)`);
+    }
+
     const pngBuffer = await sharp(buffer)
       .png({
         compressionLevel: 9,
@@ -18,7 +28,10 @@ export const fetchAndConvertToDataUri = async (url: string): Promise<string> => 
       })
       .toBuffer();
 
-    return `data:image/png;base64,${pngBuffer.toString('base64')}`;
+    const dataUri = `data:image/png;base64,${pngBuffer.toString('base64')}`;
+
+    cache.set(url, dataUri);
+    return dataUri;
   } catch (err) {
     console.error(`[fetchAndConvertToDataUri] Error for URL "${url}":`, err);
     throw err;

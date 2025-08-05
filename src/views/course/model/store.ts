@@ -27,11 +27,9 @@ class CoursePageStore {
         throw new Error('Course id is not defined.');
       }
 
-      let sections: Section[] = [];
-
-      if (coursePageSections && coursePageSections.length > 0) {
-        sections = transformCourseSections(coursePageSections);
-      }
+      const sections: Section[] = coursePageSections?.length
+        ? transformCourseSections(coursePageSections)
+        : [];
 
       return {
         courseId,

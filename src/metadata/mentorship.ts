@@ -5,7 +5,10 @@ export const mentorshipMetadata = {
   keywords:
     'RS School mentorship, mentor, teaching, leadership, tech mentorship, programming mentor, developer mentor',
   canonical: 'https://rs.school/mentorship',
-  robots: 'index, follow',
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export const mentorshipCourseMetadata = {
@@ -15,5 +18,8 @@ export const mentorshipCourseMetadata = {
   keywords:
     'RS School mentorship, mentor React, mentor Angular, mentor JavaScript, teaching, tech mentorship, developer mentor',
   canonical: 'https://rs.school/mentorship',
-  robots: 'index, follow',
+  robots: {
+    index: true,
+    follow: true,
+  },
 };

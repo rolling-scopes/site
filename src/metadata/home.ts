@@ -5,5 +5,8 @@ export const homeMetadata = {
   keywords:
     'RS School, Rolling Scopes, free programming courses, JavaScript, React, Node.js, AWS, web development, IT education, coding bootcamp',
   canonical: 'https://rs.school/',
-  robots: 'index, follow',
+  robots: {
+    index: true,
+    follow: true,
+  },
 };

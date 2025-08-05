@@ -4,7 +4,8 @@ import sharp from 'sharp';
 
 export const loadImageAsDataUri = async (relativePath: string): Promise<string> => {
   try {
-    const buf: Buffer = await fs.readFile(path.join(process.cwd(), relativePath));
+    const absPath = path.resolve(process.cwd(), relativePath);
+    const buf = await fs.readFile(absPath);
 
     const pngBuffer = await sharp(buf)
       .toFormat('png', {
@@ -16,6 +17,6 @@ export const loadImageAsDataUri = async (relativePath: string): Promise<string> 
     return `data:image/png;base64,${pngBuffer.toString('base64')}`;
   } catch (error) {
     console.error(`Error loading image from ${relativePath}:`, error);
-    throw new Error(`Failed to load image as data URI: ${error}`);
+    throw error;
   }
 };

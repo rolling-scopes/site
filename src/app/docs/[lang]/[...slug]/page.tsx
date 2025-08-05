@@ -51,7 +51,10 @@ export async function generateMetadata({
   const keywords =
     'RS School docs, documentation, rules, guides, onboarding, FAQ, student resources, mentor resources';
   const canonical = `https://rs.school/docs/${lang}/${slugPath}`;
-  const robots = 'index, follow';
+  const robots = {
+    index: true,
+    follow: true,
+  };
 
   const metadata = generatePageMetadata({
     title: `${title} ${TITLE_POSTFIX}`,

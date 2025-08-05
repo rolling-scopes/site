@@ -22,7 +22,10 @@ export async function generateMetadata({ params }: CourseRouteParams): Promise<M
     locale,
   );
   const title = `${courseName} · The Rolling Scopes School`;
-  const robots = 'index, follow';
+  const robots = {
+    index: true,
+    follow: true,
+  };
 
   return generatePageMetadata({
     title,

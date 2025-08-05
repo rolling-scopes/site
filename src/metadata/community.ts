@@ -5,5 +5,8 @@ export const communityMetadata = {
   keywords:
     'RS School community, developer community, programming community, events, collaboration, tech networking',
   canonical: 'https://rs.school/community',
-  robots: 'index, follow',
+  robots: {
+    index: true,
+    follow: true,
+  },
 };

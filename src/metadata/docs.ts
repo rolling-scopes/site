@@ -7,5 +7,8 @@ export const docsLangMetadata = {
   keywords:
     'RS School docs, documentation, rules, guides, onboarding, FAQ, student resources, mentor resources',
   canonical: 'https://rs.school/docs',
-  robots: 'index, follow',
+  robots: {
+    index: true,
+    follow: true,
+  },
 };

@@ -5,5 +5,8 @@ export const coursesMetadata = {
   keywords:
     'RS School courses, free programming courses, JavaScript, React, Node.js, AWS, Angular, web development, IT education',
   canonical: 'https://rs.school/courses',
-  robots: 'index, follow',
+  robots: {
+    index: true,
+    follow: true,
+  },
 };

@@ -14,7 +14,11 @@ const loadFont = async (weight: 400 | 700): Promise<Font> => {
 
   try {
     const buffer = await fs.readFile(fontPath);
-    const arrayBuffer = new Uint8Array(buffer).buffer;
+
+    const arrayBuffer = buffer.buffer.slice(
+      buffer.byteOffset,
+      buffer.byteOffset + buffer.byteLength,
+    ) as ArrayBuffer;
 
     return {
       name: 'Inter',
@@ -28,12 +32,11 @@ const loadFont = async (weight: 400 | 700): Promise<Font> => {
   }
 };
 
-const fontRegularPromise: Promise<Font> = loadFont(400);
-const fontBoldPromise: Promise<Font> = loadFont(700);
+let fontsPromise: Promise<Font[]> | null = null;
 
-const [fontRegular, fontBold] = await Promise.all([
-  fontRegularPromise,
-  fontBoldPromise,
-]);
-
-export const fonts: Font[] = [fontRegular, fontBold];
+export const getFonts = (): Promise<Font[]> => {
+  if (!fontsPromise) {
+    fontsPromise = Promise.all([loadFont(400), loadFont(700)]);
+  }
+  return fontsPromise;
+};
