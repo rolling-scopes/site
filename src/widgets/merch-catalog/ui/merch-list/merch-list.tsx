@@ -15,7 +15,7 @@ export type MerchListProps = {
   products: MerchProduct[];
 };
 
-const ITEMS_PER_PAGE = 10;
+const ITEMS_PER_PAGE = 12;
 
 export const MerchList = ({ products }: MerchListProps) => {
   const router = useRouter();
