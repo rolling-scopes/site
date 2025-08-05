@@ -12,7 +12,7 @@ export function getSectionId(name?: string) {
     return '';
   }
 
-  return name.toLowerCase().toLowerCase()
+  return name.toLowerCase()
     .trim()
     .replace(/[\s_]+/g, '-')
     .replace(/[^a-z0-9-]/g, '')
