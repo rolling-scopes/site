@@ -2,9 +2,9 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 
-import chevronLeft from '../../../../shared/assets/svg/chevron-left.svg';
-import chevronRight from '../../../../shared/assets/svg/chevron-right.svg';
 import { getPaginationItems } from '../utils/pagination.utils';
+import chevronLeft from '@/shared/assets/svg/chevron-left.svg';
+import chevronRight from '@/shared/assets/svg/chevron-right.svg';
 
 import styles from './pagination.module.scss';
 
