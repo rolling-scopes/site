@@ -31,6 +31,9 @@ const RICH_TEXT_OPTIONS = {
     [BLOCKS.HEADING_3]: (_node: Block | Inline, children: ReactNode) => (
       <Subtitle>{children}</Subtitle>
     ),
+    [BLOCKS.HEADING_6]: (_node: Block | Inline, children: ReactNode) => (
+      <Paragraph fontSize="large">{children}</Paragraph>
+    ),
     [BLOCKS.UL_LIST]: (_node: Block | Inline, children: ReactNode) => (
       <ContentList>{children}</ContentList>
     ),
