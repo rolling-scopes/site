@@ -8,7 +8,7 @@ import styles from './highlight-card.module.scss';
 const cx = classnames.bind(styles);
 
 export const HighlightCard = ({ heading, content, icon }: HighlightCardData) => (
-  <article className={cx('principle-card')} data-testid="principle-card">
+  <article className={cx('highlight-card')} data-testid="highlight-card">
     <span className={cx('icon')} data-testid="highlight-icon">
       <img src={icon.src} alt="" aria-hidden="true" />
     </span>
