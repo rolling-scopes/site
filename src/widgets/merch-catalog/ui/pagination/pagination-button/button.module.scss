@@ -1,0 +1,64 @@
+.button {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 4px;
+
+  font-weight: inherit;
+
+  transition: all 0.2s ease;
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+
+  // Pagination button styles
+  &--pagination {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #e5e7eb; // $color-gray-200
+    background: #fff; // $color-white
+
+    &:hover:not(:disabled) {
+      border-color: #4b5563; // $color-gray-600
+      color: #fff; // $color-white
+      background-color: #4b5563; // $color-gray-600
+    }
+  }
+
+  &--pagination-arrow {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #e5e7eb; // $color-gray-200
+
+    font-weight: bold;
+
+    background: #fff; // $color-white
+
+    &:hover:not(:disabled) {
+      border-color: #4b5563; // $color-gray-600
+      color: #fff; // $color-white
+      background-color: #4b5563; // $color-gray-600
+    }
+  }
+
+  &--pagination-active {
+    width: 35px;
+    height: 35px;
+    border: 2px solid #000; // $color-black
+
+    color: #fff; // $color-white
+
+    background: #000; // $color-black
+  }
+
+  // Default button styles
+  &--default {
+    // Add default button styles here if needed
+  }
+}

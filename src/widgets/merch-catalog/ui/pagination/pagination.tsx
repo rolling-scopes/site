@@ -1,8 +1,8 @@
 'use client';
 import classNames from 'classnames/bind';
-import Image from 'next/image';
 
 import { getPaginationItems } from '../utils/pagination.utils';
+import { Button } from './pagination-button/button';
 import chevronLeft from '@/shared/assets/svg/chevron-left.svg';
 import chevronRight from '@/shared/assets/svg/chevron-right.svg';
 
@@ -33,19 +33,18 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
 
   return (
     <div className={cx('pagination')}>
-      <button
-        className={cx('pagination-button', 'arrow')}
-        onClick={() => handlePageChangeBack()}
+      <Button
+        variant="pagination-arrow"
+        onClick={handlePageChangeBack}
         disabled={currentPage === 1}
-        aria-label="Go to previous page"
-      >
-        <Image
-          src={chevronLeft}
-          width={15}
-          height={15}
-          alt="chevron"
-        />
-      </button>
+        ariaLabel="Go to previous page"
+        icon={{
+          src: chevronLeft,
+          alt: 'chevron',
+          width: 15,
+          height: 15,
+        }}
+      />
       {getPaginationItems(currentPage, totalPages).map((item, idx) =>
         item === 'dots'
           ? (
@@ -56,28 +55,27 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
               </div>
             )
           : (
-              <button
+              <Button
                 key={item}
-                className={cx('pagination-button', { active: currentPage === item })}
+                variant={currentPage === item ? 'pagination-active' : 'pagination'}
                 onClick={() => onPageChange(item as number)}
               >
                 {item}
-              </button>
+              </Button>
             ),
       )}
-      <button
-        className={cx('pagination-button', 'arrow')}
-        onClick={() => handlePageChangeNext()}
+      <Button
+        variant="pagination-arrow"
+        onClick={handlePageChangeNext}
         disabled={currentPage === totalPages}
-        aria-label="Go to next page"
-      >
-        <Image
-          src={chevronRight}
-          width={15}
-          height={15}
-          alt="chevron"
-        />
-      </button>
+        ariaLabel="Go to next page"
+        icon={{
+          src: chevronRight,
+          alt: 'chevron',
+          width: 15,
+          height: 15,
+        }}
+      />
     </div>
   );
 };
