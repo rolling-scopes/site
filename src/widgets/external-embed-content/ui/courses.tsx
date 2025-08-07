@@ -13,7 +13,7 @@ type CoursesProps = {
 
 export const Courses = ({ courses }: CoursesProps) => {
   return (
-    <div className={cx('courses-list')}>
+    <div className={cx('courses-list')} data-testid="all-courses">
       <CourseItemsFresh courses={courses} />
     </div>
   );
