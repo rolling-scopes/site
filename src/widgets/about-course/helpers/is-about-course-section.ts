@@ -1,4 +1,5 @@
 import { TypeAboutCourseWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
+import { SECTION_TYPE } from '@/widgets/section-resolver/constants';
 import type { BaseEntry } from 'contentful';
 
 /**
@@ -10,5 +11,5 @@ import type { BaseEntry } from 'contentful';
 export function isAboutCourseSection<TSection extends BaseEntry>(
   section: TSection,
 ): section is Extract<TSection, TypeAboutCourseWithoutUnresolvableLinksResponse> {
-  return section.sys.contentType.sys.id === 'aboutCourse';
+  return section.sys.contentType.sys.id === SECTION_TYPE.ABOUT_COURSE;
 }

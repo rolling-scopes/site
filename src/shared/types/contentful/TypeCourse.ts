@@ -96,6 +96,13 @@ export interface TypeCourseFields {
    * @localized false
    */
   scheduleUrl?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
+  /**
+   * Field type definition for field 'markAsNew' (Mark as NEW)
+   * @name Mark as NEW
+   * @localized false
+   * @summary Should this course be marked with a "New"-badge ?
+   */
+  markAsNew?: EntryFieldTypes.Boolean;
 }
 
 /**
@@ -104,7 +111,7 @@ export interface TypeCourseFields {
  * @type {TypeCourseSkeleton}
  * @author 5yCs5AqlcAan6ySHEWFdJn
  * @since 2022-02-09T19:40:33.011Z
- * @version 25
+ * @version 27
  */
 export type TypeCourseSkeleton = EntrySkeletonType<TypeCourseFields, 'course'>;
 /**
@@ -113,7 +120,7 @@ export type TypeCourseSkeleton = EntrySkeletonType<TypeCourseFields, 'course'>;
  * @type {TypeCourse}
  * @author 5yCs5AqlcAan6ySHEWFdJn
  * @since 2022-02-09T19:40:33.011Z
- * @version 25
+ * @version 27
  */
 export type TypeCourse<
   Modifiers extends ChainModifiers,

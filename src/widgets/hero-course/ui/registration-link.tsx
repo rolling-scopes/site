@@ -7,7 +7,7 @@ import { LinkCustom } from '@/shared/ui/link-custom';
 import { heroCourseLocalized } from 'data';
 
 type RegistrationLink = {
-  enrollLink: string | null;
+  enrollLink?: string;
   startDate: string;
   registrationEndDate: string;
   language: Language;

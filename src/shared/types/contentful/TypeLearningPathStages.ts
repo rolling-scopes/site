@@ -15,6 +15,13 @@ import type {
  */
 export interface TypeLearningPathStagesFields {
   /**
+   * Field type definition for field 'tag' (tag)
+   * @name tag
+   * @localized false
+   * @summary This tag field is used internally only in contenful to unique identify identical content. THIS FIELD WILL NOT BE SHOWN ON THE WEBSITE
+   */
+  tag?: EntryFieldTypes.Symbol;
+  /**
    * Field type definition for field 'title' (title)
    * @name title
    * @localized true
@@ -40,7 +47,7 @@ export interface TypeLearningPathStagesFields {
  * @type {TypeLearningPathStagesSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T20:20:28.432Z
- * @version 3
+ * @version 5
  */
 export type TypeLearningPathStagesSkeleton = EntrySkeletonType<
   TypeLearningPathStagesFields,
@@ -52,7 +59,7 @@ export type TypeLearningPathStagesSkeleton = EntrySkeletonType<
  * @type {TypeLearningPathStages}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T20:20:28.432Z
- * @version 3
+ * @version 5
  */
 export type TypeLearningPathStages<
   Modifiers extends ChainModifiers,

@@ -39,6 +39,16 @@ export type {
   TypeCourseWithoutUnresolvableLinksResponse,
 } from './TypeCourse';
 export type {
+  TypeDonation,
+  TypeDonationFields,
+  TypeDonationSkeleton,
+  TypeDonationWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeDonationWithAllLocalesAndWithoutUnresolvableLinksResponse,
+  TypeDonationWithAllLocalesResponse,
+  TypeDonationWithoutLinkResolutionResponse,
+  TypeDonationWithoutUnresolvableLinksResponse,
+} from './TypeDonation';
+export type {
   TypeHeroSection,
   TypeHeroSectionFields,
   TypeHeroSectionSkeleton,
@@ -49,6 +59,16 @@ export type {
   TypeHeroSectionWithoutUnresolvableLinksResponse,
 } from './TypeHeroSection';
 export type {
+  TypeHighlightCard,
+  TypeHighlightCardFields,
+  TypeHighlightCardSkeleton,
+  TypeHighlightCardWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeHighlightCardWithAllLocalesAndWithoutUnresolvableLinksResponse,
+  TypeHighlightCardWithAllLocalesResponse,
+  TypeHighlightCardWithoutLinkResolutionResponse,
+  TypeHighlightCardWithoutUnresolvableLinksResponse,
+} from './TypeHighlightCard';
+export type {
   TypeHomePage,
   TypeHomePageFields,
   TypeHomePageSkeleton,
@@ -58,6 +78,16 @@ export type {
   TypeHomePageWithoutLinkResolutionResponse,
   TypeHomePageWithoutUnresolvableLinksResponse,
 } from './TypeHomePage';
+export type {
+  TypeLandingPage,
+  TypeLandingPageFields,
+  TypeLandingPageSkeleton,
+  TypeLandingPageWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeLandingPageWithAllLocalesAndWithoutUnresolvableLinksResponse,
+  TypeLandingPageWithAllLocalesResponse,
+  TypeLandingPageWithoutLinkResolutionResponse,
+  TypeLandingPageWithoutUnresolvableLinksResponse,
+} from './TypeLandingPage';
 export type {
   TypeLearningPathStageItem,
   TypeLearningPathStageItemFields,
@@ -79,6 +109,16 @@ export type {
   TypeLearningPathStagesWithoutUnresolvableLinksResponse,
 } from './TypeLearningPathStages';
 export type {
+  TypeMediaGrid,
+  TypeMediaGridFields,
+  TypeMediaGridSkeleton,
+  TypeMediaGridWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeMediaGridWithAllLocalesAndWithoutUnresolvableLinksResponse,
+  TypeMediaGridWithAllLocalesResponse,
+  TypeMediaGridWithoutLinkResolutionResponse,
+  TypeMediaGridWithoutUnresolvableLinksResponse,
+} from './TypeMediaGrid';
+export type {
   TypeMediaTextBlock,
   TypeMediaTextBlockFields,
   TypeMediaTextBlockSkeleton,
@@ -88,6 +128,16 @@ export type {
   TypeMediaTextBlockWithoutLinkResolutionResponse,
   TypeMediaTextBlockWithoutUnresolvableLinksResponse,
 } from './TypeMediaTextBlock';
+export type {
+  TypeUpcomingCourses,
+  TypeUpcomingCoursesFields,
+  TypeUpcomingCoursesSkeleton,
+  TypeUpcomingCoursesWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeUpcomingCoursesWithAllLocalesAndWithoutUnresolvableLinksResponse,
+  TypeUpcomingCoursesWithAllLocalesResponse,
+  TypeUpcomingCoursesWithoutLinkResolutionResponse,
+  TypeUpcomingCoursesWithoutUnresolvableLinksResponse,
+} from './TypeUpcomingCourses';
 export type {
   TypeVideoBlock,
   TypeVideoBlockFields,

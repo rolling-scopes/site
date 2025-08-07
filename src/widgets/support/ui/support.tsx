@@ -1,17 +1,25 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 
-import image from '@/shared/assets/support.webp';
 import { LinkCustom } from '@/shared/ui/link-custom';
-import { Paragraph } from '@/shared/ui/paragraph';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { donateOptions } from 'data';
+import { SupportUsSectionData } from '@/widgets/support/types';
 
 import styles from './support.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const Support = () => (
+export const Support = ({
+  title,
+  imageSrc,
+  linkLabelRight,
+  linkLabelLeft,
+  linkUrlLeft,
+  linkUrlRight,
+  content,
+  linkIconRight,
+  linkIconLeft,
+}: SupportUsSectionData) => (
   <section
     className={cx('support-container', 'container')}
     data-testid="support-section"
@@ -20,30 +28,51 @@ export const Support = () => (
     <div className={cx('support-content', 'content', 'column-2')}>
       <article className={cx('support-info')}>
         <WidgetTitle size="large" mods="lines">
-          Support Us
+          {title}
         </WidgetTitle>
-        <Paragraph fontSize="large">
-          Your donations help us cover hosting, domains, licenses, and advertising for courses and
-          events. Every donation, big or small, helps!
-        </Paragraph>
-        <Paragraph fontSize="large">Thank you for your support!</Paragraph>
+
+        {content}
+
         <div className={cx('donate-options')}>
-          {donateOptions.map(({ id, href, buttonLinkLabel, buttonIcon }) => (
-            <div key={id} className={cx('donate-item')}>
-              <LinkCustom href={href} variant="primary" external data-testid="link-donate">
-                {buttonIcon()}
-                {buttonLinkLabel}
-              </LinkCustom>
-            </div>
-          ))}
+          <div className={cx('donate-item')}>
+            <LinkCustom href={linkUrlLeft} variant="primary" external data-testid="link-donate">
+              <Image
+                width={24}
+                height={24}
+                src={linkIconLeft}
+                alt=""
+                aria-hidden="true"
+              />
+
+              {linkLabelLeft}
+            </LinkCustom>
+          </div>
+
+          <div className={cx('donate-item')}>
+            <LinkCustom href={linkUrlRight} variant="primary" external data-testid="link-donate">
+              <Image
+                width={24}
+                height={24}
+                src={linkIconRight}
+                alt=""
+                aria-hidden="true"
+              />
+
+              {linkLabelRight}
+            </LinkCustom>
+          </div>
         </div>
       </article>
-      <Image
-        className={cx('sloth-mascot')}
-        src={image}
-        alt="A sloth mascot with a piggy bank in his hands"
-        data-testid="sloth-mascot"
-      />
+
+      {imageSrc && (
+        <Image
+          className={cx('sloth-mascot')}
+          src={imageSrc}
+          alt=""
+          aria-hidden="true"
+          data-testid="sloth-mascot"
+        />
+      )}
     </div>
   </section>
 );
