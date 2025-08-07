@@ -9,9 +9,7 @@ const widgetTitle = 'All courses';
 
 describe('Courses (other courses) component', () => {
   it('renders widget without crashing and display correct content', async () => {
-    const courses = await Courses();
-
-    render(courses);
+    render(<Courses courses={mockedCourses} />);
     const widget = screen.getByTestId('all-courses');
     const title = screen.getByTestId('widget-title');
     const courseCards = screen.getAllByTestId('course-card');

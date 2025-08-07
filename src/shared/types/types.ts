@@ -6,6 +6,7 @@ import { HTTP_METHOD } from '@/shared/constants';
 import {
   TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeDonationWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeExternalEmbedContentWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeHeroSectionWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeHighlightCardWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeLearningPathStagesWithAllLocalesAndWithoutLinkResolutionResponse,
@@ -15,6 +16,7 @@ import {
   TypeVideoBlockWithAllLocalesAndWithoutLinkResolutionResponse,
 } from '@/shared/types/contentful';
 import { AboutCourseSectionData } from '@/widgets/about-course';
+import { ExternalEmbedContentData } from '@/widgets/external-embed-content';
 import { HeroSectionData } from '@/widgets/hero-course/types';
 import { HighlightCardData } from '@/widgets/highlight-card/types';
 import { LearningPathStagesSectionData } from '@/widgets/learning-path-stages';
@@ -118,7 +120,8 @@ export type SectionName =
   | ExtractSectionName<TypeUpcomingCoursesWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeDonationWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeMediaGridWithAllLocalesAndWithoutLinkResolutionResponse>
-  | ExtractSectionName<TypeHighlightCardWithAllLocalesAndWithoutLinkResolutionResponse>;
+  | ExtractSectionName<TypeHighlightCardWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeExternalEmbedContentWithAllLocalesAndWithoutLinkResolutionResponse>;
 
 type SectionBase<TName extends SectionName, TData, TId extends string = string> = {
   id: TId;
@@ -135,6 +138,7 @@ export type Section =
   | SectionBase<Extract<SectionName, 'upcomingCourses'>, UpcomingCoursesSectionData>
   | SectionBase<Extract<SectionName, 'donation'>, SupportUsSectionData>
   | SectionBase<Extract<SectionName, 'mediaGrid'>, MediaGridSectionData>
-  | SectionBase<Extract<SectionName, 'highlightCard'>, HighlightCardData>;
+  | SectionBase<Extract<SectionName, 'highlightCard'>, HighlightCardData>
+  | SectionBase<Extract<SectionName, 'externalEmbedContent'>, ExternalEmbedContentData>;
 
 export type PageResponseSections = CoursePageResponse['items'][0]['fields']['sections'];

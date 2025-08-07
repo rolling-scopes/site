@@ -42,6 +42,8 @@ export const Hero = ({ heading, subHeading, topHeading, image }: HeroSectionData
           <Image
             className={cx('sloth-mascot')}
             src={image.src}
+            height={image.height}
+            width={image.width}
             data-testid="hero-image"
             alt=""
             aria-hidden="true"

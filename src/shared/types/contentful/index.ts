@@ -49,6 +49,16 @@ export type {
   TypeDonationWithoutUnresolvableLinksResponse,
 } from './TypeDonation';
 export type {
+  TypeExternalEmbedContent,
+  TypeExternalEmbedContentFields,
+  TypeExternalEmbedContentSkeleton,
+  TypeExternalEmbedContentWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeExternalEmbedContentWithAllLocalesAndWithoutUnresolvableLinksResponse,
+  TypeExternalEmbedContentWithAllLocalesResponse,
+  TypeExternalEmbedContentWithoutLinkResolutionResponse,
+  TypeExternalEmbedContentWithoutUnresolvableLinksResponse,
+} from './TypeExternalEmbedContent';
+export type {
   TypeHeroSection,
   TypeHeroSectionFields,
   TypeHeroSectionSkeleton,

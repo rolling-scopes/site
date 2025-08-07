@@ -8,7 +8,7 @@ export type {
   MentorshipDetailsType,
   MentorshipRoute,
 } from './mentorship-data.types';
-export type { LinkList, StageCardProps, StudyPathProps } from './study-path-data.types';
+export type { LinkList } from './study-path-data.types';
 
 export type { MentorshipCourseTitles, MentorshipLinks } from './mentorship-data.types';
 
@@ -38,7 +38,6 @@ export { contributeOptions } from './contribute-options.data';
 export { courseStatus, heroCourseLocalized } from './hero-course.data';
 export { donateOptions } from './donate-options.data';
 export { events } from './events.data';
-export { generalMaterials } from './general.data';
 export { heroPageData } from './hero-page.data';
 export { mentorDocsData } from './mentor-docs.data';
 export { mentorsAfterRegisterData } from './mentors-after-register.data';
@@ -50,4 +49,3 @@ export { merchData } from './merch.data';
 export { picturesSocialMediaLinks } from './pictures.data';
 export { rsInNumbers } from './rs-in-numbers.data';
 export { sliderPhotos } from './slider-photos.data';
-export { studyPath } from './study-path.data';
