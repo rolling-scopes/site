@@ -10,7 +10,7 @@ import styles from './pagination.module.scss';
 
 const cx = classNames.bind(styles);
 
-export type PaginationProps = {
+type PaginationProps = {
   currentPage: number;
   totalPages: number;
   onPageChange: (page: number) => void;
