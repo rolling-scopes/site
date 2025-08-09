@@ -15,10 +15,8 @@ export const getPaginationItems = (currentPage: number, totalPages: number) => {
     pages.push(i);
   }
 
-  // Add dots if there's a gap between left and right group
-  if (leftEnd < totalPages - visiblePagesInRightSection) {
-    pages.push('dots');
-  }
+  // Always include dots element to keep a consistent 8-elements layout in the component
+  pages.push('dots');
 
   // Add right group (last 2 pages)
   for (let i = Math.max(totalPages - visiblePagesInRightSection + 1, leftEnd + 1); i <= totalPages; i++) {
