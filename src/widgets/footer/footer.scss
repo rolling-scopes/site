@@ -19,11 +19,11 @@
       .about-list {
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: $gap-l;
         align-items: baseline;
         justify-content: flex-start;
 
-        font-size: 18px;
+        font-size: $font-size-m;
         font-weight: $font-weight-medium;
         line-height: 24px;
         color: $color-gray-100;
@@ -53,10 +53,10 @@
       }
 
       @include media-laptop-medium {
-        gap: 50px;
+        gap: $gap-xxxl;
 
         & .left {
-          gap: 50px;
+          gap: $gap-xxxl;
         }
       }
     }

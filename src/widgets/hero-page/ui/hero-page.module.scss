@@ -1,5 +1,5 @@
 .hero-page {
-  gap: 16px;
+  gap: $gap-s;
   min-height: 440px;
   background: $color-yellow;
 
@@ -27,7 +27,7 @@
 
       .description-title {
         @include media-tablet {
-          font-size: 24px;
+          font-size: $font-size-xl;
           line-height: 32px;
         }
       }

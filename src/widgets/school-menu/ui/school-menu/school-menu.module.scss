@@ -3,12 +3,12 @@
 
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: $gap-s;
   color: $color-gray-100;
 
   .heading {
     margin: 0;
-    font-size: 12px;
+    font-size: $font-size-xxs;
     line-height: 1.15;
     text-transform: uppercase;
 
@@ -22,7 +22,7 @@
   }
 
   .school-list {
-    gap: 24px 32px;
+    gap: $gap-l $gap-xl;
     max-height: 408px;
     list-style-type: none;
 
@@ -44,7 +44,7 @@
     }
 
     @include media-mobile-landscape {
-      row-gap: 16px;
+      row-gap: $gap-s;
       max-height: 816px;
     }
   }

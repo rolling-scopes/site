@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, max-content);
-  column-gap: 24px;
+  column-gap: $gap-l;
 
   .title {
     grid-column: 1 / -1;
@@ -11,7 +11,7 @@
   .info-block {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: $gap-s;
     max-width: 380px;
   }
 

@@ -1,6 +1,6 @@
 .header {
   position: sticky;
-  z-index: 100;
+  z-index: $z-index-max;
   top: 0;
   left: 0;
 }
@@ -36,7 +36,7 @@
   position: relative;
 
   display: flex;
-  gap: 32px;
+  gap: $gap-xl;
   align-items: center;
 
   height: 100%;
