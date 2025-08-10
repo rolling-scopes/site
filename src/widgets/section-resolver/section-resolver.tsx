@@ -125,13 +125,12 @@ export const SectionResolver = ({
     case SECTION_TYPE.MEDIA_GRID:
       return (
         <MediaGrid
-          title={section.data.title}
-          description={section.data.description}
-          media={section.data.media}
           numberOfColumns={section.data.numberOfColumns}
           removeItemsOnResponsive={section.data.removeItemsOnResponsive}
           rowGapPx={section.data.rowGapPx}
-        />
+        >
+          {section.data.media}
+        </MediaGrid>
       );
 
     case SECTION_TYPE.HIGHLIGHT_CARD:

@@ -10,25 +10,7 @@ const media = Array.from({ length: 18 }, (_, i) => (
 
 describe('Media Grid', () => {
   beforeEach(() => {
-    render(
-      <MediaGrid
-        title="Our alumni"
-        description="We are immensely proud of RS School alumni"
-        media={media}
-      />,
-    );
-  });
-
-  it('renders the title correctly', () => {
-    const titleElement = screen.getByText('Our alumni');
-
-    expect(titleElement).toBeInTheDocument();
-  });
-
-  it('renders the paragraph correctly', () => {
-    const paragraphElement = screen.getByText(/We are immensely proud of RS School alumni/i);
-
-    expect(paragraphElement).toBeInTheDocument();
+    render(<MediaGrid>{media}</MediaGrid>);
   });
 
   it('renders all images for large screens', () => {

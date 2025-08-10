@@ -1,4 +1,6 @@
 .media-grid {
+  width: 100%;
+
   p {
     width: 640px;
     margin-top: 0;
@@ -41,6 +43,4 @@
   grid-template-columns: repeat(auto-fit, minmax(var(--grid-col-min-size-calc), 1fr));
   gap: var(--grid-row-gap) var(--grid-col-gap);
   place-items: center;
-
-  padding: 40px 0 48px;
 }

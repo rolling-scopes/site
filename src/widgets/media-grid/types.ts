@@ -1,8 +1,8 @@
-import { ReactNode } from 'react';
+import { PropsWithChildren, ReactNode } from 'react';
 
-export type MediaGridSectionData = MediaGridSectionSettings & {
-  title: string;
-  description: ReactNode;
+export type MediaGridSectionData = MediaGridSectionSettings & PropsWithChildren;
+
+export type ApiMediaGridSectionData = ApiMediaGridSectionSettings & {
   media: ReactNode;
 };
 
