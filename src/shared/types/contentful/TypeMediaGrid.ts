@@ -14,23 +14,24 @@ import type {
  */
 export interface TypeMediaGridFields {
   /**
-   * Field type definition for field 'title' (title)
-   * @name title
+   * Field type definition for field 'tag' (tag)
+   * @name tag
    * @localized false
+   * @summary This tag field is used internally only in contenful to unique identify identical content. THIS FIELD WILL NOT BE SHOWN ON THE WEBSITE
    */
-  title: EntryFieldTypes.Symbol;
-  /**
-   * Field type definition for field 'description' (description)
-   * @name description
-   * @localized false
-   */
-  description?: EntryFieldTypes.RichText;
+  tag?: EntryFieldTypes.Symbol;
   /**
    * Field type definition for field 'media' (media)
    * @name media
    * @localized false
    */
-  media: EntryFieldTypes.Array<EntryFieldTypes.AssetLink>;
+  media: EntryFieldTypes.RichText;
+  /**
+   * Field type definition for field 'settings' (settings)
+   * @name settings
+   * @localized false
+   */
+  settings?: EntryFieldTypes.Object;
 }
 
 /**
@@ -39,7 +40,7 @@ export interface TypeMediaGridFields {
  * @type {TypeMediaGridSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-07-16T12:45:40.455Z
- * @version 15
+ * @version 29
  */
 export type TypeMediaGridSkeleton = EntrySkeletonType<TypeMediaGridFields, 'mediaGrid'>;
 /**
@@ -48,7 +49,7 @@ export type TypeMediaGridSkeleton = EntrySkeletonType<TypeMediaGridFields, 'medi
  * @type {TypeMediaGrid}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-07-16T12:45:40.455Z
- * @version 15
+ * @version 29
  */
 export type TypeMediaGrid<
   Modifiers extends ChainModifiers,
