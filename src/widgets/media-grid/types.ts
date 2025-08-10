@@ -1,8 +1,19 @@
 import { ReactNode } from 'react';
-import { StaticImageData } from 'next/image';
 
-export type MediaGridSectionData = {
+export type MediaGridSectionData = MediaGridSectionSettings & {
   title: string;
   description: ReactNode;
-  media: StaticImageData[];
+  media: ReactNode;
+};
+
+export type MediaGridSectionSettings = {
+  removeItemsOnResponsive?: boolean;
+  numberOfColumns?: number;
+  rowGapPx?: number;
+};
+
+export type ApiMediaGridSectionSettings = {
+  removeItemsOnResponsive?: boolean;
+  numberOfColumns?: number;
+  rowGapPx?: number;
 };

@@ -38,6 +38,12 @@ export interface TypeUpcomingCoursesFields {
    * @summary By default set to '/courses'
    */
   linkUrl?: EntryFieldTypes.Symbol;
+  /**
+   * Field type definition for field 'settings' (settings)
+   * @name settings
+   * @localized false
+   */
+  settings?: EntryFieldTypes.Object;
 }
 
 /**
@@ -46,7 +52,7 @@ export interface TypeUpcomingCoursesFields {
  * @type {TypeUpcomingCoursesSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-07-16T12:12:38.743Z
- * @version 9
+ * @version 11
  */
 export type TypeUpcomingCoursesSkeleton = EntrySkeletonType<
   TypeUpcomingCoursesFields,
@@ -58,7 +64,7 @@ export type TypeUpcomingCoursesSkeleton = EntrySkeletonType<
  * @type {TypeUpcomingCourses}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-07-16T12:12:38.743Z
- * @version 9
+ * @version 11
  */
 export type TypeUpcomingCourses<
   Modifiers extends ChainModifiers,

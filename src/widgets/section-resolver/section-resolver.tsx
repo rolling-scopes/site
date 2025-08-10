@@ -128,6 +128,9 @@ export const SectionResolver = ({
           title={section.data.title}
           description={section.data.description}
           media={section.data.media}
+          numberOfColumns={section.data.numberOfColumns}
+          removeItemsOnResponsive={section.data.removeItemsOnResponsive}
+          rowGapPx={section.data.rowGapPx}
         />
       );
 

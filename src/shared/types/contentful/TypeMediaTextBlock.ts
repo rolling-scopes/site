@@ -43,9 +43,9 @@ export interface TypeMediaTextBlockFields {
    * Field type definition for field 'titleMod' (titleMod)
    * @name titleMod
    * @localized false
-   * @summary The title modification such as || or *. 0 - *, 1 - ||. By default is set to *
+   * @summary The title modification such as || or *. 0 - *, 1 - ||, 2 - empty. By default is set to empty
    */
-  titleMod?: EntryFieldTypes.Integer<0 | 1>;
+  titleMod?: EntryFieldTypes.Integer<0 | 1 | 2>;
   /**
    * Field type definition for field 'contentLeft' (contentLeft)
    * @name contentLeft
@@ -97,7 +97,7 @@ export interface TypeMediaTextBlockFields {
  * @type {TypeMediaTextBlockSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T14:21:33.812Z
- * @version 79
+ * @version 81
  */
 export type TypeMediaTextBlockSkeleton = EntrySkeletonType<
   TypeMediaTextBlockFields,
@@ -109,7 +109,7 @@ export type TypeMediaTextBlockSkeleton = EntrySkeletonType<
  * @type {TypeMediaTextBlock}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T14:21:33.812Z
- * @version 79
+ * @version 81
  */
 export type TypeMediaTextBlock<
   Modifiers extends ChainModifiers,
