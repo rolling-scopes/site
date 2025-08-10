@@ -1,7 +1,6 @@
 import { CSSProperties } from 'react';
 import classNames from 'classnames/bind';
 
-import { WidgetTitle } from '@/shared/ui/widget-title';
 import { MediaGridSectionData } from '@/widgets/media-grid/types';
 
 import styles from './media-grid.module.scss';
@@ -9,9 +8,7 @@ import styles from './media-grid.module.scss';
 const cx = classNames.bind(styles);
 
 export const MediaGrid = ({
-  title,
-  description,
-  media,
+  children,
   numberOfColumns,
   removeItemsOnResponsive,
   rowGapPx,
@@ -20,11 +17,7 @@ export const MediaGrid = ({
 
   return (
     <article className={cx('container')}>
-      <section className={cx('content', 'media-grid')}>
-        <WidgetTitle mods="asterisk">{title}</WidgetTitle>
-
-        {description}
-
+      <section className={cx('media-grid')}>
         <section
           className={cx('media-grid-list', { 'remove-items-on-responsive': removeItemsOnResponsive })}
           style={
@@ -34,7 +27,7 @@ export const MediaGrid = ({
             } as CSSProperties
           }
         >
-          {media}
+          {children}
         </section>
       </section>
     </article>

@@ -8,10 +8,6 @@ export function transformMediaGridSection(
 ): Section {
   const id = section.sys.id;
   const name = section.sys.contentType.sys.id;
-  const title = section.fields.title;
-  const description = section.fields.description
-    ? richTextRenderer(section.fields.description)
-    : undefined;
   const media = richTextRenderer(section.fields.media);
   const settings = section.fields.settings as ApiMediaGridSectionSettings;
   const numberOfColumns = settings?.numberOfColumns;
@@ -22,8 +18,6 @@ export function transformMediaGridSection(
     id,
     name,
     data: {
-      title,
-      description,
       media,
       numberOfColumns,
       removeItemsOnResponsive,
