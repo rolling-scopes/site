@@ -30,7 +30,13 @@ export interface TypeMediaGridFields {
    * @name media
    * @localized false
    */
-  media: EntryFieldTypes.Array<EntryFieldTypes.AssetLink>;
+  media: EntryFieldTypes.RichText;
+  /**
+   * Field type definition for field 'settings' (settings)
+   * @name settings
+   * @localized false
+   */
+  settings?: EntryFieldTypes.Object;
 }
 
 /**
@@ -39,7 +45,7 @@ export interface TypeMediaGridFields {
  * @type {TypeMediaGridSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-07-16T12:45:40.455Z
- * @version 15
+ * @version 23
  */
 export type TypeMediaGridSkeleton = EntrySkeletonType<TypeMediaGridFields, 'mediaGrid'>;
 /**
@@ -48,7 +54,7 @@ export type TypeMediaGridSkeleton = EntrySkeletonType<TypeMediaGridFields, 'medi
  * @type {TypeMediaGrid}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-07-16T12:45:40.455Z
- * @version 15
+ * @version 23
  */
 export type TypeMediaGrid<
   Modifiers extends ChainModifiers,

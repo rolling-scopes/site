@@ -1,9 +1,12 @@
 import type { TypeAboutCourseSkeleton } from './TypeAboutCourse';
 import type { TypeDonationSkeleton } from './TypeDonation';
 import type { TypeHeroSectionSkeleton } from './TypeHeroSection';
+import type { TypeInfoGridSkeleton } from './TypeInfoGrid';
 import type { TypeLearningPathStagesSkeleton } from './TypeLearningPathStages';
+import type { TypeMarqueeSkeleton } from './TypeMarquee';
 import type { TypeMediaGridSkeleton } from './TypeMediaGrid';
 import type { TypeMediaTextBlockSkeleton } from './TypeMediaTextBlock';
+import type { TypeSliderSkeleton } from './TypeSlider';
 import type { TypeUpcomingCoursesSkeleton } from './TypeUpcomingCourses';
 import type { TypeVideoBlockSkeleton } from './TypeVideoBlock';
 import type {
@@ -57,9 +60,12 @@ export interface TypeLandingPageFields {
       | TypeAboutCourseSkeleton
       | TypeDonationSkeleton
       | TypeHeroSectionSkeleton
+      | TypeInfoGridSkeleton
       | TypeLearningPathStagesSkeleton
+      | TypeMarqueeSkeleton
       | TypeMediaGridSkeleton
       | TypeMediaTextBlockSkeleton
+      | TypeSliderSkeleton
       | TypeUpcomingCoursesSkeleton
       | TypeVideoBlockSkeleton
     >
@@ -72,7 +78,7 @@ export interface TypeLandingPageFields {
  * @type {TypeLandingPageSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-07-09T19:17:23.117Z
- * @version 19
+ * @version 25
  */
 export type TypeLandingPageSkeleton = EntrySkeletonType<TypeLandingPageFields, 'landingPage'>;
 /**
@@ -81,7 +87,7 @@ export type TypeLandingPageSkeleton = EntrySkeletonType<TypeLandingPageFields, '
  * @type {TypeLandingPage}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-07-09T19:17:23.117Z
- * @version 19
+ * @version 25
  */
 export type TypeLandingPage<
   Modifiers extends ChainModifiers,
