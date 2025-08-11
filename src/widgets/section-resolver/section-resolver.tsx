@@ -1,10 +1,13 @@
+import { Marquee } from '../marquee';
 import { courseStore } from '@/entities/course';
 import { ROUTES } from '@/shared/constants';
 import { Section } from '@/shared/types/types';
+import { SocialMediaItem } from '@/shared/ui/social-media-item';
 import { AboutCourseSection } from '@/widgets/about-course';
 import { EXTERNAL_EMBED_CONTENT_TYPE, RSCourses } from '@/widgets/external-embed-content';
 import { Hero } from '@/widgets/hero';
 import { HighlightCard } from '@/widgets/highlight-card';
+import { InfoCell, InfoGrid } from '@/widgets/info-grid';
 import { LearningPathStageItem, LearningPathStages } from '@/widgets/learning-path-stages';
 import { MediaGrid } from '@/widgets/media-grid';
 import { MediaTextBlock } from '@/widgets/media-text-block';
@@ -43,6 +46,7 @@ export const SectionResolver = async ({
       return (
         <MediaTextBlock
           embedded={embedded}
+          imageAbsolutePosition={section.data.imageAbsolutePosition}
           anchorId={section.data.anchorId}
           title={section.data.title}
           titleSize={section.data.titleSize}
@@ -154,6 +158,37 @@ export const SectionResolver = async ({
       }
 
       throw new Error(`No component found for external embed content: ${sectionName}`);
+
+    case SECTION_TYPE.INFO_GRID:
+      return (
+        <InfoGrid>
+          {section.data.gridItems?.map((item) => (
+            <InfoCell
+              key={item.id}
+              title={item.title ?? ''}
+              description={item.content ?? ''}
+              titleFontSize={section.data.size}
+            />
+          ))}
+        </InfoGrid>
+      );
+
+    case SECTION_TYPE.MARQUEE:
+      return <Marquee items={section.data.items} />;
+
+    case SECTION_TYPE.SLIDER:
+      return 'slider';
+
+    case SECTION_TYPE.SOCIAL_LINK:
+      return (
+        <SocialMediaItem
+          title={section.data.label}
+          icon={
+            section.data.icon ? <img src={section.data.icon.src} alt="" aria-hidden="true" /> : null
+          }
+          href={section.data.link ?? '/'}
+        />
+      );
 
     default:
       throw new Error(`No component found for section type: ${sectionName}`);

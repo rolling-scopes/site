@@ -1,11 +1,11 @@
 import React, { PropsWithChildren } from 'react';
 import classNames from 'classnames/bind';
 
-import styles from './place-item.module.scss';
+import styles from './marquee-item.module.scss';
 
 const cx = classNames.bind(styles);
 
-const PlaceItem = ({ children }: PropsWithChildren) => {
+export const MarqueeItem = ({ children }: PropsWithChildren) => {
   return (
     <span className={cx('place-container')}>
       <span className={cx('place')}>{children}</span>
@@ -15,5 +15,3 @@ const PlaceItem = ({ children }: PropsWithChildren) => {
     </span>
   );
 };
-
-export default PlaceItem;

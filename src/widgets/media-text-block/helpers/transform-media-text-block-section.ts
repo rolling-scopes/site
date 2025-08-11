@@ -3,6 +3,7 @@ import { getSectionId } from '@/shared/helpers/get-section-id';
 import { richTextRenderer } from '@/shared/helpers/rich-text-renderer';
 import { TypeMediaTextBlockWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
 import { Section } from '@/shared/types/types';
+import { ApiMediaTextBlockSettings } from '@/widgets/media-text-block';
 
 export function transformMediaTextBlockSection(
   section: TypeMediaTextBlockWithoutUnresolvableLinksResponse,
@@ -27,6 +28,8 @@ export function transformMediaTextBlockSection(
   const disabledLinkLabel = section.fields.disabledLinkLabel;
   const backgroundColor = section.fields.backgroundColor;
   const anchorId = getSectionId(section.fields.title);
+  const settings = section.fields.settings as ApiMediaTextBlockSettings;
+  const imageAbsolutePosition = settings?.imageAbsolutePosition;
 
   return {
     id,
@@ -44,6 +47,7 @@ export function transformMediaTextBlockSection(
       linkLabel,
       disabledLinkLabel,
       backgroundColor,
+      imageAbsolutePosition,
     },
   };
 }

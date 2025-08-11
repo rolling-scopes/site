@@ -1,34 +1,20 @@
-import { FC } from 'react';
+import { Fragment } from 'react';
 
-import { PAGE_NAMES } from '@/shared/constants';
-import { AboutCommunity } from '@/widgets/about-community';
+import { landingPageStore } from '@/entities/landing-page';
+import { LANDING_PAGE_SLUG } from '@/entities/landing-page/constants';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
-import { CommunityMedia } from '@/widgets/community-media';
-import { Contribute } from '@/widgets/contribute';
-import { Events } from '@/widgets/events';
-import { HeroPage } from '@/widgets/hero';
-import { Merch } from '@/widgets/merch';
-import { Numbers } from '@/widgets/numbers';
-import { Pictures } from '@/widgets/pictures';
-import { Places } from '@/widgets/places';
-import { Speakers } from '@/widgets/speakers';
+import { isHeroSection } from '@/widgets/hero/helpers/is-hero-section';
+import { SectionResolver } from '@/widgets/section-resolver';
 
-const Community: FC = () => {
-  return (
-    <>
-      <HeroPage pageName={PAGE_NAMES.COMMUNITY} />
-      <Breadcrumbs />
-      <AboutCommunity />
-      <Numbers />
-      <Places />
-      <Pictures />
-      <Events />
-      <Speakers />
-      <Merch />
-      <CommunityMedia />
-      <Contribute />
-    </>
-  );
+const Community = async () => {
+  const { sections } = await landingPageStore.loadLandingPage(LANDING_PAGE_SLUG.COMMUNITY);
+
+  return sections.map((section) => (
+    <Fragment key={section?.id}>
+      <SectionResolver section={section} />
+      {isHeroSection(section?.name) && <Breadcrumbs />}
+    </Fragment>
+  ));
 };
 
 export default Community;

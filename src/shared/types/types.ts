@@ -9,17 +9,24 @@ import {
   TypeExternalEmbedContentWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeHeroSectionWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeHighlightCardWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeInfoGridWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeLearningPathStagesWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeMarqueeWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeMediaGridWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeMediaTextBlockWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeSliderWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeSocialLinkWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeUpcomingCoursesWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeVideoBlockWithAllLocalesAndWithoutLinkResolutionResponse,
 } from '@/shared/types/contentful';
+import { SocialLinkData } from '@/shared/ui/social-media-item/constants';
 import { AboutCourseSectionData } from '@/widgets/about-course';
 import { ExternalEmbedContentData } from '@/widgets/external-embed-content';
 import { HeroSectionData } from '@/widgets/hero-course/types';
 import { HighlightCardData } from '@/widgets/highlight-card/types';
+import { InfoGridData } from '@/widgets/info-grid';
 import { LearningPathStagesSectionData } from '@/widgets/learning-path-stages';
+import { MarqueeSectionData } from '@/widgets/marquee/types';
 import { ApiMediaGridSectionData } from '@/widgets/media-grid/types';
 import { MediaTextBlockSectionData } from '@/widgets/media-text-block';
 import { SupportUsSectionData } from '@/widgets/support/types';
@@ -121,7 +128,11 @@ export type SectionName =
   | ExtractSectionName<TypeDonationWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeMediaGridWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeHighlightCardWithAllLocalesAndWithoutLinkResolutionResponse>
-  | ExtractSectionName<TypeExternalEmbedContentWithAllLocalesAndWithoutLinkResolutionResponse>;
+  | ExtractSectionName<TypeExternalEmbedContentWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeInfoGridWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeMarqueeWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeSliderWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeSocialLinkWithAllLocalesAndWithoutLinkResolutionResponse>;
 
 type SectionBase<TName extends SectionName, TData, TId extends string = string> = {
   id: TId;
@@ -139,6 +150,10 @@ export type Section =
   | SectionBase<Extract<SectionName, 'donation'>, SupportUsSectionData>
   | SectionBase<Extract<SectionName, 'mediaGrid'>, ApiMediaGridSectionData>
   | SectionBase<Extract<SectionName, 'highlightCard'>, HighlightCardData>
-  | SectionBase<Extract<SectionName, 'externalEmbedContent'>, ExternalEmbedContentData>;
+  | SectionBase<Extract<SectionName, 'externalEmbedContent'>, ExternalEmbedContentData>
+  | SectionBase<Extract<SectionName, 'infoGrid'>, InfoGridData>
+  | SectionBase<Extract<SectionName, 'marquee'>, MarqueeSectionData>
+  | SectionBase<Extract<SectionName, 'slider'>, 'slider'>
+  | SectionBase<Extract<SectionName, 'socialLink'>, SocialLinkData>;
 
 export type PageResponseSections = CoursePageResponse['items'][0]['fields']['sections'];

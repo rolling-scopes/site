@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { type VariantProps, cva } from 'class-variance-authority';
 import classnames from 'classnames/bind';
 
@@ -7,9 +8,11 @@ const cx = classnames.bind(styles);
 
 type InfoCellProps = {
   title: string;
-  description: string;
-} & VariantProps<typeof titleVariants>
+  description: ReactNode;
+} & InfoCellTitleVariants
 & VariantProps<typeof cardVariants>;
+
+export type InfoCellTitleVariants = VariantProps<typeof titleVariants>;
 
 const titleVariants = cva(cx('title'), {
   variants: {
@@ -43,12 +46,12 @@ export const InfoCell = ({ title, description, titleFontSize, gap, size }: InfoC
           size,
         })}
       >
-        <p className={titleVariants({ titleFontSize })}>
+        <div className={titleVariants({ titleFontSize })}>
           {firstPart}
           <br />
           {secondPart}
-        </p>
-        <p className={cx('description')}>{description}</p>
+        </div>
+        <div className={cx('description')}>{description}</div>
       </div>
     </article>
   );

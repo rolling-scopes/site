@@ -18,13 +18,19 @@ export interface TypeSocialLinkFields {
    * @name label
    * @localized false
    */
-  label?: EntryFieldTypes.Symbol;
+  label: EntryFieldTypes.Symbol;
+  /**
+   * Field type definition for field 'link' (link)
+   * @name link
+   * @localized false
+   */
+  link: EntryFieldTypes.Symbol;
   /**
    * Field type definition for field 'icon' (icon)
    * @name icon
    * @localized false
    */
-  icon?: EntryFieldTypes.AssetLink;
+  icon: EntryFieldTypes.AssetLink;
 }
 
 /**
@@ -33,7 +39,7 @@ export interface TypeSocialLinkFields {
  * @type {TypeSocialLinkSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-08-09T09:28:34.620Z
- * @version 1
+ * @version 5
  */
 export type TypeSocialLinkSkeleton = EntrySkeletonType<TypeSocialLinkFields, 'socialLink'>;
 /**
@@ -42,7 +48,7 @@ export type TypeSocialLinkSkeleton = EntrySkeletonType<TypeSocialLinkFields, 'so
  * @type {TypeSocialLink}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-08-09T09:28:34.620Z
- * @version 1
+ * @version 5
  */
 export type TypeSocialLink<
   Modifiers extends ChainModifiers,

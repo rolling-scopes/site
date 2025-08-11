@@ -1,4 +1,6 @@
 import { PageResponseSections, Section } from '@/shared/types/types';
+import { isSocialLink } from '@/shared/ui/social-media-item/helpers/is-social-link';
+import { transformSocialLink } from '@/shared/ui/social-media-item/helpers/transform-social-link';
 import { isAboutCourseSection, transformAboutCourseSection } from '@/widgets/about-course';
 import {
   isExternalEmbedContent,
@@ -8,10 +10,12 @@ import { isHeroSection } from '@/widgets/hero/helpers/is-hero-section';
 import { transformHeroSection } from '@/widgets/hero/helpers/transform-hero-section';
 import { isHighlightCard } from '@/widgets/highlight-card/helpers/is-highlight-card';
 import { transformHighlightCard } from '@/widgets/highlight-card/helpers/transform-highlight-card';
+import { isInfoGridSection, transformInfoGridSection } from '@/widgets/info-grid';
 import {
   isLearningPathStagesSection,
   transformLearningPathStages,
 } from '@/widgets/learning-path-stages';
+import { isMarqueeSection, transformMarqueeSection } from '@/widgets/marquee';
 import { isMediaGridSection } from '@/widgets/media-grid/helpers/is-media-grid-section';
 import {
   transformMediaGridSection,
@@ -20,6 +24,7 @@ import {
   isMediaTextBlockSection,
   transformMediaTextBlockSection,
 } from '@/widgets/media-text-block';
+import { SECTION_TYPE } from '@/widgets/section-resolver/constants';
 import { isDonationSection } from '@/widgets/support/helpers/is-donation-section';
 import { transformDonationSection } from '@/widgets/support/helpers/transform-donation-section';
 import {
@@ -78,6 +83,27 @@ export function transformPageSections(sections: PageResponseSections): Section[]
 
     if (isExternalEmbedContent(section)) {
       return transformExternalEmbedContent(section);
+    }
+
+    if (isInfoGridSection(section)) {
+      return transformInfoGridSection(section);
+    }
+
+    if (isMarqueeSection(section)) {
+      return transformMarqueeSection(section);
+    }
+
+    // @ts-expect-error fix soon
+    if (section.sys.contentType.sys.id === SECTION_TYPE.SLIDER) {
+      return {
+        id: 'slider',
+        name: 'slider',
+        data: 'slider',
+      };
+    }
+
+    if (isSocialLink(section)) {
+      return transformSocialLink(section);
     }
 
     throw new Error('Unable to determine section type.');

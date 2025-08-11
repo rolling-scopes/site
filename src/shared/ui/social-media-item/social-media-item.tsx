@@ -23,6 +23,8 @@ export const SocialMediaItem = ({ title, href, icon }: SocialMediaProps) => (
     data-testid="social-media"
   >
     {icon}
-    <span className={cx('media-title')} data-testid="media-title">{title}</span>
+    <span className={cx('media-title')} data-testid="media-title">
+      {title}
+    </span>
   </LinkCustom>
 );

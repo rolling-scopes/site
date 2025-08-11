@@ -17,6 +17,7 @@ const cx = classNames.bind(styles);
 
 export const MediaTextBlock = async ({
   anchorId,
+  imageAbsolutePosition,
   title,
   titleSize,
   titleMod,
@@ -40,7 +41,7 @@ export const MediaTextBlock = async ({
   return (
     <section
       id={anchorId}
-      className={cx('media-text-block', 'container')}
+      className={cx('media-text-block', 'container', { 'image-absolute-position': imageAbsolutePosition })}
       style={{ backgroundColor }}
     >
       <div
@@ -60,7 +61,12 @@ export const MediaTextBlock = async ({
         </div>
 
         <div className={cx('content-wrapper-left', { 'component-list': isComponentList })}>
-          {contentLeft && <div className={cx('content-wrapper')}>{contentLeft}</div>}
+          {contentLeft && (
+            <div className={cx('content-wrapper')}>
+              {imageAbsolutePosition && <div className={cx('absolute-image-placeholder')} />}
+              {contentLeft}
+            </div>
+          )}
 
           {isLinkShown && (
             <LinkCustom
