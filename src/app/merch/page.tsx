@@ -8,6 +8,6 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title };
 }
 
-export default function CommunityRoute() {
+export default function MerchRoute() {
   return <Merch />;
 }
