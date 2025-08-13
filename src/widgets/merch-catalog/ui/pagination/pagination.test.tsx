@@ -15,7 +15,7 @@ describe('Pagination', () => {
     const active = screen.getByRole('button', { name: '5' });
 
     expect(active).toBeInTheDocument();
-    expect(active.className).toContain('button--pagination-active');
+    expect(active).toHaveClass('button--pagination-active');
     expect(screen.getByRole('button', { name: '6' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: '9' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: '10' })).toBeInTheDocument();
