@@ -13,6 +13,11 @@ export const getMerchData = async () => {
       throw new Error('MERCH_URL is not defined in the environment variables');
     }
     const data = await fetch(process.env.MERCH_URL);
+
+    if (!data.ok) {
+      throw new Error(`HTTP ${data.status}: ${data.statusText}`);
+    }
+
     const merch = (await data.json()) as ApiMerchResponse;
 
     cache = adaptMerchData(merch);
