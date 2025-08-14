@@ -18,6 +18,8 @@ export const LearningPathStageItem = ({
   title,
   content,
   image,
+  imageWidth,
+  imageHeight,
   index,
 }: LearningPathStagesProps) => {
   const step = index + 1;
@@ -37,7 +39,14 @@ export const LearningPathStageItem = ({
       </div>
 
       {image && (
-        <Image className={cx('stage-picture')} src={image} data-testid="stage-picture" alt="" />
+        <Image
+          className={cx('stage-picture')}
+          src={image}
+          width={imageWidth}
+          height={imageHeight}
+          data-testid="stage-picture"
+          alt=""
+        />
       )}
     </article>
   );

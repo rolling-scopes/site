@@ -17,6 +17,8 @@
     grid-template-rows: max-content 1fr;
     gap: 24px 100px;
 
+    height: 100%;
+
     @include media-tablet-large {
       grid-auto-flow: row;
       gap: 40px;
@@ -101,10 +103,19 @@
     .content-wrapper {
       display: flex;
       gap: 32px;
+      align-items: flex-start;
       justify-content: space-between;
+
+      & > * {
+        height: 100%;
+      }
 
       @include media-laptop {
         flex-wrap: wrap;
+
+        & > * {
+          height: unset;
+        }
       }
     }
   }

@@ -1,5 +1,9 @@
 import { PageResponseSections, Section } from '@/shared/types/types';
 import { isAboutCourseSection, transformAboutCourseSection } from '@/widgets/about-course';
+import {
+  isExternalEmbedContent,
+  transformExternalEmbedContent,
+} from '@/widgets/external-embed-content';
 import { isHeroSection } from '@/widgets/hero/helpers/is-hero-section';
 import { transformHeroSection } from '@/widgets/hero/helpers/transform-hero-section';
 import { isHighlightCard } from '@/widgets/highlight-card/helpers/is-highlight-card';
@@ -70,6 +74,10 @@ export function transformPageSections(sections: PageResponseSections): Section[]
 
     if (isHighlightCard(section)) {
       return transformHighlightCard(section);
+    }
+
+    if (isExternalEmbedContent(section)) {
+      return transformExternalEmbedContent(section);
     }
 
     throw new Error('Unable to determine section type.');

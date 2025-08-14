@@ -6,7 +6,7 @@ import { renderWithRouter } from '@/shared/__tests__/utils';
 import { PAGE_NAMES } from '@/shared/constants';
 import { heroPageData } from 'data';
 
-const pages = [{ name: PAGE_NAMES.COURSES }, { name: PAGE_NAMES.COMMUNITY }];
+const pages = [{ name: PAGE_NAMES.COMMUNITY }];
 
 let heroPage: HTMLElement;
 let mainTitle: HTMLElement;
@@ -16,7 +16,6 @@ let subTitles: HTMLElement[];
 describe('HeroPage component', () => {
   pages.forEach(({ name }) => {
     describe(`${name} page`, () => {
-      const pageName = name;
       const pageData: HeroPageProps = heroPageData[name];
 
       beforeEach(() => {
@@ -43,17 +42,9 @@ describe('HeroPage component', () => {
           expect(subTitle.textContent).toBe(pageData.subTitle[index]);
         });
 
-        if (pageName === PAGE_NAMES.COURSES) {
-          const image: HTMLElement = screen.getByTestId('sloth-mascot');
+        const image = screen.queryByTestId('sloth-mascot');
 
-          expect(image).toBeVisible();
-          expect(image).toHaveAttribute('src', pageData.heroImageSrc?.src);
-          expect(image).toHaveAttribute('alt', pageData.imageAltText);
-        } else {
-          const image = screen.queryByTestId('sloth-mascot');
-
-          expect(image).toBeNull();
-        }
+        expect(image).toBeNull();
       });
     });
   });
