@@ -31,6 +31,20 @@ export interface TypeLearningPathStageItemFields {
    * @localized true
    */
   image?: EntryFieldTypes.AssetLink;
+  /**
+   * Field type definition for field 'imageWidth' (imageWidth)
+   * @name imageWidth
+   * @localized false
+   * @summary Set the custom image width
+   */
+  imageWidth?: EntryFieldTypes.Integer;
+  /**
+   * Field type definition for field 'imageHeight' (imageHeight)
+   * @name imageHeight
+   * @localized false
+   * @summary Set the custom image height
+   */
+  imageHeight?: EntryFieldTypes.Integer;
 }
 
 /**
@@ -39,7 +53,7 @@ export interface TypeLearningPathStageItemFields {
  * @type {TypeLearningPathStageItemSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T20:24:48.422Z
- * @version 1
+ * @version 3
  */
 export type TypeLearningPathStageItemSkeleton = EntrySkeletonType<
   TypeLearningPathStageItemFields,
@@ -51,7 +65,7 @@ export type TypeLearningPathStageItemSkeleton = EntrySkeletonType<
  * @type {TypeLearningPathStageItem}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T20:24:48.422Z
- * @version 1
+ * @version 3
  */
 export type TypeLearningPathStageItem<
   Modifiers extends ChainModifiers,

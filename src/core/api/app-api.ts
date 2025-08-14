@@ -1,10 +1,11 @@
-import { CourseApi } from '@/entities/course/api/course-api';
-import { MentorApi } from '@/entities/mentor/api/mentor-api';
+import { CourseApi } from '@/entities/course';
+import { CoursePageApi } from '@/entities/course-page';
+import { LandingPageApi } from '@/entities/landing-page';
+import { MentorApi } from '@/entities/mentor';
 import { MerchApi } from '@/entities/merch/api/merch-api';
-import { TrainerApi } from '@/entities/trainer/api/trainer-api';
+import { TrainerApi } from '@/entities/trainer';
 import { ApiBaseClass } from '@/shared/api/api-base-class';
 import { ApiServices } from '@/shared/types';
-import { CoursePageApi } from '@/views/course/api/course-page-api';
 
 export class Api {
   public readonly services: ApiServices;
@@ -14,6 +15,7 @@ export class Api {
   public readonly mentor: MentorApi;
   public readonly merch: MerchApi;
   public readonly coursePage: CoursePageApi;
+  public readonly landingPage: LandingPageApi;
 
   constructor(
     private readonly baseURI: string,
@@ -29,5 +31,6 @@ export class Api {
     this.mentor = new MentorApi(this.services);
     this.merch = new MerchApi(this.services);
     this.coursePage = new CoursePageApi(this.services);
+    this.landingPage = new LandingPageApi(this.services);
   }
 }

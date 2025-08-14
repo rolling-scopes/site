@@ -16,16 +16,36 @@ export interface TypeMediaTextBlockFields {
   /**
    * Field type definition for field 'tag' (tag)
    * @name tag
-   * @localized true
+   * @localized false
    * @summary This tag field is used internally only in contenful to unique identify identical content. THIS FIELD WILL NOT BE SHOWN ON THE WEBSITE
    */
   tag?: EntryFieldTypes.Symbol;
+  /**
+   * Field type definition for field 'sectionLabel' (sectionLabel)
+   * @name sectionLabel
+   * @localized true
+   */
+  sectionLabel?: EntryFieldTypes.Symbol;
   /**
    * Field type definition for field 'title' (title)
    * @name title
    * @localized true
    */
-  title: EntryFieldTypes.Symbol;
+  title?: EntryFieldTypes.Symbol;
+  /**
+   * Field type definition for field 'titleSize' (titleSize)
+   * @name titleSize
+   * @localized false
+   * @summary 0 – 'Smallest'. 1 – 'Small'. 2 – 'Medium'. 3 – 'Large'. By default is set to 2 (Medium)
+   */
+  titleSize?: EntryFieldTypes.Integer<0 | 1 | 2 | 3>;
+  /**
+   * Field type definition for field 'titleMod' (titleMod)
+   * @name titleMod
+   * @localized false
+   * @summary The title modification such as || or *. 0 - *, 1 - ||, 2 - empty. By default is set to empty
+   */
+  titleMod?: EntryFieldTypes.Integer<0 | 1 | 2>;
   /**
    * Field type definition for field 'contentLeft' (contentLeft)
    * @name contentLeft
@@ -39,9 +59,15 @@ export interface TypeMediaTextBlockFields {
    */
   contentRight?: EntryFieldTypes.RichText;
   /**
+   * Field type definition for field 'contentBottom' (contentBottom)
+   * @name contentBottom
+   * @localized true
+   */
+  contentBottom?: EntryFieldTypes.RichText;
+  /**
    * Field type definition for field 'linkUrl' (linkUrl)
    * @name linkUrl
-   * @localized true
+   * @localized false
    * @summary If no link is provided the course related link to the registration page will be used as a default value
    */
   linkUrl?: EntryFieldTypes.Symbol;
@@ -60,7 +86,7 @@ export interface TypeMediaTextBlockFields {
   /**
    * Field type definition for field 'backgroundColor' (backgroundColor)
    * @name backgroundColor
-   * @localized true
+   * @localized false
    */
   backgroundColor?: EntryFieldTypes.Symbol;
 }
@@ -71,7 +97,7 @@ export interface TypeMediaTextBlockFields {
  * @type {TypeMediaTextBlockSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T14:21:33.812Z
- * @version 41
+ * @version 81
  */
 export type TypeMediaTextBlockSkeleton = EntrySkeletonType<
   TypeMediaTextBlockFields,
@@ -83,7 +109,7 @@ export type TypeMediaTextBlockSkeleton = EntrySkeletonType<
  * @type {TypeMediaTextBlock}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T14:21:33.812Z
- * @version 41
+ * @version 81
  */
 export type TypeMediaTextBlock<
   Modifiers extends ChainModifiers,

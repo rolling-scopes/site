@@ -14,6 +14,13 @@ import type {
  */
 export interface TypeAboutCourseItemFields {
   /**
+   * Field type definition for field 'tag' (tag)
+   * @name tag
+   * @localized false
+   * @summary This tag field is used internally only in contenful to unique identify identical content. THIS FIELD WILL NOT BE SHOWN ON THE WEBSITE
+   */
+  tag?: EntryFieldTypes.Symbol;
+  /**
    * Field type definition for field 'heading' (heading)
    * @name heading
    * @localized true
@@ -39,7 +46,7 @@ export interface TypeAboutCourseItemFields {
  * @type {TypeAboutCourseItemSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-16T19:52:39.219Z
- * @version 11
+ * @version 13
  */
 export type TypeAboutCourseItemSkeleton = EntrySkeletonType<
   TypeAboutCourseItemFields,
@@ -51,7 +58,7 @@ export type TypeAboutCourseItemSkeleton = EntrySkeletonType<
  * @type {TypeAboutCourseItem}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-16T19:52:39.219Z
- * @version 11
+ * @version 13
  */
 export type TypeAboutCourseItem<
   Modifiers extends ChainModifiers,
