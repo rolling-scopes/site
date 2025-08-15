@@ -1,4 +1,7 @@
 export const getPaginationItems = (currentPage: number, totalPages: number) => {
+  if (totalPages === 1) {
+    return [1];
+  }
   const visiblePagesInLeftSection = 3;
   const visiblePagesInRightSection = 2;
   const pages: (number | 'dots')[] = [];
