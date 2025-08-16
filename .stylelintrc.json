@@ -20,6 +20,13 @@
       "disableFix": true
       }
     ],
+    
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ],
 
     "order/order": [
       "custom-properties",
