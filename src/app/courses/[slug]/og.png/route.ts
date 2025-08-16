@@ -21,23 +21,21 @@ export async function GET(_request: Request, { params }: { params: Promise<{ slu
 
   const { courseName, courseId } = await coursePageStore.loadCoursePage(slug, locale);
 
-  const allCourses = await courseStore.loadCourses();
+  const course = await courseStore.loadCourse(courseId);
 
-  const meta = allCourses.find((c) => c.id === courseId);
-
-  if (!meta) {
+  if (!course) {
     throw new Error(`Course metadata not found for id="${courseId}"`);
   }
 
-  const logoWidth = meta.iconSrc.width ?? logoFallbackSize;
-  const logoHeight = meta.iconSrc.height ?? logoFallbackSize;
+  const logoWidth = course.iconSrc.width ?? logoFallbackSize;
+  const logoHeight = course.iconSrc.height ?? logoFallbackSize;
   const logoCache = new Map<string, string>();
 
-  let logoDataUri: string | undefined = logoCache.get(meta.iconSrc.src);
+  let logoDataUri: string | undefined = logoCache.get(course.iconSrc.src);
 
   try {
-    logoDataUri = await fetchAndConvertToDataUri(meta.iconSrc.src);
-    logoCache.set(meta.iconSrc.src, logoDataUri);
+    logoDataUri = await fetchAndConvertToDataUri(course.iconSrc.src);
+    logoCache.set(course.iconSrc.src, logoDataUri);
   } catch (err) {
     console.warn('Failed to load remote logo, using fallback', err);
     logoDataUri = await loadImageAsDataUri(fallbackPath);
@@ -50,6 +48,6 @@ export async function GET(_request: Request, { params }: { params: Promise<{ slu
       width: logoWidth,
       height: logoHeight,
     },
-    startDate: meta.startDate,
+    startDate: course.startDate,
   });
 }

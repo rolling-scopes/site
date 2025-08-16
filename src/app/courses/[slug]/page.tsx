@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import path from 'path';
 
 import { resolveCoursePageLocale } from '@/entities/course/helpers/resolve-course-page-locale';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
@@ -30,7 +31,7 @@ export async function generateMetadata({ params }: CourseRouteParams): Promise<M
   return generatePageMetadata({
     title,
     description,
-    imagePath: `/courses/${slug}/og.png`,
+    imagePath: path.join('courses', slug, 'og.png'),
     keywords,
     alternates: { canonical: courseUrl },
     robots,
