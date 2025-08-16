@@ -1,6 +1,6 @@
 import { richTextRenderer } from '@/shared/helpers/rich-text-renderer';
 import { TypeLearningPathStagesWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
-import { Section } from '@/views/course/types';
+import { Section } from '@/shared/types/types';
 import { transformLearningPathStageItem } from '@/widgets/learning-path-stages';
 
 export function transformLearningPathStages(

@@ -17,7 +17,6 @@ export function transformCourses(coursesResponse: CoursesResponse): Course[] {
     const language = course.fields.language;
     const mode = course.fields.mode;
     const detailsUrl = buildCourseUrl(course.fields.url);
-    const enroll = null;
     const backgroundStyle = {
       backgroundColor: course.fields.backgroundColor,
       accentColor: course.fields.accentColor,
@@ -51,7 +50,6 @@ export function transformCourses(coursesResponse: CoursesResponse): Course[] {
       language,
       mode,
       detailsUrl,
-      enroll,
       backgroundStyle,
       personalMentoringStartDate,
       personalMentoringEndDate,

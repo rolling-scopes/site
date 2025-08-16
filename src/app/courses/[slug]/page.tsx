@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 import path from 'path';
 
-import { resolveCoursePageLocale } from '@/entities/course/helpers/resolve-course-page-locale';
+import { resolveCoursePageLocale } from '@/entities/course';
+import { coursePageStore } from '@/entities/course-page';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
-import { Course } from '@/views/course/course';
-import { coursePageStore } from '@/views/course/model/store';
+import { Course } from '@/views/course';
 
 type Params = {
   slug: string;

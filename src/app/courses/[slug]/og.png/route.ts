@@ -1,9 +1,9 @@
 import { courseStore } from '@/entities/course';
 import { resolveCoursePageLocale } from '@/entities/course/helpers/resolve-course-page-locale';
+import { coursePageStore } from '@/entities/course-page';
 import { fetchAndConvertToDataUri } from '@/shared/og/utils/fetch-and-convert-to-data-uri';
 import { loadImageAsDataUri } from '@/shared/og/utils/load-image-as-data-uri';
 import { createCourseTree } from '@/shared/og/view/courses-tree/generate-courses-tree';
-import { coursePageStore } from '@/views/course/model/store';
 
 export const preferredRegion = 'auto';
 const fallbackPath = 'src/shared/assets/svg/rss-logo.svg';
