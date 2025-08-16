@@ -1,5 +1,5 @@
+import { CoursePageResponse } from '../types';
 import { transformCoursePages } from '@/entities/course-page/helpers/transform-course-pages';
-import { CoursePageResponse } from '@/entities/course-page/types';
 import { api } from '@/shared/api/api';
 import { prepareContentfulResponse } from '@/shared/helpers/prepare-contentful-response';
 import { transformPageSections } from '@/shared/helpers/transform-page-sections';
@@ -12,8 +12,15 @@ class CoursePageStore {
     if (res.isSuccess) {
       const preparedData = prepareContentfulResponse<CoursePageResponse['items']>(res.result);
 
-      const { title = '', sections: coursePageSections, course } = preparedData.at(0)?.fields ?? {};
+      const {
+        title = '',
+        seoDescription = '',
+        seoKeywords = '',
+        sections: coursePageSections,
+        course,
+      } = preparedData.at(0)?.fields ?? {};
       const courseId = course?.sys?.id;
+      const courseUrl = course?.fields.url || '';
       const sections = transformPageSections(coursePageSections);
 
       if (!courseId) {
@@ -22,7 +29,10 @@ class CoursePageStore {
 
       return {
         courseId,
+        courseUrl,
         courseName: title,
+        description: seoDescription,
+        keywords: seoKeywords,
         sections,
       };
     }
