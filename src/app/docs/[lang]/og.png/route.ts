@@ -1,7 +1,7 @@
 import { createPageTree } from '@/shared/og/view/pages-tree/generate-pages-tree';
 import { Language } from '@/shared/types';
 
-export { PREFERRED_REGION as preferredRegion, DYNAMIC as dynamic } from '@/shared/constants';
+export { DYNAMIC as dynamic } from '@/shared/constants';
 
 export function generateStaticParams() {
   return [{ lang: 'en' }, { lang: 'ru' }];

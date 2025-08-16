@@ -32,9 +32,9 @@ const loadFont = async (weight: 400 | 700): Promise<Font> => {
   }
 };
 
-let fontsPromise: Promise<Font[]> | null = null;
-
 export const getFonts = (): Promise<Font[]> => {
+  let fontsPromise: Promise<Font[]> | null = null;
+
   if (!fontsPromise) {
     fontsPromise = Promise.all([loadFont(400), loadFont(700)]);
   }
