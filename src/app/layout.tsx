@@ -6,7 +6,6 @@ import '@/shared/helpers/day-js';
 import type { Metadata } from 'next';
 
 import '@/core/styles/index.scss';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 export const metadata: Metadata = {
   title: 'RS Site',
