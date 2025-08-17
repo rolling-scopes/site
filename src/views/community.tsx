@@ -10,9 +10,9 @@ const Community = async () => {
   const { sections } = await landingPageStore.loadLandingPage(LANDING_PAGE_SLUG.COMMUNITY);
 
   return sections.map((section) => (
-    <Fragment key={section?.id}>
+    <Fragment key={section.id}>
       <SectionResolver section={section} />
-      {isHeroSection(section?.name) && <Breadcrumbs />}
+      {isHeroSection(section.name) && <Breadcrumbs />}
     </Fragment>
   ));
 };

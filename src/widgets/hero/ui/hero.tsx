@@ -10,16 +10,20 @@ import styles from './hero.module.scss';
 
 export const cx = classNames.bind(styles);
 
-type SubTitleProps = Pick<HeroSectionData, 'subHeading'>;
+type HeroTopHeadingProps = Pick<HeroSectionData, 'topHeading'>;
 
-const HeroSubTitle = ({ subHeading }: SubTitleProps) => {
-  if (!subHeading?.length) {
+const HeroTopHeading = ({ topHeading }: HeroTopHeadingProps) => {
+  if (!topHeading?.length) {
     return null;
   }
 
   return (
     <div className={cx('subtitle-container')}>
-      <Subtitle size="extra-small">{subHeading}</Subtitle>
+      {topHeading.map((heading) => (
+        <Subtitle key={heading} size="extra-small">
+          {heading}
+        </Subtitle>
+      ))}
     </div>
   );
 };
@@ -29,7 +33,7 @@ export const Hero = ({ heading, subHeading, topHeading, image }: HeroSectionData
     <section id="hero-page" className={cx('hero-page', 'container')} data-testid="hero-section">
       <div className={cx('hero-page-content', 'content')}>
         <article className={cx('title-container')}>
-          <HeroSubTitle subHeading={topHeading ?? ''} />
+          <HeroTopHeading topHeading={topHeading} />
 
           <MainTitle className={cx('title-main')}>{heading}</MainTitle>
 

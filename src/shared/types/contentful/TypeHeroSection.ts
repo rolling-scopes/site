@@ -18,7 +18,7 @@ export interface TypeHeroSectionFields {
    * @name topHeading
    * @localized false
    */
-  topHeading?: EntryFieldTypes.Symbol;
+  topHeading?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
   /**
    * Field type definition for field 'heading' (heading)
    * @name heading
@@ -45,7 +45,7 @@ export interface TypeHeroSectionFields {
  * @type {TypeHeroSectionSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-12T19:41:11.842Z
- * @version 7
+ * @version 15
  */
 export type TypeHeroSectionSkeleton = EntrySkeletonType<TypeHeroSectionFields, 'heroSection'>;
 /**
@@ -54,7 +54,7 @@ export type TypeHeroSectionSkeleton = EntrySkeletonType<TypeHeroSectionFields, '
  * @type {TypeHeroSection}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-12T19:41:11.842Z
- * @version 7
+ * @version 15
  */
 export type TypeHeroSection<
   Modifiers extends ChainModifiers,

@@ -15,7 +15,7 @@ type MediaTextBlockProps = MediaTextBlockSectionData;
 
 const cx = classNames.bind(styles);
 
-export const MediaTextBlock = async ({
+export const MediaTextBlock = ({
   anchorId,
   imageAbsolutePosition,
   title,
@@ -29,6 +29,7 @@ export const MediaTextBlock = async ({
   linkLabel,
   disabledLinkLabel,
   backgroundColor,
+  width,
   embedded = false,
 }: MediaTextBlockProps) => {
   const linkText = linkUrl ? linkLabel : disabledLinkLabel;
@@ -36,13 +37,17 @@ export const MediaTextBlock = async ({
   const isLinkDisabled = !linkUrl;
   const isLinkShown = (href && Boolean(linkLabel)) || (!href && Boolean(disabledLinkLabel));
   const small = titleSize === 'smallest';
-  const isComponentList = isSectionComponentsList(contentLeft);
+  const isComponentListContentLeft = isSectionComponentsList(contentLeft);
+  const isComponentListContentBottom = isSectionComponentsList(contentBottom);
 
   return (
     <section
       id={anchorId}
       className={cx('media-text-block', 'container', { 'image-absolute-position': imageAbsolutePosition })}
-      style={{ backgroundColor }}
+      style={{
+        backgroundColor,
+        maxWidth: width,
+      }}
     >
       <div
         className={cx('inner', 'content', {
@@ -60,7 +65,9 @@ export const MediaTextBlock = async ({
           )}
         </div>
 
-        <div className={cx('content-wrapper-left', { 'component-list': isComponentList })}>
+        <div
+          className={cx('content-wrapper-left', { 'component-list': isComponentListContentLeft })}
+        >
           {contentLeft && (
             <div className={cx('content-wrapper')}>
               {imageAbsolutePosition && <div className={cx('absolute-image-placeholder')} />}
@@ -85,7 +92,13 @@ export const MediaTextBlock = async ({
         )}
       </div>
 
-      {contentBottom && <div className={cx('content-bottom', 'content')}>{contentBottom}</div>}
+      {contentBottom && (
+        <div
+          className={cx('content-bottom', 'content', { 'component-list': isComponentListContentBottom })}
+        >
+          {contentBottom}
+        </div>
+      )}
     </section>
   );
 };

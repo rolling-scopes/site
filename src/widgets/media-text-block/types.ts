@@ -20,4 +20,5 @@ export type MediaTextBlockSectionData = ApiMediaTextBlockSettings & {
 
 export type ApiMediaTextBlockSettings = {
   imageAbsolutePosition?: boolean;
+  width?: number;
 };

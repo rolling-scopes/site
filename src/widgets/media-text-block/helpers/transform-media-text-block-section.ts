@@ -30,6 +30,7 @@ export function transformMediaTextBlockSection(
   const anchorId = getSectionId(section.fields.title);
   const settings = section.fields.settings as ApiMediaTextBlockSettings;
   const imageAbsolutePosition = settings?.imageAbsolutePosition;
+  const width = settings?.width;
 
   return {
     id,
@@ -48,6 +49,7 @@ export function transformMediaTextBlockSection(
       disabledLinkLabel,
       backgroundColor,
       imageAbsolutePosition,
+      width,
     },
   };
 }

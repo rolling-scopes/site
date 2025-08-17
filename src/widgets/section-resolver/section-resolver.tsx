@@ -59,6 +59,7 @@ export const SectionResolver = async ({
           linkLabel={section.data.linkLabel}
           disabledLinkLabel={section.data.disabledLinkLabel}
           backgroundColor={section.data.backgroundColor}
+          width={section.data.width}
         />
       );
 
@@ -134,6 +135,8 @@ export const SectionResolver = async ({
           numberOfColumns={section.data.numberOfColumns}
           removeItemsOnResponsive={section.data.removeItemsOnResponsive}
           rowGapPx={section.data.rowGapPx}
+          colGapPx={section.data.colGapPx}
+          fitContent={section.data.fitContent}
         >
           {section.data.media}
         </MediaGrid>

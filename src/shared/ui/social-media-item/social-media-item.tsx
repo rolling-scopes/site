@@ -22,7 +22,7 @@ export const SocialMediaItem = ({ title, href, icon }: SocialMediaProps) => (
     highContrast
     data-testid="social-media"
   >
-    {icon}
+    <div className={cx('media-icon')}>{icon}</div>
     <span className={cx('media-title')} data-testid="media-title">
       {title}
     </span>

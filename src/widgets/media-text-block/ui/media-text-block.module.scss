@@ -78,11 +78,8 @@
     display: flex;
     align-self: center;
     width: 100%;
-    max-width: 380px;
 
     [data-id='asset-image'] {
-      width: 100%;
-      height: fit-content;
       object-fit: contain;
 
       @include media-tablet-large {
@@ -98,9 +95,7 @@
   }
 
   .component-list {
-    grid-column: span 2;
-
-    .content-wrapper {
+    & > .content-wrapper {
       display: flex;
       gap: 32px;
       align-items: flex-start;
@@ -122,7 +117,7 @@
 
   .content-bottom {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: responsive-grid-columns();
     gap: 32px;
     align-items: flex-start;
     justify-content: space-between;
@@ -130,12 +125,51 @@
     width: 100%;
     padding-top: 0;
 
+    & > :last-child:nth-child(n + 2) {
+      justify-self: flex-end;
+    }
+
+    .content-bottom {
+      padding: 0;
+    }
+
     @include media-tablet-large {
       grid-template-columns: 1fr;
+
+      & > :last-child:nth-child(n + 2) {
+        justify-self: unset;
+      }
     }
   }
 
   .embedded {
     padding: 0;
+  }
+
+  &.image-absolute-position {
+    .content-bottom {
+      position: relative;
+    }
+
+    .content-wrapper-left,
+    .content-wrapper-right {
+      position: relative;
+      max-width: unset;
+
+      img[data-id='asset-image'] {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        translate: 0 -50%;
+
+        width: unset;
+        height: unset;
+      }
+    }
+  }
+
+  .absolute-image-placeholder {
+    width: 500px;
+    height: 200px;
   }
 }

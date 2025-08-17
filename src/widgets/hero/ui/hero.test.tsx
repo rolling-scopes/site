@@ -11,7 +11,7 @@ describe('Hero component', () => {
       <Hero
         heading="headingTest"
         subHeading="subHeadingTest"
-        topHeading="topHeadingTest"
+        topHeading={['topHeadingTest']}
         image={MOCKED_IMAGE_PATH}
       />,
     );
