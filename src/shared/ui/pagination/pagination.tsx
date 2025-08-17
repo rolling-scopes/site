@@ -1,8 +1,8 @@
 'use client';
 import classNames from 'classnames/bind';
 
-import { getPaginationItems } from '../utils/pagination.utils';
 import { Button } from './pagination-button/button';
+import { getPaginationItems } from './utils/pagination.utils';
 import chevronLeft from '@/shared/assets/svg/chevron-left.svg';
 import chevronRight from '@/shared/assets/svg/chevron-right.svg';
 

@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { useRouter, useSearchParams } from 'next/navigation';
 
+import { Pagination } from '../../../../shared/ui/pagination/pagination';
 import { MerchItem } from '../merch-item/merch-item';
-import { Pagination } from '../pagination/pagination';
 import { MerchProduct } from '@/entities/merch/types';
 
 import styles from './merch-list.module.scss';
