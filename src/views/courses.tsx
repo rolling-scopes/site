@@ -1,18 +1,18 @@
-import { PAGE_NAMES } from '@/shared/constants';
-import { Breadcrumbs } from '@/widgets/breadcrumbs';
-import { RSCourses } from '@/widgets/courses';
-import { General } from '@/widgets/general';
-import { HeroPage } from '@/widgets/hero';
-import { StudyPath } from '@/widgets/study-path';
+import { Fragment } from 'react';
 
-export const Courses = () => {
-  return (
-    <>
-      <HeroPage pageName={PAGE_NAMES.COURSES} />
-      <Breadcrumbs />
-      <RSCourses />
-      <StudyPath />
-      <General />
-    </>
-  );
+import { landingPageStore } from '@/entities/landing-page';
+import { LANDING_PAGE_SLUG } from '@/entities/landing-page/constants';
+import { Breadcrumbs } from '@/widgets/breadcrumbs';
+import { isHeroSection } from '@/widgets/hero/helpers/is-hero-section';
+import { SectionResolver } from '@/widgets/section-resolver';
+
+export const Courses = async () => {
+  const { sections } = await landingPageStore.loadLandingPage(LANDING_PAGE_SLUG.COURSES);
+
+  return sections.map((section) => (
+    <Fragment key={section.id}>
+      <SectionResolver section={section} />
+      {isHeroSection(section.name) && <Breadcrumbs />}
+    </Fragment>
+  ));
 };

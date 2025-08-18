@@ -106,6 +106,10 @@ const sortData = <T extends DataType>(data: T): T =>
     const dateA = isCourse(a) ? a.startDate : a.date;
     const dateB = isCourse(b) ? b.startDate : b.date;
 
+    if (dateA === TO_BE_DETERMINED && dateB === TO_BE_DETERMINED) {
+      return 0;
+    }
+
     if (dateA === TO_BE_DETERMINED || dateB === TO_BE_DETERMINED) {
       return dateA === TO_BE_DETERMINED ? 1 : -1;
     }

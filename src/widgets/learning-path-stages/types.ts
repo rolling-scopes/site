@@ -6,6 +6,8 @@ export type LearningPathStageItem = {
   title: string;
   content: ReactNode;
   image?: StaticImageData;
+  imageWidth: number | undefined;
+  imageHeight: number | undefined;
 };
 
 export type LearningPathStagesSectionData = {
