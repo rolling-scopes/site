@@ -35,6 +35,7 @@ export const Button = ({
 }: ButtonProps) => {
   return (
     <button
+      type="button"
       className={cx('button', `button--${variant}`, className)}
       onClick={onClick}
       disabled={disabled}
