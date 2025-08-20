@@ -40,7 +40,7 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
         ariaLabel="Go to previous page"
         icon={{
           src: chevronLeft,
-          alt: 'chevron',
+          alt: '',
           width: 15,
           height: 15,
         }}
@@ -71,7 +71,7 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
         ariaLabel="Go to next page"
         icon={{
           src: chevronRight,
-          alt: 'chevron',
+          alt: '',
           width: 15,
           height: 15,
         }}
