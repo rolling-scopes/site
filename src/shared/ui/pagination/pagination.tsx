@@ -32,7 +32,7 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
   };
 
   return (
-    <div className={cx('pagination')}>
+    <nav className={cx('pagination')} aria-label="Pagination">
       <Button
         variant="pagination-arrow"
         onClick={handlePageChangeBack}
@@ -76,6 +76,6 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
           height: 15,
         }}
       />
-    </div>
+    </nav>
   );
 };
