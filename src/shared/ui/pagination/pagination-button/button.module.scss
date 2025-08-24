@@ -14,45 +14,45 @@
 
   &:disabled {
     pointer-events: none;
-    opacity: 0.3;
+    opacity: $opacity-30;
   }
 
   &--pagination {
     width: 35px;
     height: 35px;
-    border: 1px solid #e5e7eb; // $color-gray-200
-    background: #fff; // $color-white
+    border: 1px solid $color-gray-200;
+    background: $color-white;
 
     &:hover:not(:disabled) {
-      border-color: #4b5563; // $color-gray-600
-      color: #fff; // $color-white
-      background-color: #4b5563; // $color-gray-600
+      border-color: $color-gray-600;
+      color: $color-white;
+      background-color: $color-gray-600;
     }
   }
 
   &--pagination-arrow {
     width: 35px;
     height: 35px;
-    border: 1px solid #e5e7eb; // $color-gray-200
+    border: 1px solid $color-gray-200;
 
-    font-weight: bold;
+    font-weight: $font-weight-bold;
 
-    background: #fff; // $color-white
+    background: $color-white;
 
     &:hover:not(:disabled) {
-      border-color: #4b5563; // $color-gray-600
-      color: #fff; // $color-white
-      background-color: #4b5563; // $color-gray-600
+      border-color: $color-gray-600;
+      color: $color-white;
+      background-color: $color-gray-600;
     }
   }
 
   &--pagination-active {
     width: 35px;
     height: 35px;
-    border: 2px solid #000; // $color-black
+    border: 2px solid $color-black;
 
-    color: #fff; // $color-white
+    color: $color-white;
 
-    background: #000; // $color-black
+    background: $color-black;
   }
 }
