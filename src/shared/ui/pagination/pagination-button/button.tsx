@@ -24,7 +24,7 @@ export type ButtonProps = {
   };
 };
 
-export const Button = ({
+export const PaginationButton = ({
   children,
   variant = 'default',
   onClick,

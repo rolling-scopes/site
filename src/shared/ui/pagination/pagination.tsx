@@ -1,7 +1,7 @@
 'use client';
 import classNames from 'classnames/bind';
 
-import { Button } from './pagination-button/button';
+import { PaginationButton } from './pagination-button/button';
 import { getPaginationItems } from './utils/pagination.utils';
 import chevronLeft from '@/shared/assets/svg/chevron-left.svg';
 import chevronRight from '@/shared/assets/svg/chevron-right.svg';
@@ -33,7 +33,7 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
 
   return (
     <nav className={cx('pagination')} aria-label="Pagination">
-      <Button
+      <PaginationButton
         variant="pagination-arrow"
         onClick={handlePageChangeBack}
         disabled={currentPage === 1}
@@ -55,16 +55,16 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
               </div>
             )
           : (
-              <Button
+              <PaginationButton
                 key={item}
                 variant={currentPage === item ? 'pagination-active' : 'pagination'}
                 onClick={() => onPageChange(item as number)}
               >
                 {item}
-              </Button>
+              </PaginationButton>
             ),
       )}
-      <Button
+      <PaginationButton
         variant="pagination-arrow"
         onClick={handlePageChangeNext}
         disabled={currentPage === totalPages}
