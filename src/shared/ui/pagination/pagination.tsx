@@ -59,6 +59,11 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }: Pagination
                 key={item}
                 variant={currentPage === item ? 'pagination-active' : 'pagination'}
                 onClick={() => onPageChange(item as number)}
+                ariaLabel={
+                  currentPage === item
+                    ? `Current page, page ${item}`
+                    : `Go to page ${item}`
+                }
               >
                 {item}
               </PaginationButton>
