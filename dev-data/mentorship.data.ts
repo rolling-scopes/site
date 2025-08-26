@@ -1,5 +1,4 @@
-import { COURSE_TITLES } from './courseTitles.data';
-import { ROUTES } from '@/core/const';
+import { COURSE_TITLES } from './course-titles.data';
 import angular from '@/shared/assets/icons/angular.svg';
 import javascript from '@/shared/assets/icons/javascript.svg';
 import react from '@/shared/assets/icons/react.svg';
@@ -7,6 +6,7 @@ import assignment from '@/shared/assets/svg/assignment.svg';
 import bestPractices from '@/shared/assets/svg/best-practices-icon.svg';
 import codeReview from '@/shared/assets/svg/code-review-icon.svg';
 import interview from '@/shared/assets/svg/interview.svg';
+import { ROUTES } from '@/shared/constants';
 import { TelegramIcon } from '@/shared/icons';
 import { MENTOR_ONBOARD_TELEGRAM_EN, MENTOR_ONBOARD_TELEGRAM_RU, MentorshipCourse } from 'data';
 

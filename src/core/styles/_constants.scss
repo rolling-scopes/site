@@ -85,10 +85,13 @@ $opacity-50: 0.5;
 $opacity-40: 0.4;
 $opacity-30: 0.3;
 $opacity-20: 0.2;
+$opacity-15: 0.15;
 $opacity-10: 0.1;
 $opacity-8: 0.08;
 $opacity-0: 0;
 
 // Easing functions
+$ease-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
+$ease-emphasize-decelerate: cubic-bezier(0, 0, 0, 1);
 $ease-in-cubic: cubic-bezier(0.32, 0, 0.67, 0);
 $standard-decelerate: cubic-bezier(0, 0, 0, 1);

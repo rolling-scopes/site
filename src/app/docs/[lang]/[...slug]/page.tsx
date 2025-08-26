@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import { DocsLayout } from '../../components/docs-layout/docs-layout';
+import { DocsContent } from '../../components/docs-content/docs-content';
 import { TITLE_POSTFIX } from '../../constants';
 import { Menu } from '../../types';
-import { fetchMarkdownContent } from '../../utils/fetchMarkdownContent';
-import { fetchMenu } from '../../utils/fetchMenu';
+import { fetchMarkdownContent } from '../../utils/fetch-markdown-content';
+import { fetchMenu } from '../../utils/fetch-menu';
 import { Language } from '@/shared/types';
 
 type RouteParams = { lang: Language;
@@ -90,19 +90,14 @@ export async function generateStaticParams(): Promise<RouteParams[]> {
   return allSlugs;
 }
 
-export default async function DocPage({
-  params,
-}: {
-  params: Promise<RouteParams>;
-}) {
+export default async function DocPage({ params }: { params: Promise<RouteParams> }) {
   const { lang, slug } = await params;
 
   try {
     const markdownContent = await fetchMarkdownContent(lang, slug);
-    const docsMenu = await fetchMenu(lang);
 
-    return <DocsLayout menu={docsMenu} markdownContent={markdownContent} lang={lang} />;
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    return <DocsContent markdownContent={markdownContent} lang={lang} />;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     notFound();
   }

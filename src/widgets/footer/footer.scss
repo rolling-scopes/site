@@ -1,0 +1,88 @@
+.footer {
+  background-color: $color-black;
+
+  &.content {
+    padding: 40px 80px;
+
+    & .desktop-view {
+      display: flex;
+      gap: 75px;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      & .left {
+        display: flex;
+        gap: 167px;
+      }
+
+      // AboutList component styles
+      .about-list {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: baseline;
+        justify-content: flex-start;
+
+        font-size: 18px;
+        font-weight: $font-weight-medium;
+        line-height: 24px;
+        color: $color-gray-100;
+        letter-spacing: 0;
+
+        .about-links {
+          list-style-type: none;
+
+          & li:not(:last-child) {
+            margin-bottom: 24px;
+          }
+
+          a {
+            @extend %transition-all;
+
+            color: currentcolor;
+
+            &:hover {
+              color: $color-gray-400;
+            }
+          }
+        }
+      }
+
+      @include media-tablet {
+        display: none;
+      }
+
+      @include media-laptop-medium {
+        gap: 50px;
+
+        & .left {
+          gap: 50px;
+        }
+      }
+
+      @include media-tablet-large {
+        flex-direction: column;
+
+        & .left {
+          justify-content: space-between;
+          width: 100%;
+          max-width: 430px;
+        }
+      }
+    }
+
+    .copyright {
+      margin-top: 64px;
+      line-height: 24px;
+      color: $color-white;
+    }
+
+    @include media-laptop {
+      padding: 40px;
+    }
+
+    @include media-tablet {
+      padding: 40px 16px;
+    }
+  }
+}
