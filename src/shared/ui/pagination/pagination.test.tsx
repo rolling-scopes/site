@@ -11,14 +11,14 @@ describe('Pagination', () => {
     render(<Pagination currentPage={5} totalPages={10} onPageChange={onPageChange} />);
 
     // Visible page items from util for (5,10): 4,5,6, dots, 9,10
-    expect(screen.getByRole('button', { name: '4' })).toBeInTheDocument();
-    const active = screen.getByRole('button', { name: '5' });
+    expect(screen.getByRole('button', { name: 'Go to page 4' })).toBeInTheDocument();
+    const active = screen.getByRole('button', { name: 'Current page, page 5' });
 
     expect(active).toBeInTheDocument();
     expect(active).toHaveClass('button--pagination-active');
-    expect(screen.getByRole('button', { name: '6' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: '9' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: '10' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Go to page 6' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Go to page 9' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Go to page 10' })).toBeInTheDocument();
 
     // Dots container with three dots
     const dotsContainers = document.querySelectorAll('.pagination-dots');
@@ -67,7 +67,7 @@ describe('Pagination', () => {
 
     render(<Pagination currentPage={5} totalPages={10} onPageChange={onPageChange} />);
 
-    await user.click(screen.getByRole('button', { name: '10' }));
+    await user.click(screen.getByRole('button', { name: 'Go to page 10' }));
     expect(onPageChange).toHaveBeenCalledWith(10);
   });
 });
