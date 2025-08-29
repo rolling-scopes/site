@@ -13,12 +13,13 @@ type ApiMerchData = {
 };
 
 export type ApiMerchItemAdapt = ApiMerchItem | ApiMerchCategory | ApiMerchData;
-export type ApiMerchResponse = {
+
+export type MerchResponse = {
   [category: string]: ApiMerchData;
 };
 
 export type MerchProduct = {
-  id: string;
+  id: number;
   name: string;
   title: string;
   preview: string[];

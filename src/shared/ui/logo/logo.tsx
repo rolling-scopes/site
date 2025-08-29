@@ -1,7 +1,7 @@
 import { HTMLAttributes } from 'react';
 import { type VariantProps, cva } from 'class-variance-authority';
 import classNames from 'classnames/bind';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
 import logo from '@/shared/assets/svg/rss-logo.svg';
@@ -9,13 +9,17 @@ import { ROUTES } from '@/shared/constants';
 
 import styles from './logo.module.scss';
 
-type LogoProps = Pick<HTMLAttributes<HTMLElement>, 'className'> & VariantProps<typeof logoVariants>;
+type LogoProps = Pick<HTMLAttributes<HTMLElement>, 'className'>
+  & VariantProps<typeof logoVariants> & {
+    logoSrc?: StaticImageData;
+    onClick?: () => void;
+  };
 
 export const cx = classNames.bind(styles);
 
 const logoVariants = cva(cx('logo'), { variants: { type: { 'with-border': cx('with-border') } } });
 
-export const Logo = ({ type, className }: LogoProps) => {
+export const Logo = ({ type, className, logoSrc = logo, onClick }: LogoProps) => {
   return (
     <Link
       href={ROUTES.HOME}
@@ -24,8 +28,9 @@ export const Logo = ({ type, className }: LogoProps) => {
         className,
       })}
       data-testid="logo"
+      onClick={onClick}
     >
-      <Image src={logo} alt="RSS-logo" />
+      <Image src={logoSrc} alt="RSS-logo" />
     </Link>
   );
 };

@@ -17,10 +17,6 @@
         margin: 0;
       }
 
-      &-subtitle {
-        font-weight: $font-weight-bold;
-      }
-
       @include media-tablet {
         gap: 8px;
       }

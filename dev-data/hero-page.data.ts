@@ -2,12 +2,6 @@ import coursesPageHeroImg from '@/shared/assets/mentor-with-his-students.webp';
 import welcome from '@/shared/assets/welcome.webp';
 
 export const heroPageData = {
-  school: {
-    mainTitle: 'RS School',
-    widgetTitle: 'Connecting people, growing together, having fun',
-    subTitle: ['Free courses. High motivation'],
-    imageAltText: '',
-  },
   courses: {
     mainTitle: 'Our Courses',
     widgetTitle: 'Journey to full stack mastery',

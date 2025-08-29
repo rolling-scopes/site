@@ -1,17 +1,19 @@
 import { ApiResourceLocale, Language } from '@/shared/types/';
+import { WidgetTitleVariants } from '@/shared/ui/widget-title/widget-title';
 
-export const RS_INTRO_URL = 'https://www.youtube.com/embed/n4unZLVpnaU';
 export const RS_FOUNDATION_YEAR = '2013';
 export const RS_EMAIL = 'rolling.scopes@gmail.com';
 export const TO_BE_DETERMINED = 'TBD';
+export const RS_GRADUATED_ONLY = 'Alumni only';
 export const REGISTRATION_WILL_OPEN_SOON = 'Registration will open soon!';
 export const REGISTRATION_WILL_OPEN_SOON_RU = 'Регистрация откроется скоро!';
 export const UNKNOWN_API_ERROR = 'Unknown error, API request failed.';
-
+export const YOUTUBE_API_MAX_RESULTS_PER_PAGE = 50;
 /**
  * https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/links
  */
 export const API_MAX_INCLUDE_DEPTH = 10;
+export const API_OMIT_LINKED_ITEMS_INCLUDE_DEPTH = 0;
 
 export const LABELS = {
   START_DATE: 'Course starts on:',
@@ -24,7 +26,6 @@ export const LABELS = {
 } as const;
 
 export const PAGE_NAMES = {
-  SCHOOL: 'school',
   COURSES: 'courses',
   COMMUNITY: 'community',
   MENTORSHIP: 'mentorship',
@@ -45,7 +46,11 @@ export const COURSE_LINKS = {
   AWS_AI: 'https://rs.school/courses/aws-ai',
 };
 
-export const KEY_CODES = { ESCAPE: 'Escape' } as const;
+export const KEY_CODES = {
+  ESCAPE: 'Escape',
+  ENTER: 'Enter',
+  SPACE: 'Space',
+} as const;
 
 export const HTTP_METHOD = {
   GET: 'GET',
@@ -63,10 +68,13 @@ export const API_LOCALE_DICTIONARY: Record<Language, ApiResourceLocale> = {
 export const API_CONTENT_TYPE_DICTIONARY = {
   TRAINER: 'contributor',
   COURSE: 'course',
+  COURSE_PAGE: 'homePage',
+  LANDING_PAGE: 'landingPage',
 } as const;
+
 export const ANCHORS = {
   ABOUT_COMMUNITY: 'about-community',
-  ABOUT_SCHOOL: 'about-school',
+  ABOUT_SCHOOL: 'about-rs-school',
   MENTORS_WANTED: 'mentors-wanted',
   UPCOMING_COURSES: 'upcoming-courses',
   EVENTS: 'events',
@@ -88,6 +96,15 @@ export const LINKS = {
   ANGULAR_MENTORING: 'https://github.com/rolling-scopes-school/tasks/tree/master/angular/mentoring',
 };
 
+export const NAV_MENU_LABELS = {
+  RS_SCHOOL: 'RS School',
+  COURSES: 'Courses',
+  COMMUNITY: 'Community',
+  MENTORSHIP: 'Mentorship',
+  DOCS: 'Docs',
+  SUPPORT_US: 'Support Us',
+} as const;
+
 export const ROUTES = {
   HOME: '/',
   COMMUNITY: 'community',
@@ -105,5 +122,26 @@ export const ROUTES = {
   MENTORSHIP: 'mentorship',
   DOCS_EN: 'docs/en',
   DOCS_RU: 'docs/ru',
+  MERCH: 'merch',
   NOT_FOUND: '*',
 } as const;
+
+export const SWR_CACHE_KEY = { MENTORS_PLAYLIST: 'MENTORS_PLAYLIST' };
+
+export const OG_IMAGE_WIDTH = 1200;
+export const OG_IMAGE_HEIGHT = 630;
+
+export const OG_SITE_NAME = 'The Rolling Scopes School';
+export const DYNAMIC = 'force-static';
+
+export const WIDGET_TITLE_SIZE_MAP = new Map<number | undefined, WidgetTitleVariants['size']>([
+  [0, 'smallest'],
+  [1, 'small'],
+  [2, 'medium'],
+  [3, 'large'],
+]);
+
+export const WIDGET_TITLE_MOD_MAP = new Map<number | undefined, WidgetTitleVariants['mods']>([
+  [0, 'asterisk'],
+  [1, 'lines'],
+]);

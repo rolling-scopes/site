@@ -24,7 +24,7 @@ describe('Subtitle component', () => {
     render(<Subtitle>Default Font Size</Subtitle>);
     const subtitle = screen.getByTestId('subtitle');
 
-    expect(subtitle).toHaveClass(cx('medium-font-size'));
+    expect(subtitle).toHaveClass(cx('font-size-medium'));
   });
 
   it('applies correct font size classes when specified', () => {
@@ -32,14 +32,14 @@ describe('Subtitle component', () => {
 
     sizes.forEach((size) => {
       const { getByTestId } = render(
-        <Subtitle fontSize={size}>
+        <Subtitle size={size}>
           {size}
           Font Size
         </Subtitle>,
       );
       const subtitle = getByTestId('subtitle');
 
-      expect(subtitle).toHaveClass(cx(`${size}-font-size`));
+      expect(subtitle).toHaveClass(cx(`font-size-${size}`));
       cleanup();
     });
   });
@@ -53,20 +53,27 @@ describe('Subtitle component', () => {
 
   it('applies multiple variant classes correctly', () => {
     render(
-      <Subtitle fontSize="large" className="custom-class">
+      <Subtitle className="custom-class" size="large">
         Multiple Variants
       </Subtitle>,
     );
     const subtitle = screen.getByTestId('subtitle');
 
-    expect(subtitle).toHaveClass(cx('large-font-size'));
+    expect(subtitle).toHaveClass(cx('font-size-large'));
     expect(subtitle).toHaveClass('custom-class');
   });
 
-  it('renders as h3 element', () => {
-    render(<Subtitle>H3 Element</Subtitle>);
+  it('renders as h3 element by default', () => {
+    render(<Subtitle>h3</Subtitle>);
     const subtitle = screen.getByTestId('subtitle');
 
     expect(subtitle.tagName).toBe('H3');
+  });
+
+  it.each(['h2', 'h3', 'h4'] as const)('renders as %s element', (tag) => {
+    render(<Subtitle as={tag}>{tag}</Subtitle>);
+    const subtitle = screen.getByTestId('subtitle');
+
+    expect(subtitle.tagName).toBe(tag.toUpperCase());
   });
 });

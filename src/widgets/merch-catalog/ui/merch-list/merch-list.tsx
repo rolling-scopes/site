@@ -1,12 +1,12 @@
 'use client';
 import { useEffect, useState } from 'react';
-import classNames from 'classnames/bind';
 import { useRouter, useSearchParams } from 'next/navigation';
 
 import { Pagination } from '../../../../shared/ui/pagination/pagination';
 import { MerchItem } from '../merch-item/merch-item';
 import { MerchProduct } from '@/entities/merch/types';
-
+import classNames from 'classnames/bind';
+        
 import styles from './merch-list.module.scss';
 
 const cx = classNames.bind(styles);
@@ -47,7 +47,7 @@ export const MerchList = ({ products }: MerchListProps) => {
     router.push(`?${params.toString()}`, { scroll: false });
     setCurrentPage(page);
   };
-
+// заменить MerchItem на MerchCard
   return (
     <div className={cx('wrapper')}>
       <div className={cx('list')}>

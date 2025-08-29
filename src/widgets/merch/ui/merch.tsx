@@ -21,7 +21,7 @@ export const Merch = () => (
         <WidgetTitle mods="asterisk">{merchData.title}</WidgetTitle>
         <Paragraph fontSize="large">{merchData.mainParagraph}</Paragraph>
         <Paragraph>{merchData.description}</Paragraph>
-        <LinkCustom href={`/${ROUTES.MERCH}`} variant="primary">
+        <LinkCustom href={LINKS.MERCH} variant="primary">
           {merchData.linkTitle}
         </LinkCustom>
       </article>
