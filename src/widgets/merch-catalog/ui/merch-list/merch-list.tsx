@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { useRouter, useSearchParams } from 'next/navigation';
 
-import { Pagination } from '../../../../shared/ui/pagination/pagination';
 import { MerchCard } from '@/entities/merch';
 import { MerchProduct } from '@/entities/merch/types';
+import { Pagination } from '@/shared/ui/pagination/pagination';
 
 import styles from './merch-list.module.scss';
 
