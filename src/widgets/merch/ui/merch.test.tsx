@@ -4,6 +4,7 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { Merch } from './merch';
 import { MOCKED_MERCH_DATA } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
+import { LINKS } from '@/shared/constants';
 
 describe('Merch', () => {
   beforeEach(() => {
@@ -24,7 +25,7 @@ describe('Merch', () => {
     const buttonElement = screen.getByRole('link', { name: new RegExp(MOCKED_MERCH_DATA.buttonText, 'i') });
 
     expect(buttonElement).toBeVisible();
-    expect(buttonElement).toHaveAttribute('href', MOCKED_MERCH_DATA.buttonLink);
+    expect(buttonElement).toHaveAttribute('href', LINKS.MERCH);
   });
 
   it('renders the image with alt text', () => {
