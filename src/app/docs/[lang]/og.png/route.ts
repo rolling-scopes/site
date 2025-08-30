@@ -17,8 +17,8 @@ const descriptionMap: Record<Language, string> = {
   ru: 'Документация RS: правила, гайды, часто задаваемые вопросы.',
 };
 
-export async function GET(_request: Request, { params }: { params: Promise<{ lang: Language }> }) {
-  const lang = (await params).lang;
+export async function GET(_request: Request, { params }: { params: Promise<{ lang: string }> }) {
+  const lang = (await params).lang as Language;
 
   return createPageTree({
     title: titleMap[lang],
