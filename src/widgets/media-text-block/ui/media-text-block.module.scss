@@ -149,6 +149,8 @@
   }
 
   &.image-absolute-position {
+    overflow-x: clip;
+
     .content-bottom {
       position: relative;
     }
@@ -166,6 +168,11 @@
 
         width: unset;
         height: unset;
+
+        @include media-tablet-large {
+          // hack for community page only
+          top: 500px;
+        }
       }
     }
   }
@@ -173,5 +180,9 @@
   .absolute-image-placeholder {
     width: 500px;
     height: 200px;
+
+    @include media-tablet-large {
+      height: 0;
+    }
   }
 }
