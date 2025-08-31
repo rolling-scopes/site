@@ -159,3 +159,16 @@ figure {
     }
   }
 }
+
+.swiper {
+  padding: 10px 10px 52px 10px !important;
+
+  .swiper-slide {
+    cursor: grab;
+    user-select: none;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+}

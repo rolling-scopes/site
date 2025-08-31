@@ -1,4 +1,6 @@
 import { PageResponseSections, Section } from '@/shared/types/types';
+import { isSlider } from '@/shared/ui/slider/helpers/is-slider';
+import { transformSlider } from '@/shared/ui/slider/helpers/transform-slider';
 import { isSocialLink } from '@/shared/ui/social-media-item/helpers/is-social-link';
 import { transformSocialLink } from '@/shared/ui/social-media-item/helpers/transform-social-link';
 import { isAboutCourseSection, transformAboutCourseSection } from '@/widgets/about-course';
@@ -24,7 +26,6 @@ import {
   isMediaTextBlockSection,
   transformMediaTextBlockSection,
 } from '@/widgets/media-text-block';
-import { SECTION_TYPE } from '@/widgets/section-resolver/constants';
 import { isDonationSection } from '@/widgets/support/helpers/is-donation-section';
 import { transformDonationSection } from '@/widgets/support/helpers/transform-donation-section';
 import {
@@ -93,13 +94,8 @@ export function transformPageSections(sections: PageResponseSections): Section[]
       return transformMarqueeSection(section);
     }
 
-    // @ts-expect-error fix soon
-    if (section.sys.contentType.sys.id === SECTION_TYPE.SLIDER) {
-      return {
-        id: 'slider',
-        name: 'slider',
-        data: 'slider',
-      };
+    if (isSlider(section)) {
+      return transformSlider(section);
     }
 
     if (isSocialLink(section)) {

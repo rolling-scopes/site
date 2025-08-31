@@ -19,6 +19,7 @@ import {
   TypeUpcomingCoursesWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeVideoBlockWithAllLocalesAndWithoutLinkResolutionResponse,
 } from '@/shared/types/contentful';
+import { SliderData } from '@/shared/ui/slider/types';
 import { SocialLinkData } from '@/shared/ui/social-media-item/constants';
 import { AboutCourseSectionData } from '@/widgets/about-course';
 import { ExternalEmbedContentData } from '@/widgets/external-embed-content';
@@ -153,7 +154,7 @@ export type Section =
   | SectionBase<Extract<SectionName, 'externalEmbedContent'>, ExternalEmbedContentData>
   | SectionBase<Extract<SectionName, 'infoGrid'>, InfoGridData>
   | SectionBase<Extract<SectionName, 'marquee'>, MarqueeSectionData>
-  | SectionBase<Extract<SectionName, 'slider'>, 'slider'>
+  | SectionBase<Extract<SectionName, 'slider'>, SliderData>
   | SectionBase<Extract<SectionName, 'socialLink'>, SocialLinkData>;
 
 export type PageResponseSections = CoursePageResponse['items'][0]['fields']['sections'];

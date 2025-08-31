@@ -41,6 +41,8 @@
     grid-row: 2 / 3;
     flex-direction: column;
     gap: 24px;
+
+    min-width: 100%;
   }
 
   .content-wrapper-right {

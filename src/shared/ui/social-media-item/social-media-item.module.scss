@@ -17,6 +17,10 @@
   text-align: center;
   text-decoration: none;
 
+  &.inline {
+    display: inline-flex;
+  }
+
   .media-icon {
     display: flex;
     border-radius: 50%;

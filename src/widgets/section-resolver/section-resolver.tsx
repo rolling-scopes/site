@@ -2,6 +2,7 @@ import { Marquee } from '../marquee';
 import { courseStore } from '@/entities/course';
 import { ROUTES } from '@/shared/constants';
 import { Section } from '@/shared/types/types';
+import { Slider } from '@/shared/ui/slider';
 import { SocialMediaItem } from '@/shared/ui/social-media-item';
 import { AboutCourseSection } from '@/widgets/about-course';
 import { EXTERNAL_EMBED_CONTENT_TYPE, RSCourses } from '@/widgets/external-embed-content';
@@ -20,12 +21,14 @@ type SectionResolverProps = {
   section: Section;
   courseEnrollUrl?: string;
   embedded?: boolean;
+  inline?: boolean;
 };
 
 export const SectionResolver = async ({
   courseEnrollUrl,
   section,
   embedded,
+  inline,
 }: SectionResolverProps) => {
   const sectionName = section.name;
   const courses = await courseStore.loadCourses();
@@ -180,11 +183,27 @@ export const SectionResolver = async ({
       return <Marquee items={section.data.items} />;
 
     case SECTION_TYPE.SLIDER:
-      return 'slider';
+      return (
+        <Slider
+          slides={section.data.slides}
+          sliderProps={{
+            loop: true,
+            centeredSlides: true,
+            keyboard: { enabled: true },
+            slidesPerView: 1.25,
+            spaceBetween: 10,
+            autoplay: {
+              delay: 2000,
+              pauseOnMouseEnter: true,
+            },
+          }}
+        />
+      );
 
     case SECTION_TYPE.SOCIAL_LINK:
       return (
         <SocialMediaItem
+          inline={inline}
           title={section.data.label}
           icon={
             section.data.icon ? <img src={section.data.icon.src} alt="" aria-hidden="true" /> : null
