@@ -11,12 +11,19 @@ class LandingPageStore {
     if (res.isSuccess) {
       const preparedData = prepareContentfulResponse<LandingPageResponse['items']>(res.result);
 
-      const { title = '', sections: pageSections } = preparedData.at(0)?.fields ?? {};
+      const {
+        title = '',
+        seoDescription = '',
+        seoKeywords = '',
+        sections: pageSections,
+      } = preparedData.at(0)?.fields ?? {};
       const sections = transformPageSections(pageSections);
 
       return {
         title,
         sections,
+        seoDescription,
+        seoKeywords,
       };
     }
 
