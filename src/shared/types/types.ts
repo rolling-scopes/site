@@ -11,6 +11,7 @@ import {
   TypeHighlightCardWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeInfoGridWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeLearningPathStagesWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeLinkWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeMarqueeWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeMediaGridWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeMediaTextBlockWithAllLocalesAndWithoutLinkResolutionResponse,
@@ -19,6 +20,7 @@ import {
   TypeUpcomingCoursesWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeVideoBlockWithAllLocalesAndWithoutLinkResolutionResponse,
 } from '@/shared/types/contentful';
+import { LinkData } from '@/shared/ui/link-custom/types';
 import { SliderData } from '@/shared/ui/slider/types';
 import { SocialLinkData } from '@/shared/ui/social-media-item/constants';
 import { AboutCourseSectionData } from '@/widgets/about-course';
@@ -133,7 +135,8 @@ export type SectionName =
   | ExtractSectionName<TypeInfoGridWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeMarqueeWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeSliderWithAllLocalesAndWithoutLinkResolutionResponse>
-  | ExtractSectionName<TypeSocialLinkWithAllLocalesAndWithoutLinkResolutionResponse>;
+  | ExtractSectionName<TypeSocialLinkWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeLinkWithAllLocalesAndWithoutLinkResolutionResponse>;
 
 type SectionBase<TName extends SectionName, TData, TId extends string = string> = {
   id: TId;
@@ -155,6 +158,7 @@ export type Section =
   | SectionBase<Extract<SectionName, 'infoGrid'>, InfoGridData>
   | SectionBase<Extract<SectionName, 'marquee'>, MarqueeSectionData>
   | SectionBase<Extract<SectionName, 'slider'>, SliderData>
-  | SectionBase<Extract<SectionName, 'socialLink'>, SocialLinkData>;
+  | SectionBase<Extract<SectionName, 'socialLink'>, SocialLinkData>
+  | SectionBase<Extract<SectionName, 'link'>, LinkData>;
 
 export type PageResponseSections = CoursePageResponse['items'][0]['fields']['sections'];

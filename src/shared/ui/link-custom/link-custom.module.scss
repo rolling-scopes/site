@@ -91,8 +91,23 @@
   @extend %transition-all;
 
   display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  font-style: normal;
   color: $color-blue-600;
   text-decoration: underline;
+
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 24px;
+    min-height: 24px;
+  }
 
   &:hover {
     text-decoration: none;

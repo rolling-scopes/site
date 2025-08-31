@@ -2,6 +2,7 @@ import { Marquee } from '../marquee';
 import { courseStore } from '@/entities/course';
 import { ROUTES } from '@/shared/constants';
 import { Section } from '@/shared/types/types';
+import { Link } from '@/shared/ui/link-custom';
 import { Slider } from '@/shared/ui/slider';
 import { SocialMediaItem } from '@/shared/ui/social-media-item';
 import { AboutCourseSection } from '@/widgets/about-course';
@@ -209,6 +210,17 @@ export const SectionResolver = async ({
             section.data.icon ? <img src={section.data.icon.src} alt="" aria-hidden="true" /> : null
           }
           href={section.data.link ?? '/'}
+        />
+      );
+
+    case SECTION_TYPE.LINK:
+      return (
+        <Link
+          variant={section.data.variant}
+          label={section.data.label}
+          disabledLabel={section.data.disabledLabel}
+          link={section.data.link}
+          icon={section.data.icon}
         />
       );
 

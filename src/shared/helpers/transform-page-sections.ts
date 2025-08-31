@@ -1,4 +1,6 @@
 import { PageResponseSections, Section } from '@/shared/types/types';
+import { isLink } from '@/shared/ui/link-custom/helpers/is-link';
+import { transformLink } from '@/shared/ui/link-custom/helpers/transform-link';
 import { isSlider } from '@/shared/ui/slider/helpers/is-slider';
 import { transformSlider } from '@/shared/ui/slider/helpers/transform-slider';
 import { isSocialLink } from '@/shared/ui/social-media-item/helpers/is-social-link';
@@ -100,6 +102,10 @@ export function transformPageSections(sections: PageResponseSections): Section[]
 
     if (isSocialLink(section)) {
       return transformSocialLink(section);
+    }
+
+    if (isLink(section)) {
+      return transformLink(section);
     }
 
     throw new Error('Unable to determine section type.');

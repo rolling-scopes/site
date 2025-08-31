@@ -13,4 +13,5 @@ export const SECTION_TYPE = {
   MARQUEE: 'marquee',
   SLIDER: 'slider',
   SOCIAL_LINK: 'socialLink',
+  LINK: 'link',
 } as const;
