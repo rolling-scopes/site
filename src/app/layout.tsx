@@ -8,6 +8,7 @@ import type { Metadata } from 'next';
 import '@/core/styles/index.scss';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://rs.school'),
   title: 'RS Site',
   description:
     'RS School offers free, community-driven education courses run by The Rolling Scopes developer community since 2013. Enhance your web development, JavaScript, and front-end skills with us.',

@@ -159,7 +159,7 @@ export const SectionResolver = async ({
         throw new Error('No courses provided');
       }
 
-      if (EXTERNAL_EMBED_CONTENT_TYPE.ALL_COURSES) {
+      if (section.data.type === EXTERNAL_EMBED_CONTENT_TYPE.ALL_COURSES) {
         return <RSCourses courses={courses} />;
       }
 
