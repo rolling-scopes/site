@@ -26,10 +26,8 @@ export const LABELS = {
 } as const;
 
 export const PAGE_NAMES = {
-  COURSES: 'courses',
   COMMUNITY: 'community',
   MENTORSHIP: 'mentorship',
-  MERCH: 'merch',
 } as const;
 
 // ⚠️ These links are used to identify courses from the API

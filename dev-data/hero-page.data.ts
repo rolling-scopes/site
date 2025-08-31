@@ -1,13 +1,4 @@
-import coursesPageHeroImg from '@/shared/assets/mentor-with-his-students.webp';
-
 export const heroPageData = {
-  courses: {
-    mainTitle: 'Our Courses',
-    widgetTitle: 'Journey to full stack mastery',
-    subTitle: ['Community driven. 100% free of charge'],
-    heroImageSrc: coursesPageHeroImg,
-    imageAltText: 'Sloth mascot mentor with his sloths students',
-  },
   community: {
     mainTitle: 'The Rolling Scopes',
     widgetTitle: 'Connecting people, growing together, having fun',

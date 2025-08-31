@@ -1,7 +1,8 @@
-import { Course } from '@/entities/course';
+import { courseStore } from '@/entities/course';
 import { ROUTES } from '@/shared/constants';
 import { Section } from '@/shared/types/types';
 import { AboutCourseSection } from '@/widgets/about-course';
+import { EXTERNAL_EMBED_CONTENT_TYPE, RSCourses } from '@/widgets/external-embed-content';
 import { Hero } from '@/widgets/hero';
 import { HighlightCard } from '@/widgets/highlight-card';
 import { LearningPathStageItem, LearningPathStages } from '@/widgets/learning-path-stages';
@@ -16,16 +17,15 @@ type SectionResolverProps = {
   section: Section;
   courseEnrollUrl?: string;
   embedded?: boolean;
-  courses?: Course[];
 };
 
-export const SectionResolver = ({
+export const SectionResolver = async ({
   courseEnrollUrl,
   section,
   embedded,
-  courses,
 }: SectionResolverProps) => {
   const sectionName = section.name;
+  const courses = await courseStore.loadCourses();
 
   switch (sectionName) {
     case SECTION_TYPE.ABOUT_COURSE:
@@ -68,6 +68,8 @@ export const SectionResolver = ({
               title={stage.title}
               content={stage.content}
               image={stage.image}
+              imageWidth={stage.imageWidth}
+              imageHeight={stage.imageHeight}
             />
           ))}
         </LearningPathStages>
@@ -141,6 +143,17 @@ export const SectionResolver = ({
           icon={section.data.icon}
         />
       );
+
+    case SECTION_TYPE.EXTERNAL_EMBED_CONTENT:
+      if (!courses) {
+        throw new Error('No courses provided');
+      }
+
+      if (section.data.type === EXTERNAL_EMBED_CONTENT_TYPE.ALL_COURSES) {
+        return <RSCourses courses={courses} />;
+      }
+
+      throw new Error(`No component found for external embed content: ${sectionName}`);
 
     default:
       throw new Error(`No component found for section type: ${sectionName}`);
