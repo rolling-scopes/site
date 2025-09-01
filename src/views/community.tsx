@@ -6,7 +6,7 @@ import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { CommunityMedia } from '@/widgets/community-media';
 import { Contribute } from '@/widgets/contribute';
 import { Events } from '@/widgets/events';
-import { HeroPage } from '@/widgets/hero-page';
+import { HeroPage } from '@/widgets/hero';
 import { Merch } from '@/widgets/merch';
 import { Numbers } from '@/widgets/numbers';
 import { Pictures } from '@/widgets/pictures';

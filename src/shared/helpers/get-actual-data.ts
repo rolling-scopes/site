@@ -11,18 +11,34 @@ type GetActualDataParams<T extends DataType> = {
   data: T;
   staleAfter?: number;
   filterStale?: boolean;
+  isMentorship?: boolean;
+  sort?: boolean;
 };
 
 type GetActualDataType = <T extends DataType>(params: GetActualDataParams<T>) => T;
 
-export const getActualData: GetActualDataType = ({ data, staleAfter, filterStale = true }) => {
+export const getActualData: GetActualDataType = ({
+  data,
+  staleAfter,
+  filterStale = true,
+  isMentorship = false,
+  sort = true,
+}) => {
   let dataWithTBD = mapStaleAsTBD(data, staleAfter);
+
+  if (isMentorship) {
+    dataWithTBD = mapMentorshipStaleAsTBD(data);
+  }
 
   if (filterStale) {
     dataWithTBD = filterStaleData(dataWithTBD);
   }
 
-  return sortData(dataWithTBD);
+  if (sort) {
+    dataWithTBD = sortData(dataWithTBD);
+  }
+
+  return dataWithTBD;
 };
 
 const mapStaleAsTBD = <T extends DataType>(data: T, staleAfter?: number): T =>
@@ -45,6 +61,39 @@ const mapStaleAsTBD = <T extends DataType>(data: T, staleAfter?: number): T =>
     };
   }) as T;
 
+const mapMentorshipStaleAsTBD = <T extends DataType>(data: T): T => {
+  if ('eventType' in data) {
+    return data;
+  }
+
+  const mentorshipDataWithTBD = (data as Course[]).map((item) => {
+    const date: string | null = item.personalMentoringStartDate;
+
+    if (!date) {
+      return item;
+    }
+
+    const daysBeforeStale = dayJS(item.personalMentoringEndDate).diff(
+      item.personalMentoringStartDate,
+      'd',
+    );
+
+    const startDate = getCourseDate(date, daysBeforeStale);
+
+    if (startDate === TO_BE_DETERMINED) {
+      return {
+        ...item,
+        personalMentoringStartDate: null,
+        personalMentoringEndDate: null,
+      };
+    }
+
+    return item;
+  }) as T;
+
+  return mentorshipDataWithTBD;
+};
+
 const filterStaleData = <T extends DataType>(data: T): T =>
   data.filter((item) => {
     const date = isCourse(item) ? item.startDate : item.date;
@@ -56,6 +105,10 @@ const sortData = <T extends DataType>(data: T): T =>
   data.sort((a, b) => {
     const dateA = isCourse(a) ? a.startDate : a.date;
     const dateB = isCourse(b) ? b.startDate : b.date;
+
+    if (dateA === TO_BE_DETERMINED && dateB === TO_BE_DETERMINED) {
+      return 0;
+    }
 
     if (dateA === TO_BE_DETERMINED || dateB === TO_BE_DETERMINED) {
       return dateA === TO_BE_DETERMINED ? 1 : -1;

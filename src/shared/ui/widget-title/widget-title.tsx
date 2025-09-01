@@ -4,14 +4,17 @@ import classNames from 'classnames/bind';
 
 import styles from './widget-title.module.scss';
 
-type WidgetTitleProps = Pick<HTMLAttributes<HTMLHeadingElement>, 'className' | 'children' | 'id'> &
-  VariantProps<typeof widgetTitleVariants>;
+export type WidgetTitleVariants = VariantProps<typeof widgetTitleVariants>;
+
+type WidgetTitleProps = Pick<HTMLAttributes<HTMLHeadingElement>, 'className' | 'children' | 'id'>
+  & WidgetTitleVariants;
 
 export const cx = classNames.bind(styles);
 
 const widgetTitleVariants = cva(cx('widget-title'), {
   variants: {
     size: {
+      smallest: cx('smallest'),
       small: cx('small'),
       medium: cx('medium'),
       large: cx('large'),

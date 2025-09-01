@@ -1,28 +1,18 @@
-import { FC } from 'react';
+import { Fragment } from 'react';
 
-import { PAGE_NAMES } from '@/shared/constants';
-import { AboutSchool } from '@/widgets/about-school';
-import { Alumni } from '@/widgets/alumni';
+import { LANDING_PAGE_SLUG } from '@/entities/landing-page/constants';
+import { landingPageStore } from '@/entities/landing-page/model/store';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
-import { HeroPage } from '@/widgets/hero-page';
-import { MentorsWanted } from '@/widgets/mentors-wanted';
-import { Principles } from '@/widgets/principles';
-import { StudyWithUs } from '@/widgets/study-with-us';
-import { Support } from '@/widgets/support';
-import { UpcomingCourses } from '@/widgets/upcoming-courses';
+import { isHeroSection } from '@/widgets/hero/helpers/is-hero-section';
+import { SectionResolver } from '@/widgets/section-resolver';
 
-export const Home: FC = () => {
-  return (
-    <>
-      <HeroPage pageName={PAGE_NAMES.SCHOOL} />
-      <Breadcrumbs />
-      <AboutSchool />
-      <Principles />
-      <StudyWithUs />
-      <UpcomingCourses />
-      <Support />
-      <Alumni />
-      <MentorsWanted />
-    </>
-  );
+export const Home = async () => {
+  const { sections } = await landingPageStore.loadLandingPage(LANDING_PAGE_SLUG.HOME);
+
+  return sections.map((section) => (
+    <Fragment key={section.id}>
+      <SectionResolver section={section} />
+      {isHeroSection(section.name) && <Breadcrumbs />}
+    </Fragment>
+  ));
 };

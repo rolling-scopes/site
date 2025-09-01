@@ -20,7 +20,7 @@ const fsdConfig = compat.extends('@feature-sliced/eslint-config');
 fsdConfig.pop();
 
 export default tseslint.config(
-  { ignores: ['.next', 'build'] },
+  { ignores: ['.next', 'build', 'next-env.d.ts'] },
   {
     extends: [js.configs.recommended, tseslint.configs.recommended, fsdConfig],
     files: ['**/*.{ts,tsx,js,jsx}'],
@@ -60,7 +60,7 @@ export default tseslint.config(
       ...reactHooks.configs.recommended.rules,
       ...importPlugin.configs.recommended.rules,
       ...vitest.configs.recommended.rules,
-      ...stylistic.configs['recommended-flat'].rules,
+      ...stylistic.configs.recommended.rules,
 
       'boundaries/element-types': 'off',
       'no-undef': 'off',
@@ -185,7 +185,7 @@ export default tseslint.config(
         'single',
         {
           avoidEscape: true,
-          allowTemplateLiterals: true,
+          allowTemplateLiterals: 'always',
         },
       ],
       '@stylistic/operator-linebreak': ['error', 'before', { overrides: { '=': 'after' } }],
@@ -238,7 +238,6 @@ export default tseslint.config(
       ],
       '@stylistic/arrow-parens': ['error', 'always'],
       '@stylistic/no-mixed-operators': 'error',
-      '@stylistic/quote-props': ['error', 'as-needed'],
       '@stylistic/space-before-function-paren': [
         'error',
         {
@@ -264,7 +263,10 @@ export default tseslint.config(
       '@stylistic/quote-props': ['error', 'consistent'],
       'unicorn/filename-case': [
         'error',
-        { cases: { kebabCase: true } },
+        {
+          cases: { kebabCase: true },
+          ignore: [/^Type[A-Z][a-zA-Z0-9]*\.ts$/],
+        },
       ],
     },
   },
