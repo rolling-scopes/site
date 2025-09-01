@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 
+import { COURSE_DATE_FORMAT, MENTORING_DATE_FORMAT } from '@/entities/course/constants';
 import noteIcon from '@/shared/assets/icons/note-icon.svg';
 import { TO_BE_DETERMINED } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/day-js';
@@ -24,7 +25,7 @@ const formatDateAttr = (date: string | null | undefined): string | undefined => 
     return undefined;
   }
 
-  return dayJS(date).toISOString();
+  return dayJS(date, [MENTORING_DATE_FORMAT, COURSE_DATE_FORMAT]).toISOString();
 };
 
 export const DateSimple = ({
