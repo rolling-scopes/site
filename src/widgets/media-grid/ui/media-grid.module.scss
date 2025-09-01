@@ -30,4 +30,9 @@
   &.fit-content {
     grid-template-columns: repeat(var(--grid-max-col-count), max-content);
   }
+
+  @include media-mobile-landscape {
+    gap: 0;
+    justify-content: space-between;
+  }
 }
