@@ -16,13 +16,18 @@ export type MerchListProps = {
 };
 
 const ITEMS_PER_PAGE = 12;
+const DEFAULT_PAGE = 1;
 
 export const MerchList = ({ products }: MerchListProps) => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const pageParam = searchParams.get('page');
-  const [currentPage, setCurrentPage] = useState(parseInt(pageParam || '1', 10));
-  const totalPages = Math.ceil(products.length / ITEMS_PER_PAGE);
+  const totalPages = Math.max(1, Math.ceil(products.length / ITEMS_PER_PAGE));
+  const raw = Number(pageParam);
+  const initialPage = Number.isFinite(raw) ? Math.trunc(raw) : DEFAULT_PAGE;
+  const [currentPage, setCurrentPage] = useState(
+    Math.min(Math.max(initialPage, DEFAULT_PAGE), totalPages),
+  );
 
   useEffect(() => {
     const newPage = parseInt(pageParam || '1', 10);
