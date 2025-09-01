@@ -81,7 +81,6 @@ export class ApiBaseClass {
         method,
         headers: queryHeaders,
         body: queryBody,
-        next: { revalidate: 3600 },
       });
       result = await response.json();
 
