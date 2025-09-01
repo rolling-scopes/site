@@ -13,7 +13,7 @@ const cx = classNames.bind(styles);
 export const MediaGrid = ({
   fitContent,
   children,
-  numberOfColumns,
+  numberOfColumns = 99,
   removeItemsOnResponsive,
   rowGapPx,
   colGapPx,
@@ -23,6 +23,7 @@ export const MediaGrid = ({
   const gridRowGapPx = Number.isFinite(rowGapPx) ? `${rowGapPx}px` : undefined;
   const gridColGapPx = Number.isFinite(colGapPx) ? `${colGapPx}px` : defaultGridColGapPx;
   const minColSizePx = minGridColSize ? `${minGridColSize}px` : undefined;
+  const shouldFitOnMobile = numberOfColumns > 3;
 
   const handleDefineMinGridColSize = (node: HTMLElement | null) => {
     const childWidth = node?.firstElementChild?.clientWidth;
@@ -39,6 +40,7 @@ export const MediaGrid = ({
         className={cx('media-grid-list', {
           'remove-items-on-responsive': removeItemsOnResponsive,
           'fit-content': fitContent,
+          'fit-mobile': shouldFitOnMobile,
         })}
         style={
           {

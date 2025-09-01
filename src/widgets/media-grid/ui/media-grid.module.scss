@@ -15,20 +15,29 @@
 }
 
 .media-grid-list {
-  display: grid;
-  grid-template-columns: responsive-grid-columns(
+  $responsive-grid: responsive-grid-columns(
     var(--grid-max-col-count),
     var(--grid-min-col-size),
     var(--grid-row-gap),
     var(--grid-col-gap)
   );
+
+  display: grid;
+  grid-template-columns: $responsive-grid;
   gap: var(--grid-row-gap) var(--grid-col-gap);
   place-items: center;
+  align-items: flex-start;
 
   width: 100%;
 
   &.fit-content {
     grid-template-columns: repeat(var(--grid-max-col-count), max-content);
+
+    &.fit-mobile {
+      @include media-mobile-landscape {
+        grid-template-columns: $responsive-grid;
+      }
+    }
   }
 
   @include media-mobile-landscape {

@@ -37,6 +37,7 @@ export const MediaTextBlock = ({
   const isLinkDisabled = !linkUrl;
   const isLinkShown = (href && Boolean(linkLabel)) || (!href && Boolean(disabledLinkLabel));
   const small = titleSize === 'smallest';
+  const hasTitle = title || sectionLabel;
   const isComponentListContentLeft = isSectionComponentsList(contentLeft);
   const isComponentListContentBottom = isSectionComponentsList(contentBottom);
 
@@ -55,15 +56,17 @@ export const MediaTextBlock = ({
           small,
         })}
       >
-        <div className={cx('title')}>
-          {sectionLabel && <SectionLabel>{sectionLabel}</SectionLabel>}
+        {hasTitle && (
+          <div className={cx('title')}>
+            {sectionLabel && <SectionLabel>{sectionLabel}</SectionLabel>}
 
-          {title && (
-            <WidgetTitle size={titleSize} mods={titleMod}>
-              {title}
-            </WidgetTitle>
-          )}
-        </div>
+            {title && (
+              <WidgetTitle size={titleSize} mods={titleMod}>
+                {title}
+              </WidgetTitle>
+            )}
+          </div>
+        )}
 
         <div
           className={cx('content-wrapper-left', { 'component-list': isComponentListContentLeft })}

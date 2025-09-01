@@ -52,7 +52,17 @@ export const RICH_TEXT_OPTIONS = {
       const src = prepareAssetImage(node.data.target.fields.file);
       const alt = node.data.target.fields.title;
 
-      return <Image data-id="asset-image" src={src} alt={alt} />;
+      return (
+        <Image
+          data-id="asset-image"
+          src={src}
+          alt={alt}
+          style={{
+            maxWidth: src.width,
+            maxHeight: src.height,
+          }}
+        />
+      );
     },
     [BLOCKS.EMBEDDED_ENTRY]: (node: Inline | Block) => {
       const [section] = transformPageSections([node.data.target]);
