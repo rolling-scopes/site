@@ -17,10 +17,10 @@
 .secondary {
   width: max-content;
   padding: 12px 24px;
-  border: 1px solid $color-black;
+  border: 1px solid $color-gray-900;
 
   font-size: $font-size-m;
-  color: $color-black;
+  color: $color-gray-900;
 
   .icon-wrapper {
     display: flex;
@@ -39,13 +39,13 @@
 .primary {
   width: max-content;
   padding: 16px 24px;
-  border: 2px solid $color-black;
+  border: 2px solid $color-gray-900;
 
   font-size: $font-size-m;
   line-height: 24px;
   color: $color-white;
 
-  background-color: $color-black;
+  background-color: $color-gray-900;
 
   &:hover {
     border-color: $color-gray-600;
@@ -65,9 +65,9 @@
 
   font-size: $font-size-xs;
   line-height: 16px;
-  color: $color-black;
+  color: $color-gray-900;
 
-  background-color: #eee;
+  background-color: $color-gray-100;
 
   .icon-wrapper {
     display: flex;

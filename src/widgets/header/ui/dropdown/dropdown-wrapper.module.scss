@@ -26,7 +26,7 @@
   visibility: hidden;
   opacity: $opacity-0;
   background-color: $color-white;
-  box-shadow: 0 4px 10px 0 hsla(from $color-black h s l/ $opacity-10);
+  box-shadow: 0 4px 10px 0 hsla(from $color-gray-900 h s l/ $opacity-10);
 
   &:has(> :nth-child(1):nth-last-child(1)) {
     > *:first-child {

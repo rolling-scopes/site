@@ -22,7 +22,7 @@
     border-radius: inherit;
 
     opacity: 0;
-    background-color: hsla(from $color-black h s l/ $opacity-15);
+    background-color: hsla(from $color-gray-900 h s l/ $opacity-15);
     backdrop-filter: blur(6px);
 
     transition: ease-in 200ms;

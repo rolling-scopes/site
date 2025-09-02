@@ -11,7 +11,7 @@ Please follow the rules and tokens provided in the guide.
 ```scss
 {
   background-color: rgba($color-yellow, $opacity-8);
-  color: $color-black;
+  color: $color-gray-900;
 }
 ```
 

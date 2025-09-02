@@ -10,7 +10,7 @@
 
   &.border-black {
     & > *:not(:last-child) {
-      border-right: 1px solid $color-black;
+      border-right: 1px solid $color-gray-900;
     }
   }
 
