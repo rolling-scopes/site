@@ -4,7 +4,7 @@
   gap: $gap-l;
 
   @include media-laptop {
-    gap: 48px;
+    gap: $gap-xxxl;
   }
 }
 
@@ -52,7 +52,7 @@
   }
 
   @include media-tablet {
-    gap: 28px;
+    gap: $gap-xl;
   }
 }
 

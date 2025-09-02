@@ -11,7 +11,7 @@
 .courses-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  gap: $gap-l;
   width: 100%;
 
   @include media-laptop-medium {

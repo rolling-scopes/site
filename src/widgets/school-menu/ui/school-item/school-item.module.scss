@@ -1,6 +1,6 @@
 .school-item {
   display: flex;
-  column-gap: 8px;
+  column-gap: $gap-xs;
   align-items: flex-start;
 
   &.centered {
@@ -41,14 +41,14 @@
   &.with-icon {
     display: flex;
     flex-direction: row;
-    gap: 15px;
+    gap: $gap-s;
     align-items: center;
     justify-content: flex-start;
 
     .details {
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: $gap-xxs;
       align-items: flex-start;
       justify-content: flex-start;
     }

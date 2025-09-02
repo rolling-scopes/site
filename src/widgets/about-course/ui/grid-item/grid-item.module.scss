@@ -1,7 +1,7 @@
 .grid-item {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: $gap-s;
 
   width: 100%;
   padding: 24px;

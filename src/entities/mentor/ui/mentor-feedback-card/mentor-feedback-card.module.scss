@@ -43,7 +43,7 @@
 .card-header {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: $gap-s;
 
   .card-subtitle {
     margin: 0;

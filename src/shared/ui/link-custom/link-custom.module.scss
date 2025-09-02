@@ -83,7 +83,7 @@
   }
 
   @include media-tablet {
-    gap: 4px;
+    gap: $gap-xxs;
   }
 }
 

@@ -12,7 +12,7 @@
 .alumni-list {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  row-gap: 48px;
+  row-gap: $gap-xxxl;
   place-items: center;
 
   padding: 40px 0 48px;

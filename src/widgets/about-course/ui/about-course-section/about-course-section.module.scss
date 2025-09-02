@@ -9,7 +9,7 @@
       'a a b'
       'c d e';
     grid-template-columns: repeat(3, 1fr);
-    gap: $gap-xl 30px;
+    gap: $gap-xl $gap-xl;
 
     margin-bottom: 16px;
 
