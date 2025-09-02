@@ -12,15 +12,15 @@ export const Partnered = () => (
   <section className={cx('container')} data-testid="partnered">
     <div className={cx('partnered-content', 'content')}>
       <WidgetTitle size="small">Partnered with</WidgetTitle>
-      <ul className={cx('partners')} data-testid="partners-list">
+      <div className={cx('partners')} data-testid="partners-list">
         {partners.map(({ id, Component, href }) => (
-          <li key={id} className={cx('partner-logo-container')}>
+          <div key={id} className={cx('partner-logo-container')}>
             <LinkCustom href={href} external icon={null}>
               <Component />
             </LinkCustom>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   </section>
 );
