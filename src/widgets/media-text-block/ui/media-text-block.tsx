@@ -19,7 +19,7 @@ export const MediaTextBlock = async ({
   anchorId,
   title,
   titleSize,
-  titleMod = 'asterisk',
+  titleMod,
   sectionLabel,
   contentLeft,
   contentRight,

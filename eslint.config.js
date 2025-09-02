@@ -20,7 +20,7 @@ const fsdConfig = compat.extends('@feature-sliced/eslint-config');
 fsdConfig.pop();
 
 export default tseslint.config(
-  { ignores: ['.next', 'build'] },
+  { ignores: ['.next', 'build', 'next-env.d.ts'] },
   {
     extends: [js.configs.recommended, tseslint.configs.recommended, fsdConfig],
     files: ['**/*.{ts,tsx,js,jsx}'],

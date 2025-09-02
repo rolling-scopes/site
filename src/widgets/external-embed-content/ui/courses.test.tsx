@@ -5,21 +5,14 @@ import { Courses } from './courses';
 import { mockedCourses } from '@/shared/__tests__/constants';
 import { COURSE_TITLES } from 'data';
 
-const widgetTitle = 'All courses';
-
 describe('Courses (other courses) component', () => {
-  it('renders widget without crashing and display correct content', async () => {
-    const courses = await Courses();
-
-    render(courses);
+  it('renders widget without crashing and display correct content', () => {
+    render(<Courses courses={mockedCourses} />);
     const widget = screen.getByTestId('all-courses');
-    const title = screen.getByTestId('widget-title');
     const courseCards = screen.getAllByTestId('course-card');
     const courseTitles = screen.getAllByTestId('subtitle');
 
     expect(widget).toBeVisible();
-    expect(title).toBeVisible();
-    expect(title).toHaveTextContent(widgetTitle);
     expect(courseCards.length).toBe(mockedCourses.length);
 
     courseCards.forEach((card) => expect(card).toBeVisible());

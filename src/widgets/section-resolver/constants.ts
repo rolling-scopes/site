@@ -8,4 +8,5 @@ export const SECTION_TYPE = {
   DONATION: 'donation',
   MEDIA_GRID: 'mediaGrid',
   HIGHLIGHT_CARD: 'highlightCard',
+  EXTERNAL_EMBED_CONTENT: 'externalEmbedContent',
 } as const;
