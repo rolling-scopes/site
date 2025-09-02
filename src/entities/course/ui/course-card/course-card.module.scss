@@ -16,7 +16,7 @@
     content: '';
 
     position: absolute;
-    z-index: $z-index-negative;
+    z-index: $z-index-below;
     inset: 0;
 
     border-radius: inherit;
@@ -143,7 +143,7 @@
   }
 
   .course-title {
-    z-index: $z-index-m;
+    z-index: $z-index-above;
   }
 
   @include media-hover {
