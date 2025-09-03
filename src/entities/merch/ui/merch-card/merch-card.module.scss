@@ -7,7 +7,7 @@
   max-width: 320px;
   height: 100%;
   margin: 0 auto;
-  border-radius: 5px;
+  border-radius: $border-radius-xxs;
 
   background-color: $color-white;
   box-shadow: 0 4px 12px 0 hsla(from $color-gray-900 h s l / $opacity-10);
@@ -68,7 +68,7 @@
 
   padding: 8px 10px;
   border: none;
-  border-radius: 100%;
+  border-radius: 50%;
 
   opacity: $opacity-80;
   background-color: $color-yellow;
@@ -87,6 +87,6 @@
 .download-img {
   width: 20px;
   height: 20px;
-  border-radius: 5px;
+  border-radius: $border-radius-xxs;
   background-color: $color-yellow;
 }

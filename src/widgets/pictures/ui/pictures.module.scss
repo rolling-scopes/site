@@ -37,7 +37,7 @@
   :global(.swiper-button-next),
   :global(.swiper-button-prev) {
     height: 50px;
-    border-radius: 8px;
+    border-radius: $border-radius-xs;
 
     color: $color-white;
 
