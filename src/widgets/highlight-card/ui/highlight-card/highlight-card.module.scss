@@ -6,12 +6,12 @@
   overflow: hidden;
   display: grid;
   grid-template-columns: max-content 1fr;
-  column-gap: 16px;
+  column-gap: $gap-s;
 
   width: 100%;
   padding: 24px;
-  border: 1px solid rgb(255 219 32 / 8%);
-  border-radius: 12px;
+  border: 1px solid hsla(from $color-js-accent h s l / $opacity-8);
+  border-radius: $border-radius-s;
 
   background-color: $color-yellow-50;
 
@@ -24,15 +24,15 @@
 
     width: 310px;
     height: 300px;
-    border-radius: 100%;
+    border-radius: 50%;
 
-    background-color: rgb(255 219 32 / 20%);
+    background-color: hsla(from $color-js-accent h s l / $opacity-20);
     filter: blur(32px);
   }
 
   .card-header {
     display: flex;
-    gap: 16px;
+    gap: $gap-s;
     align-items: center;
 
     min-height: 80px;
@@ -44,11 +44,11 @@
   }
 
   .card-description {
-    z-index: 1;
+    z-index: $z-index-above;
 
     grid-column: span 2;
 
-    font-size: 18px;
+    font-size: $font-size-m;
     font-weight: $font-weight-regular;
     line-height: 1.4;
     text-align: left;
@@ -72,7 +72,7 @@
 
       width: 20px;
       height: 20px;
-      border-radius: 100%;
+      border-radius: 50%;
 
       background-color: rgba($color-yellow, $opacity-80);
       filter: blur(8px);
@@ -98,7 +98,7 @@
 
   @include media-hover {
     &:hover {
-      box-shadow: 0 4px 16px 0 rgb(0 0 0 / 14%);
+      box-shadow: 0 4px 16px 0 hsla(from $color-gray-900 h s l / $opacity-15);
     }
   }
 
@@ -107,7 +107,7 @@
     padding: 32px 24px;
 
     .card-description {
-      font-size: 16px;
+      font-size: $font-size-s;
       line-height: 24px;
     }
   }

@@ -1,12 +1,12 @@
 .trainer-card {
   display: flex;
-  gap: 24px;
+  gap: $gap-l;
   align-items: flex-start;
   justify-content: space-between;
 
   max-width: 700px;
   padding: 40px 32px 40px 32px;
-  border-radius: 16px;
+  border-radius: $border-radius-m;
 
   box-shadow: 0 4px 16px 0 rgb(0 0 0 / 12%);
 
@@ -17,7 +17,7 @@
     img {
       width: 100%;
       height: auto;
-      border-radius: 12px;
+      border-radius: $border-radius-s;
     }
   }
 
@@ -31,13 +31,13 @@
 
   .card-subtitle {
     margin: 0;
-    font-size: 18px;
+    font-size: $font-size-m;
     line-height: 1.15;
     color: $color-gray-500;
   }
 
   .card-content {
-    font-size: 16px;
+    font-size: $font-size-s;
     font-weight: $font-weight-regular;
     line-height: 24px;
   }

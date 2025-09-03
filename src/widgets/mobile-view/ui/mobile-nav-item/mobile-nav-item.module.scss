@@ -7,7 +7,7 @@
   padding: 0;
   border: none;
 
-  font-size: 20px;
+  font-size: $font-size-l;
   font-weight: $font-weight-bold;
 
   background: none;
@@ -28,7 +28,7 @@
 
 .category-title {
   display: flex;
-  gap: 8px;
+  gap: $gap-xs;
   align-items: center;
 }
 
