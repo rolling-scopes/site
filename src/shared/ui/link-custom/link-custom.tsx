@@ -9,9 +9,9 @@ import styles from './link-custom.module.scss';
 
 export const cx = classNames.bind(styles);
 
-type LinkCustomProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'rel' | 'target'> &
-  VariantProps<typeof linkCustomVariants> &
-  LinkCustomAdditionalProps;
+type LinkCustomProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'rel' | 'target'>
+  & VariantProps<typeof linkCustomVariants>
+  & LinkCustomAdditionalProps;
 
 type LinkCustomAdditionalProps = {
   href: string;

@@ -1,4 +1,5 @@
 import { TypeLearningPathStagesWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
+import { SECTION_TYPE } from '@/widgets/section-resolver/constants';
 import type { BaseEntry } from 'contentful';
 
 /**
@@ -10,5 +11,5 @@ import type { BaseEntry } from 'contentful';
 export function isLearningPathStagesSection<TSection extends BaseEntry>(
   section: TSection,
 ): section is Extract<TSection, TypeLearningPathStagesWithoutUnresolvableLinksResponse> {
-  return section?.sys?.contentType?.sys?.id === 'learningPathStages';
+  return section?.sys?.contentType?.sys?.id === SECTION_TYPE.LEARNING_PATH_STAGES;
 }

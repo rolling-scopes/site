@@ -9,8 +9,8 @@ import { ROUTES } from '@/shared/constants';
 
 import styles from './logo.module.scss';
 
-type LogoProps = Pick<HTMLAttributes<HTMLElement>, 'className'> &
-  VariantProps<typeof logoVariants> & {
+type LogoProps = Pick<HTMLAttributes<HTMLElement>, 'className'>
+  & VariantProps<typeof logoVariants> & {
     logoSrc?: StaticImageData;
     onClick?: () => void;
   };

@@ -1,4 +1,5 @@
 import { TypeVideoBlockWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
+import { SECTION_TYPE } from '@/widgets/section-resolver/constants';
 import type { BaseEntry } from 'contentful';
 
 /**
@@ -10,5 +11,5 @@ import type { BaseEntry } from 'contentful';
 export function isVideoBlockSection<TSection extends BaseEntry>(
   section: TSection,
 ): section is Extract<TSection, TypeVideoBlockWithoutUnresolvableLinksResponse> {
-  return section?.sys?.contentType?.sys?.id === 'videoBlock';
+  return section?.sys?.contentType?.sys?.id === SECTION_TYPE.VIDEO_BLOCK;
 }
