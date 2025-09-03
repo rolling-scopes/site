@@ -20,12 +20,21 @@ type DateStartProps = {
   showMentoringStartDate: boolean;
 };
 
-const formatDateAttr = (date: string | null | undefined): string | undefined => {
+const formatDateAttr = (
+  date: string | null | undefined,
+  isMentoringDate: boolean,
+): string | undefined => {
   if (!date || date === TO_BE_DETERMINED) {
     return undefined;
   }
 
-  return dayJS(date, [MENTORING_DATE_FORMAT, COURSE_DATE_FORMAT]).toISOString();
+  let format = COURSE_DATE_FORMAT;
+
+  if (isMentoringDate) {
+    format = MENTORING_DATE_FORMAT;
+  }
+
+  return dayJS(date, format).toISOString();
 };
 
 export const DateSimple = ({
@@ -36,8 +45,8 @@ export const DateSimple = ({
   children,
   showMentoringStartDate,
 }: DateStartProps) => {
-  const startDateAttr = formatDateAttr(startDate);
-  const endDateAttr = formatDateAttr(endDate);
+  const startDateAttr = formatDateAttr(startDate, showMentoringStartDate);
+  const endDateAttr = formatDateAttr(endDate, showMentoringStartDate);
 
   const startDateFormat = startDate && endDate ? dayJS(startDate).format('MMM D') : startDate;
 

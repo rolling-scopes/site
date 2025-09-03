@@ -19,7 +19,7 @@ const mockedProps: CourseItemData = {
 
 const expectedDate = dayjs(mockedProps.startDate).toISOString();
 
-describe.skip('CourseItem Component', () => {
+describe('CourseItem Component', () => {
   beforeEach(() => {
     renderWithRouter(<CourseItem {...mockedProps} />);
   });

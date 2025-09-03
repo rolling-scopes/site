@@ -25,7 +25,7 @@
     margin: 0 8px;
 
     background-color: $color-white;
-    box-shadow: 1px 1px 2px $color-black;
+    box-shadow: 1px 1px 2px $color-gray-900;
 
     @media (hover: hover) {
       &:hover {
@@ -37,7 +37,7 @@
   :global(.swiper-button-next),
   :global(.swiper-button-prev) {
     height: 50px;
-    border-radius: 8px;
+    border-radius: $border-radius-xs;
 
     color: $color-white;
 

@@ -2,12 +2,12 @@
   background-color: $color-gray-100;
 
   .support-content {
-    gap: 50px;
+    gap: $gap-xxxl;
 
     .support-info {
       width: 640px;
       font-weight: 500;
-      color: $color-black;
+      color: $color-gray-900;
       text-align: left;
 
       @include media-laptop {
@@ -37,7 +37,7 @@
     .donate-options {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: $gap-s;
       justify-content: space-between;
 
       margin-top: 24px;
@@ -45,10 +45,10 @@
       .donate-item {
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: $gap-l;
 
         @include media-tablet {
-          gap: 16px;
+          gap: $gap-s;
         }
       }
 
@@ -58,7 +58,7 @@
     }
 
     @include media-tablet-large {
-      gap: 40px;
+      gap: $gap-xxl;
     }
   }
 }

@@ -5,7 +5,7 @@
 
   width: 320px;
   padding: 0;
-  border-radius: 12px;
+  border-radius: $border-radius-s;
 
   .card-header {
     position: relative;
@@ -16,7 +16,7 @@
     padding: 32px 24px 24px 24px;
     border: solid $color-gray-200;
     border-width: 1px 1px 0 1px;
-    border-radius: 12px 12px 0 0;
+    border-radius: $border-radius-s $border-radius-s 0 0;
 
     background-color: $color-purple-50;
 
@@ -38,7 +38,7 @@
       border: 4px solid $color-purple-100;
       border-radius: 36px;
 
-      font-size: 16px;
+      font-size: $font-size-s;
       line-height: 1.2;
     }
 
@@ -73,7 +73,7 @@
         margin-top: 0;
         margin-bottom: 8px;
 
-        font-size: 16px;
+        font-size: $font-size-s;
         text-overflow: ellipsis;
         white-space: nowrap;
       }
@@ -92,7 +92,7 @@
     padding: 24px;
     border: solid $color-gray-200;
     border-width: 0 1px 1px 1px;
-    border-radius: 0 0 12px 12px;
+    border-radius: 0 0 $border-radius-s $border-radius-s;
 
     background-color: hsla(from $color-gray-100 h s l/ $opacity-20);
 
@@ -104,7 +104,7 @@
 
       margin-bottom: 16px;
 
-      font-size: 14px;
+      font-size: $font-size-xs;
       font-weight: $font-weight-medium;
       color: $color-gray-500;
     }
@@ -128,7 +128,7 @@
 
   @include media-hover {
     &:hover {
-      box-shadow: 0 4px 16px 0 hsla(from $color-black h s l/ $opacity-20);
+      box-shadow: 0 4px 16px 0 hsla(from $color-gray-900 h s l/ $opacity-20);
 
       .card-header::after {
         @include card-corner-accent($accent-color, $isHovered: true);

@@ -2,14 +2,14 @@
   .activity-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+    gap: $gap-xl;
 
     @include media-tablet {
       grid-template-columns: 1fr;
     }
 
     @include media-tablet {
-      gap: 16px;
+      gap: $gap-s;
     }
   }
 }

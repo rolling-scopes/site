@@ -16,7 +16,7 @@
 .course-list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: $gap-l;
   align-items: flex-start;
   justify-content: space-between;
 

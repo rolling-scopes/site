@@ -6,7 +6,7 @@
   max-width: 889px;
   padding: 0 32px;
   border: none;
-  border-radius: 12px;
+  border-radius: $border-radius-s;
 
   line-height: 24px;
 
@@ -15,7 +15,7 @@
   animation: modal-fade-in 450ms $standard-decelerate both;
 
   &::backdrop {
-    background-color: hsla(from $color-black h s l / $opacity-50);
+    background-color: hsla(from $color-gray-900 h s l / $opacity-50);
     animation: backdrop-fade-in 300ms both;
   }
 
@@ -117,9 +117,9 @@
 
   padding: 16px;
   border: none;
-  border-radius: 999px;
+  border-radius: $border-radius-max;
 
-  font-size: 24px;
+  font-size: $font-size-xl;
 
   background-color: transparent;
 

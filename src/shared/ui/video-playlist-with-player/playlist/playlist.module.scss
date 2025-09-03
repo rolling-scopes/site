@@ -1,7 +1,7 @@
 .playlist {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: $gap-xs;
 }
 
 .videos-container {
@@ -10,12 +10,12 @@
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: $gap-xs;
 
   @include media-tablet-large {
     overflow: scroll auto;
     flex-direction: row;
-    gap: 24px;
+    gap: $gap-l;
   }
 }
 
@@ -33,7 +33,7 @@
 
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: $gap-xs;
 
   margin-right: 5px;
   padding: 16px;
@@ -66,7 +66,7 @@
   img {
     display: block;
     max-width: 100%;
-    border-radius: 8px;
+    border-radius: $border-radius-xs;
 
     @include media-tablet-large {
       max-width: 200px;
@@ -88,11 +88,11 @@
 
   width: 100%;
   height: 100%;
-  border-radius: 8px;
+  border-radius: $border-radius-xs;
 
-  font-size: 14px;
+  font-size: $font-size-xs;
   font-weight: $font-weight-bold;
   color: $color-white;
 
-  background-color: hsla(from $color-black h s l / $opacity-70);
+  background-color: hsla(from $color-gray-900 h s l / $opacity-70);
 }
