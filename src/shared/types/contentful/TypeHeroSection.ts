@@ -14,11 +14,17 @@ import type {
  */
 export interface TypeHeroSectionFields {
   /**
+   * Field type definition for field 'variant' (variant)
+   * @name variant
+   * @localized false
+   */
+  variant: EntryFieldTypes.Symbol<'base' | 'mentorship'>;
+  /**
    * Field type definition for field 'topHeading' (topHeading)
    * @name topHeading
    * @localized false
    */
-  topHeading?: EntryFieldTypes.Symbol;
+  topHeading?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
   /**
    * Field type definition for field 'heading' (heading)
    * @name heading
@@ -30,7 +36,7 @@ export interface TypeHeroSectionFields {
    * @name subHeading
    * @localized false
    */
-  subHeading?: EntryFieldTypes.Symbol;
+  subHeading?: EntryFieldTypes.RichText;
   /**
    * Field type definition for field 'image' (image)
    * @name image
@@ -45,7 +51,7 @@ export interface TypeHeroSectionFields {
  * @type {TypeHeroSectionSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-12T19:41:11.842Z
- * @version 7
+ * @version 33
  */
 export type TypeHeroSectionSkeleton = EntrySkeletonType<TypeHeroSectionFields, 'heroSection'>;
 /**
@@ -54,7 +60,7 @@ export type TypeHeroSectionSkeleton = EntrySkeletonType<TypeHeroSectionFields, '
  * @type {TypeHeroSection}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-12T19:41:11.842Z
- * @version 7
+ * @version 33
  */
 export type TypeHeroSection<
   Modifiers extends ChainModifiers,

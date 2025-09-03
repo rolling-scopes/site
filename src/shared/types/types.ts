@@ -17,7 +17,7 @@ import {
 } from '@/shared/types/contentful';
 import { AboutCourseSectionData } from '@/widgets/about-course';
 import { ExternalEmbedContentData } from '@/widgets/external-embed-content';
-import { HeroSectionData } from '@/widgets/hero-course/types';
+import { HeroSectionData } from '@/widgets/hero/types';
 import { HighlightCardData } from '@/widgets/highlight-card/types';
 import { LearningPathStagesSectionData } from '@/widgets/learning-path-stages';
 import { ApiMediaGridSectionData } from '@/widgets/media-grid/types';
