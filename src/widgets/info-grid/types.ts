@@ -1,6 +1,10 @@
 import { ReactNode } from 'react';
 
-import { InfoCellTitleVariants } from '@/widgets/info-grid/ui/info-cell/info-cell';
+import {
+  InfoCellCardVariants,
+  InfoCellTitleVariants,
+} from '@/widgets/info-grid/ui/info-cell/info-cell';
+import { InfoGridVariants } from '@/widgets/info-grid/ui/info-grid/info-grid';
 
 export type InfoGridItem = {
   id?: string;
@@ -10,5 +14,8 @@ export type InfoGridItem = {
 
 export type InfoGridData = {
   gridItems?: InfoGridItem[];
-  size?: InfoCellTitleVariants['titleFontSize'];
+  size?: InfoCellCardVariants['size'];
+  titleFontSize: InfoCellTitleVariants['titleFontSize'];
+  borderColor: InfoGridVariants['borderColor'];
+  withGap: boolean;
 };

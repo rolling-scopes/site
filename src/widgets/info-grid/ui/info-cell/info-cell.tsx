@@ -10,9 +10,11 @@ type InfoCellProps = {
   title: string;
   description: ReactNode;
 } & InfoCellTitleVariants
-& VariantProps<typeof cardVariants>;
+& InfoCellCardVariants;
 
 export type InfoCellTitleVariants = VariantProps<typeof titleVariants>;
+
+export type InfoCellCardVariants = VariantProps<typeof cardVariants>;
 
 const titleVariants = cva(cx('title'), {
   variants: {

@@ -6,6 +6,8 @@ import styles from './info-grid.module.scss';
 
 const cx = classnames.bind(styles);
 
+export type InfoGridVariants = VariantProps<typeof gridVariants>;
+
 const gridVariants = cva(cx('info-grid'), {
   variants: {
     borderColor: {
@@ -17,7 +19,7 @@ const gridVariants = cva(cx('info-grid'), {
 });
 
 type InfoGridProps = Pick<HTMLAttributes<HTMLParagraphElement>, 'className' | 'children'>
-  & VariantProps<typeof gridVariants>;
+  & InfoGridVariants;
 
 export const InfoGrid = ({ children, className, borderColor }: InfoGridProps) => {
   return (

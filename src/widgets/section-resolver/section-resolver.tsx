@@ -168,13 +168,15 @@ export const SectionResolver = async ({
 
     case SECTION_TYPE.INFO_GRID:
       return (
-        <InfoGrid>
+        <InfoGrid borderColor={section.data.borderColor}>
           {section.data.gridItems?.map((item) => (
             <InfoCell
               key={item.id}
               title={item.title ?? ''}
               description={item.content ?? ''}
-              titleFontSize={section.data.size}
+              titleFontSize={section.data.titleFontSize}
+              size={section.data.size}
+              gap={section.data.withGap ? 'withGap' : undefined}
             />
           ))}
         </InfoGrid>

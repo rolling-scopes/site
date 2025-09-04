@@ -28,6 +28,24 @@ export interface TypeInfoGridFields {
    */
   size: EntryFieldTypes.Symbol<'large' | 'medium'>;
   /**
+   * Field type definition for field 'titleFontSize' (titleFontSize)
+   * @name titleFontSize
+   * @localized false
+   */
+  titleFontSize: EntryFieldTypes.Symbol<'large' | 'medium'>;
+  /**
+   * Field type definition for field 'borderColor' (borderColor)
+   * @name borderColor
+   * @localized false
+   */
+  borderColor: EntryFieldTypes.Symbol<'black' | 'gray'>;
+  /**
+   * Field type definition for field 'withGap' (withGap)
+   * @name withGap
+   * @localized false
+   */
+  withGap: EntryFieldTypes.Boolean;
+  /**
    * Field type definition for field 'gridItems' (gridItems)
    * @name gridItems
    * @localized false
@@ -41,7 +59,7 @@ export interface TypeInfoGridFields {
  * @type {TypeInfoGridSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-08-08T11:16:45.850Z
- * @version 9
+ * @version 13
  */
 export type TypeInfoGridSkeleton = EntrySkeletonType<TypeInfoGridFields, 'infoGrid'>;
 /**
@@ -50,7 +68,7 @@ export type TypeInfoGridSkeleton = EntrySkeletonType<TypeInfoGridFields, 'infoGr
  * @type {TypeInfoGrid}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-08-08T11:16:45.850Z
- * @version 9
+ * @version 13
  */
 export type TypeInfoGrid<
   Modifiers extends ChainModifiers,

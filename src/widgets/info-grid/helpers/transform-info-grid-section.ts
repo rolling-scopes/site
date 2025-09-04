@@ -13,6 +13,9 @@ export function transformInfoGridSection(
     content: item?.fields.contentLeft ? richTextRenderer(item?.fields.contentLeft) : undefined,
   }));
   const size = section.fields.size;
+  const titleFontSize = section.fields.titleFontSize;
+  const withGap = section.fields.withGap;
+  const borderColor = section.fields.borderColor;
 
   return {
     id,
@@ -20,6 +23,9 @@ export function transformInfoGridSection(
     data: {
       gridItems,
       size,
+      titleFontSize,
+      withGap,
+      borderColor,
     },
   };
 }
