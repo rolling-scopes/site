@@ -49,10 +49,10 @@
   &--pagination-active {
     width: 35px;
     height: 35px;
-    border: 2px solid #000;
+    border: 2px solid $color-gray-900;
 
     color: $color-white;
 
-    background: #000;
+    background: $color-gray-900;
   }
 }
