@@ -12,6 +12,8 @@ export const cx = classNames.bind(styles);
 
 type HeroTopHeadingProps = Pick<HeroSectionData, 'topHeading'>;
 
+type HeroSectionProps = Omit<HeroSectionData, 'variant'>;
+
 const HeroTopHeading = ({ topHeading }: HeroTopHeadingProps) => {
   if (!topHeading?.length) {
     return null;
@@ -28,7 +30,7 @@ const HeroTopHeading = ({ topHeading }: HeroTopHeadingProps) => {
   );
 };
 
-export const Hero = ({ heading, subHeading, topHeading, image }: HeroSectionData) => {
+export const Hero = ({ heading, subHeading, topHeading, image }: HeroSectionProps) => {
   return (
     <section id="hero-page" className={cx('hero-page', 'container')} data-testid="hero-section">
       <div className={cx('hero-page-content', 'content')}>

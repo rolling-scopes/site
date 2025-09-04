@@ -1,2 +1,1 @@
-export { Hero } from './ui/hero';
-export { HeroPage } from './ui/hero-page';
+export { Hero } from './ui/base/hero';

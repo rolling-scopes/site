@@ -1,8 +1,3 @@
-import { PAGE_NAMES } from '@/shared/constants';
+import { HeroSectionData } from '@/widgets/hero-course/types';
 
-export type PageName = {
-  pageName: Extract<
-    (typeof PAGE_NAMES)[keyof typeof PAGE_NAMES],
-    'mentorship' | 'community' | 'courses'
-  >;
-};
+export type HeroProps = Omit<HeroSectionData, 'variant'>;
