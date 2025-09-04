@@ -1,7 +1,7 @@
 .partnered-content {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: $gap-s;
 
   .partners {
     display: flex;
@@ -25,11 +25,11 @@
     }
 
     @include media-tablet {
-      row-gap: 16px;
+      row-gap: $gap-s;
     }
 
     @include media-mobile {
-      row-gap: 48px;
+      row-gap: $gap-xxxl;
     }
   }
 }
