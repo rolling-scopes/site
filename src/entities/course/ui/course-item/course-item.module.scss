@@ -22,7 +22,7 @@
   .course-info {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: $gap-xs;
 
     width: 100%;
 
@@ -45,7 +45,7 @@
 
   @include media-hover {
     &:hover {
-      box-shadow: $shadow-xl;
+      box-shadow: 0 4px 16px 0 rgb(0 0 0 / 12%);
     }
   }
 }

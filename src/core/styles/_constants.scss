@@ -1,4 +1,5 @@
 // In case of updating any of these variables, please update the viewports.ts file inside e2e/utils folder
+$large-laptop-width: 1441px;
 $content-width: 1440px;
 $medium-laptop-width: 1250px;
 $large-tablet-width: 1024px;
@@ -16,27 +17,9 @@ $font-weight-regular: 400;
 $font-weight-medium: 500;
 $font-weight-bold: 700;
 
-// font-size
-$font-size-xs: 12px;
-$font-size-sm: 14px;
-$font-size-md: 16px;
-$font-size-lg: 18px;
-$font-size-xl: 20px;
-$font-size-h4: 24px;
-$font-size-h3: 28px;
-$font-size-h2: 32px;
-$font-size-h1: 36px;
-$font-size-hero: 40px;
-$font-size-hero-lg: 44px;
-$font-size-hero-xl: 52px;
-$font-size-hero-xxl: 60px;
-$font-size-display: 80px;
-$font-size-display-xl: 96px;
-
 // COLORS
 
 // Primary colors
-$color-black: hsl(0deg 0% 0%); // #000
 
 // White colors
 $color-white: hsl(0deg 0% 100%); // #fff
@@ -94,16 +77,13 @@ $color-aws-accent: hsl(257deg 45% 54%); // #7356bf
 // Link color
 $color-blue: hsl(202deg 89% 65%);
 
-// Discord color
-$discord-color: hsl(234.9deg 85.6% 64.7%);
-
 // OPACITY  /* Use color-variables with opacity: hsla(from $[color-variable] h s l / $[opacity-variable]); */
 $opacity-100: 1;
 $opacity-80: 0.8;
 $opacity-70: 0.7;
 $opacity-50: 0.5;
+$opacity-40: 0.4;
 $opacity-30: 0.3;
-$opacity-25: 0.25;
 $opacity-20: 0.2;
 $opacity-15: 0.15;
 $opacity-10: 0.1;
@@ -116,25 +96,37 @@ $ease-emphasize-decelerate: cubic-bezier(0, 0, 0, 1);
 $ease-in-cubic: cubic-bezier(0.32, 0, 0.67, 0);
 $standard-decelerate: cubic-bezier(0, 0, 0, 1);
 
-// Border-radius
-$border-radius-sm: 5px;
-$border-radius-md: 8px;
-$border-radius-lg: 12px;
+// Border radius
+$border-radius-xxs: 4px;
+$border-radius-xs: 8px;
+$border-radius-s: 12px;
+$border-radius-m: 16px;
+$border-radius-l: 20px;
 $border-radius-xl: 36px;
+$border-radius-max: 999px;
 $border-radius-half: 50%;
-$border-radius-circle: 100%;
-$border-radius-full: 999px;
 
-// z-index
-$z-index-behind: -1;
-$z-index-base: 1;
-$z-index-above-base: 2;
-$z-index-header: 10;
-$z-index-overlay: 100;
+// Font sizes
+$font-size-xxs: 12px;
+$font-size-xs: 14px;
+$font-size-s: 16px;
+$font-size-m: 18px;
+$font-size-l: 20px;
+$font-size-xl: 24px;
+$font-size-xxl: 36px;
 
-// Box-shadow
-$shadow-xs: 0 1px 8px 0 hsla(from $color-black h s l / $opacity-10);
-$shadow-sm: 0 1px 8px 0 hsla(from $color-black h s l / $opacity-25);
-$shadow-md: 0 4px 8px 0 hsla(from $color-black h s l / $opacity-10);
-$shadow-lg: 0 4px 12px 0 hsla(from $color-black h s l / $opacity-10);
-$shadow-xl: 0 4px 16px 0 hsla(from $color-black h s l / $opacity-15);
+// Standard gap
+$gap-xxs: 4px;
+$gap-xs: 8px;
+$gap-s: 16px;
+$gap-m: 20px;
+$gap-l: 24px;
+$gap-xl: 32px;
+$gap-xxl: 40px;
+$gap-xxxl: 48px;
+
+// Z-indexes
+$z-index-base: 0;
+$z-index-below: -1;
+$z-index-above: 1;
+$z-index-max: 1000;

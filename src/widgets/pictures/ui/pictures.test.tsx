@@ -3,6 +3,7 @@ import { beforeEach, describe, expect, it } from 'vitest';
 
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { Pictures } from '@/widgets/pictures';
+import { sliderPhotos } from 'data';
 
 describe('Pictures', () => {
   beforeEach(() => {
@@ -17,7 +18,7 @@ describe('Pictures', () => {
 
     expect(title).toBeVisible();
     expect(paragraph).toBeVisible();
-    expect(images.length).toBe(11);
+    expect(images.length).toBe(sliderPhotos.length);
     expect(socialMediaLinks.length).toBe(4);
   });
 });

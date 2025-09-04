@@ -5,7 +5,7 @@
     min-width: 640px;
 
     @include media-laptop {
-      gap: 20px;
+      gap: $gap-m;
       min-width: 400px;
     }
 
@@ -25,10 +25,10 @@
   }
 
   @include media-laptop {
-    gap: 50px;
+    gap: $gap-xxxl;
   }
 
   @include media-tablet-large {
-    gap: 32px;
+    gap: $gap-xl;
   }
 }

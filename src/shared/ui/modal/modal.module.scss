@@ -6,7 +6,7 @@
   max-width: 889px;
   padding: 0 32px;
   border: none;
-  border-radius: $border-radius-lg;
+  border-radius: $border-radius-s;
 
   line-height: 24px;
 
@@ -15,7 +15,7 @@
   animation: modal-fade-in 450ms $standard-decelerate both;
 
   &::backdrop {
-    background-color: hsla(from $color-black h s l / $opacity-50);
+    background-color: hsla(from $color-gray-900 h s l / $opacity-50);
     animation: backdrop-fade-in 300ms both;
   }
 
@@ -45,23 +45,23 @@
   @keyframes modal-fade-out {
     100% {
       scale: 0.96;
-      opacity: $opacity-0;
+      opacity: 0;
     }
   }
 
   @keyframes backdrop-fade-in {
     0% {
-      opacity: $opacity-0;
+      opacity: 0;
     }
 
     100% {
-      opacity: $opacity-100;
+      opacity: 1;
     }
   }
 
   @keyframes backdrop-fade-out {
     100% {
-      opacity: $opacity-0;
+      opacity: 0;
     }
   }
 }
@@ -98,10 +98,6 @@
   }
 }
 
-.modal-title {
-  font-size: $font-size-xl;
-}
-
 .modal-body {
   overflow-y: auto;
   padding-bottom: 32px;
@@ -121,9 +117,9 @@
 
   padding: 16px;
   border: none;
-  border-radius: $border-radius-full;
+  border-radius: $border-radius-max;
 
-  font-size: $font-size-h4;
+  font-size: $font-size-xl;
 
   background-color: transparent;
 

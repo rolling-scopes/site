@@ -1,14 +1,14 @@
 .trainer-card {
   display: flex;
-  gap: 24px;
+  gap: $gap-l;
   align-items: flex-start;
   justify-content: space-between;
 
   max-width: 700px;
   padding: 40px 32px 40px 32px;
-  border-radius: $border-radius-lg;
+  border-radius: $border-radius-m;
 
-  box-shadow: $shadow-xl;
+  box-shadow: 0 4px 16px 0 rgb(0 0 0 / 12%);
 
   .card-picture {
     max-width: 120px;
@@ -17,7 +17,7 @@
     img {
       width: 100%;
       height: auto;
-      border-radius: $border-radius-lg;
+      border-radius: $border-radius-s;
     }
   }
 
@@ -27,24 +27,17 @@
 
   .card-title {
     margin: 0;
-    font-size: $font-size-h4;
-    font-weight: $font-weight-medium;
-    line-height: 32px;
-
-    @include media-tablet {
-      font-size: $font-size-xl;
-    }
   }
 
   .card-subtitle {
     margin: 0;
-    font-size: $font-size-lg;
-    font-weight: $font-weight-medium;
+    font-size: $font-size-m;
+    line-height: 1.15;
     color: $color-gray-500;
   }
 
   .card-content {
-    font-size: $font-size-md;
+    font-size: $font-size-s;
     font-weight: $font-weight-regular;
     line-height: 24px;
   }

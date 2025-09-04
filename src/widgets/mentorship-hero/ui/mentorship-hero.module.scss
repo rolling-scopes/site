@@ -11,7 +11,7 @@
 
       width: fit-content;
       padding: 32px;
-      border-radius: $border-radius-lg;
+      border-radius: $border-radius-s;
 
       text-align: left;
 
@@ -19,11 +19,11 @@
 
       .title-main {
         @include media-tablet {
-          font-size: $font-size-display;
+          font-size: 80px;
         }
 
         @include media-mobile-landscape {
-          font-size: $font-size-hero;
+          font-size: 40px;
         }
       }
     }

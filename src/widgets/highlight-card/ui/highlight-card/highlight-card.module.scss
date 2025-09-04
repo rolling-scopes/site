@@ -1,0 +1,114 @@
+.highlight-card {
+  @extend %transition-all;
+
+  position: relative;
+
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: $gap-s;
+
+  width: 100%;
+  padding: 24px;
+  border: 1px solid hsla(from $color-js-accent h s l / $opacity-8);
+  border-radius: $border-radius-s;
+
+  background-color: $color-yellow-50;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    right: -160px;
+    bottom: -150px;
+
+    width: 310px;
+    height: 300px;
+    border-radius: $border-radius-half;
+
+    background-color: hsla(from $color-js-accent h s l / $opacity-20);
+    filter: blur(32px);
+  }
+
+  .card-header {
+    display: flex;
+    gap: $gap-s;
+    align-items: center;
+
+    min-height: 80px;
+    margin-bottom: 16px;
+
+    @include media-laptop {
+      min-height: unset;
+    }
+  }
+
+  .card-description {
+    z-index: $z-index-above;
+
+    grid-column: span 2;
+
+    font-size: $font-size-m;
+    font-weight: $font-weight-regular;
+    line-height: 1.4;
+    text-align: left;
+    letter-spacing: 0;
+  }
+
+  .icon {
+    display: flex;
+    justify-content: center;
+
+    img {
+      position: relative;
+      width: 44px;
+      height: 44px;
+    }
+
+    &::before {
+      content: '';
+
+      position: absolute;
+
+      width: 20px;
+      height: 20px;
+      border-radius: $border-radius-half;
+
+      background-color: rgba($color-yellow, $opacity-80);
+      filter: blur(8px);
+    }
+  }
+
+  .card-title {
+    align-self: flex-start;
+
+    max-width: 265px;
+
+    font-size: 32px;
+    font-weight: $font-weight-medium;
+    line-height: 40px;
+    text-align: left;
+    letter-spacing: 0;
+
+    @include media-laptop {
+      align-self: unset;
+      max-width: unset;
+    }
+  }
+
+  @include media-hover {
+    &:hover {
+      box-shadow: 0 4px 16px 0 hsla(from $color-gray-900 h s l / $opacity-15);
+    }
+  }
+
+  @include media-laptop {
+    width: 100%;
+    padding: 32px 24px;
+
+    .card-description {
+      font-size: $font-size-s;
+      line-height: 24px;
+    }
+  }
+}

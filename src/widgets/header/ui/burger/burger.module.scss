@@ -40,7 +40,7 @@
   }
 
   &.open {
-    background-color: $color-white;
+    background-color: white;
 
     .top {
       transform: rotate(-45deg) translate(-5px, 6px);
@@ -66,7 +66,7 @@
   }
 
   @include media-tablet-large {
-    z-index: $z-index-header;
+    z-index: $z-index-max;
     display: block;
   }
 }

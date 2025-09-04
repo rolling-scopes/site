@@ -2,61 +2,73 @@
   margin: 0;
   color: $color-gray-900;
 
-  &.extra-small-font-size {
-    font-size: $font-size-xl;
-    line-height: 28px;
-
-    @include media-tablet {
-      font-size: $font-size-lg;
-      line-height: 24px;
-    }
-  }
-
-  &.small-font-size {
-    font-size: $font-size-h4;
-    line-height: 32px;
-
-    @include media-tablet {
-      font-size: $font-size-xl;
+  &.font-size {
+    &-extra-small {
+      font-size: $font-size-l;
       line-height: 28px;
+
+      @include media-tablet {
+        font-size: $font-size-m;
+        line-height: 24px;
+      }
     }
-  }
 
-  &.medium-font-size {
-    font-size: $font-size-h3;
-    line-height: 36px;
-
-    @include media-tablet {
-      font-size: $font-size-h4;
+    &-small {
+      font-size: $font-size-xl;
       line-height: 32px;
+
+      @include media-tablet {
+        font-size: $font-size-l;
+        line-height: 28px;
+      }
     }
-  }
 
-  &.large-font-size {
-    font-size: $font-size-h2;
-    line-height: 40px;
-
-    @include media-tablet {
-      font-size: $font-size-h3;
+    &-medium {
+      font-size: 28px;
       line-height: 36px;
+
+      @include media-tablet {
+        font-size: $font-size-xl;
+        line-height: 32px;
+      }
+    }
+
+    &-large {
+      font-size: 32px;
+      line-height: 40px;
+
+      @include media-tablet {
+        font-size: 28px;
+        line-height: 36px;
+      }
+    }
+
+    &-extra-large {
+      font-size: $font-size-xxl;
+      line-height: 44px;
+
+      @include media-tablet {
+        font-size: 32px;
+        line-height: 36px;
+      }
     }
   }
 
-  &.extra-large-font-size {
-    font-size: $font-size-h1;
-    line-height: 44px;
-
-    @include media-tablet {
-      font-size: $font-size-h2;
-      line-height: 36px;
+  &.font-weight {
+    &-light {
+      font-weight: $font-weight-light;
     }
-  }
 
-  &.normal {
-    font-weight: $font-weight-medium;
-  }
+    &-regular {
+      font-weight: $font-weight-regular;
+    }
 
-  &.bold {
-    font-weight: $font-weight-bold;
+    &-medium {
+      font-weight: $font-weight-medium;
+    }
+
+    &-bold {
+      font-weight: $font-weight-bold;
+    }
   }
 }

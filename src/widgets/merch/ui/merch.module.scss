@@ -1,5 +1,5 @@
 .merch {
-  gap: 50px;
+  gap: $gap-xxxl;
 
   .info {
     width: 600px;
@@ -31,6 +31,6 @@
   }
 
   @include media-laptop {
-    gap: 74px;
+    gap: 76px;
   }
 }

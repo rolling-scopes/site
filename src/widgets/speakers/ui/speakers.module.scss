@@ -1,6 +1,6 @@
 .speakers {
   display: flex;
-  gap: 50px;
+  gap: $gap-xxxl;
   background-color: $color-gray-100;
 
   .info {
@@ -12,16 +12,16 @@
 
     .email-wrapper {
       display: flex;
-      gap: 8px;
+      gap: $gap-xs;
 
       margin-top: 8px;
 
-      font-size: $font-size-lg;
+      font-size: $font-size-m;
       font-style: normal;
       line-height: 24px;
 
       @include media-tablet {
-        font-size: $font-size-md;
+        font-size: $font-size-s;
         line-height: 20px;
       }
     }

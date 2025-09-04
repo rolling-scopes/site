@@ -5,10 +5,10 @@
   align-items: center;
   justify-content: space-between;
 
-  font-size: $font-size-xl;
+  font-size: $font-size-l;
   font-weight: $font-weight-medium;
   line-height: 28px;
-  color: $color-black;
+  color: $color-gray-900;
   letter-spacing: 0;
 
   .place {
@@ -19,12 +19,12 @@
   .divider {
     display: inline-block;
     height: 12px;
-    font-size: $font-size-h1;
+    font-size: $font-size-xxl;
     color: $color-red;
   }
 
   @include media-tablet {
-    font-size: $font-size-md;
+    font-size: $font-size-s;
     font-weight: $font-weight-regular;
     line-height: 24px;
   }

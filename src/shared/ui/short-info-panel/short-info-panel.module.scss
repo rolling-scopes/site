@@ -1,7 +1,7 @@
 .info {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: $gap-s;
   align-items: flex-start;
 
   &.margin {
@@ -11,13 +11,13 @@
 
 .additional-info {
   display: flex;
-  gap: 8px;
+  gap: $gap-xs;
   align-items: center;
   justify-content: flex-start;
 
   margin: 0;
 
-  font-size: $font-size-sm;
+  font-size: $font-size-xs;
   color: $color-gray-900;
 }
 

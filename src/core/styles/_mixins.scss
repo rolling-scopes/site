@@ -1,5 +1,11 @@
 @use 'constants' as *;
 
+@mixin media-laptop-large {
+  @media (min-width: ($large-laptop-width)) {
+    @content;
+  }
+}
+
 @mixin media-laptop {
   @media (max-width: $content-width) {
     @content;
@@ -59,7 +65,7 @@
 
   width: 310px;
   height: 300px;
-  border-radius: $border-radius-full;
+  border-radius: $border-radius-half;
 
   opacity: $opacity-50;
   background-color: $bg-color;

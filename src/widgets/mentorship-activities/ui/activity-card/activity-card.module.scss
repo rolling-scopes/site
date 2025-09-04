@@ -1,14 +1,14 @@
 .activity-card {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: $gap-s;
 
   max-width: 624px;
   padding: 32px;
   border: 1px solid hsla(from $color-yellow h s l / $opacity-8);
-  border-radius: $border-radius-lg;
+  border-radius: $border-radius-s;
 
-  box-shadow: $shadow-xs;
+  box-shadow: 0 4px 8px 0 hsla(from $color-gray-900 h s l / $opacity-10);
 
   .card-description {
     padding-bottom: 0;
@@ -29,7 +29,7 @@
 
       width: 20px;
       height: 20px;
-      border-radius: $border-radius-circle;
+      border-radius: $border-radius-half;
 
       background: $color-blue-background-100;
       filter: blur(8px);

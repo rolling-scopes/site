@@ -4,7 +4,7 @@
   width: 100%;
 
   .with-gap {
-    gap: 16px;
+    gap: $gap-s;
   }
 
   .large-card-size {
@@ -46,23 +46,23 @@
       letter-spacing: 0.04em;
 
       &.medium-font-size {
-        font-size: $font-size-h1;
-        font-weight: $font-weight-bold;
+        font-size: $font-size-xxl;
+        font-weight: 700;
         line-height: 46px;
 
         @include media-laptop {
-          font-size: $font-size-h3;
+          font-size: 28px;
           line-height: 34px;
         }
       }
 
       &.large-font-size {
-        font-size: $font-size-hero-xl;
-        font-weight: $font-weight-medium;
+        font-size: 52px;
+        font-weight: 500;
         line-height: 64px;
 
         @include media-laptop {
-          font-size: $font-size-hero-lg;
+          font-size: 44px;
           line-height: 52px;
         }
       }
@@ -71,8 +71,8 @@
     .description {
       height: 56px;
       margin: 0;
-      font-size: $font-size-md;
-      font-weight: $font-weight-regular;
+      font-size: $font-size-s;
+      font-weight: 400;
     }
   }
 }

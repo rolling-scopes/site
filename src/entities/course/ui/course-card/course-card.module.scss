@@ -10,19 +10,19 @@
 
   min-width: 100px;
   height: 100%;
-  border-radius: $border-radius-lg;
+  border-radius: $border-radius-s;
 
   &::before {
     content: '';
 
     position: absolute;
-    z-index: $z-index-behind;
+    z-index: $z-index-below;
     inset: 0;
 
     border-radius: inherit;
 
-    opacity: $opacity-0;
-    background-color: hsla(from $color-black h s l/ $opacity-15);
+    opacity: 0;
+    background-color: hsla(from $color-gray-900 h s l/ $opacity-15);
     backdrop-filter: blur(6px);
 
     transition: ease-in 200ms;
@@ -33,13 +33,13 @@
 
     overflow: hidden;
     display: flex;
-    gap: 16px;
+    gap: $gap-s;
     align-items: center;
 
     height: 100%;
     min-height: 112px;
     padding: 36px 32px;
-    border-radius: $border-radius-lg $border-radius-lg 0 0;
+    border-radius: $border-radius-s $border-radius-s 0 0;
 
     background-color: $color-purple-50;
 
@@ -57,7 +57,7 @@
 
   .course-info {
     display: flex;
-    gap: 16px;
+    gap: $gap-s;
     align-items: center;
     justify-content: space-between;
 
@@ -65,7 +65,7 @@
     border-color: $color-gray-200;
     border-style: solid;
     border-width: 0 1px 1px 1px;
-    border-radius: 0 0 $border-radius-lg $border-radius-lg;
+    border-radius: 0 0 $border-radius-s $border-radius-s;
 
     background-color: $color-white;
 
@@ -103,7 +103,7 @@
 
     .course-info {
       padding: 24px;
-      font-size: $font-size-sm;
+      font-size: $font-size-xs;
 
       @include media-laptop-medium {
         flex-direction: row;
@@ -115,9 +115,9 @@
     }
 
     .course-link {
-      gap: 4px;
+      gap: $gap-xxs;
       padding: 10px 12px;
-      font-size: $font-size-sm;
+      font-size: $font-size-xs;
     }
 
     section {
@@ -143,7 +143,7 @@
   }
 
   .course-title {
-    z-index: $z-index-above-base;
+    z-index: $z-index-above;
   }
 
   @include media-hover {

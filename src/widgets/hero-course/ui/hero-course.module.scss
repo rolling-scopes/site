@@ -4,7 +4,7 @@
 
   .hero-course-content {
     display: flex;
-    gap: 40px;
+    gap: $gap-xxl;
     align-items: center;
     justify-content: flex-start;
 
@@ -21,12 +21,12 @@
 
     .hero-subtitle {
       margin: 0;
-      font-size: $font-size-h4;
+      font-size: $font-size-xl;
       font-weight: $font-weight-medium;
       line-height: 32px;
 
       @include media-tablet {
-        font-size: $font-size-xl;
+        font-size: $font-size-l;
         line-height: 28px;
       }
     }
