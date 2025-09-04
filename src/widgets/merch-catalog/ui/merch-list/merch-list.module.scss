@@ -2,14 +2,15 @@
   display: flex;
   flex: 1 1;
   flex-direction: column;
-  gap: 24px;
+  gap: $gap-l;
   align-items: center;
+
   width: 100%;
 }
 
 .list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 24px;
+  gap: $gap-l;
   width: 100%;
 }
