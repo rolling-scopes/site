@@ -63,7 +63,12 @@
     ],
     "scale-unlimited/declaration-strict-value": [
       [
-        "border-radius"
+        "border-radius",
+        "color",
+        "background-color",
+        "opacity",
+        "z-index",
+        "font-weight"
       ],
       {
         "ignoreValues": [
