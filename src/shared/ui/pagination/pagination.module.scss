@@ -1,6 +1,6 @@
 .pagination {
   display: flex;
-  gap: 8px;
+  gap: $gap-xs;
   align-items: center;
   justify-content: center;
 }
@@ -15,7 +15,7 @@
   width: 35px;
   height: 35px;
   border: 1px solid $color-gray-200;
-  border-radius: 4px;
+  border-radius: $border-radius-xxs;
 
   background: $color-white;
 
@@ -33,9 +33,9 @@
   }
 
   &.active {
-    border: 2px solid #000;
+    border: 2px solid $color-gray-900;
     color: $color-white;
-    background-color: #000;
+    background-color: $color-gray-900;
   }
 
   &.arrow {
@@ -45,13 +45,13 @@
 
 .pagination-dots {
   display: flex;
-  gap: 8px;
+  gap: $gap-xs;
   align-items: center;
 
   .dot {
     width: 4px;
     height: 4px;
-    border-radius: 2px;
+    border-radius: 50%;
     background-color: $color-gray-400;
   }
 }
