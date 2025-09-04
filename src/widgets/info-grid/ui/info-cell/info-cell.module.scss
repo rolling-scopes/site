@@ -5,7 +5,7 @@
   min-height: 180px;
 
   .with-gap {
-    gap: 16px;
+    gap: $gap-s;
   }
 
   .large-card-size {
@@ -47,7 +47,7 @@
       letter-spacing: 0.04em;
 
       &.medium-font-size {
-        font-size: 36px;
+        font-size: $font-size-xxl;
         font-weight: 700;
         line-height: 46px;
 
@@ -72,7 +72,7 @@
     .description {
       height: 56px;
       margin: 0;
-      font-size: 16px;
+      font-size: $font-size-s;
       font-weight: 400;
     }
   }

@@ -1,3 +1,10 @@
-import { HeroSectionData } from '@/widgets/hero-course/types';
+import { ReactNode } from 'react';
+import { StaticImageData } from 'next/image';
 
-export type HeroProps = Omit<HeroSectionData, 'variant'>;
+export type HeroSectionData = {
+  variant: 'mentorship' | 'base';
+  heading: string;
+  subHeading?: ReactNode | string;
+  topHeading?: string[];
+  image?: StaticImageData;
+};

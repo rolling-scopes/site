@@ -25,7 +25,7 @@ import { SliderData } from '@/shared/ui/slider/types';
 import { SocialLinkData } from '@/shared/ui/social-media-item/constants';
 import { AboutCourseSectionData } from '@/widgets/about-course';
 import { ExternalEmbedContentData } from '@/widgets/external-embed-content';
-import { HeroSectionData } from '@/widgets/hero-course/types';
+import { HeroSectionData } from '@/widgets/hero/types';
 import { HighlightCardData } from '@/widgets/highlight-card/types';
 import { InfoGridData } from '@/widgets/info-grid';
 import { LearningPathStagesSectionData } from '@/widgets/learning-path-stages';

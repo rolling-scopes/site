@@ -1,6 +1,6 @@
 .media-text-block {
   flex-direction: column;
-  gap: 24px;
+  gap: $gap-l;
 
   .title {
     grid-column: 1 / 3;
@@ -15,13 +15,13 @@
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: max-content 1fr;
-    gap: 24px 100px;
+    gap: $gap-l 100px;
 
     height: 100%;
 
     @include media-tablet-large {
       grid-auto-flow: row;
-      gap: 40px;
+      gap: $gap-xxl;
     }
   }
 
@@ -32,7 +32,7 @@
   }
 
   .inner.small {
-    row-gap: 16px;
+    row-gap: $gap-s;
   }
 
   .content-wrapper-left {
@@ -40,7 +40,7 @@
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     flex-direction: column;
-    gap: 24px;
+    gap: $gap-l;
 
     min-width: 100%;
   }
@@ -111,7 +111,7 @@
 
     & > .content-wrapper {
       display: flex;
-      gap: 32px;
+      gap: $gap-xl;
       align-items: flex-start;
       justify-content: space-between;
 

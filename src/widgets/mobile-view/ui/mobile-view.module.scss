@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    gap: 16px;
+    gap: $gap-s;
     align-items: baseline;
 
     width: 100%;
@@ -35,7 +35,7 @@
 }
 
 .category-link {
-  font-size: 20px;
+  font-size: $font-size-l;
   font-weight: $font-weight-bold;
   background: none;
 }

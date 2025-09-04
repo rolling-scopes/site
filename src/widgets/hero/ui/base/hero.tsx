@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { MainTitle } from '@/shared/ui/main-title';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { HeroSectionData } from '@/widgets/hero-course/types';
+import { HeroSectionData } from '@/widgets/hero/types';
 
 import styles from './hero.module.scss';
 

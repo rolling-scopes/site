@@ -1,7 +1,7 @@
 .about-course {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: $gap-l;
 
   .about-course-grid {
     display: grid;
@@ -9,18 +9,18 @@
       'a a b'
       'c d e';
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px 30px;
+    gap: $gap-xl $gap-xl;
 
     margin-bottom: 16px;
 
     @include media-laptop {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: $gap-l;
     }
 
     @include media-tablet {
-      gap: 16px;
+      gap: $gap-s;
     }
   }
 }
