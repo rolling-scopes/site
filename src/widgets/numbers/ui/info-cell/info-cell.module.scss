@@ -46,23 +46,23 @@
       letter-spacing: 0.04em;
 
       &.medium-font-size {
-        font-size: $font-size-xxl;
+        font-size: $font-size-display-m;
         font-weight: $font-weight-bold;
         line-height: 46px;
 
         @include media-laptop {
-          font-size: 28px;
+          font-size: $font-size-xxl;
           line-height: 34px;
         }
       }
 
       &.large-font-size {
-        font-size: 52px;
+        font-size: $font-size-display-xxl;
         font-weight: $font-weight-medium;
         line-height: 64px;
 
         @include media-laptop {
-          font-size: 44px;
+          font-size: $font-size-display-xl;
           line-height: 52px;
         }
       }

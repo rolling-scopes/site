@@ -69,7 +69,8 @@
         "opacity",
         "z-index",
         "font-weight",
-        "box-shadow"
+        "box-shadow",
+        "font-size"
       ],
       {
         "ignoreValues": [
