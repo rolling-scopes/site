@@ -1,7 +1,7 @@
 .video-player-container {
   position: relative;
   display: flex;
-  gap: 24px;
+  gap: $gap-l;
 
   @include media-tablet-large {
     flex-direction: column;
@@ -15,6 +15,6 @@
 
 .video-player {
   iframe {
-    border-radius: 12px;
+    border-radius: $border-radius-s;
   }
 }

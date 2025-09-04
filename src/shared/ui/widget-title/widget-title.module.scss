@@ -11,7 +11,7 @@
 
 .small {
   padding-bottom: 24px;
-  font-size: 36px;
+  font-size: $font-size-xxl;
   line-height: 44px;
   letter-spacing: 0;
 }
@@ -23,7 +23,7 @@
 
   @include media-tablet {
     padding-bottom: 16px;
-    font-size: 36px;
+    font-size: $font-size-xxl;
     line-height: 44px;
   }
 }
@@ -35,7 +35,7 @@
 
   @include media-tablet {
     padding-bottom: 16px;
-    font-size: 36px;
+    font-size: $font-size-xxl;
     line-height: 44px;
   }
 }

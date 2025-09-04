@@ -1,6 +1,6 @@
 .lang-switcher {
   display: flex;
-  gap: 10px;
+  gap: $gap-xs;
   align-items: center;
 
   .active {

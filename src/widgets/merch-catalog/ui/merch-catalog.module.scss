@@ -16,6 +16,6 @@
 .empty-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: $gap-xl;
   align-items: center;
 }

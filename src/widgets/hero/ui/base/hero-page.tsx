@@ -1,10 +1,10 @@
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
 
-import { PageName } from '../types';
 import { MainTitle } from '@/shared/ui/main-title';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
+import { PageName } from '@/widgets/hero/types';
 import { heroPageData } from 'data';
 
 import styles from './hero.module.scss';

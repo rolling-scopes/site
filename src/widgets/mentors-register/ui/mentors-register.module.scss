@@ -10,12 +10,12 @@
     gap: 176px;
 
     @include media-laptop {
-      gap: 50px;
+      gap: $gap-xxxl;
     }
 
     @include media-tablet-large {
       flex-direction: column;
-      gap: 32px;
+      gap: $gap-xl;
     }
   }
 }
