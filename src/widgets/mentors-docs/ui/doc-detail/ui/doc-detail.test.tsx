@@ -12,14 +12,11 @@ describe('DocDetail', () => {
   };
 
   it('renders null when no linkDocs provided', () => {
-    const { container } = render(
-      <DocDetail
-        textBeforeLink="Before"
-        textLink="Link"
-        textAfterLink="After"
-        linkDocs={undefined}
-      />,
-    );
+    const propsWithoutLink = {
+      ...mockProps,
+      linkDocs: undefined,
+    };
+    const { container } = render(<DocDetail {...propsWithoutLink} />);
 
     expect(container).toBeEmptyDOMElement();
   });

@@ -33,9 +33,11 @@ describe('MentorsDocs', () => {
   it('renders correct content for component', () => {
     render(<MentorsDocs {...defaultProps} />);
     const title = screen.getByTestId('widget-title');
+    const links = screen.getAllByRole('link');
 
     expect(title).toBeVisible();
     expect(title.textContent).toBe(mentorDocsData[defaultProps.lang].header);
+    expect(links).toHaveLength(1 + mockOnboardLinks.length);
   });
 
   it('does not render mentor documentation section when courseTitle is not provided', () => {
@@ -49,24 +51,6 @@ describe('MentorsDocs', () => {
     const docDetail = screen.queryByTestId('paragraph');
 
     expect(docDetail).not.toBeInTheDocument();
-  });
-
-  it('renders onboard links when provided', () => {
-    render(<MentorsDocs {...defaultProps} />);
-
-    const links = screen.getAllByRole('link');
-
-    expect(links).toHaveLength(1 + mockOnboardLinks.length);
-  });
-
-  it('does not render course title section when courseTitle is not provided', () => {
-    const propsWithoutCourse = {
-      ...defaultProps,
-      courseTitle: undefined,
-    };
-
-    render(<MentorsDocs {...propsWithoutCourse} />);
-
     expect(screen.queryByText(mentorDocsData.en.mentor.textLink)).not.toBeInTheDocument();
   });
 
