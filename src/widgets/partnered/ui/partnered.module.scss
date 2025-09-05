@@ -13,17 +13,6 @@
     width: 100%;
     max-width: 600px;
 
-    .partner-logo-container {
-      display: flex;
-      flex-basis: 20%;
-      align-items: center;
-      justify-content: center;
-
-      @include media-mobile {
-        flex-basis: 50%;
-      }
-    }
-
     @include media-tablet {
       row-gap: $gap-s;
     }

@@ -14,11 +14,9 @@ export const Partnered = () => (
       <WidgetTitle size="small">Partnered with</WidgetTitle>
       <div className={cx('partners')} data-testid="partners-list">
         {partners.map(({ id, Component, href }) => (
-          <div key={id} className={cx('partner-logo-container')}>
-            <LinkCustom href={href} external icon={null}>
-              <Component />
-            </LinkCustom>
-          </div>
+          <LinkCustom href={href} external icon={null} key={id}>
+            <Component />
+          </LinkCustom>
         ))}
       </div>
     </section>
