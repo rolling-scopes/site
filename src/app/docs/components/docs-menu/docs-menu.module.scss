@@ -1,14 +1,18 @@
 .menu {
   width: 300px;
 
+  > ul {
+    padding-bottom: 15px;
+  }
+
   ul {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: $gap-xxs;
 
     padding-left: 12px;
 
-    font-size: 14px;
+    font-size: $font-size-xs;
     text-align: left;
     list-style-type: none;
 
@@ -65,7 +69,7 @@
 
   @include media-tablet {
     display: flex;
-    gap: 4px;
+    gap: $gap-xxs;
     align-items: center;
 
     padding: 0;

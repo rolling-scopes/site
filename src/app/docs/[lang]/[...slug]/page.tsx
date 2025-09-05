@@ -1,11 +1,14 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import path from 'path';
 
 import { DocsContent } from '../../components/docs-content/docs-content';
 import { TITLE_POSTFIX } from '../../constants';
 import { Menu } from '../../types';
 import { fetchMarkdownContent } from '../../utils/fetch-markdown-content';
 import { fetchMenu } from '../../utils/fetch-menu';
+import { generateDocsMetadata } from '@/metadata/docs';
+import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 import { Language } from '@/shared/types';
 
 type RouteParams = { lang: Language;
@@ -45,7 +48,18 @@ export async function generateMetadata({
 
   const title = titles.find((el) => el.slug.join('/') === slugPath)?.title;
 
-  return { title: `${title} ${TITLE_POSTFIX}` };
+  const { description, keywords, canonical, robots } = generateDocsMetadata(lang, slugPath);
+
+  const metadata = generatePageMetadata({
+    title: `${title} ${TITLE_POSTFIX}`,
+    description,
+    imagePath: path.join('docs', lang, 'og.png'),
+    keywords,
+    alternates: { canonical },
+    robots,
+  });
+
+  return metadata;
 }
 
 export async function generateStaticParams(): Promise<RouteParams[]> {

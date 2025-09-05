@@ -10,7 +10,7 @@
 
   &.border-black {
     & > *:not(:last-child) {
-      border-right: 1px solid $color-black;
+      border-right: 1px solid $color-gray-900;
     }
   }
 
@@ -41,7 +41,7 @@
 
   @include media-tablet {
     grid-auto-flow: row;
-    gap: 24px;
+    gap: $gap-l;
 
     :nth-child(n + 3) {
       grid-row: 2 / 3;

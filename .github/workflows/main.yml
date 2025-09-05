@@ -8,8 +8,9 @@ on:
 
 env:
   NODE_VERSION: 20.x
-  API_BASE_URL: ${{ secrets.API_BASE_URL }}
-  YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY_DEVELOPMENT }}
+  NEXT_PUBLIC_API_BASE_URL: ${{ secrets.API_BASE_URL }}
+  NEXT_PUBLIC_YOUTUBE_API_BASE_URL: ${{ secrets.YOUTUBE_API_BASE_URL }}
+  NEXT_PUBLIC_YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY_DEVELOPMENT }}
 
 jobs:
   ci:
@@ -18,7 +19,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

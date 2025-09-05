@@ -1,4 +1,5 @@
 // In case of updating any of these variables, please update the viewports.ts file inside e2e/utils folder
+$large-laptop-width: 1441px;
 $content-width: 1440px;
 $medium-laptop-width: 1250px;
 $large-tablet-width: 1024px;
@@ -19,7 +20,6 @@ $font-weight-bold: 700;
 // COLORS
 
 // Primary colors
-$color-black: hsl(0deg 0% 0%); // #000
 
 // White colors
 $color-white: hsl(0deg 0% 100%); // #fff
@@ -82,6 +82,7 @@ $opacity-100: 1;
 $opacity-80: 0.8;
 $opacity-70: 0.7;
 $opacity-50: 0.5;
+$opacity-40: 0.4;
 $opacity-30: 0.3;
 $opacity-20: 0.2;
 $opacity-15: 0.15;
@@ -94,3 +95,36 @@ $ease-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
 $ease-emphasize-decelerate: cubic-bezier(0, 0, 0, 1);
 $ease-in-cubic: cubic-bezier(0.32, 0, 0.67, 0);
 $standard-decelerate: cubic-bezier(0, 0, 0, 1);
+
+// Border radius
+$border-radius-xxs: 4px;
+$border-radius-xs: 8px;
+$border-radius-s: 12px;
+$border-radius-m: 16px;
+$border-radius-l: 20px;
+$border-radius-max: 999px;
+
+// Font sizes
+$font-size-xxs: 12px;
+$font-size-xs: 14px;
+$font-size-s: 16px;
+$font-size-m: 18px;
+$font-size-l: 20px;
+$font-size-xl: 24px;
+$font-size-xxl: 36px;
+
+// Standard gap
+$gap-xxs: 4px;
+$gap-xs: 8px;
+$gap-s: 16px;
+$gap-m: 20px;
+$gap-l: 24px;
+$gap-xl: 32px;
+$gap-xxl: 40px;
+$gap-xxxl: 48px;
+
+// Z-indexes
+$z-index-base: 0;
+$z-index-below: -1;
+$z-index-above: 1;
+$z-index-max: 1000;

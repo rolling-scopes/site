@@ -1,8 +1,32 @@
 import { HttpStatus } from 'http-status';
 
+import { CoursePageResponse } from '@/entities/course-page/types';
 import { ApiBaseClass } from '@/shared/api/api-base-class';
 import { HTTP_METHOD } from '@/shared/constants';
-import { LinkList } from '@/widgets/required/types';
+import {
+  TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeDonationWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeExternalEmbedContentWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeHeroSectionWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeHighlightCardWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeLearningPathStagesWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeMediaGridWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeMediaTextBlockWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeUpcomingCoursesWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeVideoBlockWithAllLocalesAndWithoutLinkResolutionResponse,
+} from '@/shared/types/contentful';
+import { AboutCourseSectionData } from '@/widgets/about-course';
+import { ExternalEmbedContentData } from '@/widgets/external-embed-content';
+import { HeroSectionData } from '@/widgets/hero/types';
+import { HighlightCardData } from '@/widgets/highlight-card/types';
+import { LearningPathStagesSectionData } from '@/widgets/learning-path-stages';
+import { ApiMediaGridSectionData } from '@/widgets/media-grid/types';
+import { MediaTextBlockSectionData } from '@/widgets/media-text-block';
+import { SupportUsSectionData } from '@/widgets/support/types';
+import { UpcomingCoursesSectionData } from '@/widgets/upcoming-courses/types';
+import { VideoBlockSectionData } from '@/widgets/video-block';
+import type { BaseEntry } from 'contentful';
+import { LinkList } from 'data';
 
 export type ListData = (string | LinkList)[] | [];
 export type ListType = 'marked' | 'unmarked';
@@ -17,6 +41,7 @@ export type Video = {
 
 export type ApiServices = {
   rest: ApiBaseClass;
+  youtube: ApiBaseClass;
 };
 
 export type HttpMethod = (typeof HTTP_METHOD)[keyof typeof HTTP_METHOD];
@@ -82,3 +107,38 @@ export type ApiResponseError = {
   message: string;
   requestId: string;
 };
+
+export type ExtractSectionName<TContentType extends BaseEntry> =
+  TContentType['sys']['contentType']['sys']['id'];
+
+export type SectionName =
+  | ExtractSectionName<TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeMediaTextBlockWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeLearningPathStagesWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeVideoBlockWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeHeroSectionWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeUpcomingCoursesWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeDonationWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeMediaGridWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeHighlightCardWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeExternalEmbedContentWithAllLocalesAndWithoutLinkResolutionResponse>;
+
+type SectionBase<TName extends SectionName, TData, TId extends string = string> = {
+  id: TId;
+  name: TName;
+  data: TData;
+};
+
+export type Section =
+  | SectionBase<Extract<SectionName, 'aboutCourse'>, AboutCourseSectionData>
+  | SectionBase<Extract<SectionName, 'mediaTextBlock'>, MediaTextBlockSectionData>
+  | SectionBase<Extract<SectionName, 'learningPathStages'>, LearningPathStagesSectionData>
+  | SectionBase<Extract<SectionName, 'videoBlock'>, VideoBlockSectionData>
+  | SectionBase<Extract<SectionName, 'heroSection'>, HeroSectionData>
+  | SectionBase<Extract<SectionName, 'upcomingCourses'>, UpcomingCoursesSectionData>
+  | SectionBase<Extract<SectionName, 'donation'>, SupportUsSectionData>
+  | SectionBase<Extract<SectionName, 'mediaGrid'>, ApiMediaGridSectionData>
+  | SectionBase<Extract<SectionName, 'highlightCard'>, HighlightCardData>
+  | SectionBase<Extract<SectionName, 'externalEmbedContent'>, ExternalEmbedContentData>;
+
+export type PageResponseSections = CoursePageResponse['items'][0]['fields']['sections'];
