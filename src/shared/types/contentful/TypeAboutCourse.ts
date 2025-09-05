@@ -15,9 +15,16 @@ import type {
  */
 export interface TypeAboutCourseFields {
   /**
+   * Field type definition for field 'tag' (tag)
+   * @name tag
+   * @localized false
+   * @summary This tag field is used internally only in contenful to unique identify identical content. THIS FIELD WILL NOT BE SHOWN ON THE WEBSITE
+   */
+  tag?: EntryFieldTypes.Symbol;
+  /**
    * Field type definition for field 'title' (title)
    * @name title
-   * @localized false
+   * @localized true
    */
   title: EntryFieldTypes.Symbol;
   /**
@@ -35,13 +42,13 @@ export interface TypeAboutCourseFields {
   /**
    * Field type definition for field 'registrationLinkText' (registrationLinkText)
    * @name registrationLinkText
-   * @localized false
+   * @localized true
    */
   registrationLinkText: EntryFieldTypes.Symbol;
   /**
    * Field type definition for field 'registrationClosedLinkText' (registrationClosedLinkText)
    * @name registrationClosedLinkText
-   * @localized false
+   * @localized true
    */
   registrationClosedLinkText: EntryFieldTypes.Symbol;
 }
@@ -52,7 +59,7 @@ export interface TypeAboutCourseFields {
  * @type {TypeAboutCourseSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-16T19:51:09.481Z
- * @version 11
+ * @version 17
  */
 export type TypeAboutCourseSkeleton = EntrySkeletonType<TypeAboutCourseFields, 'aboutCourse'>;
 /**
@@ -61,7 +68,7 @@ export type TypeAboutCourseSkeleton = EntrySkeletonType<TypeAboutCourseFields, '
  * @type {TypeAboutCourse}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-16T19:51:09.481Z
- * @version 11
+ * @version 17
  */
 export type TypeAboutCourse<
   Modifiers extends ChainModifiers,

@@ -10,6 +10,7 @@ import iconBlue from '@/shared/assets/svg/heart-blue.svg';
 import iconYellow from '@/shared/assets/svg/heart-yellow.svg';
 import logoBlue from '@/shared/assets/svg/rss-logo-blue.svg';
 import { ANCHORS, NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
+import { CourseMenuItemsFresh } from '@/shared/ui/course-menu-items-fresh';
 import { Logo } from '@/shared/ui/logo';
 import { Paragraph } from '@/shared/ui/paragraph';
 import {
@@ -96,15 +97,7 @@ export const Header = ({ courses }: HeaderProps) => {
                 />
               </SchoolMenu>
               <SchoolMenu layout="columns">
-                {courses.map((course) => (
-                  <SchoolMenu.Item
-                    key={course.id}
-                    icon={course.iconSmall}
-                    title={course.title}
-                    description={course.startDate}
-                    url={course.detailsUrl}
-                  />
-                ))}
+                <CourseMenuItemsFresh courses={courses} />
               </SchoolMenu>
             </NavItem>
             <NavItem label={NAV_MENU_LABELS.COMMUNITY} href={ROUTES.COMMUNITY}>
@@ -149,8 +142,8 @@ export const Header = ({ courses }: HeaderProps) => {
             >
               <div className={cx('support-text')}>
                 <Paragraph fontSize="small">
-                  Your donations help us cover hosting, domains, licenses, and advertising for courses
-                  and events. Every donation, big or small, helps!
+                  Your donations help us cover hosting, domains, licenses, and advertising for
+                  courses and events. Every donation, big or small, helps!
                 </Paragraph>
                 <Paragraph fontSize="small">Thank you for your support!</Paragraph>
               </div>

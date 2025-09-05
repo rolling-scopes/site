@@ -18,11 +18,15 @@ export function transformLearningPathStageItem(
     ? prepareAssetImage(item.fields.image?.fields?.file)
     : undefined;
   const content = richTextRenderer(item.fields.content);
+  const imageWidth = item.fields.imageWidth;
+  const imageHeight = item.fields.imageHeight;
 
   return {
     id,
     title,
     image,
     content,
+    imageWidth,
+    imageHeight,
   };
 }

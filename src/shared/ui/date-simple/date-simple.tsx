@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 
+import { COURSE_DATE_FORMAT, MENTORING_DATE_FORMAT } from '@/entities/course/constants';
 import noteIcon from '@/shared/assets/icons/note-icon.svg';
 import { TO_BE_DETERMINED } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/day-js';
@@ -19,12 +20,21 @@ type DateStartProps = {
   showMentoringStartDate: boolean;
 };
 
-const formatDateAttr = (date: string | null | undefined): string | undefined => {
+const formatDateAttr = (
+  date: string | null | undefined,
+  isMentoringDate: boolean,
+): string | undefined => {
   if (!date || date === TO_BE_DETERMINED) {
     return undefined;
   }
 
-  return dayJS(date).toISOString();
+  let format = COURSE_DATE_FORMAT;
+
+  if (isMentoringDate) {
+    format = MENTORING_DATE_FORMAT;
+  }
+
+  return dayJS(date, format).toISOString();
 };
 
 export const DateSimple = ({
@@ -35,8 +45,8 @@ export const DateSimple = ({
   children,
   showMentoringStartDate,
 }: DateStartProps) => {
-  const startDateAttr = formatDateAttr(startDate);
-  const endDateAttr = formatDateAttr(endDate);
+  const startDateAttr = formatDateAttr(startDate, showMentoringStartDate);
+  const endDateAttr = formatDateAttr(endDate, showMentoringStartDate);
 
   const startDateFormat = startDate && endDate ? dayJS(startDate).format('MMM D') : startDate;
 

@@ -25,7 +25,7 @@ jobs:
     if: ${{ github.event.label.name == 'preview' || contains(github.event.pull_request.labels.*.name, 'preview') }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         name: Checkout
 
       - name: Use Node.js ${{ env.NODE_VERSION }}

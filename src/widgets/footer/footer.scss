@@ -1,29 +1,29 @@
 .footer {
-  background-color: $color-black;
+  background-color: $color-gray-900;
 
   &.content {
     padding: 40px 80px;
 
     & .desktop-view {
       display: flex;
-      gap: 75px;
+      gap: 76px;
       align-items: flex-start;
       justify-content: flex-start;
 
       & .left {
         display: flex;
-        gap: 167px;
+        gap: 168px;
       }
 
       // AboutList component styles
       .about-list {
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: $gap-l;
         align-items: baseline;
         justify-content: flex-start;
 
-        font-size: 18px;
+        font-size: $font-size-m;
         font-weight: $font-weight-medium;
         line-height: 24px;
         color: $color-gray-100;
@@ -53,10 +53,10 @@
       }
 
       @include media-laptop-medium {
-        gap: 50px;
+        gap: $gap-xxxl;
 
         & .left {
-          gap: 50px;
+          gap: $gap-xxxl;
         }
       }
     }

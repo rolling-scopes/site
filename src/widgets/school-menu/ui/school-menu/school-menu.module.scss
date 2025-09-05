@@ -3,17 +3,17 @@
 
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: $gap-s;
   color: $color-gray-100;
 
   .heading {
     margin: 0;
-    font-size: 12px;
+    font-size: $font-size-xxs;
     line-height: 1.15;
     text-transform: uppercase;
 
     &.dark {
-      color: $color-black;
+      color: $color-gray-900;
     }
 
     &.light {
@@ -22,7 +22,7 @@
   }
 
   .school-list {
-    gap: 24px 32px;
+    gap: $gap-l $gap-xl;
     max-height: 408px;
     list-style-type: none;
 
@@ -30,11 +30,11 @@
       display: grid;
       grid-auto-flow: column;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 48px);
+      grid-template-rows: repeat(2, $gap-xxxl);
 
       &:has(:nth-child(5)) {
-        grid-template-columns: auto;
-        grid-template-rows: repeat(auto-fit, 48px);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, $gap-xxxl);
       }
     }
 
@@ -44,7 +44,7 @@
     }
 
     @include media-mobile-landscape {
-      row-gap: 16px;
+      row-gap: $gap-s;
       max-height: 816px;
     }
   }
