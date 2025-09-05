@@ -17,9 +17,9 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="chevron-right.svg">
+   sodipodi:docname="chevron-left.svg">
   <title
-     id="title3340">chevron-right</title>
+     id="title3340">chevron-left</title>
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -65,7 +65,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title>chevron-right</dc:title>
+        <dc:title>chevron-left</dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -76,7 +76,7 @@
      transform="translate(0,-604.36224)">
     <path
        style="fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"
-       d="M 116.43703,988.36226 80,950.9021 199.19302,828.36225 80,705.82242 l 36.43703,-37.46016 36.40349,37.42566 -0.0335,0.0344 L 272,828.36226 152.80698,950.90209 l 0.0335,0.0344 -36.4035,37.42568 z"
+       d="M 203.56297,988.36226 240,950.9021 120.80698,828.36225 240,705.82242 l -36.43703,-37.46016 -36.40349,37.42566 0.0335,0.0344 L 48,828.36226 l 119.19302,122.53983 -0.0335,0.0344 36.4035,37.42568 z"
        id="rect4331"
        inkscape:connector-curvature="0" />
   </g>
