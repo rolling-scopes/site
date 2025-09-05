@@ -19,7 +19,7 @@
 
   figure {
     display: flex;
-    border-radius: 50%;
+    border-radius: $border-radius-half;
     background-color: $color-gray-200;
     transition: $transition-social;
 

@@ -84,6 +84,7 @@ $opacity-70: 0.7;
 $opacity-50: 0.5;
 $opacity-40: 0.4;
 $opacity-30: 0.3;
+$opacity-25: 0.25;
 $opacity-20: 0.2;
 $opacity-15: 0.15;
 $opacity-10: 0.1;
@@ -102,7 +103,9 @@ $border-radius-xs: 8px;
 $border-radius-s: 12px;
 $border-radius-m: 16px;
 $border-radius-l: 20px;
+$border-radius-xl: 36px;
 $border-radius-max: 999px;
+$border-radius-half: 50%;
 
 // Font sizes
 $font-size-xxs: 12px;
@@ -111,7 +114,15 @@ $font-size-s: 16px;
 $font-size-m: 18px;
 $font-size-l: 20px;
 $font-size-xl: 24px;
-$font-size-xxl: 36px;
+$font-size-2xl: 28px;
+$font-size-3xl: 32px;
+$font-size-4xl: 36px;
+$font-size-5xl: 40px;
+$font-size-6xl: 44px;
+$font-size-7xl: 52px;
+$font-size-8xl: 60px;
+$font-size-9xl: 80px;
+$font-size-10xl: 96px;
 
 // Standard gap
 $gap-xxs: 4px;
@@ -128,3 +139,10 @@ $z-index-base: 0;
 $z-index-below: -1;
 $z-index-above: 1;
 $z-index-max: 1000;
+
+// Box-shadow
+$shadow-xs: 1px 1px 2px $color-gray-900;
+$shadow-s: 0 4px 8px 0 hsla(from $color-gray-900 h s l / $opacity-10);
+$shadow-m: 0 4px 10px 0 hsla(from $color-gray-900 h s l / $opacity-10);
+$shadow-l: 0 4px 12px 0 hsla(from $color-gray-900 h s l / $opacity-10);
+$shadow-xl: 0 4px 16px 0 hsla(from $color-gray-900 h s l / $opacity-15);

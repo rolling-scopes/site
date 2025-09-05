@@ -11,7 +11,7 @@
   padding: 0 40px;
 
   background-color: $color-white;
-  box-shadow: 0 4px 10px 0 hsla(from $color-gray-900 h s l/ $opacity-10);
+  box-shadow: $shadow-m;
 
   @include media-tablet-large {
     padding: 0 16px;

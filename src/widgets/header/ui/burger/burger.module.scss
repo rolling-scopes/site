@@ -40,14 +40,14 @@
   }
 
   &.open {
-    background-color: white;
+    background-color: $color-white;
 
     .top {
       transform: rotate(-45deg) translate(-5px, 6px);
     }
 
     .mid {
-      opacity: 0;
+      opacity: $opacity-0;
     }
 
     .bottom {

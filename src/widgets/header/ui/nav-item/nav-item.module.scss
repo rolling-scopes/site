@@ -21,7 +21,7 @@
   &:focus-visible {
     z-index: $z-index-max;
 
-    border-radius: 2px;
+    border-radius: $border-radius-xxs;
 
     outline-style: solid;
     outline-width: 2px;
