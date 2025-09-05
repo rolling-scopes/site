@@ -19,11 +19,11 @@
 
       .title-main {
         @include media-tablet {
-          font-size: $font-size-hero-tablet;
+          font-size: $font-size-9xl;
         }
 
         @include media-mobile-landscape {
-          font-size: $font-size-display-l;
+          font-size: $font-size-5xl;
         }
       }
     }

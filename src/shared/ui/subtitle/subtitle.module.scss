@@ -24,7 +24,7 @@
     }
 
     &-medium {
-      font-size: $font-size-xxl;
+      font-size: $font-size-2xl;
       line-height: 36px;
 
       @include media-tablet {
@@ -34,21 +34,21 @@
     }
 
     &-large {
-      font-size: $font-size-display-s;
+      font-size: $font-size-3xl;
       line-height: 40px;
 
       @include media-tablet {
-        font-size: $font-size-xxl;
+        font-size: $font-size-2xl;
         line-height: 36px;
       }
     }
 
     &-extra-large {
-      font-size: $font-size-display-m;
+      font-size: $font-size-4xl;
       line-height: 44px;
 
       @include media-tablet {
-        font-size: $font-size-display-s;
+        font-size: $font-size-3xl;
         line-height: 36px;
       }
     }

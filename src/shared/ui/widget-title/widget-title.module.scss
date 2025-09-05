@@ -11,38 +11,38 @@
 
 .small {
   padding-bottom: 24px;
-  font-size: $font-size-display-m;
+  font-size: $font-size-4xl;
   line-height: 44px;
   letter-spacing: 0;
 }
 
 .medium {
   padding-bottom: 20px;
-  font-size: $font-size-display-xl;
+  font-size: $font-size-6xl;
   line-height: 52px;
 
   @include media-tablet {
     padding-bottom: 16px;
-    font-size: $font-size-display-m;
+    font-size: $font-size-4xl;
     line-height: 44px;
   }
 }
 
 .large {
   padding-bottom: 24px;
-  font-size: $font-size-display-xxl;
+  font-size: $font-size-7xl;
   line-height: 64px;
 
   @include media-tablet {
     padding-bottom: 16px;
-    font-size: $font-size-display-m;
+    font-size: $font-size-4xl;
     line-height: 44px;
   }
 }
 
 .smallest {
   padding-bottom: 0;
-  font-size: $font-size-xxl;
+  font-size: $font-size-2xl;
   font-weight: $font-weight-medium;
   line-height: 36px;
 }
