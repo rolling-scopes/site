@@ -13,11 +13,12 @@
 
   .inner {
     display: grid;
-    grid-auto-flow: column;
-    grid-template-rows: max-content 1fr;
     gap: $gap-l 100px;
-
     height: 100%;
+
+    &.with-title {
+      grid-template-rows: max-content 1fr;
+    }
 
     @include media-tablet-large {
       grid-auto-flow: row;
@@ -38,7 +39,6 @@
   .content-wrapper-left {
     display: flex;
     grid-column: 1 / 2;
-    grid-row: 2 / 3;
     flex-direction: column;
     gap: $gap-l;
 
@@ -46,6 +46,8 @@
   }
 
   .content-wrapper-right {
+    grid-column: 2 / 3;
+
     @include media-tablet-large {
       grid-column: 1 / 2;
       grid-row: 3 / 4;
@@ -58,14 +60,6 @@
 
     @include media-laptop {
       grid-column: unset;
-    }
-  }
-
-  // if the content is NOT an image, place it under the title -> |title       |            |
-  //                                                          -> |text content|text content|
-  .content-wrapper-right:not(:has([data-id='asset-image'])) {
-    @include media-from-tablet-large {
-      grid-row: 2 / 3;
     }
   }
 
@@ -183,6 +177,14 @@
           // hack for community page only
           top: 200px;
         }
+      }
+    }
+
+    // if the content is NOT an image, place it under the title -> |title       |            |
+    //                                                          -> |text content|text content|
+    &:not(:has(.inner.with-title)) .content-wrapper-right:not(:has([data-id='asset-image'])) {
+      @include media-from-tablet-large {
+        grid-row: 2 / 3;
       }
     }
 

@@ -54,6 +54,7 @@ export const MediaTextBlock = ({
         className={cx('inner', 'content', {
           embedded,
           small,
+          'with-title': hasTitle,
         })}
       >
         {hasTitle && (
