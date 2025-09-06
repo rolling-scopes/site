@@ -91,13 +91,13 @@
   @extend %transition-all;
 
   display: inline-flex;
-  gap: 8px;
+  gap: $gap-xs;
   align-items: center;
   justify-content: center;
 
   width: fit-content;
 
-  font-size: 18px;
+  font-size: $font-size-m;
   font-style: normal;
   color: $color-blue-600;
   text-decoration: underline;
