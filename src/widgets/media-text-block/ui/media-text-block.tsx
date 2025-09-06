@@ -58,11 +58,11 @@ export const MediaTextBlock = ({
         })}
       >
         {hasTitle && (
-          <div className={cx('title')}>
+          <div className={cx('title-wrapper')}>
             {sectionLabel && <SectionLabel>{sectionLabel}</SectionLabel>}
 
             {title && (
-              <WidgetTitle size={titleSize} mods={titleMod}>
+              <WidgetTitle size={titleSize} mods={titleMod} className={cx('title')}>
                 {title}
               </WidgetTitle>
             )}

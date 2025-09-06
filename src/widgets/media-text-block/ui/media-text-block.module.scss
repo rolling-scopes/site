@@ -2,9 +2,13 @@
   flex-direction: column;
   gap: $gap-l;
 
-  .title {
+  .title-wrapper {
     grid-column: 1 / 3;
     grid-row: 1 / 2;
+
+    .title {
+      padding: 0;
+    }
 
     @include media-laptop {
       grid-column: unset;
