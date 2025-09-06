@@ -12,11 +12,6 @@
   left: 0;
   transform: translateY(-10px);
 
-  // display: grid;
-  // grid-template-columns: 1fr 1fr 1fr;
-  // column-gap: $gap-xl;
-
-  // width: max-content;
   min-width: calc(100% + var(--header-padding));
   max-width: calc(100vw - var(--page-padding));
   height: max-content;

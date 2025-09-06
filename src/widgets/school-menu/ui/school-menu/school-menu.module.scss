@@ -2,9 +2,6 @@
   @extend %transition-all;
 
   display: grid;
-  // gap: 16px;
-  // display: flex;
-  // flex-direction: column;
   gap: $gap-s;
   color: $color-gray-100;
 
@@ -26,7 +23,6 @@
   .school-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    // gap: 24px 32px;
     gap: $gap-l $gap-xl;
 
     max-height: 408px;
@@ -34,19 +30,6 @@
     list-style-type: none;
 
     @include media-tablet-large {
-      // &--columns {
-      //   display: grid;
-      //   grid-auto-flow: column;
-      //   grid-template-columns: repeat(2, 1fr);
-      //   grid-template-rows: repeat(2, $gap-xxxl);
-
-      //   &:has(:nth-child(5)) {
-      //     grid-template-columns: repeat(2, 1fr);
-      //     grid-template-rows: repeat(6, $gap-xxxl);
-      //   }
-      // }
-
-      // &--single {
       display: flex;
       flex-flow: column wrap;
     }
