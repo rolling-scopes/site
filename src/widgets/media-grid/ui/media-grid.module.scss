@@ -40,8 +40,8 @@
     }
   }
 
-  @include media-mobile-landscape {
+  @include media-tablet {
     gap: 0;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
