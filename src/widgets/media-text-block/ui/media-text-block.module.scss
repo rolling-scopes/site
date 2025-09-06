@@ -103,7 +103,7 @@
     &.content-bottom {
       :where(&) {
         grid-template-columns: responsive-grid-columns();
-        gap: 32px;
+        gap: $gap-xl;
       }
     }
 
