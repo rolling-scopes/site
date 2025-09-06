@@ -51,7 +51,7 @@ export interface TypeHeroSectionFields {
  * @type {TypeHeroSectionSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-12T19:41:11.842Z
- * @version 33
+ * @version 35
  */
 export type TypeHeroSectionSkeleton = EntrySkeletonType<TypeHeroSectionFields, 'heroSection'>;
 /**
@@ -60,7 +60,7 @@ export type TypeHeroSectionSkeleton = EntrySkeletonType<TypeHeroSectionFields, '
  * @type {TypeHeroSection}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-12T19:41:11.842Z
- * @version 33
+ * @version 35
  */
 export type TypeHeroSection<
   Modifiers extends ChainModifiers,

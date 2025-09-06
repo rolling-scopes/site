@@ -48,6 +48,12 @@
   }
 }
 
+@mixin media-from-tablet-large {
+  @media (min-width: $large-tablet-width) {
+    @content;
+  }
+}
+
 @mixin media-hover {
   @media (hover: hover) {
     @content;

@@ -129,6 +129,16 @@ export type {
   TypeLearningPathStagesWithoutUnresolvableLinksResponse,
 } from './TypeLearningPathStages';
 export type {
+  TypeLink,
+  TypeLinkFields,
+  TypeLinkSkeleton,
+  TypeLinkWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeLinkWithAllLocalesAndWithoutUnresolvableLinksResponse,
+  TypeLinkWithAllLocalesResponse,
+  TypeLinkWithoutLinkResolutionResponse,
+  TypeLinkWithoutUnresolvableLinksResponse,
+} from './TypeLink';
+export type {
   TypeMarquee,
   TypeMarqueeFields,
   TypeMarqueeSkeleton,

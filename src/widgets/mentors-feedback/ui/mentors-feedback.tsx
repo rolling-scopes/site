@@ -33,7 +33,6 @@ export const MentorsFeedback = ({ mentorsFeedback }: MentorsFeedbackProps) => {
         <div className={cx('mentors-feedback-wrapper')}>
           <div className={cx('slider-wrapper')} data-testid="mentors-feedback-list">
             <Slider
-              className={cx('mentors-feedback-slider')}
               slides={slides}
               sliderProps={{
                 spaceBetween: 32,

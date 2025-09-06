@@ -13,6 +13,8 @@ export function transformMediaGridSection(
   const numberOfColumns = settings?.numberOfColumns;
   const removeItemsOnResponsive = settings?.removeItemsOnResponsive;
   const rowGapPx = settings?.rowGapPx;
+  const colGapPx = settings?.colGapPx;
+  const fitContent = settings?.fitContent;
 
   return {
     id,
@@ -22,6 +24,8 @@ export function transformMediaGridSection(
       numberOfColumns,
       removeItemsOnResponsive,
       rowGapPx,
+      fitContent,
+      colGapPx,
     },
   };
 }

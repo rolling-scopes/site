@@ -11,18 +11,21 @@ export type SocialMediaProps = {
   title: string;
   href: string;
   icon: ReactNode;
+  inline?: boolean;
 };
 
-export const SocialMediaItem = ({ title, href, icon }: SocialMediaProps) => (
+export const SocialMediaItem = ({ title, href, icon, inline }: SocialMediaProps) => (
   <LinkCustom
-    className={cx('social-media')}
+    className={cx('social-media', { inline })}
     href={href}
     variant="withCustomClassName"
     external
     highContrast
     data-testid="social-media"
   >
-    {icon}
-    <span className={cx('media-title')} data-testid="media-title">{title}</span>
+    <span className={cx('media-icon')}>{icon}</span>
+    <span className={cx('media-title')} data-testid="media-title">
+      {title}
+    </span>
   </LinkCustom>
 );
