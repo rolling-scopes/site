@@ -2,12 +2,7 @@ import { StaticImageData } from 'next/image';
 
 import { API_COURSES_IDS_DICTIONARY } from '@/entities/course/constants';
 import { COURSE_LINKS } from '@/shared/constants';
-import {
-  ApiResourceLocale,
-  Language,
-  TypeCourseSkeleton,
-  TypeHomePageSkeleton,
-} from '@/shared/types';
+import { ApiResourceLocale, Language, TypeCourseSkeleton } from '@/shared/types';
 import type { EntryCollection } from 'contentful';
 import { CourseNamesKeys } from 'data';
 
@@ -32,18 +27,12 @@ export type CoursesScheduleResponse = Readonly<
     startDate: string;
     personalMentoringStartDate: string | null;
     personalMentoringEndDate: string | null;
-    wearecommunityUrl: string | null;
+    wearecommunityUrl?: string;
   }[]
 >;
 
 export type CoursesResponse = EntryCollection<
   TypeCourseSkeleton,
-  'WITHOUT_UNRESOLVABLE_LINKS',
-  ApiResourceLocale
->;
-
-export type CoursePageResponse = EntryCollection<
-  TypeHomePageSkeleton,
   'WITHOUT_UNRESOLVABLE_LINKS',
   ApiResourceLocale
 >;
@@ -63,7 +52,7 @@ export type Course = {
   language: Language;
   mode: 'online' | 'offline';
   detailsUrl: string;
-  enroll: string | null;
+  enroll?: string;
   backgroundStyle: {
     backgroundColor: string;
     accentColor: string;

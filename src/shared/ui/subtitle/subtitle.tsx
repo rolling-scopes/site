@@ -4,8 +4,8 @@ import classNames from 'classnames/bind';
 
 import styles from './subtitle.module.scss';
 
-type SubtitleProps = Pick<HTMLAttributes<HTMLHeadingElement>, 'className' | 'children'> &
-  VariantProps<typeof subtitleVariants> & {
+type SubtitleProps = Pick<HTMLAttributes<HTMLHeadingElement>, 'className' | 'children'>
+  & VariantProps<typeof subtitleVariants> & {
     as?: 'h2' | 'h3' | 'h4';
   };
 

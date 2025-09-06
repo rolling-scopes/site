@@ -1,6 +1,6 @@
 .header {
   position: sticky;
-  z-index: 100;
+  z-index: $z-index-above;
   top: 0;
   left: 0;
 }
@@ -11,7 +11,7 @@
   padding: 0 40px;
 
   background-color: $color-white;
-  box-shadow: 0 4px 10px 0 hsla(from $color-black h s l/ $opacity-10);
+  box-shadow: 0 4px 10px 0 hsla(from $color-gray-900 h s l/ $opacity-10);
 
   @include media-tablet-large {
     padding: 0 16px;
@@ -36,7 +36,7 @@
   position: relative;
 
   display: flex;
-  gap: 32px;
+  gap: $gap-xl;
   align-items: center;
 
   height: 100%;
@@ -66,7 +66,7 @@
   margin-top: 0;
   padding: 8px 24px 28px 16px;
 
-  color: $color-black;
+  color: $color-gray-900;
 
   opacity: $opacity-0;
   background-color: $color-white;

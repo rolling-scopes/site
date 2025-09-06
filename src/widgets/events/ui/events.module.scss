@@ -1,13 +1,13 @@
 .events {
   &-content {
     display: flex;
-    gap: 24px;
+    gap: $gap-l;
     align-items: flex-start;
     justify-content: space-between;
 
     .cards {
       display: flex;
-      gap: 16px;
+      gap: $gap-s;
       align-items: center;
       justify-content: space-between;
 

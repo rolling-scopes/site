@@ -2,8 +2,9 @@ import { DocsLayout } from '../components/docs-layout/docs-layout';
 import { fetchMenu } from '../utils/fetch-menu';
 import { Language } from '@/shared/types';
 
-type RouteParams = { lang: Language;
-  slug: string[]; };
+type RouteParams = {
+  lang: string;
+};
 
 type RootLayoutProps = {
   children: React.ReactNode;
@@ -11,7 +12,7 @@ type RootLayoutProps = {
 };
 
 export default async function RootLayout({ children, params }: RootLayoutProps) {
-  const { lang } = await params;
+  const { lang } = (await params) as { lang: Language };
   const menu = await fetchMenu(lang);
 
   return (

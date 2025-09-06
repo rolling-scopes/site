@@ -83,7 +83,7 @@ export const mockedCourses: Course[] = [
     iconSmall: MOCKED_IMAGE_PATH,
     iconFooter: MOCKED_IMAGE_PATH,
     secondaryIcon: MOCKED_IMAGE_PATH,
-    enroll: null,
+    enroll: undefined,
     mode: 'online',
     altTitle: 'JavaScript / Front-end',
     backgroundStyle: {
@@ -195,7 +195,7 @@ export const mockedCourses: Course[] = [
     language: 'en',
     mode: 'online',
     detailsUrl: `/${ROUTES.COURSES}/${ROUTES.AWS_DEVOPS}`,
-    enroll: null,
+    enroll: undefined,
     backgroundStyle: {
       backgroundColor: '#F4F1FA',
       accentColor: '#7356BF',
@@ -210,7 +210,7 @@ export const MOCKED_MERCH_DATA = {
   subtitle: 'Are you an RS sloth fan and looking for RS merch?',
   paragraph: 'The wait is almost over',
   buttonText: 'Discover merch assets',
-  buttonLink: 'https://sloths.rs.school/',
+  buttonLink: '/merch',
   imageAltText:
     'A collage of photos with branded T-shirts, cups, and stickers featuring the RSSchool logo',
 };

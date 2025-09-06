@@ -1,0 +1,24 @@
+.partnered-content {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-s;
+
+  .partners {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-self: center;
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: 600px;
+
+    @include media-tablet {
+      row-gap: $gap-s;
+    }
+
+    @include media-mobile {
+      row-gap: $gap-xxxl;
+    }
+  }
+}

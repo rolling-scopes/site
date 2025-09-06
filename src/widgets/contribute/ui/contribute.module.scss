@@ -1,7 +1,7 @@
 .contribute {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: $gap-l;
   justify-content: space-between;
 
   @include media-laptop {
@@ -33,7 +33,7 @@
 }
 
 .general {
-  gap: 50px;
+  gap: $gap-xxxl;
   width: 100%;
 
   @include media-tablet-large {
@@ -43,7 +43,7 @@
 
 .contribute-options {
   display: flex;
-  gap: 24px;
+  gap: $gap-l;
   align-items: center;
   justify-content: space-between;
 
@@ -58,7 +58,7 @@
 .option-item {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: $gap-s;
   max-width: 500px;
 
   @include media-laptop {

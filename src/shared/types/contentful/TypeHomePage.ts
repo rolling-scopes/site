@@ -32,6 +32,20 @@ export interface TypeHomePageFields {
    * @summary The slug that will be used in the url bar
    */
   slug: EntryFieldTypes.Symbol;
+
+  /**
+   * Field type definition for field 'seoDescription' (SEO Description)
+   * @name SEO Description
+   * @localized false
+   * @summary Enter a description of the page using sentence casing, remaining between 100 and 150 characters. The format should include the page's topic and value proposition (if relevant), followed by a call-to-action
+   */
+  seoDescription: EntryFieldTypes.Symbol;
+  /**
+   * Field type definition for field 'seoKeywords' (SEO Keywords)
+   * @name SEO Keywords
+   * @localized false
+   */
+  seoKeywords: EntryFieldTypes.Symbol;
   /**
    * Field type definition for field 'sections' (sections)
    * @name sections
@@ -59,7 +73,7 @@ export interface TypeHomePageFields {
  * @type {TypeHomePageSkeleton}
  * @author 7eBAEG99Zg1EDoAM5bOSWX
  * @since 2025-03-27T06:29:32.332Z
- * @version 65
+ * @version 69
  */
 export type TypeHomePageSkeleton = EntrySkeletonType<TypeHomePageFields, 'homePage'>;
 /**
@@ -68,7 +82,7 @@ export type TypeHomePageSkeleton = EntrySkeletonType<TypeHomePageFields, 'homePa
  * @type {TypeHomePage}
  * @author 7eBAEG99Zg1EDoAM5bOSWX
  * @since 2025-03-27T06:29:32.332Z
- * @version 65
+ * @version 69
  */
 export type TypeHomePage<
   Modifiers extends ChainModifiers,

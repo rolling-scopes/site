@@ -13,6 +13,7 @@ import iconBlue from '@/shared/assets/svg/heart-blue.svg';
 import iconYellow from '@/shared/assets/svg/heart-yellow.svg';
 import logoBlue from '@/shared/assets/svg/rss-logo-blue.svg';
 import { KEY_CODES, NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
+import { getActualData } from '@/shared/helpers/get-actual-data';
 import { useOutsideClick } from '@/shared/hooks/use-outside-click/use-outside-click';
 import { Logo } from '@/shared/ui/logo';
 import {
@@ -40,7 +41,12 @@ export const Header = ({ courses }: HeaderProps) => {
   const pathname = usePathname();
   const isMentorshipPage = pathname.includes(ROUTES.MENTORSHIP);
   const iconSrc = isMentorshipPage ? iconBlue : iconYellow;
-  const coursesWithMentorship = transformCoursesToMentorship(courses);
+  const actualCourses = getActualData({
+    data: courses,
+    filterStale: false,
+    sort: false,
+  });
+  const coursesWithMentorship = transformCoursesToMentorship(actualCourses);
 
   // mobile menu logic
 
@@ -67,8 +73,8 @@ export const Header = ({ courses }: HeaderProps) => {
   // desktop menu logic
 
   const menuData = useMemo(
-    () => generateNavMenuData(courses, coursesWithMentorship),
-    [courses, coursesWithMentorship],
+    () => generateNavMenuData(actualCourses, coursesWithMentorship),
+    [actualCourses, coursesWithMentorship],
   );
 
   const navItemsData = generateNavItemsConfig(iconSrc);
@@ -121,7 +127,7 @@ export const Header = ({ courses }: HeaderProps) => {
           <menu className={cx('mobile-menu', { open: isMobileMenuOpen })} data-testid="mobile-menu">
             <MobileView
               onClose={handleMenuClose}
-              courses={courses}
+              courses={actualCourses}
               type="header"
               logoIcon={isMentorshipPage ? logoBlue : undefined}
               isMenuOpen={isMobileMenuOpen}

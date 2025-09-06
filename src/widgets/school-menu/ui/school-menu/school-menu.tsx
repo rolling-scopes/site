@@ -9,8 +9,8 @@ import styles from './school-menu.module.scss';
 
 const cx = classNames.bind(styles);
 
-type SchoolMenuProps = PropsWithChildren &
-  HTMLProps<HTMLUListElement> & {
+type SchoolMenuProps = PropsWithChildren
+  & HTMLProps<HTMLUListElement> & {
     heading?: string;
     color?: Color;
     isVisible?: boolean;
