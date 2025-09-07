@@ -91,7 +91,6 @@
   @extend %transition-all;
 
   display: inline-flex;
-  gap: $gap-xs;
   align-items: center;
   justify-content: center;
 
@@ -109,6 +108,7 @@
 
     min-width: 24px;
     min-height: 24px;
+    margin-right: 8px;
   }
 
   &:hover {
