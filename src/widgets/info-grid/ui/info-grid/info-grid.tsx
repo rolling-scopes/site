@@ -18,7 +18,7 @@ const gridVariants = cva(cx('info-grid'), {
   defaultVariants: { borderColor: 'gray' },
 });
 
-type InfoGridProps = Pick<HTMLAttributes<HTMLParagraphElement>, 'className' | 'children'>
+type InfoGridProps = Pick<HTMLAttributes<HTMLDivElement>, 'className' | 'children'>
   & InfoGridVariants;
 
 export const InfoGrid = ({ children, className, borderColor }: InfoGridProps) => {
