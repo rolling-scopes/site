@@ -3,7 +3,7 @@ import { getSectionId } from '@/shared/helpers/get-section-id';
 import { richTextRenderer } from '@/shared/helpers/rich-text-renderer';
 import { TypeMediaTextBlockWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
 import { Section } from '@/shared/types/types';
-import { ApiMediaTextBlockSettings } from '@/widgets/media-text-block';
+import type { ApiMediaTextBlockSettings } from '@/widgets/media-text-block';
 
 export function transformMediaTextBlockSection(
   section: TypeMediaTextBlockWithoutUnresolvableLinksResponse,
