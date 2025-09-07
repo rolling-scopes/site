@@ -1,3 +1,5 @@
+import { CSSProperties } from 'react';
+
 import { richTextRenderer } from '@/shared/helpers/rich-text-renderer';
 import { TypeMediaGridWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
 import { Section } from '@/shared/types/types';
@@ -9,12 +11,10 @@ export function transformMediaGridSection(
   const id = section.sys.id;
   const name = section.sys.contentType.sys.id;
   const media = richTextRenderer(section.fields.media);
-  const settings = section.fields.settings as ApiMediaGridSectionSettings;
-  const numberOfColumns = settings?.numberOfColumns;
-  const removeItemsOnResponsive = settings?.removeItemsOnResponsive;
-  const rowGapPx = settings?.rowGapPx;
-  const colGapPx = settings?.colGapPx;
-  const fitContent = settings?.fitContent;
+  const { numberOfColumns, removeItemsOnResponsive, rowGapPx, colGapPx, fitContent, ...settings } =
+    section.fields.settings as ApiMediaGridSectionSettings;
+
+  console.log(section.fields.settings, 'checking settings');
 
   return {
     id,
@@ -26,6 +26,7 @@ export function transformMediaGridSection(
       rowGapPx,
       fitContent,
       colGapPx,
+      settings: settings as CSSProperties,
     },
   };
 }

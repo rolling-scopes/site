@@ -17,6 +17,7 @@ export const MediaGrid = ({
   removeItemsOnResponsive,
   rowGapPx,
   colGapPx,
+  settings,
 }: MediaGridSectionData) => {
   const [minGridColSize, setMinGridColSize] = useState<number>();
 
@@ -44,6 +45,7 @@ export const MediaGrid = ({
         })}
         style={
           {
+            ...settings,
             '--grid-max-col-count': numberOfColumns,
             '--grid-col-gap': gridColGapPx,
             '--grid-row-gap': gridRowGapPx,

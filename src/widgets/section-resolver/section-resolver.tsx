@@ -141,6 +141,7 @@ export const SectionResolver = async ({
           rowGapPx={section.data.rowGapPx}
           colGapPx={section.data.colGapPx}
           fitContent={section.data.fitContent}
+          settings={section.data.settings}
         >
           {section.data.media}
         </MediaGrid>

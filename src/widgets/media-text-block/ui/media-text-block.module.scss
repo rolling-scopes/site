@@ -51,6 +51,7 @@
 
   .content-wrapper-right {
     grid-column: 2 / 3;
+    justify-content: end;
 
     @include media-tablet-large {
       grid-column: 1 / 2;
@@ -129,14 +130,14 @@
 
   .content-bottom {
     display: grid;
-    align-items: flex-start;
+    align-items: start;
     justify-content: space-between;
 
     width: 100%;
     padding-top: 0;
 
     & > :last-child:nth-child(n + 2) {
-      justify-self: flex-end;
+      justify-self: end;
     }
 
     .content-bottom {

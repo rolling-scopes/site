@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 import { isExternalUri } from '@/shared/helpers/is-external-uri';
 import { prepareAssetImage } from '@/shared/helpers/prepare-asset-image';
+import { replaceTextBreaksWithBrTag } from '@/shared/helpers/replace-text-breaks-with-br-tag';
 import { transformPageSections } from '@/shared/helpers/transform-page-sections';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { ContentList } from '@/shared/ui/list/content-list';
@@ -16,7 +17,8 @@ import { SectionResolver } from '@/widgets/section-resolver';
 type RichTextDocument = Parameters<typeof documentToReactComponents>['0'];
 type RichTextOptions = Parameters<typeof documentToReactComponents>['1'];
 
-export const RICH_TEXT_OPTIONS = {
+export const RICH_TEXT_OPTIONS: RichTextOptions = {
+  renderText: replaceTextBreaksWithBrTag,
   renderNode: {
     [BLOCKS.PARAGRAPH]: (_node: Block | Inline, children: ReactNode) => {
       if (!children) {
