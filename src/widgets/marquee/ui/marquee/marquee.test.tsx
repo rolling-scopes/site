@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 
 import { Marquee } from '@/widgets/marquee';
 
-export const places = [
+const places = [
   'Kazakhstan',
   'Belarus',
   'Latvia',
