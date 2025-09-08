@@ -72,13 +72,13 @@ export const API_CONTENT_TYPE_DICTIONARY = {
 } as const;
 
 export const ANCHORS = {
-  ABOUT_COMMUNITY: 'about-community',
+  ABOUT_COMMUNITY: 'who-we-are',
   ABOUT_SCHOOL: 'about-rs-school',
   MENTORS_WANTED: 'mentors-wanted',
   UPCOMING_COURSES: 'upcoming-courses',
-  EVENTS: 'events',
-  MERCH: 'merch',
-  CONTRIBUTE: 'contribute',
+  EVENTS: 'meet-us-at-events',
+  MERCH: 'rs-merch',
+  CONTRIBUTE: 'how-to-contribute',
   DONATE: 'donate',
 };
 

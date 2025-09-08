@@ -40,7 +40,7 @@ export interface TypeMediaGridFields {
  * @type {TypeMediaGridSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-07-16T12:45:40.455Z
- * @version 29
+ * @version 31
  */
 export type TypeMediaGridSkeleton = EntrySkeletonType<TypeMediaGridFields, 'mediaGrid'>;
 /**
@@ -49,7 +49,7 @@ export type TypeMediaGridSkeleton = EntrySkeletonType<TypeMediaGridFields, 'medi
  * @type {TypeMediaGrid}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-07-16T12:45:40.455Z
- * @version 29
+ * @version 31
  */
 export type TypeMediaGrid<
   Modifiers extends ChainModifiers,

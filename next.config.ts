@@ -15,6 +15,7 @@ const nextConfig: NextConfig = {
       @use '@/core/styles/constants' as *;
       @use '@/core/styles/mixins' as *;
       @use '@/core/styles/placeholders' as *;
+      @use '@/core/styles/functions' as *;
     `,
   },
   devIndicators: false,

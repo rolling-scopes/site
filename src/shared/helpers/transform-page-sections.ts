@@ -1,4 +1,10 @@
 import { PageResponseSections, Section } from '@/shared/types/types';
+import { isLink } from '@/shared/ui/link-custom/helpers/is-link';
+import { transformLink } from '@/shared/ui/link-custom/helpers/transform-link';
+import { isSlider } from '@/shared/ui/slider/helpers/is-slider';
+import { transformSlider } from '@/shared/ui/slider/helpers/transform-slider';
+import { isSocialLink } from '@/shared/ui/social-media-item/helpers/is-social-link';
+import { transformSocialLink } from '@/shared/ui/social-media-item/helpers/transform-social-link';
 import { isAboutCourseSection, transformAboutCourseSection } from '@/widgets/about-course';
 import {
   isExternalEmbedContent,
@@ -8,10 +14,12 @@ import { isHeroSection } from '@/widgets/hero/helpers/is-hero-section';
 import { transformHeroSection } from '@/widgets/hero/helpers/transform-hero-section';
 import { isHighlightCard } from '@/widgets/highlight-card/helpers/is-highlight-card';
 import { transformHighlightCard } from '@/widgets/highlight-card/helpers/transform-highlight-card';
+import { isInfoGridSection, transformInfoGridSection } from '@/widgets/info-grid';
 import {
   isLearningPathStagesSection,
   transformLearningPathStages,
 } from '@/widgets/learning-path-stages';
+import { isMarqueeSection, transformMarqueeSection } from '@/widgets/marquee';
 import { isMediaGridSection } from '@/widgets/media-grid/helpers/is-media-grid-section';
 import {
   transformMediaGridSection,
@@ -78,6 +86,26 @@ export function transformPageSections(sections: PageResponseSections): Section[]
 
     if (isExternalEmbedContent(section)) {
       return transformExternalEmbedContent(section);
+    }
+
+    if (isInfoGridSection(section)) {
+      return transformInfoGridSection(section);
+    }
+
+    if (isMarqueeSection(section)) {
+      return transformMarqueeSection(section);
+    }
+
+    if (isSlider(section)) {
+      return transformSlider(section);
+    }
+
+    if (isSocialLink(section)) {
+      return transformSocialLink(section);
+    }
+
+    if (isLink(section)) {
+      return transformLink(section);
     }
 
     throw new Error('Unable to determine section type.');

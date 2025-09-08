@@ -9,4 +9,9 @@ export const SECTION_TYPE = {
   MEDIA_GRID: 'mediaGrid',
   HIGHLIGHT_CARD: 'highlightCard',
   EXTERNAL_EMBED_CONTENT: 'externalEmbedContent',
+  INFO_GRID: 'infoGrid',
+  MARQUEE: 'marquee',
+  SLIDER: 'slider',
+  SOCIAL_LINK: 'socialLink',
+  LINK: 'link',
 } as const;
