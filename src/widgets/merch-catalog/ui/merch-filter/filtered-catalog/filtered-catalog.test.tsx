@@ -51,8 +51,8 @@ vi.mock('../filter-controls/filter-controls', () => ({
       <span>{`SelectedTypesMock: ${props.selectedTags?.join(',') ?? ''}`}</span>
       <span>{`AllAvailableTagsMock: ${props.allAvailableTags?.join(',') ?? ''}`}</span>
       <span>{`HasActiveFiltersMock: ${props.hasActiveFilters}`}</span>
-      <span>{`IsMobileLayoutMock: ${props.isMobileLayout}`}</span>
-      <span>{`AreTagsExpandedMobileMock: ${props.areTagsExpandedMobile}`}</span>
+      <span>{`IsTabletLayoutMock: ${props.isTabletLayout}`}</span>
+      <span>{`AreTagsExpandedTabletMock: ${props.areTagsExpandedTablet}`}</span>
     </div>
   )),
 }));
@@ -139,8 +139,8 @@ describe('FilteredMerchView', () => {
           <span>{`SelectedTypesMock: ${props.selectedTags?.join(',') ?? ''}`}</span>
           <span>{`AllAvailableTagsMock: ${props.allAvailableTags?.join(',') ?? ''}`}</span>
           <span>{`HasActiveFiltersMock: ${props.hasActiveFilters}`}</span>
-          <span>{`IsMobileLayoutMock: ${props.isMobileLayout}`}</span>
-          <span>{`AreTagsExpandedMobileMock: ${props.areTagsExpandedMobile}`}</span>
+          <span>{`IsTabletLayoutMock: ${props.isTabletLayout}`}</span>
+          <span>{`AreTagsExpandedTabletMock: ${props.areTagsExpandedTablet}`}</span>
         </div>
       );
     });
@@ -227,13 +227,13 @@ describe('FilteredMerchView', () => {
     expect(screen.getByTestId('rendered-products-count')).toHaveTextContent('Rendered products: 4');
   });
 
-  describe('Mobile Layout Interactions', () => {
+  describe('Tablet Layout Interactions', () => {
     beforeEach(() => {
       vi.clearAllMocks();
       mockedUseMediaQueryHook.mockReturnValue(false);
     });
 
-    it('passes isMobileLayout based on useMediaQuery hook', () => {
+    it('passes isTabletLayout based on useMediaQuery hook', () => {
       mockedUseMediaQueryHook.mockReturnValue(true);
       render(
         <FilteredMerchView
@@ -241,7 +241,7 @@ describe('FilteredMerchView', () => {
           initialAvailableTags={expectedUniqueTags}
         />,
       );
-      expect(capturedFilterControlsProps.isMobileLayout).toBe(true);
+      expect(capturedFilterControlsProps.isTabletLayout).toBe(true);
 
       mockedUseMediaQueryHook.mockReturnValue(false);
       render(
@@ -250,10 +250,10 @@ describe('FilteredMerchView', () => {
           initialAvailableTags={expectedUniqueTags}
         />,
       );
-      expect(capturedFilterControlsProps.isMobileLayout).toBe(false);
+      expect(capturedFilterControlsProps.isTabletLayout).toBe(false);
     });
 
-    it('toggles areTagsExpandedMobile for FilterControls via onToggleTagsExpansionMobile', () => {
+    it('toggles areTagsExpandedTablet for FilterControls via onToggleTagsExpansionTablet', () => {
       mockedUseMediaQueryHook.mockReturnValue(true);
       render(
         <FilteredMerchView
@@ -261,19 +261,19 @@ describe('FilteredMerchView', () => {
           initialAvailableTags={expectedUniqueTags}
         />,
       );
-      expect(capturedFilterControlsProps.isMobileLayout).toBe(true);
-      expect(capturedFilterControlsProps.areTagsExpandedMobile).toBe(false);
+      expect(capturedFilterControlsProps.isTabletLayout).toBe(true);
+      expect(capturedFilterControlsProps.areTagsExpandedTablet).toBe(false);
       act(() => {
-        capturedFilterControlsProps.onToggleTagsExpansionMobile!();
+        capturedFilterControlsProps.onToggleTagsExpansionTablet!();
       });
-      expect(capturedFilterControlsProps.areTagsExpandedMobile).toBe(true);
+      expect(capturedFilterControlsProps.areTagsExpandedTablet).toBe(true);
       act(() => {
-        capturedFilterControlsProps.onToggleTagsExpansionMobile!();
+        capturedFilterControlsProps.onToggleTagsExpansionTablet!();
       });
-      expect(capturedFilterControlsProps.areTagsExpandedMobile).toBe(false);
+      expect(capturedFilterControlsProps.areTagsExpandedTablet).toBe(false);
     });
 
-    it('resets areMobileFiltersExpanded when switching to desktop layout', () => {
+    it('resets areTabletFiltersExpanded when switching to desktop layout', () => {
       mockedUseMediaQueryHook.mockReturnValue(true);
       const { rerender } = render(
         <FilteredMerchView
@@ -283,10 +283,10 @@ describe('FilteredMerchView', () => {
       );
 
       act(() => {
-        capturedFilterControlsProps.onToggleTagsExpansionMobile!();
+        capturedFilterControlsProps.onToggleTagsExpansionTablet!();
       });
-      expect(capturedFilterControlsProps.areTagsExpandedMobile).toBe(true);
-      expect(capturedFilterControlsProps.isMobileLayout).toBe(true);
+      expect(capturedFilterControlsProps.areTagsExpandedTablet).toBe(true);
+      expect(capturedFilterControlsProps.isTabletLayout).toBe(true);
 
       mockedUseMediaQueryHook.mockReturnValue(false);
       rerender(
@@ -295,8 +295,8 @@ describe('FilteredMerchView', () => {
           initialAvailableTags={expectedUniqueTags}
         />,
       );
-      expect(capturedFilterControlsProps.isMobileLayout).toBe(false);
-      expect(capturedFilterControlsProps.areTagsExpandedMobile).toBe(false);
+      expect(capturedFilterControlsProps.isTabletLayout).toBe(false);
+      expect(capturedFilterControlsProps.areTagsExpandedTablet).toBe(false);
     });
   });
 

@@ -1,11 +1,11 @@
 .filter-catalog {
   display: flex;
-  gap: 30px;
+  gap: $gap-xl;
 
-  @media (width <= 960px) {
+  @include media-tablet-large {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: $gap-xxxl;
     align-items: center;
 
     width: 100%;
@@ -16,7 +16,7 @@
   display: block;
   width: 222px;
 
-  @media (width <= 960px) {
+  @include media-tablet-large {
     width: 100%;
   }
 }

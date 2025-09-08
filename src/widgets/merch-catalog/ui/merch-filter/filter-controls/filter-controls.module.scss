@@ -1,7 +1,7 @@
 .filter-container {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: $gap-s;
 }
 
 .filter-title-wrapper {
@@ -16,11 +16,11 @@
 
 .filter-search-wrapper {
   display: flex;
-  gap: 5px;
+  gap: $gap-xxs;
 
   padding: 5px;
   border: 1px solid $color-gray-300;
-  border-radius: 5px;
+  border-radius: $border-radius-xxs;
 }
 
 .filter-search-input {
@@ -30,14 +30,14 @@
   outline: none;
 }
 
-.mobile-toggle-button {
+.tablet-toggle-button {
   .filter-toggle-arrow {
     &.expanded {
       transform: rotate(180deg);
     }
   }
 
-  @at-root .filter-container.mobile & {
+  @at-root .filter-container.tablet & {
     cursor: pointer;
 
     display: flex;
@@ -47,10 +47,10 @@
     width: 100%;
     padding: 12px;
     border: none;
-    border-radius: 5px;
+    border-radius: $border-radius-xxs;
 
-    font-size: 15px;
-    font-weight: 500;
+    font-size: $font-size-s;
+    font-weight: $font-weight-medium;
 
     background-color: transparent;
     outline: none;
@@ -66,13 +66,13 @@
 
   padding: 4px 10px;
   border: 1px solid $color-gray-300;
-  border-radius: 5px;
+  border-radius: $border-radius-xxs;
 
-  font-size: 12px;
+  font-size: $font-size-xxs;
   color: $color-gray-600;
 
   visibility: hidden;
-  opacity: 0;
+  opacity: $opacity-0;
   background: none;
   outline: none;
 
@@ -85,21 +85,20 @@
 
   &.active {
     visibility: visible;
-    opacity: 1;
+    opacity: $opacity-100;
     transition-delay: 0s;
   }
 }
 
-.mobile-clear-button {
+.tablet-clear-button {
   cursor: pointer;
 
   width: 100%;
-  margin-bottom: 15px;
   padding: 8px;
   border: 1px solid $color-gray-300;
-  border-radius: 5px;
+  border-radius: $border-radius-xxs;
 
-  font-size: 15px;
+  font-size: $font-size-s;
   color: $color-gray-600;
 
   background: none;
@@ -116,19 +115,19 @@
 .filter-tags-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: $gap-xs;
 }
 
 .filter-tag-label {
   cursor: pointer;
 
   display: flex;
-  gap: 10px;
+  gap: $gap-xs;
 
   width: 100%;
   padding: 8px;
   border: 1px solid transparent;
-  border-radius: 5px;
+  border-radius: $border-radius-xxs;
 
   background-color: $color-gray-50;
 
@@ -144,10 +143,10 @@
 
   width: 18px;
   height: 18px;
-  border: 2px solid #ccc;
-  border-radius: 3px;
+  border: 2px solid $color-gray-300;
+  border-radius: $border-radius-xxs;
 
-  background-color: #fff;
+  background-color: $color-white;
 
   transition:
     background-color 0.2s,
@@ -180,7 +179,7 @@
   margin: 0;
   padding: 0;
 
-  opacity: 0;
+  opacity: $opacity-0;
 
   &:checked + .filter-checkbox-custom {
     border-color: $color-yellow;

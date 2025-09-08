@@ -14,6 +14,8 @@ import styles from './filtered-catalog.module.scss';
 
 const cx = classNames.bind(styles);
 
+const TABLET_BREAKPOINT_PX = 1024;
+
 export const FilteredMerchView = ({
   initialProducts,
   initialAvailableTags,
@@ -22,8 +24,8 @@ export const FilteredMerchView = ({
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [allAvailableTags, setAllAvailableTags] = useState<string[]>(initialAvailableTags || []);
-  const isMobileLayout = useMediaQuery('(max-width: 960px)');
-  const [areMobileFiltersExpanded, setAreMobileFiltersExpanded] = useState(false);
+  const isTabletLayout = useMediaQuery(`(max-width: ${TABLET_BREAKPOINT_PX}px)`);
+  const [areTabletFiltersExpanded, setAreTabletFiltersExpanded] = useState(false);
 
   const [searchTerm, setSearchTerm] = useState(() => {
     return searchParams.get('search') || '';
@@ -96,15 +98,15 @@ export const FilteredMerchView = ({
     updateUrl('', []);
   };
 
-  const toggleMobileFiltersExpansion = () => {
-    setAreMobileFiltersExpanded(!areMobileFiltersExpanded);
+  const toggleTabletFiltersExpansion = () => {
+    setAreTabletFiltersExpanded(!areTabletFiltersExpanded);
   };
 
   useEffect(() => {
-    if (!isMobileLayout && areMobileFiltersExpanded) {
-      setAreMobileFiltersExpanded(false);
+    if (!isTabletLayout && areTabletFiltersExpanded) {
+      setAreTabletFiltersExpanded(false);
     }
-  }, [isMobileLayout, areMobileFiltersExpanded]);
+  }, [isTabletLayout, areTabletFiltersExpanded]);
 
   const hasActiveFilters = searchTerm.trim() !== '' || selectedTypes.length > 0;
 
@@ -120,9 +122,9 @@ export const FilteredMerchView = ({
           onSearchChange={handleSearchChange}
           onTagChange={handleTypeChange}
           onClearFilters={handleClearFilters}
-          isMobileLayout={isMobileLayout}
-          areTagsExpandedMobile={areMobileFiltersExpanded}
-          onToggleTagsExpansionMobile={toggleMobileFiltersExpansion}
+          isTabletLayout={isTabletLayout}
+          areTagsExpandedTablet={areTabletFiltersExpanded}
+          onToggleTagsExpansionTablet={toggleTabletFiltersExpansion}
         />
       </div>
       <>

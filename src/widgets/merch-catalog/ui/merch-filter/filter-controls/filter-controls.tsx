@@ -16,15 +16,15 @@ export const FilterControls = ({
   onSearchChange,
   onTagChange,
   onClearFilters,
-  isMobileLayout = false,
-  areTagsExpandedMobile = false,
-  onToggleTagsExpansionMobile,
+  isTabletLayout = false,
+  areTagsExpandedTablet = false,
+  onToggleTagsExpansionTablet,
 }: FilterControlsProps) => {
-  const showTagsSection = !isMobileLayout || areTagsExpandedMobile;
+  const showTagsSection = !isTabletLayout || areTagsExpandedTablet;
 
   return (
-    <div className={cx('filter-container', { mobile: isMobileLayout })}>
-      {!isMobileLayout && (
+    <div className={cx('filter-container', { tablet: isTabletLayout })}>
+      {!isTabletLayout && (
         <div className={cx('filter-title-wrapper')}>
           <h4 className={cx('filter-title')}>Filter merch</h4>
           <button
@@ -47,22 +47,22 @@ export const FilterControls = ({
         />
       </div>
 
-      {isMobileLayout && (
+      {isTabletLayout && (
         <button
-          className={cx('mobile-toggle-button', { expanded: areTagsExpandedMobile })}
-          onClick={onToggleTagsExpansionMobile}
+          className={cx('tablet-toggle-button', { expanded: areTagsExpandedTablet })}
+          onClick={onToggleTagsExpansionTablet}
         >
           Filter By:
-          {hasActiveFilters && !areTagsExpandedMobile && <span></span>}
-          <span className={cx('filter-toggle-arrow', { expanded: areTagsExpandedMobile })}>
+          {hasActiveFilters && !areTagsExpandedTablet && <span></span>}
+          <span className={cx('filter-toggle-arrow', { expanded: areTagsExpandedTablet })}>
             <DropdownArrow />
           </span>
         </button>
       )}
       {showTagsSection && allAvailableTags && allAvailableTags.length > 0 && (
         <>
-          {isMobileLayout && hasActiveFilters && (
-            <button className={cx('mobile-clear-button')} onClick={onClearFilters}>
+          {isTabletLayout && hasActiveFilters && (
+            <button className={cx('tablet-clear-button')} onClick={onClearFilters}>
               Clear
             </button>
           )}

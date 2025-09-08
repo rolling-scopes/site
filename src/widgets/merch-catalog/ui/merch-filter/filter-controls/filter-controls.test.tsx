@@ -13,9 +13,9 @@ describe('FilterControls', () => {
     onSearchChange: vi.fn(),
     onTagChange: vi.fn(),
     onClearFilters: vi.fn(),
-    isMobileLayout: false,
-    areTagsExpandedMobile: false,
-    onToggleTagsExpansionMobile: vi.fn(),
+    isTabletLayout: false,
+    areTagsExpandedTablet: false,
+    onToggleTagsExpansionTablet: vi.fn(),
   };
 
   it('renders search input', () => {
@@ -40,14 +40,14 @@ describe('FilterControls', () => {
     expect(mockProps.onTagChange).toHaveBeenCalledWith('tag1');
   });
 
-  it('renders mobile toggle button and hides tags by default in mobile layout', () => {
-    render(<FilterControls {...mockProps} isMobileLayout={true} areTagsExpandedMobile={false} />);
+  it('renders tablet toggle button and hides tags by default in tablet layout', () => {
+    render(<FilterControls {...mockProps} isTabletLayout={true} areTagsExpandedTablet={false} />);
     expect(screen.getByRole('button', { name: /Filter By:/i })).toBeInTheDocument();
     expect(screen.queryByText('tag1')).not.toBeInTheDocument();
   });
 
-  it('shows tags when mobile toggle button is clicked and areTagsExpandedMobile is true', () => {
-    render(<FilterControls {...mockProps} isMobileLayout={true} areTagsExpandedMobile={true} />);
+  it('shows tags when tablet toggle button is clicked and areTagsExpandedTablet is true', () => {
+    render(<FilterControls {...mockProps} isTabletLayout={true} areTagsExpandedTablet={true} />);
     expect(screen.getByRole('button', { name: /Filter By:/i })).toBeInTheDocument();
     expect(screen.getByText('tag1')).toBeVisible();
   });
