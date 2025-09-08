@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { getActualData } from './get-actual-data';
 import { MOCKED_IMAGE_PATH } from '../__tests__/constants';
 import { Course } from '@/entities/course';
+import { COURSE_DATE_FORMAT } from '@/entities/course/constants';
 import { Event } from '@/entities/event';
 import { COURSE_LINKS, TO_BE_DETERMINED } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/day-js';
@@ -11,18 +12,18 @@ import { COURSE_TITLES } from 'data';
 
 const staleAfterDays = 14;
 
-const dayInFuture = dayJS().add(2, 'month').toISOString();
-const nonStaleDayInPast = dayJS().subtract(1, 'day').toISOString();
+const dayInFuture = dayJS().add(2, 'month').format(COURSE_DATE_FORMAT);
+const nonStaleDayInPast = dayJS().subtract(1, 'day').format(COURSE_DATE_FORMAT);
 const staleDayInPast = dayJS()
   .subtract(staleAfterDays + 100, 'day')
-  .toISOString();
+  .format(COURSE_DATE_FORMAT);
 
 const coursesMock: Course[] = [
   {
     id: '1',
     title: COURSE_TITLES.REACT,
     descriptionUrl: COURSE_LINKS.REACT,
-    subTitle: null,
+    subTitle: undefined,
     altTitle: 'altTitle',
     iconSrc: {
       src: 'icon',
@@ -56,7 +57,7 @@ const coursesMock: Course[] = [
   {
     id: '2',
     title: COURSE_TITLES.REACT,
-    subTitle: null,
+    subTitle: undefined,
     descriptionUrl: COURSE_LINKS.REACT,
     altTitle: 'altTitle',
     iconSrc: {
@@ -91,7 +92,7 @@ const coursesMock: Course[] = [
   {
     id: '3',
     title: COURSE_TITLES.REACT,
-    subTitle: null,
+    subTitle: undefined,
     descriptionUrl: COURSE_LINKS.REACT,
     altTitle: 'altTitle',
     iconSrc: {

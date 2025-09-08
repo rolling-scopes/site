@@ -1,11 +1,13 @@
 import { AboutList } from './about-list';
 import { Course } from '@/entities/course';
+import { CourseMenuItemsFresh } from '@/shared/ui/course-menu-items-fresh';
 import { SchoolMenu } from '@/widgets/school-menu';
 import { schoolMenuStaticLinks } from 'data';
 
 type DesktopViewProps = {
   courses: Course[];
 };
+
 export const DesktopView = ({ courses }: DesktopViewProps) => {
   return (
     <div className="desktop-view" data-testid="desktop-view">
@@ -26,16 +28,7 @@ export const DesktopView = ({ courses }: DesktopViewProps) => {
 
       <div className="right">
         <SchoolMenu heading="all courses" color="light">
-          {courses.map((course) => (
-            <SchoolMenu.Item
-              key={course.id}
-              icon={course.iconFooter}
-              title={course.title}
-              description={course.startDate}
-              url={course.detailsUrl}
-              color="light"
-            />
-          ))}
+          <CourseMenuItemsFresh courses={courses} color="light" icon="iconFooter" />
         </SchoolMenu>
       </div>
     </div>

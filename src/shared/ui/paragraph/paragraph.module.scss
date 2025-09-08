@@ -5,25 +5,35 @@
 
   &.medium-font-size {
     padding-bottom: 18px;
-    font-size: 18px;
+    font-size: $font-size-m;
     font-weight: $font-weight-regular;
   }
 
   &.large-font-size {
     padding-bottom: 16px;
-    font-size: 20px;
+    font-size: $font-size-l;
     font-weight: $font-weight-medium;
+  }
+
+  &.small-font-size {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-regular;
+    line-height: 24px;
   }
 
   @include media-laptop {
     &.medium-font-size {
-      font-size: 16px;
+      font-size: $font-size-s;
       line-height: 24px;
     }
 
     &.large-font-size {
-      font-size: 18px;
+      font-size: $font-size-m;
       font-weight: $font-weight-regular;
+    }
+
+    &.small-font-size {
+      line-height: 22px;
     }
   }
 }

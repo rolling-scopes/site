@@ -59,7 +59,7 @@ export class ApiBaseClass {
 
   private async query<TResponse>(
     url: string,
-    { method = HTTP_METHOD.GET, body, headers, params, shouldLog }: RequestOptions = {},
+    { method = HTTP_METHOD.GET, body, headers, params, shouldLog = true }: RequestOptions = {},
   ): Promise<QueryResult<TResponse>> {
     const compiledUrl = this.compileUrl(url, params);
     const queryHeaders = {
@@ -122,6 +122,6 @@ export class ApiBaseClass {
     const urlWithQueryString = `${url}?${queryString}`;
     const baseUrl = !isValidUrl(url) ? this.baseUrl : '';
 
-    return new URL(urlWithQueryString, baseUrl).toString();
+    return `${baseUrl}${urlWithQueryString}`;
   }
 }

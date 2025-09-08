@@ -9,9 +9,9 @@ import styles from './link-custom.module.scss';
 
 export const cx = classNames.bind(styles);
 
-type LinkCustomProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'rel' | 'target'> &
-  VariantProps<typeof linkCustomVariants> &
-  LinkCustomAdditionalProps;
+type LinkCustomProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'rel' | 'target'>
+  & VariantProps<typeof linkCustomVariants>
+  & LinkCustomAdditionalProps;
 
 type LinkCustomAdditionalProps = {
   href: string;
@@ -53,21 +53,22 @@ export const LinkCustom = ({
   highContrast = false,
   ...props
 }: LinkCustomProps) => {
-  const resolveIcon = () => {
+  const resolveIcon = (): ReactNode => {
     switch (true) {
-      case external && variant === 'textLink':
-        return <TextLinkIcon />;
       case icon !== undefined:
         return icon;
-      case variant === 'primary':
+      case external && variant === 'textLink':
+        return <TextLinkIcon />;
       case variant === 'secondary':
         return <ArrowIcon />;
       case variant === 'rounded':
         return <ArrowIcon />;
       default:
-        return <></>;
+        return null;
     }
   };
+
+  const IconComponent = resolveIcon();
 
   return (
     <Link
@@ -84,9 +85,7 @@ export const LinkCustom = ({
       {...(external && externalLinkAttributes)}
     >
       {children}
-      <span className={cx('icon-wrapper')}>
-        {!disabled && resolveIcon()}
-      </span>
+      {IconComponent && <span className={cx('icon-wrapper')}>{!disabled && IconComponent}</span>}
     </Link>
   );
 };

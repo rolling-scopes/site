@@ -31,7 +31,7 @@
       overflow-y: initial;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: $gap-m;
 
       height: initial;
     }
@@ -40,7 +40,7 @@
   .docs-content {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: $gap-xxxl;
 
     width: 100%;
     min-width: 0;
@@ -59,7 +59,7 @@
     align-items: center;
 
     @include media-mobile-landscape {
-      gap: 20px;
+      gap: $gap-m;
     }
   }
 

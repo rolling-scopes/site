@@ -1,17 +1,19 @@
 .school-menu {
+  @extend %transition-all;
+
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: $gap-s;
   color: $color-gray-100;
 
   .heading {
     margin: 0;
-    font-size: 12px;
-    font-weight: $font-weight-medium;
+    font-size: $font-size-xxs;
+    line-height: 1.15;
     text-transform: uppercase;
 
     &.dark {
-      color: $color-black;
+      color: $color-gray-900;
     }
 
     &.light {
@@ -20,25 +22,48 @@
   }
 
   .school-list {
-    display: flex;
-    flex-flow: column wrap;
-    gap: 19px 40px;
-
-    max-height: 280px;
-
+    gap: $gap-l $gap-xl;
+    max-height: 408px;
     list-style-type: none;
 
-    &:has(:nth-child(5)) {
-      width: 512px;
+    &--columns {
+      display: grid;
+      grid-auto-flow: column;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, $gap-xxxl);
 
-      @include media-tablet {
-        width: unset;
+      &:has(:nth-child(5)) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, $gap-xxxl);
       }
     }
 
-    @include media-mobile-landscape {
-      column-gap: 10px;
-      max-height: 600px;
+    &--single {
+      display: flex;
+      flex-flow: column wrap;
     }
+
+    @include media-mobile-landscape {
+      row-gap: $gap-s;
+      max-height: 816px;
+    }
+  }
+
+  &.hidden {
+    @extend %transition-all;
+
+    max-height: 0;
+    margin-top: 0;
+    visibility: hidden;
+    opacity: $opacity-0;
+  }
+
+  &.visible {
+    @extend %transition-all;
+
+    max-height: 816px;
+    margin-top: 26px;
+    visibility: visible;
+    opacity: $opacity-100;
   }
 }

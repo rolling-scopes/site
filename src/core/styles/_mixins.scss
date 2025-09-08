@@ -1,5 +1,11 @@
 @use 'constants' as *;
 
+@mixin media-laptop-large {
+  @media (min-width: ($large-laptop-width)) {
+    @content;
+  }
+}
+
 @mixin media-laptop {
   @media (max-width: $content-width) {
     @content;
@@ -36,6 +42,12 @@
   }
 }
 
+@mixin media-desktop-wide {
+  @media (min-width: #{$content-width + 1px}) {
+    @content;
+  }
+}
+
 @mixin media-hover {
   @media (hover: hover) {
     @content;
@@ -53,7 +65,7 @@
 
   width: 310px;
   height: 300px;
-  border-radius: 100%;
+  border-radius: 50%;
 
   opacity: 0.5;
   background-color: $bg-color;

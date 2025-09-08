@@ -30,14 +30,11 @@ export const CourseItem = ({
         />
       </figure>
       <article className={cx('course-info')}>
-        <Subtitle fontSize="extra-small">
-          {title}
-        </Subtitle>
+        <Subtitle size="extra-small">{title}</Subtitle>
         <ShortInfoPanel
           startDate={startDate}
           registrationEndDate={registrationEndDate}
           language={language}
-          onlyLanguage={true}
         />
       </article>
       <LinkCustom

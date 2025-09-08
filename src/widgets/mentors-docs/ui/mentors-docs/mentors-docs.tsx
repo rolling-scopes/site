@@ -12,7 +12,7 @@ import styles from './mentors-docs.module.scss';
 
 const cx = classNames.bind(styles);
 
-type MentorsDocsProps = {
+export type MentorsDocsProps = {
   mentorDocsLink?: string;
   courseDocsLink?: string;
   courseTitle?: CourseTitle;

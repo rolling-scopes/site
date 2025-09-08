@@ -7,71 +7,21 @@ import { VideoPlayer } from '@/shared/ui/video-player';
 
 vi.mock('@/shared/ui/video-player', () => ({ VideoPlayer: vi.fn(() => <div data-testid="mocked-video-player" />) }));
 
-const fetchMock = vi.spyOn(global, 'fetch');
-
 describe('VideoPlaylistWithPlayer Component', () => {
   afterEach(() => {
     vi.clearAllMocks();
   });
 
-  it('should render loading state initially', () => {
-    render(<VideoPlaylistWithPlayer playlistId="testPlaylist" apiKey="testApiKey" />);
+  it('should render the playlist and video player', () => {
+    render(<VideoPlaylistWithPlayer videoItems={MOCKED_VIDEOS} />);
 
-    expect(screen.getByTestId('loading-message')).toBeVisible();
-  });
-
-  it('should render error message if fetching fails', async () => {
-    fetchMock.mockRejectedValue(new Error('Error fetching playlist'));
-
-    await waitFor(() => {
-      render(<VideoPlaylistWithPlayer playlistId="testPlaylist" apiKey="testApiKey" />);
-    });
-
-    expect(screen.getByTestId('error-message')).toBeVisible();
-    expect(screen.getByTestId('error-message')).toHaveTextContent('Error fetching playlist');
-  });
-
-  it('should render the playlist and video player after loading', async () => {
-    fetchMock.mockResolvedValue({
-      ok: true,
-      json: async () => ({
-        items: MOCKED_VIDEOS.map((video) => ({
-          snippet: {
-            resourceId: { videoId: video.id },
-            title: video.title,
-            thumbnails: { medium: { url: video.thumbnail } },
-          },
-          status: { privacyStatus: 'public' },
-        })),
-      }),
-    } as Response);
-
-    render(<VideoPlaylistWithPlayer playlistId="testPlaylist" apiKey="testApiKey" />);
-
-    await waitFor(() => {
-      expect(screen.getByTestId('playlist')).toBeVisible();
-    });
     expect(screen.getByTestId('mocked-video-player')).toBeVisible();
     expect(screen.getByTestId('playlist-title')).toHaveTextContent(`3 Video Feedbacks`);
     expect(screen.getAllByTestId(/thumbnail-\d+/)).toHaveLength(MOCKED_VIDEOS.length);
   });
 
   it('should select a new video when clicked', async () => {
-    fetchMock.mockResolvedValue({
-      ok: true,
-      json: async () => ({
-        items: MOCKED_VIDEOS.map((video) => ({
-          snippet: {
-            resourceId: { videoId: video.id },
-            title: video.title,
-            thumbnails: { medium: { url: video.thumbnail } },
-          },
-          status: { privacyStatus: 'public' },
-        })),
-      }),
-    } as Response);
-
-    render(<VideoPlaylistWithPlayer playlistId="testPlaylist" apiKey="testApiKey" />);
+    render(<VideoPlaylistWithPlayer videoItems={MOCKED_VIDEOS} />);
 
     await waitFor(() => {
       expect(screen.getByTestId('playlist')).toBeVisible();
@@ -82,7 +32,7 @@ describe('VideoPlaylistWithPlayer Component', () => {
     fireEvent.click(videoItem);
 
     await waitFor(() => {
-      expect(VideoPlayer).toHaveBeenCalledTimes(2);
+      expect(VideoPlayer).toHaveBeenCalledTimes(3);
       expect(VideoPlayer).toHaveBeenNthCalledWith(
         1,
         {
@@ -95,6 +45,15 @@ describe('VideoPlaylistWithPlayer Component', () => {
       expect(VideoPlayer).toHaveBeenNthCalledWith(
         2,
         {
+          'videoId': '1',
+          'className': 'video-player',
+          'data-testid': 'video-player',
+        },
+        undefined,
+      );
+      expect(VideoPlayer).toHaveBeenNthCalledWith(
+        3,
+        {
           'videoId': '2',
           'className': 'video-player',
           'data-testid': 'video-player',
@@ -105,31 +64,16 @@ describe('VideoPlaylistWithPlayer Component', () => {
   });
 
   it('should update playlist height based on video player height', async () => {
-    fetchMock.mockResolvedValue({
-      ok: true,
-      json: async () => ({
-        items: MOCKED_VIDEOS.map((video) => ({
-          snippet: {
-            resourceId: { videoId: video.id },
-            title: video.title,
-            thumbnails: { medium: { url: video.thumbnail } },
-          },
-          status: { privacyStatus: 'public' },
-        })),
-      }),
-    } as Response);
+    render(<VideoPlaylistWithPlayer videoItems={MOCKED_VIDEOS} />);
 
-    Object.defineProperty(HTMLElement.prototype, 'offsetHeight', {
-      configurable: true,
-      get() {
-        return 300;
-      },
-    });
+    const player = screen.getByTestId('main-video-area');
 
-    render(<VideoPlaylistWithPlayer playlistId="testPlaylist" apiKey="testApiKey" />);
-
-    await waitFor(() => {
-      expect(screen.getByTestId('playlist')).toBeVisible();
+    act(() => {
+      Object.defineProperty(player, 'offsetHeight', {
+        configurable: true,
+        value: 513,
+      });
+      window.dispatchEvent(new Event('resize'));
     });
 
     const playlistContainer = screen.getByTestId('playlist');
@@ -137,45 +81,15 @@ describe('VideoPlaylistWithPlayer Component', () => {
     expect(playlistContainer).toHaveStyle({ maxHeight: '513px' });
 
     act(() => {
+      Object.defineProperty(player, 'offsetHeight', {
+        configurable: true,
+        value: 300,
+      });
       window.dispatchEvent(new Event('resize'));
     });
 
     await waitFor(() => {
       expect(playlistContainer).toHaveStyle({ maxHeight: '300px' });
     });
-  });
-
-  it('should filter out private videos', async () => {
-    const publicVideos = MOCKED_VIDEOS.map((video) => ({
-      snippet: {
-        resourceId: { videoId: video.id },
-        title: video.title,
-        thumbnails: { medium: { url: video.thumbnail } },
-      },
-      status: { privacyStatus: 'public' },
-    }));
-    const privateVideos = MOCKED_VIDEOS.map((video) => ({
-      snippet: {
-        resourceId: { videoId: video.id },
-        title: video.title,
-        thumbnails: { medium: { url: video.thumbnail } },
-      },
-      status: { privacyStatus: 'private' },
-    }));
-
-    fetchMock.mockResolvedValue({
-      ok: true,
-      json: async () => ({ items: [...publicVideos, ...privateVideos] }),
-    } as Response);
-
-    render(<VideoPlaylistWithPlayer playlistId="testPlaylist" apiKey="testApiKey" />);
-
-    await waitFor(() => {
-      expect(screen.getByTestId('videos-container')).toBeVisible();
-    });
-
-    const videosContainer = screen.getByTestId('videos-container');
-
-    expect(videosContainer.children).toHaveLength(3);
   });
 });

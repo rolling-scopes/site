@@ -1,4 +1,4 @@
-import util from 'node:util';
+import { inspect } from 'util';
 
 import { stringifyJSONSafe } from '@/shared/helpers/stringify-json-safe';
 import { HttpMethod } from '@/shared/types';
@@ -26,7 +26,7 @@ export function logRequest({
   body,
   error,
 }: LogRequestParams) {
-  if (process.env.LOG_QUERY === 'false') {
+  if (process.env.NODE_ENV === 'production' || process.env.LOG_QUERY === 'false') {
     return;
   }
 
@@ -57,9 +57,9 @@ export function logRequest({
   }
 
   console.log(
-    util.inspect(logObject, {
+    inspect(logObject, {
       depth: null,
-      colors: process.env.NODE_ENV !== 'production',
+      colors: true,
     }),
   );
 }

@@ -1,14 +1,19 @@
-import { PAGE_NAMES } from '@/shared/constants';
+import { Suspense } from 'react';
+
+import welcome from '@/shared/assets/welcome.webp';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
-import { HeroPage } from '@/widgets/hero-page';
+import { Hero } from '@/widgets/hero';
 import { MerchCatalog } from '@/widgets/merch-catalog';
+import { Loader } from '@/widgets/merch-catalog/ui/loader/loader';
 
 export const Merch = async () => {
   return (
-    <main>
-      <HeroPage pageName={PAGE_NAMES.MERCH} />
+    <>
+      <Hero heading="Merch" subHeading="Free assets for your design" image={welcome} />
       <Breadcrumbs />
-      <MerchCatalog />
-    </main>
+      <Suspense fallback={<Loader />}>
+        <MerchCatalog />
+      </Suspense>
+    </>
   );
 };

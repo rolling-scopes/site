@@ -4,16 +4,16 @@
     'top-left top-center top-right'
     'bottom-left bottom-left bottom-right';
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: $gap-xl;
 
   list-style-type: none;
 
   .grid-item {
     padding: 24px;
     border: 1px solid $color-yellow-100;
-    border-radius: 12px;
+    border-radius: $border-radius-s;
 
-    font-size: 18px;
+    font-size: $font-size-m;
     line-height: 28px;
 
     background-color: $color-yellow-50;
@@ -38,18 +38,18 @@
   @include media-laptop {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: $gap-l;
   }
 
   @include media-tablet {
-    gap: 16px;
+    gap: $gap-s;
   }
 }
 
 .benefits-flex {
   display: flex;
   flex-flow: row wrap;
-  gap: 30px;
+  gap: $gap-xl;
   justify-content: space-between;
 
   margin-top: 24px;
@@ -58,15 +58,15 @@
 
   .flex-item {
     display: flex;
-    gap: 16px;
+    gap: $gap-s;
     align-items: center;
 
     width: 100%;
     padding: 24px;
     border: 1px solid $color-yellow-100;
-    border-radius: 12px;
+    border-radius: $border-radius-s;
 
-    font-size: 18px;
+    font-size: $font-size-m;
     line-height: 28px;
     letter-spacing: 0;
 
@@ -91,11 +91,11 @@
 
   @include media-laptop {
     display: flex;
-    gap: 24px;
+    gap: $gap-l;
   }
 
   @include media-tablet {
     flex-direction: column;
-    gap: 16px;
+    gap: $gap-s;
   }
 }

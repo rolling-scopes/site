@@ -1,0 +1,12 @@
+export const SECTION_TYPE = {
+  ABOUT_COURSE: 'aboutCourse',
+  MEDIA_TEXT_BLOCK: 'mediaTextBlock',
+  LEARNING_PATH_STAGES: 'learningPathStages',
+  VIDEO_BLOCK: 'videoBlock',
+  HERO: 'heroSection',
+  UPCOMING_COURSES: 'upcomingCourses',
+  DONATION: 'donation',
+  MEDIA_GRID: 'mediaGrid',
+  HIGHLIGHT_CARD: 'highlightCard',
+  EXTERNAL_EMBED_CONTENT: 'externalEmbedContent',
+} as const;

@@ -20,16 +20,16 @@ env:
   AWS_ACCESS_KEY_ID: ${{ secrets.DEPLOY_AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_AWS_SECRET_ACCESS_KEY }}
   AWS_REGION: 'eu-central-1'
-  API_URL: ${{ secrets.API_URL }}
-  API_BASE_URL: ${{ secrets.API_BASE_URL }}
-  YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY_PRODUCTION }}
+  NEXT_PUBLIC_API_BASE_URL: ${{ secrets.API_BASE_URL }}
+  NEXT_PUBLIC_YOUTUBE_API_BASE_URL: ${{ secrets.YOUTUBE_API_BASE_URL }}
+  NEXT_PUBLIC_YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY_PRODUCTION }}
 
 jobs:
   rs-school:
     name: Build and Deploy (rs.school)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4

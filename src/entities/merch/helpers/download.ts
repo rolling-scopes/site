@@ -4,8 +4,7 @@ function downloadFile(url: string, filename: string) {
   const link = document.createElement('a');
 
   link.href = url;
-  link.download = filename;
-  link.download = url.split('/').pop() || '';
+  link.download = filename || url.split('/').pop() || '';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
@@ -22,11 +21,20 @@ async function createArchive(files: string[]): Promise<Blob> {
 
   await Promise.all(
     files.map(async (url) => {
-      const response = await fetch(url);
-      const blob = await response.blob();
-      const filename = url.split('/').pop() || '';
+      try {
+        const response = await fetch(url);
 
-      zip.file(filename, blob);
+        if (!response.ok) {
+          throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
+        }
+
+        const blob = await response.blob();
+        const filename = url.split('/').pop() || '';
+
+        zip.file(filename, blob);
+      } catch (error) {
+        console.error(`Error processing file ${url}:`, error);
+      }
     }),
   );
 

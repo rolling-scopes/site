@@ -1,21 +1,32 @@
-import { syncWithApiData } from '@/entities/course/helpers/sync-with-api-data';
-import { ApiCoursesResponse, Course } from '@/entities/course/types';
+import { CoursesResponse, CoursesScheduleResponse } from '@/entities/course/types';
+import { API_CONTENT_TYPE_DICTIONARY, API_MAX_INCLUDE_DEPTH } from '@/shared/constants';
+import { ApiServices } from '@/shared/types';
 
-let cache: Course[] | null = null;
+export class CourseApi {
+  constructor(private readonly services: ApiServices) {}
 
-export const getCourses = async () => {
-  if (cache) {
-    return cache;
+  public queryCourses() {
+    return this.services.rest.get<CoursesResponse>('/entries', {
+      params: {
+        content_type: API_CONTENT_TYPE_DICTIONARY.COURSE,
+        include: API_MAX_INCLUDE_DEPTH,
+        order: 'fields.order',
+      },
+    });
   }
 
-  try {
-    const data = await fetch(process.env.API_URL);
-    const courses = (await data.json()) as ApiCoursesResponse[];
-
-    cache = syncWithApiData(courses);
-
-    return cache;
-  } catch (e) {
-    throw new Error(`Something went wrong fetching courses! (${e})`);
+  public queryCourse(id: string) {
+    return this.services.rest.get<CoursesResponse>('/entries', {
+      params: {
+        'content_type': API_CONTENT_TYPE_DICTIONARY.COURSE,
+        'include': API_MAX_INCLUDE_DEPTH,
+        'order': 'fields.order',
+        'sys.id': id,
+      },
+    });
   }
-};
+
+  public queryCoursesSchedule() {
+    return this.services.rest.get<CoursesScheduleResponse>('/app/courses.json');
+  }
+}
