@@ -79,8 +79,8 @@
   transition: color 0.2s ease;
 
   &:hover {
-    border: 1px solid $color-black;
-    color: $color-black;
+    border: 1px solid $color-gray-900;
+    color: $color-gray-900;
   }
 
   &.active {
@@ -108,7 +108,7 @@
   transition: color 0.2s ease;
 
   &:hover {
-    color: $color-black;
+    color: $color-gray-900;
     background-color: $color-gray-50;
   }
 }

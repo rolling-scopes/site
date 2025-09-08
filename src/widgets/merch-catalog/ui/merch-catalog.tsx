@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 
-import { MerchList } from './merch-list/merch-list';
+import { FilteredMerchView } from './merch-filter/filtered-catalog/filtered-catalog';
 import { merchStore } from '@/entities/merch';
 import notFoundImg from '@/shared/assets/404.webp';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -12,6 +12,9 @@ const cx = classNames.bind(styles);
 
 export const MerchCatalog = async () => {
   const products = await merchStore.loadMerchCatalog();
+  const uniqueTags = Array.from(
+    new Set(products.flatMap((product) => product.tags || []).filter((tag) => tag)),
+  ).sort();
 
   return (
     <section className={cx('container')}>
@@ -26,7 +29,7 @@ export const MerchCatalog = async () => {
 
       {products && products.length > 0 && (
         <div className={cx('content', 'merch-catalog')}>
-          <MerchList products={products} />
+          <FilteredMerchView initialProducts={products} initialAvailableTags={uniqueTags} />
         </div>
       )}
     </section>
