@@ -18,7 +18,7 @@
   display: flex;
   gap: $gap-xxs;
 
-  padding: 5px;
+  padding: $gap-xxs;
   border: 1px solid $color-gray-300;
   border-radius: $border-radius-xxs;
 }
@@ -45,7 +45,7 @@
     justify-content: space-between;
 
     width: 100%;
-    padding: 12px;
+    padding: $gap-s;
     border: none;
     border-radius: $border-radius-xxs;
 
@@ -64,7 +64,7 @@
 .filter-clear-button {
   cursor: pointer;
 
-  padding: 4px 10px;
+  padding: $gap-xxs $gap-xs;
   border: 1px solid $color-gray-300;
   border-radius: $border-radius-xxs;
 
@@ -94,7 +94,7 @@
   cursor: pointer;
 
   width: 100%;
-  padding: 8px;
+  padding: $gap-xs;
   border: 1px solid $color-gray-300;
   border-radius: $border-radius-xxs;
 
@@ -125,7 +125,7 @@
   gap: $gap-xs;
 
   width: 100%;
-  padding: 8px;
+  padding: $gap-xs;
   border: 1px solid transparent;
   border-radius: $border-radius-xxs;
 
