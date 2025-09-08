@@ -1,18 +1,31 @@
 import { Marquee } from '../marquee';
 import { courseStore } from '@/entities/course';
+import { MentorFeedbackCard } from '@/entities/mentor';
 import { ROUTES } from '@/shared/constants';
+import { isExternalUri } from '@/shared/helpers/is-external-uri';
 import { Section } from '@/shared/types/types';
 import { Link } from '@/shared/ui/link-custom';
 import { Slider } from '@/shared/ui/slider';
+import { communitySliderOptions, mentorshipSliderOptions } from '@/shared/ui/slider/constants';
 import { SocialMediaItem } from '@/shared/ui/social-media-item';
 import { AboutCourseSection } from '@/widgets/about-course';
-import { EXTERNAL_EMBED_CONTENT_TYPE, RSCourses } from '@/widgets/external-embed-content';
-import { Hero } from '@/widgets/hero';
+import { ActivityCard } from '@/widgets/about-course/ui/activity-card/activity-card';
+import { GridItem } from '@/widgets/about-course/ui/grid-item/grid-item';
+import {
+  EXTERNAL_EMBED_CONTENT_TYPE,
+  MentorTalksVideoPlaylistWithPlayer,
+  MentorshipCourses,
+  RSCourses,
+} from '@/widgets/external-embed-content';
+import { Hero, MentorshipHero } from '@/widgets/hero';
 import { HighlightCard } from '@/widgets/highlight-card';
 import { InfoCell, InfoGrid } from '@/widgets/info-grid';
 import { LearningPathStageItem, LearningPathStages } from '@/widgets/learning-path-stages';
 import { MediaGrid } from '@/widgets/media-grid';
 import { MediaTextBlock } from '@/widgets/media-text-block';
+import {
+  isSectionComponentsList,
+} from '@/widgets/media-text-block/helpers/is-section-components-list';
 import { SECTION_TYPE } from '@/widgets/section-resolver/constants';
 import { Support } from '@/widgets/support';
 import { UpcomingCourses } from '@/widgets/upcoming-courses';
@@ -43,6 +56,25 @@ export const SectionResolver = async ({
           gridItems={section.data.gridItems}
           registrationLinkText={section.data.registrationLinkText}
           registrationClosedLinkText={section.data.registrationClosedLinkText}
+        />
+      );
+
+    case SECTION_TYPE.ABOUT_COURSE_ITEM:
+      if (section.data.variant === 'mentorship') {
+        return (
+          <ActivityCard
+            title={section.data.heading}
+            description={section.data.content}
+            icon={section.data.icon}
+          />
+        );
+      }
+
+      return (
+        <GridItem
+          heading={section.data.heading}
+          content={section.data.content}
+          icon={section.data.icon}
         />
       );
 
@@ -94,6 +126,17 @@ export const SectionResolver = async ({
       );
 
     case SECTION_TYPE.HERO:
+      if (section.data.variant === 'mentorship') {
+        return (
+          <MentorshipHero
+            heading={section.data.heading}
+            subHeading={section.data.subHeading}
+            topHeading={section.data.topHeading}
+            image={section.data.image}
+          />
+        );
+      }
+
       return (
         <Hero
           heading={section.data.heading}
@@ -165,6 +208,14 @@ export const SectionResolver = async ({
         return <RSCourses courses={courses} />;
       }
 
+      if (section.data.type === EXTERNAL_EMBED_CONTENT_TYPE.MENTOR_TALKS_YOUTUBE_PLAYER) {
+        return <MentorTalksVideoPlaylistWithPlayer />;
+      }
+
+      if (section.data.type === EXTERNAL_EMBED_CONTENT_TYPE.MENTORSHIP_COURSES) {
+        return <MentorshipCourses courses={courses} />;
+      }
+
       throw new Error(`No component found for external embed content: ${sectionName}`);
 
     case SECTION_TYPE.INFO_GRID:
@@ -186,23 +237,13 @@ export const SectionResolver = async ({
     case SECTION_TYPE.MARQUEE:
       return <Marquee items={section.data.items} />;
 
-    case SECTION_TYPE.SLIDER:
-      return (
-        <Slider
-          slides={section.data.slides}
-          sliderProps={{
-            loop: true,
-            centeredSlides: true,
-            keyboard: { enabled: true },
-            slidesPerView: 1.25,
-            spaceBetween: 10,
-            autoplay: {
-              delay: 2000,
-              pauseOnMouseEnter: true,
-            },
-          }}
-        />
-      );
+    case SECTION_TYPE.SLIDER: {
+      const sliderOptions = isSectionComponentsList(section.data.slides)
+        ? mentorshipSliderOptions
+        : communitySliderOptions;
+
+      return <Slider slides={section.data.slides} sliderProps={sliderOptions} />;
+    }
 
     case SECTION_TYPE.SOCIAL_LINK:
       return (
@@ -219,11 +260,22 @@ export const SectionResolver = async ({
     case SECTION_TYPE.LINK:
       return (
         <Link
+          external={isExternalUri(section.data.link)}
           variant={section.data.variant}
           label={section.data.label}
           disabledLabel={section.data.disabledLabel}
           link={section.data.link}
           icon={section.data.icon}
+        />
+      );
+
+    case SECTION_TYPE.SLIDE:
+      return (
+        <MentorFeedbackCard
+          name={section.data.title}
+          course={section.data.subTitle}
+          review={section.data.content ?? []}
+          photo={section.data.icon}
         />
       );
 

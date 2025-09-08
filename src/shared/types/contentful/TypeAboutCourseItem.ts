@@ -21,6 +21,12 @@ export interface TypeAboutCourseItemFields {
    */
   tag?: EntryFieldTypes.Symbol;
   /**
+   * Field type definition for field 'variant' (variant)
+   * @name variant
+   * @localized false
+   */
+  variant: EntryFieldTypes.Symbol<'base' | 'mentorship'>;
+  /**
    * Field type definition for field 'heading' (heading)
    * @name heading
    * @localized true
@@ -46,7 +52,7 @@ export interface TypeAboutCourseItemFields {
  * @type {TypeAboutCourseItemSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-16T19:52:39.219Z
- * @version 13
+ * @version 17
  */
 export type TypeAboutCourseItemSkeleton = EntrySkeletonType<
   TypeAboutCourseItemFields,
@@ -58,7 +64,7 @@ export type TypeAboutCourseItemSkeleton = EntrySkeletonType<
  * @type {TypeAboutCourseItem}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-16T19:52:39.219Z
- * @version 13
+ * @version 17
  */
 export type TypeAboutCourseItem<
   Modifiers extends ChainModifiers,

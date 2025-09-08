@@ -3,6 +3,7 @@ import { CoursePageApi } from '@/entities/course-page';
 import { LandingPageApi } from '@/entities/landing-page';
 import { MentorApi } from '@/entities/mentor';
 import { MerchApi } from '@/entities/merch/api/merch-api';
+import { PageApi } from '@/entities/page/api/landing-page-api';
 import { TrainerApi } from '@/entities/trainer';
 import { ApiBaseClass } from '@/shared/api/api-base-class';
 import { ApiServices } from '@/shared/types';
@@ -16,6 +17,7 @@ export class Api {
   public readonly merch: MerchApi;
   public readonly coursePage: CoursePageApi;
   public readonly landingPage: LandingPageApi;
+  public readonly page: PageApi;
 
   constructor(
     private readonly baseURI: string,
@@ -32,5 +34,6 @@ export class Api {
     this.merch = new MerchApi(this.services);
     this.coursePage = new CoursePageApi(this.services);
     this.landingPage = new LandingPageApi(this.services);
+    this.page = new PageApi(this.services);
   }
 }

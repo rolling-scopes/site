@@ -46,7 +46,7 @@ export const MediaTextBlock = ({
       id={anchorId}
       className={cx('media-text-block', 'container', { 'image-absolute-position': imageAbsolutePosition })}
       style={{
-        backgroundColor,
+        background: backgroundColor,
         maxWidth: width,
       }}
     >
