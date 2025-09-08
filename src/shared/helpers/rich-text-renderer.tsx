@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 import { isExternalUri } from '@/shared/helpers/is-external-uri';
 import { prepareAssetImage } from '@/shared/helpers/prepare-asset-image';
+import { replaceTextBreaksWithBrTag } from '@/shared/helpers/replace-text-breaks-with-br-tag';
 import { transformPageSections } from '@/shared/helpers/transform-page-sections';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { ContentList } from '@/shared/ui/list/content-list';
@@ -16,7 +17,8 @@ import { SectionResolver } from '@/widgets/section-resolver';
 type RichTextDocument = Parameters<typeof documentToReactComponents>['0'];
 type RichTextOptions = Parameters<typeof documentToReactComponents>['1'];
 
-const RICH_TEXT_OPTIONS = {
+export const RICH_TEXT_OPTIONS: RichTextOptions = {
+  renderText: replaceTextBreaksWithBrTag,
   renderNode: {
     [BLOCKS.PARAGRAPH]: (_node: Block | Inline, children: ReactNode) => {
       if (!children) {
@@ -57,12 +59,43 @@ const RICH_TEXT_OPTIONS = {
       const src = prepareAssetImage(node.data.target.fields.file);
       const alt = node.data.target.fields.title;
 
-      return <Image data-id="asset-image" src={src} alt={alt} />;
+      return (
+        <Image
+          data-id="asset-image"
+          src={src}
+          alt={alt}
+          style={{
+            maxWidth: src.width,
+            maxHeight: src.height,
+          }}
+        />
+      );
     },
     [BLOCKS.EMBEDDED_ENTRY]: (node: Inline | Block) => {
       const [section] = transformPageSections([node.data.target]);
 
       return <SectionResolver embedded section={section} />;
+    },
+    [INLINES.EMBEDDED_ENTRY]: (node: Inline | Block) => {
+      const [section] = transformPageSections([node.data.target]);
+
+      return <SectionResolver embedded inline section={section} />;
+    },
+  },
+};
+
+export const RICH_TEXT_SLIDER_OPTIONS = {
+  renderNode: {
+    [BLOCKS.PARAGRAPH]: () => null,
+    [BLOCKS.EMBEDDED_ASSET]: (node: Inline | Block) => {
+      const src = prepareAssetImage(node.data.target.fields.file);
+      const alt = node.data.target.fields.title;
+
+      return (
+        <div style={{ aspectRatio: '8 / 5' }}>
+          <Image data-id="asset-image" src={src} alt={alt} fill />
+        </div>
+      );
     },
   },
 };

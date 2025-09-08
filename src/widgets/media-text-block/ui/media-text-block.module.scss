@@ -2,9 +2,13 @@
   flex-direction: column;
   gap: $gap-l;
 
-  .title {
+  .title-wrapper {
     grid-column: 1 / 3;
     grid-row: 1 / 2;
+
+    .title {
+      padding: 0;
+    }
 
     @include media-laptop {
       grid-column: unset;
@@ -13,11 +17,12 @@
 
   .inner {
     display: grid;
-    grid-auto-flow: column;
-    grid-template-rows: max-content 1fr;
     gap: $gap-l 100px;
-
     height: 100%;
+
+    &.with-title {
+      grid-template-rows: max-content 1fr;
+    }
 
     @include media-tablet-large {
       grid-auto-flow: row;
@@ -38,15 +43,19 @@
   .content-wrapper-left {
     display: flex;
     grid-column: 1 / 2;
-    grid-row: 2 / 3;
     flex-direction: column;
     gap: $gap-l;
+
+    min-width: 100%;
   }
 
   .content-wrapper-right {
+    grid-column: 2 / 3;
+    justify-content: end;
+
     @include media-tablet-large {
-      grid-column: 1 / 2 !important;
-      grid-row: 3 / 4 !important;
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
     }
   }
 
@@ -59,17 +68,13 @@
     }
   }
 
-  // if the content is NOT an image, place it under the title -> |title       |            |
-  //                                                          -> |text content|text content|
-  .content-wrapper-right:not(:has([data-id='asset-image'])) {
-    grid-row: 2 / 3;
-  }
-
   // if the content is an image, place it on the same leve as title -> |title       |image|
   //                                                                -> |text content|image|
   .content-wrapper-right:has([data-id='asset-image']) {
-    grid-column: 2 / 3;
-    grid-row: 1 / 3;
+    @include media-from-tablet-large {
+      grid-column: 2 / 3;
+      grid-row: 1 / 3;
+    }
   }
 
   // if the content is an image, format the image accordingly
@@ -78,16 +83,14 @@
     display: flex;
     align-self: center;
     width: 100%;
-    max-width: 380px;
 
     [data-id='asset-image'] {
       width: 100%;
-      height: fit-content;
+      height: auto;
       object-fit: contain;
 
       @include media-tablet-large {
         justify-self: center;
-        width: 320px;
       }
     }
 
@@ -98,9 +101,14 @@
   }
 
   .component-list {
-    grid-column: span 2;
+    &.content-bottom {
+      :where(&) {
+        grid-template-columns: responsive-grid-columns();
+        gap: $gap-xl;
+      }
+    }
 
-    .content-wrapper {
+    & > .content-wrapper {
       display: flex;
       gap: $gap-xl;
       align-items: flex-start;
@@ -122,20 +130,88 @@
 
   .content-bottom {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: $gap-xl;
-    align-items: flex-start;
+    align-items: start;
     justify-content: space-between;
 
     width: 100%;
     padding-top: 0;
 
+    & > :last-child:nth-child(n + 2) {
+      justify-self: end;
+    }
+
+    .content-bottom {
+      padding: 0;
+    }
+
     @include media-tablet-large {
       grid-template-columns: 1fr;
+
+      & > :last-child:nth-child(n + 2) {
+        justify-self: unset;
+      }
     }
   }
 
   .embedded {
     padding: 0;
+  }
+
+  &.image-absolute-position {
+    overflow-x: clip;
+
+    .content-bottom {
+      position: relative;
+    }
+
+    .content-wrapper-left,
+    .content-wrapper-right {
+      position: relative;
+      max-width: unset;
+
+      img[data-id='asset-image'] {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        translate: 0 -50%;
+
+        width: unset;
+        height: unset;
+
+        @include media-tablet-large {
+          // hack for community page only
+          top: 200px;
+        }
+      }
+    }
+
+    // if the content is NOT an image, place it under the title -> |title       |            |
+    //                                                          -> |text content|text content|
+    &:not(:has(.inner.with-title)) .content-wrapper-right:not(:has([data-id='asset-image'])) {
+      @include media-from-tablet-large {
+        grid-row: 2 / 3;
+      }
+    }
+
+    @include media-tablet {
+      .content-wrapper-right {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+
+      .content-wrapper-left {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+    }
+  }
+
+  .absolute-image-placeholder {
+    width: 500px;
+    height: 200px;
+
+    @include media-tablet-large {
+      display: none;
+    }
   }
 }

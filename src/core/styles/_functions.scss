@@ -1,0 +1,11 @@
+@function responsive-grid-columns(
+  $max-col-count: 99,
+  $min-col-size: 100px,
+  $row-gap: 12px,
+  $col-gap: 12px
+) {
+  $col-size-calc: calc((100% - $col-gap * $max-col-count) / $max-col-count);
+  $col-min-size-calc: min(100%, max($min-col-size, $col-size-calc));
+
+  @return repeat(auto-fit, minmax($col-min-size-calc, 1fr));
+}
