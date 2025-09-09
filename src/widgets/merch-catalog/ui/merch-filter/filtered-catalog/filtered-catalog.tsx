@@ -35,6 +35,18 @@ export const FilteredMerchView = ({
     return searchParams.getAll('type');
   });
 
+  useEffect(() => {
+    const nextSearch = searchParams.get('search') || '';
+    const nextTypes = searchParams.getAll('type');
+
+    if (nextSearch !== searchTerm) {
+      setSearchTerm(nextSearch);
+    }
+    if (JSON.stringify(nextTypes) !== JSON.stringify(selectedTypes)) {
+      setSelectedTypes(nextTypes);
+    }
+  }, [searchParams, searchTerm, selectedTypes]);
+
   const updateUrl = useCallback(
     (currentSearchTerm: string, currentSelectedTypes: string[]) => {
       const params = new URLSearchParams();
@@ -128,17 +140,17 @@ export const FilteredMerchView = ({
         />
       </div>
       <>
-        {filteredProducts.length > 0
+        {(!initialProducts || initialProducts.length === 0) && !hasActiveFilters
           ? (
-              <MerchList products={filteredProducts} />
+              <Paragraph>No merch found</Paragraph>
             )
-          : (
-              <Paragraph>No merch found. Please try another filter or search term</Paragraph>
-            )}
-
-        {(!initialProducts || initialProducts.length === 0) && !hasActiveFilters && (
-          <Paragraph>No merch found</Paragraph>
-        )}
+          : filteredProducts.length > 0
+            ? (
+                <MerchList products={filteredProducts} />
+              )
+            : (
+                <Paragraph>No merch found. Please try another filter or search term</Paragraph>
+              )}
       </>
     </div>
   );

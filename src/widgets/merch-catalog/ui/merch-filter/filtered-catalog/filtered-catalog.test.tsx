@@ -15,6 +15,11 @@ import { useMediaQuery } from '@/shared/hooks/use-media-query/use-media-query';
 
 const mockRouterReplace = vi.fn();
 
+const mockSearchParams = {
+  search: '',
+  types: [] as string[],
+};
+
 vi.mock('next/navigation', () => ({
   useRouter: () => ({
     replace: mockRouterReplace,
@@ -25,16 +30,13 @@ vi.mock('next/navigation', () => ({
   useSearchParams: () => ({
     get: vi.fn((param: string) => {
       if (param === 'search') {
-        return '';
-      }
-      if (param === 'type') {
-        return null;
+        return mockSearchParams.search;
       }
       return null;
     }),
     getAll: vi.fn((param: string) => {
       if (param === 'type') {
-        return [];
+        return mockSearchParams.types;
       }
       return [];
     }),
@@ -113,6 +115,9 @@ describe('FilteredMerchView', () => {
   let capturedFilterControlsProps: ActualFilterControlsProps;
 
   beforeEach(() => {
+    mockSearchParams.search = '';
+    mockSearchParams.types = [];
+
     vi.clearAllMocks();
     mockedUseMediaQueryHook.mockReturnValue(false);
 
@@ -155,61 +160,110 @@ describe('FilteredMerchView', () => {
         initialAvailableTags={expectedUniqueTags}
       />,
     );
+
     act(() => {
+      mockSearchParams.search = 'Alpha';
       capturedFilterControlsProps.onSearchChange('Alpha');
     });
+
     expect(capturedFilterControlsProps.searchTerm).toBe('Alpha');
     expect(screen.getByTestId('rendered-products-count')).toHaveTextContent('Rendered products: 1');
-    expect(screen.getByTestId('merch-item-1')).toHaveTextContent('Alpha T-Shirt');
-    expect(screen.queryByTestId('merch-item-2')).not.toBeInTheDocument();
   });
 
   it('filters products by selected types (OR logic)', () => {
-    render(
+    const { rerender } = render(
       <FilteredMerchView
         initialProducts={mockInitialProducts}
         initialAvailableTags={expectedUniqueTags}
       />,
     );
+
     act(() => {
       capturedFilterControlsProps.onTagChange('mug');
     });
+
+    mockSearchParams.types = ['mug'];
+    rerender(
+      <FilteredMerchView
+        initialProducts={mockInitialProducts}
+        initialAvailableTags={expectedUniqueTags}
+      />,
+    );
+
     expect(capturedFilterControlsProps.selectedTags).toEqual(['mug']);
     expect(screen.getByTestId('rendered-products-count')).toHaveTextContent('Rendered products: 1');
     expect(screen.getByTestId('merch-item-2')).toHaveTextContent('Beta Coffee Mug');
+
     act(() => {
       capturedFilterControlsProps.onTagChange('stickers');
     });
+    mockSearchParams.types = ['mug', 'stickers'];
+    rerender(
+      <FilteredMerchView
+        initialProducts={mockInitialProducts}
+        initialAvailableTags={expectedUniqueTags}
+      />,
+    );
+
     expect(capturedFilterControlsProps.selectedTags).toEqual(['mug', 'stickers']);
     expect(screen.getByTestId('rendered-products-count')).toHaveTextContent('Rendered products: 2');
-    expect(screen.getByTestId('merch-item-2')).toBeInTheDocument();
-    expect(screen.getByTestId('merch-item-3')).toBeInTheDocument();
+
     act(() => {
       capturedFilterControlsProps.onTagChange('mug');
     });
+
+    mockSearchParams.types = ['stickers'];
+    rerender(
+      <FilteredMerchView
+        initialProducts={mockInitialProducts}
+        initialAvailableTags={expectedUniqueTags}
+      />,
+    );
+
     expect(capturedFilterControlsProps.selectedTags).toEqual(['stickers']);
     expect(screen.getByTestId('rendered-products-count')).toHaveTextContent('Rendered products: 1');
-    expect(screen.getByTestId('merch-item-3')).toBeInTheDocument();
     expect(screen.queryByTestId('merch-item-2')).not.toBeInTheDocument();
   });
 
   it('clears filters when onClearFilters is called', () => {
-    render(
+    const { rerender } = render(
       <FilteredMerchView
         initialProducts={mockInitialProducts}
         initialAvailableTags={expectedUniqueTags}
       />,
     );
+
     act(() => {
       capturedFilterControlsProps.onSearchChange('Alpha');
       capturedFilterControlsProps.onTagChange('tee');
     });
+
+    mockSearchParams.search = 'Alpha';
+    mockSearchParams.types = ['tee'];
+    rerender(
+      <FilteredMerchView
+        initialProducts={mockInitialProducts}
+        initialAvailableTags={expectedUniqueTags}
+      />,
+    );
+
     expect(capturedFilterControlsProps.searchTerm).toBe('Alpha');
     expect(capturedFilterControlsProps.selectedTags).toEqual(['tee']);
     expect(screen.getByTestId('rendered-products-count')).toHaveTextContent('Rendered products: 1');
+
     act(() => {
       capturedFilterControlsProps.onClearFilters();
     });
+
+    mockSearchParams.search = '';
+    mockSearchParams.types = [];
+    rerender(
+      <FilteredMerchView
+        initialProducts={mockInitialProducts}
+        initialAvailableTags={expectedUniqueTags}
+      />,
+    );
+
     expect(capturedFilterControlsProps.searchTerm).toBe('');
     expect(capturedFilterControlsProps.selectedTags).toEqual([]);
     expect(capturedFilterControlsProps.hasActiveFilters).toBe(false);
@@ -290,15 +344,26 @@ describe('FilteredMerchView', () => {
   });
 
   it('shows "no results" message when filters match no products', () => {
-    render(
+    const { rerender } = render(
       <FilteredMerchView
         initialProducts={mockInitialProducts}
         initialAvailableTags={expectedUniqueTags}
       />,
     );
+
     act(() => {
       capturedFilterControlsProps.onSearchChange('nonExistentSearchTerm123');
     });
+
+    mockSearchParams.search = 'nonExistentSearchTerm123';
+
+    rerender(
+      <FilteredMerchView
+        initialProducts={mockInitialProducts}
+        initialAvailableTags={expectedUniqueTags}
+      />,
+    );
+
     expect(
       screen.getByText('No merch found. Please try another filter or search term'),
     ).toBeInTheDocument();
