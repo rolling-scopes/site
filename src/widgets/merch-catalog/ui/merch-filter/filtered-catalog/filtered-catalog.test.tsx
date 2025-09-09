@@ -44,18 +44,7 @@ vi.mock('next/navigation', () => ({
 
 type ActualFilterControlsProps = React.ComponentProps<typeof RealFilterControlsComponent>;
 
-vi.mock('../filter-controls/filter-controls', () => ({
-  FilterControls: vi.fn((props: ActualFilterControlsProps) => (
-    <div data-testid="filter-controls">
-      <span>{`SearchTermMock: ${props.searchTerm}`}</span>
-      <span>{`SelectedTypesMock: ${props.selectedTags?.join(',') ?? ''}`}</span>
-      <span>{`AllAvailableTagsMock: ${props.allAvailableTags?.join(',') ?? ''}`}</span>
-      <span>{`HasActiveFiltersMock: ${props.hasActiveFilters}`}</span>
-      <span>{`IsTabletLayoutMock: ${props.isTabletLayout}`}</span>
-      <span>{`AreTagsExpandedTabletMock: ${props.areTagsExpandedTablet}`}</span>
-    </div>
-  )),
-}));
+vi.mock('../filter-controls/filter-controls', () => ({ FilterControls: vi.fn() }));
 
 vi.mock('../../merch-list/merch-list', () => ({
   MerchList: vi.fn(({ products }: { products: MerchProduct[] }) => (
