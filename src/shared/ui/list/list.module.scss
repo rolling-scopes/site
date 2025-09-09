@@ -3,6 +3,8 @@
   flex-direction: column;
   gap: $gap-xs;
 
+  padding-bottom: 16px;
+
   font-size: $font-size-m;
   line-height: 28px;
   letter-spacing: 0.5px;
@@ -13,6 +15,7 @@
     letter-spacing: 0;
 
     @include media-laptop {
+      padding-bottom: 14px;
       font-size: $font-size-s;
       line-height: 24px;
     }

@@ -9,6 +9,7 @@ export const JetBrainsLogo = () => {
       style={{ filter: 'grayscale(100%) contrast(15%)' }}
       width={200}
       alt="jetbrains icon"
+      data-testid="jetbrains icon"
     />
   );
 };

@@ -4,32 +4,38 @@ import Image from 'next/image';
 import { MainTitle } from '@/shared/ui/main-title';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { HeroProps, HeroSectionData } from '@/widgets/hero/types';
+import { HeroSectionData } from '@/widgets/hero/types';
 
 import styles from './hero.module.scss';
 
 export const cx = classNames.bind(styles);
 
-type SubTitleProps = Pick<HeroSectionData, 'topHeading'>;
+type HeroTopHeadingProps = Pick<HeroSectionData, 'topHeading'>;
 
-const HeroSubTitle = ({ topHeading }: SubTitleProps) => {
+type HeroSectionProps = Omit<HeroSectionData, 'variant'>;
+
+const HeroTopHeading = ({ topHeading }: HeroTopHeadingProps) => {
   if (!topHeading?.length) {
     return null;
   }
 
   return (
     <div className={cx('subtitle-container')}>
-      <Subtitle size="extra-small">{topHeading}</Subtitle>
+      {topHeading.map((heading) => (
+        <Subtitle key={heading} size="extra-small">
+          {heading}
+        </Subtitle>
+      ))}
     </div>
   );
 };
 
-export const Hero = ({ heading, subHeading, topHeading, image }: HeroProps) => {
+export const Hero = ({ heading, subHeading, topHeading, image }: HeroSectionProps) => {
   return (
     <section id="hero-page" className={cx('hero-page', 'container')} data-testid="hero-section">
       <div className={cx('hero-page-content', 'content')}>
         <article className={cx('title-container')}>
-          <HeroSubTitle topHeading={topHeading} />
+          <HeroTopHeading topHeading={topHeading} />
 
           <MainTitle className={cx('title-main')}>{heading}</MainTitle>
 

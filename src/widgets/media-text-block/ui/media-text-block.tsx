@@ -15,8 +15,9 @@ type MediaTextBlockProps = MediaTextBlockSectionData;
 
 const cx = classNames.bind(styles);
 
-export const MediaTextBlock = async ({
+export const MediaTextBlock = ({
   anchorId,
+  imageAbsolutePosition,
   title,
   titleSize,
   titleMod,
@@ -28,6 +29,7 @@ export const MediaTextBlock = async ({
   linkLabel,
   disabledLinkLabel,
   backgroundColor,
+  width,
   embedded = false,
 }: MediaTextBlockProps) => {
   const linkText = linkUrl ? linkLabel : disabledLinkLabel;
@@ -35,32 +37,47 @@ export const MediaTextBlock = async ({
   const isLinkDisabled = !linkUrl;
   const isLinkShown = (href && Boolean(linkLabel)) || (!href && Boolean(disabledLinkLabel));
   const small = titleSize === 'smallest';
-  const isComponentList = isSectionComponentsList(contentLeft);
+  const hasTitle = title || sectionLabel;
+  const isComponentListContentLeft = isSectionComponentsList(contentLeft);
+  const isComponentListContentBottom = isSectionComponentsList(contentBottom);
 
   return (
     <section
       id={anchorId}
-      className={cx('media-text-block', 'container')}
-      style={{ backgroundColor }}
+      className={cx('media-text-block', 'container', { 'image-absolute-position': imageAbsolutePosition })}
+      style={{
+        backgroundColor,
+        maxWidth: width,
+      }}
     >
       <div
         className={cx('inner', 'content', {
           embedded,
           small,
+          'with-title': hasTitle,
         })}
       >
-        <div className={cx('title')}>
-          {sectionLabel && <SectionLabel>{sectionLabel}</SectionLabel>}
+        {hasTitle && (
+          <div className={cx('title-wrapper')}>
+            {sectionLabel && <SectionLabel>{sectionLabel}</SectionLabel>}
 
-          {title && (
-            <WidgetTitle size={titleSize} mods={titleMod}>
-              {title}
-            </WidgetTitle>
+            {title && (
+              <WidgetTitle size={titleSize} mods={titleMod} className={cx('title')}>
+                {title}
+              </WidgetTitle>
+            )}
+          </div>
+        )}
+
+        <div
+          className={cx('content-wrapper-left', { 'component-list': isComponentListContentLeft })}
+        >
+          {contentLeft && (
+            <div className={cx('content-wrapper')}>
+              {imageAbsolutePosition && <div className={cx('absolute-image-placeholder')} />}
+              {contentLeft}
+            </div>
           )}
-        </div>
-
-        <div className={cx('content-wrapper-left', { 'component-list': isComponentList })}>
-          {contentLeft && <div className={cx('content-wrapper')}>{contentLeft}</div>}
 
           {isLinkShown && (
             <LinkCustom
@@ -79,7 +96,13 @@ export const MediaTextBlock = async ({
         )}
       </div>
 
-      {contentBottom && <div className={cx('content-bottom', 'content')}>{contentBottom}</div>}
+      {contentBottom && (
+        <div
+          className={cx('content-bottom', 'content', { 'component-list': isComponentListContentBottom })}
+        >
+          {contentBottom}
+        </div>
+      )}
     </section>
   );
 };

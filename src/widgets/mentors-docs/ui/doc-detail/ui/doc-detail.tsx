@@ -7,7 +7,7 @@ import styles from './doc-detail.module.scss';
 
 const cx = classNames.bind(styles);
 
-type DocDetailProps = {
+export type DocDetailProps = {
   textBeforeLink: string;
   textLink: string;
   textAfterLink: string;

@@ -2,8 +2,8 @@ import classnames from 'classnames/bind';
 
 import { Language } from '@/shared/types';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { InfoCell } from '@/widgets/numbers/ui/info-cell/info-cell';
-import { InfoGrid } from '@/widgets/numbers/ui/info-grid/info-grid';
+import { InfoCell } from '@/widgets/info-grid/ui/info-cell/info-cell';
+import { InfoGrid } from '@/widgets/info-grid/ui/info-grid/info-grid';
 import { type MentorshipDetailsType, aboutMentorsData } from 'data';
 
 import styles from './mentorship-details.module.scss';

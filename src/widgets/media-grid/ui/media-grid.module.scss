@@ -1,46 +1,47 @@
-.media-grid {
-  width: 100%;
-
-  p {
-    width: 640px;
-    margin-top: 0;
+.remove-items-on-responsive {
+  & > * {
+    @include media-laptop {
+      &:nth-child(n + 13) {
+        display: none;
+      }
+    }
 
     @include media-tablet {
-      width: 100%;
-    }
-  }
-
-  .remove-items-on-responsive {
-    & > * {
-      @include media-laptop {
-        &:nth-child(n + 13) {
-          display: none;
-        }
-      }
-
-      @include media-tablet {
-        &:nth-child(n + 7) {
-          display: none;
-        }
+      &:nth-child(n + 7) {
+        display: none;
       }
     }
   }
 }
 
 .media-grid-list {
-  --grid-max-col-count: 99;
-  --grid-min-col-size: 200px;
-  --grid-row-gap: 12px;
-  --grid-col-gap: 12px;
-
-  // calculations, do not touch
-  --grid-col-size-calc: calc(
-    (100% - var(--grid-col-gap) * var(--grid-max-col-count)) / var(--grid-max-col-count)
+  $responsive-grid: responsive-grid-columns(
+    var(--grid-max-col-count),
+    var(--grid-min-col-size),
+    var(--grid-row-gap),
+    var(--grid-col-gap)
   );
-  --grid-col-min-size-calc: min(100%, max(var(--grid-min-col-size), var(--grid-col-size-calc)));
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(var(--grid-col-min-size-calc), 1fr));
+  grid-template-columns: $responsive-grid;
   gap: var(--grid-row-gap) var(--grid-col-gap);
   place-items: center;
+  align-items: flex-start;
+
+  width: 100%;
+
+  &.fit-content {
+    grid-template-columns: repeat(var(--grid-max-col-count), max-content);
+
+    &.fit-mobile {
+      @include media-mobile-landscape {
+        grid-template-columns: $responsive-grid;
+      }
+    }
+  }
+
+  @include media-tablet {
+    gap: 0;
+    justify-content: space-around;
+  }
 }

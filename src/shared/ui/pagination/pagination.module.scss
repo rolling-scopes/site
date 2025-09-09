@@ -1,0 +1,57 @@
+.pagination {
+  display: flex;
+  gap: $gap-xs;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-button {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 35px;
+  height: 35px;
+  border: 1px solid $color-gray-200;
+  border-radius: $border-radius-xxs;
+
+  background: $color-white;
+
+  transition: all 0.2s ease;
+
+  &:disabled {
+    pointer-events: none;
+    opacity: $opacity-30;
+  }
+
+  &:hover:not(:disabled) {
+    border-color: $color-gray-600;
+    color: $color-white;
+    background-color: $color-gray-600;
+  }
+
+  &.active {
+    border: 2px solid $color-gray-900;
+    color: $color-white;
+    background-color: $color-gray-900;
+  }
+
+  &.arrow {
+    font-weight: $font-weight-bold;
+  }
+}
+
+.pagination-dots {
+  display: flex;
+  gap: $gap-xs;
+  align-items: center;
+
+  .dot {
+    width: 4px;
+    height: 4px;
+    border-radius: $border-radius-round;
+    background-color: $color-gray-400;
+  }
+}

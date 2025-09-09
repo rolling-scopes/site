@@ -89,6 +89,12 @@ export interface TypeMediaTextBlockFields {
    * @localized false
    */
   backgroundColor?: EntryFieldTypes.Symbol;
+  /**
+   * Field type definition for field 'settings' (settings)
+   * @name settings
+   * @localized false
+   */
+  settings?: EntryFieldTypes.Object;
 }
 
 /**
@@ -97,7 +103,7 @@ export interface TypeMediaTextBlockFields {
  * @type {TypeMediaTextBlockSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T14:21:33.812Z
- * @version 81
+ * @version 83
  */
 export type TypeMediaTextBlockSkeleton = EntrySkeletonType<
   TypeMediaTextBlockFields,
@@ -109,7 +115,7 @@ export type TypeMediaTextBlockSkeleton = EntrySkeletonType<
  * @type {TypeMediaTextBlock}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T14:21:33.812Z
- * @version 81
+ * @version 83
  */
 export type TypeMediaTextBlock<
   Modifiers extends ChainModifiers,

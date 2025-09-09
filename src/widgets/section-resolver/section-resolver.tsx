@@ -1,10 +1,15 @@
+import { Marquee } from '../marquee';
 import { courseStore } from '@/entities/course';
 import { ROUTES } from '@/shared/constants';
 import { Section } from '@/shared/types/types';
+import { Link } from '@/shared/ui/link-custom';
+import { Slider } from '@/shared/ui/slider';
+import { SocialMediaItem } from '@/shared/ui/social-media-item';
 import { AboutCourseSection } from '@/widgets/about-course';
 import { EXTERNAL_EMBED_CONTENT_TYPE, RSCourses } from '@/widgets/external-embed-content';
 import { Hero } from '@/widgets/hero';
 import { HighlightCard } from '@/widgets/highlight-card';
+import { InfoCell, InfoGrid } from '@/widgets/info-grid';
 import { LearningPathStageItem, LearningPathStages } from '@/widgets/learning-path-stages';
 import { MediaGrid } from '@/widgets/media-grid';
 import { MediaTextBlock } from '@/widgets/media-text-block';
@@ -17,12 +22,14 @@ type SectionResolverProps = {
   section: Section;
   courseEnrollUrl?: string;
   embedded?: boolean;
+  inline?: boolean;
 };
 
 export const SectionResolver = async ({
   courseEnrollUrl,
   section,
   embedded,
+  inline,
 }: SectionResolverProps) => {
   const sectionName = section.name;
   const courses = await courseStore.loadCourses();
@@ -43,6 +50,7 @@ export const SectionResolver = async ({
       return (
         <MediaTextBlock
           embedded={embedded}
+          imageAbsolutePosition={section.data.imageAbsolutePosition}
           anchorId={section.data.anchorId}
           title={section.data.title}
           titleSize={section.data.titleSize}
@@ -55,6 +63,7 @@ export const SectionResolver = async ({
           linkLabel={section.data.linkLabel}
           disabledLinkLabel={section.data.disabledLinkLabel}
           backgroundColor={section.data.backgroundColor}
+          width={section.data.width}
         />
       );
 
@@ -130,6 +139,9 @@ export const SectionResolver = async ({
           numberOfColumns={section.data.numberOfColumns}
           removeItemsOnResponsive={section.data.removeItemsOnResponsive}
           rowGapPx={section.data.rowGapPx}
+          colGapPx={section.data.colGapPx}
+          fitContent={section.data.fitContent}
+          settings={section.data.settings}
         >
           {section.data.media}
         </MediaGrid>
@@ -154,6 +166,66 @@ export const SectionResolver = async ({
       }
 
       throw new Error(`No component found for external embed content: ${sectionName}`);
+
+    case SECTION_TYPE.INFO_GRID:
+      return (
+        <InfoGrid borderColor={section.data.borderColor}>
+          {section.data.gridItems?.map((item) => (
+            <InfoCell
+              key={item.id}
+              title={item.title ?? ''}
+              description={item.content ?? ''}
+              titleFontSize={section.data.titleFontSize}
+              size={section.data.size}
+              gap={section.data.withGap ? 'withGap' : undefined}
+            />
+          ))}
+        </InfoGrid>
+      );
+
+    case SECTION_TYPE.MARQUEE:
+      return <Marquee items={section.data.items} />;
+
+    case SECTION_TYPE.SLIDER:
+      return (
+        <Slider
+          slides={section.data.slides}
+          sliderProps={{
+            loop: true,
+            centeredSlides: true,
+            keyboard: { enabled: true },
+            slidesPerView: 1.25,
+            spaceBetween: 10,
+            autoplay: {
+              delay: 2000,
+              pauseOnMouseEnter: true,
+            },
+          }}
+        />
+      );
+
+    case SECTION_TYPE.SOCIAL_LINK:
+      return (
+        <SocialMediaItem
+          inline={inline}
+          title={section.data.label}
+          icon={
+            section.data.icon ? <img src={section.data.icon.src} alt="" aria-hidden="true" /> : null
+          }
+          href={section.data.link ?? '/'}
+        />
+      );
+
+    case SECTION_TYPE.LINK:
+      return (
+        <Link
+          variant={section.data.variant}
+          label={section.data.label}
+          disabledLabel={section.data.disabledLabel}
+          link={section.data.link}
+          icon={section.data.icon}
+        />
+      );
 
     default:
       throw new Error(`No component found for section type: ${sectionName}`);

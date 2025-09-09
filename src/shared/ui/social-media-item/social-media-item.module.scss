@@ -17,7 +17,11 @@
   text-align: center;
   text-decoration: none;
 
-  figure {
+  &.inline {
+    display: inline-flex;
+  }
+
+  .media-icon {
     display: flex;
     border-radius: $border-radius-round;
     background-color: $color-gray-200;
@@ -34,7 +38,7 @@
     &:hover {
       color: $color-gray-900;
 
-      figure {
+      .media-icon {
         background-color: $color-gray-600;
 
         > img {
