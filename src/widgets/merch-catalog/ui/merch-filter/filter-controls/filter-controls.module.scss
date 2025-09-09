@@ -23,6 +23,10 @@
   border-radius: $border-radius-xxs;
 }
 
+.filter-search-wrapper:focus-within {
+  border-color: $color-gray-600;
+}
+
 .filter-search-input {
   display: inline-flex;
   width: 100%;
