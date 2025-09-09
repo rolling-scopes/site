@@ -24,7 +24,7 @@
 
     width: 310px;
     height: 300px;
-    border-radius: $border-radius-half;
+    border-radius: $border-radius-round;
 
     background-color: hsla(from $color-js-accent h s l / $opacity-20);
     filter: blur(32px);
@@ -72,7 +72,7 @@
 
       width: 20px;
       height: 20px;
-      border-radius: $border-radius-half;
+      border-radius: $border-radius-round;
 
       background-color: rgba($color-yellow, $opacity-80);
       filter: blur(8px);
