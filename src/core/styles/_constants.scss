@@ -111,15 +111,13 @@ $font-size-s: 16px;
 $font-size-m: 18px;
 $font-size-l: 20px;
 $font-size-xl: 24px;
-$font-size-2xl: 28px;
-$font-size-3xl: 32px;
-$font-size-4xl: 36px;
-$font-size-5xl: 40px;
-$font-size-6xl: 44px;
-$font-size-7xl: 52px;
-$font-size-8xl: 60px;
-$font-size-9xl: 80px;
-$font-size-10xl: 96px;
+$font-size-2xs: 2 * $font-size-xs; // 28px
+$font-size-2s: 2 * $font-size-s; // 32px
+$font-size-2m: 2 * $font-size-m; // 36px
+$font-size-2xl: 2 * $font-size-xl; // 48px
+$font-size-4s: 2 * $font-size-2s; // 64px
+$font-size-4l: 4 * $font-size-l; // 80px
+$font-size-4xl: 2 * $font-size-2xl; // 96px
 
 // Standard gap
 $gap-xxs: 4px;
