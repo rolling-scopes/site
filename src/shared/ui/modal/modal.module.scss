@@ -34,7 +34,7 @@
   @keyframes modal-fade-in {
     0% {
       scale: 0.96;
-      opacity: $opacity-0;
+      opacity: 0;
     }
 
     100% {
@@ -45,13 +45,13 @@
   @keyframes modal-fade-out {
     100% {
       scale: 0.96;
-      opacity: $opacity-0;
+      opacity: 0;
     }
   }
 
   @keyframes backdrop-fade-in {
     0% {
-      opacity: $opacity-0;
+      opacity: 0;
     }
 
     100% {
@@ -61,7 +61,7 @@
 
   @keyframes backdrop-fade-out {
     100% {
-      opacity: $opacity-0;
+      opacity: 0;
     }
   }
 }

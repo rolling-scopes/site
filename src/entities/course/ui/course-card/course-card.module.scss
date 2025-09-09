@@ -21,7 +21,7 @@
 
     border-radius: inherit;
 
-    opacity: $opacity-0;
+    opacity: 0;
     background-color: hsla(from $color-gray-900 h s l/ $opacity-15);
     backdrop-filter: blur(6px);
 
