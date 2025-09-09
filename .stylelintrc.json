@@ -63,24 +63,24 @@
     ],
     "scale-unlimited/declaration-strict-value": [
       [
-        "border-radius",
-        "color",
         "background-color",
-        "opacity",
-        "z-index",
-        "font-weight",
+        "border-radius",
         "box-shadow",
-        "font-size"
+        "color",
+        "font-size",
+        "font-weight",
+        "opacity",
+        "z-index"
       ],
       {
         "ignoreValues": [
-          "inherit",
-          "transparent",
-          "initial",
-          "unset",
           "0",
+          "currentcolor",
+          "inherit",
+          "initial",
           "none",
-          "currentcolor"
+          "transparent",
+          "unset"
         ]
       }
     ]
