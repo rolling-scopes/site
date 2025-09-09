@@ -10,7 +10,7 @@
   border-radius: $border-radius-xxs;
 
   background-color: $color-white;
-  box-shadow: $shadow-l;
+  box-shadow: $shadow-m;
 
   transition: box-shadow 0.3s ease;
 }
@@ -72,7 +72,7 @@
 
   opacity: $opacity-80;
   background-color: $color-yellow;
-  box-shadow: $shadow-l;
+  box-shadow: $shadow-m;
 
   &:hover {
     opacity: $opacity-100;

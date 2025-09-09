@@ -128,7 +128,7 @@
 
   @include media-hover {
     &:hover {
-      box-shadow: $shadow-xl;
+      box-shadow: $shadow-l;
 
       .card-header::after {
         @include card-corner-accent($accent-color, $isHovered: true);

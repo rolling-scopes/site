@@ -143,6 +143,5 @@ $z-index-max: 1000;
 // Box-shadow
 $shadow-xs: 1px 1px 2px $color-gray-900;
 $shadow-s: 0 4px 8px 0 hsla(from $color-gray-900 h s l / $opacity-10);
-$shadow-m: 0 4px 10px 0 hsla(from $color-gray-900 h s l / $opacity-10);
-$shadow-l: 0 4px 12px 0 hsla(from $color-gray-900 h s l / $opacity-10);
-$shadow-xl: 0 4px 16px 0 hsla(from $color-gray-900 h s l / $opacity-15);
+$shadow-m: 0 4px 12px 0 hsla(from $color-gray-900 h s l / $opacity-10);
+$shadow-l: 0 4px 16px 0 hsla(from $color-gray-900 h s l / $opacity-15);
