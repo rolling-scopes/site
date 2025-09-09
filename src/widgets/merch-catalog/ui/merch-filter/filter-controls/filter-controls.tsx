@@ -25,7 +25,7 @@ export const FilterControls = ({
   return (
     <div className={cx('filter-container', { tablet: isTabletLayout })}>
       {!isTabletLayout && (
-        <div className={cx('filter-title-wrapper')}>
+        <div id="merch-filter-tags" className={cx('filter-title-wrapper')}>
           <h4 className={cx('filter-title')}>Filter merch</h4>
           <button
             className={cx('filter-clear-button', { active: hasActiveFilters })}
@@ -40,7 +40,8 @@ export const FilterControls = ({
         <input
           className={cx('filter-search-input')}
           id="merch-search-input"
-          type="text"
+          type="search"
+          aria-label="Search merch"
           placeholder="Search..."
           value={searchTerm}
           onChange={(e) => onSearchChange(e.target.value)}
@@ -51,6 +52,8 @@ export const FilterControls = ({
         <button
           className={cx('tablet-toggle-button', { expanded: areTagsExpandedTablet })}
           onClick={onToggleTagsExpansionTablet}
+          aria-expanded={areTagsExpandedTablet}
+          aria-controls="merch-filter-tags"
         >
           Filter By:
           {hasActiveFilters && !areTagsExpandedTablet && <span></span>}
