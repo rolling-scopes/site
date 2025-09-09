@@ -5,7 +5,7 @@ import { vi } from 'vitest';
 import { FilterControls } from './filter-controls';
 
 describe('FilterControls', () => {
-  const mockProps = {
+  const makeProps = () => ({
     allAvailableTags: ['tag1', 'tag2', 'tag3'],
     searchTerm: '',
     selectedTags: [],
@@ -16,15 +16,15 @@ describe('FilterControls', () => {
     isTabletLayout: false,
     areTagsExpandedTablet: false,
     onToggleTagsExpansionTablet: vi.fn(),
-  };
+  });
 
   it('renders search input', () => {
-    render(<FilterControls {...mockProps} />);
+    render(<FilterControls {...makeProps()} />);
     expect(screen.getByPlaceholderText('Search...')).toBeInTheDocument();
   });
 
   it('renders tags checkboxes', () => {
-    render(<FilterControls {...mockProps} />);
+    render(<FilterControls {...makeProps()} />);
     expect(screen.getByText('tag1')).toBeInTheDocument();
     expect(screen.getByText('tag2')).toBeInTheDocument();
     expect(screen.getByText('tag3')).toBeInTheDocument();
@@ -32,22 +32,23 @@ describe('FilterControls', () => {
 
   it('calls onTagChange when a tag checkbox is clicked', async () => {
     const user = userEvent.setup();
+    const props = makeProps();
 
-    render(<FilterControls {...mockProps} />);
+    render(<FilterControls {...props} />);
     const tagLabel = screen.getByText('tag1');
 
     await user.click(tagLabel);
-    expect(mockProps.onTagChange).toHaveBeenCalledWith('tag1');
+    expect(props.onTagChange).toHaveBeenCalledWith('tag1');
   });
 
   it('renders tablet toggle button and hides tags by default in tablet layout', () => {
-    render(<FilterControls {...mockProps} isTabletLayout={true} areTagsExpandedTablet={false} />);
+    render(<FilterControls {...makeProps()} isTabletLayout={true} areTagsExpandedTablet={false} />);
     expect(screen.getByRole('button', { name: /Filter By:/i })).toBeInTheDocument();
     expect(screen.queryByText('tag1')).not.toBeInTheDocument();
   });
 
   it('shows tags when tablet toggle button is clicked and areTagsExpandedTablet is true', () => {
-    render(<FilterControls {...mockProps} isTabletLayout={true} areTagsExpandedTablet={true} />);
+    render(<FilterControls {...makeProps()} isTabletLayout={true} areTagsExpandedTablet={true} />);
     expect(screen.getByRole('button', { name: /Filter By:/i })).toBeInTheDocument();
     expect(screen.getByText('tag1')).toBeVisible();
   });
