@@ -25,7 +25,7 @@ export const FilterControls = ({
   return (
     <div className={cx('filter-container', { tablet: isTabletLayout })}>
       {!isTabletLayout && (
-        <div id="merch-filter-tags" className={cx('filter-title-wrapper')}>
+        <div className={cx('filter-title-wrapper')}>
           <h4 className={cx('filter-title')}>Filter merch</h4>
           <button
             className={cx('filter-clear-button', { active: hasActiveFilters })}
@@ -50,6 +50,7 @@ export const FilterControls = ({
 
       {isTabletLayout && (
         <button
+          id="merch-filter-toggle"
           className={cx('tablet-toggle-button', { expanded: areTagsExpandedTablet })}
           onClick={onToggleTagsExpansionTablet}
           aria-expanded={areTagsExpandedTablet}
@@ -64,30 +65,42 @@ export const FilterControls = ({
       )}
       {showTagsSection && allAvailableTags && allAvailableTags.length > 0 && (
         <>
-          {isTabletLayout && hasActiveFilters && (
-            <button className={cx('tablet-clear-button')} onClick={onClearFilters}>
+          {isTabletLayout && (
+            <button
+              className={cx('tablet-clear-button', { active: hasActiveFilters })}
+              onClick={onClearFilters}
+            >
               Clear
             </button>
           )}
-          <div className={cx('filter-tags-wrapper')}>
+          <div
+            id="merch-filter-tags"
+            className={cx('filter-tags-wrapper')}
+            role="region"
+            aria-labelledby="merch-filter-toggle"
+          >
             {' '}
-            {allAvailableTags.map((tag) => (
-              <label
-                key={tag}
-                htmlFor={`tag-checkbox-${tag}`}
-                className={cx('filter-tag-label', { selected: selectedTags.includes(tag) })}
-              >
-                <input
-                  type="checkbox"
-                  id={`tag-checkbox-${tag}`}
-                  className={cx('filter-checkbox-original')}
-                  checked={selectedTags.includes(tag)}
-                  onChange={() => onTagChange(tag)}
-                />
-                <span className={cx('filter-checkbox-custom')}></span>
-                <span>{tag}</span>
-              </label>
-            ))}
+            {allAvailableTags.map((tag) => {
+              const safeId = `tag-checkbox-${tag.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+
+              return (
+                <label
+                  key={tag}
+                  htmlFor={safeId}
+                  className={cx('filter-tag-label', { selected: selectedTags.includes(tag) })}
+                >
+                  <input
+                    type="checkbox"
+                    id={safeId}
+                    className={cx('filter-checkbox-original')}
+                    checked={selectedTags.includes(tag)}
+                    onChange={() => onTagChange(tag)}
+                  />
+                  <span className={cx('filter-checkbox-custom')}></span>
+                  <span>{tag}</span>
+                </label>
+              );
+            })}
           </div>
         </>
       )}

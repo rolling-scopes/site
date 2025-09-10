@@ -66,6 +66,8 @@
 }
 
 .filter-clear-button {
+  @extend %transition-all;
+
   cursor: pointer;
 
   padding: $gap-xxs $gap-xs;
@@ -79,8 +81,6 @@
   opacity: $opacity-0;
   background: none;
   outline: none;
-
-  transition: color 0.2s ease;
 
   &:hover {
     border: 1px solid $color-gray-900;
@@ -97,22 +97,40 @@
 .tablet-clear-button {
   cursor: pointer;
 
+  overflow: hidden;
+
   width: 100%;
-  padding: $gap-xs;
-  border: 1px solid $color-gray-300;
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-width: 0;
+  border-top: 0 solid $color-gray-300;
+  border-bottom: 0 solid $color-gray-300;
   border-radius: $border-radius-xxs;
 
   font-size: $font-size-s;
   color: $color-gray-600;
 
+  opacity: $opacity-0;
   background: none;
   outline: none;
 
-  transition: color 0.2s ease;
+  transition:
+    max-height 0.3s ease-in-out,
+    opacity 0.3s ease-in-out,
+    padding 0.3s ease-in-out,
+    border 0.3s ease-in-out;
 
   &:hover {
     color: $color-gray-900;
     background-color: $color-gray-50;
+  }
+
+  &.active {
+    max-height: 100px;
+    padding: $gap-xs;
+    border: 1px solid $color-gray-300;
+    opacity: $opacity-100;
   }
 }
 
