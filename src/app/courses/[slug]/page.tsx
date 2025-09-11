@@ -45,7 +45,7 @@ export async function generateStaticParams() {
 export default async function CourseRoute({ params }: CourseRouteParams) {
   const { slug } = await params;
   const locale = resolveCoursePageLocale(slug);
-  const { courseName, sections, courseId } = await coursePageStore.loadCoursePage(slug, locale);
+  const { sections, courseId } = await coursePageStore.loadCoursePage(slug, locale);
 
-  return <Course id={courseId} name={courseName} sections={sections} locale={locale} />;
+  return <Course id={courseId} sections={sections} locale={locale} />;
 }
