@@ -48,6 +48,7 @@ export const KEY_CODES = {
   ESCAPE: 'Escape',
   ENTER: 'Enter',
   SPACE: 'Space',
+  TAB: 'Tab',
 } as const;
 
 export const HTTP_METHOD = {
@@ -94,14 +95,14 @@ export const LINKS = {
   ANGULAR_MENTORING: 'https://github.com/rolling-scopes-school/tasks/tree/master/angular/mentoring',
 };
 
-export const NAV_MENU_LABELS = {
-  RS_SCHOOL: 'RS School',
-  COURSES: 'Courses',
-  COMMUNITY: 'Community',
-  MENTORSHIP: 'Mentorship',
-  DOCS: 'Docs',
-  SUPPORT_US: 'Support Us',
-} as const;
+export enum NAV_MENU_LABELS {
+  RS_SCHOOL = 'RS School',
+  COURSES = 'Courses',
+  COMMUNITY = 'Community',
+  MENTORSHIP = 'Mentorship',
+  DOCS = 'Docs',
+  SUPPORT_US = 'Support Us',
+}
 
 export const ROUTES = {
   HOME: '/',

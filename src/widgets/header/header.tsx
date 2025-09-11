@@ -1,25 +1,26 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import classNames from 'classnames/bind';
 import { usePathname } from 'next/navigation';
 
+import { generateNavItemsConfig, generateNavMenuData } from './helpers/generate-nav-menu-data';
 import { BurgerMenu } from './ui/burger/burger';
+import { DropdownContent } from './ui/dropdown/dropdown-content/dropdown-content';
+import { DropdownWrapper } from './ui/dropdown/dropdown-wrapper';
 import { Course } from '@/entities/course';
 import iconBlue from '@/shared/assets/svg/heart-blue.svg';
 import iconYellow from '@/shared/assets/svg/heart-yellow.svg';
 import logoBlue from '@/shared/assets/svg/rss-logo-blue.svg';
-import { ANCHORS, NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
-import { CourseMenuItemsFresh } from '@/shared/ui/course-menu-items-fresh';
+import { KEY_CODES, NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
+import { getActualData } from '@/shared/helpers/get-actual-data';
+import { useOutsideClick } from '@/shared/hooks/use-outside-click/use-outside-click';
 import { Logo } from '@/shared/ui/logo';
-import { Paragraph } from '@/shared/ui/paragraph';
 import {
   transformCoursesToMentorship,
 } from '@/views/mentorship/helpers/transform-courses-to-mentorship';
 import { NavItem } from '@/widgets/header/ui/nav-item/nav-item';
 import { MobileView } from '@/widgets/mobile-view';
-import { SchoolMenu } from '@/widgets/school-menu';
-import { communityMenuStaticLinks, donateOptions, schoolMenuStaticLinks } from 'data';
 
 import styles from './header.module.scss';
 
@@ -30,23 +31,35 @@ type HeaderProps = {
 };
 
 export const Header = ({ courses }: HeaderProps) => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeMenuItem, setActiveMenuItem] = useState<NAV_MENU_LABELS | null>(null);
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const wrapperRef = useRef<HTMLMenuElement>(null);
+  const activeDropdownItemRef = useRef<HTMLAnchorElement>(null);
+  const activeNavItemRef = useRef<HTMLButtonElement>(null);
 
   const pathname = usePathname();
   const isMentorshipPage = pathname.includes(ROUTES.MENTORSHIP);
   const iconSrc = isMentorshipPage ? iconBlue : iconYellow;
-  const coursesWithMentorship = transformCoursesToMentorship(courses);
+  const actualCourses = getActualData({
+    data: courses,
+    filterStale: false,
+    sort: false,
+  });
+  const coursesWithMentorship = transformCoursesToMentorship(actualCourses);
+
+  // mobile menu logic
 
   const toggleMenu = () => {
-    setMenuOpen((prev) => !prev);
+    setMobileMenuOpen((prev) => !prev);
   };
 
   const handleMenuClose = () => {
-    setMenuOpen(false);
+    setMobileMenuOpen(false);
   };
 
   useEffect(() => {
-    if (isMenuOpen) {
+    if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -55,7 +68,55 @@ export const Header = ({ courses }: HeaderProps) => {
     return () => {
       document.body.style.overflow = '';
     };
-  }, [isMenuOpen]);
+  }, [isMobileMenuOpen]);
+
+  // desktop menu logic
+
+  const menuData = useMemo(
+    () => generateNavMenuData(actualCourses, coursesWithMentorship),
+    [actualCourses, coursesWithMentorship],
+  );
+
+  const navItemsData = generateNavItemsConfig(iconSrc);
+
+  const onClose = useCallback(() => {
+    setDropdownOpen(false);
+    setActiveMenuItem(null);
+  }, []);
+
+  useOutsideClick(wrapperRef, onClose, isDropdownOpen);
+
+  const handleNavItemClick = (label: NAV_MENU_LABELS) => {
+    if (label === NAV_MENU_LABELS.DOCS) {
+      setDropdownOpen(false);
+      setActiveMenuItem(null);
+      return;
+    }
+
+    const isSameItem = activeMenuItem === label;
+
+    setDropdownOpen(!isSameItem);
+    setActiveMenuItem(isSameItem ? null : label);
+  };
+
+  useEffect(() => {
+    setDropdownOpen(false);
+    setActiveMenuItem(null);
+  }, [pathname]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.code === KEY_CODES.ESCAPE && isDropdownOpen) {
+        e.preventDefault();
+        setDropdownOpen(false);
+        setActiveMenuItem(null);
+        activeNavItemRef.current?.focus();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isDropdownOpen]);
 
   return (
     <header className={cx('header')}>
@@ -63,101 +124,44 @@ export const Header = ({ courses }: HeaderProps) => {
         <section className={cx('navbar-content')}>
           <Logo logoSrc={isMentorshipPage ? logoBlue : undefined} />
 
-          <menu className={cx('mobile-menu', { open: isMenuOpen })} data-testid="mobile-menu">
+          <menu className={cx('mobile-menu', { open: isMobileMenuOpen })} data-testid="mobile-menu">
             <MobileView
               onClose={handleMenuClose}
-              courses={courses}
+              courses={actualCourses}
               type="header"
               logoIcon={isMentorshipPage ? logoBlue : undefined}
-              isMenuOpen={isMenuOpen}
+              isMenuOpen={isMobileMenuOpen}
             />
           </menu>
-          <BurgerMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+          <BurgerMenu isMenuOpen={isMobileMenuOpen} toggleMenu={toggleMenu} />
 
-          <menu className={cx('menu')} data-testid="desktop-menu">
-            <NavItem label={NAV_MENU_LABELS.RS_SCHOOL} href={ROUTES.HOME}>
-              <SchoolMenu layout="columns">
-                {schoolMenuStaticLinks.map((link, i) => (
-                  <SchoolMenu.Item
-                    key={i}
-                    title={link.title}
-                    description={link.description}
-                    url={link.detailsUrl}
-                  />
-                ))}
-              </SchoolMenu>
-            </NavItem>
-            <NavItem label={NAV_MENU_LABELS.COURSES} href={ROUTES.COURSES}>
-              <SchoolMenu>
-                <SchoolMenu.Item
-                  key={NAV_MENU_LABELS.COURSES}
-                  title="All Courses"
-                  description="Journey to full stack mastery"
-                  url={`/${ROUTES.COURSES}`}
+          <menu ref={wrapperRef} className={cx('menu')} data-testid="desktop-menu">
+            {navItemsData.map((item) => (
+              <NavItem
+                key={item.label}
+                label={item.label}
+                icon={item.icon}
+                href={item.url}
+                activeNavItemRef={activeMenuItem === item.label ? activeNavItemRef : undefined}
+                isActiveNavItem={activeMenuItem === item.label}
+                isDropdownOpen={isDropdownOpen}
+                onNavItemClick={() => handleNavItemClick(item.label)}
+                onFocusDropdownItem={() => {
+                  setTimeout(() => {
+                    activeDropdownItemRef.current?.focus();
+                  }, 0);
+                }}
+              />
+            ))}
+            <DropdownWrapper isOpen={isDropdownOpen}>
+              {activeMenuItem && (
+                <DropdownContent
+                  menuData={menuData[activeMenuItem]}
+                  activeMenuItem={activeMenuItem}
+                  activeItemRef={activeDropdownItemRef}
                 />
-              </SchoolMenu>
-              <SchoolMenu layout="columns">
-                <CourseMenuItemsFresh courses={courses} />
-              </SchoolMenu>
-            </NavItem>
-            <NavItem label={NAV_MENU_LABELS.COMMUNITY} href={ROUTES.COMMUNITY}>
-              <SchoolMenu layout="columns">
-                {communityMenuStaticLinks.map((link, i) => (
-                  <SchoolMenu.Item
-                    key={i}
-                    title={link.title}
-                    description={link.description}
-                    url={link.detailsUrl}
-                  />
-                ))}
-              </SchoolMenu>
-            </NavItem>
-            <NavItem label={NAV_MENU_LABELS.MENTORSHIP} href={ROUTES.MENTORSHIP}>
-              <SchoolMenu>
-                <SchoolMenu.Item
-                  key={NAV_MENU_LABELS.MENTORSHIP}
-                  title="About Mentorship"
-                  description="By teaching others, you learn yourself"
-                  url={`/${ROUTES.MENTORSHIP}`}
-                />
-              </SchoolMenu>
-              <SchoolMenu layout="columns">
-                {coursesWithMentorship.map((course) => (
-                  <SchoolMenu.Item
-                    key={course.id}
-                    icon={course.iconSmall}
-                    title={course.title}
-                    description={course.startDate}
-                    url={course.detailsUrl}
-                  />
-                ))}
-              </SchoolMenu>
-            </NavItem>
-            <NavItem label={NAV_MENU_LABELS.DOCS} href={ROUTES.DOCS_EN} />
-            <NavItem
-              reverseLayout={true}
-              label={NAV_MENU_LABELS.SUPPORT_US}
-              href={`#${ANCHORS.DONATE}`}
-              icon={iconSrc}
-            >
-              <div className={cx('support-text')}>
-                <Paragraph fontSize="small">
-                  Your donations help us cover hosting, domains, licenses, and advertising for
-                  courses and events. Every donation, big or small, helps!
-                </Paragraph>
-                <Paragraph fontSize="small">Thank you for your support!</Paragraph>
-              </div>
-              <SchoolMenu>
-                {donateOptions.toReversed().map((option) => (
-                  <SchoolMenu.Item
-                    key={option.id}
-                    icon={option.menuIcon}
-                    title={option.menuLinkLabel}
-                    url={option.href}
-                  />
-                ))}
-              </SchoolMenu>
-            </NavItem>
+              )}
+            </DropdownWrapper>
           </menu>
         </section>
       </nav>
