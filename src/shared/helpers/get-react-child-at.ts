@@ -1,6 +1,9 @@
 import React, { Component, ReactNode } from 'react';
 
-export function getReactChildAt(node: ReactNode, index = 0): Component | string | null {
+export function getReactChildAt(
+  node: ReactNode,
+  index = 0,
+): Component | string | null | Array<unknown> {
   if (
     !node
     || !React.isValidElement(node)

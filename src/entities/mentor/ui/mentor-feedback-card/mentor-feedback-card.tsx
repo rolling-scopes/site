@@ -34,8 +34,13 @@ export const MentorFeedbackCard = ({
   };
 
   const reviewText = getReactChildAt(review.at(0));
-  const isLongReview =
-    typeof reviewText === 'string' ? reviewText.length > FEEDBACK_MAX_CHARS : false;
+  let isLongReview = false;
+
+  if (Array.isArray(reviewText)) {
+    const mergedText = reviewText.filter((item) => typeof item === 'string').join('');
+
+    isLongReview = mergedText.length > FEEDBACK_MAX_CHARS;
+  }
 
   const card = (
     <div className={cx('card')}>
