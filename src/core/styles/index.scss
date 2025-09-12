@@ -172,3 +172,17 @@ figure {
     }
   }
 }
+
+.embedded-text-break {
+  @include media-laptop {
+    display: none;
+  }
+}
+
+.embedded-space {
+  display: none;
+
+  @include media-laptop {
+    display: unset;
+  }
+}

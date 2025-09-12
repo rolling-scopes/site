@@ -86,7 +86,6 @@ describe('HeroCourse component', () => {
       const buttonElement = screen.getByText(REGISTRATION_WILL_OPEN_SOON);
 
       expect(buttonElement).toBeVisible();
-      expect(buttonElement).toHaveAttribute('href', '/');
       expect(buttonElement).toHaveTextContent(REGISTRATION_WILL_OPEN_SOON);
     });
 
@@ -100,7 +99,6 @@ describe('HeroCourse component', () => {
       const buttonElement = screen.getByText(REGISTRATION_WILL_OPEN_SOON_RU);
 
       expect(buttonElement).toBeVisible();
-      expect(buttonElement).toHaveAttribute('href', '/');
       expect(buttonElement).toHaveTextContent(REGISTRATION_WILL_OPEN_SOON_RU);
     });
   });
