@@ -86,7 +86,7 @@ export const LinkCustom = ({
       {...props}
       {...(external && externalLinkAttributes)}
     >
-      {children}
+      <span>{children}</span>
       {IconComponent && <span className={cx('icon-wrapper')}>{!disabled && IconComponent}</span>}
     </Link>
   );
