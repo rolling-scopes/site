@@ -17,6 +17,6 @@
 .with-border {
   img {
     border: 2px solid $color-white;
-    border-radius: 50%;
+    border-radius: $border-radius-round;
   }
 }

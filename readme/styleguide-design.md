@@ -74,7 +74,6 @@ Please follow the rules and tokens provided in the guide.
 | `$opacity-20` | 0.2 |
 | `$opacity-10` | 0.1 |
 | `$opacity-8` | 0.08 |
-| `$opacity-0` | 0 |
 
 ## 🇦 Fonts
 🚧 The section is in development 🚧
