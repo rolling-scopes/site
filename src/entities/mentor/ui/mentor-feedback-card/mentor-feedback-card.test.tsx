@@ -9,11 +9,11 @@ describe('MentorFeedbackCard', () => {
   const mockProps = MOCKED_MENTORS_FEEDBACK;
   const longReviewProps = {
     ...mockProps,
-    review: [<Paragraph key="0">{['a'.repeat(600)]}</Paragraph>],
+    review: [<Paragraph key="0">{[['a'.repeat(600)]]}</Paragraph>],
   };
   const shortReviewProps = {
     ...mockProps,
-    review: [<Paragraph key="1">{['a'.repeat(300)]}</Paragraph>],
+    review: [<Paragraph key="1">{[['a'.repeat(300)]]}</Paragraph>],
   };
 
   it('should render the card with correct data', () => {

@@ -219,7 +219,7 @@ export const MOCKED_MERCH_DATA = {
 export const MOCKED_MENTORS_FEEDBACK = {
   name: 'John Doe',
   course: 'React',
-  review: [<Paragraph key="0">{['One of the best courses!']}</Paragraph>],
+  review: [<Paragraph key="0">{[['One of the best courses!']]}</Paragraph>],
   photo: nodejsImg1,
 };
 
