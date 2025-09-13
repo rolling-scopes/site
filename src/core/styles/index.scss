@@ -174,7 +174,7 @@ figure {
 }
 
 .embedded-text-break {
-  @include media-laptop {
+  @include media-tablet-large {
     display: none;
   }
 }
@@ -182,7 +182,7 @@ figure {
 .embedded-space {
   display: none;
 
-  @include media-laptop {
+  @include media-tablet-large {
     display: unset;
   }
 }
