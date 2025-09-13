@@ -68,6 +68,7 @@ export const API_CONTENT_TYPE_DICTIONARY = {
   COURSE: 'course',
   COURSE_PAGE: 'homePage',
   LANDING_PAGE: 'landingPage',
+  PAGE: 'page',
 } as const;
 
 export const ANCHORS = {

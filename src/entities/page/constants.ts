@@ -1,0 +1,5 @@
+export const PAGE_TYPE = {
+  MENTORSHIP: 'mentorship',
+  MENTORSHIP_COURSE: 'mentorship-course',
+  NOT_FOUND: 'not-found',
+} as const;

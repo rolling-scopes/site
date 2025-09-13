@@ -70,7 +70,7 @@ export const Link = ({
       {...(external && externalLinkAttributes)}
     >
       {icon && (
-        <span className={cx('icon-wrapper')}>
+        <span className={cx('icon-wrapper-left')}>
           <Image src={icon} alt="" aria-hidden="true" />
         </span>
       )}

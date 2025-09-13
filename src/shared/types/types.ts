@@ -4,6 +4,7 @@ import { CoursePageResponse } from '@/entities/course-page/types';
 import { ApiBaseClass } from '@/shared/api/api-base-class';
 import { HTTP_METHOD } from '@/shared/constants';
 import {
+  TypeAboutCourseItemWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeDonationWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeExternalEmbedContentWithAllLocalesAndWithoutLinkResolutionResponse,
@@ -15,15 +16,17 @@ import {
   TypeMarqueeWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeMediaGridWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeMediaTextBlockWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeSlideWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeSliderWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeSocialLinkWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeUpcomingCoursesWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeVideoBlockWithAllLocalesAndWithoutLinkResolutionResponse,
 } from '@/shared/types/contentful';
 import { LinkData } from '@/shared/ui/link-custom/types';
-import { SliderData } from '@/shared/ui/slider/types';
+import { SlideData, SliderData } from '@/shared/ui/slider/types';
 import { SocialLinkData } from '@/shared/ui/social-media-item/constants';
 import { AboutCourseSectionData } from '@/widgets/about-course';
+import { GridItemData } from '@/widgets/about-course/types';
 import { ExternalEmbedContentData } from '@/widgets/external-embed-content';
 import { HeroSectionData } from '@/widgets/hero/types';
 import { HighlightCardData } from '@/widgets/highlight-card/types';
@@ -123,6 +126,7 @@ export type ExtractSectionName<TContentType extends BaseEntry> =
 
 export type SectionName =
   | ExtractSectionName<TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeAboutCourseItemWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeMediaTextBlockWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeLearningPathStagesWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeVideoBlockWithAllLocalesAndWithoutLinkResolutionResponse>
@@ -135,6 +139,7 @@ export type SectionName =
   | ExtractSectionName<TypeInfoGridWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeMarqueeWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeSliderWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeSlideWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeSocialLinkWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeLinkWithAllLocalesAndWithoutLinkResolutionResponse>;
 
@@ -146,6 +151,7 @@ type SectionBase<TName extends SectionName, TData, TId extends string = string> 
 
 export type Section =
   | SectionBase<Extract<SectionName, 'aboutCourse'>, AboutCourseSectionData>
+  | SectionBase<Extract<SectionName, 'aboutCourseItem'>, GridItemData>
   | SectionBase<Extract<SectionName, 'mediaTextBlock'>, MediaTextBlockSectionData>
   | SectionBase<Extract<SectionName, 'learningPathStages'>, LearningPathStagesSectionData>
   | SectionBase<Extract<SectionName, 'videoBlock'>, VideoBlockSectionData>
@@ -158,6 +164,7 @@ export type Section =
   | SectionBase<Extract<SectionName, 'infoGrid'>, InfoGridData>
   | SectionBase<Extract<SectionName, 'marquee'>, MarqueeSectionData>
   | SectionBase<Extract<SectionName, 'slider'>, SliderData>
+  | SectionBase<Extract<SectionName, 'slide'>, SlideData>
   | SectionBase<Extract<SectionName, 'socialLink'>, SocialLinkData>
   | SectionBase<Extract<SectionName, 'link'>, LinkData>;
 

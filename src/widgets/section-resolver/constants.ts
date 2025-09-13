@@ -1,5 +1,6 @@
 export const SECTION_TYPE = {
   ABOUT_COURSE: 'aboutCourse',
+  ABOUT_COURSE_ITEM: 'aboutCourseItem',
   MEDIA_TEXT_BLOCK: 'mediaTextBlock',
   LEARNING_PATH_STAGES: 'learningPathStages',
   VIDEO_BLOCK: 'videoBlock',
@@ -12,6 +13,7 @@ export const SECTION_TYPE = {
   INFO_GRID: 'infoGrid',
   MARQUEE: 'marquee',
   SLIDER: 'slider',
+  SLIDE: 'slide',
   SOCIAL_LINK: 'socialLink',
   LINK: 'link',
 } as const;

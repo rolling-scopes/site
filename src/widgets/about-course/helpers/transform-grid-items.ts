@@ -12,11 +12,13 @@ export function transformGridItems(
     }
 
     const heading = item.fields.heading;
+    const variant = item.fields.variant;
     const content = richTextRenderer(item.fields.content);
     const icon = prepareAssetImage(item.fields.icon?.fields.file);
 
     return {
       id: heading,
+      variant,
       heading,
       content,
       icon,

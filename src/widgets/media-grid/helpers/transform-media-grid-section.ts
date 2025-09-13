@@ -14,8 +14,6 @@ export function transformMediaGridSection(
   const { numberOfColumns, removeItemsOnResponsive, rowGapPx, colGapPx, fitContent, ...settings } =
     section.fields.settings as ApiMediaGridSectionSettings;
 
-  console.log(section.fields.settings, 'checking settings');
-
   return {
     id,
     name,

@@ -5,6 +5,7 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import { MentorFeedback } from '../../types';
+import { getReactChildAt } from '@/shared/helpers/get-react-child-at';
 import { Modal } from '@/shared/ui/modal';
 import { Subtitle } from '@/shared/ui/subtitle';
 
@@ -16,7 +17,12 @@ type MentorFeedbackCardProps = MentorFeedback;
 
 const FEEDBACK_MAX_CHARS = 500;
 
-export const MentorFeedbackCard = ({ name, course, review, photo }: MentorFeedbackCardProps) => {
+export const MentorFeedbackCard = ({
+  name,
+  course,
+  review = [],
+  photo,
+}: MentorFeedbackCardProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -27,7 +33,14 @@ export const MentorFeedbackCard = ({ name, course, review, photo }: MentorFeedba
     setIsModalOpen(false);
   };
 
-  const isLongReview = review.length > FEEDBACK_MAX_CHARS;
+  const reviewText = getReactChildAt(review.at(0));
+  let isLongReview = false;
+
+  if (Array.isArray(reviewText)) {
+    const mergedText = reviewText.filter((item) => typeof item === 'string').join('');
+
+    isLongReview = mergedText.length > FEEDBACK_MAX_CHARS;
+  }
 
   const card = (
     <div className={cx('card')}>
@@ -61,9 +74,9 @@ export const MentorFeedbackCard = ({ name, course, review, photo }: MentorFeedba
         </header>
       </section>
       <div className={cx('card-content-wrapper')} data-testid="card-content-wrapper">
-        <p className={cx('card-content')} data-testid="card-content">
+        <div className={cx('card-content')} data-testid="card-content">
           {review}
-        </p>
+        </div>
         {isLongReview && (
           <button
             className={cx('see-more-button')}

@@ -13,7 +13,13 @@ export function isSectionComponentsList(nodes: ReactNode | ReactNode[]) {
     return false;
   }
 
-  return React.Children.toArray(nodes.filter(Boolean)).every((child) => {
+  const cleanNodes = nodes.filter(Boolean);
+
+  if (cleanNodes.length <= 1) {
+    return false;
+  }
+
+  return React.Children.toArray(cleanNodes).every((child) => {
     return (
       React.isValidElement(child)
       && typeof child.type === 'function'

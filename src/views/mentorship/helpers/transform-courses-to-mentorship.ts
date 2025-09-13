@@ -1,6 +1,6 @@
 import { Course } from '@/entities/course';
+import { MentorshipCourseTitles } from '@/entities/mentor/types';
 import { mentorshipCourseTitles, mentorshipLinks } from '@/views/mentorship/constants';
-import { MentorshipCourseTitles } from 'data';
 
 export const transformCoursesToMentorship = (courses: Course[]) => {
   const clonedCourses = structuredClone(courses);

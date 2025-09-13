@@ -130,6 +130,7 @@
 
   .content-bottom {
     display: grid;
+    grid-auto-columns: 1fr;
     align-items: start;
     justify-content: space-between;
 

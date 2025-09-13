@@ -31,17 +31,19 @@
   width: 100%;
 
   &.fit-content {
-    grid-template-columns: repeat(var(--grid-max-col-count), max-content);
+    grid-template-columns: repeat(var(--grid-max-col-count), minmax(auto, max-content));
+
+    &.spread-mobile {
+      @include media-tablet {
+        gap: 0;
+        justify-content: space-around;
+      }
+    }
 
     &.fit-mobile {
       @include media-mobile-landscape {
         grid-template-columns: $responsive-grid;
       }
     }
-  }
-
-  @include media-tablet {
-    gap: 0;
-    justify-content: space-around;
   }
 }
