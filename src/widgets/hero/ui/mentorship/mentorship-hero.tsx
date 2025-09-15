@@ -6,7 +6,7 @@ import { HeroSectionData } from '@/widgets/hero/types';
 
 import styles from './mentorship-hero.module.scss';
 
-export const cx = classNames.bind(styles);
+const cx = classNames.bind(styles);
 
 type MentorshipHeroProps = Omit<HeroSectionData, 'variant'>;
 

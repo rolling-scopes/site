@@ -5,10 +5,10 @@ type PageMetadata = {
 };
 
 export function preparePageMetadata(response: PageResponse): PageMetadata[] {
-  return response.items.map((courses) => {
+  return response.items.map((page) => {
     const {
       fields: { slug },
-    } = courses;
+    } = page;
 
     return { slug };
   });

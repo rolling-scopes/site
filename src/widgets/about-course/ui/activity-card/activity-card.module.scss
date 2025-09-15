@@ -11,8 +11,9 @@
 
   box-shadow: 0 4px 8px 0 hsla(from $color-gray-900 h s l / $opacity-10);
 
-  p {
-    padding: 0 !important;
+  .card-description :where(p, .paragraph) {
+    margin: 0;
+    padding: 0;
   }
 
   .icon {

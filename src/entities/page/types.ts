@@ -1,9 +1,10 @@
 import { PAGE_TYPE } from '@/entities/page/constants';
-import { ApiResourceLocale, TypeHomePageSkeleton } from '@/shared/types';
+import { ApiResourceLocale } from '@/shared/types';
+import { TypePageSkeleton } from '@/shared/types/contentful';
 import type { EntryCollection } from 'contentful';
 
 export type PageResponse = EntryCollection<
-  TypeHomePageSkeleton,
+  TypePageSkeleton,
   'WITHOUT_UNRESOLVABLE_LINKS',
   ApiResourceLocale
 >;

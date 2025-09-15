@@ -23,6 +23,6 @@ export const ActivityCard = ({ title, description, icon }: ActivityCardProps) =>
     <Subtitle className={cx('card-title')} size="large" weight="bold">
       {title}
     </Subtitle>
-    {description}
+    <div className={cx('card-description')}>{description}</div>
   </article>
 );
