@@ -1,15 +1,23 @@
 import { Metadata } from 'next';
 
+import { PAGE_TYPE } from '@/entities/page/constants';
+import { pageStore } from '@/entities/page/model/store';
 import { mentorshipMetadata } from '@/metadata/mentorship';
+import { OG_SITE_NAME } from '@/shared/constants';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 import { Mentorship } from '@/views/mentorship/mentorship';
-import { mentorshipCoursesDefault } from 'data';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { title, description, keywords, canonical, robots } = mentorshipMetadata;
+  const {
+    title,
+    seoDescription: description,
+    seoKeywords: keywords,
+  } = await pageStore.loadPage(PAGE_TYPE.MENTORSHIP);
+  const preparedTitle = `${title} · ${OG_SITE_NAME}`;
+  const { canonical, robots } = mentorshipMetadata;
 
   const metadata = generatePageMetadata({
-    title,
+    title: preparedTitle,
     description,
     imagePath: `/mentorship/og.png`,
     keywords,
@@ -21,5 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function MentorshipRoute() {
-  return <Mentorship courses mentorshipData={mentorshipCoursesDefault} />;
+  const { sections } = await pageStore.loadPage(PAGE_TYPE.MENTORSHIP);
+
+  return <Mentorship sections={sections} />;
 }

@@ -12,6 +12,7 @@ import { ContentList } from '@/shared/ui/list/content-list';
 import { ListItem } from '@/shared/ui/list/list-item';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 import { SectionResolver } from '@/widgets/section-resolver';
 
 type RichTextDocument = Parameters<typeof documentToReactComponents>['0'];
@@ -30,11 +31,19 @@ export const RICH_TEXT_OPTIONS: RichTextOptions = {
 
       return isEmptyNode ? '' : <Paragraph>{children}</Paragraph>;
     },
+    [BLOCKS.HEADING_2]: (_node: Block | Inline, children: ReactNode) => (
+      <WidgetTitle size="medium">{children}</WidgetTitle>
+    ),
     [BLOCKS.HEADING_3]: (_node: Block | Inline, children: ReactNode) => (
       <Subtitle size="small">{children}</Subtitle>
     ),
     [BLOCKS.HEADING_4]: (_node: Block | Inline, children: ReactNode) => (
       <Subtitle as="h4" size="extra-small">
+        {children}
+      </Subtitle>
+    ),
+    [BLOCKS.HEADING_5]: (_node: Block | Inline, children: ReactNode) => (
+      <Subtitle size="small" weight="bold">
         {children}
       </Subtitle>
     ),
@@ -86,6 +95,7 @@ export const RICH_TEXT_OPTIONS: RichTextOptions = {
 
 export const RICH_TEXT_SLIDER_OPTIONS = {
   renderNode: {
+    ...RICH_TEXT_OPTIONS.renderNode,
     [BLOCKS.PARAGRAPH]: () => null,
     [BLOCKS.EMBEDDED_ASSET]: (node: Inline | Block) => {
       const src = prepareAssetImage(node.data.target.fields.file);

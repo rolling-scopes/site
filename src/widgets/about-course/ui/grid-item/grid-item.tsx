@@ -2,13 +2,15 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import { Subtitle } from '@/shared/ui/subtitle';
-import { GridItem as TGridItem } from '@/widgets/about-course/types';
+import { GridItemData } from '@/widgets/about-course/types';
 
 import styles from './grid-item.module.scss';
 
 export const cx = classNames.bind(styles);
 
-export const GridItem = ({ heading, content, icon }: TGridItem) => {
+type GridItemProps = Omit<GridItemData, 'variant'>;
+
+export const GridItem = ({ heading, content, icon }: GridItemProps) => {
   return (
     <article className={cx('grid-item')} data-testid="about-course-grid-item">
       <header className={cx('item-title')}>

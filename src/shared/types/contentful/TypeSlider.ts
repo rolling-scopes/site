@@ -34,7 +34,7 @@ export interface TypeSliderFields {
  * @type {TypeSliderSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-08-09T09:03:18.515Z
- * @version 11
+ * @version 13
  */
 export type TypeSliderSkeleton = EntrySkeletonType<TypeSliderFields, 'slider'>;
 /**
@@ -43,7 +43,7 @@ export type TypeSliderSkeleton = EntrySkeletonType<TypeSliderFields, 'slider'>;
  * @type {TypeSlider}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-08-09T09:03:18.515Z
- * @version 11
+ * @version 13
  */
 export type TypeSlider<
   Modifiers extends ChainModifiers,

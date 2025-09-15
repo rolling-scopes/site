@@ -169,6 +169,26 @@ export type {
   TypeMediaTextBlockWithoutUnresolvableLinksResponse,
 } from './TypeMediaTextBlock';
 export type {
+  TypePage,
+  TypePageFields,
+  TypePageSkeleton,
+  TypePageWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypePageWithAllLocalesAndWithoutUnresolvableLinksResponse,
+  TypePageWithAllLocalesResponse,
+  TypePageWithoutLinkResolutionResponse,
+  TypePageWithoutUnresolvableLinksResponse,
+} from './TypePage';
+export type {
+  TypeSlide,
+  TypeSlideFields,
+  TypeSlideSkeleton,
+  TypeSlideWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeSlideWithAllLocalesAndWithoutUnresolvableLinksResponse,
+  TypeSlideWithAllLocalesResponse,
+  TypeSlideWithoutLinkResolutionResponse,
+  TypeSlideWithoutUnresolvableLinksResponse,
+} from './TypeSlide';
+export type {
   TypeSlider,
   TypeSliderFields,
   TypeSliderSkeleton,
