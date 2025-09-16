@@ -3,7 +3,6 @@ import Image from 'next/image';
 
 import { Course } from '@/entities/course';
 import { LABELS } from '@/shared/constants';
-import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { MainTitle } from '@/shared/ui/main-title';
 import { ShortInfoPanel } from '@/shared/ui/short-info-panel';
 import { AvailabilityStatus } from '@/widgets/hero/ui/course/availability-status';
@@ -14,11 +13,10 @@ import styles from './course-hero.module.scss';
 const cx = classNames.bind(styles);
 
 type HeroCourseProps = {
-  courseName: Course['title'];
+  course: Course;
 };
 
-export const CourseHero = async ({ courseName }: HeroCourseProps) => {
-  const course = await selectCourse(courseName);
+export const CourseHero = ({ course }: HeroCourseProps) => {
   const {
     title,
     subTitle,

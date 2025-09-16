@@ -22,12 +22,12 @@ export const Course = async ({ id, sections, locale }: CourseProps) => {
 
   return (
     <>
-      <CourseHero courseName={course.title} />
+      <CourseHero course={course} />
       <Breadcrumbs />
       {sections.map((section) => (
         <SectionResolver key={section.id} courseEnrollUrl={course.enroll} section={section} />
       ))}
-      {trainers && <Trainers trainers={trainers} courseName={course.title} />}
+      {trainers && <Trainers trainers={trainers} language={course.language} />}
     </>
   );
 };

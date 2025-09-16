@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 
 import { Trainer, TrainerCard } from '@/entities/trainer';
-import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
+import { Language } from '@/shared/types';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { trainersTitle } from '@/widgets/trainers/constants';
 
@@ -10,13 +10,11 @@ import styles from './trainers.module.scss';
 const cx = classNames.bind(styles);
 
 type TrainersProps = {
-  courseName: string;
+  language: Language;
   trainers: Trainer[];
 };
 
-export const Trainers = async ({ trainers, courseName }: TrainersProps) => {
-  const course = await selectCourse(courseName);
-  const { language } = course;
+export const Trainers = async ({ trainers, language }: TrainersProps) => {
   const title = trainersTitle[language];
 
   return (
