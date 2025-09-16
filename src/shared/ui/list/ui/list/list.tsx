@@ -14,24 +14,16 @@ export const cx = classNames.bind(styles);
 
 const listVariants = cva(cx('list'), {
   variants: {
-    size: {
-      compact: cx('compact'),
-      medium: cx('medium'),
-    },
     type: {
       marked: cx('marked'),
       unmarked: cx(''),
     },
   },
-  defaultVariants: {
-    size: 'medium',
-    type: 'marked',
-  },
+  defaultVariants: { type: 'marked' },
 });
 
-export const ContentList = ({ className = '', size, type, children, ordered }: ListProps) => {
+export const List = ({ className = '', type, children, ordered }: ListProps) => {
   const classNameList = listVariants({
-    size,
     type,
     className,
   });

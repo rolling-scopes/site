@@ -8,8 +8,7 @@ import { prepareAssetImage } from '@/shared/helpers/prepare-asset-image';
 import { replaceTextBreaksWithBrTag } from '@/shared/helpers/replace-text-breaks-with-br-tag';
 import { transformPageSections } from '@/shared/helpers/transform-page-sections';
 import { LinkCustom } from '@/shared/ui/link-custom';
-import { ContentList } from '@/shared/ui/list/content-list';
-import { ListItem } from '@/shared/ui/list/list-item';
+import { List, ListItem } from '@/shared/ui/list';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
@@ -50,11 +49,9 @@ export const RICH_TEXT_OPTIONS: RichTextOptions = {
     [BLOCKS.HEADING_6]: (_node: Block | Inline, children: ReactNode) => (
       <Paragraph fontSize="large">{children}</Paragraph>
     ),
-    [BLOCKS.UL_LIST]: (_node: Block | Inline, children: ReactNode) => (
-      <ContentList>{children}</ContentList>
-    ),
+    [BLOCKS.UL_LIST]: (_node: Block | Inline, children: ReactNode) => <List>{children}</List>,
     [BLOCKS.OL_LIST]: (_node: Block | Inline, children: ReactNode) => (
-      <ContentList ordered>{children}</ContentList>
+      <List ordered>{children}</List>
     ),
     [BLOCKS.LIST_ITEM]: (_node: Block | Inline, children: ReactNode) => (
       <ListItem>{children}</ListItem>

@@ -8,8 +8,6 @@ export type {
   HttpMethod,
   HttpStatusCodes,
   Language,
-  ListData,
-  ListType,
   QueryResult,
   QueryStringParams,
   RequestBody,

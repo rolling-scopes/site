@@ -39,10 +39,6 @@ import { SupportUsSectionData } from '@/widgets/support/types';
 import { UpcomingCoursesSectionData } from '@/widgets/upcoming-courses/types';
 import { VideoBlockSectionData } from '@/widgets/video-block';
 import type { BaseEntry } from 'contentful';
-import { LinkList } from 'data';
-
-export type ListData = (string | LinkList)[] | [];
-export type ListType = 'marked' | 'unmarked';
 
 export type Language = 'en' | 'ru';
 
