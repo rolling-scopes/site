@@ -4,9 +4,11 @@ import { Course, CourseItem } from '@/entities/course';
 import { getActualData } from '@/shared/helpers/get-actual-data';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
-import { maxUpcomingCoursesQuantity } from '@/widgets/upcoming-courses/constants';
+import {
+  announcementTelegramLink,
+  maxUpcomingCoursesQuantity,
+} from '@/widgets/upcoming-courses/constants';
 import { UpcomingCoursesSectionData } from '@/widgets/upcoming-courses/types';
-import { ANNOUNCEMENT_TELEGRAM_LINK } from 'data';
 
 type CourseItems = Required<Pick<UpcomingCoursesSectionData, 'linkLabel' | 'linkUrl'>> & {
   courses: Course[];
@@ -51,7 +53,7 @@ export const CourseItems = ({ courses, linkLabel, linkUrl }: CourseItems) => {
   return (
     <Paragraph>
       {emptyText.part1}
-      <LinkCustom href={ANNOUNCEMENT_TELEGRAM_LINK} external>
+      <LinkCustom href={announcementTelegramLink} external>
         Telegram
       </LinkCustom>
       {emptyText.part2}

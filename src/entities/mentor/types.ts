@@ -1,14 +1,4 @@
-import { ReactNode } from 'react';
-import { StaticImageData } from 'next/image';
-
-import { CourseNamesKeys } from 'data';
-
-export type MentorFeedback = {
-  name: string;
-  course?: string;
-  review: ReactNode[];
-  photo: StaticImageData;
-};
+import { CourseNamesKeys } from '@/shared/types/types';
 
 export type MentorPlaylistResponse = {
   items: GoogleApiYouTubePlaylistItemResource[];

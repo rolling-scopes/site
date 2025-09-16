@@ -5,8 +5,8 @@ import { CourseItem, CourseItemData } from '@/entities/course';
 import { COURSE_DATE_FORMAT } from '@/entities/course/constants';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
+import { COURSE_TITLES } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/day-js';
-import { COURSE_TITLES } from 'data';
 
 const mockedProps: CourseItemData = {
   title: COURSE_TITLES.REACT,

@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 
 import { Trainers } from './trainers';
 import { MOCKED_ONE_TRAINER, MOCKED_SEVERAL_TRAINERS } from '@/shared/__tests__/constants';
-import { COURSE_TITLES } from 'data';
+import { COURSE_TITLES } from '@/shared/constants';
 
 describe('Trainers component', () => {
   const { name, role, bio, photo } = MOCKED_ONE_TRAINER[0];

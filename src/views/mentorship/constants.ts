@@ -1,6 +1,5 @@
 import { MentorshipCourseTitles } from '@/entities/mentor/types';
-import { ROUTES } from '@/shared/constants';
-import { COURSE_TITLES } from 'data';
+import { COURSE_TITLES, ROUTES } from '@/shared/constants';
 
 export const mentorshipCourseTitles: MentorshipCourseTitles[] = [
   COURSE_TITLES.JS_RU,

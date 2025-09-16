@@ -7,12 +7,12 @@ import { HeroCourse } from './hero-course';
 import { MOCKED_IMAGE_PATH, mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import {
+  COURSE_TITLES,
   REGISTRATION_WILL_OPEN_SOON,
   REGISTRATION_WILL_OPEN_SOON_RU,
   TO_BE_DETERMINED,
 } from '@/shared/constants';
 import * as getCourseDate from '@/shared/helpers/get-course-date';
-import { COURSE_TITLES } from 'data';
 
 const mockedCourseWithSubtitle = mockedCourses.find(
   (course) => course.title === COURSE_TITLES.JS_PRESCHOOL_RU,

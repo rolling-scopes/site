@@ -3,9 +3,8 @@ import { StaticImageData } from 'next/image';
 import { Video } from '../types';
 import { Course } from '@/entities/course';
 import type { Trainer } from '@/entities/trainer';
-import { COURSE_LINKS, ROUTES } from '@/shared/constants';
+import { COURSE_LINKS, COURSE_TITLES, ROUTES } from '@/shared/constants';
 import { Paragraph } from '@/shared/ui/paragraph';
-import { COURSE_TITLES } from 'data';
 
 export const MOCKED_IMAGE_PATH: StaticImageData = {
   src: 'mocked-image-path.webp',

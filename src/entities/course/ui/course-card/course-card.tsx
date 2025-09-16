@@ -3,11 +3,10 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import type { Course } from '../../types';
-import { LABELS } from '@/shared/constants';
+import { COURSE_TITLES, LABELS } from '@/shared/constants';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { ShortInfoPanel } from '@/shared/ui/short-info-panel';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { COURSE_TITLES } from 'data';
 
 import styles from './course-card.module.scss';
 

@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 
 import { Courses } from './courses';
 import { mockedCourses } from '@/shared/__tests__/constants';
-import { COURSE_TITLES } from 'data';
+import { COURSE_TITLES } from '@/shared/constants';
 
 describe('Courses (other courses) component', () => {
   it('renders widget without crashing and display correct content', () => {

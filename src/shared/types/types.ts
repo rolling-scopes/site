@@ -2,7 +2,7 @@ import { HttpStatus } from 'http-status';
 
 import { CoursePageResponse } from '@/entities/course-page/types';
 import { ApiBaseClass } from '@/shared/api/api-base-class';
-import { HTTP_METHOD } from '@/shared/constants';
+import { COURSE_TITLES, HTTP_METHOD } from '@/shared/constants';
 import {
   TypeAboutCourseItemWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse,
@@ -165,3 +165,6 @@ export type Section =
   | SectionBase<Extract<SectionName, 'link'>, LinkData>;
 
 export type PageResponseSections = CoursePageResponse['items'][0]['fields']['sections'];
+
+export type CourseNames = typeof COURSE_TITLES;
+export type CourseNamesKeys = CourseNames[keyof CourseNames];
