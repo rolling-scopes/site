@@ -199,16 +199,6 @@ export type {
   TypeSliderWithoutUnresolvableLinksResponse,
 } from './TypeSlider';
 export type {
-  TypeSocialLink,
-  TypeSocialLinkFields,
-  TypeSocialLinkSkeleton,
-  TypeSocialLinkWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeSocialLinkWithAllLocalesAndWithoutUnresolvableLinksResponse,
-  TypeSocialLinkWithAllLocalesResponse,
-  TypeSocialLinkWithoutLinkResolutionResponse,
-  TypeSocialLinkWithoutUnresolvableLinksResponse,
-} from './TypeSocialLink';
-export type {
   TypeUpcomingCourses,
   TypeUpcomingCoursesFields,
   TypeUpcomingCoursesSkeleton,

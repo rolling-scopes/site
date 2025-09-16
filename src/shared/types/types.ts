@@ -18,12 +18,10 @@ import {
   TypeMediaTextBlockWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeSlideWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeSliderWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeSocialLinkWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeUpcomingCoursesWithAllLocalesAndWithoutLinkResolutionResponse,
 } from '@/shared/types/contentful';
 import { LinkData } from '@/shared/ui/link-custom/types';
 import { SlideData, SliderData } from '@/shared/ui/slider/types';
-import { SocialLinkData } from '@/shared/ui/social-media-item/constants';
 import { AboutCourseSectionData } from '@/widgets/about-course';
 import { GridItemData } from '@/widgets/about-course/types';
 import { ExternalEmbedContentData } from '@/widgets/external-embed-content';
@@ -133,7 +131,6 @@ export type SectionName =
   | ExtractSectionName<TypeMarqueeWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeSliderWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeSlideWithAllLocalesAndWithoutLinkResolutionResponse>
-  | ExtractSectionName<TypeSocialLinkWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeLinkWithAllLocalesAndWithoutLinkResolutionResponse>;
 
 type SectionBase<TName extends SectionName, TData, TId extends string = string> = {
@@ -157,7 +154,6 @@ export type Section =
   | SectionBase<Extract<SectionName, 'marquee'>, MarqueeSectionData>
   | SectionBase<Extract<SectionName, 'slider'>, SliderData>
   | SectionBase<Extract<SectionName, 'slide'>, SlideData>
-  | SectionBase<Extract<SectionName, 'socialLink'>, SocialLinkData>
   | SectionBase<Extract<SectionName, 'link'>, LinkData>;
 
 export type PageResponseSections = CoursePageResponse['items'][0]['fields']['sections'];

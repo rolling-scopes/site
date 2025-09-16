@@ -1,23 +1,21 @@
-import { ReactNode } from 'react';
 import { screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import { SocialMediaItem } from './social-media-item';
+import { SocialMediaLink } from './social-media-link';
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
 describe('SocialMediaItem component', () => {
-  const mockIcon: ReactNode = <div>mockIcon</div>;
-
   const props = {
     title: 'TestSocialMedia',
     href: 'https://test.com',
-    icon: mockIcon,
+    icon: MOCKED_IMAGE_PATH,
   };
 
   let linkElement: HTMLElement;
 
   beforeEach(() => {
-    renderWithRouter(<SocialMediaItem {...props} />);
+    renderWithRouter(<SocialMediaLink {...props} />);
     linkElement = screen.getByTestId('social-media');
   });
 

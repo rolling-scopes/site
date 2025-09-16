@@ -1,20 +1,22 @@
-import { ReactNode } from 'react';
+/* eslint-disable @stylistic/jsx-closing-tag-location */
+
 import classNames from 'classnames/bind';
+import Image, { StaticImageData } from 'next/image';
 
 import { LinkCustom } from '../link-custom';
 
-import styles from './social-media-item.module.scss';
+import styles from './social-media-link.module.scss';
 
 export const cx = classNames.bind(styles);
 
 export type SocialMediaProps = {
   title: string;
   href: string;
-  icon: ReactNode;
+  icon?: StaticImageData;
   inline?: boolean;
 };
 
-export const SocialMediaItem = ({ title, href, icon, inline }: SocialMediaProps) => (
+export const SocialMediaLink = ({ title, href, icon, inline }: SocialMediaProps) => (
   <LinkCustom
     className={cx('social-media', { inline })}
     href={href}
@@ -23,7 +25,10 @@ export const SocialMediaItem = ({ title, href, icon, inline }: SocialMediaProps)
     highContrast
     data-testid="social-media"
   >
-    <span className={cx('media-icon')}>{icon}</span>
+    {icon
+      && <span className={cx('media-icon')}>
+        <Image src={icon} alt="" aria-hidden="true" />
+      </span>}
     <span className={cx('media-title')} data-testid="media-title">
       {title}
     </span>

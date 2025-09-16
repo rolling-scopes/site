@@ -7,7 +7,7 @@ import { Section } from '@/shared/types/types';
 import { Link } from '@/shared/ui/link-custom';
 import { Slider } from '@/shared/ui/slider';
 import { communitySliderOptions, mentorshipSliderOptions } from '@/shared/ui/slider/constants';
-import { SocialMediaItem } from '@/shared/ui/social-media-item';
+import { SocialMediaLink } from '@/shared/ui/social-media-link';
 import { AboutCourseSection } from '@/widgets/about-course';
 import { ActivityCard } from '@/widgets/about-course/ui/activity-card/activity-card';
 import { GridItem } from '@/widgets/about-course/ui/grid-item/grid-item';
@@ -241,19 +241,18 @@ export const SectionResolver = async ({
       return <Slider slides={section.data.slides} sliderProps={sliderOptions} />;
     }
 
-    case SECTION_TYPE.SOCIAL_LINK:
-      return (
-        <SocialMediaItem
-          inline={inline}
-          title={section.data.label}
-          icon={
-            section.data.icon ? <img src={section.data.icon.src} alt="" aria-hidden="true" /> : null
-          }
-          href={section.data.link ?? '/'}
-        />
-      );
-
     case SECTION_TYPE.LINK:
+      if (section.data.variant === 'social') {
+        return (
+          <SocialMediaLink
+            inline={inline}
+            title={section.data.label}
+            icon={section.data.icon}
+            href={section.data.link}
+          />
+        );
+      }
+
       return (
         <Link
           external={isExternalUri(section.data.link)}

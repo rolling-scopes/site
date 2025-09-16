@@ -5,8 +5,6 @@ import { isSlide } from '@/shared/ui/slider/helpers/is-slide';
 import { isSlider } from '@/shared/ui/slider/helpers/is-slider';
 import { transformSlide } from '@/shared/ui/slider/helpers/transform-slide';
 import { transformSlider } from '@/shared/ui/slider/helpers/transform-slider';
-import { isSocialLink } from '@/shared/ui/social-media-item/helpers/is-social-link';
-import { transformSocialLink } from '@/shared/ui/social-media-item/helpers/transform-social-link';
 import { isAboutCourseSection, transformAboutCourseSection } from '@/widgets/about-course';
 import { isAboutCourseItem } from '@/widgets/about-course/helpers/is-about-course-item';
 import {
@@ -109,13 +107,11 @@ export function transformPageSections(sections: PageResponseSections): Section[]
       return transformSlide(section);
     }
 
-    if (isSocialLink(section)) {
-      return transformSocialLink(section);
-    }
-
     if (isLink(section)) {
       return transformLink(section);
     }
+
+    console.log(section.sys.contentType.sys.id);
 
     throw new Error('Unable to determine section type.');
   });

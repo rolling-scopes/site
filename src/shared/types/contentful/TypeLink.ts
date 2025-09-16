@@ -18,7 +18,7 @@ export interface TypeLinkFields {
    * @name variant
    * @localized false
    */
-  variant: EntryFieldTypes.Symbol<'primary' | 'rounded' | 'secondary' | 'textLink'>;
+  variant: EntryFieldTypes.Symbol<'primary' | 'rounded' | 'secondary' | 'social' | 'textLink'>;
   /**
    * Field type definition for field 'label' (label)
    * @name label
@@ -51,7 +51,7 @@ export interface TypeLinkFields {
  * @type {TypeLinkSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-08-31T18:36:55.863Z
- * @version 13
+ * @version 15
  */
 export type TypeLinkSkeleton = EntrySkeletonType<TypeLinkFields, 'link'>;
 /**
@@ -60,7 +60,7 @@ export type TypeLinkSkeleton = EntrySkeletonType<TypeLinkFields, 'link'>;
  * @type {TypeLink}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-08-31T18:36:55.863Z
- * @version 13
+ * @version 15
  */
 export type TypeLink<
   Modifiers extends ChainModifiers,

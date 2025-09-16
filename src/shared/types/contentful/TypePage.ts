@@ -14,7 +14,6 @@ import type { TypeMarqueeSkeleton } from './TypeMarquee';
 import type { TypeMediaGridSkeleton } from './TypeMediaGrid';
 import type { TypeMediaTextBlockSkeleton } from './TypeMediaTextBlock';
 import type { TypeSliderSkeleton } from './TypeSlider';
-import type { TypeSocialLinkSkeleton } from './TypeSocialLink';
 import type { TypeUpcomingCoursesSkeleton } from './TypeUpcomingCourses';
 import type {
   ChainModifiers,
@@ -95,7 +94,6 @@ export interface TypePageFields {
       | TypeMediaGridSkeleton
       | TypeMediaTextBlockSkeleton
       | TypeSliderSkeleton
-      | TypeSocialLinkSkeleton
       | TypeUpcomingCoursesSkeleton
     >
   >;
@@ -113,7 +111,7 @@ export interface TypePageFields {
  * @type {TypePageSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-09-02T11:58:16.325Z
- * @version 17
+ * @version 19
  */
 export type TypePageSkeleton = EntrySkeletonType<TypePageFields, 'page'>;
 /**
@@ -122,7 +120,7 @@ export type TypePageSkeleton = EntrySkeletonType<TypePageFields, 'page'>;
  * @type {TypePage}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-09-02T11:58:16.325Z
- * @version 17
+ * @version 19
  */
 export type TypePage<
   Modifiers extends ChainModifiers,
