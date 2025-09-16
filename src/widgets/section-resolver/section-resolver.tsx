@@ -4,7 +4,7 @@ import { MentorFeedbackCard } from '@/entities/mentor';
 import { ROUTES } from '@/shared/constants';
 import { isExternalUri } from '@/shared/helpers/is-external-uri';
 import { Section } from '@/shared/types/types';
-import { Link } from '@/shared/ui/link-custom';
+import { LinkCustom } from '@/shared/ui/link-custom';
 import { Slider } from '@/shared/ui/slider';
 import { communitySliderOptions, mentorshipSliderOptions } from '@/shared/ui/slider/constants';
 import { SocialMediaLink } from '@/shared/ui/social-media-link';
@@ -247,21 +247,23 @@ export const SectionResolver = async ({
           <SocialMediaLink
             inline={inline}
             title={section.data.label}
-            icon={section.data.icon}
+            icon={section.data.iconLeft ?? section.data.iconRight}
             href={section.data.link}
           />
         );
       }
 
       return (
-        <Link
+        <LinkCustom
           external={isExternalUri(section.data.link)}
           variant={section.data.variant}
-          label={section.data.label}
           disabledLabel={section.data.disabledLabel}
-          link={section.data.link}
-          icon={section.data.icon}
-        />
+          href={section.data.link}
+          iconLeft={section.data.iconLeft}
+          iconRight={section.data.iconRight}
+        >
+          {section.data.label}
+        </LinkCustom>
       );
 
     case SECTION_TYPE.SLIDE:

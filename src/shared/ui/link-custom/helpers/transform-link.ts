@@ -9,8 +9,11 @@ export function transformLink(section: TypeLinkWithoutUnresolvableLinksResponse)
   const label = section.fields.label;
   const disabledLabel = section.fields.disabledLabel;
   const link = section.fields.link;
-  const icon = section.fields.icon?.fields
-    ? prepareAssetImage(section.fields.icon.fields.file)
+  const iconLeft = section.fields.iconLeft?.fields
+    ? prepareAssetImage(section.fields.iconLeft.fields.file)
+    : undefined;
+  const iconRight = section.fields.iconRight?.fields
+    ? prepareAssetImage(section.fields.iconRight.fields.file)
     : undefined;
 
   return {
@@ -21,7 +24,8 @@ export function transformLink(section: TypeLinkWithoutUnresolvableLinksResponse)
       disabledLabel,
       label,
       link,
-      icon,
+      iconLeft,
+      iconRight,
     },
   };
 }

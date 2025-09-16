@@ -38,11 +38,17 @@ export interface TypeLinkFields {
    */
   link: EntryFieldTypes.Symbol;
   /**
-   * Field type definition for field 'icon' (icon)
-   * @name icon
+   * Field type definition for field 'iconLeft' (iconLeft)
+   * @name iconLeft
    * @localized false
    */
-  icon?: EntryFieldTypes.AssetLink;
+  iconLeft?: EntryFieldTypes.AssetLink;
+  /**
+   * Field type definition for field 'iconRight' (iconRight)
+   * @name iconRight
+   * @localized false
+   */
+  iconRight?: EntryFieldTypes.AssetLink;
 }
 
 /**
@@ -51,7 +57,7 @@ export interface TypeLinkFields {
  * @type {TypeLinkSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-08-31T18:36:55.863Z
- * @version 15
+ * @version 19
  */
 export type TypeLinkSkeleton = EntrySkeletonType<TypeLinkFields, 'link'>;
 /**
@@ -60,7 +66,7 @@ export type TypeLinkSkeleton = EntrySkeletonType<TypeLinkFields, 'link'>;
  * @type {TypeLink}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-08-31T18:36:55.863Z
- * @version 15
+ * @version 19
  */
 export type TypeLink<
   Modifiers extends ChainModifiers,

@@ -20,7 +20,9 @@ export type LinkCustomProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'rel
 
 type LinkCustomAdditionalProps = {
   href: string;
-  icon?: StaticImageData | null;
+  disabledLabel?: string;
+  iconRight?: StaticImageData | null;
+  iconLeft?: StaticImageData | null;
   external?: boolean;
   disabled?: boolean;
   highContrast?: boolean;
@@ -49,8 +51,10 @@ const externalLinkAttributes = {
 
 export const LinkCustom = ({
   children,
+  disabledLabel,
   href,
-  icon,
+  iconLeft,
+  iconRight,
   className = '',
   variant = 'textLink',
   external = false,
@@ -58,10 +62,13 @@ export const LinkCustom = ({
   highContrast = false,
   ...props
 }: LinkCustomProps) => {
+  const isDisabled = disabled || !href;
+  const showLabel = isDisabled ? disabledLabel : children;
+
   const resolveIcon = () => {
     switch (true) {
-      case icon !== undefined:
-        return icon;
+      case iconRight !== undefined:
+        return iconRight;
       case external && variant === 'textLink':
         return textLinkIcon;
       case variant === 'secondary':
@@ -78,7 +85,7 @@ export const LinkCustom = ({
   return (
     <Link
       className={cx(
-        { disabled },
+        { disabled: isDisabled },
         { highContrast },
         linkCustomVariants({
           variant,
@@ -89,7 +96,20 @@ export const LinkCustom = ({
       {...props}
       {...(external && externalLinkAttributes)}
     >
-      {children}
+      {iconLeft && (
+        <span className={cx('icon-wrapper')}>
+          {!disabled && <Image
+            src={iconLeft}
+            width={20}
+            height={20}
+            alt=""
+            data-testid="icon"
+          />}
+        </span>
+      )}
+
+      {showLabel}
+
       {iconSrc && (
         <span className={cx('icon-wrapper')}>
           {!disabled && <Image

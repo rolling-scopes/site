@@ -7,5 +7,6 @@ export type LinkData = {
   disabledLabel: string;
   variant: LinkCustomVariants['variant'] | 'social';
   link: string;
-  icon?: StaticImageData;
+  iconLeft?: StaticImageData;
+  iconRight?: StaticImageData;
 };
