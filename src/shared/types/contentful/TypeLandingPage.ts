@@ -6,7 +6,6 @@ import type { TypeMarqueeSkeleton } from './TypeMarquee';
 import type { TypeMediaGridSkeleton } from './TypeMediaGrid';
 import type { TypeMediaTextBlockSkeleton } from './TypeMediaTextBlock';
 import type { TypeSliderSkeleton } from './TypeSlider';
-import type { TypeUpcomingCoursesSkeleton } from './TypeUpcomingCourses';
 import type {
   ChainModifiers,
   Entry,
@@ -63,7 +62,6 @@ export interface TypeLandingPageFields {
       | TypeMediaGridSkeleton
       | TypeMediaTextBlockSkeleton
       | TypeSliderSkeleton
-      | TypeUpcomingCoursesSkeleton
     >
   >;
 }
@@ -74,7 +72,7 @@ export interface TypeLandingPageFields {
  * @type {TypeLandingPageSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-07-09T19:17:23.117Z
- * @version 29
+ * @version 31
  */
 export type TypeLandingPageSkeleton = EntrySkeletonType<TypeLandingPageFields, 'landingPage'>;
 /**
@@ -83,7 +81,7 @@ export type TypeLandingPageSkeleton = EntrySkeletonType<TypeLandingPageFields, '
  * @type {TypeLandingPage}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-07-09T19:17:23.117Z
- * @version 29
+ * @version 31
  */
 export type TypeLandingPage<
   Modifiers extends ChainModifiers,

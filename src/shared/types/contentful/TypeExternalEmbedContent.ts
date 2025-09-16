@@ -25,7 +25,11 @@ export interface TypeExternalEmbedContentFields {
    * @localized false
    */
   type: EntryFieldTypes.Symbol<
-    'all-courses' | 'mentor-talks-youtube-player' | 'mentorship-courses' | 'video-block'
+    | 'all-courses'
+    | 'mentor-talks-youtube-player'
+    | 'mentorship-courses'
+    | 'upcoming-courses'
+    | 'video-block'
   >;
 }
 
@@ -35,7 +39,7 @@ export interface TypeExternalEmbedContentFields {
  * @type {TypeExternalEmbedContentSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-08-06T09:38:59.915Z
- * @version 7
+ * @version 9
  */
 export type TypeExternalEmbedContentSkeleton = EntrySkeletonType<
   TypeExternalEmbedContentFields,
@@ -47,7 +51,7 @@ export type TypeExternalEmbedContentSkeleton = EntrySkeletonType<
  * @type {TypeExternalEmbedContent}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-08-06T09:38:59.915Z
- * @version 7
+ * @version 9
  */
 export type TypeExternalEmbedContent<
   Modifiers extends ChainModifiers,

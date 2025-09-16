@@ -188,13 +188,3 @@ export type {
   TypeSliderWithoutLinkResolutionResponse,
   TypeSliderWithoutUnresolvableLinksResponse,
 } from './TypeSlider';
-export type {
-  TypeUpcomingCourses,
-  TypeUpcomingCoursesFields,
-  TypeUpcomingCoursesSkeleton,
-  TypeUpcomingCoursesWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeUpcomingCoursesWithAllLocalesAndWithoutUnresolvableLinksResponse,
-  TypeUpcomingCoursesWithAllLocalesResponse,
-  TypeUpcomingCoursesWithoutLinkResolutionResponse,
-  TypeUpcomingCoursesWithoutUnresolvableLinksResponse,
-} from './TypeUpcomingCourses';

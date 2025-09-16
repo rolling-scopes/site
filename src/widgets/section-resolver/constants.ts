@@ -4,7 +4,6 @@ export const SECTION_TYPE = {
   MEDIA_TEXT_BLOCK: 'mediaTextBlock',
   LEARNING_PATH_STAGES: 'learningPathStages',
   HERO: 'heroSection',
-  UPCOMING_COURSES: 'upcomingCourses',
   MEDIA_GRID: 'mediaGrid',
   HIGHLIGHT_CARD: 'highlightCard',
   EXTERNAL_EMBED_CONTENT: 'externalEmbedContent',

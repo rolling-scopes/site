@@ -8,9 +8,8 @@ import {
   announcementTelegramLink,
   maxUpcomingCoursesQuantity,
 } from '@/widgets/upcoming-courses/constants';
-import { UpcomingCoursesSectionData } from '@/widgets/upcoming-courses/types';
 
-type CourseItems = Required<Pick<UpcomingCoursesSectionData, 'linkLabel' | 'linkUrl'>> & {
+type CourseItems = {
   courses: Course[];
 };
 
@@ -19,7 +18,7 @@ const emptyText = {
   part2: ` Announcement channel to be the first to know when fresh courses are served.`,
 };
 
-export const CourseItems = ({ courses, linkLabel, linkUrl }: CourseItems) => {
+export const CourseItems = ({ courses }: CourseItems) => {
   const coursesData = getActualData({
     data: courses,
     filterStale: true,
@@ -40,14 +39,7 @@ export const CourseItems = ({ courses, linkLabel, linkUrl }: CourseItems) => {
     ));
 
   if (coursesContent.length > 0) {
-    return (
-      <>
-        {coursesContent}
-        <LinkCustom href={linkUrl} variant="primary">
-          {linkLabel}
-        </LinkCustom>
-      </>
-    );
+    return coursesContent;
   }
 
   return (

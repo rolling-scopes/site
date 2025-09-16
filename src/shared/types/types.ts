@@ -17,7 +17,6 @@ import {
   TypeMediaTextBlockWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeSlideWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeSliderWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeUpcomingCoursesWithAllLocalesAndWithoutLinkResolutionResponse,
 } from '@/shared/types/contentful';
 import { LinkData } from '@/shared/ui/link-custom/types';
 import { SlideData, SliderData } from '@/shared/ui/slider/types';
@@ -31,7 +30,6 @@ import { LearningPathStagesSectionData } from '@/widgets/learning-path-stages';
 import { MarqueeSectionData } from '@/widgets/marquee/types';
 import { ApiMediaGridSectionData } from '@/widgets/media-grid/types';
 import { MediaTextBlockSectionData } from '@/widgets/media-text-block';
-import { UpcomingCoursesSectionData } from '@/widgets/upcoming-courses/types';
 import type { BaseEntry } from 'contentful';
 
 export type Language = 'en' | 'ru';
@@ -120,7 +118,6 @@ export type SectionName =
   | ExtractSectionName<TypeMediaTextBlockWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeLearningPathStagesWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeHeroSectionWithAllLocalesAndWithoutLinkResolutionResponse>
-  | ExtractSectionName<TypeUpcomingCoursesWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeMediaGridWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeHighlightCardWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeExternalEmbedContentWithAllLocalesAndWithoutLinkResolutionResponse>
@@ -142,7 +139,6 @@ export type Section =
   | SectionBase<Extract<SectionName, 'mediaTextBlock'>, MediaTextBlockSectionData>
   | SectionBase<Extract<SectionName, 'learningPathStages'>, LearningPathStagesSectionData>
   | SectionBase<Extract<SectionName, 'heroSection'>, HeroSectionData>
-  | SectionBase<Extract<SectionName, 'upcomingCourses'>, UpcomingCoursesSectionData>
   | SectionBase<Extract<SectionName, 'mediaGrid'>, ApiMediaGridSectionData>
   | SectionBase<Extract<SectionName, 'highlightCard'>, HighlightCardData>
   | SectionBase<Extract<SectionName, 'externalEmbedContent'>, ExternalEmbedContentData>

@@ -32,12 +32,6 @@ import {
   isMediaTextBlockSection,
   transformMediaTextBlockSection,
 } from '@/widgets/media-text-block';
-import {
-  isUpcomingCoursesSection,
-} from '@/widgets/upcoming-courses/helpers/is-upcoming-courses-section';
-import {
-  transformUpcomingCoursesSection,
-} from '@/widgets/upcoming-courses/helpers/transform-upcoming-courses-section';
 
 export function transformPageSections(sections: PageResponseSections): Section[] {
   if (!sections) {
@@ -67,10 +61,6 @@ export function transformPageSections(sections: PageResponseSections): Section[]
 
     if (isHeroSection(section)) {
       return transformHeroSection(section);
-    }
-
-    if (isUpcomingCoursesSection(section)) {
-      return transformUpcomingCoursesSection(section);
     }
 
     if (isMediaGridSection(section)) {

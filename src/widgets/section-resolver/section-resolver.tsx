@@ -1,7 +1,6 @@
 import { Marquee } from '../marquee';
 import { courseStore } from '@/entities/course';
 import { MentorFeedbackCard } from '@/entities/mentor';
-import { ROUTES } from '@/shared/constants';
 import { isExternalUri } from '@/shared/helpers/is-external-uri';
 import { Section } from '@/shared/types/types';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -137,21 +136,6 @@ export const SectionResolver = async ({
         />
       );
 
-    case SECTION_TYPE.UPCOMING_COURSES:
-      if (!courses) {
-        throw new Error('No courses provided');
-      }
-
-      return (
-        <UpcomingCourses
-          courses={courses}
-          title={section.data.title}
-          linkLabel={section.data.linkLabel}
-          linkUrl={section.data.linkUrl ?? ROUTES.COURSES}
-          imageSrc={section.data.imageSrc}
-        />
-      );
-
     case SECTION_TYPE.MEDIA_GRID:
       return (
         <MediaGrid
@@ -194,6 +178,14 @@ export const SectionResolver = async ({
 
       if (section.data.type === EXTERNAL_EMBED_CONTENT_TYPE.VIDEO_BLOCK) {
         return <VideoBlock url={rsSchoolIntroUrl} />;
+      }
+
+      if (section.data.type === EXTERNAL_EMBED_CONTENT_TYPE.UPCOMING_COURSES) {
+        return (
+          <UpcomingCourses
+            courses={courses}
+          />
+        );
       }
 
       throw new Error(`No component found for external embed content: ${sectionName}`);
