@@ -2,7 +2,7 @@
 
 import { dayJS } from '@/shared/helpers/day-js';
 import { SectionLabel } from '@/shared/ui/section-label';
-import { getCourseStatus } from '@/widgets/hero-course/helpers/get-course-status';
+import { getCourseStatus } from '@/widgets/hero/helpers/get-course-status';
 
 type AvailabilityStatusProps = {
   startDate: string;

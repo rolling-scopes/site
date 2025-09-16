@@ -3,7 +3,7 @@
 import { screen } from '@testing-library/react';
 import { vi } from 'vitest';
 
-import { HeroCourse } from './hero-course';
+import { CourseHero } from './course-hero';
 import { MOCKED_IMAGE_PATH, mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import {
@@ -25,7 +25,7 @@ const mockedCalculateFreshDate = vi.spyOn(getCourseDate, 'calculateFreshDate');
 describe('HeroCourse component', () => {
   describe('Render general content', () => {
     beforeEach(async () => {
-      const widget = await HeroCourse({ courseName: mockedCourseWithSubtitle.title });
+      const widget = await CourseHero({ courseName: mockedCourseWithSubtitle.title });
 
       renderWithRouter(widget);
     });
@@ -45,7 +45,7 @@ describe('HeroCourse component', () => {
     it('renders enroll button with correct label and href', async () => {
       mockedCalculateFreshDate.mockReturnValue(mockedCourseWithSubtitle.startDate);
 
-      const widget = await HeroCourse({ courseName: mockedCourseWithSubtitle.title });
+      const widget = await CourseHero({ courseName: mockedCourseWithSubtitle.title });
 
       renderWithRouter(widget);
 
@@ -66,7 +66,7 @@ describe('HeroCourse component', () => {
 
   describe('Render widget with empty subtitle', () => {
     it('does not display subtitles if they are not provided', async () => {
-      const widget = await HeroCourse({ courseName: mockedCourseNoSubtitle.title });
+      const widget = await CourseHero({ courseName: mockedCourseNoSubtitle.title });
 
       renderWithRouter(widget);
       const subtitleElement = await screen.queryByTestId('course-subtitle');
@@ -79,7 +79,7 @@ describe('HeroCourse component', () => {
     it('renders registration will open soon with correct label and href', async () => {
       mockedCalculateFreshDate.mockReturnValue(TO_BE_DETERMINED);
 
-      const widget = await HeroCourse({ courseName: COURSE_TITLES.AWS_DEVOPS });
+      const widget = await CourseHero({ courseName: COURSE_TITLES.AWS_DEVOPS });
 
       renderWithRouter(widget);
 
@@ -92,7 +92,7 @@ describe('HeroCourse component', () => {
     it('renders registration will open soon in russian with correct label and href', async () => {
       mockedCalculateFreshDate.mockReturnValue(TO_BE_DETERMINED);
 
-      const widget = await HeroCourse({ courseName: COURSE_TITLES.JS_RU });
+      const widget = await CourseHero({ courseName: COURSE_TITLES.JS_RU });
 
       renderWithRouter(widget);
 

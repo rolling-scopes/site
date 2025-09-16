@@ -6,10 +6,10 @@ import { LABELS } from '@/shared/constants';
 import { selectCourse } from '@/shared/hooks/use-course-by-title/utils/select-course';
 import { MainTitle } from '@/shared/ui/main-title';
 import { ShortInfoPanel } from '@/shared/ui/short-info-panel';
-import { AvailabilityStatus } from '@/widgets/hero-course/ui/availability-status';
-import { RegistrationLink } from '@/widgets/hero-course/ui/registration-link';
+import { AvailabilityStatus } from '@/widgets/hero/ui/course/availability-status';
+import { RegistrationLink } from '@/widgets/hero/ui/course/registration-link';
 
-import styles from './hero-course.module.scss';
+import styles from './course-hero.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -17,7 +17,7 @@ type HeroCourseProps = {
   courseName: Course['title'];
 };
 
-export const HeroCourse = async ({ courseName }: HeroCourseProps) => {
+export const CourseHero = async ({ courseName }: HeroCourseProps) => {
   const course = await selectCourse(courseName);
   const {
     title,
