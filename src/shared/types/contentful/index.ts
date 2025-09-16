@@ -218,13 +218,3 @@ export type {
   TypeUpcomingCoursesWithoutLinkResolutionResponse,
   TypeUpcomingCoursesWithoutUnresolvableLinksResponse,
 } from './TypeUpcomingCourses';
-export type {
-  TypeVideoBlock,
-  TypeVideoBlockFields,
-  TypeVideoBlockSkeleton,
-  TypeVideoBlockWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeVideoBlockWithAllLocalesAndWithoutUnresolvableLinksResponse,
-  TypeVideoBlockWithAllLocalesResponse,
-  TypeVideoBlockWithoutLinkResolutionResponse,
-  TypeVideoBlockWithoutUnresolvableLinksResponse,
-} from './TypeVideoBlock';

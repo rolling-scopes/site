@@ -20,7 +20,6 @@ import {
   TypeSliderWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeSocialLinkWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeUpcomingCoursesWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeVideoBlockWithAllLocalesAndWithoutLinkResolutionResponse,
 } from '@/shared/types/contentful';
 import { LinkData } from '@/shared/ui/link-custom/types';
 import { SlideData, SliderData } from '@/shared/ui/slider/types';
@@ -37,7 +36,6 @@ import { ApiMediaGridSectionData } from '@/widgets/media-grid/types';
 import { MediaTextBlockSectionData } from '@/widgets/media-text-block';
 import { SupportUsSectionData } from '@/widgets/support/types';
 import { UpcomingCoursesSectionData } from '@/widgets/upcoming-courses/types';
-import { VideoBlockSectionData } from '@/widgets/video-block';
 import type { BaseEntry } from 'contentful';
 
 export type Language = 'en' | 'ru';
@@ -125,7 +123,6 @@ export type SectionName =
   | ExtractSectionName<TypeAboutCourseItemWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeMediaTextBlockWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeLearningPathStagesWithAllLocalesAndWithoutLinkResolutionResponse>
-  | ExtractSectionName<TypeVideoBlockWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeHeroSectionWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeUpcomingCoursesWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeDonationWithAllLocalesAndWithoutLinkResolutionResponse>
@@ -150,7 +147,6 @@ export type Section =
   | SectionBase<Extract<SectionName, 'aboutCourseItem'>, GridItemData>
   | SectionBase<Extract<SectionName, 'mediaTextBlock'>, MediaTextBlockSectionData>
   | SectionBase<Extract<SectionName, 'learningPathStages'>, LearningPathStagesSectionData>
-  | SectionBase<Extract<SectionName, 'videoBlock'>, VideoBlockSectionData>
   | SectionBase<Extract<SectionName, 'heroSection'>, HeroSectionData>
   | SectionBase<Extract<SectionName, 'upcomingCourses'>, UpcomingCoursesSectionData>
   | SectionBase<Extract<SectionName, 'donation'>, SupportUsSectionData>

@@ -22,13 +22,13 @@ export interface TypeLinkFields {
   /**
    * Field type definition for field 'label' (label)
    * @name label
-   * @localized false
+   * @localized true
    */
   label: EntryFieldTypes.Symbol;
   /**
    * Field type definition for field 'disabledLabel' (disabledLabel)
    * @name disabledLabel
-   * @localized false
+   * @localized true
    */
   disabledLabel: EntryFieldTypes.Symbol;
   /**
@@ -51,7 +51,7 @@ export interface TypeLinkFields {
  * @type {TypeLinkSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-08-31T18:36:55.863Z
- * @version 11
+ * @version 13
  */
 export type TypeLinkSkeleton = EntrySkeletonType<TypeLinkFields, 'link'>;
 /**
@@ -60,7 +60,7 @@ export type TypeLinkSkeleton = EntrySkeletonType<TypeLinkFields, 'link'>;
  * @type {TypeLink}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-08-31T18:36:55.863Z
- * @version 11
+ * @version 13
  */
 export type TypeLink<
   Modifiers extends ChainModifiers,

@@ -16,7 +16,6 @@ import type { TypeMediaTextBlockSkeleton } from './TypeMediaTextBlock';
 import type { TypeSliderSkeleton } from './TypeSlider';
 import type { TypeSocialLinkSkeleton } from './TypeSocialLink';
 import type { TypeUpcomingCoursesSkeleton } from './TypeUpcomingCourses';
-import type { TypeVideoBlockSkeleton } from './TypeVideoBlock';
 import type {
   ChainModifiers,
   Entry,
@@ -33,12 +32,18 @@ import type {
  */
 export interface TypePageFields {
   /**
+   * Field type definition for field 'tag' (tag)
+   * @name tag
+   * @localized false
+   */
+  tag: EntryFieldTypes.Symbol;
+  /**
    * Field type definition for field 'type' (type)
    * @name type
    * @localized false
    */
   type: EntryFieldTypes.Symbol<
-    'community' | 'course' | 'courses' | 'home' | 'mentorship' | 'mentorship-course'
+    'community' | 'course' | 'courses' | 'home' | 'mentorship' | 'mentorship-course' | 'not-found'
   >;
   /**
    * Field type definition for field 'title' (title)
@@ -92,7 +97,6 @@ export interface TypePageFields {
       | TypeSliderSkeleton
       | TypeSocialLinkSkeleton
       | TypeUpcomingCoursesSkeleton
-      | TypeVideoBlockSkeleton
     >
   >;
   /**
@@ -109,7 +113,7 @@ export interface TypePageFields {
  * @type {TypePageSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-09-02T11:58:16.325Z
- * @version 9
+ * @version 17
  */
 export type TypePageSkeleton = EntrySkeletonType<TypePageFields, 'page'>;
 /**
@@ -118,7 +122,7 @@ export type TypePageSkeleton = EntrySkeletonType<TypePageFields, 'page'>;
  * @type {TypePage}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-09-02T11:58:16.325Z
- * @version 9
+ * @version 17
  */
 export type TypePage<
   Modifiers extends ChainModifiers,

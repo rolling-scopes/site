@@ -42,7 +42,6 @@ import {
 import {
   transformUpcomingCoursesSection,
 } from '@/widgets/upcoming-courses/helpers/transform-upcoming-courses-section';
-import { isVideoBlockSection, transformVideoBlockSection } from '@/widgets/video-block';
 
 export function transformPageSections(sections: PageResponseSections): Section[] {
   if (!sections) {
@@ -68,10 +67,6 @@ export function transformPageSections(sections: PageResponseSections): Section[]
 
     if (isLearningPathStagesSection(section)) {
       return transformLearningPathStages(section);
-    }
-
-    if (isVideoBlockSection(section)) {
-      return transformVideoBlockSection(section);
     }
 
     if (isHeroSection(section)) {

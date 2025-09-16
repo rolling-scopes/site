@@ -30,6 +30,7 @@ import { SECTION_TYPE } from '@/widgets/section-resolver/constants';
 import { Support } from '@/widgets/support';
 import { UpcomingCourses } from '@/widgets/upcoming-courses';
 import { VideoBlock } from '@/widgets/video-block';
+import { rsSchoolIntroUrl } from '@/widgets/video-block/constants';
 
 type SectionResolverProps = {
   section: Section;
@@ -114,15 +115,6 @@ export const SectionResolver = async ({
             />
           ))}
         </LearningPathStages>
-      );
-
-    case SECTION_TYPE.VIDEO_BLOCK:
-      return (
-        <VideoBlock
-          title={section.data.title}
-          url={section.data.url}
-          videoTitle={section.data.videoTitle}
-        />
       );
 
     case SECTION_TYPE.HERO:
@@ -214,6 +206,10 @@ export const SectionResolver = async ({
 
       if (section.data.type === EXTERNAL_EMBED_CONTENT_TYPE.MENTORSHIP_COURSES) {
         return <MentorshipCourses courses={courses} />;
+      }
+
+      if (section.data.type === EXTERNAL_EMBED_CONTENT_TYPE.VIDEO_BLOCK) {
+        return <VideoBlock url={rsSchoolIntroUrl} />;
       }
 
       throw new Error(`No component found for external embed content: ${sectionName}`);

@@ -3,7 +3,6 @@ export const SECTION_TYPE = {
   ABOUT_COURSE_ITEM: 'aboutCourseItem',
   MEDIA_TEXT_BLOCK: 'mediaTextBlock',
   LEARNING_PATH_STAGES: 'learningPathStages',
-  VIDEO_BLOCK: 'videoBlock',
   HERO: 'heroSection',
   UPCOMING_COURSES: 'upcomingCourses',
   DONATION: 'donation',

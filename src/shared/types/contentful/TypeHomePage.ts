@@ -2,7 +2,6 @@ import type { TypeAboutCourseSkeleton } from './TypeAboutCourse';
 import type { TypeCourseSkeleton } from './TypeCourse';
 import type { TypeLearningPathStagesSkeleton } from './TypeLearningPathStages';
 import type { TypeMediaTextBlockSkeleton } from './TypeMediaTextBlock';
-import type { TypeVideoBlockSkeleton } from './TypeVideoBlock';
 import type {
   ChainModifiers,
   Entry,
@@ -52,10 +51,7 @@ export interface TypeHomePageFields {
    */
   sections?: EntryFieldTypes.Array<
     EntryFieldTypes.EntryLink<
-      | TypeAboutCourseSkeleton
-      | TypeLearningPathStagesSkeleton
-      | TypeMediaTextBlockSkeleton
-      | TypeVideoBlockSkeleton
+      TypeAboutCourseSkeleton | TypeLearningPathStagesSkeleton | TypeMediaTextBlockSkeleton
     >
   >;
   /**
@@ -72,7 +68,7 @@ export interface TypeHomePageFields {
  * @type {TypeHomePageSkeleton}
  * @author 7eBAEG99Zg1EDoAM5bOSWX
  * @since 2025-03-27T06:29:32.332Z
- * @version 69
+ * @version 71
  */
 export type TypeHomePageSkeleton = EntrySkeletonType<TypeHomePageFields, 'homePage'>;
 /**
@@ -81,7 +77,7 @@ export type TypeHomePageSkeleton = EntrySkeletonType<TypeHomePageFields, 'homePa
  * @type {TypeHomePage}
  * @author 7eBAEG99Zg1EDoAM5bOSWX
  * @since 2025-03-27T06:29:32.332Z
- * @version 69
+ * @version 71
  */
 export type TypeHomePage<
   Modifiers extends ChainModifiers,
