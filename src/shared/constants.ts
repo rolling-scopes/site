@@ -79,7 +79,7 @@ export const ANCHORS = {
   EVENTS: 'meet-us-at-events',
   MERCH: 'rs-merch',
   CONTRIBUTE: 'how-to-contribute',
-  DONATE: 'donate',
+  DONATE: 'support-us',
 };
 
 export const COURSE_STALE_AFTER_DAYS = 14;

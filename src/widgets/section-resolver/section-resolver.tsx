@@ -27,7 +27,6 @@ import {
   isSectionComponentsList,
 } from '@/widgets/media-text-block/helpers/is-section-components-list';
 import { SECTION_TYPE } from '@/widgets/section-resolver/constants';
-import { Support } from '@/widgets/support';
 import { UpcomingCourses } from '@/widgets/upcoming-courses';
 import { VideoBlock } from '@/widgets/video-block';
 import { rsSchoolIntroUrl } from '@/widgets/video-block/constants';
@@ -150,21 +149,6 @@ export const SectionResolver = async ({
           linkLabel={section.data.linkLabel}
           linkUrl={section.data.linkUrl ?? ROUTES.COURSES}
           imageSrc={section.data.imageSrc}
-        />
-      );
-
-    case SECTION_TYPE.DONATION:
-      return (
-        <Support
-          title={section.data.title}
-          imageSrc={section.data.imageSrc}
-          content={section.data.content}
-          linkLabelRight={section.data.linkLabelRight}
-          linkLabelLeft={section.data.linkLabelLeft}
-          linkUrlLeft={section.data.linkUrlLeft}
-          linkUrlRight={section.data.linkUrlRight}
-          linkIconLeft={section.data.linkIconLeft}
-          linkIconRight={section.data.linkIconRight}
         />
       );
 

@@ -39,16 +39,6 @@ export type {
   TypeCourseWithoutUnresolvableLinksResponse,
 } from './TypeCourse';
 export type {
-  TypeDonation,
-  TypeDonationFields,
-  TypeDonationSkeleton,
-  TypeDonationWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeDonationWithAllLocalesAndWithoutUnresolvableLinksResponse,
-  TypeDonationWithAllLocalesResponse,
-  TypeDonationWithoutLinkResolutionResponse,
-  TypeDonationWithoutUnresolvableLinksResponse,
-} from './TypeDonation';
-export type {
   TypeExternalEmbedContent,
   TypeExternalEmbedContentFields,
   TypeExternalEmbedContentSkeleton,

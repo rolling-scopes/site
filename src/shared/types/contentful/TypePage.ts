@@ -2,7 +2,6 @@ import type { TypeAboutCourseSkeleton } from './TypeAboutCourse';
 import type { TypeAboutCourseItemSkeleton } from './TypeAboutCourseItem';
 import type { TypeContributorSkeleton } from './TypeContributor';
 import type { TypeCourseSkeleton } from './TypeCourse';
-import type { TypeDonationSkeleton } from './TypeDonation';
 import type { TypeExternalEmbedContentSkeleton } from './TypeExternalEmbedContent';
 import type { TypeHeroSectionSkeleton } from './TypeHeroSection';
 import type { TypeHighlightCardSkeleton } from './TypeHighlightCard';
@@ -82,7 +81,6 @@ export interface TypePageFields {
       | TypeAboutCourseSkeleton
       | TypeContributorSkeleton
       | TypeCourseSkeleton
-      | TypeDonationSkeleton
       | TypeExternalEmbedContentSkeleton
       | TypeHeroSectionSkeleton
       | TypeHighlightCardSkeleton
@@ -111,7 +109,7 @@ export interface TypePageFields {
  * @type {TypePageSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-09-02T11:58:16.325Z
- * @version 19
+ * @version 21
  */
 export type TypePageSkeleton = EntrySkeletonType<TypePageFields, 'page'>;
 /**
@@ -120,7 +118,7 @@ export type TypePageSkeleton = EntrySkeletonType<TypePageFields, 'page'>;
  * @type {TypePage}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-09-02T11:58:16.325Z
- * @version 19
+ * @version 21
  */
 export type TypePage<
   Modifiers extends ChainModifiers,

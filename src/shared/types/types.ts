@@ -6,7 +6,6 @@ import { COURSE_TITLES, HTTP_METHOD } from '@/shared/constants';
 import {
   TypeAboutCourseItemWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeDonationWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeExternalEmbedContentWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeHeroSectionWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeHighlightCardWithAllLocalesAndWithoutLinkResolutionResponse,
@@ -32,7 +31,6 @@ import { LearningPathStagesSectionData } from '@/widgets/learning-path-stages';
 import { MarqueeSectionData } from '@/widgets/marquee/types';
 import { ApiMediaGridSectionData } from '@/widgets/media-grid/types';
 import { MediaTextBlockSectionData } from '@/widgets/media-text-block';
-import { SupportUsSectionData } from '@/widgets/support/types';
 import { UpcomingCoursesSectionData } from '@/widgets/upcoming-courses/types';
 import type { BaseEntry } from 'contentful';
 
@@ -123,7 +121,6 @@ export type SectionName =
   | ExtractSectionName<TypeLearningPathStagesWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeHeroSectionWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeUpcomingCoursesWithAllLocalesAndWithoutLinkResolutionResponse>
-  | ExtractSectionName<TypeDonationWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeMediaGridWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeHighlightCardWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeExternalEmbedContentWithAllLocalesAndWithoutLinkResolutionResponse>
@@ -146,7 +143,6 @@ export type Section =
   | SectionBase<Extract<SectionName, 'learningPathStages'>, LearningPathStagesSectionData>
   | SectionBase<Extract<SectionName, 'heroSection'>, HeroSectionData>
   | SectionBase<Extract<SectionName, 'upcomingCourses'>, UpcomingCoursesSectionData>
-  | SectionBase<Extract<SectionName, 'donation'>, SupportUsSectionData>
   | SectionBase<Extract<SectionName, 'mediaGrid'>, ApiMediaGridSectionData>
   | SectionBase<Extract<SectionName, 'highlightCard'>, HighlightCardData>
   | SectionBase<Extract<SectionName, 'externalEmbedContent'>, ExternalEmbedContentData>

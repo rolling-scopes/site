@@ -1,5 +1,4 @@
 import type { TypeAboutCourseSkeleton } from './TypeAboutCourse';
-import type { TypeDonationSkeleton } from './TypeDonation';
 import type { TypeHeroSectionSkeleton } from './TypeHeroSection';
 import type { TypeInfoGridSkeleton } from './TypeInfoGrid';
 import type { TypeLearningPathStagesSkeleton } from './TypeLearningPathStages';
@@ -57,7 +56,6 @@ export interface TypeLandingPageFields {
   sections?: EntryFieldTypes.Array<
     EntryFieldTypes.EntryLink<
       | TypeAboutCourseSkeleton
-      | TypeDonationSkeleton
       | TypeHeroSectionSkeleton
       | TypeInfoGridSkeleton
       | TypeLearningPathStagesSkeleton
@@ -76,7 +74,7 @@ export interface TypeLandingPageFields {
  * @type {TypeLandingPageSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-07-09T19:17:23.117Z
- * @version 27
+ * @version 29
  */
 export type TypeLandingPageSkeleton = EntrySkeletonType<TypeLandingPageFields, 'landingPage'>;
 /**
@@ -85,7 +83,7 @@ export type TypeLandingPageSkeleton = EntrySkeletonType<TypeLandingPageFields, '
  * @type {TypeLandingPage}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-07-09T19:17:23.117Z
- * @version 27
+ * @version 29
  */
 export type TypeLandingPage<
   Modifiers extends ChainModifiers,

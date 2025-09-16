@@ -32,8 +32,6 @@ import {
   isMediaTextBlockSection,
   transformMediaTextBlockSection,
 } from '@/widgets/media-text-block';
-import { isDonationSection } from '@/widgets/support/helpers/is-donation-section';
-import { transformDonationSection } from '@/widgets/support/helpers/transform-donation-section';
 import {
   isUpcomingCoursesSection,
 } from '@/widgets/upcoming-courses/helpers/is-upcoming-courses-section';
@@ -75,10 +73,6 @@ export function transformPageSections(sections: PageResponseSections): Section[]
       return transformUpcomingCoursesSection(section);
     }
 
-    if (isDonationSection(section)) {
-      return transformDonationSection(section);
-    }
-
     if (isMediaGridSection(section)) {
       return transformMediaGridSection(section);
     }
@@ -110,8 +104,6 @@ export function transformPageSections(sections: PageResponseSections): Section[]
     if (isLink(section)) {
       return transformLink(section);
     }
-
-    console.log(section.sys.contentType.sys.id);
 
     throw new Error('Unable to determine section type.');
   });

@@ -5,7 +5,6 @@ export const SECTION_TYPE = {
   LEARNING_PATH_STAGES: 'learningPathStages',
   HERO: 'heroSection',
   UPCOMING_COURSES: 'upcomingCourses',
-  DONATION: 'donation',
   MEDIA_GRID: 'mediaGrid',
   HIGHLIGHT_CARD: 'highlightCard',
   EXTERNAL_EMBED_CONTENT: 'externalEmbedContent',
