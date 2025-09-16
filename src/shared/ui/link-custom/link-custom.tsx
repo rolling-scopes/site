@@ -1,9 +1,12 @@
-import { AnchorHTMLAttributes, ReactNode } from 'react';
+/* eslint-disable @stylistic/jsx-closing-bracket-location */
+import { AnchorHTMLAttributes } from 'react';
 import { type VariantProps, cva } from 'class-variance-authority';
 import classNames from 'classnames/bind';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
-import { ArrowIcon, TextLinkIcon } from '@/shared/icons';
+import arrowIcon from '@/shared/assets/svg/arrow.svg';
+import textLinkIcon from '@/shared/assets/svg/text-link.svg';
 
 import styles from './link-custom.module.scss';
 
@@ -17,7 +20,7 @@ export type LinkCustomProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'rel
 
 type LinkCustomAdditionalProps = {
   href: string;
-  icon?: ReactNode;
+  icon?: StaticImageData | null;
   external?: boolean;
   disabled?: boolean;
   highContrast?: boolean;
@@ -55,22 +58,22 @@ export const LinkCustom = ({
   highContrast = false,
   ...props
 }: LinkCustomProps) => {
-  const resolveIcon = (): ReactNode => {
+  const resolveIcon = () => {
     switch (true) {
       case icon !== undefined:
         return icon;
       case external && variant === 'textLink':
-        return <TextLinkIcon />;
+        return textLinkIcon;
       case variant === 'secondary':
-        return <ArrowIcon />;
+        return arrowIcon;
       case variant === 'rounded':
-        return <ArrowIcon />;
+        return arrowIcon;
       default:
         return null;
     }
   };
 
-  const IconComponent = resolveIcon();
+  const iconSrc = resolveIcon();
 
   return (
     <Link
@@ -87,7 +90,17 @@ export const LinkCustom = ({
       {...(external && externalLinkAttributes)}
     >
       {children}
-      {IconComponent && <span className={cx('icon-wrapper')}>{!disabled && IconComponent}</span>}
+      {iconSrc && (
+        <span className={cx('icon-wrapper')}>
+          {!disabled && <Image
+            src={iconSrc}
+            width={20}
+            height={20}
+            alt=""
+            data-testid="icon"
+          />}
+        </span>
+      )}
     </Link>
   );
 };

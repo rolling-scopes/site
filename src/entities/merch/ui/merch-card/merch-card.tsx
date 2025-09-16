@@ -5,9 +5,9 @@ import Image from 'next/image';
 
 import { downloadArchive } from '../../helpers/download';
 import { MerchProduct } from '@/entities/merch/types';
-import loadingImg from '@/shared/assets/loading.svg';
-import loadingZip from '@/shared/assets/spin.svg';
 import downloadImg from '@/shared/assets/svg/download.svg';
+import loadingImg from '@/shared/assets/svg/loading.svg';
+import loadingZip from '@/shared/assets/svg/spin.svg';
 import { Paragraph } from '@/shared/ui/paragraph';
 
 import styles from './merch-card.module.scss';

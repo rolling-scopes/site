@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 
 import { ShortInfoPanel } from './short-info-panel';
 import { COURSE_DATE_FORMAT, MENTORING_DATE_FORMAT } from '@/entities/course/constants';
-import micIcon from '@/shared/assets/icons/mic.svg';
+import micIcon from '@/shared/assets/svg/mic.svg';
 import { LABELS } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/day-js';
 import { Language } from '@/shared/types';

@@ -1,19 +1,21 @@
-import { AwsLogo, GithubLogo, JetBrainsLogo } from '@/shared/icons';
+import awsIcon from '@/shared/assets/svg/aws-gray.svg';
+import githubIcon from '@/shared/assets/svg/github.svg';
+import jetbrainsIcon from '@/shared/assets/svg/jetbrains.svg';
 
 export const partners = [
   {
     id: 'jetbrains',
     href: 'https://www.jetbrains.com',
-    Component: JetBrainsLogo,
+    icon: jetbrainsIcon,
   },
   {
     id: 'aws',
     href: 'https://aws.amazon.com/',
-    Component: AwsLogo,
+    icon: awsIcon,
   },
   {
     id: 'github',
     href: 'https://github.com/',
-    Component: GithubLogo,
+    icon: githubIcon,
   },
-];
+] as const;

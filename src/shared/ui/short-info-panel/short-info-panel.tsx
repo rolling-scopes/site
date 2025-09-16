@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import { DateSimple } from '../date-simple';
-import micIcon from '@/shared/assets/icons/mic.svg';
+import micIcon from '@/shared/assets/svg/mic.svg';
 import { LABELS, TO_BE_DETERMINED } from '@/shared/constants';
 import { Language } from '@/shared/types';
 import { CourseStartLabel } from '@/shared/ui/short-info-panel/course-start-label';

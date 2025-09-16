@@ -151,7 +151,7 @@ export const Header = ({ courses }: HeaderProps) => {
                 {donateOptions.toReversed().map((option) => (
                   <SchoolMenu.Item
                     key={option.id}
-                    icon={option.menuIcon}
+                    icon={option.icon}
                     title={option.menuLinkLabel}
                     url={option.href}
                   />

@@ -21,4 +21,3 @@ export { communityMenuStaticLinks, schoolMenuStaticLinks } from './school-menu-l
 export { courseStatus, heroCourseLocalized } from './hero-course.data';
 export { donateOptions } from './donate-options.data';
 export { events } from './events.data';
-export { merchData } from './merch.data';

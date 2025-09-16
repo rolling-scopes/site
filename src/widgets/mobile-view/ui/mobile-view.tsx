@@ -224,7 +224,7 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
             {donateOptions.toReversed().map((option) => (
               <SchoolMenu.Item
                 key={option.id}
-                icon={option.menuIcon}
+                icon={option.icon}
                 title={option.menuLinkLabel}
                 url={option.href}
                 color={color}

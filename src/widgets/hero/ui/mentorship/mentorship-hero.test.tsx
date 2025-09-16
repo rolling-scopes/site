@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
+import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import AboutImage from '@/shared/assets/about.webp';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { MentorshipHero } from '@/widgets/hero';
 
@@ -10,14 +10,14 @@ let heroPage: HTMLElement;
 let mainTitle: HTMLElement;
 let subTitles: HTMLElement[];
 
-describe('HeroPage component', () => {
+describe('Hero Mentorship component', () => {
   beforeEach(() => {
     renderWithRouter(
       <MentorshipHero
         heading="heading"
         subHeading={<Paragraph>subHeading</Paragraph>}
         topHeading={['topHeading']}
-        image={AboutImage}
+        image={MOCKED_IMAGE_PATH}
       />,
     );
     heroPage = screen.getByTestId('mentorship-hero');

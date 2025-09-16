@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import Image from 'next/image';
 
 import { partners } from '../constants';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -13,9 +14,9 @@ export const Partnered = () => (
     <section className={cx('partnered-content', 'content')}>
       <WidgetTitle size="small">Partnered with</WidgetTitle>
       <div className={cx('partners')} data-testid="partners-list">
-        {partners.map(({ id, Component, href }) => (
+        {partners.map(({ id, icon, href }) => (
           <LinkCustom href={href} external icon={null} key={id}>
-            <Component />
+            <Image src={icon} alt="" aria-hidden="true" />
           </LinkCustom>
         ))}
       </div>
