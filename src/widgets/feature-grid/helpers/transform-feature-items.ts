@@ -1,12 +1,12 @@
 import { prepareAssetImage } from '@/shared/helpers/prepare-asset-image';
 import { richTextRenderer } from '@/shared/helpers/rich-text-renderer';
 import { TypeAboutCourseItemWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
-import { GridItem } from '@/widgets/about-course/types';
+import { FeatureItem } from '@/widgets/feature-grid/types';
 
-export function transformGridItems(
+export function transformFeatureItems(
   items: (TypeAboutCourseItemWithoutUnresolvableLinksResponse | undefined)[],
-): GridItem[] {
-  return items.map((item): GridItem => {
+): FeatureItem[] {
+  return items.map((item): FeatureItem => {
     if (!item) {
       throw new Error('Grid item is not defined.');
     }

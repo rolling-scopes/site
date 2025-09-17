@@ -5,29 +5,25 @@ import { isSlide } from '@/shared/ui/slider/helpers/is-slide';
 import { isSlider } from '@/shared/ui/slider/helpers/is-slider';
 import { transformSlide } from '@/shared/ui/slider/helpers/transform-slide';
 import { transformSlider } from '@/shared/ui/slider/helpers/transform-slider';
-import { isAboutCourseSection, transformAboutCourseSection } from '@/widgets/about-course';
-import { isAboutCourseItem } from '@/widgets/about-course/helpers/is-about-course-item';
-import {
-  transformAboutCourseItem,
-} from '@/widgets/about-course/helpers/transform-about-course-item';
 import {
   isExternalEmbedContent,
   transformExternalEmbedContent,
 } from '@/widgets/external-embed-content';
-import { isHeroSection } from '@/widgets/hero/helpers/is-hero-section';
-import { transformHeroSection } from '@/widgets/hero/helpers/transform-hero-section';
-import { isHighlightCard } from '@/widgets/highlight-card/helpers/is-highlight-card';
-import { transformHighlightCard } from '@/widgets/highlight-card/helpers/transform-highlight-card';
+import {
+  isFeatureGrid,
+  isFeatureItem,
+  transformFeatureGrid,
+  transformFeatureItem,
+} from '@/widgets/feature-grid';
+import { isHeroSection, transformHeroSection } from '@/widgets/hero';
+import { isHighlightCard, transformHighlightCard } from '@/widgets/highlight-card';
 import { isInfoGridSection, transformInfoGridSection } from '@/widgets/info-grid';
 import {
   isLearningPathStagesSection,
   transformLearningPathStages,
 } from '@/widgets/learning-path-stages';
 import { isMarqueeSection, transformMarqueeSection } from '@/widgets/marquee';
-import { isMediaGridSection } from '@/widgets/media-grid/helpers/is-media-grid-section';
-import {
-  transformMediaGridSection,
-} from '@/widgets/media-grid/helpers/transform-media-grid-section';
+import { isMediaGridSection, transformMediaGridSection } from '@/widgets/media-grid';
 import {
   isMediaTextBlockSection,
   transformMediaTextBlockSection,
@@ -43,12 +39,12 @@ export function transformPageSections(sections: PageResponseSections): Section[]
       throw new Error('Unable to determine section.');
     }
 
-    if (isAboutCourseSection(section)) {
-      return transformAboutCourseSection(section);
+    if (isFeatureGrid(section)) {
+      return transformFeatureGrid(section);
     }
 
-    if (isAboutCourseItem(section)) {
-      return transformAboutCourseItem(section);
+    if (isFeatureItem(section)) {
+      return transformFeatureItem(section);
     }
 
     if (isMediaTextBlockSection(section)) {

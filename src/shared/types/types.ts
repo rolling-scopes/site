@@ -20,9 +20,9 @@ import {
 } from '@/shared/types/contentful';
 import { LinkData } from '@/shared/ui/link-custom/types';
 import { SlideData, SliderData } from '@/shared/ui/slider/types';
-import { AboutCourseSectionData } from '@/widgets/about-course';
-import { GridItemData } from '@/widgets/about-course/types';
 import { ExternalEmbedContentData } from '@/widgets/external-embed-content';
+import { FeatureGridData } from '@/widgets/feature-grid';
+import { FeatureItemData } from '@/widgets/feature-grid/types';
 import { HeroSectionData } from '@/widgets/hero/types';
 import { HighlightCardData } from '@/widgets/highlight-card/types';
 import { InfoGridData } from '@/widgets/info-grid';
@@ -134,8 +134,8 @@ type SectionBase<TName extends SectionName, TData, TId extends string = string> 
 };
 
 export type Section =
-  | SectionBase<Extract<SectionName, 'aboutCourse'>, AboutCourseSectionData>
-  | SectionBase<Extract<SectionName, 'aboutCourseItem'>, GridItemData>
+  | SectionBase<Extract<SectionName, 'aboutCourse'>, FeatureGridData>
+  | SectionBase<Extract<SectionName, 'aboutCourseItem'>, FeatureItemData>
   | SectionBase<Extract<SectionName, 'mediaTextBlock'>, MediaTextBlockSectionData>
   | SectionBase<Extract<SectionName, 'learningPathStages'>, LearningPathStagesSectionData>
   | SectionBase<Extract<SectionName, 'heroSection'>, HeroSectionData>

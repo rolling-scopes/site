@@ -1,4 +1,4 @@
-.activity-card {
+.feature-item-mentorship {
   display: flex;
   flex-direction: column;
   gap: $gap-s;
@@ -11,7 +11,7 @@
 
   box-shadow: 0 4px 8px 0 hsla(from $color-gray-900 h s l / $opacity-10);
 
-  .card-description :where(p:last-child, .paragraph:last-child) {
+  .item-description :where(p:last-child, .paragraph:last-child) {
     margin: 0;
     padding: 0;
   }

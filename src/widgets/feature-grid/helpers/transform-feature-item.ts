@@ -3,7 +3,7 @@ import { richTextRenderer } from '@/shared/helpers/rich-text-renderer';
 import { TypeAboutCourseItemWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
 import { Section } from '@/shared/types/types';
 
-export function transformAboutCourseItem(
+export function transformFeatureItem(
   section: TypeAboutCourseItemWithoutUnresolvableLinksResponse,
 ): Section {
   const id = section.sys.id;

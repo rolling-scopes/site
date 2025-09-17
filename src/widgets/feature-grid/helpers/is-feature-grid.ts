@@ -8,7 +8,7 @@ import type { BaseEntry } from 'contentful';
  * @param section - The section to be checked, constrained to extend BaseEntry.
  * @return Returns true if the section is of the type 'aboutCourse', otherwise false.
  */
-export function isAboutCourseSection<TSection extends BaseEntry>(
+export function isFeatureGrid<TSection extends BaseEntry>(
   section: TSection,
 ): section is Extract<TSection, TypeAboutCourseWithoutUnresolvableLinksResponse> {
   return section.sys.contentType.sys.id === SECTION_TYPE.ABOUT_COURSE;

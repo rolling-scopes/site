@@ -1,4 +1,4 @@
-.grid-item {
+.feature-item {
   display: flex;
   flex-direction: column;
   gap: $gap-s;
@@ -15,7 +15,7 @@
     gap: $gap-s;
     align-items: center;
 
-    .grid-icon {
+    .item-icon {
       width: auto;
       max-width: 50px;
       height: auto;

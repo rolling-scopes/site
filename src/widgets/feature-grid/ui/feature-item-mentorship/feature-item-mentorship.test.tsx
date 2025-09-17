@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import { ActivityCard } from './activity-card';
+import { FeatureItemMentorship } from './feature-item-mentorship';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { Paragraph } from '@/shared/ui/paragraph';
 
@@ -19,11 +19,11 @@ describe('ActivityCard component', () => {
   };
 
   beforeEach(() => {
-    render(<ActivityCard {...mockProps} />);
+    render(<FeatureItemMentorship {...mockProps} />);
   });
 
   it('renders correct icon', () => {
-    const icon = screen.getByTestId('activity-card-icon');
+    const icon = screen.getByTestId('feature-item-mentorship-icon');
 
     expect(icon).toBeVisible();
     expect(icon).toHaveAttribute('src', mockProps.icon.src);

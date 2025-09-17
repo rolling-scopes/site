@@ -8,15 +8,17 @@ import { LINK_TYPE } from '@/shared/ui/link-custom/constants';
 import { Slider } from '@/shared/ui/slider';
 import { communitySliderOptions, mentorshipSliderOptions } from '@/shared/ui/slider/constants';
 import { SocialMediaLink } from '@/shared/ui/social-media-link';
-import { AboutCourseSection } from '@/widgets/about-course';
-import { ActivityCard } from '@/widgets/about-course/ui/activity-card/activity-card';
-import { GridItem } from '@/widgets/about-course/ui/grid-item/grid-item';
 import {
   EXTERNAL_EMBED_CONTENT_TYPE,
   MentorTalksVideoPlaylistWithPlayer,
   MentorshipCourses,
   RSCourses,
 } from '@/widgets/external-embed-content';
+import { FeatureGrid } from '@/widgets/feature-grid';
+import { FeatureItem } from '@/widgets/feature-grid/ui/feature-item/feature-item';
+import {
+  FeatureItemMentorship,
+} from '@/widgets/feature-grid/ui/feature-item-mentorship/feature-item-mentorship';
 import { Hero, MentorshipHero } from '@/widgets/hero';
 import { HighlightCard } from '@/widgets/highlight-card';
 import { InfoCell, InfoGrid } from '@/widgets/info-grid';
@@ -50,19 +52,15 @@ export const SectionResolver = async ({
   switch (sectionName) {
     case SECTION_TYPE.ABOUT_COURSE:
       return (
-        <AboutCourseSection
-          enrollUrl={courseEnrollUrl}
-          title={section.data.title}
+        <FeatureGrid
           gridItems={section.data.gridItems}
-          registrationLinkText={section.data.registrationLinkText}
-          registrationClosedLinkText={section.data.registrationClosedLinkText}
         />
       );
 
     case SECTION_TYPE.ABOUT_COURSE_ITEM:
       if (section.data.variant === 'mentorship') {
         return (
-          <ActivityCard
+          <FeatureItemMentorship
             title={section.data.heading}
             description={section.data.content}
             icon={section.data.icon}
@@ -71,7 +69,7 @@ export const SectionResolver = async ({
       }
 
       return (
-        <GridItem
+        <FeatureItem
           heading={section.data.heading}
           content={section.data.content}
           icon={section.data.icon}

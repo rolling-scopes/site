@@ -2,24 +2,24 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import { Subtitle } from '@/shared/ui/subtitle';
-import { GridItemData } from '@/widgets/about-course/types';
+import { FeatureItemData } from '@/widgets/feature-grid/types';
 
-import styles from './grid-item.module.scss';
+import styles from './feature-item.module.scss';
 
 export const cx = classNames.bind(styles);
 
-type GridItemProps = Omit<GridItemData, 'variant'>;
+type GridItemProps = Omit<FeatureItemData, 'variant'>;
 
-export const GridItem = ({ heading, content, icon }: GridItemProps) => {
+export const FeatureItem = ({ heading, content, icon }: GridItemProps) => {
   return (
-    <article className={cx('grid-item')} data-testid="about-course-grid-item">
+    <article className={cx('feature-item')} data-testid="feature-item">
       <header className={cx('item-title')}>
         <Image
-          className={cx('grid-icon')}
+          className={cx('item-icon')}
           src={icon}
           aria-hidden="true"
           alt=""
-          data-testid="grid-icon"
+          data-testid="item-icon"
         />
 
         <Subtitle size="extra-small">{heading}</Subtitle>
