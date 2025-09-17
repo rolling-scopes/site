@@ -11,7 +11,7 @@ export type MediaTextBlockSectionData = ApiMediaTextBlockSettings & {
   contentLeft?: ReactNode | ReactNode[];
   contentRight?: ReactNode | ReactNode[];
   contentBottom?: ReactNode | ReactNode[];
-  backgroundColor?: string;
+  backgroundColor?: 'bg-rs-primary' | 'bg-mentorship-primary' | 'bg-gray';
   embedded?: boolean;
 };
 

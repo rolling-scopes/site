@@ -72,12 +72,6 @@ export interface TypeMediaTextBlockFields {
    */
   backgroundColor?: EntryFieldTypes.Symbol<'gray' | 'mentorship-primary' | 'rs-primary'>;
   /**
-   * Field type definition for field 'backgroundColorOld' (backgroundColorOld)
-   * @name backgroundColorOld
-   * @localized false
-   */
-  backgroundColorOld?: EntryFieldTypes.Symbol;
-  /**
    * Field type definition for field 'settings' (settings)
    * @name settings
    * @localized false
@@ -91,7 +85,7 @@ export interface TypeMediaTextBlockFields {
  * @type {TypeMediaTextBlockSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T14:21:33.812Z
- * @version 101
+ * @version 105
  */
 export type TypeMediaTextBlockSkeleton = EntrySkeletonType<
   TypeMediaTextBlockFields,
@@ -103,7 +97,7 @@ export type TypeMediaTextBlockSkeleton = EntrySkeletonType<
  * @type {TypeMediaTextBlock}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T14:21:33.812Z
- * @version 101
+ * @version 105
  */
 export type TypeMediaTextBlock<
   Modifiers extends ChainModifiers,

@@ -22,7 +22,9 @@ export function transformMediaTextBlockSection(
   const contentBottom = section.fields.contentBottom
     ? richTextRenderer(section.fields.contentBottom)
     : undefined;
-  const backgroundColor = section.fields.backgroundColor;
+  const backgroundColor = section.fields.backgroundColor
+    ? `bg-${section.fields.backgroundColor}` as const
+    : undefined;
   const anchorId = getSectionId(section.fields.title);
   const settings = section.fields.settings as ApiMediaTextBlockSettings;
   const imageAbsolutePosition = settings?.imageAbsolutePosition;

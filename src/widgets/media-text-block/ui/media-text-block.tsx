@@ -35,11 +35,8 @@ export const MediaTextBlock = ({
   return (
     <section
       id={anchorId}
-      className={cx('media-text-block', 'container', { 'image-absolute-position': imageAbsolutePosition })}
-      style={{
-        background: backgroundColor,
-        maxWidth: width,
-      }}
+      className={cx('media-text-block', 'container', backgroundColor, { 'image-absolute-position': imageAbsolutePosition })}
+      style={{ maxWidth: width }}
     >
       <div
         className={cx('inner', 'content', {

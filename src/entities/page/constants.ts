@@ -6,5 +6,4 @@ export const PAGE_TYPE = {
   COMMUNITY: 'community',
   COURSES: 'courses',
   COURSE: 'course',
-
 } as const;

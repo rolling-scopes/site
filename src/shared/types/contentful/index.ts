@@ -69,16 +69,6 @@ export type {
   TypeHighlightCardWithoutUnresolvableLinksResponse,
 } from './TypeHighlightCard';
 export type {
-  TypeHomePage,
-  TypeHomePageFields,
-  TypeHomePageSkeleton,
-  TypeHomePageWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeHomePageWithAllLocalesAndWithoutUnresolvableLinksResponse,
-  TypeHomePageWithAllLocalesResponse,
-  TypeHomePageWithoutLinkResolutionResponse,
-  TypeHomePageWithoutUnresolvableLinksResponse,
-} from './TypeHomePage';
-export type {
   TypeInfoGrid,
   TypeInfoGridFields,
   TypeInfoGridSkeleton,
@@ -88,16 +78,6 @@ export type {
   TypeInfoGridWithoutLinkResolutionResponse,
   TypeInfoGridWithoutUnresolvableLinksResponse,
 } from './TypeInfoGrid';
-export type {
-  TypeLandingPage,
-  TypeLandingPageFields,
-  TypeLandingPageSkeleton,
-  TypeLandingPageWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeLandingPageWithAllLocalesAndWithoutUnresolvableLinksResponse,
-  TypeLandingPageWithAllLocalesResponse,
-  TypeLandingPageWithoutLinkResolutionResponse,
-  TypeLandingPageWithoutUnresolvableLinksResponse,
-} from './TypeLandingPage';
 export type {
   TypeLearningPathStageItem,
   TypeLearningPathStageItemFields,

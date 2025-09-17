@@ -1,7 +1,7 @@
 import { CourseApi } from '@/entities/course';
 import { MentorApi } from '@/entities/mentor';
-import { MerchApi } from '@/entities/merch/api/merch-api';
-import { PageApi } from '@/entities/page/api/landing-page-api';
+import { MerchApi } from '@/entities/merch';
+import { PageApi } from '@/entities/page';
 import { TrainerApi } from '@/entities/trainer';
 import { ApiBaseClass } from '@/shared/api/api-base-class';
 import { ApiServices } from '@/shared/types';

@@ -35,12 +35,4 @@ export type {
   TypeCourseWithAllLocalesResponse,
   TypeCourseWithoutLinkResolutionResponse,
   TypeCourseWithoutUnresolvableLinksResponse,
-  TypeHomePage,
-  TypeHomePageFields,
-  TypeHomePageSkeleton,
-  TypeHomePageWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeHomePageWithAllLocalesAndWithoutUnresolvableLinksResponse,
-  TypeHomePageWithAllLocalesResponse,
-  TypeHomePageWithoutLinkResolutionResponse,
-  TypeHomePageWithoutUnresolvableLinksResponse,
 } from './contentful/index';
