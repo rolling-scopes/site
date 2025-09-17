@@ -14,6 +14,20 @@ import type {
  */
 export interface TypeLinkFields {
   /**
+   * Field type definition for field 'tag' (tag)
+   * @name tag
+   * @localized false
+   * @summary This tag field is used internally only in contenful to unique identify identical content. THIS FIELD WILL NOT BE SHOWN ON THE WEBSITE
+   */
+  tag?: EntryFieldTypes.Symbol;
+  /**
+   * Field type definition for field 'type' (type)
+   * @name type
+   * @localized false
+   * @summary Static → enter a custom URL in the Link field. Dynamic (e.g. Course Registration) → the app will fill in the link automatically, so the Link field is ignored.
+   */
+  type: EntryFieldTypes.Symbol<'course-registration' | 'static'>;
+  /**
    * Field type definition for field 'variant' (variant)
    * @name variant
    * @localized false
@@ -30,13 +44,14 @@ export interface TypeLinkFields {
    * @name disabledLabel
    * @localized true
    */
-  disabledLabel: EntryFieldTypes.Symbol;
+  disabledLabel?: EntryFieldTypes.Symbol;
   /**
    * Field type definition for field 'link' (link)
    * @name link
    * @localized false
+   * @summary Use a full URL for external sites (e.g. https://example.com). Use a relative path for internal pages (e.g. /courses). This field is only used when Link Type = Static.
    */
-  link: EntryFieldTypes.Symbol;
+  link?: EntryFieldTypes.Symbol;
   /**
    * Field type definition for field 'iconLeft' (iconLeft)
    * @name iconLeft
@@ -57,7 +72,7 @@ export interface TypeLinkFields {
  * @type {TypeLinkSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-08-31T18:36:55.863Z
- * @version 19
+ * @version 29
  */
 export type TypeLinkSkeleton = EntrySkeletonType<TypeLinkFields, 'link'>;
 /**
@@ -66,7 +81,7 @@ export type TypeLinkSkeleton = EntrySkeletonType<TypeLinkFields, 'link'>;
  * @type {TypeLink}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-08-31T18:36:55.863Z
- * @version 19
+ * @version 29
  */
 export type TypeLink<
   Modifiers extends ChainModifiers,

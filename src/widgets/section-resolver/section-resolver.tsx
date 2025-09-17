@@ -4,6 +4,7 @@ import { MentorFeedbackCard } from '@/entities/mentor';
 import { isExternalUri } from '@/shared/helpers/is-external-uri';
 import { Section } from '@/shared/types/types';
 import { LinkCustom } from '@/shared/ui/link-custom';
+import { LINK_TYPE } from '@/shared/ui/link-custom/constants';
 import { Slider } from '@/shared/ui/slider';
 import { communitySliderOptions, mentorshipSliderOptions } from '@/shared/ui/slider/constants';
 import { SocialMediaLink } from '@/shared/ui/social-media-link';
@@ -90,9 +91,6 @@ export const SectionResolver = async ({
           contentLeft={section.data.contentLeft}
           contentRight={section.data.contentRight}
           contentBottom={section.data.contentBottom}
-          linkUrl={section.data.linkUrl ?? courseEnrollUrl}
-          linkLabel={section.data.linkLabel}
-          disabledLinkLabel={section.data.disabledLinkLabel}
           backgroundColor={section.data.backgroundColor}
           width={section.data.width}
         />
@@ -217,7 +215,9 @@ export const SectionResolver = async ({
       return <Slider slides={section.data.slides} sliderProps={sliderOptions} />;
     }
 
-    case SECTION_TYPE.LINK:
+    case SECTION_TYPE.LINK: {
+      const isCourseRegistration = section.data.type === LINK_TYPE.COURSE_REGISTRATION;
+
       if (section.data.variant === 'social') {
         return (
           <SocialMediaLink
@@ -231,16 +231,17 @@ export const SectionResolver = async ({
 
       return (
         <LinkCustom
-          external={isExternalUri(section.data.link)}
+          external={isCourseRegistration ? true : isExternalUri(section.data.link)}
           variant={section.data.variant}
           disabledLabel={section.data.disabledLabel}
-          href={section.data.link}
+          href={isCourseRegistration ? courseEnrollUrl : section.data.link}
           iconLeft={section.data.iconLeft}
           iconRight={section.data.iconRight}
         >
           {section.data.label}
         </LinkCustom>
       );
+    }
 
     case SECTION_TYPE.SLIDE:
       return (

@@ -11,9 +11,6 @@ export type MediaTextBlockSectionData = ApiMediaTextBlockSettings & {
   contentLeft?: ReactNode | ReactNode[];
   contentRight?: ReactNode | ReactNode[];
   contentBottom?: ReactNode | ReactNode[];
-  linkUrl?: string | null;
-  linkLabel?: string;
-  disabledLinkLabel?: string;
   backgroundColor?: string;
   embedded?: boolean;
 };

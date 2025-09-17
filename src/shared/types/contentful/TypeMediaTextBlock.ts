@@ -66,30 +66,17 @@ export interface TypeMediaTextBlockFields {
    */
   contentBottom?: EntryFieldTypes.RichText;
   /**
-   * Field type definition for field 'linkUrl' (linkUrl)
-   * @name linkUrl
-   * @localized false
-   * @summary If no link is provided the course related link to the registration page will be used as a default value
-   */
-  linkUrl?: EntryFieldTypes.Symbol;
-  /**
-   * Field type definition for field 'linkLabel' (linkLabel)
-   * @name linkLabel
-   * @localized true
-   */
-  linkLabel?: EntryFieldTypes.Symbol;
-  /**
-   * Field type definition for field 'disabledLinkLabel' (disabledLinkLabel)
-   * @name disabledLinkLabel
-   * @localized true
-   */
-  disabledLinkLabel?: EntryFieldTypes.Symbol;
-  /**
    * Field type definition for field 'backgroundColor' (backgroundColor)
    * @name backgroundColor
    * @localized false
    */
-  backgroundColor?: EntryFieldTypes.Symbol;
+  backgroundColor?: EntryFieldTypes.Symbol<'gray' | 'mentorship-primary' | 'rs-primary'>;
+  /**
+   * Field type definition for field 'backgroundColorOld' (backgroundColorOld)
+   * @name backgroundColorOld
+   * @localized false
+   */
+  backgroundColorOld?: EntryFieldTypes.Symbol;
   /**
    * Field type definition for field 'settings' (settings)
    * @name settings
@@ -104,7 +91,7 @@ export interface TypeMediaTextBlockFields {
  * @type {TypeMediaTextBlockSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T14:21:33.812Z
- * @version 95
+ * @version 101
  */
 export type TypeMediaTextBlockSkeleton = EntrySkeletonType<
   TypeMediaTextBlockFields,
@@ -116,7 +103,7 @@ export type TypeMediaTextBlockSkeleton = EntrySkeletonType<
  * @type {TypeMediaTextBlock}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T14:21:33.812Z
- * @version 95
+ * @version 101
  */
 export type TypeMediaTextBlock<
   Modifiers extends ChainModifiers,

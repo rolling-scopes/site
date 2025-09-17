@@ -1,8 +1,6 @@
 import classNames from 'classnames/bind';
 
 import { MediaTextBlockSectionData } from '../types';
-import { isExternalUri } from '@/shared/helpers/is-external-uri';
-import { LinkCustom } from '@/shared/ui/link-custom';
 import { SectionLabel } from '@/shared/ui/section-label';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import {
@@ -25,16 +23,10 @@ export const MediaTextBlock = ({
   contentLeft,
   contentRight,
   contentBottom,
-  linkUrl,
-  linkLabel,
-  disabledLinkLabel,
   backgroundColor,
   width,
   embedded = false,
 }: MediaTextBlockProps) => {
-  const href = linkUrl ?? '';
-  const isLinkDisabled = !linkUrl;
-  const isLinkShown = (href && Boolean(linkLabel)) || (!href && Boolean(disabledLinkLabel));
   const small = titleSize === 'smallest';
   const hasTitle = title || sectionLabel;
   const isComponentListContentLeft = isSectionComponentsList(contentLeft);
@@ -76,18 +68,6 @@ export const MediaTextBlock = ({
               {imageAbsolutePosition && <div className={cx('absolute-image-placeholder')} />}
               {contentLeft}
             </div>
-          )}
-
-          {isLinkShown && (
-            <LinkCustom
-              href={href}
-              variant="primary"
-              external={isExternalUri(href)}
-              disabled={isLinkDisabled}
-              disabledLabel={disabledLinkLabel}
-            >
-              {linkLabel}
-            </LinkCustom>
           )}
         </div>
 

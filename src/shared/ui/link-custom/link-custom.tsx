@@ -19,7 +19,7 @@ export type LinkCustomProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'rel
   & LinkCustomAdditionalProps;
 
 type LinkCustomAdditionalProps = {
-  href: string;
+  href?: string;
   disabledLabel?: string;
   iconRight?: StaticImageData | null;
   iconLeft?: StaticImageData | null;
@@ -52,7 +52,7 @@ const externalLinkAttributes = {
 export const LinkCustom = ({
   children,
   disabledLabel,
-  href,
+  href = '',
   iconLeft,
   iconRight,
   className = '',

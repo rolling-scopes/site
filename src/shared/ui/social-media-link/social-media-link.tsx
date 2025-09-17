@@ -11,7 +11,7 @@ export const cx = classNames.bind(styles);
 
 export type SocialMediaProps = {
   title: string;
-  href: string;
+  href?: string;
   icon?: StaticImageData;
   inline?: boolean;
 };

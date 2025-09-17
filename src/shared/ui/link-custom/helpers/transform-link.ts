@@ -5,6 +5,7 @@ import { Section } from '@/shared/types/types';
 export function transformLink(section: TypeLinkWithoutUnresolvableLinksResponse): Section {
   const id = section.sys.id;
   const name = section.sys.contentType.sys.id;
+  const type = section.fields.type;
   const variant = section.fields.variant;
   const label = section.fields.label;
   const disabledLabel = section.fields.disabledLabel;
@@ -20,6 +21,7 @@ export function transformLink(section: TypeLinkWithoutUnresolvableLinksResponse)
     id,
     name,
     data: {
+      type,
       variant,
       disabledLabel,
       label,

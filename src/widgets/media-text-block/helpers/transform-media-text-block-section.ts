@@ -22,9 +22,6 @@ export function transformMediaTextBlockSection(
   const contentBottom = section.fields.contentBottom
     ? richTextRenderer(section.fields.contentBottom)
     : undefined;
-  const linkUrl = section.fields.linkUrl;
-  const linkLabel = section.fields.linkLabel;
-  const disabledLinkLabel = section.fields.disabledLinkLabel;
   const backgroundColor = section.fields.backgroundColor;
   const anchorId = getSectionId(section.fields.title);
   const settings = section.fields.settings as ApiMediaTextBlockSettings;
@@ -43,9 +40,6 @@ export function transformMediaTextBlockSection(
       contentLeft,
       contentRight,
       contentBottom,
-      linkUrl,
-      linkLabel,
-      disabledLinkLabel,
       backgroundColor,
       imageAbsolutePosition,
       width,
