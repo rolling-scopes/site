@@ -1,6 +1,7 @@
 'use client';
 
 import { Course, CourseItem } from '@/entities/course';
+import { ROUTES } from '@/shared/constants';
 import { getActualData } from '@/shared/helpers/get-actual-data';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -39,7 +40,14 @@ export const CourseItems = ({ courses }: CourseItems) => {
     ));
 
   if (coursesContent.length > 0) {
-    return coursesContent;
+    return (
+      <>
+        {coursesContent}
+        <LinkCustom href={ROUTES.COURSES} variant="primary">
+          Go to courses
+        </LinkCustom>
+      </>
+    );
   }
 
   return (

@@ -25,7 +25,6 @@ export const AboutCourseSection = async ({
   registrationClosedLinkText,
   registrationLinkText,
 }: AboutCourseSectionProps) => {
-  const linkText = enrollUrl ? registrationLinkText : registrationClosedLinkText;
   const enrollHref = enrollUrl ?? '';
 
   return (
@@ -42,8 +41,14 @@ export const AboutCourseSection = async ({
             ),
           )}
         </div>
-        <LinkCustom href={enrollHref} variant="primary" external disabled={!enrollUrl}>
-          {linkText}
+        <LinkCustom
+          href={enrollHref}
+          variant="primary"
+          external
+          disabled={!enrollUrl}
+          disabledLabel={registrationClosedLinkText}
+        >
+          {registrationLinkText}
         </LinkCustom>
       </div>
     </section>

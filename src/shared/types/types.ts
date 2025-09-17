@@ -1,6 +1,6 @@
 import { HttpStatus } from 'http-status';
 
-import { CoursePageResponse } from '@/entities/course-page/types';
+import { PageResponse } from '@/entities/page/types';
 import { ApiBaseClass } from '@/shared/api/api-base-class';
 import { COURSE_TITLES, HTTP_METHOD } from '@/shared/constants';
 import {
@@ -148,7 +148,7 @@ export type Section =
   | SectionBase<Extract<SectionName, 'slide'>, SlideData>
   | SectionBase<Extract<SectionName, 'link'>, LinkData>;
 
-export type PageResponseSections = CoursePageResponse['items'][0]['fields']['sections'];
+export type PageResponseSections = PageResponse['items'][0]['fields']['sections'];
 
 export type CourseNames = typeof COURSE_TITLES;
 export type CourseNamesKeys = CourseNames[keyof CourseNames];

@@ -12,6 +12,11 @@
   font-weight: $font-weight-medium;
   letter-spacing: 0;
   white-space: pre;
+
+  .icon-wrapper-left {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .secondary {

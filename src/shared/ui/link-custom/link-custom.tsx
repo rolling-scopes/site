@@ -10,7 +10,7 @@ import textLinkIcon from '@/shared/assets/svg/text-link.svg';
 
 import styles from './link-custom.module.scss';
 
-export const cx = classNames.bind(styles);
+const cx = classNames.bind(styles);
 
 export type LinkCustomVariants = VariantProps<typeof linkCustomVariants>;
 
@@ -97,7 +97,7 @@ export const LinkCustom = ({
       {...(external && externalLinkAttributes)}
     >
       {iconLeft && (
-        <span className={cx('icon-wrapper')}>
+        <span className={cx('icon-wrapper', 'icon-wrapper-left')}>
           {!disabled && <Image
             src={iconLeft}
             width={20}

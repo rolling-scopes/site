@@ -1,8 +1,5 @@
-import { ApiResourceLocale, Language } from '@/shared/types/';
 import { WidgetTitleVariants } from '@/shared/ui/widget-title/widget-title';
 
-export const RS_FOUNDATION_YEAR = '2013';
-export const RS_EMAIL = 'rolling.scopes@gmail.com';
 export const TO_BE_DETERMINED = 'TBD';
 export const RS_GRADUATED_ONLY = 'Alumni only';
 export const REGISTRATION_WILL_OPEN_SOON = 'Registration will open soon!';
@@ -13,7 +10,6 @@ export const YOUTUBE_API_MAX_RESULTS_PER_PAGE = 50;
  * https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/links
  */
 export const API_MAX_INCLUDE_DEPTH = 10;
-export const API_OMIT_LINKED_ITEMS_INCLUDE_DEPTH = 0;
 
 export const LABELS = {
   START_DATE: 'Course starts on:',
@@ -23,11 +19,6 @@ export const LABELS = {
   COURSE_LANGUAGE_RU: 'Russian',
   MENTOR_ACTIVITIES: 'Mentorship starts on:',
   MENTOR_ACTIVITIES_SEPARATOR: '-',
-} as const;
-
-export const PAGE_NAMES = {
-  COMMUNITY: 'community',
-  MENTORSHIP: 'mentorship',
 } as const;
 
 // ⚠️ These links are used to identify courses from the API
@@ -57,11 +48,6 @@ export const HTTP_METHOD = {
   PATCH: 'PATCH',
   DELETE: 'DELETE',
 } as const;
-
-export const API_LOCALE_DICTIONARY: Record<Language, ApiResourceLocale> = {
-  ru: 'ru',
-  en: 'en-US',
-};
 
 export const API_CONTENT_TYPE_DICTIONARY = {
   TRAINER: 'contributor',

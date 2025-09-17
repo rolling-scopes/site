@@ -20,8 +20,6 @@ class CourseStore {
   }
 
   public async loadCourse(id: ApiCoursesIds) {
-    // TODO: seems to be not efficient to fetch schedule every time. Maybe cache?
-
     const [courseRes, courseSchedule] = await Promise.all([
       api.course.queryCourse(id),
       this.loadCoursesSchedule(),

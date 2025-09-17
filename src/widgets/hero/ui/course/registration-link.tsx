@@ -25,13 +25,18 @@ export const RegistrationLink = ({
   const isCourseStale = freshDate === TO_BE_DETERMINED;
   const isDisabled = !enrollLink || isCourseStale;
 
-  const registrationLinkText = isDisabled
-    ? heroCourseLocalized[language].noLinkLabel
-    : heroCourseLocalized[language].linkLabel;
+  const registrationLinkLabel = heroCourseLocalized[language].linkLabel;
+  const registrationLinkDisabledLabel = heroCourseLocalized[language].noLinkLabel;
 
   return (
-    <LinkCustom href={enrollHref} variant="secondary" external disabled={isDisabled}>
-      {registrationLinkText}
+    <LinkCustom
+      href={enrollHref}
+      variant="secondary"
+      external
+      disabled={isDisabled}
+      disabledLabel={registrationLinkDisabledLabel}
+    >
+      {registrationLinkLabel}
     </LinkCustom>
   );
 };

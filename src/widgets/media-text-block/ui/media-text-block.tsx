@@ -32,7 +32,6 @@ export const MediaTextBlock = ({
   width,
   embedded = false,
 }: MediaTextBlockProps) => {
-  const linkText = linkUrl ? linkLabel : disabledLinkLabel;
   const href = linkUrl ?? '';
   const isLinkDisabled = !linkUrl;
   const isLinkShown = (href && Boolean(linkLabel)) || (!href && Boolean(disabledLinkLabel));
@@ -85,8 +84,9 @@ export const MediaTextBlock = ({
               variant="primary"
               external={isExternalUri(href)}
               disabled={isLinkDisabled}
+              disabledLabel={disabledLinkLabel}
             >
-              {linkText}
+              {linkLabel}
             </LinkCustom>
           )}
         </div>

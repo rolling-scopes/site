@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageRouteParams): Promise<Met
     title: pageTitle,
     seoDescription: description,
     seoKeywords: keywords,
-  } = await pageStore.loadPage(PAGE_TYPE.MENTORSHIP_COURSE, slug, locale);
+  } = await pageStore.loadPage(PAGE_TYPE.MENTORSHIP_COURSE, locale, slug);
 
   const { canonical, robots } = mentorshipCourseMetadata;
   const title = `${pageTitle} · ${OG_SITE_NAME}`;
@@ -42,15 +42,13 @@ export async function generateMetadata({ params }: PageRouteParams): Promise<Met
 }
 
 export async function generateStaticParams() {
-  return await pageStore.loadPages(PAGE_TYPE.MENTORSHIP_COURSE);
+  return await pageStore.loadPagesMetadata(PAGE_TYPE.MENTORSHIP_COURSE);
 }
 
 export default async function MentorshipRoute({ params }: PageRouteParams) {
   const { slug } = await params;
-
   const locale = resolveCoursePageLocale(slug);
-
-  const { sections } = await pageStore.loadPage(PAGE_TYPE.MENTORSHIP_COURSE, slug, locale);
+  const { sections } = await pageStore.loadPage(PAGE_TYPE.MENTORSHIP_COURSE, locale, slug);
 
   return <Mentorship sections={sections} />;
 }
