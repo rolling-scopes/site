@@ -7,7 +7,7 @@ import { LinkCustom } from '../link-custom';
 
 import styles from './social-media-link.module.scss';
 
-export const cx = classNames.bind(styles);
+const cx = classNames.bind(styles);
 
 export type SocialMediaProps = {
   title: string;
@@ -26,7 +26,7 @@ export const SocialMediaLink = ({ title, href, icon, inline }: SocialMediaProps)
     data-testid="social-media"
   >
     {icon
-      && <span className={cx('media-icon')}>
+      && <span className={cx('media-icon')} data-testid="icon">
         <Image src={icon} alt="" aria-hidden="true" />
       </span>}
     <span className={cx('media-title')} data-testid="media-title">

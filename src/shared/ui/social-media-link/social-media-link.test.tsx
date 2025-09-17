@@ -5,7 +5,7 @@ import { SocialMediaLink } from './social-media-link';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 
-describe('SocialMediaItem component', () => {
+describe('SocialMediaLink component', () => {
   const props = {
     title: 'TestSocialMedia',
     href: 'https://test.com',
@@ -24,7 +24,7 @@ describe('SocialMediaItem component', () => {
   });
 
   it('renders correct icon', () => {
-    const icon = screen.getByText('mockIcon');
+    const icon = screen.getByTestId('icon');
 
     expect(icon).toBeVisible();
   });
