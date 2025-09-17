@@ -1,5 +1,3 @@
-import { WidgetTitleVariants } from '@/shared/ui/widget-title/widget-title';
-
 export const TO_BE_DETERMINED = 'TBD';
 export const RS_GRADUATED_ONLY = 'Alumni only';
 export const REGISTRATION_WILL_OPEN_SOON = 'Registration will open soon!';
@@ -118,18 +116,6 @@ export const OG_IMAGE_HEIGHT = 630;
 
 export const OG_SITE_NAME = 'The Rolling Scopes School';
 export const DYNAMIC = 'force-static';
-
-export const WIDGET_TITLE_SIZE_MAP = new Map<number | undefined, WidgetTitleVariants['size']>([
-  [0, 'smallest'],
-  [1, 'small'],
-  [2, 'medium'],
-  [3, 'large'],
-]);
-
-export const WIDGET_TITLE_MOD_MAP = new Map<number | undefined, WidgetTitleVariants['mods']>([
-  [0, 'asterisk'],
-  [1, 'lines'],
-]);
 
 export const COURSE_TITLES = {
   JS_PRESCHOOL_RU: 'JS / Front-end Pre-school RU',
