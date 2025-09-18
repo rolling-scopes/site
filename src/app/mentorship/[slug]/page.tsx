@@ -6,7 +6,7 @@ import { pageStore } from '@/entities/page/model/store';
 import { mentorshipCourseMetadata } from '@/metadata/mentorship';
 import { OG_SITE_NAME } from '@/shared/constants';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
-import { Mentorship } from '@/views/mentorship/mentorship';
+import { Mentorship } from '@/views/mentorship';
 
 type Params = {
   slug: string;
