@@ -1,3 +1,4 @@
+import { courseStore } from '@/entities/course';
 import { PAGE_TYPE } from '@/entities/page/constants';
 import { preparePageMetadata } from '@/entities/page/helpers/prepare-page-metadata';
 import {
@@ -62,7 +63,11 @@ class PageStore {
       course,
     } = preparedData.at(0)?.fields ?? {};
 
-    const sections = transformPageSections(pageSections as PageResponseSections);
+    const courseId = course?.sys?.id;
+    const courseUrl = course?.fields.url || '';
+    const currentCourse = courseId ? await courseStore.loadCourse(courseId) : undefined;
+
+    const sections = transformPageSections(pageSections as PageResponseSections, currentCourse?.enroll);
     const pageData = {
       title,
       sections,
@@ -73,9 +78,6 @@ class PageStore {
     if (type !== PAGE_TYPE.COURSE) {
       return pageData;
     }
-
-    const courseId = course?.sys?.id;
-    const courseUrl = course?.fields.url || '';
 
     if (!courseId) {
       throw new Error('Course id is not defined.');

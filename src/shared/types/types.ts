@@ -1,3 +1,4 @@
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { HttpStatus } from 'http-status';
 
 import { ApiBaseClass } from '@/shared/api/api-base-class';
@@ -168,3 +169,11 @@ export type PageResponseSections = (
 
 export type CourseNames = typeof COURSE_TITLES;
 export type CourseNamesKeys = CourseNames[keyof CourseNames];
+
+export type RichTextDocument = Parameters<typeof documentToReactComponents>['0'];
+export type RichTextOptions = Parameters<typeof documentToReactComponents>['1'];
+
+export type RichTextRendererOptions = {
+  courseEnrollUrl?: string;
+  options?: RichTextOptions;
+};

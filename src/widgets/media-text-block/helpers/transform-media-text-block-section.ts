@@ -6,6 +6,7 @@ import type { ApiMediaTextBlockSettings } from '@/widgets/media-text-block';
 
 export function transformMediaTextBlockSection(
   section: TypeMediaTextBlockWithoutUnresolvableLinksResponse,
+  courseEnrollUrl?: string,
 ): Section {
   const id = section.sys.id;
   const name = section.sys.contentType.sys.id;
@@ -14,13 +15,13 @@ export function transformMediaTextBlockSection(
   const titleMod = section.fields.titleModification;
   const sectionLabel = section.fields.sectionLabel;
   const contentLeft = section.fields.contentLeft
-    ? richTextRenderer(section.fields.contentLeft)
+    ? richTextRenderer(section.fields.contentLeft, { courseEnrollUrl })
     : undefined;
   const contentRight = section.fields.contentRight
-    ? richTextRenderer(section.fields.contentRight)
+    ? richTextRenderer(section.fields.contentRight, { courseEnrollUrl })
     : undefined;
   const contentBottom = section.fields.contentBottom
-    ? richTextRenderer(section.fields.contentBottom)
+    ? richTextRenderer(section.fields.contentBottom, { courseEnrollUrl })
     : undefined;
   const backgroundColor = section.fields.backgroundColor
     ? `bg-${section.fields.backgroundColor}` as const

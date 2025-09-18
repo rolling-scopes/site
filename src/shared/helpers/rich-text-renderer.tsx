@@ -5,17 +5,14 @@ import Image from 'next/image';
 
 import { isExternalUri } from '@/shared/helpers/is-external-uri';
 import { prepareAssetImage } from '@/shared/helpers/prepare-asset-image';
+import { renderEntry } from '@/shared/helpers/render-entry';
 import { replaceTextBreaksWithBrTag } from '@/shared/helpers/replace-text-breaks-with-br-tag';
-import { transformPageSections } from '@/shared/helpers/transform-page-sections';
+import { RichTextDocument, RichTextOptions, RichTextRendererOptions } from '@/shared/types/types';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { List, ListItem } from '@/shared/ui/list';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
-import { SectionResolver } from '@/widgets/section-resolver';
-
-type RichTextDocument = Parameters<typeof documentToReactComponents>['0'];
-type RichTextOptions = Parameters<typeof documentToReactComponents>['1'];
 
 export const RICH_TEXT_OPTIONS: RichTextOptions = {
   renderText: replaceTextBreaksWithBrTag,
@@ -77,16 +74,8 @@ export const RICH_TEXT_OPTIONS: RichTextOptions = {
         />
       );
     },
-    [BLOCKS.EMBEDDED_ENTRY]: (node: Inline | Block) => {
-      const [section] = transformPageSections([node.data.target]);
-
-      return <SectionResolver embedded section={section} />;
-    },
-    [INLINES.EMBEDDED_ENTRY]: (node: Inline | Block) => {
-      const [section] = transformPageSections([node.data.target]);
-
-      return <SectionResolver embedded inline section={section} />;
-    },
+    [BLOCKS.EMBEDDED_ENTRY]: (node: Inline | Block) => renderEntry(node),
+    [INLINES.EMBEDDED_ENTRY]: (node: Inline | Block) => renderEntry(node, true),
   },
 };
 
@@ -109,7 +98,17 @@ export const RICH_TEXT_SLIDER_OPTIONS = {
 
 export function richTextRenderer(
   document: RichTextDocument,
-  options: RichTextOptions = RICH_TEXT_OPTIONS,
+  {
+    courseEnrollUrl,
+    options = RICH_TEXT_OPTIONS,
+  }: RichTextRendererOptions = {},
 ) {
-  return documentToReactComponents(document, options);
+  return documentToReactComponents(document, {
+    ...options,
+    renderNode: {
+      ...options?.renderNode,
+      [BLOCKS.EMBEDDED_ENTRY]: (node: Inline | Block) => renderEntry(node, false, courseEnrollUrl),
+      [INLINES.EMBEDDED_ENTRY]: (node: Inline | Block) => renderEntry(node, true, courseEnrollUrl),
+    },
+  });
 }

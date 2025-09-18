@@ -29,7 +29,7 @@ import {
   transformMediaTextBlockSection,
 } from '@/widgets/media-text-block';
 
-export function transformPageSections(sections: PageResponseSections): Section[] {
+export function transformPageSections(sections: PageResponseSections, courseEnrollUrl?: string): Section[] {
   if (!sections) {
     throw new Error('Unable to determine list of sections.');
   }
@@ -48,7 +48,7 @@ export function transformPageSections(sections: PageResponseSections): Section[]
     }
 
     if (isMediaTextBlockSection(section)) {
-      return transformMediaTextBlockSection(section);
+      return transformMediaTextBlockSection(section, courseEnrollUrl);
     }
 
     if (isLearningPathStageItem(section)) {
