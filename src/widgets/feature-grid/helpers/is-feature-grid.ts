@@ -11,5 +11,5 @@ import type { BaseEntry } from 'contentful';
 export function isFeatureGrid<TSection extends BaseEntry>(
   section: TSection,
 ): section is Extract<TSection, TypeAboutCourseWithoutUnresolvableLinksResponse> {
-  return section.sys.contentType.sys.id === SECTION_TYPE.ABOUT_COURSE;
+  return section.sys.contentType.sys.id === SECTION_TYPE.FEATURE_GRID;
 }

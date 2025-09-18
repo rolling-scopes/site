@@ -1,18 +1,8 @@
-import type { TypeAboutCourseSkeleton } from './TypeAboutCourse';
-import type { TypeAboutCourseItemSkeleton } from './TypeAboutCourseItem';
-import type { TypeContributorSkeleton } from './TypeContributor';
 import type { TypeCourseSkeleton } from './TypeCourse';
 import type { TypeExternalEmbedContentSkeleton } from './TypeExternalEmbedContent';
 import type { TypeHeroSectionSkeleton } from './TypeHeroSection';
-import type { TypeHighlightCardSkeleton } from './TypeHighlightCard';
-import type { TypeInfoGridSkeleton } from './TypeInfoGrid';
-import type { TypeLearningPathStageItemSkeleton } from './TypeLearningPathStageItem';
-import type { TypeLearningPathStagesSkeleton } from './TypeLearningPathStages';
-import type { TypeLinkSkeleton } from './TypeLink';
 import type { TypeMarqueeSkeleton } from './TypeMarquee';
-import type { TypeMediaGridSkeleton } from './TypeMediaGrid';
 import type { TypeMediaTextBlockSkeleton } from './TypeMediaTextBlock';
-import type { TypeSliderSkeleton } from './TypeSlider';
 import type {
   ChainModifiers,
   Entry,
@@ -76,21 +66,10 @@ export interface TypePageFields {
    */
   sections?: EntryFieldTypes.Array<
     EntryFieldTypes.EntryLink<
-      | TypeAboutCourseItemSkeleton
-      | TypeAboutCourseSkeleton
-      | TypeContributorSkeleton
-      | TypeCourseSkeleton
       | TypeExternalEmbedContentSkeleton
       | TypeHeroSectionSkeleton
-      | TypeHighlightCardSkeleton
-      | TypeInfoGridSkeleton
-      | TypeLearningPathStageItemSkeleton
-      | TypeLearningPathStagesSkeleton
-      | TypeLinkSkeleton
       | TypeMarqueeSkeleton
-      | TypeMediaGridSkeleton
       | TypeMediaTextBlockSkeleton
-      | TypeSliderSkeleton
     >
   >;
   /**
@@ -107,7 +86,7 @@ export interface TypePageFields {
  * @type {TypePageSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-09-02T11:58:16.325Z
- * @version 25
+ * @version 29
  */
 export type TypePageSkeleton = EntrySkeletonType<TypePageFields, 'page'>;
 /**
@@ -116,7 +95,7 @@ export type TypePageSkeleton = EntrySkeletonType<TypePageFields, 'page'>;
  * @type {TypePage}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-09-02T11:58:16.325Z
- * @version 25
+ * @version 29
  */
 export type TypePage<
   Modifiers extends ChainModifiers,

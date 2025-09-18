@@ -1,6 +1,5 @@
 import { HttpStatus } from 'http-status';
 
-import { PageResponse } from '@/entities/page/types';
 import { ApiBaseClass } from '@/shared/api/api-base-class';
 import { COURSE_TITLES, HTTP_METHOD } from '@/shared/constants';
 import {
@@ -10,7 +9,8 @@ import {
   TypeHeroSectionWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeHighlightCardWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeInfoGridWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeLearningPathStagesWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeLearningPathStageItemWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeLearningPathStageItemWithoutUnresolvableLinksResponse,
   TypeLinkWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeMarqueeWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeMediaGridWithAllLocalesAndWithoutLinkResolutionResponse,
@@ -26,7 +26,7 @@ import { FeatureItemData } from '@/widgets/feature-grid/types';
 import { HeroSectionData } from '@/widgets/hero/types';
 import { HighlightCardData } from '@/widgets/highlight-card/types';
 import { InfoGridData } from '@/widgets/info-grid';
-import { LearningPathStagesSectionData } from '@/widgets/learning-path-stages';
+import { LearningPathStageItemData } from '@/widgets/learning-path-stages';
 import { MarqueeSectionData } from '@/widgets/marquee/types';
 import { ApiMediaGridSectionData } from '@/widgets/media-grid/types';
 import { MediaTextBlockSectionData } from '@/widgets/media-text-block';
@@ -118,7 +118,6 @@ export type SectionName =
   | ExtractSectionName<TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeAboutCourseItemWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeMediaTextBlockWithAllLocalesAndWithoutLinkResolutionResponse>
-  | ExtractSectionName<TypeLearningPathStagesWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeHeroSectionWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeMediaGridWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeHighlightCardWithAllLocalesAndWithoutLinkResolutionResponse>
@@ -127,6 +126,7 @@ export type SectionName =
   | ExtractSectionName<TypeMarqueeWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeSliderWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeSlideWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeLearningPathStageItemWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeLinkWithAllLocalesAndWithoutLinkResolutionResponse>;
 
 type SectionBase<TName extends SectionName, TData, TId extends string = string> = {
@@ -139,7 +139,7 @@ export type Section =
   | SectionBase<Extract<SectionName, 'aboutCourse'>, FeatureGridData>
   | SectionBase<Extract<SectionName, 'aboutCourseItem'>, FeatureItemData>
   | SectionBase<Extract<SectionName, 'mediaTextBlock'>, MediaTextBlockSectionData>
-  | SectionBase<Extract<SectionName, 'learningPathStages'>, LearningPathStagesSectionData>
+  | SectionBase<Extract<SectionName, 'learningPathStageItem'>, LearningPathStageItemData>
   | SectionBase<Extract<SectionName, 'heroSection'>, HeroSectionData>
   | SectionBase<Extract<SectionName, 'mediaGrid'>, ApiMediaGridSectionData>
   | SectionBase<Extract<SectionName, 'highlightCard'>, HighlightCardData>
@@ -150,7 +150,21 @@ export type Section =
   | SectionBase<Extract<SectionName, 'slide'>, SlideData>
   | SectionBase<Extract<SectionName, 'link'>, LinkData>;
 
-export type PageResponseSections = PageResponse['items'][0]['fields']['sections'];
+export type PageResponseSections = (
+  TypeAboutCourseItemWithAllLocalesAndWithoutLinkResolutionResponse
+  | TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse
+  | TypeExternalEmbedContentWithAllLocalesAndWithoutLinkResolutionResponse
+  | TypeHeroSectionWithAllLocalesAndWithoutLinkResolutionResponse
+  | TypeHighlightCardWithAllLocalesAndWithoutLinkResolutionResponse
+  | TypeInfoGridWithAllLocalesAndWithoutLinkResolutionResponse
+  | TypeLearningPathStageItemWithoutUnresolvableLinksResponse
+  | TypeLinkWithAllLocalesAndWithoutLinkResolutionResponse
+  | TypeMarqueeWithAllLocalesAndWithoutLinkResolutionResponse
+  | TypeMediaGridWithAllLocalesAndWithoutLinkResolutionResponse
+  | TypeMediaTextBlockWithAllLocalesAndWithoutLinkResolutionResponse
+  | TypeSlideWithAllLocalesAndWithoutLinkResolutionResponse
+  | TypeSliderWithAllLocalesAndWithoutLinkResolutionResponse
+)[];
 
 export type CourseNames = typeof COURSE_TITLES;
 export type CourseNamesKeys = CourseNames[keyof CourseNames];

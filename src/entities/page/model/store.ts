@@ -11,6 +11,7 @@ import { api } from '@/shared/api/api';
 import { prepareContentfulResponse } from '@/shared/helpers/prepare-contentful-response';
 import { transformPageSections } from '@/shared/helpers/transform-page-sections';
 import { ApiResourceLocale } from '@/shared/types';
+import { PageResponseSections } from '@/shared/types/types';
 
 class PageStore {
   public loadPagesMetadata = async (type: PageType, locale: ApiResourceLocale = 'en-US') => {
@@ -61,7 +62,7 @@ class PageStore {
       course,
     } = preparedData.at(0)?.fields ?? {};
 
-    const sections = transformPageSections(pageSections);
+    const sections = transformPageSections(pageSections as PageResponseSections);
     const pageData = {
       title,
       sections,

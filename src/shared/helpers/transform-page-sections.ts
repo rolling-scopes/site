@@ -19,8 +19,8 @@ import { isHeroSection, transformHeroSection } from '@/widgets/hero';
 import { isHighlightCard, transformHighlightCard } from '@/widgets/highlight-card';
 import { isInfoGridSection, transformInfoGridSection } from '@/widgets/info-grid';
 import {
-  isLearningPathStagesSection,
-  transformLearningPathStages,
+  isLearningPathStageItem,
+  transformLearningPathStageItem,
 } from '@/widgets/learning-path-stages';
 import { isMarqueeSection, transformMarqueeSection } from '@/widgets/marquee';
 import { isMediaGridSection, transformMediaGridSection } from '@/widgets/media-grid';
@@ -51,8 +51,8 @@ export function transformPageSections(sections: PageResponseSections): Section[]
       return transformMediaTextBlockSection(section);
     }
 
-    if (isLearningPathStagesSection(section)) {
-      return transformLearningPathStages(section);
+    if (isLearningPathStageItem(section)) {
+      return transformLearningPathStageItem(section);
     }
 
     if (isHeroSection(section)) {

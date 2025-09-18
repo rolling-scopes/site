@@ -1,4 +1,6 @@
-import { TypeLearningPathStagesWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
+import {
+  TypeLearningPathStageItemWithoutUnresolvableLinksResponse,
+} from '@/shared/types/contentful';
 import { SECTION_TYPE } from '@/widgets/section-resolver/constants';
 import type { BaseEntry } from 'contentful';
 
@@ -8,8 +10,8 @@ import type { BaseEntry } from 'contentful';
  * @param {TSection} section - The section to be checked, which extends the BaseEntry.
  * @return {boolean} - Returns true if the section is of type `TypeMediaTextBlockWithoutUnresolvableLinksResponse`, otherwise false.
  */
-export function isLearningPathStagesSection<TSection extends BaseEntry>(
+export function isLearningPathStageItem<TSection extends BaseEntry>(
   section: TSection,
-): section is Extract<TSection, TypeLearningPathStagesWithoutUnresolvableLinksResponse> {
-  return section?.sys?.contentType?.sys?.id === SECTION_TYPE.LEARNING_PATH_STAGES;
+): section is Extract<TSection, TypeLearningPathStageItemWithoutUnresolvableLinksResponse> {
+  return section?.sys?.contentType?.sys?.id === SECTION_TYPE.LEARNING_PATH_STAGE_ITEM;
 }

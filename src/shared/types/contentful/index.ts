@@ -89,16 +89,6 @@ export type {
   TypeLearningPathStageItemWithoutUnresolvableLinksResponse,
 } from './TypeLearningPathStageItem';
 export type {
-  TypeLearningPathStages,
-  TypeLearningPathStagesFields,
-  TypeLearningPathStagesSkeleton,
-  TypeLearningPathStagesWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeLearningPathStagesWithAllLocalesAndWithoutUnresolvableLinksResponse,
-  TypeLearningPathStagesWithAllLocalesResponse,
-  TypeLearningPathStagesWithoutLinkResolutionResponse,
-  TypeLearningPathStagesWithoutUnresolvableLinksResponse,
-} from './TypeLearningPathStages';
-export type {
   TypeLink,
   TypeLinkFields,
   TypeLinkSkeleton,

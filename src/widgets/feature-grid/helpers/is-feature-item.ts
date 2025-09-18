@@ -11,5 +11,5 @@ import type { BaseEntry } from 'contentful';
 export function isFeatureItem<TSection extends BaseEntry>(
   section: TSection,
 ): section is Extract<TSection, TypeAboutCourseItemWithoutUnresolvableLinksResponse> {
-  return section.sys.contentType.sys.id === SECTION_TYPE.ABOUT_COURSE_ITEM;
+  return section.sys.contentType.sys.id === SECTION_TYPE.FEATURE_ITEM;
 }

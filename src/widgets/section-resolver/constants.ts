@@ -1,8 +1,8 @@
 export const SECTION_TYPE = {
-  ABOUT_COURSE: 'aboutCourse',
-  ABOUT_COURSE_ITEM: 'aboutCourseItem',
+  FEATURE_GRID: 'aboutCourse',
+  FEATURE_ITEM: 'aboutCourseItem',
   MEDIA_TEXT_BLOCK: 'mediaTextBlock',
-  LEARNING_PATH_STAGES: 'learningPathStages',
+  LEARNING_PATH_STAGE_ITEM: 'learningPathStageItem',
   HERO: 'heroSection',
   MEDIA_GRID: 'mediaGrid',
   HIGHLIGHT_CARD: 'highlightCard',

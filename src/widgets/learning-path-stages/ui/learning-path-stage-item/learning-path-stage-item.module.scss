@@ -1,6 +1,8 @@
 .learning-path-stage-item {
+  counter-increment: learning-path;
   display: flex;
   gap: $gap-xxl;
+  padding-bottom: 32px;
 
   .stage-number {
     $number-size: 80px;
@@ -26,6 +28,10 @@
       color: $color-gray-600;
 
       background-color: $color-yellow-50;
+
+      &::before {
+        content: counter(learning-path);
+      }
 
       @include media-tablet {
         width: $number-size-tablet;

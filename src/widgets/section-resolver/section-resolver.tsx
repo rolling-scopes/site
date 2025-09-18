@@ -22,7 +22,7 @@ import {
 import { Hero, MentorshipHero } from '@/widgets/hero';
 import { HighlightCard } from '@/widgets/highlight-card';
 import { InfoCell, InfoGrid } from '@/widgets/info-grid';
-import { LearningPathStageItem, LearningPathStages } from '@/widgets/learning-path-stages';
+import { LearningPathStageItem } from '@/widgets/learning-path-stages';
 import { MediaGrid } from '@/widgets/media-grid';
 import { MediaTextBlock } from '@/widgets/media-text-block';
 import {
@@ -51,14 +51,14 @@ export const SectionResolver = async ({
   const mentorshipCourses = await courseStore.loadMentorshipCourses();
 
   switch (sectionName) {
-    case SECTION_TYPE.ABOUT_COURSE:
+    case SECTION_TYPE.FEATURE_GRID:
       return (
         <FeatureGrid
           gridItems={section.data.gridItems}
         />
       );
 
-    case SECTION_TYPE.ABOUT_COURSE_ITEM:
+    case SECTION_TYPE.FEATURE_ITEM:
       if (section.data.variant === 'mentorship') {
         return (
           <FeatureItemMentorship
@@ -95,21 +95,15 @@ export const SectionResolver = async ({
         />
       );
 
-    case SECTION_TYPE.LEARNING_PATH_STAGES:
+    case SECTION_TYPE.LEARNING_PATH_STAGE_ITEM:
       return (
-        <LearningPathStages title={section.data.title} description={section.data.description}>
-          {section.data.stages.map((stage, index) => (
-            <LearningPathStageItem
-              key={stage.id}
-              index={index}
-              title={stage.title}
-              content={stage.content}
-              image={stage.image}
-              imageWidth={stage.imageWidth}
-              imageHeight={stage.imageHeight}
-            />
-          ))}
-        </LearningPathStages>
+        <LearningPathStageItem
+          title={section.data.title}
+          content={section.data.content}
+          image={section.data.image}
+          imageWidth={section.data.imageWidth}
+          imageHeight={section.data.imageHeight}
+        />
       );
 
     case SECTION_TYPE.HERO:

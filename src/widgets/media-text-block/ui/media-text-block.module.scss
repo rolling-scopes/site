@@ -1,4 +1,5 @@
 .media-text-block {
+  counter-reset: learning-path;
   flex-direction: column;
   gap: $gap-l;
 
