@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 
 import { Trainer, TrainerCard } from '@/entities/trainer';
-import { Language } from '@/shared/types';
+import { ApiResourceLocale } from '@/shared/types/types';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 import { trainersTitle } from '@/widgets/trainers/constants';
 
@@ -10,12 +10,12 @@ import styles from './trainers.module.scss';
 const cx = classNames.bind(styles);
 
 type TrainersProps = {
-  language: Language;
+  locale: ApiResourceLocale;
   trainers: Trainer[];
 };
 
-export const Trainers = async ({ trainers, language }: TrainersProps) => {
-  const title = trainersTitle[language];
+export const Trainers = async ({ trainers, locale }: TrainersProps) => {
+  const title = trainersTitle[locale];
 
   return (
     <section className={cx('container')} data-testid="trainers">

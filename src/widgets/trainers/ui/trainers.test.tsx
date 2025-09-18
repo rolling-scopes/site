@@ -13,7 +13,7 @@ describe('Trainers component', () => {
   it('renders without crashing', async () => {
     const widget = await Trainers({
       trainers: MOCKED_ONE_TRAINER,
-      language: 'en',
+      locale: 'ru',
     });
 
     render(widget);
@@ -25,7 +25,7 @@ describe('Trainers component', () => {
   it('renders the content correctly with mocked props', async () => {
     const widget = await Trainers({
       trainers: MOCKED_ONE_TRAINER,
-      language: 'en',
+      locale: 'en-US',
     });
 
     render(widget);
@@ -48,7 +48,7 @@ describe('Trainers component', () => {
   it('renders the title content correctly with lang ru prop', async () => {
     const widget = await Trainers({
       trainers: MOCKED_ONE_TRAINER,
-      language: 'ru',
+      locale: 'ru',
     });
 
     render(widget);
@@ -60,7 +60,7 @@ describe('Trainers component', () => {
   it('renders all the trainers if passed several (8 in items)', async () => {
     const widget = await Trainers({
       trainers: MOCKED_SEVERAL_TRAINERS,
-      language: 'ru',
+      locale: 'ru',
     });
 
     render(widget);

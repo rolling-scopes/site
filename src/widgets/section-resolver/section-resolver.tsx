@@ -48,6 +48,7 @@ export const SectionResolver = async ({
 }: SectionResolverProps) => {
   const sectionName = section.name;
   const courses = await courseStore.loadCourses();
+  const mentorshipCourses = await courseStore.loadMentorshipCourses();
 
   switch (sectionName) {
     case SECTION_TYPE.ABOUT_COURSE:
@@ -169,7 +170,7 @@ export const SectionResolver = async ({
       }
 
       if (section.data.type === EXTERNAL_EMBED_CONTENT_TYPE.MENTORSHIP_COURSES) {
-        return <MentorshipCourses courses={courses} />;
+        return <MentorshipCourses courses={mentorshipCourses} />;
       }
 
       if (section.data.type === EXTERNAL_EMBED_CONTENT_TYPE.VIDEO_BLOCK) {

@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import { Course } from '@/entities/course';
 import { LABELS } from '@/shared/constants';
+import { ApiResourceLocale } from '@/shared/types';
 import { MainTitle } from '@/shared/ui/main-title';
 import { ShortInfoPanel } from '@/shared/ui/short-info-panel';
 import { AvailabilityStatus } from '@/widgets/hero/ui/course/availability-status';
@@ -14,9 +15,10 @@ const cx = classNames.bind(styles);
 
 type HeroCourseProps = {
   course: Course;
+  locale: ApiResourceLocale;
 };
 
-export const CourseHero = ({ course }: HeroCourseProps) => {
+export const CourseHero = ({ course, locale }: HeroCourseProps) => {
   const {
     title,
     subTitle,
@@ -54,7 +56,7 @@ export const CourseHero = ({ course }: HeroCourseProps) => {
           />
           <RegistrationLink
             enrollLink={enroll}
-            language={language}
+            locale={locale}
             startDate={startDate}
             registrationEndDate={registrationEndDate}
           />

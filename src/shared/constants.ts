@@ -1,5 +1,6 @@
+import { Language } from '@/shared/types/types';
+
 export const TO_BE_DETERMINED = 'TBD';
-export const RS_GRADUATED_ONLY = 'Alumni only';
 export const REGISTRATION_WILL_OPEN_SOON = 'Registration will open soon!';
 export const REGISTRATION_WILL_OPEN_SOON_RU = 'Регистрация откроется скоро!';
 export const UNKNOWN_API_ERROR = 'Unknown error, API request failed.';
@@ -9,12 +10,15 @@ export const YOUTUBE_API_MAX_RESULTS_PER_PAGE = 50;
  */
 export const API_MAX_INCLUDE_DEPTH = 10;
 
+export const COURSE_LANGUAGE_LABEL: Record<Language, string> = {
+  en: 'English',
+  ru: 'Russian',
+} as const;
+
 export const LABELS = {
   START_DATE: 'Course starts on:',
   START_DATE_SHORT: 'Start:',
   REGISTRATION_END: 'Enroll untill:',
-  COURSE_LANGUAGE_EN: 'English',
-  COURSE_LANGUAGE_RU: 'Russian',
   MENTOR_ACTIVITIES: 'Mentorship starts on:',
   MENTOR_ACTIVITIES_SEPARATOR: '-',
 } as const;

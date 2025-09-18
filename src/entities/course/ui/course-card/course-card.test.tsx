@@ -20,7 +20,7 @@ describe('CourseCard', () => {
     });
 
     it('renders the course card content correctly', () => {
-      const language = course.language === 'ru' ? 'Russian' : 'English';
+      const language = course.language.has('ru') ? 'Russian' : 'English';
       const title = `${course.title}${course.title === COURSE_TITLES.ANGULAR ? ` (${course.subTitle})` : ''}`;
 
       expect(screen.getByText(title)).toBeVisible();

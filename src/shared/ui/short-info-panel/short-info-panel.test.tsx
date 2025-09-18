@@ -6,13 +6,13 @@ import { COURSE_DATE_FORMAT, MENTORING_DATE_FORMAT } from '@/entities/course/con
 import micIcon from '@/shared/assets/svg/mic.svg';
 import { LABELS } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/day-js';
-import { Language } from '@/shared/types';
+import { CourseLanguage } from '@/shared/types/types';
 
 describe('CourseShortInfo', () => {
   const data = {
     startDate: dayJS('2060-01-01').format(COURSE_DATE_FORMAT),
     registrationEndDate: dayJS('2060-01-01').add(1, 'd').format(COURSE_DATE_FORMAT),
-    language: 'en' as Language,
+    language: new Set(['en']) as CourseLanguage,
   };
 
   it('renders normal course card view with correct labels, dates, language, and microphone icon', () => {
@@ -51,7 +51,7 @@ describe('CourseShortInfo', () => {
   it('renders mentoring course card view with correct labels, dates, language, and microphone icon', () => {
     const personalMentoringStartDate = dayJS('2060-02-01').format(MENTORING_DATE_FORMAT);
     const personalMentoringEndDate = dayJS('2060-03-15').format(MENTORING_DATE_FORMAT);
-    const language = 'en';
+    const language = new Set(['en'] as const);
 
     render(
       <ShortInfoPanel

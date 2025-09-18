@@ -34,6 +34,8 @@ import type { BaseEntry } from 'contentful';
 
 export type Language = 'en' | 'ru';
 
+export type CourseLanguage = Set<'en' | 'ru'>;
+
 export type Video = {
   id: string;
   title: string;

@@ -31,7 +31,7 @@ const mockedCalculateFreshDate = vi.spyOn(getCourseDate, 'calculateFreshDate');
 describe('HeroCourse component', () => {
   describe('Render general content', () => {
     beforeEach(async () => {
-      renderWithRouter(<CourseHero course={mockedCourseWithSubtitle} />);
+      renderWithRouter(<CourseHero course={mockedCourseWithSubtitle} locale="ru" />);
     });
 
     it('renders the title, label and subtitle correctly', async () => {
@@ -49,7 +49,7 @@ describe('HeroCourse component', () => {
     it('renders enroll button with correct label and href', async () => {
       mockedCalculateFreshDate.mockReturnValue(mockedCourseWithSubtitle.startDate);
 
-      renderWithRouter(<CourseHero course={mockedCourseWithSubtitle} />);
+      renderWithRouter(<CourseHero course={mockedCourseWithSubtitle} locale="ru" />);
 
       const buttonElement = screen.getByRole('link', { name: /присоединиться/i });
 
@@ -68,7 +68,7 @@ describe('HeroCourse component', () => {
 
   describe('Render widget with empty subtitle', () => {
     it('does not display subtitles if they are not provided', async () => {
-      renderWithRouter(<CourseHero course={mockedCourseNoSubtitle} />);
+      renderWithRouter(<CourseHero course={mockedCourseNoSubtitle} locale="en-US" />);
       const subtitleElement = await screen.queryByTestId('course-subtitle');
 
       expect(subtitleElement).toBeNull();
@@ -79,7 +79,7 @@ describe('HeroCourse component', () => {
     it('renders registration will open soon with correct label and href', async () => {
       mockedCalculateFreshDate.mockReturnValue(TO_BE_DETERMINED);
 
-      renderWithRouter(<CourseHero course={mockedCourseAws} />);
+      renderWithRouter(<CourseHero course={mockedCourseAws} locale="en-US" />);
 
       const buttonElement = screen.getByText(REGISTRATION_WILL_OPEN_SOON);
 
@@ -90,7 +90,7 @@ describe('HeroCourse component', () => {
     it('renders registration will open soon in russian with correct label and href', async () => {
       mockedCalculateFreshDate.mockReturnValue(TO_BE_DETERMINED);
 
-      renderWithRouter(<CourseHero course={mockedCourseRu} />);
+      renderWithRouter(<CourseHero course={mockedCourseRu} locale="ru" />);
 
       const buttonElement = screen.getByText(REGISTRATION_WILL_OPEN_SOON_RU);
 

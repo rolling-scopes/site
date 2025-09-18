@@ -21,7 +21,7 @@ class CourseStore {
 
   public async loadCourse(id: ApiCoursesIds) {
     const [courseRes, courseSchedule] = await Promise.all([
-      api.course.queryCourse(id),
+      api.course.queryCourseById(id),
       this.loadCoursesSchedule(),
     ]);
 
@@ -37,6 +37,21 @@ class CourseStore {
     }
 
     throw new Error('Something went wrong fetching course!');
+  }
+
+  public async loadMentorshipCourses() {
+    const [courses, courseSchedule] = await Promise.all([
+      api.course.queryMentorshipCourses(),
+      this.loadCoursesSchedule(),
+    ]);
+
+    if (courses.isSuccess) {
+      const transformedCoursesData = transformCourses(courses.result, true);
+
+      return syncApiCoursesSchedule(courseSchedule, transformedCoursesData);
+    }
+
+    throw new Error('Something went wrong fetching mentorship course!');
   }
 
   public loadCoursesSchedule = async () => {

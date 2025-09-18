@@ -2,8 +2,8 @@ import { StaticImageData } from 'next/image';
 
 import { API_COURSES_IDS_DICTIONARY } from '@/entities/course/constants';
 import { COURSE_LINKS } from '@/shared/constants';
-import { ApiResourceLocale, Language, TypeCourseSkeleton } from '@/shared/types';
-import { CourseNamesKeys } from '@/shared/types/types';
+import { ApiResourceLocale, TypeCourseSkeleton } from '@/shared/types';
+import { CourseLanguage, CourseNamesKeys } from '@/shared/types/types';
 import type { EntryCollection } from 'contentful';
 
 type CourseLinks = typeof COURSE_LINKS;
@@ -49,7 +49,7 @@ export type Course = {
   iconFooter: StaticImageData;
   startDate: string;
   registrationEndDate: string;
-  language: Language;
+  language: CourseLanguage;
   mode: 'online' | 'offline';
   detailsUrl: string;
   enroll?: string;

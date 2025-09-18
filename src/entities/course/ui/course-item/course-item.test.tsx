@@ -10,7 +10,7 @@ import { dayJS } from '@/shared/helpers/day-js';
 
 const mockedProps: CourseItemData = {
   title: COURSE_TITLES.REACT,
-  language: 'en',
+  language: new Set(['en']),
   startDate: dayJS().format(COURSE_DATE_FORMAT),
   registrationEndDate: dayJS().add(1, 'd').format(COURSE_DATE_FORMAT),
   detailsUrl: '/courses/react-intro',
