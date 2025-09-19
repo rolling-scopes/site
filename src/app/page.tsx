@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: pageTitle,
     seoDescription: description,
     seoKeywords: keywords,
-  } = await pageStore.loadPage(PAGE_TYPE.COURSES);
+  } = await pageStore.loadPage(PAGE_TYPE.HOME);
 
   const title = `${pageTitle} · ${OG_SITE_NAME}`;
   const { canonical, robots } = homeMetadata;

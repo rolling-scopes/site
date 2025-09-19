@@ -8,10 +8,10 @@ export class CourseApi {
   public queryCourses(params?: Record<string, unknown>) {
     return this.services.rest.get<CoursesResponse>('/entries', {
       params: {
-        content_type: API_CONTENT_TYPE_DICTIONARY.COURSE,
-        include: API_MAX_INCLUDE_DEPTH,
         order: 'fields.order',
         ...params,
+        content_type: API_CONTENT_TYPE_DICTIONARY.COURSE,
+        include: API_MAX_INCLUDE_DEPTH,
       },
     });
   }

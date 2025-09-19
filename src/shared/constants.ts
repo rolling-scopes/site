@@ -1,4 +1,4 @@
-import { Language } from '@/shared/types/types';
+import type { Language } from '@/shared/types/types';
 
 export const TO_BE_DETERMINED = 'TBD';
 export const REGISTRATION_WILL_OPEN_SOON = 'Registration will open soon!';
