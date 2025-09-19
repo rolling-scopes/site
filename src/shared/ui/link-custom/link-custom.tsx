@@ -113,9 +113,8 @@ export const LinkCustom = ({
       {iconSrc && (
         <span className={cx('icon-wrapper')}>
           {!disabled && <Image
+            className={cx('icon')}
             src={iconSrc}
-            width={20}
-            height={20}
             alt=""
             data-testid="icon"
           />}
