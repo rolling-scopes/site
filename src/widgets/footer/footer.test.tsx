@@ -11,7 +11,7 @@ vi.mock('next/navigation', () => ({ usePathname: () => '/' }));
 
 describe('Footer', () => {
   it('renders footer container', async () => {
-    const { getByTestId } = renderWithRouter(<Footer courses={mockedCourses} />);
+    const { getByTestId } = renderWithRouter(<Footer courses={mockedCourses} mentorshipCourses={mockedCourses} />);
     const footer = getByTestId('footer');
 
     expect(footer).toBeInTheDocument();
@@ -39,7 +39,7 @@ describe('Footer', () => {
   describe('MobileView', () => {
     it('should render mobile view', () => {
       const { getByTestId } = renderWithRouter(
-        <MobileView courses={mockedCourses} type="footer" />,
+        <MobileView courses={mockedCourses} mentorshipCourses={mockedCourses} type="footer" />,
       );
       const mobileView = getByTestId('mobile-view');
 

@@ -1,7 +1,9 @@
+/* eslint-disable @stylistic/jsx-closing-bracket-location */
+
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
 
-import { DropdownArrow } from '@/shared/icons/dropdown-arrow';
+import arrowIcon from '@/shared/assets/svg/dropdown-arrow.svg';
 
 import styles from './mobile-nav-item.module.scss';
 
@@ -25,15 +27,13 @@ export const MobileNavItem = ({
   return (
     <button onClick={() => onMenuItemClick(title)} className={cx('category-link', color)}>
       <div className={cx('category-title')}>
-        {icon && (
-          <Image
-            src={icon}
-            alt="Donate-icon"
-            width={20}
-            height={18}
-            aria-hidden="true"
-          />
-        )}
+        {icon && <Image
+          src={icon}
+          alt=""
+          width={20}
+          height={18}
+          aria-hidden="true"
+        />}
         <span>{title}</span>
       </div>
       <span
@@ -41,7 +41,7 @@ export const MobileNavItem = ({
         role="button"
         aria-expanded={isDropdownActive}
       >
-        <DropdownArrow />
+        <Image src={arrowIcon} alt="dropdown-arrow" aria-label="dropdown-arrow" />
       </span>
     </button>
   );

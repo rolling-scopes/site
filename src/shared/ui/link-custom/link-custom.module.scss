@@ -12,6 +12,11 @@
   font-weight: $font-weight-medium;
   letter-spacing: 0;
   white-space: pre;
+
+  .icon-wrapper-left {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .secondary {
@@ -100,6 +105,13 @@
   font-style: normal;
   color: $color-blue-600;
   text-decoration: underline;
+
+  .icon-wrapper {
+    .icon {
+      max-width: 20px;
+      max-height: 20px;
+    }
+  }
 
   .icon-wrapper-left {
     display: flex;

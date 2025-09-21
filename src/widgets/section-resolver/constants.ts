@@ -1,12 +1,9 @@
 export const SECTION_TYPE = {
-  ABOUT_COURSE: 'aboutCourse',
-  ABOUT_COURSE_ITEM: 'aboutCourseItem',
+  FEATURE_GRID: 'aboutCourse',
+  FEATURE_ITEM: 'aboutCourseItem',
   MEDIA_TEXT_BLOCK: 'mediaTextBlock',
-  LEARNING_PATH_STAGES: 'learningPathStages',
-  VIDEO_BLOCK: 'videoBlock',
+  LEARNING_PATH_STAGE_ITEM: 'learningPathStageItem',
   HERO: 'heroSection',
-  UPCOMING_COURSES: 'upcomingCourses',
-  DONATION: 'donation',
   MEDIA_GRID: 'mediaGrid',
   HIGHLIGHT_CARD: 'highlightCard',
   EXTERNAL_EMBED_CONTENT: 'externalEmbedContent',
@@ -14,6 +11,5 @@ export const SECTION_TYPE = {
   MARQUEE: 'marquee',
   SLIDER: 'slider',
   SLIDE: 'slide',
-  SOCIAL_LINK: 'socialLink',
   LINK: 'link',
 } as const;

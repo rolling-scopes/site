@@ -4,14 +4,17 @@ import { Footer, Header, Partnered } from './components';
 import { courseStore } from '@/entities/course';
 
 export const BaseLayout = async ({ children }: PropsWithChildren) => {
-  const courses = await courseStore.loadCourses();
+  const [courses, mentorshipCourses] = await Promise.all([
+    courseStore.loadCourses(),
+    courseStore.loadMentorshipCourses(),
+  ]);
 
   return (
     <>
-      <Header courses={courses} />
+      <Header courses={courses} mentorshipCourses={mentorshipCourses} />
       {children}
       <Partnered />
-      <Footer courses={courses} />
+      <Footer courses={courses} mentorshipCourses={mentorshipCourses} />
     </>
   );
 };

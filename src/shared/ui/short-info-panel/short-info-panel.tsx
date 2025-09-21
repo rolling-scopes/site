@@ -2,9 +2,9 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import { DateSimple } from '../date-simple';
-import micIcon from '@/shared/assets/icons/mic.svg';
-import { LABELS, TO_BE_DETERMINED } from '@/shared/constants';
-import { Language } from '@/shared/types';
+import micIcon from '@/shared/assets/svg/mic.svg';
+import { COURSE_LANGUAGE_LABEL, LABELS, TO_BE_DETERMINED } from '@/shared/constants';
+import { CourseLanguage } from '@/shared/types/types';
 import { CourseStartLabel } from '@/shared/ui/short-info-panel/course-start-label';
 
 import styles from './short-info-panel.module.scss';
@@ -16,7 +16,7 @@ export type ShortInfoPanelView = 'normal' | 'upcoming' | 'mentoring';
 interface ShortInfoPanelProps {
   startDate: string | null;
   registrationEndDate: string | null;
-  language: Language;
+  language: CourseLanguage;
   withMargin?: boolean;
   label?: string;
   isShortLabel?: boolean;
@@ -35,7 +35,7 @@ export const ShortInfoPanel = ({
   personalMentoringEndDate,
   showMentoringStartDate,
 }: ShortInfoPanelProps) => {
-  const courseLanguage = language === 'en' ? LABELS.COURSE_LANGUAGE_EN : LABELS.COURSE_LANGUAGE_RU;
+  const courseLanguage = Array.from(language).map((lang) => COURSE_LANGUAGE_LABEL[lang]).join(', ');
 
   let view: ShortInfoPanelView = 'normal';
 

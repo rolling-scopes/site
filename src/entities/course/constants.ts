@@ -1,4 +1,5 @@
-import { COURSE_TITLES, CourseNamesKeys } from 'data';
+import { COURSE_TITLES } from '@/shared/constants';
+import { CourseNamesKeys } from '@/shared/types/types';
 
 export const COURSE_DATE_FORMAT = 'MMM DD, YYYY';
 export const MENTORING_DATE_FORMAT = 'MMM, YYYY';

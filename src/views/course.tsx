@@ -4,7 +4,7 @@ import { trainerStore } from '@/entities/trainer';
 import { ApiResourceLocale } from '@/shared/types';
 import { Section } from '@/shared/types/types';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
-import { HeroCourse } from '@/widgets/hero-course';
+import { CourseHero } from '@/widgets/hero';
 import { SectionResolver } from '@/widgets/section-resolver';
 import { Trainers } from '@/widgets/trainers';
 
@@ -22,12 +22,12 @@ export const Course = async ({ id, sections, locale }: CourseProps) => {
 
   return (
     <>
-      <HeroCourse courseName={course.title} />
+      <CourseHero course={course} locale={locale} />
       <Breadcrumbs />
       {sections.map((section) => (
         <SectionResolver key={section.id} courseEnrollUrl={course.enroll} section={section} />
       ))}
-      {trainers && <Trainers trainers={trainers} courseName={course.title} />}
+      {trainers && <Trainers trainers={trainers} locale={locale} />}
     </>
   );
 };

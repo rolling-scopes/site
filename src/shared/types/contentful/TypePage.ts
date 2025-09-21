@@ -1,22 +1,8 @@
-import type { TypeAboutCourseSkeleton } from './TypeAboutCourse';
-import type { TypeAboutCourseItemSkeleton } from './TypeAboutCourseItem';
-import type { TypeContributorSkeleton } from './TypeContributor';
 import type { TypeCourseSkeleton } from './TypeCourse';
-import type { TypeDonationSkeleton } from './TypeDonation';
 import type { TypeExternalEmbedContentSkeleton } from './TypeExternalEmbedContent';
 import type { TypeHeroSectionSkeleton } from './TypeHeroSection';
-import type { TypeHighlightCardSkeleton } from './TypeHighlightCard';
-import type { TypeInfoGridSkeleton } from './TypeInfoGrid';
-import type { TypeLearningPathStageItemSkeleton } from './TypeLearningPathStageItem';
-import type { TypeLearningPathStagesSkeleton } from './TypeLearningPathStages';
-import type { TypeLinkSkeleton } from './TypeLink';
 import type { TypeMarqueeSkeleton } from './TypeMarquee';
-import type { TypeMediaGridSkeleton } from './TypeMediaGrid';
 import type { TypeMediaTextBlockSkeleton } from './TypeMediaTextBlock';
-import type { TypeSliderSkeleton } from './TypeSlider';
-import type { TypeSocialLinkSkeleton } from './TypeSocialLink';
-import type { TypeUpcomingCoursesSkeleton } from './TypeUpcomingCourses';
-import type { TypeVideoBlockSkeleton } from './TypeVideoBlock';
 import type {
   ChainModifiers,
   Entry,
@@ -33,12 +19,18 @@ import type {
  */
 export interface TypePageFields {
   /**
+   * Field type definition for field 'tag' (tag)
+   * @name tag
+   * @localized false
+   */
+  tag: EntryFieldTypes.Symbol;
+  /**
    * Field type definition for field 'type' (type)
    * @name type
    * @localized false
    */
   type: EntryFieldTypes.Symbol<
-    'community' | 'course' | 'courses' | 'home' | 'mentorship' | 'mentorship-course'
+    'community' | 'course' | 'courses' | 'home' | 'mentorship' | 'mentorship-course' | 'not-found'
   >;
   /**
    * Field type definition for field 'title' (title)
@@ -74,25 +66,10 @@ export interface TypePageFields {
    */
   sections?: EntryFieldTypes.Array<
     EntryFieldTypes.EntryLink<
-      | TypeAboutCourseItemSkeleton
-      | TypeAboutCourseSkeleton
-      | TypeContributorSkeleton
-      | TypeCourseSkeleton
-      | TypeDonationSkeleton
       | TypeExternalEmbedContentSkeleton
       | TypeHeroSectionSkeleton
-      | TypeHighlightCardSkeleton
-      | TypeInfoGridSkeleton
-      | TypeLearningPathStageItemSkeleton
-      | TypeLearningPathStagesSkeleton
-      | TypeLinkSkeleton
       | TypeMarqueeSkeleton
-      | TypeMediaGridSkeleton
       | TypeMediaTextBlockSkeleton
-      | TypeSliderSkeleton
-      | TypeSocialLinkSkeleton
-      | TypeUpcomingCoursesSkeleton
-      | TypeVideoBlockSkeleton
     >
   >;
   /**
@@ -109,7 +86,7 @@ export interface TypePageFields {
  * @type {TypePageSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-09-02T11:58:16.325Z
- * @version 9
+ * @version 29
  */
 export type TypePageSkeleton = EntrySkeletonType<TypePageFields, 'page'>;
 /**
@@ -118,7 +95,7 @@ export type TypePageSkeleton = EntrySkeletonType<TypePageFields, 'page'>;
  * @type {TypePage}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-09-02T11:58:16.325Z
- * @version 9
+ * @version 29
  */
 export type TypePage<
   Modifiers extends ChainModifiers,

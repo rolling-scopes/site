@@ -1,13 +1,21 @@
-import { LandingPageResponse } from '@/entities/landing-page/types';
-import { preparePageMetadata } from '@/entities/page/helpers/transform-page';
-import { PageType } from '@/entities/page/types';
+import { courseStore } from '@/entities/course';
+import { PAGE_TYPE } from '@/entities/page/constants';
+import { preparePageMetadata } from '@/entities/page/helpers/prepare-page-metadata';
+import {
+  CoursePageData,
+  NonCoursePageData,
+  PageData,
+  PageResponse,
+  PageType,
+} from '@/entities/page/types';
 import { api } from '@/shared/api/api';
 import { prepareContentfulResponse } from '@/shared/helpers/prepare-contentful-response';
 import { transformPageSections } from '@/shared/helpers/transform-page-sections';
 import { ApiResourceLocale } from '@/shared/types';
+import { PageResponseSections } from '@/shared/types/types';
 
 class PageStore {
-  public loadPages = async (type: PageType, locale: ApiResourceLocale = 'en-US') => {
+  public loadPagesMetadata = async (type: PageType, locale: ApiResourceLocale = 'en-US') => {
     const res = await api.page.queryPage({
       type,
       locale,
@@ -20,34 +28,67 @@ class PageStore {
     throw new Error('Something went wrong fetching pages!');
   };
 
-  public loadPage = async (type: PageType, slug?: string, locale: ApiResourceLocale = 'en-US') => {
+  public async loadPage(
+    type: Extract<PageType, 'course'>,
+    locale?: ApiResourceLocale,
+    slug?: string,
+  ): Promise<CoursePageData>;
+  public async loadPage(
+    type: Exclude<PageType, 'course'>,
+    locale?: ApiResourceLocale,
+    slug?: string,
+  ): Promise<NonCoursePageData>;
+  public async loadPage(
+    type: PageType,
+    locale: ApiResourceLocale = 'en-US',
+    slug?: string,
+  ): Promise<PageData> {
     const res = await api.page.queryPage({
       type,
       slug,
       locale,
     });
 
-    if (res.isSuccess) {
-      const preparedData = prepareContentfulResponse<LandingPageResponse['items']>(res.result);
-
-      const {
-        title = '',
-        seoDescription = '',
-        seoKeywords = '',
-        sections: pageSections,
-      } = preparedData.at(0)?.fields ?? {};
-      const sections = transformPageSections(pageSections);
-
-      return {
-        title,
-        sections,
-        seoDescription,
-        seoKeywords,
-      };
+    if (!res.isSuccess) {
+      throw new Error('Something went wrong fetching page!');
     }
 
-    throw new Error('Something went wrong fetching page!');
-  };
+    const preparedData = prepareContentfulResponse<PageResponse['items']>(res.result);
+
+    const {
+      title = '',
+      seoDescription = '',
+      seoKeywords = '',
+      sections: pageSections,
+      course,
+    } = preparedData.at(0)?.fields ?? {};
+
+    const courseId = course?.sys?.id;
+    const courseUrl = course?.fields.url || '';
+    const currentCourse = courseId ? await courseStore.loadCourse(courseId) : undefined;
+
+    const sections = transformPageSections(pageSections as PageResponseSections, currentCourse?.enroll);
+    const pageData = {
+      title,
+      sections,
+      seoDescription,
+      seoKeywords,
+    };
+
+    if (type !== PAGE_TYPE.COURSE) {
+      return pageData;
+    }
+
+    if (!courseId) {
+      throw new Error('Course id is not defined.');
+    }
+
+    return {
+      ...pageData,
+      courseId,
+      courseUrl,
+    };
+  }
 }
 
 export const pageStore = new PageStore();

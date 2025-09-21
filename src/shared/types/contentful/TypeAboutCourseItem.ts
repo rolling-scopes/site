@@ -47,24 +47,24 @@ export interface TypeAboutCourseItemFields {
 }
 
 /**
- * Entry skeleton type definition for content type 'aboutCourseItem' (About Course Item)
+ * Entry skeleton type definition for content type 'aboutCourseItem' (Feature Item)
  * @name TypeAboutCourseItemSkeleton
  * @type {TypeAboutCourseItemSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-16T19:52:39.219Z
- * @version 17
+ * @version 19
  */
 export type TypeAboutCourseItemSkeleton = EntrySkeletonType<
   TypeAboutCourseItemFields,
   'aboutCourseItem'
 >;
 /**
- * Entry type definition for content type 'aboutCourseItem' (About Course Item)
+ * Entry type definition for content type 'aboutCourseItem' (Feature Item)
  * @name TypeAboutCourseItem
  * @type {TypeAboutCourseItem}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-16T19:52:39.219Z
- * @version 17
+ * @version 19
  */
 export type TypeAboutCourseItem<
   Modifiers extends ChainModifiers,

@@ -5,46 +5,31 @@ import { isSlide } from '@/shared/ui/slider/helpers/is-slide';
 import { isSlider } from '@/shared/ui/slider/helpers/is-slider';
 import { transformSlide } from '@/shared/ui/slider/helpers/transform-slide';
 import { transformSlider } from '@/shared/ui/slider/helpers/transform-slider';
-import { isSocialLink } from '@/shared/ui/social-media-item/helpers/is-social-link';
-import { transformSocialLink } from '@/shared/ui/social-media-item/helpers/transform-social-link';
-import { isAboutCourseSection, transformAboutCourseSection } from '@/widgets/about-course';
-import { isAboutCourseItem } from '@/widgets/about-course/helpers/is-about-course-item';
-import {
-  transformAboutCourseItem,
-} from '@/widgets/about-course/helpers/transform-about-course-item';
 import {
   isExternalEmbedContent,
   transformExternalEmbedContent,
 } from '@/widgets/external-embed-content';
-import { isHeroSection } from '@/widgets/hero/helpers/is-hero-section';
-import { transformHeroSection } from '@/widgets/hero/helpers/transform-hero-section';
-import { isHighlightCard } from '@/widgets/highlight-card/helpers/is-highlight-card';
-import { transformHighlightCard } from '@/widgets/highlight-card/helpers/transform-highlight-card';
+import {
+  isFeatureGrid,
+  isFeatureItem,
+  transformFeatureGrid,
+  transformFeatureItem,
+} from '@/widgets/feature-grid';
+import { isHeroSection, transformHeroSection } from '@/widgets/hero';
+import { isHighlightCard, transformHighlightCard } from '@/widgets/highlight-card';
 import { isInfoGridSection, transformInfoGridSection } from '@/widgets/info-grid';
 import {
-  isLearningPathStagesSection,
-  transformLearningPathStages,
+  isLearningPathStageItem,
+  transformLearningPathStageItem,
 } from '@/widgets/learning-path-stages';
 import { isMarqueeSection, transformMarqueeSection } from '@/widgets/marquee';
-import { isMediaGridSection } from '@/widgets/media-grid/helpers/is-media-grid-section';
-import {
-  transformMediaGridSection,
-} from '@/widgets/media-grid/helpers/transform-media-grid-section';
+import { isMediaGridSection, transformMediaGridSection } from '@/widgets/media-grid';
 import {
   isMediaTextBlockSection,
   transformMediaTextBlockSection,
 } from '@/widgets/media-text-block';
-import { isDonationSection } from '@/widgets/support/helpers/is-donation-section';
-import { transformDonationSection } from '@/widgets/support/helpers/transform-donation-section';
-import {
-  isUpcomingCoursesSection,
-} from '@/widgets/upcoming-courses/helpers/is-upcoming-courses-section';
-import {
-  transformUpcomingCoursesSection,
-} from '@/widgets/upcoming-courses/helpers/transform-upcoming-courses-section';
-import { isVideoBlockSection, transformVideoBlockSection } from '@/widgets/video-block';
 
-export function transformPageSections(sections: PageResponseSections): Section[] {
+export function transformPageSections(sections: PageResponseSections, courseEnrollUrl?: string): Section[] {
   if (!sections) {
     throw new Error('Unable to determine list of sections.');
   }
@@ -54,36 +39,24 @@ export function transformPageSections(sections: PageResponseSections): Section[]
       throw new Error('Unable to determine section.');
     }
 
-    if (isAboutCourseSection(section)) {
-      return transformAboutCourseSection(section);
+    if (isFeatureGrid(section)) {
+      return transformFeatureGrid(section);
     }
 
-    if (isAboutCourseItem(section)) {
-      return transformAboutCourseItem(section);
+    if (isFeatureItem(section)) {
+      return transformFeatureItem(section);
     }
 
     if (isMediaTextBlockSection(section)) {
-      return transformMediaTextBlockSection(section);
+      return transformMediaTextBlockSection(section, courseEnrollUrl);
     }
 
-    if (isLearningPathStagesSection(section)) {
-      return transformLearningPathStages(section);
-    }
-
-    if (isVideoBlockSection(section)) {
-      return transformVideoBlockSection(section);
+    if (isLearningPathStageItem(section)) {
+      return transformLearningPathStageItem(section);
     }
 
     if (isHeroSection(section)) {
       return transformHeroSection(section);
-    }
-
-    if (isUpcomingCoursesSection(section)) {
-      return transformUpcomingCoursesSection(section);
-    }
-
-    if (isDonationSection(section)) {
-      return transformDonationSection(section);
     }
 
     if (isMediaGridSection(section)) {
@@ -112,10 +85,6 @@ export function transformPageSections(sections: PageResponseSections): Section[]
 
     if (isSlide(section)) {
       return transformSlide(section);
-    }
-
-    if (isSocialLink(section)) {
-      return transformSocialLink(section);
     }
 
     if (isLink(section)) {

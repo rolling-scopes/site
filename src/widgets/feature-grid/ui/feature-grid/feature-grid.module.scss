@@ -1,0 +1,20 @@
+.about-course-grid {
+  display: grid;
+  grid-template-areas:
+    'a a b'
+    'c d e';
+  grid-template-columns: repeat(3, 1fr);
+  gap: $gap-xl $gap-xl;
+
+  margin-bottom: $gap-s;
+
+  @include media-laptop {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-l;
+  }
+
+  @include media-tablet {
+    gap: $gap-s;
+  }
+}

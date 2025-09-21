@@ -1,10 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import classNames from 'classnames/bind';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
-import { MentorFeedback } from '../../types';
 import { getReactChildAt } from '@/shared/helpers/get-react-child-at';
 import { Modal } from '@/shared/ui/modal';
 import { Subtitle } from '@/shared/ui/subtitle';
@@ -13,7 +12,12 @@ import styles from './mentor-feedback-card.module.scss';
 
 const cx = classNames.bind(styles);
 
-type MentorFeedbackCardProps = MentorFeedback;
+type MentorFeedbackCardProps = {
+  name: string;
+  course?: string;
+  review: ReactNode[];
+  photo: StaticImageData;
+};
 
 const FEEDBACK_MAX_CHARS = 500;
 

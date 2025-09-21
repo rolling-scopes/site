@@ -4,9 +4,6 @@ import { ReactNode } from 'react';
 
 import { Course } from '@/entities/course';
 import { getActualData } from '@/shared/helpers/get-actual-data';
-import {
-  transformCoursesToMentorship,
-} from '@/views/mentorship/helpers/transform-courses-to-mentorship';
 
 type FreshCoursesProps = {
   courses: Course[];
@@ -29,10 +26,6 @@ export const FreshCourses = ({
     sort,
     isMentorship: mentorship,
   });
-
-  if (mentorship) {
-    return transformCoursesToMentorship(actualCourses).map(renderCourse);
-  }
 
   return actualCourses.map(renderCourse);
 };
