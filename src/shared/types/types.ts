@@ -54,7 +54,7 @@ export type QueryStringParams = Record<string, unknown>;
 
 export type HttpHeaders = Record<string, string>;
 
-export type RequestBody = RequestInit['body'];
+type RequestBody = RequestInit['body'];
 
 export type RequestOptions = {
   method?: HttpMethod;
@@ -112,7 +112,7 @@ export type ApiResponseError = {
   requestId: string;
 };
 
-export type ExtractSectionName<TContentType extends BaseEntry> =
+type ExtractSectionName<TContentType extends BaseEntry> =
   TContentType['sys']['contentType']['sys']['id'];
 
 export type SectionName =
@@ -167,7 +167,7 @@ export type PageResponseSections = (
   | TypeSliderWithAllLocalesAndWithoutLinkResolutionResponse
 )[];
 
-export type CourseNames = typeof COURSE_TITLES;
+type CourseNames = typeof COURSE_TITLES;
 export type CourseNamesKeys = CourseNames[keyof CourseNames];
 
 export type RichTextDocument = Parameters<typeof documentToReactComponents>['0'];

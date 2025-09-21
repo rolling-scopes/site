@@ -2,7 +2,7 @@
   counter-increment: learning-path;
   display: flex;
   gap: $gap-xxl;
-  padding-bottom: 32px;
+  padding-bottom: $gap-xl;
 
   .stage-number {
     $number-size: 80px;

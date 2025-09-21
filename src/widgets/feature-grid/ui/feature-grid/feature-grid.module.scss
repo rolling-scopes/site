@@ -6,7 +6,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: $gap-xl $gap-xl;
 
-  margin-bottom: 16px;
+  margin-bottom: $gap-s;
 
   @include media-laptop {
     display: flex;

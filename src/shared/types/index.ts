@@ -10,7 +10,6 @@ export type {
   Language,
   QueryResult,
   QueryStringParams,
-  RequestBody,
   RequestOptions,
   Video,
 } from './types';

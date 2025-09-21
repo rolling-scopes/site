@@ -8,7 +8,7 @@ import type { EntryCollection } from 'contentful';
 
 type CourseLinks = typeof COURSE_LINKS;
 
-export type CourseLinksValues = CourseLinks[keyof CourseLinks];
+type CourseLinksValues = CourseLinks[keyof CourseLinks];
 
 export type CoursesScheduleResponse = Readonly<
   {

@@ -14,7 +14,7 @@ import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
 import { WidgetTitle } from '@/shared/ui/widget-title';
 
-export const RICH_TEXT_OPTIONS: RichTextOptions = {
+const RICH_TEXT_OPTIONS: RichTextOptions = {
   renderText: replaceTextBreaksWithBrTag,
   renderNode: {
     [BLOCKS.PARAGRAPH]: (_node: Block | Inline, children: ReactNode) => {
