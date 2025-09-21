@@ -57,7 +57,11 @@
     font-weight: $font-weight-medium;
 
     background-color: transparent;
-    outline: none;
+
+    &:focus-visible {
+      outline: 1px solid $color-gray-600;
+      outline-offset: 1px;
+    }
 
     &.expanded {
       background-color: $color-gray-50;
@@ -80,11 +84,15 @@
   visibility: hidden;
   opacity: $opacity-0;
   background: none;
-  outline: none;
 
   &:hover {
     border: 1px solid $color-gray-900;
     color: $color-gray-900;
+  }
+
+  &:focus-visible {
+    outline: 1px solid $color-gray-600;
+    outline-offset: 1px;
   }
 
   &.active {
@@ -113,7 +121,6 @@
 
   opacity: $opacity-0;
   background: none;
-  outline: none;
 
   transition:
     max-height 0.3s ease-in-out,
@@ -131,6 +138,11 @@
     padding: $gap-xs;
     border: 1px solid $color-gray-300;
     opacity: $opacity-100;
+  }
+
+  &:focus-visible {
+    outline: 1px solid $color-gray-600;
+    outline-offset: 1px;
   }
 }
 
@@ -154,6 +166,11 @@
   background-color: $color-gray-50;
 
   &:hover {
+    background-color: $color-gray-200;
+  }
+
+  &:focus-within {
+    border-color: $color-gray-600;
     background-color: $color-gray-200;
   }
 }
@@ -196,12 +213,16 @@
 
   overflow: hidden;
 
-  width: 0;
-  height: 0;
-  margin: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
   padding: 0;
+  border: 0;
 
-  opacity: $opacity-0;
+  white-space: nowrap;
+
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
 
   &:checked + .filter-checkbox-custom {
     border-color: $color-yellow;
@@ -210,5 +231,10 @@
     &::after {
       display: block;
     }
+  }
+
+  &:focus-visible + .filter-checkbox-custom {
+    outline: 1px solid $color-gray-600;
+    outline-offset: 1px;
   }
 }
