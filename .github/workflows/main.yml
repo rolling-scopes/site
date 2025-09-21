@@ -37,5 +37,8 @@ jobs:
       - name: Run application tests
         run: npm run test
 
+      - name: Rebuild Sharp for Linux
+        run: npm rebuild sharp
+
       - name: Build
         run: npm run build
