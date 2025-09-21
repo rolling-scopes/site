@@ -154,18 +154,21 @@ describe('FilteredMerchView', () => {
   });
 
   it('filters products when searchTerm changes', () => {
-    render(
+    const { rerender } = render(
       <FilteredMerchView
         initialProducts={mockInitialProducts}
         initialAvailableTags={expectedUniqueTags}
       />,
     );
 
-    act(() => {
-      mockSearchParams.search = 'Alpha';
-      capturedFilterControlsProps.onSearchChange('Alpha');
-    });
-
+    expect(screen.getByTestId('rendered-products-count')).toHaveTextContent('Rendered products: 4');
+    mockSearchParams.search = 'Alpha';
+    rerender(
+      <FilteredMerchView
+        initialProducts={mockInitialProducts}
+        initialAvailableTags={expectedUniqueTags}
+      />,
+    );
     expect(capturedFilterControlsProps.searchTerm).toBe('Alpha');
     expect(screen.getByTestId('rendered-products-count')).toHaveTextContent('Rendered products: 1');
   });
