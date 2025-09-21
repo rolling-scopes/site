@@ -1,0 +1,22 @@
+.filter-catalog {
+  display: flex;
+  gap: $gap-xl;
+
+  @include media-tablet-large {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-xxxl;
+    align-items: center;
+
+    width: 100%;
+  }
+}
+
+.filter-sidebar {
+  display: block;
+  width: 222px;
+
+  @include media-tablet-large {
+    width: 100%;
+  }
+}
