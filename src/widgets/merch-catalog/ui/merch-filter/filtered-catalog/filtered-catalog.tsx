@@ -23,29 +23,13 @@ export const FilteredMerchView = ({
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+
+  const searchTerm = searchParams.get('search') || '';
+  const selectedTypes = searchParams.getAll('type');
+
   const [allAvailableTags, setAllAvailableTags] = useState<string[]>(initialAvailableTags || []);
   const isTabletLayout = useMediaQuery(`(max-width: ${TABLET_BREAKPOINT_PX}px)`);
   const [areTabletFiltersExpanded, setAreTabletFiltersExpanded] = useState(false);
-
-  const [searchTerm, setSearchTerm] = useState(() => {
-    return searchParams.get('search') || '';
-  });
-
-  const [selectedTypes, setSelectedTypes] = useState<string[]>(() => {
-    return searchParams.getAll('type');
-  });
-
-  useEffect(() => {
-    const nextSearch = searchParams.get('search') || '';
-    const nextTypes = searchParams.getAll('type');
-
-    if (nextSearch !== searchTerm) {
-      setSearchTerm(nextSearch);
-    }
-    if (JSON.stringify(nextTypes) !== JSON.stringify(selectedTypes)) {
-      setSelectedTypes(nextTypes);
-    }
-  }, [searchParams, searchTerm, selectedTypes]);
 
   const updateUrl = useCallback(
     (currentSearchTerm: string, currentSelectedTypes: string[]) => {
@@ -91,7 +75,6 @@ export const FilteredMerchView = ({
   }, [initialProducts, searchTerm, selectedTypes]);
 
   const handleSearchChange = (newSearchTerm: string) => {
-    setSearchTerm(newSearchTerm);
     updateUrl(newSearchTerm, selectedTypes);
   };
 
@@ -100,13 +83,10 @@ export const FilteredMerchView = ({
       ? selectedTypes.filter((t) => t !== typeValue)
       : [...selectedTypes, typeValue];
 
-    setSelectedTypes(newSelectedTypes);
     updateUrl(searchTerm, newSelectedTypes);
   };
 
   const handleClearFilters = () => {
-    setSearchTerm('');
-    setSelectedTypes([]);
     updateUrl('', []);
   };
 
