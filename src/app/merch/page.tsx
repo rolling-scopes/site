@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 import { merchMetadata } from '@/metadata/merch';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
-import { Merch } from '@/views/merch/merch';
+import { Merch } from '@/views/merch';
 
 export async function generateMetadata(): Promise<Metadata> {
   const { title, description, keywords, canonical, robots } = merchMetadata;

@@ -11,9 +11,9 @@ import Image, { StaticImageData } from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 
 import { DropdownWrapper } from '../dropdown/dropdown-wrapper';
+import arrowIcon from '@/shared/assets/svg/dropdown-arrow.svg';
 import { KEY_CODES, ROUTES } from '@/shared/constants';
 import { useOutsideClick } from '@/shared/hooks/use-outside-click/use-outside-click';
-import { DropdownArrow } from '@/shared/icons/dropdown-arrow';
 
 import styles from './nav-item.module.scss';
 
@@ -125,7 +125,7 @@ export const NavItem = ({ label, href, icon, reverseLayout = false, children }: 
         </span>
         {isDropdown && (
           <span className={cx('dropdown-arrow')} role="button" aria-expanded={isDropdownOpen}>
-            <DropdownArrow />
+            <Image src={arrowIcon} alt="dropdown-arrow" aria-label="dropdown-arrow" />
           </span>
         )}
       </button>

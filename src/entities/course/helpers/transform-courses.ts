@@ -3,7 +3,7 @@ import { Course, CoursesResponse } from '@/entities/course/types';
 import { TO_BE_DETERMINED } from '@/shared/constants';
 import { findAssetImageById } from '@/shared/helpers/find-asset-image-by-id';
 
-export function transformCourses(coursesResponse: CoursesResponse): Course[] {
+export function transformCourses(coursesResponse: CoursesResponse, isMentorship: boolean = false): Course[] {
   const courseItems = coursesResponse.items;
 
   return courseItems.map((course): Course => {
@@ -14,9 +14,9 @@ export function transformCourses(coursesResponse: CoursesResponse): Course[] {
     const courseAssets = coursesResponse.includes?.Asset;
     const startDate = TO_BE_DETERMINED;
     const registrationEndDate = TO_BE_DETERMINED;
-    const language = course.fields.language;
+    const language = new Set(course.fields.language);
     const mode = course.fields.mode;
-    const detailsUrl = buildCourseUrl(course.fields.url);
+    const detailsUrl = buildCourseUrl(course.fields.url, isMentorship);
     const backgroundStyle = {
       backgroundColor: course.fields.backgroundColor,
       accentColor: course.fields.accentColor,

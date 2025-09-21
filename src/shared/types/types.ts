@@ -1,47 +1,41 @@
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { HttpStatus } from 'http-status';
 
-import { CoursePageResponse } from '@/entities/course-page/types';
 import { ApiBaseClass } from '@/shared/api/api-base-class';
-import { HTTP_METHOD } from '@/shared/constants';
+import { COURSE_TITLES, HTTP_METHOD } from '@/shared/constants';
 import {
+  TypeAboutCourseItemWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeDonationWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeExternalEmbedContentWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeHeroSectionWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeHighlightCardWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeInfoGridWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeLearningPathStagesWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeLearningPathStageItemWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeLearningPathStageItemWithoutUnresolvableLinksResponse,
   TypeLinkWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeMarqueeWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeMediaGridWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeMediaTextBlockWithAllLocalesAndWithoutLinkResolutionResponse,
+  TypeSlideWithAllLocalesAndWithoutLinkResolutionResponse,
   TypeSliderWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeSocialLinkWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeUpcomingCoursesWithAllLocalesAndWithoutLinkResolutionResponse,
-  TypeVideoBlockWithAllLocalesAndWithoutLinkResolutionResponse,
 } from '@/shared/types/contentful';
 import { LinkData } from '@/shared/ui/link-custom/types';
-import { SliderData } from '@/shared/ui/slider/types';
-import { SocialLinkData } from '@/shared/ui/social-media-item/constants';
-import { AboutCourseSectionData } from '@/widgets/about-course';
+import { SlideData, SliderData } from '@/shared/ui/slider/types';
 import { ExternalEmbedContentData } from '@/widgets/external-embed-content';
+import { FeatureGridData } from '@/widgets/feature-grid';
+import { FeatureItemData } from '@/widgets/feature-grid/types';
 import { HeroSectionData } from '@/widgets/hero/types';
 import { HighlightCardData } from '@/widgets/highlight-card/types';
 import { InfoGridData } from '@/widgets/info-grid';
-import { LearningPathStagesSectionData } from '@/widgets/learning-path-stages';
+import { LearningPathStageItemData } from '@/widgets/learning-path-stages';
 import { MarqueeSectionData } from '@/widgets/marquee/types';
 import { ApiMediaGridSectionData } from '@/widgets/media-grid/types';
 import { MediaTextBlockSectionData } from '@/widgets/media-text-block';
-import { SupportUsSectionData } from '@/widgets/support/types';
-import { UpcomingCoursesSectionData } from '@/widgets/upcoming-courses/types';
-import { VideoBlockSectionData } from '@/widgets/video-block';
 import type { BaseEntry } from 'contentful';
-import { LinkList } from 'data';
-
-export type ListData = (string | LinkList)[] | [];
-export type ListType = 'marked' | 'unmarked';
 
 export type Language = 'en' | 'ru';
+
+export type CourseLanguage = Set<'en' | 'ru'>;
 
 export type Video = {
   id: string;
@@ -60,7 +54,7 @@ export type QueryStringParams = Record<string, unknown>;
 
 export type HttpHeaders = Record<string, string>;
 
-export type RequestBody = RequestInit['body'];
+type RequestBody = RequestInit['body'];
 
 export type RequestOptions = {
   method?: HttpMethod;
@@ -118,24 +112,22 @@ export type ApiResponseError = {
   requestId: string;
 };
 
-export type ExtractSectionName<TContentType extends BaseEntry> =
+type ExtractSectionName<TContentType extends BaseEntry> =
   TContentType['sys']['contentType']['sys']['id'];
 
 export type SectionName =
   | ExtractSectionName<TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeAboutCourseItemWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeMediaTextBlockWithAllLocalesAndWithoutLinkResolutionResponse>
-  | ExtractSectionName<TypeLearningPathStagesWithAllLocalesAndWithoutLinkResolutionResponse>
-  | ExtractSectionName<TypeVideoBlockWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeHeroSectionWithAllLocalesAndWithoutLinkResolutionResponse>
-  | ExtractSectionName<TypeUpcomingCoursesWithAllLocalesAndWithoutLinkResolutionResponse>
-  | ExtractSectionName<TypeDonationWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeMediaGridWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeHighlightCardWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeExternalEmbedContentWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeInfoGridWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeMarqueeWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeSliderWithAllLocalesAndWithoutLinkResolutionResponse>
-  | ExtractSectionName<TypeSocialLinkWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeSlideWithAllLocalesAndWithoutLinkResolutionResponse>
+  | ExtractSectionName<TypeLearningPathStageItemWithAllLocalesAndWithoutLinkResolutionResponse>
   | ExtractSectionName<TypeLinkWithAllLocalesAndWithoutLinkResolutionResponse>;
 
 type SectionBase<TName extends SectionName, TData, TId extends string = string> = {
@@ -145,20 +137,43 @@ type SectionBase<TName extends SectionName, TData, TId extends string = string> 
 };
 
 export type Section =
-  | SectionBase<Extract<SectionName, 'aboutCourse'>, AboutCourseSectionData>
+  | SectionBase<Extract<SectionName, 'aboutCourse'>, FeatureGridData>
+  | SectionBase<Extract<SectionName, 'aboutCourseItem'>, FeatureItemData>
   | SectionBase<Extract<SectionName, 'mediaTextBlock'>, MediaTextBlockSectionData>
-  | SectionBase<Extract<SectionName, 'learningPathStages'>, LearningPathStagesSectionData>
-  | SectionBase<Extract<SectionName, 'videoBlock'>, VideoBlockSectionData>
+  | SectionBase<Extract<SectionName, 'learningPathStageItem'>, LearningPathStageItemData>
   | SectionBase<Extract<SectionName, 'heroSection'>, HeroSectionData>
-  | SectionBase<Extract<SectionName, 'upcomingCourses'>, UpcomingCoursesSectionData>
-  | SectionBase<Extract<SectionName, 'donation'>, SupportUsSectionData>
   | SectionBase<Extract<SectionName, 'mediaGrid'>, ApiMediaGridSectionData>
   | SectionBase<Extract<SectionName, 'highlightCard'>, HighlightCardData>
   | SectionBase<Extract<SectionName, 'externalEmbedContent'>, ExternalEmbedContentData>
   | SectionBase<Extract<SectionName, 'infoGrid'>, InfoGridData>
   | SectionBase<Extract<SectionName, 'marquee'>, MarqueeSectionData>
   | SectionBase<Extract<SectionName, 'slider'>, SliderData>
-  | SectionBase<Extract<SectionName, 'socialLink'>, SocialLinkData>
+  | SectionBase<Extract<SectionName, 'slide'>, SlideData>
   | SectionBase<Extract<SectionName, 'link'>, LinkData>;
 
-export type PageResponseSections = CoursePageResponse['items'][0]['fields']['sections'];
+export type PageResponseSections = (
+  TypeAboutCourseItemWithAllLocalesAndWithoutLinkResolutionResponse
+  | TypeAboutCourseWithAllLocalesAndWithoutLinkResolutionResponse
+  | TypeExternalEmbedContentWithAllLocalesAndWithoutLinkResolutionResponse
+  | TypeHeroSectionWithAllLocalesAndWithoutLinkResolutionResponse
+  | TypeHighlightCardWithAllLocalesAndWithoutLinkResolutionResponse
+  | TypeInfoGridWithAllLocalesAndWithoutLinkResolutionResponse
+  | TypeLearningPathStageItemWithoutUnresolvableLinksResponse
+  | TypeLinkWithAllLocalesAndWithoutLinkResolutionResponse
+  | TypeMarqueeWithAllLocalesAndWithoutLinkResolutionResponse
+  | TypeMediaGridWithAllLocalesAndWithoutLinkResolutionResponse
+  | TypeMediaTextBlockWithAllLocalesAndWithoutLinkResolutionResponse
+  | TypeSlideWithAllLocalesAndWithoutLinkResolutionResponse
+  | TypeSliderWithAllLocalesAndWithoutLinkResolutionResponse
+)[];
+
+type CourseNames = typeof COURSE_TITLES;
+export type CourseNamesKeys = CourseNames[keyof CourseNames];
+
+export type RichTextDocument = Parameters<typeof documentToReactComponents>['0'];
+export type RichTextOptions = Parameters<typeof documentToReactComponents>['1'];
+
+export type RichTextRendererOptions = {
+  courseEnrollUrl?: string;
+  options?: RichTextOptions;
+};

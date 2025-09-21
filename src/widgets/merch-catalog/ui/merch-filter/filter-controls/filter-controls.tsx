@@ -1,8 +1,9 @@
 import classNames from 'classnames/bind';
+import Image from 'next/image';
 
 import { FilterControlsProps } from '../types';
-import { DropdownArrow } from '@/shared/icons/dropdown-arrow';
-import { SearchIcon } from '@/shared/icons/search-icon';
+import DropdownArrow from '@/shared/assets/svg/dropdown-arrow.svg';
+import SearchIcon from '@/shared/assets/svg/search-icon.svg';
 
 import styles from './filter-controls.module.scss';
 
@@ -36,7 +37,7 @@ export const FilterControls = ({
         </div>
       )}
       <div className={cx('filter-search-wrapper')}>
-        <SearchIcon />
+        <Image src={SearchIcon} alt="search-icon" aria-label="search-icon" />
         <input
           className={cx('filter-search-input')}
           id="merch-search-input"
@@ -59,7 +60,7 @@ export const FilterControls = ({
           Filter By:
           {hasActiveFilters && !areTagsExpandedTablet && <span></span>}
           <span className={cx('filter-toggle-arrow', { expanded: areTagsExpandedTablet })}>
-            <DropdownArrow />
+            <Image src={DropdownArrow} alt="dropdown-arrow" aria-label="dropdown-arrow" />
           </span>
         </button>
       )}

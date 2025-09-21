@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { Children, ComponentProps, ReactNode, isValidElement } from 'react';
 
 import { SectionResolver } from '@/widgets/section-resolver';
 
@@ -12,12 +12,18 @@ export function isSectionComponentsList(nodes: ReactNode | ReactNode[]) {
   if (!Array.isArray(nodes)) {
     return false;
   }
+  const cleanNodes = nodes.filter(Boolean);
 
-  return React.Children.toArray(nodes.filter(Boolean)).every((child) => {
+  if (cleanNodes.length <= 1) {
+    return false;
+  }
+
+  return Children.toArray(cleanNodes).every((child) => {
     return (
-      React.isValidElement(child)
+      isValidElement(child)
       && typeof child.type === 'function'
       && SectionResolver.name === child.type.name
+      && (child.props as ComponentProps<typeof SectionResolver>).section.name !== 'link'
     );
   });
 }

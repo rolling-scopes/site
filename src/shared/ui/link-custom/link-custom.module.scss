@@ -12,6 +12,11 @@
   font-weight: $font-weight-medium;
   letter-spacing: 0;
   white-space: pre;
+
+  .icon-wrapper-left {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .secondary {
@@ -102,6 +107,13 @@
   text-decoration: underline;
 
   .icon-wrapper {
+    .icon {
+      max-width: 20px;
+      max-height: 20px;
+    }
+  }
+
+  .icon-wrapper-left {
     display: flex;
     align-items: center;
     justify-content: center;

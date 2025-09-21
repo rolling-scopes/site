@@ -1,4 +1,3 @@
-import { WIDGET_TITLE_MOD_MAP, WIDGET_TITLE_SIZE_MAP } from '@/shared/constants';
 import { getSectionId } from '@/shared/helpers/get-section-id';
 import { richTextRenderer } from '@/shared/helpers/rich-text-renderer';
 import { TypeMediaTextBlockWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
@@ -7,26 +6,26 @@ import type { ApiMediaTextBlockSettings } from '@/widgets/media-text-block';
 
 export function transformMediaTextBlockSection(
   section: TypeMediaTextBlockWithoutUnresolvableLinksResponse,
+  courseEnrollUrl?: string,
 ): Section {
   const id = section.sys.id;
   const name = section.sys.contentType.sys.id;
   const title = section.fields.title;
-  const titleSize = WIDGET_TITLE_SIZE_MAP.get(section.fields.titleSize);
-  const titleMod = WIDGET_TITLE_MOD_MAP.get(section.fields.titleMod);
+  const titleSize = section.fields.titleSize;
+  const titleMod = section.fields.titleModification;
   const sectionLabel = section.fields.sectionLabel;
   const contentLeft = section.fields.contentLeft
-    ? richTextRenderer(section.fields.contentLeft)
+    ? richTextRenderer(section.fields.contentLeft, { courseEnrollUrl })
     : undefined;
   const contentRight = section.fields.contentRight
-    ? richTextRenderer(section.fields.contentRight)
+    ? richTextRenderer(section.fields.contentRight, { courseEnrollUrl })
     : undefined;
   const contentBottom = section.fields.contentBottom
-    ? richTextRenderer(section.fields.contentBottom)
+    ? richTextRenderer(section.fields.contentBottom, { courseEnrollUrl })
     : undefined;
-  const linkUrl = section.fields.linkUrl;
-  const linkLabel = section.fields.linkLabel;
-  const disabledLinkLabel = section.fields.disabledLinkLabel;
-  const backgroundColor = section.fields.backgroundColor;
+  const backgroundColor = section.fields.backgroundColor
+    ? `bg-${section.fields.backgroundColor}` as const
+    : undefined;
   const anchorId = getSectionId(section.fields.title);
   const settings = section.fields.settings as ApiMediaTextBlockSettings;
   const imageAbsolutePosition = settings?.imageAbsolutePosition;
@@ -44,9 +43,6 @@ export function transformMediaTextBlockSection(
       contentLeft,
       contentRight,
       contentBottom,
-      linkUrl,
-      linkLabel,
-      disabledLinkLabel,
       backgroundColor,
       imageAbsolutePosition,
       width,

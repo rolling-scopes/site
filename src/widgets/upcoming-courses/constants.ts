@@ -1,2 +1,2 @@
-export const tabletScreenBreakPoint = 810;
 export const maxUpcomingCoursesQuantity = 5;
+export const announcementTelegramLink = 'https://t.me/AfishaRSSchool';

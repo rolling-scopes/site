@@ -7,14 +7,15 @@ import './footer.scss';
 
 type FooterProps = {
   courses: Course[];
+  mentorshipCourses: Course[];
 };
 
-export const Footer = ({ courses }: FooterProps) => {
+export const Footer = ({ courses, mentorshipCourses }: FooterProps) => {
   return (
     <footer className="footer container" data-testid="footer">
       <div className="footer content">
         <DesktopView courses={courses} />
-        <MobileView courses={courses} type="footer" />
+        <MobileView courses={courses} mentorshipCourses={mentorshipCourses} type="footer" />
         <Copyright />
       </div>
     </footer>

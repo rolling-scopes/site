@@ -1,6 +1,19 @@
 .media-text-block {
+  counter-reset: learning-path;
   flex-direction: column;
   gap: $gap-l;
+
+  &.bg-rs-primary {
+    background: $color-yellow;
+  }
+
+  &.bg-mentorship-primary {
+    background: $gradient-blue-background;
+  }
+
+  &.bg-gray {
+    background: $color-gray-100;
+  }
 
   .title-wrapper {
     grid-column: 1 / 3;
@@ -130,6 +143,7 @@
 
   .content-bottom {
     display: grid;
+    grid-auto-columns: 1fr;
     align-items: start;
     justify-content: space-between;
 

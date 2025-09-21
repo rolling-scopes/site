@@ -13,9 +13,6 @@ import { ANCHORS, NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
 import { CourseMenuItemsFresh } from '@/shared/ui/course-menu-items-fresh';
 import { Logo } from '@/shared/ui/logo';
 import { Paragraph } from '@/shared/ui/paragraph';
-import {
-  transformCoursesToMentorship,
-} from '@/views/mentorship/helpers/transform-courses-to-mentorship';
 import { NavItem } from '@/widgets/header/ui/nav-item/nav-item';
 import { MobileView } from '@/widgets/mobile-view';
 import { SchoolMenu } from '@/widgets/school-menu';
@@ -27,15 +24,15 @@ const cx = classNames.bind(styles);
 
 type HeaderProps = {
   courses: Course[];
+  mentorshipCourses: Course[];
 };
 
-export const Header = ({ courses }: HeaderProps) => {
+export const Header = ({ courses, mentorshipCourses }: HeaderProps) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const pathname = usePathname();
   const isMentorshipPage = pathname.includes(ROUTES.MENTORSHIP);
   const iconSrc = isMentorshipPage ? iconBlue : iconYellow;
-  const coursesWithMentorship = transformCoursesToMentorship(courses);
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -67,6 +64,7 @@ export const Header = ({ courses }: HeaderProps) => {
             <MobileView
               onClose={handleMenuClose}
               courses={courses}
+              mentorshipCourses={mentorshipCourses}
               type="header"
               logoIcon={isMentorshipPage ? logoBlue : undefined}
               isMenuOpen={isMenuOpen}
@@ -122,7 +120,7 @@ export const Header = ({ courses }: HeaderProps) => {
                 />
               </SchoolMenu>
               <SchoolMenu layout="columns">
-                {coursesWithMentorship.map((course) => (
+                {mentorshipCourses.map((course) => (
                   <SchoolMenu.Item
                     key={course.id}
                     icon={course.iconSmall}
@@ -151,7 +149,7 @@ export const Header = ({ courses }: HeaderProps) => {
                 {donateOptions.toReversed().map((option) => (
                   <SchoolMenu.Item
                     key={option.id}
-                    icon={option.menuIcon}
+                    icon={option.icon}
                     title={option.menuLinkLabel}
                     url={option.href}
                   />

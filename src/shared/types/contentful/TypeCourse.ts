@@ -14,6 +14,12 @@ import type {
  */
 export interface TypeCourseFields {
   /**
+   * Field type definition for field 'hasMentorship' (hasMentorship)
+   * @name hasMentorship
+   * @localized false
+   */
+  hasMentorship: EntryFieldTypes.Boolean;
+  /**
    * Field type definition for field 'name' (name)
    * @name name
    * @localized false
@@ -59,9 +65,15 @@ export interface TypeCourseFields {
    * Field type definition for field 'language' (language)
    * @name language
    * @localized false
+   */
+  language: EntryFieldTypes.Array<EntryFieldTypes.Symbol<'en' | 'ru'>>;
+  /**
+   * Field type definition for field 'languageOld' (languageOld)
+   * @name languageOld
+   * @localized false
    * @summary Should contain course language (en, ru)
    */
-  language: EntryFieldTypes.Symbol<'en' | 'ru'>;
+  languageOld: EntryFieldTypes.Symbol<'en' | 'ru'>;
   /**
    * Field type definition for field 'mode' (mode)
    * @name mode
@@ -111,7 +123,7 @@ export interface TypeCourseFields {
  * @type {TypeCourseSkeleton}
  * @author 5yCs5AqlcAan6ySHEWFdJn
  * @since 2022-02-09T19:40:33.011Z
- * @version 27
+ * @version 29
  */
 export type TypeCourseSkeleton = EntrySkeletonType<TypeCourseFields, 'course'>;
 /**
@@ -120,7 +132,7 @@ export type TypeCourseSkeleton = EntrySkeletonType<TypeCourseFields, 'course'>;
  * @type {TypeCourse}
  * @author 5yCs5AqlcAan6ySHEWFdJn
  * @since 2022-02-09T19:40:33.011Z
- * @version 27
+ * @version 29
  */
 export type TypeCourse<
   Modifiers extends ChainModifiers,
