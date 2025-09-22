@@ -16,7 +16,7 @@ export async function generateStaticParams({ params: { lang } }: { params: Await
 
   return pages.map(({ slug }) => ({
     slug,
-    lang,
+    lang: 'ru',
   }));
 }
 
