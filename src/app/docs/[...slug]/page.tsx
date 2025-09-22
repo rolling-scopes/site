@@ -2,25 +2,18 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import path from 'path';
 
-import { DocsContent } from '../../components/docs-content/docs-content';
-import { TITLE_POSTFIX } from '../../constants';
-import { Menu } from '../../types';
-import { fetchMarkdownContent } from '../../utils/fetch-markdown-content';
-import { fetchMenu } from '../../utils/fetch-menu';
+import { DocsContent } from '@/app/docs/components/docs-content/docs-content';
+import { TITLE_POSTFIX } from '@/app/docs/constants';
+import { Menu } from '@/app/docs/types';
+import { fetchMarkdownContent } from '@/app/docs/utils/fetch-markdown-content';
+import { fetchMenu } from '@/app/docs/utils/fetch-menu';
 import { generateDocsMetadata } from '@/metadata/docs';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 import { Language } from '@/shared/types';
 
-type RouteParams = { lang: Language;
-  slug: string[]; };
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<RouteParams>;
-}): Promise<Metadata> {
-  const { lang, slug } = await params;
-  const docsMenu = await fetchMenu(lang);
+export async function generateMetadata({ params }: PageProps<'/docs/[...slug]'>): Promise<Metadata> {
+  const { slug } = await params;
+  const docsMenu = await fetchMenu('en');
 
   const collectTitles = (items: Menu): { slug: string[];
     title: string; }[] => {
@@ -48,12 +41,12 @@ export async function generateMetadata({
 
   const title = titles.find((el) => el.slug.join('/') === slugPath)?.title;
 
-  const { description, keywords, canonical, robots } = generateDocsMetadata(lang, slugPath);
+  const { description, keywords, canonical, robots } = generateDocsMetadata('en', slugPath);
 
   const metadata = generatePageMetadata({
     title: `${title} ${TITLE_POSTFIX}`,
     description,
-    imagePath: path.join('docs', lang, 'og.png'),
+    imagePath: path.join('docs', 'en', 'og.png'),
     keywords,
     alternates: { canonical },
     robots,
@@ -62,10 +55,7 @@ export async function generateMetadata({
   return metadata;
 }
 
-export async function generateStaticParams(): Promise<RouteParams[]> {
-  const supportedLanguages: Language[] = ['en', 'ru'];
-  const allSlugs = [];
-
+export async function generateStaticParams() {
   const collectSlugs = (items: Menu, lang: Language) => {
     return items.flatMap((section) => {
       const results = [];
@@ -94,23 +84,18 @@ export async function generateStaticParams(): Promise<RouteParams[]> {
     });
   };
 
-  for (const lang of supportedLanguages) {
-    const docsMenu = await fetchMenu(lang);
-    const slugs = collectSlugs(docsMenu, lang);
+  const docsMenu = await fetchMenu('en');
 
-    allSlugs.push(...slugs);
-  }
-
-  return allSlugs;
+  return collectSlugs(docsMenu, 'en');
 }
 
-export default async function DocPage({ params }: { params: Promise<RouteParams> }) {
-  const { lang, slug } = await params;
+export default async function DocPage({ params }: PageProps<'/docs/[...slug]'>) {
+  const { slug } = await params;
 
   try {
-    const markdownContent = await fetchMarkdownContent(lang, slug);
+    const markdownContent = await fetchMarkdownContent('en', slug);
 
-    return <DocsContent markdownContent={markdownContent} lang={lang} />;
+    return <DocsContent markdownContent={markdownContent} lang="en" />;
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     notFound();

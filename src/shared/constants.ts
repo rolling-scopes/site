@@ -1,4 +1,4 @@
-import type { Language } from '@/shared/types/types';
+import type { ApiResourceLocale, Language } from '@/shared/types/types';
 
 export const TO_BE_DETERMINED = 'TBD';
 export const REGISTRATION_WILL_OPEN_SOON = 'Registration will open soon!';
@@ -107,8 +107,7 @@ export const ROUTES = {
   AWS_AI: 'aws-ai',
   REACT: 'reactjs',
   MENTORSHIP: 'mentorship',
-  DOCS_EN: 'docs/en',
-  DOCS_RU: 'docs/ru',
+  DOCS: 'docs',
   MERCH: 'merch',
   NOT_FOUND: '*',
 } as const;
@@ -133,3 +132,8 @@ export const COURSE_TITLES = {
   AWS_DEVOPS: 'AWS DevOps',
   AWS_AI: 'AWS AI',
 } as const;
+
+export const LOCALE_MAP = new Map<string, ApiResourceLocale>([
+  ['ru', 'ru'],
+  ['en', 'en-US'],
+]);

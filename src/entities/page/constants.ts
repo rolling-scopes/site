@@ -6,4 +6,6 @@ export const PAGE_TYPE = {
   COMMUNITY: 'community',
   COURSES: 'courses',
   COURSE: 'course',
+  DOCS: 'docs',
+  MERCH: 'merch',
 } as const;

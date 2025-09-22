@@ -28,6 +28,8 @@ export async function generateMetadata(): Promise<Metadata> {
   return metadata;
 }
 
-export default function CoursesRoute() {
-  return <Courses />;
+export default async function CoursesRoute() {
+  const { sections } = await pageStore.loadPage(PAGE_TYPE.COURSES);
+
+  return <Courses sections={sections} />;
 }

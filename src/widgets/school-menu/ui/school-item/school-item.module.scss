@@ -3,6 +3,9 @@
   column-gap: $gap-xs;
   align-items: flex-start;
 
+  font-size: $font-size-s;
+  text-decoration: none;
+
   &.centered {
     align-items: center;
   }

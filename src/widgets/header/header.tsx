@@ -11,6 +11,7 @@ import iconYellow from '@/shared/assets/svg/heart-yellow.svg';
 import logoBlue from '@/shared/assets/svg/rss-logo-blue.svg';
 import { ANCHORS, NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
 import { CourseMenuItemsFresh } from '@/shared/ui/course-menu-items-fresh';
+import { LangSwitcher } from '@/shared/ui/lang-switcher/lang-switcher';
 import { Logo } from '@/shared/ui/logo';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { NavItem } from '@/widgets/header/ui/nav-item/nav-item';
@@ -131,7 +132,7 @@ export const Header = ({ courses, mentorshipCourses }: HeaderProps) => {
                 ))}
               </SchoolMenu>
             </NavItem>
-            <NavItem label={NAV_MENU_LABELS.DOCS} href={ROUTES.DOCS_EN} />
+            <NavItem label={NAV_MENU_LABELS.DOCS} href={ROUTES.DOCS} />
             <NavItem
               reverseLayout={true}
               label={NAV_MENU_LABELS.SUPPORT_US}
@@ -157,6 +158,8 @@ export const Header = ({ courses, mentorshipCourses }: HeaderProps) => {
               </SchoolMenu>
             </NavItem>
           </menu>
+
+          <LangSwitcher />
         </section>
       </nav>
     </header>

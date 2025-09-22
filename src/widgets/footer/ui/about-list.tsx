@@ -1,6 +1,5 @@
-import Link from 'next/link';
-
 import { ANCHORS, ROUTES } from '@/shared/constants';
+import { LinkCustom } from '@/shared/ui/link-custom';
 import { Logo } from '@/shared/ui/logo';
 
 const aboutList = [
@@ -30,7 +29,7 @@ export const AboutList = () => {
       <ul className="about-links">
         {aboutList.map(({ title, to }) => (
           <li key={to}>
-            <Link href={to}>{title}</Link>
+            <LinkCustom href={to}>{title}</LinkCustom>
           </li>
         ))}
       </ul>

@@ -1,8 +1,8 @@
 import { HTMLProps } from 'react';
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
-import Link from 'next/link';
 
+import { LinkCustom } from '@/shared/ui/link-custom';
 import { Color } from '@/widgets/school-menu/types';
 
 import styles from './school-item.module.scss';
@@ -29,7 +29,7 @@ export const SchoolItem = ({
 
   return (
     <li {...props} className={cx(props.className)}>
-      <Link
+      <LinkCustom
         href={url}
         className={cx(
           'school-item',
@@ -56,7 +56,7 @@ export const SchoolItem = ({
             </small>
           )}
         </div>
-      </Link>
+      </LinkCustom>
     </li>
   );
 };

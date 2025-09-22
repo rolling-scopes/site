@@ -30,5 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function HomeRoute() {
-  return <Home />;
+  const { sections } = await pageStore.loadPage(PAGE_TYPE.HOME);
+
+  return <Home sections={sections} />;
 }

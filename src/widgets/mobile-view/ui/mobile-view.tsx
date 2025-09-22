@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { StaticImageData } from 'next/image';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { MobileNavItem } from './mobile-nav-item/mobile-nav-item';
@@ -12,6 +11,7 @@ import iconBlue from '@/shared/assets/svg/heart-blue.svg';
 import iconYellow from '@/shared/assets/svg/heart-yellow.svg';
 import { NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
 import { CourseMenuItemsFresh } from '@/shared/ui/course-menu-items-fresh';
+import { LinkCustom } from '@/shared/ui/link-custom';
 import { Logo } from '@/shared/ui/logo';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { SchoolMenu } from '@/widgets/school-menu';
@@ -189,9 +189,9 @@ export const MobileView = ({ type, courses, mentorshipCourses, isMenuOpen, logoI
 
         <Divider color={color} />
 
-        <Link onClick={onClose} href={`/${ROUTES.DOCS_EN}`} className={cx('category-link', color)}>
+        <LinkCustom onClick={onClose} href={`/${ROUTES.DOCS}`} className={cx('category-link', color)}>
           {NAV_MENU_LABELS.DOCS}
-        </Link>
+        </LinkCustom>
 
         <Divider color={color} />
 

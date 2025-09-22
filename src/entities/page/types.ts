@@ -17,6 +17,8 @@ export type NonCoursePageData = {
   sections: Section[];
   seoDescription: string;
   seoKeywords: string;
+  seoOgImageTitle: string;
+  seoOgImageDescription: string;
 };
 
 export type CoursePageData = NonCoursePageData & {

@@ -16,9 +16,11 @@ type BreadcrumbsProps = {
   className?: string;
 };
 
+const ITEMS_TO_OMIT = new Set(['ru']);
+
 export const Breadcrumbs = ({ className }: BreadcrumbsProps) => {
   const pathname = usePathname();
-  const crumbs = pathname.split('/').filter(Boolean) as RouteValues[];
+  const crumbs = pathname.split('/').filter(Boolean).filter((item) => !ITEMS_TO_OMIT.has(item)) as RouteValues[];
 
   const transformedCrumbs = crumbs.map((crumb, i) => ({
     text: breadcrumbNameMap[crumb] || crumb,

@@ -1,23 +1,15 @@
 import { Metadata } from 'next';
 import path from 'path';
 
-import { resolveCoursePageLocale } from '@/entities/course';
+import { resolvePageLocale } from '@/entities/page';
 import { PAGE_TYPE } from '@/entities/page/constants';
 import { pageStore } from '@/entities/page/model/store';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 import { Course } from '@/views/course';
 
-type Params = {
-  slug: string;
-};
-
-type CourseRouteParams = {
-  params: Promise<Params>;
-};
-
-export async function generateMetadata({ params }: CourseRouteParams): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps<'/courses/[slug]'>): Promise<Metadata> {
   const { slug } = await params;
-  const locale = resolveCoursePageLocale(slug);
+  const locale = resolvePageLocale();
 
   const {
     courseUrl,
@@ -46,9 +38,9 @@ export async function generateStaticParams() {
   return await pageStore.loadPagesMetadata(PAGE_TYPE.COURSE);
 }
 
-export default async function CourseRoute({ params }: CourseRouteParams) {
+export default async function CourseRoute({ params }: PageProps<'/courses/[slug]'>) {
   const { slug } = await params;
-  const locale = resolveCoursePageLocale(slug);
+  const locale = resolvePageLocale();
   const { sections, courseId } = await pageStore.loadPage(PAGE_TYPE.COURSE, locale, slug);
 
   return <Course id={courseId} sections={sections} locale={locale} />;

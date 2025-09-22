@@ -3,3 +3,4 @@ export { PAGE_TYPE } from './constants';
 export { PageApi } from './api/page-api';
 export { pageStore } from './model/store';
 export { preparePageMetadata } from './helpers/prepare-page-metadata';
+export { resolvePageLocale } from './helpers/resolve-page-locale';

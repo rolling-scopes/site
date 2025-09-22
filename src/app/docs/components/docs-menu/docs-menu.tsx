@@ -2,13 +2,12 @@
 
 import classNames from 'classnames/bind';
 import Image from 'next/image';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { Menu } from '../../types';
 import chevronRight from '@/shared/assets/svg/chevron-right.svg';
 import { isValidUrl } from '@/shared/helpers/is-valid-url';
-import { Language } from '@/shared/types';
+import { LinkCustom } from '@/shared/ui/link-custom';
 
 import styles from './docs-menu.module.scss';
 
@@ -16,12 +15,11 @@ const cx = classNames.bind(styles);
 
 type DocsMenuProps = {
   menu: Menu;
-  lang: Language;
   isOpen: boolean;
   onMenuToggle: (isOpen: boolean) => void;
 };
 
-export const DocsMenu = ({ menu, lang, isOpen, onMenuToggle }: DocsMenuProps) => {
+export const DocsMenu = ({ menu, isOpen, onMenuToggle }: DocsMenuProps) => {
   const pathname = usePathname();
 
   const handleMenuToggle = () => {
@@ -29,11 +27,11 @@ export const DocsMenu = ({ menu, lang, isOpen, onMenuToggle }: DocsMenuProps) =>
   };
 
   const isActive = (link: string) => {
-    return pathname === `/docs/${lang}/${link}`;
+    return pathname === `/docs/${link}`;
   };
 
   const resolveHref = (link: string) => {
-    return isValidUrl(link) ? link : `/docs/${lang}/${link}`;
+    return isValidUrl(link) ? link : `/docs/${link}`;
   };
 
   const renderMenuItems = (items: Menu) => {
@@ -42,9 +40,9 @@ export const DocsMenu = ({ menu, lang, isOpen, onMenuToggle }: DocsMenuProps) =>
         return (
           <li key={index}>
             {doc.link && (
-              <Link href={resolveHref(doc.link)} className={cx({ active: isActive(doc.link) })}>
+              <LinkCustom href={resolveHref(doc.link)} className={cx('link', { active: isActive(doc.link) })}>
                 {doc.title}
-              </Link>
+              </LinkCustom>
             )}
             {!doc.link && <span>{doc.title}</span>}
             <ul className={cx({ border: true })}>{renderMenuItems(doc.items)}</ul>
@@ -55,9 +53,9 @@ export const DocsMenu = ({ menu, lang, isOpen, onMenuToggle }: DocsMenuProps) =>
       return (
         doc.link && (
           <li key={index}>
-            <Link href={resolveHref(doc.link)} className={cx({ active: isActive(doc.link) })}>
+            <LinkCustom href={resolveHref(doc.link)} className={cx('link', { active: isActive(doc.link) })}>
               {doc.title}
-            </Link>
+            </LinkCustom>
           </li>
         )
       );
