@@ -7,11 +7,12 @@ import { TITLE_POSTFIX } from '@/app/docs/constants';
 import { Menu } from '@/app/docs/types';
 import { fetchMarkdownContent } from '@/app/docs/utils/fetch-markdown-content';
 import { fetchMenu } from '@/app/docs/utils/fetch-menu';
+import { PagePropsDocs } from '@/entities/page/types';
 import { generateDocsMetadata } from '@/metadata/docs';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 import { Language } from '@/shared/types';
 
-export async function generateMetadata({ params }: PageProps<'/docs/[...slug]'>): Promise<Metadata> {
+export async function generateMetadata({ params }: PagePropsDocs): Promise<Metadata> {
   const { slug } = await params;
   const docsMenu = await fetchMenu('en');
 
@@ -89,7 +90,7 @@ export async function generateStaticParams() {
   return collectSlugs(docsMenu, 'en');
 }
 
-export default async function DocPage({ params }: PageProps<'/docs/[...slug]'>) {
+export default async function DocPage({ params }: PagePropsDocs) {
   const { slug } = await params;
 
   try {

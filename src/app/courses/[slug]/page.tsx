@@ -4,10 +4,11 @@ import path from 'path';
 import { resolvePageLocale } from '@/entities/page';
 import { PAGE_TYPE } from '@/entities/page/constants';
 import { pageStore } from '@/entities/page/model/store';
+import { PageProps } from '@/entities/page/types';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 import { Course } from '@/views/course';
 
-export async function generateMetadata({ params }: PageProps<'/courses/[slug]'>): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const locale = resolvePageLocale();
 
@@ -38,7 +39,7 @@ export async function generateStaticParams() {
   return await pageStore.loadPagesMetadata(PAGE_TYPE.COURSE);
 }
 
-export default async function CourseRoute({ params }: PageProps<'/courses/[slug]'>) {
+export default async function CourseRoute({ params }: PageProps) {
   const { slug } = await params;
   const locale = resolvePageLocale();
   const { sections, courseId } = await pageStore.loadPage(PAGE_TYPE.COURSE, locale, slug);

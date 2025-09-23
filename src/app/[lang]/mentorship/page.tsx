@@ -3,12 +3,13 @@ import { Metadata } from 'next';
 import { resolvePageLocale } from '@/entities/page';
 import { PAGE_TYPE } from '@/entities/page/constants';
 import { pageStore } from '@/entities/page/model/store';
+import { PageProps } from '@/entities/page/types';
 import { mentorshipMetadata } from '@/metadata/mentorship';
 import { OG_SITE_NAME } from '@/shared/constants';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 import { Mentorship } from '@/views/mentorship';
 
-export async function generateMetadata({ params }: PageProps<'/[lang]/mentorship'>): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { lang } = await params;
   const locale = resolvePageLocale(lang);
   const {
@@ -31,7 +32,7 @@ export async function generateMetadata({ params }: PageProps<'/[lang]/mentorship
   return metadata;
 }
 
-export default async function MentorshipRoute({ params }: PageProps<'/[lang]/mentorship'>) {
+export default async function MentorshipRoute({ params }: PageProps) {
   const { lang } = await params;
   const locale = resolvePageLocale(lang);
   const { sections } = await pageStore.loadPage(PAGE_TYPE.MENTORSHIP, locale);

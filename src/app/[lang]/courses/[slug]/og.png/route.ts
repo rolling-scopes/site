@@ -2,6 +2,7 @@ import { courseStore } from '@/entities/course';
 import { resolvePageLocale } from '@/entities/page';
 import { PAGE_TYPE } from '@/entities/page/constants';
 import { pageStore } from '@/entities/page/model/store';
+import { PageProps } from '@/entities/page/types';
 import { fetchAndConvertToDataUri } from '@/shared/og/utils/fetch-and-convert-to-data-uri';
 import { loadImageAsDataUri } from '@/shared/og/utils/load-image-as-data-uri';
 import { createCourseTree } from '@/shared/og/view/courses-tree/generate-courses-tree';
@@ -10,7 +11,7 @@ export const preferredRegion = 'auto';
 const fallbackPath = 'src/shared/assets/svg/rss-logo.svg';
 const logoFallbackSize = 250;
 
-export async function generateStaticParams({ params: { lang } }: { params: Awaited<PageProps<'/[lang]/courses/[slug]'>['params']> }) {
+export async function generateStaticParams({ params: { lang } }: { params: Awaited<PageProps['params']> }) {
   const locale = resolvePageLocale(lang);
   const pages = await pageStore.loadPagesMetadata(PAGE_TYPE.COURSE, locale);
 
@@ -20,7 +21,7 @@ export async function generateStaticParams({ params: { lang } }: { params: Await
   }));
 }
 
-export async function GET(_request: Request, { params }: { params: PageProps<'/[lang]/courses/[slug]'>['params'] }) {
+export async function GET(_request: Request, { params }: { params: PageProps['params'] }) {
   const { slug, lang } = await params;
   const locale = resolvePageLocale(lang);
 

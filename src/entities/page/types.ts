@@ -27,3 +27,20 @@ export type CoursePageData = NonCoursePageData & {
 };
 
 export type PageData = CoursePageData | NonCoursePageData;
+
+export type PageProps = {
+  params: Promise<{
+    slug: string;
+    lang: string;
+  }>;
+};
+
+export type PagePropsOg = {
+  params: Promise<Pick<Awaited<PageProps['params']>, 'lang'>>;
+};
+
+export type PagePropsDocs = {
+  params: Promise<Pick<Awaited<PageProps['params']>, 'lang'> & {
+    slug: string[];
+  }>;
+};

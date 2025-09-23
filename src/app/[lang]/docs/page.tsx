@@ -1,10 +1,11 @@
 import { DocsContent } from '@/app/docs/components/docs-content/docs-content';
 import { fetchMarkdownContent } from '@/app/docs/utils/fetch-markdown-content';
 import { PAGE_TYPE, pageStore, resolvePageLocale } from '@/entities/page';
+import { PageProps } from '@/entities/page/types';
 import { docsLangMetadata } from '@/metadata/docs';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 
-export async function generateMetadata({ params }: PageProps<'/[lang]/docs'>) {
+export async function generateMetadata({ params }: PageProps) {
   const { lang } = await params;
   const locale = resolvePageLocale(lang);
   const { title, seoDescription: description, seoKeywords: keywords } =
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: PageProps<'/[lang]/docs'>) {
   return metadata;
 }
 
-export default async function DocsIndex({ params }: PageProps<'/[lang]/docs'>) {
+export default async function DocsIndex({ params }: PageProps) {
   const { lang } = await params;
 
   const indexContent = await fetchMarkdownContent(lang);
