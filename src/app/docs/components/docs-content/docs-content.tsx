@@ -9,13 +9,12 @@ import remarkToc from 'remark-toc';
 
 import { GITHUB_RAW_ROOT } from '../../constants';
 import { isValidUrl } from '@/shared/helpers/is-valid-url';
-import { Language } from '@/shared/types';
 
 const GITHUB_IMAGE_BASE = `${GITHUB_RAW_ROOT}/images`;
 
 type DocsContentProps = {
   markdownContent: string;
-  lang: Language;
+  lang: string;
 };
 
 export function DocsContent({ markdownContent, lang }: DocsContentProps) {

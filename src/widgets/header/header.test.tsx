@@ -14,6 +14,7 @@ import stylesDropdown from './ui/dropdown/dropdown-wrapper.module.scss';
 vi.mock('next/navigation', () => ({
   useRouter: () => ({ push: vi.fn() }),
   usePathname: () => '/',
+  useParams: () => {},
 }));
 
 const cxDropdown = classNames.bind(stylesDropdown);

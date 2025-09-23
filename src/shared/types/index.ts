@@ -16,7 +16,7 @@ export type {
 
 export type Route = typeof ROUTES;
 
-export type RouteValues = Exclude<Route[keyof Route], '*' | '/' | 'docs/en' | 'docs/ru'>;
+export type RouteValues = Exclude<Route[keyof Route], '*' | '/' | 'docs'>;
 export type {
   TypeContributor,
   TypeContributorFields,

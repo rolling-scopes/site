@@ -1,12 +1,17 @@
+'use client';
+
 /* eslint-disable @stylistic/jsx-closing-bracket-location */
 import { AnchorHTMLAttributes } from 'react';
 import { type VariantProps, cva } from 'class-variance-authority';
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
+import { useParams, usePathname } from 'next/navigation';
 
 import arrowIcon from '@/shared/assets/svg/arrow.svg';
 import textLinkIcon from '@/shared/assets/svg/text-link.svg';
+import { getLangFromPathname } from '@/shared/ui/link-custom/helpers/get-lang-from-pathname';
+import { withLang } from '@/shared/ui/link-custom/helpers/with-lang';
 
 import styles from './link-custom.module.scss';
 
@@ -62,6 +67,13 @@ export const LinkCustom = ({
   highContrast = false,
   ...props
 }: LinkCustomProps) => {
+  const params = useParams();
+  const pathName = usePathname();
+
+  const fallbackLang = getLangFromPathname(pathName);
+  const lang = params?.lang as string ?? fallbackLang ?? '';
+  const localizedHref = external ? href : withLang(lang, href);
+
   const isDisabled = disabled || !href;
   const showLabel = isDisabled ? disabledLabel : children;
 
@@ -92,7 +104,7 @@ export const LinkCustom = ({
           className,
         }),
       )}
-      href={href}
+      href={localizedHref}
       {...props}
       {...(external && externalLinkAttributes)}
     >

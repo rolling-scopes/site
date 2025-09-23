@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import translate from '@/shared/assets/svg/translate.svg';
-import { ROUTES } from '@/shared/constants';
 
 import styles from './lang-switcher.module.scss';
 
@@ -13,18 +12,28 @@ const cx = classNames.bind(styles);
 export const LangSwitcher = () => {
   const pathname = usePathname();
 
-  const isRuActive = pathname.startsWith(`/${ROUTES.DOCS_RU}`);
-  const isEnActive = pathname.startsWith(`/${ROUTES.DOCS_EN}`);
+  const isRuActive = pathname.startsWith(`/ru`);
+  const isEnActive = !isRuActive;
+  const path = pathname.split('/').filter(Boolean);
+
+  if (isRuActive) {
+    path.shift();
+  }
+
+  const preservePath = path.join('/');
+
+  const ruPath = `/ru/${preservePath}`;
+  const enPath = `/${preservePath}`;
 
   return (
     <div className={cx('lang-switcher')}>
       <Image src={translate} alt="Language switcher" width={24} height={24} />
       <span>
-        <Link href={`/${ROUTES.DOCS_RU}`} className={cx({ active: isRuActive })}>
+        <Link href={ruPath} className={cx({ active: isRuActive })}>
           RU
         </Link>
         &nbsp;/&nbsp;
-        <Link href={`/${ROUTES.DOCS_EN}`} className={cx({ active: isEnActive })}>
+        <Link href={enPath} className={cx({ active: isEnActive })}>
           EN
         </Link>
       </span>

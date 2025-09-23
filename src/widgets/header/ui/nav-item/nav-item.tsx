@@ -8,12 +8,13 @@ import {
 } from 'react';
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
-import { usePathname, useRouter } from 'next/navigation';
+import { useParams, usePathname, useRouter } from 'next/navigation';
 
 import { DropdownWrapper } from '../dropdown/dropdown-wrapper';
 import arrowIcon from '@/shared/assets/svg/dropdown-arrow.svg';
 import { KEY_CODES, ROUTES } from '@/shared/constants';
 import { useOutsideClick } from '@/shared/hooks/use-outside-click/use-outside-click';
+import { withLang } from '@/shared/ui/link-custom/helpers/with-lang';
 
 import styles from './nav-item.module.scss';
 
@@ -35,6 +36,9 @@ export const NavItem = ({ label, href, icon, reverseLayout = false, children }: 
   const router = useRouter();
 
   const pathname = usePathname();
+  const params = useParams();
+
+  const lang = params?.lang as string ?? '';
   const isHrefHome = href === ROUTES.HOME;
   const isActive = isHrefHome ? pathname === ROUTES.HOME : pathname?.includes(href);
   const linkHref = isHrefHome ? href : `/${href}`;
@@ -56,7 +60,7 @@ export const NavItem = ({ label, href, icon, reverseLayout = false, children }: 
     if (isDropdown) {
       onDropdownToggle();
     } else {
-      router.push(linkHref);
+      router.push(withLang(lang, linkHref));
     }
   };
 

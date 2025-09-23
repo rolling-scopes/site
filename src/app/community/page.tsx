@@ -23,6 +23,8 @@ export async function generateMetadata(): Promise<Metadata> {
   return metadata;
 }
 
-export default function CommunityRoute() {
-  return <Community />;
+export default async function CommunityRoute() {
+  const { sections } = await pageStore.loadPage(PAGE_TYPE.COMMUNITY);
+
+  return <Community sections={sections} />;
 }
