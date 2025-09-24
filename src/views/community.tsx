@@ -1,13 +1,13 @@
 import { Fragment } from 'react';
 
-import { landingPageStore } from '@/entities/landing-page';
-import { LANDING_PAGE_SLUG } from '@/entities/landing-page/constants';
+import { PAGE_TYPE } from '@/entities/page/constants';
+import { pageStore } from '@/entities/page/model/store';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { isHeroSection } from '@/widgets/hero/helpers/is-hero-section';
 import { SectionResolver } from '@/widgets/section-resolver';
 
 const Community = async () => {
-  const { sections } = await landingPageStore.loadLandingPage(LANDING_PAGE_SLUG.COMMUNITY);
+  const { sections } = await pageStore.loadPage(PAGE_TYPE.COMMUNITY);
 
   return sections.map((section) => (
     <Fragment key={section.id}>

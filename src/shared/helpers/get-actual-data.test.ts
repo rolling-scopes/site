@@ -5,10 +5,9 @@ import { MOCKED_IMAGE_PATH } from '../__tests__/constants';
 import { Course } from '@/entities/course';
 import { COURSE_DATE_FORMAT } from '@/entities/course/constants';
 import { Event } from '@/entities/event';
-import { COURSE_LINKS, TO_BE_DETERMINED } from '@/shared/constants';
+import { COURSE_LINKS, COURSE_TITLES, TO_BE_DETERMINED } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/day-js';
 import { isCourse } from '@/shared/helpers/is-course';
-import { COURSE_TITLES } from 'data';
 
 const staleAfterDays = 14;
 
@@ -42,7 +41,7 @@ const coursesMock: Course[] = [
     },
     startDate: staleDayInPast,
     registrationEndDate: staleDayInPast,
-    language: 'ru',
+    language: new Set(['ru']),
     mode: 'online',
     detailsUrl: `url`,
     enroll: 'enroll',
@@ -77,7 +76,7 @@ const coursesMock: Course[] = [
     },
     startDate: dayInFuture,
     registrationEndDate: staleDayInPast,
-    language: 'ru',
+    language: new Set(['ru']),
     mode: 'online',
     detailsUrl: `url`,
     enroll: 'enroll',
@@ -112,7 +111,7 @@ const coursesMock: Course[] = [
     },
     startDate: nonStaleDayInPast,
     registrationEndDate: staleDayInPast,
-    language: 'ru',
+    language: new Set(['ru']),
     mode: 'online',
     detailsUrl: `url`,
     enroll: 'enroll',

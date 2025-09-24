@@ -3,7 +3,11 @@
 import { CSSProperties, useState } from 'react';
 import classNames from 'classnames/bind';
 
-import { defaultGridColGapPx, mobileColumnThreshold } from '@/widgets/media-grid/constants';
+import {
+  defaultGridColGapPx,
+  mobileColumnThreshold,
+  mobileSpreadColumnsThreshold,
+} from '@/widgets/media-grid/constants';
 import { MediaGridSectionData } from '@/widgets/media-grid/types';
 
 import styles from './media-grid.module.scss';
@@ -25,6 +29,7 @@ export const MediaGrid = ({
   const gridColGapPx = Number.isFinite(colGapPx) ? `${colGapPx}px` : defaultGridColGapPx;
   const minColSizePx = minGridColSize ? `${minGridColSize}px` : undefined;
   const shouldFitOnMobile = numberOfColumns > mobileColumnThreshold;
+  const shouldSpreadMobile = numberOfColumns > mobileSpreadColumnsThreshold;
 
   const handleDefineMinGridColSize = (node: HTMLElement | null) => {
     const childWidth = node?.firstElementChild?.clientWidth;
@@ -42,6 +47,7 @@ export const MediaGrid = ({
           'remove-items-on-responsive': removeItemsOnResponsive,
           'fit-content': fitContent,
           'fit-mobile': shouldFitOnMobile,
+          'spread-mobile': shouldSpreadMobile,
         })}
         style={
           {

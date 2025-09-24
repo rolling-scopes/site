@@ -23,7 +23,7 @@ export interface TypeMediaGridFields {
   /**
    * Field type definition for field 'media' (media)
    * @name media
-   * @localized false
+   * @localized true
    */
   media: EntryFieldTypes.RichText;
   /**
@@ -40,7 +40,7 @@ export interface TypeMediaGridFields {
  * @type {TypeMediaGridSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-07-16T12:45:40.455Z
- * @version 31
+ * @version 33
  */
 export type TypeMediaGridSkeleton = EntrySkeletonType<TypeMediaGridFields, 'mediaGrid'>;
 /**
@@ -49,7 +49,7 @@ export type TypeMediaGridSkeleton = EntrySkeletonType<TypeMediaGridFields, 'medi
  * @type {TypeMediaGrid}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-07-16T12:45:40.455Z
- * @version 31
+ * @version 33
  */
 export type TypeMediaGrid<
   Modifiers extends ChainModifiers,

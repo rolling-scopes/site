@@ -1,10 +1,6 @@
-import { ApiResourceLocale, Language } from '@/shared/types/';
-import { WidgetTitleVariants } from '@/shared/ui/widget-title/widget-title';
+import type { Language } from '@/shared/types/types';
 
-export const RS_FOUNDATION_YEAR = '2013';
-export const RS_EMAIL = 'rolling.scopes@gmail.com';
 export const TO_BE_DETERMINED = 'TBD';
-export const RS_GRADUATED_ONLY = 'Alumni only';
 export const REGISTRATION_WILL_OPEN_SOON = 'Registration will open soon!';
 export const REGISTRATION_WILL_OPEN_SOON_RU = 'Регистрация откроется скоро!';
 export const UNKNOWN_API_ERROR = 'Unknown error, API request failed.';
@@ -13,21 +9,18 @@ export const YOUTUBE_API_MAX_RESULTS_PER_PAGE = 50;
  * https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/links
  */
 export const API_MAX_INCLUDE_DEPTH = 10;
-export const API_OMIT_LINKED_ITEMS_INCLUDE_DEPTH = 0;
+
+export const COURSE_LANGUAGE_LABEL: Record<Language, string> = {
+  en: 'English',
+  ru: 'Russian',
+} as const;
 
 export const LABELS = {
   START_DATE: 'Course starts on:',
   START_DATE_SHORT: 'Start:',
   REGISTRATION_END: 'Enroll untill:',
-  COURSE_LANGUAGE_EN: 'English',
-  COURSE_LANGUAGE_RU: 'Russian',
   MENTOR_ACTIVITIES: 'Mentorship starts on:',
   MENTOR_ACTIVITIES_SEPARATOR: '-',
-} as const;
-
-export const PAGE_NAMES = {
-  COMMUNITY: 'community',
-  MENTORSHIP: 'mentorship',
 } as const;
 
 // ⚠️ These links are used to identify courses from the API
@@ -58,16 +51,12 @@ export const HTTP_METHOD = {
   DELETE: 'DELETE',
 } as const;
 
-export const API_LOCALE_DICTIONARY: Record<Language, ApiResourceLocale> = {
-  ru: 'ru',
-  en: 'en-US',
-};
-
 export const API_CONTENT_TYPE_DICTIONARY = {
   TRAINER: 'contributor',
   COURSE: 'course',
   COURSE_PAGE: 'homePage',
   LANDING_PAGE: 'landingPage',
+  PAGE: 'page',
 } as const;
 
 export const ANCHORS = {
@@ -78,7 +67,7 @@ export const ANCHORS = {
   EVENTS: 'meet-us-at-events',
   MERCH: 'rs-merch',
   CONTRIBUTE: 'how-to-contribute',
-  DONATE: 'donate',
+  DONATE: 'support-us',
 };
 
 export const COURSE_STALE_AFTER_DAYS = 14;
@@ -132,14 +121,15 @@ export const OG_IMAGE_HEIGHT = 630;
 export const OG_SITE_NAME = 'The Rolling Scopes School';
 export const DYNAMIC = 'force-static';
 
-export const WIDGET_TITLE_SIZE_MAP = new Map<number | undefined, WidgetTitleVariants['size']>([
-  [0, 'smallest'],
-  [1, 'small'],
-  [2, 'medium'],
-  [3, 'large'],
-]);
-
-export const WIDGET_TITLE_MOD_MAP = new Map<number | undefined, WidgetTitleVariants['mods']>([
-  [0, 'asterisk'],
-  [1, 'lines'],
-]);
+export const COURSE_TITLES = {
+  JS_PRESCHOOL_RU: 'JS / Front-end Pre-school RU',
+  JS_EN: 'JS / Front-end EN',
+  JS_RU: 'JS / Front-end RU',
+  REACT: 'React',
+  ANGULAR: 'Angular',
+  NODE: 'Node.js',
+  AWS_FUNDAMENTALS: 'AWS Fundamentals',
+  AWS_CLOUD_DEVELOPER: 'AWS Cloud Developer',
+  AWS_DEVOPS: 'AWS DevOps',
+  AWS_AI: 'AWS AI',
+} as const;

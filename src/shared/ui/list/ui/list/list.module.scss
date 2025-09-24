@@ -1,0 +1,20 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-xs;
+
+  padding-bottom: 16px;
+
+  font-size: $font-size-m;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+  list-style-type: none;
+
+  &.marked {
+    list-style-type: disc;
+  }
+
+  @include media-tablet-large {
+    font-size: $font-size-s;
+  }
+}

@@ -13,9 +13,6 @@ import iconYellow from '@/shared/assets/svg/heart-yellow.svg';
 import { NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
 import { CourseMenuItemsFresh } from '@/shared/ui/course-menu-items-fresh';
 import { Logo } from '@/shared/ui/logo';
-import {
-  transformCoursesToMentorship,
-} from '@/views/mentorship/helpers/transform-courses-to-mentorship';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { SchoolMenu } from '@/widgets/school-menu';
 import { communityMenuStaticLinks, donateOptions, schoolMenuStaticLinks } from 'data';
@@ -33,18 +30,18 @@ const Divider = ({ color }: DividerProps) => <hr className={cx('divider', color)
 type MobileViewProps = {
   type: 'header' | 'footer';
   courses: Course[];
+  mentorshipCourses: Course[];
   logoIcon?: StaticImageData;
   isMenuOpen?: boolean;
   onClose?: () => void;
 };
 
-export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: MobileViewProps) => {
+export const MobileView = ({ type, courses, mentorshipCourses, isMenuOpen, logoIcon, onClose }: MobileViewProps) => {
   const color = type === 'header' ? 'dark' : 'light';
   const logoView = type === 'header' ? null : 'with-border';
   const courseIcon = type === 'header' ? 'iconSmall' : 'iconFooter';
   const pathname = usePathname();
   const iconSrc = pathname.includes(ROUTES.MENTORSHIP) ? iconBlue : iconYellow;
-  const coursesWithMentorship = transformCoursesToMentorship(courses);
 
   const [activeDropdowns, setActiveDropdowns] = useState<Set<string>>(new Set());
 
@@ -176,7 +173,7 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
               color={color}
               onClick={onClose}
             />
-            {coursesWithMentorship.map((course) => (
+            {mentorshipCourses.map((course) => (
               <SchoolMenu.Item
                 key={course.id}
                 icon={course.iconSmall}
@@ -224,7 +221,7 @@ export const MobileView = ({ type, courses, isMenuOpen, logoIcon, onClose }: Mob
             {donateOptions.toReversed().map((option) => (
               <SchoolMenu.Item
                 key={option.id}
-                icon={option.menuIcon}
+                icon={option.icon}
                 title={option.menuLinkLabel}
                 url={option.href}
                 color={color}

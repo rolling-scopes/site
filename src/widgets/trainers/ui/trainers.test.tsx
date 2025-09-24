@@ -2,7 +2,6 @@ import { render, screen } from '@testing-library/react';
 
 import { Trainers } from './trainers';
 import { MOCKED_ONE_TRAINER, MOCKED_SEVERAL_TRAINERS } from '@/shared/__tests__/constants';
-import { COURSE_TITLES } from 'data';
 
 describe('Trainers component', () => {
   const { name, role, bio, photo } = MOCKED_ONE_TRAINER[0];
@@ -14,7 +13,7 @@ describe('Trainers component', () => {
   it('renders without crashing', async () => {
     const widget = await Trainers({
       trainers: MOCKED_ONE_TRAINER,
-      courseName: COURSE_TITLES.ANGULAR,
+      locale: 'ru',
     });
 
     render(widget);
@@ -26,7 +25,7 @@ describe('Trainers component', () => {
   it('renders the content correctly with mocked props', async () => {
     const widget = await Trainers({
       trainers: MOCKED_ONE_TRAINER,
-      courseName: COURSE_TITLES.ANGULAR,
+      locale: 'en-US',
     });
 
     render(widget);
@@ -49,7 +48,7 @@ describe('Trainers component', () => {
   it('renders the title content correctly with lang ru prop', async () => {
     const widget = await Trainers({
       trainers: MOCKED_ONE_TRAINER,
-      courseName: COURSE_TITLES.JS_PRESCHOOL_RU,
+      locale: 'ru',
     });
 
     render(widget);
@@ -61,7 +60,7 @@ describe('Trainers component', () => {
   it('renders all the trainers if passed several (8 in items)', async () => {
     const widget = await Trainers({
       trainers: MOCKED_SEVERAL_TRAINERS,
-      courseName: COURSE_TITLES.JS_PRESCHOOL_RU,
+      locale: 'ru',
     });
 
     render(widget);

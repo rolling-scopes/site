@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import { COURSE_DATE_FORMAT, MENTORING_DATE_FORMAT } from '@/entities/course/constants';
-import noteIcon from '@/shared/assets/icons/note-icon.svg';
+import noteIcon from '@/shared/assets/svg/note-icon.svg';
 import { TO_BE_DETERMINED } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/day-js';
 

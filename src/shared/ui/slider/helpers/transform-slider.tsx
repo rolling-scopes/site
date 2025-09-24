@@ -8,7 +8,7 @@ export function transformSlider(section: TypeSliderWithoutUnresolvableLinksRespo
   const id = section.sys.id;
   const name = section.sys.contentType.sys.id;
   const slides = (
-    richTextRenderer(section.fields.slides, RICH_TEXT_SLIDER_OPTIONS) as ReactNode[]
+    richTextRenderer(section.fields.slides, { options: RICH_TEXT_SLIDER_OPTIONS }) as ReactNode[]
   ).filter(Boolean);
 
   return {

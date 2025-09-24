@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
-import { landingPageStore } from '@/entities/landing-page';
-import { LANDING_PAGE_SLUG } from '@/entities/landing-page/constants';
+import { PAGE_TYPE } from '@/entities/page/constants';
+import { pageStore } from '@/entities/page/model/store';
 import { coursesMetadata } from '@/metadata/courses';
 import { OG_SITE_NAME } from '@/shared/constants';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: coursesTitle,
     seoDescription: description,
     seoKeywords: keywords,
-  } = await landingPageStore.loadLandingPage(LANDING_PAGE_SLUG.COURSES);
+  } = await pageStore.loadPage(PAGE_TYPE.COURSES);
   const title = `${coursesTitle} · ${OG_SITE_NAME}`;
   const { canonical, robots } = coursesMetadata;
 

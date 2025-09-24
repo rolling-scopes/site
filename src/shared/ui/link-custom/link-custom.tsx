@@ -1,13 +1,16 @@
-import { AnchorHTMLAttributes, ReactNode } from 'react';
+/* eslint-disable @stylistic/jsx-closing-bracket-location */
+import { AnchorHTMLAttributes } from 'react';
 import { type VariantProps, cva } from 'class-variance-authority';
 import classNames from 'classnames/bind';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
-import { ArrowIcon, TextLinkIcon } from '@/shared/icons';
+import arrowIcon from '@/shared/assets/svg/arrow.svg';
+import textLinkIcon from '@/shared/assets/svg/text-link.svg';
 
 import styles from './link-custom.module.scss';
 
-export const cx = classNames.bind(styles);
+const cx = classNames.bind(styles);
 
 export type LinkCustomVariants = VariantProps<typeof linkCustomVariants>;
 
@@ -16,8 +19,10 @@ export type LinkCustomProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'rel
   & LinkCustomAdditionalProps;
 
 type LinkCustomAdditionalProps = {
-  href: string;
-  icon?: ReactNode;
+  href?: string;
+  disabledLabel?: string;
+  iconRight?: StaticImageData | null;
+  iconLeft?: StaticImageData | null;
   external?: boolean;
   disabled?: boolean;
   highContrast?: boolean;
@@ -46,8 +51,10 @@ const externalLinkAttributes = {
 
 export const LinkCustom = ({
   children,
-  href,
-  icon,
+  disabledLabel,
+  href = '',
+  iconLeft,
+  iconRight,
   className = '',
   variant = 'textLink',
   external = false,
@@ -55,27 +62,30 @@ export const LinkCustom = ({
   highContrast = false,
   ...props
 }: LinkCustomProps) => {
-  const resolveIcon = (): ReactNode => {
+  const isDisabled = disabled || !href;
+  const showLabel = isDisabled ? disabledLabel : children;
+
+  const resolveIcon = () => {
     switch (true) {
-      case icon !== undefined:
-        return icon;
+      case iconRight !== undefined:
+        return iconRight;
       case external && variant === 'textLink':
-        return <TextLinkIcon />;
+        return textLinkIcon;
       case variant === 'secondary':
-        return <ArrowIcon />;
+        return arrowIcon;
       case variant === 'rounded':
-        return <ArrowIcon />;
+        return arrowIcon;
       default:
         return null;
     }
   };
 
-  const IconComponent = resolveIcon();
+  const iconSrc = resolveIcon();
 
   return (
     <Link
       className={cx(
-        { disabled },
+        { disabled: isDisabled },
         { highContrast },
         linkCustomVariants({
           variant,
@@ -86,8 +96,30 @@ export const LinkCustom = ({
       {...props}
       {...(external && externalLinkAttributes)}
     >
-      {children}
-      {IconComponent && <span className={cx('icon-wrapper')}>{!disabled && IconComponent}</span>}
+      {iconLeft && (
+        <span className={cx('icon-wrapper', 'icon-wrapper-left')}>
+          {!disabled && <Image
+            src={iconLeft}
+            width={20}
+            height={20}
+            alt=""
+            data-testid="icon"
+          />}
+        </span>
+      )}
+
+      {showLabel}
+
+      {iconSrc && (
+        <span className={cx('icon-wrapper')}>
+          {!disabled && <Image
+            className={cx('icon')}
+            src={iconSrc}
+            alt=""
+            data-testid="icon"
+          />}
+        </span>
+      )}
     </Link>
   );
 };

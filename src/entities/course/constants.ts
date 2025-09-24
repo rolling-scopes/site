@@ -1,9 +1,10 @@
-import { COURSE_TITLES, CourseTitle } from 'data';
+import { COURSE_TITLES } from '@/shared/constants';
+import { CourseNamesKeys } from '@/shared/types/types';
 
 export const COURSE_DATE_FORMAT = 'MMM DD, YYYY';
 export const MENTORING_DATE_FORMAT = 'MMM, YYYY';
 
-export const API_COURSES_IDS_DICTIONARY: Record<CourseTitle, string> = {
+export const API_COURSES_IDS_DICTIONARY: Record<CourseNamesKeys, string> = {
   [COURSE_TITLES.NODE]: '75SiyJCiH4OrIQUKDg0Pci',
   [COURSE_TITLES.AWS_CLOUD_DEVELOPER]: 'L504RMpq3gsKyY0C9EQYI',
   [COURSE_TITLES.AWS_DEVOPS]: '2Za7cDAZ7Bg4o2fRTTsl91',

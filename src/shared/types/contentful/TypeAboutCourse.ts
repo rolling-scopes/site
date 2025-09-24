@@ -22,53 +22,29 @@ export interface TypeAboutCourseFields {
    */
   tag?: EntryFieldTypes.Symbol;
   /**
-   * Field type definition for field 'title' (title)
-   * @name title
-   * @localized true
-   */
-  title: EntryFieldTypes.Symbol;
-  /**
-   * Field type definition for field 'subTitle' (subTitle)
-   * @name subTitle
-   * @localized false
-   */
-  subTitle?: EntryFieldTypes.RichText;
-  /**
    * Field type definition for field 'gridItems' (gridItems)
    * @name gridItems
    * @localized false
    */
   gridItems: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeAboutCourseItemSkeleton>>;
-  /**
-   * Field type definition for field 'registrationLinkText' (registrationLinkText)
-   * @name registrationLinkText
-   * @localized true
-   */
-  registrationLinkText: EntryFieldTypes.Symbol;
-  /**
-   * Field type definition for field 'registrationClosedLinkText' (registrationClosedLinkText)
-   * @name registrationClosedLinkText
-   * @localized true
-   */
-  registrationClosedLinkText: EntryFieldTypes.Symbol;
 }
 
 /**
- * Entry skeleton type definition for content type 'aboutCourse' (About Course)
+ * Entry skeleton type definition for content type 'aboutCourse' (Feature Grid)
  * @name TypeAboutCourseSkeleton
  * @type {TypeAboutCourseSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-16T19:51:09.481Z
- * @version 17
+ * @version 25
  */
 export type TypeAboutCourseSkeleton = EntrySkeletonType<TypeAboutCourseFields, 'aboutCourse'>;
 /**
- * Entry type definition for content type 'aboutCourse' (About Course)
+ * Entry type definition for content type 'aboutCourse' (Feature Grid)
  * @name TypeAboutCourse
  * @type {TypeAboutCourse}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-16T19:51:09.481Z
- * @version 17
+ * @version 25
  */
 export type TypeAboutCourse<
   Modifiers extends ChainModifiers,

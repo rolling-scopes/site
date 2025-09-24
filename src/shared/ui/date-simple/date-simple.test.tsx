@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 
 import { DateSimple } from './date-simple';
 import { COURSE_DATE_FORMAT } from '@/entities/course/constants';
-import noteIcon from '@/shared/assets/icons/note-icon.svg';
+import noteIcon from '@/shared/assets/svg/note-icon.svg';
 import { LABELS, TO_BE_DETERMINED } from '@/shared/constants';
 import { dayJS } from '@/shared/helpers/day-js';
 
