@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 
 import { KEY_CODES, NAV_MENU_LABELS } from '@/shared/constants';
 import { Paragraph } from '@/shared/ui/paragraph';
+import { NavMenuLabel } from '@/widgets/header/header';
 import { MenuItem } from '@/widgets/header/helpers/generate-nav-menu-data';
 import { SchoolMenu } from '@/widgets/school-menu';
 
@@ -11,7 +12,7 @@ import styles from './dropdown-content.module.scss';
 const cx = classNames.bind(styles);
 
 type DropdownContentProps = {
-  activeMenuItem: NAV_MENU_LABELS | null;
+  activeMenuItem: NavMenuLabel | null;
   menuData: MenuItem[];
   activeItemRef: RefObject<HTMLAnchorElement | null>;
 };

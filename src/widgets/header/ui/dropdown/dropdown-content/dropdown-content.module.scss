@@ -4,7 +4,7 @@
 
 .support-container {
   display: grid;
-  gap: 16px;
+  gap: $gap-s;
 
   > :first-child {
     grid-column: span 2;

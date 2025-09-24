@@ -5,13 +5,14 @@ import { usePathname, useRouter } from 'next/navigation';
 
 import arrowIcon from '@/shared/assets/svg/dropdown-arrow.svg';
 import { KEY_CODES, NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
+import { NavMenuLabel } from '@/widgets/header/header';
 
 import styles from './nav-item.module.scss';
 
 const cx = classNames.bind(styles);
 
 type NavItemProps = PropsWithChildren & {
-  label: NAV_MENU_LABELS;
+  label: NavMenuLabel;
   href: string;
   icon?: StaticImageData;
   activeNavItemRef?: RefObject<HTMLButtonElement | null>;
