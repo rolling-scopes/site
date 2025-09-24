@@ -1,8 +1,10 @@
 {
-  "extends": ["stylelint-config-standard-scss", "stylelint-config-clean-order", "stylelint-prettier/recommended"],
-  "plugins": [
-    "stylelint-order"
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-clean-order",
+    "stylelint-prettier/recommended"
   ],
+  "plugins": ["stylelint-order", "stylelint-declaration-strict-value"],
 
   "rules": {
     "shorthand-property-no-redundant-values": null,
@@ -15,9 +17,9 @@
     "scss/dollar-variable-empty-line-before": [
       "always",
       {
-      "except": ["after-dollar-variable", "first-nested"],
-      "ignore": ["after-comment", "inside-single-line-block"],
-      "disableFix": true
+        "except": ["after-dollar-variable", "first-nested"],
+        "ignore": ["after-comment", "inside-single-line-block"],
+        "disableFix": true
       }
     ],
     
@@ -58,6 +60,37 @@
         "type": "at-rule",
         "hasBlock": true
       }
+    ],
+    "scale-unlimited/declaration-strict-value": [
+      [
+        "background-color",
+        "border-radius",
+        "box-shadow",
+        "color",
+        "font-size",
+        "font-weight",
+        "opacity",
+        "z-index"
+      ],
+      {
+        "ignoreValues": [
+          "0",
+          "currentcolor",
+          "inherit",
+          "initial",
+          "none",
+          "transparent",
+          "unset"
+        ]
+      }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/normalize.scss"],
+      "rules": {
+        "scale-unlimited/declaration-strict-value": null
+      }
+    }
+  ]
 }

@@ -71,9 +71,9 @@
 
   width: 310px;
   height: 300px;
-  border-radius: 50%;
+  border-radius: $border-radius-round;
 
-  opacity: 0.5;
+  opacity: $opacity-50;
   background-color: $bg-color;
   filter: blur(32px);
 
