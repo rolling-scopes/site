@@ -86,18 +86,6 @@ figure {
   }
 }
 
-.column-3 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-
-  @include media-laptop {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
 .app-styles {
   display: flex;
   flex-direction: column;
@@ -157,5 +145,32 @@ figure {
 
       background: $color-gray-400;
     }
+  }
+}
+
+.swiper {
+  padding: 10px 10px 52px 10px !important;
+
+  .swiper-slide {
+    cursor: grab;
+    user-select: none;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+}
+
+.embedded-text-break {
+  @include media-tablet-large {
+    display: none;
+  }
+}
+
+.embedded-space {
+  display: none;
+
+  @include media-tablet-large {
+    display: unset;
   }
 }

@@ -12,6 +12,11 @@
   font-weight: $font-weight-medium;
   letter-spacing: 0;
   white-space: pre;
+
+  .icon-wrapper-left {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .secondary {
@@ -91,8 +96,32 @@
   @extend %transition-all;
 
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+
+  font-size: $font-size-m;
+  font-style: normal;
   color: $color-blue-600;
   text-decoration: underline;
+
+  .icon-wrapper {
+    .icon {
+      max-width: 20px;
+      max-height: 20px;
+    }
+  }
+
+  .icon-wrapper-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 24px;
+    min-height: 24px;
+    margin-right: 8px;
+  }
 
   &:hover {
     text-decoration: none;

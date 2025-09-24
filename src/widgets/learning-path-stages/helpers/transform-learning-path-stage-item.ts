@@ -3,30 +3,30 @@ import { richTextRenderer } from '@/shared/helpers/rich-text-renderer';
 import {
   TypeLearningPathStageItemWithoutUnresolvableLinksResponse,
 } from '@/shared/types/contentful';
-import { LearningPathStageItem } from '@/widgets/learning-path-stages/types';
+import { Section } from '@/shared/types/types';
 
 export function transformLearningPathStageItem(
-  item: TypeLearningPathStageItemWithoutUnresolvableLinksResponse | undefined,
-): LearningPathStageItem {
-  if (!item) {
-    throw new Error('Learning path stage item is not defined.');
-  }
-
-  const id = item.sys.id;
-  const title = item.fields.title;
-  const image = item.fields.image?.fields?.file
-    ? prepareAssetImage(item.fields.image?.fields?.file)
+  section: TypeLearningPathStageItemWithoutUnresolvableLinksResponse,
+): Section {
+  const id = section.sys.id;
+  const name = section.sys.contentType.sys.id;
+  const title = section.fields.title;
+  const image = section.fields.image?.fields?.file
+    ? prepareAssetImage(section.fields.image?.fields?.file)
     : undefined;
-  const content = richTextRenderer(item.fields.content);
-  const imageWidth = item.fields.imageWidth;
-  const imageHeight = item.fields.imageHeight;
+  const content = richTextRenderer(section.fields.content);
+  const imageWidth = section.fields.imageWidth;
+  const imageHeight = section.fields.imageHeight;
 
   return {
     id,
-    title,
-    image,
-    content,
-    imageWidth,
-    imageHeight,
+    name,
+    data: {
+      title,
+      image,
+      content,
+      imageWidth,
+      imageHeight,
+    },
   };
 }

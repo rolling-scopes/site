@@ -3,6 +3,8 @@ import { describe, expect, it } from 'vitest';
 
 import { LinkCustom } from './link-custom';
 import { renderWithRouter } from '@/shared/__tests__/utils';
+import arrowIcon from '@/shared/assets/svg/arrow.svg';
+import textLinkIcon from '@/shared/assets/svg/text-link.svg';
 
 describe('LinkCustom', () => {
   const label = 'Click me';
@@ -56,9 +58,10 @@ describe('LinkCustom', () => {
       </LinkCustom>,
     );
 
-    const icon = screen.getByTestId('text-link-icon');
+    const icon = screen.getByTestId('icon');
 
     expect(icon).toBeInTheDocument();
+    expect(icon).toHaveAttribute('src', textLinkIcon.src);
   });
 
   it('does not render ArrowIcon when variant is primary', () => {
@@ -80,25 +83,10 @@ describe('LinkCustom', () => {
       </LinkCustom>,
     );
 
-    const icon = screen.getByTestId('arrow-icon');
+    const icon = screen.getByTestId('icon');
 
     expect(icon).toBeInTheDocument();
+    expect(icon).toHaveAttribute('src', arrowIcon.src);
     expect(icon).toHaveAttribute('height', '1');
-  });
-
-  it('renders provided icon when icon prop is passed', () => {
-    const CustomIcon = () => <div data-testid="custom-icon">custom</div>;
-
-    renderWithRouter(
-      <LinkCustom href="/" variant="primary" icon={<CustomIcon />}>
-        {label}
-      </LinkCustom>,
-    );
-
-    const providedIcon = screen.getByTestId('custom-icon');
-    const defaultIcon = screen.queryByTestId('arrow-icon');
-
-    expect(providedIcon).toBeInTheDocument();
-    expect(defaultIcon).toBeNull();
   });
 });

@@ -5,18 +5,17 @@ import Image from 'next/image';
 
 import { isExternalUri } from '@/shared/helpers/is-external-uri';
 import { prepareAssetImage } from '@/shared/helpers/prepare-asset-image';
-import { transformPageSections } from '@/shared/helpers/transform-page-sections';
+import { renderEntry } from '@/shared/helpers/render-entry';
+import { replaceTextBreaksWithBrTag } from '@/shared/helpers/replace-text-breaks-with-br-tag';
+import { RichTextDocument, RichTextOptions, RichTextRendererOptions } from '@/shared/types/types';
 import { LinkCustom } from '@/shared/ui/link-custom';
-import { ContentList } from '@/shared/ui/list/content-list';
-import { ListItem } from '@/shared/ui/list/list-item';
+import { List, ListItem } from '@/shared/ui/list';
 import { Paragraph } from '@/shared/ui/paragraph';
 import { Subtitle } from '@/shared/ui/subtitle';
-import { SectionResolver } from '@/widgets/section-resolver';
+import { WidgetTitle } from '@/shared/ui/widget-title';
 
-type RichTextDocument = Parameters<typeof documentToReactComponents>['0'];
-type RichTextOptions = Parameters<typeof documentToReactComponents>['1'];
-
-const RICH_TEXT_OPTIONS = {
+const RICH_TEXT_OPTIONS: RichTextOptions = {
+  renderText: replaceTextBreaksWithBrTag,
   renderNode: {
     [BLOCKS.PARAGRAPH]: (_node: Block | Inline, children: ReactNode) => {
       if (!children) {
@@ -28,6 +27,9 @@ const RICH_TEXT_OPTIONS = {
 
       return isEmptyNode ? '' : <Paragraph>{children}</Paragraph>;
     },
+    [BLOCKS.HEADING_2]: (_node: Block | Inline, children: ReactNode) => (
+      <WidgetTitle size="medium">{children}</WidgetTitle>
+    ),
     [BLOCKS.HEADING_3]: (_node: Block | Inline, children: ReactNode) => (
       <Subtitle size="small">{children}</Subtitle>
     ),
@@ -36,14 +38,17 @@ const RICH_TEXT_OPTIONS = {
         {children}
       </Subtitle>
     ),
+    [BLOCKS.HEADING_5]: (_node: Block | Inline, children: ReactNode) => (
+      <Subtitle size="small" weight="bold">
+        {children}
+      </Subtitle>
+    ),
     [BLOCKS.HEADING_6]: (_node: Block | Inline, children: ReactNode) => (
       <Paragraph fontSize="large">{children}</Paragraph>
     ),
-    [BLOCKS.UL_LIST]: (_node: Block | Inline, children: ReactNode) => (
-      <ContentList>{children}</ContentList>
-    ),
+    [BLOCKS.UL_LIST]: (_node: Block | Inline, children: ReactNode) => <List>{children}</List>,
     [BLOCKS.OL_LIST]: (_node: Block | Inline, children: ReactNode) => (
-      <ContentList ordered>{children}</ContentList>
+      <List ordered>{children}</List>
     ),
     [BLOCKS.LIST_ITEM]: (_node: Block | Inline, children: ReactNode) => (
       <ListItem>{children}</ListItem>
@@ -57,19 +62,53 @@ const RICH_TEXT_OPTIONS = {
       const src = prepareAssetImage(node.data.target.fields.file);
       const alt = node.data.target.fields.title;
 
-      return <Image data-id="asset-image" src={src} alt={alt} />;
+      return (
+        <Image
+          data-id="asset-image"
+          src={src}
+          alt={alt}
+          style={{
+            maxWidth: src.width,
+            maxHeight: src.height,
+          }}
+        />
+      );
     },
-    [BLOCKS.EMBEDDED_ENTRY]: (node: Inline | Block) => {
-      const [section] = transformPageSections([node.data.target]);
+    [BLOCKS.EMBEDDED_ENTRY]: (node: Inline | Block) => renderEntry(node),
+    [INLINES.EMBEDDED_ENTRY]: (node: Inline | Block) => renderEntry(node, true),
+  },
+};
 
-      return <SectionResolver embedded section={section} />;
+export const RICH_TEXT_SLIDER_OPTIONS = {
+  renderNode: {
+    ...RICH_TEXT_OPTIONS.renderNode,
+    [BLOCKS.PARAGRAPH]: () => null,
+    [BLOCKS.EMBEDDED_ASSET]: (node: Inline | Block) => {
+      const src = prepareAssetImage(node.data.target.fields.file);
+      const alt = node.data.target.fields.title;
+
+      return (
+        <div style={{ aspectRatio: '8 / 5' }}>
+          <Image data-id="asset-image" src={src} alt={alt} fill />
+        </div>
+      );
     },
   },
 };
 
 export function richTextRenderer(
   document: RichTextDocument,
-  options: RichTextOptions = RICH_TEXT_OPTIONS,
+  {
+    courseEnrollUrl,
+    options = RICH_TEXT_OPTIONS,
+  }: RichTextRendererOptions = {},
 ) {
-  return documentToReactComponents(document, options);
+  return documentToReactComponents(document, {
+    ...options,
+    renderNode: {
+      ...options?.renderNode,
+      [BLOCKS.EMBEDDED_ENTRY]: (node: Inline | Block) => renderEntry(node, false, courseEnrollUrl),
+      [INLINES.EMBEDDED_ENTRY]: (node: Inline | Block) => renderEntry(node, true, courseEnrollUrl),
+    },
+  });
 }

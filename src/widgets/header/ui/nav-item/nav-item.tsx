@@ -3,8 +3,8 @@ import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 
+import arrowIcon from '@/shared/assets/svg/dropdown-arrow.svg';
 import { KEY_CODES, NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
-import { DropdownArrow } from '@/shared/icons/dropdown-arrow';
 
 import styles from './nav-item.module.scss';
 
@@ -87,7 +87,7 @@ export const NavItem = ({
         </span>
         {isDropdown && (
           <span className={cx('dropdown-arrow')} role="button" aria-expanded={isDropdownOpen}>
-            <DropdownArrow />
+            <Image src={arrowIcon} alt="dropdown-arrow" aria-label="dropdown-arrow" />
           </span>
         )}
       </button>

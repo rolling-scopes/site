@@ -1,11 +1,11 @@
 import { REGISTRATION_WILL_OPEN_SOON, REGISTRATION_WILL_OPEN_SOON_RU } from '@/shared/constants';
 
 export const heroCourseLocalized = {
-  en: {
+  'en-US': {
     linkLabel: 'Enroll',
     noLinkLabel: REGISTRATION_WILL_OPEN_SOON,
   },
-  ru: {
+  'ru': {
     linkLabel: 'Присоединиться',
     noLinkLabel: REGISTRATION_WILL_OPEN_SOON_RU,
   },

@@ -24,6 +24,7 @@ export interface TypeMediaTextBlockFields {
    * Field type definition for field 'sectionLabel' (sectionLabel)
    * @name sectionLabel
    * @localized true
+   * @summary The small label above the title
    */
   sectionLabel?: EntryFieldTypes.Symbol;
   /**
@@ -36,16 +37,16 @@ export interface TypeMediaTextBlockFields {
    * Field type definition for field 'titleSize' (titleSize)
    * @name titleSize
    * @localized false
-   * @summary 0 – 'Smallest'. 1 – 'Small'. 2 – 'Medium'. 3 – 'Large'. By default is set to 2 (Medium)
+   * @summary The size of the title
    */
-  titleSize?: EntryFieldTypes.Integer<0 | 1 | 2 | 3>;
+  titleSize: EntryFieldTypes.Symbol<'large' | 'medium' | 'small' | 'smallest'>;
   /**
-   * Field type definition for field 'titleMod' (titleMod)
-   * @name titleMod
+   * Field type definition for field 'titleModification' (titleModification)
+   * @name titleModification
    * @localized false
-   * @summary The title modification such as || or *. 0 - *, 1 - ||, 2 - empty. By default is set to empty
+   * @summary The title modification either * or ||
    */
-  titleMod?: EntryFieldTypes.Integer<0 | 1 | 2>;
+  titleModification?: EntryFieldTypes.Symbol<'asterisk' | 'lines'>;
   /**
    * Field type definition for field 'contentLeft' (contentLeft)
    * @name contentLeft
@@ -65,30 +66,17 @@ export interface TypeMediaTextBlockFields {
    */
   contentBottom?: EntryFieldTypes.RichText;
   /**
-   * Field type definition for field 'linkUrl' (linkUrl)
-   * @name linkUrl
-   * @localized false
-   * @summary If no link is provided the course related link to the registration page will be used as a default value
-   */
-  linkUrl?: EntryFieldTypes.Symbol;
-  /**
-   * Field type definition for field 'linkLabel' (linkLabel)
-   * @name linkLabel
-   * @localized true
-   */
-  linkLabel?: EntryFieldTypes.Symbol;
-  /**
-   * Field type definition for field 'disabledLinkLabel' (disabledLinkLabel)
-   * @name disabledLinkLabel
-   * @localized true
-   */
-  disabledLinkLabel?: EntryFieldTypes.Symbol;
-  /**
    * Field type definition for field 'backgroundColor' (backgroundColor)
    * @name backgroundColor
    * @localized false
    */
-  backgroundColor?: EntryFieldTypes.Symbol;
+  backgroundColor?: EntryFieldTypes.Symbol<'gray' | 'mentorship-primary' | 'rs-primary'>;
+  /**
+   * Field type definition for field 'settings' (settings)
+   * @name settings
+   * @localized false
+   */
+  settings?: EntryFieldTypes.Object;
 }
 
 /**
@@ -97,7 +85,7 @@ export interface TypeMediaTextBlockFields {
  * @type {TypeMediaTextBlockSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T14:21:33.812Z
- * @version 81
+ * @version 105
  */
 export type TypeMediaTextBlockSkeleton = EntrySkeletonType<
   TypeMediaTextBlockFields,
@@ -109,7 +97,7 @@ export type TypeMediaTextBlockSkeleton = EntrySkeletonType<
  * @type {TypeMediaTextBlock}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T14:21:33.812Z
- * @version 81
+ * @version 105
  */
 export type TypeMediaTextBlock<
   Modifiers extends ChainModifiers,

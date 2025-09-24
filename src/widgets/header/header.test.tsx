@@ -22,7 +22,7 @@ const cxHeader = classNames.bind(stylesHeader);
 describe('Header', () => {
   describe('Desktop view', () => {
     beforeEach(() => {
-      renderWithRouter(<Header courses={mockedCourses} />);
+      renderWithRouter(<Header courses={mockedCourses} mentorshipCourses={mockedCourses} />);
     });
 
     it('renders without crashing', () => {
@@ -47,7 +47,7 @@ describe('Header', () => {
 
   describe('Mobile view', () => {
     beforeEach(async () => {
-      await act(async () => renderWithRouter(<Header courses={mockedCourses} />));
+      await act(async () => renderWithRouter(<Header mentorshipCourses={mockedCourses} courses={mockedCourses} />));
     });
 
     it('renders RsLogo in mobile view', async () => {

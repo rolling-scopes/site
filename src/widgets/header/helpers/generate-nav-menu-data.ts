@@ -1,4 +1,3 @@
-import { JSX } from 'react';
 import { StaticImageData } from 'next/image';
 
 import { Course } from '@/entities/course';
@@ -15,8 +14,7 @@ type DonateOptionType = {
   id: number;
   buttonLinkLabel: string;
   menuLinkLabel: string;
-  buttonIcon: () => JSX.Element;
-  menuIcon: StaticImageData;
+  icon: StaticImageData;
   href: string;
 };
 
@@ -71,7 +69,7 @@ const mapDonateOptions = (options: DonateOptionType[]): MenuItem[] => {
   return options.toReversed().map((option) => ({
     id: option.id.toString(),
     title: option.menuLinkLabel,
-    icon: option.menuIcon,
+    icon: option.icon,
     description: '',
     url: option.href,
   }));

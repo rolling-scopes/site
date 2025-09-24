@@ -1,0 +1,49 @@
+.feature-item-mentorship {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-s;
+
+  max-width: 624px;
+  height: 100%;
+  padding: 32px;
+  border: 1px solid hsla(from $color-yellow h s l / $opacity-8);
+  border-radius: $border-radius-s;
+
+  box-shadow: 0 4px 8px 0 hsla(from $color-gray-900 h s l / $opacity-10);
+
+  .item-description :where(p:last-child, .paragraph:last-child) {
+    margin: 0;
+    padding: 0;
+  }
+
+  .icon {
+    position: relative;
+
+    img {
+      width: 38px;
+      height: 38px;
+    }
+
+    &-accent {
+      position: absolute;
+      top: 6px;
+      left: 12px;
+
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+
+      background: $color-blue-background-100;
+      filter: blur(8px);
+    }
+  }
+
+  @include media-tablet {
+    max-width: 100%;
+  }
+
+  @include media-laptop {
+    width: 100%;
+    padding: 24px;
+  }
+}

@@ -1,6 +1,7 @@
 import { courseStore } from '@/entities/course';
 import { resolveCoursePageLocale } from '@/entities/course/helpers/resolve-course-page-locale';
-import { coursePageStore } from '@/entities/course-page';
+import { PAGE_TYPE } from '@/entities/page/constants';
+import { pageStore } from '@/entities/page/model/store';
 import { fetchAndConvertToDataUri } from '@/shared/og/utils/fetch-and-convert-to-data-uri';
 import { loadImageAsDataUri } from '@/shared/og/utils/load-image-as-data-uri';
 import { createCourseTree } from '@/shared/og/view/courses-tree/generate-courses-tree';
@@ -10,7 +11,7 @@ const fallbackPath = 'src/shared/assets/svg/rss-logo.svg';
 const logoFallbackSize = 250;
 
 export async function generateStaticParams() {
-  const pages = await coursePageStore.loadCoursePages();
+  const pages = await pageStore.loadPagesMetadata(PAGE_TYPE.COURSE);
 
   return pages.map(({ slug }) => ({ slug }));
 }
@@ -19,7 +20,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ slu
   const { slug } = await params;
   const locale = resolveCoursePageLocale(slug);
 
-  const { courseName, courseId } = await coursePageStore.loadCoursePage(slug, locale);
+  const { title: courseName, courseId } = await pageStore.loadPage(PAGE_TYPE.COURSE, locale, slug);
 
   const course = await courseStore.loadCourse(courseId);
 

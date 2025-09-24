@@ -63,8 +63,13 @@
 .menu-toggle {
   display: none;
 
-  .chevron.open {
-    transform: rotate(90deg);
+  .chevron {
+    width: 20px;
+    height: auto;
+
+    &.open {
+      transform: rotate(90deg);
+    }
   }
 
   @include media-tablet {

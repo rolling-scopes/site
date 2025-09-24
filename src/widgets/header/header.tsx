@@ -16,9 +16,6 @@ import { KEY_CODES, NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
 import { getActualData } from '@/shared/helpers/get-actual-data';
 import { useOutsideClick } from '@/shared/hooks/use-outside-click/use-outside-click';
 import { Logo } from '@/shared/ui/logo';
-import {
-  transformCoursesToMentorship,
-} from '@/views/mentorship/helpers/transform-courses-to-mentorship';
 import { NavItem } from '@/widgets/header/ui/nav-item/nav-item';
 import { MobileView } from '@/widgets/mobile-view';
 
@@ -28,9 +25,10 @@ const cx = classNames.bind(styles);
 
 type HeaderProps = {
   courses: Course[];
+  mentorshipCourses: Course[];
 };
 
-export const Header = ({ courses }: HeaderProps) => {
+export const Header = ({ courses, mentorshipCourses }: HeaderProps) => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMenuItem, setActiveMenuItem] = useState<NAV_MENU_LABELS | null>(null);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -46,7 +44,6 @@ export const Header = ({ courses }: HeaderProps) => {
     filterStale: false,
     sort: false,
   });
-  const coursesWithMentorship = transformCoursesToMentorship(actualCourses);
 
   // mobile menu logic
 
@@ -73,8 +70,8 @@ export const Header = ({ courses }: HeaderProps) => {
   // desktop menu logic
 
   const menuData = useMemo(
-    () => generateNavMenuData(actualCourses, coursesWithMentorship),
-    [actualCourses, coursesWithMentorship],
+    () => generateNavMenuData(actualCourses, mentorshipCourses),
+    [actualCourses, mentorshipCourses],
   );
 
   const navItemsData = generateNavItemsConfig(iconSrc);
@@ -128,6 +125,7 @@ export const Header = ({ courses }: HeaderProps) => {
             <MobileView
               onClose={handleMenuClose}
               courses={actualCourses}
+              mentorshipCourses={mentorshipCourses}
               type="header"
               logoIcon={isMentorshipPage ? logoBlue : undefined}
               isMenuOpen={isMobileMenuOpen}

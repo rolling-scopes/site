@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import { WidgetTitleVariants } from '@/shared/ui/widget-title/widget-title';
 
-export type MediaTextBlockSectionData = {
+export type MediaTextBlockSectionData = ApiMediaTextBlockSettings & {
   anchorId?: string;
   title?: string;
   titleSize?: WidgetTitleVariants['size'];
@@ -11,9 +11,11 @@ export type MediaTextBlockSectionData = {
   contentLeft?: ReactNode | ReactNode[];
   contentRight?: ReactNode | ReactNode[];
   contentBottom?: ReactNode | ReactNode[];
-  linkUrl?: string | null;
-  linkLabel?: string;
-  disabledLinkLabel?: string;
-  backgroundColor?: string;
+  backgroundColor?: 'bg-rs-primary' | 'bg-mentorship-primary' | 'bg-gray';
   embedded?: boolean;
+};
+
+export type ApiMediaTextBlockSettings = {
+  imageAbsolutePosition?: boolean;
+  width?: number;
 };
