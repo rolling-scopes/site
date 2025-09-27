@@ -41,6 +41,7 @@ export const KEY_CODES = {
   ESCAPE: 'Escape',
   ENTER: 'Enter',
   SPACE: 'Space',
+  TAB: 'Tab',
 } as const;
 
 export const HTTP_METHOD = {

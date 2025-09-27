@@ -17,4 +17,4 @@ export const donateOptions = [
     icon: boostyIcon,
     href: LINKS.DONATE_BOOSTY,
   },
-] as const;
+];
