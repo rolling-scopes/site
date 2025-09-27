@@ -23,27 +23,19 @@ export const DropdownContent = ({
   activeItemRef,
 }: DropdownContentProps) => {
   const contentClassName = activeMenuItem?.replace(/\s+/g, '').toLowerCase() + '-content';
-
+  const isMenuSupportUs = activeMenuItem === NAV_MENU_LABELS.SUPPORT_US;
   const listRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key !== KEY_CODES.TAB) {
-        return;
-      }
-
       const focusableElements = listRef.current?.querySelectorAll<HTMLElement>('a[href]');
 
-      if (!focusableElements || focusableElements.length === 0) {
+      if (e.key !== KEY_CODES.TAB || !focusableElements?.length || !document.activeElement) {
         return;
       }
 
       const firstElement = focusableElements[0];
       const lastElement = focusableElements[focusableElements.length - 1];
-
-      if (!document.activeElement) {
-        return;
-      }
 
       if (!e.shiftKey && document.activeElement === lastElement) {
         e.preventDefault();
@@ -64,10 +56,10 @@ export const DropdownContent = ({
 
   return (
     <div
-      className={cx('dropdown-content', { 'support-container': activeMenuItem === NAV_MENU_LABELS.SUPPORT_US })}
+      className={cx('dropdown-content', { 'support-container': isMenuSupportUs })}
       data-testid="dropdown-content"
     >
-      {activeMenuItem === NAV_MENU_LABELS.SUPPORT_US && (
+      {isMenuSupportUs && (
         <div className={cx('support-text')}>
           <Paragraph fontSize="small">
             Your donations help us cover hosting, domains, licenses, and advertising for courses and

@@ -32,7 +32,7 @@ export const NavItem = ({
   onNavItemClick,
   onFocusDropdownItem,
 }: NavItemProps) => {
-  const isDropdown = Boolean(label !== NAV_MENU_LABELS.DOCS);
+  const isDropdown = label !== NAV_MENU_LABELS.DOCS;
   const router = useRouter();
 
   const pathname = usePathname();
