@@ -1,7 +1,7 @@
 'use client';
 
 /* eslint-disable @stylistic/jsx-closing-bracket-location */
-import { AnchorHTMLAttributes } from 'react';
+import { AnchorHTMLAttributes, RefObject } from 'react';
 import { type VariantProps, cva } from 'class-variance-authority';
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
@@ -31,6 +31,7 @@ type LinkCustomAdditionalProps = {
   external?: boolean;
   disabled?: boolean;
   highContrast?: boolean;
+  ref?: RefObject<HTMLAnchorElement | null>;
 };
 
 const linkCustomVariants = cva('', {
@@ -65,6 +66,7 @@ export const LinkCustom = ({
   external = false,
   disabled = false,
   highContrast = false,
+  ref,
   ...props
 }: LinkCustomProps) => {
   const params = useParams();
@@ -96,6 +98,7 @@ export const LinkCustom = ({
 
   return (
     <Link
+      ref={ref}
       className={cx(
         { disabled: isDisabled },
         { highContrast },

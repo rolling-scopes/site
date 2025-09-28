@@ -1,4 +1,4 @@
-import { HTMLProps } from 'react';
+import { HTMLProps, RefObject } from 'react';
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
 
@@ -15,6 +15,7 @@ type SchoolItemProps = HTMLProps<HTMLLIElement> & {
   description?: string;
   icon?: StaticImageData;
   color?: Color;
+  activeItemRef?: RefObject<HTMLAnchorElement | null>;
 };
 
 export const SchoolItem = ({
@@ -23,6 +24,7 @@ export const SchoolItem = ({
   title,
   color = 'dark',
   url,
+  activeItemRef,
   ...props
 }: SchoolItemProps) => {
   const isNonClickable = Boolean(url === '#');
@@ -30,6 +32,7 @@ export const SchoolItem = ({
   return (
     <li {...props} className={cx(props.className)}>
       <LinkCustom
+        ref={activeItemRef}
         href={url}
         className={cx(
           'school-item',
