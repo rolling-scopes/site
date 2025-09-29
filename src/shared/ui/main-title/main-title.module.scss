@@ -1,7 +1,7 @@
 .main-title {
   padding-bottom: 16px;
 
-  font-size: 96px;
+  font-size: $font-size-4xl;
   font-weight: $font-weight-bold;
   line-height: 125px;
   color: $color-gray-900;
@@ -9,20 +9,20 @@
   &.small {
     padding-bottom: 20px;
 
-    font-size: 44px;
+    font-size: $font-size-2xl;
     font-weight: $font-weight-medium;
     line-height: 52px;
     letter-spacing: -0.04em;
 
     @include media-tablet {
       padding-bottom: 16px;
-      font-size: $font-size-xxl;
+      font-size: $font-size-2m;
       line-height: 44px;
     }
   }
 
   @include media-tablet {
-    font-size: 60px;
+    font-size: $font-size-4s;
     line-height: 78px;
   }
 }

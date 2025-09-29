@@ -19,9 +19,9 @@
   border-radius: 0 0 0 $border-radius-xxs;
 
   visibility: hidden;
-  opacity: $opacity-0;
+  opacity: 0;
   background-color: $color-white;
-  box-shadow: 0 4px 10px 0 hsla(from $color-gray-900 h s l/ $opacity-10);
+  box-shadow: $shadow-m;
 
   &::before {
     pointer-events: none;

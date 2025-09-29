@@ -17,7 +17,7 @@
   border-radius: calc($border-radius-xxxs + $border-radius-xxs);
 
   background: $color-white;
-  box-shadow: 0 0 6px 3px hsla(from $color-gray-900 h s l/ $opacity-10);
+  box-shadow: $shadow-xl;
 
   animation: popover-fade-out 200ms ease-out both;
 
@@ -53,7 +53,7 @@
   &-active {
     color: $color-gray-800;
     background: $color-gray-100;
-    box-shadow: 0 0.5px 2px 0.5px hsla(from $color-gray-900 h s l/ $opacity-20);
+    box-shadow: $shadow-xxs;
 
     &:hover {
       background: $color-gray-200;
@@ -93,7 +93,7 @@
   100% {
     translate: 0;
     scale: 1;
-    opacity: 1;
+    opacity: $opacity-100;
   }
 }
 
@@ -101,13 +101,13 @@
   0% {
     translate: 0;
     scale: 1;
-    opacity: 1;
+    opacity: $opacity-100;
   }
 
   85% {
     translate: 0 2px;
     scale: 1.06;
-    opacity: 1;
+    opacity: $opacity-100;
   }
 
   100% {
