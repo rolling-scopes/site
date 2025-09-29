@@ -2,8 +2,8 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import { FilterControlsProps } from '../types';
+import SearchInput from './search-input/search-input';
 import DropdownArrow from '@/shared/assets/svg/dropdown-arrow.svg';
-import SearchIcon from '@/shared/assets/svg/search-icon.svg';
 
 import styles from './filter-controls.module.scss';
 
@@ -36,7 +36,7 @@ export const FilterControls = ({
           </button>
         </div>
       )}
-      <div className={cx('filter-search-wrapper')}>
+      {/* <div className={cx('filter-search-wrapper')}>
         <Image src={SearchIcon} alt="search-icon" aria-label="search-icon" />
         <input
           className={cx('filter-search-input')}
@@ -47,7 +47,8 @@ export const FilterControls = ({
           value={searchTerm}
           onChange={(e) => onSearchChange(e.target.value)}
         />
-      </div>
+      </div> */}
+      <SearchInput searchTerm={searchTerm} onSearchChange={onSearchChange} />
 
       {isTabletLayout && (
         <button
