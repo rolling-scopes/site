@@ -1,19 +1,27 @@
+'use client';
+
+import { useState } from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Popover } from 'radix-ui';
 
-import translate from '@/shared/assets/svg/translate.svg';
+import languageIcon from '@/shared/assets/svg/translate.svg';
+import { LinkCustom } from '@/shared/ui/link-custom';
 
 import styles from './lang-switcher.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const LangSwitcher = () => {
-  const pathname = usePathname();
+type LangSwitcherProps = {
+  className?: string;
+};
 
-  const isRuActive = pathname.startsWith(`/ru`);
-  const isEnActive = !isRuActive;
+export const LangSwitcher = ({ className }: LangSwitcherProps) => {
+  const pathname = usePathname();
+  const [isOpened, setIsOpened] = useState(false);
+
+  const isRuActive = pathname.startsWith('/ru');
   const path = pathname.split('/').filter(Boolean);
 
   if (isRuActive) {
@@ -25,18 +33,59 @@ export const LangSwitcher = () => {
   const ruPath = `/ru/${preservePath}`;
   const enPath = `/${preservePath}`;
 
+  const handlePopoverToggle = () => {
+    setIsOpened((prev) => !prev);
+  };
+
   return (
-    <div className={cx('lang-switcher')}>
-      <Image src={translate} alt="Language switcher" width={24} height={24} />
-      <span>
-        <Link href={ruPath} className={cx({ active: isRuActive })}>
-          RU
-        </Link>
-        &nbsp;/&nbsp;
-        <Link href={enPath} className={cx({ active: isEnActive })}>
-          EN
-        </Link>
-      </span>
+    <div className={cx('lang-switcher', className)}>
+      <Popover.Root open={isOpened} onOpenChange={handlePopoverToggle}>
+        <Popover.Trigger asChild>
+          <button
+            title="Change language"
+            className={cx('popover-trigger', { 'popover-trigger-opened': isOpened })}
+            aria-label="Change Language"
+          >
+            <Image
+              src={languageIcon}
+              width="18"
+              height="18"
+              alt=""
+              aria-hidden="true"
+            />
+          </button>
+        </Popover.Trigger>
+
+        <Popover.Portal>
+          <Popover.Content
+            className={cx('popover-content', { 'popover-content-opened': isOpened })}
+            sideOffset={5}
+          >
+            <LinkCustom
+              preserveLang={false}
+              className={cx('popover-link',
+                { 'popover-link-active': !isRuActive },
+              )}
+              href={enPath}
+              onClick={handlePopoverToggle}
+            >
+              English
+            </LinkCustom>
+
+            <LinkCustom
+              preserveLang={false}
+              className={cx('popover-link',
+                { 'popover-link-active': isRuActive })}
+              href={ruPath}
+              onClick={handlePopoverToggle}
+            >
+              Russian
+            </LinkCustom>
+
+            <Popover.Arrow className={cx('popover-arrow')} />
+          </Popover.Content>
+        </Popover.Portal>
+      </Popover.Root>
     </div>
   );
 };

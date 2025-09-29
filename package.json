@@ -36,6 +36,7 @@
     "jszip": "^3.10.1",
     "next": "15.5.3",
     "pagefind": "^1.4.0",
+    "radix-ui": "^1.4.3",
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "react-double-marquee": "^1.1.0",

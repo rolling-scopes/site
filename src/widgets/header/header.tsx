@@ -9,7 +9,6 @@ import { Course } from '@/entities/course';
 import logoBlue from '@/shared/assets/svg/rss-logo-blue.svg';
 import { NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
 import { getActualData } from '@/shared/helpers/get-actual-data';
-import { LangSwitcher } from '@/shared/ui/lang-switcher/lang-switcher';
 import { Logo } from '@/shared/ui/logo';
 
 import styles from './header.module.scss';
@@ -49,8 +48,6 @@ export const Header = ({ courses, mentorshipCourses }: HeaderProps) => {
             coursesWithMentorship={mentorshipCourses}
             isMentorshipPage={isMentorshipPage}
           />
-
-          <LangSwitcher />
         </section>
       </nav>
     </header>

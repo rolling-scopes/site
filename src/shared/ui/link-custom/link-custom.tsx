@@ -31,6 +31,7 @@ type LinkCustomAdditionalProps = {
   external?: boolean;
   disabled?: boolean;
   highContrast?: boolean;
+  preserveLang?: boolean;
   ref?: RefObject<HTMLAnchorElement | null>;
 };
 
@@ -66,6 +67,7 @@ export const LinkCustom = ({
   external = false,
   disabled = false,
   highContrast = false,
+  preserveLang = true,
   ref,
   ...props
 }: LinkCustomProps) => {
@@ -74,7 +76,7 @@ export const LinkCustom = ({
 
   const fallbackLang = getLangFromPathname(pathName);
   const lang = params?.lang as string ?? fallbackLang ?? '';
-  const localizedHref = external ? href : withLang(lang, href);
+  const localizedHref = external || !preserveLang ? href : withLang(lang, href);
 
   const isDisabled = disabled || !href;
   const showLabel = isDisabled ? disabledLabel : children;

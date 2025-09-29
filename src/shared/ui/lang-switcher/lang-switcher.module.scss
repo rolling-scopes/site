@@ -2,10 +2,117 @@
   display: flex;
   gap: $gap-xs;
   align-items: center;
+}
 
-  .active {
-    font-weight: bold;
-    color: $color-blue-600;
-    text-decoration: underline;
+.popover-content {
+  pointer-events: none;
+
+  z-index: $z-index-max;
+  transform-origin: top;
+
+  display: grid;
+  gap: $gap-xxs;
+
+  padding: $gap-xxs;
+  border-radius: calc($border-radius-xxxs + $border-radius-xxs);
+
+  background: $color-white;
+  box-shadow: 0 0 6px 3px hsla(from $color-gray-900 h s l/ $opacity-10);
+
+  animation: popover-fade-out 200ms ease-out both;
+
+  &-opened {
+    pointer-events: unset;
+    animation: popover-fade-in 440ms $ease-spring both;
+  }
+}
+
+.popover-arrow {
+  fill: $color-white;
+}
+
+.popover-link {
+  width: 100%;
+  padding: 4px 8px;
+  border-radius: $border-radius-xxxs;
+
+  font-size: $font-size-xs;
+  color: $color-gray-600;
+  text-decoration: none;
+
+  transition: 200ms ease;
+
+  &:hover {
+    background: $color-gray-100;
+  }
+
+  &:active {
+    background: $color-gray-50;
+  }
+
+  &-active {
+    color: $color-gray-800;
+    background: $color-gray-100;
+    box-shadow: 0 0.5px 2px 0.5px hsla(from $color-gray-900 h s l/ $opacity-20);
+
+    &:hover {
+      background: $color-gray-200;
+    }
+  }
+}
+
+.popover-trigger {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: $border-radius-xxs;
+
+  background: transparent;
+
+  transition: 200ms ease;
+
+  &:hover,
+  &-opened {
+    background: $color-gray-100;
+  }
+}
+
+@keyframes popover-fade-in {
+  0% {
+    translate: 0 -10px;
+    scale: 0.8;
+    opacity: 0;
+  }
+
+  100% {
+    translate: 0;
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes popover-fade-out {
+  0% {
+    translate: 0;
+    scale: 1;
+    opacity: 1;
+  }
+
+  85% {
+    translate: 0 2px;
+    scale: 1.06;
+    opacity: 1;
+  }
+
+  100% {
+    translate: 0 -10px;
+    scale: 0.95;
+    opacity: 0;
   }
 }

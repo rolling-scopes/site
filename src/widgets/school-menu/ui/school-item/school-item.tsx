@@ -16,6 +16,7 @@ type SchoolItemProps = HTMLProps<HTMLLIElement> & {
   icon?: StaticImageData;
   color?: Color;
   activeItemRef?: RefObject<HTMLAnchorElement | null>;
+  preserveLang?: boolean;
 };
 
 export const SchoolItem = ({
@@ -25,6 +26,7 @@ export const SchoolItem = ({
   color = 'dark',
   url,
   activeItemRef,
+  preserveLang = true,
   ...props
 }: SchoolItemProps) => {
   const isNonClickable = Boolean(url === '#');
@@ -33,6 +35,7 @@ export const SchoolItem = ({
     <li {...props} className={cx(props.className)}>
       <LinkCustom
         ref={activeItemRef}
+        preserveLang={preserveLang}
         href={url}
         className={cx(
           'school-item',

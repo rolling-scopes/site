@@ -11,6 +11,7 @@ import iconBlue from '@/shared/assets/svg/heart-blue.svg';
 import iconYellow from '@/shared/assets/svg/heart-yellow.svg';
 import { NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
 import { CourseMenuItemsFresh } from '@/shared/ui/course-menu-items-fresh';
+import { LangSwitcher } from '@/shared/ui/lang-switcher/lang-switcher';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Logo } from '@/shared/ui/logo';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
@@ -189,7 +190,11 @@ export const MobileView = ({ type, courses, mentorshipCourses, isMenuOpen, logoI
 
         <Divider color={color} />
 
-        <LinkCustom onClick={onClose} href={`/${ROUTES.DOCS}`} className={cx('category-link', color)}>
+        <LinkCustom
+          onClick={onClose}
+          href={`/${ROUTES.DOCS}`}
+          className={cx('category-link', color)}
+        >
           {NAV_MENU_LABELS.DOCS}
         </LinkCustom>
 
@@ -230,6 +235,8 @@ export const MobileView = ({ type, courses, mentorshipCourses, isMenuOpen, logoI
             ))}
           </SchoolMenu>
         </div>
+
+        <LangSwitcher className={cx('lang-switcher')} />
       </div>
     </nav>
   );
