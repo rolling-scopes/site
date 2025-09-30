@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import { FilterControlsProps } from '../types';
 import SearchInput from './search-input/search-input';
+import TagFilters from './tag-filters/tag-filters';
 import DropdownArrow from '@/shared/assets/svg/dropdown-arrow.svg';
 
 import styles from './filter-controls.module.scss';
@@ -36,18 +37,7 @@ export const FilterControls = ({
           </button>
         </div>
       )}
-      {/* <div className={cx('filter-search-wrapper')}>
-        <Image src={SearchIcon} alt="search-icon" aria-label="search-icon" />
-        <input
-          className={cx('filter-search-input')}
-          id="merch-search-input"
-          type="search"
-          aria-label="Search merch"
-          placeholder="Search..."
-          value={searchTerm}
-          onChange={(e) => onSearchChange(e.target.value)}
-        />
-      </div> */}
+
       <SearchInput searchTerm={searchTerm} onSearchChange={onSearchChange} />
 
       {isTabletLayout && (
@@ -75,35 +65,11 @@ export const FilterControls = ({
               Clear
             </button>
           )}
-          <div
-            id="merch-filter-tags"
-            className={cx('filter-tags-wrapper')}
-            role="region"
-            aria-labelledby="merch-filter-toggle"
-          >
-            {' '}
-            {allAvailableTags.map((tag) => {
-              const safeId = `tag-checkbox-${tag.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
-
-              return (
-                <label
-                  key={tag}
-                  htmlFor={safeId}
-                  className={cx('filter-tag-label', { selected: selectedTags.includes(tag) })}
-                >
-                  <input
-                    type="checkbox"
-                    id={safeId}
-                    className={cx('filter-checkbox-original')}
-                    checked={selectedTags.includes(tag)}
-                    onChange={() => onTagChange(tag)}
-                  />
-                  <span className={cx('filter-checkbox-custom')}></span>
-                  <span>{tag}</span>
-                </label>
-              );
-            })}
-          </div>
+          <TagFilters
+            allAvailableTags={allAvailableTags}
+            selectedTags={selectedTags}
+            onTagChange={onTagChange}
+          />
         </>
       )}
     </div>

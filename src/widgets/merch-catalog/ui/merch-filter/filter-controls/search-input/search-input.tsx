@@ -4,13 +4,12 @@ import styles from './search-input.module.scss';
 
 const cx = classNames.bind(styles);
 
-export default function SearchInput({
-  searchTerm,
-  onSearchChange,
-}: {
+type SearchInputProps = {
   searchTerm: string;
   onSearchChange: (newSearchTerm: string) => void;
-}) {
+};
+
+export default function SearchInput({ searchTerm, onSearchChange }: SearchInputProps) {
   return (
     <div className={cx('search')}>
       <input
