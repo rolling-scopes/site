@@ -30,7 +30,7 @@ export const FilterControls = ({
         <div className={cx('filter-title-wrapper')}>
           <h4 className={cx('filter-title')}>Filter merch</h4>
           <button
-            className={cx('filter-clear-button', { active: hasActiveFilters })}
+            className={cx('button', 'secondary', { active: hasActiveFilters })}
             onClick={onClearFilters}
           >
             Clear
@@ -59,7 +59,7 @@ export const FilterControls = ({
         <>
           {isTabletLayout && (
             <button
-              className={cx('tablet-clear-button', { active: hasActiveFilters })}
+              className={cx('button', 'secondary', { active: hasActiveFilters })}
               onClick={onClearFilters}
             >
               Clear

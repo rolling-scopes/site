@@ -104,7 +104,6 @@ export const FilteredMerchView = ({
 
   return (
     <div className={cx('filter-catalog')}>
-      {' '}
       <div className={cx('filter-sidebar')}>
         <FilterControls
           allAvailableTags={allAvailableTags}

@@ -49,30 +49,34 @@
   }
 }
 
-.filter-clear-button {
+.button {
   @extend %transition-all;
 
   cursor: pointer;
 
-  padding: $gap-xxs $gap-xs;
-  border: 1px solid $color-gray-300;
-  border-radius: $border-radius-xxs;
+  gap: $gap-xs;
+  place-content: center center;
+  align-items: center;
+
+  font-weight: $font-weight-medium;
+  letter-spacing: 0;
+  white-space: pre;
+}
+
+.secondary {
+  width: max-content;
+  padding: 6px 14px;
+  border: 1px solid $color-gray-900;
 
   font-size: $font-size-xxs;
-  color: $color-gray-600;
+  color: $color-gray-900;
 
   visibility: hidden;
-  opacity: $opacity-0;
+  opacity: 0;
   background: none;
 
   &:hover {
-    border: 1px solid $color-gray-900;
-    color: $color-gray-900;
-  }
-
-  &:focus-visible {
-    outline: 1px solid $color-gray-600;
-    outline-offset: 1px;
+    background-color: $color-gray-100;
   }
 
   &.active {
@@ -80,48 +84,20 @@
     opacity: $opacity-100;
     transition-delay: 0s;
   }
-}
 
-.tablet-clear-button {
-  cursor: pointer;
+  @include media-tablet-large {
+    overflow: hidden;
 
-  overflow: hidden;
+    width: 100%;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 
-  width: 100%;
-  max-height: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  border-width: 0;
-  border-top: 0 solid $color-gray-300;
-  border-bottom: 0 solid $color-gray-300;
-  border-radius: $border-radius-xxs;
+    transition: all 0.3s ease-in-out;
 
-  font-size: $font-size-s;
-  color: $color-gray-600;
-
-  opacity: $opacity-0;
-  background: none;
-
-  transition:
-    max-height 0.3s ease-in-out,
-    opacity 0.3s ease-in-out,
-    padding 0.3s ease-in-out,
-    border 0.3s ease-in-out;
-
-  &:hover {
-    color: $color-gray-900;
-    background-color: $color-gray-50;
-  }
-
-  &.active {
-    max-height: 100px;
-    padding: $gap-xs;
-    border: 1px solid $color-gray-300;
-    opacity: $opacity-100;
-  }
-
-  &:focus-visible {
-    outline: 1px solid $color-gray-600;
-    outline-offset: 1px;
+    &.active {
+      max-height: 100px;
+      padding: $gap-xs;
+    }
   }
 }
