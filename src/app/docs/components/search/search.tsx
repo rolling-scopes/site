@@ -7,6 +7,7 @@ import { createPortal } from 'react-dom';
 
 import MOCKED_SEARCH from '../../mocked-search';
 import { Language } from '@/shared/types';
+import Input from '@/shared/ui/input/input';
 import { Subtitle } from '@/shared/ui/subtitle';
 
 import styles from './search.module.scss';
@@ -71,12 +72,11 @@ export default function Search({ lang, resultsRef }: SearchProps) {
 
   return (
     <div className={cx('search')}>
-      <input
-        className={cx('search-input')}
-        type="text"
-        placeholder={translations[lang].search.placeholder}
+      <Input
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={setQuery}
+        placeholder={translations[lang].search.placeholder}
+        ariaLabel={translations[lang].search.placeholder}
       />
       <div className={cx('results')}>
         {query
@@ -128,7 +128,9 @@ function Result({ result }: { result: PagefindSearchResult }) {
   return (
     <div>
       <Link href={removeHtmlExtension(data.url)}>
-        <Subtitle size="extra-small" weight="bold">{data.meta.title}</Subtitle>
+        <Subtitle size="extra-small" weight="bold">
+          {data.meta.title}
+        </Subtitle>
         <p dangerouslySetInnerHTML={{ __html: data.excerpt }} />
       </Link>
 
