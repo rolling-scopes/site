@@ -1,10 +1,12 @@
 import { KeyboardEvent, PropsWithChildren, RefObject } from 'react';
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
-import { usePathname, useRouter } from 'next/navigation';
+import { useParams, usePathname, useRouter } from 'next/navigation';
 
 import arrowIcon from '@/shared/assets/svg/dropdown-arrow.svg';
 import { KEY_CODES, NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
+import { withLang } from '@/shared/ui/link-custom/helpers/with-lang';
+import { withoutLang } from '@/shared/ui/link-custom/helpers/without-lang';
 import { NavMenuLabel } from '@/widgets/header/header';
 
 import styles from './nav-item.module.scss';
@@ -36,14 +38,17 @@ export const NavItem = ({
   const router = useRouter();
 
   const pathname = usePathname();
+  const params = useParams();
+
+  const lang = params?.lang as string ?? '';
   const isHrefHome = href === ROUTES.HOME;
-  const isActive = isHrefHome ? pathname === ROUTES.HOME : pathname?.includes(href);
+  const isActive = isHrefHome ? withoutLang(pathname) === ROUTES.HOME : pathname?.includes(href);
   const linkHref = isHrefHome ? href : `/${href}`;
 
   const handleClick = () => {
     onNavItemClick();
     if (!isDropdown) {
-      router.push(linkHref);
+      router.push(withLang(lang, linkHref));
     }
   };
 

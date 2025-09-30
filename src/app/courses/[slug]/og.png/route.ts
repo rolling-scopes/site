@@ -1,7 +1,8 @@
 import { courseStore } from '@/entities/course';
-import { resolveCoursePageLocale } from '@/entities/course/helpers/resolve-course-page-locale';
+import { resolvePageLocale } from '@/entities/page';
 import { PAGE_TYPE } from '@/entities/page/constants';
 import { pageStore } from '@/entities/page/model/store';
+import { PageProps } from '@/entities/page/types';
 import { fetchAndConvertToDataUri } from '@/shared/og/utils/fetch-and-convert-to-data-uri';
 import { loadImageAsDataUri } from '@/shared/og/utils/load-image-as-data-uri';
 import { createCourseTree } from '@/shared/og/view/courses-tree/generate-courses-tree';
@@ -16,10 +17,9 @@ export async function generateStaticParams() {
   return pages.map(({ slug }) => ({ slug }));
 }
 
-export async function GET(_request: Request, { params }: { params: Promise<{ slug: string }> }) {
+export async function GET(_request: Request, { params }: { params: Promise<Pick<Awaited<PageProps['params']>, 'slug'>> }) {
   const { slug } = await params;
-  const locale = resolveCoursePageLocale(slug);
-
+  const locale = resolvePageLocale();
   const { title: courseName, courseId } = await pageStore.loadPage(PAGE_TYPE.COURSE, locale, slug);
 
   const course = await courseStore.loadCourse(courseId);

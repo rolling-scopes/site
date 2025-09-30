@@ -1,8 +1,8 @@
 import { HTMLProps, RefObject } from 'react';
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
-import Link from 'next/link';
 
+import { LinkCustom } from '@/shared/ui/link-custom';
 import { Color } from '@/widgets/school-menu/types';
 
 import styles from './school-item.module.scss';
@@ -16,6 +16,7 @@ type SchoolItemProps = HTMLProps<HTMLLIElement> & {
   icon?: StaticImageData;
   color?: Color;
   activeItemRef?: RefObject<HTMLAnchorElement | null>;
+  preserveLang?: boolean;
 };
 
 export const SchoolItem = ({
@@ -25,14 +26,16 @@ export const SchoolItem = ({
   color = 'dark',
   url,
   activeItemRef,
+  preserveLang = true,
   ...props
 }: SchoolItemProps) => {
   const isNonClickable = Boolean(url === '#');
 
   return (
     <li {...props} className={cx(props.className)}>
-      <Link
+      <LinkCustom
         ref={activeItemRef}
+        preserveLang={preserveLang}
         href={url}
         className={cx(
           'school-item',
@@ -59,7 +62,7 @@ export const SchoolItem = ({
             </small>
           )}
         </div>
-      </Link>
+      </LinkCustom>
     </li>
   );
 };

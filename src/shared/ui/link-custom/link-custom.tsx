@@ -1,12 +1,17 @@
+'use client';
+
 /* eslint-disable @stylistic/jsx-closing-bracket-location */
-import { AnchorHTMLAttributes } from 'react';
+import { AnchorHTMLAttributes, RefObject } from 'react';
 import { type VariantProps, cva } from 'class-variance-authority';
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
+import { useParams, usePathname } from 'next/navigation';
 
 import arrowIcon from '@/shared/assets/svg/arrow.svg';
 import textLinkIcon from '@/shared/assets/svg/text-link.svg';
+import { getLangFromPathname } from '@/shared/ui/link-custom/helpers/get-lang-from-pathname';
+import { withLang } from '@/shared/ui/link-custom/helpers/with-lang';
 
 import styles from './link-custom.module.scss';
 
@@ -26,6 +31,8 @@ type LinkCustomAdditionalProps = {
   external?: boolean;
   disabled?: boolean;
   highContrast?: boolean;
+  preserveLang?: boolean;
+  ref?: RefObject<HTMLAnchorElement | null>;
 };
 
 const linkCustomVariants = cva('', {
@@ -60,8 +67,17 @@ export const LinkCustom = ({
   external = false,
   disabled = false,
   highContrast = false,
+  preserveLang = true,
+  ref,
   ...props
 }: LinkCustomProps) => {
+  const params = useParams();
+  const pathName = usePathname();
+
+  const fallbackLang = getLangFromPathname(pathName);
+  const lang = params?.lang as string ?? fallbackLang ?? '';
+  const localizedHref = external || !preserveLang ? href : withLang(lang, href);
+
   const isDisabled = disabled || !href;
   const showLabel = isDisabled ? disabledLabel : children;
 
@@ -84,6 +100,7 @@ export const LinkCustom = ({
 
   return (
     <Link
+      ref={ref}
       className={cx(
         { disabled: isDisabled },
         { highContrast },
@@ -92,7 +109,7 @@ export const LinkCustom = ({
           className,
         }),
       )}
-      href={href}
+      href={localizedHref}
       {...props}
       {...(external && externalLinkAttributes)}
     >

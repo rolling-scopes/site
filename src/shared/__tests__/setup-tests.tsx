@@ -51,3 +51,8 @@ vi.mock('next/image', () => ({
     />
   ),
 }));
+
+vi.mock('next/navigation', () => ({
+  usePathname: () => '/',
+  useParams: () => {},
+}));

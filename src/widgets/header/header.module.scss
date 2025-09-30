@@ -21,7 +21,6 @@
 .navbar-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 
   max-width: 1440px;
   height: 100%;
@@ -40,6 +39,7 @@
   align-items: center;
 
   height: 100%;
+  margin-left: auto;
   padding-inline-start: 0;
 
   @include media-tablet-large {
@@ -60,7 +60,7 @@
   align-items: flex-start;
 
   width: 100%;
-  height: min-content;
+  height: 100%;
   min-height: 100dvh;
   max-height: 100dvh;
   margin-top: 0;
@@ -81,5 +81,19 @@
 
   @include media-tablet-large {
     display: block;
+  }
+}
+
+.separator {
+  margin: 0 16px;
+
+  @include media-tablet-large {
+    display: none;
+  }
+}
+
+.lang-switcher-desktop {
+  @include media-tablet-large {
+    display: none;
   }
 }

@@ -5,7 +5,6 @@ import classNames from 'classnames/bind';
 
 import { Menu } from '../../types';
 import { DocsMenu } from '../docs-menu/docs-menu';
-import { LangSwitcher } from '../lang-switcher/lang-switcher';
 import Search from '../search/search';
 import { Language } from '@/shared/types';
 
@@ -31,7 +30,7 @@ export function DocsLayout({ children, menu, lang }: DocsLayoutProps) {
     <main className={cx('container', 'content', 'docs-layout')}>
       <nav className={cx('menu-wrapper')}>
         <div className={cx('menu')}>
-          <DocsMenu menu={menu} lang={lang} isOpen={isMenuOpen} onMenuToggle={handleMenuToggle} />
+          <DocsMenu menu={menu} isOpen={isMenuOpen} onMenuToggle={handleMenuToggle} />
         </div>
       </nav>
       {!isMenuOpen && (
@@ -39,7 +38,6 @@ export function DocsLayout({ children, menu, lang }: DocsLayoutProps) {
           <div>
             <div className={cx('docs-top')}>
               <Search lang={lang} resultsRef={resultsRef} />
-              <LangSwitcher />
             </div>
             <div ref={resultsRef}></div>
           </div>
