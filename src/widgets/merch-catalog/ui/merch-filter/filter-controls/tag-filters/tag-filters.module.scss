@@ -37,9 +37,7 @@
 
   background-color: $color-white;
 
-  transition:
-    background-color 0.2s,
-    border-color 0.2s;
+  transition: all 0.2s ease-in-out;
 
   &::after {
     content: '';
