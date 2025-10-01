@@ -102,6 +102,22 @@ export const FilteredMerchView = ({
 
   const hasActiveFilters = searchTerm.trim() !== '' || selectedTypes.length > 0;
 
+  const renderContent = () => {
+    if ((!initialProducts || initialProducts.length === 0) && !hasActiveFilters) {
+      return <Paragraph>No merch found</Paragraph>;
+    }
+
+    if (filteredProducts.length > 0) {
+      return <MerchList products={filteredProducts} />;
+    }
+
+    if (filteredProducts.length === 0 && hasActiveFilters) {
+      return <Paragraph>No merch found. Please try another filter or search term</Paragraph>;
+    }
+
+    return null;
+  };
+
   return (
     <div className={cx('filter-catalog')}>
       <div className={cx('filter-sidebar')}>
@@ -118,19 +134,7 @@ export const FilteredMerchView = ({
           onToggleTagsExpansionTablet={toggleTabletFiltersExpansion}
         />
       </div>
-      <>
-        {(!initialProducts || initialProducts.length === 0) && !hasActiveFilters
-          ? (
-              <Paragraph>No merch found</Paragraph>
-            )
-          : filteredProducts.length > 0
-            ? (
-                <MerchList products={filteredProducts} />
-              )
-            : (
-                <Paragraph>No merch found. Please try another filter or search term</Paragraph>
-              )}
-      </>
+      {renderContent()}
     </div>
   );
 };
