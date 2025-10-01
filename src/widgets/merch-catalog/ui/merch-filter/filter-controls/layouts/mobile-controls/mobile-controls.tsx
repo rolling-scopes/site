@@ -32,16 +32,21 @@ export const MobileFilterControls = ({
       <div className={cx('tablet-actions-wrapper')}>
         <button
           id="merch-filter-toggle"
-          className={cx('tablet-toggle-button', { expanded: areTagsExpandedTablet })}
+          className={cx('tablet-toggle-button', {
+            'expanded': areTagsExpandedTablet,
+            'has-active-filters': hasActiveFilters && !areTagsExpandedTablet,
+          })}
           onClick={onToggleTagsExpansionTablet}
           aria-expanded={areTagsExpandedTablet}
           aria-controls="merch-filter-tags"
         >
           Filter By:
-          {hasActiveFilters && !areTagsExpandedTablet && <span></span>}
-          <span className={cx('filter-toggle-arrow', { expanded: areTagsExpandedTablet })}>
-            <Image src={DropdownArrow} alt="dropdown-arrow" aria-label="dropdown-arrow" />
-          </span>
+          <Image
+            src={DropdownArrow}
+            alt=""
+            aria-label="dropdown-arrow"
+            className={cx('filter-toggle-arrow')}
+          />
         </button>
 
         {hasActiveFilters && (

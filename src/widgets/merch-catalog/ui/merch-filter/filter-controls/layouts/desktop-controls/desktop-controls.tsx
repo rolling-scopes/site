@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import { FilterControlsProps } from '../../../types';
 import SearchInput from '../../search-input/search-input';
 import TagFilters from '../../tag-filters/tag-filters';
+import { Subtitle } from '@/shared/ui/subtitle';
 
 import styles from '../../filter-controls.module.scss';
 
@@ -25,7 +26,9 @@ export const DesktopFilterControls = ({
   return (
     <>
       <div className={cx('filter-title-wrapper')}>
-        <h4 className={cx('filter-title')}>Filter merch</h4>
+        <Subtitle size="extra-small" weight="bold">
+          Filter merch
+        </Subtitle>
         <button
           className={cx('button', 'secondary', { active: hasActiveFilters })}
           onClick={onClearFilters}
