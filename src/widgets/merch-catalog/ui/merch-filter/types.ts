@@ -15,5 +15,5 @@ export type FilterControlsProps = {
 
 export type FilteredMerchViewProps = {
   initialProducts: MerchProduct[];
-  initialAvailableTags?: string[];
+  initialAvailableTags: string[];
 };
