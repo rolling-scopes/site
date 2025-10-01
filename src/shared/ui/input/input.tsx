@@ -9,9 +9,10 @@ type InputProps = {
   onChange: (value: string) => void;
   placeholder?: string;
   ariaLabel?: string;
+  name?: string;
 };
 
-export default function Input({ value, onChange, placeholder, ariaLabel }: InputProps) {
+export default function Input({ value, onChange, placeholder, ariaLabel, name }: InputProps) {
   return (
     <input
       className={cx('input')}
@@ -20,6 +21,7 @@ export default function Input({ value, onChange, placeholder, ariaLabel }: Input
       value={value}
       onChange={(e) => onChange(e.target.value)}
       aria-label={ariaLabel}
+      name={name}
     />
   );
 }

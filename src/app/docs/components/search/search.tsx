@@ -77,6 +77,7 @@ export default function Search({ lang, resultsRef }: SearchProps) {
         onChange={setQuery}
         placeholder={translations[lang].search.placeholder}
         ariaLabel={translations[lang].search.placeholder}
+        name="search"
       />
       <div className={cx('results')}>
         {query

@@ -12,6 +12,7 @@ export default function SearchInput({ searchTerm, onSearchChange }: SearchInputP
       onChange={onSearchChange}
       placeholder="Search..."
       ariaLabel="Search merch"
+      name="search"
     />
   );
 }
