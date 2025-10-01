@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import { FilteredMerchView } from './merch-filter/filtered-catalog/filtered-catalog';
-import { merchStore } from '@/entities/merch';
+import { MerchProduct, merchStore } from '@/entities/merch';
 import notFoundImg from '@/shared/assets/404.webp';
 import { Paragraph } from '@/shared/ui/paragraph';
 
@@ -11,10 +11,10 @@ import styles from './merch-catalog.module.scss';
 const cx = classNames.bind(styles);
 
 export const MerchCatalog = async () => {
-  const products = await merchStore.loadMerchCatalog();
-  const uniqueTags = Array.from(
-    new Set(products.flatMap((product) => product.tags || []).filter((tag) => tag)),
-  ).sort();
+  const products: MerchProduct[] = await merchStore.loadMerchCatalog();
+
+  const allTags: string[] = products.flatMap((product) => product.tags || []);
+  const uniqueTags: string[] = Array.from(new Set(allTags.filter(Boolean))).sort();
 
   return (
     <section className={cx('container')}>
@@ -27,7 +27,7 @@ export const MerchCatalog = async () => {
         </div>
       )}
 
-      {products && products.length > 0 && (
+      {products?.length > 0 && (
         <div className={cx('content', 'merch-catalog')}>
           <FilteredMerchView initialProducts={products} initialAvailableTags={uniqueTags} />
         </div>
