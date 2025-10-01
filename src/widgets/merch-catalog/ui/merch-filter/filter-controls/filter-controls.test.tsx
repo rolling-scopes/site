@@ -23,11 +23,9 @@ describe('FilterControls', () => {
     expect(screen.getByPlaceholderText('Search...')).toBeInTheDocument();
   });
 
-  it('renders tags checkboxes', () => {
+  it.each(['tag1', 'tag2', 'tag3'])('renders tag checkbox for %s', (tag) => {
     render(<FilterControls {...makeProps()} />);
-    expect(screen.getByText('tag1')).toBeInTheDocument();
-    expect(screen.getByText('tag2')).toBeInTheDocument();
-    expect(screen.getByText('tag3')).toBeInTheDocument();
+    expect(screen.getByText(tag)).toBeInTheDocument();
   });
 
   it('calls onTagChange when a tag checkbox is clicked', async () => {
