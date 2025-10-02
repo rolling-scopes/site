@@ -1,23 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { vi } from 'vitest';
 
 import { FilterControls } from './filter-controls';
+import { getMockedProps } from '@/shared/__tests__/constants';
 
 describe('FilterControls', () => {
-  const getMockedProps = () => ({
-    allAvailableTags: ['tag1', 'tag2', 'tag3'],
-    searchTerm: '',
-    selectedTags: [],
-    hasActiveFilters: false,
-    onSearchChange: vi.fn(),
-    onTagChange: vi.fn(),
-    onClearFilters: vi.fn(),
-    isTabletLayout: false,
-    areTagsExpandedTablet: false,
-    onToggleTagsExpansionTablet: vi.fn(),
-  });
-
   it('renders search input', () => {
     render(<FilterControls {...getMockedProps()} />);
     expect(screen.getByPlaceholderText('Search...')).toBeInTheDocument();

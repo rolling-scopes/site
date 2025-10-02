@@ -48,7 +48,6 @@ export const MobileFilterControls = ({
             className={cx('filter-toggle-arrow')}
           />
         </button>
-
         {hasActiveFilters && (
           <button className={cx('button', 'secondary', 'active')} onClick={onClearFilters}>
             Clear
