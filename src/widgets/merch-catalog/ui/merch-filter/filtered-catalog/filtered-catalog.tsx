@@ -2,11 +2,13 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import classNames from 'classnames/bind';
+import Image from 'next/image';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { MerchList } from '../../merch-list/merch-list';
 import { FilterControls } from '../filter-controls/filter-controls';
 import { FilteredMerchViewProps } from '../types';
+import notFoundImg from '@/shared/assets/404.webp';
 import { useMediaQuery } from '@/shared/hooks/use-media-query/use-media-query';
 import { Paragraph } from '@/shared/ui/paragraph';
 
@@ -99,8 +101,16 @@ export const FilteredMerchView = ({
   const hasActiveFilters = searchTerm.trim() !== '' || selectedTypes.length > 0;
 
   const renderContent = () => {
-    if ((!initialProducts || initialProducts.length === 0) && !hasActiveFilters) {
-      return <Paragraph>No merch found</Paragraph>;
+    if (!initialProducts || initialProducts.length === 0) {
+      return (
+        <div className={cx('empty-wrapper')}>
+          <Image className={cx('empty-image')} src={notFoundImg} alt="No merchandise available" />
+
+          <Paragraph className={cx('empty-paragraph')}>
+            No merchandise available at this time.
+          </Paragraph>
+        </div>
+      );
     }
 
     if (filteredProducts.length > 0) {
