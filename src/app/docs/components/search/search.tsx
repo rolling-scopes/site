@@ -7,7 +7,6 @@ import { createPortal } from 'react-dom';
 
 import MOCKED_SEARCH from '../../mocked-search';
 import { Language } from '@/shared/types';
-import Input from '@/shared/ui/input/input';
 import { Subtitle } from '@/shared/ui/subtitle';
 
 import styles from './search.module.scss';
@@ -72,12 +71,12 @@ export default function Search({ lang, resultsRef }: SearchProps) {
 
   return (
     <div className={cx('search')}>
-      <Input
-        value={query}
-        onChange={setQuery}
+      <input
+        className={cx('search-input')}
+        type="text"
         placeholder={translations[lang].search.placeholder}
-        ariaLabel={translations[lang].search.placeholder}
-        name="search"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
       />
       <div className={cx('results')}>
         {query

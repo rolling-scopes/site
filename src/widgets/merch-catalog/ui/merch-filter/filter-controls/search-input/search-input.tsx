@@ -1,4 +1,4 @@
-import Input from '@/shared/ui/input/input';
+import Search from '@/shared/ui/search/search';
 
 type SearchInputProps = {
   searchTerm: string;
@@ -7,7 +7,7 @@ type SearchInputProps = {
 
 export default function SearchInput({ searchTerm, onSearchChange }: SearchInputProps) {
   return (
-    <Input
+    <Search
       value={searchTerm}
       onChange={onSearchChange}
       placeholder="Search..."
