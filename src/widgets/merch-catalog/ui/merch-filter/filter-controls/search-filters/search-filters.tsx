@@ -1,13 +1,13 @@
-import Search from '@/shared/ui/search/search';
+import SearchInput from '@/shared/ui/search-input/search-input';
 
 type SearchInputProps = {
   searchTerm: string;
   onSearchChange: (newSearchTerm: string) => void;
 };
 
-export default function SearchInput({ searchTerm, onSearchChange }: SearchInputProps) {
+export default function SearchFilters({ searchTerm, onSearchChange }: SearchInputProps) {
   return (
-    <Search
+    <SearchInput
       value={searchTerm}
       onChange={onSearchChange}
       placeholder="Search..."

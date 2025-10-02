@@ -4,9 +4,9 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { MobileFilterControls } from './mobile-controls';
 import { getMockedProps } from '@/shared/__tests__/constants';
 
-vi.mock('../../search-input/search-input', () => ({
+vi.mock('../../search-filters/search-filters', () => ({
   default: (props: { searchTerm: string }) => (
-    <div data-testid="search-input">
+    <div data-testid="search-filtres">
       Search Term:
       {props.searchTerm}
     </div>
@@ -25,7 +25,7 @@ describe('MobileFilterControls', () => {
 
     render(<MobileFilterControls {...props} />);
 
-    const searchInput = screen.getByTestId('search-input');
+    const searchInput = screen.getByTestId('search-filtres');
 
     expect(searchInput).toBeInTheDocument();
     expect(searchInput).toHaveTextContent('Search Term:Test Query');

@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 
 import { FilterControlsProps } from '../../../types';
-import SearchInput from '../../search-input/search-input';
+import SearchInput from '../../search-filters/search-filters';
 import TagFilters from '../../tag-filters/tag-filters';
 import DropdownArrow from '@/shared/assets/svg/dropdown-arrow.svg';
 

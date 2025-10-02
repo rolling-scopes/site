@@ -4,9 +4,9 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { DesktopFilterControls } from './desktop-controls';
 import { getMockedProps } from '@/shared/__tests__/constants';
 
-vi.mock('../../search-input/search-input', () => ({
+vi.mock('../../search-filters/search-filters', () => ({
   default: (props: { searchTerm: string }) => (
-    <div data-testid="search-input">
+    <div data-testid="search-filters">
       Search Term:
       {props.searchTerm}
     </div>
@@ -35,7 +35,7 @@ describe('DesktopFilterControls', () => {
     render(<DesktopFilterControls {...props} />);
 
     expect(screen.getByText('Filter merch')).toBeInTheDocument();
-    expect(screen.getByTestId('search-input')).toBeInTheDocument();
+    expect(screen.getByTestId('search-filters')).toBeInTheDocument();
     expect(screen.getByTestId('tag-filters')).toBeInTheDocument();
   });
 
@@ -47,7 +47,7 @@ describe('DesktopFilterControls', () => {
 
     render(<DesktopFilterControls {...props} />);
 
-    expect(screen.getByTestId('search-input')).toHaveTextContent('Search Term:hoodie');
+    expect(screen.getByTestId('search-filters')).toHaveTextContent('Search Term:hoodie');
     expect(screen.getByTestId('tag-filters')).toHaveTextContent('Selected Tags:clothing');
   });
 

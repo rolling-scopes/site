@@ -1,10 +1,10 @@
 import classNames from 'classnames/bind';
 
-import styles from './input.module.scss';
+import styles from './search-input.module.scss';
 
 const cx = classNames.bind(styles);
 
-type InputProps = {
+type SearchInputProps = {
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
@@ -12,7 +12,13 @@ type InputProps = {
   name?: string;
 };
 
-export default function Input({ value, onChange, placeholder, ariaLabel, name }: InputProps) {
+export default function SearchInput({
+  value,
+  onChange,
+  placeholder,
+  ariaLabel,
+  name,
+}: SearchInputProps) {
   return (
     <input
       className={cx('input')}

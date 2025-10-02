@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 
 import { FilterControlsProps } from '../../../types';
-import SearchInput from '../../search-input/search-input';
+import SearchInput from '../../search-filters/search-filters';
 import TagFilters from '../../tag-filters/tag-filters';
 import { Subtitle } from '@/shared/ui/subtitle';
 
