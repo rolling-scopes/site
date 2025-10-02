@@ -30,7 +30,7 @@ jobs:
 
       - name: Get the pull request information
         id: get_pr
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const issueNumber = context.issue.number;
