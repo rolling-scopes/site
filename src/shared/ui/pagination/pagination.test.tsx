@@ -55,10 +55,12 @@ describe('Pagination', () => {
     render(<Pagination currentPage={3} totalPages={7} onPageChange={onPageChange} />);
 
     await user.click(screen.getByRole('button', { name: 'Go to previous page' }));
-    expect(onPageChange).toHaveBeenCalledWith(2);
+    expect(onPageChange).toHaveBeenCalledExactlyOnceWith(2);
+
+    onPageChange.mockClear();
 
     await user.click(screen.getByRole('button', { name: 'Go to next page' }));
-    expect(onPageChange).toHaveBeenCalledWith(4);
+    expect(onPageChange).toHaveBeenCalledExactlyOnceWith(4);
   });
 
   it('invokes onPageChange when clicking a specific page number', async () => {
@@ -68,6 +70,6 @@ describe('Pagination', () => {
     render(<Pagination currentPage={5} totalPages={10} onPageChange={onPageChange} />);
 
     await user.click(screen.getByRole('button', { name: 'Go to page 10' }));
-    expect(onPageChange).toHaveBeenCalledWith(10);
+    expect(onPageChange).toHaveBeenCalledExactlyOnceWith(10);
   });
 });
