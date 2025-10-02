@@ -27,7 +27,7 @@ export const FilteredMerchView = ({
   const searchTerm = searchParams.get('search') || '';
   const selectedTypes = searchParams.getAll('type');
 
-  const [allAvailableTags, setAllAvailableTags] = useState<string[]>(initialAvailableTags || []);
+  const allAvailableTags = initialAvailableTags ?? [];
   const isTabletLayout = useMediaQuery(`(max-width: ${TABLET_BREAKPOINT_PX}px)`);
   const [areTabletFiltersExpanded, setAreTabletFiltersExpanded] = useState(false);
 
@@ -48,10 +48,6 @@ export const FilteredMerchView = ({
     },
     [pathname, router],
   );
-
-  useEffect(() => {
-    setAllAvailableTags(initialAvailableTags || []);
-  }, [initialAvailableTags]);
 
   const filteredProducts = useMemo(() => {
     let productsToFilter = initialProducts || [];
