@@ -38,7 +38,7 @@ describe('Playlist Component', () => {
     fireEvent.click(secondVideoItem);
 
     expect(onSelectVideo).toHaveBeenCalledTimes(1);
-    expect(onSelectVideo).toHaveBeenCalledWith(MOCKED_VIDEOS[1]);
+    expect(onSelectVideo).toHaveBeenCalledExactlyOnceWith(MOCKED_VIDEOS[1]);
   });
 
   it('should highlight the selected video item', () => {

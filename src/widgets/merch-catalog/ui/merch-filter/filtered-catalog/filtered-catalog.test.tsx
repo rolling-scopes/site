@@ -109,7 +109,7 @@ describe('FilteredMerchView', () => {
 
       fireEvent.change(searchInput, { target: { value: 'Beta' } });
 
-      expect(mockRouterReplace).toHaveBeenCalledWith('/merch?search=Beta', { scroll: false });
+      expect(mockRouterReplace).toHaveBeenCalledExactlyOnceWith('/merch?search=Beta', { scroll: false });
     });
 
     it('should call router.replace with the selected tag when a checkbox is clicked', () => {
@@ -124,7 +124,7 @@ describe('FilteredMerchView', () => {
 
       fireEvent.click(clothingCheckbox);
 
-      expect(mockRouterReplace).toHaveBeenCalledWith('/merch?type=clothing', { scroll: false });
+      expect(mockRouterReplace).toHaveBeenCalledExactlyOnceWith('/merch?type=clothing', { scroll: false });
     });
 
     it('should call router.replace with an empty query when "Clear" is clicked', () => {
@@ -138,7 +138,7 @@ describe('FilteredMerchView', () => {
       const clearButton = screen.getByRole('button', { name: /clear/i });
 
       fireEvent.click(clearButton);
-      expect(mockRouterReplace).toHaveBeenCalledWith('/merch', { scroll: false });
+      expect(mockRouterReplace).toHaveBeenCalledExactlyOnceWith('/merch', { scroll: false });
     });
   });
 

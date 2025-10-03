@@ -88,7 +88,6 @@ $opacity-20: 0.2;
 $opacity-15: 0.15;
 $opacity-10: 0.1;
 $opacity-8: 0.08;
-$opacity-0: 0;
 
 // Easing functions
 $ease-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
@@ -103,6 +102,7 @@ $border-radius-s: 12px;
 $border-radius-m: 16px;
 $border-radius-l: 20px;
 $border-radius-max: 999px;
+$border-radius-round: 50%;
 
 // Font sizes
 $font-size-xxs: 12px;
@@ -111,7 +111,13 @@ $font-size-s: 16px;
 $font-size-m: 18px;
 $font-size-l: 20px;
 $font-size-xl: 24px;
-$font-size-xxl: 36px;
+$font-size-2xs: 2 * $font-size-xs; // 28px
+$font-size-2s: 2 * $font-size-s; // 32px
+$font-size-2m: 2 * $font-size-m; // 36px
+$font-size-2xl: 2 * $font-size-xl; // 48px
+$font-size-4s: 2 * $font-size-2s; // 64px
+$font-size-4l: 4 * $font-size-l; // 80px
+$font-size-4xl: 2 * $font-size-2xl; // 96px
 
 // Standard gap
 $gap-xxs: 4px;
@@ -128,3 +134,9 @@ $z-index-base: 0;
 $z-index-below: -1;
 $z-index-above: 1;
 $z-index-max: 1000;
+
+// Box-shadow
+$shadow-xs: 1px 1px 2px $color-gray-900;
+$shadow-s: 0 4px 8px 0 hsla(from $color-gray-900 h s l / $opacity-10);
+$shadow-m: 0 4px 12px 0 hsla(from $color-gray-900 h s l / $opacity-10);
+$shadow-l: 0 4px 16px 0 hsla(from $color-gray-900 h s l / $opacity-15);

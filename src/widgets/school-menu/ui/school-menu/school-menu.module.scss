@@ -1,8 +1,7 @@
 .school-menu {
   @extend %transition-all;
 
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: $gap-s;
   color: $color-gray-100;
 
@@ -22,23 +21,15 @@
   }
 
   .school-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: $gap-l $gap-xl;
+
     max-height: 408px;
+
     list-style-type: none;
 
-    &--columns {
-      display: grid;
-      grid-auto-flow: column;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, $gap-xxxl);
-
-      &:has(:nth-child(5)) {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(6, $gap-xxxl);
-      }
-    }
-
-    &--single {
+    @include media-tablet-large {
       display: flex;
       flex-flow: column wrap;
     }
@@ -49,13 +40,129 @@
     }
   }
 
+  .rsschool-content,
+  .community-content {
+    grid-template-areas:
+      'a c '
+      'b d ';
+
+    > :nth-child(1) {
+      grid-area: a;
+    }
+
+    > :nth-child(2) {
+      grid-area: b;
+    }
+
+    > :nth-child(3) {
+      grid-area: c;
+    }
+
+    > :nth-child(4) {
+      grid-area: d;
+    }
+  }
+
+  .mentorship-content {
+    grid-template-areas:
+      'a b d'
+      'a c e';
+
+    > :nth-child(1) {
+      grid-area: a;
+    }
+
+    > :nth-child(2) {
+      grid-area: b;
+    }
+
+    > :nth-child(3) {
+      grid-area: c;
+    }
+
+    > :nth-child(4) {
+      grid-area: d;
+    }
+
+    > :nth-child(5) {
+      grid-area: e;
+    }
+  }
+
+  .courses-content {
+    grid-template-areas:
+      'a b h'
+      'a c i'
+      'a d j'
+      'a e k'
+      'a f l'
+      'a g m';
+    grid-template-columns: 1fr auto 1fr;
+
+    > :nth-child(1) {
+      grid-area: a;
+    }
+
+    > :nth-child(2) {
+      grid-area: b;
+    }
+
+    > :nth-child(3) {
+      grid-area: c;
+    }
+
+    > :nth-child(4) {
+      grid-area: d;
+    }
+
+    > :nth-child(5) {
+      grid-area: e;
+    }
+
+    > :nth-child(6) {
+      grid-area: f;
+    }
+
+    > :nth-child(7) {
+      grid-area: g;
+    }
+
+    > :nth-child(8) {
+      grid-area: h;
+    }
+
+    > :nth-child(9) {
+      grid-area: i;
+    }
+
+    > :nth-child(10) {
+      grid-area: j;
+    }
+
+    > :nth-child(11) {
+      grid-area: k;
+    }
+
+    > :nth-child(12) {
+      grid-area: l;
+    }
+
+    > :nth-child(13) {
+      grid-area: m;
+    }
+  }
+
+  .supportus-content {
+    grid-template-columns: 1fr;
+  }
+
   &.hidden {
     @extend %transition-all;
 
     max-height: 0;
     margin-top: 0;
     visibility: hidden;
-    opacity: $opacity-0;
+    opacity: 0;
   }
 
   &.visible {

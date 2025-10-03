@@ -1,4 +1,4 @@
-import { HTMLProps, PropsWithChildren } from 'react';
+import { HTMLProps, PropsWithChildren, RefObject } from 'react';
 import classNames from 'classnames/bind';
 
 import { Subtitle } from '@/shared/ui/subtitle';
@@ -13,8 +13,8 @@ type SchoolMenuProps = PropsWithChildren
   & HTMLProps<HTMLUListElement> & {
     heading?: string;
     color?: Color;
-    layout?: 'columns' | 'single';
     isVisible?: boolean;
+    listRef?: RefObject<HTMLUListElement | null>;
   };
 
 export const SchoolMenu = ({
@@ -22,8 +22,8 @@ export const SchoolMenu = ({
   color = 'light',
   children,
   className,
-  layout = 'single',
   isVisible,
+  listRef,
 }: SchoolMenuProps) => {
   return (
     <div
@@ -33,7 +33,7 @@ export const SchoolMenu = ({
       })}
     >
       {heading && <Subtitle className={cx('heading', color)}>{heading}</Subtitle>}
-      <ul className={cx('school-list', `school-list--${layout}`, className)}>{children}</ul>
+      <ul ref={listRef} className={cx('school-list', className)}>{children}</ul>
     </div>
   );
 };
