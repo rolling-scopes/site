@@ -53,14 +53,15 @@ export const FilteredMerchView = ({
 
   const filteredProducts = useMemo(() => {
     let productsToFilter = initialProducts || [];
+    const normalizedSearchTerm = searchTerm.trim().toLowerCase();
 
     if (!Array.isArray(productsToFilter)) {
       productsToFilter = [];
     }
 
-    if (searchTerm.trim() !== '') {
+    if (normalizedSearchTerm !== '') {
       productsToFilter = productsToFilter.filter((product) =>
-        product.title.toLowerCase().includes(searchTerm.toLowerCase()),
+        product.title.toLowerCase().includes(normalizedSearchTerm),
       );
     }
 
