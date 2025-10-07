@@ -13,8 +13,8 @@ const cx = classNames.bind(styles);
 export const MerchCatalog = async () => {
   const products: MerchProduct[] = await merchStore.loadMerchCatalog();
 
-  const allTags: string[] = products.flatMap((product) => product.tags || []);
-  const uniqueTags: string[] = Array.from(new Set(allTags.filter(Boolean))).sort();
+  const allTags: string[] = products.flatMap((product) => product.tags).filter((tag) => tag.length);
+  const uniqueTags: string[] = Array.from(new Set(allTags)).sort();
 
   return (
     <section className={cx('container')}>
