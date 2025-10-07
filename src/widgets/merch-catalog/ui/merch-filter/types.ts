@@ -8,9 +8,8 @@ export type FilterControlsProps = {
   onSearchChange: (newSearchTerm: string) => void;
   onTagChange: (tag: string) => void;
   onClearFilters: () => void;
-  isTabletLayout?: boolean;
-  areTagsExpandedTablet?: boolean;
-  onToggleTagsExpansionTablet?: () => void;
+  areTagsExpanded?: boolean;
+  onToggleTagsExpansion?: () => void;
 };
 
 export type FilteredMerchViewProps = {

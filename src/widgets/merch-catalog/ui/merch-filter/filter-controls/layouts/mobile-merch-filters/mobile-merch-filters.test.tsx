@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { MobileFilterControls } from './mobile-controls';
+import { MobileMerchFilter } from './mobile-merch-filters';
 import { getMockedProps } from '@/shared/__tests__/constants';
 
 vi.mock('../../search-filters/search-filters', () => ({
@@ -23,7 +23,7 @@ describe('MobileFilterControls', () => {
   it('should always render the search input with the correct search term', () => {
     const props = getMockedProps({ searchTerm: 'Test Query' });
 
-    render(<MobileFilterControls {...props} />);
+    render(<MobileMerchFilter {...props} />);
 
     const searchInput = screen.getByTestId('search-filtres');
 
@@ -33,7 +33,7 @@ describe('MobileFilterControls', () => {
 
   describe('when filters are collapsed', () => {
     it('should have correct attributes and classes on the toggle button', () => {
-      render(<MobileFilterControls {...getMockedProps({ areTagsExpandedTablet: false })} />);
+      render(<MobileMerchFilter {...getMockedProps({ areTagsExpanded: false })} />);
       const toggleButton = screen.getByRole('button', { name: /Filter By:/i });
 
       expect(toggleButton).toHaveAttribute('aria-expanded', 'false');
@@ -41,36 +41,31 @@ describe('MobileFilterControls', () => {
     });
 
     it('should not render the TagFilters component', () => {
-      render(<MobileFilterControls {...getMockedProps({ areTagsExpandedTablet: false })} />);
+      render(<MobileMerchFilter {...getMockedProps({ areTagsExpanded: false })} />);
       expect(screen.queryByTestId('tag-filters')).not.toBeInTheDocument();
     });
 
     it('should not render the "Clear" button if filters are not active', () => {
-      render(<MobileFilterControls {...getMockedProps({ hasActiveFilters: false })} />);
+      render(<MobileMerchFilter {...getMockedProps({ hasActiveFilters: false })} />);
       expect(screen.queryByRole('button', { name: /Clear/i })).not.toBeInTheDocument();
     });
 
-    it('should render the "Clear" button and apply active class to toggle if filters are active', () => {
+    it('should render the "Clear" button when filters are active', () => {
       render(
-        <MobileFilterControls
+        <MobileMerchFilter
           {...getMockedProps({
             hasActiveFilters: true,
-            areTagsExpandedTablet: false,
+            areTagsExpanded: false,
           })}
         />,
       );
-
       expect(screen.getByRole('button', { name: /Clear/i })).toBeInTheDocument();
-
-      const toggleButton = screen.getByRole('button', { name: /Filter By:/i });
-
-      expect(toggleButton).toHaveClass('has-active-filters');
     });
   });
 
   describe('when filters are expanded', () => {
     it('should have correct attributes and classes on the toggle button', () => {
-      render(<MobileFilterControls {...getMockedProps({ areTagsExpandedTablet: true })} />);
+      render(<MobileMerchFilter {...getMockedProps({ areTagsExpanded: true })} />);
       const toggleButton = screen.getByRole('button', { name: /Filter By:/i });
 
       expect(toggleButton).toHaveAttribute('aria-expanded', 'true');
@@ -78,16 +73,16 @@ describe('MobileFilterControls', () => {
     });
 
     it('should render the TagFilters component', () => {
-      render(<MobileFilterControls {...getMockedProps({ areTagsExpandedTablet: true })} />);
+      render(<MobileMerchFilter {...getMockedProps({ areTagsExpanded: true })} />);
       expect(screen.getByTestId('tag-filters')).toBeInTheDocument();
     });
 
     it('should NOT apply "has-active-filters" class to the toggle, even if filters are active', () => {
       render(
-        <MobileFilterControls
+        <MobileMerchFilter
           {...getMockedProps({
             hasActiveFilters: true,
-            areTagsExpandedTablet: true,
+            areTagsExpanded: true,
           })}
         />,
       );

@@ -236,11 +236,10 @@ export const getMockedProps = (
   searchTerm: '',
   selectedTags: [],
   hasActiveFilters: false,
-  areTagsExpandedTablet: false,
-  isTabletLayout: false,
+  areTagsExpanded: false,
   onSearchChange: vi.fn(),
   onTagChange: vi.fn(),
   onClearFilters: vi.fn(),
-  onToggleTagsExpansionTablet: vi.fn(),
+  onToggleTagsExpansion: vi.fn(),
   ...overrides,
 });

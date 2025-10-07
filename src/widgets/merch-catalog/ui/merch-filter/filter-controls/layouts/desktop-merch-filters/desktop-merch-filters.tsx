@@ -5,16 +5,11 @@ import SearchInput from '../../search-filters/search-filters';
 import TagFilters from '../../tag-filters/tag-filters';
 import { Subtitle } from '@/shared/ui/subtitle';
 
-import styles from '../../filter-controls.module.scss';
+import styles from '../layout.module.scss';
 
 const cx = classNames.bind(styles);
 
-type DesktopFilterControlsProps = Omit<
-  FilterControlsProps,
-  'isTabletLayout' | 'areTagsExpandedTablet' | 'onToggleTagsExpansionTablet'
->;
-
-export const DesktopFilterControls = ({
+export const DesktopMerchFilters = ({
   allAvailableTags,
   searchTerm,
   selectedTags,
@@ -22,10 +17,10 @@ export const DesktopFilterControls = ({
   onSearchChange,
   onTagChange,
   onClearFilters,
-}: DesktopFilterControlsProps) => {
+}: FilterControlsProps) => {
   return (
-    <>
-      <div className={cx('filter-title-wrapper')}>
+    <div className={cx('controls-wrapper')}>
+      <div className={cx('desktop-actions-wrapper')}>
         <Subtitle size="extra-small" weight="bold">
           Filter merch
         </Subtitle>
@@ -44,6 +39,6 @@ export const DesktopFilterControls = ({
         selectedTags={selectedTags}
         onTagChange={onTagChange}
       />
-    </>
+    </div>
   );
 };

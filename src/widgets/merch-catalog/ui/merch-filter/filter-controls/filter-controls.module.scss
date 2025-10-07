@@ -4,124 +4,22 @@
   gap: $gap-s;
 }
 
-.filter-title-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .filter-title {
   margin: 0;
 }
 
-.tablet-toggle-button {
-  display: flex;
-  justify-content: space-between;
-}
-
-.filter-container.tablet .tablet-toggle-button {
-  cursor: pointer;
-
-  position: relative;
-
-  display: inline-flex;
-  gap: $gap-xs;
-  align-items: center;
-
-  width: 100%;
-  padding: $gap-s;
-  border: none;
-  border-radius: $border-radius-xxs;
-
-  font-size: $font-size-s;
-  font-weight: $font-weight-medium;
-
-  background-color: transparent;
-
-  transition: background-color 0.2s ease;
-
-  &:focus-visible {
-    outline: 1px solid $color-gray-600;
-    outline-offset: 1px;
-  }
-
-  &.has-active-filters::after {
-    content: '';
-    display: block;
-    width: 6px;
-    height: 6px;
-  }
-
-  .filter-toggle-arrow {
-    margin-left: auto;
-    transition: transform 0.2s ease-in-out;
-  }
-
-  &.expanded {
-    background-color: $color-gray-50;
-
-    .filter-toggle-arrow {
-      transform: rotate(180deg);
-    }
-  }
-}
-
-.button {
-  @extend %transition-all;
-
-  cursor: pointer;
-
-  gap: $gap-xs;
-  place-content: center center;
-  align-items: center;
-
-  font-weight: $font-weight-medium;
-  letter-spacing: 0;
-  white-space: pre;
-}
-
-.secondary {
-  width: max-content;
-  padding: $gap-xxs $gap-s;
-  border: 1px solid $color-gray-900;
-
-  font-size: $font-size-xxs;
-  color: $color-gray-900;
-
-  visibility: hidden;
-  opacity: 0;
-  background: none;
-
-  &:hover {
-    background-color: $color-gray-100;
-  }
-
-  &.active {
-    visibility: visible;
-    opacity: $opacity-100;
-    transition-delay: 0s;
-  }
+.desktop-layout {
+  display: block;
 
   @include media-tablet-large {
-    overflow: hidden;
-
-    width: 40%;
-    max-height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-
-    font-size: $font-size-m;
-
-    transition: all 0.3s ease-in-out;
-
-    &.active {
-      max-height: 100px;
-      padding: $gap-xs;
-    }
+    display: none;
   }
 }
 
-.tablet-actions-wrapper {
-  display: flex;
-  gap: $gap-xs;
+.mobile-layout {
+  display: none;
+
+  @include media-tablet-large {
+    display: block;
+  }
 }

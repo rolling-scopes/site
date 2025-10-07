@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { DesktopFilterControls } from './desktop-controls';
+import { DesktopMerchFilters } from './desktop-merch-filters';
 import { getMockedProps } from '@/shared/__tests__/constants';
 
 vi.mock('../../search-filters/search-filters', () => ({
@@ -32,7 +32,7 @@ describe('DesktopFilterControls', () => {
   it('should always render the title, search input, and tag filters', () => {
     const props = getMockedProps();
 
-    render(<DesktopFilterControls {...props} />);
+    render(<DesktopMerchFilters {...props} />);
 
     expect(screen.getByText('Filter merch')).toBeInTheDocument();
     expect(screen.getByTestId('search-filters')).toBeInTheDocument();
@@ -45,7 +45,7 @@ describe('DesktopFilterControls', () => {
     props.searchTerm = 'hoodie';
     props.selectedTags = ['clothing'];
 
-    render(<DesktopFilterControls {...props} />);
+    render(<DesktopMerchFilters {...props} />);
 
     expect(screen.getByTestId('search-filters')).toHaveTextContent('Search Term:hoodie');
     expect(screen.getByTestId('tag-filters')).toHaveTextContent('Selected Tags:clothing');
@@ -56,7 +56,7 @@ describe('DesktopFilterControls', () => {
 
     props.hasActiveFilters = false;
 
-    render(<DesktopFilterControls {...props} />);
+    render(<DesktopMerchFilters {...props} />);
 
     const clearButton = screen.getByRole('button', { name: /Clear/i });
 
@@ -69,7 +69,7 @@ describe('DesktopFilterControls', () => {
 
     props.hasActiveFilters = true;
 
-    render(<DesktopFilterControls {...props} />);
+    render(<DesktopMerchFilters {...props} />);
 
     const clearButton = screen.getByRole('button', { name: /Clear/i });
 

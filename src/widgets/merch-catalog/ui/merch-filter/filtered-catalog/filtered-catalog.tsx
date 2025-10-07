@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
@@ -9,14 +9,11 @@ import { MerchList } from '../../merch-list/merch-list';
 import { FilterControls } from '../filter-controls/filter-controls';
 import { FilteredMerchViewProps } from '../types';
 import notFoundImg from '@/shared/assets/404.webp';
-import { useMediaQuery } from '@/shared/hooks/use-media-query/use-media-query';
 import { Paragraph } from '@/shared/ui/paragraph';
 
 import styles from './filtered-catalog.module.scss';
 
 const cx = classNames.bind(styles);
-
-const TABLET_BREAKPOINT_PX = 1024;
 
 export const FilteredMerchView = ({
   initialProducts,
@@ -30,7 +27,7 @@ export const FilteredMerchView = ({
   const selectedTypes = searchParams.getAll('type');
 
   const allAvailableTags = initialAvailableTags ?? [];
-  const isTabletLayout = useMediaQuery(`(max-width: ${TABLET_BREAKPOINT_PX}px)`);
+  // const isTabletLayout = useMediaQuery(`(max-width: ${TABLET_BREAKPOINT_PX}px)`);
   const [areTabletFiltersExpanded, setAreTabletFiltersExpanded] = useState(false);
 
   const updateUrl = useCallback(
@@ -90,14 +87,8 @@ export const FilteredMerchView = ({
   };
 
   const toggleTabletFiltersExpansion = () => {
-    setAreTabletFiltersExpanded(!areTabletFiltersExpanded);
+    setAreTabletFiltersExpanded((prev) => !prev);
   };
-
-  useEffect(() => {
-    if (!isTabletLayout && areTabletFiltersExpanded) {
-      setAreTabletFiltersExpanded(false);
-    }
-  }, [isTabletLayout, areTabletFiltersExpanded]);
 
   const hasActiveFilters = searchTerm.trim() !== '' || selectedTypes.length > 0;
 
@@ -129,16 +120,15 @@ export const FilteredMerchView = ({
     <div className={cx('filter-catalog')}>
       <div className={cx('filter-sidebar')}>
         <FilterControls
-          allAvailableTags={allAvailableTags}
-          searchTerm={searchTerm}
-          selectedTags={selectedTypes}
-          hasActiveFilters={hasActiveFilters}
-          onSearchChange={handleSearchChange}
-          onTagChange={handleTypeChange}
-          onClearFilters={handleClearFilters}
-          isTabletLayout={isTabletLayout}
-          areTagsExpandedTablet={areTabletFiltersExpanded}
-          onToggleTagsExpansionTablet={toggleTabletFiltersExpansion}
+          allAvailableTags={allAvailableTags} // tag-filters
+          searchTerm={searchTerm} // search-input
+          selectedTags={selectedTypes} // tag-filters
+          onSearchChange={handleSearchChange} // search-input
+          onTagChange={handleTypeChange} // tag-filters
+          hasActiveFilters={hasActiveFilters} // desktop-controls & mobile-controls
+          onClearFilters={handleClearFilters} // desktop-controls & mobile-controls
+          areTagsExpanded={areTabletFiltersExpanded} // mobile-controls
+          onToggleTagsExpansion={toggleTabletFiltersExpansion} // mobile-controls
         />
       </div>
       {renderContent()}
