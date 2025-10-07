@@ -92,12 +92,9 @@ export const FilteredMerchView = ({
   const renderContent = () => {
     if (filteredProducts.length > 0) {
       return <MerchList products={filteredProducts} />;
-    }
-
-    if (filteredProducts.length === 0 && hasActiveFilters) {
+    } else {
       return <Paragraph>No merch found. Please try another filter or search term</Paragraph>;
     }
-    return null;
   };
 
   return (
