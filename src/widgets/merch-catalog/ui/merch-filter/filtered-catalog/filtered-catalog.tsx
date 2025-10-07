@@ -2,13 +2,11 @@
 
 import { useCallback, useMemo, useState } from 'react';
 import classNames from 'classnames/bind';
-import Image from 'next/image';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { MerchList } from '../../merch-list/merch-list';
 import { FilterControls } from '../filter-controls/filter-controls';
 import { FilteredMerchViewProps } from '../types';
-import notFoundImg from '@/shared/assets/404.webp';
 import { Paragraph } from '@/shared/ui/paragraph';
 
 import styles from './filtered-catalog.module.scss';
@@ -27,7 +25,6 @@ export const FilteredMerchView = ({
   const selectedTypes = searchParams.getAll('type');
 
   const allAvailableTags = initialAvailableTags ?? [];
-  // const isTabletLayout = useMediaQuery(`(max-width: ${TABLET_BREAKPOINT_PX}px)`);
   const [areTabletFiltersExpanded, setAreTabletFiltersExpanded] = useState(false);
 
   const updateUrl = useCallback(
@@ -93,18 +90,6 @@ export const FilteredMerchView = ({
   const hasActiveFilters = searchTerm.trim() !== '' || selectedTypes.length > 0;
 
   const renderContent = () => {
-    if (!initialProducts || initialProducts.length === 0) {
-      return (
-        <div className={cx('empty-wrapper')}>
-          <Image className={cx('empty-image')} src={notFoundImg} alt="No merchandise available" />
-
-          <Paragraph className={cx('empty-paragraph')}>
-            No merchandise available at this time.
-          </Paragraph>
-        </div>
-      );
-    }
-
     if (filteredProducts.length > 0) {
       return <MerchList products={filteredProducts} />;
     }
@@ -112,7 +97,6 @@ export const FilteredMerchView = ({
     if (filteredProducts.length === 0 && hasActiveFilters) {
       return <Paragraph>No merch found. Please try another filter or search term</Paragraph>;
     }
-
     return null;
   };
 
@@ -120,15 +104,15 @@ export const FilteredMerchView = ({
     <div className={cx('filter-catalog')}>
       <div className={cx('filter-sidebar')}>
         <FilterControls
-          allAvailableTags={allAvailableTags} // tag-filters
-          searchTerm={searchTerm} // search-input
-          selectedTags={selectedTypes} // tag-filters
-          onSearchChange={handleSearchChange} // search-input
-          onTagChange={handleTypeChange} // tag-filters
-          hasActiveFilters={hasActiveFilters} // desktop-controls & mobile-controls
-          onClearFilters={handleClearFilters} // desktop-controls & mobile-controls
-          areTagsExpanded={areTabletFiltersExpanded} // mobile-controls
-          onToggleTagsExpansion={toggleTabletFiltersExpansion} // mobile-controls
+          allAvailableTags={allAvailableTags}
+          searchTerm={searchTerm}
+          selectedTags={selectedTypes}
+          onSearchChange={handleSearchChange}
+          onTagChange={handleTypeChange}
+          hasActiveFilters={hasActiveFilters}
+          onClearFilters={handleClearFilters}
+          areTagsExpanded={areTabletFiltersExpanded}
+          onToggleTagsExpansion={toggleTabletFiltersExpansion}
         />
       </div>
       {renderContent()}

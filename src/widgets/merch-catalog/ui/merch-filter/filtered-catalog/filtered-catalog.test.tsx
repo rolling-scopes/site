@@ -143,11 +143,6 @@ describe('FilteredMerchView', () => {
   });
 
   describe('Empty State Rendering', () => {
-    it('should render "No merchandise available" message when initialProducts is empty', () => {
-      render(<FilteredMerchView initialProducts={[]} initialAvailableTags={[]} />);
-      expect(screen.getByText('No merchandise available at this time.')).toBeInTheDocument();
-    });
-
     it('should render "try another filter" message when filters yield no results', () => {
       mockUrlParams = 'search=nonexistent';
       render(
