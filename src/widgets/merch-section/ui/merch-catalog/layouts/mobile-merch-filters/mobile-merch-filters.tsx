@@ -1,32 +1,26 @@
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 
-import { FilterControlsProps } from '../../../types';
-import SearchInput from '../../search-filters/search-filters';
-import TagFilters from '../../tag-filters/tag-filters';
+import { LayoutMobileProps } from '../../types';
 import DropdownArrow from '@/shared/assets/svg/dropdown-arrow.svg';
 
-import styles from '../layout.module.scss';
+import styles from '../layouts.module.scss';
 
 const cx = classNames.bind(styles);
 
-type MobileMerchFilterProps = FilterControlsProps;
-
-export const MobileMerchFilter = ({
-  allAvailableTags,
-  searchTerm,
-  selectedTags,
+export const MobileMerchFilters = ({
   hasActiveFilters,
-  onSearchChange,
-  onTagChange,
+
   onClearFilters,
   areTagsExpanded,
   onToggleTagsExpansion,
-}: MobileMerchFilterProps) => {
+  searchFilters,
+  tagFilters,
+}: LayoutMobileProps) => {
   return (
     <div className={cx('controls-wrapper')}>
       <div className={cx('tablet-actions-wrapper')}>
-        <SearchInput searchTerm={searchTerm} onSearchChange={onSearchChange} />
+        {searchFilters}
         {hasActiveFilters && (
           <button className={cx('button', 'secondary', 'active')} onClick={onClearFilters}>
             Clear
@@ -48,13 +42,7 @@ export const MobileMerchFilter = ({
           />
         </button>
 
-        {areTagsExpanded && (
-          <TagFilters
-            allAvailableTags={allAvailableTags}
-            selectedTags={selectedTags}
-            onTagChange={onTagChange}
-          />
-        )}
+        {areTagsExpanded && tagFilters}
       </div>
     </div>
   );

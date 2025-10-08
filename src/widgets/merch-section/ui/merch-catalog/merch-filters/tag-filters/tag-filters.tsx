@@ -4,7 +4,7 @@ import styles from './tag-filters.module.scss';
 
 const cx = classNames.bind(styles);
 
-type TagFilterProps = {
+type TagFiltersProps = {
   allAvailableTags: string[];
   selectedTags: string[];
   onTagChange: (tag: string) => void;
@@ -14,7 +14,7 @@ export default function TagFilters({
   allAvailableTags,
   selectedTags,
   onTagChange,
-}: TagFilterProps) {
+}: TagFiltersProps) {
   if (!allAvailableTags || allAvailableTags.length === 0) {
     return null;
   }

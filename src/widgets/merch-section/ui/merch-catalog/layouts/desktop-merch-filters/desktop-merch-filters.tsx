@@ -1,23 +1,18 @@
 import classNames from 'classnames/bind';
 
-import { FilterControlsProps } from '../../../types';
-import SearchInput from '../../search-filters/search-filters';
-import TagFilters from '../../tag-filters/tag-filters';
+import { LayoutProps } from '../../types';
 import { Subtitle } from '@/shared/ui/subtitle';
 
-import styles from '../layout.module.scss';
+import styles from '../layouts.module.scss';
 
 const cx = classNames.bind(styles);
 
 export const DesktopMerchFilters = ({
-  allAvailableTags,
-  searchTerm,
-  selectedTags,
   hasActiveFilters,
-  onSearchChange,
-  onTagChange,
+  searchFilters,
+  tagFilters,
   onClearFilters,
-}: FilterControlsProps) => {
+}: LayoutProps) => {
   return (
     <div className={cx('controls-wrapper')}>
       <div className={cx('desktop-actions-wrapper')}>
@@ -32,13 +27,9 @@ export const DesktopMerchFilters = ({
         </button>
       </div>
 
-      <SearchInput searchTerm={searchTerm} onSearchChange={onSearchChange} />
+      {searchFilters}
 
-      <TagFilters
-        allAvailableTags={allAvailableTags}
-        selectedTags={selectedTags}
-        onTagChange={onTagChange}
-      />
+      {tagFilters}
     </div>
   );
 };

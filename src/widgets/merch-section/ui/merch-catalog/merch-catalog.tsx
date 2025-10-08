@@ -4,19 +4,19 @@ import { useCallback, useMemo, useState } from 'react';
 import classNames from 'classnames/bind';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-import { MerchList } from '../../merch-list/merch-list';
-import { FilterControls } from '../filter-controls/filter-controls';
-import { FilteredMerchViewProps } from '../types';
+import { DesktopMerchFilters } from './layouts/desktop-merch-filters/desktop-merch-filters';
+import { MobileMerchFilters } from './layouts/mobile-merch-filters/mobile-merch-filters';
+import SearchFilters from './merch-filters/search-filters/search-filters';
+import TagFilters from './merch-filters/tag-filters/tag-filters';
+import { MerchList } from './merch-list/merch-list';
+import { MerchProductsProps } from './types';
 import { Paragraph } from '@/shared/ui/paragraph';
 
-import styles from './filtered-catalog.module.scss';
+import styles from './merch-catalog.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const FilteredMerchView = ({
-  initialProducts,
-  initialAvailableTags,
-}: FilteredMerchViewProps) => {
+export const MerchCatalog = ({ initialProducts, initialAvailableTags }: MerchProductsProps) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -97,21 +97,35 @@ export const FilteredMerchView = ({
     }
   };
 
+  const commonControlProps = {
+    hasActiveFilters: hasActiveFilters,
+    onClearFilters: handleClearFilters,
+    searchFilters: <SearchFilters searchTerm={searchTerm} onSearchChange={handleSearchChange} />,
+    tagFilters: (
+      <TagFilters
+        allAvailableTags={allAvailableTags}
+        selectedTags={selectedTypes}
+        onTagChange={handleTypeChange}
+      />
+    ),
+  };
+
   return (
     <div className={cx('filter-catalog')}>
       <div className={cx('filter-sidebar')}>
-        <FilterControls
-          allAvailableTags={allAvailableTags}
-          searchTerm={searchTerm}
-          selectedTags={selectedTypes}
-          onSearchChange={handleSearchChange}
-          onTagChange={handleTypeChange}
-          hasActiveFilters={hasActiveFilters}
-          onClearFilters={handleClearFilters}
-          areTagsExpanded={areTabletFiltersExpanded}
-          onToggleTagsExpansion={toggleTabletFiltersExpansion}
-        />
+        <div className={cx('desktop-layout')}>
+          <DesktopMerchFilters {...commonControlProps} />
+        </div>
+
+        <div className={cx('mobile-layout')}>
+          <MobileMerchFilters
+            {...commonControlProps}
+            areTagsExpanded={areTabletFiltersExpanded}
+            onToggleTagsExpansion={toggleTabletFiltersExpansion}
+          />
+        </div>
       </div>
+
       {renderContent()}
     </div>
   );

@@ -1,11 +1,11 @@
 import SearchInput from '@/shared/ui/search-input/search-input';
 
-type SearchInputProps = {
+type SearchFiltersProps = {
   searchTerm: string;
   onSearchChange: (newSearchTerm: string) => void;
 };
 
-export default function SearchFilters({ searchTerm, onSearchChange }: SearchInputProps) {
+export default function SearchFilters({ searchTerm, onSearchChange }: SearchFiltersProps) {
   return (
     <SearchInput
       value={searchTerm}

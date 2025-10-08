@@ -5,7 +5,7 @@ import { Course } from '@/entities/course';
 import type { Trainer } from '@/entities/trainer';
 import { COURSE_LINKS, COURSE_TITLES, ROUTES } from '@/shared/constants';
 import { Paragraph } from '@/shared/ui/paragraph';
-import { FilterControlsProps } from '@/widgets/merch-catalog/ui/merch-filter/types';
+import { MerchCatalogProps } from '@/widgets/merch-section/ui/merch-catalog/types';
 
 export const MOCKED_IMAGE_PATH: StaticImageData = {
   src: 'mocked-image-path.webp',
@@ -229,9 +229,7 @@ export const MOCKED_VIDEOS: Video[] = [
   },
 ];
 
-export const getMockedProps = (
-  overrides: Partial<FilterControlsProps> = {},
-): FilterControlsProps => ({
+export const getMockedProps = (overrides: Partial<MerchCatalogProps> = {}): MerchCatalogProps => ({
   allAvailableTags: ['tag1', 'tag2', 'tag3'],
   searchTerm: '',
   selectedTags: [],

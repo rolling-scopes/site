@@ -1,6 +1,8 @@
+import { ReactNode } from 'react';
+
 import { MerchProduct } from '@/entities/merch';
 
-export type FilterControlsProps = {
+export type MerchCatalogProps = {
   allAvailableTags: string[];
   searchTerm: string;
   selectedTags: string[];
@@ -12,7 +14,19 @@ export type FilterControlsProps = {
   onToggleTagsExpansion?: () => void;
 };
 
-export type FilteredMerchViewProps = {
+export type LayoutProps = {
+  hasActiveFilters: boolean;
+  onClearFilters: () => void;
+  searchFilters: ReactNode;
+  tagFilters: ReactNode;
+};
+
+export type LayoutMobileProps = LayoutProps & {
+  areTagsExpanded: boolean;
+  onToggleTagsExpansion: () => void;
+};
+
+export type MerchProductsProps = {
   initialProducts: MerchProduct[];
   initialAvailableTags: string[];
 };
