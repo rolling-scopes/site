@@ -1,10 +1,10 @@
-.filter-tags-wrapper {
+.tags-wrapper {
   display: flex;
   flex-direction: column;
   gap: $gap-xs;
 }
 
-.filter-tag-label {
+.tags-label {
   cursor: pointer;
 
   display: flex;
@@ -25,7 +25,7 @@
   }
 }
 
-.filter-checkbox-custom {
+.tags-checkbox-custom {
   position: relative;
 
   display: inline-block;
@@ -56,7 +56,7 @@
   }
 }
 
-.filter-checkbox-original {
+.tags-checkbox-original {
   position: absolute;
 
   overflow: hidden;
@@ -71,7 +71,7 @@
 
   clip-path: inset(50%);
 
-  &:checked + .filter-checkbox-custom {
+  &:checked + .tags-checkbox-custom {
     border-color: $color-yellow;
     background-color: $color-yellow;
 
@@ -80,7 +80,7 @@
     }
   }
 
-  &:focus-visible + .filter-checkbox-custom {
+  &:focus-visible + .tags-checkbox-custom {
     outline: 1px solid $color-gray-600;
     outline-offset: 1px;
   }

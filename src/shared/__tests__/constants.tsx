@@ -5,7 +5,6 @@ import { Course } from '@/entities/course';
 import type { Trainer } from '@/entities/trainer';
 import { COURSE_LINKS, COURSE_TITLES, ROUTES } from '@/shared/constants';
 import { Paragraph } from '@/shared/ui/paragraph';
-import { MerchCatalogProps } from '@/widgets/merch-section/ui/merch-catalog/types';
 
 export const MOCKED_IMAGE_PATH: StaticImageData = {
   src: 'mocked-image-path.webp',
@@ -228,16 +227,3 @@ export const MOCKED_VIDEOS: Video[] = [
     thumbnail: 'thumb3.jpg',
   },
 ];
-
-export const getMockedProps = (overrides: Partial<MerchCatalogProps> = {}): MerchCatalogProps => ({
-  allAvailableTags: ['tag1', 'tag2', 'tag3'],
-  searchTerm: '',
-  selectedTags: [],
-  hasActiveFilters: false,
-  areTagsExpanded: false,
-  onSearchChange: vi.fn(),
-  onTagChange: vi.fn(),
-  onClearFilters: vi.fn(),
-  onToggleTagsExpansion: vi.fn(),
-  ...overrides,
-});

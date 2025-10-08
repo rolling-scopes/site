@@ -19,12 +19,7 @@ export default function TagFilters({
     return null;
   }
   return (
-    <div
-      id="merch-filter-tags"
-      className={cx('filter-tags-wrapper')}
-      role="region"
-      aria-labelledby="merch-filter-toggle"
-    >
+    <div id="merch-tags" className={cx('tags-wrapper')} role="region" aria-label="Merch filters">
       {allAvailableTags.map((tag) => {
         const safeId = `tag-checkbox-${tag.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
 
@@ -32,16 +27,16 @@ export default function TagFilters({
           <label
             key={tag}
             htmlFor={safeId}
-            className={cx('filter-tag-label', { selected: selectedTags.includes(tag) })}
+            className={cx('tags-label', { selected: selectedTags.includes(tag) })}
           >
             <input
               type="checkbox"
               id={safeId}
-              className={cx('filter-checkbox-original')}
+              className={cx('tags-checkbox-original')}
               checked={selectedTags.includes(tag)}
               onChange={() => onTagChange(tag)}
             />
-            <span className={cx('filter-checkbox-custom')}></span>
+            <span className={cx('tags-checkbox-custom')}></span>
             <span>{tag}</span>
           </label>
         );

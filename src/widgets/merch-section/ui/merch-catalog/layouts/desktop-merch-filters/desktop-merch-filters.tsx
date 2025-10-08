@@ -14,8 +14,8 @@ export const DesktopMerchFilters = ({
   onClearFilters,
 }: LayoutProps) => {
   return (
-    <div className={cx('controls-wrapper')}>
-      <div className={cx('desktop-actions-wrapper')}>
+    <div className={cx('filters-wrapper')}>
+      <div className={cx('desktop-filters-wrapper')}>
         <Subtitle size="extra-small" weight="bold">
           Filter merch
         </Subtitle>

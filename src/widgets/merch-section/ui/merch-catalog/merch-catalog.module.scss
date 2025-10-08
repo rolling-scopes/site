@@ -1,4 +1,4 @@
-.filter-catalog {
+.merch-catalog-wrapper {
   display: flex;
   gap: $gap-xl;
 
@@ -12,40 +12,13 @@
   }
 }
 
-.filter-sidebar {
+.filters {
   display: block;
   width: 222px;
 
   @include media-tablet-large {
     width: 100%;
   }
-}
-
-.empty-image {
-  max-width: 170px;
-  height: auto;
-}
-
-.empty-paragraph {
-  max-width: 480px;
-  text-align: center;
-}
-
-.empty-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: $gap-xl;
-  align-items: center;
-}
-
-.filter-container {
-  display: flex;
-  flex-direction: column;
-  gap: $gap-s;
-}
-
-.filter-title {
-  margin: 0;
 }
 
 .desktop-layout {

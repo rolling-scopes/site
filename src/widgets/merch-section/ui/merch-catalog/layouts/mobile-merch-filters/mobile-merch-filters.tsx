@@ -18,8 +18,8 @@ export const MobileMerchFilters = ({
   tagFilters,
 }: LayoutMobileProps) => {
   return (
-    <div className={cx('controls-wrapper')}>
-      <div className={cx('tablet-actions-wrapper')}>
+    <div className={cx('filters-wrapper')}>
+      <div className={cx('tablet-filters-wrapper')}>
         {searchFilters}
         {hasActiveFilters && (
           <button className={cx('button', 'secondary', 'active')} onClick={onClearFilters}>
@@ -28,7 +28,7 @@ export const MobileMerchFilters = ({
         )}
       </div>
 
-      <div className={cx('filter-accordion')}>
+      <div className={cx('tags-accordion')}>
         <button
           className={cx('tablet-toggle-button', { expanded: areTagsExpanded })}
           onClick={onToggleTagsExpansion}

@@ -110,11 +110,16 @@ describe('MerchCatalog', () => {
     expect(mobileFiltersProps.areTagsExpanded).toBe(true);
   });
 
-  it('renders initial products when no filters are active', () => {
-    render(<MerchCatalog {...defaultProps} />);
-    expect(screen.getByText('Cool T-Shirt')).toBeInTheDocument();
-    expect(screen.getByText('Awesome Mug')).toBeInTheDocument();
-    expect(screen.getByText('Another T-Shirt')).toBeInTheDocument();
+  describe('when rendering initial products without active filters', () => {
+    beforeEach(() => {
+      render(<MerchCatalog {...defaultProps} />);
+    });
+
+    const productTitles = ['Cool T-Shirt', 'Awesome Mug', 'Another T-Shirt'];
+
+    it.each(productTitles)('should render the product: %s', (title) => {
+      expect(screen.getByText(title)).toBeInTheDocument();
+    });
   });
 
   it('filters products based on search term from URL', () => {

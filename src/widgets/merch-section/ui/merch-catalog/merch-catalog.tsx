@@ -111,8 +111,8 @@ export const MerchCatalog = ({ initialProducts, initialAvailableTags }: MerchPro
   };
 
   return (
-    <div className={cx('filter-catalog')}>
-      <div className={cx('filter-sidebar')}>
+    <div className={cx('merch-catalog-wrapper')}>
+      <div className={cx('filters')}>
         <div className={cx('desktop-layout')}>
           <DesktopMerchFilters {...commonControlProps} />
         </div>
