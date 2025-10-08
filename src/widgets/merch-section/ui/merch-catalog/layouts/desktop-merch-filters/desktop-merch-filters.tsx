@@ -20,6 +20,7 @@ export const DesktopMerchFilters = ({
           Filter merch
         </Subtitle>
         <button
+          type="button"
           className={cx('button', 'secondary', { active: hasActiveFilters })}
           onClick={onClearFilters}
         >
