@@ -1,157 +1,176 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import React from 'react';
+import { act, render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
+import { DesktopMerchFilters } from './layouts/desktop-merch-filters/desktop-merch-filters';
+import { MobileMerchFilters } from './layouts/mobile-merch-filters/mobile-merch-filters';
 import { MerchCatalog } from './merch-catalog';
-import { MerchProduct } from '@/entities/merch/types';
-import { useMediaQuery } from '@/shared/hooks/use-media-query/use-media-query';
-
-vi.mock('@/shared/hooks/use-media-query/use-media-query');
+import SearchFilters from './merch-filters/search-filters/search-filters';
+import TagFilters from './merch-filters/tag-filters/tag-filters';
+import { LayoutMobileProps, LayoutProps, MerchProductsProps } from './types';
+import { MerchProduct } from '@/entities/merch';
 
 const mockRouterReplace = vi.fn();
+let mockSearchParams: { search?: string;
+  types?: string[]; } = {};
 
 vi.mock('next/navigation', () => ({
   useRouter: () => ({ replace: mockRouterReplace }),
   usePathname: () => '/merch',
-  useSearchParams: () => new URLSearchParams(mockUrlParams),
+  useSearchParams: () => ({
+    get: (key: string) => (key === 'search' ? mockSearchParams.search || '' : ''),
+    getAll: (key: string) => (key === 'type' ? mockSearchParams.types || [] : []),
+  }),
 }));
 
-let mockUrlParams = '';
+vi.mock('@/shared/ui/paragraph', () => ({ Paragraph: ({ children }: { children: React.ReactNode }) => <p>{children}</p> }));
+vi.mock('./merch-list/merch-list', () => ({
+  MerchList: ({ products }: { products: MerchProduct[] }) => (
+    <div data-testid="merch-list">
+      {products.map((p) => (
+        <div key={p.id}>{p.title}</div>
+      ))}
+    </div>
+  ),
+}));
 
-const mockInitialProducts: MerchProduct[] = [
+vi.mock('./merch-filters/search-filters/search-filters', () => ({ default: vi.fn() }));
+vi.mock('./merch-filters/tag-filters/tag-filters', () => ({ default: vi.fn() }));
+vi.mock('./layouts/desktop-merch-filters/desktop-merch-filters', () => ({ DesktopMerchFilters: vi.fn() }));
+vi.mock('./layouts/mobile-merch-filters/mobile-merch-filters', () => ({ MobileMerchFilters: vi.fn() }));
+
+const mockProducts: MerchProduct[] = [
   {
     id: 1,
-    title: 'Alpha T-Shirt',
-    tags: ['clothing', 'tee'],
+    title: 'Cool T-Shirt',
+    tags: ['clothing', 'unisex'],
     name: '',
     preview: [],
     download: [],
   },
   {
     id: 2,
-    title: 'Beta Coffee Mug',
-    tags: ['accessories', 'mug'],
+    title: 'Awesome Mug',
+    tags: ['kitchen', 'gift'],
     name: '',
     preview: [],
     download: [],
   },
   {
     id: 3,
-    title: 'Delta Graphic Tee',
-    tags: ['clothing', 'tee', 'new'],
+    title: 'Another T-Shirt',
+    tags: ['clothing', 'men'],
     name: '',
     preview: [],
     download: [],
   },
 ];
-
-const mockAvailableTags = ['clothing', 'tee', 'accessories', 'mug', 'new'];
+const mockTags = ['clothing', 'unisex', 'kitchen', 'gift', 'men'];
+const defaultProps: MerchProductsProps = {
+  initialProducts: mockProducts,
+  initialAvailableTags: mockTags,
+};
 
 describe('MerchCatalog', () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    mockUrlParams = '';
-    vi.mocked(useMediaQuery).mockReturnValue(false);
+    mockSearchParams = {};
+
+    vi.mocked(DesktopMerchFilters).mockImplementation(
+      ({ searchFilters, tagFilters }: LayoutProps) => (
+        <div>
+          {searchFilters}
+          {tagFilters}
+        </div>
+      ),
+    );
+
+    vi.mocked(MobileMerchFilters).mockImplementation(
+      ({ searchFilters, tagFilters }: LayoutMobileProps) => (
+        <div>
+          {searchFilters}
+          {tagFilters}
+        </div>
+      ),
+    );
   });
 
-  describe('Initial Rendering from URL', () => {
-    it.skip('should display the search term from the URL in the input field', () => {
-      mockUrlParams = 'search=Alpha';
-      render(
-        <MerchCatalog
-          initialProducts={mockInitialProducts}
-          initialAvailableTags={mockAvailableTags}
-        />,
-      );
+  it('toggles the expanded state for mobile filters when its callback is called', () => {
+    render(<MerchCatalog {...defaultProps} />);
 
-      const searchInput = screen.getByPlaceholderText(/Search.../i);
+    let mobileFiltersProps = vi.mocked(MobileMerchFilters).mock.calls[0][0];
 
-      expect(searchInput).toHaveValue('Alpha');
+    expect(mobileFiltersProps.areTagsExpanded).toBe(false);
+
+    act(() => {
+      mobileFiltersProps.onToggleTagsExpansion();
     });
 
-    it.skip('should render only the products that match the search term from the URL', () => {
-      mockUrlParams = 'search=Alpha';
-      render(
-        <MerchCatalog
-          initialProducts={mockInitialProducts}
-          initialAvailableTags={mockAvailableTags}
-        />,
-      );
-
-      expect(screen.getByText('Alpha T-Shirt')).toBeInTheDocument();
-      expect(screen.queryByText('Beta Coffee Mug')).not.toBeInTheDocument();
-    });
-
-    it('should correctly check the tags that are present in the URL', () => {
-      mockUrlParams = 'type=mug';
-      render(
-        <MerchCatalog
-          initialProducts={mockInitialProducts}
-          initialAvailableTags={mockAvailableTags}
-        />,
-      );
-
-      const mugCheckbox = screen.getByLabelText('mug');
-
-      expect(mugCheckbox).toBeChecked();
-    });
+    mobileFiltersProps = vi.mocked(MobileMerchFilters).mock.calls[1][0];
+    expect(mobileFiltersProps.areTagsExpanded).toBe(true);
   });
 
-  describe('User interaction and URL updates', () => {
-    it.skip('should call router.replace with the new search term when user types', () => {
-      render(
-        <MerchCatalog
-          initialProducts={mockInitialProducts}
-          initialAvailableTags={mockAvailableTags}
-        />,
-      );
-
-      const searchInput = screen.getByPlaceholderText(/Search.../i);
-
-      fireEvent.change(searchInput, { target: { value: 'Beta' } });
-
-      expect(mockRouterReplace).toHaveBeenCalledExactlyOnceWith('/merch?search=Beta', { scroll: false });
-    });
-
-    it('should call router.replace with the selected tag when a checkbox is clicked', () => {
-      render(
-        <MerchCatalog
-          initialProducts={mockInitialProducts}
-          initialAvailableTags={mockAvailableTags}
-        />,
-      );
-
-      const clothingCheckbox = screen.getByLabelText('clothing');
-
-      fireEvent.click(clothingCheckbox);
-
-      expect(mockRouterReplace).toHaveBeenCalledExactlyOnceWith('/merch?type=clothing', { scroll: false });
-    });
-
-    it.skip('should call router.replace with an empty query when "Clear" is clicked', () => {
-      mockUrlParams = 'search=Alpha&type=clothing';
-      render(
-        <MerchCatalog
-          initialProducts={mockInitialProducts}
-          initialAvailableTags={mockAvailableTags}
-        />,
-      );
-      const clearButton = screen.getByRole('button', { name: /clear/i });
-
-      fireEvent.click(clearButton);
-      expect(mockRouterReplace).toHaveBeenCalledExactlyOnceWith('/merch', { scroll: false });
-    });
+  it('renders initial products when no filters are active', () => {
+    render(<MerchCatalog {...defaultProps} />);
+    expect(screen.getByText('Cool T-Shirt')).toBeInTheDocument();
+    expect(screen.getByText('Awesome Mug')).toBeInTheDocument();
+    expect(screen.getByText('Another T-Shirt')).toBeInTheDocument();
   });
 
-  describe('Empty State Rendering', () => {
-    it.skip('should render "try another filter" message when filters yield no results', () => {
-      mockUrlParams = 'search=nonexistent';
-      render(
-        <MerchCatalog
-          initialProducts={mockInitialProducts}
-          initialAvailableTags={mockAvailableTags}
-        />,
-      );
-      expect(screen.getByText(/no merch found. please try another filter/i)).toBeInTheDocument();
+  it('filters products based on search term from URL', () => {
+    mockSearchParams = { search: 'Mug' };
+    render(<MerchCatalog {...defaultProps} />);
+    expect(screen.queryByText('Cool T-Shirt')).not.toBeInTheDocument();
+    expect(screen.getByText('Awesome Mug')).toBeInTheDocument();
+  });
+
+  it('filters products based on a single type from URL', () => {
+    mockSearchParams = { types: ['kitchen'] };
+    render(<MerchCatalog {...defaultProps} />);
+    expect(screen.queryByText('Cool T-Shirt')).not.toBeInTheDocument();
+    expect(screen.getByText('Awesome Mug')).toBeInTheDocument();
+  });
+
+  it('updates the URL when SearchFilters calls onSearchChange', () => {
+    render(<MerchCatalog {...defaultProps} />);
+    const searchFiltersProps = vi.mocked(SearchFilters).mock.calls[0][0];
+
+    act(() => {
+      searchFiltersProps.onSearchChange('Test');
     });
+    expect(mockRouterReplace).toHaveBeenCalledTimes(1);
+    expect(mockRouterReplace).toHaveBeenCalledExactlyOnceWith('/merch?search=Test', { scroll: false });
+  });
+
+  it('updates the URL when TagFilters calls onTagChange to select a tag', () => {
+    render(<MerchCatalog {...defaultProps} />);
+    const tagFiltersProps = vi.mocked(TagFilters).mock.calls[0][0];
+
+    act(() => {
+      tagFiltersProps.onTagChange('clothing');
+    });
+    expect(mockRouterReplace).toHaveBeenCalledTimes(1);
+    expect(mockRouterReplace).toHaveBeenCalledExactlyOnceWith('/merch?type=clothing', { scroll: false });
+  });
+
+  it('removes a tag from the URL when TagFilters calls onTagChange to deselect it', () => {
+    mockSearchParams = { types: ['clothing', 'unisex'] };
+    render(<MerchCatalog {...defaultProps} />);
+    const tagFiltersProps = vi.mocked(TagFilters).mock.calls[0][0];
+
+    act(() => {
+      tagFiltersProps.onTagChange('clothing');
+    });
+    expect(mockRouterReplace).toHaveBeenCalledTimes(1);
+    expect(mockRouterReplace).toHaveBeenCalledExactlyOnceWith('/merch?type=unisex', { scroll: false });
+  });
+
+  it('shows "No merch found" when filters yield no results', () => {
+    mockSearchParams = { search: 'impossible' };
+    render(<MerchCatalog {...defaultProps} />);
+    expect(
+      screen.getByText('No merch found. Please try another filter or search term'),
+    ).toBeInTheDocument();
+    expect(screen.queryByTestId('merch-list')).not.toBeInTheDocument();
   });
 });

@@ -1,53 +1,67 @@
 import { render, screen } from '@testing-library/react';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import userEvent from '@testing-library/user-event';
+import { describe, expect, it, vi } from 'vitest';
 
 import TagFilters from './tag-filters';
 
 describe('TagFilters', () => {
-  const mockOnTagChange = vi.fn();
-  const defaultProps = {
-    allAvailableTags: ['clothing', 'mug', 'stickers'],
-    selectedTags: [],
-    onTagChange: mockOnTagChange,
-  };
+  const user = userEvent.setup();
+  const mockAllTags = ['Hoodie', 'Sticker', 'Cup'];
 
-  beforeEach(() => {
-    vi.clearAllMocks();
+  it('should render nothing if no tags are provided', () => {
+    const { container } = render(
+      <TagFilters allAvailableTags={[]} selectedTags={[]} onTagChange={() => {}} />,
+    );
+
+    expect(container.firstChild).toBeNull();
   });
 
-  describe('when rendering tags', () => {
-    beforeEach(() => {
-      render(<TagFilters {...defaultProps} />);
-    });
-    it.each(defaultProps.allAvailableTags)('should render a checkbox for the "%s" tag', (tag) => {
-      expect(screen.getByLabelText(tag)).toBeInTheDocument();
-    });
+  it('should render a checkbox for each available tag', () => {
+    render(<TagFilters allAvailableTags={mockAllTags} selectedTags={[]} onTagChange={() => {}} />);
+
+    const checkboxes = screen.getAllByRole('checkbox');
+
+    expect(checkboxes).toHaveLength(mockAllTags.length);
+
+    expect(screen.getByLabelText('Hoodie')).toBeInTheDocument();
+    expect(screen.getByLabelText('Sticker')).toBeInTheDocument();
+    expect(screen.getByLabelText('Cup')).toBeInTheDocument();
   });
 
-  it('should render nothing if allAvailableTags is empty', () => {
-    const { container } = render(<TagFilters {...defaultProps} allAvailableTags={[]} />);
+  it('should correctly check the checkboxes based on the selectedTags prop', () => {
+    const mockSelectedTags = ['Sticker'];
 
-    expect(container).toBeEmptyDOMElement();
+    render(
+      <TagFilters
+        allAvailableTags={mockAllTags}
+        selectedTags={mockSelectedTags}
+        onTagChange={() => {}}
+      />,
+    );
+
+    expect(screen.getByLabelText('Sticker')).toBeChecked();
+
+    expect(screen.getByLabelText('Hoodie')).not.toBeChecked();
+    expect(screen.getByLabelText('Cup')).not.toBeChecked();
   });
 
-  it('should correctly mark checkboxes as checked based on the selectedTags prop', () => {
-    render(<TagFilters {...defaultProps} selectedTags={['mug', 'stickers']} />);
+  it('should call onTagChange with the correct tag when a label is clicked', async () => {
+    const handleTagChangeMock = vi.fn();
 
-    expect(screen.getByLabelText('mug')).toBeChecked();
-    expect(screen.getByLabelText('stickers')).toBeChecked();
+    render(
+      <TagFilters
+        allAvailableTags={mockAllTags}
+        selectedTags={[]}
+        onTagChange={handleTagChangeMock}
+      />,
+    );
 
-    expect(screen.getByLabelText('clothing')).not.toBeChecked();
-  });
+    const cupLabel = screen.getByText('Cup');
 
-  it('should apply the "selected" class to the label of a selected tag', () => {
-    render(<TagFilters {...defaultProps} selectedTags={['mug']} />);
+    await user.click(cupLabel);
 
-    const mugLabel = screen.getByText('mug').closest('label');
+    expect(handleTagChangeMock).toHaveBeenCalledTimes(1);
 
-    expect(mugLabel).toHaveClass('selected');
-
-    const clothingLabel = screen.getByText('clothing').closest('label');
-
-    expect(clothingLabel).not.toHaveClass('selected');
+    expect(handleTagChangeMock).toHaveBeenCalledExactlyOnceWith('Cup');
   });
 });
