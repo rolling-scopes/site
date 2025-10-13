@@ -7,27 +7,20 @@ const cx = classNames.bind(styles);
 type SearchInputProps = {
   value: string;
   onChange: (value: string) => void;
-  placeholder?: string;
   ariaLabel?: string;
   name?: string;
 };
 
-export default function SearchInput({
-  value,
-  onChange,
-  placeholder,
-  ariaLabel,
-  name,
-}: SearchInputProps) {
+export const SearchInput = ({ value, onChange, ariaLabel, name }: SearchInputProps) => {
   return (
     <input
-      className={cx('input')}
+      className={cx('search-input')}
       type="text"
-      placeholder={placeholder}
+      placeholder="Search..."
       value={value}
       onChange={(e) => onChange(e.target.value)}
       aria-label={ariaLabel}
       name={name}
     />
   );
-}
+};

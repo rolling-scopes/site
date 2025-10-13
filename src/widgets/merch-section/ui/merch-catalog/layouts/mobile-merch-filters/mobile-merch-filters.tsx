@@ -10,7 +10,6 @@ const cx = classNames.bind(styles);
 
 export const MobileMerchFilters = ({
   hasActiveFilters,
-
   onClearFilters,
   areTagsExpanded,
   onToggleTagsExpansion,
