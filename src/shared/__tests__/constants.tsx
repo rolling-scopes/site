@@ -2,6 +2,7 @@ import { StaticImageData } from 'next/image';
 
 import { Video } from '../types';
 import { Course } from '@/entities/course';
+import { MerchProduct } from '@/entities/merch/types';
 import type { Trainer } from '@/entities/trainer';
 import { COURSE_LINKS, COURSE_TITLES, ROUTES } from '@/shared/constants';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -225,5 +226,32 @@ export const MOCKED_VIDEOS: Video[] = [
     id: '3',
     title: 'Video 3',
     thumbnail: 'thumb3.jpg',
+  },
+];
+
+export const MOCKED_PRODUCTS: MerchProduct[] = [
+  {
+    id: 1,
+    title: 'Cool T-Shirt',
+    tags: ['clothing', 'unisex'],
+    name: '',
+    preview: [],
+    download: [],
+  },
+  {
+    id: 2,
+    title: 'Awesome Mug',
+    tags: ['kitchen', 'gift'],
+    name: '',
+    preview: [],
+    download: [],
+  },
+  {
+    id: 3,
+    title: 'Another T-Shirt',
+    tags: ['clothing', 'men'],
+    name: '',
+    preview: [],
+    download: [],
   },
 ];

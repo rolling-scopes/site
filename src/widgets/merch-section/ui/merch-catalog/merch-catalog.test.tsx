@@ -9,6 +9,7 @@ import SearchFilters from './merch-filters/search-filters/search-filters';
 import TagFilters from './merch-filters/tag-filters/tag-filters';
 import { LayoutMobileProps, LayoutProps, MerchProductsProps } from './types';
 import { MerchProduct } from '@/entities/merch';
+import { MOCKED_PRODUCTS } from '@/shared/__tests__/constants';
 
 const mockRouterReplace = vi.fn();
 let mockSearchParams: { search?: string;
@@ -39,34 +40,7 @@ vi.mock('./merch-filters/tag-filters/tag-filters', () => ({ default: vi.fn() }))
 vi.mock('./layouts/desktop-merch-filters/desktop-merch-filters', () => ({ DesktopMerchFilters: vi.fn() }));
 vi.mock('./layouts/mobile-merch-filters/mobile-merch-filters', () => ({ MobileMerchFilters: vi.fn() }));
 
-const mockProducts: MerchProduct[] = [
-  {
-    id: 1,
-    title: 'Cool T-Shirt',
-    tags: ['clothing', 'unisex'],
-    name: '',
-    preview: [],
-    download: [],
-  },
-  {
-    id: 2,
-    title: 'Awesome Mug',
-    tags: ['kitchen', 'gift'],
-    name: '',
-    preview: [],
-    download: [],
-  },
-  {
-    id: 3,
-    title: 'Another T-Shirt',
-    tags: ['clothing', 'men'],
-    name: '',
-    preview: [],
-    download: [],
-  },
-];
-
-const defaultProps: MerchProductsProps = { initialProducts: mockProducts };
+const defaultProps: MerchProductsProps = { initialProducts: MOCKED_PRODUCTS };
 
 describe('MerchCatalog', () => {
   beforeEach(() => {
