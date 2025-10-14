@@ -10,13 +10,14 @@ import SearchFilters from './merch-filters/search-filters/search-filters';
 import TagFilters from './merch-filters/tag-filters/tag-filters';
 import { MerchList } from './merch-list/merch-list';
 import { MerchProductsProps } from './types';
+import { getTags } from '../../helpers/get-tags';
 import { Paragraph } from '@/shared/ui/paragraph';
 
 import styles from './merch-catalog.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const MerchCatalog = ({ initialProducts, initialAvailableTags }: MerchProductsProps) => {
+export const MerchCatalog = ({ initialProducts }: MerchProductsProps) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -24,7 +25,7 @@ export const MerchCatalog = ({ initialProducts, initialAvailableTags }: MerchPro
   const searchTerm = searchParams.get('search') || '';
   const selectedTypes = searchParams.getAll('type');
 
-  const allAvailableTags = initialAvailableTags ?? [];
+  const tags = getTags(initialProducts);
   const [areTabletFiltersExpanded, setAreTabletFiltersExpanded] = useState(false);
 
   const updateUrl = useCallback(
@@ -103,7 +104,7 @@ export const MerchCatalog = ({ initialProducts, initialAvailableTags }: MerchPro
     searchFilters: <SearchFilters searchTerm={searchTerm} onSearchChange={handleSearchChange} />,
     tagFilters: (
       <TagFilters
-        allAvailableTags={allAvailableTags}
+        allAvailableTags={tags}
         selectedTags={selectedTypes}
         onTagChange={handleTypeChange}
       />

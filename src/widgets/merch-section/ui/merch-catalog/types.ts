@@ -28,5 +28,4 @@ export type LayoutMobileProps = LayoutProps & {
 
 export type MerchProductsProps = {
   initialProducts: MerchProduct[];
-  initialAvailableTags: string[];
 };

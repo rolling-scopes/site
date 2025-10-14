@@ -65,11 +65,8 @@ const mockProducts: MerchProduct[] = [
     download: [],
   },
 ];
-const mockTags = ['clothing', 'unisex', 'kitchen', 'gift', 'men'];
-const defaultProps: MerchProductsProps = {
-  initialProducts: mockProducts,
-  initialAvailableTags: mockTags,
-};
+
+const defaultProps: MerchProductsProps = { initialProducts: mockProducts };
 
 describe('MerchCatalog', () => {
   beforeEach(() => {
