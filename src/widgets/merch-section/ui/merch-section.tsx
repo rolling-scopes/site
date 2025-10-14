@@ -1,10 +1,8 @@
 import classNames from 'classnames/bind';
-import Image from 'next/image';
 
 import { MerchCatalog } from './merch-catalog/merch-catalog';
+import MerchNotFound from './merch-catalog/merch-not-found/merch-not-found';
 import { MerchProduct, merchStore } from '@/entities/merch';
-import notFoundImg from '@/shared/assets/404.webp';
-import { Paragraph } from '@/shared/ui/paragraph';
 
 import styles from './merch-section.module.scss';
 
@@ -18,15 +16,7 @@ export const MerchSection = async () => {
 
   return (
     <section className={cx('container')}>
-      {(!products || products.length === 0) && (
-        <div className={cx('content', 'merch-catalog', 'empty-wrapper')}>
-          <Image className={cx('empty-image')} src={notFoundImg} alt="No merchandise available" />
-
-          <Paragraph className={cx('empty-paragraph')}>
-            No merchandise available at this time.
-          </Paragraph>
-        </div>
-      )}
+      {(!products || products.length === 0) && <MerchNotFound />}
 
       {products?.length > 0 && (
         <div className={cx('content', 'merch-catalog')}>

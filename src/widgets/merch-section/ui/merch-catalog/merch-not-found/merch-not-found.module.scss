@@ -1,0 +1,16 @@
+.merch-not-found {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-xl;
+  align-items: center;
+
+  &-image {
+    max-width: 170px;
+    height: auto;
+  }
+
+  &-text {
+    max-width: 480px;
+    text-align: center;
+  }
+}
