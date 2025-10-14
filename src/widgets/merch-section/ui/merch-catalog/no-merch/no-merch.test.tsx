@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { ImageProps } from 'next/image';
 import { describe, it, vi } from 'vitest';
 
-import MerchNotFound from './merch-not-found';
+import NoMerch from './no-merch';
 
 vi.mock('next/image', () => ({
   default: (props: ImageProps) => {
@@ -10,9 +10,9 @@ vi.mock('next/image', () => ({
   },
 }));
 
-describe('MerchNotFound', () => {
+describe('NoMerch', () => {
   it('should render the correct "not available" text', () => {
-    render(<MerchNotFound />);
+    render(<NoMerch />);
 
     const textElement = screen.getByText('No merchandise available at this time.');
 
@@ -20,7 +20,7 @@ describe('MerchNotFound', () => {
   });
 
   it('should render an image with the correct alt text', () => {
-    render(<MerchNotFound />);
+    render(<NoMerch />);
 
     const imageElement = screen.getByAltText('No merchandise available');
 
