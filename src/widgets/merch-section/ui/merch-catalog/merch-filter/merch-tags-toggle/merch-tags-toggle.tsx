@@ -24,7 +24,12 @@ export const MerchTagsToggle = ({ isOpen, onClick }: MerchTagsToggleProps) => {
       <Subtitle size="extra-small" weight="medium" as="h3">
         All filters
       </Subtitle>
-      <Image src={DropdownArrow} alt="" className={cx('tag-arrow', { rotate: isOpen })} />
+      <Image
+        src={DropdownArrow}
+        alt=""
+        aria-label="dropdown-arrow"
+        className={cx('tag-arrow', { rotate: isOpen })}
+      />
     </button>
   );
 };
