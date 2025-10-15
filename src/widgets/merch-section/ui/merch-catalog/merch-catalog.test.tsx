@@ -6,7 +6,7 @@ import { MerchCatalog } from './merch-catalog';
 import { MerchFilter } from './merch-filter/merch-filter';
 import SearchFilters from './merch-filter/search-filters/search-filters';
 import TagFilters from './merch-filter/tag-filters/tag-filters';
-import { LayoutProps, MerchProductsProps } from './types';
+import { MerchFilterProps, MerchProductsProps } from './types';
 import { MerchProduct } from '@/entities/merch';
 import { MOCKED_PRODUCTS } from '@/shared/__tests__/constants';
 
@@ -46,27 +46,12 @@ describe('MerchCatalog', () => {
     vi.clearAllMocks();
     mockSearchParams = {};
 
-    vi.mocked(MerchFilter).mockImplementation(({ searchFilters, tagFilters }: LayoutProps) => (
+    vi.mocked(MerchFilter).mockImplementation(({ searchFilters, tagFilters }: MerchFilterProps) => (
       <div>
         {searchFilters}
         {tagFilters}
       </div>
     ));
-  });
-
-  it.skip('toggles the expanded state for mobile filters when its callback is called', () => {
-    render(<MerchCatalog {...defaultProps} />);
-
-    let mobileFiltersProps = vi.mocked(MerchFilter).mock.calls[0][0];
-
-    expect(mobileFiltersProps.areTagsExpanded).toBe(false);
-
-    act(() => {
-      mobileFiltersProps.onToggleTagsExpansion();
-    });
-
-    mobileFiltersProps = vi.mocked(MerchFilter).mock.calls[1][0];
-    expect(mobileFiltersProps.areTagsExpanded).toBe(true);
   });
 
   describe('when rendering initial products without active filters', () => {

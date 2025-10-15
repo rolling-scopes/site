@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo } from 'react';
 import classNames from 'classnames/bind';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
@@ -25,7 +25,6 @@ export const MerchCatalog = ({ initialProducts }: MerchProductsProps) => {
   const selectedTypes = searchParams.getAll('type');
 
   const tags = getTags(initialProducts);
-  const [areTabletFiltersExpanded, setAreTabletFiltersExpanded] = useState(false);
 
   const updateUrl = useCallback(
     (currentSearchTerm: string, currentSelectedTypes: string[]) => {
@@ -83,10 +82,6 @@ export const MerchCatalog = ({ initialProducts }: MerchProductsProps) => {
     updateUrl('', []);
   };
 
-  const toggleTabletFiltersExpansion = () => {
-    setAreTabletFiltersExpanded((prev) => !prev);
-  };
-
   const hasActiveFilters = searchTerm.trim() !== '' || selectedTypes.length > 0;
 
   const renderContent = () => {
@@ -113,11 +108,7 @@ export const MerchCatalog = ({ initialProducts }: MerchProductsProps) => {
   return (
     <div className={cx('merch-catalog-wrapper')}>
       <div className={cx('filters')}>
-        <MerchFilter
-          {...commonControlProps}
-          areTagsExpanded={areTabletFiltersExpanded}
-          onToggleTagsExpansion={toggleTabletFiltersExpansion}
-        />
+        <MerchFilter {...commonControlProps} />
       </div>
 
       {renderContent()}

@@ -14,16 +14,11 @@ export type MerchCatalogProps = {
   onToggleTagsExpansion?: () => void;
 };
 
-export type LayoutProps = {
+export type MerchFilterProps = {
   hasActiveFilters: boolean;
   onClearFilters: () => void;
   searchFilters: ReactNode;
   tagFilters: ReactNode;
-};
-
-export type MerchFilterProps = LayoutProps & {
-  areTagsExpanded: boolean;
-  onToggleTagsExpansion: () => void;
 };
 
 export type MerchProductsProps = {

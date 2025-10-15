@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import classNames from 'classnames/bind';
 
 import { MerchFilterProps } from '../types';
@@ -10,12 +11,15 @@ const cx = classNames.bind(styles);
 
 export const MerchFilter = ({
   hasActiveFilters,
-  onClearFilters,
-  areTagsExpanded,
-  onToggleTagsExpansion,
   searchFilters,
   tagFilters,
+  onClearFilters,
 }: MerchFilterProps) => {
+  const [areTagsOpen, setTagsOpen] = useState(false);
+  const toggleTagsDropdown = () => {
+    setTagsOpen((prev) => !prev);
+  };
+
   return (
     <div className={cx('merch-filter')}>
       <div className={cx('merch-filter-title')}>
@@ -32,8 +36,8 @@ export const MerchFilter = ({
       </div>
       {searchFilters}
       <div className={cx('tags')}>
-        <TagToggleButton isExpanded={areTagsExpanded} onClick={onToggleTagsExpansion} />
-        <div className={cx('tags-list', { expanded: areTagsExpanded })}>{tagFilters}</div>
+        <TagToggleButton isOpen={areTagsOpen} onClick={toggleTagsDropdown} />
+        <div className={cx('tags-list', { expanded: areTagsOpen })}>{tagFilters}</div>
       </div>
     </div>
   );

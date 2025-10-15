@@ -15,9 +15,6 @@ export default function TagFilters({
   selectedTags,
   onTagChange,
 }: TagFiltersProps) {
-  if (!allAvailableTags || allAvailableTags.length === 0) {
-    return null;
-  }
   return (
     <div id="merch-tags" className={cx('tags-wrapper')} role="region" aria-label="Merch filters">
       {allAvailableTags.map((tag) => {

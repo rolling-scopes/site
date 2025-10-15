@@ -8,23 +8,23 @@ import styles from './tag-toggle-button.module.scss';
 
 const cx = classNames.bind(styles);
 
-interface TagDropdownButtonProps {
-  isExpanded: boolean;
+interface TagToggleButtonProps {
+  isOpen: boolean;
   onClick: () => void;
 }
 
-export const TagToggleButton = ({ isExpanded, onClick }: TagDropdownButtonProps) => {
+export const TagToggleButton = ({ isOpen, onClick }: TagToggleButtonProps) => {
   return (
     <button
       type="button"
-      className={cx('button', 'rounded', { expanded: isExpanded })}
+      className={cx('button', 'rounded', { expanded: isOpen })}
       onClick={onClick}
-      aria-expanded={isExpanded}
+      aria-expanded={isOpen}
     >
       <Subtitle size="extra-small" weight="medium" as="h3">
         All filters
       </Subtitle>
-      <Image src={DropdownArrow} alt="" className={cx('tag-arrow', { rotate: isExpanded })} />
+      <Image src={DropdownArrow} alt="" className={cx('tag-arrow', { rotate: isOpen })} />
     </button>
   );
 };
