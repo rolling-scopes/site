@@ -1,11 +1,11 @@
 import { SearchInput } from '@/shared/ui/search-input/search-input';
 
-type SearchFiltersProps = {
+type MerchSearchProps = {
   searchTerm: string;
   onSearchChange: (newSearchTerm: string) => void;
 };
 
-export default function SearchFilters({ searchTerm, onSearchChange }: SearchFiltersProps) {
+export default function MerchSearch({ searchTerm, onSearchChange }: MerchSearchProps) {
   return (
     <SearchInput
       value={searchTerm}

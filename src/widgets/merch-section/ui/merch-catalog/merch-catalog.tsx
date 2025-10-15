@@ -5,8 +5,8 @@ import classNames from 'classnames/bind';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { MerchFilter } from './merch-filter/merch-filter';
-import SearchFilters from './merch-filter/search-filters/search-filters';
-import TagFilters from './merch-filter/tag-filters/tag-filters';
+import SearchFilters from './merch-filter/merch-search/merch-search';
+import TagFilters from './merch-filter/merch-tags/merch-tags';
 import { MerchList } from './merch-list/merch-list';
 import { MerchProductsProps } from './types';
 import { getTags } from '../../helpers/get-tags';

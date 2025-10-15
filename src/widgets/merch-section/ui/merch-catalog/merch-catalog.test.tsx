@@ -4,8 +4,8 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { MerchCatalog } from './merch-catalog';
 import { MerchFilter } from './merch-filter/merch-filter';
-import SearchFilters from './merch-filter/search-filters/search-filters';
-import TagFilters from './merch-filter/tag-filters/tag-filters';
+import SearchFilters from './merch-filter/merch-search/merch-search';
+import TagFilters from './merch-filter/merch-tags/merch-tags';
 import { MerchFilterProps, MerchProductsProps } from './types';
 import { MerchProduct } from '@/entities/merch';
 import { MOCKED_PRODUCTS } from '@/shared/__tests__/constants';

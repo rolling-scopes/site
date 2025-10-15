@@ -2,22 +2,22 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 
-import TagFilters from './tag-filters';
+import MerchTags from './merch-tags';
 
-describe('TagFilters', () => {
+describe('MerchTags', () => {
   const user = userEvent.setup();
   const mockAllTags = ['Hoodie', 'Sticker', 'Cup'];
 
   it.skip('should render nothing if no tags are provided', () => {
     const { container } = render(
-      <TagFilters allAvailableTags={[]} selectedTags={[]} onTagChange={() => {}} />,
+      <MerchTags allAvailableTags={[]} selectedTags={[]} onTagChange={() => {}} />,
     );
 
     expect(container.firstChild).toBeNull();
   });
 
   it('should render a checkbox for each available tag', () => {
-    render(<TagFilters allAvailableTags={mockAllTags} selectedTags={[]} onTagChange={() => {}} />);
+    render(<MerchTags allAvailableTags={mockAllTags} selectedTags={[]} onTagChange={() => {}} />);
 
     const checkboxes = screen.getAllByRole('checkbox');
 
@@ -32,7 +32,7 @@ describe('TagFilters', () => {
     const mockSelectedTags = ['Sticker'];
 
     render(
-      <TagFilters
+      <MerchTags
         allAvailableTags={mockAllTags}
         selectedTags={mockSelectedTags}
         onTagChange={() => {}}
@@ -49,7 +49,7 @@ describe('TagFilters', () => {
     const handleTagChangeMock = vi.fn();
 
     render(
-      <TagFilters
+      <MerchTags
         allAvailableTags={mockAllTags}
         selectedTags={[]}
         onTagChange={handleTagChangeMock}

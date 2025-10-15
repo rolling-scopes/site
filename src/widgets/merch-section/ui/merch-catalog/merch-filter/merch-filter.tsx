@@ -2,7 +2,7 @@ import { useState } from 'react';
 import classNames from 'classnames/bind';
 
 import { MerchFilterProps } from '../types';
-import { TagToggleButton } from './tag-toggle-button/tag-toggle-button';
+import { MerchTagsToggle } from './merch-tags-toggle/merch-tags-toggle';
 import { Subtitle } from '@/shared/ui/subtitle';
 
 import styles from './merch-filter.module.scss';
@@ -36,7 +36,7 @@ export const MerchFilter = ({
       </div>
       {searchFilters}
       <div className={cx('tags')}>
-        <TagToggleButton isOpen={areTagsOpen} onClick={toggleTagsDropdown} />
+        <MerchTagsToggle isOpen={areTagsOpen} onClick={toggleTagsDropdown} />
         <div className={cx('tags-list', { expanded: areTagsOpen })}>{tagFilters}</div>
       </div>
     </div>

@@ -4,16 +4,16 @@ import Image from 'next/image';
 import DropdownArrow from '@/shared/assets/svg/dropdown-arrow.svg';
 import { Subtitle } from '@/shared/ui/subtitle';
 
-import styles from './tag-toggle-button.module.scss';
+import styles from './merch-tags-toggle.module.scss';
 
 const cx = classNames.bind(styles);
 
-interface TagToggleButtonProps {
+interface MerchTagsToggleProps {
   isOpen: boolean;
   onClick: () => void;
 }
 
-export const TagToggleButton = ({ isOpen, onClick }: TagToggleButtonProps) => {
+export const MerchTagsToggle = ({ isOpen, onClick }: MerchTagsToggleProps) => {
   return (
     <button
       type="button"
