@@ -1,5 +1,7 @@
 import classNames from 'classnames/bind';
 
+import { Checkbox } from '@/shared/ui/checkbox/index';
+
 import styles from './merch-tags.module.scss';
 
 const cx = classNames.bind(styles);
@@ -12,26 +14,19 @@ type MerchTagsProps = {
 
 export default function MerchTags({ allAvailableTags, selectedTags, onTagChange }: MerchTagsProps) {
   return (
-    <div id="merch-tags" className={cx('tags-wrapper')} role="region" aria-label="Merch filters">
+    <div id="merch-tags" className={cx('merch-tags')} role="region" aria-label="Merch filters">
       {allAvailableTags.map((tag) => {
         const safeId = `tag-checkbox-${tag.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
 
         return (
-          <label
+          <Checkbox
             key={tag}
-            htmlFor={safeId}
-            className={cx('tags-label', { selected: selectedTags.includes(tag) })}
+            id={safeId}
+            checked={selectedTags.includes(tag)}
+            onChange={() => onTagChange(tag)}
           >
-            <input
-              type="checkbox"
-              id={safeId}
-              className={cx('tags-checkbox-original')}
-              checked={selectedTags.includes(tag)}
-              onChange={() => onTagChange(tag)}
-            />
-            <span className={cx('tags-checkbox-custom')}></span>
-            <span>{tag}</span>
-          </label>
+            {tag}
+          </Checkbox>
         );
       })}
     </div>
