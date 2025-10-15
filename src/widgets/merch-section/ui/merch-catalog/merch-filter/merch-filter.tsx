@@ -1,8 +1,7 @@
 import classNames from 'classnames/bind';
-import Image from 'next/image';
 
 import { MerchFilterProps } from '../types';
-import DropdownArrow from '@/shared/assets/svg/dropdown-arrow.svg';
+import { TagToggleButton } from './tag-toggle-button/tag-toggle-button';
 import { Subtitle } from '@/shared/ui/subtitle';
 
 import styles from './merch-filter.module.scss';
@@ -33,18 +32,7 @@ export const MerchFilter = ({
       </div>
       {searchFilters}
       <div className={cx('tags')}>
-        <button
-          className={cx('tags-toggle')}
-          onClick={onToggleTagsExpansion}
-          aria-expanded={areTagsExpanded}
-        >
-          Filter By:
-          <Image
-            src={DropdownArrow}
-            alt=""
-            className={cx('tags-arrow', { rotate: areTagsExpanded })}
-          />
-        </button>
+        <TagToggleButton isExpanded={areTagsExpanded} onClick={onToggleTagsExpansion} />
         <div className={cx('tags-list', { expanded: areTagsExpanded })}>{tagFilters}</div>
       </div>
     </div>

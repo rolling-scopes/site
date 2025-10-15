@@ -1,7 +1,7 @@
 .merch-filter {
   display: flex;
   flex-direction: column;
-  gap: $gap-xs;
+  gap: $gap-s;
 
   &-title {
     display: flex;
@@ -14,45 +14,6 @@
   display: flex;
   flex-direction: column;
   gap: $gap-xs;
-
-  &-toggle {
-    display: none;
-
-    @include media-tablet-large {
-      cursor: pointer;
-
-      position: relative;
-
-      display: inline-flex;
-      gap: $gap-xs;
-      align-items: center;
-      justify-content: space-between;
-
-      width: 100%;
-      padding: $gap-s;
-      border: none;
-      border-radius: $border-radius-xxs;
-
-      font-size: $font-size-s;
-      font-weight: $font-weight-medium;
-
-      background-color: transparent;
-
-      transition: background-color 0.2s ease;
-
-      &:focus-visible {
-        outline: 1px solid $color-gray-600;
-        outline-offset: 1px;
-      }
-
-      &.has-active-filters::after {
-        content: '';
-        display: block;
-        width: 6px;
-        height: 6px;
-      }
-    }
-  }
 
   &-arrow {
     margin-left: auto;
