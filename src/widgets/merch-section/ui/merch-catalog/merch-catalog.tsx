@@ -4,10 +4,9 @@ import { useCallback, useMemo, useState } from 'react';
 import classNames from 'classnames/bind';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-import { DesktopMerchFilters } from './layouts/desktop-merch-filters/desktop-merch-filters';
-import { MobileMerchFilters } from './layouts/mobile-merch-filters/mobile-merch-filters';
-import SearchFilters from './merch-filters/search-filters/search-filters';
-import TagFilters from './merch-filters/tag-filters/tag-filters';
+import { MerchFilter } from './merch-filter/merch-filter';
+import SearchFilters from './merch-filter/search-filters/search-filters';
+import TagFilters from './merch-filter/tag-filters/tag-filters';
 import { MerchList } from './merch-list/merch-list';
 import { MerchProductsProps } from './types';
 import { getTags } from '../../helpers/get-tags';
@@ -114,17 +113,11 @@ export const MerchCatalog = ({ initialProducts }: MerchProductsProps) => {
   return (
     <div className={cx('merch-catalog-wrapper')}>
       <div className={cx('filters')}>
-        <div className={cx('desktop-layout')}>
-          <DesktopMerchFilters {...commonControlProps} />
-        </div>
-
-        <div className={cx('mobile-layout')}>
-          <MobileMerchFilters
-            {...commonControlProps}
-            areTagsExpanded={areTabletFiltersExpanded}
-            onToggleTagsExpansion={toggleTabletFiltersExpansion}
-          />
-        </div>
+        <MerchFilter
+          {...commonControlProps}
+          areTagsExpanded={areTabletFiltersExpanded}
+          onToggleTagsExpansion={toggleTabletFiltersExpansion}
+        />
       </div>
 
       {renderContent()}

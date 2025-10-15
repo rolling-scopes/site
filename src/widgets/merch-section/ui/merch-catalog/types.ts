@@ -21,7 +21,7 @@ export type LayoutProps = {
   tagFilters: ReactNode;
 };
 
-export type LayoutMobileProps = LayoutProps & {
+export type MerchFilterProps = LayoutProps & {
   areTagsExpanded: boolean;
   onToggleTagsExpansion: () => void;
 };
