@@ -19,17 +19,20 @@ export default function MerchSearch() {
     if (searchTerm === urlSearchTerm) {
       return;
     }
-    const params = new URLSearchParams(searchParams.toString());
 
-    params.delete('page');
+    const timeoutId = setTimeout(() => {
+      const params = new URLSearchParams(searchParams.toString());
 
-    if (searchTerm) {
-      params.set('search', searchTerm);
-    } else {
-      params.delete('search');
-    }
+      params.delete('page');
+      if (searchTerm) {
+        params.set('search', searchTerm);
+      } else {
+        params.delete('search');
+      }
+      router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+    }, 300);
 
-    router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+    return () => clearTimeout(timeoutId);
   }, [searchTerm, urlSearchTerm, pathname, router, searchParams]);
 
   return (
