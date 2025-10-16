@@ -8,7 +8,7 @@ import { getTags } from '../helpers/get-tags';
 import { MerchProductsProps } from '../types';
 import { MerchFilter } from './merch-filter/merch-filter';
 import { MerchList } from './merch-list/merch-list';
-import { Paragraph } from '@/shared/ui/paragraph';
+import { NoMerch } from './no-merch/no-merch';
 
 import styles from './merch-catalog.module.scss';
 
@@ -19,6 +19,7 @@ export const MerchCatalog = ({ allProducts }: MerchProductsProps) => {
 
   const searchTerm = (searchParams.get('search') || '').trim().toLowerCase();
   const selectedTypes = searchParams.getAll('type');
+  const isFiltered = searchTerm !== '' || selectedTypes.length > 0;
 
   const tags = getTags(allProducts);
 
@@ -53,7 +54,7 @@ export const MerchCatalog = ({ allProducts }: MerchProductsProps) => {
             <MerchList products={filteredProducts} />
           )
         : (
-            <Paragraph>No merch found. Please try another filter or search term</Paragraph>
+            <NoMerch isFiltered={isFiltered} />
           )}
     </div>
   );
