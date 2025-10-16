@@ -36,7 +36,7 @@ vi.mock('./merch-filters/tag-filters/tag-filters', () => ({ default: vi.fn() }))
 vi.mock('./layouts/desktop-merch-filters/desktop-merch-filters', () => ({ DesktopMerchFilters: vi.fn() }));
 vi.mock('./layouts/mobile-merch-filters/mobile-merch-filters', () => ({ MobileMerchFilters: vi.fn() }));
 
-const defaultProps: MerchProductsProps = { initialProducts: MOCKED_PRODUCTS };
+const defaultProps: MerchProductsProps = { allProducts: MOCKED_PRODUCTS };
 
 describe('MerchCatalog', () => {
   beforeEach(() => {

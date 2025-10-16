@@ -11,7 +11,7 @@ export const MerchSection = async () => {
 
       {products?.length > 0 && (
         <div className="content">
-          <MerchCatalog initialProducts={products} />
+          <MerchCatalog allProducts={products} />
         </div>
       )}
     </section>

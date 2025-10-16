@@ -17,7 +17,7 @@ export const MerchFilter = ({ allTags }: MerchFilterProps) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  const searchTerm = searchParams.get('search') || '';
+  const searchTerm = (searchParams.get('search') || '').trim();
   const selectedTypes = searchParams.getAll('type');
   const isFiltered = searchTerm || selectedTypes.length;
 

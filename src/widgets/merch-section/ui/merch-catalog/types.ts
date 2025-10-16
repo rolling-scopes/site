@@ -5,5 +5,5 @@ export type MerchFilterProps = {
 };
 
 export type MerchProductsProps = {
-  initialProducts: MerchProduct[];
+  allProducts: MerchProduct[];
 };

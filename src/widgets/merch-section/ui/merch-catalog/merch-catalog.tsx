@@ -14,35 +14,34 @@ import styles from './merch-catalog.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const MerchCatalog = ({ initialProducts }: MerchProductsProps) => {
+export const MerchCatalog = ({ allProducts }: MerchProductsProps) => {
   const searchParams = useSearchParams();
 
-  const searchTerm = searchParams.get('search') || '';
+  const searchTerm = (searchParams.get('search') || '').trim().toLowerCase();
   const selectedTypes = searchParams.getAll('type');
 
-  const tags = getTags(initialProducts);
+  const tags = getTags(allProducts);
 
   const filteredProducts = useMemo(() => {
-    let productsToFilter = initialProducts || [];
-    const normalizedSearchTerm = searchTerm.trim().toLowerCase();
+    return allProducts
+      .filter((product) => {
+        if (!searchTerm) {
+          return true;
+        }
+        const titleMatch = product.title.toLowerCase().includes(searchTerm);
+        const tagsMatch = (product.tags || []).some((tag) =>
+          tag.toLowerCase().includes(searchTerm),
+        );
 
-    if (!Array.isArray(productsToFilter)) {
-      productsToFilter = [];
-    }
-
-    if (normalizedSearchTerm !== '') {
-      productsToFilter = productsToFilter.filter((product) =>
-        product.title.toLowerCase().includes(normalizedSearchTerm),
-      );
-    }
-
-    if (selectedTypes.length > 0) {
-      productsToFilter = productsToFilter.filter((product) =>
-        selectedTypes.some((typeValue) => (product.tags || []).includes(typeValue)),
-      );
-    }
-    return productsToFilter;
-  }, [initialProducts, searchTerm, selectedTypes]);
+        return titleMatch || tagsMatch;
+      })
+      .filter((product) => {
+        if (selectedTypes.length === 0) {
+          return true;
+        }
+        return selectedTypes.some((type) => (product.tags || []).includes(type));
+      });
+  }, [allProducts, searchTerm, selectedTypes]);
 
   return (
     <div className={cx('merch-catalog-wrapper')}>
