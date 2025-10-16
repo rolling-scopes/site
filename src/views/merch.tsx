@@ -1,18 +1,23 @@
 import { Suspense } from 'react';
 
+import { MerchProduct, merchStore } from '@/entities/merch';
 import welcome from '@/shared/assets/welcome.webp';
 import { Loader } from '@/shared/ui/loader/loader';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { Hero } from '@/widgets/hero';
-import { MerchSection } from '@/widgets/merch-section';
+import { MerchCatalog, NoMerch } from '@/widgets/merch-catalog/index';
 
 export const Merch = async () => {
+  const products: MerchProduct[] | [] = await merchStore.loadMerchCatalog();
+
   return (
     <>
       <Hero heading="Merch" subHeading="Free assets for your design" image={welcome} />
       <Breadcrumbs />
       <Suspense fallback={<Loader />}>
-        <MerchSection />
+        <section className="container">
+          {products && products.length > 0 ? <MerchCatalog allProducts={products} /> : <NoMerch />}
+        </section>
       </Suspense>
     </>
   );

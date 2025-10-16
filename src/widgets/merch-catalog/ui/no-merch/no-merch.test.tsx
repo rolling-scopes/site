@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { ImageProps } from 'next/image';
 import { describe, it, vi } from 'vitest';
 
-import NoMerch from './no-merch';
+import { NoMerch } from './no-merch';
 
 vi.mock('next/image', () => ({
   default: (props: ImageProps) => {

@@ -4,10 +4,10 @@ import { useMemo } from 'react';
 import classNames from 'classnames/bind';
 import { useSearchParams } from 'next/navigation';
 
+import { getTags } from '../helpers/get-tags';
+import { MerchProductsProps } from '../types';
 import { MerchFilter } from './merch-filter/merch-filter';
 import { MerchList } from './merch-list/merch-list';
-import { MerchProductsProps } from './types';
-import { getTags } from '../../helpers/get-tags';
 import { Paragraph } from '@/shared/ui/paragraph';
 
 import styles from './merch-catalog.module.scss';
@@ -44,7 +44,7 @@ export const MerchCatalog = ({ allProducts }: MerchProductsProps) => {
   }, [allProducts, searchTerm, selectedTypes]);
 
   return (
-    <div className={cx('merch-catalog-wrapper')}>
+    <div className={cx('content', 'merch-catalog-wrapper')}>
       <div className={cx('filters')}>
         <MerchFilter allTags={tags} />
       </div>

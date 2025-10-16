@@ -2,7 +2,7 @@ import { useState } from 'react';
 import classNames from 'classnames/bind';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-import { MerchFilterProps } from '../types';
+import { MerchFilterProps } from '../../types';
 import MerchSearch from './merch-search/merch-search';
 import MerchTags from './merch-tags/merch-tags';
 import { MerchTagsToggle } from './merch-tags-toggle/merch-tags-toggle';

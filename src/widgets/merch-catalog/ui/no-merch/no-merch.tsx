@@ -8,7 +8,7 @@ import styles from './no-merch.module.scss';
 
 const cx = classNames.bind(styles);
 
-const NoMerch = () => {
+export const NoMerch = () => {
   return (
     <div className={cx('content', 'no-merch')}>
       <Image className={cx('no-merch-image')} src={notFoundImg} alt="No merchandise available" />
@@ -16,5 +16,3 @@ const NoMerch = () => {
     </div>
   );
 };
-
-export default NoMerch;

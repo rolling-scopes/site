@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { MerchCatalog } from './merch-catalog';
-import { MerchProductsProps } from './types';
+import { MerchProductsProps } from '../types';
 import { MerchProduct } from '@/entities/merch';
 import { MOCKED_PRODUCTS } from '@/shared/__tests__/constants';
 
