@@ -8,19 +8,6 @@ export default function MerchSearch() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  // const handleSearchChange = (newSearchTerm: string) => {
-  //   const params = new URLSearchParams(searchParams.toString());
-
-  //   params.delete('page');
-
-  //   if (newSearchTerm) {
-  //     params.set('search', newSearchTerm);
-  //   } else {
-  //     params.delete('search');
-  //   }
-  //   router.replace(`${pathname}?${params.toString()}`, { scroll: false });
-  // };
-
   const urlSearchTerm = searchParams.get('search') || '';
   const [searchTerm, setSearchTerm] = useState(urlSearchTerm);
 

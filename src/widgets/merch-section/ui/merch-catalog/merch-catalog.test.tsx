@@ -1,10 +1,9 @@
 import React from 'react';
-import { act, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { MerchCatalog } from './merch-catalog';
 import { MerchFilter } from './merch-filter/merch-filter';
-import TagFilters from './merch-filter/merch-tags/merch-tags';
 import { MerchFilterProps, MerchProductsProps } from './types';
 import { MerchProduct } from '@/entities/merch';
 import { MOCKED_PRODUCTS } from '@/shared/__tests__/constants';
@@ -77,29 +76,6 @@ describe('MerchCatalog', () => {
     render(<MerchCatalog {...defaultProps} />);
     expect(screen.queryByText('Cool T-Shirt')).not.toBeInTheDocument();
     expect(screen.getByText('Awesome Mug')).toBeInTheDocument();
-  });
-
-  it.skip('updates the URL when TagFilters calls onTagChange to select a tag', () => {
-    render(<MerchCatalog {...defaultProps} />);
-    const tagFiltersProps = vi.mocked(TagFilters).mock.calls[0][0];
-
-    act(() => {
-      tagFiltersProps.onTagChange('clothing');
-    });
-    expect(mockRouterReplace).toHaveBeenCalledTimes(1);
-    expect(mockRouterReplace).toHaveBeenCalledExactlyOnceWith('/merch?type=clothing', { scroll: false });
-  });
-
-  it.skip('removes a tag from the URL when TagFilters calls onTagChange to deselect it', () => {
-    mockSearchParams = { types: ['clothing', 'unisex'] };
-    render(<MerchCatalog {...defaultProps} />);
-    const tagFiltersProps = vi.mocked(TagFilters).mock.calls[0][0];
-
-    act(() => {
-      tagFiltersProps.onTagChange('clothing');
-    });
-    expect(mockRouterReplace).toHaveBeenCalledTimes(1);
-    expect(mockRouterReplace).toHaveBeenCalledExactlyOnceWith('/merch?type=unisex', { scroll: false });
   });
 
   it.skip('shows "No merch found" when filters yield no results', () => {

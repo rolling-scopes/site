@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { Checkbox } from '@/shared/ui/checkbox/index';
 
@@ -7,23 +8,45 @@ import styles from './merch-tags.module.scss';
 const cx = classNames.bind(styles);
 
 type MerchTagsProps = {
-  allAvailableTags: string[];
-  selectedTags: string[];
-  onTagChange: (tag: string) => void;
+  allTags: string[];
 };
 
-export default function MerchTags({ allAvailableTags, selectedTags, onTagChange }: MerchTagsProps) {
+export default function MerchTags({ allTags }: MerchTagsProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const selectedTags = searchParams.getAll('type');
+
+  const handleTagChange = (tag: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+
+    params.delete('page');
+
+    const newSelectedTags = selectedTags.includes(tag)
+      ? selectedTags.filter((tags) => tags !== tag)
+      : [...selectedTags, tag];
+
+    params.delete('type');
+
+    newSelectedTags.forEach((type) => {
+      params.append('type', type);
+    });
+
+    const queryString = params.toString();
+
+    router.replace(queryString ? `${pathname}?${queryString}` : pathname, { scroll: false });
+  };
+
   return (
     <div id="merch-tags" className={cx('merch-tags')} role="region" aria-label="Merch filters">
-      {allAvailableTags.map((tag) => {
-        const safeId = `tag-checkbox-${tag.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
-
+      {allTags.map((tag) => {
         return (
           <Checkbox
             key={tag}
-            id={safeId}
+            id={tag}
             checked={selectedTags.includes(tag)}
-            onChange={() => onTagChange(tag)}
+            onChange={() => handleTagChange(tag)}
           >
             {tag}
           </Checkbox>

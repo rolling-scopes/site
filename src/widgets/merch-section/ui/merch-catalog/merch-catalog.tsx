@@ -66,14 +66,6 @@ export const MerchCatalog = ({ initialProducts }: MerchProductsProps) => {
     return productsToFilter;
   }, [initialProducts, searchTerm, selectedTypes]);
 
-  const handleTypeChange = (typeValue: string) => {
-    const newSelectedTypes = selectedTypes.includes(typeValue)
-      ? selectedTypes.filter((t) => t !== typeValue)
-      : [...selectedTypes, typeValue];
-
-    updateUrl(searchTerm, newSelectedTypes);
-  };
-
   const handleClearFilters = () => {
     updateUrl('', []);
   };
@@ -92,13 +84,7 @@ export const MerchCatalog = ({ initialProducts }: MerchProductsProps) => {
     hasActiveFilters: hasActiveFilters,
     onClearFilters: handleClearFilters,
     searchFilters: <SearchFilters />,
-    tagFilters: (
-      <TagFilters
-        allAvailableTags={tags}
-        selectedTags={selectedTypes}
-        onTagChange={handleTypeChange}
-      />
-    ),
+    tagFilters: <TagFilters allTags={tags} />,
   };
 
   return (
