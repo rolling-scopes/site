@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { SearchInput } from '@/shared/ui/search-input/search-input';
@@ -11,7 +11,14 @@ export default function MerchSearch() {
   const urlSearchTerm = searchParams.get('search') || '';
   const [searchTerm, setSearchTerm] = useState(urlSearchTerm);
 
+  const isWaitingForUrlUpdate = useRef(false);
+
   useEffect(() => {
+    if (isWaitingForUrlUpdate.current) {
+      isWaitingForUrlUpdate.current = false;
+      return;
+    }
+
     setSearchTerm(urlSearchTerm);
   }, [urlSearchTerm]);
 
@@ -29,6 +36,7 @@ export default function MerchSearch() {
       } else {
         params.delete('search');
       }
+      isWaitingForUrlUpdate.current = true;
       router.replace(`${pathname}?${params.toString()}`, { scroll: false });
     }, 300);
 
