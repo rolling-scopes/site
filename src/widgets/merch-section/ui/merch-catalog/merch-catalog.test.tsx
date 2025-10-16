@@ -3,8 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { MerchCatalog } from './merch-catalog';
-import { MerchFilter } from './merch-filter/merch-filter';
-import { MerchFilterProps, MerchProductsProps } from './types';
+import { MerchProductsProps } from './types';
 import { MerchProduct } from '@/entities/merch';
 import { MOCKED_PRODUCTS } from '@/shared/__tests__/constants';
 
@@ -43,13 +42,6 @@ describe('MerchCatalog', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mockSearchParams = {};
-
-    vi.mocked(MerchFilter).mockImplementation(({ searchFilters, tagFilters }: MerchFilterProps) => (
-      <div>
-        {searchFilters}
-        {tagFilters}
-      </div>
-    ));
   });
 
   describe('when rendering initial products without active filters', () => {

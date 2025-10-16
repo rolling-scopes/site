@@ -1,12 +1,10 @@
 'use client';
 
-import { useCallback, useMemo } from 'react';
+import { useMemo } from 'react';
 import classNames from 'classnames/bind';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 
 import { MerchFilter } from './merch-filter/merch-filter';
-import SearchFilters from './merch-filter/merch-search/merch-search';
-import TagFilters from './merch-filter/merch-tags/merch-tags';
 import { MerchList } from './merch-list/merch-list';
 import { MerchProductsProps } from './types';
 import { getTags } from '../../helpers/get-tags';
@@ -17,32 +15,12 @@ import styles from './merch-catalog.module.scss';
 const cx = classNames.bind(styles);
 
 export const MerchCatalog = ({ initialProducts }: MerchProductsProps) => {
-  const router = useRouter();
-  const pathname = usePathname();
   const searchParams = useSearchParams();
 
   const searchTerm = searchParams.get('search') || '';
   const selectedTypes = searchParams.getAll('type');
 
   const tags = getTags(initialProducts);
-
-  const updateUrl = useCallback(
-    (currentSearchTerm: string, currentSelectedTypes: string[]) => {
-      const params = new URLSearchParams();
-
-      if (currentSearchTerm) {
-        params.set('search', currentSearchTerm);
-      }
-      currentSelectedTypes.forEach((type) => {
-        params.append('type', type);
-      });
-
-      const queryString = params.toString();
-
-      router.replace(queryString ? `${pathname}?${queryString}` : pathname, { scroll: false });
-    },
-    [pathname, router],
-  );
 
   const filteredProducts = useMemo(() => {
     let productsToFilter = initialProducts || [];
@@ -66,34 +44,18 @@ export const MerchCatalog = ({ initialProducts }: MerchProductsProps) => {
     return productsToFilter;
   }, [initialProducts, searchTerm, selectedTypes]);
 
-  const handleClearFilters = () => {
-    updateUrl('', []);
-  };
-
-  const hasActiveFilters = searchTerm.trim() !== '' || selectedTypes.length > 0;
-
-  const renderContent = () => {
-    if (filteredProducts.length > 0) {
-      return <MerchList products={filteredProducts} />;
-    } else {
-      return <Paragraph>No merch found. Please try another filter or search term</Paragraph>;
-    }
-  };
-
-  const commonControlProps = {
-    hasActiveFilters: hasActiveFilters,
-    onClearFilters: handleClearFilters,
-    searchFilters: <SearchFilters />,
-    tagFilters: <TagFilters allTags={tags} />,
-  };
-
   return (
     <div className={cx('merch-catalog-wrapper')}>
       <div className={cx('filters')}>
-        <MerchFilter {...commonControlProps} />
+        <MerchFilter allTags={tags} />
       </div>
-
-      {renderContent()}
+      {filteredProducts.length
+        ? (
+            <MerchList products={filteredProducts} />
+          )
+        : (
+            <Paragraph>No merch found. Please try another filter or search term</Paragraph>
+          )}
     </div>
   );
 };

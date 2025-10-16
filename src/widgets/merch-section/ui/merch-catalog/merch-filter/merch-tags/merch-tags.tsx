@@ -16,20 +16,20 @@ export default function MerchTags({ allTags }: MerchTagsProps) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  const selectedTags = searchParams.getAll('type');
+  const selectedTypes = searchParams.getAll('type');
 
-  const handleTagChange = (tag: string) => {
+  const handleTypeChange = (typeValue: string) => {
     const params = new URLSearchParams(searchParams.toString());
 
     params.delete('page');
 
-    const newSelectedTags = selectedTags.includes(tag)
-      ? selectedTags.filter((tags) => tags !== tag)
-      : [...selectedTags, tag];
+    const newSelectedTypes = selectedTypes.includes(typeValue)
+      ? selectedTypes.filter((type) => type !== typeValue)
+      : [...selectedTypes, typeValue];
 
     params.delete('type');
 
-    newSelectedTags.forEach((type) => {
+    newSelectedTypes.forEach((type) => {
       params.append('type', type);
     });
 
@@ -45,8 +45,8 @@ export default function MerchTags({ allTags }: MerchTagsProps) {
           <Checkbox
             key={tag}
             id={tag}
-            checked={selectedTags.includes(tag)}
-            onChange={() => handleTagChange(tag)}
+            checked={selectedTypes.includes(tag)}
+            onChange={() => handleTypeChange(tag)}
           >
             {tag}
           </Checkbox>
