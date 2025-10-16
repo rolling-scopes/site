@@ -1,15 +1,39 @@
+import { useEffect, useState } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+
 import { SearchInput } from '@/shared/ui/search-input/search-input';
 
-type MerchSearchProps = {
-  searchTerm: string;
-  onSearchChange: (newSearchTerm: string) => void;
-};
+export default function MerchSearch() {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
-export default function MerchSearch({ searchTerm, onSearchChange }: MerchSearchProps) {
+  const urlSearchTerm = searchParams.get('search') || '';
+  const [searchTerm, setSearchTerm] = useState(urlSearchTerm);
+
+  useEffect(() => {
+    setSearchTerm(urlSearchTerm);
+  }, [urlSearchTerm]);
+
+  useEffect(() => {
+    if (searchTerm === urlSearchTerm) {
+      return;
+    }
+    const params = new URLSearchParams(searchParams.toString());
+
+    if (searchTerm) {
+      params.set('search', searchTerm);
+    } else {
+      params.delete('search');
+    }
+
+    router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+  }, [searchTerm, urlSearchTerm, pathname, router, searchParams]);
+
   return (
     <SearchInput
       value={searchTerm}
-      onChange={onSearchChange}
+      onChange={setSearchTerm}
       ariaLabel="Search merch"
       name="search"
     />

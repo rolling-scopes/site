@@ -4,7 +4,6 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { MerchCatalog } from './merch-catalog';
 import { MerchFilter } from './merch-filter/merch-filter';
-import SearchFilters from './merch-filter/merch-search/merch-search';
 import TagFilters from './merch-filter/merch-tags/merch-tags';
 import { MerchFilterProps, MerchProductsProps } from './types';
 import { MerchProduct } from '@/entities/merch';
@@ -78,17 +77,6 @@ describe('MerchCatalog', () => {
     render(<MerchCatalog {...defaultProps} />);
     expect(screen.queryByText('Cool T-Shirt')).not.toBeInTheDocument();
     expect(screen.getByText('Awesome Mug')).toBeInTheDocument();
-  });
-
-  it.skip('updates the URL when SearchFilters calls onSearchChange', () => {
-    render(<MerchCatalog {...defaultProps} />);
-    const searchFiltersProps = vi.mocked(SearchFilters).mock.calls[0][0];
-
-    act(() => {
-      searchFiltersProps.onSearchChange('Test');
-    });
-    expect(mockRouterReplace).toHaveBeenCalledTimes(1);
-    expect(mockRouterReplace).toHaveBeenCalledExactlyOnceWith('/merch?search=Test', { scroll: false });
   });
 
   it.skip('updates the URL when TagFilters calls onTagChange to select a tag', () => {

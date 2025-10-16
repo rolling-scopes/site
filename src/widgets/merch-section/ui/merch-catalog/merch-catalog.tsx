@@ -66,10 +66,6 @@ export const MerchCatalog = ({ initialProducts }: MerchProductsProps) => {
     return productsToFilter;
   }, [initialProducts, searchTerm, selectedTypes]);
 
-  const handleSearchChange = (newSearchTerm: string) => {
-    updateUrl(newSearchTerm, selectedTypes);
-  };
-
   const handleTypeChange = (typeValue: string) => {
     const newSelectedTypes = selectedTypes.includes(typeValue)
       ? selectedTypes.filter((t) => t !== typeValue)
@@ -95,7 +91,7 @@ export const MerchCatalog = ({ initialProducts }: MerchProductsProps) => {
   const commonControlProps = {
     hasActiveFilters: hasActiveFilters,
     onClearFilters: handleClearFilters,
-    searchFilters: <SearchFilters searchTerm={searchTerm} onSearchChange={handleSearchChange} />,
+    searchFilters: <SearchFilters />,
     tagFilters: (
       <TagFilters
         allAvailableTags={tags}
