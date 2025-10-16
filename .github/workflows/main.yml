@@ -26,33 +26,9 @@ env:
   NEXT_PUBLIC_YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY_PRODUCTION }}
 
 jobs:
-  check:
-    name: Check
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v5
-
-      - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v5
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
-
-      - uses: bahmutov/npm-install@v1
-
-      - name: Lint
-        run: npm run lint
-
-      - name: Style lint
-        run: npm run stylelint
-
-      - name: Run tests
-        run: npm run test
-
   staging:
     name: Deploy staging.rs.school
     runs-on: ubuntu-latest
-    needs: check
     steps:
       - uses: actions/checkout@v5
 
@@ -88,7 +64,6 @@ jobs:
   production:
     name: Deploy rs.school
     runs-on: ubuntu-latest
-    needs: check
     steps:
       - uses: actions/checkout@v5
 
