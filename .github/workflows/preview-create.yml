@@ -1,3 +1,4 @@
+# Create preview for pull request (pr{number}.rs.school)
 name: Preview
 
 on:
@@ -33,10 +34,12 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
+      - uses: bahmutov/npm-install@v1
+
       - name: Build
-        run: |
-          npm ci
-          npm run build
+        env:
+          NEXT_PUBLIC_DEPLOY_ENV: 'pr${{ github.event.pull_request.number }}'
+        run: npm run build
 
       - uses: jakejarvis/s3-sync-action@master
         name: Sync to S3
