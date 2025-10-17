@@ -4,7 +4,7 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { MerchTagsProps } from '../../types';
 import { MerchSearch } from './merch-search/merch-search';
-import MerchTags from './merch-tags/merch-tags';
+import { MerchTags } from './merch-tags/merch-tags';
 import { MerchTagsToggle } from './merch-tags-toggle/merch-tags-toggle';
 import { Subtitle } from '@/shared/ui/subtitle';
 

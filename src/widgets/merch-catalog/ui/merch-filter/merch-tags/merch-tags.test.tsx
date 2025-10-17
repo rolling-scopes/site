@@ -1,51 +1,70 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import MerchTags from './merch-tags';
+import { MerchTags } from './merch-tags';
+import { MOCKED_ROUTER, MOCKED_TAGS } from '@/shared/__tests__/constants';
+
+let mockedSearchParams: URLSearchParams = new URLSearchParams();
+
+vi.mock('next/navigation', () => ({
+  useRouter: () => MOCKED_ROUTER,
+  usePathname: () => '/merch',
+  useSearchParams: () => mockedSearchParams,
+}));
 
 describe('MerchTags', () => {
   const user = userEvent.setup();
-  const mockAllTags = ['Hoodie', 'Sticker', 'Cup'];
 
-  it.skip('should render nothing if no tags are provided', () => {
-    const { container } = render(<MerchTags tags={[]} />);
-
-    expect(container.firstChild).toBeNull();
+  beforeEach(() => {
+    MOCKED_ROUTER.replace.mockClear();
   });
 
-  it.skip('should render a checkbox for each available tag', () => {
-    render(<MerchTags tags={mockAllTags} />);
-
-    const checkboxes = screen.getAllByRole('checkbox');
-
-    expect(checkboxes).toHaveLength(mockAllTags.length);
-
-    expect(screen.getByLabelText('Hoodie')).toBeInTheDocument();
-    expect(screen.getByLabelText('Sticker')).toBeInTheDocument();
-    expect(screen.getByLabelText('Cup')).toBeInTheDocument();
+  it('should render all checkboxes unchecked if URL has no "type" params', () => {
+    mockedSearchParams = new URLSearchParams('');
+    render(<MerchTags tags={MOCKED_TAGS} />);
+    MOCKED_TAGS.forEach((tag) => {
+      expect(screen.getByLabelText(tag)).not.toBeChecked();
+    });
   });
 
-  it.skip('should correctly check the checkboxes based on the selectedTags prop', () => {
-    render(<MerchTags tags={mockAllTags} />);
-
+  it('should check the correct checkbox based on a  URL "type" param', () => {
+    mockedSearchParams = new URLSearchParams('type=Sticker');
+    render(<MerchTags tags={MOCKED_TAGS} />);
     expect(screen.getByLabelText('Sticker')).toBeChecked();
-
     expect(screen.getByLabelText('Hoodie')).not.toBeChecked();
     expect(screen.getByLabelText('Cup')).not.toBeChecked();
   });
 
-  it.skip('should call onTagChange with the correct tag when a label is clicked', async () => {
-    const handleTagChangeMock = vi.fn();
+  it('should add a type parameter to URL when an unchecked checkbox is clicked', async () => {
+    mockedSearchParams = new URLSearchParams('');
+    render(<MerchTags tags={MOCKED_TAGS} />);
+    await user.click(screen.getByLabelText('Hoodie'));
+    expect(MOCKED_ROUTER.replace).toHaveBeenCalledTimes(1);
+    expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith('/merch?type=Hoodie', { scroll: false });
+  });
 
-    render(<MerchTags tags={mockAllTags} />);
+  it('should remove the type parameter from URL when a checked checkbox is clicked', async () => {
+    mockedSearchParams = new URLSearchParams('type=Hoodie');
+    render(<MerchTags tags={MOCKED_TAGS} />);
+    await user.click(screen.getByLabelText('Hoodie'));
+    expect(MOCKED_ROUTER.replace).toHaveBeenCalledTimes(1);
+    expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith('/merch', { scroll: false });
+  });
 
-    const cupLabel = screen.getByText('Cup');
+  it('should correctly remove one of multiple type parameters from URL', async () => {
+    mockedSearchParams = new URLSearchParams('type=Sticker&type=Cup');
+    render(<MerchTags tags={MOCKED_TAGS} />);
+    await user.click(screen.getByLabelText('Sticker'));
+    expect(MOCKED_ROUTER.replace).toHaveBeenCalledTimes(1);
+    expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith('/merch?type=Cup', { scroll: false });
+  });
 
-    await user.click(cupLabel);
-
-    expect(handleTagChangeMock).toHaveBeenCalledTimes(1);
-
-    expect(handleTagChangeMock).toHaveBeenCalledExactlyOnceWith('Cup');
+  it('should remove the "page" parameter from URL when a filter is changed', async () => {
+    mockedSearchParams = new URLSearchParams('type=Hoodie&page=3');
+    render(<MerchTags tags={MOCKED_TAGS} />);
+    await user.click(screen.getByLabelText('Cup'));
+    expect(MOCKED_ROUTER.replace).toHaveBeenCalledTimes(1);
+    expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith('/merch?type=Hoodie&type=Cup', { scroll: false });
   });
 });

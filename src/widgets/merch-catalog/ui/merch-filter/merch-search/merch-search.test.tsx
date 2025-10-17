@@ -8,20 +8,20 @@ import {
   vi,
 } from 'vitest';
 
-const mockRouter = { replace: vi.fn() };
-let mockSearchParams: URLSearchParams;
+import { MerchSearch } from './merch-search';
+import { MOCKED_ROUTER } from '@/shared/__tests__/constants';
+
+let mockedSearchParams: URLSearchParams = new URLSearchParams();
 
 vi.mock('next/navigation', () => ({
-  useRouter: () => mockRouter,
+  useRouter: () => MOCKED_ROUTER,
   usePathname: () => '/merch',
-  useSearchParams: () => mockSearchParams,
+  useSearchParams: () => mockedSearchParams,
 }));
-
-import { MerchSearch } from './merch-search';
 
 describe('MerchSearch', () => {
   beforeEach(() => {
-    mockRouter.replace.mockClear();
+    MOCKED_ROUTER.replace.mockClear();
     vi.useFakeTimers();
   });
 
@@ -30,7 +30,7 @@ describe('MerchSearch', () => {
   });
 
   it('should reflect the URL search parameter on initial render', () => {
-    mockSearchParams = new URLSearchParams('search=t-shirt');
+    mockedSearchParams = new URLSearchParams('search=t-shirt');
     render(<MerchSearch />);
     const input = screen.getByLabelText('Search merch');
 
@@ -38,7 +38,7 @@ describe('MerchSearch', () => {
   });
 
   it('should have an empty value if there is no search parameter in the URL', () => {
-    mockSearchParams = new URLSearchParams('');
+    mockedSearchParams = new URLSearchParams('');
     render(<MerchSearch />);
     const input = screen.getByLabelText('Search merch');
 
@@ -46,58 +46,58 @@ describe('MerchSearch', () => {
   });
 
   it('should update the URL query after the user types with a debounce', () => {
-    mockSearchParams = new URLSearchParams('');
+    mockedSearchParams = new URLSearchParams('');
     render(<MerchSearch />);
     const input = screen.getByLabelText('Search merch');
 
     fireEvent.change(input, { target: { value: 'hoodie' } });
 
     expect(input).toHaveValue('hoodie');
-    expect(mockRouter.replace).not.toHaveBeenCalled();
+    expect(MOCKED_ROUTER.replace).not.toHaveBeenCalled();
     vi.runAllTimers();
-    expect(mockRouter.replace).toHaveBeenCalledTimes(1);
-    expect(mockRouter.replace).toHaveBeenCalledExactlyOnceWith('/merch?search=hoodie', { scroll: false });
+    expect(MOCKED_ROUTER.replace).toHaveBeenCalledTimes(1);
+    expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith('/merch?search=hoodie', { scroll: false });
   });
 
   it('should remove the search parameter from URL when input is cleared', () => {
-    mockSearchParams = new URLSearchParams('search=hoodie');
+    mockedSearchParams = new URLSearchParams('search=hoodie');
     render(<MerchSearch />);
     const input = screen.getByLabelText('Search merch');
 
     fireEvent.change(input, { target: { value: '' } });
     vi.runAllTimers();
-    expect(mockRouter.replace).toHaveBeenCalledTimes(1);
-    expect(mockRouter.replace).toHaveBeenCalledExactlyOnceWith('/merch?', { scroll: false });
+    expect(MOCKED_ROUTER.replace).toHaveBeenCalledTimes(1);
+    expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith('/merch?', { scroll: false });
   });
 
   it('should remove the "page" parameter when performing a new search', () => {
-    mockSearchParams = new URLSearchParams('search=t-shirt&page=2');
+    mockedSearchParams = new URLSearchParams('search=t-shirt&page=2');
     render(<MerchSearch />);
     const input = screen.getByLabelText('Search merch');
 
     fireEvent.change(input, { target: { value: 'cups' } });
     vi.runAllTimers();
-    expect(mockRouter.replace).toHaveBeenCalledTimes(1);
-    expect(mockRouter.replace).toHaveBeenCalledExactlyOnceWith('/merch?search=cups', { scroll: false });
+    expect(MOCKED_ROUTER.replace).toHaveBeenCalledTimes(1);
+    expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith('/merch?search=cups', { scroll: false });
   });
 
   it('should not call router.replace if the search term matches the URL', () => {
-    mockSearchParams = new URLSearchParams('search=hoodie');
+    mockedSearchParams = new URLSearchParams('search=hoodie');
     render(<MerchSearch />);
     const input = screen.getByLabelText('Search merch');
 
     fireEvent.change(input, { target: { value: 'hoodie' } });
     vi.runAllTimers();
-    expect(mockRouter.replace).not.toHaveBeenCalled();
+    expect(MOCKED_ROUTER.replace).not.toHaveBeenCalled();
   });
 
   it('should update its value when the URL search parameter changes externally', () => {
-    mockSearchParams = new URLSearchParams('search=t-shirt');
+    mockedSearchParams = new URLSearchParams('search=t-shirt');
     const { rerender } = render(<MerchSearch />);
     const input = screen.getByLabelText('Search merch');
 
     expect(input).toHaveValue('t-shirt');
-    mockSearchParams = new URLSearchParams('search=hoodie');
+    mockedSearchParams = new URLSearchParams('search=hoodie');
     rerender(<MerchSearch />);
     expect(input).toHaveValue('hoodie');
   });

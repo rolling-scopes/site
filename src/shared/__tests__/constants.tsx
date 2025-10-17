@@ -301,3 +301,7 @@ export const MOCKED_PRODUCTS_WITH_BLANK_TAGS: MerchProduct[] = [
     download: ['https://example.com/download/product-2.zip'],
   },
 ];
+
+export const MOCKED_TAGS = ['Hoodie', 'Sticker', 'Cup'];
+
+export const MOCKED_ROUTER = { replace: vi.fn() };
