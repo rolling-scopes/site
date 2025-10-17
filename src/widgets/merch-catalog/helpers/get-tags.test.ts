@@ -10,7 +10,7 @@ import {
 describe('getTags', () => {
   it('should extract, deduplicate, and sort all tags alphabetically', () => {
     const result = getTags(MOCKED_PRODUCTS);
-    const expected = ['clothing', 'gift', 'kitchen', 'men', 'unisex'];
+    const expected = ['cups', 'hoodie', 'merch', 't-shirts'];
 
     expect(result).toEqual(expected);
   });
@@ -30,6 +30,6 @@ describe('getTags', () => {
   it('should correctly filter out empty string tags', () => {
     const result = getTags(MOCKED_PRODUCTS_WITH_BLANK_TAGS);
 
-    expect(result).toEqual(['tag1', 'tag2']);
+    expect(result).toEqual(['hoodie', 'merch']);
   });
 });

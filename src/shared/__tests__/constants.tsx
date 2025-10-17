@@ -233,7 +233,7 @@ export const MOCKED_PRODUCTS: MerchProduct[] = [
   {
     id: 1,
     title: 'Cool T-Shirt',
-    tags: ['clothing', 'unisex'],
+    tags: ['t-shirts', 'hoodie'],
     name: 'cool-t-shirt',
     preview: ['https://example.com/preview/cool-t-shirt.jpg'],
     download: ['https://example.com/download/cool-t-shirt.zip'],
@@ -241,7 +241,7 @@ export const MOCKED_PRODUCTS: MerchProduct[] = [
   {
     id: 2,
     title: 'Awesome Mug',
-    tags: ['kitchen', 'gift'],
+    tags: ['merch', 'cups'],
     name: 'awesome-mug',
     preview: ['https://example.com/preview/awesome-mug.jpg'],
     download: ['https://example.com/download/awesome-mug.zip'],
@@ -249,59 +249,59 @@ export const MOCKED_PRODUCTS: MerchProduct[] = [
   {
     id: 3,
     title: 'Another T-Shirt',
-    tags: ['clothing', 'men'],
+    tags: ['t-shirts', 'merch'],
     name: 'another-t-shirt',
     preview: ['https://example.com/preview/another-t-shirt.jpg'],
     download: ['https://example.com/download/another-t-shirt.zip'],
   },
-];
+] as unknown as MerchProduct[];
 
 export const MOCKED_PRODUCTS_WITH_MISSING_TAGS: MerchProduct[] = [
   {
     id: 1,
-    title: 'Product 1',
+    title: 'Cool T-Shirt',
     tags: null,
-    name: 'product-1',
-    preview: ['https://example.com/preview/product-1.jpg'],
-    download: ['https://example.com/download/product-1.zip'],
+    name: 'cool-t-shirt',
+    preview: ['https://example.com/preview/cool-t-shirt.jpg'],
+    download: ['https://example.com/download/cool-t-shirt.zip'],
   },
   {
     id: 2,
-    title: 'Product 2',
+    title: 'Awesome Mug',
     tags: undefined,
-    name: 'product-2',
-    preview: ['https://example.com/preview/product-2.jpg'],
-    download: ['https://example.com/download/product-2.zip'],
+    name: 'awesome-mug',
+    preview: ['https://example.com/preview/awesome-mug.jpg'],
+    download: ['https://example.com/download/awesome-mug.zip'],
   },
   {
     id: 3,
-    title: 'Product 3',
+    title: 'Another T-Shirt',
     tags: [],
-    name: 'product-3',
-    preview: ['https://example.com/preview/product-3.jpg'],
-    download: ['https://example.com/download/product-3.zip'],
+    name: 'another-t-shirt',
+    preview: ['https://example.com/preview/another-t-shirt.jpg'],
+    download: ['https://example.com/download/another-t-shirt.zip'],
   },
 ] as unknown as MerchProduct[];
 
 export const MOCKED_PRODUCTS_WITH_BLANK_TAGS: MerchProduct[] = [
   {
     id: 1,
-    title: 'Product 1',
-    tags: ['tag1', '', 'tag2'],
-    name: 'product-1',
-    preview: ['https://example.com/preview/product-1.jpg'],
-    download: ['https://example.com/download/product-1.zip'],
+    title: 'Cool T-Shirt',
+    tags: ['hoodie', '', 'merch'],
+    name: 'cool-t-shirt',
+    preview: ['https://example.com/preview/cool-t-shirt.jpg'],
+    download: ['https://example.com/download/cool-t-shirt.zip'],
   },
   {
     id: 2,
-    title: 'Product 2',
+    title: 'Awesome Mug',
     tags: [''],
-    name: 'product-2',
-    preview: ['https://example.com/preview/product-2.jpg'],
-    download: ['https://example.com/download/product-2.zip'],
+    name: 'awesome-mug',
+    preview: ['https://example.com/preview/awesome-mug.jpg'],
+    download: ['https://example.com/download/awesome-mug.zip'],
   },
 ];
 
-export const MOCKED_TAGS = ['Hoodie', 'Sticker', 'Cup'];
+export const MOCKED_TAGS = ['Hoodie', 'Merch', 'Cup', 'T-Shirts'];
 
 export const MOCKED_ROUTER = { replace: vi.fn() };

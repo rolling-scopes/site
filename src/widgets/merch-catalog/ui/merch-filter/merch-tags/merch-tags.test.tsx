@@ -29,9 +29,9 @@ describe('MerchTags', () => {
   });
 
   it('should check the correct checkbox based on a  URL "type" param', () => {
-    mockedSearchParams = new URLSearchParams('type=Sticker');
+    mockedSearchParams = new URLSearchParams('type=T-Shirts');
     render(<MerchTags tags={MOCKED_TAGS} />);
-    expect(screen.getByLabelText('Sticker')).toBeChecked();
+    expect(screen.getByLabelText('T-Shirts')).toBeChecked();
     expect(screen.getByLabelText('Hoodie')).not.toBeChecked();
     expect(screen.getByLabelText('Cup')).not.toBeChecked();
   });
@@ -53,9 +53,9 @@ describe('MerchTags', () => {
   });
 
   it('should correctly remove one of multiple type parameters from URL', async () => {
-    mockedSearchParams = new URLSearchParams('type=Sticker&type=Cup');
+    mockedSearchParams = new URLSearchParams('type=T-Shirts&type=Cup');
     render(<MerchTags tags={MOCKED_TAGS} />);
-    await user.click(screen.getByLabelText('Sticker'));
+    await user.click(screen.getByLabelText('T-Shirts'));
     expect(MOCKED_ROUTER.replace).toHaveBeenCalledTimes(1);
     expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith('/merch?type=Cup', { scroll: false });
   });
