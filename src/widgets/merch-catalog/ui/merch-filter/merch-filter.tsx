@@ -2,7 +2,7 @@ import { useState } from 'react';
 import classNames from 'classnames/bind';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-import { MerchFilterProps } from '../../types';
+import { MerchTagsProps } from '../../types';
 import MerchSearch from './merch-search/merch-search';
 import MerchTags from './merch-tags/merch-tags';
 import { MerchTagsToggle } from './merch-tags-toggle/merch-tags-toggle';
@@ -12,7 +12,7 @@ import styles from './merch-filter.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const MerchFilter = ({ allTags }: MerchFilterProps) => {
+export const MerchFilter = ({ tags }: MerchTagsProps) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -48,7 +48,7 @@ export const MerchFilter = ({ allTags }: MerchFilterProps) => {
       <div className={cx('tags')}>
         <MerchTagsToggle isOpen={areTagsOpen} onClick={toggleTagsDropdown} />
         <div className={cx('tags-list', { expanded: areTagsOpen })}>
-          <MerchTags allTags={allTags} />
+          <MerchTags tags={tags} />
         </div>
       </div>
     </div>

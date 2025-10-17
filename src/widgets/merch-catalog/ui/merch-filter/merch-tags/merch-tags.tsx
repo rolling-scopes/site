@@ -2,16 +2,13 @@ import classNames from 'classnames/bind';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { Checkbox } from '@/shared/ui/checkbox/index';
+import { MerchTagsProps } from '@/widgets/merch-catalog/types';
 
 import styles from './merch-tags.module.scss';
 
 const cx = classNames.bind(styles);
 
-type MerchTagsProps = {
-  allTags: string[];
-};
-
-export default function MerchTags({ allTags }: MerchTagsProps) {
+export default function MerchTags({ tags }: MerchTagsProps) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -40,7 +37,7 @@ export default function MerchTags({ allTags }: MerchTagsProps) {
 
   return (
     <div id="merch-tags" className={cx('merch-tags')} role="region" aria-label="Merch filters">
-      {allTags.map((tag) => {
+      {tags.map((tag) => {
         return (
           <Checkbox
             key={tag}

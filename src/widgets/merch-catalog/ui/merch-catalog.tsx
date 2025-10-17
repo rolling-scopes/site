@@ -14,17 +14,17 @@ import styles from './merch-catalog.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const MerchCatalog = ({ allProducts }: MerchProductsProps) => {
+export const MerchCatalog = ({ products }: MerchProductsProps) => {
   const searchParams = useSearchParams();
 
   const searchTerm = (searchParams.get('search') || '').trim().toLowerCase();
   const selectedTypes = searchParams.getAll('type');
   const isFiltered = searchTerm !== '' || selectedTypes.length > 0;
 
-  const tags = getTags(allProducts);
+  const tags = getTags(products);
 
   const filteredProducts = useMemo(() => {
-    return allProducts
+    return products
       .filter((product) => {
         if (!searchTerm) {
           return true;
@@ -42,12 +42,12 @@ export const MerchCatalog = ({ allProducts }: MerchProductsProps) => {
         }
         return selectedTypes.some((type) => (product.tags || []).includes(type));
       });
-  }, [allProducts, searchTerm, selectedTypes]);
+  }, [products, searchTerm, selectedTypes]);
 
   return (
     <div className={cx('content', 'merch-catalog')}>
       <div className={cx('merch-catalog-tags')}>
-        <MerchFilter allTags={tags} />
+        <MerchFilter tags={tags} />
       </div>
       {filteredProducts.length
         ? (

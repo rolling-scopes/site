@@ -9,13 +9,13 @@ describe('MerchTags', () => {
   const mockAllTags = ['Hoodie', 'Sticker', 'Cup'];
 
   it.skip('should render nothing if no tags are provided', () => {
-    const { container } = render(<MerchTags allTags={[]} />);
+    const { container } = render(<MerchTags tags={[]} />);
 
     expect(container.firstChild).toBeNull();
   });
 
   it.skip('should render a checkbox for each available tag', () => {
-    render(<MerchTags allTags={mockAllTags} />);
+    render(<MerchTags tags={mockAllTags} />);
 
     const checkboxes = screen.getAllByRole('checkbox');
 
@@ -27,7 +27,7 @@ describe('MerchTags', () => {
   });
 
   it.skip('should correctly check the checkboxes based on the selectedTags prop', () => {
-    render(<MerchTags allTags={mockAllTags} />);
+    render(<MerchTags tags={mockAllTags} />);
 
     expect(screen.getByLabelText('Sticker')).toBeChecked();
 
@@ -38,7 +38,7 @@ describe('MerchTags', () => {
   it.skip('should call onTagChange with the correct tag when a label is clicked', async () => {
     const handleTagChangeMock = vi.fn();
 
-    render(<MerchTags allTags={mockAllTags} />);
+    render(<MerchTags tags={mockAllTags} />);
 
     const cupLabel = screen.getByText('Cup');
 
