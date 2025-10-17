@@ -1,17 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
+import { ReadonlyURLSearchParams, usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { SearchInput } from '@/shared/ui/search-input/search-input';
 
-export default function MerchSearch() {
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+export const MerchSearch = () => {
+  const router: AppRouterInstance = useRouter();
+  const pathname: string = usePathname();
+  const searchParams: ReadonlyURLSearchParams = useSearchParams();
 
-  const urlSearchTerm = searchParams.get('search') || '';
-  const [searchTerm, setSearchTerm] = useState(urlSearchTerm);
+  const urlSearchTerm: string = searchParams.get('search') || '';
+  const [searchTerm, setSearchTerm] = useState<string>(urlSearchTerm);
 
-  const isWaitingForUrlUpdate = useRef(false);
+  const isWaitingForUrlUpdate = useRef<boolean>(false);
 
   useEffect(() => {
     if (isWaitingForUrlUpdate.current) {
@@ -28,7 +29,7 @@ export default function MerchSearch() {
     }
 
     const timeoutId = setTimeout(() => {
-      const params = new URLSearchParams(searchParams.toString());
+      const params = new URLSearchParams(searchParams);
 
       params.delete('page');
       if (searchTerm) {
@@ -51,4 +52,4 @@ export default function MerchSearch() {
       name="search"
     />
   );
-}
+};
