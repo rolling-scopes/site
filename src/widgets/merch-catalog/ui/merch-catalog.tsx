@@ -45,8 +45,8 @@ export const MerchCatalog = ({ allProducts }: MerchProductsProps) => {
   }, [allProducts, searchTerm, selectedTypes]);
 
   return (
-    <div className={cx('content', 'merch-catalog-wrapper')}>
-      <div className={cx('filters')}>
+    <div className={cx('content', 'merch-catalog')}>
+      <div className={cx('merch-catalog-tags')}>
         <MerchFilter allTags={tags} />
       </div>
       {filteredProducts.length

@@ -1,6 +1,14 @@
-.merch-catalog-wrapper {
+.merch-catalog {
   display: flex;
   gap: $gap-xl;
+
+  &-tags {
+    width: 224px;
+
+    @include media-tablet-large {
+      width: 100%;
+    }
+  }
 
   @include media-tablet-large {
     display: flex;
@@ -9,30 +17,5 @@
     align-items: center;
 
     width: 100%;
-  }
-}
-
-.filters {
-  display: block;
-  width: 222px;
-
-  @include media-tablet-large {
-    width: 100%;
-  }
-}
-
-.desktop-layout {
-  display: block;
-
-  @include media-tablet-large {
-    display: none;
-  }
-}
-
-.mobile-layout {
-  display: none;
-
-  @include media-tablet-large {
-    display: block;
   }
 }
