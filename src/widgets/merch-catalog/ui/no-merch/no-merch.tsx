@@ -25,7 +25,11 @@ export const NoMerch = ({ isFiltered = false }: NoMerchProps) => {
 
   return (
     <div className={cx('no-merch')}>
-      <Image className={cx('no-merch-image')} src={notFoundImg} alt="No merchandise available" />
+      <Image
+        className={cx('no-merch-image')}
+        src={notFoundImg}
+        alt={isFiltered ? 'No results found' : 'No merchandise available'}
+      />
       {isFiltered
         ? (
             <Paragraph className={cx('no-merch-text')}>
