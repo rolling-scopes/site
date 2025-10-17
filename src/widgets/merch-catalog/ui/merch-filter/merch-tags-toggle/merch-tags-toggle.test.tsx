@@ -18,7 +18,6 @@ describe('MerchTagsToggle', () => {
     const handleClick = vi.fn();
 
     render(<MerchTagsToggle isOpen={true} onClick={handleClick} />);
-
     const button = screen.getByRole('button', { name: /all filters/i });
 
     expect(button).toBeInTheDocument();

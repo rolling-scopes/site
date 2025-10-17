@@ -28,7 +28,7 @@ export const MerchTagsToggle = ({ isOpen, onClick }: MerchTagsToggleProps) => {
         src={DropdownArrow}
         alt=""
         aria-label="dropdown-arrow"
-        className={cx('tag-arrow', { rotate: isOpen })}
+        className={cx('dropdown-arrow', { rotate: isOpen })}
       />
     </button>
   );
