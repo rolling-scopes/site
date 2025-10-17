@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import classNames from 'classnames/bind';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
+import { ReadonlyURLSearchParams, usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { MerchTagsProps } from '../../types';
 import { MerchSearch } from './merch-search/merch-search';
@@ -13,19 +14,19 @@ import styles from './merch-filter.module.scss';
 const cx = classNames.bind(styles);
 
 export const MerchFilter = ({ tags }: MerchTagsProps) => {
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const router: AppRouterInstance = useRouter();
+  const pathname: string = usePathname();
+  const searchParams: ReadonlyURLSearchParams = useSearchParams();
 
-  const searchTerm = (searchParams.get('search') || '').trim();
-  const selectedTypes = searchParams.getAll('type');
-  const isFiltered = searchTerm || selectedTypes.length;
+  const searchTerm: string = (searchParams.get('search') || '').trim();
+  const selectedTypes: string[] = searchParams.getAll('type');
+  const isFiltered: boolean = !!(searchTerm || selectedTypes.length);
 
   const handleClearFilters = () => {
     router.replace(pathname, { scroll: false });
   };
 
-  const [areTagsOpen, setTagsOpen] = useState(false);
+  const [areTagsOpen, setTagsOpen] = useState<boolean>(false);
   const toggleTagsDropdown = () => {
     setTagsOpen((prev) => !prev);
   };
