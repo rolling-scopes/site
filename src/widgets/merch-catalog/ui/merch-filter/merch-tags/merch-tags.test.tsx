@@ -29,42 +29,42 @@ describe('MerchTags', () => {
   });
 
   it('should check the correct checkbox based on a  URL "type" param', () => {
-    mockedSearchParams = new URLSearchParams('type=T-Shirts');
+    mockedSearchParams = new URLSearchParams('type=t-shirts');
     render(<MerchTags tags={MOCKED_TAGS} />);
-    expect(screen.getByLabelText('T-Shirts')).toBeChecked();
-    expect(screen.getByLabelText('Hoodie')).not.toBeChecked();
-    expect(screen.getByLabelText('Cup')).not.toBeChecked();
+    expect(screen.getByLabelText('t-shirts')).toBeChecked();
+    expect(screen.getByLabelText('hoodie')).not.toBeChecked();
+    expect(screen.getByLabelText('cups')).not.toBeChecked();
   });
 
   it('should add a type parameter to URL when an unchecked checkbox is clicked', async () => {
     mockedSearchParams = new URLSearchParams('');
     render(<MerchTags tags={MOCKED_TAGS} />);
-    await user.click(screen.getByLabelText('Hoodie'));
+    await user.click(screen.getByLabelText('hoodie'));
     expect(MOCKED_ROUTER.replace).toHaveBeenCalledTimes(1);
-    expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith('/merch?type=Hoodie', { scroll: false });
+    expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith('/merch?type=hoodie', { scroll: false });
   });
 
   it('should remove the type parameter from URL when a checked checkbox is clicked', async () => {
-    mockedSearchParams = new URLSearchParams('type=Hoodie');
+    mockedSearchParams = new URLSearchParams('type=hoodie');
     render(<MerchTags tags={MOCKED_TAGS} />);
-    await user.click(screen.getByLabelText('Hoodie'));
+    await user.click(screen.getByLabelText('hoodie'));
     expect(MOCKED_ROUTER.replace).toHaveBeenCalledTimes(1);
     expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith('/merch', { scroll: false });
   });
 
   it('should correctly remove one of multiple type parameters from URL', async () => {
-    mockedSearchParams = new URLSearchParams('type=T-Shirts&type=Cup');
+    mockedSearchParams = new URLSearchParams('type=t-shirts&type=cups');
     render(<MerchTags tags={MOCKED_TAGS} />);
-    await user.click(screen.getByLabelText('T-Shirts'));
+    await user.click(screen.getByLabelText('t-shirts'));
     expect(MOCKED_ROUTER.replace).toHaveBeenCalledTimes(1);
-    expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith('/merch?type=Cup', { scroll: false });
+    expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith('/merch?type=cups', { scroll: false });
   });
 
   it('should remove the "page" parameter from URL when a filter is changed', async () => {
-    mockedSearchParams = new URLSearchParams('type=Hoodie&page=3');
+    mockedSearchParams = new URLSearchParams('type=hoodie&page=3');
     render(<MerchTags tags={MOCKED_TAGS} />);
-    await user.click(screen.getByLabelText('Cup'));
+    await user.click(screen.getByLabelText('cups'));
     expect(MOCKED_ROUTER.replace).toHaveBeenCalledTimes(1);
-    expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith('/merch?type=Hoodie&type=Cup', { scroll: false });
+    expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith('/merch?type=hoodie&type=cups', { scroll: false });
   });
 });

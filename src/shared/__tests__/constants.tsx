@@ -303,6 +303,6 @@ export const MOCKED_PRODUCTS_WITH_BLANK_TAGS: MerchProduct[] = [
   },
 ];
 
-export const MOCKED_TAGS = ['Hoodie', 'Merch', 'Cup', 'T-Shirts'];
+export const MOCKED_TAGS = ['cups', 'hoodie', 'merch', 't-shirts'];
 
 export const MOCKED_ROUTER = { replace: vi.fn() };
