@@ -1,6 +1,10 @@
 .menu {
   width: 300px;
 
+  .link {
+    font-size: $font-size-xs;
+  }
+
   > ul {
     padding-bottom: 15px;
   }

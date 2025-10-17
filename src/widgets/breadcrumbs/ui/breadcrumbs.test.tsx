@@ -13,6 +13,7 @@ vi.mock('next/navigation', () => ({
   usePathname() {
     return mockUsePathname();
   },
+  useParams: () => {},
 }));
 
 describe('Breadcrumbs', () => {

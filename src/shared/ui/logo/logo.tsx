@@ -2,10 +2,10 @@ import { HTMLAttributes } from 'react';
 import { type VariantProps, cva } from 'class-variance-authority';
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
-import Link from 'next/link';
 
 import logo from '@/shared/assets/svg/rss-logo.svg';
 import { ROUTES } from '@/shared/constants';
+import { LinkCustom } from '@/shared/ui/link-custom';
 
 import styles from './logo.module.scss';
 
@@ -21,7 +21,7 @@ const logoVariants = cva(cx('logo'), { variants: { type: { 'with-border': cx('wi
 
 export const Logo = ({ type, className, logoSrc = logo, onClick }: LogoProps) => {
   return (
-    <Link
+    <LinkCustom
       href={ROUTES.HOME}
       className={logoVariants({
         type,
@@ -31,6 +31,6 @@ export const Logo = ({ type, className, logoSrc = logo, onClick }: LogoProps) =>
       onClick={onClick}
     >
       <Image src={logoSrc} alt="RSS-logo" />
-    </Link>
+    </LinkCustom>
   );
 };

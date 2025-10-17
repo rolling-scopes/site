@@ -20,6 +20,9 @@ body {
 
 * {
   box-sizing: border-box;
+
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 }
 
 h1 {
@@ -173,4 +176,18 @@ figure {
   @include media-tablet-large {
     display: unset;
   }
+}
+
+.separator-root {
+  background-color: $color-gray-600;
+}
+
+.separator-root[data-orientation='horizontal'] {
+  width: 100%;
+  height: 1px;
+}
+
+.separator-root[data-orientation='vertical'] {
+  width: 1px;
+  height: 24px;
 }

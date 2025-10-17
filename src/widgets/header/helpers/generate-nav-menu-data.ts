@@ -108,7 +108,7 @@ export const generateNavItemsConfig = (iconSrc: StaticImageData) => {
     },
     {
       label: NAV_MENU_LABELS.DOCS,
-      url: ROUTES.DOCS_EN,
+      url: ROUTES.DOCS,
     },
     {
       label: NAV_MENU_LABELS.SUPPORT_US,
