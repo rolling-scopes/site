@@ -1,5 +1,6 @@
 'use client';
 import classNames from 'classnames/bind';
+import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 
@@ -15,8 +16,8 @@ interface NoMerchProps {
 }
 
 export const NoMerch = ({ isFiltered = false }: NoMerchProps) => {
-  const router = useRouter();
-  const pathname = usePathname();
+  const router: AppRouterInstance = useRouter();
+  const pathname: string = usePathname();
 
   const handleClearFilters = () => {
     router.replace(pathname, { scroll: false });
