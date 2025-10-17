@@ -1,4 +1,5 @@
 import { StaticImageData } from 'next/image';
+import { vi } from 'vitest';
 
 import { Video } from '../types';
 import { Course } from '@/entities/course';
