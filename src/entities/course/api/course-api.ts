@@ -6,7 +6,7 @@ export class CourseApi {
   constructor(private readonly services: ApiServices) {}
 
   public queryCourses(params?: Record<string, unknown>) {
-    return this.services.rest.get<CoursesResponse>('/entries', {
+    return this.services.contentful.get<CoursesResponse>('/entries', {
       params: {
         order: 'fields.order',
         ...params,
@@ -25,6 +25,6 @@ export class CourseApi {
   };
 
   public queryCoursesSchedule() {
-    return this.services.rest.get<CoursesScheduleResponse>('/app/courses.json');
+    return this.services.rsApp.get<CoursesScheduleResponse>('/app/courses.json');
   }
 }
