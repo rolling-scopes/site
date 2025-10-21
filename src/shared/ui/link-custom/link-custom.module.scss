@@ -56,7 +56,7 @@
     width: 100%;
   }
 
-  @media (hover: hover) and (pointer: fine) {
+  @include media-hover {
     &:hover {
       border-color: $color-gray-600;
       background-color: $color-gray-600;
