@@ -8,10 +8,10 @@ import styles from './merch-tags-toggle.module.scss';
 
 const cx = classNames.bind(styles);
 
-interface MerchTagsToggleProps {
+type MerchTagsToggleProps = {
   isOpen: boolean;
   onClick: () => void;
-}
+};
 
 export const MerchTagsToggle = ({ isOpen, onClick }: MerchTagsToggleProps) => {
   return (

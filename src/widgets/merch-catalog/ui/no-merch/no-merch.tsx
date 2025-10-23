@@ -11,9 +11,9 @@ import styles from './no-merch.module.scss';
 
 const cx = classNames.bind(styles);
 
-interface NoMerchProps {
+type NoMerchProps = {
   isFiltered?: boolean;
-}
+};
 
 export const NoMerch = ({ isFiltered = false }: NoMerchProps) => {
   const router: AppRouterInstance = useRouter();
