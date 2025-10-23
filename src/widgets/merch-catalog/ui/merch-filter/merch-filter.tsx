@@ -3,7 +3,6 @@ import classNames from 'classnames/bind';
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 import { ReadonlyURLSearchParams, usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-import { MerchTagsProps } from '../../types';
 import { MerchSearch } from './merch-search/merch-search';
 import { MerchTags } from './merch-tags/merch-tags';
 import { MerchTagsToggle } from './merch-tags-toggle/merch-tags-toggle';
@@ -12,6 +11,10 @@ import { Subtitle } from '@/shared/ui/subtitle';
 import styles from './merch-filter.module.scss';
 
 const cx = classNames.bind(styles);
+
+type MerchTagsProps = {
+  tags: string[];
+};
 
 export const MerchFilter = ({ tags }: MerchTagsProps) => {
   const router: AppRouterInstance = useRouter();

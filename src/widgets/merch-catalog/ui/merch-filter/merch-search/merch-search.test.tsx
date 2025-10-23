@@ -51,7 +51,6 @@ describe('MerchSearch', () => {
     const input = screen.getByLabelText('Search merch');
 
     fireEvent.change(input, { target: { value: 'hoodie' } });
-
     expect(input).toHaveValue('hoodie');
     expect(MOCKED_ROUTER.replace).not.toHaveBeenCalled();
     vi.runAllTimers();

@@ -3,11 +3,14 @@ import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.share
 import { ReadonlyURLSearchParams, usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { Checkbox } from '@/shared/ui/checkbox/index';
-import { MerchTagsProps } from '@/widgets/merch-catalog/types';
 
 import styles from './merch-tags.module.scss';
 
 const cx = classNames.bind(styles);
+
+type MerchTagsProps = {
+  tags: string[];
+};
 
 export const MerchTags = ({ tags }: MerchTagsProps) => {
   const router: AppRouterInstance = useRouter();
