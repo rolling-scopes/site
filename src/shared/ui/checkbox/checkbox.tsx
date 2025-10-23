@@ -27,7 +27,7 @@ export const Checkbox = ({ id, checked, onChange, children, className }: Checkbo
       />
 
       <span className={cx('checkbox-custom')}></span>
-      <span>{children}</span>
+      <div>{children}</div>
     </label>
   );
 };
