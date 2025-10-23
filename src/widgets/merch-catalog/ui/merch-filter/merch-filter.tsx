@@ -42,16 +42,16 @@ export const MerchFilter = ({ tags }: MerchTagsProps) => {
         </Subtitle>
         <button
           type="button"
-          className={cx('merch-filter-button', 'merch-filter-secondary', { active: isFiltered })}
+          className={cx('merch-filter-button', 'merch-filter-rounded', { active: isFiltered })}
           onClick={handleClearFilters}
         >
           Clear
         </button>
       </div>
       <MerchSearch />
-      <div className={cx('tags')}>
+      <div className={cx('merch-filter-tags')}>
         <MerchTagsToggle isOpen={areTagsOpen} onClick={toggleTagsDropdown} />
-        <div className={cx('tags-list', { expanded: areTagsOpen })}>
+        <div className={cx('merch-filter-tags-list', { expanded: areTagsOpen })}>
           <MerchTags tags={tags} />
         </div>
       </div>
