@@ -93,6 +93,15 @@ export const NAV_MENU_LABELS = {
   SUPPORT_US: 'Support Us',
 } as const;
 
+export const NAV_MENU_LABELS_RU = {
+  RS_SCHOOL: 'RS School',
+  COURSES: 'Курсы',
+  COMMUNITY: 'Сообщество',
+  MENTORSHIP: 'Менторство',
+  DOCS: 'Документация',
+  SUPPORT_US: 'Поддержать',
+} as const;
+
 export const ROUTES = {
   HOME: '/',
   COMMUNITY: 'community',

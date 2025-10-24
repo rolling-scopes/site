@@ -14,6 +14,7 @@ import styles from './nav-item.module.scss';
 const cx = classNames.bind(styles);
 
 type NavItemProps = PropsWithChildren & {
+  id: NavMenuLabel;
   label: NavMenuLabel;
   href: string;
   icon?: StaticImageData;
@@ -25,6 +26,7 @@ type NavItemProps = PropsWithChildren & {
 };
 
 export const NavItem = ({
+  id,
   label,
   href,
   icon,
@@ -34,7 +36,7 @@ export const NavItem = ({
   onNavItemClick,
   onFocusDropdownItem,
 }: NavItemProps) => {
-  const isDropdown = label !== NAV_MENU_LABELS.DOCS;
+  const isDropdown = id !== NAV_MENU_LABELS.DOCS;
   const router = useRouter();
 
   const pathname = usePathname();

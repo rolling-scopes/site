@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import classNames from 'classnames/bind';
-import { usePathname } from 'next/navigation';
+import { useParams, usePathname } from 'next/navigation';
 import { Separator } from 'radix-ui';
 
 import { NavMenuLabel } from '../header';
@@ -13,6 +13,7 @@ import iconBlue from '@/shared/assets/svg/heart-blue.svg';
 import iconYellow from '@/shared/assets/svg/heart-yellow.svg';
 import { KEY_CODES, NAV_MENU_LABELS } from '@/shared/constants';
 import { useOutsideClick } from '@/shared/hooks/use-outside-click/use-outside-click';
+import { ApiResourceLocale } from '@/shared/types';
 import { LangSwitcher } from '@/shared/ui/lang-switcher/lang-switcher';
 
 import styles from '../header.module.scss';
@@ -37,7 +38,9 @@ export const DesktopMenu = ({
   const activeDropdownItemRef = useRef<HTMLAnchorElement>(null);
 
   const pathname = usePathname();
+  const params = useParams();
 
+  const lang = params?.lang as ApiResourceLocale;
   const iconSrc = isMentorshipPage ? iconBlue : iconYellow;
 
   const menuData = useMemo(
@@ -45,7 +48,7 @@ export const DesktopMenu = ({
     [courses, coursesWithMentorship],
   );
 
-  const navItemsData = generateNavItemsConfig(iconSrc);
+  const navItemsData = generateNavItemsConfig(iconSrc, lang);
 
   const onClose = useCallback(() => {
     setDropdownOpen(false);
@@ -92,13 +95,14 @@ export const DesktopMenu = ({
         {navItemsData.map((item) => (
           <NavItem
             key={item.label}
+            id={item.id}
             label={item.label}
             icon={item.icon}
             href={item.url}
-            activeNavItemRef={activeMenuItem === item.label ? activeNavItemRef : undefined}
-            isActiveNavItem={activeMenuItem === item.label}
+            activeNavItemRef={activeMenuItem === item.id ? activeNavItemRef : undefined}
+            isActiveNavItem={activeMenuItem === item.id}
             isDropdownOpen={isDropdownOpen}
-            onNavItemClick={() => handleNavItemClick(item.label)}
+            onNavItemClick={() => handleNavItemClick(item.id)}
             onFocusDropdownItem={() => {
               setTimeout(() => {
                 activeDropdownItemRef.current?.focus();

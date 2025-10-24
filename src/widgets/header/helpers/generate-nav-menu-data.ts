@@ -1,8 +1,36 @@
 import { StaticImageData } from 'next/image';
 
 import { Course } from '@/entities/course';
-import { ANCHORS, NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
+import { ANCHORS, NAV_MENU_LABELS, NAV_MENU_LABELS_RU, ROUTES } from '@/shared/constants';
+import { ApiResourceLocale } from '@/shared/types';
 import { communityMenuStaticLinks, donateOptions, schoolMenuStaticLinks } from 'data';
+
+const TRANSLATION_MAP_LABELS = {
+  [NAV_MENU_LABELS.RS_SCHOOL]: {
+    'en-US': NAV_MENU_LABELS.RS_SCHOOL,
+    'ru': NAV_MENU_LABELS_RU.RS_SCHOOL,
+  },
+  [NAV_MENU_LABELS.COURSES]: {
+    'en-US': NAV_MENU_LABELS.COURSES,
+    'ru': NAV_MENU_LABELS_RU.COURSES,
+  },
+  [NAV_MENU_LABELS.COMMUNITY]: {
+    'en-US': NAV_MENU_LABELS.COMMUNITY,
+    'ru': NAV_MENU_LABELS_RU.COMMUNITY,
+  },
+  [NAV_MENU_LABELS.MENTORSHIP]: {
+    'en-US': NAV_MENU_LABELS.MENTORSHIP,
+    'ru': NAV_MENU_LABELS_RU.MENTORSHIP,
+  },
+  [NAV_MENU_LABELS.DOCS]: {
+    'en-US': NAV_MENU_LABELS.DOCS,
+    'ru': NAV_MENU_LABELS_RU.DOCS,
+  },
+  [NAV_MENU_LABELS.SUPPORT_US]: {
+    'en-US': NAV_MENU_LABELS.SUPPORT_US,
+    'ru': NAV_MENU_LABELS_RU.SUPPORT_US,
+  },
+};
 
 type StaticLinksType = {
   title: string;
@@ -88,30 +116,36 @@ export const generateNavMenuData = (
   };
 };
 
-export const generateNavItemsConfig = (iconSrc: StaticImageData) => {
+export const generateNavItemsConfig = (iconSrc: StaticImageData, lang: ApiResourceLocale = 'en-US') => {
   return [
     {
-      label: NAV_MENU_LABELS.RS_SCHOOL,
+      id: NAV_MENU_LABELS.RS_SCHOOL,
+      label: TRANSLATION_MAP_LABELS[NAV_MENU_LABELS.RS_SCHOOL][lang],
       url: ROUTES.HOME,
     },
     {
-      label: NAV_MENU_LABELS.COURSES,
+      id: NAV_MENU_LABELS.COURSES,
+      label: TRANSLATION_MAP_LABELS[NAV_MENU_LABELS.COURSES][lang],
       url: ROUTES.COURSES,
     },
     {
-      label: NAV_MENU_LABELS.COMMUNITY,
+      id: NAV_MENU_LABELS.COMMUNITY,
+      label: TRANSLATION_MAP_LABELS[NAV_MENU_LABELS.COMMUNITY][lang],
       url: ROUTES.COMMUNITY,
     },
     {
-      label: NAV_MENU_LABELS.MENTORSHIP,
+      id: NAV_MENU_LABELS.MENTORSHIP,
+      label: TRANSLATION_MAP_LABELS[NAV_MENU_LABELS.MENTORSHIP][lang],
       url: ROUTES.MENTORSHIP,
     },
     {
-      label: NAV_MENU_LABELS.DOCS,
+      id: NAV_MENU_LABELS.DOCS,
+      label: TRANSLATION_MAP_LABELS[NAV_MENU_LABELS.DOCS][lang],
       url: ROUTES.DOCS,
     },
     {
-      label: NAV_MENU_LABELS.SUPPORT_US,
+      id: NAV_MENU_LABELS.SUPPORT_US,
+      label: TRANSLATION_MAP_LABELS[NAV_MENU_LABELS.SUPPORT_US][lang],
       url: `#${ANCHORS.DONATE}`,
       icon: iconSrc,
     },
