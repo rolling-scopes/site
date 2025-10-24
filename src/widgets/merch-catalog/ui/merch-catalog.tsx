@@ -8,6 +8,7 @@ import { getTags } from '../helpers/get-tags';
 import { MerchFilter } from './merch-filter/merch-filter';
 import { MerchList } from './merch-list/merch-list';
 import { NoMerch } from './no-merch/no-merch';
+import { filterBySearchTerm, filterByTypes } from '../helpers/filter-merch';
 import { MerchProduct } from '@/entities/merch/types';
 
 import styles from './merch-catalog.module.scss';
@@ -26,25 +27,11 @@ export const MerchCatalog = ({ products }: MerchProductsProps) => {
   const isFiltered: boolean = !!(searchTerm || selectedTypes.length);
   const tags: string[] | [] = getTags(products);
 
-  const filteredProducts: MerchProduct[] | [] = useMemo(() => {
-    return products
-      .filter((product) => {
-        if (!searchTerm) {
-          return true;
-        }
-        const titleMatch = product.title.toLowerCase().includes(searchTerm);
-        const tagsMatch = (product.tags || []).some((tag) =>
-          tag.toLowerCase().includes(searchTerm),
-        );
+  const filteredProducts: MerchProduct[] = useMemo(() => {
+    const filteredByTypes = filterByTypes(products, selectedTypes);
+    const filteredBySearch = filterBySearchTerm(filteredByTypes, searchTerm);
 
-        return titleMatch || tagsMatch;
-      })
-      .filter((product) => {
-        if (!selectedTypes.length) {
-          return true;
-        }
-        return selectedTypes.some((type) => (product.tags || []).includes(type));
-      });
+    return filteredBySearch;
   }, [products, searchTerm, selectedTypes]);
 
   return (
