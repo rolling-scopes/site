@@ -1,7 +1,7 @@
 .no-merch {
   display: flex;
   flex-direction: column;
-  gap: $gap-xl;
+  gap: $gap-l;
   align-items: center;
 
   width: $large-tablet-width;
@@ -15,37 +15,8 @@
     max-width: 480px;
     text-align: center;
   }
-}
 
-.button {
-  @extend %transition-all;
-
-  cursor: pointer;
-
-  display: flex;
-  flex-flow: row nowrap;
-  gap: $gap-xs;
-  place-content: center center;
-  align-items: center;
-
-  font-weight: $font-weight-medium;
-  letter-spacing: 0;
-  white-space: pre;
-}
-
-.primary {
-  width: max-content;
-  padding: 16px 24px;
-  border: 2px solid $color-gray-900;
-
-  font-size: $font-size-m;
-  line-height: 24px;
-  color: $color-white;
-
-  background-color: $color-gray-900;
-
-  &:hover {
-    border-color: $color-gray-600;
-    background-color: $color-gray-600;
+  @include media-tablet-large {
+    width: 100%;
   }
 }

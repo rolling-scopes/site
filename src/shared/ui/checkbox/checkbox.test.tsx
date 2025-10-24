@@ -36,7 +36,6 @@ describe('Checkbox', () => {
         Text
       </Checkbox>,
     );
-
     const checkboxInput = screen.getByRole('checkbox', { name: 'Text' });
 
     expect(checkboxInput).toBeChecked();
