@@ -32,6 +32,28 @@ const TRANSLATION_MAP_LABELS = {
   },
 };
 
+const COURSES_LINK_TRANSLATION_MAP = {
+  'en-US': {
+    title: 'All Courses',
+    description: 'Journey to full stack mastery',
+  },
+  'ru': {
+    title: 'Все курсы',
+    description: 'Путь к мастерству во фуллстеке',
+  },
+};
+
+const MENTORSHIP_LINK_TRANSLATION_MAP = {
+  'en-US': {
+    title: 'About Mentorship',
+    description: 'By teaching others, you learn yourself',
+  },
+  'ru': {
+    title: 'О менторстве',
+    description: 'Обучая других — учишься сам',
+  },
+};
+
 type StaticLinksType = {
   title: string;
   detailsUrl: string;
@@ -64,19 +86,19 @@ const mapStaticLinksToMenuItem = (links: StaticLinksType[]): MenuItem[] => {
   }));
 };
 
-const mapCoursesToMenuItems = (courses: Course[], type: 'courses' | 'mentorship'): MenuItem[] => {
+const mapCoursesToMenuItems = (courses: Course[], type: 'courses' | 'mentorship', lang: ApiResourceLocale = 'en-US'): MenuItem[] => {
   const coursesLink = {
     id: NAV_MENU_LABELS.COURSES,
-    title: 'All Courses',
-    description: 'Journey to full stack mastery',
+    title: COURSES_LINK_TRANSLATION_MAP[lang].title,
+    description: COURSES_LINK_TRANSLATION_MAP[lang].description,
     url: `/${ROUTES.COURSES}`,
     icon: undefined,
   };
 
   const mentorshipLink = {
     id: NAV_MENU_LABELS.MENTORSHIP,
-    title: 'About Mentorship',
-    description: 'By teaching others, you learn yourself',
+    title: MENTORSHIP_LINK_TRANSLATION_MAP[lang].title,
+    description: MENTORSHIP_LINK_TRANSLATION_MAP[lang].description,
     url: `/${ROUTES.MENTORSHIP}`,
     icon: undefined,
   };
@@ -106,13 +128,14 @@ const mapDonateOptions = (options: DonateOptionType[]): MenuItem[] => {
 export const generateNavMenuData = (
   courses: Course[],
   mentorshipCourses: Course[],
+  lang: ApiResourceLocale = 'en-US',
 ): Record<string, MenuItem[]> => {
   return {
-    [NAV_MENU_LABELS.RS_SCHOOL]: mapStaticLinksToMenuItem(schoolMenuStaticLinks),
-    [NAV_MENU_LABELS.COURSES]: mapCoursesToMenuItems(courses, 'courses'),
-    [NAV_MENU_LABELS.COMMUNITY]: mapStaticLinksToMenuItem(communityMenuStaticLinks),
-    [NAV_MENU_LABELS.MENTORSHIP]: mapCoursesToMenuItems(mentorshipCourses, 'mentorship'),
-    [NAV_MENU_LABELS.SUPPORT_US]: mapDonateOptions(donateOptions),
+    [NAV_MENU_LABELS.RS_SCHOOL]: mapStaticLinksToMenuItem(schoolMenuStaticLinks[lang]),
+    [NAV_MENU_LABELS.COURSES]: mapCoursesToMenuItems(courses, 'courses', lang),
+    [NAV_MENU_LABELS.COMMUNITY]: mapStaticLinksToMenuItem(communityMenuStaticLinks[lang]),
+    [NAV_MENU_LABELS.MENTORSHIP]: mapCoursesToMenuItems(mentorshipCourses, 'mentorship', lang),
+    [NAV_MENU_LABELS.SUPPORT_US]: mapDonateOptions(donateOptions[lang]),
   };
 };
 

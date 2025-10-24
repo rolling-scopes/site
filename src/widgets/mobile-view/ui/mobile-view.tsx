@@ -3,20 +3,26 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { StaticImageData } from 'next/image';
-import { usePathname } from 'next/navigation';
+import { useParams, usePathname } from 'next/navigation';
 
 import { MobileNavItem } from './mobile-nav-item/mobile-nav-item';
 import { Course } from '@/entities/course';
 import iconBlue from '@/shared/assets/svg/heart-blue.svg';
 import iconYellow from '@/shared/assets/svg/heart-yellow.svg';
 import { NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
+import { ApiResourceLocale } from '@/shared/types';
 import { CourseMenuItemsFresh } from '@/shared/ui/course-menu-items-fresh';
 import { LangSwitcher } from '@/shared/ui/lang-switcher/lang-switcher';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Logo } from '@/shared/ui/logo';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
 import { SchoolMenu } from '@/widgets/school-menu';
-import { communityMenuStaticLinks, donateOptions, schoolMenuStaticLinks } from 'data';
+import {
+  DONATION_DESCRIPTION_TRANSLATION_MAP,
+  communityMenuStaticLinks,
+  donateOptions,
+  schoolMenuStaticLinks,
+} from 'data';
 
 import styles from './mobile-view.module.scss';
 
@@ -42,7 +48,10 @@ export const MobileView = ({ type, courses, mentorshipCourses, isMenuOpen, logoI
   const logoView = type === 'header' ? null : 'with-border';
   const courseIcon = type === 'header' ? 'iconSmall' : 'iconFooter';
   const pathname = usePathname();
+  const params = useParams();
+
   const iconSrc = pathname.includes(ROUTES.MENTORSHIP) ? iconBlue : iconYellow;
+  const lang = params?.lang as ApiResourceLocale ?? 'en-US';
 
   const [activeDropdowns, setActiveDropdowns] = useState<Set<string>>(new Set());
 
@@ -91,7 +100,7 @@ export const MobileView = ({ type, courses, mentorshipCourses, isMenuOpen, logoI
           />
 
           <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.RS_SCHOOL)}>
-            {schoolMenuStaticLinks.map((link, i) => (
+            {schoolMenuStaticLinks[lang].map((link, i) => (
               <SchoolMenu.Item
                 key={i}
                 title={link.title}
@@ -143,7 +152,7 @@ export const MobileView = ({ type, courses, mentorshipCourses, isMenuOpen, logoI
           />
 
           <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.COMMUNITY)}>
-            {communityMenuStaticLinks.map((link, i) => (
+            {communityMenuStaticLinks[lang].map((link, i) => (
               <SchoolMenu.Item
                 key={i}
                 title={link.title}
@@ -213,18 +222,11 @@ export const MobileView = ({ type, courses, mentorshipCourses, isMenuOpen, logoI
           <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.SUPPORT_US)}>
             <SchoolMenu.Item
               className="support-title"
-              title="Your donations help us cover hosting, domains, licenses, and advertising for courses
-                          and events. Every donation, big or small, helps!"
+              title={DONATION_DESCRIPTION_TRANSLATION_MAP[lang]}
               url="#"
               color={color}
             />
-            <SchoolMenu.Item
-              className="support-title"
-              title="Thank you for your support!"
-              url="#"
-              color={color}
-            />
-            {donateOptions.toReversed().map((option) => (
+            {donateOptions[lang].toReversed().map((option) => (
               <SchoolMenu.Item
                 key={option.id}
                 icon={option.icon}

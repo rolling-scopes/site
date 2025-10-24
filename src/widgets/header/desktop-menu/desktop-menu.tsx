@@ -44,7 +44,7 @@ export const DesktopMenu = ({
   const iconSrc = isMentorshipPage ? iconBlue : iconYellow;
 
   const menuData = useMemo(
-    () => generateNavMenuData(courses, coursesWithMentorship),
+    () => generateNavMenuData(courses, coursesWithMentorship, lang),
     [courses, coursesWithMentorship],
   );
 
