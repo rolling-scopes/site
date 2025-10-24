@@ -1,13 +1,13 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 
-import { MerchTagsToggle } from './merch-tags-toggle';
+import { MerchTagsDropdown } from './merch-tags-dropdown';
 
-describe('MerchTagsToggle', () => {
+describe('MerchTagsDropdown', () => {
   it('should render correctly in a close state', () => {
     const handleClick = vi.fn();
 
-    render(<MerchTagsToggle isOpen={false} onClick={handleClick} />);
+    render(<MerchTagsDropdown isOpen={false} onClick={handleClick} />);
     const button = screen.getByRole('button', { name: /all filters/i });
 
     expect(button).toBeInTheDocument();
@@ -17,7 +17,7 @@ describe('MerchTagsToggle', () => {
   it('should render correctly in an open state', () => {
     const handleClick = vi.fn();
 
-    render(<MerchTagsToggle isOpen={true} onClick={handleClick} />);
+    render(<MerchTagsDropdown isOpen={true} onClick={handleClick} />);
     const button = screen.getByRole('button', { name: /all filters/i });
 
     expect(button).toBeInTheDocument();
@@ -27,7 +27,7 @@ describe('MerchTagsToggle', () => {
   it('should call the onClick handler when the button is clicked', () => {
     const handleClick = vi.fn();
 
-    render(<MerchTagsToggle isOpen={false} onClick={handleClick} />);
+    render(<MerchTagsDropdown isOpen={false} onClick={handleClick} />);
     const button = screen.getByRole('button', { name: /all filters/i });
 
     fireEvent.click(button);
@@ -35,7 +35,7 @@ describe('MerchTagsToggle', () => {
   });
 
   it('should contain a dropdown arrow icon', () => {
-    render(<MerchTagsToggle isOpen={false} onClick={() => {}} />);
+    render(<MerchTagsDropdown isOpen={false} onClick={() => {}} />);
     const arrowIcon = screen.getByLabelText('dropdown-arrow');
 
     expect(arrowIcon).toBeInTheDocument();

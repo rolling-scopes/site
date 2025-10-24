@@ -5,7 +5,7 @@ import { ReadonlyURLSearchParams, usePathname, useRouter, useSearchParams } from
 
 import { MerchSearch } from './merch-search/merch-search';
 import { MerchTags } from './merch-tags/merch-tags';
-import { MerchTagsToggle } from './merch-tags-toggle/merch-tags-toggle';
+import { MerchTagsDropdown } from './merch-tags-toggle/merch-tags-dropdown';
 import { Subtitle } from '@/shared/ui/subtitle';
 
 import styles from './merch-filter.module.scss';
@@ -50,7 +50,7 @@ export const MerchFilter = ({ tags }: MerchTagsProps) => {
       </div>
       <MerchSearch />
       <div className={cx('merch-filter-tags')}>
-        <MerchTagsToggle isOpen={areTagsOpen} onClick={toggleTagsDropdown} />
+        <MerchTagsDropdown isOpen={areTagsOpen} onClick={toggleTagsDropdown} />
         <div className={cx('merch-filter-tags-list', { expanded: areTagsOpen })}>
           <MerchTags tags={tags} />
         </div>

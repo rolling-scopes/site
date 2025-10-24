@@ -4,16 +4,16 @@ import Image from 'next/image';
 import DropdownArrow from '@/shared/assets/svg/dropdown-arrow.svg';
 import { Subtitle } from '@/shared/ui/subtitle';
 
-import styles from './merch-tags-toggle.module.scss';
+import styles from './merch-tags-dropdown.module.scss';
 
 const cx = classNames.bind(styles);
 
-type MerchTagsToggleProps = {
+type MerchTagsDropdownProps = {
   isOpen: boolean;
   onClick: () => void;
 };
 
-export const MerchTagsToggle = ({ isOpen, onClick }: MerchTagsToggleProps) => {
+export const MerchTagsDropdown = ({ isOpen, onClick }: MerchTagsDropdownProps) => {
   return (
     <button
       type="button"
