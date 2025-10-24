@@ -50,12 +50,14 @@ export const MerchFilter = ({ tags }: MerchTagsProps) => {
         </button>
       </div>
       <MerchSearch />
-      <div className={cx('merch-filter-tags')}>
-        <MerchTagsDropdown isOpen={areTagsOpen} onClick={toggleTagsDropdown} />
-        <div className={cx('merch-filter-tags-list', { expanded: areTagsOpen })}>
-          <MerchTags tags={tags} />
+      {tags.length > 0 && (
+        <div className={cx('merch-filter-tags')}>
+          <MerchTagsDropdown isOpen={areTagsOpen} onClick={toggleTagsDropdown} />
+          <div className={cx('merch-filter-tags-list', { expanded: areTagsOpen })}>
+            <MerchTags tags={tags} />
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

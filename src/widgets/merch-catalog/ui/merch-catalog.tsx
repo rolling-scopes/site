@@ -40,7 +40,7 @@ export const MerchCatalog = ({ products }: MerchProductsProps) => {
         return titleMatch || tagsMatch;
       })
       .filter((product) => {
-        if (selectedTypes.length === 0) {
+        if (!selectedTypes.length) {
           return true;
         }
         return selectedTypes.some((type) => (product.tags || []).includes(type));
@@ -48,7 +48,7 @@ export const MerchCatalog = ({ products }: MerchProductsProps) => {
   }, [products, searchTerm, selectedTypes]);
 
   return (
-    <div className={cx('content', 'merch-catalog')}>
+    <div className={cx('merch-catalog', 'content')}>
       <div className={cx('merch-catalog-tags')}>
         <MerchFilter tags={tags} />
       </div>
