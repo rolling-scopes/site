@@ -282,7 +282,7 @@ export const MOCKED_PRODUCTS_WITH_MISSING_TAGS: MerchProduct[] = [
     preview: ['https://example.com/preview/another-t-shirt.jpg'],
     download: ['https://example.com/download/another-t-shirt.zip'],
   },
-] as unknown as MerchProduct[];
+];
 
 export const MOCKED_PRODUCTS_WITH_BLANK_TAGS: MerchProduct[] = [
   {

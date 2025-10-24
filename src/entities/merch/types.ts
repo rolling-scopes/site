@@ -24,5 +24,5 @@ export type MerchProduct = {
   title: string;
   preview: string[];
   download: string[];
-  tags: string[];
+  tags: string[] | null | undefined;
 };
