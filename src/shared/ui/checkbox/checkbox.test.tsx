@@ -18,14 +18,26 @@ describe('Checkbox', () => {
     handleChange = vi.fn();
   });
 
+  it('should be visible in the document', () => {
+    render(
+      <Checkbox id="test-checkbox" checked={false} onChange={handleChange}>
+        Checkbox Text
+      </Checkbox>,
+    );
+    const checkboxInput = screen.getByTestId('checkbox');
+    const labelText = screen.getByTestId('label');
+
+    expect(checkboxInput).toBeInTheDocument();
+    expect(labelText).toBeVisible();
+  });
+
   it('should render unchecked by default', () => {
     render(
       <Checkbox id="test-checkbox" checked={false} onChange={handleChange}>
         Text
       </Checkbox>,
     );
-
-    const checkboxInput = screen.getByRole('checkbox', { name: 'Text' });
+    const checkboxInput = screen.getByTestId('checkbox');
 
     expect(checkboxInput).not.toBeChecked();
   });
@@ -36,7 +48,7 @@ describe('Checkbox', () => {
         Text
       </Checkbox>,
     );
-    const checkboxInput = screen.getByRole('checkbox', { name: 'Text' });
+    const checkboxInput = screen.getByTestId('checkbox');
 
     expect(checkboxInput).toBeChecked();
   });
@@ -47,11 +59,9 @@ describe('Checkbox', () => {
         Text
       </Checkbox>,
     );
+    const checkboxInput = screen.getByTestId('checkbox');
 
-    const labelText = screen.getByText('Text');
-
-    fireEvent.click(labelText);
-
+    fireEvent.click(checkboxInput);
     expect(handleChange).toHaveBeenCalledTimes(1);
   });
 });

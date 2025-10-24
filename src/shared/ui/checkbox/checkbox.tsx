@@ -17,13 +17,14 @@ export const Checkbox = ({ id, checked, onChange, children, className }: Checkbo
   const labelClasses = cx('checkbox', { checked }, className);
 
   return (
-    <label htmlFor={id} className={labelClasses}>
+    <label htmlFor={id} className={labelClasses} data-testid="label">
       <input
         type="checkbox"
         id={id}
         className={cx('checkbox-original')}
         checked={checked}
         onChange={onChange}
+        data-testid="checkbox"
       />
 
       <span className={cx('checkbox-custom')}></span>
