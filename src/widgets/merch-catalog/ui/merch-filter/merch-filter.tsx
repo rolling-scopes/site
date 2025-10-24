@@ -44,6 +44,7 @@ export const MerchFilter = ({ tags }: MerchTagsProps) => {
           type="button"
           className={cx('merch-filter-button', 'merch-filter-rounded', { active: isFiltered })}
           onClick={handleClearFilters}
+          data-testid="clear-button"
         >
           Clear
         </button>

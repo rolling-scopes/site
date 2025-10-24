@@ -20,6 +20,7 @@ export const MerchTagsDropdown = ({ isOpen, onClick }: MerchTagsDropdownProps) =
       className={cx('button', 'rounded', { expanded: isOpen })}
       onClick={onClick}
       aria-expanded={isOpen}
+      data-testid="dropdown-button"
     >
       <Subtitle size="extra-small" weight="medium" as="h3">
         All filters

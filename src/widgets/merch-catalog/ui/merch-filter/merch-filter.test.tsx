@@ -7,8 +7,8 @@ import { MOCKED_ROUTER, MOCKED_TAGS } from '@/shared/__tests__/constants';
 
 vi.mock('./merch-search/merch-search', () => ({ MerchSearch: () => <input aria-label="Search merch" /> }));
 
-vi.mock('./merch-tags-toggle/merch-tags-toggle', () => ({
-  MerchTagsToggle: ({ isOpen, onClick }: { isOpen: boolean;
+vi.mock('./merch-tags-dropdown/merch-tags-dropdown', () => ({
+  MerchTagsDropdown: ({ isOpen, onClick }: { isOpen: boolean;
     onClick: () => void; }) => (
     <button type="button" onClick={onClick}>
       {isOpen ? 'Hide tags' : 'Show tags'}
@@ -36,7 +36,7 @@ describe('MerchFilter', () => {
   it('should not have an active "Clear" button when no filters are applied', () => {
     mockedSearchParams = new URLSearchParams('');
     render(<MerchFilter tags={MOCKED_TAGS} />);
-    const clearButton = screen.getByRole('button', { name: /clear/i });
+    const clearButton = screen.getByTestId('clear-button');
 
     expect(clearButton.classList.contains('active')).toBe(false);
   });
@@ -44,7 +44,7 @@ describe('MerchFilter', () => {
   it('should have an active "Clear" button when a "type" filter is applied', () => {
     mockedSearchParams = new URLSearchParams('type=Hoodie');
     render(<MerchFilter tags={MOCKED_TAGS} />);
-    const clearButton = screen.getByRole('button', { name: /clear/i });
+    const clearButton = screen.getByTestId('clear-button');
 
     expect(clearButton.classList.contains('active')).toBe(true);
   });
@@ -52,7 +52,7 @@ describe('MerchFilter', () => {
   it('should have an active "Clear" button when a "search" filter is applied', () => {
     mockedSearchParams = new URLSearchParams('search=logo');
     render(<MerchFilter tags={MOCKED_TAGS} />);
-    const clearButton = screen.getByRole('button', { name: /clear/i });
+    const clearButton = screen.getByTestId('clear-button');
 
     expect(clearButton.classList.contains('active')).toBe(true);
   });
@@ -61,7 +61,7 @@ describe('MerchFilter', () => {
     mockedSearchParams = new URLSearchParams('type=Sticker&search=awesome');
     render(<MerchFilter tags={MOCKED_TAGS} />);
 
-    await user.click(screen.getByRole('button', { name: /clear/i }));
+    await user.click(screen.getByTestId('clear-button'));
 
     expect(MOCKED_ROUTER.replace).toHaveBeenCalledTimes(1);
     expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith('/merch', { scroll: false });
@@ -71,16 +71,16 @@ describe('MerchFilter', () => {
     mockedSearchParams = new URLSearchParams('');
     render(<MerchFilter tags={MOCKED_TAGS} />);
 
-    const toggleButton = screen.getByRole('button', { name: /show tags/i });
+    const dropdownButton = screen.getByTestId('dropdown-button');
     const tagsList = screen.getByText('Tags List').parentElement;
 
     expect(tagsList?.classList.contains('expanded')).toBe(false);
 
-    await user.click(toggleButton);
+    await user.click(dropdownButton);
     expect(tagsList?.classList.contains('expanded')).toBe(true);
-    expect(screen.getByRole('button', { name: /hide tags/i })).toBeInTheDocument();
-    await user.click(toggleButton);
+    expect(screen.getByTestId('dropdown-button')).toBeInTheDocument();
+    await user.click(dropdownButton);
     expect(tagsList?.classList.contains('expanded')).toBe(false);
-    expect(screen.getByRole('button', { name: /show tags/i })).toBeInTheDocument();
+    expect(screen.getByTestId('dropdown-button')).toBeInTheDocument();
   });
 });
