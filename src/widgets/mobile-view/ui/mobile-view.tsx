@@ -16,6 +16,11 @@ import { LangSwitcher } from '@/shared/ui/lang-switcher/lang-switcher';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Logo } from '@/shared/ui/logo';
 import { Breadcrumbs } from '@/widgets/breadcrumbs';
+import {
+  COURSES_LINK_TRANSLATION_MAP,
+  MENTORSHIP_LINK_TRANSLATION_MAP,
+  TRANSLATION_MAP_LABELS,
+} from '@/widgets/header/helpers/generate-nav-menu-data';
 import { SchoolMenu } from '@/widgets/school-menu';
 import {
   DONATION_DESCRIPTION_TRANSLATION_MAP,
@@ -117,7 +122,7 @@ export const MobileView = ({ type, courses, mentorshipCourses, isMenuOpen, logoI
 
         <div className={cx('category-container')}>
           <MobileNavItem
-            title={NAV_MENU_LABELS.COURSES}
+            title={TRANSLATION_MAP_LABELS[NAV_MENU_LABELS.COURSES][lang]}
             color={color}
             isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.COURSES)}
             onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.COURSES)}
@@ -125,9 +130,9 @@ export const MobileView = ({ type, courses, mentorshipCourses, isMenuOpen, logoI
 
           <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.COURSES)}>
             <SchoolMenu.Item
-              key={NAV_MENU_LABELS.COURSES}
-              title="All Courses"
-              description="Journey to full stack mastery"
+              key={TRANSLATION_MAP_LABELS[NAV_MENU_LABELS.COURSES][lang]}
+              title={COURSES_LINK_TRANSLATION_MAP[lang].title}
+              description={COURSES_LINK_TRANSLATION_MAP[lang].description}
               url={`/${ROUTES.COURSES}`}
               color={color}
               onClick={onClose}
@@ -145,7 +150,7 @@ export const MobileView = ({ type, courses, mentorshipCourses, isMenuOpen, logoI
 
         <div className={cx('category-container')}>
           <MobileNavItem
-            title={NAV_MENU_LABELS.COMMUNITY}
+            title={TRANSLATION_MAP_LABELS[NAV_MENU_LABELS.COMMUNITY][lang]}
             color={color}
             isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.COMMUNITY)}
             onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.COMMUNITY)}
@@ -169,7 +174,7 @@ export const MobileView = ({ type, courses, mentorshipCourses, isMenuOpen, logoI
 
         <div className={cx('category-container')}>
           <MobileNavItem
-            title={NAV_MENU_LABELS.MENTORSHIP}
+            title={TRANSLATION_MAP_LABELS[NAV_MENU_LABELS.MENTORSHIP][lang]}
             color={color}
             isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.MENTORSHIP)}
             onMenuItemClick={() => onMenuItemClick(NAV_MENU_LABELS.MENTORSHIP)}
@@ -178,8 +183,8 @@ export const MobileView = ({ type, courses, mentorshipCourses, isMenuOpen, logoI
           <SchoolMenu isVisible={activeDropdowns.has(NAV_MENU_LABELS.MENTORSHIP)}>
             <SchoolMenu.Item
               key={NAV_MENU_LABELS.MENTORSHIP}
-              title="About Mentorship"
-              description="By teaching others, you learn yourself"
+              title={MENTORSHIP_LINK_TRANSLATION_MAP[lang].title}
+              description={MENTORSHIP_LINK_TRANSLATION_MAP[lang].description}
               url={`/${ROUTES.MENTORSHIP}`}
               color={color}
               onClick={onClose}
@@ -205,14 +210,14 @@ export const MobileView = ({ type, courses, mentorshipCourses, isMenuOpen, logoI
           href={`/${ROUTES.DOCS}`}
           className={cx('category-link', color)}
         >
-          {NAV_MENU_LABELS.DOCS}
+          {TRANSLATION_MAP_LABELS[NAV_MENU_LABELS.DOCS][lang]}
         </LinkCustom>
 
         <Divider color={color} />
 
         <div className={cx('category-container')}>
           <MobileNavItem
-            title={NAV_MENU_LABELS.SUPPORT_US}
+            title={TRANSLATION_MAP_LABELS[NAV_MENU_LABELS.SUPPORT_US][lang]}
             icon={iconSrc}
             color={color}
             isDropdownActive={activeDropdowns.has(NAV_MENU_LABELS.SUPPORT_US)}

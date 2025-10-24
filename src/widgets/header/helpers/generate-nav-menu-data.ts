@@ -5,7 +5,7 @@ import { ANCHORS, NAV_MENU_LABELS, NAV_MENU_LABELS_RU, ROUTES } from '@/shared/c
 import { ApiResourceLocale } from '@/shared/types';
 import { communityMenuStaticLinks, donateOptions, schoolMenuStaticLinks } from 'data';
 
-const TRANSLATION_MAP_LABELS = {
+export const TRANSLATION_MAP_LABELS = {
   [NAV_MENU_LABELS.RS_SCHOOL]: {
     'en-US': NAV_MENU_LABELS.RS_SCHOOL,
     'ru': NAV_MENU_LABELS_RU.RS_SCHOOL,
@@ -32,7 +32,7 @@ const TRANSLATION_MAP_LABELS = {
   },
 };
 
-const COURSES_LINK_TRANSLATION_MAP = {
+export const COURSES_LINK_TRANSLATION_MAP = {
   'en-US': {
     title: 'All Courses',
     description: 'Journey to full stack mastery',
@@ -43,7 +43,7 @@ const COURSES_LINK_TRANSLATION_MAP = {
   },
 };
 
-const MENTORSHIP_LINK_TRANSLATION_MAP = {
+export const MENTORSHIP_LINK_TRANSLATION_MAP = {
   'en-US': {
     title: 'About Mentorship',
     description: 'By teaching others, you learn yourself',
