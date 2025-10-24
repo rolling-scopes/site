@@ -21,6 +21,7 @@ export const SearchInput = ({ value, onChange, ariaLabel, name }: SearchInputPro
       onChange={(e) => onChange(e.target.value)}
       aria-label={ariaLabel}
       name={name}
+      data-testid="search-input"
     />
   );
 };
