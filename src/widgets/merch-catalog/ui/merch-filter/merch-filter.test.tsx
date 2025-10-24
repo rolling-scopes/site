@@ -10,7 +10,7 @@ vi.mock('./merch-search/merch-search', () => ({ MerchSearch: () => <input aria-l
 vi.mock('./merch-tags-dropdown/merch-tags-dropdown', () => ({
   MerchTagsDropdown: ({ isOpen, onClick }: { isOpen: boolean;
     onClick: () => void; }) => (
-    <button type="button" onClick={onClick}>
+    <button type="button" onClick={onClick} data-testid="dropdown-button">
       {isOpen ? 'Hide tags' : 'Show tags'}
     </button>
   ),
