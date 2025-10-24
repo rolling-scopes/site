@@ -22,12 +22,13 @@ type MerchProductsProps = {
 export const MerchCatalog = ({ products }: MerchProductsProps) => {
   const searchParams: ReadonlyURLSearchParams = useSearchParams();
 
-  const searchTerm: string = (searchParams.get('search') || '').trim().toLowerCase();
+  const searchTerm: string = searchParams.get('search') || '';
   const selectedTypes: string[] = searchParams.getAll('type');
   const isFiltered: boolean = !!(searchTerm || selectedTypes.length);
   const tags: string[] | [] = getTags(products);
 
   const filteredProducts: MerchProduct[] = useMemo(() => {
+    console.log(searchTerm);
     const filteredByTypes = filterByTypes(products, selectedTypes);
     const filteredBySearch = filterBySearchTerm(filteredByTypes, searchTerm);
 
