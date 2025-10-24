@@ -36,7 +36,7 @@ describe('MerchTagsDropdown', () => {
 
   it('should contain a dropdown arrow icon', () => {
     render(<MerchTagsDropdown isOpen={false} onClick={() => {}} />);
-    const arrowIcon = screen.getByLabelText('dropdown-arrow');
+    const arrowIcon = screen.getByTestId('dropdown-arrow');
 
     expect(arrowIcon).toBeInTheDocument();
   });

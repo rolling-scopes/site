@@ -5,7 +5,7 @@ import { ReadonlyURLSearchParams, usePathname, useRouter, useSearchParams } from
 
 import { MerchSearch } from './merch-search/merch-search';
 import { MerchTags } from './merch-tags/merch-tags';
-import { MerchTagsDropdown } from './merch-tags-toggle/merch-tags-dropdown';
+import { MerchTagsDropdown } from './merch-tags-dropdown/merch-tags-dropdown';
 import { Subtitle } from '@/shared/ui/subtitle';
 
 import styles from './merch-filter.module.scss';
