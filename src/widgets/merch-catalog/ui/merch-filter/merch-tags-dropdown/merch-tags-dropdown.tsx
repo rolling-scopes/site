@@ -22,7 +22,7 @@ export const MerchTagsDropdown = ({ isOpen, onClick }: MerchTagsDropdownProps) =
       aria-expanded={isOpen}
       data-testid="dropdown-button"
     >
-      <Subtitle size="extra-small" weight="medium" as="h3">
+      <Subtitle size="extra-small" weight="medium" as="h3" data-testid="dropdown-title">
         All filters
       </Subtitle>
       <Image

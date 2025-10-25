@@ -4,31 +4,27 @@ import { describe, expect, it, vi } from 'vitest';
 import { MerchTagsDropdown } from './merch-tags-dropdown';
 
 describe('MerchTagsDropdown', () => {
-  it('should render correctly in a close state', () => {
-    const handleClick = vi.fn();
+  const handleClick = vi.fn();
 
+  it('should render correctly in a close state', () => {
     render(<MerchTagsDropdown isOpen={false} onClick={handleClick} />);
-    const button = screen.getByRole('button', { name: /all filters/i });
+    const button = screen.getByTestId('dropdown-button');
 
     expect(button).toBeInTheDocument();
     expect(button).toHaveAttribute('aria-expanded', 'false');
   });
 
   it('should render correctly in an open state', () => {
-    const handleClick = vi.fn();
-
     render(<MerchTagsDropdown isOpen={true} onClick={handleClick} />);
-    const button = screen.getByRole('button', { name: /all filters/i });
+    const button = screen.getByTestId('dropdown-button');
 
     expect(button).toBeInTheDocument();
     expect(button).toHaveAttribute('aria-expanded', 'true');
   });
 
   it('should call the onClick handler when the button is clicked', () => {
-    const handleClick = vi.fn();
-
     render(<MerchTagsDropdown isOpen={false} onClick={handleClick} />);
-    const button = screen.getByRole('button', { name: /all filters/i });
+    const button = screen.getByTestId('dropdown-button');
 
     fireEvent.click(button);
     expect(handleClick).toHaveBeenCalledTimes(1);
@@ -39,5 +35,12 @@ describe('MerchTagsDropdown', () => {
     const arrowIcon = screen.getByTestId('dropdown-arrow');
 
     expect(arrowIcon).toBeInTheDocument();
+  });
+
+  it('should contain a button title', () => {
+    render(<MerchTagsDropdown isOpen={false} onClick={() => {}} />);
+    const dropdownTitle = screen.getByTestId('dropdown-title');
+
+    expect(dropdownTitle).toBeInTheDocument();
   });
 });
