@@ -3,8 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 
 import { NoMerch } from './no-merch';
-
-vi.mock('@/shared/constants', () => ({ ROUTES: { HOME: '/' } }));
+import { ROUTES } from '@/shared/constants';
 
 vi.mock('@/shared/ui/link-custom', () => ({
   LinkCustom: (props: ComponentPropsWithoutRef<'a'>) => {
@@ -24,7 +23,7 @@ describe('NoMerch', () => {
     const homeLink = screen.getByTestId('no-merch-home-link');
 
     expect(homeLink).toBeInTheDocument();
-    expect(homeLink).toHaveAttribute('href', '/');
+    expect(homeLink).toHaveAttribute('href', ROUTES.HOME);
   });
 
   it('should render "not available" text when not filtered', () => {
