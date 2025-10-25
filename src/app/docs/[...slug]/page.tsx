@@ -1,0 +1,104 @@
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import path from 'path';
+
+import { DocsContent } from '@/app/docs/components/docs-content/docs-content';
+import { TITLE_POSTFIX } from '@/app/docs/constants';
+import { Menu } from '@/app/docs/types';
+import { fetchMarkdownContent } from '@/app/docs/utils/fetch-markdown-content';
+import { fetchMenu } from '@/app/docs/utils/fetch-menu';
+import { PagePropsDocs } from '@/entities/page/types';
+import { generateDocsMetadata } from '@/metadata/docs';
+import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
+import { Language } from '@/shared/types';
+
+export async function generateMetadata({ params }: PagePropsDocs): Promise<Metadata> {
+  const { slug } = await params;
+  const docsMenu = await fetchMenu('en');
+
+  const collectTitles = (items: Menu): { slug: string[];
+    title: string; }[] => {
+    return items.flatMap((section) => {
+      const titles = [
+        {
+          slug: section.link?.split('/') ?? [],
+          title: section.title,
+        },
+      ];
+
+      if (section.items) {
+        const subTitles = collectTitles(section.items);
+
+        return titles.concat(subTitles);
+      }
+
+      return titles;
+    });
+  };
+
+  const titles = collectTitles(docsMenu);
+
+  const slugPath = slug.join('/');
+
+  const title = titles.find((el) => el.slug.join('/') === slugPath)?.title;
+
+  const { description, keywords, canonical, robots } = generateDocsMetadata('en', slugPath);
+
+  const metadata = generatePageMetadata({
+    title: `${title} ${TITLE_POSTFIX}`,
+    description,
+    imagePath: path.join('docs', 'en', 'og.png'),
+    keywords,
+    alternates: { canonical },
+    robots,
+  });
+
+  return metadata;
+}
+
+export async function generateStaticParams() {
+  const collectSlugs = (items: Menu, lang: Language) => {
+    return items.flatMap((section) => {
+      const results = [];
+
+      if (section.link && !section.link.startsWith('http')) {
+        const slugSegments = section.link.split('/');
+
+        results.push({
+          lang,
+          slug: slugSegments,
+        });
+      }
+
+      if (section.items) {
+        const subSlugs = collectSlugs(section.items, lang);
+
+        subSlugs.forEach((subSlug) => {
+          results.push({
+            lang,
+            slug: subSlug.slug,
+          });
+        });
+      }
+
+      return results;
+    });
+  };
+
+  const docsMenu = await fetchMenu('en');
+
+  return collectSlugs(docsMenu, 'en');
+}
+
+export default async function DocPage({ params }: PagePropsDocs) {
+  const { slug } = await params;
+
+  try {
+    const markdownContent = await fetchMarkdownContent('en', slug);
+
+    return <DocsContent markdownContent={markdownContent} lang="en" />;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } catch (error) {
+    notFound();
+  }
+}

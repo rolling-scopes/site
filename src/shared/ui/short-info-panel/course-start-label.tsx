@@ -3,6 +3,7 @@
 import { PropsWithChildren } from 'react';
 
 import { calculateFreshDate } from '@/shared/helpers/get-course-date';
+import { ApiResourceLocale } from '@/shared/types';
 import { DateSimple } from '@/shared/ui/date-simple';
 
 type CourseStartLabelProps = PropsWithChildren & {
@@ -11,6 +12,9 @@ type CourseStartLabelProps = PropsWithChildren & {
   label: string | undefined;
   labelSeparator?: string;
   showRegistrationEnd?: boolean;
+  startDateFormat?: string;
+  endDateFormat?: string;
+  lang: ApiResourceLocale;
 };
 
 export const CourseStartLabel = ({
@@ -20,6 +24,9 @@ export const CourseStartLabel = ({
   children,
   labelSeparator,
   showRegistrationEnd = true,
+  startDateFormat,
+  endDateFormat,
+  lang,
 }: CourseStartLabelProps) => {
   const freshDate =
     startDate && registrationEndDate ? calculateFreshDate(startDate, registrationEndDate) : null;
@@ -27,6 +34,9 @@ export const CourseStartLabel = ({
 
   return (
     <DateSimple
+      lang={lang}
+      startDateFormat={startDateFormat}
+      endDateFormat={endDateFormat}
       label={label}
       startDate={freshDate}
       endDate={endDate}

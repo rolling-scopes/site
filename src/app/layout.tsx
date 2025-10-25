@@ -1,6 +1,7 @@
 import { PropsWithChildren } from 'react';
 
 import { Analytics } from './analytics';
+import { LocaleResolver } from '@/app/locale-resolver';
 import { BaseLayout } from '@/core/base-layout';
 import '@/shared/helpers/day-js';
 import type { Metadata } from 'next';
@@ -43,6 +44,7 @@ function RootLayout({ children }: PropsWithChildren) {
             <BaseLayout>{children}</BaseLayout>
           </div>
         </div>
+        <LocaleResolver />
         <Analytics />
       </body>
     </html>

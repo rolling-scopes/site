@@ -1,8 +1,8 @@
 import { getCourseStatus } from './get-course-status';
 import type { CourseStatus } from '@/entities/course';
-import { dayJS } from '@/shared/helpers/day-js';
+import dayjs from '@/shared/helpers/day-js';
 
-const now = dayJS();
+const now = dayjs();
 
 const dates = {
   available: now.add(12, 'day').format('MMM DD, YYYY'),

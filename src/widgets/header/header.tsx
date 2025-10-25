@@ -7,7 +7,7 @@ import { DesktopMenu } from './desktop-menu/desktop-menu';
 import { MobileMenu } from './mobile-menu/mobile-menu';
 import { Course } from '@/entities/course';
 import logoBlue from '@/shared/assets/svg/rss-logo-blue.svg';
-import { NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
+import { NAV_MENU_LABELS, NAV_MENU_LABELS_RU, ROUTES } from '@/shared/constants';
 import { getActualData } from '@/shared/helpers/get-actual-data';
 import { Logo } from '@/shared/ui/logo';
 
@@ -15,7 +15,9 @@ import styles from './header.module.scss';
 
 const cx = classNames.bind(styles);
 
-export type NavMenuLabel = (typeof NAV_MENU_LABELS)[keyof typeof NAV_MENU_LABELS];
+export type NavMenuLabel =
+  (typeof NAV_MENU_LABELS)[keyof typeof NAV_MENU_LABELS]
+  | (typeof NAV_MENU_LABELS_RU)[keyof typeof NAV_MENU_LABELS_RU];
 
 type HeaderProps = {
   courses: Course[];

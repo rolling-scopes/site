@@ -5,28 +5,29 @@ import { DateSimple } from './date-simple';
 import { COURSE_DATE_FORMAT } from '@/entities/course/constants';
 import noteIcon from '@/shared/assets/svg/note-icon.svg';
 import { LABELS, TO_BE_DETERMINED } from '@/shared/constants';
-import { dayJS } from '@/shared/helpers/day-js';
+import dayjs from '@/shared/helpers/day-js';
 
 describe('DateSimple', () => {
   it('renders UI correctly having only start date', () => {
-    const startDate = dayJS('2088-01-01').format(COURSE_DATE_FORMAT);
+    const startDate = dayjs('2088-01-01').format(COURSE_DATE_FORMAT);
     const showMentoringStartDate = false;
 
-    render(<DateSimple startDate={startDate} showMentoringStartDate={showMentoringStartDate} />);
-    expect(screen.queryByText(LABELS.START_DATE)).toBeNull();
+    render(<DateSimple startDate={startDate} showMentoringStartDate={showMentoringStartDate} lang="en-US" />);
+    expect(screen.queryByText(LABELS['en-US'].START_DATE)).toBeNull();
     expect(screen.getByText(`${startDate}`)).toBeInTheDocument();
     expect(screen.queryByAltText('note-icon')).toBeNull();
   });
 
   it('renders label, start/end dates, icon and separator correctly', () => {
     const label = 'Dates:';
-    const startDate = dayJS('2088-01-01').format(COURSE_DATE_FORMAT);
-    const endDate = dayJS('2088-06-30').format(COURSE_DATE_FORMAT);
+    const startDate = dayjs('2088-01-01').format(COURSE_DATE_FORMAT);
+    const endDate = dayjs('2088-06-30').format(COURSE_DATE_FORMAT);
     const labelSeparator = 'test-separator';
     const showMentoringStartDate = true;
 
     render(
       <DateSimple
+        lang="en-US"
         label={label}
         startDate={startDate}
         endDate={endDate}
@@ -42,12 +43,13 @@ describe('DateSimple', () => {
   });
 
   it('displays dates and date attributes correctly including endDate TBD case', () => {
-    const startDate = dayJS('2088-01-01').format(COURSE_DATE_FORMAT);
+    const startDate = dayjs('2088-01-01').format(COURSE_DATE_FORMAT);
     const endDate = TO_BE_DETERMINED;
     const showMentoringStartDate = true;
 
     render(
       <DateSimple
+        lang="en-US"
         startDate={startDate}
         endDate={endDate}
         showMentoringStartDate={showMentoringStartDate}
@@ -57,7 +59,7 @@ describe('DateSimple', () => {
     const endDateElement = screen.getByTestId('date-time-end');
 
     expect(startDateElement).toHaveTextContent(startDate);
-    expect(startDateElement).toHaveAttribute('datetime', dayJS(startDate).toISOString());
+    expect(startDateElement).toHaveAttribute('datetime', dayjs(startDate).toISOString());
     expect(endDateElement).toHaveTextContent(endDate);
     expect(endDateElement).not.toHaveAttribute('datetime');
   });
@@ -69,9 +71,10 @@ describe('DateSimple', () => {
 
     render(
       <DateSimple
-        label={LABELS.START_DATE}
+        lang="en-US"
+        label={LABELS['en-US'].START_DATE}
         startDate={startDate}
-        labelSeparator={LABELS.MENTOR_ACTIVITIES_SEPARATOR}
+        labelSeparator={LABELS['en-US'].MENTOR_ACTIVITIES_SEPARATOR}
         endDate={endDate}
         showMentoringStartDate={showMentoringStartDate}
       />,
@@ -88,13 +91,14 @@ describe('DateSimple', () => {
   });
 
   it('displays correctly when endDate is undefined but label separator not', () => {
-    const startDate = dayJS('2088-01-01').format(COURSE_DATE_FORMAT);
+    const startDate = dayjs('2088-01-01').format(COURSE_DATE_FORMAT);
     const labelSeparator = 'test-separator';
     const showMentoringStartDate = true;
 
     render(
       <DateSimple
-        label={LABELS.START_DATE}
+        lang="en-US"
+        label={LABELS['en-US'].START_DATE}
         startDate={startDate}
         labelSeparator={labelSeparator}
         showMentoringStartDate={showMentoringStartDate}
@@ -106,12 +110,12 @@ describe('DateSimple', () => {
   });
 
   it('displays start date and additional info passed as children', () => {
-    const startDate = dayJS('2088-01-01').format(COURSE_DATE_FORMAT);
+    const startDate = dayjs('2088-01-01').format(COURSE_DATE_FORMAT);
     const additionalInfoText = 'Test additional info element';
     const showMentoringStartDate = true;
 
     render(
-      <DateSimple startDate={startDate} showMentoringStartDate={showMentoringStartDate}>
+      <DateSimple lang="en-US" startDate={startDate} showMentoringStartDate={showMentoringStartDate}>
         <span>{additionalInfoText}</span>
       </DateSimple>,
     );

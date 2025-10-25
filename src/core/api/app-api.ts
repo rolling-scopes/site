@@ -16,11 +16,13 @@ export class Api {
   public readonly page: PageApi;
 
   constructor(
-    private readonly baseURI: string,
+    private readonly rsAppBaseURI: string,
+    private readonly contentfulBaseURI: string,
     private readonly youtubeBaseURI: string,
   ) {
     this.services = {
-      rest: new ApiBaseClass(this.baseURI),
+      rsApp: new ApiBaseClass(this.rsAppBaseURI),
+      contentful: new ApiBaseClass(this.contentfulBaseURI),
       youtube: new ApiBaseClass(this.youtubeBaseURI),
     };
 

@@ -94,8 +94,37 @@ $ease-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
 $ease-emphasize-decelerate: cubic-bezier(0, 0, 0, 1);
 $ease-in-cubic: cubic-bezier(0.32, 0, 0.67, 0);
 $standard-decelerate: cubic-bezier(0, 0, 0, 1);
+$ease-spring: linear(
+  0,
+  0.009,
+  0.035 2.1%,
+  0.141,
+  0.281 6.7%,
+  0.723 12.9%,
+  0.938 16.7%,
+  1.017,
+  1.077,
+  1.121,
+  1.149 24.3%,
+  1.159,
+  1.163,
+  1.161,
+  1.154 29.9%,
+  1.129 32.8%,
+  1.051 39.6%,
+  1.017 43.1%,
+  0.991,
+  0.977 51%,
+  0.974 53.8%,
+  0.975 57.1%,
+  0.997 69.8%,
+  1.003 76.9%,
+  1.004 83.8%,
+  1
+);
 
 // Border radius
+$border-radius-xxxs: 2px;
 $border-radius-xxs: 4px;
 $border-radius-xs: 8px;
 $border-radius-s: 12px;
@@ -136,7 +165,9 @@ $z-index-above: 1;
 $z-index-max: 1000;
 
 // Box-shadow
+$shadow-xxs: 0 0.5px 2px 0.5px hsla(from $color-gray-900 h s l/ $opacity-20);
 $shadow-xs: 1px 1px 2px $color-gray-900;
 $shadow-s: 0 4px 8px 0 hsla(from $color-gray-900 h s l / $opacity-10);
 $shadow-m: 0 4px 12px 0 hsla(from $color-gray-900 h s l / $opacity-10);
 $shadow-l: 0 4px 16px 0 hsla(from $color-gray-900 h s l / $opacity-15);
+$shadow-xl: 0 0 6px 3px hsla(from $color-gray-900 h s l/ $opacity-10);

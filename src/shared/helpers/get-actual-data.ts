@@ -3,7 +3,7 @@ import { isCourse } from './is-course';
 import type { Course } from '@/entities/course';
 import { Event } from '@/entities/event';
 import { TO_BE_DETERMINED } from '@/shared/constants';
-import { dayJS } from '@/shared/helpers/day-js';
+import dayjs from '@/shared/helpers/day-js';
 
 type DataType = Course[] | Event[];
 
@@ -50,7 +50,7 @@ const mapStaleAsTBD = <T extends DataType>(data: T, staleAfter?: number): T =>
     if (staleAfter) {
       courseDate = getCourseDate(date, staleAfter);
     } else if (isCourse(item)) {
-      const daysBeforeStale = dayJS(item.registrationEndDate).diff(item.startDate, 'd');
+      const daysBeforeStale = dayjs(item.registrationEndDate).diff(item.startDate, 'd');
 
       courseDate = getCourseDate(date, daysBeforeStale);
     }
@@ -73,7 +73,7 @@ const mapMentorshipStaleAsTBD = <T extends DataType>(data: T): T => {
       return item;
     }
 
-    const daysBeforeStale = dayJS(item.personalMentoringEndDate).diff(
+    const daysBeforeStale = dayjs(item.personalMentoringEndDate).diff(
       item.personalMentoringStartDate,
       'd',
     );
@@ -114,5 +114,5 @@ const sortData = <T extends DataType>(data: T): T =>
       return dateA === TO_BE_DETERMINED ? 1 : -1;
     }
 
-    return dayJS(dateA).diff(dayJS(dateB));
+    return dayjs(dateA).diff(dayjs(dateB));
   }) as T;

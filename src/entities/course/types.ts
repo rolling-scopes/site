@@ -61,7 +61,7 @@ export type Course = {
   personalMentoringEndDate: string | null;
 };
 
-export type CourseStatus = 'planned' | 'available' | 'upcoming';
+export type CourseStatus = 'planned' | 'available' | 'upcoming' | 'доступен' | 'запланирован' | 'предстоящий';
 
 export type CourseItemData = Pick<
   Course,

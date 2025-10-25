@@ -3,6 +3,9 @@
   column-gap: $gap-xs;
   align-items: flex-start;
 
+  font-size: $font-size-s;
+  text-decoration: none;
+
   &.centered {
     align-items: center;
   }
@@ -16,6 +19,7 @@
     font-weight: $font-weight-medium;
     line-height: 24px;
     text-align: start;
+    white-space: pre-wrap;
 
     &.dark {
       color: $color-gray-900;

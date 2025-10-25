@@ -1,8 +1,11 @@
 'use client';
 
+import { useParams } from 'next/navigation';
+
 import { Course, CourseItem } from '@/entities/course';
 import { ROUTES } from '@/shared/constants';
 import { getActualData } from '@/shared/helpers/get-actual-data';
+import { ApiResourceLocale } from '@/shared/types';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Paragraph } from '@/shared/ui/paragraph';
 import {
@@ -19,7 +22,15 @@ const emptyText = {
   part2: ` Announcement channel to be the first to know when fresh courses are served.`,
 };
 
+const buttonLabel = {
+  'en-US': 'Go to courses',
+  'ru': 'Все курсы',
+};
+
 export const CourseItems = ({ courses }: CourseItems) => {
+  const params = useParams();
+  const lang = params?.lang as ApiResourceLocale ?? 'en-US';
+
   const coursesData = getActualData({
     data: courses,
     filterStale: true,
@@ -44,7 +55,7 @@ export const CourseItems = ({ courses }: CourseItems) => {
       <>
         {coursesContent}
         <LinkCustom href={ROUTES.COURSES} variant="primary">
-          Go to courses
+          {buttonLabel[lang]}
         </LinkCustom>
       </>
     );

@@ -1,9 +1,13 @@
+'use client';
+
 import { HTMLProps } from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+import { useParams } from 'next/navigation';
 
 import type { Course } from '../../types';
 import { COURSE_TITLES, LABELS } from '@/shared/constants';
+import { ApiResourceLocale } from '@/shared/types';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { ShortInfoPanel } from '@/shared/ui/short-info-panel';
 import { Subtitle } from '@/shared/ui/subtitle';
@@ -47,8 +51,11 @@ export const CourseCard = ({
   size = 'md',
 }: CourseCardProps) => {
   const { backgroundColor, accentColor } = backgroundStyle;
+  const params = useParams();
+  const lang = (params?.lang as ApiResourceLocale) ?? 'en-US';
 
-  const dateLabel = size === 'sm' ? LABELS.START_DATE_SHORT : LABELS.START_DATE;
+  const buttonLabel = lang === 'en-US' ? 'View details' : 'Подробнее';
+  const dateLabel = size === 'sm' ? LABELS[lang].START_DATE_SHORT : LABELS[lang].START_DATE;
   const fontSize = size === 'md' ? 'large' : 'small';
 
   const mark = title === COURSE_TITLES.ANGULAR && !showMentoringStartDate ? ` (${subTitle})` : '';
@@ -88,7 +95,7 @@ export const CourseCard = ({
           aria-label="View course details"
           data-testid="course-link"
         >
-          View details
+          {buttonLabel}
         </LinkCustom>
       </div>
     </article>

@@ -40,7 +40,7 @@ export const CourseHero = ({ course, locale }: HeroCourseProps) => {
           data-testid="hero-image"
         />
         <article>
-          <AvailabilityStatus startDate={startDate} registrationEndDate={registrationEndDate} />
+          <AvailabilityStatus startDate={startDate} registrationEndDate={registrationEndDate} lang={locale} />
           <MainTitle size="small">{`${altTitle || title} Course`}</MainTitle>
           {subTitle && (
             <p data-testid="course-subtitle" className={cx('hero-subtitle')}>
@@ -48,7 +48,7 @@ export const CourseHero = ({ course, locale }: HeroCourseProps) => {
             </p>
           )}
           <ShortInfoPanel
-            label={LABELS.START_DATE}
+            label={LABELS[locale].START_DATE}
             startDate={startDate}
             registrationEndDate={registrationEndDate}
             language={language}

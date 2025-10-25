@@ -12,7 +12,7 @@ export class PageApi {
   constructor(private readonly services: ApiServices) {}
 
   public queryPage({ type, slug, locale }: QueryPageParams) {
-    return this.services.rest.get<PageResponse>('/entries', {
+    return this.services.contentful.get<PageResponse>('/entries', {
       params: {
         'content_type': API_CONTENT_TYPE_DICTIONARY.PAGE,
         'include': API_MAX_INCLUDE_DEPTH,
