@@ -5,7 +5,7 @@ import { PAGE_TYPE } from '@/entities/page/constants';
 import { pageStore } from '@/entities/page/model/store';
 import { PageProps } from '@/entities/page/types';
 import { mentorshipCourseMetadata } from '@/metadata/mentorship';
-import { OG_SITE_NAME } from '@/shared/constants';
+import { OG_SITE_NAME, ROUTES } from '@/shared/constants';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 import { Mentorship } from '@/views/mentorship';
 
@@ -18,7 +18,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     seoKeywords: keywords,
   } = await pageStore.loadPage(PAGE_TYPE.MENTORSHIP_COURSE, locale, slug);
 
-  const { canonical, robots } = mentorshipCourseMetadata;
+  const { robots } = mentorshipCourseMetadata;
+  const canonical = `https://rs.school/${lang}/${ROUTES.MENTORSHIP}/${slug}`;
   const title = `${pageTitle} · ${OG_SITE_NAME}`;
 
   const metadata = generatePageMetadata({

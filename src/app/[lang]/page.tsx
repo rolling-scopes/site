@@ -19,7 +19,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   } = await pageStore.loadPage(PAGE_TYPE.HOME, locale);
 
   const title = `${pageTitle} · ${OG_SITE_NAME}`;
-  const { canonical, robots } = homeMetadata;
+  const { robots } = homeMetadata;
+  const canonical = `https://rs.school/${lang}`;
 
   const metadata = generatePageMetadata({
     title,

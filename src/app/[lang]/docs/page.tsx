@@ -3,6 +3,7 @@ import { fetchMarkdownContent } from '@/app/docs/utils/fetch-markdown-content';
 import { PAGE_TYPE, pageStore, resolvePageLocale } from '@/entities/page';
 import { PageProps } from '@/entities/page/types';
 import { docsLangMetadata } from '@/metadata/docs';
+import { ROUTES } from '@/shared/constants';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 
 export async function generateMetadata({ params }: PageProps) {
@@ -10,7 +11,8 @@ export async function generateMetadata({ params }: PageProps) {
   const locale = resolvePageLocale(lang);
   const { title, seoDescription: description, seoKeywords: keywords } =
     await pageStore.loadPage(PAGE_TYPE.DOCS, locale);
-  const { canonical, robots } = docsLangMetadata;
+  const { robots } = docsLangMetadata;
+  const canonical = `https://rs.school/${lang}/${ROUTES.DOCS}`;
 
   const metadata = generatePageMetadata({
     title,

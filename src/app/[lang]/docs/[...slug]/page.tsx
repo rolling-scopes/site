@@ -9,6 +9,7 @@ import { fetchMarkdownContent } from '@/app/docs/utils/fetch-markdown-content';
 import { fetchMenu } from '@/app/docs/utils/fetch-menu';
 import { PagePropsDocs } from '@/entities/page/types';
 import { generateDocsMetadata } from '@/metadata/docs';
+import { ROUTES } from '@/shared/constants';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 import { Language } from '@/shared/types';
 
@@ -42,7 +43,10 @@ export async function generateMetadata({ params }: PagePropsDocs): Promise<Metad
 
   const title = titles.find((el) => el.slug.join('/') === slugPath)?.title;
 
-  const { description, keywords, canonical, robots } = generateDocsMetadata(lang, slugPath);
+  const { description, keywords, robots } = generateDocsMetadata(lang, slugPath);
+  const canonical = slugPath
+    ? `https://rs.school/${lang}/${ROUTES.DOCS}/${slugPath}`
+    : `https://rs.school/${lang}/${ROUTES.DOCS}`;
 
   const metadata = generatePageMetadata({
     title: `${title} ${TITLE_POSTFIX}`,

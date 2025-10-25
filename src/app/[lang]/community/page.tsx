@@ -5,6 +5,7 @@ import { PAGE_TYPE } from '@/entities/page/constants';
 import { pageStore } from '@/entities/page/model/store';
 import { PageProps } from '@/entities/page/types';
 import { communityMetadata } from '@/metadata/community';
+import { ROUTES } from '@/shared/constants';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 import Community from '@/views/community';
 
@@ -14,14 +15,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { title, seoDescription: description, seoKeywords: keywords } =
     await pageStore.loadPage(PAGE_TYPE.COMMUNITY, locale);
 
-  const { canonical, robots } = communityMetadata;
+  const { robots } = communityMetadata;
 
   const metadata = generatePageMetadata({
     title,
     description,
     imagePath: `/${lang}/community/og.png`,
     keywords,
-    alternates: { canonical },
+    alternates: { canonical: `https://rs.school/${lang}/${ROUTES.COMMUNITY}` },
     robots,
   });
 

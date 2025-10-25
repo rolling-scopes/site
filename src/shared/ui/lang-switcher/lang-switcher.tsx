@@ -48,8 +48,8 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
           >
             <Image
               src={languageIcon}
-              width="18"
-              height="18"
+              width={18}
+              height={18}
               alt=""
               aria-hidden="true"
             />

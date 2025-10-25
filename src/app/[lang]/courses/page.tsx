@@ -5,7 +5,7 @@ import { PAGE_TYPE } from '@/entities/page/constants';
 import { pageStore } from '@/entities/page/model/store';
 import { PageProps } from '@/entities/page/types';
 import { coursesMetadata } from '@/metadata/courses';
-import { OG_SITE_NAME } from '@/shared/constants';
+import { OG_SITE_NAME, ROUTES } from '@/shared/constants';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 import { Courses } from '@/views/courses';
 
@@ -18,14 +18,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     seoKeywords: keywords,
   } = await pageStore.loadPage(PAGE_TYPE.COURSES, locale);
   const title = `${coursesTitle} · ${OG_SITE_NAME}`;
-  const { canonical, robots } = coursesMetadata;
+  const { robots } = coursesMetadata;
 
   const metadata = generatePageMetadata({
     title,
     description,
     imagePath: `/${lang}/courses/og.png`,
     keywords,
-    alternates: { canonical },
+    alternates: { canonical: `https://rs.school/${lang}/${ROUTES.COURSES}` },
     robots,
   });
 

@@ -2,7 +2,7 @@
 
 import classNames from 'classnames/bind';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+import { useParams, usePathname } from 'next/navigation';
 
 import { Menu } from '../../types';
 import chevronRight from '@/shared/assets/svg/chevron-right.svg';
@@ -20,6 +20,7 @@ type DocsMenuProps = {
 };
 
 export const DocsMenu = ({ menu, isOpen, onMenuToggle }: DocsMenuProps) => {
+  const params = useParams();
   const pathname = usePathname();
 
   const handleMenuToggle = () => {
@@ -27,7 +28,10 @@ export const DocsMenu = ({ menu, isOpen, onMenuToggle }: DocsMenuProps) => {
   };
 
   const isActive = (link: string) => {
-    return pathname === `/docs/${link}`;
+    const lang = (params?.lang as string) || '';
+    const base = lang ? `/${lang}/docs/` : '/docs/';
+
+    return pathname === `${base}${link}`;
   };
 
   const resolveHref = (link: string) => {
