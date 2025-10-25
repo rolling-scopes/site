@@ -28,7 +28,6 @@ export const MerchCatalog = ({ products }: MerchProductsProps) => {
   const tags: string[] | [] = getTags(products);
 
   const filteredProducts: MerchProduct[] = useMemo(() => {
-    console.log(searchTerm);
     const filteredByTypes = filterByTypes(products, selectedTypes);
     const filteredBySearch = filterBySearchTerm(filteredByTypes, searchTerm);
 
