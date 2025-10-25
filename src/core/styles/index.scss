@@ -180,14 +180,14 @@ figure {
 
 .separator-root {
   background-color: $color-gray-600;
-}
 
-.separator-root[data-orientation='horizontal'] {
-  width: 100%;
-  height: 1px;
-}
+  &[data-orientation='horizontal'] {
+    width: 100%;
+    height: 1px;
+  }
 
-.separator-root[data-orientation='vertical'] {
-  width: 1px;
-  height: 24px;
+  &[data-orientation='vertical'] {
+    width: 1px;
+    height: 24px;
+  }
 }
