@@ -7,10 +7,10 @@ import { MOCKED_TAGS } from '@/shared/__tests__/constants';
 import { ROUTES, URL_PARAMS } from '@/shared/constants';
 
 let mockedSearchParams: URLSearchParams = new URLSearchParams();
-const MOCKED_ROUTER = { replace: vi.fn() };
+const mockedRouter = { replace: vi.fn() };
 
 vi.mock('next/navigation', () => ({
-  useRouter: () => MOCKED_ROUTER,
+  useRouter: () => mockedRouter,
   usePathname: () => ROUTES.MERCH,
   useSearchParams: () => mockedSearchParams,
 }));
@@ -19,7 +19,7 @@ describe('MerchTags', () => {
   const user = userEvent.setup();
 
   beforeEach(() => {
-    MOCKED_ROUTER.replace.mockClear();
+    mockedRouter.replace.mockClear();
   });
 
   it('should render all checkboxes unchecked if URL has no "type" params', () => {
@@ -42,8 +42,8 @@ describe('MerchTags', () => {
     mockedSearchParams = new URLSearchParams('');
     render(<MerchTags tags={MOCKED_TAGS} />);
     await user.click(screen.getByLabelText('hoodie'));
-    expect(MOCKED_ROUTER.replace).toHaveBeenCalledTimes(1);
-    expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith(
+    expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
+    expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(
       `${ROUTES.MERCH}?${URL_PARAMS.TYPE}=hoodie`,
       { scroll: false },
     );
@@ -53,16 +53,16 @@ describe('MerchTags', () => {
     mockedSearchParams = new URLSearchParams(`${URL_PARAMS.TYPE}=hoodie`);
     render(<MerchTags tags={MOCKED_TAGS} />);
     await user.click(screen.getByLabelText('hoodie'));
-    expect(MOCKED_ROUTER.replace).toHaveBeenCalledTimes(1);
-    expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith(`${ROUTES.MERCH}`, { scroll: false });
+    expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
+    expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(`${ROUTES.MERCH}`, { scroll: false });
   });
 
   it('should correctly remove one of multiple type parameters from URL', async () => {
     mockedSearchParams = new URLSearchParams(`${URL_PARAMS.TYPE}=t-shirts&${URL_PARAMS.TYPE}=cups`);
     render(<MerchTags tags={MOCKED_TAGS} />);
     await user.click(screen.getByLabelText('t-shirts'));
-    expect(MOCKED_ROUTER.replace).toHaveBeenCalledTimes(1);
-    expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith(
+    expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
+    expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(
       `${ROUTES.MERCH}?${URL_PARAMS.TYPE}=cups`,
       { scroll: false },
     );
@@ -72,8 +72,8 @@ describe('MerchTags', () => {
     mockedSearchParams = new URLSearchParams(`${URL_PARAMS.TYPE}=hoodie&${URL_PARAMS.PAGE}=3`);
     render(<MerchTags tags={MOCKED_TAGS} />);
     await user.click(screen.getByLabelText('cups'));
-    expect(MOCKED_ROUTER.replace).toHaveBeenCalledTimes(1);
-    expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith(
+    expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
+    expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(
       `${ROUTES.MERCH}?${URL_PARAMS.TYPE}=hoodie&${URL_PARAMS.TYPE}=cups`,
       { scroll: false },
     );

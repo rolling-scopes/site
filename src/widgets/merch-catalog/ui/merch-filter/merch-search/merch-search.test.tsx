@@ -12,17 +12,17 @@ import { MerchSearch } from './merch-search';
 import { ROUTES, URL_PARAMS } from '@/shared/constants';
 
 let mockedSearchParams: URLSearchParams = new URLSearchParams();
-const MOCKED_ROUTER = { replace: vi.fn() };
+const mockedRouter = { replace: vi.fn() };
 
 vi.mock('next/navigation', () => ({
-  useRouter: () => MOCKED_ROUTER,
+  useRouter: () => mockedRouter,
   usePathname: () => ROUTES.MERCH,
   useSearchParams: () => mockedSearchParams,
 }));
 
 describe('MerchSearch', () => {
   beforeEach(() => {
-    MOCKED_ROUTER.replace.mockClear();
+    mockedRouter.replace.mockClear();
     vi.useFakeTimers();
   });
 
@@ -53,10 +53,10 @@ describe('MerchSearch', () => {
 
     fireEvent.change(input, { target: { value: 'hoodie' } });
     expect(input).toHaveValue('hoodie');
-    expect(MOCKED_ROUTER.replace).not.toHaveBeenCalled();
+    expect(mockedRouter.replace).not.toHaveBeenCalled();
     vi.runAllTimers();
-    expect(MOCKED_ROUTER.replace).toHaveBeenCalledTimes(1);
-    expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith(
+    expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
+    expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(
       `${ROUTES.MERCH}?${URL_PARAMS.SEARCH}=hoodie`,
       { scroll: false },
     );
@@ -69,8 +69,8 @@ describe('MerchSearch', () => {
 
     fireEvent.change(input, { target: { value: '' } });
     vi.runAllTimers();
-    expect(MOCKED_ROUTER.replace).toHaveBeenCalledTimes(1);
-    expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith(`${ROUTES.MERCH}?`, { scroll: false });
+    expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
+    expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(`${ROUTES.MERCH}?`, { scroll: false });
   });
 
   it('should remove the "page" parameter when performing a new search', () => {
@@ -80,8 +80,8 @@ describe('MerchSearch', () => {
 
     fireEvent.change(input, { target: { value: 'cups' } });
     vi.runAllTimers();
-    expect(MOCKED_ROUTER.replace).toHaveBeenCalledTimes(1);
-    expect(MOCKED_ROUTER.replace).toHaveBeenCalledExactlyOnceWith(
+    expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
+    expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(
       `${ROUTES.MERCH}?${URL_PARAMS.SEARCH}=cups`,
       { scroll: false },
     );
@@ -94,7 +94,7 @@ describe('MerchSearch', () => {
 
     fireEvent.change(input, { target: { value: 'hoodie' } });
     vi.runAllTimers();
-    expect(MOCKED_ROUTER.replace).not.toHaveBeenCalled();
+    expect(mockedRouter.replace).not.toHaveBeenCalled();
   });
 
   it('should update its value when the URL search parameter changes externally', () => {

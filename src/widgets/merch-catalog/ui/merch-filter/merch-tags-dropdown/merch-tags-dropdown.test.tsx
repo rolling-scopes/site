@@ -30,17 +30,12 @@ describe('MerchTagsDropdown', () => {
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 
-  it('should contain a dropdown arrow icon', () => {
+  it('should contain a dropdown arrow icon and a button title', () => {
     render(<MerchTagsDropdown isOpen={false} onClick={() => {}} />);
     const arrowIcon = screen.getByTestId('dropdown-arrow');
-
-    expect(arrowIcon).toBeInTheDocument();
-  });
-
-  it('should contain a button title', () => {
-    render(<MerchTagsDropdown isOpen={false} onClick={() => {}} />);
     const dropdownTitle = screen.getByTestId('dropdown-title');
 
+    expect(arrowIcon).toBeInTheDocument();
     expect(dropdownTitle).toBeInTheDocument();
   });
 });

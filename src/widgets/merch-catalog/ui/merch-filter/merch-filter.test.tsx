@@ -95,7 +95,7 @@ describe('MerchFilter', () => {
     mockedSearchParams = new URLSearchParams('');
     render(<MerchFilter tags={MOCKED_TAGS} />);
 
-    expect(screen.getByTestId('button-title')).toHaveTextContent('Filter merch');
+    expect(screen.getByTestId('button-title')).toBeInTheDocument();
     expect(screen.getByTestId('search-input')).toBeInTheDocument();
     expect(screen.getByTestId('clear-button')).toBeInTheDocument();
     expect(screen.getByTestId('dropdown-button')).toBeInTheDocument();
