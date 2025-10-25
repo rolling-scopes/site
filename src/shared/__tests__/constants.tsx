@@ -2,6 +2,7 @@ import { StaticImageData } from 'next/image';
 
 import { Video } from '../types';
 import { Course } from '@/entities/course';
+import { MerchProduct } from '@/entities/merch/types';
 import type { Trainer } from '@/entities/trainer';
 import { COURSE_LINKS, COURSE_TITLES, ROUTES } from '@/shared/constants';
 import { Paragraph } from '@/shared/ui/paragraph';
@@ -227,3 +228,78 @@ export const MOCKED_VIDEOS: Video[] = [
     thumbnail: 'thumb3.jpg',
   },
 ];
+
+export const MOCKED_PRODUCTS: MerchProduct[] = [
+  {
+    id: 1,
+    title: 'Cool T-Shirt',
+    tags: ['t-shirts', 'hoodie'],
+    name: 'cool-t-shirt',
+    preview: ['https://example.com/preview/cool-t-shirt.jpg'],
+    download: ['https://example.com/download/cool-t-shirt.zip'],
+  },
+  {
+    id: 2,
+    title: 'Awesome Mug',
+    tags: ['merch', 'cups'],
+    name: 'awesome-mug',
+    preview: ['https://example.com/preview/awesome-mug.jpg'],
+    download: ['https://example.com/download/awesome-mug.zip'],
+  },
+  {
+    id: 3,
+    title: 'Another T-Shirt',
+    tags: ['t-shirts', 'merch'],
+    name: 'another-t-shirt',
+    preview: ['https://example.com/preview/another-t-shirt.jpg'],
+    download: ['https://example.com/download/another-t-shirt.zip'],
+  },
+];
+
+export const MOCKED_PRODUCTS_WITH_MISSING_TAGS: MerchProduct[] = [
+  {
+    id: 1,
+    title: 'Cool T-Shirt',
+    tags: null,
+    name: 'cool-t-shirt',
+    preview: ['https://example.com/preview/cool-t-shirt.jpg'],
+    download: ['https://example.com/download/cool-t-shirt.zip'],
+  },
+  {
+    id: 2,
+    title: 'Awesome Mug',
+    tags: undefined,
+    name: 'awesome-mug',
+    preview: ['https://example.com/preview/awesome-mug.jpg'],
+    download: ['https://example.com/download/awesome-mug.zip'],
+  },
+  {
+    id: 3,
+    title: 'Another T-Shirt',
+    tags: [],
+    name: 'another-t-shirt',
+    preview: ['https://example.com/preview/another-t-shirt.jpg'],
+    download: ['https://example.com/download/another-t-shirt.zip'],
+  },
+];
+
+export const MOCKED_PRODUCTS_WITH_BLANK_TAGS: MerchProduct[] = [
+  {
+    id: 1,
+    title: 'Cool T-Shirt',
+    tags: ['hoodie', '', 'merch'],
+    name: 'cool-t-shirt',
+    preview: ['https://example.com/preview/cool-t-shirt.jpg'],
+    download: ['https://example.com/download/cool-t-shirt.zip'],
+  },
+  {
+    id: 2,
+    title: 'Awesome Mug',
+    tags: [''],
+    name: 'awesome-mug',
+    preview: ['https://example.com/preview/awesome-mug.jpg'],
+    download: ['https://example.com/download/awesome-mug.zip'],
+  },
+];
+
+export const MOCKED_TAGS = ['cups', 'hoodie', 'merch', 't-shirts'];
