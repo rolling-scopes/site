@@ -10,6 +10,7 @@ import { MerchList } from './merch-list/merch-list';
 import { NoMerch } from './no-merch/no-merch';
 import { filterBySearchTerm, filterByTypes } from '../helpers/filter-merch';
 import { MerchProduct } from '@/entities/merch/types';
+import { URL_PARAMS } from '@/shared/constants';
 
 import styles from './merch-catalog.module.scss';
 
@@ -22,9 +23,8 @@ type MerchProductsProps = {
 export const MerchCatalog = ({ products }: MerchProductsProps) => {
   const searchParams: ReadonlyURLSearchParams = useSearchParams();
 
-  const searchTerm: string = searchParams.get('search') || '';
-  const selectedTypes: string[] = searchParams.getAll('type');
-  const isFiltered: boolean = !!(searchTerm || selectedTypes.length);
+  const searchTerm: string = searchParams.get(URL_PARAMS.SEARCH) || '';
+  const selectedTypes: string[] = searchParams.getAll(URL_PARAMS.TYPE);
   const tags: string[] | [] = getTags(products);
 
   const filteredProducts: MerchProduct[] = useMemo(() => {
@@ -44,7 +44,7 @@ export const MerchCatalog = ({ products }: MerchProductsProps) => {
             <MerchList products={filteredProducts} />
           )
         : (
-            <NoMerch isFiltered={isFiltered} />
+            <NoMerch isFiltered={true} />
           )}
     </div>
   );

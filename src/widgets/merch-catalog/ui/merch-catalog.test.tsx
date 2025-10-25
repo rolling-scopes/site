@@ -3,6 +3,7 @@ import { describe, expect, it, vi } from 'vitest';
 
 import { MerchCatalog } from './merch-catalog';
 import { MOCKED_PRODUCTS, MOCKED_TAGS } from '@/shared/__tests__/constants';
+import { URL_PARAMS } from '@/shared/constants';
 
 vi.mock('./merch-filter/merch-filter', () => ({
   MerchFilter: ({ tags }: { tags: string[] }) => (
@@ -17,7 +18,7 @@ vi.mock('./merch-list/merch-list', () => ({
 }));
 
 vi.mock('./no-merch/no-merch', () => ({
-  NoMerch: ({ isFiltered }: { isFiltered: boolean }) => (
+  NoMerch: ({ isFiltered = false }: { isFiltered?: boolean }) => (
     <div data-testid="no-merch">{`isFiltered: ${isFiltered}`}</div>
   ),
 }));
@@ -32,52 +33,47 @@ describe('MerchCatalog', () => {
   it('should render all products when no filters are applied', () => {
     mockedSearchParams = new URLSearchParams('');
     render(<MerchCatalog products={MOCKED_PRODUCTS} />);
+
     expect(screen.getByTestId('merch-list')).toHaveTextContent('Product count: 3');
     expect(screen.queryByTestId('no-merch')).not.toBeInTheDocument();
     expect(screen.getByTestId('merch-filter')).toHaveTextContent(`Tags: ${MOCKED_TAGS.join(',')}`);
   });
 
   it('should filter products by search term (case-insensitive)', () => {
-    mockedSearchParams = new URLSearchParams('search=t-shirts');
+    mockedSearchParams = new URLSearchParams(`${URL_PARAMS.SEARCH}=t-shirts`);
     render(<MerchCatalog products={MOCKED_PRODUCTS} />);
+
     expect(screen.getByTestId('merch-list')).toHaveTextContent('Product count: 2');
   });
 
   it('should filter products by a single type', () => {
-    mockedSearchParams = new URLSearchParams('type=hoodie');
+    mockedSearchParams = new URLSearchParams(`${URL_PARAMS.TYPE}=hoodie`);
     render(<MerchCatalog products={MOCKED_PRODUCTS} />);
+
     expect(screen.getByTestId('merch-list')).toHaveTextContent('Product count: 1');
   });
 
   it('should filter products by multiple types', () => {
-    mockedSearchParams = new URLSearchParams('type=hoodie&type=cups');
+    mockedSearchParams = new URLSearchParams(`${URL_PARAMS.TYPE}=hoodie&${URL_PARAMS.TYPE}=cups`);
     render(<MerchCatalog products={MOCKED_PRODUCTS} />);
+
     expect(screen.getByTestId('merch-list')).toHaveTextContent('Product count: 2');
   });
 
   it('should filter by both search term and type', () => {
-    mockedSearchParams = new URLSearchParams('search=cool&type=hoodie');
+    mockedSearchParams = new URLSearchParams(`${URL_PARAMS.SEARCH}=cool&${URL_PARAMS.TYPE}=hoodie`);
     render(<MerchCatalog products={MOCKED_PRODUCTS} />);
+
     expect(screen.getByTestId('merch-list')).toHaveTextContent('Product count: 1');
   });
 
   it('should render NoMerch component when no products match filters', () => {
-    mockedSearchParams = new URLSearchParams('search=nonexistent');
+    mockedSearchParams = new URLSearchParams(`${URL_PARAMS.SEARCH}=nonexistent`);
     render(<MerchCatalog products={MOCKED_PRODUCTS} />);
-    expect(screen.queryByTestId('merch-list')).not.toBeInTheDocument();
     const noMerch = screen.getByTestId('no-merch');
 
+    expect(screen.queryByTestId('merch-list')).not.toBeInTheDocument();
     expect(noMerch).toBeInTheDocument();
     expect(noMerch).toHaveTextContent('isFiltered: true');
-  });
-
-  it('should render NoMerch component when initial product list is empty', () => {
-    mockedSearchParams = new URLSearchParams('');
-    render(<MerchCatalog products={[]} />);
-    expect(screen.queryByTestId('merch-list')).not.toBeInTheDocument();
-    const noMerch = screen.getByTestId('no-merch');
-
-    expect(noMerch).toBeInTheDocument();
-    expect(noMerch).toHaveTextContent('isFiltered: false');
   });
 });
