@@ -2,6 +2,7 @@ import { COURSE_TITLES } from '@/shared/constants';
 import { CourseNamesKeys } from '@/shared/types/types';
 
 export const COURSE_DATE_FORMAT = 'MMM DD, YYYY';
+export const COURSE_DATE_FORMAT_SHORT = 'MMM D';
 export const MENTORING_DATE_FORMAT = 'MMM, YYYY';
 
 export const API_COURSES_IDS_DICTIONARY: Record<CourseNamesKeys, string> = {

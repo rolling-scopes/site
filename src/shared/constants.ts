@@ -12,15 +12,24 @@ export const API_MAX_INCLUDE_DEPTH = 10;
 
 export const COURSE_LANGUAGE_LABEL: Record<Language, string> = {
   en: 'English',
-  ru: 'Russian',
+  ru: 'Русский',
 } as const;
 
 export const LABELS = {
-  START_DATE: 'Course starts on:',
-  START_DATE_SHORT: 'Start:',
-  REGISTRATION_END: 'Enroll untill:',
-  MENTOR_ACTIVITIES: 'Mentorship starts on:',
-  MENTOR_ACTIVITIES_SEPARATOR: '-',
+  'en-US': {
+    START_DATE: 'Course starts on:',
+    START_DATE_SHORT: 'Start:',
+    REGISTRATION_END: 'Enroll untill:',
+    MENTOR_ACTIVITIES: 'Mentorship starts on:',
+    MENTOR_ACTIVITIES_SEPARATOR: '-',
+  },
+  'ru': {
+    START_DATE: 'Начало курса:',
+    START_DATE_SHORT: 'Старт:',
+    REGISTRATION_END: 'Запись до:',
+    MENTOR_ACTIVITIES: 'Старт менторства:',
+    MENTOR_ACTIVITIES_SEPARATOR: '-',
+  },
 } as const;
 
 // ⚠️ These links are used to identify courses from the API

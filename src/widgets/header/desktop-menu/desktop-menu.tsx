@@ -45,7 +45,7 @@ export const DesktopMenu = ({
 
   const menuData = useMemo(
     () => generateNavMenuData(courses, coursesWithMentorship, lang),
-    [courses, coursesWithMentorship],
+    [courses, coursesWithMentorship, lang],
   );
 
   const navItemsData = generateNavItemsConfig(iconSrc, lang);

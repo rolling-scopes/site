@@ -1,7 +1,15 @@
 import { StaticImageData } from 'next/image';
 
 import { Course } from '@/entities/course';
-import { ANCHORS, NAV_MENU_LABELS, NAV_MENU_LABELS_RU, ROUTES } from '@/shared/constants';
+import { COURSE_DATE_FORMAT } from '@/entities/course/constants';
+import {
+  ANCHORS,
+  NAV_MENU_LABELS,
+  NAV_MENU_LABELS_RU,
+  ROUTES,
+  TO_BE_DETERMINED,
+} from '@/shared/constants';
+import dayjs from '@/shared/helpers/day-js';
 import { ApiResourceLocale } from '@/shared/types';
 import { communityMenuStaticLinks, donateOptions, schoolMenuStaticLinks } from 'data';
 
@@ -109,7 +117,9 @@ const mapCoursesToMenuItems = (courses: Course[], type: 'courses' | 'mentorship'
       id: course.id,
       title: course.title,
       icon: course.iconSmall,
-      description: course.startDate,
+      description: dayjs(course.startDate).isValid()
+        ? dayjs(course.startDate).locale(lang).format(COURSE_DATE_FORMAT)
+        : TO_BE_DETERMINED,
       url: course.detailsUrl,
     })),
   ];
