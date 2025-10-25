@@ -76,7 +76,7 @@ describe('MerchFilter', () => {
     render(<MerchFilter tags={MOCKED_TAGS} />);
 
     const dropdownButton = screen.getByTestId('dropdown-button');
-    const tagsList = screen.getByText('Tags List').parentElement;
+    const tagsList = screen.getByTestId('merch-tags').parentElement;
 
     expect(tagsList?.classList.contains('expanded')).toBe(false);
 

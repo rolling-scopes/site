@@ -41,7 +41,9 @@ describe('MerchTags', () => {
   it('should add a type parameter to URL when an unchecked checkbox is clicked', async () => {
     mockedSearchParams = new URLSearchParams('');
     render(<MerchTags tags={MOCKED_TAGS} />);
+
     await user.click(screen.getByLabelText('hoodie'));
+
     expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
     expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(
       `${ROUTES.MERCH}?${URL_PARAMS.TYPE}=hoodie`,
@@ -52,7 +54,9 @@ describe('MerchTags', () => {
   it('should remove the type parameter from URL when a checked checkbox is clicked', async () => {
     mockedSearchParams = new URLSearchParams(`${URL_PARAMS.TYPE}=hoodie`);
     render(<MerchTags tags={MOCKED_TAGS} />);
+
     await user.click(screen.getByLabelText('hoodie'));
+
     expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
     expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(`${ROUTES.MERCH}`, { scroll: false });
   });
@@ -60,7 +64,9 @@ describe('MerchTags', () => {
   it('should correctly remove one of multiple type parameters from URL', async () => {
     mockedSearchParams = new URLSearchParams(`${URL_PARAMS.TYPE}=t-shirts&${URL_PARAMS.TYPE}=cups`);
     render(<MerchTags tags={MOCKED_TAGS} />);
+
     await user.click(screen.getByLabelText('t-shirts'));
+
     expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
     expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(
       `${ROUTES.MERCH}?${URL_PARAMS.TYPE}=cups`,
@@ -71,7 +77,9 @@ describe('MerchTags', () => {
   it('should remove the "page" parameter from URL when a filter is changed', async () => {
     mockedSearchParams = new URLSearchParams(`${URL_PARAMS.TYPE}=hoodie&${URL_PARAMS.PAGE}=3`);
     render(<MerchTags tags={MOCKED_TAGS} />);
+
     await user.click(screen.getByLabelText('cups'));
+
     expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
     expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(
       `${ROUTES.MERCH}?${URL_PARAMS.TYPE}=hoodie&${URL_PARAMS.TYPE}=cups`,
