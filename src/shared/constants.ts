@@ -19,7 +19,7 @@ export const LABELS = {
   'en-US': {
     START_DATE: 'Course starts on:',
     START_DATE_SHORT: 'Start:',
-    REGISTRATION_END: 'Enroll untill:',
+    REGISTRATION_END: 'Enroll until:',
     MENTOR_ACTIVITIES: 'Mentorship starts on:',
     MENTOR_ACTIVITIES_SEPARATOR: '-',
   },
