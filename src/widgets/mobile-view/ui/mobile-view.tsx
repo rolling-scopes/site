@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { StaticImageData } from 'next/image';
 import { useParams, usePathname } from 'next/navigation';
@@ -83,7 +83,9 @@ export const MobileView = ({ type, courses, mentorshipCourses, isMenuOpen, logoI
     <nav className={cx('mobile-view')} data-testid="mobile-view">
       <div className={cx('menu-logo')}>
         <Logo type={logoView} logoSrc={logoIcon} onClick={onClose} />
-        <LangSwitcher className={cx('lang-switcher')} />
+        <Suspense>
+          <LangSwitcher className={cx('lang-switcher')} />
+        </Suspense>
       </div>
 
       <div className={cx('menu-content')}>

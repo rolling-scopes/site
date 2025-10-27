@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { Popover } from 'radix-ui';
 
 import languageIcon from '@/shared/assets/svg/translate.svg';
@@ -19,6 +19,7 @@ type LangSwitcherProps = {
 
 export const LangSwitcher = ({ className }: LangSwitcherProps) => {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [isOpened, setIsOpened] = useState(false);
 
   const isRuActive = pathname.startsWith('/ru');
@@ -30,8 +31,8 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
 
   const preservePath = path.join('/');
 
-  const ruPath = `/ru/${preservePath}`;
-  const enPath = `/${preservePath}`;
+  const ruPath = `/ru/${preservePath}?${searchParams}`;
+  const enPath = `/${preservePath}?${searchParams}`;
 
   const handlePopoverToggle = () => {
     setIsOpened((prev) => !prev);

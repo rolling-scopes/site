@@ -7,6 +7,13 @@ import { Copyright } from '@/widgets/footer/ui/copyright';
 import { DesktopView } from '@/widgets/footer/ui/desktop-view';
 import { MobileView } from '@/widgets/mobile-view';
 
+vi.mock('next/navigation', () => ({
+  useRouter: () => ({ push: vi.fn() }),
+  usePathname: () => '/',
+  useParams: () => {},
+  useSearchParams: () => new URLSearchParams(),
+}));
+
 describe('Footer', () => {
   it('renders footer container', async () => {
     const { getByTestId } = renderWithRouter(<Footer courses={mockedCourses} mentorshipCourses={mockedCourses} />);

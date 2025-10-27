@@ -1,4 +1,11 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import {
+  Suspense,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import classNames from 'classnames/bind';
 import { useParams, usePathname } from 'next/navigation';
 import { Separator } from 'radix-ui';
@@ -128,7 +135,9 @@ export const DesktopMenu = ({
         orientation="vertical"
       />
 
-      <LangSwitcher className={cx('lang-switcher-desktop')} />
+      <Suspense>
+        <LangSwitcher className={cx('lang-switcher-desktop')} />
+      </Suspense>
     </>
   );
 };
