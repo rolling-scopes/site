@@ -133,12 +133,12 @@ describe('MerchSearch', () => {
     );
   });
 
-  it('should normalize multiple internal whitespaces to a single space', () => {
+  it('should normalize input completely (trim, collapse spaces, and toLowerCase) before updating URL', () => {
     mockedSearchParams = new URLSearchParams('');
     render(<MerchSearch />);
     const input = screen.getByTestId('search-input');
 
-    fireEvent.change(input, { target: { value: 'coffee     yellow' } });
+    fireEvent.change(input, { target: { value: '  Coffee   YELLOW  ' } });
     vi.runAllTimers();
     expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
     expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(

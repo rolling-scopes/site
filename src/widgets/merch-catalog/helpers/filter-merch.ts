@@ -4,16 +4,14 @@ export const filterBySearchTerm = (
   products: MerchProduct[],
   searchTerm: string,
 ): MerchProduct[] => {
-  const normalizedSearchTerm = searchTerm.trim().toLowerCase();
-
-  if (!normalizedSearchTerm) {
+  if (!searchTerm) {
     return products;
   }
 
   return products.filter((product) => {
     const tags = product.tags ?? [];
-    const titleMatch = product.title.toLowerCase().includes(normalizedSearchTerm);
-    const tagsMatch = tags.some((tag) => tag.toLowerCase().includes(normalizedSearchTerm));
+    const titleMatch = product.title.toLowerCase().includes(searchTerm);
+    const tagsMatch = tags.some((tag) => tag.toLowerCase().includes(searchTerm));
 
     return titleMatch || tagsMatch;
   });

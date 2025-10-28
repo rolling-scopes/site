@@ -27,20 +27,20 @@ describe('filterBySearchTerm', () => {
     expect(result).toEqual([]);
   });
 
-  it('should filter by title (case-insensitive)', () => {
+  it('should filter by title', () => {
     const result = filterBySearchTerm(MOCKED_PRODUCTS, 'mug');
 
     expect(result).toEqual([MOCKED_PRODUCTS[1]]);
-    const resultUpper = filterBySearchTerm(MOCKED_PRODUCTS, 'MUG');
+    const resultUpper = filterBySearchTerm(MOCKED_PRODUCTS, 'mug');
 
     expect(resultUpper).toEqual([MOCKED_PRODUCTS[1]]);
   });
 
-  it('should filter by tag (case-insensitive)', () => {
+  it('should filter by tag', () => {
     const result = filterBySearchTerm(MOCKED_PRODUCTS, 'cups');
 
     expect(result).toEqual([MOCKED_PRODUCTS[1]]);
-    const resultUpper = filterBySearchTerm(MOCKED_PRODUCTS, 'CUPS');
+    const resultUpper = filterBySearchTerm(MOCKED_PRODUCTS, 'cups');
 
     expect(resultUpper).toEqual([MOCKED_PRODUCTS[1]]);
   });
@@ -61,7 +61,7 @@ describe('filterBySearchTerm', () => {
   });
 
   it('should correctly handle null, undefined, or empty tags', () => {
-    const resultTitle = filterBySearchTerm(MOCKED_PRODUCTS_WITH_MISSING_TAGS, 'Mug');
+    const resultTitle = filterBySearchTerm(MOCKED_PRODUCTS_WITH_MISSING_TAGS, 'mug');
 
     expect(resultTitle).toEqual([MOCKED_PRODUCTS_WITH_MISSING_TAGS[1]]);
     const resultTag = filterBySearchTerm(MOCKED_PRODUCTS_WITH_MISSING_TAGS, 'hoodie');

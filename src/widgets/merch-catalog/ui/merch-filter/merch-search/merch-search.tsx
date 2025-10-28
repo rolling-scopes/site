@@ -24,7 +24,7 @@ export const MerchSearch = () => {
   }, [urlSearchTerm]);
 
   useEffect(() => {
-    const searchTerm = inputValue.trim().replace(/\s+/g, ' ');
+    const searchTerm = inputValue.trim().toLowerCase().replace(/\s+/g, ' ');
 
     if (searchTerm === urlSearchTerm) {
       return;
