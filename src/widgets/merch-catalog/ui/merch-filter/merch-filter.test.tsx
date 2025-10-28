@@ -41,7 +41,7 @@ describe('MerchFilter', () => {
     render(<MerchFilter tags={MOCKED_TAGS} />);
     const clearButton = screen.getByTestId('clear-button');
 
-    expect(clearButton.classList.contains('active')).toBe(false);
+    expect(clearButton).not.toHaveClass('active');
   });
 
   it('should have an active "Clear" button when a "type" filter is applied', () => {
@@ -49,7 +49,7 @@ describe('MerchFilter', () => {
     render(<MerchFilter tags={MOCKED_TAGS} />);
     const clearButton = screen.getByTestId('clear-button');
 
-    expect(clearButton.classList.contains('active')).toBe(true);
+    expect(clearButton).toHaveClass('active');
   });
 
   it('should have an active "Clear" button when a "search" filter is applied', () => {
@@ -57,7 +57,7 @@ describe('MerchFilter', () => {
     render(<MerchFilter tags={MOCKED_TAGS} />);
     const clearButton = screen.getByTestId('clear-button');
 
-    expect(clearButton.classList.contains('active')).toBe(true);
+    expect(clearButton).toHaveClass('active');
   });
 
   it('should call router.replace with the correct pathname when "Clear" button is clicked', async () => {
@@ -79,15 +79,13 @@ describe('MerchFilter', () => {
     const dropdownButton = screen.getByTestId('dropdown-button');
     const tagsList = screen.getByTestId('tags-list-container');
 
-    expect(tagsList?.classList.contains('expanded')).toBe(false);
+    expect(tagsList).not.toHaveClass('expanded');
 
     await user.click(dropdownButton);
-
-    expect(tagsList?.classList.contains('expanded')).toBe(true);
+    expect(tagsList).toHaveClass('expanded');
 
     await user.click(dropdownButton);
-
-    expect(tagsList?.classList.contains('expanded')).toBe(false);
+    expect(tagsList).not.toHaveClass('expanded');
   });
 
   it('should render all components correctly when tags are provided', () => {
