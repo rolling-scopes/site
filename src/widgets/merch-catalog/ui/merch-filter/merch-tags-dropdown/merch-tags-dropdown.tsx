@@ -31,6 +31,9 @@ export const MerchTagsDropdown = ({ isOpen, onClick }: MerchTagsDropdownProps) =
         aria-label="dropdown-arrow"
         className={cx('dropdown-arrow', { rotate: isOpen })}
         data-testid="dropdown-arrow"
+        width={20}
+        height={18}
+        aria-hidden="true"
       />
     </button>
   );

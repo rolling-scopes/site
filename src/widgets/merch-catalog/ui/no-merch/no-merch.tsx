@@ -22,6 +22,9 @@ export const NoMerch = ({ isFiltered = false }: NoMerchProps) => {
         src={noResultImg}
         alt={isFiltered ? 'No results found' : 'No merchandise available'}
         data-testid="no-merch-image"
+        width={304}
+        height={316}
+        aria-hidden="true"
       />
       <Paragraph className={cx('no-merch-text')} data-testid="no-merch-text">
         {isFiltered
