@@ -28,7 +28,6 @@ export const MerchTagsDropdown = ({ isOpen, onClick }: MerchTagsDropdownProps) =
       <Image
         src={DropdownArrow}
         alt=""
-        aria-label="dropdown-arrow"
         className={cx('dropdown-arrow', { rotate: isOpen })}
         data-testid="dropdown-arrow"
         width={20}
