@@ -10,7 +10,7 @@ export const MerchSearch = () => {
   const searchParams: ReadonlyURLSearchParams = useSearchParams();
 
   const urlSearchTerm: string = searchParams.get(URL_PARAMS.SEARCH) || '';
-  const [searchTerm, setSearchTerm] = useState<string>(urlSearchTerm);
+  const [inputValue, setInputValue] = useState<string>(urlSearchTerm);
 
   const isWaitingForUrlUpdate = useRef<boolean>(false);
 
@@ -20,10 +20,12 @@ export const MerchSearch = () => {
       return;
     }
 
-    setSearchTerm(urlSearchTerm);
+    setInputValue(urlSearchTerm);
   }, [urlSearchTerm]);
 
   useEffect(() => {
+    const searchTerm = inputValue.trim().replace(/\s+/g, ' ');
+
     if (searchTerm === urlSearchTerm) {
       return;
     }
@@ -42,12 +44,12 @@ export const MerchSearch = () => {
     }, 300);
 
     return () => clearTimeout(timeoutId);
-  }, [searchTerm, urlSearchTerm, pathname, router, searchParams]);
+  }, [inputValue, urlSearchTerm, pathname, router, searchParams]);
 
   return (
     <SearchInput
-      value={searchTerm}
-      onChange={setSearchTerm}
+      value={inputValue}
+      onChange={setInputValue}
       ariaLabel="Search merch"
       name="merch-search"
     />

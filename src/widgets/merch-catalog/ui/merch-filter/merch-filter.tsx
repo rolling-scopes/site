@@ -21,7 +21,7 @@ export const MerchFilter = ({ tags }: MerchTagsProps) => {
   const pathname: string = usePathname();
   const searchParams: ReadonlyURLSearchParams = useSearchParams();
 
-  const searchTerm: string = (searchParams.get(URL_PARAMS.SEARCH) || '').trim();
+  const searchTerm: string = searchParams.get(URL_PARAMS.SEARCH) || '';
   const selectedTypes: string[] = searchParams.getAll(URL_PARAMS.TYPE);
   const isFiltered: boolean = !!(searchTerm || selectedTypes.length);
 

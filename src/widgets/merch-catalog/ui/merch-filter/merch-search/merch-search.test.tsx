@@ -107,4 +107,53 @@ describe('MerchSearch', () => {
     rerender(<MerchSearch />);
     expect(input).toHaveValue('hoodie');
   });
+
+  it('should remove the search parameter from URL when input contains only whitespace', () => {
+    mockedSearchParams = new URLSearchParams(`${URL_PARAMS.SEARCH}=hoodie`);
+    render(<MerchSearch />);
+    const input = screen.getByTestId('search-input');
+
+    fireEvent.change(input, { target: { value: '   ' } });
+    vi.runAllTimers();
+    expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
+    expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(`${ROUTES.MERCH}?`, { scroll: false });
+  });
+
+  it('should trim leading and trailing whitespace before updating URL', () => {
+    mockedSearchParams = new URLSearchParams('');
+    render(<MerchSearch />);
+    const input = screen.getByTestId('search-input');
+
+    fireEvent.change(input, { target: { value: '  cups  ' } });
+    vi.runAllTimers();
+    expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
+    expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(
+      `${ROUTES.MERCH}?${URL_PARAMS.SEARCH}=cups`,
+      { scroll: false },
+    );
+  });
+
+  it('should normalize multiple internal whitespaces to a single space', () => {
+    mockedSearchParams = new URLSearchParams('');
+    render(<MerchSearch />);
+    const input = screen.getByTestId('search-input');
+
+    fireEvent.change(input, { target: { value: 'coffee     yellow' } });
+    vi.runAllTimers();
+    expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
+    expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(
+      `${ROUTES.MERCH}?${URL_PARAMS.SEARCH}=coffee+yellow`,
+      { scroll: false },
+    );
+  });
+
+  it('should not call router.replace if the trimmed search term matches the URL', () => {
+    mockedSearchParams = new URLSearchParams(`${URL_PARAMS.SEARCH}=hoodie`);
+    render(<MerchSearch />);
+    const input = screen.getByTestId('search-input');
+
+    fireEvent.change(input, { target: { value: '  hoodie  ' } });
+    vi.runAllTimers();
+    expect(mockedRouter.replace).not.toHaveBeenCalled();
+  });
 });
