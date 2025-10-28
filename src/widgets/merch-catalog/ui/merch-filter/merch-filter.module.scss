@@ -14,8 +14,7 @@
 
     cursor: pointer;
 
-    gap: $gap-xs;
-    place-content: center center;
+    display: inline-flex;
     align-items: center;
 
     border: 1px solid $color-gray-400;
