@@ -1,12 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 import { ReadonlyURLSearchParams, usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { URL_PARAMS } from '@/shared/constants';
 import { SearchInput } from '@/shared/ui/search-input/search-input';
 
 export const MerchSearch = () => {
-  const router: AppRouterInstance = useRouter();
+  const router = useRouter();
   const pathname: string = usePathname();
   const searchParams: ReadonlyURLSearchParams = useSearchParams();
 

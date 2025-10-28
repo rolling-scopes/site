@@ -1,5 +1,4 @@
 import classNames from 'classnames/bind';
-import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 import { ReadonlyURLSearchParams, usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { URL_PARAMS } from '@/shared/constants';
@@ -14,7 +13,7 @@ type MerchTagsProps = {
 };
 
 export const MerchTags = ({ tags }: MerchTagsProps) => {
-  const router: AppRouterInstance = useRouter();
+  const router = useRouter();
   const pathname: string = usePathname();
   const searchParams: ReadonlyURLSearchParams = useSearchParams();
 
