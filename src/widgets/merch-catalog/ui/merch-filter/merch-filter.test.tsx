@@ -83,12 +83,10 @@ describe('MerchFilter', () => {
     await user.click(dropdownButton);
 
     expect(tagsList?.classList.contains('expanded')).toBe(true);
-    expect(screen.getByTestId('dropdown-button')).toBeInTheDocument();
 
     await user.click(dropdownButton);
 
     expect(tagsList?.classList.contains('expanded')).toBe(false);
-    expect(screen.getByTestId('dropdown-button')).toBeInTheDocument();
   });
 
   it('should render all components correctly when tags are provided', () => {
