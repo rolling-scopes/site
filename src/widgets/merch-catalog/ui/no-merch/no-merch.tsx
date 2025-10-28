@@ -24,7 +24,6 @@ export const NoMerch = ({ isFiltered = false }: NoMerchProps) => {
         data-testid="no-merch-image"
         width={304}
         height={316}
-        aria-hidden="true"
       />
       <Paragraph className={cx('no-merch-text')} data-testid="no-merch-text">
         {isFiltered
