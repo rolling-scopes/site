@@ -107,7 +107,7 @@ describe('filterByTypes', () => {
     expect(result).toEqual([MOCKED_PRODUCTS[0], MOCKED_PRODUCTS[1]]);
   });
 
-  it('should be case-sensative', () => {
+  it('should be case-sensitive', () => {
     const result = filterByTypes(MOCKED_PRODUCTS, ['HOODIE']);
 
     expect(result).toEqual([]);
