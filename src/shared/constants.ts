@@ -1,4 +1,4 @@
-import type { Language } from '@/shared/types/types';
+import type { ApiResourceLocale, Language } from '@/shared/types/types';
 
 export const TO_BE_DETERMINED = 'TBD';
 export const REGISTRATION_WILL_OPEN_SOON = 'Registration will open soon!';
@@ -12,15 +12,24 @@ export const API_MAX_INCLUDE_DEPTH = 10;
 
 export const COURSE_LANGUAGE_LABEL: Record<Language, string> = {
   en: 'English',
-  ru: 'Russian',
+  ru: 'Русский',
 } as const;
 
 export const LABELS = {
-  START_DATE: 'Course starts on:',
-  START_DATE_SHORT: 'Start:',
-  REGISTRATION_END: 'Enroll untill:',
-  MENTOR_ACTIVITIES: 'Mentorship starts on:',
-  MENTOR_ACTIVITIES_SEPARATOR: '-',
+  'en-US': {
+    START_DATE: 'Course starts on:',
+    START_DATE_SHORT: 'Start:',
+    REGISTRATION_END: 'Enroll until:',
+    MENTOR_ACTIVITIES: 'Mentorship starts on:',
+    MENTOR_ACTIVITIES_SEPARATOR: '-',
+  },
+  'ru': {
+    START_DATE: 'Начало курса:',
+    START_DATE_SHORT: 'Старт:',
+    REGISTRATION_END: 'Запись до:',
+    MENTOR_ACTIVITIES: 'Старт менторства:',
+    MENTOR_ACTIVITIES_SEPARATOR: '-',
+  },
 } as const;
 
 // ⚠️ These links are used to identify courses from the API
@@ -93,6 +102,15 @@ export const NAV_MENU_LABELS = {
   SUPPORT_US: 'Support Us',
 } as const;
 
+export const NAV_MENU_LABELS_RU = {
+  RS_SCHOOL: 'RS School',
+  COURSES: 'Курсы',
+  COMMUNITY: 'Сообщество',
+  MENTORSHIP: 'Менторство',
+  DOCS: 'Документация',
+  SUPPORT_US: 'Поддержать',
+} as const;
+
 export const ROUTES = {
   HOME: '/',
   COMMUNITY: 'community',
@@ -108,8 +126,7 @@ export const ROUTES = {
   AWS_AI: 'aws-ai',
   REACT: 'reactjs',
   MENTORSHIP: 'mentorship',
-  DOCS_EN: 'docs/en',
-  DOCS_RU: 'docs/ru',
+  DOCS: 'docs',
   MERCH: 'merch',
   NOT_FOUND: '*',
 } as const;
@@ -134,3 +151,8 @@ export const COURSE_TITLES = {
   AWS_DEVOPS: 'AWS DevOps',
   AWS_AI: 'AWS AI',
 } as const;
+
+export const LOCALE_MAP = new Map<string, ApiResourceLocale>([
+  ['ru', 'ru'],
+  ['en', 'en-US'],
+]);

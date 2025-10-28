@@ -1,4 +1,3 @@
-import { getSectionId } from '@/shared/helpers/get-section-id';
 import { richTextRenderer } from '@/shared/helpers/rich-text-renderer';
 import { TypeMediaTextBlockWithoutUnresolvableLinksResponse } from '@/shared/types/contentful';
 import { Section } from '@/shared/types/types';
@@ -26,7 +25,7 @@ export function transformMediaTextBlockSection(
   const backgroundColor = section.fields.backgroundColor
     ? `bg-${section.fields.backgroundColor}` as const
     : undefined;
-  const anchorId = getSectionId(section.fields.title);
+  const anchorId = section.fields.id;
   const settings = section.fields.settings as ApiMediaTextBlockSettings;
   const imageAbsolutePosition = settings?.imageAbsolutePosition;
   const width = settings?.width;

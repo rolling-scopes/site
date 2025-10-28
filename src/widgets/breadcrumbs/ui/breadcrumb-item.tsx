@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
-import Link from 'next/link';
+
+import { LinkCustom } from '@/shared/ui/link-custom';
 
 import styles from './breadcrumbs.module.scss';
 
@@ -22,9 +23,9 @@ export function BreadcrumbItem({ linkTo, text, isLastLink = false }: BreadcrumbP
 
   return (
     <li>
-      <Link href={linkTo} className={cx('link')}>
+      <LinkCustom href={linkTo} className={cx('link')}>
         {text}
-      </Link>
+      </LinkCustom>
       <span className={cx('separator')}>/</span>
     </li>
   );

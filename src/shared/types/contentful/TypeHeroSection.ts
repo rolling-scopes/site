@@ -22,19 +22,19 @@ export interface TypeHeroSectionFields {
   /**
    * Field type definition for field 'topHeading' (topHeading)
    * @name topHeading
-   * @localized false
+   * @localized true
    */
   topHeading?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
   /**
    * Field type definition for field 'heading' (heading)
    * @name heading
-   * @localized false
+   * @localized true
    */
   heading: EntryFieldTypes.Symbol;
   /**
    * Field type definition for field 'subHeading' (subHeading)
    * @name subHeading
-   * @localized false
+   * @localized true
    */
   subHeading?: EntryFieldTypes.RichText;
   /**
@@ -51,7 +51,7 @@ export interface TypeHeroSectionFields {
  * @type {TypeHeroSectionSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-12T19:41:11.842Z
- * @version 35
+ * @version 37
  */
 export type TypeHeroSectionSkeleton = EntrySkeletonType<TypeHeroSectionFields, 'heroSection'>;
 /**
@@ -60,7 +60,7 @@ export type TypeHeroSectionSkeleton = EntrySkeletonType<TypeHeroSectionFields, '
  * @type {TypeHeroSection}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-12T19:41:11.842Z
- * @version 35
+ * @version 37
  */
 export type TypeHeroSection<
   Modifiers extends ChainModifiers,

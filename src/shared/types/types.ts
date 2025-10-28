@@ -44,7 +44,8 @@ export type Video = {
 };
 
 export type ApiServices = {
-  rest: ApiBaseClass;
+  rsApp: ApiBaseClass;
+  contentful: ApiBaseClass;
   youtube: ApiBaseClass;
 };
 

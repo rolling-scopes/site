@@ -9,7 +9,7 @@ describe('SchoolMenu', () => {
   it('renders without crashing and displays "rs school" heading', () => {
     renderWithRouter(
       <SchoolMenu heading="rs school">
-        {schoolMenuStaticLinks.map((link) => (
+        {schoolMenuStaticLinks['en-US'].map((link) => (
           <SchoolMenu.Item
             key={link.title}
             title={link.title}
@@ -28,7 +28,7 @@ describe('SchoolMenu', () => {
   it('displays correct links and descriptions with "rs school" props', () => {
     const { container } = renderWithRouter(
       <SchoolMenu heading="rs school">
-        {schoolMenuStaticLinks.map((link) => (
+        {schoolMenuStaticLinks['en-US'].map((link) => (
           <SchoolMenu.Item
             key={link.title}
             title={link.title}

@@ -2,23 +2,18 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import path from 'path';
 
-import { DocsContent } from '../../components/docs-content/docs-content';
-import { TITLE_POSTFIX } from '../../constants';
-import { Menu } from '../../types';
-import { fetchMarkdownContent } from '../../utils/fetch-markdown-content';
-import { fetchMenu } from '../../utils/fetch-menu';
+import { DocsContent } from '@/app/docs/components/docs-content/docs-content';
+import { TITLE_POSTFIX } from '@/app/docs/constants';
+import { Menu } from '@/app/docs/types';
+import { fetchMarkdownContent } from '@/app/docs/utils/fetch-markdown-content';
+import { fetchMenu } from '@/app/docs/utils/fetch-menu';
+import { PagePropsDocs } from '@/entities/page/types';
 import { generateDocsMetadata } from '@/metadata/docs';
+import { ROUTES } from '@/shared/constants';
 import { generatePageMetadata } from '@/shared/helpers/generate-page-metadata';
 import { Language } from '@/shared/types';
 
-type RouteParams = { lang: Language;
-  slug: string[]; };
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<RouteParams>;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: PagePropsDocs): Promise<Metadata> {
   const { lang, slug } = await params;
   const docsMenu = await fetchMenu(lang);
 
@@ -48,12 +43,15 @@ export async function generateMetadata({
 
   const title = titles.find((el) => el.slug.join('/') === slugPath)?.title;
 
-  const { description, keywords, canonical, robots } = generateDocsMetadata(lang, slugPath);
+  const { description, keywords, robots } = generateDocsMetadata(lang, slugPath);
+  const canonical = slugPath
+    ? `https://rs.school/${lang}/${ROUTES.DOCS}/${slugPath}`
+    : `https://rs.school/${lang}/${ROUTES.DOCS}`;
 
   const metadata = generatePageMetadata({
     title: `${title} ${TITLE_POSTFIX}`,
     description,
-    imagePath: path.join('docs', lang, 'og.png'),
+    imagePath: path.join(lang, 'docs', 'og.png'),
     keywords,
     alternates: { canonical },
     robots,
@@ -62,8 +60,8 @@ export async function generateMetadata({
   return metadata;
 }
 
-export async function generateStaticParams(): Promise<RouteParams[]> {
-  const supportedLanguages: Language[] = ['en', 'ru'];
+export async function generateStaticParams() {
+  const supportedLanguages: Language[] = ['ru'];
   const allSlugs = [];
 
   const collectSlugs = (items: Menu, lang: Language) => {
@@ -104,7 +102,7 @@ export async function generateStaticParams(): Promise<RouteParams[]> {
   return allSlugs;
 }
 
-export default async function DocPage({ params }: { params: Promise<RouteParams> }) {
+export default async function DocPage({ params }: PagePropsDocs) {
   const { lang, slug } = await params;
 
   try {

@@ -5,6 +5,6 @@ export class MerchApi {
   constructor(private readonly services: ApiServices) {}
 
   public queryMerchCatalog() {
-    return this.services.rest.get<MerchResponse>(`/merch/filelist.json`);
+    return this.services.rsApp.get<MerchResponse>(`/merch/filelist.json`);
   }
 }

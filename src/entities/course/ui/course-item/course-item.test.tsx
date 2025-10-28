@@ -1,18 +1,17 @@
 import { screen } from '@testing-library/react';
-import dayjs from 'dayjs';
 
 import { CourseItem, CourseItemData } from '@/entities/course';
 import { COURSE_DATE_FORMAT } from '@/entities/course/constants';
 import { MOCKED_IMAGE_PATH } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
 import { COURSE_TITLES } from '@/shared/constants';
-import { dayJS } from '@/shared/helpers/day-js';
+import dayjs from '@/shared/helpers/day-js';
 
 const mockedProps: CourseItemData = {
   title: COURSE_TITLES.REACT,
   language: new Set(['en']),
-  startDate: dayJS().format(COURSE_DATE_FORMAT),
-  registrationEndDate: dayJS().add(1, 'd').format(COURSE_DATE_FORMAT),
+  startDate: dayjs().format(COURSE_DATE_FORMAT),
+  registrationEndDate: dayjs().add(1, 'd').format(COURSE_DATE_FORMAT),
   detailsUrl: '/courses/react-intro',
   iconSrc: MOCKED_IMAGE_PATH,
 };

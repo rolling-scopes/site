@@ -30,7 +30,15 @@ export interface TypePageFields {
    * @localized false
    */
   type: EntryFieldTypes.Symbol<
-    'community' | 'course' | 'courses' | 'home' | 'mentorship' | 'mentorship-course' | 'not-found'
+    | 'community'
+    | 'course'
+    | 'courses'
+    | 'docs'
+    | 'home'
+    | 'mentorship'
+    | 'mentorship-course'
+    | 'merch'
+    | 'not-found'
   >;
   /**
    * Field type definition for field 'title' (title)
@@ -49,16 +57,28 @@ export interface TypePageFields {
   /**
    * Field type definition for field 'seoDescription' (SEO Description)
    * @name SEO Description
-   * @localized false
+   * @localized true
    * @summary Enter a description of the page using sentence casing, remaining between 100 and 150 characters. The format should include the page's topic and value proposition (if relevant), followed by a call-to-action
    */
   seoDescription: EntryFieldTypes.Symbol;
   /**
    * Field type definition for field 'seoKeywords' (SEO Keywords)
    * @name SEO Keywords
-   * @localized false
+   * @localized true
    */
   seoKeywords: EntryFieldTypes.Symbol;
+  /**
+   * Field type definition for field 'seoOgImageTitle' (SEO OG Image Title)
+   * @name SEO OG Image Title
+   * @localized true
+   */
+  seoOgImageTitle?: EntryFieldTypes.Symbol;
+  /**
+   * Field type definition for field 'seoOgImageDescription' (SEO OG Image Description)
+   * @name SEO OG Image Description
+   * @localized true
+   */
+  seoOgImageDescription?: EntryFieldTypes.Symbol;
   /**
    * Field type definition for field 'sections' (sections)
    * @name sections
@@ -86,7 +106,7 @@ export interface TypePageFields {
  * @type {TypePageSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-09-02T11:58:16.325Z
- * @version 29
+ * @version 37
  */
 export type TypePageSkeleton = EntrySkeletonType<TypePageFields, 'page'>;
 /**
@@ -95,7 +115,7 @@ export type TypePageSkeleton = EntrySkeletonType<TypePageFields, 'page'>;
  * @type {TypePage}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-09-02T11:58:16.325Z
- * @version 29
+ * @version 37
  */
 export type TypePage<
   Modifiers extends ChainModifiers,
