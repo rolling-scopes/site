@@ -10,7 +10,6 @@ describe('MerchTagsDropdown', () => {
     render(<MerchTagsDropdown isOpen={false} onClick={handleClick} />);
     const button = screen.getByTestId('dropdown-button');
 
-    expect(button).toBeInTheDocument();
     expect(button).toHaveAttribute('aria-expanded', 'false');
   });
 
