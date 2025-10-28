@@ -16,7 +16,7 @@ const mockedRouter = { replace: vi.fn() };
 
 vi.mock('next/navigation', () => ({
   useRouter: () => mockedRouter,
-  usePathname: () => ROUTES.MERCH,
+  usePathname: () => `/${ROUTES.MERCH}`,
   useSearchParams: () => mockedSearchParams,
 }));
 
@@ -57,7 +57,7 @@ describe('MerchSearch', () => {
     vi.runAllTimers();
     expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
     expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(
-      `${ROUTES.MERCH}?${URL_PARAMS.SEARCH}=hoodie`,
+      `/${ROUTES.MERCH}?${URL_PARAMS.SEARCH}=hoodie`,
       { scroll: false },
     );
   });
@@ -70,7 +70,7 @@ describe('MerchSearch', () => {
     fireEvent.change(input, { target: { value: '' } });
     vi.runAllTimers();
     expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
-    expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(`${ROUTES.MERCH}?`, { scroll: false });
+    expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(`/${ROUTES.MERCH}?`, { scroll: false });
   });
 
   it('should remove the "page" parameter when performing a new search', () => {
@@ -82,7 +82,7 @@ describe('MerchSearch', () => {
     vi.runAllTimers();
     expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
     expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(
-      `${ROUTES.MERCH}?${URL_PARAMS.SEARCH}=cups`,
+      `/${ROUTES.MERCH}?${URL_PARAMS.SEARCH}=cups`,
       { scroll: false },
     );
   });
@@ -116,7 +116,7 @@ describe('MerchSearch', () => {
     fireEvent.change(input, { target: { value: '   ' } });
     vi.runAllTimers();
     expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
-    expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(`${ROUTES.MERCH}?`, { scroll: false });
+    expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(`/${ROUTES.MERCH}?`, { scroll: false });
   });
 
   it('should trim leading and trailing whitespace before updating URL', () => {
@@ -128,7 +128,7 @@ describe('MerchSearch', () => {
     vi.runAllTimers();
     expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
     expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(
-      `${ROUTES.MERCH}?${URL_PARAMS.SEARCH}=cups`,
+      `/${ROUTES.MERCH}?${URL_PARAMS.SEARCH}=cups`,
       { scroll: false },
     );
   });
@@ -142,7 +142,7 @@ describe('MerchSearch', () => {
     vi.runAllTimers();
     expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
     expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(
-      `${ROUTES.MERCH}?${URL_PARAMS.SEARCH}=coffee+yellow`,
+      `/${ROUTES.MERCH}?${URL_PARAMS.SEARCH}=coffee+yellow`,
       { scroll: false },
     );
   });

@@ -11,7 +11,7 @@ const mockedRouter = { replace: vi.fn() };
 
 vi.mock('next/navigation', () => ({
   useRouter: () => mockedRouter,
-  usePathname: () => ROUTES.MERCH,
+  usePathname: () => `/${ROUTES.MERCH}`,
   useSearchParams: () => mockedSearchParams,
 }));
 
@@ -46,7 +46,7 @@ describe('MerchTags', () => {
 
     expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
     expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(
-      `${ROUTES.MERCH}?${URL_PARAMS.TYPE}=hoodie`,
+      `/${ROUTES.MERCH}?${URL_PARAMS.TYPE}=hoodie`,
       { scroll: false },
     );
   });
@@ -58,7 +58,7 @@ describe('MerchTags', () => {
     await user.click(screen.getByLabelText('hoodie'));
 
     expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
-    expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(`${ROUTES.MERCH}`, { scroll: false });
+    expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(`/${ROUTES.MERCH}`, { scroll: false });
   });
 
   it('should correctly remove one of multiple type parameters from URL', async () => {
@@ -69,7 +69,7 @@ describe('MerchTags', () => {
 
     expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
     expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(
-      `${ROUTES.MERCH}?${URL_PARAMS.TYPE}=cups`,
+      `/${ROUTES.MERCH}?${URL_PARAMS.TYPE}=cups`,
       { scroll: false },
     );
   });
@@ -82,7 +82,7 @@ describe('MerchTags', () => {
 
     expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
     expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(
-      `${ROUTES.MERCH}?${URL_PARAMS.TYPE}=hoodie&${URL_PARAMS.TYPE}=cups`,
+      `/${ROUTES.MERCH}?${URL_PARAMS.TYPE}=hoodie&${URL_PARAMS.TYPE}=cups`,
       { scroll: false },
     );
   });

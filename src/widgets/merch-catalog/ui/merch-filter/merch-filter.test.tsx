@@ -24,7 +24,7 @@ const mockedRouter = { replace: vi.fn() };
 
 vi.mock('next/navigation', () => ({
   useRouter: () => mockedRouter,
-  usePathname: () => ROUTES.MERCH,
+  usePathname: () => `/${ROUTES.MERCH}`,
   useSearchParams: () => mockedSearchParams,
 }));
 
@@ -69,7 +69,7 @@ describe('MerchFilter', () => {
     await user.click(screen.getByTestId('clear-button'));
 
     expect(mockedRouter.replace).toHaveBeenCalledTimes(1);
-    expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(`${ROUTES.MERCH}`, { scroll: false });
+    expect(mockedRouter.replace).toHaveBeenCalledExactlyOnceWith(`/${ROUTES.MERCH}`, { scroll: false });
   });
 
   it('should toggle the visibility of the tags list on click', async () => {
