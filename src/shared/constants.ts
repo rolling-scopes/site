@@ -134,3 +134,9 @@ export const COURSE_TITLES = {
   AWS_DEVOPS: 'AWS DevOps',
   AWS_AI: 'AWS AI',
 } as const;
+
+export const URL_PARAMS = {
+  TYPE: 'type',
+  PAGE: 'page',
+  SEARCH: 'search',
+} as const;
