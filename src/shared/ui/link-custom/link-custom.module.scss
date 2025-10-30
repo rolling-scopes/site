@@ -36,8 +36,10 @@
     min-height: 24px;
   }
 
-  &:hover {
-    background-color: $color-gray-100;
+  @include media-hover {
+    &:hover {
+      background-color: $color-gray-100;
+    }
   }
 }
 
@@ -52,13 +54,15 @@
 
   background-color: $color-gray-900;
 
-  &:hover {
-    border-color: $color-gray-600;
-    background-color: $color-gray-600;
-  }
-
   @include media-tablet {
     width: 100%;
+  }
+
+  @include media-hover {
+    &:hover {
+      border-color: $color-gray-600;
+      background-color: $color-gray-600;
+    }
   }
 }
 
@@ -83,8 +87,10 @@
     min-height: 16px;
   }
 
-  &:hover {
-    background-color: hsla(from $color-gray-600 h s l/ $opacity-50);
+  @include media-hover {
+    &:hover {
+      background-color: hsla(from $color-gray-600 h s l/ $opacity-50);
+    }
   }
 
   @include media-tablet {
@@ -123,8 +129,10 @@
     margin-right: 8px;
   }
 
-  &:hover {
-    text-decoration: none;
+  @include media-hover {
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 
