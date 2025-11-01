@@ -144,6 +144,7 @@ export const MobileView = ({ type, courses, mentorshipCourses, isMenuOpen, logoI
               icon={courseIcon}
               onClose={onClose}
               color={color}
+              lang={lang}
             />
           </SchoolMenu>
         </div>
