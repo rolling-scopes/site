@@ -46,7 +46,7 @@ jobs:
           echo "reportUrl=$REPORT_URL" >> $GITHUB_OUTPUT
 
       - name: Post Lighthouse results to PR
-        uses: peter-evans/create-or-update-comment@v4
+        uses: peter-evans/create-or-update-comment@v5
         with:
           issue-number: ${{ github.event.client_payload.number }}
           body: |
