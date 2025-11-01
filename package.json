@@ -26,15 +26,15 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^16.1.5",
-    "@next/third-parties": "^15.5.4",
+    "@next/third-parties": "^16.0.1",
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
-    "contentful-resolve-response": "^1.9.3",
-    "dayjs": "^1.11.18",
+    "contentful-resolve-response": "^1.9.4",
+    "dayjs": "^1.11.19",
     "github-markdown-css": "^5.8.1",
     "http-status": "^2.1.0",
     "jszip": "^3.10.1",
-    "next": "15.5.4",
+    "next": "16.0.1",
     "pagefind": "^1.4.0",
     "radix-ui": "^1.4.3",
     "react": "19.2.0",
@@ -49,7 +49,7 @@
     "remark-rehype": "^11.1.2",
     "remark-remove-comments": "^1.1.1",
     "remark-toc": "^9.0.0",
-    "swiper": "^12.0.2",
+    "swiper": "^12.0.3",
     "swr": "^2.3.6"
   },
   "devDependencies": {
