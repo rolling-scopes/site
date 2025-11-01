@@ -7,6 +7,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import { Popover } from 'radix-ui';
 
 import languageIcon from '@/shared/assets/svg/translate.svg';
+import { ROUTES } from '@/shared/constants';
 import { LinkCustom } from '@/shared/ui/link-custom';
 
 import styles from './lang-switcher.module.scss';
@@ -22,6 +23,7 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
   const searchParams = useSearchParams();
   const [isOpened, setIsOpened] = useState(false);
 
+  const isDocsPage = pathname.includes(ROUTES.DOCS);
   const isRuActive = pathname.startsWith('/ru');
   const path = pathname.split('/').filter(Boolean);
 
@@ -30,9 +32,13 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
   }
 
   const preservePath = path.join('/');
+  let ruPath = `/ru/${preservePath}?${searchParams}`;
+  let enPath = `/${preservePath}?${searchParams}`;
 
-  const ruPath = `/ru/${preservePath}?${searchParams}`;
-  const enPath = `/${preservePath}?${searchParams}`;
+  if (isDocsPage) {
+    ruPath = `/ru/${ROUTES.DOCS}`;
+    enPath = `/${ROUTES.DOCS}`;
+  }
 
   const handlePopoverToggle = () => {
     setIsOpened((prev) => !prev);
