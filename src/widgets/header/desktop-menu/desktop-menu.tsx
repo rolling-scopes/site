@@ -135,7 +135,7 @@ export const DesktopMenu = ({
         orientation="vertical"
       />
 
-      <Suspense>
+      <Suspense fallback={<div />}>
         <LangSwitcher className={cx('lang-switcher-desktop')} />
       </Suspense>
     </>
