@@ -128,7 +128,7 @@ function Result({ result }: { result: PagefindSearchResult }) {
 
   return (
     <div>
-      <LinkCustom href={removeHtmlExtension(data.url)}>
+      <LinkCustom href={removeHtmlExtension(data.url)} className={cx('link')}>
         <Subtitle size="extra-small" weight="bold">{data.meta.title}</Subtitle>
         <p dangerouslySetInnerHTML={{ __html: data.excerpt }} />
       </LinkCustom>
