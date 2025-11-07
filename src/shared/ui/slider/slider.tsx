@@ -1,6 +1,6 @@
 'use client';
 
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import 'swiper/css';
 import 'swiper/css/a11y';
 import 'swiper/css/navigation';

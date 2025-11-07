@@ -1,6 +1,6 @@
 import { createPageTree } from '@/shared/og/view/pages-tree/generate-pages-tree';
 
-export { DYNAMIC as dynamic } from '@/shared/constants';
+export const dynamic = 'force-static';
 
 export async function GET() {
   const title = 'Merch';

@@ -3,7 +3,7 @@ import { generateLangParams } from '@/entities/page/helpers/generate-lang-params
 import { PagePropsOg } from '@/entities/page/types';
 import { createPageTree } from '@/shared/og/view/pages-tree/generate-pages-tree';
 
-export { DYNAMIC as dynamic } from '@/shared/constants';
+export const dynamic = 'force-static';
 
 export const generateStaticParams = generateLangParams;
 
