@@ -12,9 +12,8 @@ const nextConfig = {
   distDir: './build',
   images: { unoptimized: true },
   sassOptions: {
-    implementation: 'sass-embedded',
     includePaths: [path.join(__dirname, 'src')],
-    prependData: `
+    additionalData: `
       @use '@/core/styles/constants' as *;
       @use '@/core/styles/mixins' as *;
       @use '@/core/styles/placeholders' as *;
