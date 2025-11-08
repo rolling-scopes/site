@@ -10,23 +10,25 @@ import styles from './school-item.module.scss';
 const cx = classNames.bind(styles);
 
 type SchoolItemProps = HTMLProps<HTMLLIElement> & {
+  activeItemRef?: RefObject<HTMLAnchorElement | null>;
+  color?: Color;
+  description?: string;
+  external?: boolean;
+  icon?: StaticImageData;
+  preserveLang?: boolean;
   title: string;
   url: string;
-  description?: string;
-  icon?: StaticImageData;
-  color?: Color;
-  activeItemRef?: RefObject<HTMLAnchorElement | null>;
-  preserveLang?: boolean;
 };
 
 export const SchoolItem = ({
-  icon,
-  description,
-  title,
-  color = 'dark',
-  url,
   activeItemRef,
+  color = 'dark',
+  description,
+  external = false,
+  icon,
   preserveLang = true,
+  title,
+  url,
   ...props
 }: SchoolItemProps) => {
   const isNonClickable = Boolean(url === '#');
@@ -34,14 +36,16 @@ export const SchoolItem = ({
   return (
     <li {...props} className={cx(props.className)}>
       <LinkCustom
-        ref={activeItemRef}
-        preserveLang={preserveLang}
-        href={url}
         className={cx(
           'school-item',
           { 'non-clickable': isNonClickable },
           { centered: !description },
         )}
+        external={external}
+        href={url}
+        iconRight={null}
+        preserveLang={preserveLang}
+        ref={activeItemRef}
         tabIndex={isNonClickable ? -1 : 0}
       >
         {icon && (

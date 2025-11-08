@@ -76,11 +76,13 @@ export const DropdownContent = ({
         {menuData.map((option, i) => (
           <SchoolMenu.Item
             key={option.id}
+
+            activeItemRef={i === 0 ? activeItemRef : undefined}
+            description={option.description}
+            external={option.external}
             icon={option.icon}
             title={option.title}
-            description={option.description}
             url={option.url}
-            activeItemRef={i === 0 ? activeItemRef : undefined}
           />
         ))}
       </SchoolMenu>

@@ -63,9 +63,10 @@ export const MENTORSHIP_LINK_TRANSLATION_MAP = {
 };
 
 type StaticLinksType = {
-  title: string;
-  detailsUrl: string;
   description: string;
+  detailsUrl: string;
+  external?: boolean;
+  title: string;
 };
 
 type DonateOptionType = {
@@ -77,19 +78,21 @@ type DonateOptionType = {
 };
 
 export type MenuItem = {
+  description: string;
+  external?: boolean;
+  icon: StaticImageData | undefined;
   id: string;
   title: string;
   url: string;
-  description: string;
-  icon: StaticImageData | undefined;
 };
 
 const mapStaticLinksToMenuItem = (links: StaticLinksType[]): MenuItem[] => {
   return links.map((link, i) => ({
+    description: link.description,
+    external: link.external,
+    icon: undefined,
     id: i.toString(),
     title: link.title,
-    icon: undefined,
-    description: link.description,
     url: link.detailsUrl,
   }));
 };
@@ -127,10 +130,11 @@ const mapCoursesToMenuItems = (courses: Course[], type: 'courses' | 'mentorship'
 
 const mapDonateOptions = (options: DonateOptionType[]): MenuItem[] => {
   return options.toReversed().map((option) => ({
+    description: '',
+    external: true,
+    icon: option.icon,
     id: option.id.toString(),
     title: option.menuLinkLabel,
-    icon: option.icon,
-    description: '',
     url: option.href,
   }));
 };
