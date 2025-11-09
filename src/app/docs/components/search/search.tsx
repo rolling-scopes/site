@@ -1,6 +1,6 @@
 'use client';
 
-import React, { RefObject, useEffect, useState } from 'react';
+import { RefObject, useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import Link from 'next/link.js';
 import { createPortal } from 'react-dom';

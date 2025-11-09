@@ -1,4 +1,4 @@
-import React, { KeyboardEvent, ReactNode, useCallback, useEffect, useRef } from 'react';
+import { KeyboardEvent, ReactNode, useCallback, useEffect, useRef } from 'react';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 import { createPortal } from 'react-dom';
@@ -29,12 +29,16 @@ export const Modal = ({ isOpen, onClose, children, title, className }: ModalProp
 
   const handleClose = useCallback(() => {
     dialogRef.current?.classList.add(cx('fade-out'));
-    dialogRef.current?.addEventListener('animationend', () => {
-      dialogRef.current?.classList.remove(cx('fade-out'));
-      dialogRef.current?.close();
-      onClose();
-      updateScrollbarWidth();
-    }, { once: true });
+    dialogRef.current?.addEventListener(
+      'animationend',
+      () => {
+        dialogRef.current?.classList.remove(cx('fade-out'));
+        dialogRef.current?.close();
+        onClose();
+        updateScrollbarWidth();
+      },
+      { once: true },
+    );
   }, [onClose]);
 
   const handleMouseDown = useCallback(
