@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import classNames from 'classnames/bind';
 import { useRouter, useSearchParams } from 'next/navigation';
 
@@ -23,23 +23,16 @@ export const MerchList = ({ products }: MerchListProps) => {
   const searchParams = useSearchParams();
   const pageParam = searchParams.get('page');
   const totalPages = Math.max(1, Math.ceil(products.length / ITEMS_PER_PAGE));
-  const raw = Number(pageParam);
-  const initialPage = Number.isFinite(raw) ? Math.trunc(raw) : DEFAULT_PAGE;
-  const [currentPage, setCurrentPage] = useState(
-    Math.min(Math.max(initialPage, DEFAULT_PAGE), totalPages),
-  );
+
+  const pageFromUrl = pageParam ? parseInt(pageParam, 10) : DEFAULT_PAGE;
+  const isValidPage = pageFromUrl >= 1 && pageFromUrl <= totalPages;
+  const currentPage = isValidPage ? pageFromUrl : DEFAULT_PAGE;
 
   useEffect(() => {
-    const newPage = parseInt(pageParam || '1', 10);
-
-    if (newPage > totalPages || newPage < 1) {
-      setCurrentPage(1);
-      router.push(`?page=1`);
+    if (pageParam && !isValidPage) {
+      router.push(`?page=${DEFAULT_PAGE}`);
     }
-    if (newPage !== currentPage) {
-      setCurrentPage(newPage);
-    }
-  }, [pageParam]);
+  }, [pageParam, isValidPage, router]);
 
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const endIndex = startIndex + ITEMS_PER_PAGE;
@@ -50,7 +43,6 @@ export const MerchList = ({ products }: MerchListProps) => {
 
     params.set('page', page.toString());
     router.push(`?${params.toString()}`, { scroll: false });
-    setCurrentPage(page);
   };
 
   return (
