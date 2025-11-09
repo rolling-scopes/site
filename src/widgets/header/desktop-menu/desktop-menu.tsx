@@ -38,17 +38,23 @@ export const DesktopMenu = ({
   coursesWithMentorship,
   isMentorshipPage,
 }: DesktopMenuProps) => {
+  const pathname = usePathname();
+  const params = useParams();
+  const [prevPathname, setPrevPathname] = useState(pathname);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [activeMenuItem, setActiveMenuItem] = useState<NavMenuLabel | null>(null);
   const wrapperRef = useRef<HTMLMenuElement>(null);
   const activeNavItemRef = useRef<HTMLButtonElement>(null);
   const activeDropdownItemRef = useRef<HTMLAnchorElement>(null);
 
-  const pathname = usePathname();
-  const params = useParams();
-
   const lang = params?.lang as ApiResourceLocale;
   const iconSrc = isMentorshipPage ? iconBlue : iconYellow;
+
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    setDropdownOpen(false);
+    setActiveMenuItem(null);
+  }
 
   const menuData = useMemo(
     () => generateNavMenuData(courses, coursesWithMentorship, lang),
@@ -76,11 +82,6 @@ export const DesktopMenu = ({
     setDropdownOpen(!isSameItem);
     setActiveMenuItem(isSameItem ? null : label);
   };
-
-  useEffect(() => {
-    setDropdownOpen(false);
-    setActiveMenuItem(null);
-  }, [pathname]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {

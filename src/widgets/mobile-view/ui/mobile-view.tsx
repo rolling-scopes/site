@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useState } from 'react';
 import classNames from 'classnames/bind';
 import { StaticImageData } from 'next/image';
 import { useParams, usePathname } from 'next/navigation';
@@ -48,7 +48,14 @@ type MobileViewProps = {
   onClose?: () => void;
 };
 
-export const MobileView = ({ type, courses, mentorshipCourses, isMenuOpen, logoIcon, onClose }: MobileViewProps) => {
+export const MobileView = ({
+  type,
+  courses,
+  mentorshipCourses,
+  isMenuOpen,
+  logoIcon,
+  onClose,
+}: MobileViewProps) => {
   const color = type === 'header' ? 'dark' : 'light';
   const logoView = type === 'header' ? null : 'with-border';
   const courseIcon = type === 'header' ? 'iconSmall' : 'iconFooter';
@@ -56,7 +63,7 @@ export const MobileView = ({ type, courses, mentorshipCourses, isMenuOpen, logoI
   const params = useParams();
 
   const iconSrc = pathname.includes(ROUTES.MENTORSHIP) ? iconBlue : iconYellow;
-  const lang = params?.lang as ApiResourceLocale ?? 'en-US';
+  const lang = (params?.lang as ApiResourceLocale) ?? 'en-US';
 
   const [activeDropdowns, setActiveDropdowns] = useState<Set<string>>(new Set());
 
@@ -73,11 +80,9 @@ export const MobileView = ({ type, courses, mentorshipCourses, isMenuOpen, logoI
     });
   };
 
-  useEffect(() => {
-    if (!isMenuOpen) {
-      setActiveDropdowns(new Set());
-    }
-  }, [isMenuOpen]);
+  if (!isMenuOpen && activeDropdowns.size > 0) {
+    setActiveDropdowns(new Set());
+  }
 
   return (
     <nav className={cx('mobile-view')} data-testid="mobile-view">

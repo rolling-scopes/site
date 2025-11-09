@@ -105,12 +105,14 @@ export async function generateStaticParams() {
 export default async function DocPage({ params }: PagePropsDocs) {
   const { lang, slug } = await params;
 
-  try {
-    const markdownContent = await fetchMarkdownContent(lang, slug);
+  let markdownContent: string;
 
-    return <DocsContent markdownContent={markdownContent} lang={lang} />;
+  try {
+    markdownContent = await fetchMarkdownContent(lang, slug);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     notFound();
   }
+
+  return <DocsContent markdownContent={markdownContent} lang={lang} />;
 }
