@@ -45,3 +45,8 @@
 .subresult p {
   font-size: $font-size-xs;
 }
+
+.link {
+  flex-direction: column;
+  align-items: flex-start;
+}
