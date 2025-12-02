@@ -1,6 +1,12 @@
 'use client';
 
+import { useParams } from 'next/navigation';
+
 import { Course } from '@/entities/course';
+import { COURSE_DATE_FORMAT } from '@/entities/course/constants';
+import { TO_BE_DETERMINED } from '@/shared/constants';
+import dayjs from '@/shared/helpers/day-js';
+import { ApiResourceLocale } from '@/shared/types';
 import { FreshCourses } from '@/shared/ui/fresh-courses';
 import { SchoolMenu } from '@/widgets/school-menu';
 import { Color } from '@/widgets/school-menu/types';
@@ -18,6 +24,9 @@ export const CourseMenuItemsFresh = ({
   color,
   onClose,
 }: AllCoursesProps) => {
+  const params = useParams();
+  const lang = params?.lang as ApiResourceLocale ?? 'en-US';
+
   return (
     <FreshCourses
       courses={courses}
@@ -26,7 +35,11 @@ export const CourseMenuItemsFresh = ({
           key={course.id}
           icon={course[icon]}
           title={course.title}
-          description={course.startDate}
+          description={
+            dayjs(course.startDate).isValid()
+              ? dayjs(course.startDate).locale(lang).format(COURSE_DATE_FORMAT)
+              : TO_BE_DETERMINED
+          }
           url={course.detailsUrl}
           color={color}
           onClick={onClose}
