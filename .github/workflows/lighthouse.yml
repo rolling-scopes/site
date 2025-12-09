@@ -23,7 +23,7 @@ jobs:
         run: lhci autorun --collect.url=https://pr${{ github.event.client_payload.number }}.rs.school
 
       - name: Upload Lighthouse artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: lighthouse-report
           path: '.lighthouseci/*'
