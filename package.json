@@ -106,5 +106,8 @@
     "@types/react-dom": "$@types/react-dom",
     "react": "$react",
     "react-dom": "$react-dom"
-  }
+  },
+  "browserslist": [
+    "defaults"
+  ]
 }
