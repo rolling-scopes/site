@@ -83,7 +83,7 @@ export const MobileView = ({ type, courses, mentorshipCourses, isMenuOpen, logoI
     <nav className={cx('mobile-view')} data-testid="mobile-view">
       <div className={cx('menu-logo')}>
         <Logo type={logoView} logoSrc={logoIcon} onClick={onClose} />
-        <Suspense>
+        <Suspense fallback={<div />}>
           <LangSwitcher className={cx('lang-switcher')} />
         </Suspense>
       </div>
@@ -144,6 +144,7 @@ export const MobileView = ({ type, courses, mentorshipCourses, isMenuOpen, logoI
               icon={courseIcon}
               onClose={onClose}
               color={color}
+              lang={lang}
             />
           </SchoolMenu>
         </div>
