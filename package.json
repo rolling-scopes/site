@@ -30,6 +30,7 @@
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
     "contentful-resolve-response": "^1.9.3",
+    "core-js": "^3.47.0",
     "dayjs": "^1.11.18",
     "github-markdown-css": "^5.8.1",
     "http-status": "^2.1.0",
@@ -106,8 +107,5 @@
     "@types/react-dom": "$@types/react-dom",
     "react": "$react",
     "react-dom": "$react-dom"
-  },
-  "browserslist": [
-    "defaults"
-  ]
+  }
 }
