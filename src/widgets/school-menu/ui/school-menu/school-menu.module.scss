@@ -24,9 +24,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: $gap-l $gap-xl;
-
-    max-height: 408px;
-
     list-style-type: none;
 
     @include media-tablet-large {
