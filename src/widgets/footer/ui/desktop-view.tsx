@@ -37,7 +37,7 @@ export const DesktopView = ({ courses }: DesktopViewProps) => {
 
       <div className="right">
         <SchoolMenu heading={menuHeading} color="light">
-          <CourseMenuItemsFresh courses={courses} color="light" icon="iconFooter" />
+          <CourseMenuItemsFresh courses={courses} lang={lang} color="light" icon="iconFooter" />
         </SchoolMenu>
       </div>
     </div>

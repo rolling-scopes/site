@@ -10,6 +10,7 @@ import { useParams, usePathname } from 'next/navigation';
 
 import arrowIcon from '@/shared/assets/svg/arrow.svg';
 import textLinkIcon from '@/shared/assets/svg/text-link.svg';
+import { isExternalUri } from '@/shared/helpers/is-external-uri';
 import { getLangFromPathname } from '@/shared/ui/link-custom/helpers/get-lang-from-pathname';
 import { withLang } from '@/shared/ui/link-custom/helpers/with-lang';
 
@@ -76,7 +77,8 @@ export const LinkCustom = ({
 
   const fallbackLang = getLangFromPathname(pathName);
   const lang = params?.lang as string ?? fallbackLang ?? '';
-  const localizedHref = external || !preserveLang ? href : withLang(lang, href);
+  const isExternalLink = external || isExternalUri(href);
+  const localizedHref = isExternalLink || !preserveLang ? href : withLang(lang, href);
 
   const isDisabled = disabled || !href;
   const showLabel = isDisabled ? disabledLabel : children;

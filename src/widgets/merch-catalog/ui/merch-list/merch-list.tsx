@@ -32,14 +32,17 @@ export const MerchList = ({ products }: MerchListProps) => {
   useEffect(() => {
     const newPage = parseInt(pageParam || '1', 10);
 
-    if (newPage > totalPages || newPage < 1) {
-      setCurrentPage(1);
-      router.push(`?page=1`);
-    }
-    if (newPage !== currentPage) {
+    if (isNaN(newPage) || newPage < 1 || newPage > totalPages) {
+      if (currentPage !== 1) {
+        setCurrentPage(1);
+      }
+      if (pageParam !== '1') {
+        router.push(`?page=1`);
+      }
+    } else if (newPage !== currentPage) {
       setCurrentPage(newPage);
     }
-  }, [pageParam]);
+  }, [pageParam, currentPage, router, totalPages]);
 
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const endIndex = startIndex + ITEMS_PER_PAGE;
