@@ -7,6 +7,7 @@ import { createPortal } from 'react-dom';
 
 import MOCKED_SEARCH from '../../mocked-search';
 import { Language } from '@/shared/types';
+import { LinkCustom } from '@/shared/ui/link-custom';
 import { Subtitle } from '@/shared/ui/subtitle';
 
 import styles from './search.module.scss';
@@ -127,12 +128,10 @@ function Result({ result }: { result: PagefindSearchResult }) {
 
   return (
     <div>
-      <Link href={removeHtmlExtension(data.url)}>
-        <Subtitle size="extra-small" weight="bold">
-          {data.meta.title}
-        </Subtitle>
+      <LinkCustom href={removeHtmlExtension(data.url)} className={cx('link')}>
+        <Subtitle size="extra-small" weight="bold">{data.meta.title}</Subtitle>
         <p dangerouslySetInnerHTML={{ __html: data.excerpt }} />
-      </Link>
+      </LinkCustom>
 
       {data.sub_results && data.sub_results.length > 0 && (
         <div className={cx('subresults')}>

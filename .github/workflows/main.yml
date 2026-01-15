@@ -1,41 +1,99 @@
-name: Pull Request
+# Deploy staging.rs.school and rs.school
+name: Main
 
 on:
-  pull_request:
-    types: [opened, synchronize]
+  push:
     branches:
       - main
+  workflow_dispatch:
+
+  repository_dispatch:
+    types:
+      - 'course.updated'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 env:
-  NODE_VERSION: 20.x
-  NEXT_PUBLIC_API_BASE_URL: ${{ secrets.API_BASE_URL }}
+  NODE_VERSION: '22.x' # set this to the node version to use
+  AWS_S3_BUCKET: 'sites-frontend'
+  AWS_ACCESS_KEY_ID: ${{ secrets.DEPLOY_AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_AWS_SECRET_ACCESS_KEY }}
+  AWS_REGION: 'eu-central-1'
+  NEXT_PUBLIC_RS_APP_API_BASE_URL: ${{ secrets.RS_APP_API_BASE_URL }}
   NEXT_PUBLIC_YOUTUBE_API_BASE_URL: ${{ secrets.YOUTUBE_API_BASE_URL }}
-  NEXT_PUBLIC_YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY_DEVELOPMENT }}
+  NEXT_PUBLIC_YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY_PRODUCTION }}
 
 jobs:
-  ci:
-    name: CI
+  staging:
+    name: Deploy staging.rs.school
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v5
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
 
       - uses: bahmutov/npm-install@v1
 
-      - name: Lint Application
-        run: npm run lint
+      - name: Build
+        env:
+          NEXT_PUBLIC_DEPLOY_ENV: 'staging'
+          NEXT_PUBLIC_CONTENTFUL_API_BASE_URL: ${{ secrets.CONTENTFUL_API_BASE_URL_STAGING }}
+        run: npm run build
 
-      - name: Style lint Application
-        run: npm run stylelint
+      - name: Copy Static Assets to S3
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --cache-control max-age=31536000 --exclude '*' --include '_next/*'
+        env:
+          SOURCE_DIR: 'build'
+          DEST_DIR: rs-school-preview/staging
 
-      - name: Run application tests
-        run: npm run test
+      - name: Copy Pages to S3
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --cache-control max-age=5 --exclude '_next/*'
+        env:
+          SOURCE_DIR: 'build'
+          DEST_DIR: rs-school-preview/staging
+
+  production:
+    name: Deploy rs.school
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - uses: bahmutov/npm-install@v1
 
       - name: Build
+        env:
+          NEXT_PUBLIC_DEPLOY_ENV: 'production'
+          NEXT_PUBLIC_CONTENTFUL_API_BASE_URL: ${{ secrets.CONTENTFUL_API_BASE_URL_PRODUCTION }}
         run: npm run build
+
+      - name: Copy Static Assets to S3
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --cache-control max-age=31536000 --exclude '*' --include '_next/*'
+        env:
+          SOURCE_DIR: 'build'
+          DEST_DIR: rs-school
+
+      - name: Copy Pages to S3
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --cache-control max-age=300 --exclude '_next/*'
+        env:
+          SOURCE_DIR: 'build'
+          DEST_DIR: rs-school

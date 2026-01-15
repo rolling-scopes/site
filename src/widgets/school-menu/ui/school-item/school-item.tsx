@@ -1,8 +1,8 @@
 import { HTMLProps, RefObject } from 'react';
 import classNames from 'classnames/bind';
 import Image, { StaticImageData } from 'next/image';
-import Link from 'next/link';
 
+import { LinkCustom } from '@/shared/ui/link-custom';
 import { Color } from '@/widgets/school-menu/types';
 
 import styles from './school-item.module.scss';
@@ -10,35 +10,42 @@ import styles from './school-item.module.scss';
 const cx = classNames.bind(styles);
 
 type SchoolItemProps = HTMLProps<HTMLLIElement> & {
+  activeItemRef?: RefObject<HTMLAnchorElement | null>;
+  color?: Color;
+  description?: string;
+  external?: boolean;
+  icon?: StaticImageData;
+  preserveLang?: boolean;
   title: string;
   url: string;
-  description?: string;
-  icon?: StaticImageData;
-  color?: Color;
-  activeItemRef?: RefObject<HTMLAnchorElement | null>;
 };
 
 export const SchoolItem = ({
-  icon,
-  description,
-  title,
-  color = 'dark',
-  url,
   activeItemRef,
+  color = 'dark',
+  description,
+  external = false,
+  icon,
+  preserveLang = true,
+  title,
+  url,
   ...props
 }: SchoolItemProps) => {
   const isNonClickable = Boolean(url === '#');
 
   return (
     <li {...props} className={cx(props.className)}>
-      <Link
-        ref={activeItemRef}
-        href={url}
+      <LinkCustom
         className={cx(
           'school-item',
           { 'non-clickable': isNonClickable },
           { centered: !description },
         )}
+        external={external}
+        href={url}
+        iconRight={null}
+        preserveLang={preserveLang}
+        ref={activeItemRef}
         tabIndex={isNonClickable ? -1 : 0}
       >
         {icon && (
@@ -59,7 +66,7 @@ export const SchoolItem = ({
             </small>
           )}
         </div>
-      </Link>
+      </LinkCustom>
     </li>
   );
 };

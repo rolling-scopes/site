@@ -18,8 +18,8 @@
     "test:coverage": "vitest run --coverage",
     "precommit": "npx lint-staged",
     "prepare": "husky",
-    "postbuild": "pagefind --force-language ru --site .next/server/app/docs/ru --output-path build/_next/static/pagefind/ru && pagefind --force-language en --site .next/server/app/docs/en --output-path build/_next/static/pagefind/en",
-    "contentful:prepare": "dotenv -e .env -- bash -c 'cf-content-types-generator -X -r -d -s $CONTENTFUL_SPACE_ID -t $CONTENTFUL_MANAGEMENT_TOKEN -o src/shared/types/contentful' && npx eslint src/shared/types/contentful/*.ts --fix && prettier --write src/shared/types/contentful/**/*.ts"
+    "postbuild": "pagefind --force-language ru --site .next/server/app/ru/docs --output-path build/_next/static/pagefind/ru && pagefind --force-language en --site .next/server/app/docs --output-path build/_next/static/pagefind/en",
+    "contentful:prepare": "dotenv -e .env -- bash -c 'cf-content-types-generator -e $CONTENTFUL_ENVIRONMENT -X -r -d -s $CONTENTFUL_SPACE_ID -t $CONTENTFUL_MANAGEMENT_TOKEN -o src/shared/types/contentful' && npx eslint src/shared/types/contentful/*.ts --fix && prettier --write src/shared/types/contentful/**/*.ts"
   },
   "engines": {
     "node": ">=20.x"
@@ -30,12 +30,14 @@
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
     "contentful-resolve-response": "^1.9.3",
+    "core-js": "^3.47.0",
     "dayjs": "^1.11.18",
     "github-markdown-css": "^5.8.1",
     "http-status": "^2.1.0",
     "jszip": "^3.10.1",
-    "next": "15.5.4",
+    "next": "15.5.9",
     "pagefind": "^1.4.0",
+    "radix-ui": "^1.4.3",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-double-marquee": "^1.1.0",

@@ -12,7 +12,14 @@ export const heroCourseLocalized = {
 } as const;
 
 export const courseStatus = {
-  available: 'available',
-  upcoming: 'upcoming',
-  planned: 'planned',
-} as const;
+  'en-US': {
+    available: 'available',
+    upcoming: 'upcoming',
+    planned: 'planned',
+  } as const,
+  'ru': {
+    available: 'доступен',
+    upcoming: 'предстоящий',
+    planned: 'запланирован',
+  } as const,
+};

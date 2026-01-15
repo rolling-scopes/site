@@ -1,6 +1,14 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import {
+  Suspense,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import classNames from 'classnames/bind';
-import { usePathname } from 'next/navigation';
+import { useParams, usePathname } from 'next/navigation';
+import { Separator } from 'radix-ui';
 
 import { NavMenuLabel } from '../header';
 import { generateNavItemsConfig, generateNavMenuData } from '../helpers/generate-nav-menu-data';
@@ -12,6 +20,8 @@ import iconBlue from '@/shared/assets/svg/heart-blue.svg';
 import iconYellow from '@/shared/assets/svg/heart-yellow.svg';
 import { KEY_CODES, NAV_MENU_LABELS } from '@/shared/constants';
 import { useOutsideClick } from '@/shared/hooks/use-outside-click/use-outside-click';
+import { ApiResourceLocale } from '@/shared/types';
+import { LangSwitcher } from '@/shared/ui/lang-switcher/lang-switcher';
 
 import styles from '../header.module.scss';
 
@@ -35,15 +45,17 @@ export const DesktopMenu = ({
   const activeDropdownItemRef = useRef<HTMLAnchorElement>(null);
 
   const pathname = usePathname();
+  const params = useParams();
 
+  const lang = params?.lang as ApiResourceLocale;
   const iconSrc = isMentorshipPage ? iconBlue : iconYellow;
 
   const menuData = useMemo(
-    () => generateNavMenuData(courses, coursesWithMentorship),
-    [courses, coursesWithMentorship],
+    () => generateNavMenuData(courses, coursesWithMentorship, lang),
+    [courses, coursesWithMentorship, lang],
   );
 
-  const navItemsData = generateNavItemsConfig(iconSrc);
+  const navItemsData = generateNavItemsConfig(iconSrc, lang);
 
   const onClose = useCallback(() => {
     setDropdownOpen(false);
@@ -85,33 +97,47 @@ export const DesktopMenu = ({
   }, [isDropdownOpen]);
 
   return (
-    <menu ref={wrapperRef} className={cx('menu')} data-testid="desktop-menu">
-      {navItemsData.map((item) => (
-        <NavItem
-          key={item.label}
-          label={item.label}
-          icon={item.icon}
-          href={item.url}
-          activeNavItemRef={activeMenuItem === item.label ? activeNavItemRef : undefined}
-          isActiveNavItem={activeMenuItem === item.label}
-          isDropdownOpen={isDropdownOpen}
-          onNavItemClick={() => handleNavItemClick(item.label)}
-          onFocusDropdownItem={() => {
-            setTimeout(() => {
-              activeDropdownItemRef.current?.focus();
-            }, 0);
-          }}
-        />
-      ))}
-      <DropdownWrapper isOpen={isDropdownOpen}>
-        {activeMenuItem && (
-          <DropdownContent
-            menuData={menuData[activeMenuItem]}
-            activeMenuItem={activeMenuItem}
-            activeItemRef={activeDropdownItemRef}
+    <>
+      <menu ref={wrapperRef} className={cx('menu')} data-testid="desktop-menu">
+        {navItemsData.map((item) => (
+          <NavItem
+            key={item.label}
+            id={item.id}
+            label={item.label}
+            icon={item.icon}
+            href={item.url}
+            activeNavItemRef={activeMenuItem === item.id ? activeNavItemRef : undefined}
+            isActiveNavItem={activeMenuItem === item.id}
+            isDropdownOpen={isDropdownOpen}
+            onNavItemClick={() => handleNavItemClick(item.id)}
+            onFocusDropdownItem={() => {
+              setTimeout(() => {
+                activeDropdownItemRef.current?.focus();
+              }, 0);
+            }}
           />
-        )}
-      </DropdownWrapper>
-    </menu>
+        ))}
+
+        <DropdownWrapper isOpen={isDropdownOpen}>
+          {activeMenuItem && (
+            <DropdownContent
+              menuData={menuData[activeMenuItem]}
+              activeMenuItem={activeMenuItem}
+              activeItemRef={activeDropdownItemRef}
+            />
+          )}
+        </DropdownWrapper>
+      </menu>
+
+      <Separator.Root
+        decorative
+        className={cx('separator-root', 'separator')}
+        orientation="vertical"
+      />
+
+      <Suspense fallback={<div />}>
+        <LangSwitcher className={cx('lang-switcher-desktop')} />
+      </Suspense>
+    </>
   );
 };

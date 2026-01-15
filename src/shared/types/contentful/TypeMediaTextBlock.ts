@@ -21,6 +21,13 @@ export interface TypeMediaTextBlockFields {
    */
   tag?: EntryFieldTypes.Symbol;
   /**
+   * Field type definition for field 'id' (id)
+   * @name id
+   * @localized false
+   * @summary Enter a section ID that will be used for anchor links
+   */
+  id?: EntryFieldTypes.Symbol;
+  /**
    * Field type definition for field 'sectionLabel' (sectionLabel)
    * @name sectionLabel
    * @localized true
@@ -85,7 +92,7 @@ export interface TypeMediaTextBlockFields {
  * @type {TypeMediaTextBlockSkeleton}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T14:21:33.812Z
- * @version 105
+ * @version 107
  */
 export type TypeMediaTextBlockSkeleton = EntrySkeletonType<
   TypeMediaTextBlockFields,
@@ -97,7 +104,7 @@ export type TypeMediaTextBlockSkeleton = EntrySkeletonType<
  * @type {TypeMediaTextBlock}
  * @author 1gdRTUbGl7AN0NHL83pCVK
  * @since 2025-05-18T14:21:33.812Z
- * @version 105
+ * @version 107
  */
 export type TypeMediaTextBlock<
   Modifiers extends ChainModifiers,

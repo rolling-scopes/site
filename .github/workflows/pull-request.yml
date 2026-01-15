@@ -1,0 +1,43 @@
+# Run CI for pull request
+name: Pull Request
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - main
+
+env:
+  NODE_VERSION: 22.x
+  NEXT_PUBLIC_CONTENTFUL_API_BASE_URL: ${{ secrets.CONTENTFUL_API_BASE_URL_STAGING }}
+  NEXT_PUBLIC_RS_APP_API_BASE_URL: ${{ secrets.RS_APP_API_BASE_URL }}
+  NEXT_PUBLIC_YOUTUBE_API_BASE_URL: ${{ secrets.YOUTUBE_API_BASE_URL }}
+  NEXT_PUBLIC_YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY_DEVELOPMENT }}
+
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - uses: bahmutov/npm-install@v1
+
+      - name: Lint Application
+        run: npm run lint
+
+      - name: Style lint Application
+        run: npm run stylelint
+
+      - name: Run application tests
+        run: npm run test
+
+      - name: Build
+        run: npm run build

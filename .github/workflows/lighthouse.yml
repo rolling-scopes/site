@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Setup Node
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           node-version: '20.x'
 
@@ -23,7 +23,7 @@ jobs:
         run: lhci autorun --collect.url=https://pr${{ github.event.client_payload.number }}.rs.school
 
       - name: Upload Lighthouse artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: lighthouse-report
           path: '.lighthouseci/*'
@@ -46,7 +46,7 @@ jobs:
           echo "reportUrl=$REPORT_URL" >> $GITHUB_OUTPUT
 
       - name: Post Lighthouse results to PR
-        uses: peter-evans/create-or-update-comment@v4
+        uses: peter-evans/create-or-update-comment@v5
         with:
           issue-number: ${{ github.event.client_payload.number }}
           body: |

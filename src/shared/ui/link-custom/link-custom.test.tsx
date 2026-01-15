@@ -23,7 +23,7 @@ describe('LinkCustom', () => {
   it('renders correctly when given right props', () => {
     const label = 'Test Label';
     const href = 'http://test.com';
-    const { getByRole } = renderWithRouter(<LinkCustom href={href}>{label}</LinkCustom>);
+    const { getByRole } = renderWithRouter(<LinkCustom external href={href}>{label}</LinkCustom>);
     const link = getByRole('link');
 
     expect(link).toHaveAttribute('href', href);

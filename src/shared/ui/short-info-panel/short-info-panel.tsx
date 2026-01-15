@@ -1,9 +1,18 @@
+'use client';
+
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+import { useParams } from 'next/navigation';
 
 import { DateSimple } from '../date-simple';
+import {
+  COURSE_DATE_FORMAT,
+  COURSE_DATE_FORMAT_SHORT,
+  MENTORING_DATE_FORMAT,
+} from '@/entities/course/constants';
 import micIcon from '@/shared/assets/svg/mic.svg';
 import { COURSE_LANGUAGE_LABEL, LABELS, TO_BE_DETERMINED } from '@/shared/constants';
+import { ApiResourceLocale } from '@/shared/types';
 import { CourseLanguage } from '@/shared/types/types';
 import { CourseStartLabel } from '@/shared/ui/short-info-panel/course-start-label';
 
@@ -35,7 +44,11 @@ export const ShortInfoPanel = ({
   personalMentoringEndDate,
   showMentoringStartDate,
 }: ShortInfoPanelProps) => {
-  const courseLanguage = Array.from(language).map((lang) => COURSE_LANGUAGE_LABEL[lang]).join(', ');
+  const params = useParams();
+  const lang = (params?.lang as ApiResourceLocale) ?? 'en-US';
+  const courseLanguage = Array.from(language)
+    .map((lang) => COURSE_LANGUAGE_LABEL[lang])
+    .join(', ');
 
   let view: ShortInfoPanelView = 'normal';
 
@@ -48,6 +61,9 @@ export const ShortInfoPanel = ({
   const normalView = (
     <section className={cx('info', { margin: withMargin })}>
       <CourseStartLabel
+        lang={lang}
+        startDateFormat={COURSE_DATE_FORMAT}
+        endDateFormat={COURSE_DATE_FORMAT}
         label={label}
         startDate={startDate}
         registrationEndDate={registrationEndDate}
@@ -55,7 +71,10 @@ export const ShortInfoPanel = ({
       />
 
       <DateSimple
-        label={LABELS.REGISTRATION_END}
+        lang={lang}
+        startDateFormat={COURSE_DATE_FORMAT}
+        endDateFormat={COURSE_DATE_FORMAT}
+        label={LABELS[lang].REGISTRATION_END}
         startDate={registrationEndDate}
         showMentoringStartDate={false}
       >
@@ -72,10 +91,13 @@ export const ShortInfoPanel = ({
 
   const upcomingView = (
     <CourseStartLabel
+      lang={lang}
+      startDateFormat={COURSE_DATE_FORMAT_SHORT}
+      endDateFormat={COURSE_DATE_FORMAT}
       label={label}
       startDate={startDate}
       registrationEndDate={startDate ? registrationEndDate : null}
-      labelSeparator={LABELS.MENTOR_ACTIVITIES_SEPARATOR}
+      labelSeparator={LABELS[lang].MENTOR_ACTIVITIES_SEPARATOR}
     >
       <span className={cx('language')} data-testid="course-language">
         {courseLanguage}
@@ -86,10 +108,13 @@ export const ShortInfoPanel = ({
   const mentoringView = (
     <section className={cx('info', { margin: withMargin })}>
       <DateSimple
-        label={LABELS.MENTOR_ACTIVITIES}
+        lang={lang}
+        startDateFormat={MENTORING_DATE_FORMAT}
+        endDateFormat={MENTORING_DATE_FORMAT}
+        label={LABELS[lang].MENTOR_ACTIVITIES}
         startDate={personalMentoringStartDate || TO_BE_DETERMINED}
         endDate={personalMentoringStartDate ? personalMentoringEndDate : null}
-        labelSeparator={LABELS.MENTOR_ACTIVITIES_SEPARATOR}
+        labelSeparator={LABELS[lang].MENTOR_ACTIVITIES_SEPARATOR}
         showMentoringStartDate={true}
       >
       </DateSimple>
