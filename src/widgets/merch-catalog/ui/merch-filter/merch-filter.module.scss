@@ -1,0 +1,69 @@
+.merch-filter {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-s;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-button {
+    @extend %transition-all;
+
+    cursor: pointer;
+
+    display: inline-flex;
+    align-items: center;
+
+    border: 1px solid $color-gray-400;
+
+    font-weight: $font-weight-medium;
+    letter-spacing: 0;
+    white-space: pre;
+  }
+
+  &-rounded {
+    width: max-content;
+    height: 36px;
+    padding: $gap-xxs $gap-s;
+    border-radius: $border-radius-max;
+
+    font-size: $font-size-s;
+    line-height: 16px;
+    color: $color-gray-900;
+
+    visibility: hidden;
+    opacity: 0;
+    background-color: $color-gray-100;
+
+    &:hover {
+      background-color: hsla(from $color-gray-600 h s l/ $opacity-50);
+    }
+
+    &.active {
+      visibility: visible;
+      opacity: $opacity-100;
+      transition-delay: 0s;
+    }
+  }
+
+  &-tags {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-xs;
+
+    &-list {
+      display: block;
+
+      @include media-tablet-large {
+        display: none;
+
+        &.expanded {
+          display: block;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.no-merch {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-l;
+  align-items: center;
+
+  width: $large-tablet-width;
+
+  &-image {
+    max-width: 170px;
+    height: auto;
+  }
+
+  &-text {
+    max-width: 480px;
+    text-align: center;
+  }
+
+  @include media-tablet-large {
+    width: 100%;
+  }
+}

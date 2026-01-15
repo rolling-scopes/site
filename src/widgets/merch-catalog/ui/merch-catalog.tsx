@@ -1,34 +1,51 @@
-import classNames from 'classnames/bind';
-import Image from 'next/image';
+'use client';
 
+import { useMemo } from 'react';
+import classNames from 'classnames/bind';
+import { ReadonlyURLSearchParams, useSearchParams } from 'next/navigation';
+
+import { getTags } from '../helpers/get-tags';
+import { MerchFilter } from './merch-filter/merch-filter';
 import { MerchList } from './merch-list/merch-list';
-import { merchStore } from '@/entities/merch';
-import notFoundImg from '@/shared/assets/404.webp';
-import { Paragraph } from '@/shared/ui/paragraph';
+import { NoMerch } from './no-merch/no-merch';
+import { filterBySearchTerm, filterByTypes } from '../helpers/filter-merch';
+import { MerchProduct } from '@/entities/merch/types';
+import { URL_PARAMS } from '@/shared/constants';
 
 import styles from './merch-catalog.module.scss';
 
 const cx = classNames.bind(styles);
 
-export const MerchCatalog = async () => {
-  const products = await merchStore.loadMerchCatalog();
+type MerchProductsProps = {
+  products: MerchProduct[];
+};
+
+export const MerchCatalog = ({ products }: MerchProductsProps) => {
+  const searchParams: ReadonlyURLSearchParams = useSearchParams();
+
+  const searchTerm: string = searchParams.get(URL_PARAMS.SEARCH) || '';
+  const selectedTypes: string[] = searchParams.getAll(URL_PARAMS.TYPE);
+  const tags: string[] | [] = useMemo(() => getTags(products), [products]);
+
+  const filteredProducts: MerchProduct[] = useMemo(() => {
+    const filteredByTypes = filterByTypes(products, selectedTypes);
+    const filteredBySearch = filterBySearchTerm(filteredByTypes, searchTerm);
+
+    return filteredBySearch;
+  }, [products, searchTerm, selectedTypes]);
 
   return (
-    <section className={cx('container')}>
-      {(!products || products.length === 0) && (
-        <div className={cx('content', 'merch-catalog', 'empty-wrapper')}>
-          <Image className={cx('empty-image')} src={notFoundImg} alt="No merchandise available" />
-          <Paragraph className={cx('empty-paragraph')}>
-            No merchandise available at this time.
-          </Paragraph>
-        </div>
-      )}
-
-      {products && products.length > 0 && (
-        <div className={cx('content', 'merch-catalog')}>
-          <MerchList products={products} />
-        </div>
-      )}
-    </section>
+    <div className={cx('merch-catalog', 'content')}>
+      <div className={cx('merch-catalog-tags')}>
+        <MerchFilter tags={tags} />
+      </div>
+      {filteredProducts.length
+        ? (
+            <MerchList products={filteredProducts} />
+          )
+        : (
+            <NoMerch isFiltered={true} />
+          )}
+    </div>
   );
 };

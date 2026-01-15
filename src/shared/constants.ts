@@ -156,3 +156,9 @@ export const LOCALE_MAP = new Map<string, ApiResourceLocale>([
   ['ru', 'ru'],
   ['en', 'en-US'],
 ]);
+
+export const URL_PARAMS = {
+  TYPE: 'type',
+  PAGE: 'page',
+  SEARCH: 'search',
+} as const;
