@@ -16,7 +16,7 @@ export const Merch = async () => {
       <Breadcrumbs />
       <Suspense fallback={<Loader />}>
         <section className="container">
-          {products?.length ? <MerchCatalog products={products} /> : <NoMerch />}
+          {products.length ? <MerchCatalog products={products} /> : <NoMerch />}
         </section>
       </Suspense>
     </>

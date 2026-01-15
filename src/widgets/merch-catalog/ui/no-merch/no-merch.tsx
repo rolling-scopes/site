@@ -32,7 +32,7 @@ export const NoMerch = ({ isFiltered = false }: NoMerchProps) => {
       </Paragraph>
 
       <LinkCustom
-        variant="secondary"
+        variant="primary"
         href={ROUTES.HOME}
         iconRight={null}
         data-testid="no-merch-home-link"
