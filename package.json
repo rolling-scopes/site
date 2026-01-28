@@ -35,7 +35,7 @@
     "github-markdown-css": "^5.8.1",
     "http-status": "^2.1.0",
     "jszip": "^3.10.1",
-    "next": "15.5.9",
+    "next": "16.1.5",
     "pagefind": "^1.4.0",
     "radix-ui": "^1.4.3",
     "react": "19.2.0",
