@@ -34,7 +34,7 @@ export const SchoolItem = ({
   const isNonClickable = Boolean(url === '#');
 
   return (
-    <li {...props} className={cx(props.className)} style={{ width: '250px' }}>
+    <li {...props} className={cx('linebreak-fixer')}>
       <LinkCustom
         className={cx(
           'school-item',
