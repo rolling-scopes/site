@@ -28,14 +28,19 @@ export const DocsMenu = ({ menu, isOpen, onMenuToggle }: DocsMenuProps) => {
   };
 
   const isActive = (link: string) => {
-    const lang = (params?.lang as string) || '';
-    const base = lang ? `/${lang}/docs/` : '/docs/';
+    const lang = (params?.lang as string) || 'en';
+    const base = lang === 'en' ? '/docs/' : `/${lang}/docs/`;
 
     return pathname === `${base}${link}`;
   };
 
   const resolveHref = (link: string) => {
-    return isValidUrl(link) ? link : `/docs/${link}`;
+    const lang = (params?.lang as string) || 'en';
+
+    if (isValidUrl(link)) {
+      return link;
+    }
+    return lang === 'en' ? `/docs/${link}` : `docs/${link}`;
   };
 
   const renderMenuItems = (items: Menu) => {
@@ -44,7 +49,10 @@ export const DocsMenu = ({ menu, isOpen, onMenuToggle }: DocsMenuProps) => {
         return (
           <li key={index}>
             {doc.link && (
-              <LinkCustom href={resolveHref(doc.link)} className={cx('link', { active: isActive(doc.link) })}>
+              <LinkCustom
+                href={resolveHref(doc.link)}
+                className={cx('link', { active: isActive(doc.link) })}
+              >
                 {doc.title}
               </LinkCustom>
             )}
@@ -57,7 +65,10 @@ export const DocsMenu = ({ menu, isOpen, onMenuToggle }: DocsMenuProps) => {
       return (
         doc.link && (
           <li key={index}>
-            <LinkCustom href={resolveHref(doc.link)} className={cx('link', { active: isActive(doc.link) })}>
+            <LinkCustom
+              href={resolveHref(doc.link)}
+              className={cx('link', { active: isActive(doc.link) })}
+            >
               {doc.title}
             </LinkCustom>
           </li>

@@ -49,7 +49,9 @@ export default function Search({ lang, resultsRef }: SearchProps) {
           /* webpackIgnore: true */ `/_next/static/pagefind/${lang}/pagefind.js`,
         );
 
-        await window.pagefind.options!({ baseUrl: `/docs/${lang}` });
+        const baseUrl = lang === 'en' ? '/docs' : `/${lang}/docs`;
+
+        await window.pagefind.options!({ baseUrl });
       } else {
         window.pagefind = { search: async () => ({ results: MOCKED_SEARCH }) as unknown as PagefindSearchResults };
       }
@@ -85,7 +87,7 @@ export default function Search({ lang, resultsRef }: SearchProps) {
             <div className={cx('results')}>
               {results.length > 0
                 ? (
-                    results.map((result, index) => <Result key={index} result={result} />)
+                    results.map((result, index) => <Result key={index} result={result} lang={lang} />)
                   )
                 : (
                     <div className={cx('no-results')}>
@@ -100,7 +102,8 @@ export default function Search({ lang, resultsRef }: SearchProps) {
   );
 }
 
-function Result({ result }: { result: PagefindSearchResult }) {
+function Result({ result, lang }: { result: PagefindSearchResult;
+  lang: Language; }) {
   const [data, setData] = useState<PagefindSearchFragment>();
 
   useEffect(() => {
@@ -119,7 +122,13 @@ function Result({ result }: { result: PagefindSearchResult }) {
     const pathname = urlObj.pathname;
     const cleanedPathname = pathname.endsWith('.html') ? pathname.slice(0, -5) : pathname;
 
-    return `${cleanedPathname}${hash}`;
+    const finalPathname = lang === 'en'
+      ? cleanedPathname.replace('/docs/en/', '/docs/')
+      : cleanedPathname;
+
+    const result = `${finalPathname}${hash}`;
+
+    return result;
   };
 
   if (!data) {
