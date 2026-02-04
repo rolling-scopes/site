@@ -21,7 +21,7 @@ type SchoolMenuProps = PropsWithChildren
 export const SchoolMenu = ({
   heading,
   color = 'light',
-  columns,
+  columns = 2,
   children,
   className,
   isVisible,
@@ -35,7 +35,9 @@ export const SchoolMenu = ({
       })}
     >
       {heading && <Subtitle className={cx('heading', color)}>{heading}</Subtitle>}
-      <ul ref={listRef} className={cx('school-list', columns && `columns-${columns}`, className)}>{children}</ul>
+      <ul ref={listRef} className={cx('school-list', `columns-${columns}`, className)}>
+        {children}
+      </ul>
     </div>
   );
 };

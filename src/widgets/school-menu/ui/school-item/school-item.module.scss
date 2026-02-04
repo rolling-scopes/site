@@ -1,80 +1,76 @@
-.linebreak-fixer {
-  width: 250px;
+.school-item {
+  display: flex;
+  column-gap: $gap-xs;
+  align-items: flex-start;
 
-  .school-item {
-    display: flex;
-    column-gap: $gap-xs;
-    align-items: flex-start;
+  font-size: $font-size-s;
+  text-decoration: none;
 
-    font-size: $font-size-s;
-    text-decoration: none;
+  &.centered {
+    align-items: center;
+  }
 
-    &.centered {
-      align-items: center;
+  &.non-clickable {
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .title {
+    font-weight: $font-weight-medium;
+    line-height: 24px;
+    text-align: start;
+    white-space: nowrap;
+
+    &.dark {
+      color: $color-gray-900;
     }
 
-    &.non-clickable {
-      pointer-events: none;
-      cursor: default;
+    &.light {
+      color: $color-gray-200;
     }
+  }
 
+  &:hover {
     .title {
-      font-weight: $font-weight-medium;
-      line-height: 24px;
-      text-align: start;
-      white-space: pre-wrap;
-
       &.dark {
-        color: $color-gray-900;
+        color: $color-gray-500;
       }
 
       &.light {
-        color: $color-gray-200;
+        color: $color-gray-400;
       }
     }
+  }
 
-    &:hover {
-      .title {
-        &.dark {
-          color: $color-gray-500;
-        }
+  &.with-icon {
+    display: flex;
+    flex-direction: row;
+    gap: $gap-s;
+    align-items: center;
+    justify-content: flex-start;
 
-        &.light {
-          color: $color-gray-400;
-        }
-      }
-    }
-
-    &.with-icon {
-      display: flex;
-      flex-direction: row;
-      gap: $gap-s;
-      align-items: center;
-      justify-content: flex-start;
-
-      .details {
-        display: flex;
-        flex-direction: column;
-        gap: $gap-xxs;
-        align-items: flex-start;
-        justify-content: flex-start;
-      }
-    }
-
-    [data-testid='school-item-icon'] {
-      max-height: 32px;
-    }
-
-    .description-wrapper {
+    .details {
       display: flex;
       flex-direction: column;
+      gap: $gap-xxs;
       align-items: flex-start;
+      justify-content: flex-start;
+    }
+  }
 
-      .description {
-        font-size: $font-size-xxs;
-        line-height: 24px;
-        color: $color-gray-500;
-      }
+  [data-testid='school-item-icon'] {
+    max-height: 32px;
+  }
+
+  .description-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .description {
+      font-size: $font-size-xxs;
+      line-height: 24px;
+      color: $color-gray-500;
     }
   }
 }
