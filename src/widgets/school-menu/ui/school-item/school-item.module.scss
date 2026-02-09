@@ -19,7 +19,7 @@
     font-weight: $font-weight-medium;
     line-height: 24px;
     text-align: start;
-    white-space: nowrap;
+    white-space: pre-wrap;
 
     &.dark {
       color: $color-gray-900;
