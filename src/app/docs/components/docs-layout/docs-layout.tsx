@@ -20,7 +20,7 @@ type DocsLayoutProps = {
 
 export function DocsLayout({ children, menu, lang }: DocsLayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const resultsRef = useRef(null);
+  const resultsRef = useRef<HTMLDivElement | null>(null);
 
   const handleMenuToggle = (isOpen: boolean) => {
     setIsMenuOpen(isOpen);

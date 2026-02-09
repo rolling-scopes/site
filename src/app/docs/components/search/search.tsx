@@ -2,7 +2,7 @@
 
 import React, { RefObject, useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
-import Link from 'next/link.js';
+import Link from 'next/link';
 import { createPortal } from 'react-dom';
 
 import MOCKED_SEARCH from '../../mocked-search';
@@ -21,37 +21,47 @@ const translations = {
     search: {
       placeholder: 'Search docs...',
       noResults: 'No results found for "{{query}}". Please try a different search.',
+      error: 'Search is temporarily unavailable. Please try again later.',
     },
   },
   ru: {
     search: {
       placeholder: 'Поиск по документации...',
       noResults: 'Результатов для "{{query}}" не найдено. Пожалуйста, попробуйте другой запрос.',
+      error: 'Поиск временно недоступен. Пожалуйста, повторите попытку позже.',
     },
   },
 };
 
 type SearchProps = {
   lang: Language;
-  resultsRef: RefObject<null> | RefObject<HTMLDivElement>;
+  resultsRef: RefObject<HTMLDivElement | null>;
 };
 
 export default function Search({ lang, resultsRef }: SearchProps) {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<PagefindSearchResult[]>([]);
+  const [isPagefindReady, setIsPagefindReady] = useState(false);
+  const [searchError, setSearchError] = useState<string | null>(null);
 
   useEffect(() => {
-    // see: https://www.petemillspaugh.com/nextjs-search-with-pagefind#dynamically-import-search-bundle
     async function loadPagefind() {
-      if (!isRunningInDev) {
-        window.pagefind = await import(
-          // pagefind.js generated after build
-          /* webpackIgnore: true */ `/_next/static/pagefind/${lang}/pagefind.js`,
-        );
+      try {
+        if (!isRunningInDev) {
+          window.pagefind = await import(
+            /* webpackIgnore: true */ `/_next/static/pagefind/${lang}/pagefind.js`,
+          );
 
-        await window.pagefind.options!({ baseUrl: `/docs/${lang}` });
-      } else {
-        window.pagefind = { search: async () => ({ results: MOCKED_SEARCH }) as unknown as PagefindSearchResults };
+          if (window.pagefind?.options) {
+            await window.pagefind.options({ baseUrl: `/docs/${lang}` });
+          }
+        } else {
+          window.pagefind = { search: async () => ({ results: MOCKED_SEARCH }) as unknown as PagefindSearchResults };
+        }
+        setIsPagefindReady(true);
+      } catch (error) {
+        console.error('Failed to load Pagefind:', error);
+        setSearchError(translations[lang].search.error);
       }
     }
 
@@ -59,16 +69,49 @@ export default function Search({ lang, resultsRef }: SearchProps) {
   }, [lang]);
 
   useEffect(() => {
-    async function handleSearch() {
-      if (window.pagefind) {
-        const search = await window.pagefind.search(query);
+    const handleSearch = async () => {
+      if (isPagefindReady && window.pagefind && query) {
+        try {
+          const search = await window.pagefind.search(query);
 
-        setResults(search.results);
+          setResults(search.results);
+          setSearchError(null);
+        } catch (error) {
+          console.error('Pagefind search failed:', error);
+          setSearchError(translations[lang].search.error);
+        }
+      } else if (!query) {
+        setResults([]);
+        setSearchError(null);
       }
+    };
+
+    const debounceTimer = setTimeout(() => {
+      handleSearch();
+    }, 300);
+
+    return () => clearTimeout(debounceTimer);
+  }, [query, isPagefindReady, lang]);
+
+  const renderResults = () => {
+    if (searchError) {
+      return <div className={cx('error-message')}>{searchError}</div>;
     }
 
-    handleSearch();
-  }, [query]);
+    if (results.length > 0) {
+      return results.map((result) => <Result key={result.id} result={result} />);
+    }
+
+    if (query) {
+      return (
+        <div className={cx('no-results')}>
+          {translations[lang].search.noResults.replace('{{query}}', query)}
+        </div>
+      );
+    }
+
+    return null;
+  };
 
   return (
     <div className={cx('search')}>
@@ -79,47 +122,40 @@ export default function Search({ lang, resultsRef }: SearchProps) {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-      <div className={cx('results')}>
-        {query
-          && createPortal(
-            <div className={cx('results')}>
-              {results.length > 0
-                ? (
-                    results.map((result, index) => <Result key={index} result={result} />)
-                  )
-                : (
-                    <div className={cx('no-results')}>
-                      {translations[lang].search.noResults.replace('{{query}}', query)}
-                    </div>
-                  )}
-            </div>,
-            resultsRef.current!,
-          )}
-      </div>
+      {resultsRef.current && createPortal(<div className={cx('results')}>{renderResults()}</div>, resultsRef.current)}
     </div>
   );
 }
 
 function Result({ result }: { result: PagefindSearchResult }) {
-  const [data, setData] = useState<PagefindSearchFragment>();
+  const [data, setData] = useState<PagefindSearchFragment | null>(null);
 
   useEffect(() => {
     async function fetchData() {
-      const data = await result.data();
+      try {
+        const resultData = await result.data();
 
-      setData(data);
+        setData(resultData);
+      } catch (error) {
+        console.error('Failed to fetch result data:', error);
+        setData(null);
+      }
     }
 
     fetchData();
   }, [result]);
 
   const removeHtmlExtension = (url: string): string => {
-    const urlObj = new URL(url, window.location.origin);
-    const hash = urlObj.hash;
-    const pathname = urlObj.pathname;
-    const cleanedPathname = pathname.endsWith('.html') ? pathname.slice(0, -5) : pathname;
+    try {
+      const urlObj = new URL(url, window.location.origin);
+      const { hash, pathname } = urlObj;
+      const cleanedPathname = pathname.endsWith('.html') ? pathname.slice(0, -5) : pathname;
 
-    return `${cleanedPathname}${hash}`;
+      return `${cleanedPathname}${hash}`;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_) {
+      return url;
+    }
   };
 
   if (!data) {
@@ -135,8 +171,8 @@ function Result({ result }: { result: PagefindSearchResult }) {
 
       {data.sub_results && data.sub_results.length > 0 && (
         <div className={cx('subresults')}>
-          {data.sub_results.map((subresult, index) => (
-            <div key={index} className={cx('subresult')}>
+          {data.sub_results.map((subresult) => (
+            <div key={subresult.url} className={cx('subresult')}>
               <Link href={removeHtmlExtension(subresult.url)}>
                 <h4>{subresult.title}</h4>
                 <p dangerouslySetInnerHTML={{ __html: subresult.excerpt }} />
