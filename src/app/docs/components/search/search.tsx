@@ -45,12 +45,19 @@ export default function Search({ lang, resultsRef }: SearchProps) {
   const [searchError, setSearchError] = useState<string | null>(null);
 
   useEffect(() => {
+    let stale = false;
+
     async function loadPagefind() {
+      setIsPagefindReady(false);
+      setSearchError(null);
       try {
         if (!isRunningInDev) {
           window.pagefind = await import(
             /* webpackIgnore: true */ `/_next/static/pagefind/${lang}/pagefind.js`,
           );
+          if (stale) {
+            return;
+          }
 
           if (window.pagefind?.options) {
             await window.pagefind.options({ baseUrl: `/docs/${lang}` });
@@ -58,14 +65,23 @@ export default function Search({ lang, resultsRef }: SearchProps) {
         } else {
           window.pagefind = { search: async () => ({ results: MOCKED_SEARCH }) as unknown as PagefindSearchResults };
         }
+        if (stale) {
+          return;
+        }
         setIsPagefindReady(true);
       } catch (error) {
+        if (stale) {
+          return;
+        }
         console.error('Failed to load Pagefind:', error);
         setSearchError(translations[lang].search.error);
       }
     }
 
     loadPagefind();
+    return () => {
+      stale = true;
+    };
   }, [lang]);
 
   useEffect(() => {
