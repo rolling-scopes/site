@@ -54,6 +54,7 @@ export default function Search({ lang, resultsRef }: SearchProps) {
   const [results, setResults] = useState<PagefindSearchResult[]>([]);
   const [isPagefindReady, setIsPagefindReady] = useState(false);
   const [searchError, setSearchError] = useState<string | null>(null);
+  const [isSearching, setIsSearching] = useState(false);
 
   useEffect(() => {
     let stale = false;
@@ -96,6 +97,7 @@ export default function Search({ lang, resultsRef }: SearchProps) {
   }, [lang]);
 
   useEffect(() => {
+    setIsSearching(true);
     const handleSearch = async () => {
       if (isPagefindReady && window.pagefind && query) {
         try {
@@ -103,13 +105,16 @@ export default function Search({ lang, resultsRef }: SearchProps) {
 
           setResults(search.results);
           setSearchError(null);
+          setIsSearching(false);
         } catch (error) {
           console.error('Pagefind search failed:', error);
           setSearchError(translations[lang].search.error);
+          setIsSearching(false);
         }
       } else if (!query) {
         setResults([]);
         setSearchError(null);
+        setIsSearching(false);
       }
     };
 
@@ -117,7 +122,10 @@ export default function Search({ lang, resultsRef }: SearchProps) {
       handleSearch();
     }, 300);
 
-    return () => clearTimeout(debounceTimer);
+    return () => {
+      clearTimeout(debounceTimer);
+      setIsSearching(false);
+    };
   }, [query, isPagefindReady, lang]);
 
   const renderResults = () => {
@@ -129,7 +137,7 @@ export default function Search({ lang, resultsRef }: SearchProps) {
       return results.map((result) => <Result key={result.id} result={result} />);
     }
 
-    if (query) {
+    if (query && !isSearching && results.length === 0) {
       return (
         <div className={cx('no-results')}>
           {translations[lang].search.noResults.replace('{{query}}', query)}
