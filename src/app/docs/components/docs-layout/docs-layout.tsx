@@ -18,6 +18,17 @@ type DocsLayoutProps = {
   lang: Language;
 };
 
+/**
+ * Layout component that renders the documentation navigation, search, and page content.
+ *
+ * The component manages the menu open state, passes the menu and toggle handler to DocsMenu,
+ * and hides the main docs content while the menu is open.
+ *
+ * @param children - The page content (rendered inside the article with markdown styling)
+ * @param menu - The structure describing navigation items for the DocsMenu
+ * @param lang - Language identifier used by the Search component
+ * @returns The docs layout element containing navigation, search, and the supplied content
+ */
 export function DocsLayout({ children, menu, lang }: DocsLayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const resultsRef = useRef<HTMLDivElement | null>(null);

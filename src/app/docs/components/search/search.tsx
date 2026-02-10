@@ -38,6 +38,17 @@ type SearchProps = {
   resultsRef: RefObject<HTMLDivElement | null>;
 };
 
+/**
+ * Render a localized search input that loads Pagefind, performs debounced queries, and displays results.
+ *
+ * Loads Pagefind for the given language, runs searches as the user types (debounced), and renders either
+ * results, a localized no-results message, or a localized error message. Search result content is mounted
+ * into the provided results container via a React portal.
+ *
+ * @param lang - Language code used for localizing UI text and configuring Pagefind's base URL
+ * @param resultsRef - Ref to the container element where search results will be rendered via portal
+ * @returns The search UI element; the actual results are mounted into `resultsRef.current`
+ */
 export default function Search({ lang, resultsRef }: SearchProps) {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<PagefindSearchResult[]>([]);
@@ -143,6 +154,14 @@ export default function Search({ lang, resultsRef }: SearchProps) {
   );
 }
 
+/**
+ * Renders a search result entry with title, excerpt, and optional subresults.
+ *
+ * Fetches fragment data from the provided Pagefind result and renders a link to the cleaned URL containing the fragment's title and excerpt. If the fragment includes sub-results, each subresult is rendered as a linked item with its title and excerpt. Returns nothing (null) while fragment data is loading or if data cannot be fetched.
+ *
+ * @param result - A Pagefind search result object that exposes a `data()` method resolving to the result fragment used for rendering.
+ * @returns A React element displaying the result and any subresults, or `null` if fragment data is not available.
+ */
 function Result({ result }: { result: PagefindSearchResult }) {
   const [data, setData] = useState<PagefindSearchFragment | null>(null);
 
