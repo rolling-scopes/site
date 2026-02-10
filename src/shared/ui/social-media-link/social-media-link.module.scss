@@ -23,13 +23,18 @@
 
   .media-icon {
     display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 56px;
+    height: 56px;
     border-radius: $border-radius-round;
+
     background-color: $color-gray-200;
+
     transition: $transition-social;
 
     > img {
-      width: 56px;
-      height: auto;
       transition: $transition-social;
     }
   }
