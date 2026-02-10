@@ -180,7 +180,7 @@ function Result({ result }: { result: PagefindSearchResult }) {
 
         setData(resultData);
       } catch (error) {
-        console.error('Failed to fetch result data:', error);
+        console.error(`Failed to fetch result data for ID ${result.id}:`, error);
         setData(null);
       }
     }
@@ -209,6 +209,11 @@ function Result({ result }: { result: PagefindSearchResult }) {
     <div>
       <LinkCustom href={removeHtmlExtension(data.url)} className={cx('link')}>
         <Subtitle size="extra-small" weight="bold">{data.meta.title}</Subtitle>
+        {/*
+          Pagefind excerpts contain highlight <mark> tags.
+          dangerouslySetInnerHTML is used to render this HTML.
+          This assumes the indexed content is trusted and sanitized to prevent XSS.
+        */}
         <p dangerouslySetInnerHTML={{ __html: data.excerpt }} />
       </LinkCustom>
 
@@ -218,6 +223,11 @@ function Result({ result }: { result: PagefindSearchResult }) {
             <div key={`${subresult.url}-${index}`} className={cx('subresult')}>
               <Link href={removeHtmlExtension(subresult.url)}>
                 <h4>{subresult.title}</h4>
+                {/*
+                  Pagefind excerpts contain highlight <mark> tags.
+                  dangerouslySetInnerHTML is used to render this HTML.
+                  This assumes the indexed content is trusted and sanitized to prevent XSS.
+                */}
                 <p dangerouslySetInnerHTML={{ __html: subresult.excerpt }} />
               </Link>
             </div>
