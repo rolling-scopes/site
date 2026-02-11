@@ -40,7 +40,7 @@ export const DocsMenu = ({ menu, isOpen, onMenuToggle }: DocsMenuProps) => {
     if (isValidUrl(link)) {
       return link;
     }
-    return lang === 'en' ? `/docs/${link}` : `docs/${link}`;
+    return lang === 'en' ? `/docs/${link}` : `/${lang}/docs/${link}`;
   };
 
   const renderMenuItems = (items: Menu) => {

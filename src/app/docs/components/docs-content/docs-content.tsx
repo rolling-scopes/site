@@ -53,7 +53,7 @@ export function DocsContent({ markdownContent, lang }: DocsContentProps) {
             const transformedHref = href.replace('?id=', '#');
             const lastPathSegment = transformedHref.split('/').pop();
 
-            newHref = lang === 'en' ? `/docs/${lastPathSegment}` : `docs/${lastPathSegment}`;
+            newHref = lang === 'en' ? `/docs/${lastPathSegment}` : `/${lang}/docs/${lastPathSegment}`;
           }
 
           return (
