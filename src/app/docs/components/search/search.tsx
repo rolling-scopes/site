@@ -72,7 +72,7 @@ export default function Search({ lang, resultsRef }: SearchProps) {
           }
 
           if (window.pagefind?.options) {
-            await window.pagefind.options({ baseUrl: `/docs/${lang}` });
+            await window.pagefind.options({ baseUrl: `/docs` });
           }
         } else {
           window.pagefind = { search: async () => ({ results: MOCKED_SEARCH }) as unknown as PagefindSearchResults };
@@ -134,7 +134,7 @@ export default function Search({ lang, resultsRef }: SearchProps) {
     }
 
     if (results.length > 0) {
-      return results.map((result) => <Result key={result.id} result={result} />);
+      return results.map((result) => <Result key={result.id} result={result} lang={lang} />);
     }
 
     if (query && !isSearching && results.length === 0) {
@@ -170,7 +170,8 @@ export default function Search({ lang, resultsRef }: SearchProps) {
  * @param result - A Pagefind search result object that exposes a `data()` method resolving to the result fragment used for rendering.
  * @returns A React element displaying the result and any subresults, or `null` if fragment data is not available.
  */
-function Result({ result }: { result: PagefindSearchResult }) {
+function Result({ result, lang }: { result: PagefindSearchResult;
+  lang: Language; }) {
   const [data, setData] = useState<PagefindSearchFragment | null>(null);
 
   useEffect(() => {
@@ -194,9 +195,14 @@ function Result({ result }: { result: PagefindSearchResult }) {
       const { hash, pathname } = urlObj;
       const cleanedPathname = pathname.endsWith('.html') ? pathname.slice(0, -5) : pathname;
 
-      return `${cleanedPathname}${hash}`;
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    } catch (_) {
+      const finalPathname = lang === 'en'
+        ? cleanedPathname.replace('/docs/en/', '/docs/')
+        : `/${lang}${cleanedPathname}`;
+
+      const finalUrl = `${finalPathname}${hash}`;
+
+      return finalUrl;
+    } catch {
       return url;
     }
   };

@@ -28,14 +28,19 @@ export const DocsMenu = ({ menu, isOpen, onMenuToggle }: DocsMenuProps) => {
   };
 
   const isActive = (link: string) => {
-    const lang = (params?.lang as string) || '';
-    const base = lang ? `/${lang}/docs/` : '/docs/';
+    const lang = (params?.lang as string) || 'en';
+    const base = lang === 'en' ? '/docs/' : `/${lang}/docs/`;
 
     return pathname === `${base}${link}`;
   };
 
   const resolveHref = (link: string) => {
-    return isValidUrl(link) ? link : `/docs/${link}`;
+    const lang = (params?.lang as string) || 'en';
+
+    if (isValidUrl(link)) {
+      return link;
+    }
+    return lang === 'en' ? `/docs/${link}` : `/${lang}/docs/${link}`;
   };
 
   const renderMenuItems = (items: Menu) => {
