@@ -197,11 +197,11 @@ function Result({ result, lang }: { result: PagefindSearchResult;
 
       const finalPathname = lang === 'en'
         ? cleanedPathname.replace('/docs/en/', '/docs/')
-        : cleanedPathname;
+        : cleanedPathname.replace(`/docs/${lang}/`, `/${lang}/docs/`);
 
-      const result = `${finalPathname}${hash}`;
+      const finalUrl = `${finalPathname}${hash}`;
 
-      return result;
+      return finalUrl;
     } catch {
       return url;
     }
