@@ -72,7 +72,7 @@ export default function Search({ lang, resultsRef }: SearchProps) {
           }
 
           if (window.pagefind?.options) {
-            await window.pagefind.options({ baseUrl: `/docs` });
+            await window.pagefind.options({ baseUrl: '' });
           }
         } else {
           window.pagefind = { search: async () => ({ results: MOCKED_SEARCH }) as unknown as PagefindSearchResults };
@@ -195,8 +195,8 @@ function Result({ result, lang }: { result: PagefindSearchResult;
       const { hash, pathname } = urlObj;
       const cleanedPathname = pathname.endsWith('.html') ? pathname.slice(0, -5) : pathname;
 
-      const finalPathname = lang === 'en'
-        ? cleanedPathname.replace('/docs/en/', '/docs/')
+      const finalPathname = cleanedPathname.startsWith(`/${lang}/`)
+        ? cleanedPathname
         : `/${lang}${cleanedPathname}`;
 
       const finalUrl = `${finalPathname}${hash}`;
