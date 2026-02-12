@@ -5,7 +5,8 @@ import classNames from 'classnames/bind';
 import Link from 'next/link';
 import { createPortal } from 'react-dom';
 
-import MOCKED_SEARCH from '../../mocked-search';
+import MOCKED_SEARCH_EN from '../../mocked-search';
+import MOCKED_SEARCH_RU from '../../mocked-search-ru';
 import { Language } from '@/shared/types';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Subtitle } from '@/shared/ui/subtitle';
@@ -75,6 +76,8 @@ export default function Search({ lang, resultsRef }: SearchProps) {
             await window.pagefind.options({ baseUrl: '' });
           }
         } else {
+          const MOCKED_SEARCH = lang === 'ru' ? MOCKED_SEARCH_RU : MOCKED_SEARCH_EN;
+
           window.pagefind = { search: async () => ({ results: MOCKED_SEARCH }) as unknown as PagefindSearchResults };
         }
         if (stale) {
@@ -213,7 +216,7 @@ function Result({ result, lang }: { result: PagefindSearchResult;
 
   return (
     <div>
-      <LinkCustom href={removeHtmlExtension(data.url)} className={cx('link')}>
+      <LinkCustom href={removeHtmlExtension(data.url)} className={cx('link')} preserveLang={false}>
         <Subtitle size="extra-small" weight="bold">{data.meta.title}</Subtitle>
         {/*
           Pagefind excerpts contain highlight <mark> tags.

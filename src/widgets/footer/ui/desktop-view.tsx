@@ -15,7 +15,8 @@ type DesktopViewProps = {
 
 export const DesktopView = ({ courses }: DesktopViewProps) => {
   const params = useParams();
-  const lang = params?.lang as ApiResourceLocale ?? 'en-US';
+  const rawLang = (params?.lang as string) ?? 'en-US';
+  const lang: ApiResourceLocale = rawLang === 'en' ? 'en-US' : (rawLang as ApiResourceLocale);
   const menuHeading = lang === 'en-US' ? 'all courses' : 'курсы';
 
   return (

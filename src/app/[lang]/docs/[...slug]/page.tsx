@@ -61,7 +61,7 @@ export async function generateMetadata({ params }: PagePropsDocs): Promise<Metad
 }
 
 export async function generateStaticParams() {
-  const supportedLanguages: Language[] = ['ru'];
+  const supportedLanguages: Language[] = ['ru', 'en'];
   const allSlugs = [];
 
   const collectSlugs = (items: Menu, lang: Language) => {

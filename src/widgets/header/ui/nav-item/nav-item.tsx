@@ -50,7 +50,11 @@ export const NavItem = ({
   const handleClick = () => {
     onNavItemClick();
     if (!isDropdown) {
-      router.push(withLang(lang, linkHref));
+      if (id === NAV_MENU_LABELS.DOCS) {
+        router.push(linkHref);
+      } else {
+        router.push(withLang(lang, linkHref));
+      }
     }
   };
 
