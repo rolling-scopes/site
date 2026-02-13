@@ -45,7 +45,7 @@ export const ShortInfoPanel = ({
   showMentoringStartDate,
 }: ShortInfoPanelProps) => {
   const params = useParams();
-  const lang: ApiResourceLocale = (params?.lang as string) === 'ru' ? 'ru' : 'en-US';
+  const lang = (params?.lang as ApiResourceLocale) ?? 'en-US';
   const courseLanguage = Array.from(language)
     .map((lang) => COURSE_LANGUAGE_LABEL[lang])
     .join(', ');

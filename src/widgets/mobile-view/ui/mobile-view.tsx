@@ -56,8 +56,7 @@ export const MobileView = ({ type, courses, mentorshipCourses, isMenuOpen, logoI
   const params = useParams();
 
   const iconSrc = pathname.includes(ROUTES.MENTORSHIP) ? iconBlue : iconYellow;
-  const rawLang = params?.lang as string;
-  const lang: ApiResourceLocale = rawLang === 'ru' ? 'ru' : 'en-US';
+  const lang = params?.lang as ApiResourceLocale ?? 'en-US';
 
   const [activeDropdowns, setActiveDropdowns] = useState<Set<string>>(new Set());
 
