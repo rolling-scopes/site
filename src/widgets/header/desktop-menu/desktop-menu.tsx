@@ -47,8 +47,7 @@ export const DesktopMenu = ({
   const pathname = usePathname();
   const params = useParams();
 
-  const rawLang = params?.lang as string;
-  const lang: ApiResourceLocale = rawLang === 'ru' ? 'ru' : 'en-US';
+  const lang = params?.lang as ApiResourceLocale;
   const iconSrc = isMentorshipPage ? iconBlue : iconYellow;
 
   const menuData = useMemo(

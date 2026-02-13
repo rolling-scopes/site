@@ -5,7 +5,6 @@ import { useParams, usePathname, useRouter } from 'next/navigation';
 
 import arrowIcon from '@/shared/assets/svg/dropdown-arrow.svg';
 import { KEY_CODES, NAV_MENU_LABELS, ROUTES } from '@/shared/constants';
-import { ApiResourceLocale } from '@/shared/types';
 import { withLang } from '@/shared/ui/link-custom/helpers/with-lang';
 import { withoutLang } from '@/shared/ui/link-custom/helpers/without-lang';
 import { NavMenuLabel } from '@/widgets/header/header';
@@ -43,9 +42,7 @@ export const NavItem = ({
   const pathname = usePathname();
   const params = useParams();
 
-  const rawLang = params?.lang as string;
-  const lang: ApiResourceLocale = rawLang === 'ru' ? 'ru' : 'en-US';
-
+  const lang = params?.lang as string ?? '';
   const isHrefHome = href === ROUTES.HOME;
   const isActive = isHrefHome ? withoutLang(pathname) === ROUTES.HOME : pathname?.includes(href);
   const linkHref = isHrefHome ? href : `/${href}`;

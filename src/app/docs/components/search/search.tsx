@@ -2,10 +2,10 @@
 
 import React, { RefObject, useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
+import Link from 'next/link';
 import { createPortal } from 'react-dom';
 
-import MOCKED_SEARCH_EN from '../../mocked-search';
-import MOCKED_SEARCH_RU from '../../mocked-search-ru';
+import MOCKED_SEARCH from '../../mocked-search';
 import { Language } from '@/shared/types';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { Subtitle } from '@/shared/ui/subtitle';
@@ -72,13 +72,9 @@ export default function Search({ lang, resultsRef }: SearchProps) {
           }
 
           if (window.pagefind?.options) {
-            const baseUrl = lang === 'en' ? '/docs' : `/${lang}/docs`;
-
-            await window.pagefind.options({ baseUrl });
+            await window.pagefind.options({ baseUrl: `/docs` });
           }
         } else {
-          const MOCKED_SEARCH = lang === 'ru' ? MOCKED_SEARCH_RU : MOCKED_SEARCH_EN;
-
           window.pagefind = { search: async () => ({ results: MOCKED_SEARCH }) as unknown as PagefindSearchResults };
         }
         if (stale) {
@@ -197,19 +193,13 @@ function Result({ result, lang }: { result: PagefindSearchResult;
     try {
       const urlObj = new URL(url, window.location.origin);
       const { hash, pathname } = urlObj;
-      let cleanedPathname = pathname.endsWith('.html') ? pathname.slice(0, -5) : pathname;
+      const cleanedPathname = pathname.endsWith('.html') ? pathname.slice(0, -5) : pathname;
 
-      if (lang === 'en') {
-        if (cleanedPathname === '/en') {
-          cleanedPathname = '/';
-        } else if (cleanedPathname.startsWith('/en/')) {
-          cleanedPathname = cleanedPathname.substring(3);
-        }
-      } else if (!cleanedPathname.startsWith(`/${lang}/`)) {
-        cleanedPathname = `/${lang}${cleanedPathname}`;
-      }
+      const finalPathname = lang === 'en'
+        ? cleanedPathname.replace('/docs/en/', '/docs/')
+        : `/${lang}${cleanedPathname}`;
 
-      const finalUrl = `${cleanedPathname}${hash}`;
+      const finalUrl = `${finalPathname}${hash}`;
 
       return finalUrl;
     } catch {
@@ -223,7 +213,7 @@ function Result({ result, lang }: { result: PagefindSearchResult;
 
   return (
     <div>
-      <LinkCustom href={removeHtmlExtension(data.url)} className={cx('link')} preserveLang={false}>
+      <LinkCustom href={removeHtmlExtension(data.url)} className={cx('link')}>
         <Subtitle size="extra-small" weight="bold">{data.meta.title}</Subtitle>
         {/*
           Pagefind excerpts contain highlight <mark> tags.
@@ -237,11 +227,7 @@ function Result({ result, lang }: { result: PagefindSearchResult;
         <div className={cx('subresults')}>
           {data.sub_results.map((subresult, index) => (
             <div key={`${subresult.url}-${index}`} className={cx('subresult')}>
-              <LinkCustom
-                href={removeHtmlExtension(subresult.url)}
-                className={cx('link')}
-                preserveLang={false}
-              >
+              <Link href={removeHtmlExtension(subresult.url)}>
                 <h4>{subresult.title}</h4>
                 {/*
                   Pagefind excerpts contain highlight <mark> tags.
@@ -249,7 +235,7 @@ function Result({ result, lang }: { result: PagefindSearchResult;
                   This assumes the indexed content is trusted and sanitized to prevent XSS.
                 */}
                 <p dangerouslySetInnerHTML={{ __html: subresult.excerpt }} />
-              </LinkCustom>
+              </Link>
             </div>
           ))}
         </div>

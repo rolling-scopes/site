@@ -52,7 +52,7 @@ export const CourseCard = ({
 }: CourseCardProps) => {
   const { backgroundColor, accentColor } = backgroundStyle;
   const params = useParams();
-  const lang: ApiResourceLocale = (params?.lang as string) === 'ru' ? 'ru' : 'en-US';
+  const lang = (params?.lang as ApiResourceLocale) ?? 'en-US';
 
   const buttonLabel = lang === 'en-US' ? 'View details' : 'Подробнее';
   const dateLabel = size === 'sm' ? LABELS[lang].START_DATE_SHORT : LABELS[lang].START_DATE;
