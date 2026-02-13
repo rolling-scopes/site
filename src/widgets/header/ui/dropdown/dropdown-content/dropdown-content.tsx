@@ -30,7 +30,7 @@ export const DropdownContent = ({
   const listRef = useRef<HTMLUListElement>(null);
   const params = useParams();
 
-  const lang = params.lang as ApiResourceLocale ?? 'en-US';
+  const lang: ApiResourceLocale = (params.lang as string) === 'ru' ? 'ru' : 'en-US';
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
