@@ -17,8 +17,12 @@ export async function generateMetadata({ params }: PagePropsDocs): Promise<Metad
   const { lang, slug } = await params;
   const docsMenu = await fetchMenu(lang);
 
-  const collectTitles = (items: Menu): { slug: string[];
-    title: string; }[] => {
+  const collectTitles = (
+    items: Menu,
+  ): {
+    slug: string[];
+    title: string;
+  }[] => {
     return items.flatMap((section) => {
       const titles = [
         {
@@ -62,15 +66,19 @@ export async function generateMetadata({ params }: PagePropsDocs): Promise<Metad
 
 export async function generateStaticParams() {
   const supportedLanguages: Language[] = ['ru', 'en'];
-  const allSlugs: { lang: Language;
-    slug: string[]; }[] = [];
+  const allSlugs: {
+    lang: Language;
+    slug: string[];
+  }[] = [];
 
   const collectSlugs = (
     items: Menu,
     lang: Language,
     basePath: string[] = [],
-  ): { lang: Language;
-    slug: string[]; }[] => {
+  ): {
+    lang: Language;
+    slug: string[];
+  }[] => {
     return items.flatMap((section) => {
       const currentPathSegments =
         section.link && !section.link.startsWith('http') ? section.link.split('/') : [];
@@ -78,10 +86,12 @@ export async function generateStaticParams() {
 
       const self =
         section.link && !section.link.startsWith('http')
-          ? [{
-              lang,
-              slug: newBasePath,
-            }]
+          ? [
+              {
+                lang,
+                slug: newBasePath,
+              },
+            ]
           : [];
 
       const children = section.items ? collectSlugs(section.items, lang, newBasePath) : [];
