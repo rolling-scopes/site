@@ -196,13 +196,17 @@ function Result({ result, lang }: { result: PagefindSearchResult;
     try {
       const urlObj = new URL(url, window.location.origin);
       const { hash, pathname } = urlObj;
-      const cleanedPathname = pathname.endsWith('.html') ? pathname.slice(0, -5) : pathname;
+      let cleanedPathname = pathname.endsWith('.html') ? pathname.slice(0, -5) : pathname;
 
-      const finalPathname = cleanedPathname.startsWith(`/${lang}/`)
-        ? cleanedPathname
-        : `/${lang}${cleanedPathname}`;
+      if (lang === 'en') {
+        if (cleanedPathname.startsWith('/en/')) {
+          cleanedPathname = cleanedPathname.substring(3);
+        }
+      } else if (!cleanedPathname.startsWith(`/${lang}/`)) {
+        cleanedPathname = `/${lang}${cleanedPathname}`;
+      }
 
-      const finalUrl = `${finalPathname}${hash}`;
+      const finalUrl = `${cleanedPathname}${hash}`;
 
       return finalUrl;
     } catch {
