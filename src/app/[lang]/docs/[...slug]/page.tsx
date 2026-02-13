@@ -17,8 +17,12 @@ export async function generateMetadata({ params }: PagePropsDocs): Promise<Metad
   const { lang, slug } = await params;
   const docsMenu = await fetchMenu(lang);
 
-  const collectTitles = (items: Menu): { slug: string[];
-    title: string; }[] => {
+  const collectTitles = (
+    items: Menu,
+  ): {
+    slug: string[];
+    title: string;
+  }[] => {
     return items.flatMap((section) => {
       const titles = [
         {
@@ -61,42 +65,46 @@ export async function generateMetadata({ params }: PagePropsDocs): Promise<Metad
 }
 
 export async function generateStaticParams() {
-  const supportedLanguages: Language[] = ['ru'];
-  const allSlugs = [];
+  const supportedLanguages: Language[] = ['ru', 'en'];
+  const allSlugs: {
+    lang: Language;
+    slug: string[];
+  }[] = [];
 
-  const collectSlugs = (items: Menu, lang: Language) => {
+  const collectSlugs = (
+    items: Menu,
+    lang: Language,
+    basePath: string[] = [],
+  ): {
+    lang: Language;
+    slug: string[];
+  }[] => {
     return items.flatMap((section) => {
-      const results = [];
+      const currentPathSegments =
+        section.link && !section.link.startsWith('http') ? section.link.split('/') : [];
+      const newBasePath = [...basePath, ...currentPathSegments];
 
-      if (section.link && !section.link.startsWith('http')) {
-        const slugSegments = section.link.split('/');
+      const self =
+        section.link && !section.link.startsWith('http')
+          ? [
+              {
+                lang,
+                slug: newBasePath,
+              },
+            ]
+          : [];
 
-        results.push({
-          lang,
-          slug: slugSegments,
-        });
-      }
+      const children = section.items ? collectSlugs(section.items, lang, newBasePath) : [];
 
-      if (section.items) {
-        const subSlugs = collectSlugs(section.items, lang);
-
-        subSlugs.forEach((subSlug) => {
-          results.push({
-            lang,
-            slug: subSlug.slug,
-          });
-        });
-      }
-
-      return results;
+      return [...self, ...children];
     });
   };
 
   for (const lang of supportedLanguages) {
     const docsMenu = await fetchMenu(lang);
-    const slugs = collectSlugs(docsMenu, lang);
+    const slugsForLang = collectSlugs(docsMenu, lang);
 
-    allSlugs.push(...slugs);
+    allSlugs.push(...slugsForLang);
   }
 
   return allSlugs;

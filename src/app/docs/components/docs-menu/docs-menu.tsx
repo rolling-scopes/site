@@ -49,7 +49,11 @@ export const DocsMenu = ({ menu, isOpen, onMenuToggle }: DocsMenuProps) => {
         return (
           <li key={index}>
             {doc.link && (
-              <LinkCustom href={resolveHref(doc.link)} className={cx('link', { active: isActive(doc.link) })}>
+              <LinkCustom
+                href={resolveHref(doc.link)}
+                className={cx('link', { active: isActive(doc.link) })}
+                preserveLang={false}
+              >
                 {doc.title}
               </LinkCustom>
             )}
@@ -62,7 +66,11 @@ export const DocsMenu = ({ menu, isOpen, onMenuToggle }: DocsMenuProps) => {
       return (
         doc.link && (
           <li key={index}>
-            <LinkCustom href={resolveHref(doc.link)} className={cx('link', { active: isActive(doc.link) })}>
+            <LinkCustom
+              href={resolveHref(doc.link)}
+              className={cx('link', { active: isActive(doc.link) })}
+              preserveLang={false}
+            >
               {doc.title}
             </LinkCustom>
           </li>

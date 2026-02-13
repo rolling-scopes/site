@@ -78,7 +78,8 @@ export const LinkCustom = ({
   const fallbackLang = getLangFromPathname(pathName);
   const lang = params?.lang as string ?? fallbackLang ?? '';
   const isExternalLink = external || isExternalUri(href);
-  const localizedHref = isExternalLink || !preserveLang ? href : withLang(lang, href);
+  const isStaticAsset = /\.(pdf|txt|zip|jpg|png|md)$/i.test(href);
+  const localizedHref = isExternalLink || !preserveLang || isStaticAsset ? href : withLang(lang, href);
 
   const isDisabled = disabled || !href;
   const showLabel = isDisabled ? disabledLabel : children;

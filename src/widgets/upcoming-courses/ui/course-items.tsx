@@ -29,7 +29,7 @@ const buttonLabel = {
 
 export const CourseItems = ({ courses }: CourseItems) => {
   const params = useParams();
-  const lang = params?.lang as ApiResourceLocale ?? 'en-US';
+  const lang: ApiResourceLocale = (params?.lang as string) === 'ru' ? 'ru' : 'en-US';
 
   const coursesData = getActualData({
     data: courses,
