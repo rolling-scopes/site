@@ -72,7 +72,7 @@ export default function Search({ lang, resultsRef }: SearchProps) {
           }
 
           if (window.pagefind?.options) {
-            const baseUrl = lang === 'en' ? '/' : `/${lang}/`;
+            const baseUrl = lang === 'en' ? '/docs' : `/${lang}/docs`;
 
             await window.pagefind.options({ baseUrl });
           }
