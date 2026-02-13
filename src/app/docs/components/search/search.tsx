@@ -2,7 +2,6 @@
 
 import React, { RefObject, useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
-import Link from 'next/link';
 import { createPortal } from 'react-dom';
 
 import MOCKED_SEARCH_EN from '../../mocked-search';
@@ -201,7 +200,9 @@ function Result({ result, lang }: { result: PagefindSearchResult;
       let cleanedPathname = pathname.endsWith('.html') ? pathname.slice(0, -5) : pathname;
 
       if (lang === 'en') {
-        if (cleanedPathname.startsWith('/en/')) {
+        if (cleanedPathname === '/en') {
+          cleanedPathname = '/';
+        } else if (cleanedPathname.startsWith('/en/')) {
           cleanedPathname = cleanedPathname.substring(3);
         }
       } else if (!cleanedPathname.startsWith(`/${lang}/`)) {
@@ -236,7 +237,11 @@ function Result({ result, lang }: { result: PagefindSearchResult;
         <div className={cx('subresults')}>
           {data.sub_results.map((subresult, index) => (
             <div key={`${subresult.url}-${index}`} className={cx('subresult')}>
-              <Link href={removeHtmlExtension(subresult.url)}>
+              <LinkCustom
+                href={removeHtmlExtension(subresult.url)}
+                className={cx('link')}
+                preserveLang={false}
+              >
                 <h4>{subresult.title}</h4>
                 {/*
                   Pagefind excerpts contain highlight <mark> tags.
@@ -244,7 +249,7 @@ function Result({ result, lang }: { result: PagefindSearchResult;
                   This assumes the indexed content is trusted and sanitized to prevent XSS.
                 */}
                 <p dangerouslySetInnerHTML={{ __html: subresult.excerpt }} />
-              </Link>
+              </LinkCustom>
             </div>
           ))}
         </div>
