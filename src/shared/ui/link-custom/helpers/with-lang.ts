@@ -1,7 +1,7 @@
 import { ROUTES } from '@/shared/constants';
 
 export function withLang(lang: string, path: string) {
-  if (lang === 'en') {
+  if (lang === 'en' || lang === 'en-US') {
     return path;
   }
 
