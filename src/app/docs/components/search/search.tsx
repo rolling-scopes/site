@@ -73,7 +73,9 @@ export default function Search({ lang, resultsRef }: SearchProps) {
           }
 
           if (window.pagefind?.options) {
-            await window.pagefind.options({ baseUrl: '' });
+            const baseUrl = lang === 'en' ? '/' : `/${lang}/`;
+
+            await window.pagefind.options({ baseUrl });
           }
         } else {
           const MOCKED_SEARCH = lang === 'ru' ? MOCKED_SEARCH_RU : MOCKED_SEARCH_EN;
