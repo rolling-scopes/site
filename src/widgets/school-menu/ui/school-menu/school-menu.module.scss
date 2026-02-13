@@ -22,9 +22,24 @@
 
   .school-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: $gap-l $gap-xl;
     list-style-type: none;
+
+    &.columns-1 {
+      grid-template-columns: 1fr;
+    }
+
+    &.columns-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &.columns-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &.columns-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
 
     @include media-tablet-large {
       display: flex;
