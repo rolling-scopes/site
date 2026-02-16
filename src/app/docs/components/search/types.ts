@@ -11,6 +11,10 @@ declare global {
         excerptLength?: number;
         highlightParam?: 'highlight';
       }) => Promise<void>;
+      mergeIndex?: (indexPath: string, options?: {
+        bundlePath?: string;
+        language?: string;
+      }) => Promise<void>;
       search: (query: string) => Promise<PagefindSearchResults>;
     };
   }
