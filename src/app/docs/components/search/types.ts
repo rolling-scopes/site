@@ -13,6 +13,7 @@ declare global {
       }) => Promise<void>;
       mergeIndex?: (indexPath: string, options?: {
         bundlePath?: string;
+        baseUrl?: string;
         language?: string;
       }) => Promise<void>;
       search: (query: string) => Promise<PagefindSearchResults>;

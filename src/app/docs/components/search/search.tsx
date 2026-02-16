@@ -76,8 +76,9 @@ export default function Search({ lang, resultsRef }: SearchProps) {
           }
 
           const otherLang = lang === 'en' ? 'ru' : 'en';
+          const otherBaseUrl = otherLang === 'ru' ? '/ru/docs' : '/en/docs';
 
-          await window.pagefind?.mergeIndex?.(`/pagefind/${otherLang}/`, { bundlePath: `/pagefind/${otherLang}/` });
+          await window.pagefind?.mergeIndex?.(`/pagefind/${otherLang}/`, { bundlePath: `/pagefind/${otherLang}/`, baseUrl: otherBaseUrl });
         } else {
           window.pagefind = { search: async () => ({ results: MOCKED_SEARCH }) as unknown as PagefindSearchResults };
         }
@@ -193,23 +194,25 @@ function Result({ result, lang }: { result: PagefindSearchResult;
     fetchData();
   }, [result]);
 
-  const removeHtmlExtension = (url: string): string => {
+  const normalizeResultUrl = (url: string): string => {
     try {
       const urlObj = new URL(url, window.location.origin);
       const { hash, pathname } = urlObj;
       const cleanedPathname = pathname.endsWith('.html') ? pathname.slice(0, -5) : pathname;
 
-      const alreadyHasLangPrefix = cleanedPathname.startsWith(`/${lang}/`) || cleanedPathname === `/${lang}`;
-      const finalPathname =
-        lang === 'en'
-          ? cleanedPathname.replace('/docs/en/', '/docs/')
-          : alreadyHasLangPrefix
-            ? cleanedPathname
-            : `/${lang}${cleanedPathname}`;
+      let finalPathname;
 
-      const finalUrl = `${finalPathname}${hash}`;
+      if (cleanedPathname.startsWith('/ru/docs')) {
+        finalPathname = cleanedPathname;
+      } else if (cleanedPathname.startsWith('/en/docs')) {
+        finalPathname = cleanedPathname.replace('/en/docs', '/docs');
+      } else if (lang === 'en') {
+        finalPathname = cleanedPathname.replace('/docs/en/', '/docs/');
+      } else {
+        finalPathname = `/${lang}${cleanedPathname}`;
+      }
 
-      return finalUrl;
+      return `${finalPathname}${hash}`;
     } catch {
       return url;
     }
@@ -221,7 +224,7 @@ function Result({ result, lang }: { result: PagefindSearchResult;
 
   return (
     <div>
-      <LinkCustom href={removeHtmlExtension(data.url)} className={cx('link')} preserveLang={false}>
+      <LinkCustom href={normalizeResultUrl(data.url)} className={cx('link')} preserveLang={false}>
         <Subtitle size="extra-small" weight="bold">{data.meta.title}</Subtitle>
         {/*
           Pagefind excerpts contain highlight <mark> tags.
@@ -235,7 +238,7 @@ function Result({ result, lang }: { result: PagefindSearchResult;
         <div className={cx('subresults')}>
           {data.sub_results.map((subresult, index) => (
             <div key={`${subresult.url}-${index}`} className={cx('subresult')}>
-              <Link href={removeHtmlExtension(subresult.url)}>
+              <Link href={normalizeResultUrl(subresult.url)}>
                 <h4>{subresult.title}</h4>
                 {/*
                   Pagefind excerpts contain highlight <mark> tags.
