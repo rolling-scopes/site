@@ -15,14 +15,14 @@ type DesktopViewProps = {
 
 export const DesktopView = ({ courses }: DesktopViewProps) => {
   const params = useParams();
-  const lang = params?.lang as ApiResourceLocale ?? 'en-US';
+  const lang = (params?.lang as ApiResourceLocale) ?? 'en-US';
   const menuHeading = lang === 'en-US' ? 'all courses' : 'курсы';
 
   return (
     <div className="desktop-view" data-testid="desktop-view">
       <div className="left">
         <AboutList lang={lang} />
-        <SchoolMenu heading="rs school" color="light">
+        <SchoolMenu heading="rs school" color="light" columns={1}>
           {schoolMenuStaticLinks[lang].map((link, i) => (
             <SchoolMenu.Item
               key={i}
@@ -36,7 +36,7 @@ export const DesktopView = ({ courses }: DesktopViewProps) => {
       </div>
 
       <div className="right">
-        <SchoolMenu heading={menuHeading} color="light">
+        <SchoolMenu heading={menuHeading} color="light" columns={2}>
           <CourseMenuItemsFresh courses={courses} lang={lang} color="light" icon="iconFooter" />
         </SchoolMenu>
       </div>

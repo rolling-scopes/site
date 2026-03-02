@@ -13,6 +13,7 @@ type SchoolMenuProps = PropsWithChildren
   & HTMLProps<HTMLUListElement> & {
     heading?: string;
     color?: Color;
+    columns?: 1 | 2 | 3 | 4;
     isVisible?: boolean;
     listRef?: RefObject<HTMLUListElement | null>;
   };
@@ -20,6 +21,7 @@ type SchoolMenuProps = PropsWithChildren
 export const SchoolMenu = ({
   heading,
   color = 'light',
+  columns = 2,
   children,
   className,
   isVisible,
@@ -33,7 +35,9 @@ export const SchoolMenu = ({
       })}
     >
       {heading && <Subtitle className={cx('heading', color)}>{heading}</Subtitle>}
-      <ul ref={listRef} className={cx('school-list', className)}>{children}</ul>
+      <ul ref={listRef} className={cx('school-list', `columns-${columns}`, className)}>
+        {children}
+      </ul>
     </div>
   );
 };

@@ -6,13 +6,13 @@
 
     & .desktop-view {
       display: flex;
-      gap: 76px;
+      gap: 20%;
       align-items: flex-start;
       justify-content: flex-start;
 
       & .left {
         display: flex;
-        gap: 168px;
+        gap: 10vw;
       }
 
       // AboutList component styles
