@@ -21,7 +21,9 @@ describe('CourseCard', () => {
 
     it('renders the course card content correctly', () => {
       const language = course.language.has('ru') ? 'Русский' : 'English';
-      const title = `${course.title}${course.title === COURSE_TITLES.ANGULAR ? ` (${course.subTitle})` : ''}`;
+      const mark =
+        course.title === COURSE_TITLES.ANGULAR && course.subTitle ? ` (${course.subTitle})` : '';
+      const title = `${course.title}${mark}`;
 
       expect(screen.getByText(title)).toBeVisible();
       expect(screen.getByText(language)).toBeVisible();
