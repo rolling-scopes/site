@@ -58,7 +58,8 @@ export const CourseCard = ({
   const dateLabel = size === 'sm' ? LABELS[lang].START_DATE_SHORT : LABELS[lang].START_DATE;
   const fontSize = size === 'md' ? 'large' : 'small';
 
-  const mark = title === COURSE_TITLES.ANGULAR && !showMentoringStartDate ? ` (${subTitle})` : '';
+  const mark =
+    title === COURSE_TITLES.ANGULAR && !showMentoringStartDate && subTitle ? ` (${subTitle})` : '';
   const classes = {
     [`size-${size}`]: true,
     [className]: true,
