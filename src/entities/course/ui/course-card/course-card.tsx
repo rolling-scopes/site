@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useParams } from 'next/navigation';
 
 import type { Course } from '../../types';
-import { COURSE_TITLES, LABELS } from '@/shared/constants';
+import { LABELS } from '@/shared/constants';
 import { ApiResourceLocale } from '@/shared/types';
 import { LinkCustom } from '@/shared/ui/link-custom';
 import { ShortInfoPanel } from '@/shared/ui/short-info-panel';
@@ -37,7 +37,7 @@ export type CourseCardProps = Pick<
 
 export const CourseCard = ({
   title,
-  subTitle,
+  subTitle = '',
   iconSrc,
   startDate,
   registrationEndDate,
@@ -58,8 +58,7 @@ export const CourseCard = ({
   const dateLabel = size === 'sm' ? LABELS[lang].START_DATE_SHORT : LABELS[lang].START_DATE;
   const fontSize = size === 'md' ? 'large' : 'small';
 
-  const mark =
-    title === COURSE_TITLES.ANGULAR && !showMentoringStartDate && subTitle ? ` (${subTitle})` : '';
+  const mark = !showMentoringStartDate && subTitle ? ` (${subTitle})` : '';
   const classes = {
     [`size-${size}`]: true,
     [className]: true,
