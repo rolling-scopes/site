@@ -18,7 +18,7 @@ describe('Courses (other courses) component', () => {
 
     courseTitles.forEach((title) => {
       const course = mockedCourses.find((c) => {
-        const mark = !c.showMentoringStartDate && c.subTitle ? ` (${c.subTitle})` : '';
+        const mark = c.subTitle ? ` (${c.subTitle})` : '';
 
         return `${c.title}${mark}` === title.textContent;
       });

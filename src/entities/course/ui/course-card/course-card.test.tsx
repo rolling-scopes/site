@@ -20,9 +20,7 @@ describe('CourseCard', () => {
 
     it('renders the course card content correctly', () => {
       const language = course.language.has('ru') ? 'Русский' : 'English';
-      const mark = !course.showMentoringStartDate && course.subTitle
-        ? ` (${course.subTitle})`
-        : '';
+      const mark = course.subTitle ? ` (${course.subTitle})` : '';
       const title = `${course.title}${mark}`;
 
       expect(screen.getByText(title)).toBeVisible();
