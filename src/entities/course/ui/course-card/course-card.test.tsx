@@ -4,7 +4,6 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { CourseCard } from './course-card';
 import { mockedCourses } from '@/shared/__tests__/constants';
 import { renderWithRouter } from '@/shared/__tests__/utils';
-import { COURSE_TITLES } from '@/shared/constants';
 
 describe('CourseCard', () => {
   describe.each(mockedCourses)('Testing course card $title', (course) => {
@@ -21,7 +20,8 @@ describe('CourseCard', () => {
 
     it('renders the course card content correctly', () => {
       const language = course.language.has('ru') ? 'Русский' : 'English';
-      const title = `${course.title}${course.title === COURSE_TITLES.ANGULAR ? ` (${course.subTitle})` : ''}`;
+      const mark = course.subTitle ? ` (${course.subTitle})` : '';
+      const title = `${course.title}${mark}`;
 
       expect(screen.getByText(title)).toBeVisible();
       expect(screen.getByText(language)).toBeVisible();

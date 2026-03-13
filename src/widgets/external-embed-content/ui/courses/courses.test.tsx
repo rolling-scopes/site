@@ -3,7 +3,6 @@ import { describe, expect, it } from 'vitest';
 
 import { Courses } from './courses';
 import { mockedCourses } from '@/shared/__tests__/constants';
-import { COURSE_TITLES } from '@/shared/constants';
 
 describe('Courses (other courses) component', () => {
   it('renders widget without crashing and display correct content', () => {
@@ -19,7 +18,7 @@ describe('Courses (other courses) component', () => {
 
     courseTitles.forEach((title) => {
       const course = mockedCourses.find((c) => {
-        const mark = c.title === COURSE_TITLES.ANGULAR ? ` (${c.subTitle})` : '';
+        const mark = c.subTitle ? ` (${c.subTitle})` : '';
 
         return `${c.title}${mark}` === title.textContent;
       });
