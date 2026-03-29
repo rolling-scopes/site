@@ -17,6 +17,7 @@
   }
 
   .menu {
+    scrollbar-color: $color-gray-400 $color-gray-100;
     scrollbar-width: thin;
     scrollbar-gutter: stable;
 
@@ -28,6 +29,22 @@
 
     height: calc(100vh - 104px);
 
+    &::-webkit-scrollbar {
+      width: $gap-xs;
+    }
+
+    &::-webkit-scrollbar-track {
+      margin: $gap-xxs 0;
+      border-radius: $border-radius-xxs;
+      background: $color-gray-100;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border: 2px solid $color-gray-100;
+      border-radius: $border-radius-xxs;
+      background-color: $color-gray-400;
+    }
+
     @include media-tablet {
       position: initial;
 
@@ -38,6 +55,14 @@
 
       height: initial;
     }
+  }
+
+  .menu-wrapper:hover .menu {
+    scrollbar-color: $color-gray-500 $color-gray-100;
+  }
+
+  .menu-wrapper:hover .menu::-webkit-scrollbar-thumb {
+    background-color: $color-gray-500;
   }
 
   .docs-content {
