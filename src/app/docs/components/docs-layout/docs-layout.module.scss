@@ -25,6 +25,7 @@
     top: 104px;
 
     overflow-y: auto;
+    overscroll-behavior: none;
     display: flex;
 
     height: calc(100vh - 104px);
