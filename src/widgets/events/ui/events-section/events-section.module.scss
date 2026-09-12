@@ -1,0 +1,10 @@
+.event-cards {
+  display: flex;
+  gap: $gap-s;
+  align-items: center;
+  justify-content: space-between;
+
+  @include media-tablet {
+    flex-direction: column;
+  }
+}

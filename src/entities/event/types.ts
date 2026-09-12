@@ -11,3 +11,7 @@ export type Event = {
   city: string;
   href: string;
 };
+
+export type EventRecord = Event & {
+  id: number;
+};

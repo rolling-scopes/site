@@ -1,6 +1,7 @@
 import { Marquee } from '../marquee';
 import { courseStore } from '@/entities/course';
 import { MentorFeedbackCard } from '@/entities/mentor';
+import { ANCHORS } from '@/shared/constants';
 import { isExternalUri } from '@/shared/helpers/is-external-uri';
 import { Section } from '@/shared/types/types';
 import { LinkCustom } from '@/shared/ui/link-custom';
@@ -8,6 +9,7 @@ import { LINK_TYPE } from '@/shared/ui/link-custom/constants';
 import { Slider } from '@/shared/ui/slider';
 import { communitySliderOptions, mentorshipSliderOptions } from '@/shared/ui/slider/constants';
 import { SocialMediaLink } from '@/shared/ui/social-media-link';
+import { EventsSection } from '@/widgets/events';
 import {
   EXTERNAL_EMBED_CONTENT_TYPE,
   MentorTalksVideoPlaylistWithPlayer,
@@ -88,7 +90,11 @@ export const SectionResolver = async ({
           titleMod={section.data.titleMod}
           sectionLabel={section.data.sectionLabel}
           contentLeft={section.data.contentLeft}
-          contentRight={section.data.contentRight}
+          contentRight={
+            section.data.anchorId === ANCHORS.EVENTS
+              ? <EventsSection fallback={section.data.contentRight} />
+              : section.data.contentRight
+          }
           contentBottom={section.data.contentBottom}
           backgroundColor={section.data.backgroundColor}
           width={section.data.width}
