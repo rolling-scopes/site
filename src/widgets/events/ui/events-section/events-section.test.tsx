@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { EventsSection } from './events-section';
@@ -68,22 +68,52 @@ describe('EventsSection', () => {
   });
 
   it('keeps the fallback when there are no upcoming events', async () => {
-    mockResponse({ upcomingEvents: [] });
+    let resolveJson!: (value: unknown) => void;
+    const json = new Promise((resolve) => {
+      resolveJson = resolve;
+    });
+
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: vi.fn().mockReturnValue(json),
+      }),
+    );
 
     render(
       <EventsSection eventsUrl="https://cdn.example.com/no-events.json" fallback={fallback} />,
     );
 
     await waitFor(() => expect(fetch).toHaveBeenCalledOnce());
+    await act(async () => {
+      resolveJson({ upcomingEvents: [] });
+      await json;
+    });
     expect(screen.getByTestId('events-fallback')).toBeVisible();
   });
 
   it('keeps the fallback when the response is invalid', async () => {
-    mockResponse({ upcomingEvents: [{ id: 1 }] });
+    let resolveJson!: (value: unknown) => void;
+    const json = new Promise((resolve) => {
+      resolveJson = resolve;
+    });
+
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: vi.fn().mockReturnValue(json),
+      }),
+    );
 
     render(<EventsSection eventsUrl="https://cdn.example.com/invalid.json" fallback={fallback} />);
 
     await waitFor(() => expect(fetch).toHaveBeenCalledOnce());
+    await act(async () => {
+      resolveJson({ upcomingEvents: [{ id: 1 }] });
+      await json;
+    });
     expect(screen.getByTestId('events-fallback')).toBeVisible();
   });
 });
